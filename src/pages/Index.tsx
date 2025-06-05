@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { RotatingText } from "@/components/RotatingText";
+import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { getLatestPost, getRecentPostsSkipFirst, formatDate } from "@/lib/blog/utils";
 
 export default function Index() {
@@ -21,27 +22,37 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Hero Content */}
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
-                  🚀 Build the Decentralized Future
-                </Badge>
-                <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 leading-tight">
-                  Build Your{" "}
-                  <RotatingText
-                    words={[
-                      { text: "Platform", color: "text-blue-600" },
-                      { text: "Community", color: "text-purple-600" },
-                      { text: "Protocol", color: "text-pink-600" },
-                      { text: "Project", color: "text-orange-500" }
-                    ]}
-                    interval={2000}
-                    className="font-display font-bold"
-                  />
-                </h1>
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                  Soapbox creates tools that put the power back in your hands. Build your own platforms, 
-                  communities, and applications with our open-source toolkit.
-                </p>
+              <div className="space-y-6">
+                {/* Large Soapbox Logo */}
+                <div className="flex justify-center lg:justify-start">
+                  <div className="flex items-center space-x-4 drop-shadow-sm">
+                    <SoapboxLogo size={80} className="drop-shadow-md" />
+                    <span className="font-display font-bold text-5xl md:text-6xl bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">Soapbox</span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
+                    🚀 Build the Decentralized Future
+                  </Badge>
+                  <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 leading-tight">
+                    Build Your{" "}
+                    <RotatingText
+                      words={[
+                        { text: "Platform", color: "text-blue-600" },
+                        { text: "Community", color: "text-purple-600" },
+                        { text: "Protocol", color: "text-pink-600" },
+                        { text: "Project", color: "text-orange-500" }
+                      ]}
+                      interval={2000}
+                      className="font-display font-bold"
+                    />
+                  </h1>
+                  <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                    Soapbox creates tools that put the power back in your hands. Build your own platforms, 
+                    communities, and applications with our open-source toolkit.
+                  </p>
+                </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -144,7 +155,7 @@ export default function Index() {
                 </div>
                 <Button className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
                   <Link to="/tools/ditto">
-                    Build Community
+                    Build Your Community
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

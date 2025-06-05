@@ -473,15 +473,6 @@ export default function Ditto() {
               </CardContent>
             </Card>
           </div>
-
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="px-8 py-3" asChild>
-              <a href="https://soapbox.pub/servers" target="_blank" rel="noopener noreferrer">
-                View All Ditto Communities
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -552,7 +543,7 @@ export default function Ditto() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-violet-600 hover:bg-violet-700 text-white" asChild>
-                  <a href="https://gitlab.com/soapbox-pub/ditto/-/releases" target="_blank" rel="noopener noreferrer">
+                  <a href="/blog/ditto-1.3" rel="noopener noreferrer">
                     View Release Notes
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
