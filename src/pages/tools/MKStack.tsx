@@ -160,11 +160,12 @@ export default function MKStack() {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Group Chat Demo */}
             <Card className="bg-white/80 backdrop-blur-sm border-2 hover:border-violet-200 transition-all duration-300 hover:shadow-xl">
-              <div className="aspect-video bg-gray-100 border-b flex items-center justify-center text-gray-400">
-                <div className="text-center">
-                  <div className="text-sm font-medium">Screenshot Coming Soon</div>
-                  <div className="text-xs mt-1">Group Chat Application</div>
-                </div>
+              <div className="aspect-video bg-gray-100 border-b overflow-hidden">
+                <img 
+                  src="/assets/demos/group-chat-app-demo.png" 
+                  alt="Group Chat Application Demo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="text-xl">Group Chat Application</CardTitle>
@@ -179,10 +180,11 @@ export default function MKStack() {
                 </div>
 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full" disabled>
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Live Demo
-                    <span className="ml-2 text-xs text-gray-500">(Coming Soon)</span>
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="http://mkstack-groupchat.surge.sh/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Demo
+                    </a>
                   </Button>
                 </div>
               </CardContent>
