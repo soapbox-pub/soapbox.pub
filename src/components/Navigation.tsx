@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SoapboxLogo } from "@/components/SoapboxLogo";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-azure rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <SoapboxLogo size={32} />
             <span className="font-display font-bold text-xl text-gray-900">Soapbox</span>
           </Link>
 

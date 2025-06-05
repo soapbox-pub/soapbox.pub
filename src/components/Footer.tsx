@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SoapboxLogo } from "@/components/SoapboxLogo";
 
 export function Footer() {
   return (
@@ -7,9 +8,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-azure rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
+              <SoapboxLogo size={32} />
               <span className="font-display font-bold text-xl">Soapbox</span>
             </div>
             <p className="text-gray-400">
