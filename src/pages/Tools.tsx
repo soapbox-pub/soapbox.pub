@@ -250,9 +250,9 @@ export default function Tools() {
             </Card>
 
             {/* NostrHub */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
                   <FileText className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-xl font-display">NostrHub</CardTitle>
@@ -265,15 +265,15 @@ export default function Tools() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
                     Complete NIP database
                   </div>
                   <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
                     Publish Custom Nips
                   </div>
                   <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
                     Implementation guides
                   </div>
                 </div>
@@ -287,9 +287,9 @@ export default function Tools() {
             </Card>
 
             {/* Nostrify */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
                   <Wrench className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-xl font-display">Nostrify</CardTitle>
@@ -302,15 +302,15 @@ export default function Tools() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                     TypeScript framework
                   </div>
                   <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                     Relay management
                   </div>
                   <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                     Cross-platform
                   </div>
                 </div>

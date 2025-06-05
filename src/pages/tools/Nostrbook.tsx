@@ -829,7 +829,7 @@ export default function Nostrbook() {
                 Browse Documentation
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white hover:bg-white hover:text-orange-600" asChild>
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-orange-600" asChild>
               <a href="https://nostrbook.dev/mcp" target="_blank" rel="noopener noreferrer">
                 <Bot className="mr-2 h-5 w-5" />
                 Setup MCP Integration

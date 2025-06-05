@@ -1,7 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Heart, Users, Zap } from "lucide-react";
 
 const teamMembers = [
@@ -11,6 +10,13 @@ const teamMembers = [
     bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on ActivityPub and the Fediverse. He is still learning, and still dreaming.",
     avatar: "/assets/avatars/alex.png",
     follow: "https://gleasonator.dev/@alex@gleasonator.dev"
+  },
+  {
+    name: "M. K. Fain",
+    role: "Director of Product",
+    bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
+    avatar: "/assets/avatars/mk.jpg",
+    follow: "https://ditto.pub/@mk@ditto.pub"
   },
   {
     name: "Patrick dos Reis",
@@ -32,13 +38,6 @@ const teamMembers = [
     bio: "Danidfra is a programmer with an interest in both code and music. He believes that technology can transform the world, and is always looking for new ways to create a positive impact.",
     avatar: "/assets/avatars/danidfra.jpeg",
     follow: "https://ditto.pub/@danidfra@danidfra.com"
-  },
-  {
-    name: "M. K. Fain",
-    role: "Marketing & Communications",
-    bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for women online.",
-    avatar: "/assets/avatars/mk.jpg",
-    follow: "https://henhouse.social/@mk@henhouse.social"
   }
 ];
 
@@ -71,7 +70,7 @@ export default function About() {
                 About Soapbox
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Building free software to empower the next generation of builders online.
+                Building free software that empowers communities online.
               </p>
             </div>
           <div className="max-w-6xl mx-auto">
@@ -83,15 +82,12 @@ export default function About() {
               />
             </div>
             <div className="text-center mt-6">
-              <p className="text-gray-600 text-lg">
-                Our team working together to build the future of decentralized social media
-              </p>
             </div>
           </div>
         </section>
 
         {/* Mission Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
@@ -118,82 +114,6 @@ export default function About() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* What We Do Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
-                What We Do
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our diverse portfolio of projects spans the decentralized web, from social platforms to developer tools.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-8">
-                <CardContent className="p-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    🌟 Ditto
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    The only Nostr client with a built-in community relay. Ditto bridges Nostr and ActivityPub, 
-                    creating communities that can reach across the entire decentralized web.
-                  </p>
-                  <Badge variant="secondary" className="mr-2">Nostr</Badge>
-                  <Badge variant="secondary" className="mr-2">ActivityPub</Badge>
-                  <Badge variant="secondary">Community Building</Badge>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-8">
-                <CardContent className="p-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    🛠️ Developer Tools
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Advanced ecosystem of Nostr development tools including Nostrify, Nostrbook MCP, 
-                    and Stacks - designed for both humans and AI developers.
-                  </p>
-                  <Badge variant="secondary" className="mr-2">Nostrify</Badge>
-                  <Badge variant="secondary" className="mr-2">MCP</Badge>
-                  <Badge variant="secondary">AI Integration</Badge>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-8">
-                <CardContent className="p-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    🌉 Bridge Technologies
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Our Mostr bridge connects Nostr and ActivityPub networks, allowing content to flow 
-                    seamlessly across different decentralized platforms.
-                  </p>
-                  <Badge variant="secondary" className="mr-2">Bridge</Badge>
-                  <Badge variant="secondary" className="mr-2">Interoperability</Badge>
-                  <Badge variant="secondary">Cross-platform</Badge>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-8">
-                <CardContent className="p-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    🎓 Developer Mentorship
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    We provide mentorship opportunities for developers in developing nations to contribute to Nostr, 
-                    offering Bitcoin stipends for economic empowerment and financial freedom.
-                  </p>
-                  <Badge variant="secondary" className="mr-2">Education</Badge>
-                  <Badge variant="secondary" className="mr-2">Mentorship</Badge>
-                  <Badge variant="secondary">Bitcoin</Badge>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>

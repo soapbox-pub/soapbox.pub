@@ -136,9 +136,9 @@ export default function Index() {
             </Card>
 
             {/* NostrHub */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
                   <FileText className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-display">NostrHub</CardTitle>
@@ -151,19 +151,19 @@ export default function Index() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Complete NIP database
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Developer tools
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Implementation guides
                   </div>
                 </div>
-                <Button variant="outline" className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors" asChild>
+                <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
                   <Link to="/tools/nostrhub">
                     Explore NIPs
                     <ArrowRight className="ml-2 h-4 w-4" />
