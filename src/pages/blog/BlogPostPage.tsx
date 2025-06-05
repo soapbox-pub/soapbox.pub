@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Layout } from '@/components/Layout';
 import { getPostBySlug, formatDate, getReadingTime } from '@/lib/blog/utils';
 import { wrapVideoEmbeds } from '@/lib/blog/videoUtils';
 import { BlogPost } from '@/lib/blog/types';
@@ -29,7 +30,7 @@ export default function BlogPostPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <Layout>
         <div className="max-w-4xl mx-auto px-4 py-8">
           <Skeleton className="h-8 w-32 mb-8" />
           <Skeleton className="h-64 w-full mb-8 rounded-xl" />
@@ -42,7 +43,7 @@ export default function BlogPostPage() {
             <Skeleton className="h-4 w-3/4" />
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
@@ -53,7 +54,7 @@ export default function BlogPostPage() {
   const readingTime = getReadingTime(post.content || '');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <Layout>
       {/* Navigation */}
       <div className="max-w-4xl mx-auto px-4 pt-8">
         <Link to="/blog">
@@ -142,6 +143,6 @@ export default function BlogPostPage() {
           </div>
         </div>
       </article>
-    </div>
+    </Layout>
   );
 }

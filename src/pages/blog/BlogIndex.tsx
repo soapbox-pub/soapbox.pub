@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { BlogList } from '@/components/blog/BlogList';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
+import { Layout } from '@/components/Layout';
 import { getAllPosts, formatDate } from '@/lib/blog/utils';
 
 export default function BlogIndex() {
@@ -20,9 +19,7 @@ export default function BlogIndex() {
   const featuredPost = allPosts[0]; // Most recent post as featured
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <Navigation />
-      
+    <Layout>
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
@@ -113,8 +110,6 @@ export default function BlogIndex() {
           </p>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
