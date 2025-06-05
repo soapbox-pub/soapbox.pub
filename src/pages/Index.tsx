@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Zap, Globe, Shield, Rocket, Calendar } from "lucide-react";
+import { ArrowRight, Code, Users, Zap, Globe, Shield, Rocket, Calendar, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -384,7 +384,7 @@ export default function Index() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Ready to Build Your Vision?
+            Ready to Build Your Platform?
           </h2>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
             Choose your tool, start your project, and join the community of builders creating the decentralized future.

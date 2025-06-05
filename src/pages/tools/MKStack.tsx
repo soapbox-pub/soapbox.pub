@@ -19,15 +19,15 @@ export default function MKStack() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-violet-100 text-violet-700 border-violet-200">
-                  🏗️ Platform Framework
+                 🤖 AI Nostr Framework
                 </Badge>
                 <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
                   <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                    MK Stack
+                    MKStack
                   </span>
                 </h1>
                 <p className="text-2xl font-medium text-gray-700">
-                  The Complete Framework for Building Nostr Clients
+                  The Complete Framework for Building Nostr Clients with AI
                 </p>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Build powerful Nostr applications with AI-first development. From social feeds to private messaging, 
@@ -404,13 +404,12 @@ export default function MKStack() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-video bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Users className="h-8 w-8 text-white" />
-                    </div>
-                    <p className="font-medium text-gray-700">Chorus</p>
-                  </div>
+                <div className="aspect-video bg-gray-100 border-b overflow-hidden">
+                  <img 
+                    src="/assets/mkstack-apps/chorus-screenshot.png" 
+                    alt="Chorus - Facebook-style groups on Nostr"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <div className="space-y-3">
@@ -419,13 +418,15 @@ export default function MKStack() {
                       <Badge variant="secondary">Communities</Badge>
                     </div>
                     <p className="text-gray-600">
-                      Facebook-style groups with built-in eCash wallet for fundraising.
+                      Facebook-style groups on Nostr with built-in eCash wallet for cross-border fundraising. Designed for activists and community organizers.
                     </p>
                     <div className="flex items-center justify-between text-sm text-gray-500">
-                      <span>Community Platform</span>
-                      <Button variant="outline" size="sm">
-                        Visit Platform
-                        <ExternalLink className="ml-2 h-3 w-3" />
+                      <span>Nostr Groups</span>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href="https://chorus.community/" target="_blank" rel="noopener noreferrer">
+                          Visit Platform
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -433,28 +434,28 @@ export default function MKStack() {
               </Card>
 
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-video bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Package className="h-8 w-8 text-white" />
-                    </div>
-                    <p className="font-medium text-gray-700">Bookstr</p>
-                  </div>
+                <div className="aspect-video bg-gray-100 border-b overflow-hidden">
+                  <img 
+                    src="/assets/mkstack-apps/blobbi-screenshot.png" 
+                    alt="Blobbi - Creative platform for digital art"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold">Bookstr</h3>
-                      <Badge variant="secondary">Social Reading</Badge>
+                      <h3 className="text-xl font-semibold">Blobbi</h3>
+                      <Badge variant="secondary">Games</Badge>
                     </div>
                     <p className="text-gray-600">
-                      Decentralized social reading platform where book lovers discover, review, and discuss literature on Nostr.
-                    </p>
+                      Adopt and care for your own unique digital companion that lives forever on the decentralized web. Each Nostr account can have one special Blobbi pet!</p>
                     <div className="flex items-center justify-between text-sm text-gray-500">
-                      <span>5,000+ active readers</span>
-                      <Button variant="outline" size="sm">
-                        Visit Platform
-                        <ExternalLink className="ml-2 h-3 w-3" />
+                      <span>Virtual Pet</span>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href="https://www.blobbi.pet/" target="_blank" rel="noopener noreferrer">
+                          Visit Platform
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -462,28 +463,28 @@ export default function MKStack() {
               </Card>
 
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-video bg-gradient-to-br from-blue-200 to-cyan-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Zap className="h-8 w-8 text-white" />
-                    </div>
-                    <p className="font-medium text-gray-700">NIP-28 Chat</p>
-                  </div>
+               <div className="aspect-video bg-gray-100 border-b overflow-hidden">
+                  <img 
+                    src="/assets/mkstack-apps/treasures-screenshot.png" 
+                    alt="Discover HiddenTreasures"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold">NIP-28 Chat</h3>
-                      <Badge variant="secondary">Public Chat</Badge>
+                      <h3 className="text-xl font-semibold">Treasures</h3>
+                      <Badge variant="secondary">Social</Badge>
                     </div>
                     <p className="text-gray-600">
-                      Example Nostr chat application built with MKStack demonstrating NIP-28 public chat implementation.
-                    </p>
+                      Join the decentralized geocaching adventure powered by Nostr. Hide caches, find treasures, and connect with explorers worldwide. Join the quest!</p>
                     <div className="flex items-center justify-between text-sm text-gray-500">
-                      <span>Demo application</span>
-                      <Button variant="outline" size="sm">
-                        Visit Demo
-                        <ExternalLink className="ml-2 h-3 w-3" />
+                      <span>Nostr IRL</span>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href="https://treasures.surge.sh/" target="_blank" rel="noopener noreferrer">
+                          Visit Platform
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -1047,45 +1048,15 @@ export default function MKStack() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-violet-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Build Your Nostr App with MK Stack
-          </h2>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Join the growing community of developers building decentralized applications on Nostr with AI-powered tools.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-violet-600 hover:bg-gray-100" asChild>
+          {/* CTA Section */}
+          <div className="text-center mt-16">
+            <Button size="lg" className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3 text-lg" asChild>
               <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">
                 Start Building
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-violet-600">
-              <Code className="mr-2 h-5 w-5" />
-              View Documentation
-            </Button>
-          </div>
-
-          <div className="flex items-center justify-center space-x-6 text-sm opacity-80">
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              50+ NIPs Supported
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              AI-First Development
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              Open Source
-            </div>
           </div>
         </div>
       </section>

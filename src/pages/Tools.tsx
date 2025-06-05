@@ -20,7 +20,7 @@ export default function Tools() {
           <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
             Tools to Build Your{" "}
             <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
-              Vision
+              Platform
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -35,80 +35,83 @@ export default function Tools() {
       <section className="pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
-            {/* Ditto - Featured */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-azure-200 lg:col-span-2">
+            {/* MKstack - Featured */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-violet-200 lg:col-span-2">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-azure to-blue-600 rounded-2xl flex items-center justify-center">
-                      <Users className="h-8 w-8 text-white" />
+                    <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                      <Code className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-display font-bold">Ditto</h2>
-                      <p className="text-lg text-gray-600">Community Platform Builder</p>
+                      <h2 className="text-3xl font-display font-bold">MKstack</h2>
+                      <p className="text-lg text-gray-600">Platform Framework</p>
                     </div>
                   </div>
                   
                   <p className="text-lg text-gray-700 mb-6">
-                    Build decentralized, censorship-resistant communities on Nostr with built-in monetization, 
-                    custom themes, and cross-platform compatibility. Perfect for creating your own social space.
+                    Create custom social platforms and applications with our flexible framework. 
+                    Powers multiple successful platforms including Bookstr, Blobbi, and geocaching sites.
+                    Perfect for building your next big idea.
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                        Built-in Nostr relay
+                        <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                        Flexible architecture
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                        Custom themes & branding
+                        <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                        Rapid development
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                        Bitcoin Lightning integration
+                        <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                        Scalable solutions
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                        ActivityPub bridge
+                        <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                        Production-ready
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                        Community moderation
+                        <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                        TypeScript support
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                        Mobile-responsive design
+                        <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                        Cross-platform compatibility
                       </div>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Button className="bg-azure hover:bg-azure-600 text-white" asChild>
-                      <Link to="/tools/ditto">
-                        Build Community
+                    <Button className="bg-violet-500 hover:bg-violet-600 text-white" asChild>
+                      <Link to="/tools/mkstack">
+                        Learn More
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button variant="outline">
-                      View Documentation
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                    <Button variant="outline" asChild>
+                      <a href="https://gitlab.com/soapbox-pub/mkstack" target="_blank" rel="noopener noreferrer">
+                        Source code
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-azure-100 to-blue-100 p-8 lg:p-12 flex items-center justify-center">
+                <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-8 lg:p-12 flex items-center justify-center">
                   <div className="text-center space-y-4">
                     <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto">
-                      <Users className="h-12 w-12 text-azure" />
+                      <Code className="h-12 w-12 text-violet-500" />
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm text-gray-600">Powering communities like</p>
+                      <p className="text-sm text-gray-600">Powering platforms like</p>
                       <div className="space-y-1">
-                        <Badge variant="secondary">Ditto.pub</Badge>
-                        <Badge variant="secondary">Henhouse.social</Badge>
+                        <Badge variant="secondary">Bookstr.app</Badge>
+                        <Badge variant="secondary">Blobbi.app</Badge>
                       </div>
                     </div>
                   </div>
@@ -116,44 +119,44 @@ export default function Tools() {
               </div>
             </Card>
 
-            {/* MKstack */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-violet-200">
+            {/* Ditto */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
               <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <Code className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-azure to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-2xl font-display">MKstack</CardTitle>
-                <CardDescription className="text-lg">Platform Framework</CardDescription>
+                <CardTitle className="text-2xl font-display">Ditto</CardTitle>
+                <CardDescription className="text-lg">Community Platform Builder</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-gray-600">
-                  Create custom social platforms and applications with our flexible framework. 
-                  Powers multiple successful platforms including Bookstr, Blobbi, and geocaching sites.
+                  Build decentralized, censorship-resistant communities on Nostr with built-in monetization, 
+                  custom themes, and cross-platform compatibility. Perfect for creating your own social space.
                 </p>
                 
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Flexible architecture
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    Built-in Nostr relay
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Rapid development
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    Custom themes & branding
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Scalable solutions
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    Bitcoin Lightning integration
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Production-ready
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    ActivityPub bridge
                   </div>
                 </div>
                 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors" asChild>
-                    <Link to="/tools/mkstack">
-                      Explore MKStack
+                  <Button variant="outline" className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
+                    <Link to="/tools/ditto">
+                      Build Community
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -246,13 +249,13 @@ export default function Tools() {
               </CardContent>
             </Card>
 
-            {/* Nostrnips.com */}
+            {/* NostrHub */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
                   <FileText className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-xl font-display">Nostrnips.com</CardTitle>
+                <CardTitle className="text-xl font-display">NostrHub</CardTitle>
                 <CardDescription>NIP Explorer</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
