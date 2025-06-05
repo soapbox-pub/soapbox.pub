@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { getPostBySlug, formatDate, getReadingTime } from '@/lib/blog/utils';
+import { wrapVideoEmbeds } from '@/lib/blog/videoUtils';
 import { BlogPost } from '@/lib/blog/types';
 import NotFound from '../NotFound';
 
@@ -119,7 +120,7 @@ export default function BlogPostPage() {
           {post.Component ? (
             <post.Component />
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+            <div dangerouslySetInnerHTML={{ __html: wrapVideoEmbeds(post.content || '') }} />
           )}
         </div>
 

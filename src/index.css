@@ -160,4 +160,45 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
+
+  /* Video embed styling */
+  .prose iframe[src*="youtube.com"],
+  .prose iframe[src*="youtu.be"],
+  .prose iframe[src*="vimeo.com"],
+  .prose iframe[src*="dailymotion.com"],
+  .prose iframe[src*="twitch.tv"] {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+  }
+
+  /* Responsive video wrapper for better browser support */
+  .prose .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .prose .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
 }
