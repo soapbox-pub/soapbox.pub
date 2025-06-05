@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 import { Separator } from '@/components/ui/separator';
 import { MarkdownContent } from './MarkdownContent';
-import { BlogSEO } from './BlogSEO';
+
 import { formatDate, getReadingTime } from '@/lib/blog/utils';
 import type { BlogPost } from '@/lib/blog/types';
 
@@ -16,9 +16,7 @@ export function BlogPost({ post }: BlogPostProps) {
   const readingTime = getReadingTime(post.content);
 
   return (
-    <>
-      <BlogSEO post={post} />
-      <article className="max-w-4xl mx-auto">
+    <article className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-8">
         <Link to="/blog">
@@ -81,6 +79,5 @@ export function BlogPost({ post }: BlogPostProps) {
         </Link>
       </div>
     </article>
-    </>
   );
 }

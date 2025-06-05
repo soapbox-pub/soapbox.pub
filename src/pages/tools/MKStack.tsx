@@ -5,16 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { SEOHead } from "@/components/SEOHead";
-import { useSEO } from "@/hooks/useSEO";
+
 
 export default function MKStack() {
-  const { getMKStackSEO } = useSEO();
-  const seoData = getMKStackSEO();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50">
-      <SEOHead data={seoData} />
       <Navigation />
 
       {/* Hero Section */}
