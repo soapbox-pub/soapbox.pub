@@ -423,38 +423,6 @@ export default function Showcase() {
         </div>
       </section>
 
-      {/* Success Metrics */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">Success Metrics</h2>
-            <p className="text-xl text-gray-600">Real numbers from real platforms</p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-gradient-to-br from-azure-50 to-azure-100 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-azure mb-2">15+</div>
-              <div className="text-gray-600">Active Platforms</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-violet-50 to-violet-100 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-violet-600 mb-2">25,000+</div>
-              <div className="text-gray-600">Total Users</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">500,000+</div>
-              <div className="text-gray-600">Posts Created</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-orange-600 mb-2">99.9%</div>
-              <div className="text-gray-600">Uptime</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -469,7 +437,7 @@ export default function Showcase() {
               <Link to="/tools">Explore Tools</Link>
             </Button>
             <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure">
-              Start with Ditto
+             <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Try Nostr with Ditto</a>
             </Button>
           </div>
         </div>

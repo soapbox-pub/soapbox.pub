@@ -388,9 +388,6 @@ export default function Tools() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure">
-              Get Started Today
-            </Button>
           </div>
         </div>
       </section>
