@@ -1,5 +1,4 @@
-import { ArrowRight, Shield, Zap, Heart, Globe, MessageCircle, Coins, Palette, Code, ExternalLink, PlayCircle, Users, Search, Smartphone, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, Shield, Zap, Globe, MessageCircle, Palette, Code, ExternalLink, Users, Search, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +55,7 @@ export default function Ditto() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  Works with 50+ Mastodon Apps
+                  Built-in NIP-05 Support
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
@@ -66,11 +65,11 @@ export default function Ditto() {
             </div>
 
             <div className="relative">
-              <div className="aspect-video rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-violet-100 to-purple-100">
+              <div className="aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-violet-100 to-purple-100">
                 <img 
                   src="/assets/images/ditto/ditto-phones.png" 
                   alt="Ditto on various devices" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-4"
                 />
               </div>
               
@@ -141,26 +140,26 @@ export default function Ditto() {
             <Card className="border-2 hover:border-violet-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Smartphone className="h-6 w-6 text-white" />
+                  <Users className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Mastodon API Compatible</CardTitle>
+                <CardTitle>NIP-05 Username Selfservice</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Works seamlessly with 50+ existing Mastodon apps including official apps, Tusky, and more.
+                  Users can register their own NIP-05 usernames directly through the platform with automatic verification.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    iOS & Android apps
+                    Self-service registration
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Desktop clients
+                    Automatic verification
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Browser extensions
+                    Custom domain support
                   </div>
                 </div>
               </CardContent>
@@ -628,12 +627,12 @@ export default function Ditto() {
               <h3 className="text-2xl font-bold">Customize & Grow</h3>
               <p className="text-gray-600">
                 Brand your community, set up moderation policies, and invite your users. 
-                Everything works with existing Mastodon apps.
+                Built-in NIP-05 usernames make onboarding seamless.
               </p>
               <div className="space-y-2 text-sm text-gray-500">
                 <div className="flex items-center justify-center">
-                  <Smartphone className="h-4 w-4 mr-2" />
-                  50+ compatible apps
+                  <Users className="h-4 w-4 mr-2" />
+                  NIP-05 username service
                 </div>
               </div>
             </div>

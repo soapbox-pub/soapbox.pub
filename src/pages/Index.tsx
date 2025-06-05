@@ -6,9 +6,11 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { RotatingText } from "@/components/RotatingText";
-import { getRecentPosts, formatDate } from "@/lib/blog/utils";
+import { getLatestPost, getRecentPostsSkipFirst, formatDate } from "@/lib/blog/utils";
 
 export default function Index() {
+  const latestPost = getLatestPost();
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
       <Navigation />
@@ -16,41 +18,84 @@ export default function Index() {
       {/* Hero Section */}
       <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
-                🚀 Build the Decentralized Future
-              </Badge>
-              <h1 className="text-5xl md:text-7xl font-display font-bold text-gray-900 leading-tight">
-                Build Your{" "}
-                <RotatingText
-                  words={[
-                    { text: "Platform", color: "text-blue-600" },
-                    { text: "Community", color: "text-purple-600" },
-                    { text: "Protocol", color: "text-pink-600" },
-                    { text: "Project", color: "text-orange-500" }
-                  ]}
-                  interval={2000}
-                  className="font-display font-bold"
-                />
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Soapbox creates tools that put the power back in your hands. Build your own platforms, 
-                communities, and applications with our open-source toolkit.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Main Hero Content */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
+                  🚀 Build the Decentralized Future
+                </Badge>
+                <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 leading-tight">
+                  Build Your{" "}
+                  <RotatingText
+                    words={[
+                      { text: "Platform", color: "text-blue-600" },
+                      { text: "Community", color: "text-purple-600" },
+                      { text: "Protocol", color: "text-pink-600" },
+                      { text: "Project", color: "text-orange-500" }
+                    ]}
+                    interval={2000}
+                    className="font-display font-bold"
+                  />
+                </h1>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                  Soapbox creates tools that put the power back in your hands. Build your own platforms, 
+                  communities, and applications with our open-source toolkit.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
+                  <Link to="/tools">
+                    Explore Tools
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" className="px-8 py-3 text-lg" asChild>
+                  <Link to="/showcase">View Showcase</Link>
+                </Button>
+              </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
-                <Link to="/tools">
-                  Explore Tools
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg" asChild>
-                <Link to="/showcase">View Showcase</Link>
-              </Button>
-            </div>
+
+            {/* Right Column - Latest Blog Post */}
+            {latestPost && (
+              <div className="lg:pl-8">
+                <div className="mb-4">
+                  <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
+                    Latest from Our Blog
+                  </Badge>
+                </div>
+                <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-azure-200 bg-white/80 backdrop-blur">
+                  <Link to={`/blog/${latestPost.slug}`}>
+                    {latestPost.coverImage && (
+                      <div className="aspect-video overflow-hidden rounded-t-lg">
+                        <img
+                          src={latestPost.coverImage}
+                          alt={latestPost.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                        <Calendar className="w-4 h-4" />
+                        <time dateTime={latestPost.date}>{formatDate(latestPost.date)}</time>
+                      </div>
+                      <CardTitle className="text-xl group-hover:text-azure transition-colors line-clamp-2">
+                        {latestPost.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 line-clamp-3 mb-4">{latestPost.excerpt}</p>
+                      <div className="flex items-center text-azure group-hover:text-azure-600 transition-colors">
+                        <span className="text-sm font-medium">Read More</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </CardContent>
+                  </Link>
+                </Card>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -413,7 +458,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getRecentPosts(3).map((post) => (
+            {getRecentPostsSkipFirst(3).map((post) => (
               <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <Link to={`/blog/${post.slug}`}>
                   {post.coverImage && (

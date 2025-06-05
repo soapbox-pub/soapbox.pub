@@ -23,6 +23,14 @@ export function getRecentPosts(limit: number = 5) {
   return blogPosts.slice(0, limit);
 }
 
+export function getLatestPost() {
+  return blogPosts[0] || null;
+}
+
+export function getRecentPostsSkipFirst(limit: number = 3) {
+  return blogPosts.slice(1, 1 + limit);
+}
+
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
