@@ -9,14 +9,14 @@ export function wrapVideoEmbeds(html: string): string {
   let processedHtml = html;
 
   // Create regex pattern for video iframes
-  const videoIframeRegex = /<iframe[^>]*src=['\"](https?:\/\/[^'\"]*(?:youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com|twitch\.tv|wistia\.com|brightcove\.com)[^'\"]*)['\"][^>]*><\/iframe>/gi;
+  const videoIframeRegex = /<iframe[^>]*src=['"](?:https?:\/\/[^'"]*(?:youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com|twitch\.tv|wistia\.com|brightcove\.com)[^'"]*)['"][^>]*><\/iframe>/gi;
 
   // Replace video iframes with wrapped versions
   processedHtml = processedHtml.replace(videoIframeRegex, (match) => {
     // Remove width and height attributes from the iframe
     const cleanedIframe = match
-      .replace(/\s+width=['\"][^'\"]*['\"]/gi, '')
-      .replace(/\s+height=['\"][^'\"]*['\"]/gi, '');
+      .replace(/\s+width=['"][^'"]*['"]/gi, '')
+      .replace(/\s+height=['"][^'"]*['"]/gi, '');
 
     // Wrap in responsive container
     return `<div class="video-wrapper">${cleanedIframe}</div>`;
@@ -51,7 +51,7 @@ export function createYouTubeEmbed(videoId: string, title?: string): string {
     <div class="video-wrapper">
       <iframe 
         src="https://www.youtube.com/embed/${videoId}" 
-        title="${title || 'YouTube video'}"
+        title="${title || "YouTube video"}"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
@@ -67,7 +67,7 @@ export function createVimeoEmbed(videoId: string, title?: string): string {
     <div class="video-wrapper">
       <iframe 
         src="https://player.vimeo.com/video/${videoId}" 
-        title="${title || 'Vimeo video'}"
+        title="${title || "Vimeo video"}"
         allow="autoplay; fullscreen; picture-in-picture" 
         allowfullscreen>
       </iframe>

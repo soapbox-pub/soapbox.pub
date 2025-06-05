@@ -86,9 +86,11 @@ export default function Tools() {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Button className="bg-azure hover:bg-azure-600 text-white">
-                      Build Community
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className="bg-azure hover:bg-azure-600 text-white" asChild>
+                      <Link to="/tools/ditto">
+                        Build Community
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </Button>
                     <Button variant="outline">
                       View Documentation
@@ -149,9 +151,11 @@ export default function Tools() {
                 </div>
                 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors">
-                    Start Building
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors" asChild>
+                    <Link to="/tools/mk-stack">
+                      Start Building
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
@@ -192,9 +196,11 @@ export default function Tools() {
                 </div>
                 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                    Explore Templates
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors" asChild>
+                    <Link to="/tools/stacks">
+                      Explore Templates
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
@@ -231,9 +237,11 @@ export default function Tools() {
                     Always up-to-date
                   </div>
                 </div>
-                <Button variant="outline" className="w-full text-sm">
-                  Browse Docs
-                  <ArrowRight className="ml-2 h-3 w-3" />
+                <Button variant="outline" className="w-full text-sm" asChild>
+                  <Link to="/tools/nostrbook">
+                    Browse Docs
+                    <ArrowRight className="ml-2 h-3 w-3" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -266,9 +274,11 @@ export default function Tools() {
                     Implementation guides
                   </div>
                 </div>
-                <Button variant="outline" className="w-full text-sm">
-                  Explore NIPs
-                  <ArrowRight className="ml-2 h-3 w-3" />
+                <Button variant="outline" className="w-full text-sm" asChild>
+                  <Link to="/tools/nostrhub">
+                    Explore NIPs
+                    <ArrowRight className="ml-2 h-3 w-3" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -301,9 +311,11 @@ export default function Tools() {
                     Cross-platform
                   </div>
                 </div>
-                <Button variant="outline" className="w-full text-sm">
-                  Start Coding
-                  <ArrowRight className="ml-2 h-3 w-3" />
+                <Button variant="outline" className="w-full text-sm" asChild>
+                  <Link to="/tools/nostrify">
+                    Start Coding
+                    <ArrowRight className="ml-2 h-3 w-3" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
