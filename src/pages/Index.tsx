@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { RotatingText } from "@/components/RotatingText";
 import { getRecentPosts, formatDate } from "@/lib/blog/utils";
 
 export default function Index() {
@@ -22,9 +23,15 @@ export default function Index() {
               </Badge>
               <h1 className="text-5xl md:text-7xl font-display font-bold text-gray-900 leading-tight">
                 Build Your{" "}
-                <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
-                  Vision
-                </span>
+                <RotatingText
+                  words={[
+                    { text: "Platform", color: "text-blue-600" },
+                    { text: "Community", color: "text-purple-600" },
+                    { text: "Protocol", color: "text-pink-600" },
+                    { text: "Project", color: "text-orange-500" }
+                  ]}
+                  className="font-display font-bold"
+                />
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Soapbox creates tools that put the power back in your hands. Build your own platforms, 
@@ -384,7 +391,16 @@ export default function Index() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Ready to Build Your Platform?
+            Ready to Build Your{" "}
+            <RotatingText
+              words={[
+                { text: "Platform?", color: "text-white" },
+                { text: "Community?", color: "text-white" },
+                { text: "Protocol?", color: "text-white" },
+                { text: "Project?", color: "text-white" }
+              ]}
+              className="font-display font-bold"
+            />
           </h2>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
             Choose your tool, start your project, and join the community of builders creating the decentralized future.
