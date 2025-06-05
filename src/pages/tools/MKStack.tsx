@@ -179,7 +179,7 @@ export default function MKStack() {
               <div className="aspect-video bg-gray-100 border-b overflow-hidden">
                   <img 
                     src="/assets/demos/mkstack-bookstr-demo.png" 
-                    alt="Group Chat Application Demo"
+                    alt="Decentralized Book Review Site Demo"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -196,40 +196,43 @@ export default function MKStack() {
                 </div>
 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full" disabled>
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Live Demo
-                    <span className="ml-2 text-xs text-gray-500">(Coming Soon)</span>
+                  <Button variant="outline" className="w-full">
+                    <a href="http://mkstack-bookstr.surge.sh/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Demo
+                    </a>
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Words with Friends Demo */}
+            {/* Chess Game Demo */}
             <Card className="bg-white/80 backdrop-blur-sm border-2 hover:border-violet-200 transition-all duration-300 hover:shadow-xl">
-              <div className="aspect-video bg-gray-100 border-b flex items-center justify-center text-gray-400">
-                <div className="text-center">
-                  <div className="text-sm font-medium">Screenshot Coming Soon</div>
-                  <div className="text-xs mt-1">Words with Friends Game</div>
+                <div className="aspect-video bg-gray-100 border-b overflow-hidden">
+                  <img 
+                    src="/assets/demos/mkstack-chess-game.png" 
+                    alt="Chess Game Demo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
               <CardHeader>
-                <CardTitle className="text-xl">Words with Friends Game</CardTitle>
+                <CardTitle className="text-xl">Chess Game</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-700">The Prompt:</h4>
                   <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono text-green-400">
                     <div className="text-gray-500">$ dork</div>
-                    <div>"Build a words with friends game on nostr"</div>
+                    <div>"Build a chess game with NIP 64"</div>
                   </div>
                 </div>
 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full" disabled>
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Live Demo
-                    <span className="ml-2 text-xs text-gray-500">(Coming Soon)</span>
+                  <Button variant="outline" className="w-full">
+                    <a href="http://mkstack-chess.surge.sh/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Demo
+                    </a>
                   </Button>
                 </div>
               </CardContent>
