@@ -8,6 +8,7 @@ export function Navigation() {
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+  const isBlogActive = () => location.pathname === '/blog' || location.pathname.startsWith('/blog/');
 
   return (
     <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
@@ -52,6 +53,16 @@ export function Navigation() {
               }`}
             >
               Showcase
+            </Link>
+            <Link 
+              to="/blog" 
+              className={`transition-colors ${
+                isBlogActive() 
+                  ? 'text-azure font-medium' 
+                  : 'text-gray-600 hover:text-azure'
+              }`}
+            >
+              Blog
             </Link>
             <Button variant="outline" size="sm">
               Get Started
@@ -107,6 +118,17 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Showcase
+              </Link>
+              <Link
+                to="/blog"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isBlogActive()
+                    ? 'text-azure bg-azure-50'
+                    : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
               </Link>
               <div className="px-3 py-2">
                 <Button variant="outline" size="sm" className="w-full">

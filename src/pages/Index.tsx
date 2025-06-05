@@ -1,10 +1,11 @@
-import { ArrowRight, Code, Users, Zap, Globe, Shield, Rocket } from "lucide-react";
+import { ArrowRight, Code, Users, Zap, Globe, Shield, Rocket, Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { getRecentPosts, formatDate } from "@/lib/blog/utils";
 
 export default function Index() {
   return (
@@ -316,6 +317,59 @@ export default function Index() {
                 Battle-tested tools powering real platforms and communities around the world.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog Posts */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Latest from Our Blog
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Stay updated with the latest insights, tutorials, and news from the Soapbox team.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getRecentPosts(3).map((post) => (
+              <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <Link to={`/blog/${post.slug}`}>
+                  {post.coverImage && (
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                      <Calendar className="w-4 h-4" />
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    </div>
+                    <CardTitle className="text-xl group-hover:text-azure transition-colors line-clamp-2">
+                      {post.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+              <Link to="/blog">
+                View All Posts
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
