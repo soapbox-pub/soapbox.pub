@@ -1,8 +1,7 @@
-import { ArrowRight, BookOpen, Search, Brain, Database, FileText, ExternalLink, Users, Zap, Shield, Globe } from "lucide-react";
+import { ArrowRight, BookOpen, Database, FileText, Users, Shield, Globe, Bot, Code2, Terminal, Cpu, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -19,7 +18,7 @@ export default function Nostrbook() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">
-                  📚 Documentation Registry
+                  ⚡ AI-Optimized Documentation
                 </Badge>
                 <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
                   <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
@@ -27,38 +26,55 @@ export default function Nostrbook() {
                   </span>
                 </h1>
                 <p className="text-2xl font-medium text-gray-700">
-                  The Comprehensive Nostr Documentation Registry
+                  Structured Nostr Knowledge for Humans & AI
                 </p>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Structured, detailed knowledge about Nostr for both humans and AI. The definitive 
-                  resource for understanding the Nostr protocol and ecosystem.
+                  The central registry of well-structured, detailed documentation about all aspects of the Nostr protocol. 
+                  Enhanced with clearer explanations, examples, and built specifically for AI integration.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-lg">
-                  Browse Documentation
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-lg" asChild>
+                  <a href="https://nostrbook.dev" target="_blank" rel="noopener noreferrer">
+                    Browse Documentation
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
-                  <Brain className="mr-2 h-5 w-5" />
-                  AI Integration
+                <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-orange-600 text-orange-600 hover:bg-orange-50">
+                  <Bot className="mr-2 h-5 w-5" />
+                  Nostrbook MCP
                 </Button>
               </div>
 
-              {/* Quick Search */}
-              <div className="relative max-w-md">
-                <div className="flex">
-                  <Input 
-                    placeholder="Search Nostr docs..." 
-                    className="pr-12 text-lg py-3"
-                  />
-                  <Button className="absolute right-1 top-1 bottom-1 bg-orange-600 hover:bg-orange-700">
-                    <Search className="h-4 w-4" />
-                  </Button>
+              {/* MCP Integration Highlight */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <Bot className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">Perfect for AI Projects</h3>
+                    <p className="text-sm text-gray-600">Now with Model Context Protocol (MCP) integration</p>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600 mt-2">
-                  Try: "NIP-01", "event structure", "relay implementation"
+                <p className="text-gray-700">
+                  AI agents can directly access all Nostr documentation through function calls - no scraping or outdated training data. 
+                  Includes custom NIPs from <span className="font-semibold text-blue-700">NostrHub</span> for the latest protocol extensions.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                    <Terminal className="w-3 h-3 mr-1" />
+                    MCP Integration
+                  </Badge>
+                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                    <Database className="w-3 h-3 mr-1" />
+                    Custom NIPs
+                  </Badge>
+                  <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+                    <Cpu className="w-3 h-3 mr-1" />
+                    Real-time Updates
+                  </Badge>
                 </div>
               </div>
 
@@ -151,8 +167,8 @@ export default function Nostrbook() {
                     <div className="text-xs text-gray-600">Code Examples</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-500">10K+</div>
-                    <div className="text-xs text-gray-600">Monthly Views</div>
+                    <div className="text-2xl font-bold text-orange-500">MCP</div>
+                    <div className="text-xs text-gray-600">AI Integration</div>
                   </div>
                 </div>
               </div>
@@ -166,10 +182,11 @@ export default function Nostrbook() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              The Complete Nostr Knowledge Base
+              Beyond the Official NIPs Repository
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to understand, implement, and build on the Nostr protocol.
+              While the official NIPs repository defines the specifications, Nostrbook expands upon them with structured navigation, 
+              detailed examples, and consistent formatting optimized for both human understanding and AI consumption.
             </p>
           </div>
           
@@ -177,26 +194,26 @@ export default function Nostrbook() {
             <Card className="border-2 hover:border-orange-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-white" />
+                  <Bot className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Complete NIP Coverage</CardTitle>
+                <CardTitle>Model Context Protocol (MCP)</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Detailed documentation for every Nostr Improvement Proposal with examples, implementation notes, and best practices.
+                  Direct integration with AI tools through MCP, allowing agents to access up-to-date Nostr documentation without relying on training data.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    All NIPs documented
+                    Works with Goose AI
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    Code examples included
+                    VSCode Copilot support
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    Implementation guides
+                    Function-based access
                   </div>
                 </div>
               </CardContent>
@@ -205,26 +222,26 @@ export default function Nostrbook() {
             <Card className="border-2 hover:border-orange-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
-                  <Brain className="h-6 w-6 text-white" />
+                  <Database className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>AI-Optimized Content</CardTitle>
+                <CardTitle>Custom NIPs from NostrHub</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Structured documentation specifically designed for AI systems to understand and utilize Nostr protocol information.
+                  Access to custom NIPs and protocol extensions from NostrHub, ensuring you have the latest developments beyond the core protocol.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></div>
-                    Machine-readable format
+                    Community extensions
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></div>
-                    Semantic markup
+                    Experimental NIPs
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></div>
-                    API access available
+                    Real-time updates
                   </div>
                 </div>
               </CardContent>
@@ -233,13 +250,13 @@ export default function Nostrbook() {
             <Card className="border-2 hover:border-orange-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center mb-4">
-                  <Database className="h-6 w-6 text-white" />
+                  <BookOpen className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Searchable Knowledge</CardTitle>
+                <CardTitle>Searchable Knowledge Base</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Advanced search capabilities that help you find exactly what you need across all Nostr documentation.
+                  Full-text search across all documentation with structured navigation and cross-references between related concepts.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
@@ -248,11 +265,11 @@ export default function Nostrbook() {
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-3"></div>
-                    Semantic search
+                    Cross-references
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-3"></div>
-                    Category filtering
+                    Structured navigation
                   </div>
                 </div>
               </CardContent>
@@ -261,26 +278,26 @@ export default function Nostrbook() {
             <Card className="border-2 hover:border-orange-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Globe className="h-6 w-6 text-white" />
+                  <FileText className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Always Current</CardTitle>
+                <CardTitle>Enhanced Documentation</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Automatically synchronized with the latest NIPs and protocol changes to ensure you have the most current information.
+                  Clearer explanations, detailed examples, and consistent formatting that makes the protocol easier to understand.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Real-time updates
+                    Real-world examples
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Version tracking
+                    Implementation guides
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Change notifications
+                    Consistent formatting
                   </div>
                 </div>
               </CardContent>
@@ -289,26 +306,26 @@ export default function Nostrbook() {
             <Card className="border-2 hover:border-orange-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-white" />
+                  <Code2 className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Community Driven</CardTitle>
+                <CardTitle>Programmatic Access</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Enhanced by community contributions including explanations, examples, and real-world implementation insights.
+                  Markdown endpoints and llms.txt conformance for easy integration with AI tools and programmatic access.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
-                    Community examples
+                    Markdown endpoints
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
-                    Developer insights
+                    llms.txt specification
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
-                    Best practices
+                    API access
                   </div>
                 </div>
               </CardContent>
@@ -317,26 +334,26 @@ export default function Nostrbook() {
             <Card className="border-2 hover:border-orange-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-white" />
+                  <Globe className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Developer Tools</CardTitle>
+                <CardTitle>Always Up-to-Date</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Interactive tools, validators, and utilities to help developers implement Nostr features correctly.
+                  Regularly maintained to reflect the latest developments in the Nostr ecosystem and protocol changes.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Event validators
+                    Automated updates
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Key generators
+                    Latest protocol changes
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Testing utilities
+                    Community maintained
                   </div>
                 </div>
               </CardContent>
@@ -624,114 +641,170 @@ export default function Nostrbook() {
         </div>
       </section>
 
-      {/* Usage Stats */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold text-gray-900 mb-6">
-              Trusted by the Nostr Community
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Developers and researchers rely on Nostrbook for accurate, comprehensive Nostr documentation.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-orange-600 mb-2">100+</div>
-              <div className="text-gray-600">NIPs Documented</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-red-600 mb-2">10,000+</div>
-              <div className="text-gray-600">Monthly Visitors</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-amber-600 mb-2">500+</div>
-              <div className="text-gray-600">Code Examples</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-yellow-600 mb-2">99.9%</div>
-              <div className="text-gray-600">Accuracy Rate</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* API Integration */}
+      {/* MCP Integration Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-display font-bold text-gray-900">
-                Built for AI Integration
-              </h2>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                  <Bot className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-4xl font-display font-bold text-gray-900">
+                    Nostrbook MCP Integration
+                  </h2>
+                  <p className="text-gray-600">Model Context Protocol for AI Tools</p>
+                </div>
+              </div>
+              
               <p className="text-xl text-gray-600">
-                Structured data formats and API access make Nostrbook perfect for AI systems, 
-                chatbots, and automated tools that need accurate Nostr protocol information.
+                The Nostr Model Context Protocol (MCP) integration allows AI tools and agents to directly access 
+                structured Nostr documentation programmatically, eliminating the need to scrape documentation 
+                or rely solely on training data.
               </p>
               
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
-                    <Brain className="h-5 w-5 text-white" />
+                <h3 className="text-xl font-semibold text-gray-900">Available MCP Functions</h3>
+                <div className="grid gap-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-orange-600 rounded-md flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">01</span>
+                    </div>
+                    <div>
+                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">read_nip(nip)</code>
+                      <span className="text-gray-600 ml-2">- Fetch NIPs from official repository</span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold">Machine-Readable Format</h3>
-                    <p className="text-sm text-gray-600">JSON and structured data optimized for AI consumption</p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-red-600 rounded-md flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">02</span>
+                    </div>
+                    <div>
+                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">read_kind(kind)</code>
+                      <span className="text-gray-600 ml-2">- Get event kind documentation</span>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
-                    <Database className="h-5 w-5 text-white" />
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-amber-600 rounded-md flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">03</span>
+                    </div>
+                    <div>
+                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">read_tag(tag)</code>
+                      <span className="text-gray-600 ml-2">- Access tag specifications</span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold">REST API Access</h3>
-                    <p className="text-sm text-gray-600">Programmatic access to all documentation and examples</p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">04</span>
+                    </div>
+                    <div>
+                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">read_protocol(doc)</code>
+                      <span className="text-gray-600 ml-2">- Get protocol documentation</span>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center">
-                    <Search className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Semantic Search</h3>
-                    <p className="text-sm text-gray-600">Advanced search capabilities for finding relevant information</p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-green-600 rounded-md flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">05</span>
+                    </div>
+                    <div>
+                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">read_nips_index()</code>
+                      <span className="text-gray-600 ml-2">- List all NIPs, kinds, and tags</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              <Button className="bg-orange-600 hover:bg-orange-700">
-                View API Documentation
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold text-gray-900">Key Benefits</h3>
+                <div className="grid gap-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <span className="text-gray-700">Up-to-date information (not limited by training data cutoffs)</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <span className="text-gray-700">Structured data in well-formatted markdown</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <span className="text-gray-700">Direct access to official documentation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <span className="text-gray-700">Includes custom NIPs from NostrHub</span>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="ml-3 text-gray-400">API Example</span>
+            <div className="space-y-6">
+              <div className="bg-white rounded-xl shadow-lg border overflow-hidden">
+                <div className="bg-gray-900 px-6 py-4">
+                  <h3 className="text-white font-semibold flex items-center">
+                    <Terminal className="mr-2 h-5 w-5" />
+                    Installation Guide
+                  </h3>
+                </div>
+                
+                <div className="p-6 space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3 flex items-center">
+                      <Bot className="mr-2 h-4 w-4 text-blue-600" />
+                      For Goose AI
+                    </h4>
+                    <ol className="text-sm space-y-2 text-gray-600 list-decimal list-inside">
+                      <li>Run <code className="bg-gray-100 px-1 rounded">goose configure</code></li>
+                      <li>Choose "Add Extension"</li>
+                      <li>Choose "Command-line Extension"</li>
+                      <li>Enter "nostr" as the name</li>
+                      <li>Enter command: <code className="bg-gray-100 px-1 rounded">npx -y xjsr @nostrbook/mcp</code></li>
+                      <li>Enter "10" seconds timeout</li>
+                    </ol>
+                  </div>
+                  
+                  <div className="border-t pt-4">
+                    <h4 className="font-semibold mb-3 flex items-center">
+                      <Code2 className="mr-2 h-4 w-4 text-green-600" />
+                      For VSCode Copilot
+                    </h4>
+                    <p className="text-sm text-gray-600 mb-2">Create <code className="bg-gray-100 px-1 rounded">.vscode/mcp.json</code>:</p>
+                    <div className="bg-gray-900 rounded-lg p-3 text-white font-mono text-xs overflow-x-auto">
+                      <div>{'{'}</div>
+                      <div className="ml-2">"servers": {'{'}</div>
+                      <div className="ml-4">"nostr": {'{'}</div>
+                      <div className="ml-6">"type": "stdio",</div>
+                      <div className="ml-6">"command": "npx",</div>
+                      <div className="ml-6">"args": ["-y", "xjsr", "@nostrbook/mcp"]</div>
+                      <div className="ml-4">{'}'}</div>
+                      <div className="ml-2">{'}'}</div>
+                      <div>{'}'}</div>
+                    </div>
+                  </div>
+                  
+                  <div className="border-t pt-4">
+                    <h4 className="font-semibold mb-3 flex items-center">
+                      <Database className="mr-2 h-4 w-4 text-purple-600" />
+                      Other MCP Clients
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Use command: <code className="bg-gray-100 px-1 rounded">npx -y xjsr @nostrbook/mcp</code>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="space-y-2">
-                <div><span className="text-gray-400">GET</span> <span className="text-green-400">https://api.nostrbook.dev/nips</span></div>
-                <div className="text-gray-400">// Get all NIPs with metadata</div>
-                <div></div>
-                <div>{'{'}</div>
-                <div className="ml-4"><span className="text-blue-400">"nips"</span>: [</div>
-                <div className="ml-8">{'{'}</div>
-                <div className="ml-12"><span className="text-blue-400">"number"</span>: <span className="text-yellow-400">"01"</span>,</div>
-                <div className="ml-12"><span className="text-blue-400">"title"</span>: <span className="text-green-400">"Basic protocol flow"</span>,</div>
-                <div className="ml-12"><span className="text-blue-400">"status"</span>: <span className="text-green-400">"final"</span>,</div>
-                <div className="ml-12"><span className="text-blue-400">"tags"</span>: [<span className="text-green-400">"core"</span>, <span className="text-green-400">"protocol"</span>]</div>
-                <div className="ml-8">{'}'}</div>
-                <div className="ml-4">]</div>
-                <div>{'}'}</div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <Zap className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">Ready to Use</h3>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Once installed, your AI assistant can answer questions like "What is the structure of a Nostr Kind 1 event?" 
+                  using live documentation from Nostrbook and NostrHub.
+                </p>
               </div>
             </div>
           </div>
@@ -742,21 +815,25 @@ export default function Nostrbook() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Explore the Complete Nostr Documentation
+            Access Structured Nostr Knowledge Today
           </h2>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Whether you're a developer, researcher, or AI system, Nostrbook has the comprehensive 
-            Nostr knowledge you need.
+            Whether you're a developer, researcher, or AI system, Nostrbook provides the comprehensive 
+            Nostr documentation you need with cutting-edge AI integration.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-orange-600 hover:bg-gray-100">
-              Browse Documentation
-              <BookOpen className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-orange-600 hover:bg-gray-100" asChild>
+              <a href="https://nostrbook.dev" target="_blank" rel="noopener noreferrer">
+                <BookOpen className="mr-2 h-5 w-5" />
+                Browse Documentation
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-orange-600">
-              <Brain className="mr-2 h-5 w-5" />
-              API Access
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-orange-600" asChild>
+              <a href="https://nostrbook.dev/mcp" target="_blank" rel="noopener noreferrer">
+                <Bot className="mr-2 h-5 w-5" />
+                Setup MCP Integration
+              </a>
             </Button>
           </div>
 
@@ -767,11 +844,11 @@ export default function Nostrbook() {
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              Always Updated
+              AI-Optimized
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              Community Verified
+              Custom NIPs Included
             </div>
           </div>
         </div>

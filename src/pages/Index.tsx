@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Zap, Globe, Shield, Rocket, Calendar, FileText } from "lucide-react";
+import { ArrowRight, Code, Users, Globe, Shield, Rocket, Calendar, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -135,37 +135,37 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            {/* Stacks */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
+            {/* NostrHub */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-2xl font-display">Stacks</CardTitle>
-                <CardDescription className="text-lg">AI Project Templates</CardDescription>
+                <CardTitle className="text-2xl font-display">NostrHub</CardTitle>
+                <CardDescription className="text-lg">NIP Explorer</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
-                  Share and discover AI project templates on our decentralized platform. 
-                  Find the perfect starter for your next AI project.
+                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive 
+                  database and tools for developers.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    Decentralized sharing
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    Complete NIP database
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    AI-focused projects
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    Developer tools
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    Community-driven
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    Implementation guides
                   </div>
                 </div>
-                <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/stacks">
-                    Explore Templates
+                <Button variant="outline" className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/nostrhub">
+                    Explore NIPs
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
