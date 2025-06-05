@@ -7,7 +7,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { RotatingText } from "@/components/RotatingText";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
-import { getLatestPost, getRecentPostsSkipFirst, formatDate } from "@/lib/blog/utils";
+import { SoapboxPostsSection } from "@/components/SoapboxPostsSection";
+import { getLatestPost, formatDate } from "@/lib/blog/utils";
 
 export default function Index() {
   const latestPost = getLatestPost();
@@ -456,74 +457,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Latest Blog Posts */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Latest from Our Blog
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with the latest insights, tutorials, and news from the Soapbox team.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getRecentPostsSkipFirst(3).map((post) => (
-              <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <Link to={`/blog/${post.slug}`}>
-                  {post.coverImage && (
-                    <div className="aspect-video overflow-hidden">
-                      <img
-                        src={post.coverImage}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                      <Calendar className="w-4 h-4" />
-                      <time dateTime={post.date}>{formatDate(post.date)}</time>
-                    </div>
-                    <CardTitle className="text-xl group-hover:text-azure transition-colors line-clamp-2">
-                      {post.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
-                  </CardContent>
-                </Link>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-              <Link to="/blog">
-                View All Posts
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Latest Posts from Soapbox */}
+      <SoapboxPostsSection />
 
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Ready to Build Your{" "}
-            <RotatingText
-              words={[
-                { text: "Platform?", color: "text-white" },
-                { text: "Community?", color: "text-white" },
-                { text: "Protocol?", color: "text-white" },
-                { text: "Project?", color: "text-white" }
-              ]}
-              interval={2000}
-              className="font-display font-bold"
-            />
+            Ready to Start Building?
           </h2>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
             Choose your tool, start your project, and join the community of builders creating the decentralized future.
