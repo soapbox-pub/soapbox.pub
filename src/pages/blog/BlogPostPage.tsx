@@ -1,7 +1,10 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { BlogPost as BlogPostComponent } from '@/components/blog/BlogPost';
-import { getPostBySlug } from '@/lib/blog/utils';
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
+import { getPostBySlug, formatDate, getReadingTime } from '@/lib/blog/utils';
 import { BlogPost } from '@/lib/blog/types';
 import NotFound from '../NotFound';
 
@@ -24,23 +27,120 @@ export default function BlogPostPage() {
   }, [slug]);
 
   if (loading) {
-    return <div className="container mx-auto px-4 py-8">Loading...</div>;
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 py-8">
+          <Skeleton className="h-8 w-32 mb-8" />
+          <Skeleton className="h-64 w-full mb-8 rounded-xl" />
+          <Skeleton className="h-12 w-3/4 mb-4" />
+          <Skeleton className="h-6 w-full mb-2" />
+          <Skeleton className="h-6 w-2/3 mb-8" />
+          <div className="space-y-4">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-3/4" />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (!post) {
     return <NotFound />;
   }
 
+  const readingTime = getReadingTime(post.content || '');
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      {post.Component ? (
-        <div>
-          <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
-          <post.Component />
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Navigation */}
+      <div className="max-w-4xl mx-auto px-4 pt-8">
+        <Link to="/blog">
+          <Button variant="ghost" className="mb-8 hover:bg-azure/10">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Blog
+          </Button>
+        </Link>
+      </div>
+
+      {/* Featured Image */}
+      {post.coverImage && (
+        <div className="max-w-6xl mx-auto px-4 mb-12">
+          <div className="aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl">
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
-      ) : (
-        <BlogPostComponent post={post} />
       )}
+
+      {/* Article Content */}
+      <article className="max-w-4xl mx-auto px-4 pb-16">
+        {/* Header */}
+        <header className="mb-12">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-6">
+            {post.title}
+          </h1>
+          
+          {post.excerpt && (
+            <p className="text-xl text-gray-600 leading-relaxed mb-8 font-medium">
+              {post.excerpt}
+            </p>
+          )}
+
+          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              <time dateTime={post.date} className="font-medium">
+                {formatDate(post.date)}
+              </time>
+            </div>
+            
+            {post.author.name && (
+              <div className="flex items-center gap-2">
+                <User className="w-4 h-4" />
+                <span className="font-medium">{post.author.name}</span>
+              </div>
+            )}
+            
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span className="font-medium">{readingTime} min read</span>
+            </div>
+          </div>
+        </header>
+
+        <Separator className="mb-12" />
+
+        {/* Content */}
+        <div className="prose prose-lg max-w-none">
+          {post.Component ? (
+            <post.Component />
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+          )}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <Link to="/blog">
+              <Button variant="outline" className="hover:bg-azure hover:text-white transition-colors">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Blog
+              </Button>
+            </Link>
+            
+            {post.author.name && (
+              <div className="text-sm text-gray-500">
+                Written by <span className="font-medium text-gray-700">{post.author.name}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </article>
     </div>
   );
 }

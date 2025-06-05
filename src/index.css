@@ -107,3 +107,57 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Enhanced Blog Post Styling */
+@layer components {
+  /* Grid layout for images */
+  .prose .grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .prose .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .prose .grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .prose .grid img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Custom styling for specific elements */
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(209 213 219);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .prose th {
+    background-color: rgb(243 244 246);
+    border: 1px solid rgb(209 213 219);
+    padding: 0.5rem 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .prose td {
+    border: 1px solid rgb(209 213 219);
+    padding: 0.5rem 1rem;
+  }
+
+  .prose hr {
+    border-color: rgb(209 213 219);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}

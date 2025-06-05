@@ -32,9 +32,9 @@ export const meta: BlogPostMeta = {
 
 export default function AnnouncingDitto() {
   return (
-    <article className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none">
       <div dangerouslySetInnerHTML={{ 
-        __html: `<p> It's finally here. After a year of work, I'm pleased to announce the first release of Ditto! 🎉</p>
+        __html: `<p>It's finally here. After a year of work, I'm pleased to announce the first release of Ditto! 🎉</p>
 
 <strong>Ditto is a Nostr community server.</strong> It has a built-in Nostr relay, a web UI, and it implements Mastodon's REST API.
 
@@ -223,6 +223,6 @@ export default function AnnouncingDitto() {
 
 <p>I would like to give a special thanks to everyone who has made this past year possible: fiatjaf, for all your advice and support; the Soapbox community for being my early testers; and the generous people of the Nostr and Bitcoin community for allowing me to do this work. And, finally, a very special thanks to my wonderful, beautiful, kind, smart, and funny wife for all of her love, patience, and work to help my dreams come true. 😘</p>}`
       }} />
-    </article>
+    </div>
   );
 }
