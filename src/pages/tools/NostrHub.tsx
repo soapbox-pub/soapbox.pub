@@ -1,11 +1,13 @@
-import { ArrowRight, FileText, Code, Users, Search, BookOpen, Rocket, Globe, Bell } from "lucide-react";
+import { ArrowRight, FileText, Code, Users, Search, Rocket, Globe, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { RecentNips } from "@/components/RecentNips";
+import { PublishCustomNip } from "@/components/PublishCustomNip";
+import { CustomNipsList } from "@/components/CustomNipsList";
 
 export default function NostrHub() {
   return (
@@ -42,53 +44,9 @@ export default function NostrHub() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-                  <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">
-                    <FileText className="mr-2 h-5 w-5" />
-                    Publish Custom NIP
-                  </a>
-                </Button>
+                <PublishCustomNip />
               </div>
-
-              {/* Search & Filter */}
-              <div className="bg-white rounded-lg border p-4 space-y-4 shadow-sm">
-                <div className="flex gap-4">
-                  <div className="flex-1">
-                    <Input 
-                      placeholder="Search NIPs by number, title, or keyword..." 
-                      className="text-base"
-                    />
-                  </div>
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    <Search className="h-4 w-4" />
-                  </Button>
-                </div>
-                <div className="flex gap-4">
-                  <Select>
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="final">Final</SelectItem>
-                      <SelectItem value="draft">Draft</SelectItem>
-                      <SelectItem value="proposed">Proposed</SelectItem>
-                      <SelectItem value="optional">Optional</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Select>
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="core">Core Protocol</SelectItem>
-                      <SelectItem value="events">Event Kinds</SelectItem>
-                      <SelectItem value="tags">Tag Specifications</SelectItem>
-                      <SelectItem value="misc">Miscellaneous</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
+          
               <div className="flex items-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
@@ -107,70 +65,7 @@ export default function NostrHub() {
 
             <div className="relative">
               {/* NIP Showcase */}
-              <div className="bg-white rounded-2xl shadow-2xl border">
-                {/* Header */}
-                <div className="p-6 border-b">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">Recent NIPs</h3>
-                    <Badge variant="secondary">Live Updates</Badge>
-                  </div>
-                </div>
-                
-                {/* NIP List */}
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50">
-                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">01</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold">Basic Protocol Flow</h4>
-                      <p className="text-sm text-gray-600">Core protocol specification</p>
-                    </div>
-                    <div className="text-right text-sm">
-                      <Badge variant="outline" className="text-green-600 border-green-600">Final</Badge>
-                      <div className="text-gray-500 mt-1">Core</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50">
-                    <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">72</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold">Moderated Communities</h4>
-                      <p className="text-sm text-gray-600">Community group events</p>
-                    </div>
-                    <div className="text-right text-sm">
-                      <Badge variant="outline" className="text-blue-600 border-blue-600">Draft</Badge>
-                      <div className="text-gray-500 mt-1">Events</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">94</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold">File Metadata</h4>
-                      <p className="text-sm text-gray-600">File attachment metadata</p>
-                    </div>
-                    <div className="text-right text-sm">
-                      <Badge variant="outline" className="text-green-600 border-green-600">Final</Badge>
-                      <div className="text-gray-500 mt-1">Tags</div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Footer */}
-                <div className="p-4 border-t bg-gray-50 rounded-b-2xl">
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">
-                      Browse All NIPs
-                      <ArrowRight className="ml-2 h-3 w-3" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
+              <RecentNips />
               
               {/* Stats overlay */}
               <div className="absolute -bottom-6 left-4 right-4">
@@ -419,168 +314,11 @@ export default function NostrHub() {
               </div>
             </Card>
           </div>
-
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
-              <h3 className="text-3xl font-bold mb-6">How Nostr Works</h3>
-              <div className="max-w-4xl mx-auto space-y-6 text-left">
-                <p className="text-lg text-blue-100">
-                  Nostr is a simple, decentralized protocol for creating and sharing events. Unlike traditional 
-                  platforms with fixed schemas, Nostr allows anyone to publish events of any kind to relays 
-                  distributed around the world.
-                </p>
-                <p className="text-lg text-blue-100">
-                  This flexibility is what makes custom NIPs so powerful. You can define a new event kind 
-                  (like "kind: 40000" for a hypothetical chess game state), specify how clients should 
-                  interpret it, and immediately start building applications that use it.
-                </p>
-                <p className="text-lg text-blue-100">
-                  There's no central authority to approve your idea, no corporation that can shut down your 
-                  innovation. If you can imagine it and define it as a NIP, you can build it on Nostr.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Protocol Development Features */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Protocol Development Hub
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              NostrHub enables the Nostr community to collaboratively build and improve the protocol ecosystem.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center space-y-6">
-              <div className="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg">
-                <BookOpen className="h-10 w-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold">Browse Official NIPs</h3>
-              <p className="text-gray-600">
-                Access the complete collection of official Nostr Implementation Possibilities with detailed 
-                documentation and implementation guides.
-              </p>
-            </div>
-
-            <div className="text-center space-y-6">
-              <div className="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg">
-                <FileText className="h-10 w-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold">Publish Custom NIPs</h3>
-              <p className="text-gray-600">
-                Share your own Nostr implementations with the community by publishing custom NIPs 
-                directly on the Nostr network.
-              </p>
-            </div>
-
-            <div className="text-center space-y-6">
-              <div className="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg">
-                <Users className="h-10 w-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold">Community-Driven</h3>
-              <p className="text-gray-600">
-                Built on Nostr itself, NostrHub is decentralized and community-driven, ensuring 
-                the protocol development remains open and collaborative.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Publish NIP CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-display font-bold text-gray-900">
-              Contribute to the Nostr Protocol
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Have a new idea for extending the Nostr protocol? Share it with the community by 
-              publishing your custom NIP on NostrHub.
-            </p>
-          </div>
-          
-          <div className="bg-white rounded-2xl p-8 shadow-lg border">
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Write Your NIP</h3>
-                <p className="text-sm text-gray-600">Create your implementation specification</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Publish on Nostr</h3>
-                <p className="text-sm text-gray-600">Share your NIP directly on the Nostr network</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Get Feedback</h3>
-                <p className="text-sm text-gray-600">Engage with developers and refine your proposal</p>
-              </div>
-            </div>
-            
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg" asChild>
-              <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">
-                Publish Your NIP
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Protocol Stats */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-6">
-              Nostr Protocol at a Glance
-            </h2>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Tracking the growth and development of the Nostr protocol specification.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
-              <div className="text-4xl font-bold mb-2">100+</div>
-              <div className="opacity-90">Official NIPs</div>
-            </div>
-            
-            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
-              <div className="text-4xl font-bold mb-2">25+</div>
-              <div className="opacity-90">Event Kinds</div>
-            </div>
-            
-            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="opacity-90">Tag Specifications</div>
-            </div>
-            
-            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
-              <div className="text-4xl font-bold mb-2">Active</div>
-              <div className="opacity-90">Development</div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
             Start Exploring Nostr Implementation Possibilities
@@ -597,12 +335,7 @@ export default function NostrHub() {
                 <Search className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-              <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">
-                <FileText className="mr-2 h-5 w-5" />
-                Publish Custom NIP
-              </a>
-            </Button>
+            <PublishCustomNip />
           </div>
 
           <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">

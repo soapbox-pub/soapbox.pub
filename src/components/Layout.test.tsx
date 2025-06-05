@@ -20,7 +20,7 @@ describe('Layout', () => {
     expect(screen.getAllByText('Soapbox')).toHaveLength(2); // One in nav, one in footer
     
     // Check that footer is present (look for footer text)
-    expect(screen.getByText(/Built by builders, for builders/)).toBeInTheDocument();
+    expect(screen.getByText(/Software for the next generation of social media/)).toBeInTheDocument();
   });
 
   it('applies custom className', () => {

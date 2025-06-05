@@ -1,53 +1,67 @@
 import { Link } from "react-router-dom";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
+import { EmailSignupForm } from "@/components/EmailSignupForm";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <SoapboxLogo size={32} />
-              <span className="font-display font-bold text-xl">Soapbox</span>
+        <div className="grid md:grid-cols-5 gap-8">
+          <div className="md:col-span-2 space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <SoapboxLogo size={32} />
+                <span className="font-display font-bold text-xl">Soapbox</span>
+              </div>
+              <p className="text-gray-400 max-w-md">
+                Software for the next generation of social media.
+              </p>
             </div>
-            <p className="text-gray-400">
-              Building tools that empower creators and communities in the decentralized web.
-            </p>
+            
+            <div className="space-y-3">
+              <h4 className="font-semibold text-sm uppercase tracking-wide">Stay Updated</h4>
+              <EmailSignupForm tags={['Soapbox']} />
+            </div>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4">Tools</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/tools/ditto" className="hover:text-white transition-colors">Ditto</Link></li>
-              <li><Link to="/tools/mkstack" className="hover:text-white transition-colors">MKstack</Link></li>
-              <li><Link to="/tools/stacks" className="hover:text-white transition-colors">Stacks</Link></li>
-              <li><Link to="/tools/nostrbook" className="hover:text-white transition-colors">Nostrbook</Link></li>
+              <li><a href="https://ditto.pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto</a></li>
+              <li><a href="https://mkstack.xyz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">MKStack</a></li>
+              <li><a href="https://getstacks.dev" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Stacks</a></li>
+              <li><a href="https://nostrbook.dev" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostrbook</a></li>
+              <li><a href="https://nostrhub.io" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">NostrHub</a></li>
+              <li><a href="https://nostrify.dev" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostrify</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Community</h4>
+            <h4 className="font-semibold mb-4">Communities</h4>
             <ul className="space-y-2 text-gray-400">
+              <li><a href="https://ditto.pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto.pub</a></li>
+              <li><a href="https://treasures.surge.sh" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Treasures</a></li>
+              <li><a href="https://blobbi.pet" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Blobbi</a></li>
+              <li><a href="https://bookstr.xyz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Bookstr</a></li>
               <li><Link to="/showcase" className="hover:text-white transition-colors">Showcase</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Support</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contributing</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
+            <h4 className="font-semibold mb-4">About</h4>
             <ul className="space-y-2 text-gray-400">
+              <li><Link to="/about" className="hover:text-white transition-colors">Team</Link></li>
+              <li><a href="/get-involved" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Get Involved</a></li>
               <li><a href="https://gitlab.com/groups/soapbox-pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitLab</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Nostr</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://njump.me/npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxbm755fcea5s9cqrwq" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostr</a></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Soapbox. Built by builders, for builders.</p>
+          <p>♡{currentYear} Soapbox Technology. Please <a className="underline hover:text-white transition-colors" href="https://gitlab.com/soapbox-pub/soapbox.pub" target="_blank" rel="noopener noreferrer">copy and share</a>.</p>
         </div>
       </div>
     </footer>

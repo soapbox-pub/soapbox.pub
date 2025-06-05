@@ -7,6 +7,7 @@ import Showcase from "./pages/Showcase";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
 import NotFound from "./pages/NotFound";
+import CustomNipPage from "./pages/CustomNipPage";
 
 // Tool pages
 import Ditto from "./pages/tools/Ditto";
@@ -32,6 +33,7 @@ export function AppRouter() {
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/nip/:naddr" element={<CustomNipPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

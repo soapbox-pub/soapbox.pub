@@ -10,6 +10,9 @@ export default defineConfig(() => ({
     port: 8080,
   },
   plugins: [react()],
+  optimizeDeps: {
+    include: ['nostr-tools'],
+  },
   test: {
     globals: true,
     environment: 'jsdom',

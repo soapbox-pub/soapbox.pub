@@ -372,40 +372,6 @@ export default function Tools() {
         </div>
       </section>
 
-      {/* Success Metrics */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-azure-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">
-              Proven Results
-            </h2>
-            <p className="text-xl text-gray-600">Real numbers from real platforms built with our tools</p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-azure mb-2">15+</div>
-              <div className="text-gray-600">Active Platforms</div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-violet-600 mb-2">25,000+</div>
-              <div className="text-gray-600">Total Users</div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">500,000+</div>
-              <div className="text-gray-600">Posts Created</div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-orange-600 mb-2">99.9%</div>
-              <div className="text-gray-600">Uptime</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
