@@ -30,6 +30,7 @@ export default function Index() {
                     { text: "Protocol", color: "text-pink-600" },
                     { text: "Project", color: "text-orange-500" }
                   ]}
+                  interval={2000}
                   className="font-display font-bold"
                 />
               </h1>
@@ -399,6 +400,7 @@ export default function Index() {
                 { text: "Protocol?", color: "text-white" },
                 { text: "Project?", color: "text-white" }
               ]}
+              interval={2000}
               className="font-display font-bold"
             />
           </h2>
