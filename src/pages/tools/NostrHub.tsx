@@ -171,17 +171,13 @@ export default function NostrHub() {
                 </div>
               </div>
 
-              {/* NostrHub Screenshot Placeholder */}
+              {/* NostrHub Screenshot */}
               <div className="bg-white rounded-2xl shadow-lg border overflow-hidden">
-                <div className="bg-gradient-to-r from-gray-100 to-gray-200 h-64 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="w-16 h-16 bg-gray-300 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <FileText className="h-8 w-8 text-gray-400" />
-                    </div>
-                    <p className="text-sm font-medium">NostrHub Screenshot</p>
-                    <p className="text-xs">Placeholder - Replace with actual screenshot</p>
-                  </div>
-                </div>
+                <img 
+                  src="/assets/nostrhub-screenshot.png" 
+                  alt="NostrHub Interface Screenshot" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>

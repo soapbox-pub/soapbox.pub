@@ -218,8 +218,8 @@ export default function Tools() {
                 <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
                   <BookOpen className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-xl font-display">Nostrbook</CardTitle>
-                <CardDescription>Documentation Registry</CardDescription>
+                <CardTitle className="text-xl font-display">Nostrbook MCP</CardTitle>
+                <CardDescription>AI tool for the Nostr protocol</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600 text-sm">
@@ -242,7 +242,7 @@ export default function Tools() {
                 </div>
                 <Button variant="outline" className="w-full text-sm" asChild>
                   <Link to="/tools/nostrbook">
-                    Browse Docs
+                    Learn More
                     <ArrowRight className="ml-2 h-3 w-3" />
                   </Link>
                 </Button>
@@ -256,11 +256,11 @@ export default function Tools() {
                   <FileText className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-xl font-display">NostrHub</CardTitle>
-                <CardDescription>NIP Explorer</CardDescription>
+                <CardDescription>Nostr Protocol Explorer</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600 text-sm">
-                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive 
+                  Explore and understand Nostr Implementation Possibilities (NIPs) with our comprehensive 
                   database and tools for developers.
                 </p>
                 <div className="space-y-2">
@@ -270,7 +270,7 @@ export default function Tools() {
                   </div>
                   <div className="flex items-center text-xs text-gray-600">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    Developer tools
+                    Publish Custom Nips
                   </div>
                   <div className="flex items-center text-xs text-gray-600">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
