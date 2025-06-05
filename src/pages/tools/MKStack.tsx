@@ -26,11 +26,11 @@ export default function MKStack() {
                   </span>
                 </h1>
                 <p className="text-2xl font-medium text-gray-700">
-                  The Complete Framework for Building Social Platforms
+                  The Complete Framework for Building Nostr Clients
                 </p>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Create custom social platforms and applications with our battle-tested framework. 
-                  Powers multiple successful platforms including Bookstr, Blobbi, and geocaching sites.
+                  Build powerful Nostr applications with AI-first development. From social feeds to private messaging, 
+                  MKStack provides everything you need to create decentralized apps on the Nostr protocol.
                 </p>
               </div>
 
@@ -48,11 +48,11 @@ export default function MKStack() {
               <div className="flex items-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  Production Ready
+                  Nostr Protocol
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  Scalable Architecture
+                  AI-First Development
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
@@ -65,8 +65,8 @@ export default function MKStack() {
               {/* Architecture Diagram */}
               <div className="bg-white rounded-2xl shadow-2xl p-6 border">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">MK Stack Architecture</h3>
-                  <p className="text-sm text-gray-600">Flexible, modular, and production-ready</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Nostr Client Architecture</h3>
+                  <p className="text-sm text-gray-600">Built for the decentralized web</p>
                 </div>
                 
                 <div className="space-y-4">
@@ -83,40 +83,40 @@ export default function MKStack() {
                     <div className="text-xs text-gray-600 mt-1">React • TypeScript • Tailwind</div>
                   </div>
                   
-                  {/* API Layer */}
+                  {/* Nostr Layer */}
+                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-purple-700">Nostr Protocol</span>
+                      <div className="flex space-x-2">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">Nostrify • NIP Support • Relays</div>
+                  </div>
+                  
+                  {/* Features Layer */}
                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-blue-700">API Layer</span>
+                      <span className="text-sm font-medium text-blue-700">Features</span>
                       <div className="flex space-x-2">
                         <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
                       </div>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">GraphQL • REST • WebSockets</div>
+                    <div className="text-xs text-gray-600 mt-1">Auth • Messaging • Media • Zaps</div>
                   </div>
                   
-                  {/* Backend Layer */}
+                  {/* AI Tools */}
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-green-700">Backend</span>
+                      <span className="text-sm font-medium text-green-700">AI Development</span>
                       <div className="flex space-x-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                       </div>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">Node.js • PostgreSQL • Redis</div>
-                  </div>
-                  
-                  {/* Infrastructure */}
-                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">Infrastructure</span>
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">Docker • Kubernetes • CDN</div>
+                    <div className="text-xs text-gray-600 mt-1">Dork Agent • Nostrbook MCP • Context</div>
                   </div>
                 </div>
               </div>
@@ -125,16 +125,16 @@ export default function MKStack() {
               <div className="absolute -bottom-6 left-4 right-4">
                 <div className="bg-white rounded-xl shadow-lg p-4 grid grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-violet-600">15+</div>
-                    <div className="text-xs text-gray-600">Platforms</div>
+                    <div className="text-2xl font-bold text-violet-600">50+</div>
+                    <div className="text-xs text-gray-600">NIPs Supported</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">25K+</div>
-                    <div className="text-xs text-gray-600">Users</div>
+                    <div className="text-2xl font-bold text-purple-600">5 Days</div>
+                    <div className="text-xs text-gray-600">Build Time</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">99%</div>
-                    <div className="text-xs text-gray-600">Uptime</div>
+                    <div className="text-2xl font-bold text-blue-600">AI-First</div>
+                    <div className="text-xs text-gray-600">Development</div>
                   </div>
                 </div>
               </div>
@@ -148,10 +148,10 @@ export default function MKStack() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Everything You Need for Social Platform Development
+              Everything You Need for Nostr Client Development
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              MK Stack provides a comprehensive foundation that scales from prototype to production.
+              MK Stack provides comprehensive Nostr protocol support with AI-powered development tools.
             </p>
           </div>
           
@@ -161,24 +161,24 @@ export default function MKStack() {
                 <div className="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center mb-4">
                   <Layers className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Modular Architecture</CardTitle>
+                <CardTitle>Complete Nostr Integration</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Flexible component system that adapts to your needs. Build exactly what you want without unnecessary complexity.
+                  Full Nostr protocol support with 50+ NIPs implemented. Connect to relays, manage keys, and build decentralized apps.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-violet-600 rounded-full mr-3"></div>
-                    Plugin architecture
+                    Nostrify framework
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-violet-600 rounded-full mr-3"></div>
-                    Microservice ready
+                    Multi-relay support
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-violet-600 rounded-full mr-3"></div>
-                    Component isolation
+                    Event validation
                   </div>
                 </div>
               </CardContent>
@@ -189,24 +189,24 @@ export default function MKStack() {
                 <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Rapid Development</CardTitle>
+                <CardTitle>AI-Powered Development</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Get from idea to launch faster with pre-built components, generators, and development tools.
+                  Build Nostr apps in days, not weeks. Dork AI agent and Nostrbook MCP provide intelligent assistance.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Code generators
+                    Dork AI agent
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Hot reloading
+                    Nostrbook MCP
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Pre-built components
+                    Context-aware prompts
                   </div>
                 </div>
               </CardContent>
@@ -217,24 +217,24 @@ export default function MKStack() {
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Globe className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Multi-Protocol Support</CardTitle>
+                <CardTitle>Rich Social Features</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Built-in support for multiple protocols including Nostr, ActivityPub, and traditional APIs.
+                  Complete social platform features: profiles, feeds, messaging, reactions, zaps, and communities.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Nostr integration
+                    Social feeds (NIP-01)
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    ActivityPub bridge
+                    Private messaging (NIP-17)
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    REST/GraphQL APIs
+                    Communities (NIP-72)
                   </div>
                 </div>
               </CardContent>
@@ -245,24 +245,24 @@ export default function MKStack() {
                 <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Enterprise Security</CardTitle>
+                <CardTitle>Cryptographic Security</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Production-grade security with authentication, authorization, rate limiting, and audit trails.
+                  Built-in cryptographic features: key management, encryption, signatures, and secure authentication.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
-                    JWT authentication
+                    NIP-07 browser signing
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
-                    Role-based access
+                    NIP-44 encryption
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
-                    Audit logging
+                    Event verification
                   </div>
                 </div>
               </CardContent>
@@ -273,24 +273,24 @@ export default function MKStack() {
                 <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
                   <Rocket className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Deployment Ready</CardTitle>
+                <CardTitle>Media & Payments</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Docker containers, Kubernetes configs, and CI/CD pipelines included for seamless deployment.
+                  File uploads via Blossom servers, Lightning zaps, and eCash integration for monetization.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    Docker support
+                    Blossom file storage
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    K8s manifests
+                    Lightning zaps (NIP-57)
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    CI/CD templates
+                    eCash wallets (NIP-60)
                   </div>
                 </div>
               </CardContent>
@@ -301,28 +301,140 @@ export default function MKStack() {
                 <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Community Features</CardTitle>
+                <CardTitle>Advanced Features</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Rich social features including profiles, feeds, messaging, groups, and content moderation tools.
+                  Long-form content, live events, marketplaces, calendars, and specialized applications.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></div>
-                    User management
+                    Articles (NIP-23)
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></div>
-                    Content moderation
+                    Live events (NIP-53)
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></div>
-                    Real-time features
+                    Marketplaces (NIP-15)
                   </div>
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Nostr Features */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Comprehensive Nostr Protocol Support
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              MKStack implements 50+ NIPs (Nostr Implementation Possibilities) covering everything from basic messaging to advanced features.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-purple-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Social Features</h3>
+                <div className="text-sm text-gray-600 space-y-1">
+                  <div>• User profiles (NIP-01)</div>
+                  <div>• Follow lists (NIP-02)</div>
+                  <div>• Reactions (NIP-25)</div>
+                  <div>• Reposts (NIP-18)</div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Messaging</h3>
+                <div className="text-sm text-gray-600 space-y-1">
+                  <div>• Private DMs (NIP-17)</div>
+                  <div>• Public chat (NIP-28)</div>
+                  <div>• Group chat (NIP-29)</div>
+                  <div>• Encryption (NIP-44)</div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-green-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Payments</h3>
+                <div className="text-sm text-gray-600 space-y-1">
+                  <div>• Lightning zaps (NIP-57)</div>
+                  <div>• Cashu wallets (NIP-60)</div>
+                  <div>• Nutzaps (NIP-61)</div>
+                  <div>• Wallet connect (NIP-47)</div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-orange-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Content</h3>
+                <div className="text-sm text-gray-600 space-y-1">
+                  <div>• Long-form (NIP-23)</div>
+                  <div>• File metadata (NIP-94)</div>
+                  <div>• Live events (NIP-53)</div>
+                  <div>• Calendars (NIP-52)</div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-2xl font-bold text-center mb-8">Built-in Components & Hooks</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="font-semibold text-purple-600 mb-4">Authentication</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• LoginArea component</li>
+                  <li>• useCurrentUser hook</li>
+                  <li>• Account switching</li>
+                  <li>• NIP-07 browser signing</li>
+                  <li>• Key management</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-blue-600 mb-4">Data & Publishing</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• useNostr hook</li>
+                  <li>• useNostrPublish hook</li>
+                  <li>• useAuthor hook</li>
+                  <li>• Event validation</li>
+                  <li>• Relay management</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-green-600 mb-4">Media & UI</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• useUploadFile hook</li>
+                  <li>• NoteContent component</li>
+                  <li>• EditProfileForm</li>
+                  <li>• RelaySelector</li>
+                  <li>• Rich text rendering</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -332,18 +444,18 @@ export default function MKStack() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Modern Technology Stack
+              Nostr-First Technology Stack
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built with the latest technologies and best practices for performance, scalability, and developer experience.
+              Built specifically for Nostr development with modern web technologies and AI-powered tools.
             </p>
           </div>
 
           <Tabs defaultValue="frontend" className="w-full">
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="frontend">Frontend</TabsTrigger>
-              <TabsTrigger value="backend">Backend</TabsTrigger>
-              <TabsTrigger value="database">Database</TabsTrigger>
+              <TabsTrigger value="nostr">Nostr</TabsTrigger>
+              <TabsTrigger value="ai">AI Tools</TabsTrigger>
               <TabsTrigger value="deployment">Deployment</TabsTrigger>
             </TabsList>
 
@@ -391,89 +503,89 @@ export default function MKStack() {
               </div>
             </TabsContent>
 
-            <TabsContent value="backend" className="mt-8">
+            <TabsContent value="nostr" className="mt-8">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Code className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Node.js</h3>
-                    <p className="text-sm text-gray-600">High-performance JavaScript runtime</p>
+                    <h3 className="font-semibold mb-2">Nostrify</h3>
+                    <p className="text-sm text-gray-600">Comprehensive Nostr framework</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-gray-800 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Package className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Express.js</h3>
-                    <p className="text-sm text-gray-600">Fast and minimalist web framework</p>
+                    <h3 className="font-semibold mb-2">nostr-tools</h3>
+                    <p className="text-sm text-gray-600">Core Nostr utilities and helpers</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-pink-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Layers className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">GraphQL</h3>
-                    <p className="text-sm text-gray-600">Flexible API query language</p>
+                    <h3 className="font-semibold mb-2">Blossom</h3>
+                    <p className="text-sm text-gray-600">Decentralized file storage</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-orange-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-orange-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Zap className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Socket.io</h3>
-                    <p className="text-sm text-gray-600">Real-time bidirectional communication</p>
+                    <h3 className="font-semibold mb-2">WebSockets</h3>
+                    <p className="text-sm text-gray-600">Real-time relay connections</p>
                   </CardContent>
                 </Card>
               </div>
             </TabsContent>
 
-            <TabsContent value="database" className="mt-8">
+            <TabsContent value="ai" className="mt-8">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-700 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Package className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">PostgreSQL</h3>
-                    <p className="text-sm text-gray-600">Advanced relational database</p>
+                    <h3 className="font-semibold mb-2">Dork Agent</h3>
+                    <p className="text-sm text-gray-600">Built-in AI development assistant</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-red-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Layers className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Redis</h3>
-                    <p className="text-sm text-gray-600">In-memory caching and sessions</p>
+                    <h3 className="font-semibold mb-2">Nostrbook MCP</h3>
+                    <p className="text-sm text-gray-600">Queryable Nostr documentation</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-700 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Code className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Prisma</h3>
-                    <p className="text-sm text-gray-600">Type-safe database toolkit</p>
+                    <h3 className="font-semibold mb-2">Context Files</h3>
+                    <p className="text-sm text-gray-600">AI-optimized project context</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-purple-700 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-orange-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Zap className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Elasticsearch</h3>
-                    <p className="text-sm text-gray-600">Full-text search and analytics</p>
+                    <h3 className="font-semibold mb-2">Claude/GPT</h3>
+                    <p className="text-sm text-gray-600">Multiple LLM model support</p>
                   </CardContent>
                 </Card>
               </div>
@@ -483,21 +595,21 @@ export default function MKStack() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Package className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Docker</h3>
-                    <p className="text-sm text-gray-600">Containerization for consistent deployments</p>
+                    <h3 className="font-semibold mb-2">Surge</h3>
+                    <p className="text-sm text-gray-600">One-command static site deployment</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Layers className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Kubernetes</h3>
-                    <p className="text-sm text-gray-600">Container orchestration at scale</p>
+                    <h3 className="font-semibold mb-2">Vite</h3>
+                    <p className="text-sm text-gray-600">Lightning-fast build and dev server</p>
                   </CardContent>
                 </Card>
                 
@@ -516,8 +628,8 @@ export default function MKStack() {
                     <div className="w-12 h-12 bg-orange-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                       <Globe className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">CDN</h3>
-                    <p className="text-sm text-gray-600">Global content delivery network</p>
+                    <h3 className="font-semibold mb-2">Static Hosting</h3>
+                    <p className="text-sm text-gray-600">Deploy anywhere, no servers needed</p>
                   </CardContent>
                 </Card>
               </div>
@@ -531,14 +643,43 @@ export default function MKStack() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Built with MK Stack
+              Nostr Apps Built with MK Stack
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real platforms serving thousands of users, built on MK Stack foundation.
+              Real Nostr applications built using MKStack and AI-first development, including Chorus which was built in just 5 days.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+              <div className="aspect-video bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <p className="font-medium text-gray-700">Chorus</p>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold">Chorus</h3>
+                    <Badge variant="secondary">Communities</Badge>
+                  </div>
+                  <p className="text-gray-600">
+                    Facebook-style groups with built-in eCash wallet for fundraising. Built in just 5 days using AI.
+                  </p>
+                  <div className="flex items-center justify-between text-sm text-gray-500">
+                    <span>Built in 5 days</span>
+                    <Button variant="outline" size="sm">
+                      Visit Platform
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div className="aspect-video bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center">
                 <div className="text-center">
@@ -555,7 +696,7 @@ export default function MKStack() {
                     <Badge variant="secondary">Social Reading</Badge>
                   </div>
                   <p className="text-gray-600">
-                    Decentralized social reading platform where book lovers discover, review, and discuss literature.
+                    Decentralized social reading platform where book lovers discover, review, and discuss literature on Nostr.
                   </p>
                   <div className="flex items-center justify-between text-sm text-gray-500">
                     <span>5,000+ active readers</span>
@@ -569,56 +710,27 @@ export default function MKStack() {
             </Card>
 
             <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-blue-200 to-purple-200 flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-br from-blue-200 to-cyan-200 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Globe className="h-8 w-8 text-white" />
+                    <Zap className="h-8 w-8 text-white" />
                   </div>
-                  <p className="font-medium text-gray-700">Blobbi</p>
+                  <p className="font-medium text-gray-700">NIP-28 Chat</p>
                 </div>
               </div>
               <CardContent className="p-6">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">Blobbi</h3>
-                    <Badge variant="secondary">File Storage</Badge>
+                    <h3 className="text-xl font-semibold">NIP-28 Chat</h3>
+                    <Badge variant="secondary">Public Chat</Badge>
                   </div>
                   <p className="text-gray-600">
-                    Decentralized file storage and sharing platform with advanced privacy and encryption features.
+                    Example Nostr chat application built with MKStack demonstrating NIP-28 public chat implementation.
                   </p>
                   <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>10,000+ files stored</span>
+                    <span>Demo application</span>
                     <Button variant="outline" size="sm">
-                      Visit Platform
-                      <ExternalLink className="ml-2 h-3 w-3" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-green-200 to-teal-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Users className="h-8 w-8 text-white" />
-                  </div>
-                  <p className="font-medium text-gray-700">GeoNostr</p>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">GeoNostr</h3>
-                    <Badge variant="secondary">Geocaching</Badge>
-                  </div>
-                  <p className="text-gray-600">
-                    Location-based social platform for geocaching enthusiasts with real-time GPS integration.
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>2,500+ geocachers</span>
-                    <Button variant="outline" size="sm">
-                      Visit Platform
+                      Visit Demo
                       <ExternalLink className="ml-2 h-3 w-3" />
                     </Button>
                   </div>
@@ -634,10 +746,10 @@ export default function MKStack() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Get Started with MK Stack
+              Build Your Nostr App with AI
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From development to production in three simple steps.
+              From idea to deployed Nostr application in minutes using AI-powered development.
             </p>
           </div>
 
@@ -646,14 +758,14 @@ export default function MKStack() {
               <div className="w-20 h-20 bg-violet-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg">
                 <Code className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold">Clone & Setup</h3>
+              <h3 className="text-2xl font-bold">Install & Create</h3>
               <p className="text-gray-600">
-                Clone the MK Stack repository and run the setup script. All dependencies 
-                and configurations are handled automatically.
+                Install Stacks CLI and create a new Nostr app using MKStack template. 
+                Everything is set up automatically.
               </p>
               <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
-                <div>$ git clone mkstack</div>
-                <div>$ npm run setup</div>
+                <div>$ npm install -g @getstacks/stacks</div>
+                <div>$ stacks mkstack</div>
               </div>
             </div>
 
@@ -661,14 +773,14 @@ export default function MKStack() {
               <div className="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg">
                 <Layers className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold">Customize</h3>
+              <h3 className="text-2xl font-bold">Prompt Dork</h3>
               <p className="text-gray-600">
-                Configure your platform features, branding, and integrations using our 
-                intuitive configuration system and generators.
+                Tell Dork AI agent what you want to build. It uses Nostrbook MCP to 
+                understand Nostr protocols and build your app.
               </p>
               <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
-                <div>$ mk generate:feature</div>
-                <div>$ mk config:branding</div>
+                <div>Dork: What do you need?</div>
+                <div>You: Build a NIP-28 group chat app</div>
               </div>
             </div>
 
@@ -678,12 +790,12 @@ export default function MKStack() {
               </div>
               <h3 className="text-2xl font-bold">Deploy</h3>
               <p className="text-gray-600">
-                Deploy to your preferred platform using our pre-configured Docker containers 
-                and deployment scripts. Scale as you grow.
+                Deploy your Nostr app instantly with built-in Surge integration. 
+                Your app goes live in seconds.
               </p>
               <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
-                <div>$ mk deploy:production</div>
-                <div>✅ Platform deployed!</div>
+                <div>$ npm run deploy</div>
+                <div>✅ App deployed to Surge!</div>
               </div>
             </div>
           </div>
@@ -694,10 +806,10 @@ export default function MKStack() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-violet-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Build Your Platform with MK Stack
+            Build Your Nostr App with MK Stack
           </h2>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Join the growing community of developers building the next generation of social platforms.
+            Join the growing community of developers building decentralized applications on Nostr with AI-powered tools.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -714,15 +826,15 @@ export default function MKStack() {
           <div className="flex items-center justify-center space-x-6 text-sm opacity-80">
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              Production Ready
+              50+ NIPs Supported
+            </div>
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+              AI-First Development
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
               Open Source
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              Community Support
             </div>
           </div>
         </div>
