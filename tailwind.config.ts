@@ -19,12 +19,24 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
+				display: ['Outfit Variable', 'Outfit', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				azure: {
+					DEFAULT: 'hsl(var(--azure))',
+					50: 'hsl(var(--azure-50))',
+					100: 'hsl(var(--azure-100))',
+					500: 'hsl(var(--azure-500))',
+					600: 'hsl(var(--azure-600))',
+					700: 'hsl(var(--azure-700))',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

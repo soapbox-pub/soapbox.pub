@@ -1,0 +1,420 @@
+import { ArrowRight, Users, Code, Zap, BookOpen, FileText, Wrench, Shield, Globe, Rocket, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+
+export default function Tools() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
+      <Navigation />
+
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200 mb-6">
+            🛠️ Complete Toolkit
+          </Badge>
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
+            Tools to Build Your{" "}
+            <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
+              Vision
+            </span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Soapbox provides a complete ecosystem of tools that empower you to create your own platforms, 
+            communities, and applications. Each tool is designed to work independently or together as part 
+            of a larger vision.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Tools Grid */}
+      <section className="pb-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            {/* Ditto - Featured */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-azure-200 lg:col-span-2">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-azure to-blue-600 rounded-2xl flex items-center justify-center">
+                      <Users className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-display font-bold">Ditto</h2>
+                      <p className="text-lg text-gray-600">Community Platform Builder</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-lg text-gray-700 mb-6">
+                    Build decentralized, censorship-resistant communities on Nostr with built-in monetization, 
+                    custom themes, and cross-platform compatibility. Perfect for creating your own social space.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                        Built-in Nostr relay
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                        Custom themes & branding
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                        Bitcoin Lightning integration
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                        ActivityPub bridge
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                        Community moderation
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                        Mobile-responsive design
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button className="bg-azure hover:bg-azure-600 text-white">
+                      Build Community
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                    <Button variant="outline">
+                      View Documentation
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-br from-azure-100 to-blue-100 p-8 lg:p-12 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto">
+                      <Users className="h-12 w-12 text-azure" />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600">Powering communities like</p>
+                      <div className="space-y-1">
+                        <Badge variant="secondary">Ditto.pub</Badge>
+                        <Badge variant="secondary">Henhouse.social</Badge>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* MKstack */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-violet-200">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <Code className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-display">MKstack</CardTitle>
+                <CardDescription className="text-lg">Platform Framework</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-gray-600">
+                  Create custom social platforms and applications with our flexible framework. 
+                  Powers multiple successful platforms including Bookstr, Blobbi, and geocaching sites.
+                </p>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                    Flexible architecture
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                    Rapid development
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                    Scalable solutions
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                    Production-ready
+                  </div>
+                </div>
+                
+                <div className="pt-4">
+                  <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors">
+                    Start Building
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Stacks */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-emerald-200">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-display">Stacks</CardTitle>
+                <CardDescription className="text-lg">AI Project Templates</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-gray-600">
+                  Share and discover AI project templates on our decentralized platform. 
+                  Find the perfect starter for your next AI project or share your own templates.
+                </p>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                    Decentralized template sharing
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                    AI-focused projects
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                    Community-driven
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                    Version control
+                  </div>
+                </div>
+                
+                <div className="pt-4">
+                  <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                    Explore Templates
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Additional Tools */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Nostrbook */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-200">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
+                  <BookOpen className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl font-display">Nostrbook</CardTitle>
+                <CardDescription>Documentation Registry</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-sm">
+                  Comprehensive registry of Nostr documentation. Structured, detailed knowledge 
+                  about Nostr for both humans and AI.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                    Comprehensive docs
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                    AI-friendly format
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                    Always up-to-date
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full text-sm">
+                  Browse Docs
+                  <ArrowRight className="ml-2 h-3 w-3" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Nostrnips.com */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl font-display">Nostrnips.com</CardTitle>
+                <CardDescription>NIP Explorer</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-sm">
+                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive 
+                  database and tools for developers.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    Complete NIP database
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    Developer tools
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    Implementation guides
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full text-sm">
+                  Explore NIPs
+                  <ArrowRight className="ml-2 h-3 w-3" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Nostrify */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                  <Wrench className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl font-display">Nostrify</CardTitle>
+                <CardDescription>Development Framework</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-sm">
+                  Bring your projects to life on Nostr with simple tools for relays, storage, 
+                  signers, and moderation. Pure TypeScript framework.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    TypeScript framework
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    Relay management
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    Cross-platform
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full text-sm">
+                  Start Coding
+                  <ArrowRight className="ml-2 h-3 w-3" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Soapbox Tools */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Why Choose Soapbox Tools?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Built with the philosophy of empowerment and freedom
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-azure rounded-2xl flex items-center justify-center mx-auto">
+                <Shield className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-display font-semibold">Always Open Source</h3>
+              <p className="text-gray-600">
+                All our tools are free and open source, giving you complete control and transparency.
+              </p>
+            </div>
+            
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mx-auto">
+                <Globe className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-display font-semibold">Decentralized by Design</h3>
+              <p className="text-gray-600">
+                Built on decentralized protocols to ensure your independence and data sovereignty.
+              </p>
+            </div>
+            
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto">
+                <Rocket className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-display font-semibold">Production Ready</h3>
+              <p className="text-gray-600">
+                Battle-tested tools powering real platforms and communities around the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Metrics */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-azure-50 to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">
+              Proven Results
+            </h2>
+            <p className="text-xl text-gray-600">Real numbers from real platforms built with our tools</p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="text-4xl font-bold text-azure mb-2">15+</div>
+              <div className="text-gray-600">Active Platforms</div>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="text-4xl font-bold text-violet-600 mb-2">25,000+</div>
+              <div className="text-gray-600">Total Users</div>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="text-4xl font-bold text-emerald-600 mb-2">500,000+</div>
+              <div className="text-gray-600">Posts Created</div>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="text-4xl font-bold text-orange-600 mb-2">99.9%</div>
+              <div className="text-gray-600">Uptime</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-4xl md:text-5xl font-display font-bold">
+            See Our Tools in Action
+          </h2>
+          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            Explore real platforms and applications built using Soapbox tools by developers and creators worldwide.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg" asChild>
+              <Link to="/showcase">
+                View Client Showcase
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure">
+              Get Started Today
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
