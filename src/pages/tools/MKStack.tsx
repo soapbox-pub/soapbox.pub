@@ -129,12 +129,12 @@ export default function MKStack() {
         </div>
       </section>
 
-      {/* Demos Section */}
+      {/* Step 1: Build in Minutes */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Built in Minutes, Not Months
+              Step 1: Build in Minutes, Not Months
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See the power of AI-driven development with MKStack. Each of these applications was built with just one prompt. After you get an MVP from the first prompt, you can then refine and build new features with the built-in Stacks agent.
@@ -234,6 +234,273 @@ export default function MKStack() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Step 2: Edit with Dork */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Step 2: Edit with Dork, Built-in AI Agent
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Once you have your initial app, use Dork to refine and add features. Dork understands your codebase and Nostr protocols to make intelligent changes.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">How Dork Works</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Code className="h-4 w-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Context-Aware AI</h4>
+                      <p className="text-gray-600">Dork understands your entire codebase, project structure, and the Nostr protocols you're using.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Package className="h-4 w-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Nostr Protocol Expert</h4>
+                      <p className="text-gray-600">Built-in knowledge of 50+ NIPs and best practices for Nostr development.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Zap className="h-4 w-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Instant Implementation</h4>
+                      <p className="text-gray-600">Makes changes directly to your code, following React and TypeScript best practices.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-gray-900">Getting Started with Dork</h3>
+                <div className="bg-gray-900 rounded-lg p-6 space-y-3">
+                  <div className="text-gray-400 text-sm">Run Dork in your MKStack project:</div>
+                  <div className="font-mono text-green-400">$ stacks agent</div>
+                  <div className="text-gray-400 text-sm">Then describe what you want to add or change:</div>
+                  <div className="font-mono text-white">"Add user profiles with avatars and bio"</div>
+                  <div className="font-mono text-white">"Implement NIP-17 private messaging"</div>
+                  <div className="font-mono text-white">"Add a dark mode toggle"</div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-gray-900">Refining Your App</h3>
+                <p className="text-gray-600">
+                  Dork can help you iterate on your app by adding new features, fixing bugs, improving UI/UX, 
+                  implementing additional NIPs, and optimizing performance. Just describe what you want in natural language.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              {/* Placeholder for screenshot */}
+              <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 border-2 border-dashed border-purple-300">
+                <div className="text-center space-y-4">
+                  <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto">
+                    <Code className="h-10 w-10 text-white" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-gray-700">Dork AI Agent Screenshot</h4>
+                  <p className="text-gray-600">Interactive development session showing Dork making real-time code changes</p>
+                  <div className="text-sm text-purple-600 font-medium">Coming Soon</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Step 3: Deploy */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Step 3: Deploy
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Deploy your Nostr app instantly with built-in Surge integration. Your app goes live in seconds with just one command.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">Built-in Deployment with Surge</h3>
+                <p className="text-gray-600">
+                  MKStack comes with pre-configured Surge deployment. No complex setup, no server management, 
+                  no configuration files. Just run one command and your app is live on the web.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="text-xl font-bold text-gray-900">One-Command Deployment</h4>
+                <div className="bg-gray-900 rounded-lg p-6 space-y-3">
+                  <div className="text-gray-400 text-sm">Deploy your app:</div>
+                  <div className="font-mono text-green-400">$ npm run deploy</div>
+                  <div className="text-gray-400 text-sm">✅ Building app...</div>
+                  <div className="text-gray-400 text-sm">✅ Uploading to Surge...</div>
+                  <div className="text-gray-400 text-sm">✅ App deployed to: https://your-app.surge.sh</div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="text-xl font-bold text-gray-900">Features</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-600">Instant deployment in seconds</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-600">Free hosting with custom domains</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-600">Automatic builds and optimization</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-600">HTTPS enabled by default</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-sm text-gray-500 ml-2">Terminal</span>
+                  </div>
+                  <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                    <div className="text-green-400">$ npm run deploy</div>
+                    <div className="text-gray-400 mt-2">Building for production...</div>
+                    <div className="text-gray-400">✓ Built in 2.3s</div>
+                    <div className="text-gray-400 mt-2">Deploying to Surge...</div>
+                    <div className="text-gray-400">✓ Uploaded 15 files</div>
+                    <div className="text-blue-400 mt-2">🚀 Success! Published to:</div>
+                    <div className="text-blue-400">   https://mkstack-demo.surge.sh</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Nostr Apps Built with MKStack */}
+          <div className="space-y-16">
+            <div className="text-center">
+              <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+                Nostr Apps Built with MK Stack
+              </h3>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Real Nostr applications built using MKStack and AI-first development.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+                <div className="aspect-video bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                      <Users className="h-8 w-8 text-white" />
+                    </div>
+                    <p className="font-medium text-gray-700">Chorus</p>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold">Chorus</h3>
+                      <Badge variant="secondary">Communities</Badge>
+                    </div>
+                    <p className="text-gray-600">
+                      Facebook-style groups with built-in eCash wallet for fundraising.
+                    </p>
+                    <div className="flex items-center justify-between text-sm text-gray-500">
+                      <span>Community Platform</span>
+                      <Button variant="outline" size="sm">
+                        Visit Platform
+                        <ExternalLink className="ml-2 h-3 w-3" />
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+                <div className="aspect-video bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                      <Package className="h-8 w-8 text-white" />
+                    </div>
+                    <p className="font-medium text-gray-700">Bookstr</p>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold">Bookstr</h3>
+                      <Badge variant="secondary">Social Reading</Badge>
+                    </div>
+                    <p className="text-gray-600">
+                      Decentralized social reading platform where book lovers discover, review, and discuss literature on Nostr.
+                    </p>
+                    <div className="flex items-center justify-between text-sm text-gray-500">
+                      <span>5,000+ active readers</span>
+                      <Button variant="outline" size="sm">
+                        Visit Platform
+                        <ExternalLink className="ml-2 h-3 w-3" />
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+                <div className="aspect-video bg-gradient-to-br from-blue-200 to-cyan-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                      <Zap className="h-8 w-8 text-white" />
+                    </div>
+                    <p className="font-medium text-gray-700">NIP-28 Chat</p>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold">NIP-28 Chat</h3>
+                      <Badge variant="secondary">Public Chat</Badge>
+                    </div>
+                    <p className="text-gray-600">
+                      Example Nostr chat application built with MKStack demonstrating NIP-28 public chat implementation.
+                    </p>
+                    <div className="flex items-center justify-between text-sm text-gray-500">
+                      <span>Demo application</span>
+                      <Button variant="outline" size="sm">
+                        Visit Demo
+                        <ExternalLink className="ml-2 h-3 w-3" />
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -733,115 +1000,12 @@ export default function MKStack() {
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Nostr Apps Built with MK Stack
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real Nostr applications built using MKStack and AI-first development.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Users className="h-8 w-8 text-white" />
-                  </div>
-                  <p className="font-medium text-gray-700">Chorus</p>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">Chorus</h3>
-                    <Badge variant="secondary">Communities</Badge>
-                  </div>
-                  <p className="text-gray-600">
-                    Facebook-style groups with built-in eCash wallet for fundraising.
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>Community Platform</span>
-                    <Button variant="outline" size="sm">
-                      Visit Platform
-                      <ExternalLink className="ml-2 h-3 w-3" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Package className="h-8 w-8 text-white" />
-                  </div>
-                  <p className="font-medium text-gray-700">Bookstr</p>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">Bookstr</h3>
-                    <Badge variant="secondary">Social Reading</Badge>
-                  </div>
-                  <p className="text-gray-600">
-                    Decentralized social reading platform where book lovers discover, review, and discuss literature on Nostr.
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>5,000+ active readers</span>
-                    <Button variant="outline" size="sm">
-                      Visit Platform
-                      <ExternalLink className="ml-2 h-3 w-3" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-blue-200 to-cyan-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Zap className="h-8 w-8 text-white" />
-                  </div>
-                  <p className="font-medium text-gray-700">NIP-28 Chat</p>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">NIP-28 Chat</h3>
-                    <Badge variant="secondary">Public Chat</Badge>
-                  </div>
-                  <p className="text-gray-600">
-                    Example Nostr chat application built with MKStack demonstrating NIP-28 public chat implementation.
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>Demo application</span>
-                    <Button variant="outline" size="sm">
-                      Visit Demo
-                      <ExternalLink className="ml-2 h-3 w-3" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Getting Started */}
+      {/* Build Your Own */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Build Your Nostr App with AI
+              Build Your Own Nostr App with AI
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From idea to deployed Nostr application in minutes using AI-powered development.
