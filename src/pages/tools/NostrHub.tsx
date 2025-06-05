@@ -6,8 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { RecentNips } from "@/components/RecentNips";
-import { PublishCustomNip } from "@/components/PublishCustomNip";
-import { CustomNipsList } from "@/components/CustomNipsList";
 
 export default function NostrHub() {
   return (
@@ -44,7 +42,12 @@ export default function NostrHub() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-                <PublishCustomNip />
+                <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+                  <a href="https://nostrhub.io/create" target="_blank" rel="noopener noreferrer">
+                    <FileText className="mr-2 h-5 w-5" />
+                    Publish Custom NIP
+                  </a>
+                </Button>
               </div>
           
               <div className="flex items-center space-x-6 text-sm text-gray-600">
@@ -133,7 +136,7 @@ export default function NostrHub() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative space-y-8">
               <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-8 text-white">
                 <h4 className="text-2xl font-bold mb-6">The Power of Decentralized Protocol Development</h4>
                 <div className="space-y-4">
@@ -164,6 +167,19 @@ export default function NostrHub() {
                       <h5 className="font-semibold mb-2">Permissionless Innovation</h5>
                       <p className="text-blue-100 text-sm">Create new event kinds and start building immediately</p>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* NostrHub Screenshot Placeholder */}
+              <div className="bg-white rounded-2xl shadow-lg border overflow-hidden">
+                <div className="bg-gradient-to-r from-gray-100 to-gray-200 h-64 flex items-center justify-center">
+                  <div className="text-center text-gray-500">
+                    <div className="w-16 h-16 bg-gray-300 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                      <FileText className="h-8 w-8 text-gray-400" />
+                    </div>
+                    <p className="text-sm font-medium">NostrHub Screenshot</p>
+                    <p className="text-xs">Placeholder - Replace with actual screenshot</p>
                   </div>
                 </div>
               </div>
@@ -335,7 +351,12 @@ export default function NostrHub() {
                 <Search className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <PublishCustomNip />
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+              <a href="https://nostrhub.io/create" target="_blank" rel="noopener noreferrer">
+                <FileText className="mr-2 h-5 w-5" />
+                Publish Custom NIP
+              </a>
+            </Button>
           </div>
 
           <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">

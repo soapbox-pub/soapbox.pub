@@ -35,31 +35,9 @@ function NipItem({ nip }: NipItemProps) {
     kind: 30817,
   });
 
-  // Get a color for the NIP number based on identifier
-  const getColor = (identifier: string) => {
-    const colors = ['blue', 'purple', 'green', 'orange', 'red', 'indigo'];
-    const hash = identifier.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    return colors[hash % colors.length];
-  };
-
-  const color = getColor(nip.identifier);
-  const colorClasses = {
-    blue: 'bg-blue-600',
-    purple: 'bg-purple-600', 
-    green: 'bg-green-600',
-    orange: 'bg-orange-600',
-    red: 'bg-red-600',
-    indigo: 'bg-indigo-600',
-  };
-
   return (
     <Link to={`/nip/${naddr}`} className="block">
       <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 group transition-colors">
-        <div className={`w-12 h-12 ${colorClasses[color as keyof typeof colorClasses]} rounded-lg flex items-center justify-center flex-shrink-0`}>
-          <span className="text-white font-bold text-sm">
-            {nip.identifier.toUpperCase()}
-          </span>
-        </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-semibold truncate group-hover:text-blue-600 transition-colors">{nip.title}</h4>
           <p className="text-sm text-gray-600 truncate">
@@ -99,7 +77,6 @@ function NipItem({ nip }: NipItemProps) {
 function NipSkeleton() {
   return (
     <div className="flex items-center space-x-4 p-3 rounded-lg">
-      <Skeleton className="w-12 h-12 rounded-lg" />
       <div className="flex-1 space-y-2">
         <Skeleton className="h-4 w-3/4" />
         <Skeleton className="h-3 w-1/2" />

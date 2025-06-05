@@ -34,6 +34,16 @@ export function Navigation() {
               Home
             </Link>
             <Link 
+              to="/about" 
+              className={`transition-colors ${
+                isActive('/about') 
+                  ? 'text-azure font-medium' 
+                  : 'text-gray-600 hover:text-azure'
+              }`}
+            >
+              About
+            </Link>
+            <Link 
               to="/tools" 
               className={`transition-colors ${
                 isActive('/tools') 
@@ -95,6 +105,17 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                to="/about"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActive('/about')
+                    ? 'text-azure bg-azure-50'
+                    : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                About
               </Link>
               <Link
                 to="/tools"
