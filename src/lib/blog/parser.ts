@@ -1,6 +1,6 @@
-import { BlogPost, BlogPostMetadata } from './types';
+import { BlogPost } from './types';
 
-export function parseFrontmatter(content: string): { metadata: any; content: string } {
+export function parseFrontmatter(content: string): { metadata: Record<string, unknown>; content: string } {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
   const match = content.match(frontmatterRegex);
   
@@ -9,12 +9,12 @@ export function parseFrontmatter(content: string): { metadata: any; content: str
   }
   
   const [, frontmatterStr, bodyContent] = match;
-  const metadata: any = {};
+  const metadata: Record<string, unknown> = {};
   
   // Parse YAML-like frontmatter
   const lines = frontmatterStr.split('\n');
   let currentKey = '';
-  let currentValue = '';
+  const _currentValue = '';
   let inMultiline = false;
   
   for (const line of lines) {
@@ -27,10 +27,10 @@ export function parseFrontmatter(content: string): { metadata: any; content: str
         const [key, value] = trimmedLine.split(':').map(s => s.trim());
         if (currentKey === 'author') {
           if (!metadata.author) metadata.author = {};
-          metadata.author[key] = value.replace(/['"]/g, '');
+          (metadata.author as Record<string, unknown>)[key] = value.replace(/['"]/g, '');
         } else if (currentKey === 'ogImage') {
           if (!metadata.ogImage) metadata.ogImage = {};
-          metadata.ogImage[key] = value.replace(/['"]/g, '');
+          (metadata.ogImage as Record<string, unknown>)[key] = value.replace(/['"]/g, '');
         }
       } else {
         inMultiline = false;
@@ -92,12 +92,12 @@ export function createBlogPost(filename: string, content: string): BlogPost {
   
   return {
     slug,
-    title: metadata.title || '',
-    excerpt: metadata.excerpt || '',
-    coverImage: metadata.coverImage || '',
-    date: metadata.date || '',
-    author: metadata.author || { name: '', picture: '' },
-    ogImage: metadata.ogImage || { url: '' },
+    title: (metadata.title as string) || '',
+    excerpt: (metadata.excerpt as string) || '',
+    coverImage: (metadata.coverImage as string) || '',
+    date: (metadata.date as string) || '',
+    author: (metadata.author as { name?: string; picture?: string }) || { name: '', picture: '' },
+    ogImage: (metadata.ogImage as { url?: string }) || { url: '' },
     content: convertMdxToMarkdown(bodyContent)
   };
 }

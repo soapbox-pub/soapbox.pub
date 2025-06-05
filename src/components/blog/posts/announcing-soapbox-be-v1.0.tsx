@@ -1,0 +1,124 @@
+import React from 'react';
+
+export interface BlogPostMeta {
+  slug: string;
+  title: string;
+  excerpt: string;
+  coverImage: string;
+  date: string;
+  author: { name?: string; picture?: string; };
+  ogImage: { url?: string; };
+}
+
+export const meta: BlogPostMeta = {
+  "slug": "announcing-soapbox-be-v1.0",
+  "title": "Announcing Soapbox BE v1.0",
+  "excerpt": "Soapbox BE is a production ready Pleroma branch. It's being maintained alongside Pleroma, with additional bugfixes and features. Our goal is to move faster, while taking deliberate care to ensure clean code merges between projects. Soapbox BE contains code that has not yet been merged (or may never be merged) by Pleroma.",
+  "coverImage": "/assets/blog/announcing-soapbox-be-v1.0/be-1-0-thumb.png",
+  "date": "2021-05-11",
+  "author": {
+    "name": "Alex Gleason",
+    "picture": "/assets/avatars/alex.png"
+  },
+  "ogImage": {
+    "url": "/assets/blog/announcing-soapbox-be-v1.0/be-1-0-thumb.png"
+  }
+};
+
+export default function AnnouncingSoapboxBeV10() {
+  return (
+    <article className="prose prose-lg max-w-none">
+      <div dangerouslySetInnerHTML={{ 
+        __html: `<p> <h2>Based on Pleroma</h2></p>
+
+<p>Soapbox BE is a production ready Pleroma branch based on Pleroma 2.3 stable. It's being maintained alongside Pleroma, with additional bugfixes and features. Our goal is to move faster, while taking deliberate care to ensure clean code merges between projects.</p>
+
+<p>Soapbox BE contains code that has not yet been merged (or may never be merged) by Pleroma.</p>
+
+<h2>A new foundation</h2>
+
+<p>A big part of this release was just laying the groundwork to support another Fediverse backend: an updated website, an <a href="https://gitlab.com/soapbox-pub/soapbox/-/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>, and <a href="/install/" target="_blank" rel="noopener noreferrer">proper documentation</a>.</p>
+
+<p>We are now free to do things that weren't possible before.</p>
+
+<p>A full list of differences between Soapbox and Pleroma is <a href="https://gitlab.com/soapbox-pub/soapbox/-/blob/main/CHANGELOG_soapbox.md" target="_blank" rel="noopener noreferrer">documented here</a>.</p>
+
+<h2>Soapbox FE by default</h2>
+
+<p>!<a href="/assets/blog/soapbox-fe-v1.1-release/soapbox-fe-1.1-screenshot.png" target="_blank" rel="noopener noreferrer">Soapbox FE</a></p>
+
+<p>Soapbox FE is the default frontend of Soapbox BE. We think this is a good choice for growing the Fediverse, and it gives us more control over how the FE and BE interact.</p>
+
+<p>It will still be possible to switch to another frontend as usual. See the FAQ below for details.</p>
+
+<h2>Rich media embeds</h2>
+
+<p>!<a href="/assets/blog/announcing-soapbox-be-v1.0/youtube-embed.png" target="_blank" rel="noopener noreferrer">YouTube embed</a></p>
+
+<p>Share a link to a popular video site, and users can watch right from their timeline! The following sites are tested to work:</p>
+
+<p>- YouTube - Vimeo - PeerTube instances - Giphy - Soundcloud (audio player) - Kickstarter - Flickr - anything on <a href="https://oembed.com/providers.json" target="_blank" rel="noopener noreferrer">this list</a>, and more</p>
+
+<p>Most OEmbed compatible links will work. First we try known URL patterns, then fall back to scraping the page (discovery). Otherwise, it generates a link preview as usual.</p>
+
+<p>Rich media embeds are sanitized and can only contain an iframe or image. Unsafe embeds fall back to link previews.</p>
+
+<h2>Configurable block behavior</h2>
+
+<p>On Twitter, blocking someone prevents them from seeing your posts. On the Fediverse, it's a mixed bag. Different servers handle blocks differently.</p>
+
+<p>We think it makes sense for the default behavior to be Twitter-like, as it's what users expect. You can now configure it in Admin FE, under "ActivityPub > Blockers visible"</p>
+
+<strong>Note:</strong> This setting cannot force a remote server to change their behavior, it only changes the behavior of your server.
+
+<h2>Bug fixes</h2>
+
+<p>- Domain blocks: reposts from a blocked domain are now correctly blocked. (<a href="https://gitlab.com/soapbox-pub/soapbox/-/merge_requests/11" target="_blank" rel="noopener noreferrer">!11</a>) - Fixed some (not all) Markdown issues, such as broken trailing slash in links. (<a href="https://gitlab.com/soapbox-pub/soapbox/-/merge_requests/10" target="_blank" rel="noopener noreferrer">!10</a>) - Don't crash so hard when email settings are invalid. (<a href="https://gitlab.com/soapbox-pub/soapbox/-/merge_requests/12" target="_blank" rel="noopener noreferrer">!12</a>) - Return OpenGraph metadata on Soapbox FE routes. (<a href="https://gitlab.com/soapbox-pub/soapbox/-/merge_requests/14" target="_blank" rel="noopener noreferrer">!14</a>)</p>
+
+<h2>Installing Soapbox</h2>
+
+<p>To install a fresh server, see our <a href="/install" target="_blank" rel="noopener noreferrer">install guide</a>.</p>
+
+<h2>Switching from Pleroma</h2>
+
+<p>Switching over is easy. As long as you're on Pleroma 2.3, you can simply checkout the repo:</p>
+
+<pre><code>sudo -Hu pleroma bash
+cd /opt/pleroma
+
+<p>git remote add soapbox https://gitlab.com/soapbox-pub/soapbox.git git fetch soapbox --tags git checkout -b soapbox soapbox-v1.0.0</p>
+
+<p>MIX_ENV=prod mix deps.get MIX_ENV=prod mix compile</p>
+
+<h1>As root</h1>
+systemctl restart pleroma
+</code></pre>
+
+<strong>Note:</strong> Only the source version of Pleroma is supported.
+If you're using the OTP release, you may need to switch to the source version first.
+
+<h2>FAQ</h2>
+
+<p>- <strong>Will Soapbox FE continue to support vanilla Pleroma?</strong> &mdash; Yes. Soapbox FE already uses version detection for compatibility across versions. It will continue to support Pleroma.</p>
+
+<p>- <strong>Will Soapbox BE stay updated with Pleroma?</strong> &mdash; Yes. New stable releases of Pleroma will be merged into Soapbox BE. Soapbox BE releases will happen after Pleroma releases. Think of the relationship between Ubuntu and Debian.</p>
+
+<p>- <strong>Can I switch back to Pleroma?</strong> &mdash; Yep, you can safely switch between Soapbox BE 1.0 and Pleroma 2.3. This release does not modify the database at all. Future releases will modify the database in reversible, non-destructive ways.</p>
+
+<p>- <strong>Can I use Pleroma FE with Soapbox BE?</strong> &mdash; Technically, yes. You can remove Soapbox FE as the "primary" frontend within AdminFE, and it will fall back to Pleroma FE. This use case is unsupported by Pleroma FE devs, but it seems to work fine.</p>
+
+<p>- <strong>Can I use a customized frontend/custom build?</strong> &mdash; Yep. Anything you put in <code>/opt/pleroma/instance</code> will override the default frontend. If you put a custom build here, remember to upgrade the FE and BE separately.</p>
+
+<h2>Fund the Soapbox Project</h2>
+
+<p>Soapbox is funded entirely by donations. If you would like to support me, you can send me a donation. Your support is greatly appreciated, and every bit counts.</p>
+
+<p>- Credit Card — <a href="https://paypal.me/gleasonator" target="_blank" rel="noopener noreferrer">PayPal</a> (alex@alexgleason.me) - Bitcoin — <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code> - Etherium — <code>0xAc9aB5Fc04Dc1cB1789Af75b523Bd23C70B2D717</code> - Dogecoin — <code>D5zVZs6jrRakaPVGiErkQiHt9sayzm6V5D</code> - Ubiq (10grans) — <code>0x541a45cb212b57f41393427fb15335fc89c35851</code> - Monero — <code>45JDCLrjJ4bgVUSbbs2yjy9m5Mf4VLPW8fG7jw9sq5u69rXZZopQogZNeyYkMBnXpkaip4p4QwaaJNhdTotPa9g44DBCzdK</code></p>
+
+<h2>Thank you!</h2>
+
+<p>A huge thank you to everyone who has been so supportive of my efforts, from the donations to the moral support to development help. Thank you to the Pleroma dev team for building a great foundation. I really appreciate you all being a part of this and look forward to advancing the Fediverse together.</p>}`
+      }} />
+    </article>
+  );
+}

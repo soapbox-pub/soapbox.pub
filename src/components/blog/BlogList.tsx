@@ -1,8 +1,8 @@
 import { BlogCard } from './BlogCard';
-import type { BlogPostMetadata } from '@/lib/blog/types';
+import type { BlogPostMeta } from '@/lib/blog/types';
 
 interface BlogListProps {
-  posts: BlogPostMetadata[];
+  posts: BlogPostMeta[];
 }
 
 export function BlogList({ posts }: BlogListProps) {

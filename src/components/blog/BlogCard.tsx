@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+
 import { formatDate } from '@/lib/blog/utils';
-import type { BlogPostMetadata } from '@/lib/blog/types';
+import type { BlogPostMeta } from '@/lib/blog/types';
 
 interface BlogCardProps {
-  post: BlogPostMetadata;
+  post: BlogPostMeta;
 }
 
 export function BlogCard({ post }: BlogCardProps) {

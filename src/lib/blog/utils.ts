@@ -1,24 +1,26 @@
-import { blogPosts } from './posts';
-import type { BlogPost, BlogPostMetadata } from './types';
+import { blogPosts, getPostBySlug as getPostComponent } from './blogIndex';
+import type { BlogPost } from './types';
 
-export function getAllPosts(): BlogPostMetadata[] {
-  return blogPosts.map(post => ({
-    slug: post.slug,
-    title: post.title,
-    excerpt: post.excerpt,
-    coverImage: post.coverImage,
-    date: post.date,
-    author: post.author,
-    ogImage: post.ogImage,
-  }));
+export function getAllPosts() {
+  return blogPosts;
 }
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+  const postMeta = blogPosts.find(post => post.slug === slug);
+  if (!postMeta) return null;
+
+  const PostComponent = await getPostComponent(slug);
+  if (!PostComponent) return null;
+
+  return {
+    ...postMeta,
+    content: '', // We render the component directly instead
+    Component: PostComponent
+  };
 }
 
-export function getRecentPosts(limit: number = 5): BlogPostMetadata[] {
-  return getAllPosts().slice(0, limit);
+export function getRecentPosts(limit: number = 5) {
+  return blogPosts.slice(0, limit);
 }
 
 export function formatDate(dateString: string): string {
