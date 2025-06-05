@@ -153,6 +153,14 @@ export default function MKStack() {
               </div>
               <CardHeader>
                 <CardTitle className="text-xl">Group Chat Application</CardTitle>
+                <div className="pt-2">
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="http://mkstack-groupchat.surge.sh/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Demo
+                    </a>
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-3">
@@ -161,15 +169,6 @@ export default function MKStack() {
                     <div className="text-gray-500">$ dork</div>
                     <div>"Build me a group chat application"</div>
                   </div>
-                </div>
-
-                <div className="pt-4">
-                  <Button variant="outline" className="w-full" asChild>
-                    <a href="http://mkstack-groupchat.surge.sh/" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      View Live Demo
-                    </a>
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -185,6 +184,14 @@ export default function MKStack() {
                 </div>
               <CardHeader>
                 <CardTitle className="text-xl">Decentralized Goodreads</CardTitle>
+                <div className="pt-2">
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="http://mkstack-bookstr.surge.sh/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Demo
+                    </a>
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-3">
@@ -193,15 +200,6 @@ export default function MKStack() {
                     <div className="text-gray-500">$ dork</div>
                     <div>"Build a decentralized goodreads alternative. Use OpenLibrary API for book data."</div>
                   </div>
-                </div>
-
-                <div className="pt-4">
-                  <Button variant="outline" className="w-full">
-                    <a href="http://mkstack-bookstr.surge.sh/" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      View Live Demo
-                    </a>
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -217,6 +215,14 @@ export default function MKStack() {
                 </div>
               <CardHeader>
                 <CardTitle className="text-xl">Chess Game</CardTitle>
+                <div className="pt-2">
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="http://mkstack-chess.surge.sh/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Demo
+                    </a>
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-3">
@@ -225,15 +231,6 @@ export default function MKStack() {
                     <div className="text-gray-500">$ dork</div>
                     <div>"Build a chess game with NIP 64"</div>
                   </div>
-                </div>
-
-                <div className="pt-4">
-                  <Button variant="outline" className="w-full">
-                    <a href="http://mkstack-chess.surge.sh/" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      View Live Demo
-                    </a>
-                  </Button>
                 </div>
               </CardContent>
             </Card>
