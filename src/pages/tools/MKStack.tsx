@@ -5,10 +5,16 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function MKStack() {
+  const { getMKStackSEO } = useSEO();
+  const seoData = getMKStackSEO();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50">
+      <SEOHead data={seoData} />
       <Navigation />
 
       {/* Hero Section */}
@@ -175,12 +181,13 @@ export default function MKStack() {
 
             {/* Goodreads Alternative Demo */}
             <Card className="bg-white/80 backdrop-blur-sm border-2 hover:border-violet-200 transition-all duration-300 hover:shadow-xl">
-              <div className="aspect-video bg-gray-100 border-b flex items-center justify-center text-gray-400">
-                <div className="text-center">
-                  <div className="text-sm font-medium">Screenshot Coming Soon</div>
-                  <div className="text-xs mt-1">Decentralized Goodreads</div>
+              <div className="aspect-video bg-gray-100 border-b overflow-hidden">
+                  <img 
+                    src="/assets/demos/mkstack-bookstr-demo.png" 
+                    alt="Group Chat Application Demo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
               <CardHeader>
                 <CardTitle className="text-xl">Decentralized Goodreads</CardTitle>
               </CardHeader>
@@ -189,7 +196,7 @@ export default function MKStack() {
                   <h4 className="font-semibold text-gray-700">The Prompt:</h4>
                   <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono text-green-400">
                     <div className="text-gray-500">$ dork</div>
-                    <div>"Build a decentralized goodreads alternative"</div>
+                    <div>"Build a decentralized goodreads alternative. Use OpenLibrary API for book data."</div>
                   </div>
                 </div>
 
