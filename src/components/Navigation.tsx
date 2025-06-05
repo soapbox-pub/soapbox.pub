@@ -73,9 +73,6 @@ export function Navigation() {
             >
               Blog
             </Link>
-            <Button variant="outline" size="sm">
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -150,11 +147,6 @@ export function Navigation() {
               >
                 Blog
               </Link>
-              <div className="px-3 py-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  Get Started
-                </Button>
-              </div>
             </div>
           </div>
         )}

@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Nostrify() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Navigation />
 
       {/* Hero Section */}
@@ -17,11 +17,11 @@ export default function Nostrify() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
+                <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200">
                   ⚡ Developer Framework
                 </Badge>
                 <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Nostrify
                   </span>
                 </h1>
@@ -35,7 +35,7 @@ export default function Nostrify() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -70,10 +70,10 @@ export default function Nostrify() {
                   <span className="text-sm text-gray-500 font-mono">main.ts</span>
                 </div>
                 <div className="font-mono text-sm space-y-2">
-                  <div><span className="text-purple-600">import</span> <span className="text-gray-700">{'{ NostrEvent }'}</span> <span className="text-purple-600">from</span> <span className="text-green-600">'@nostrify/nostrify'</span>;</div>
+                  <div><span className="text-blue-600">import</span> <span className="text-gray-700">{'{ NostrEvent }'}</span> <span className="text-blue-600">from</span> <span className="text-green-600">'@nostrify/nostrify'</span>;</div>
                   <div className="text-gray-400">// Simple, powerful, TypeScript-first</div>
                   <div></div>
-                  <div><span className="text-blue-600">const</span> <span className="text-gray-700">event</span>: <span className="text-purple-600">NostrEvent</span> = {'{'};</div>
+                  <div><span className="text-blue-600">const</span> <span className="text-gray-700">event</span>: <span className="text-blue-600">NostrEvent</span> = {'{'};</div>
                   <div className="ml-4"><span className="text-gray-600">kind</span>: <span className="text-orange-600">1</span>,</div>
                   <div className="ml-4"><span className="text-gray-600">content</span>: <span className="text-green-600">'Hello Nostr!'</span>,</div>
                   <div className="ml-4"><span className="text-gray-600">tags</span>: [],</div>
@@ -85,11 +85,11 @@ export default function Nostrify() {
               <div className="absolute -bottom-6 left-4 right-4">
                 <div className="bg-white rounded-xl shadow-lg p-4 grid grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">100%</div>
+                    <div className="text-2xl font-bold text-blue-600">100%</div>
                     <div className="text-xs text-gray-600">TypeScript</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-pink-600">Cross</div>
+                    <div className="text-2xl font-bold text-indigo-600">Cross</div>
                     <div className="text-xs text-gray-600">Platform</div>
                   </div>
                   <div className="text-center">
@@ -117,9 +117,9 @@ export default function Nostrify() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-2 hover:border-purple-200 transition-colors">
+            <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Terminal className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Relay Management</CardTitle>
@@ -131,9 +131,9 @@ export default function Nostrify() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-purple-200 transition-colors">
+            <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
                   <Package className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Event Storage</CardTitle>
@@ -145,9 +145,9 @@ export default function Nostrify() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-purple-200 transition-colors">
+            <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Signing & Crypto</CardTitle>
@@ -159,9 +159,9 @@ export default function Nostrify() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-purple-200 transition-colors">
+            <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
                   <Globe className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Cross Platform</CardTitle>
@@ -177,7 +177,7 @@ export default function Nostrify() {
       </section>
 
       {/* Code Examples */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -207,14 +207,14 @@ export default function Nostrify() {
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-purple-400">import</span> <span className="text-gray-300">{'{ NostrRelay }'}</span> <span className="text-purple-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NostrRelay }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
                       <div><span className="text-blue-400">const</span> <span className="text-gray-300">relay</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NostrRelay</span>({`{`}</div>
                       <div className="ml-4"><span className="text-gray-400">port</span>: <span className="text-orange-400">8080</span>,</div>
                       <div className="ml-4"><span className="text-gray-400">storage</span>: <span className="text-blue-400">new</span> <span className="text-yellow-400">MemoryStore</span>(),</div>
                       <div>{`}`});</div>
                       <div></div>
-                      <div><span className="text-purple-400">await</span> <span className="text-gray-300">relay</span>.<span className="text-yellow-400">listen</span>();</div>
+                      <div><span className="text-blue-400">await</span> <span className="text-gray-300">relay</span>.<span className="text-yellow-400">listen</span>();</div>
                       <div><span className="text-gray-500">// Your relay is now running! 🚀</span></div>
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export default function Nostrify() {
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-purple-400">import</span> <span className="text-gray-300">{'{ PostgresStore, MemoryStore }'}</span> <span className="text-purple-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ PostgresStore, MemoryStore }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
                       <div><span className="text-gray-500">// Use PostgreSQL for production</span></div>
                       <div><span className="text-blue-400">const</span> <span className="text-gray-300">store</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">PostgresStore</span>(<span className="text-green-400">'postgresql://...'</span>);</div>
@@ -241,7 +241,7 @@ export default function Nostrify() {
                       <div><span className="text-gray-500">// Or memory for development</span></div>
                       <div><span className="text-blue-400">const</span> <span className="text-gray-300">memStore</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">MemoryStore</span>();</div>
                       <div></div>
-                      <div><span className="text-purple-400">await</span> <span className="text-gray-300">store</span>.<span className="text-yellow-400">event</span>(<span className="text-gray-300">event</span>);</div>
+                      <div><span className="text-blue-400">await</span> <span className="text-gray-300">store</span>.<span className="text-yellow-400">event</span>(<span className="text-gray-300">event</span>);</div>
                       <div><span className="text-gray-500">// Events are automatically indexed and queryable</span></div>
                     </div>
                   </div>
@@ -260,11 +260,11 @@ export default function Nostrify() {
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-purple-400">import</span> <span className="text-gray-300">{'{ NIP07Signer }'}</span> <span className="text-purple-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NIP07Signer }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
                       <div><span className="text-blue-400">const</span> <span className="text-gray-300">signer</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NIP07Signer</span>();</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">event</span> = <span className="text-purple-400">await</span> <span className="text-gray-300">signer</span>.<span className="text-yellow-400">signEvent</span>({`{`}</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">event</span> = <span className="text-blue-400">await</span> <span className="text-gray-300">signer</span>.<span className="text-yellow-400">signEvent</span>({`{`}</div>
                       <div className="ml-4"><span className="text-gray-400">kind</span>: <span className="text-orange-400">1</span>,</div>
                       <div className="ml-4"><span className="text-gray-400">content</span>: <span className="text-green-400">'Hello from Nostrify!'</span>,</div>
                       <div className="ml-4"><span className="text-gray-400">tags</span>: [],</div>
@@ -288,14 +288,14 @@ export default function Nostrify() {
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-purple-400">import</span> <span className="text-gray-300">{'{ AntiSpamPolicy, RateLimitPolicy }'}</span> <span className="text-purple-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ AntiSpamPolicy, RateLimitPolicy }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
                       <div><span className="text-blue-400">const</span> <span className="text-gray-300">policies</span> = [</div>
                       <div className="ml-4"><span className="text-blue-400">new</span> <span className="text-yellow-400">AntiSpamPolicy</span>(),</div>
                       <div className="ml-4"><span className="text-blue-400">new</span> <span className="text-yellow-400">RateLimitPolicy</span>(<span className="text-orange-400">10</span>), <span className="text-gray-500">// 10 events/min</span></div>
                       <div>];</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">result</span> = <span className="text-purple-400">await</span> <span className="text-yellow-400">applyPolicies</span>(<span className="text-gray-300">event</span>, <span className="text-gray-300">policies</span>);</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">result</span> = <span className="text-blue-400">await</span> <span className="text-yellow-400">applyPolicies</span>(<span className="text-gray-300">event</span>, <span className="text-gray-300">policies</span>);</div>
                       <div><span className="text-gray-500">// Smart moderation without the complexity</span></div>
                     </div>
                   </div>
@@ -469,7 +469,7 @@ export default function Nostrify() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
             Start Building with Nostrify
@@ -479,11 +479,11 @@ export default function Nostrify() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-purple-600 hover:bg-gray-100">
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100">
               Install Nostrify
               <Package className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-purple-600">
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-blue-600">
               <Code className="mr-2 h-5 w-5" />
               View on GitHub
             </Button>
@@ -491,8 +491,8 @@ export default function Nostrify() {
 
           <div className="bg-white/10 backdrop-blur rounded-lg p-4 font-mono text-sm max-w-md mx-auto">
             <div className="text-left">
-              <div><span className="text-purple-300">$</span> npm install @nostrify/nostrify</div>
-              <div className="text-purple-200 text-xs mt-1">Ready to use in seconds ⚡</div>
+              <div><span className="text-blue-300">$</span> npm install @nostrify/nostrify</div>
+              <div className="text-blue-200 text-xs mt-1">Ready to use in seconds ⚡</div>
             </div>
           </div>
         </div>

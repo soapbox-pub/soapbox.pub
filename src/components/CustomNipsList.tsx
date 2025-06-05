@@ -10,7 +10,7 @@ import { useCustomNips } from '@/hooks/useCustomNips';
 import { useAuthor } from '@/hooks/useAuthor';
 import { genUserName } from '@/lib/genUserName';
 import { nip19 } from 'nostr-tools';
-import { Link } from 'react-router-dom';
+
 import { RelaySelector } from '@/components/RelaySelector';
 import type { NostrEvent } from '@nostrify/nostrify';
 
@@ -62,7 +62,7 @@ function NipCard({ nip }: NipCardProps) {
   };
 
   return (
-    <Link to={`/nip/${naddr}`}>
+    <a href={`https://nostrhub.io/${naddr}`} target="_blank" rel="noopener noreferrer">
       <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-blue-200 group">
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between">
@@ -158,7 +158,7 @@ function NipCard({ nip }: NipCardProps) {
           </div>
         </CardContent>
       </Card>
-    </Link>
+    </a>
   );
 }
 

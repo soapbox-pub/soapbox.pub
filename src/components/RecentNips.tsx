@@ -6,7 +6,7 @@ import { useCustomNips } from "@/hooks/useCustomNips";
 import { useAuthor } from "@/hooks/useAuthor";
 import { genUserName } from "@/lib/genUserName";
 import { nip19 } from "nostr-tools";
-import { Link } from "react-router-dom";
+
 import type { NostrEvent } from "@nostrify/nostrify";
 
 interface NipItemProps {
@@ -36,7 +36,7 @@ function NipItem({ nip }: NipItemProps) {
   });
 
   return (
-    <Link to={`/nip/${naddr}`} className="block">
+    <a href={`https://nostrhub.io/${naddr}`} target="_blank" rel="noopener noreferrer" className="block">
       <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 group transition-colors">
         <div className="flex-1 min-w-0">
           <h4 className="font-semibold truncate group-hover:text-blue-600 transition-colors">{nip.title}</h4>
@@ -70,7 +70,7 @@ function NipItem({ nip }: NipItemProps) {
           <ArrowRight className="h-4 w-4 text-gray-400" />
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 
