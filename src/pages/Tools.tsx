@@ -152,8 +152,8 @@ export default function Tools() {
                 
                 <div className="pt-4">
                   <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors" asChild>
-                    <Link to="/tools/mk-stack">
-                      Start Building
+                    <Link to="/tools/mkstack">
+                      Explore MKStack
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

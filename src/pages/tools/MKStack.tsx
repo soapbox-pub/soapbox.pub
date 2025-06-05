@@ -35,9 +35,11 @@ export default function MKStack() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3 text-lg">
-                  Start Building
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3 text-lg" asChild>
+                  <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">
+                    Start Building
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
                 <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
                   <PlayCircle className="mr-2 h-5 w-5" />
@@ -813,9 +815,11 @@ export default function MKStack() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-violet-600 hover:bg-gray-100">
-              Start Building
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-violet-600 hover:bg-gray-100" asChild>
+              <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">
+                Start Building
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
             <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-violet-600">
               <Code className="mr-2 h-5 w-5" />

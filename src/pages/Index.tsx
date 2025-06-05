@@ -89,9 +89,11 @@ export default function Index() {
                     Bitcoin Lightning integration
                   </div>
                 </div>
-                <Button className="w-full group-hover:bg-azure group-hover:text-white transition-colors">
-                  Build Community
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/ditto">
+                    Build Community
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -124,9 +126,11 @@ export default function Index() {
                     Production-ready
                   </div>
                 </div>
-                <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors">
-                  Start Building
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/mkstack">
+                    Explore MKStack
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -159,9 +163,11 @@ export default function Index() {
                     Community-driven
                   </div>
                 </div>
-                <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                  Explore Templates
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/stacks">
+                    Explore Templates
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

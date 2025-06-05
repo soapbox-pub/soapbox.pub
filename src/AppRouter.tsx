@@ -26,7 +26,7 @@ export function AppRouter() {
         <Route path="/tools/ditto" element={<Ditto />} />
         <Route path="/tools/nostrify" element={<Nostrify />} />
         <Route path="/tools/stacks" element={<Stacks />} />
-        <Route path="/tools/mk-stack" element={<MKStack />} />
+        <Route path="/tools/mkstack" element={<MKStack />} />
         <Route path="/tools/nostrbook" element={<Nostrbook />} />
         <Route path="/tools/nostrhub" element={<NostrHub />} />
         <Route path="/showcase" element={<Showcase />} />

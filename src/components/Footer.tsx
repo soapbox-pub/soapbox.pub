@@ -20,10 +20,10 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Tools</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/tools" className="hover:text-white transition-colors">Ditto</Link></li>
-              <li><Link to="/tools" className="hover:text-white transition-colors">MKstack</Link></li>
-              <li><Link to="/tools" className="hover:text-white transition-colors">Stacks</Link></li>
-              <li><Link to="/tools" className="hover:text-white transition-colors">Nostrbook</Link></li>
+              <li><Link to="/tools/ditto" className="hover:text-white transition-colors">Ditto</Link></li>
+              <li><Link to="/tools/mkstack" className="hover:text-white transition-colors">MKstack</Link></li>
+              <li><Link to="/tools/stacks" className="hover:text-white transition-colors">Stacks</Link></li>
+              <li><Link to="/tools/nostrbook" className="hover:text-white transition-colors">Nostrbook</Link></li>
             </ul>
           </div>
           
