@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Globe, Shield, Rocket, Calendar, FileText } from "lucide-react";
+import { ArrowRight, Code, Users, Globe, Rocket, Calendar, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -289,47 +289,112 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Why Choose Soapbox */}
+      {/* Building Bridges Across the Decentralized Web */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Why Choose Soapbox?
+              Building Bridges Across the Decentralized Web
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built with the philosophy of empowerment and freedom
+              Connecting communities across Nostr, ActivityPub, and Bluesky with Mostr
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-azure rounded-2xl flex items-center justify-center mx-auto">
-                <Shield className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-display font-semibold">Always Open Source</h3>
-              <p className="text-gray-600 text-lg">
-                All our tools are free and open source, giving you complete control and transparency.
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="space-y-6">
+              <h3 className="text-3xl font-display font-bold text-gray-900">
+                Introducing Mostr: The Universal Bridge
+              </h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Mostr is our revolutionary bridge that connects different decentralized social networks together. 
+                No longer are you limited to just one protocol - communicate seamlessly across Nostr, the Fediverse 
+                (Mastodon, Pleroma, Misskey), and even Bluesky.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Whether you're on Nostr wanting to follow someone on Mastodon, or a Fediverse user curious about 
+                Bluesky accounts, Mostr makes it possible. We're breaking down the walls between decentralized 
+                platforms and creating a truly interconnected social web.
               </p>
             </div>
+            
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border-2 border-blue-100">
+                <div className="text-center space-y-6">
+                  <div className="flex justify-center items-center space-x-4">
+                    <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">N</span>
+                    </div>
+                    <div className="text-2xl text-gray-400">⟷</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">F</span>
+                    </div>
+                    <div className="text-2xl text-gray-400">⟷</div>
+                    <div className="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">B</span>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    <div className="font-semibold mb-2">Connected Networks</div>
+                    <div className="space-y-1">
+                      <div>Nostr • Fediverse • Bluesky</div>
+                      <div className="text-xs text-gray-500">All connected through Mostr</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-display font-semibold">Decentralized by Design</h3>
-              <p className="text-gray-600 text-lg">
-                Built on decentralized protocols to ensure your independence and data sovereignty.
+              <h3 className="text-xl font-display font-semibold">Cross-Protocol Communication</h3>
+              <p className="text-gray-600">
+                Follow and interact with users across Nostr, Mastodon, Pleroma, Misskey, and other 
+                ActivityPub platforms seamlessly.
               </p>
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-sky-500 rounded-2xl flex items-center justify-center mx-auto">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-display font-semibold">Bluesky Integration</h3>
+              <p className="text-gray-600">
+                Connect with Bluesky users through our bridge integration with Bridgy Fed, 
+                expanding your social network across protocols.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto">
                 <Rocket className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-display font-semibold">Production Ready</h3>
-              <p className="text-gray-600 text-lg">
-                Battle-tested tools powering real platforms and communities around the world.
+              <h3 className="text-xl font-display font-semibold">Lightning Payments</h3>
+              <p className="text-gray-600">
+                Send Bitcoin Lightning "zaps" across networks, enabling monetization and 
+                micropayments between different platforms.
               </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-200">
+              <h3 className="text-2xl font-display font-bold text-gray-900 mb-4">
+                Search Across the Decentralized Web
+              </h3>
+              <p className="text-lg text-gray-600 mb-6">
+                Use Mostr.pub to find and connect with users across all supported networks
+              </p>
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg" asChild>
+                <a href="https://mostr.pub" target="_blank" rel="noopener noreferrer">
+                  Search on Mostr.pub
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
