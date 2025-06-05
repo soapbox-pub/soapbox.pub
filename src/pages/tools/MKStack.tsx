@@ -131,7 +131,7 @@ export default function MKStack() {
                     <div className="text-xs text-gray-600">NIPs Supported</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">5 Days</div>
+                    <div className="text-2xl font-bold text-purple-600">8 Minutes</div>
                     <div className="text-xs text-gray-600">Build Time</div>
                   </div>
                   <div className="text-center">
@@ -140,6 +140,130 @@ export default function MKStack() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Demos Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Built in Minutes, Not Months
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See the power of AI-driven development with MKStack. Each of these applications was built with just one prompt.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Group Chat Demo */}
+            <Card className="bg-white/80 backdrop-blur-sm border-2 hover:border-violet-200 transition-all duration-300 hover:shadow-xl">
+              <div className="aspect-video bg-gray-100 border-b flex items-center justify-center text-gray-400">
+                <div className="text-center">
+                  <div className="text-sm font-medium">Screenshot Coming Soon</div>
+                  <div className="text-xs mt-1">Group Chat Application</div>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Group Chat Application</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-700">The Prompt:</h4>
+                  <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono text-green-400">
+                    <div className="text-gray-500">$ dork</div>
+                    <div>"Build me a group chat application"</div>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <Button variant="outline" className="w-full" disabled>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View Live Demo
+                    <span className="ml-2 text-xs text-gray-500">(Coming Soon)</span>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Goodreads Alternative Demo */}
+            <Card className="bg-white/80 backdrop-blur-sm border-2 hover:border-violet-200 transition-all duration-300 hover:shadow-xl">
+              <div className="aspect-video bg-gray-100 border-b flex items-center justify-center text-gray-400">
+                <div className="text-center">
+                  <div className="text-sm font-medium">Screenshot Coming Soon</div>
+                  <div className="text-xs mt-1">Decentralized Goodreads</div>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Decentralized Goodreads</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-700">The Prompt:</h4>
+                  <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono text-green-400">
+                    <div className="text-gray-500">$ dork</div>
+                    <div>"Build a decentralized goodreads alternative"</div>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <Button variant="outline" className="w-full" disabled>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View Live Demo
+                    <span className="ml-2 text-xs text-gray-500">(Coming Soon)</span>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Words with Friends Demo */}
+            <Card className="bg-white/80 backdrop-blur-sm border-2 hover:border-violet-200 transition-all duration-300 hover:shadow-xl">
+              <div className="aspect-video bg-gray-100 border-b flex items-center justify-center text-gray-400">
+                <div className="text-center">
+                  <div className="text-sm font-medium">Screenshot Coming Soon</div>
+                  <div className="text-xs mt-1">Words with Friends Game</div>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Words with Friends Game</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-700">The Prompt:</h4>
+                  <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono text-green-400">
+                    <div className="text-gray-500">$ dork</div>
+                    <div>"Build a words with friends game on nostr"</div>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <Button variant="outline" className="w-full" disabled>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View Live Demo
+                    <span className="ml-2 text-xs text-gray-500">(Coming Soon)</span>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-16">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Ready to Build Your Own?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Start with MKStack and tell Dork AI what you want to build. From simple chat apps to complex social platforms, 
+                your idea becomes reality in minutes.
+              </p>
+              <Button className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3" asChild>
+                <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">
+                  Get Started Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -648,7 +772,7 @@ export default function MKStack() {
               Nostr Apps Built with MK Stack
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real Nostr applications built using MKStack and AI-first development, including Chorus which was built in just 5 days.
+              Real Nostr applications built using MKStack and AI-first development.
             </p>
           </div>
 
@@ -669,10 +793,10 @@ export default function MKStack() {
                     <Badge variant="secondary">Communities</Badge>
                   </div>
                   <p className="text-gray-600">
-                    Facebook-style groups with built-in eCash wallet for fundraising. Built in just 5 days using AI.
+                    Facebook-style groups with built-in eCash wallet for fundraising.
                   </p>
                   <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>Built in 5 days</span>
+                    <span>Community Platform</span>
                     <Button variant="outline" size="sm">
                       Visit Platform
                       <ExternalLink className="ml-2 h-3 w-3" />
