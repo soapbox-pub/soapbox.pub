@@ -65,65 +65,69 @@ export default function MKStack() {
             </div>
 
             <div className="relative">
-              {/* Architecture Diagram */}
+              {/* Steps Overview */}
               <div className="bg-white rounded-2xl shadow-2xl p-6 border">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Nostr Client Architecture</h3>
-                  <p className="text-sm text-gray-600">Built for the decentralized web</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Build Your Nostr App in 3 Steps</h3>
+                  <p className="text-sm text-gray-600">From idea to deployment in minutes</p>
                 </div>
                 
                 <div className="space-y-4">
-                  {/* Frontend Layer */}
-                  <div className="bg-violet-50 rounded-lg p-4 border border-violet-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-violet-700">Frontend</span>
+                  {/* Step 1 */}
+                  <div className="bg-gradient-to-r from-violet-50 to-violet-100 rounded-lg p-4 border border-violet-200">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-violet-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <Code className="h-4 w-4 text-violet-600 mr-2" />
+                          <span className="text-sm font-semibold text-violet-700">Build in Minutes</span>
+                        </div>
+                        <div className="text-xs text-gray-700">Create full Nostr apps with just one prompt</div>
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">React • TypeScript • Tailwind</div>
                   </div>
                   
-                  {/* Nostr Layer */}
-                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-purple-700">Nostr Protocol</span>
+                  {/* Step 2 */}
+                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-4 border border-purple-200">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <Zap className="h-4 w-4 text-purple-600 mr-2" />
+                          <span className="text-sm font-semibold text-purple-700">Edit with Dork AI</span>
+                        </div>
+                        <div className="text-xs text-gray-700">Refine and add features with AI assistance</div>
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">Nostrify • NIP Support • Relays</div>
                   </div>
                   
-                  {/* Features Layer */}
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-blue-700">Features</span>
+                  {/* Step 3 */}
+                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <Rocket className="h-4 w-4 text-blue-600 mr-2" />
+                          <span className="text-sm font-semibold text-blue-700">Deploy Instantly</span>
+                        </div>
+                        <div className="text-xs text-gray-700">One command deployment with Surge</div>
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">Auth • Messaging • Media • Zaps</div>
                   </div>
                   
-                  {/* AI Tools */}
-                  <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-green-700">AI Development</span>
+                  {/* Call to Action */}
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <div className="text-center">
+                      <div className="text-xs text-gray-500 mb-3">Ready to start building?</div>
+                      <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg p-3 text-center">
+                        <div className="text-sm font-semibold">$ npm install -g @getstacks/stacks</div>
+                        <div className="text-sm font-semibold">$ stacks mkstack</div>
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">Dork Agent • Nostrbook MCP • Context</div>
                   </div>
                 </div>
               </div>
-              
-              {/* Success Metrics */}
-              <div className="absolute -bottom-6 left-4 right-4">
-                <div className="bg-white rounded-xl shadow-lg p-4 grid grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-violet-600">50+</div>
-                    <div className="text-xs text-gray-600">NIPs Supported</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">8 Minutes</div>
-                    <div className="text-xs text-gray-600">Build Time</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">AI-First</div>
-                    <div className="text-xs text-gray-600">Development</div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -136,9 +140,27 @@ export default function MKStack() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
               Step 1: Build in Minutes, Not Months
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See the power of AI-driven development with MKStack. Each of these applications was built with just one prompt. After you get an MVP from the first prompt, you can then refine and build new features with the built-in Stacks agent.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+              See the power of AI-driven development with MKStack. Each of these applications was built with just one prompt. After you get an working demo from the first prompt, refine and build new features with the built-in Stacks agent.
             </p>
+            
+            {/* Success Metrics */}
+            <div className="max-w-2xl mx-auto mb-16">
+              <div className="bg-white rounded-xl shadow-lg p-6 grid grid-cols-3 gap-6 border">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-violet-600">50+</div>
+                  <div className="text-sm text-gray-600">NIPs Supported</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600">8 Minutes</div>
+                  <div className="text-sm text-gray-600">Avg. Build Time</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600">AI-First</div>
+                  <div className="text-sm text-gray-600">Development</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -344,39 +366,6 @@ export default function MKStack() {
                   no configuration files. Just run one command and your app is live on the web.
                 </p>
               </div>
-
-              <div className="space-y-4">
-                <h4 className="text-xl font-bold text-gray-900">One-Command Deployment</h4>
-                <div className="bg-gray-900 rounded-lg p-6 space-y-3">
-                  <div className="text-gray-400 text-sm">Deploy your app:</div>
-                  <div className="font-mono text-green-400">$ npm run deploy</div>
-                  <div className="text-gray-400 text-sm">✅ Building app...</div>
-                  <div className="text-gray-400 text-sm">✅ Uploading to Surge...</div>
-                  <div className="text-gray-400 text-sm">✅ App deployed to: https://your-app.surge.sh</div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-xl font-bold text-gray-900">Features</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-600">Instant deployment in seconds</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-600">Free hosting with custom domains</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-600">Automatic builds and optimization</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-600">HTTPS enabled by default</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="relative">
@@ -405,7 +394,7 @@ export default function MKStack() {
           {/* Nostr Apps Built with MKStack */}
           <div className="space-y-16">
             <div className="text-center">
-              <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+              <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6 mt-40">
                 Nostr Apps Built with MK Stack
               </h3>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
