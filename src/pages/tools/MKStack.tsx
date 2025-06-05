@@ -76,11 +76,6 @@ export default function MKStack() {
                   <div className="bg-violet-50 rounded-lg p-4 border border-violet-200">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-violet-700">Frontend</span>
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 bg-violet-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      </div>
                     </div>
                     <div className="text-xs text-gray-600 mt-1">React • TypeScript • Tailwind</div>
                   </div>
@@ -89,10 +84,6 @@ export default function MKStack() {
                   <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-purple-700">Nostr Protocol</span>
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                      </div>
                     </div>
                     <div className="text-xs text-gray-600 mt-1">Nostrify • NIP Support • Relays</div>
                   </div>
@@ -101,10 +92,6 @@ export default function MKStack() {
                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-blue-700">Features</span>
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                      </div>
                     </div>
                     <div className="text-xs text-gray-600 mt-1">Auth • Messaging • Media • Zaps</div>
                   </div>
@@ -113,10 +100,6 @@ export default function MKStack() {
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-green-700">AI Development</span>
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      </div>
                     </div>
                     <div className="text-xs text-gray-600 mt-1">Dork Agent • Nostrbook MCP • Context</div>
                   </div>
@@ -153,7 +136,7 @@ export default function MKStack() {
               Built in Minutes, Not Months
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See the power of AI-driven development with MKStack. Each of these applications was built with just one prompt.
+              See the power of AI-driven development with MKStack. Each of these applications was built with just one prompt. After you get an MVP from the first prompt, you can then refine and build new features with the built-in Stacks agent.
             </p>
           </div>
 
@@ -249,24 +232,6 @@ export default function MKStack() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="text-center mt-16">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Build Your Own?
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Start with MKStack and tell Dork AI what you want to build. From simple chat apps to complex social platforms, 
-                your idea becomes reality in minutes.
-              </p>
-              <Button className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3" asChild>
-                <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">
-                  Get Started Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
