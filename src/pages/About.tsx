@@ -9,42 +9,48 @@ const teamMembers = [
     role: "Founder & CEO",
     bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on ActivityPub and the Fediverse. He is still learning, and still dreaming.",
     avatar: "/assets/avatars/alex.png",
-    follow: "https://gleasonator.dev/@alex@gleasonator.dev"
+    follow: "https://gleasonator.dev/@alex@gleasonator.dev",
+    npub: "npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxckmzddywnws6cd26p"
   },
   {
     name: "M. K. Fain",
     role: "Director of Product",
     bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
     avatar: "/assets/avatars/mk.jpg",
-    follow: "https://ditto.pub/@mk@ditto.pub"
+    follow: "https://ditto.pub/@mk@ditto.pub",
+    npub: "npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc"
   },
   {
     name: "Patrick dos Reis",
     role: "Developer",
     bio: "Patrick is interested in working in disruptive technologies like Ditto that can be used to empower individual freedom. He also loves nature.",
     avatar: "/assets/avatars/patrick.png",
-    follow: "https://ditto.pub/@patrick@patrickdosreis.com"
+    follow: "https://ditto.pub/@patrick@patrickdosreis.com",
+    npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
   },
   {
     name: "shantaram",
     role: "Software Engineer",
     bio: "Self-taught software engineer writing software to achieve a net good effect on the world.",
     avatar: "/assets/avatars/shantaram.jpeg",
-    follow: "https://ditto.pub/@shan@shantaram.xyz"
+    follow: "https://ditto.pub/@shan@shantaram.xyz",
+    npub: "npub1q469xmf77nt9ltu4ks3excgts36ayt6v99ryn4rv2r2axmm4ye7q3vnkqp"
   },
   {
     name: "Danidfra",
     role: "Developer",
     bio: "Danidfra is a programmer with an interest in both code and music. He believes that technology can transform the world, and is always looking for new ways to create a positive impact.",
     avatar: "/assets/avatars/danidfra.jpeg",
-    follow: "https://ditto.pub/@danidfra@danidfra.com"
+    follow: "https://ditto.pub/@danidfra@danidfra.com",
+    npub: "npub1e6tnvlr46lv3lwdu80r07kanhk6jcxy5r07w9umgv9kuhu9dl5hsk9gqft"
   },
   {
     name: "And Other Stuff",
     role: "Partner Organization",
     bio: "Soapbox is a member of the And Other Stuff collective, with a focus communities.",
     avatar: "/assets/avatars/aos.png",
-    follow: "https://ditto.pub/@AOS@andotherstuff.org"
+    follow: "https://ditto.pub/@AOS@andotherstuff.org",
+    npub: "npub1t5u3wp5kj78jwnuphpf5mhx00nwwtfwq56d6j8atnu89gd454wcs6aj4c2"
   }
 ];
 
