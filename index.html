@@ -55,17 +55,28 @@
         
         // Only update URLs if we're not on the default domain
         if (baseUrl !== defaultUrl) {
-          // Update OG image URLs
-          const ogImage = baseUrl + '/og-image.png';
-          document.querySelector('meta[property="og:image"]').setAttribute('content', ogImage);
-          document.querySelector('meta[name="twitter:image"]').setAttribute('content', ogImage);
-          document.querySelector('meta[name="image"]').setAttribute('content', ogImage);
+          // Get current path to construct proper URLs
+          const currentPath = window.location.pathname;
+          const currentUrl = baseUrl + currentPath;
           
-          // Update OG URL
-          document.querySelector('meta[property="og:url"]').setAttribute('content', baseUrl);
+          // Update OG image URLs only if they're relative paths
+          const ogImageMeta = document.querySelector('meta[property="og:image"]');
+          const twitterImageMeta = document.querySelector('meta[name="twitter:image"]');
+          const imageMeta = document.querySelector('meta[name="image"]');
           
-          // Update canonical URL
-          document.querySelector('link[rel="canonical"]').setAttribute('href', baseUrl);
+          if (ogImageMeta && ogImageMeta.getAttribute('content').startsWith('/')) {
+            ogImageMeta.setAttribute('content', baseUrl + ogImageMeta.getAttribute('content'));
+          }
+          if (twitterImageMeta && twitterImageMeta.getAttribute('content').startsWith('/')) {
+            twitterImageMeta.setAttribute('content', baseUrl + twitterImageMeta.getAttribute('content'));
+          }
+          if (imageMeta && imageMeta.getAttribute('content').startsWith('/')) {
+            imageMeta.setAttribute('content', baseUrl + imageMeta.getAttribute('content'));
+          }
+          
+          // Update OG URL and canonical URL to current page
+          document.querySelector('meta[property="og:url"]').setAttribute('content', currentUrl);
+          document.querySelector('link[rel="canonical"]').setAttribute('href', currentUrl);
         }
         
         // Always update structured data with current URL

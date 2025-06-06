@@ -488,6 +488,10 @@ The project uses React Router with a centralized routing configuration in `AppRo
 
 The router includes automatic scroll-to-top functionality and a 404 NotFound page for unmatched routes.
 
+## Development Server
+
+**IMPORTANT**: Do NOT run `npm run dev` or any development server commands. The development server should not be started during code modifications or testing. Make changes to code files directly and run tests to verify functionality.
+
 ## Development Practices
 
 - Uses React Query for data fetching and caching
