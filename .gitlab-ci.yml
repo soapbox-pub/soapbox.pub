@@ -1,13 +1,16 @@
 image: node:18
 
 pages:
-  stage: deploy
   script:
     - npm ci
     - npm run build
-    - cp -r dist public  # ensure both dist and static public assets are available
+    - mkdir -p public
+    - cp -r dist/* public/
   artifacts:
     paths:
       - public
-  only:
-    - main
+    expire_in: 1 week
+  cache:
+    paths:
+      - node_modules/
+
