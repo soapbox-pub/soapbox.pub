@@ -88,35 +88,14 @@ const defaultSEO = {
 };
 
 function extractIndexSEO(content) {
-  // Extract SEO data from Index.tsx useSEO call
-  const seoMatch = content.match(/useSEO\(\s*\{([^}]+)\}\s*\)/s);
+  // Extract SEO data from Index.tsx useSEO call using improved parsing
+  const seoMatch = extractUseSEOCall(content);
   if (seoMatch) {
     try {
-      // Parse the SEO object (simplified parsing)
-      const seoContent = seoMatch[1];
-      const seo = {};
-      
-      // Extract title
-      const titleMatch = seoContent.match(/title:\s*['"`]([^'"`]+)['"`]/);
-      if (titleMatch) seo.title = titleMatch[1];
-      
-      // Extract description
-      const descMatch = seoContent.match(/description:\s*['"`]([^'"`]+)['"`]/);
-      if (descMatch) seo.description = descMatch[1];
-      
-      // Extract image
-      const imageMatch = seoContent.match(/image:\s*['"`]([^'"`]+)['"`]/);
-      if (imageMatch) seo.image = imageMatch[1];
-      
-      // Extract type
-      const typeMatch = seoContent.match(/type:\s*['"`]([^'"`]+)['"`]/);
-      if (typeMatch) seo.type = typeMatch[1];
-      
-      // Extract keywords
-      const keywordsMatch = seoContent.match(/keywords:\s*['"`]([^'"`]+)['"`]/);
-      if (keywordsMatch) seo.keywords = keywordsMatch[1];
-      
-      return { ...defaultSEO, ...seo };
+      const seo = parseUseSEOObject(seoMatch);
+      if (Object.keys(seo).length > 0) {
+        return { ...defaultSEO, ...seo };
+      }
     } catch (error) {
       console.warn('Failed to parse SEO data from Index.tsx:', error.message);
     }
@@ -131,34 +110,14 @@ function extractIndexSEO(content) {
 }
 
 function extractGenericSEO(content, filePath) {
-  // Extract SEO data from useSEO call
-  const seoMatch = content.match(/useSEO\(\s*\{([^}]+)\}\s*\)/s);
+  // Extract SEO data from useSEO call with improved parsing for nested objects
+  const seoMatch = extractUseSEOCall(content);
   if (seoMatch) {
     try {
-      const seoContent = seoMatch[1];
-      const seo = {};
-      
-      // Extract title
-      const titleMatch = seoContent.match(/title:\s*['"`]([^'"`]+)['"`]/);
-      if (titleMatch) seo.title = titleMatch[1];
-      
-      // Extract description
-      const descMatch = seoContent.match(/description:\s*['"`]([^'"`]+)['"`]/);
-      if (descMatch) seo.description = descMatch[1];
-      
-      // Extract image
-      const imageMatch = seoContent.match(/image:\s*['"`]([^'"`]+)['"`]/);
-      if (imageMatch) seo.image = imageMatch[1];
-      
-      // Extract type
-      const typeMatch = seoContent.match(/type:\s*['"`]([^'"`]+)['"`]/);
-      if (typeMatch) seo.type = typeMatch[1];
-      
-      // Extract keywords
-      const keywordsMatch = seoContent.match(/keywords:\s*['"`]([^'"`]+)['"`]/);
-      if (keywordsMatch) seo.keywords = keywordsMatch[1];
-      
-      return { ...defaultSEO, ...seo };
+      const seo = parseUseSEOObject(seoMatch);
+      if (Object.keys(seo).length > 0) {
+        return { ...defaultSEO, ...seo };
+      }
     } catch (error) {
       console.warn(`Failed to parse SEO data from ${filePath}:`, error.message);
     }
@@ -167,6 +126,84 @@ function extractGenericSEO(content, filePath) {
   // Generate fallback SEO based on file path
   const fileName = path.basename(filePath, '.tsx');
   return generateFallbackSEO(fileName);
+}
+
+function extractUseSEOCall(content) {
+  // More robust extraction that handles nested objects
+  const useSEOStart = content.indexOf('useSEO(');
+  if (useSEOStart === -1) return null;
+  
+  // Find the opening brace
+  const openBraceStart = content.indexOf('{', useSEOStart);
+  if (openBraceStart === -1) return null;
+  
+  // Find the matching closing brace by counting braces
+  let braceCount = 1;
+  let pos = openBraceStart + 1;
+  
+  while (pos < content.length && braceCount > 0) {
+    const char = content[pos];
+    if (char === '{') {
+      braceCount++;
+    } else if (char === '}') {
+      braceCount--;
+    } else if (char === '"' || char === "'" || char === '`') {
+      // Skip over string literals to avoid counting braces inside strings
+      const quote = char;
+      pos++;
+      while (pos < content.length && content[pos] !== quote) {
+        if (content[pos] === '\\') pos++; // Skip escaped characters
+        pos++;
+      }
+    }
+    pos++;
+  }
+  
+  if (braceCount === 0) {
+    // Extract the content between the braces
+    return content.substring(openBraceStart + 1, pos - 1);
+  }
+  
+  return null;
+}
+
+function parseUseSEOObject(seoContent) {
+  const seo = {};
+  
+  // Helper function to extract string values, handling multi-line strings
+  function extractStringValue(property) {
+    // Match property with various quote types and handle multi-line
+    const patterns = [
+      new RegExp(`${property}:\\s*['"\`]([^'"\`]*)['"\`]`, 's'),
+      new RegExp(`${property}:\\s*['"\`]([\\s\\S]*?)['"\`](?=\\s*[,}])`, 's')
+    ];
+    
+    for (const pattern of patterns) {
+      const match = seoContent.match(pattern);
+      if (match) {
+        return match[1].trim();
+      }
+    }
+    return null;
+  }
+  
+  // Extract all SEO properties
+  const title = extractStringValue('title');
+  if (title) seo.title = title;
+  
+  const description = extractStringValue('description');
+  if (description) seo.description = description;
+  
+  const image = extractStringValue('image');
+  if (image) seo.image = image;
+  
+  const type = extractStringValue('type');
+  if (type) seo.type = type;
+  
+  const keywords = extractStringValue('keywords');
+  if (keywords) seo.keywords = keywords;
+  
+  return seo;
 }
 
 function generateFallbackSEO(fileName) {
