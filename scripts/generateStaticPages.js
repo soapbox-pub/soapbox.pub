@@ -9,6 +9,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Fallback blog posts data
+const fallbackBlogPostsData = [
+  { slug: 'announcing-ditto', title: 'Announcing Ditto', excerpt: 'Introducing Ditto, our new decentralized community platform built on Nostr.', coverImage: '/assets/images/ditto/ditto-phones.png', date: '2024-03-15', author: { name: 'Alex Gleason' } },
+  { slug: 'announcing-nostrify', title: 'Announcing Nostrify', excerpt: 'Nostrify is a powerful framework for building Nostr applications in Deno and web environments.', coverImage: '/og-image.png', date: '2024-05-20', author: { name: 'Soapbox Team' } },
+  { slug: 'ditto-1.3', title: 'Ditto 1.3 Release', excerpt: 'Latest updates and improvements to the Ditto platform with enhanced features and performance.', coverImage: '/assets/images/ditto/ditto-phones.png', date: '2024-05-30', author: { name: 'Alex Gleason' } },
+  { slug: 'future-is-decentralized', title: 'The Future is Decentralized', excerpt: 'Why decentralized social media is the future and how Soapbox is leading the way.', coverImage: '/og-image.png', date: '2024-04-10', author: { name: 'Soapbox Team' } },
+  { slug: 'nostr101', title: 'Nostr 101: Getting Started', excerpt: 'A beginner\'s guide to understanding and using the Nostr protocol.', coverImage: '/og-image.png', date: '2024-06-01', author: { name: 'Soapbox Team' } }
+];
+
 // Import blog posts data
 const blogPostsData = [
   { slug: 'announcing-ditto', title: 'Announcing Ditto', excerpt: 'Introducing Ditto, our new decentralized community platform built on Nostr.', coverImage: '/assets/images/ditto/ditto-phones.png', date: '2024-03-15', author: { name: 'Alex Gleason' } },
@@ -106,19 +115,7 @@ const routes = [
   }
 ];
 
-// Add blog posts to routes
-blogPostsData.forEach(post => {
-  routes.push({
-    path: `/blog/${post.slug}`,
-    title: `${post.title} - Soapbox Blog`,
-    description: post.excerpt,
-    image: post.coverImage,
-    keywords: `${post.title}, soapbox blog, decentralized social media, open source`,
-    type: 'article',
-    publishedTime: post.date,
-    author: post.author.name
-  });
-});
+// Blog posts will be added dynamically in the main function
 
 function generateHTMLPage(route, baseHTML) {
   const baseUrl = 'https://soapbox.pub';
@@ -158,10 +155,47 @@ function generateHTMLPage(route, baseHTML) {
     );
   }
 
+  // Fix the dynamic OG meta script to preserve custom images
+  // Add a data attribute to track the original image for this page
+  html = html.replace(
+    /(<meta property="og:image" content="[^"]*")/,
+    `$1 data-original-image="${route.image}"`
+  );
+  
+  html = html.replace(
+    /(<meta name="twitter:image" content="[^"]*")/,
+    `$1 data-original-image="${route.image}"`
+  );
+  
+  html = html.replace(
+    /(<meta name="image" content="[^"]*")/,
+    `$1 data-original-image="${route.image}"`
+  );
+
   return html;
 }
 
-function main() {
+// Import blog posts data from the actual blog system
+async function getBlogPostsData() {
+  try {
+    // Import the blog index dynamically
+    const { blogPosts } = await import('../src/lib/blog/blogIndex.ts');
+    return blogPosts.map(post => ({
+      slug: post.slug,
+      title: post.title,
+      excerpt: post.excerpt,
+      coverImage: post.coverImage || post.ogImage?.url || '/og-image.png',
+      date: post.date,
+      author: { name: post.author?.name || 'Soapbox Team' }
+    }));
+  } catch (error) {
+    console.warn('Could not load blog posts from blog system, using fallback data:', error.message);
+    // Use the existing hardcoded data as fallback
+    return fallbackBlogPostsData;
+  }
+}
+
+async function main() {
   const distDir = path.resolve(__dirname, '../dist');
   const indexHTMLPath = path.join(distDir, 'index.html');
   
@@ -172,7 +206,27 @@ function main() {
 
   const baseHTML = fs.readFileSync(indexHTMLPath, 'utf8');
   
-  routes.forEach(route => {
+  // Get blog posts data (either from the blog system or fallback)
+  const blogPostsData = await getBlogPostsData();
+  
+  // Create a copy of routes and add blog posts
+  const allRoutes = [...routes];
+  
+  // Add blog posts to routes
+  blogPostsData.forEach(post => {
+    allRoutes.push({
+      path: `/blog/${post.slug}`,
+      title: `${post.title} - Soapbox Blog`,
+      description: post.excerpt,
+      image: post.coverImage,
+      keywords: `${post.title}, soapbox blog, decentralized social media, open source`,
+      type: 'article',
+      publishedTime: post.date,
+      author: post.author.name
+    });
+  });
+  
+  allRoutes.forEach(route => {
     if (route.path === '/') {
       // Update the main index.html with home page SEO
       const homeHTML = generateHTMLPage(route, baseHTML);
@@ -197,7 +251,7 @@ function main() {
   
   console.log('\n🎉 All static pages generated successfully!');
   console.log('\nNow each route will have proper meta tags visible in view source:');
-  routes.forEach(route => {
+  allRoutes.forEach(route => {
     const url = route.path === '/' ? '/' : `${route.path}/`;
     console.log(`   ${url} -> ${url}index.html`);
   });

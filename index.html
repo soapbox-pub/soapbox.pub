@@ -60,18 +60,31 @@
           const currentUrl = baseUrl + currentPath;
           
           // Update OG image URLs only if they're relative paths
+          // But preserve the original image path set during static generation
           const ogImageMeta = document.querySelector('meta[property="og:image"]');
           const twitterImageMeta = document.querySelector('meta[name="twitter:image"]');
           const imageMeta = document.querySelector('meta[name="image"]');
           
-          if (ogImageMeta && ogImageMeta.getAttribute('content').startsWith('/')) {
-            ogImageMeta.setAttribute('content', baseUrl + ogImageMeta.getAttribute('content'));
+          if (ogImageMeta) {
+            // Use the original image from data attribute if available, otherwise use current content
+            const originalImage = ogImageMeta.getAttribute('data-original-image') || ogImageMeta.getAttribute('content');
+            if (originalImage.startsWith('/')) {
+              ogImageMeta.setAttribute('content', baseUrl + originalImage);
+            }
           }
-          if (twitterImageMeta && twitterImageMeta.getAttribute('content').startsWith('/')) {
-            twitterImageMeta.setAttribute('content', baseUrl + twitterImageMeta.getAttribute('content'));
+          if (twitterImageMeta) {
+            // Use the original image from data attribute if available, otherwise use current content
+            const originalImage = twitterImageMeta.getAttribute('data-original-image') || twitterImageMeta.getAttribute('content');
+            if (originalImage.startsWith('/')) {
+              twitterImageMeta.setAttribute('content', baseUrl + originalImage);
+            }
           }
-          if (imageMeta && imageMeta.getAttribute('content').startsWith('/')) {
-            imageMeta.setAttribute('content', baseUrl + imageMeta.getAttribute('content'));
+          if (imageMeta) {
+            // Use the original image from data attribute if available, otherwise use current content
+            const originalImage = imageMeta.getAttribute('data-original-image') || imageMeta.getAttribute('content');
+            if (originalImage.startsWith('/')) {
+              imageMeta.setAttribute('content', baseUrl + originalImage);
+            }
           }
           
           // Update OG URL and canonical URL to current page

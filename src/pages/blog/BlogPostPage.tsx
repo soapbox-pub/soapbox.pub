@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
+import { ArrowLeft, Calendar, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -82,7 +82,7 @@ export default function BlogPostPage() {
     return <NotFound />;
   }
 
-  const readingTime = getReadingTime(post.content || '');
+  const _readingTime = getReadingTime(post.content || '');
 
   return (
     <Layout>
