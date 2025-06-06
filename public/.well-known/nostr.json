@@ -1,0 +1,16 @@
+{
+  "names": {
+    "alex": "79c2cae114ea28a981e7559b4fe7854a473521a8d22a66bbab9fa248eb820ff6",
+    "mostr": "6be38f8c63df7dbf84db7ec4a6e6fbbd8d19dca3b980efad18585c46f04b26f9",
+    "mk": "932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d",
+    "ditto": "781a1527055f74c1f70230f10384609b34548f8ab6a0a6caa74025827f9fdae5"
+  },
+  "relays": {
+    "79c2cae114ea28a981e7559b4fe7854a473521a8d22a66bbab9fa248eb820ff6": [
+      "wss://relay.mostr.pub/"
+    ],
+    "6be38f8c63df7dbf84db7ec4a6e6fbbd8d19dca3b980efad18585c46f04b26f9": [
+      "wss://relay.mostr.pub/"
+    ]
+  }
+}
