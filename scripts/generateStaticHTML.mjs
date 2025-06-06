@@ -11,9 +11,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function generateHTMLPage(route, baseHTML) {
-  const baseUrl = 'https://soapbox.pub';
+  const baseUrl = process.env.SOAPBOX_BASE_URL || 'https://soapbox.pub';
   const pageUrl = route.path === '/' ? baseUrl : `${baseUrl}${route.path}`;
   const ogType = route.type === 'article' ? 'article' : 'website';
+  
+  // Convert relative image URLs to absolute URLs for social media crawlers
+  const imageUrl = route.image.startsWith('/') ? `${baseUrl}${route.image}` : route.image;
   
   let html = baseHTML
     .replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`)
@@ -21,12 +24,12 @@ function generateHTMLPage(route, baseHTML) {
     .replace(/(<meta property="og:type" content=")[^"]*/, `$1${ogType}`)
     .replace(/(<meta property="og:title" content=")[^"]*/, `$1${route.title}`)
     .replace(/(<meta property="og:description" content=")[^"]*/, `$1${route.description}`)
-    .replace(/(<meta property="og:image" content=")[^"]*/, `$1${route.image}`)
+    .replace(/(<meta property="og:image" content=")[^"]*/, `$1${imageUrl}" data-original-image="${route.image}`)
     .replace(/(<meta property="og:url" content=")[^"]*/, `$1${pageUrl}`)
     .replace(/(<meta name="twitter:title" content=")[^"]*/, `$1${route.title}`)
     .replace(/(<meta name="twitter:description" content=")[^"]*/, `$1${route.description}`)
-    .replace(/(<meta name="twitter:image" content=")[^"]*/, `$1${route.image}`)
-    .replace(/(<meta name="image" content=")[^"]*/, `$1${route.image}`)
+    .replace(/(<meta name="twitter:image" content=")[^"]*/, `$1${imageUrl}" data-original-image="${route.image}`)
+    .replace(/(<meta name="image" content=")[^"]*/, `$1${imageUrl}" data-original-image="${route.image}`)
     .replace(/(<meta name="keywords" content=")[^"]*/, `$1${route.keywords}`)
     .replace(/(<link rel="canonical" href=")[^"]*/, `$1${pageUrl}`);
 
@@ -92,8 +95,10 @@ async function main() {
   console.log('\n📋 Generated routes:');
   routes.forEach(route => {
     const url = route.path === '/' ? '/' : `${route.path}/`;
-    const image = route.image === '/og-image.png' ? 'default' : route.image;
-    console.log(`   ${url.padEnd(35)} -> ${image}`);
+    const baseUrl = process.env.SOAPBOX_BASE_URL || 'https://soapbox.pub';
+    const imageUrl = route.image.startsWith('/') ? `${baseUrl}${route.image}` : route.image;
+    const displayImage = route.image === '/og-image.png' ? 'default' : imageUrl;
+    console.log(`   ${url.padEnd(35)} -> ${displayImage}`);
   });
 }
 
