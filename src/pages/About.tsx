@@ -26,7 +26,7 @@ const teamMembers = [
   {
     name: "Patrick dos Reis",
     role: "Developer",
-    bio: "Patrick is interested in working in disruptive technologies like Ditto that can be used to empower individual freedom. He also loves nature.",
+    bio: "Patrick is interested in being a masterful interpreter of the Light.",
     avatar: "/assets/avatars/patrick.png",
     follow: "https://ditto.pub/@patrick@patrickdosreis.com",
     npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
