@@ -18,7 +18,7 @@ export default function Nostrify() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200">
-                  ⚡ Developer Framework
+                  🌱 Nostr Development
                 </Badge>
                 <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
                   <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
@@ -26,22 +26,26 @@ export default function Nostrify() {
                   </span>
                 </h1>
                 <p className="text-2xl font-medium text-gray-700">
-                  The TypeScript Framework for Building on Nostr
+                  Bring your projects to life on Nostr. 🌱
                 </p>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Bring your projects to life on Nostr with simple tools for relays, storage, 
-                  signers, and moderation. Pure TypeScript, works everywhere.
+                  A flexible TypeScript library for building Nostr apps with relays, signers, 
+                  storages, and more. Works in browsers, Node.js, Deno, and mobile apps.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg" asChild>
+                  <a href="https://nostrify.dev/start/" target="_blank" rel="noopener noreferrer">
+                    Get Started
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
-                  <BookOpen className="mr-2 h-5 w-5" />
-                  Documentation
+                <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+                  <a href="https://nostrify.dev/" target="_blank" rel="noopener noreferrer">
+                    <BookOpen className="mr-2 h-5 w-5" />
+                    Documentation
+                  </a>
                 </Button>
               </div>
 
@@ -52,8 +56,8 @@ export default function Nostrify() {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
                 <div className="space-y-1">
-                  <div><span className="text-gray-400">$</span> npm install @nostrify/nostrify</div>
-                  <div className="text-gray-400">// Start building in minutes</div>
+                  <div><span className="text-gray-400">$</span> npx jsr add @nostrify/nostrify</div>
+                  <div className="text-gray-400">// Available on JSR, a modern alternative to npm</div>
                 </div>
               </div>
             </div>
@@ -70,13 +74,13 @@ export default function Nostrify() {
                   <span className="text-sm text-gray-500 font-mono">main.ts</span>
                 </div>
                 <div className="font-mono text-sm space-y-2">
-                  <div><span className="text-blue-600">import</span> <span className="text-gray-700">{'{ NostrEvent }'}</span> <span className="text-blue-600">from</span> <span className="text-green-600">'@nostrify/nostrify'</span>;</div>
-                  <div className="text-gray-400">// Simple, powerful, TypeScript-first</div>
+                  <div><span className="text-blue-600">import</span> <span className="text-gray-700">{'{ NostrEvent, NRelay1 }'}</span> <span className="text-blue-600">from</span> <span className="text-green-600">'@nostrify/nostrify'</span>;</div>
+                  <div className="text-gray-400">// Simple, powerful, cross-platform</div>
                   <div></div>
-                  <div><span className="text-blue-600">const</span> <span className="text-gray-700">event</span>: <span className="text-blue-600">NostrEvent</span> = {'{'};</div>
-                  <div className="ml-4"><span className="text-gray-600">kind</span>: <span className="text-orange-600">1</span>,</div>
-                  <div className="ml-4"><span className="text-gray-600">content</span>: <span className="text-green-600">'Hello Nostr!'</span>,</div>
-                  <div className="ml-4"><span className="text-gray-600">tags</span>: [],</div>
+                  <div><span className="text-blue-600">const</span> <span className="text-gray-700">relay</span> = <span className="text-blue-600">new</span> <span className="text-yellow-600">NRelay1</span>(<span className="text-green-600">'wss://relay.damus.io'</span>);</div>
+                  <div></div>
+                  <div><span className="text-blue-600">for await</span> (<span className="text-blue-600">const</span> <span className="text-gray-700">msg</span> <span className="text-blue-600">of</span> <span className="text-gray-700">relay</span>.<span className="text-yellow-600">req</span>([{'{'}])) {'{'}</div>
+                  <div className="ml-4"><span className="text-blue-600">if</span> (<span className="text-gray-700">msg</span>[<span className="text-orange-600">0</span>] === <span className="text-green-600">'EVENT'</span>) <span className="text-blue-600">break</span>;</div>
                   <div>{'}'}</div>
                 </div>
               </div>
@@ -85,16 +89,16 @@ export default function Nostrify() {
               <div className="absolute -bottom-6 left-4 right-4">
                 <div className="bg-white rounded-xl shadow-lg p-4 grid grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">100%</div>
-                    <div className="text-xs text-gray-600">TypeScript</div>
+                    <div className="text-2xl font-bold text-blue-600">JSR</div>
+                    <div className="text-xs text-gray-600">Modern Registry</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-indigo-600">Cross</div>
-                    <div className="text-xs text-gray-600">Platform</div>
+                    <div className="text-2xl font-bold text-indigo-600">Async</div>
+                    <div className="text-xs text-gray-600">Generators</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-violet-600">MIT</div>
-                    <div className="text-xs text-gray-600">License</div>
+                    <div className="text-2xl font-bold text-violet-600">NIP-07</div>
+                    <div className="text-xs text-gray-600">Compatible</div>
                   </div>
                 </div>
               </div>
@@ -108,25 +112,25 @@ export default function Nostrify() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Everything You Need for Nostr Development
+              Simple Modules That Do One Thing Well
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nostrify provides a comprehensive toolkit that handles the complexity of Nostr protocol, 
-              so you can focus on building amazing applications.
+              Nostrify provides flexible building blocks that work together. Each module implements 
+              standard interfaces so you can easily switch implementations or build your own.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Terminal className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Relay Management</CardTitle>
+                <CardTitle>🛰️ Relays</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Built-in relay server, client connections, and subscription management with automatic reconnection.
+                  Automatically reconnect and gather events efficiently from pools. Uses AsyncGenerators for powerful streaming.
                 </p>
               </CardContent>
             </Card>
@@ -136,11 +140,11 @@ export default function Nostrify() {
                 <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
                   <Package className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Event Storage</CardTitle>
+                <CardTitle>📦 Storages</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Flexible storage backends including SQL, KV stores, and in-memory options with query optimization.
+                  Store events in memory, SQL databases, and relays all using the same interface. Interchangeable with relays.
                 </p>
               </CardContent>
             </Card>
@@ -150,11 +154,25 @@ export default function Nostrify() {
                 <div className="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Signing & Crypto</CardTitle>
+                <CardTitle>✒️ Signers</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  NIP-07 signer integration, key management, and cryptographic operations for secure applications.
+                  Sign events with private keys, hardware wallets, remote signers, and more. Full NIP-07 compatibility.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-blue-200 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center mb-4">
+                  <Code className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>📜 Schemas</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Parse Nostr events, relay messages, and other untrusted sources with built-in validation.
                 </p>
               </CardContent>
             </Card>
@@ -162,13 +180,27 @@ export default function Nostrify() {
             <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
-                  <Globe className="h-6 w-6 text-white" />
+                  <Layers className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Cross Platform</CardTitle>
+                <CardTitle>👩‍⚖️ Policies</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Works in browsers, Node.js, Deno, and mobile apps. Write once, run everywhere.
+                  Reject events in clients and relays based on custom rules. Composable moderation pipelines.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-blue-200 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>🖼️ Uploaders</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Upload files to Blossom, nostr.build, and more with NIP-94 compatible metadata.
                 </p>
               </CardContent>
             </Card>
@@ -184,38 +216,38 @@ export default function Nostrify() {
               See Nostrify in Action
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Simple, intuitive APIs that make Nostr development a joy.
+              AsyncGenerators, standard interfaces, and powerful abstractions make Nostr development elegant.
             </p>
           </div>
 
           <Tabs defaultValue="relay" className="w-full">
             <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="relay">Relay</TabsTrigger>
+              <TabsTrigger value="relay">Relays</TabsTrigger>
               <TabsTrigger value="storage">Storage</TabsTrigger>
-              <TabsTrigger value="signer">Signer</TabsTrigger>
-              <TabsTrigger value="policy">Policy</TabsTrigger>
+              <TabsTrigger value="signer">Signers</TabsTrigger>
+              <TabsTrigger value="policy">Policies</TabsTrigger>
             </TabsList>
 
             <TabsContent value="relay" className="mt-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>Simple Relay Setup</CardTitle>
+                  <CardTitle>AsyncGenerator-Based Relay Streaming</CardTitle>
                   <CardDescription>
-                    Create a relay server in just a few lines of code
+                    Stream events from relays using for-await loops with automatic cleanup
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NostrRelay }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NRelay1 }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">relay</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NostrRelay</span>({`{`}</div>
-                      <div className="ml-4"><span className="text-gray-400">port</span>: <span className="text-orange-400">8080</span>,</div>
-                      <div className="ml-4"><span className="text-gray-400">storage</span>: <span className="text-blue-400">new</span> <span className="text-yellow-400">MemoryStore</span>(),</div>
-                      <div>{`}`});</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">relay</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NRelay1</span>(<span className="text-green-400">'wss://relay.damus.io'</span>);</div>
                       <div></div>
-                      <div><span className="text-blue-400">await</span> <span className="text-gray-300">relay</span>.<span className="text-yellow-400">listen</span>();</div>
-                      <div><span className="text-gray-500">// Your relay is now running! 🚀</span></div>
+                      <div><span className="text-blue-400">for await</span> (<span className="text-blue-400">const</span> <span className="text-gray-300">msg</span> <span className="text-blue-400">of</span> <span className="text-gray-300">relay</span>.<span className="text-yellow-400">req</span>([{`{ kinds: [1, 6] }`}])) {`{`}</div>
+                      <div className="ml-4"><span className="text-blue-400">if</span> (<span className="text-gray-300">msg</span>[<span className="text-orange-400">0</span>] === <span className="text-green-400">'EVENT'</span>) <span className="text-blue-400">console</span>.<span className="text-yellow-400">log</span>(<span className="text-gray-300">msg</span>[<span className="text-orange-400">2</span>]);</div>
+                      <div className="ml-4"><span className="text-blue-400">if</span> (<span className="text-gray-300">msg</span>[<span className="text-orange-400">0</span>] === <span className="text-green-400">'EOSE'</span>) <span className="text-blue-400">break</span>;</div>
+                      <div>{`}`}</div>
+                      <div><span className="text-gray-500">// Breaking out of loop automatically sends CLOSE 🚀</span></div>
                     </div>
                   </div>
                 </CardContent>
@@ -225,24 +257,25 @@ export default function Nostrify() {
             <TabsContent value="storage" className="mt-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>Flexible Storage Options</CardTitle>
+                  <CardTitle>Interchangeable Storage Interfaces</CardTitle>
                   <CardDescription>
-                    Choose from multiple storage backends
+                    Relays and storages implement the same NStore interface
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ PostgresStore, MemoryStore }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NCache, NRelay1 }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
-                      <div><span className="text-gray-500">// Use PostgreSQL for production</span></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">store</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">PostgresStore</span>(<span className="text-green-400">'postgresql://...'</span>);</div>
+                      <div><span className="text-gray-500">// Both implement NStore interface</span></div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">cache</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NCache</span>();</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">relay</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NRelay1</span>(<span className="text-green-400">'wss://relay.damus.io'</span>);</div>
                       <div></div>
-                      <div><span className="text-gray-500">// Or memory for development</span></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">memStore</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">MemoryStore</span>();</div>
+                      <div><span className="text-gray-500">// Same interface works on both!</span></div>
+                      <div><span className="text-blue-400">await</span> <span className="text-gray-300">cache</span>.<span className="text-yellow-400">event</span>(<span className="text-gray-300">event</span>);</div>
+                      <div><span className="text-blue-400">await</span> <span className="text-gray-300">relay</span>.<span className="text-yellow-400">event</span>(<span className="text-gray-300">event</span>);</div>
                       <div></div>
-                      <div><span className="text-blue-400">await</span> <span className="text-gray-300">store</span>.<span className="text-yellow-400">event</span>(<span className="text-gray-300">event</span>);</div>
-                      <div><span className="text-gray-500">// Events are automatically indexed and queryable</span></div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">events</span> = <span className="text-blue-400">await</span> <span className="text-gray-300">cache</span>.<span className="text-yellow-400">query</span>([{`{ kinds: [0] }`}]);</div>
                     </div>
                   </div>
                 </CardContent>
@@ -252,25 +285,24 @@ export default function Nostrify() {
             <TabsContent value="signer" className="mt-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>Secure Signing</CardTitle>
+                  <CardTitle>NIP-07 Compatible Signers</CardTitle>
                   <CardDescription>
-                    Integrate with NIP-07 signers seamlessly
+                    Drop-in replacements for window.nostr with multiple implementations
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NIP07Signer }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ NSeedSigner }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">signer</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NIP07Signer</span>();</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">signer</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">NSeedSigner</span>(<span className="text-green-400">'your-seed-phrase...'</span>);</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">event</span> = <span className="text-blue-400">await</span> <span className="text-gray-300">signer</span>.<span className="text-yellow-400">signEvent</span>({`{`}</div>
-                      <div className="ml-4"><span className="text-gray-400">kind</span>: <span className="text-orange-400">1</span>,</div>
-                      <div className="ml-4"><span className="text-gray-400">content</span>: <span className="text-green-400">'Hello from Nostrify!'</span>,</div>
-                      <div className="ml-4"><span className="text-gray-400">tags</span>: [],</div>
-                      <div>{`}`});</div>
+                      <div><span className="text-gray-500">// Full NIP-07 interface</span></div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">pubkey</span> = <span className="text-blue-400">await</span> <span className="text-gray-300">signer</span>.<span className="text-yellow-400">getPublicKey</span>();</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">signed</span> = <span className="text-blue-400">await</span> <span className="text-gray-300">signer</span>.<span className="text-yellow-400">signEvent</span>(<span className="text-gray-300">event</span>);</div>
                       <div></div>
-                      <div><span className="text-gray-500">// Event is cryptographically signed ✨</span></div>
+                      <div><span className="text-gray-500">// NIP-44 encryption</span></div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">encrypted</span> = <span className="text-blue-400">await</span> <span className="text-gray-300">signer</span>.<span className="text-gray-300">nip44</span>.<span className="text-yellow-400">encrypt</span>(<span className="text-gray-300">pubkey</span>, <span className="text-green-400">'secret'</span>);</div>
                     </div>
                   </div>
                 </CardContent>
@@ -280,23 +312,23 @@ export default function Nostrify() {
             <TabsContent value="policy" className="mt-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>Moderation Policies</CardTitle>
+                  <CardTitle>Composable Moderation Policies</CardTitle>
                   <CardDescription>
-                    Build smart content filtering with composable policies
+                    Build smart content filtering with pipelines and custom rules
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="bg-gray-900 rounded-lg p-6 text-white font-mono text-sm overflow-x-auto">
                     <div className="space-y-2">
-                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ AntiSpamPolicy, RateLimitPolicy }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/nostrify'</span>;</div>
+                      <div><span className="text-blue-400">import</span> <span className="text-gray-300">{'{ PipePolicy, PowPolicy, KeywordPolicy }'}</span> <span className="text-blue-400">from</span> <span className="text-green-400">'@nostrify/policies'</span>;</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">policies</span> = [</div>
-                      <div className="ml-4"><span className="text-blue-400">new</span> <span className="text-yellow-400">AntiSpamPolicy</span>(),</div>
-                      <div className="ml-4"><span className="text-blue-400">new</span> <span className="text-yellow-400">RateLimitPolicy</span>(<span className="text-orange-400">10</span>), <span className="text-gray-500">// 10 events/min</span></div>
-                      <div>];</div>
+                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">policy</span> = <span className="text-blue-400">new</span> <span className="text-yellow-400">PipePolicy</span>([</div>
+                      <div className="ml-4"><span className="text-blue-400">new</span> <span className="text-yellow-400">PowPolicy</span>({`{ difficulty: 20 }`}),</div>
+                      <div className="ml-4"><span className="text-blue-400">new</span> <span className="text-yellow-400">KeywordPolicy</span>([<span className="text-green-400">'spam'</span>, <span className="text-green-400">'bitcoin giveaway'</span>]),</div>
+                      <div>]);</div>
                       <div></div>
-                      <div><span className="text-blue-400">const</span> <span className="text-gray-300">result</span> = <span className="text-blue-400">await</span> <span className="text-yellow-400">applyPolicies</span>(<span className="text-gray-300">event</span>, <span className="text-gray-300">policies</span>);</div>
-                      <div><span className="text-gray-500">// Smart moderation without the complexity</span></div>
+                      <div><span className="text-blue-400">const</span> [<span className="text-gray-300">_</span>, <span className="text-gray-300">eventId</span>, <span className="text-gray-300">ok</span>, <span className="text-gray-300">reason</span>] = <span className="text-blue-400">await</span> <span className="text-gray-300">policy</span>.<span className="text-yellow-400">call</span>(<span className="text-gray-300">event</span>);</div>
+                      <div><span className="text-gray-500">// Powerful moderation without complexity</span></div>
                     </div>
                   </div>
                 </CardContent>
@@ -323,43 +355,57 @@ export default function Nostrify() {
               <CardContent className="p-6 space-y-4">
                 <Badge>Getting Started</Badge>
                 <h3 className="text-xl font-semibold">Quick Start Guide</h3>
-                <p className="text-gray-600">Build your first Nostr application with Nostrify in under 10 minutes.</p>
+                <p className="text-gray-600">Build your first Nostr application with Nostrify - relays, storage, and signers in minutes.</p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>10 min read</span>
-                  <Button variant="ghost" size="sm">Read Guide</Button>
+                  <span>5 min read</span>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://nostrify.dev/start/" target="_blank" rel="noopener noreferrer">
+                      Read Guide
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6 space-y-4">
-                <Badge>API Reference</Badge>
-                <h3 className="text-xl font-semibold">Complete API Documentation</h3>
-                <p className="text-gray-600">Detailed documentation for every class, method, and interface in Nostrify.</p>
+                <Badge>Documentation</Badge>
+                <h3 className="text-xl font-semibold">Complete Documentation</h3>
+                <p className="text-gray-600">Explore all modules - relays, storages, signers, policies, uploaders, and integrations.</p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>Reference</span>
-                  <Button variant="ghost" size="sm">Browse API</Button>
+                  <span>Comprehensive</span>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://nostrify.dev/" target="_blank" rel="noopener noreferrer">
+                      Browse Docs
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6 space-y-4">
-                <Badge>Advanced</Badge>
-                <h3 className="text-xl font-semibold">Building Production Relays</h3>
-                <p className="text-gray-600">Learn how to build scalable, production-ready Nostr relays with Nostrify.</p>
+                <Badge>Source Code</Badge>
+                <h3 className="text-xl font-semibold">GitLab Repository</h3>
+                <p className="text-gray-600">Open source TypeScript library. Contribute, report issues, or explore the code.</p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>20 min read</span>
-                  <Button variant="ghost" size="sm">Read Tutorial</Button>
+                  <span>MIT License</span>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://gitlab.com/soapbox-pub/nostrify" target="_blank" rel="noopener noreferrer">
+                      View Source
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="px-8 py-3">
-              View Full Documentation
-              <ExternalLink className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="outline" className="px-8 py-3" asChild>
+              <a href="https://nostrify.dev/" target="_blank" rel="noopener noreferrer">
+                Visit Nostrify Docs
+                <ExternalLink className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
         </div>
@@ -376,20 +422,24 @@ export default function Nostrify() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100">
-              Install Nostrify
-              <Package className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100" asChild>
+              <a href="https://nostrify.dev/start/" target="_blank" rel="noopener noreferrer">
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-blue-600">
-              <Code className="mr-2 h-5 w-5" />
-              View on GitHub
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-blue-600" asChild>
+              <a href="https://gitlab.com/soapbox-pub/nostrify" target="_blank" rel="noopener noreferrer">
+                <Code className="mr-2 h-5 w-5" />
+                View on GitLab
+              </a>
             </Button>
           </div>
 
           <div className="bg-white/10 backdrop-blur rounded-lg p-4 font-mono text-sm max-w-md mx-auto">
             <div className="text-left">
-              <div><span className="text-blue-300">$</span> npm install @nostrify/nostrify</div>
-              <div className="text-blue-200 text-xs mt-1">Ready to use in seconds ⚡</div>
+              <div><span className="text-blue-300">$</span> npx jsr add @nostrify/nostrify</div>
+              <div className="text-blue-200 text-xs mt-1">Available on JSR ⚡</div>
             </div>
           </div>
         </div>
