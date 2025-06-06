@@ -111,7 +111,7 @@ export function PostReactions({
           <Zap className="h-4 w-4" />
           <span className="text-sm">
             {zapCount > 0 && totalZapAmount > 0 
-              ? `${Math.round(totalZapAmount)} sats` 
+              ? Math.round(totalZapAmount)
               : zapCount
             }
           </span>

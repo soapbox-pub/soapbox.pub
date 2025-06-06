@@ -61,6 +61,11 @@ export function NoteContent({
             parts.push(
               <NostrMention key={`mention-${keyCounter++}`} pubkey={pubkey} />
             );
+          } else if (decoded.type === 'nprofile') {
+            const pubkey = decoded.data.pubkey;
+            parts.push(
+              <NostrMention key={`mention-${keyCounter++}`} pubkey={pubkey} />
+            );
           } else {
             // For other types, just show as a link
             parts.push(

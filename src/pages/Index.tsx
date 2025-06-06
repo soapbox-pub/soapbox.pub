@@ -358,57 +358,12 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="space-y-6">
-              <h3 className="text-3xl font-display font-bold text-gray-900">
-                Introducing Mostr: The Universal Bridge
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Mostr is our revolutionary bridge that connects different decentralized social networks together. 
-                No longer are you limited to just one protocol - communicate seamlessly across Nostr, the Fediverse 
-                (Mastodon, Pleroma, Misskey), and even Bluesky.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Whether you're on Nostr wanting to follow someone on Mastodon, or a Fediverse user curious about 
-                Bluesky accounts, Mostr makes it possible. We're breaking down the walls between decentralized 
-                platforms and creating a truly interconnected social web.
-              </p>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border-2 border-blue-100">
-                <div className="text-center space-y-6">
-                  <div className="flex justify-center items-center space-x-4">
-                    <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">N</span>
-                    </div>
-                    <div className="text-2xl text-gray-400">⟷</div>
-                    <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">F</span>
-                    </div>
-                    <div className="text-2xl text-gray-400">⟷</div>
-                    <div className="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">B</span>
-                    </div>
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    <div className="font-semibold mb-2">Connected Networks</div>
-                    <div className="space-y-1">
-                      <div>Nostr • Fediverse • Bluesky</div>
-                      <div className="text-xs text-gray-500">All connected through Mostr</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-display font-semibold">Cross-Protocol Communication</h3>
+              <h3 className="text-xl font-display font-semibold">ActivityPub Bridge</h3>
               <p className="text-gray-600">
                 Follow and interact with users across Nostr, Mastodon, Pleroma, Misskey, and other 
                 ActivityPub platforms seamlessly.

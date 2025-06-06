@@ -13,6 +13,7 @@ import { NoteContent } from '@/components/NoteContent';
 import { PostReactions } from '@/components/PostReactions';
 import { PostComments } from '@/components/PostComments';
 import { PostInteractionsSkeleton } from '@/components/PostInteractionsSkeleton';
+import { PostModal } from '@/components/PostModal';
 import LoginDialog from '@/components/auth/LoginDialog';
 import { genUserName } from '@/lib/genUserName';
 import { cn } from '@/lib/utils';
@@ -28,6 +29,7 @@ export function NostrPost({ event, className }: NostrPostProps) {
   const { mutate: publishEvent } = useNostrPublish();
   const { data: interactions, isLoading: interactionsLoading } = usePostInteractions(event.id);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [showPostModal, setShowPostModal] = useState(false);
 
   // Check if current user has liked this post
   const isLiked = user && interactions?.reactions.some(
@@ -95,8 +97,7 @@ export function NostrPost({ event, className }: NostrPostProps) {
       setShowLoginDialog(true);
       return;
     }
-    // Comment functionality would be implemented here
-    console.log('Comment functionality not yet implemented');
+    setShowPostModal(true);
   };
 
   return (
@@ -155,13 +156,22 @@ export function NostrPost({ event, className }: NostrPostProps) {
 
       {/* Comments Section */}
       {!interactionsLoading && interactions && interactions.comments.length > 0 && (
-        <PostComments comments={interactions.comments} />
+        <PostComments 
+          comments={interactions.comments} 
+          onShowComments={() => setShowPostModal(true)}
+        />
       )}
 
       <LoginDialog
         isOpen={showLoginDialog}
         onClose={() => setShowLoginDialog(false)}
         onLogin={() => setShowLoginDialog(false)}
+      />
+
+      <PostModal
+        event={event}
+        isOpen={showPostModal}
+        onClose={() => setShowPostModal(false)}
       />
     </Card>
   );
