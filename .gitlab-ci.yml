@@ -9,10 +9,14 @@ pages:
     - npx vite build
     - cp dist/index.html dist/404.html
     - mv dist public
-    - mkdir -p public/assets
-    - echo "--- copying image assets from src/assets/ ---"
-    - apt-get update && apt-get install -y rsync
-    - rsync -av --include='*/' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.svg' --include='*.webp' --exclude='*' src/assets/ public/assets/
+    # ✅ Copy all image assets from anywhere in src/ to public/assets/
+    - echo "--- copying all image files from anywhere in src/ ---"
+    - |
+      find src -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.svg' -o -iname '*.webp' \) | while read file; do
+        relpath=$(echo "$file" | sed 's|src/||')
+        mkdir -p "public/assets/$(dirname "$relpath")"
+        cp "$file" "public/assets/$relpath"
+      done
     - echo "--- asset tree ---"
     - find public/assets
     - echo "--- index.html preview ---"
