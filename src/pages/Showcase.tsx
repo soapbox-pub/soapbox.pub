@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Users, BookOpen, Search, Code2, Globe, Server, Settings, Terminal, Wrench, Heart, Sparkles, Activity } from "lucide-react";
+import { ArrowRight, ExternalLink, Users, BookOpen, Search, Code2, Globe, Server, Settings, Terminal, Wrench, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";

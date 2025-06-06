@@ -264,8 +264,13 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Ditto.pub */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-azure to-blue-600 relative">
-                <div className="absolute inset-0 bg-black/20"></div>
+              <div className="h-48 bg-gradient-to-r from-azure to-blue-600 relative overflow-hidden">
+                <img 
+                  src="/assets/images/ditto/ditto-phones.png" 
+                  alt="Ditto platform on mobile devices"
+                  className="absolute inset-0 w-full h-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-azure/70 to-blue-600/70"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Ditto</Badge>
                   <h3 className="text-xl font-bold">Ditto.pub</h3>
@@ -278,9 +283,11 @@ export default function Index() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">5,000+ users</span>
-                  <Button variant="ghost" size="sm">
-                    Visit Platform
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
+                      Visit Platform
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </CardContent>
@@ -288,8 +295,13 @@ export default function Index() {
 
             {/* Bookstr */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-violet-500 to-purple-600 relative">
-                <div className="absolute inset-0 bg-black/20"></div>
+              <div className="h-48 bg-gradient-to-r from-violet-500 to-purple-600 relative overflow-hidden">
+                <img 
+                  src="/assets/demos/mkstack-bookstr-demo.png" 
+                  alt="Bookstr social reading platform"
+                  className="absolute inset-0 w-full h-full object-cover opacity-85"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/70 to-purple-600/70"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKstack</Badge>
                   <h3 className="text-xl font-bold">Bookstr</h3>
@@ -302,33 +314,42 @@ export default function Index() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">Social Reading</span>
-                  <Button variant="ghost" size="sm">
-                    Visit Platform
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://bookstr.xyz" target="_blank" rel="noopener noreferrer">
+                      Visit Platform
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Henhouse */}
+            {/* Treasures */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-pink-500 to-rose-600 relative">
-                <div className="absolute inset-0 bg-black/20"></div>
+              <div className="h-48 bg-gradient-to-r from-amber-500 to-orange-600 relative overflow-hidden">
+                <img 
+                  src="/assets/mkstack-apps/treasures-screenshot.png" 
+                  alt="Treasures platform screenshot"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/80 to-orange-600/80"></div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Ditto</Badge>
-                  <h3 className="text-xl font-bold">Henhouse.social</h3>
+                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Stacks</Badge>
+                  <h3 className="text-xl font-bold">Treasures</h3>
                 </div>
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">
-                  The first Nostr community specifically designed for women. A safe, welcoming space 
-                  with custom moderation.
+                  Join the decentralized geocaching adventure powered by Nostr. Hide caches, find treasures, 
+                  and connect with explorers worldwide. Join the quest!
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">1,200+ members</span>
-                  <Button variant="ghost" size="sm">
-                    Visit Platform
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <span className="text-sm text-gray-500">Nostr IRL</span>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://treasures.surge.sh" target="_blank" rel="noopener noreferrer">
+                      Visit Platform
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </CardContent>

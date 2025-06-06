@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 
@@ -73,6 +73,18 @@ export function Navigation() {
             >
               Blog
             </Link>
+            
+            {/* Special MKStack Button */}
+            <Button 
+              asChild 
+              className="bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200 hover:border-purple-300 transition-all duration-200"
+              size="sm"
+            >
+              <Link to="/tools/mkstack" className="flex items-center space-x-2">
+                <Bot className="h-4 w-4" />
+                <span>MKStack</span>
+              </Link>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -147,6 +159,24 @@ export function Navigation() {
               >
                 Blog
               </Link>
+              
+              {/* Special MKStack Button for Mobile */}
+              <div className="px-3 py-2">
+                <Button 
+                  asChild 
+                  className="w-full bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200 hover:border-purple-300 transition-all duration-200"
+                  size="sm"
+                >
+                  <Link 
+                    to="/tools/mkstack" 
+                    className="flex items-center justify-center space-x-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Bot className="h-4 w-4" />
+                    <span>MKStack</span>
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         )}
