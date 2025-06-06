@@ -272,7 +272,8 @@ export default function MKStack() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* About Dork Column */}
             <div className="space-y-8">
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900">How Dork Works</h3>
@@ -328,18 +329,106 @@ export default function MKStack() {
               </div>
             </div>
 
-            <div className="relative">
-              {/* Placeholder for screenshot */}
-              <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 border-2 border-dashed border-purple-300">
-                <div className="text-center space-y-4">
-                  <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto">
-                    <Code className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-gray-700">Dork AI Agent Screenshot</h4>
-                  <p className="text-gray-600">Interactive development session showing Dork making real-time code changes</p>
-                  <div className="text-sm text-purple-600 font-medium">Coming Soon</div>
-                </div>
+            {/* Supported Providers Column */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">Stacks Supported Providers</h3>
+                <p className="text-gray-600">
+                  For all providers, first run <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">stacks configure</code> and choose "AI Provider"
+                </p>
               </div>
+
+              {/* OpenRouter */}
+              <Card className="border-2 hover:border-blue-200 transition-colors">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                      <Globe className="h-4 w-4 text-white" />
+                    </div>
+                    <span>OpenRouter</span>
+                  </CardTitle>
+                  <p className="text-sm text-gray-600">https://openrouter.ai/</p>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start space-x-2">
+                      <span className="text-blue-600 font-semibold">1.</span>
+                      <span>Select "OpenRouter"</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-blue-600 font-semibold">2.</span>
+                      <span>Enter your OpenRouter API key from <a href="https://openrouter.ai/settings/keys" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://openrouter.ai/settings/keys</a></span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-blue-600 font-semibold">3.</span>
+                      <span>Leave the default URL and press Enter</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Routstr */}
+              <Card className="border-2 hover:border-orange-200 transition-colors">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
+                      <Rocket className="h-4 w-4 text-white" />
+                    </div>
+                    <span>Routstr</span>
+                  </CardTitle>
+                  <p className="text-sm text-gray-600">https://www.routstr.com/</p>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start space-x-2">
+                      <span className="text-orange-600 font-semibold">1.</span>
+                      <span>Select "OpenRouter"</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-orange-600 font-semibold">2.</span>
+                      <span>Mint a Cashu token with at least 3000 sats using a wallet such as <a href="https://cashu.me" className="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">https://cashu.me</a></span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-orange-600 font-semibold">3.</span>
+                      <span>Paste the Cashu token into the "API key" form and press Enter</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-orange-600 font-semibold">4.</span>
+                      <span>Enter <code className="bg-gray-100 px-1 rounded text-xs">https://api.routstr.com</code> or any other Routstr server URL and press Enter</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* PayPerQ */}
+              <Card className="border-2 hover:border-green-200 transition-colors">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+                      <Zap className="h-4 w-4 text-white" />
+                    </div>
+                    <span>PayPerQ</span>
+                  </CardTitle>
+                  <p className="text-sm text-gray-600">https://ppq.ai/</p>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start space-x-2">
+                      <span className="text-green-600 font-semibold">1.</span>
+                      <span>Select "OpenAI-compatible"</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-green-600 font-semibold">2.</span>
+                      <span>Enter your PayPerQ API key from <a href="https://ppq.ai/api-docs" className="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">https://ppq.ai/api-docs</a></span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-green-600 font-semibold">3.</span>
+                      <span>Enter <code className="bg-gray-100 px-1 rounded text-xs">https://api.ppq.ai</code> as the URL and press Enter</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+          
             </div>
           </div>
         </div>
@@ -511,7 +600,7 @@ export default function MKStack() {
         </div>
       </section>
 
-      {/* Key Features */}
+      {/* Key Features
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -693,7 +782,7 @@ export default function MKStack() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Nostr Features */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">

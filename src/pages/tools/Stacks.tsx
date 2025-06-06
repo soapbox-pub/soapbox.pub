@@ -1,4 +1,4 @@
-import { ArrowRight, Brain, Zap, Share2, Download, Search, GitBranch, Users, Terminal, PlayCircle, ExternalLink, Package } from "lucide-react";
+import { ArrowRight, Brain, Zap, Share2, Download, Search, GitBranch, Users, Terminal, PlayCircle, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -156,15 +156,15 @@ export default function Stacks() {
               {/* Quick Start Commands */}
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-gray-900">Quick Start</h3>
-                <div className="bg-gray-900 rounded-lg p-6 space-y-3">
+                <div className="bg-gray-900 rounded-lg p-6 space-y-3 overflow-hidden">
                   <div className="text-gray-400 text-sm">Add MKStack to your collection:</div>
-                  <div className="font-mono text-green-400 text-sm">
+                  <div className="font-mono text-green-400 text-sm break-all">
                     $ stacks add naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw
                   </div>
                   <div className="text-gray-400 text-sm">Create a new project:</div>
                   <div className="font-mono text-green-400 text-sm">$ stacks mkstack</div>
                   <div className="text-gray-400 text-sm">Tell Dork what to build:</div>
-                  <div className="font-mono text-white text-sm">"Please build a NIP-28 group chat app with Nostr login"</div>
+                  <div className="font-mono text-white text-sm break-words">"Please build a NIP-28 group chat app with Nostr login"</div>
                 </div>
               </div>
             </div>
@@ -354,9 +354,9 @@ export default function Stacks() {
                 Install Stacks CLI globally and add any template using its naddr identifier. 
                 View your collection with <code className="bg-gray-100 px-2 py-1 rounded">stacks list</code>.
               </p>
-              <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
-                <div className="text-green-400">$ npm install -g @getstacks/stacks</div>
-                <div className="text-green-400 mt-1">$ stacks add [naddr]</div>
+              <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white overflow-hidden">
+                <div className="text-green-400 break-words">$ npm install -g @getstacks/stacks</div>
+                <div className="text-green-400 mt-1 break-words">$ stacks add [naddr]</div>
                 <div className="text-gray-400 mt-1">$ stacks list</div>
               </div>
             </div>
@@ -370,10 +370,10 @@ export default function Stacks() {
                 Run any stack to create a project in your current directory. Use Dork AI agent 
                 to help build your app with natural language prompts.
               </p>
-              <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
+              <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white overflow-hidden">
                 <div className="text-green-400">$ stacks [alias]</div>
-                <div className="text-gray-400 mt-1">Enter project name: my-app</div>
-                <div className="text-blue-400 mt-1">&lt;o_o&gt; Dork: What do you need?</div>
+                <div className="text-gray-400 mt-1 break-words">Enter project name: my-app</div>
+                <div className="text-blue-400 mt-1 break-words">&lt;o_o&gt; Dork: What do you need?</div>
               </div>
             </div>
 
@@ -386,11 +386,65 @@ export default function Stacks() {
                 Deploy your application instantly with built-in Surge integration. 
                 Your app goes live with just one command.
               </p>
-              <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
+              <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white overflow-hidden">
                 <div className="text-green-400">$ npm run dev</div>
                 <div className="text-green-400 mt-1">$ npm run deploy</div>
-                <div className="text-blue-400 mt-1">🚀 Deployed to surge.sh!</div>
+                <div className="text-blue-400 mt-1 break-words">🚀 Deployed to surge.sh!</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Provider Configuration */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-gray-900">Configure Your AI Provider</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Stacks supports multiple AI providers to power Dork's code generation and assistance. 
+              Configure your preferred provider to get started with AI-powered development.
+            </p>
+            
+            <div className="bg-gray-900 rounded-lg p-6 max-w-2xl mx-auto overflow-hidden">
+              <div className="text-gray-400 text-sm mb-2">Configure your AI provider:</div>
+              <div className="font-mono text-green-400 text-sm break-words">$ stacks configure</div>
+              <div className="text-gray-400 text-sm mt-2">Choose "AI Provider" and follow the prompts</div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="bg-white rounded-lg p-6 shadow-md border">
+                <h4 className="font-semibold text-gray-900 mb-2">OpenRouter</h4>
+                <p className="text-sm text-gray-600 mb-3">Access to multiple AI models through a single API</p>
+                <div className="text-xs text-gray-500">
+                  Get your API key from openrouter.ai/settings/keys
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-md border">
+                <h4 className="font-semibold text-gray-900 mb-2">PayPerQ</h4>
+                <p className="text-sm text-gray-600 mb-3">Pay-per-query AI service with competitive pricing</p>
+                <div className="text-xs text-gray-500">
+                  OpenAI-compatible API at ppq.ai
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-md border">
+                <h4 className="font-semibold text-gray-900 mb-2">Routstr</h4>
+                <p className="text-sm text-gray-600 mb-3">Bitcoin Lightning payments with Cashu tokens</p>
+                <div className="text-xs text-gray-500">
+                  Use Cashu tokens for anonymous payments
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <Button variant="outline" asChild>
+                <a href="https://getstacks.dev/docs/providers" target="_blank" rel="noopener noreferrer">
+                  View All Supported Providers
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -462,7 +516,7 @@ export default function Stacks() {
                       <p className="text-gray-600">Share your templates with the world</p>
                     </div>
                     <div className="space-y-4">
-                      <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                      <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-hidden">
                         <div className="text-gray-400 mb-2">Create your stack.json:</div>
                         <div className="text-green-400">$ stacks init</div>
                         <div className="text-gray-400 mt-2 mb-2">Publish to Nostr:</div>
