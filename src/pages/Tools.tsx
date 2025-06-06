@@ -45,14 +45,14 @@ export default function Tools() {
                     </div>
                     <div>
                       <h2 className="text-3xl font-display font-bold">MKstack</h2>
-                      <p className="text-lg text-gray-600">Platform Framework</p>
+                      <p className="text-lg text-gray-600">Build Nostr Apps with AI</p>
                     </div>
                   </div>
                   
                   <p className="text-lg text-gray-700 mb-6">
                     Create custom social platforms and applications with our flexible framework. 
-                    Powers multiple successful platforms including Bookstr, Blobbi, and geocaching sites.
-                    Perfect for building your next big idea.
+                    Build in minutes, edit with Dork AI, and deploy instantly. 
+                    Baked in Nostr support for decentralized, censorship-resistant applications.
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 mb-8">
@@ -102,16 +102,36 @@ export default function Tools() {
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-8 lg:p-12 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto">
-                      <Code className="h-12 w-12 text-violet-500" />
+                <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-4 lg:p-6 flex flex-col justify-center">
+                  <div className="w-full">
+                    <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
+                      <iframe
+                        src="https://www.youtube.com/embed/kJRwAGmAmGI"
+                        title="MKstack Demo Video"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-sm text-gray-600">Powering platforms like</p>
-                      <div className="space-y-1">
-                        <Badge variant="secondary">Bookstr.app</Badge>
-                        <Badge variant="secondary">Blobbi.app</Badge>
+                    <div className="text-center space-y-2">
+                      <p className="text-sm text-gray-600">See MKstack in action</p>
+                      <div className="flex justify-center gap-2 flex-wrap">
+                        <a href="https://chorus.community/" target="_blank" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Chorus
+                          </Badge>
+                        </a>
+                        <a href="https://plektos.app" target="_blank" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Plektos
+                          </Badge>
+                        </a>
+                        <a href="https://treasures.surge.sh/" target="_blank" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Treasures
+                          </Badge>
+                        </a>
                       </div>
                     </div>
                   </div>

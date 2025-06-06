@@ -293,29 +293,29 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            {/* Bookstr */}
+            {/* Plektos */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-violet-500 to-purple-600 relative overflow-hidden">
                 <img 
-                  src="/assets/demos/mkstack-bookstr-demo.png" 
-                  alt="Bookstr social reading platform"
+                  src="/assets/mkstack-apps/plektos-screenshot.png" 
+                  alt="Plektos decentralized events platform"
                   className="absolute inset-0 w-full h-full object-cover opacity-85"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-500/70 to-purple-600/70"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKstack</Badge>
-                  <h3 className="text-xl font-bold">Bookstr</h3>
+                  <h3 className="text-xl font-bold">Plektos</h3>
                 </div>
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">
-                  A decentralized platform for book lovers to discover, review, and discuss literature 
-                  with social reading features.
+                  A decentralized events app built with MKStack. Discover, create, and manage events 
+                  on the Nostr network with seamless social integration.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Social Reading</span>
+                  <span className="text-sm text-gray-500">Decentralized Events</span>
                   <Button variant="ghost" size="sm" asChild>
-                    <a href="https://bookstr.xyz" target="_blank" rel="noopener noreferrer">
+                    <a href="https://plektos.app" target="_blank" rel="noopener noreferrer">
                       Visit Platform
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
@@ -326,13 +326,13 @@ export default function Index() {
 
             {/* Treasures */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-amber-500 to-orange-600 relative overflow-hidden">
+              <div className="h-48 bg-gradient-to-r from-green-500 to-emerald-600 relative overflow-hidden">
                 <img 
                   src="/assets/mkstack-apps/treasures-screenshot.png" 
                   alt="Treasures platform screenshot"
                   className="absolute inset-0 w-full h-full object-cover opacity-80"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/80 to-orange-600/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/80 to-emerald-600/80"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Stacks</Badge>
                   <h3 className="text-xl font-bold">Treasures</h3>
