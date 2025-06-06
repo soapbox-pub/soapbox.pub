@@ -11,18 +11,18 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Soapbox">
     <meta property="og:description" content="Soapbox is customizable open-source software that puts the power of social media in the hands of the people.">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:url" content="https://soapbox.pub">
     <meta property="og:site_name" content="Soapbox">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Soapbox">
     <meta name="twitter:description" content="Soapbox is customizable open-source software that puts the power of social media in the hands of the people.">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:image" content="/og-image.png">
     
     <!-- Additional meta tags -->
-    <meta name="image" content="">
+    <meta name="image" content="/og-image.png">
     <meta name="author" content="Soapbox Technology">
     <meta name="keywords" content="soapbox, nostr, decentralized, social media, open source, ditto, fediverse, activitypub">
     <meta name="robots" content="index, follow">
@@ -40,7 +40,7 @@
     <meta name="twitter:creator" content="@soapbox_pub">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="">
+    <link rel="canonical" href="https://soapbox.pub">
     
     <!-- Structured Data -->
     <script type="application/ld+json" id="structured-data">
@@ -51,20 +51,24 @@
       (function() {
         // Get the current origin (protocol + hostname + port)
         const baseUrl = window.location.origin;
+        const defaultUrl = 'https://soapbox.pub';
         
-        // Update OG image URLs
-        const ogImage = baseUrl + '/og-image.png';
-        document.querySelector('meta[property="og:image"]').setAttribute('content', ogImage);
-        document.querySelector('meta[name="twitter:image"]').setAttribute('content', ogImage);
-        document.querySelector('meta[name="image"]').setAttribute('content', ogImage);
+        // Only update URLs if we're not on the default domain
+        if (baseUrl !== defaultUrl) {
+          // Update OG image URLs
+          const ogImage = baseUrl + '/og-image.png';
+          document.querySelector('meta[property="og:image"]').setAttribute('content', ogImage);
+          document.querySelector('meta[name="twitter:image"]').setAttribute('content', ogImage);
+          document.querySelector('meta[name="image"]').setAttribute('content', ogImage);
+          
+          // Update OG URL
+          document.querySelector('meta[property="og:url"]').setAttribute('content', baseUrl);
+          
+          // Update canonical URL
+          document.querySelector('link[rel="canonical"]').setAttribute('href', baseUrl);
+        }
         
-        // Update OG URL
-        document.querySelector('meta[property="og:url"]').setAttribute('content', baseUrl);
-        
-        // Update canonical URL
-        document.querySelector('link[rel="canonical"]').setAttribute('href', baseUrl);
-        
-        // Update structured data
+        // Always update structured data with current URL
         const structuredData = {
           "@context": "https://schema.org",
           "@type": "Organization",
