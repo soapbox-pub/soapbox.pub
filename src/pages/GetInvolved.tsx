@@ -73,17 +73,6 @@ export default function GetInvolved() {
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <defs>
-                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-                </pattern>
-              </defs>
-              <rect width="100" height="100" fill="url(#grid)" />
-            </svg>
-          </div>
           
           {/* Floating Elements */}
           <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
@@ -100,9 +89,8 @@ export default function GetInvolved() {
                 </div>
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-6 leading-tight">
-                  Get
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
-                    Involved
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
+                    Get Involved
                   </span>
                 </h1>
                 
@@ -111,12 +99,12 @@ export default function GetInvolved() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8">
-                    Start Contributing
+                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8" asChild>
+                    <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer">
+                      Start Contributing
+                    </a>
                   </Button>
-                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                    View Open Roles
-                  </Button>
+
                 </div>
               </div>
               
@@ -148,7 +136,7 @@ export default function GetInvolved() {
                   <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-2 rounded-lg text-sm font-semibold shadow-lg">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
-                      Active Project
+                      Free Software
                     </div>
                   </div>
                   
@@ -157,7 +145,7 @@ export default function GetInvolved() {
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                       </svg>
-                      Open Source
+                      Decentralizion
                     </div>
                   </div>
                 </div>
@@ -171,7 +159,7 @@ export default function GetInvolved() {
         </section>
 
         {/* Open Positions */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="open-positions" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">

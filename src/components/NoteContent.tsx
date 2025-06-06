@@ -10,12 +10,14 @@ import { cn } from '@/lib/utils';
 interface NoteContentProps {
   event: NostrEvent;
   className?: string;
+  hideQuoteReferences?: boolean; // Hide nostr: references for quote posts
 }
 
 /** Parses content of text note events so that URLs and hashtags are linkified. */
 export function NoteContent({
   event, 
-  className, 
+  className,
+  hideQuoteReferences = false,
 }: NoteContentProps) {  
   // Extract media metadata from imeta tags
   const mediaMetadata = useMemo(() => {
@@ -44,7 +46,13 @@ export function NoteContent({
 
   // Process the content to render mentions, links, media, etc.
   const { textContent, mediaUrls } = useMemo(() => {
-    const text = event.content;
+    let text = event.content;
+    
+    // If this is a quote post and we should hide quote references, remove them
+    if (hideQuoteReferences) {
+      // Remove nostr: references that are likely quote references
+      text = text.replace(/nostr:(nevent1|note1|naddr1)([023456789acdefghjklmnpqrstuvwxyz]+)/g, '').trim();
+    }
     
     // Regex to find URLs, Nostr references, and hashtags
     const regex = /(https?:\/\/[^\s]+)|nostr:(npub1|note1|nprofile1|nevent1)([023456789acdefghjklmnpqrstuvwxyz]+)|(#\w+)/g;
@@ -147,7 +155,7 @@ export function NoteContent({
     }
     
     return { textContent: parts, mediaUrls: foundMediaUrls };
-  }, [event.content, mediaMetadata]);
+  }, [event.content, mediaMetadata, hideQuoteReferences]);
 
   return (
     <div className={cn("space-y-3", className)}>

@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { NoteContent } from '@/components/NoteContent';
+import { QuotedPost } from '@/components/QuotedPost';
 import { PostReactions } from '@/components/PostReactions';
 import { PostComments } from '@/components/PostComments';
 import { PostInteractionsSkeleton } from '@/components/PostInteractionsSkeleton';
@@ -46,6 +47,10 @@ export function NostrPost({ event, className }: NostrPostProps) {
       return null;
     }
   })() : null;
+
+  // Handle quote posts (kind 1 with q tag)
+  const isQuotePost = event.kind === 1 && event.tags.some(tag => tag[0] === 'q');
+  const qTag = isQuotePost ? event.tags.find(tag => tag[0] === 'q') : null;
 
   // Use original event for interactions if this is a repost
   const targetEvent = originalEvent || event;
@@ -208,8 +213,13 @@ export function NostrPost({ event, className }: NostrPostProps) {
         <div className="space-y-4">
           {/* Post Content */}
           <div className="text-gray-900 leading-relaxed">
-            <NoteContent event={event} />
+            <NoteContent event={event} hideQuoteReferences={isQuotePost} />
           </div>
+          
+          {/* Quoted Post */}
+          {isQuotePost && qTag && (
+            <QuotedPost qTag={qTag} />
+          )}
           
           {/* Interaction Buttons */}
           {interactionsLoading ? (
