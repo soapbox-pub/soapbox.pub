@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { TeamPostsFeed } from "@/components/TeamPostsFeed";
 import { ExternalLink, Heart, Users, Zap } from "lucide-react";
 
 const teamMembers = [
@@ -173,6 +175,22 @@ export default function About() {
           </div>
         </section>
 
+        {/* Team Posts Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
+                Latest from the Team
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Stay up to date with what our team members are sharing on Nostr.
+              </p>
+            </div>
+            
+            <TeamPostsFeed />
+          </div>
+        </section>
+
         {/* Get Involved Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
           <div className="max-w-4xl mx-auto text-center">
@@ -185,13 +203,13 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
-                <a href="https://gitlab.com/soapbox-pub/soapbox/-/issues" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                  Browse Open Issues <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
+                <Link to="/get-involved" className="inline-flex items-center">
+                  Get Involved
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900" asChild>
-                <a href="/mentorship" className="inline-flex items-center">
-                  Learn About Mentorship
+                <a href="https://gitlab.com/soapbox-pub/soapbox/-/issues" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                  Browse Open Issues <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>

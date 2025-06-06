@@ -3,6 +3,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 
 import Index from "./pages/Index";
 import About from "./pages/About";
+import GetInvolved from "./pages/GetInvolved";
 import Tools from "./pages/Tools";
 import Showcase from "./pages/Showcase";
 import BlogIndex from "./pages/blog/BlogIndex";
@@ -25,6 +26,7 @@ export function AppRouter() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
+        <Route path="/get-involved" element={<GetInvolved />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/tools/ditto" element={<Ditto />} />
         <Route path="/tools/nostrify" element={<Nostrify />} />
