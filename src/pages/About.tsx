@@ -140,9 +140,14 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
                 Meet the Team
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
                 The passionate individuals building the future of decentralized social media.
               </p>
+              <Button size="lg" className="bg-azure hover:bg-azure/90 text-white" asChild>
+                <Link to="/get-involved" className="inline-flex items-center">
+                  We're hiring! View open positions
+                </Link>
+              </Button>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

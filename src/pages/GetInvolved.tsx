@@ -2,7 +2,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, GitBranch, Users, Briefcase, MessageSquare, Zap } from "lucide-react";
+import { ExternalLink, Briefcase } from "lucide-react";
 
 const openPositions = [
   {
@@ -67,90 +67,105 @@ const openPositions = [
   }
 ];
 
-const contributionAreas = [
-  {
-    icon: <GitBranch className="h-8 w-8 text-blue-500" />,
-    title: "Code Contributions",
-    description: "Contribute to our open source projects on GitLab. From bug fixes to new features, every contribution helps build the future of decentralized social media.",
-    action: "Browse Issues",
-    link: "https://gitlab.com/soapbox-pub"
-  },
-  {
-    icon: <Users className="h-8 w-8 text-green-500" />,
-    title: "Community Support",
-    description: "Help newcomers get started, answer questions, and foster a welcoming community around our projects and the broader Nostr ecosystem.",
-    action: "Join Community",
-    link: "https://ditto.pub"
-  },
-  {
-    icon: <MessageSquare className="h-8 w-8 text-purple-500" />,
-    title: "Documentation",
-    description: "Improve our documentation, write tutorials, or help translate our projects to make them accessible to developers and users worldwide.",
-    action: "View Docs",
-    link: "https://gitlab.com/soapbox-pub"
-  },
-  {
-    icon: <Zap className="h-8 w-8 text-orange-500" />,
-    title: "Testing & Feedback",
-    description: "Test our applications, report bugs, suggest improvements, and help us ensure our software meets the needs of real users.",
-    action: "Report Issues",
-    link: "https://gitlab.com/soapbox-pub"
-  }
-];
-
 export default function GetInvolved() {
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-6">
-              Get Involved
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Join us in building the future of decentralized social media. Whether you're a developer, designer, writer, or just passionate about free software, there's a place for you in our community.
-            </p>
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#grid)" />
+            </svg>
           </div>
-        </section>
-
-        {/* Open Source Contributions */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
-                Open Source Contributions
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                All our projects are open source and available on GitLab. We welcome contributions from developers of all skill levels.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              {contributionAreas.map((area, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-0">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        {area.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {area.title}
-                        </h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed">
-                          {area.description}
-                        </p>
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={area.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                            {area.action} <ExternalLink className="ml-2 h-3 w-3" />
-                          </a>
-                        </Button>
-                      </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/15 rounded-full blur-lg animate-pulse delay-500"></div>
+          
+          <div className="relative max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                  Open Source Project
+                </div>
+                
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-6 leading-tight">
+                  Get
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
+                    Involved
+                  </span>
+                </h1>
+                
+                <p className="text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
+                  Join us in building the future of decentralized social media. Whether you're a developer, designer, writer, or just passionate about free software, there's a place for you in our community.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8">
+                    Start Contributing
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                    View Open Roles
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Image/Illustration Side */}
+              <div className="relative">
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                  {/* Code Editor Mock */}
+                  <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl">
+                    <div className="flex items-center gap-2 px-4 py-3 bg-gray-800">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="ml-4 text-gray-400 text-sm font-mono">soapbox-project</span>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div className="p-4 text-sm font-mono space-y-2">
+                      <div className="text-purple-400">import <span className="text-blue-300">{'{ NostrProvider }'}</span> from <span className="text-green-300">'@nostrify/react'</span></div>
+                      <div className="text-gray-500">// Building decentralized social media</div>
+                      <div className="text-orange-400">function <span className="text-yellow-300">SoapboxApp</span>() {'{'}</div>
+                      <div className="text-pink-400 ml-4">return <span className="text-blue-300">{'<'}</span><span className="text-red-400">NostrProvider</span><span className="text-blue-300">{'>'}</span></div>
+                      <div className="text-gray-400 ml-8">{'<'}YourContribution /{'>'}
+                      <div className="animate-pulse ml-8 w-2 h-4 bg-white inline-block"></div>
+                      </div>
+                      <div className="text-pink-400 ml-4">{'</'}<span className="text-red-400">NostrProvider</span>{'>'}</div>
+                      <div className="text-orange-400">{'}'}</div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Stats */}
+                  <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
+                      Active Project
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-3 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      Open Source
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Additional Decorative Elements */}
+                <div className="absolute top-1/4 -right-8 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 blur-xl"></div>
+                <div className="absolute bottom-1/4 -left-8 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-15 blur-2xl"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -223,6 +238,23 @@ export default function GetInvolved() {
           </div>
         </section>
 
+        {/* Open Source Contributions */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
+              Open Source Contributions
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              All our projects are open source and available on GitLab. We welcome contributions from developers of all skill levels.
+            </p>
+            <Button size="lg" asChild>
+              <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                Visit our GitLab <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
           <div className="max-w-4xl mx-auto text-center">
@@ -236,11 +268,6 @@ export default function GetInvolved() {
               <Button size="lg" variant="secondary" asChild>
                 <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
                   Start Contributing <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900" asChild>
-                <a href="mailto:careers@soapbox.pub" className="inline-flex items-center">
-                  Apply for a Position <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>

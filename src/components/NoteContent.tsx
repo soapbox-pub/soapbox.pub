@@ -3,6 +3,7 @@ import { type NostrEvent } from '@nostrify/nostrify';
 import { Link } from 'react-router-dom';
 import { nip19 } from 'nostr-tools';
 import { useAuthor } from '@/hooks/useAuthor';
+import { MediaAttachment } from '@/components/MediaAttachment';
 import { genUserName } from '@/lib/genUserName';
 import { cn } from '@/lib/utils';
 
@@ -16,14 +17,40 @@ export function NoteContent({
   event, 
   className, 
 }: NoteContentProps) {  
-  // Process the content to render mentions, links, etc.
-  const content = useMemo(() => {
+  // Extract media metadata from imeta tags
+  const mediaMetadata = useMemo(() => {
+    const imetaTags = event.tags.filter(tag => tag[0] === 'imeta');
+    const metadata: Record<string, Record<string, string>> = {};
+    
+    imetaTags.forEach(tag => {
+      const pairs = tag.slice(1); // Remove 'imeta' from the beginning
+      const urlPair = pairs.find(pair => pair.startsWith('url '));
+      if (urlPair) {
+        const url = urlPair.substring(4); // Remove 'url ' prefix
+        metadata[url] = {};
+        
+        pairs.forEach(pair => {
+          const [key, ...valueParts] = pair.split(' ');
+          const value = valueParts.join(' ');
+          if (key !== 'url') {
+            metadata[url][key] = value;
+          }
+        });
+      }
+    });
+    
+    return metadata;
+  }, [event.tags]);
+
+  // Process the content to render mentions, links, media, etc.
+  const { textContent, mediaUrls } = useMemo(() => {
     const text = event.content;
     
     // Regex to find URLs, Nostr references, and hashtags
     const regex = /(https?:\/\/[^\s]+)|nostr:(npub1|note1|nprofile1|nevent1)([023456789acdefghjklmnpqrstuvwxyz]+)|(#\w+)/g;
     
     const parts: React.ReactNode[] = [];
+    const foundMediaUrls: string[] = [];
     let lastIndex = 0;
     let match: RegExpExecArray | null;
     let keyCounter = 0;
@@ -38,18 +65,28 @@ export function NoteContent({
       }
       
       if (url) {
-        // Handle URLs
-        parts.push(
-          <a 
-            key={`url-${keyCounter++}`}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
-          >
-            {url}
-          </a>
-        );
+        // Check if this URL has media metadata or looks like media
+        const hasMetadata = mediaMetadata[url];
+        const isMediaUrl = /\.(jpg|jpeg|png|gif|webp|svg|mp4|webm|mov|avi|mkv|mp3|wav|ogg|m4a|flac)$/i.test(url);
+        
+        if (hasMetadata || isMediaUrl) {
+          // This is a media URL, collect it for rendering separately
+          foundMediaUrls.push(url);
+          // Don't render the URL in text, it will be shown as media
+        } else {
+          // Regular URL
+          parts.push(
+            <a 
+              key={`url-${keyCounter++}`}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
+              {url}
+            </a>
+          );
+        }
       } else if (nostrPrefix && nostrData) {
         // Handle Nostr references
         try {
@@ -109,12 +146,36 @@ export function NoteContent({
       parts.push(text);
     }
     
-    return parts;
-  }, [event]);
+    return { textContent: parts, mediaUrls: foundMediaUrls };
+  }, [event.content, mediaMetadata]);
 
   return (
-    <div className={cn("whitespace-pre-wrap break-words", className)}>
-      {content.length > 0 ? content : event.content}
+    <div className={cn("space-y-3", className)}>
+      {/* Text content */}
+      {textContent.length > 0 && (
+        <div className="whitespace-pre-wrap break-words">
+          {textContent}
+        </div>
+      )}
+      
+      {/* Media attachments */}
+      {mediaUrls.length > 0 && (
+        <div className="space-y-3">
+          {mediaUrls.map((url, index) => {
+            const metadata = mediaMetadata[url] || {};
+            return (
+              <MediaAttachment
+                key={`media-${index}`}
+                url={url}
+                mimeType={metadata.m}
+                dimensions={metadata.dim}
+                alt={metadata.alt}
+                blurhash={metadata.blurhash}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

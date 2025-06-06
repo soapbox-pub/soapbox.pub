@@ -31,6 +31,26 @@ export function NostrPost({ event, className }: NostrPostProps) {
   const [showLoginDialog, setShowLoginDialog] = useState(false);
   const [showPostModal, setShowPostModal] = useState(false);
 
+  // Handle repost events (kind 6)
+  const isRepost = event.kind === 6;
+  const originalEvent = isRepost ? (() => {
+    try {
+      return JSON.parse(event.content) as NostrEvent;
+    } catch {
+      // If content parsing fails, try to get event from tags
+      const eTag = event.tags.find(tag => tag[0] === 'e');
+      if (eTag) {
+        // Event needs to be fetched by ID - returning null for now
+        return null;
+      }
+      return null;
+    }
+  })() : null;
+
+  // Use original event for interactions if this is a repost
+  const targetEvent = originalEvent || event;
+  const targetEventId = targetEvent.id;
+
   // Check if current user has liked this post
   const isLiked = user && interactions?.reactions.some(
     reaction => reaction.pubkey === user.pubkey && (reaction.content === '+' || reaction.content === '')
@@ -61,8 +81,8 @@ export function NostrPost({ event, className }: NostrPostProps) {
       kind: 7,
       content: '+',
       tags: [
-        ['e', event.id],
-        ['p', event.pubkey]
+        ['e', targetEventId],
+        ['p', targetEvent.pubkey]
       ]
     });
   };
@@ -75,10 +95,10 @@ export function NostrPost({ event, className }: NostrPostProps) {
     
     publishEvent({
       kind: 6,
-      content: JSON.stringify(event),
+      content: JSON.stringify(targetEvent),
       tags: [
-        ['e', event.id],
-        ['p', event.pubkey]
+        ['e', targetEventId],
+        ['p', targetEvent.pubkey]
       ]
     });
   };
@@ -100,6 +120,62 @@ export function NostrPost({ event, className }: NostrPostProps) {
     setShowPostModal(true);
   };
 
+  // If this is a repost, show a simplified repost view
+  if (isRepost) {
+    const displayEvent = originalEvent || event;
+    
+    return (
+      <Card className={cn("group hover:shadow-lg transition-all duration-300", className)}>
+        <div className="px-4 pt-3 pb-1">
+          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <span>Repost</span>
+          </div>
+        </div>
+        
+        <CardHeader className="pb-3 pt-2">
+          <div className="flex items-start space-x-3">
+            <Avatar className="w-12 h-12">
+              <AvatarImage src={profileImage} alt={displayName} />
+              <AvatarFallback>{displayName.slice(0, 2).toUpperCase()}</AvatarFallback>
+            </Avatar>
+            
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center space-x-2">
+                <h3 className="font-semibold text-gray-900 truncate">{displayName}</h3>
+                <Badge variant="secondary" className="bg-azure-100 text-azure-700 text-xs">
+                  Soapbox
+                </Badge>
+              </div>
+              <p className="text-sm text-gray-500">{formatDate(displayEvent.created_at)}</p>
+              {about && (
+                <p className="text-sm text-gray-600 mt-1 line-clamp-1">{about}</p>
+              )}
+            </div>
+          </div>
+        </CardHeader>
+        
+        <CardContent className="pt-0">
+          <div className="text-gray-900 leading-relaxed">
+            <NoteContent event={displayEvent} />
+          </div>
+        </CardContent>
+
+        <LoginDialog
+          isOpen={showLoginDialog}
+          onClose={() => setShowLoginDialog(false)}
+          onLogin={() => setShowLoginDialog(false)}
+        />
+
+        <PostModal
+          event={displayEvent}
+          isOpen={showPostModal}
+          onClose={() => setShowPostModal(false)}
+        />
+      </Card>
+    );
+  }
+
+  // Regular post rendering
   return (
     <Card className={cn("group hover:shadow-lg transition-all duration-300", className)}>
       <CardHeader className="pb-3">

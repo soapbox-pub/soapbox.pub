@@ -31,7 +31,7 @@ export function useSoapboxPosts(limit: number = 10) {
         
         const events = await nostr.query([
           {
-            kinds: [1], // Text notes
+            kinds: [1, 6], // Text notes and reposts
             authors: [pubkeyHex],
             limit: limit,
           }
