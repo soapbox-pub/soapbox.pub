@@ -6,10 +6,20 @@ import { Badge } from '@/components/ui/badge';
 import { BlogList } from '@/components/blog/BlogList';
 import { Layout } from '@/components/Layout';
 import { getAllPosts, formatDate } from '@/lib/blog/utils';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const allPosts = getAllPosts();
+  
+  // Set custom SEO for blog index
+  useSEO({
+    title: 'Soapbox Blog - Insights on Decentralized Social Media',
+    description: 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
+    type: 'website',
+    image: '/og-image.png',
+    keywords: 'soapbox blog, decentralized social media news, open source updates, nostr insights'
+  });
   
   const filteredPosts = allPosts.filter(post =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
