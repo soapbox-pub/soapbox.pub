@@ -1,14 +1,18 @@
 import { useState } from 'react';
-import { Heart, MessageCircle, Repeat2, Zap, MoreHorizontal } from 'lucide-react';
+import { MoreHorizontal } from 'lucide-react';
 import type { NostrEvent } from '@nostrify/nostrify';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
+import { usePostInteractions } from '@/hooks/usePostInteractions';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { NoteContent } from '@/components/NoteContent';
+import { PostReactions } from '@/components/PostReactions';
+import { PostComments } from '@/components/PostComments';
+import { PostInteractionsSkeleton } from '@/components/PostInteractionsSkeleton';
 import LoginDialog from '@/components/auth/LoginDialog';
 import { genUserName } from '@/lib/genUserName';
 import { cn } from '@/lib/utils';
@@ -22,11 +26,13 @@ export function NostrPost({ event, className }: NostrPostProps) {
   const { user } = useCurrentUser();
   const author = useAuthor(event.pubkey);
   const { mutate: publishEvent } = useNostrPublish();
-  const [isLiked, setIsLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(0);
-  const [repostCount, setRepostCount] = useState(0);
-  const [commentCount] = useState(0);
+  const { data: interactions, isLoading: interactionsLoading } = usePostInteractions(event.id);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
+
+  // Check if current user has liked this post
+  const isLiked = user && interactions?.reactions.some(
+    reaction => reaction.pubkey === user.pubkey && (reaction.content === '+' || reaction.content === '')
+  ) || false;
 
   const metadata = author.data?.metadata;
   const displayName = metadata?.name ?? genUserName(event.pubkey);
@@ -57,9 +63,6 @@ export function NostrPost({ event, className }: NostrPostProps) {
         ['p', event.pubkey]
       ]
     });
-    
-    setIsLiked(!isLiked);
-    setLikeCount(prev => isLiked ? prev - 1 : prev + 1);
   };
 
   const handleRepost = () => {
@@ -70,14 +73,12 @@ export function NostrPost({ event, className }: NostrPostProps) {
     
     publishEvent({
       kind: 6,
-      content: '',
+      content: JSON.stringify(event),
       tags: [
         ['e', event.id],
         ['p', event.pubkey]
       ]
     });
-    
-    setRepostCount(prev => prev + 1);
   };
 
   const handleZap = () => {
@@ -134,59 +135,28 @@ export function NostrPost({ event, className }: NostrPostProps) {
           </div>
           
           {/* Interaction Buttons */}
-          <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-            <div className="flex items-center space-x-6">
-              {/* Like Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleLike}
-                className={cn(
-                  "flex items-center space-x-2 text-gray-500 hover:text-red-500 transition-colors",
-                  isLiked && "text-red-500"
-                )}
-              >
-                <Heart className={cn("h-4 w-4", isLiked && "fill-current")} />
-                <span className="text-sm">{likeCount}</span>
-              </Button>
-              
-              {/* Comment Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleComment}
-                className="flex items-center space-x-2 text-gray-500 hover:text-blue-500 transition-colors"
-              >
-                <MessageCircle className="h-4 w-4" />
-                <span className="text-sm">{commentCount}</span>
-              </Button>
-              
-              {/* Repost Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleRepost}
-                className="flex items-center space-x-2 text-gray-500 hover:text-green-500 transition-colors"
-              >
-                <Repeat2 className="h-4 w-4" />
-                <span className="text-sm">{repostCount}</span>
-              </Button>
-              
-              {/* Zap Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleZap}
-                className="flex items-center space-x-2 text-gray-500 hover:text-orange-500 transition-colors"
-              >
-                <Zap className="h-4 w-4" />
-              </Button>
-            </div>
-            
-
-          </div>
+          {interactionsLoading ? (
+            <PostInteractionsSkeleton />
+          ) : interactions ? (
+            <PostReactions
+              reactions={interactions.reactions}
+              comments={interactions.comments}
+              reposts={interactions.reposts}
+              zaps={interactions.zaps}
+              onLike={handleLike}
+              onComment={handleComment}
+              onRepost={handleRepost}
+              onZap={handleZap}
+              isLiked={isLiked}
+            />
+          ) : null}
         </div>
       </CardContent>
+
+      {/* Comments Section */}
+      {!interactionsLoading && interactions && interactions.comments.length > 0 && (
+        <PostComments comments={interactions.comments} />
+      )}
 
       <LoginDialog
         isOpen={showLoginDialog}
