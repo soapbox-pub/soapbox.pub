@@ -59,29 +59,29 @@ export default function Tools() {
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-600">
                         <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                        Flexible architecture
+                        Launch in less than 10 minutes
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
                         <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                        Rapid development
+                        AI-First Development
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
                         <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                        Scalable solutions
+                        Full Nostr Protocol Support
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-600">
                         <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                        Production-ready
+                        Supports multiple routers
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
                         <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                        TypeScript support
+                        Built-in AI Agent, Dork
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
                         <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                        Cross-platform compatibility
+                        Media uploads with Blossom
                       </div>
                     </div>
                   </div>
