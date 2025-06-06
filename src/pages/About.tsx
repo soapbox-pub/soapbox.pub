@@ -38,6 +38,13 @@ const teamMembers = [
     bio: "Danidfra is a programmer with an interest in both code and music. He believes that technology can transform the world, and is always looking for new ways to create a positive impact.",
     avatar: "/assets/avatars/danidfra.jpeg",
     follow: "https://ditto.pub/@danidfra@danidfra.com"
+  },
+  {
+    name: "And Other Stuff",
+    role: "Partner Organization",
+    bio: "Soapbox is a member of the And Other Stuff collective, with a focus communities.",
+    avatar: "/assets/avatars/aos.png",
+    follow: "https://ditto.pub/@AOS@andotherstuff.org"
   }
 ];
 

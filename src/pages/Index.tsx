@@ -117,7 +117,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Our Tools: Your Foundation
+              Our Tools, Your Vision
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From social platforms to AI development, our comprehensive suite of tools gives you 
