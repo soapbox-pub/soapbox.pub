@@ -1,10 +1,9 @@
 import path from "node:path";
-
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vitest/config";
 
-// https://vitejs.dev/config/
-export default defineConfig(() => ({
+export default defineConfig({
+  base: '/',
   server: {
     host: "::",
     port: 8080,
@@ -13,17 +12,9 @@ export default defineConfig(() => ({
   optimizeDeps: {
     include: ['nostr-tools'],
   },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
-    onConsoleLog(log) {
-      return !log.includes("React Router Future Flag Warning");
-    },
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+});
