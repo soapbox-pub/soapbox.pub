@@ -495,6 +495,22 @@ export default function MKStack() {
         </div>
       </section>
 
+      {/* What People Are Saying About MKStack */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              What People Are Saying About MKStack
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what developers and creators are sharing about their experience building with MKStack.
+            </p>
+          </div>
+          
+          <MKStackPostsFeed />
+        </div>
+      </section>
+
       {/* Key Features */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -788,22 +804,6 @@ export default function MKStack() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* What People Are Saying About MKStack */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              What People Are Saying About MKStack
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See what developers and creators are sharing about their experience building with MKStack.
-            </p>
-          </div>
-          
-          <MKStackPostsFeed />
         </div>
       </section>
 

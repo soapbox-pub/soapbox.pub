@@ -22,9 +22,10 @@ import { cn } from '@/lib/utils';
 interface NostrPostProps {
   event: NostrEvent;
   className?: string;
+  showBadge?: boolean;
 }
 
-export function NostrPost({ event, className }: NostrPostProps) {
+export function NostrPost({ event, className, showBadge = true }: NostrPostProps) {
   const { user } = useCurrentUser();
   const author = useAuthor(event.pubkey);
   const { mutate: publishEvent } = useNostrPublish();
@@ -147,9 +148,11 @@ export function NostrPost({ event, className }: NostrPostProps) {
             <div className="flex-1 min-w-0">
               <div className="flex items-center space-x-2">
                 <h3 className="font-semibold text-gray-900 truncate">{displayName}</h3>
-                <Badge variant="secondary" className="bg-azure-100 text-azure-700 text-xs">
-                  Soapbox
-                </Badge>
+                {showBadge && (
+                  <Badge variant="secondary" className="bg-azure-100 text-azure-700 text-xs">
+                    Soapbox
+                  </Badge>
+                )}
               </div>
               <p className="text-sm text-gray-500">{formatDate(displayEvent.created_at)}</p>
               {about && (
@@ -193,9 +196,11 @@ export function NostrPost({ event, className }: NostrPostProps) {
           <div className="flex-1 min-w-0">
             <div className="flex items-center space-x-2">
               <h3 className="font-semibold text-gray-900 truncate">{displayName}</h3>
-              <Badge variant="secondary" className="bg-azure-100 text-azure-700 text-xs">
-                Soapbox
-              </Badge>
+              {showBadge && (
+                <Badge variant="secondary" className="bg-azure-100 text-azure-700 text-xs">
+                  Soapbox
+                </Badge>
+              )}
             </div>
             <p className="text-sm text-gray-500">{formatDate(event.created_at)}</p>
             {about && (

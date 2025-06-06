@@ -78,7 +78,7 @@ export function MKStackPostsFeed() {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {posts.map((post) => (
-        <NostrPost key={post.id} event={post} />
+        <NostrPost key={post.id} event={post} showBadge={false} />
       ))}
     </div>
   );
