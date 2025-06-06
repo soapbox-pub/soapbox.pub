@@ -5,8 +5,41 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FeaturedStacks } from "@/components/FeaturedStacks";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Stacks() {
+  // Set custom SEO for Stacks page
+  useSEO({
+    title: 'Stacks - AI-First Development Templates on Nostr | Decentralized Code Sharing',
+    description: 'Discover and share AI-powered development templates on Nostr. Build applications faster with decentralized project templates, built-in AI assistance, and censorship-resistant sharing.',
+    type: 'website',
+    image: '/assets/images/stacks.png',
+    keywords: 'stacks, ai templates, nostr development, decentralized templates, ai-first development, code sharing, project templates, dork ai, rapid development',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Stacks",
+      "description": "AI-First Development Templates on Nostr",
+      "applicationCategory": "Development Platform",
+      "operatingSystem": "Cross-platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      },
+      "featureList": [
+        "Decentralized template sharing on Nostr",
+        "AI-powered development with Dork",
+        "Censorship-resistant code templates",
+        "Rapid application bootstrapping"
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       <Navigation />

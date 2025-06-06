@@ -5,8 +5,45 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Showcase() {
+  // Set custom SEO for Showcase page
+  useSEO({
+    title: 'Platform Showcase - Apps Built with Soapbox Tools | Decentralized Communities',
+    description: 'Explore real platforms and communities built with Soapbox tools. From Ditto social networks to MKStack applications, see decentralized social media in action.',
+    type: 'website',
+    image: '/assets/images/riga-team.png',
+    keywords: 'soapbox showcase, ditto apps, mkstack applications, nostr platforms, decentralized communities, soapbox examples, nostr showcase',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Soapbox Platform Showcase",
+      "description": "Collection of platforms and applications built using Soapbox tools and frameworks",
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      },
+      "hasPart": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Ditto.pub",
+          "description": "Flagship Ditto community platform"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Chorus",
+          "description": "Facebook-style groups on Nostr"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Blobbi",
+          "description": "Virtual pet platform on Nostr"
+        }
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
       <Navigation />

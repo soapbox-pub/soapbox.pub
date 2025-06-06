@@ -5,8 +5,41 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Nostrbook() {
+  // Set custom SEO for Nostrbook page
+  useSEO({
+    title: 'Nostrbook MCP - AI-Optimized Nostr Documentation | Model Context Protocol',
+    description: 'Access comprehensive Nostr protocol documentation optimized for AI systems. Includes Model Context Protocol integration, custom NIPs from NostrHub, and structured knowledge for developers.',
+    type: 'website',
+    image: '/assets/images/nostrbook.png',
+    keywords: 'nostrbook, nostr documentation, model context protocol, mcp, ai documentation, nostr protocol, nips, structured knowledge, ai integration',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Nostrbook MCP",
+      "description": "AI-optimized Nostr protocol documentation with Model Context Protocol integration",
+      "applicationCategory": "Documentation Platform",
+      "operatingSystem": "Cross-platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      },
+      "featureList": [
+        "Model Context Protocol (MCP) integration",
+        "Custom NIPs from NostrHub",
+        "Searchable knowledge base",
+        "AI-optimized documentation format"
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
       <Navigation />

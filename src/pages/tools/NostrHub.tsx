@@ -6,8 +6,41 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { RecentNips } from "@/components/RecentNips";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function NostrHub() {
+  // Set custom SEO for NostrHub page
+  useSEO({
+    title: 'NostrHub - Discover & Publish Nostr NIPs | Protocol Development Platform',
+    description: 'Browse official Nostr Implementation Possibilities (NIPs), publish custom protocol extensions, and contribute to decentralized protocol development on Nostr. The hub for Nostr innovation.',
+    type: 'website',
+    image: '/assets/nostrhub-screenshot.png',
+    keywords: 'nostrhub, nostr nips, protocol development, custom nips, nostr implementation, decentralized protocol, nip publishing, nostr innovation',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NostrHub",
+      "description": "Discover and publish Nostr Implementation Possibilities (NIPs)",
+      "applicationCategory": "Development Platform",
+      "operatingSystem": "Web-based",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      },
+      "featureList": [
+        "Browse 100+ official NIPs",
+        "Publish custom NIPs on Nostr",
+        "Interactive comments and collaboration",
+        "Author profiles and tracking"
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
       <Navigation />
