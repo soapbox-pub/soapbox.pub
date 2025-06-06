@@ -10,8 +10,9 @@ pages:
     - cp dist/index.html dist/404.html
     - mv dist public
     - mkdir -p public/assets
-    - echo "--- finding and copying image assets ---"
-    - find src -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.svg' -o -iname '*.webp' \) -exec cp --parents {} public/assets/ \;
+    - echo "--- copying image assets from src/assets/ ---"
+    - apt-get update && apt-get install -y rsync
+    - rsync -av --include='*/' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.svg' --include='*.webp' --exclude='*' src/assets/ public/assets/
     - echo "--- asset tree ---"
     - find public/assets
     - echo "--- index.html preview ---"
@@ -20,5 +21,4 @@ pages:
     paths:
       - public
   rules:
-    # Only run this job on the default branch (usually 'main')
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
