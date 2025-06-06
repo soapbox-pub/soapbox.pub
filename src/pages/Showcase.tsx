@@ -363,35 +363,6 @@ export default function Showcase() {
               Our tools power a growing ecosystem of decentralized social platforms and communities.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-azure-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Globe className="h-10 w-10 text-azure-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">10+</div>
-              <div className="text-gray-600">Live Platforms</div>
-              <div className="text-sm text-gray-500 mt-1">Active communities running</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-10 w-10 text-emerald-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">25,000+</div>
-              <div className="text-gray-600">Users Served</div>
-              <div className="text-sm text-gray-500 mt-1">Across all platforms</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-violet-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Activity className="h-10 w-10 text-violet-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">99.9%</div>
-              <div className="text-gray-600">Uptime</div>
-              <div className="text-sm text-gray-500 mt-1">Reliable infrastructure</div>
-            </div>
-          </div>
 
           {/* Key Features Grid */}
           <div className="grid md:grid-cols-3 gap-8">
