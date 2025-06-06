@@ -1,7 +1,7 @@
 {
   "name": "Soapbox",
   "short_name": "Soapbox",
-  "description": "Build your vision with Soapbox tools - open-source platforms for decentralized communities",
+  "description": "Soapbox is customizable open-source software that puts the power of social media in the hands of the people.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
