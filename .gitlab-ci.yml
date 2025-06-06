@@ -3,12 +3,12 @@ image: node:18
 
 pages:
   before_script:
+    - rm -rf public  # ← Clean up anything from old builds
     - npm install
   script:
     - npx vite build
     - cp dist/index.html dist/404.html
     - mv dist public
-    # Debug: verify the public folder contents
     - echo "--- public folder contents ---"
     - ls -la public
     - echo "--- index.html preview ---"
@@ -17,5 +17,4 @@ pages:
     paths:
       - public
   rules:
-    # Only run this job on the default branch (usually 'main')
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
