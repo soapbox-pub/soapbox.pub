@@ -1,10 +1,10 @@
-import { ArrowRight, Layers, Zap, Rocket, Code, Globe, Users, ExternalLink, PlayCircle, GitBranch, Package, Shield } from "lucide-react";
+import { ArrowRight, Layers, Zap, Rocket, Code, Globe, Users, ExternalLink, PlayCircle, Package, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { MKStackPostsFeed } from "@/components/MKStackPostsFeed";
 
 
 export default function MKStack() {
@@ -791,202 +791,19 @@ export default function MKStack() {
         </div>
       </section>
 
-      {/* Tech Stack */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50">
+      {/* What People Are Saying About MKStack */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Nostr-First Technology Stack
+              What People Are Saying About MKStack
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built specifically for Nostr development with modern web technologies and AI-powered tools.
+              See what developers and creators are sharing about their experience building with MKStack.
             </p>
           </div>
-
-          <Tabs defaultValue="frontend" className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="frontend">Frontend</TabsTrigger>
-              <TabsTrigger value="nostr">Nostr</TabsTrigger>
-              <TabsTrigger value="ai">AI Tools</TabsTrigger>
-              <TabsTrigger value="deployment">Deployment</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="frontend" className="mt-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Code className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">React 18</h3>
-                    <p className="text-sm text-gray-600">Modern React with hooks and concurrent features</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Package className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">TypeScript</h3>
-                    <p className="text-sm text-gray-600">Type safety and enhanced developer experience</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Layers className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Tailwind CSS</h3>
-                    <p className="text-sm text-gray-600">Utility-first CSS framework for rapid styling</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-purple-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Zap className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Vite</h3>
-                    <p className="text-sm text-gray-600">Lightning-fast build tool and dev server</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="nostr" className="mt-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Code className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Nostrify</h3>
-                    <p className="text-sm text-gray-600">Comprehensive Nostr framework</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Package className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">nostr-tools</h3>
-                    <p className="text-sm text-gray-600">Core Nostr utilities and helpers</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Layers className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Blossom</h3>
-                    <p className="text-sm text-gray-600">Decentralized file storage</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-orange-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Zap className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">WebSockets</h3>
-                    <p className="text-sm text-gray-600">Real-time relay connections</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="ai" className="mt-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Package className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Dork Agent</h3>
-                    <p className="text-sm text-gray-600">Built-in AI development assistant</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Layers className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Nostrbook MCP</h3>
-                    <p className="text-sm text-gray-600">Queryable Nostr documentation</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Code className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Context Files</h3>
-                    <p className="text-sm text-gray-600">AI-optimized project context</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-orange-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Zap className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Claude/GPT</h3>
-                    <p className="text-sm text-gray-600">Multiple LLM model support</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="deployment" className="mt-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Package className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Surge</h3>
-                    <p className="text-sm text-gray-600">One-command static site deployment</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Layers className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Vite</h3>
-                    <p className="text-sm text-gray-600">Lightning-fast build and dev server</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-gray-800 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <GitBranch className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">GitHub Actions</h3>
-                    <p className="text-sm text-gray-600">Automated CI/CD workflows</p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-orange-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <Globe className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Static Hosting</h3>
-                    <p className="text-sm text-gray-600">Deploy anywhere, no servers needed</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-          </Tabs>
+          
+          <MKStackPostsFeed />
         </div>
       </section>
 

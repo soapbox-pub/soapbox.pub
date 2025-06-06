@@ -36,20 +36,17 @@ export function useTeamPosts() {
       
       for (const pubkey of pubkeys) {
         try {
-          // Query for text notes (kind 1) and reposts (kind 6) from this specific team member
+          // Query for text notes (kind 1) only from this specific team member
           const memberEvents = await nostr.query([
             {
-              kinds: [1, 6], // Include both text notes and reposts
+              kinds: [1], // Include only text notes (excluding reposts)
               authors: [pubkey],
               limit: 20, // Fetch more to account for filtering out replies
             }
           ], { signal });
 
-          // Filter out replies for kind 1 events, but keep all reposts
+          // Filter out replies for kind 1 events
           const topLevelPosts = memberEvents.filter(event => {
-            // Always include reposts (kind 6)
-            if (event.kind === 6) return true;
-            
             // For text notes (kind 1), exclude replies (events with 'e' tags)
             return !event.tags.some(tag => tag[0] === 'e');
           });

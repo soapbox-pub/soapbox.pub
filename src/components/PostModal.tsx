@@ -11,6 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { NoteContent } from '@/components/NoteContent';
+import { QuotedPost } from '@/components/QuotedPost';
 import { PostReactions } from '@/components/PostReactions';
 import { LoginArea } from '@/components/auth/LoginArea';
 import { genUserName } from '@/lib/genUserName';
@@ -30,6 +31,10 @@ function CommentItem({ comment }: CommentItemProps) {
   const metadata = author.data?.metadata;
   const displayName = metadata?.name ?? genUserName(comment.pubkey);
   const profileImage = metadata?.picture;
+
+  // Handle quote posts in comments
+  const isQuotePost = comment.kind === 1 && comment.tags.some(tag => tag[0] === 'q');
+  const qTag = isQuotePost ? comment.tags.find(tag => tag[0] === 'q') : null;
 
   const formatDate = (timestamp: number) => {
     return new Date(timestamp * 1000).toLocaleDateString('en-US', {
@@ -60,8 +65,15 @@ function CommentItem({ comment }: CommentItemProps) {
         </div>
         
         <div className="text-sm text-gray-700 leading-relaxed">
-          <NoteContent event={comment} />
+          <NoteContent event={comment} hideQuoteReferences={isQuotePost} />
         </div>
+
+        {/* Quoted Post in Comment */}
+        {isQuotePost && qTag && (
+          <div className="mt-3">
+            <QuotedPost qTag={qTag} className="text-xs" />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -74,6 +86,10 @@ export function PostModal({ event, isOpen, onClose }: PostModalProps) {
   const { data: interactions, isLoading: interactionsLoading } = usePostInteractions(event.id);
   const [replyContent, setReplyContent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Handle quote posts (kind 1 with q tag)
+  const isQuotePost = event.kind === 1 && event.tags.some(tag => tag[0] === 'q');
+  const qTag = isQuotePost ? event.tags.find(tag => tag[0] === 'q') : null;
 
   // Check if current user has liked this post
   const isLiked = user && interactions?.reactions.some(
@@ -214,8 +230,15 @@ export function PostModal({ event, isOpen, onClose }: PostModalProps) {
             </div>
             
             <div className="text-gray-900 leading-relaxed mb-4">
-              <NoteContent event={event} />
+              <NoteContent event={event} hideQuoteReferences={isQuotePost} />
             </div>
+
+            {/* Quoted Post */}
+            {isQuotePost && qTag && (
+              <div className="mb-4">
+                <QuotedPost qTag={qTag} />
+              </div>
+            )}
 
             {/* Interaction Buttons */}
             {!interactionsLoading && interactions && (
