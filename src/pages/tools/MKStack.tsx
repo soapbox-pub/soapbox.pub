@@ -210,7 +210,7 @@ export default function MKStack() {
                 <CardTitle className="text-xl">Group Chat Application</CardTitle>
                 <div className="pt-2">
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="http://mkstack-groupchat.surge.sh/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://groupchat-74z9j26wq-mks-projects-1f1254c4.vercel.app/" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View Live Demo
                     </a>
@@ -241,7 +241,7 @@ export default function MKStack() {
                 <CardTitle className="text-xl">Decentralized Goodreads</CardTitle>
                 <div className="pt-2">
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="http://mkstack-bookstr.surge.sh/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://bookstr123-87phkwjcy-mks-projects-1f1254c4.vercel.app/" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View Live Demo
                     </a>
@@ -272,7 +272,7 @@ export default function MKStack() {
                 <CardTitle className="text-xl">Chess Game</CardTitle>
                 <div className="pt-2">
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="http://mkstack-chess.surge.sh/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://chess-l0d7ms7m3-mks-projects-1f1254c4.vercel.app/chess" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View Live Demo
                     </a>
