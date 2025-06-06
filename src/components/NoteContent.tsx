@@ -127,8 +127,10 @@ function NostrMention({ pubkey }: { pubkey: string }) {
   const displayName = author.data?.metadata?.name ?? genUserName(pubkey);
 
   return (
-    <Link 
-      to={`/${npub}`}
+    <a 
+      href={`https://ditto.pub/${npub}`}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "font-medium hover:underline",
         hasRealName 
@@ -137,6 +139,6 @@ function NostrMention({ pubkey }: { pubkey: string }) {
       )}
     >
       @{displayName}
-    </Link>
+    </a>
   );
 }

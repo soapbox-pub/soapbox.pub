@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { X } from 'lucide-react';
 import type { NostrEvent } from '@nostrify/nostrify';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
@@ -14,7 +13,6 @@ import { NoteContent } from '@/components/NoteContent';
 import { PostReactions } from '@/components/PostReactions';
 import { LoginArea } from '@/components/auth/LoginArea';
 import { genUserName } from '@/lib/genUserName';
-import { cn } from '@/lib/utils';
 
 interface PostModalProps {
   event: NostrEvent;
@@ -161,20 +159,11 @@ export function PostModal({ event, isOpen, onClose }: PostModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] p-0 overflow-hidden">
         <DialogHeader className="p-4 pb-0">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold">Post</h2>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="h-8 w-8 p-0"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
+          <h2 className="text-lg font-semibold">Post</h2>
         </DialogHeader>
 
-        <div className="flex flex-col max-h-[calc(90vh-4rem)] overflow-hidden">
+        {/* Single scrollable content area */}
+        <div className="overflow-y-auto max-h-[calc(90vh-4rem)]">
           {/* Main Post */}
           <div className="p-4 border-b border-gray-200">
             <div className="flex items-start space-x-3 mb-4">
@@ -246,7 +235,7 @@ export function PostModal({ event, isOpen, onClose }: PostModalProps) {
           </div>
 
           {/* Comments Section */}
-          <div className="flex-1 overflow-y-auto">
+          <div>
             {interactionsLoading ? (
               <div className="p-4 text-center text-gray-500">
                 Loading comments...
