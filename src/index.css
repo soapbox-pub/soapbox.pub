@@ -108,6 +108,15 @@
   }
 }
 
+@layer utilities {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
 /* Enhanced Blog Post Styling */
 @layer components {
   /* Grid layout for images */

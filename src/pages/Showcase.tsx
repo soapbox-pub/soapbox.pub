@@ -45,11 +45,11 @@ export default function Showcase() {
             <Card className="group hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-azure-200">
               <div className="h-64 bg-gradient-to-r from-azure to-blue-600 relative overflow-hidden">
                 <img 
-                  src="/assets/images/ditto/ditto-phones.png" 
+                  src="/assets/mkstack-apps/ditto-screenshot.png" 
                   alt="Ditto platform on mobile devices"
                   className="absolute inset-0 w-full h-full object-cover opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-azure/70 to-blue-600/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-azure/40 to-blue-600/40"></div>
                 <div className="absolute top-6 left-6">
                   <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
                     <Users className="w-3 h-3 mr-1" />
@@ -115,14 +115,14 @@ export default function Showcase() {
             </Card>
 
             {/* Chorus */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-purple-200">
-              <div className="h-64 bg-gradient-to-r from-purple-500 to-pink-600 relative overflow-hidden">
+            <Card className="group hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-red-200">
+              <div className="h-64 bg-gradient-to-r from-red-500 to-red-600 relative overflow-hidden">
                 <img 
                   src="/assets/mkstack-apps/chorus-screenshot.png" 
                   alt="Chorus - Facebook-style groups on Nostr"
                   className="absolute inset-0 w-full h-full object-cover opacity-85"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/70 to-pink-600/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/40 to-red-600/40"></div>
                 <div className="absolute top-6 left-6">
                   <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
                     <Users className="w-3 h-3 mr-1" />
@@ -144,29 +144,29 @@ export default function Showcase() {
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div className="space-y-3">
                     <div className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                       Nostr Groups (NIP-72)
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                       eCash wallet integration
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                       Cross-border fundraising
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                       Community organizing
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                       Activist tools
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                       Social features
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function Showcase() {
                   <Badge variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200">React</Badge>
                 </div>
                 
-                <Button variant="outline" className="w-full group border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white" asChild>
+                <Button variant="outline" className="w-full group border-red-500 text-red-600 hover:bg-red-500 hover:text-white" asChild>
                   <a href="https://chorus.community/" target="_blank" rel="noopener noreferrer">
                     Join Community
                     <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -198,7 +198,7 @@ export default function Showcase() {
                   alt="Treasures platform screenshot"
                   className="absolute inset-0 w-full h-full object-cover opacity-80"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/80 to-emerald-600/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/40 to-emerald-600/40"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Stacks</Badge>
                   <h3 className="text-xl font-bold">Treasures</h3>
@@ -229,7 +229,7 @@ export default function Showcase() {
                   alt="Blobbi - Virtual pet platform"
                   className="absolute inset-0 w-full h-full object-cover opacity-85"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/70 to-rose-600/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/40 to-rose-600/40"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKStack</Badge>
                   <h3 className="text-xl font-bold">Blobbi</h3>
@@ -260,7 +260,7 @@ export default function Showcase() {
                   alt="Plektos decentralized events platform"
                   className="absolute inset-0 w-full h-full object-cover opacity-85"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/70 to-purple-600/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/40 to-purple-600/40"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKStack</Badge>
                   <h3 className="text-xl font-bold">Plektos</h3>
