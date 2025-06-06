@@ -13,7 +13,7 @@ export default function Nostrify() {
     title: 'Nostrify - TypeScript Framework for Nostr Development | Cross-Platform Library',
     description: 'Build Nostr applications with TypeScript. Flexible library for relays, storage, signers, policies and more. Works in browsers, Node.js, Deno, and mobile apps.',
     type: 'website',
-    image: '/assets/images/nostrify.png',
+    image: '/assets/images/nostrify2.png',
     keywords: 'nostrify, nostr development, typescript library, nostr framework, async generators, nip-07, relay connections, cross-platform',
     structuredData: {
       "@context": "https://schema.org",

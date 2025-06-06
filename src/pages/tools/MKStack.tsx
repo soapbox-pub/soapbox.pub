@@ -14,7 +14,7 @@ export default function MKStack() {
     title: 'MKStack - AI-Powered Nostr App Framework | Build with Dork AI',
     description: 'Create Nostr applications in minutes with MKStack and Dork AI agent. From chat apps to social networks, build decentralized apps on the Nostr protocol with AI-first development.',
     type: 'website',
-    image: '/assets/images/mkstack-og.png',
+    image: '/assets/mkstack-apps/mkstack-og.png',
     keywords: 'mkstack, nostr framework, ai development, dork ai, nostr apps, decentralized development, nostr protocol, ai agent, rapid development',
     structuredData: {
       "@context": "https://schema.org",
