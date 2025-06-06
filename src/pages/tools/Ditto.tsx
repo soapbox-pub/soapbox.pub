@@ -104,16 +104,16 @@ export default function Ditto() {
               <div className="absolute -bottom-6 left-4 right-4">
                 <div className="bg-white rounded-xl shadow-lg p-4 grid grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-violet-600">15K+</div>
-                    <div className="text-xs text-gray-600">Active Users</div>
+                    <div className="text-2xl font-bold text-violet-600">45K+</div>
+                    <div className="text-xs text-gray-600">Nostr Users</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-purple-600">6+</div>
-                    <div className="text-xs text-gray-600">Live Communities</div>
+                    <div className="text-xs text-gray-600">Unique Communities</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">99.9%</div>
-                    <div className="text-xs text-gray-600">Uptime</div>
+                    <div className="text-2xl font-bold text-blue-600">Three</div>
+                    <div className="text-xs text-gray-600">Bridged Protocols</div>
                   </div>
                 </div>
               </div>

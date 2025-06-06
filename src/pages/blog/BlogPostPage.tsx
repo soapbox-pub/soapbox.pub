@@ -137,11 +137,6 @@ export default function BlogPostPage() {
                 <span className="font-medium">{post.author.name}</span>
               </div>
             )}
-            
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span className="font-medium">{readingTime} min read</span>
-            </div>
           </div>
         </header>
 

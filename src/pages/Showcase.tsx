@@ -102,7 +102,7 @@ export default function Showcase() {
               <CardContent className="p-8">
                 <p className="text-gray-700 mb-6 text-lg leading-relaxed">
                   The flagship Ditto platform showcasing all features with custom themes, 
-                  Lightning Zaps, and cross-platform connectivity. A vibrant social space with 5,000+ users.
+                  Lightning Zaps, built-in eCash wallet, and cross-platform connectivity.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-6 mb-8">
