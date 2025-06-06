@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 import type { NostrEvent } from '@nostrify/nostrify';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
@@ -155,11 +156,37 @@ export function PostModal({ event, isOpen, onClose }: PostModalProps) {
     ? [...interactions.comments].sort((a, b) => a.created_at - b.created_at)
     : [];
 
+  // Generate ditto.pub URL for the post
+  const getDittoUrl = () => {
+    // Try to get the user's NIP-05 identifier or use a fallback
+    const nip05 = metadata?.nip05;
+    if (nip05) {
+      // Use NIP-05 format: https://ditto.pub/@username@domain.com/posts/eventid
+      return `https://ditto.pub/@${nip05}/posts/${event.id}`;
+    } else {
+      // Fallback to pubkey format if no NIP-05
+      return `https://ditto.pub/users/${event.pubkey}/posts/${event.id}`;
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] p-0 overflow-hidden">
-        <DialogHeader className="p-4 pb-0">
-          <h2 className="text-lg font-semibold">Post</h2>
+        <DialogHeader className="p-4 pb-0 pr-12">
+          <div className="flex flex-col space-y-3">
+            <h2 className="text-lg font-semibold">Post</h2>
+            <Button variant="outline" size="sm" className="self-start" asChild>
+              <a 
+                href={getDittoUrl()} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                <ExternalLink className="h-4 w-4" />
+                View on Ditto
+              </a>
+            </Button>
+          </div>
         </DialogHeader>
 
         {/* Single scrollable content area */}

@@ -17,7 +17,8 @@ const openPositions = [
       "Experience with modern web frameworks and databases",
       "Strong problem-solving and architectural skills"
     ],
-    tags: ["Full Stack", "React", "Node.js", "Database Design"]
+    tags: ["Full Stack", "React", "Node.js", "Database Design"],
+    applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
     title: "Senior Frontend Developer",
@@ -31,7 +32,8 @@ const openPositions = [
       "Experience with decentralized protocols (preferred)",
       "Passion for open source and user privacy"
     ],
-    tags: ["React", "TypeScript", "Nostr", "Web3"]
+    tags: ["React", "TypeScript", "Nostr", "Web3"],
+    applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
     title: "Senior Backend Developer", 
@@ -45,7 +47,8 @@ const openPositions = [
       "Experience with Rust, Go, or similar systems languages",
       "Understanding of cryptography and decentralized protocols"
     ],
-    tags: ["Rust", "Go", "Distributed Systems", "Cryptography"]
+    tags: ["Rust", "Go", "Distributed Systems", "Cryptography"],
+    applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
     title: "Marketing and Communications Assistant",
@@ -59,7 +62,8 @@ const openPositions = [
       "Experience with social media management and content creation",
       "Interest in decentralization and open source technology"
     ],
-    tags: ["Content Marketing", "Social Media", "Community", "Writing"]
+    tags: ["Content Marketing", "Social Media", "Community", "Writing"],
+    applicationInstructions: "To apply, please email mk@marykatefain.com with a link to your website or portfolio and a letter of interest."
   }
 ];
 
@@ -167,21 +171,18 @@ export default function GetInvolved() {
               {openPositions.map((position, index) => (
                 <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
                   <CardHeader className="p-0 mb-4">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between space-y-2 md:space-y-0">
-                      <div>
-                        <CardTitle className="text-xl font-bold text-gray-900 mb-1">
-                          {position.title}
-                        </CardTitle>
-                        <div className="flex items-center space-x-4 text-sm text-gray-600">
-                          <span className="inline-flex items-center">
-                            <Briefcase className="h-3 w-3 mr-1" />
-                            {position.department}
-                          </span>
-                          <Badge variant="secondary">{position.type}</Badge>
-                          <span>{position.location}</span>
-                        </div>
+                    <div>
+                      <CardTitle className="text-xl font-bold text-gray-900 mb-1">
+                        {position.title}
+                      </CardTitle>
+                      <div className="flex items-center space-x-4 text-sm text-gray-600">
+                        <span className="inline-flex items-center">
+                          <Briefcase className="h-3 w-3 mr-1" />
+                          {position.department}
+                        </span>
+                        <Badge variant="secondary">{position.type}</Badge>
+                        <span>{position.location}</span>
                       </div>
-                      <Button>Apply Now</Button>
                     </div>
                   </CardHeader>
                   <CardContent className="p-0">
@@ -201,6 +202,13 @@ export default function GetInvolved() {
                       </ul>
                     </div>
 
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">How to Apply:</h4>
+                      <p className="text-sm text-gray-600 bg-blue-50 p-3 rounded-md border-l-4 border-blue-500">
+                        {position.applicationInstructions}
+                      </p>
+                    </div>
+
                     <div className="flex flex-wrap gap-2">
                       {position.tags.map((tag, tagIndex) => (
                         <Badge key={tagIndex} variant="outline">
@@ -211,17 +219,6 @@ export default function GetInvolved() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <p className="text-gray-600 mb-4">
-                Don't see a position that fits? We're always looking for talented individuals who share our passion for decentralization.
-              </p>
-              <Button variant="outline" asChild>
-                <a href="mailto:careers@soapbox.pub" className="inline-flex items-center">
-                  Send Us Your Resume <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
             </div>
           </div>
         </section>

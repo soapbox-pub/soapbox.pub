@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { nip19 } from 'nostr-tools';
+import type { NostrEvent } from '@nostrify/nostrify';
 import { useNostr } from '@/hooks/useNostr';
 
 // Team member npubs
@@ -18,7 +19,7 @@ export function useTeamPosts() {
   return useQuery({
     queryKey: ['team-posts'],
     queryFn: async (c) => {
-      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(3000)]);
+      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(5000)]);
       
       // Convert npubs to hex pubkeys
       const pubkeys = TEAM_NPUBS.map(npub => {
@@ -30,25 +31,40 @@ export function useTeamPosts() {
         }
       }).filter(Boolean) as string[];
 
-      // Query for text notes (kind 1) from team members
-      const events = await nostr.query([
-        {
-          kinds: [1],
-          authors: pubkeys,
-          limit: 50, // Fetch more to account for filtering out replies
+      // Fetch top 3 posts from each team member individually
+      const allPosts: NostrEvent[] = [];
+      
+      for (const pubkey of pubkeys) {
+        try {
+          // Query for text notes (kind 1) from this specific team member
+          const memberEvents = await nostr.query([
+            {
+              kinds: [1],
+              authors: [pubkey],
+              limit: 20, // Fetch more to account for filtering out replies
+            }
+          ], { signal });
+
+          // Filter out replies (events with 'e' tags) to show only top-level posts
+          const topLevelPosts = memberEvents.filter(event => {
+            // A post is considered a reply if it has an 'e' tag
+            return !event.tags.some(tag => tag[0] === 'e');
+          });
+
+          // Sort by creation time (newest first) and take top 3
+          const memberTopPosts = topLevelPosts
+            .sort((a, b) => b.created_at - a.created_at)
+            .slice(0, 3);
+
+          allPosts.push(...memberTopPosts);
+        } catch (error) {
+          // Continue if one member's posts fail to load
+          console.warn(`Failed to load posts for team member ${pubkey}:`, error);
         }
-      ], { signal });
+      }
 
-      // Filter out replies (events with 'e' tags) to show only top-level posts
-      const topLevelPosts = events.filter(event => {
-        // A post is considered a reply if it has an 'e' tag
-        return !event.tags.some(tag => tag[0] === 'e');
-      });
-
-      // Sort by creation time (newest first) and limit to 20
-      return topLevelPosts
-        .sort((a, b) => b.created_at - a.created_at)
-        .slice(0, 20);
+      // Sort all posts by creation time (newest first)
+      return allPosts.sort((a, b) => b.created_at - a.created_at);
     },
     staleTime: 1000 * 60 * 5, // 5 minutes
     refetchInterval: 1000 * 60 * 10, // 10 minutes
