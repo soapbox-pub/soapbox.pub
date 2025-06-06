@@ -8,6 +8,11 @@ pages:
     - npx vite build
     - cp dist/index.html dist/404.html
     - mv dist public
+    # Debug: verify the public folder contents
+    - echo "--- public folder contents ---"
+    - ls -la public
+    - echo "--- index.html preview ---"
+    - head -n 10 public/index.html
   artifacts:
     paths:
       - public
