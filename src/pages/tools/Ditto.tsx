@@ -4,8 +4,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Ditto() {
+  // Set custom SEO for Ditto page
+  useSEO({
+    title: 'Ditto - Nostr Community Platform | Build Decentralized Communities',
+    description: 'Create your own decentralized social network on Nostr with Ditto. Built-in relay, Lightning zaps, custom themes, NIP-05 usernames, and advanced moderation tools.',
+    type: 'website',
+    image: '/assets/images/ditto/ditto-og.png',
+    keywords: 'ditto, nostr, decentralized communities, social network, lightning, nip-05, relay, community platform, open source',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ditto",
+      "description": "A Nostr server for building resilient communities online",
+      "applicationCategory": "Social Networking",
+      "operatingSystem": "Cross-platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      }
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50">
       <Navigation />

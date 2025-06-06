@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamPostsFeed } from "@/components/TeamPostsFeed";
 import { ExternalLink, Heart, Users, Zap } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const teamMembers = [
   {
@@ -75,6 +76,15 @@ const missionValues = [
 ];
 
 export default function About() {
+  // Set custom SEO for About page
+  useSEO({
+    title: 'About Soapbox - Our Mission & Team',
+    description: 'Learn about Soapbox\'s mission to empower communities with free and open source decentralized social media tools. Meet our team building the future of digital freedom.',
+    type: 'website',
+    image: '/assets/images/riga-team.png',
+    keywords: 'soapbox team, about soapbox, decentralized social media, open source, nostr, mission'
+  });
+
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

@@ -5,10 +5,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 export default function Tools() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
+      <SEO 
+        title="Soapbox Tools - Build Decentralized Platforms" 
+        description="Discover our comprehensive toolkit for building decentralized platforms: MKstack for rapid app development, Ditto for communities, Nostrify framework, and more open source tools."
+        type="website"
+        image="/assets/images/tools-showcase.png"
+        keywords="soapbox tools, mkstack, ditto, nostrify, decentralized development, nostr tools, open source platform builder"
+      />
+      
       <Navigation />
 
       {/* Hero Section */}

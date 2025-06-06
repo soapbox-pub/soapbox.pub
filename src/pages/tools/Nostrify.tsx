@@ -5,8 +5,42 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Nostrify() {
+  // Set custom SEO for Nostrify page
+  useSEO({
+    title: 'Nostrify - TypeScript Framework for Nostr Development | Cross-Platform Library',
+    description: 'Build Nostr applications with TypeScript. Flexible library for relays, storage, signers, policies and more. Works in browsers, Node.js, Deno, and mobile apps.',
+    type: 'website',
+    image: '/assets/images/nostrify.png',
+    keywords: 'nostrify, nostr development, typescript library, nostr framework, async generators, nip-07, relay connections, cross-platform',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Nostrify",
+      "description": "TypeScript framework for building Nostr applications",
+      "applicationCategory": "Development Framework",
+      "operatingSystem": "Cross-platform",
+      "programmingLanguage": "TypeScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      },
+      "featureList": [
+        "AsyncGenerator-based relay streaming",
+        "Interchangeable storage interfaces",
+        "NIP-07 compatible signers",
+        "Composable moderation policies"
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Navigation />

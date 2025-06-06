@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Briefcase } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const openPositions = [
   {
@@ -68,6 +69,33 @@ const openPositions = [
 ];
 
 export default function GetInvolved() {
+  // Set custom SEO for Get Involved page
+  useSEO({
+    title: 'Get Involved with Soapbox - Careers & Open Source Contributions | Join Our Mission',
+    description: 'Join Soapbox team and help build the future of decentralized social media. Open positions for developers, marketing, and open source contributors welcome.',
+    type: 'website',
+    image: '/assets/images/mentee.jpg',
+    keywords: 'soapbox careers, decentralized social media jobs, open source contributions, remote developer jobs, nostr development, gitlab contributions',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Soapbox",
+        "url": "https://soapbox.pub"
+      },
+      "description": "Join our team building decentralized social media platforms and open source tools",
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Remote"
+        }
+      },
+      "employmentType": ["FULL_TIME", "PART_TIME", "CONTRACTOR"]
+    }
+  });
+
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

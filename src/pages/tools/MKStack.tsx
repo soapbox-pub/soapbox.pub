@@ -5,9 +5,42 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MKStackPostsFeed } from "@/components/MKStackPostsFeed";
+import { useSEO } from "@/hooks/useSEO";
 
 
 export default function MKStack() {
+  // Set custom SEO for MKStack page
+  useSEO({
+    title: 'MKStack - AI-Powered Nostr App Framework | Build with Dork AI',
+    description: 'Create Nostr applications in minutes with MKStack and Dork AI agent. From chat apps to social networks, build decentralized apps on the Nostr protocol with AI-first development.',
+    type: 'website',
+    image: '/assets/images/mkstack-og.png',
+    keywords: 'mkstack, nostr framework, ai development, dork ai, nostr apps, decentralized development, nostr protocol, ai agent, rapid development',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MKStack",
+      "description": "AI-powered framework for building Nostr applications",
+      "applicationCategory": "Development Tools",
+      "operatingSystem": "Cross-platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Soapbox"
+      },
+      "featureList": [
+        "AI-first development with Dork agent",
+        "50+ Nostr NIPs supported",
+        "Built-in deployment",
+        "Comprehensive Nostr components"
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50">
       <Navigation />
