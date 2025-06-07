@@ -356,7 +356,7 @@ export default function Index() {
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">Nostr IRL</span>
                   <Button variant="ghost" size="sm" asChild>
-                    <a href="https://treasures.surge.sh" target="_blank" rel="noopener noreferrer">
+                    <a href="https://treasures.to" target="_blank" rel="noopener noreferrer">
                       Visit Platform
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>

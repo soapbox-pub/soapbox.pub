@@ -603,7 +603,7 @@ export default function MKStack() {
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <span>Nostr IRL</span>
                       <Button variant="outline" size="sm" asChild>
-                        <a href="https://treasures.surge.sh/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">
                           Visit Platform
                           <ExternalLink className="ml-2 h-3 w-3" />
                         </a>

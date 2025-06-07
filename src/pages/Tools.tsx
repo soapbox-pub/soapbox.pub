@@ -136,7 +136,7 @@ export default function Tools() {
                             Plektos
                           </Badge>
                         </a>
-                        <a href="https://treasures.surge.sh/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">
                           <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
                             Treasures
                           </Badge>
