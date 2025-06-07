@@ -33,7 +33,7 @@ export default function Stacks() {
     <article className="prose prose-lg max-w-none">
       <h2>Stacks: AI-First Development</h2>
 
-      <p><strong><a href="https://getstacks.dev" target="_blank" rel="noopener noreferrer">Stacks</a> is a decentralized template-sharing platform built on <a href="/blog/nostr101/" target="_blank" rel="noopener noreferrer">Nostr</a>, designed specifically to jumpstart AI development.</strong></p>
+      <p><strong><a href="https://soapbox.pub/tools/stacks" target="_blank" rel="noopener noreferrer">Stacks</a> is a decentralized template-sharing platform built on <a href="/blog/nostr101/" target="_blank" rel="noopener noreferrer">Nostr</a>, designed specifically to jumpstart AI development.</strong></p>
 
       <ul>
         <li>Publish AI-first project templates (called "stacks")</li>
