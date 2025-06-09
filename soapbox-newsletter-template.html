@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="Build decentralized platforms with Soapbox's AI-powered toolkit. MKStack, Dork AI, and more tools for the decentralized web.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Soapbox Newsletter - Building the Decentralized Future">
+    <meta property="og:description" content="Build decentralized platforms with Soapbox's AI-powered toolkit. MKStack, Dork AI, and more tools for the decentralized web.">
+    <link rel="manifest" href="/manifest.json">
+    <title>Soapbox Newsletter - Building the Decentralized Future</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+        
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+        }
+        
+        /* Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px;
+        }
+        
+        .header-content {
+            max-width: 560px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .header h1 {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        /* Content sections */
+        .section {
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin: 0 0 30px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #f3e8ff;
+            color: #7c3aed;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 20px;
+            border: 1px solid #e9d5ff;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text {
+            font-size: 20px;
+            color: #475569;
+            margin: 0 0 40px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Tool cards */
+        .tool-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .tool-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+        }
+        
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        
+        .mkstack-icon { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%); }
+        .dork-icon { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+        .nostrbook-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        
+        .tool-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+        }
+        
+        .tool-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin: 0 0 15px;
+        }
+        
+        .tool-description {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        
+        .tool-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+            text-align: left;
+        }
+        
+        .tool-features li {
+            font-size: 14px;
+            color: #64748b;
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .tool-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff;
+        }
+        
+        .btn-secondary {
+            background: #ffffff;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-mkstack {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff;
+        }
+        
+        /* Showcase section */
+        .showcase-grid {
+            margin: 20px 0;
+        }
+        
+        .showcase-item {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .showcase-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .showcase-content {
+            padding: 20px;
+        }
+        
+        .showcase-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+        }
+        
+        .showcase-description {
+            font-size: 14px;
+            color: #64748b;
+            margin: 0 0 15px;
+            line-height: 1.5;
+        }
+        
+        /* Stats section */
+        .stats {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .stat-item {
+            display: table-cell;
+            width: 33.33%;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 0;
+        }
+        
+        /* Other tools section */
+        .other-tools {
+            background: #f8fafc;
+            padding: 40px 20px;
+        }
+        
+        .tool-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .tool-list-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        
+        .tool-list-item:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .tool-list-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .tool-list-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        
+        .ditto-tool-icon { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+        .nostrhub-tool-icon { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+        .nostrify-tool-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .mostr-tool-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        
+        .tool-list-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+        
+        .tool-list-description {
+            font-size: 14px;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* CTA section */
+        .cta {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 15px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            color: #e2e8f0;
+            margin: 0 0 30px;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 5px 0;
+        }
+        
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .logo {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-text {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .tool-card {
+                padding: 25px 15px;
+            }
+            
+            .stat-item {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://soapbox.pub/logo.svg" alt="Soapbox Logo" class="logo">
+                    <h1>Soapbox</h1>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-badge">🚀 Build the Decentralized Future</div>
+            <h1 class="hero-title">
+                Build Your <span class="gradient-text">Platform</span>
+            </h1>
+            <p class="hero-text">
+                We're creating tools that put the power back in your hands. Build your own platforms, 
+                communities, and applications with our AI-powered toolkit.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://soapbox.pub/tools/mkstack" class="btn btn-primary">Explore MKStack</a>
+                <a href="https://soapbox.pub/showcase" class="btn btn-secondary">View Showcase</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="section">
+            <h2 class="section-title">Introducing Our AI-Powered Development Stack</h2>
+            <p class="section-subtitle">Build Nostr applications in minutes, not months, with our revolutionary AI-first approach</p>
+            
+            <!-- MKStack Feature -->
+            <div class="tool-card">
+                <div class="tool-icon mkstack-icon">🔧</div>
+                <h3 class="tool-title">MKStack</h3>
+                <p class="tool-subtitle">AI-Powered Nostr App Framework</p>
+                <p class="tool-description">
+                    The complete framework for building Nostr clients with AI-first development. From social feeds to private messaging, 
+                    MKStack provides everything you need to create decentralized apps on the Nostr protocol.
+                </p>
+                <ul class="tool-features">
+                    <li>Build full Nostr apps with just one prompt</li>
+                    <li>50+ NIPs (Nostr protocols) supported</li>
+                    <li>Built-in deployment with Surge</li>
+                    <li>AI agent integration with Dork</li>
+                    <li>Complete social platform features</li>
+                </ul>
+                <a href="https://soapbox.pub/tools/mkstack" class="btn btn-mkstack">Start Building with MKStack</a>
+            </div>
+            
+            <!-- Dork AI Feature -->
+            <div class="tool-card">
+                <div class="tool-icon dork-icon">🤖</div>
+                <h3 class="tool-title">Dork AI Agent</h3>
+                <p class="tool-subtitle">Your AI Development Assistant</p>
+                <p class="tool-description">
+                    Built-in AI agent that understands your codebase and Nostr protocols. Dork can build, refine, and add features 
+                    to your applications using natural language commands.
+                </p>
+                <ul class="tool-features">
+                    <li>Context-aware AI that understands your project</li>
+                    <li>Expert knowledge of 50+ Nostr protocols</li>
+                    <li>Instant implementation of new features</li>
+                    <li>Works with OpenRouter, Routstr, and PayPerQ</li>
+                </ul>
+                <a href="https://zap.stream/naddr1qqjr2ce5xqengvnp95unjetz956x2etx95ungc3s95mkydtpx5erqvpjve3xzqg3waehxw309ahx7um5wgh8w6twv5hszxthwden5te0wfjkccte9eekummjwsh8xmmrd9skctcppemhxue69uhkummn9ekx7mp0qy2hwumn8ghj7un9d3shjtnyv9kh2uewd9hj7qghwaehxw309aex2mrp0yhxummnw3ezucnpdejz7qg3waehxw309ahx7um5wghxcctwvshsz8nhwden5te0dehhxarj94c82c3wwajkcmr0wfjx2u3wdejhgtcpz4mhxue69uhhyetvv9ujumn0wd68ytnzvuhsz9thwden5te0dehhxarj9ehhsarj9ejx2a30qyv8wumn8ghj7un9d3shjtnxda6kuarpd9hzuend9upzpn6956apxcad0mfp8grcuugdysg44eepex68h50t73zcathmfs49qvzqqqrkvuluxh2x" class="btn btn-secondary">See it in Action</a>
+            </div>
+            
+            <!-- Nostrbook MCP Feature -->
+            <div class="tool-card">
+                <div class="tool-icon nostrbook-icon">📚</div>
+                <h3 class="tool-title">Nostrbook MCP</h3>
+                <p class="tool-subtitle">AI-Optimized Nostr Documentation</p>
+                <p class="tool-description">
+                    Structured Nostr knowledge for humans and AI. Now with Model Context Protocol (MCP) integration, 
+                    allowing AI agents to access up-to-date Nostr documentation directly.
+                </p>
+                <ul class="tool-features">
+                    <li>Model Context Protocol integration</li>
+                    <li>100+ NIPs documented with examples</li>
+                    <li>Custom NIPs from NostrHub included</li>
+                    <li>Works with Goose AI and VSCode Copilot</li>
+                </ul>
+                <a href="https://nostrbook.dev" class="btn btn-secondary">Explore Documentation</a>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="stats">
+            <h2 style="color: #ffffff; margin-bottom: 30px;">See the Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">8 min</div>
+                    <div class="stat-label">Average Build Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">NIPs Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">AI-First</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Showcase Section -->
+        <div class="section">
+            <h2 class="section-title">Built with MKStack</h2>
+            <p class="section-subtitle">Real applications created using our AI-powered framework</p>
+            
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="https://soapbox.pub/assets/mkstack-apps/chorus-screenshot.png" alt="Chorus Communities" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Chorus</h3>
+                        <p class="showcase-description">Facebook-style groups on Nostr with built-in eCash wallet for cross-border fundraising. Designed for activists and community organizers.</p>
+                        <a href="https://soapbox.pub/blog/chorus-vibe-coding" class="btn btn-secondary">Read Blog Post</a>
+                    </div>
+                </div>
+                
+                <div class="showcase-item">
+                    <img src="https://soapbox.pub/assets/mkstack-apps/treasures-screenshot.png" alt="Treasures Geocaching" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Treasures</h3>
+                        <p class="showcase-description">Join the decentralized geocaching adventure powered by Nostr. Hide caches, find treasures, and connect with explorers worldwide.</p>
+                        <a href="https://treasures.to/" class="btn btn-secondary">Visit Platform</a>
+                    </div>
+                </div>
+                
+                <div class="showcase-item">
+                    <img src="https://soapbox.pub/assets/mkstack-apps/plektos-screenshot.png" alt="Plektos Events" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Plektos</h3>
+                        <p class="showcase-description">A decentralized events app built with MKStack. Discover, create, and manage events on the Nostr network with seamless social integration.</p>
+                        <a href="https://plektos.app/" class="btn btn-secondary">Visit Platform</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Other Tools Section -->
+        <div class="other-tools">
+            <h2 class="section-title">Our Complete Toolkit</h2>
+            <p class="section-subtitle">More tools to power your decentralized platform</p>
+            
+            <div class="tool-list">
+                <a href="https://soapbox.pub/tools/ditto" class="tool-list-item">
+                    <div class="tool-list-header">
+                        <div class="tool-list-icon ditto-tool-icon">👥</div>
+                        <div class="tool-list-title">Ditto</div>
+                    </div>
+                    <div class="tool-list-description">Build decentralized, censorship-resistant communities on Nostr with built-in monetization and custom themes</div>
+                </a>
+                
+                <a href="https://soapbox.pub/tools/nostrhub" class="tool-list-item">
+                    <div class="tool-list-header">
+                        <div class="tool-list-icon nostrhub-tool-icon">📋</div>
+                        <div class="tool-list-title">NostrHub</div>
+                    </div>
+                    <div class="tool-list-description">Explore and understand Nostr Improvement Proposals with our comprehensive NIP database and developer tools</div>
+                </a>
+                
+                <a href="https://soapbox.pub/tools/nostrify" class="tool-list-item">
+                    <div class="tool-list-header">
+                        <div class="tool-list-icon nostrify-tool-icon">⚡</div>
+                        <div class="tool-list-title">Nostrify</div>
+                    </div>
+                    <div class="tool-list-description">TypeScript framework for building Nostr applications with comprehensive protocol support and modern tooling</div>
+                </a>
+                
+                <a href="https://mostr.pub" class="tool-list-item">
+                    <div class="tool-list-header">
+                        <div class="tool-list-icon mostr-tool-icon">🌐</div>
+                        <div class="tool-list-title">Mostr</div>
+                    </div>
+                    <div class="tool-list-description">Bridge connecting Nostr, ActivityPub, and Bluesky networks for seamless cross-platform communication</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Migration Notice -->
+        <div class="section">
+            <h2 class="section-title">🔄 What's Coming Next</h2>
+            <p class="section-subtitle">
+                We're migrating our existing platforms to these powerful new tools and making them more accessible with intuitive web UIs. 
+                This means faster development, better performance, and easier customization for everyone.
+            </p>
+            <p style="text-align: center; font-size: 16px; color: #64748b; margin-top: 20px;">
+                Stay tuned for updates as we roll out these improvements across our entire ecosystem.
+            </p>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta">
+            <h2>Ready to Build the Future?</h2>
+            <p>Join thousands of developers already building with Soapbox tools. Start your decentralized platform today.</p>
+            <a href="https://soapbox.pub/tools/mkstack" class="btn" style="background: #ffffff; color: #3b82f6; margin: 10px;">Try MKStack Now</a>
+            <a href="https://soapbox.pub/tools" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">Explore All Tools</a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> - Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> | 
+                <a href="https://soapbox.pub/blog">Blog</a> | 
+                <a href="https://github.com/soapbox-pub">GitHub</a> | 
+                <a href="https://ditto.pub/alex">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
