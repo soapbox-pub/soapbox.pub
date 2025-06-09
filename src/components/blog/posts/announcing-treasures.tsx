@@ -16,23 +16,71 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   slug: 'announcing-treasures',
-  title: 'Announcing Treasures: Decentralized Geocaching on Nostr',
+  title: 'Announcing Treasures: Geocaching on Nostr',
   excerpt: 'The world\'s first decentralized geocaching platform built on Nostr, bringing treasure hunting to the open web.',
-  coverImage: '/assets/blog/announcing-treasures/treasures-cover.jpg',
-  date: '2024-01-30',
+  coverImage: '/assets/blog/announcing-treasures/treasures-blog.png',
+  date: '2025-06-09',
   author: {
-    name: 'Soapbox Team',
-    picture: '/assets/team/soapbox.jpg'
+    "name": "M.K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
   ogImage: {
-    url: '/assets/blog/announcing-treasures/treasures-og.jpg'
+    url: '/assets/blog/announcing-treasures/treasures-blog.png'
   }
 };
 
 export default function AnnouncingTreasures() {
   return (
     <article className="prose prose-lg max-w-none">
-      {/* Hero section with main CTA */}
+      <p><strong>Today we're thrilled to announce <a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">Treasures</a>, the world's first decentralized geocaching platform</strong> built on the Nostr protocol. Treasures brings the beloved treasure hunting hobby to the open web, free from the constraints and frustrations of centralized platforms.</p>
+
+      <h2>What is Geocaching?</h2>
+      <p>Geocaching is a real-world treasure hunting game where participants use GPS coordinates to find hidden containers (called "geocaches" or "caches") placed by other players. It's a global community activity that encourages exploration, adventure, and discovery in the physical world. With millions of geocaches hidden worldwide, it's one of the most popular outdoor recreational activities.</p>
+
+      {/* Problem/Solution section with visual cards */}
+      <div className="not-prose my-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-8">Geocaching is Overdue for an Update</h2>
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <Card className="border-red-200 bg-red-50/50">
+            <CardHeader>
+              <CardTitle className="text-red-800 flex items-center">
+                <Shield className="w-5 h-5 mr-2" />
+                The Problem with Centralized Platforms
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-700">
+              <ul className="space-y-2">
+                <li>• Pay-to-play paywalls restrict access</li>
+                <li>• Premium-only caches create inequality</li>
+                <li>• Data lock-in traps your logs</li>
+                <li>• Arbitrary restrictions limit innovation</li>
+                <li>• Corporate control over community</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+          <Card className="border-emerald-200 bg-emerald-50/50">
+            <CardHeader>
+              <CardTitle className="text-emerald-800 flex items-center">
+                <Globe className="w-5 h-5 mr-2" />
+                The Decentralized Solution
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-700">
+              <ul className="space-y-2">
+                <li>• Open protocol enables innovation</li>
+                <li>• Community-driven development</li>
+                <li>• No single point of failure</li>
+                <li>• True data ownership via Nostr</li>
+                <li>• Fully free, or fork it!</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <hr className="my-12 border-t border-gray-300" />
+
       <div className="not-prose mb-12 text-center">
         <div className="mb-6">
           <Badge variant="secondary" className="mb-4 bg-emerald-50 text-emerald-700 border-emerald-200">
@@ -72,70 +120,9 @@ export default function AnnouncingTreasures() {
             </a>
           </Button>
         </div>
-
-        {/* Mobile app preview with main screenshot */}
-        <div className="flex justify-center mb-12">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-3xl blur-2xl opacity-20 scale-105"></div>
-            <div className="relative bg-white rounded-3xl p-8 shadow-2xl max-w-sm mx-auto">
-              <img 
-                src="/assets/blog/announcing-treasures/treasures-homepage.png" 
-                alt="Treasures App Homepage" 
-                className="w-full h-auto rounded-2xl shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
       </div>
 
-      <p>Today we're thrilled to announce <strong><a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">Treasures</a></strong>, the world's first decentralized geocaching platform built on the Nostr protocol. Treasures brings the beloved treasure hunting hobby to the open web, free from the constraints and frustrations of centralized platforms.</p>
-
-      <h2>What is Geocaching?</h2>
-      <p>Geocaching is a real-world treasure hunting game where participants use GPS coordinates to find hidden containers (called "geocaches" or "caches") placed by other players. It's a global community activity that encourages exploration, adventure, and discovery in the physical world. With millions of geocaches hidden worldwide, it's one of the most popular outdoor recreational activities.</p>
-
-      {/* Problem/Solution section with visual cards */}
-      <div className="not-prose my-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Why Decentralized Geocaching?</h2>
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <Card className="border-red-200 bg-red-50/50">
-            <CardHeader>
-              <CardTitle className="text-red-800 flex items-center">
-                <Shield className="w-5 h-5 mr-2" />
-                The Problem with Centralized Platforms
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700">
-              <ul className="space-y-2">
-                <li>• Pay-to-play paywalls restrict access</li>
-                <li>• Premium-only caches create inequality</li>
-                <li>• Data lock-in traps your geocaching history</li>
-                <li>• Arbitrary restrictions limit innovation</li>
-                <li>• Corporate control over community activity</li>
-              </ul>
-            </CardContent>
-          </Card>
-          
-          <Card className="border-emerald-200 bg-emerald-50/50">
-            <CardHeader>
-              <CardTitle className="text-emerald-800 flex items-center">
-                <Globe className="w-5 h-5 mr-2" />
-                The Decentralized Solution
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700">
-              <ul className="space-y-2">
-                <li>• Completely free forever</li>
-                <li>• True data ownership via Nostr</li>
-                <li>• Open protocol enables innovation</li>
-                <li>• No single point of failure</li>
-                <li>• Community-driven development</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      <h2>Introducing Treasures</h2>
+      <h2>Treasures: Nostr Geocaching</h2>
       <p>Treasures solves these problems by building geocaching on Nostr, a decentralized protocol that puts users in control. Unlike corporate-controlled platforms with paywalls and restrictions, Treasures returns geocaching to its roots as a free, open community activity. Here's what makes Treasures special:</p>
 
       {/* Features showcase with screenshots */}
@@ -233,6 +220,35 @@ export default function AnnouncingTreasures() {
         </div>
       </div>
 
+      <h2>Built on MKStack</h2>
+      <p>Treasures was built by <strong><a href="https://ditto.pub/@chad@chadwick.site" target="_blank" rel="noopener noreferrer">Chad Curtis</a></strong> using <strong><a href="/tools/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a></strong>, a revolutionary new vibe-coding tool for Nostr applications. MKStack enables rapid development of decentralized applications with a focus on user experience and protocol integration. It provides:</p>
+      <ul>
+        <li>Pre-built Nostr integration patterns</li>
+        <li>Responsive UI components optimized for mobile and desktop</li>
+        <li>Built-in support for Nostr event types and relay management</li>
+        <li>Streamlined development workflow for decentralized apps</li>
+      </ul>
+      <p>MKStack represents the future of Nostr development - making it easier than ever to build powerful, user-friendly applications on the decentralized web.</p>
+
+      <h2>Getting People Into the Real World</h2>
+      <p>One of the most exciting aspects of Treasures is how it encourages people to disconnect from screens and explore the physical world. In an age of increasing digital isolation, geocaching provides:</p>
+      
+      <ul>
+        <li><strong>Physical Adventure</strong>: Real-world exploration and discovery</li>
+        <li><strong>Community Connection</strong>: Meeting fellow geocachers and sharing experiences</li>
+        <li><strong>Exercise & Health</strong>: Walking, hiking, and outdoor activity</li>
+        <li><strong>Local Discovery</strong>: Finding hidden gems and interesting locations in your area</li>
+        <li><strong>Family Activity</strong>: Fun for all ages and skill levels</li>
+      </ul>
+      
+      <p>Treasures taps into an existing, passionate IRL community of millions of geocachers worldwide. By bringing this community to Nostr, we're creating a bridge between the digital and physical worlds.</p>
+
+      <h2>The Technical Foundation</h2>
+      <p>Treasures implements a comprehensive Nostr-based geocaching protocol with two main event types:</p>
+      <p><strong>Geocache Listing Events (Kind 37515)</strong>: Addressable events that contain all cache information including location, difficulty, terrain, size, and type. These events are owned and maintained by the cache creator.</p>
+      <p><strong>Log Events (Kind 7516)</strong>: Regular events that record visits to geocaches, including found logs, DNF reports, maintenance notes, and archive notifications.</p>
+      <p>This protocol ensures interoperability - any Nostr client can implement geocaching features and interact with Treasures data.</p>
+
       {/* Decentralized benefits section */}
       <div className="not-prose my-12">
         <h3 className="text-2xl font-bold text-gray-900 mb-8">Decentralized & Open Architecture</h3>
@@ -310,63 +326,6 @@ export default function AnnouncingTreasures() {
           </Card>
         </div>
       </div>
-
-      <h2>Built on MKStack</h2>
-      <p>Treasures was built by <strong><a href="https://ditto.pub/@chad@chadwick.site" target="_blank" rel="noopener noreferrer">Chad Curtis</a></strong> using <strong><a href="/tools/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a></strong>, a revolutionary new vibe-coding tool for Nostr applications. MKStack enables rapid development of decentralized applications with a focus on user experience and protocol integration. It provides:</p>
-      <ul>
-        <li>Pre-built Nostr integration patterns</li>
-        <li>Responsive UI components optimized for mobile and desktop</li>
-        <li>Built-in support for Nostr event types and relay management</li>
-        <li>Streamlined development workflow for decentralized apps</li>
-      </ul>
-      <p>MKStack represents the future of Nostr development - making it easier than ever to build powerful, user-friendly applications on the decentralized web.</p>
-
-      {/* Real world benefits section */}
-      <div className="not-prose my-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Getting People Into the Real World</h2>
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 mb-8">
-          <p className="text-gray-700 text-lg mb-6">
-            One of the most exciting aspects of Treasures is how it encourages people to disconnect from screens and explore the physical world. In an age of increasing digital isolation, geocaching provides:
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-3">
-              <div className="flex items-center text-green-800">
-                <MapPin className="w-5 h-5 mr-3" />
-                <strong>Physical Adventure</strong>: Real-world exploration and discovery
-              </div>
-              <div className="flex items-center text-green-800">
-                <Users className="w-5 h-5 mr-3" />
-                <strong>Community Connection</strong>: Meeting fellow geocachers and sharing experiences
-              </div>
-              <div className="flex items-center text-green-800">
-                <Zap className="w-5 h-5 mr-3" />
-                <strong>Exercise & Health</strong>: Walking, hiking, and outdoor activity
-              </div>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center text-green-800">
-                <Globe className="w-5 h-5 mr-3" />
-                <strong>Local Discovery</strong>: Finding hidden gems and interesting locations in your area
-              </div>
-              <div className="flex items-center text-green-800">
-                <Smartphone className="w-5 h-5 mr-3" />
-                <strong>Family Activity</strong>: Fun for all ages and skill levels
-              </div>
-            </div>
-          </div>
-          <p className="text-gray-700 mt-6">
-            Treasures taps into an existing, passionate IRL (In Real Life) community of millions of geocachers worldwide. By bringing this community to Nostr, we're creating a bridge between the digital and physical worlds.
-          </p>
-        </div>
-      </div>
-
-      <h2>The Technical Foundation</h2>
-      <p>Treasures implements a comprehensive Nostr-based geocaching protocol with two main event types:</p>
-      <p><strong>Geocache Listing Events (Kind 37515)</strong>: Addressable events that contain all cache information including location, difficulty, terrain, size, and type. These events are owned and maintained by the cache creator.</p>
-      <p><strong>Log Events (Kind 7516)</strong>: Regular events that record visits to geocaches, including found logs, DNF reports, maintenance notes, and archive notifications.</p>
-      <p>This protocol ensures interoperability - any Nostr client can implement geocaching features and interact with Treasures data.</p>
-
-      
 
       <h2>Join the Revolution</h2>
       <p>Treasures represents more than just a new geocaching platform - it's a demonstration of how decentralized technologies can solve real problems and empower communities. By choosing open protocols over closed platforms, we're building a more resilient, user-controlled future for geocaching that can never be captured by corporate interests or locked behind paywalls.</p>
