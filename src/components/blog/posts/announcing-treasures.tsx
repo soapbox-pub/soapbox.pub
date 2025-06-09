@@ -17,7 +17,7 @@ export interface BlogPostMeta {
 export const meta: BlogPostMeta = {
   "slug": "announcing-treasures",
   "title": "Announcing Treasures: Geocaching on Nostr",
-  "excerpt": "The world's first decentralized geocaching platform built on Nostr, bringing treasure hunting to the open web..",
+  "excerpt": "The world's first decentralized geocaching platform built on Nostr, bringing treasure hunting to the open web.",
   "coverImage": "/assets/blog/announcing-treasures/treasures-blog.png",
   "date": "2025-06-09",
   "author": {
