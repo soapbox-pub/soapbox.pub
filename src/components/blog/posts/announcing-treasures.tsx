@@ -244,9 +244,12 @@ export default function AnnouncingTreasures() {
       <p>Treasures taps into an existing, passionate IRL community of millions of geocachers worldwide. By bringing this community to Nostr, we're creating a bridge between the digital and physical worlds.</p>
 
       <h2>The Technical Foundation</h2>
-      <p>Treasures implements a comprehensive Nostr-based geocaching protocol with two main event types:</p>
-      <p><strong>Geocache Listing Events (Kind 37515)</strong>: Addressable events that contain all cache information including location, difficulty, terrain, size, and type. These events are owned and maintained by the cache creator.</p>
-      <p><strong>Log Events (Kind 7516)</strong>: Regular events that record visits to geocaches, including found logs, DNF reports, maintenance notes, and archive notifications.</p>
+      <p>Treasures implements a comprehensive Nostr-based geocaching protocol these event types:</p>
+      <ul>
+        <li><strong>Geocache Listing Events (Kind 37515)</strong>: Addressable events that contain all cache information including location, difficulty, terrain, size, and type. These events are owned and maintained by the cache creator.</li>
+        <li><strong>Found Logs (Kind 7516)</strong>: Regular events that record when the cache is found.</li>
+        <li><strong>Log Comments (Kind 1111)</strong>: Regular events that record other log comments including DNF reports, maintenance notes, and archive notifications.</li>
+      </ul>   
       <p>This protocol ensures interoperability - any Nostr client can implement geocaching features and interact with Treasures data.</p>
 
       {/* Decentralized benefits section */}
