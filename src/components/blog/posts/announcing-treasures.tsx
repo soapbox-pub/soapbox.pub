@@ -28,48 +28,38 @@ export const meta: BlogPostMeta = {
 export default function AnnouncingTreasures() {
   return (
     <article className="prose prose-lg max-w-none">
-      <p>Today we're thrilled to announce <strong>Treasures</strong>, the world's first decentralized geocaching platform built on the Nostr protocol. Treasures brings the beloved treasure hunting hobby to the open web, free from the constraints and frustrations of centralized platforms.</p>
+      <p>Today we're thrilled to announce <strong><a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">Treasures</a></strong>, the world's first decentralized geocaching platform built on the Nostr protocol. Treasures brings the beloved treasure hunting hobby to the open web, free from the constraints and frustrations of centralized platforms.</p>
 
       <h2>What is Geocaching?</h2>
       <p>Geocaching is a real-world treasure hunting game where participants use GPS coordinates to find hidden containers (called "geocaches" or "caches") placed by other players. It's a global community activity that encourages exploration, adventure, and discovery in the physical world. With millions of geocaches hidden worldwide, it's one of the most popular outdoor recreational activities.</p>
 
       <h2>Why Decentralized Geocaching?</h2>
-      <p>The existing geocaching ecosystem is dominated by centralized platforms that have transformed what was once a free, community-driven hobby into a corporate-controlled activity with increasing paywalls and restrictions. Major platforms now lock basic functionality like cache listings, maps, and search filters behind subscription fees, while the best geocaches are restricted to premium members only, creating a two-tiered system that fundamentally changes geocaching from an open community activity to a pay-to-play service. Beyond the paywall problem, centralized platforms trap your geocaching data in proprietary systems, impose arbitrary restrictions, risk censorship without recourse, and prevent community innovation through closed-source development. As one frustrated geocacher noted in a <a href="https://www.reddit.com/r/geocaching/comments/113covm/when_did_the_paywall_begin/" target="_blank" rel="noopener noreferrer">Reddit discussion</a>, this corporate capture represents a broader pattern across the internet where free platforms become monetized once they achieve market dominance. These problems are inherent to centralized systems and require a fundamental shift to open, decentralized infrastructure that can't be captured by corporate interests.</p>
+      <p>Centralized geocaching platforms have transformed a once-free hobby into a pay-to-play service with paywalls, premium-only caches, and data lock-in. These platforms trap your geocaching data, impose arbitrary restrictions, and prevent community innovation. Decentralized infrastructure solves these problems by creating an open system that can't be captured by corporate interests.</p>
 
       <h2>Introducing Treasures</h2>
       <p>Treasures solves these problems by building geocaching on Nostr, a decentralized protocol that puts users in control. Unlike corporate-controlled platforms with paywalls and restrictions, Treasures returns geocaching to its roots as a free, open community activity. Here's what makes Treasures special:</p>
 
       <h3>Core Geocaching Features</h3>
-      <p><strong>Hide Geocaches</strong>: Create and publish geocaches with GPS coordinates, detailed descriptions, difficulty ratings, and terrain assessments. Each cache includes all the standard geocaching metadata you'd expect.</p>
-      <p><strong>Find Treasures</strong>: Discover geocaches hidden by other users around the world. Browse by location, difficulty, or cache type to find your next adventure.</p>
-      <p><strong>Interactive Map</strong>: Explore locations on a detailed map interface with custom markers, search functionality, and intuitive navigation.</p>
-      <p><strong>Log Adventures</strong>: Record your finds, DNFs (Did Not Find), maintenance notes, and personal experiences for each cache you visit.</p>
-      <p><strong>Verification System</strong>: QR code verification provides cryptographic proof of cache finds, adding an extra layer of authenticity to the geocaching experience.</p>
+      <ul>
+        <li><strong>Hide Geocaches</strong>: Create and publish geocaches with GPS coordinates, descriptions, and difficulty ratings</li>
+        <li><strong>Find Treasures</strong>: Discover geocaches hidden by other users around the world</li>
+        <li><strong>Interactive Map</strong>: Explore locations with custom markers and search functionality</li>
+        <li><strong>Log Adventures</strong>: Record your finds, DNFs, and maintenance notes for each cache</li>
+        <li><strong>QR Code Verification</strong>: Cryptographic proof of cache finds for authenticity</li>
+      </ul>
+      <p>For a complete list of features, see the <a href="https://gitlab.com/chad.curtis/treasures#features" target="_blank" rel="noopener noreferrer">Treasures source code</a>.</p>
 
       <h3>Decentralized & Open Architecture</h3>
-      <p><strong>Nostr Protocol</strong>: Built on the decentralized Nostr network with no central authority. Your geocaches and logs are published across multiple relays, ensuring resilience and censorship resistance.</p>
-      <p><strong>True Data Ownership</strong>: Your geocaching data belongs to you. Export it, back it up, or use it with other Nostr applications - you're never locked in.</p>
-      <p><strong>Open Source</strong>: Fully open-source codebase released under AGPL v3 license. The community can audit, improve, and customize the platform.</p>
-      <p><strong>No Registration Barriers</strong>: Login with any Nostr keypair - no email, phone number, or personal data required. Your privacy is protected by design.</p>
-
-      <h3>Free Forever, No Paywalls</h3>
-      <p><strong>Completely Free Access</strong>: All features are available to all users without subscription fees, premium tiers, or hidden costs. Treasures returns geocaching to its roots as an accessible hobby for everyone.</p>
-      <p><strong>No Premium-Only Caches</strong>: Every geocache published on Treasures is available to every user. There are no artificial restrictions or tiered access levels that divide the community.</p>
-      <p><strong>Full Feature Access</strong>: Download coordinates, access detailed maps, use advanced search filters, and enjoy all functionality without paying. The complete geocaching experience is available to everyone.</p>
-      <p><strong>Community-Funded Infrastructure</strong>: Instead of extracting revenue from users, Treasures relies on community support and decentralized infrastructure that can't be monetized or restricted by corporate interests.</p>
-      <p><strong>Uncapturable by Design</strong>: Because Treasures is built on open protocols and decentralized infrastructure, no single entity can impose paywalls, restrict features, or control the platform for profit.</p>
-
-      <h3>Advanced Technical Features</h3>
-      <p><strong>Location Search</strong>: Find geocaches by city, zip code, or use "Near Me" functionality for location-based discovery.</p>
-      <p><strong>Smart Filtering</strong>: Advanced filtering by difficulty, terrain, cache type, and comparison operators to find exactly what you're looking for.</p>
-      <p><strong>Proximity Search</strong>: Geohash-based optimization enables fast location queries and efficient geographic indexing.</p>
-      <p><strong>Distance Sorting</strong>: Results automatically sort by proximity to your location for optimal route planning.</p>
-      <p><strong>Progressive Web App</strong>: Install as a native app on mobile devices for offline access and push notifications.</p>
-      <p><strong>Image Support</strong>: Upload and view images for geocaches with decentralized file hosting via Blossom servers.</p>
-      <p><strong>Real-time Updates</strong>: Automatic syncing across the Nostr network ensures you always have the latest cache information and logs.</p>
+      <ul>
+        <li><strong>Nostr Protocol</strong>: Built on decentralized network with no central authority or censorship</li>
+        <li><strong>True Data Ownership</strong>: Your geocaching data belongs to you, never locked in</li>
+        <li><strong>Open Source</strong>: Fully open-source under AGPL v3 license for community development</li>
+        <li><strong>No Registration Barriers</strong>: Login with Nostr keypair, no personal data required</li>
+        <li><strong>Free Forever</strong>: All features available without subscription fees or premium tiers</li>
+      </ul>
 
       <h2>Built on MKStack</h2>
-      <p>Treasures was built using <strong>MKStack</strong>, a revolutionary new vibe-coding tool for Nostr applications. MKStack enables rapid development of decentralized applications with a focus on user experience and protocol integration. It provides:</p>
+      <p>Treasures was built by <strong><a href="https://ditto.pub/@chad@chadwick.site" target="_blank" rel="noopener noreferrer">Chad Curtis</a></strong> using <strong><a href="/tools/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a></strong>, a revolutionary new vibe-coding tool for Nostr applications. MKStack enables rapid development of decentralized applications with a focus on user experience and protocol integration. It provides:</p>
       <ul>
         <li>Pre-built Nostr integration patterns</li>
         <li>Responsive UI components optimized for mobile and desktop</li>
@@ -95,25 +85,8 @@ export default function AnnouncingTreasures() {
       <p><strong>Log Events (Kind 7516)</strong>: Regular events that record visits to geocaches, including found logs, DNF reports, maintenance notes, and archive notifications.</p>
       <p>This protocol ensures interoperability - any Nostr client can implement geocaching features and interact with Treasures data.</p>
 
-      <h2>Start Your Adventure Today</h2>
-      <p>Ready to begin your decentralized geocaching journey? Here's how to get started:</p>
-      <ol>
-        <li><strong>Visit Treasures</strong> and login with your Nostr keypair</li>
-        <li><strong>Explore the map</strong> to find geocaches near you</li>
-        <li><strong>Plan your first adventure</strong> and head out to find some treasures</li>
-        <li><strong>Log your finds</strong> and share your experiences with the community</li>
-      </ol>
-
-      <h2>Hide Your Own Geocaches</h2>
-      <p>The real magic of geocaching happens when you become a cache owner. We encourage everyone to start hiding and publishing their own geocaches:</p>
-      <ul>
-        <li><strong>Choose interesting locations</strong> that showcase local history, natural beauty, or unique features</li>
-        <li><strong>Create engaging descriptions</strong> that tell a story or share local knowledge</li>
-        <li><strong>Set appropriate difficulty and terrain ratings</strong> to help others prepare</li>
-        <li><strong>Include helpful hints</strong> (encoded in ROT13 tradition) for when finders get stuck</li>
-        <li><strong>Maintain your caches</strong> by responding to logs and keeping them in good condition</li>
-      </ul>
-      <p>Every geocache you hide adds to the global treasure network and creates opportunities for adventure and discovery for others.</p>
+      <h2>Start Your Adventure</h2>
+      <p>Ready to experience the future of geocaching? <strong><a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">Visit Treasures</a></strong> and begin your decentralized treasure hunting journey today. Login with your Nostr keypair, explore the map to find geocaches near you, and start discovering hidden treasures around the world. Whether you're finding caches or hiding your own, you're joining a community that's building the future of open, accessible geocaching.</p>
 
       <h2>Join the Revolution</h2>
       <p>Treasures represents more than just a new geocaching platform - it's a demonstration of how decentralized technologies can solve real problems and empower communities. By choosing open protocols over closed platforms, we're building a more resilient, user-controlled future for geocaching that can never be captured by corporate interests or locked behind paywalls.</p>
