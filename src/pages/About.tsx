@@ -48,12 +48,12 @@ const teamMembers = [
     npub: "npub1e6tnvlr46lv3lwdu80r07kanhk6jcxy5r07w9umgv9kuhu9dl5hsk9gqft"
   },
   {
-    name: "And Other Stuff",
-    role: "Partner Organization",
-    bio: "Soapbox is a member of the And Other Stuff collective, with a focus communities.",
-    avatar: "/assets/avatars/aos.png",
-    follow: "https://ditto.pub/@AOS@andotherstuff.org",
-    npub: "npub1t5u3wp5kj78jwnuphpf5mhx00nwwtfwq56d6j8atnu89gd454wcs6aj4c2"
+    name: "Chad Curtis",
+    role: "Developer",
+    bio: "Chad is hobbyist who enjoys creating open source solutions for everyone. He also enjoys creating art, tinkering with GNU/Linux, and playing Magic: The Gathering",
+    avatar: "/assets/avatars/chad.jpeg",
+    follow: "https://ditto.pub/@chad@chadwick.site",
+    npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
   }
 ];
 
