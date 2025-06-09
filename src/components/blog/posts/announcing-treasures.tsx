@@ -233,8 +233,6 @@ export default function AnnouncingTreasures() {
         </div>
       </div>
 
-      <p>For a complete list of features, see the <a href="https://gitlab.com/chad.curtis/treasures#features" target="_blank" rel="noopener noreferrer">Treasures source code</a>.</p>
-
       {/* Decentralized benefits section */}
       <div className="not-prose my-12">
         <h3 className="text-2xl font-bold text-gray-900 mb-8">Decentralized & Open Architecture</h3>
@@ -291,7 +289,7 @@ export default function AnnouncingTreasures() {
             <CardHeader>
               <CardTitle className="text-green-800 text-lg flex items-center">
                 <MapPin className="w-5 h-5 mr-2" />
-                Free Forever
+                Fully Free
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-700 text-sm">
@@ -310,25 +308,6 @@ export default function AnnouncingTreasures() {
               Works on any device with modern web browser support
             </CardContent>
           </Card>
-        </div>
-
-        {/* Mid-article CTA */}
-        <div className="mt-12 text-center bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-2xl p-8">
-          <h4 className="text-2xl font-bold text-emerald-900 mb-4">Ready to Start Your Adventure?</h4>
-          <p className="text-emerald-800 mb-6 max-w-2xl mx-auto">
-            Join thousands of geocachers who have already made the switch to decentralized treasure hunting. No signup required—just connect with Nostr and start exploring.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3"
-            asChild
-          >
-            <a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">
-              <MapPin className="w-5 h-5 mr-2" />
-              Explore Treasures Now
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
         </div>
       </div>
 
@@ -387,7 +366,15 @@ export default function AnnouncingTreasures() {
       <p><strong>Log Events (Kind 7516)</strong>: Regular events that record visits to geocaches, including found logs, DNF reports, maintenance notes, and archive notifications.</p>
       <p>This protocol ensures interoperability - any Nostr client can implement geocaching features and interact with Treasures data.</p>
 
-      {/* Final call to action section */}
+      
+
+      <h2>Join the Revolution</h2>
+      <p>Treasures represents more than just a new geocaching platform - it's a demonstration of how decentralized technologies can solve real problems and empower communities. By choosing open protocols over closed platforms, we're building a more resilient, user-controlled future for geocaching that can never be captured by corporate interests or locked behind paywalls.</p>
+      <p>The treasure hunting community has always been about exploration, discovery, and sharing adventures. Geocaching was born as a free, open activity that brought people together through shared adventure. Corporate platforms have tried to monetize and restrict this natural human impulse, but with Treasures on Nostr, we can return to those original values while maintaining true ownership of our data and freedom from platform restrictions.</p>
+      <p>Every geocacher who joins Treasures is voting for a future where outdoor adventure remains accessible to everyone, regardless of their ability to pay subscription fees. Together, we can build a geocaching ecosystem that serves the community instead of extracting profit from it.</p>
+      <p><strong>The world is full of hidden treasures, and they should be free for everyone to discover.</strong></p>
+      
+      {/* Treasures CTA */}
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-3xl p-12 text-white text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Start Your Adventure Today</h2>
@@ -420,59 +407,6 @@ export default function AnnouncingTreasures() {
               </a>
             </Button>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-bold text-white">100%</div>
-              <div className="text-emerald-200 text-sm">Free Forever</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white">0</div>
-              <div className="text-emerald-200 text-sm">Registration Required</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white">∞</div>
-              <div className="text-emerald-200 text-sm">Cache Possibilities</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white">🌍</div>
-              <div className="text-emerald-200 text-sm">Global Community</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2>Join the Revolution</h2>
-      <p>Treasures represents more than just a new geocaching platform - it's a demonstration of how decentralized technologies can solve real problems and empower communities. By choosing open protocols over closed platforms, we're building a more resilient, user-controlled future for geocaching that can never be captured by corporate interests or locked behind paywalls.</p>
-      <p>The treasure hunting community has always been about exploration, discovery, and sharing adventures. Geocaching was born as a free, open activity that brought people together through shared adventure. Corporate platforms have tried to monetize and restrict this natural human impulse, but with Treasures on Nostr, we can return to those original values while maintaining true ownership of our data and freedom from platform restrictions.</p>
-      <p>Every geocacher who joins Treasures is voting for a future where outdoor adventure remains accessible to everyone, regardless of their ability to pay subscription fees. Together, we can build a geocaching ecosystem that serves the community instead of extracting profit from it.</p>
-      <p><strong>The world is full of hidden treasures, and they should be free for everyone to discover.</strong></p>
-
-      <hr className="my-8" />
-      
-      {/* Footer CTA */}
-      <div className="not-prose text-center py-8">
-        <p className="text-gray-600 mb-6">
-          <em>Treasures is open source and available now. Join the community, hide some caches, and help build the future of decentralized geocaching.</em>
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            className="bg-emerald-600 hover:bg-emerald-700 text-white"
-            asChild
-          >
-            <a href="https://treasures.to/" target="_blank" rel="noopener noreferrer">
-              <MapPin className="w-4 h-4 mr-2" />
-              Try Treasures
-            </a>
-          </Button>
-          <Button 
-            variant="outline"
-            asChild
-          >
-            <a href="https://gitlab.com/chad.curtis/treasures" target="_blank" rel="noopener noreferrer">
-              View on GitLab
-            </a>
-          </Button>
         </div>
       </div>
     </article>
