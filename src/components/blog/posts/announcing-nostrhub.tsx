@@ -3,7 +3,7 @@ import { EmailSignupForm } from '../../EmailSignupForm';
 import { Button } from '../../ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../ui/card';
 import { Badge } from '../../ui/badge';
-import { ExternalLink, Code, Users, GitBranch, FileText } from 'lucide-react';
+import { ExternalLink, Code, Users, GitBranch, FileText, Search, Heart, Star } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -17,13 +17,13 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "announcing-nostrhub",
-  "title": "Announcing NostrHub: Your One-Stop Shop for Nostr Development",
+  "title": "NostrHub: NIPs, Apps, and Repos on Nostr",
   "excerpt": "NostrHub is the ultimate resource for Nostr developers, featuring official and custom NIPs, app discovery, repository sharing, and a thriving developer community.",
   "coverImage": "/assets/blog/announcing-nostrhub/announcing-nostrhub.png",
-  "date": "2024-12-19",
+  "date": "2025-06-10",
   "author": {
-    "name": "Soapbox Team",
-    "picture": "/assets/avatars/soapbox.png"
+    "name": "M.K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
     "url": "/assets/blog/announcing-nostrhub/announcing-nostrhub.png"
@@ -35,78 +35,78 @@ export default function AnnouncingNostrHub() {
     <article className="prose prose-lg max-w-none">
       <p><strong>The Nostr ecosystem is growing rapidly,</strong> but developers have been scattered across different resources, documentation sites, and communities. Finding the right NIPs, discovering compatible apps, sharing projects, and connecting with other developers has been a fragmented experience.</p>
       
-      <p>Today, we're excited to announce <strong>NostrHub</strong> — a comprehensive platform that brings together everything you need as a Nostr developer in one place.</p>
+      <p>Today, we're excited to announce <strong><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">NostrHub</a></strong> — a comprehensive platform that brings together everything you need as a Nostr developer in one place.</p>
 
       <h2>What is NostrHub?</h2>
       
-      <p>NostrHub is your one-stop shop for Nostr development, designed to streamline the developer experience and foster collaboration within the Nostr ecosystem. Whether you're just getting started with Nostr or you're building the next breakthrough application, NostrHub has the resources you need.</p>
+      <p><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">NostrHub</a> is your one-stop shop for Nostr development, designed to streamline the developer experience and foster collaboration within the Nostr ecosystem. Whether you're just getting started with Nostr or you're building the next breakthrough application, NostrHub has the resources you need.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="h-5 w-5" />
-              NIPs Repository
-            </CardTitle>
-            <CardDescription>
-              Access official and custom Nostr Implementation Possibilities
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Browse the complete collection of NIPs, from official protocol specifications to innovative custom implementations. Submit your own NIPs and help shape the future of Nostr.
+        <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-2 mb-3">
+              <FileText className="h-5 w-5 text-blue-500" />
+              <h4 className="font-semibold">Submit Your Custom NIPs</h4>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Have you created a custom event kind or protocol extension? Share it with the community and help expand the Nostr ecosystem.
             </p>
+            <Button asChild className="w-full">
+              <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">
+                Submit Custom NIP <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Code className="h-5 w-5" />
-              App Discovery
-            </CardTitle>
-            <CardDescription>
-              Find apps by supported event types and publish your own
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Discover Nostr applications organized by the event kinds they support. Perfect for finding compatible apps or showcasing your new creation to the community.
+        <Card className="border-l-4 border-l-green-500 hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-2 mb-3">
+              <Code className="h-5 w-5 text-green-500" />
+              <h4 className="font-semibold">List Your App</h4>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Built a Nostr application? Help others discover it by listing it in our app directory organized by supported event types.
             </p>
+            <Button asChild variant="outline" className="w-full">
+              <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer">
+                Submit Your App <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <GitBranch className="h-5 w-5" />
-              Repository Sharing
-            </CardTitle>
-            <CardDescription>
-              Share your Nostr projects and attract contributors
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Showcase your open-source Nostr projects, find collaborators, and discover interesting repositories from other developers in the ecosystem.
+        <Card className="border-l-4 border-l-purple-500 hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-2 mb-3">
+              <GitBranch className="h-5 w-5 text-purple-500" />
+              <h4 className="font-semibold">Share Your Repository</h4>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Open-source your Nostr project and attract contributors from the developer community.
             </p>
+            <Button asChild variant="outline" className="w-full">
+              <a href="https://nostrhub.io/repositories" target="_blank" rel="noopener noreferrer">
+                Share Repository <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Developer Community
-            </CardTitle>
-            <CardDescription>
-              Built-in NIP-72 community for Nostr developers
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Connect with fellow Nostr developers in our dedicated community space. Share ideas, get help, and collaborate on the future of decentralized social media.
+        <Card className="border-l-4 border-l-orange-500 hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-2 mb-3">
+              <Users className="h-5 w-5 text-orange-500" />
+              <h4 className="font-semibold">Join the Community</h4>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Connect with fellow Nostr developers, share ideas, and collaborate on exciting projects.
             </p>
+            <Button asChild variant="outline" className="w-full">
+              <a href="https://nostrhub.io/community" target="_blank" rel="noopener noreferrer">
+                Join Community <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </CardContent>
         </Card>
       </div>
@@ -124,118 +124,147 @@ export default function AnnouncingNostrHub() {
 
       <p>NostrHub solves these challenges by providing a centralized hub that doesn't compromise the decentralized nature of Nostr itself.</p>
 
-      <h2>Current Features</h2>
+      <h2>Explore NostrHub's Features</h2>
 
-      <p>NostrHub already includes a comprehensive <strong>NIPs repository</strong> where you can browse both official and custom Nostr Implementation Possibilities. You can explore the existing collection and understand how different event kinds and protocol extensions work together.</p>
+      <h3>🚀 <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">App Discovery Platform</a></h3>
+      <p>Browse Nostr applications organized by the event kinds they support. Whether you're looking for a client that handles NIP-04 encrypted messages or want to showcase your new NIP-23 long-form content app, the app discovery platform makes it easy to find and share compatible applications.</p>
 
-      <div className="bg-muted p-6 rounded-lg my-6 not-prose">
-        <p className="text-sm text-muted-foreground mb-4">
-          <strong>Already available:</strong>
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <Badge variant="secondary">Official NIPs</Badge>
-          <Badge variant="secondary">Custom NIPs</Badge>
-          <Badge variant="secondary">NIP Submission</Badge>
-          <Badge variant="secondary">Protocol Documentation</Badge>
-        </div>
+      <div className="my-8 not-prose">
+        <img 
+          src="/assets/blog/announcing-nostrhub/Nostr-apps.png" 
+          alt="NostrHub Apps page showing Nostr applications organized by supported event kinds"
+          className="w-full rounded-lg shadow-lg border"
+        />
+        <p className="text-sm text-muted-foreground text-center mt-2">Discover Nostr apps organized by event kinds they support</p>
       </div>
 
-      <h2>Coming Soon: The Complete Platform</h2>
+      <h3>📚 <a href="https://nostrhub.io/repositories" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">Repository Showcase</a></h3>
+      <p>Share your open-source Nostr projects and discover interesting repositories from other developers. This feature helps you find collaborators, showcase your work, and contribute to the growing ecosystem of Nostr tools and applications.</p>
 
-      <p>We're actively developing the remaining features that will make NostrHub the ultimate Nostr developer resource:</p>
+      <div className="my-8 not-prose">
+        <img 
+          src="/assets/blog/announcing-nostrhub/nostrhub-repos.png" 
+          alt="NostrHub Repositories page showcasing open-source Nostr projects"
+          className="w-full rounded-lg shadow-lg border"
+        />
+        <p className="text-sm text-muted-foreground text-center mt-2">Browse and share Nostr repositories with the community</p>
+      </div>
 
-      <h3>🚀 App Discovery Platform</h3>
-      <p>Browse Nostr applications organized by the event kinds they support. Whether you're looking for a client that handles NIP-04 encrypted messages or want to showcase your new NIP-23 long-form content app, the app discovery platform will make it easy to find and share compatible applications.</p>
-
-      <h3>📚 Repository Showcase</h3>
-      <p>Share your open-source Nostr projects and discover interesting repositories from other developers. This feature will help you find collaborators, showcase your work, and contribute to the growing ecosystem of Nostr tools and applications.</p>
-
-      <h3>👥 Developer Community</h3>
+      <h3>👥 <a href="https://nostrhub.io/community" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">Developer Community</a></h3>
       <p>A built-in NIP-72 community space specifically for Nostr developers. Connect with peers, share ideas, get help with implementation challenges, and collaborate on the future of decentralized social media.</p>
 
-      <h2>Get Involved Today</h2>
+      <div className="my-8 not-prose">
+        <img 
+          src="/assets/blog/announcing-nostrhub/nostrhub-community.png" 
+          alt="NostrHub Community page showing developer discussions and collaboration"
+          className="w-full rounded-lg shadow-lg border"
+        />
+        <p className="text-sm text-muted-foreground text-center mt-2">Connect with fellow Nostr developers in our NIP-72 community</p>
+      </div>
 
-      <p>NostrHub is built by developers, for developers. We want your input to make it the best possible resource for the Nostr community.</p>
+      <h2>Meet NostrHub Developers</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 not-prose">
-        <div className="space-y-4">
-          <h4 className="font-semibold">Submit Your Custom NIPs</h4>
-          <p className="text-sm text-muted-foreground">
-            Have you created a custom event kind or protocol extension? Share it with the community and help expand the Nostr ecosystem.
-          </p>
-          <Button asChild className="w-full">
-            <a href="https://nostrhub.io/" target="_blank" rel="noopener noreferrer">
-              Submit Custom NIP <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </div>
+      <p>NostrHub developers are already using the platform to showcase their work and connect with the community. Check out some of the amazing profiles:</p>
 
-        <div className="space-y-4">
-          <h4 className="font-semibold">List Your App</h4>
-          <p className="text-sm text-muted-foreground">
-            Built a Nostr application? Help others discover it by listing it in our app directory organized by supported event types.
-          </p>
-          <Button asChild variant="outline" className="w-full">
-            <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer">
-              Submit Your App <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
+        <Card className="hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold">A</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Alex Gleason</h4>
+                <p className="text-sm text-muted-foreground">Ditto & Soapbox Developer</p>
+              </div>
+            </div>
+            <img 
+              src="/assets/blog/announcing-nostrhub/alex-nostrhub-profile.png" 
+              alt="Alex Gleason's NostrHub profile page"
+              className="w-full rounded-lg shadow-sm border mb-4"
+            />
+            <Button asChild className="w-full" variant="outline">
+              <a href="https://nostrhub.io/npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424" target="_blank" rel="noopener noreferrer">
+                <Heart className="mr-2 h-4 w-4" />
+                Visit Profile
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
 
-        <div className="space-y-4">
-          <h4 className="font-semibold">Share Your Repository</h4>
-          <p className="text-sm text-muted-foreground">
-            Open-source your Nostr project and attract contributors from the developer community.
-          </p>
-          <Button asChild variant="outline" className="w-full">
-            <a href="https://nostrhub.io/repositories" target="_blank" rel="noopener noreferrer">
-              Share Repository <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </div>
-
-        <div className="space-y-4">
-          <h4 className="font-semibold">Join the Community</h4>
-          <p className="text-sm text-muted-foreground">
-            Connect with fellow Nostr developers, share ideas, and collaborate on exciting projects.
-          </p>
-          <Button asChild variant="outline" className="w-full">
-            <a href="https://nostrhub.io/communities" target="_blank" rel="noopener noreferrer">
-              Join Community <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </div>
+        <Card className="hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold">D</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Derek Ross</h4>
+                <p className="text-sm text-muted-foreground">Nostr Advocate & Builder</p>
+              </div>
+            </div>
+            <img 
+              src="/assets/blog/announcing-nostrhub/derek-nostrhub-profile.png" 
+              alt="Derek Ross's NostrHub profile page"
+              className="w-full rounded-lg shadow-sm border mb-4"
+            />
+            <Button asChild className="w-full" variant="outline">
+              <a href="https://nostrhub.io/npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxckmzddywnws6cd26p" target="_blank" rel="noopener noreferrer">
+                <Star className="mr-2 h-4 w-4" />
+                Visit Profile
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
       </div>
 
       <h2>The Future of Nostr Development</h2>
 
-      <p>NostrHub represents our vision for a more connected and collaborative Nostr ecosystem. By bringing together NIPs, apps, repositories, and developers in one place, we're making it easier than ever to build on Nostr.</p>
+      <p><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">NostrHub</a> represents our vision for a more connected and collaborative Nostr ecosystem. By bringing together NIPs, apps, repositories, and developers in one place, we're making it easier than ever to build on Nostr.</p>
 
       <p>The platform will continue to evolve based on community feedback and needs. We're committed to supporting the Nostr ecosystem's growth while maintaining the principles of decentralization and open development that make Nostr special.</p>
 
-      <h3>Stay Updated</h3>
-      <p>Want to be notified when new features launch? Sign up for our newsletter to get the latest updates on NostrHub and the broader Nostr ecosystem.</p>
-      
-      <EmailSignupForm tags={['NostrHub', 'Nostr Development']} />
+      <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-8 rounded-xl my-8 not-prose border">
+        <div className="text-center space-y-4">
+          <h3 className="text-xl font-bold">Stay Updated</h3>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Want to be notified when new features launch? Sign up for our newsletter to get the latest updates on NostrHub and the broader Nostr ecosystem.
+          </p>
+          <div className="max-w-md mx-auto">
+            <EmailSignupForm tags={['NostrHub', 'Nostr Development']} />
+          </div>
+        </div>
+      </div>
 
-      <h2>Start Building with NostrHub 🚀</h2>
+      <h2 className="text-center">Start Building with NostrHub 🚀</h2>
       
-      <div className="flex flex-col sm:flex-row gap-4 my-8 not-prose">
-        <Button asChild size="lg" className="flex-1">
-          <a href="https://nostrhub.io/" target="_blank" rel="noopener noreferrer">
-            Explore NostrHub <ExternalLink className="ml-2 h-4 w-4" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8 not-prose">
+        <Button asChild size="lg" className="h-auto py-4">
+          <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+            <Search className="h-5 w-5" />
+            <span>Explore NostrHub</span>
+            <ExternalLink className="h-3 w-3" />
           </a>
         </Button>
-        <Button asChild variant="outline" size="lg" className="flex-1">
-          <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer">
-            Browse Apps <ExternalLink className="ml-2 h-4 w-4" />
+        <Button asChild variant="outline" size="lg" className="h-auto py-4">
+          <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+            <Code className="h-5 w-5" />
+            <span>Browse Apps</span>
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="h-auto py-4">
+          <a href="https://nostrhub.io/community" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+            <Users className="h-5 w-5" />
+            <span>Join Community</span>
+            <ExternalLink className="h-3 w-3" />
           </a>
         </Button>
       </div>
 
-      <p className="text-center text-muted-foreground">
-        <em>Join us in building the future of decentralized social media, one NIP at a time.</em>
-      </p>
+      <div className="text-center text-muted-foreground bg-muted/50 p-6 rounded-lg">
+        <em className="text-lg">Join us in building the future of decentralized social media, one NIP at a time.</em>
+      </div>
     </article>
   );
 }
