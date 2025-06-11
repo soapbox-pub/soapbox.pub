@@ -25,7 +25,7 @@ export const meta: BlogPostMeta = {
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-nostrhub/announcing-nostrhub.png"
+    "url": "/assets/blog/announcing-nostrhub/nostrhub-blog.png"
   }
 };
 

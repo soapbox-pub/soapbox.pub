@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { RecentNips } from "@/components/RecentNips";
+import { FeaturedDevelopers } from "@/components/FeaturedDevelopers";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function NostrHub() {
@@ -472,6 +473,8 @@ export default function NostrHub() {
               </div>
             </Card>
           </div>
+          {/* Featured Developers Section */}
+          <FeaturedDevelopers />
         </div>
       </section>
 
