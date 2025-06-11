@@ -193,44 +193,44 @@ export default function Tools() {
               </CardContent>
             </Card>
 
-            {/* Stacks */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-emerald-200">
+            {/* NostrHub */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
               <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-2xl font-display">Stacks</CardTitle>
-                <CardDescription className="text-lg">AI Project Templates</CardDescription>
+                <CardTitle className="text-2xl font-display">NostrHub</CardTitle>
+                <CardDescription className="text-lg">Nostr Protocol Explorer</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-gray-600">
-                  Share and discover AI project templates on our decentralized platform. 
-                  Find the perfect starter for your next AI project or share your own templates.
+                  Explore and understand Nostr Implementation Possibilities (NIPs) with our comprehensive 
+                  database and tools for developers. Publish custom NIPs and discover implementation guides.
                 </p>
                 
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    Decentralized template sharing
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Complete NIP database
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    AI-focused projects
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Publish Custom NIPs
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    Community-driven
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Implementation guides
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                    Version control
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Developer resources
                   </div>
                 </div>
                 
                 <div className="pt-4">
-                  <Button variant="outline" className="w-full group-hover:bg-emerald-500 group-hover:text-white transition-colors" asChild>
-                    <Link to="/tools/stacks">
-                      Explore Templates
+                  <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
+                    <Link to="/tools/nostrhub">
+                      Explore NIPs
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -278,43 +278,6 @@ export default function Tools() {
               </CardContent>
             </Card>
 
-            {/* NostrHub */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl font-display">NostrHub</CardTitle>
-                <CardDescription>Nostr Protocol Explorer</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600 text-sm">
-                  Explore and understand Nostr Implementation Possibilities (NIPs) with our comprehensive 
-                  database and tools for developers.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                    Complete NIP database
-                  </div>
-                  <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                    Publish Custom Nips
-                  </div>
-                  <div className="flex items-center text-xs text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                    Implementation guides
-                  </div>
-                </div>
-                <Button variant="outline" className="w-full text-sm" asChild>
-                  <Link to="/tools/nostrhub">
-                    Explore NIPs
-                    <ArrowRight className="ml-2 h-3 w-3" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
             {/* Nostrify */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <CardHeader>
@@ -346,6 +309,43 @@ export default function Tools() {
                 <Button variant="outline" className="w-full text-sm" asChild>
                   <Link to="/tools/nostrify">
                     Start Coding
+                    <ArrowRight className="ml-2 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Stacks */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-emerald-200">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl font-display">Stacks</CardTitle>
+                <CardDescription>AI Project Templates</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-sm">
+                  Share and discover AI project templates on our decentralized platform. 
+                  Find the perfect starter for your next AI project or share your own templates.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></div>
+                    Decentralized template sharing
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></div>
+                    AI-focused projects
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></div>
+                    Community-driven
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full text-sm" asChild>
+                  <Link to="/tools/stacks">
+                    Explore Templates
                     <ArrowRight className="ml-2 h-3 w-3" />
                   </Link>
                 </Button>

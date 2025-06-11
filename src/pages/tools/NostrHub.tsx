@@ -397,7 +397,7 @@ export default function NostrHub() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Author Profiles</h3>
                   <p className="text-gray-600">
-                    Every developer gets a profile showcasing all their published NIPs. Build your 
+                    Every developer gets a profile showcasing all their published NIPs, Apps, and Repos. Build your 
                     reputation as a protocol contributor and let others discover your innovations.
                   </p>
                 </div>
@@ -418,7 +418,7 @@ export default function NostrHub() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Interactive Comments</h3>
                   <p className="text-gray-600">
-                    Engage in discussions on both official and custom NIPs. Ask questions, provide 
+                    Engage in discussions on official and custom NIPs, Apps, and repositories. Ask questions, provide 
                     feedback, suggest improvements, and collaborate with the global developer community.
                   </p>
                 </div>
@@ -430,49 +430,8 @@ export default function NostrHub() {
                 </p>
               </div>
             </Card>
-
-            <Card className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Bell className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Smart Notifications</h3>
-                  <p className="text-gray-600">
-                    Stay updated on all activity related to your NIPs. Get notified when someone 
-                    comments, implements your specification, or references your work.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-gradient-to-r from-violet-50 to-pink-50 rounded-lg p-4">
-                <p className="text-sm text-gray-700">
-                  <strong>Never miss important feedback:</strong> Receive notifications through 
-                  Nostr itself, keeping everything decentralized and in your control.
-                </p>
-              </div>
-            </Card>
-
-            <Card className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Browse Official NIPs</h3>
-                  <p className="text-gray-600">
-                    Access the complete collection of official Nostr Implementation Possibilities 
-                    with enhanced search, filtering, and categorization features.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-4">
-                <p className="text-sm text-gray-700">
-                  <strong>Enhanced discoverability:</strong> Find exactly what you need with 
-                  powerful search and filtering capabilities built for developers.
-                </p>
-              </div>
-            </Card>
           </div>
+
           {/* Featured Developers Section */}
           <FeaturedDevelopers />
         </div>
