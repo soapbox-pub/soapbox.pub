@@ -266,6 +266,22 @@ export default function GetInvolved() {
           </div>
         </section>
 
+        {/* Equal Opportunity Statement */}
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-blue-50 border-t border-blue-100">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg p-8 shadow-sm border border-blue-200">
+              <h3 className="text-2xl font-bold font-display text-gray-900 mb-4 text-center">
+                Equal Opportunity Employer
+              </h3>
+              <div className="prose prose-gray max-w-none text-center">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We welcome applications from all qualified candidates regardless of race, color, religion, sex, sexual orientation, national origin, age, disability, veteran status, or any other characteristic protected by law.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Open Source Contributions */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
