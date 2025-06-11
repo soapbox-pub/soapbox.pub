@@ -23,14 +23,14 @@ export function useDeveloperStats(pubkey: string | undefined) {
       try {
         // Fetch different types of events for this developer
         const [customNipEvents, appEvents, repoEvents] = await Promise.all([
-          // Custom NIPs (kind 30040 - NIP-72 community posts about NIPs)
+          // Custom NIPs (kind 30817 - Custom NIP events)
           nostr.query(
-            [{ kinds: [30040], authors: [pubkey], limit: 100 }],
+            [{ kinds: [30817], authors: [pubkey], limit: 100 }],
             { signal: combinedSignal }
           ),
-          // Apps (kind 30063 - Application Handler events)
+          // Apps (kind 31990 - Application events)
           nostr.query(
-            [{ kinds: [30063], authors: [pubkey], limit: 100 }],
+            [{ kinds: [31990], authors: [pubkey], limit: 100 }],
             { signal: combinedSignal }
           ),
           // Repos (kind 30617 - Repository events)
