@@ -50,7 +50,7 @@ const openPositions = [
       "Strong knowledge of distributed systems and APIs",
       "Understanding of cryptography and decentralized protocols"
     ],
-    tags: ["Backend", "Databases", "Distributed Systems", "Cryptography"],
+    tags: ["Backend", "Databases", "SQL", "Distributed Systems", "Cryptography"],
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
