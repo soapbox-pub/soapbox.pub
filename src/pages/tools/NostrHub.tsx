@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Code, Users, Search, Globe, Bell, GitBranch, ExternalLink } from "lucide-react";
+import { ArrowRight, FileText, Code, Users, Search, Globe, GitBranch, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

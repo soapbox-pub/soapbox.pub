@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "slug": "announcing-nostrhub",
   "title": "NostrHub: NIPs, Apps, and Repos on Nostr",
   "excerpt": "NostrHub is the ultimate resource for Nostr developers, featuring official and custom NIPs, app discovery, repository sharing, and a truly social experience where you can comment on NIPs, apps, and repositories.",
-  "coverImage": "/assets/blog/announcing-nostrhub/announcing-nostrhub.png",
+  "coverImage": "/assets/blog/announcing-nostrhub/nostrhub-blog.png",
   "date": "2025-06-10",
   "author": {
     "name": "M.K. Fain",
@@ -138,6 +138,18 @@ export default function AnnouncingNostrHub() {
             </p>
           </div>
         </div>
+      </div>
+
+      <h3>📋 <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">Source for Official and Custom NIPs</a></h3>
+      <p>Access the complete collection of Nostr Improvement Proposals (NIPs) in one place. Browse official NIPs from the main repository alongside community-submitted custom NIPs. Whether you're implementing existing standards or exploring innovative extensions to the protocol, NostrHub provides comprehensive documentation and real-world examples for every NIP.</p>
+
+      <div className="my-8 not-prose">
+        <img 
+          src="/assets/blog/announcing-nostrhub/announcing-nostrhub.png" 
+          alt="NostrHub NIPs page showing official and custom Nostr Improvement Proposals"
+          className="w-full rounded-lg shadow-lg border"
+        />
+        <p className="text-sm text-muted-foreground text-center mt-2">Explore official and custom NIPs with comprehensive documentation</p>
       </div>
 
       <h3>🚀 <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">App Discovery Platform</a></h3>
@@ -305,12 +317,6 @@ export default function AnnouncingNostrHub() {
           <a href="https://nostrhub.io/community" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <Users className="h-5 w-5" />
             <span>Join Community</span>
-          </a>
-        </Button>
-        <Button asChild variant="outline" size="lg" className="h-auto py-4">
-          <a href="https://nostrhub.io/dvms" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
-            <span className="text-lg">🤖</span>
-            <span>DVM Marketplace</span>
           </a>
         </Button>
       </div>
