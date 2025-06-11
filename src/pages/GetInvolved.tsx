@@ -12,6 +12,7 @@ const openPositions = [
     type: "Full-time",
     location: "Remote",
     description: "Take ownership of features from concept to deployment. Work across our entire stack to deliver exceptional user experiences on decentralized platforms.",
+    compensation: "Depends on experience and other circumstances, maximum budget $120k. Options available for W2 work + benefits (if in US) or contract outside of US.",
     requirements: [
       "5+ years of full stack development experience",
       "Proficiency in both frontend and backend technologies",
@@ -27,6 +28,7 @@ const openPositions = [
     type: "Full-time",
     location: "Remote",
     description: "Join our team to build cutting-edge user interfaces for decentralized social platforms. Work with React, TypeScript, and the latest web technologies.",
+    compensation: "Depends on experience and other circumstances, maximum budget $120k. Options available for W2 work + benefits (if in US) or contract outside of US.",
     requirements: [
       "5+ years of frontend development experience",
       "Expert knowledge of React, TypeScript, and modern web standards",
@@ -42,6 +44,7 @@ const openPositions = [
     type: "Full-time",
     location: "Remote",
     description: "Build robust, scalable backend systems for our decentralized social platforms. Work with modern backend technologies and decentralized protocols.",
+    compensation: "Depends on experience and other circumstances, maximum budget $120k. Options available for W2 work + benefits (if in US) or contract outside of US.",
     requirements: [
       "5+ years of backend development experience",
       "Strong knowledge of distributed systems and APIs",
@@ -57,11 +60,14 @@ const openPositions = [
     type: "Part-time/Contract",
     location: "Remote",
     description: "Help us spread the word about our mission to build free, decentralized social platforms. Create content, manage community outreach, and support our marketing initiatives.",
+    compensation: "Hourly contract position, depends on experience and time commitment, max budget $50/hr for 20 hours/week.",
     requirements: [
       "2+ years of marketing or communications experience",
       "Excellent written and verbal communication skills",
       "Experience with social media management and content creation",
-      "Interest in decentralization and open source technology"
+      "Interest in decentralization and open source technology",
+      "Basic technical understanding of Nostr",
+      "Junior-dev level experience and comfort in a command line is a huge plus"
     ],
     tags: ["Content Marketing", "Social Media", "Community", "Writing"],
     applicationInstructions: "To apply, please email mk@marykatefain.com with a link to your website or portfolio and a letter of interest."
@@ -220,6 +226,13 @@ export default function GetInvolved() {
                     <CardDescription className="text-gray-600 mb-4">
                       {position.description}
                     </CardDescription>
+                    
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Compensation:</h4>
+                      <p className="text-sm text-gray-600 bg-green-50 p-3 rounded-md border-l-4 border-green-500">
+                        {position.compensation}
+                      </p>
+                    </div>
                     
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
