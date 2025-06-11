@@ -35,7 +35,7 @@ const openPositions = [
       "Experience with decentralized protocols (preferred)",
       "Passion for open source and user privacy"
     ],
-    tags: ["React", "TypeScript", "Nostr", "Web3"],
+    tags: ["React", "TypeScript", "Nostr", "APIs"],
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
@@ -48,10 +48,9 @@ const openPositions = [
     requirements: [
       "5+ years of backend development experience",
       "Strong knowledge of distributed systems and APIs",
-      "Experience with Rust, Go, or similar systems languages",
       "Understanding of cryptography and decentralized protocols"
     ],
-    tags: ["Rust", "Go", "Distributed Systems", "Cryptography"],
+    tags: ["Backend", "Databases", "Distributed Systems", "Cryptography"],
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
