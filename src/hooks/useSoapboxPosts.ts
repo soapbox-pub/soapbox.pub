@@ -29,16 +29,27 @@ export function useSoapboxPosts(limit: number = 10) {
       try {
         const pubkeyHex = npubToHex(SOAPBOX_NPUB);
         
+        // Fetch more events than needed since we'll filter out replies
         const events = await nostr.query([
           {
             kinds: [1], // Text notes only (excluding reposts)
             authors: [pubkeyHex],
-            limit: limit,
+            limit: limit * 3, // Fetch 3x more to account for filtering out replies
           }
         ], { signal });
         
-        // Sort by created_at descending (newest first)
-        return events.sort((a, b) => b.created_at - a.created_at);
+        // Filter out replies (events with 'e' tags) and only keep top-level posts
+        // According to NIP-10, replies are kind 1 events that reference other events via 'e' tags
+        const topLevelPosts = events.filter(event => {
+          // Check if the event has any 'e' tags (which would make it a reply)
+          const hasETags = event.tags.some(tag => tag[0] === 'e');
+          return !hasETags; // Only include events without 'e' tags (top-level posts)
+        });
+        
+        // Sort by created_at descending (newest first) and limit to requested amount
+        return topLevelPosts
+          .sort((a, b) => b.created_at - a.created_at)
+          .slice(0, limit);
       } catch (error) {
         console.error('Failed to fetch Soapbox posts:', error);
         return [];
