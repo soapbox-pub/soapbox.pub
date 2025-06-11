@@ -1,9 +1,8 @@
 import React from 'react';
 import { EmailSignupForm } from '../../EmailSignupForm';
 import { Button } from '../../ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../ui/card';
-import { Badge } from '../../ui/badge';
-import { ExternalLink, Code, Users, GitBranch, FileText, Search, Heart, Star } from 'lucide-react';
+import { Card, CardContent } from '../../ui/card';
+import { ExternalLink, Code, Users, GitBranch, FileText, Search, Star } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -185,7 +184,7 @@ export default function AnnouncingNostrHub() {
             />
             <Button asChild className="w-full" variant="outline">
               <a href="https://nostrhub.io/npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424" target="_blank" rel="noopener noreferrer">
-                <Heart className="mr-2 h-4 w-4" />
+                <Star className="mr-2 h-4 w-4" />
                 Visit Profile
               </a>
             </Button>
@@ -243,27 +242,26 @@ export default function AnnouncingNostrHub() {
           <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <Search className="h-5 w-5" />
             <span>Explore NostrHub</span>
-            <ExternalLink className="h-3 w-3" />
           </a>
         </Button>
         <Button asChild variant="outline" size="lg" className="h-auto py-4">
           <a href="https://nostrhub.io/apps" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <Code className="h-5 w-5" />
             <span>Browse Apps</span>
-            <ExternalLink className="h-3 w-3" />
           </a>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="h-auto py-4">
+            <a href="https://nostrhub.io/repositories" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+            <GitBranch className="h-5 w-5" />
+            <span>View Repos</span>
+            </a>
         </Button>
         <Button asChild variant="outline" size="lg" className="h-auto py-4">
           <a href="https://nostrhub.io/community" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <Users className="h-5 w-5" />
             <span>Join Community</span>
-            <ExternalLink className="h-3 w-3" />
           </a>
         </Button>
-      </div>
-
-      <div className="text-center text-muted-foreground bg-muted/50 p-6 rounded-lg">
-        <em className="text-lg">Join us in building the future of decentralized social media, one NIP at a time.</em>
       </div>
     </article>
   );
