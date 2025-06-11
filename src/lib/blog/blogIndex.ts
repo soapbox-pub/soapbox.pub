@@ -2,6 +2,7 @@
 import * as announcingditto from '../../components/blog/posts/announcing-ditto';
 import * as announcinghenhouse from '../../components/blog/posts/announcing-henhouse';
 import * as announcingnostrify from '../../components/blog/posts/announcing-nostrify';
+import * as announcingnostrhub from '../../components/blog/posts/announcing-nostrhub';
 import * as announcingtreasures from '../../components/blog/posts/announcing-treasures';
 import * as announcingsoapboxbev10 from '../../components/blog/posts/announcing-soapbox-be-v1.0';
 import * as announcingsoapboxfev10 from '../../components/blog/posts/announcing-soapbox-fe-v1.0';
@@ -56,6 +57,7 @@ export const blogPosts: BlogPost[] = [
   announcingditto.meta,
   announcinghenhouse.meta,
   announcingnostrify.meta,
+  announcingnostrhub.meta,
   announcingtreasures.meta,
   announcingsoapboxbev10.meta,
   announcingsoapboxfev10.meta,
@@ -102,6 +104,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/announcing-henhouse')).default;
     case 'announcingnostrify':
       return (await import('../../components/blog/posts/announcing-nostrify')).default;
+    case 'announcingnostrhub':
+      return (await import('../../components/blog/posts/announcing-nostrhub')).default;
     case 'announcingtreasures':
       return (await import('../../components/blog/posts/announcing-treasures')).default;
     case 'announcingsoapboxbev10':
