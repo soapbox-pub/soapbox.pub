@@ -173,13 +173,13 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            {/* MKstack */}
+            {/* MKStack */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                   <Code className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-2xl font-display">MKstack</CardTitle>
+                <CardTitle className="text-2xl font-display">MKStack</CardTitle>
                 <CardDescription className="text-lg">Platform Framework</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -313,7 +313,7 @@ export default function Index() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-500/70 to-purple-600/70"></div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKstack</Badge>
+                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKStack</Badge>
                   <h3 className="text-xl font-bold">Plektos</h3>
                 </div>
               </div>

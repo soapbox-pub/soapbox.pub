@@ -12,7 +12,7 @@ export default function Tools() {
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
       <SEO 
         title="Soapbox Tools - Build Decentralized Platforms" 
-        description="Discover our comprehensive toolkit for building decentralized platforms: MKstack for rapid app development, Ditto for communities, Nostrify framework, and more open source tools."
+        description="Discover our comprehensive toolkit for building decentralized platforms: MKStack for rapid app development, Ditto for communities, Nostrify framework, and more open source tools."
         type="website"
         image="/assets/images/tools-showcase.png"
         keywords="soapbox tools, mkstack, ditto, nostrify, decentralized development, nostr tools, open source platform builder"
@@ -44,7 +44,7 @@ export default function Tools() {
       <section className="pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
-            {/* MKstack - Featured */}
+            {/* MKStack - Featured */}
             <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-violet-200 lg:col-span-2">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12">
@@ -53,7 +53,7 @@ export default function Tools() {
                       <Code className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-display font-bold">MKstack</h2>
+                      <h2 className="text-3xl font-display font-bold">MKStack</h2>
                       <p className="text-lg text-gray-600">Build Nostr Apps with AI</p>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function Tools() {
                     <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
                       <iframe
                         src="https://www.youtube.com/embed/kJRwAGmAmGI"
-                        title="MKstack Demo Video"
+                        title="MKStack Demo Video"
                         className="w-full h-full"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -124,7 +124,7 @@ export default function Tools() {
                       />
                     </div>
                     <div className="text-center space-y-2">
-                      <p className="text-sm text-gray-600">See MKstack in action</p>
+                      <p className="text-sm text-gray-600">See MKStack in action</p>
                       <div className="flex justify-center gap-2 flex-wrap">
                         <a href="https://chorus.community/" target="_blank" rel="noopener noreferrer">
                           <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">

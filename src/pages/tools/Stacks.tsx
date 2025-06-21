@@ -147,7 +147,7 @@ export default function Stacks() {
               Try Building a Nostr App with <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">MKStack</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Want to see Stacks in action? Check out MKstack, a Nostr template that demonstrates the power of AI-first development on Nostr.
+              Want to see Stacks in action? Check out MKStack, a Nostr template that demonstrates the power of AI-first development on Nostr.
             </p>
           </div>
 

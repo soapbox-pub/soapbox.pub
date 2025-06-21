@@ -20,7 +20,7 @@ A modern, beautiful marketing website for Soapbox - showcasing tools to build yo
 
 #### 1. Tools to Build Your Project
 - **Ditto**: Community Platform Builder - Build decentralized communities on Nostr
-- **MKstack**: Platform Framework - Create custom social platforms and applications  
+- **MKStack**: Platform Framework - Create custom social platforms and applications  
 - **Stacks**: AI Project Templates - Share and discover AI project templates
 - **Nostrbook**: Documentation Registry - Comprehensive Nostr documentation
 - **Nostrnips.com**: NIP Explorer - Explore Nostr Improvement Proposals
@@ -32,7 +32,7 @@ A modern, beautiful marketing website for Soapbox - showcasing tools to build yo
 - **Ditto.pub**: Flagship community platform (5,000+ users, 50,000+ posts)
 - **Henhouse.social**: Women-focused Nostr community (1,200+ members)
 
-**MKstack Platforms:**
+**MKStack Platforms:**
 - **Bookstr**: Decentralized platform for book lovers
 - **Blobbi**: Creative platform for artists and designers
 - **GeoCache Network**: Modern geocaching platform

@@ -225,7 +225,7 @@ function generateFallbackSEO(fileName) {
       keywords: 'ditto, community platform, nostr, decentralized communities, lightning payments'
     },
     'MKStack': {
-      title: 'MKstack - Platform Framework | Soapbox',
+      title: 'MKStack - Platform Framework | Soapbox',
       description: 'Create custom social platforms and applications with our flexible framework. Powers Bookstr, Blobbi, and more innovative projects.',
       keywords: 'mkstack, platform framework, social platform builder, rapid development'
     },

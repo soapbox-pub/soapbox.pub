@@ -16,8 +16,8 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "mkstack-tutorial",
-  "title": "MKstack: Vibe Coding for Everyone",
-  "excerpt": "A comprehensive guide to building Nostr apps without coding experience using Stacks, MKstack, and AI-powered vibe coding with Dork.",
+  "title": "MKStack: Vibe Coding for Everyone",
+  "excerpt": "A comprehensive guide to building Nostr apps without coding experience using Stacks, MKStack, and AI-powered vibe coding with Dork.",
   "coverImage": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
   "date": "2025-06-21",
   "author": {
@@ -52,7 +52,7 @@ export default function MKStackTutorial() {
         <div className="aspect-w-16 aspect-h-9">
           <iframe
             src="https://www.youtube.com/embed/a2UGh6F0Mbg"
-            title="MKstack Tutorial Video"
+            title="MKStack Tutorial Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -65,13 +65,13 @@ export default function MKStackTutorial() {
       <p><b><a href="https://soapbox.pub/tools/stacks">Stacks</a> is a powerful system designed to make app creation accessible to everyone, not just developers.</b> Instead of writing code or setting up complex tools, you simply choose a Stack: a ready-made project template that includes everything you need to launch.Think of it as starting your project with a smart blueprint and an AI co-pilot who guides you every step of the way.</p>
       <p>Whether you want to create a social platform, build an AI chatbot, or launch your own web app, Stacks lets you do it all with just a few prompts.</p>
 
-      <h2>What is MKstack?</h2>
-      <p><b>MKstack makes it easy for anyone to build apps on the Nostr protocol, no coding experience required.</b> Just describe your idea in plain language, and the system takes care of the rest, setting up your app, connecting it to the Nostr network, and generating the code for you.</p>
-      <p>Behind the scenes, MKstack uses smart tools like <a href="/tools/nostrbook">Nostrbook MCP</a> and <a href="/tools/nostrify">Nostrify</a> to handle data and sync with the Nostr network. The MKStack template also includes a clean, modern design system using React and ShadCN, so your app looks great from the start. There is a lot more technical information under the hood, but honestly you don’t even need to understand how any of this works. That’s the beauty of it.</p>
+      <h2>What is MKStack?</h2>
+      <p><b>MKStack makes it easy for anyone to build apps on the Nostr protocol, no coding experience required.</b> Just describe your idea in plain language, and the system takes care of the rest, setting up your app, connecting it to the Nostr network, and generating the code for you.</p>
+      <p>Behind the scenes, MKStack uses smart tools like <a href="/tools/nostrbook">Nostrbook MCP</a> and <a href="/tools/nostrify">Nostrify</a> to handle data and sync with the Nostr network. The MKStack template also includes a clean, modern design system using React and ShadCN, so your app looks great from the start. There is a lot more technical information under the hood, but honestly you don’t even need to understand how any of this works. That’s the beauty of it.</p>
 
       {/* MKStack features */}
       <div className="not-prose my-12">
-        <h3 className="text-2xl font-bold text-gray-900 mb-8">MKstack Technical Stack</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-8">MKStack Technical Stack</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-orange-100/50">
             <CardHeader>

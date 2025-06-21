@@ -108,7 +108,7 @@ pg-relay =&gt; nostr:naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2u
         />
       </div>
 
-      <p>Want to see Stacks in action? Check out <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">MKstack</a>, a Nostr template built using:</p>
+      <p>Want to see Stacks in action? Check out <a href="https://getstacks.dev/stack/naddr1qvzqqqrhl5pzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqqrk66mnw3skx6c4g6ltw" target="_blank" rel="noopener noreferrer">MKStack</a>, a Nostr template built using:</p>
 
       <ul>
         <li><a href="/blog/nostrbook-mcp" target="_blank" rel="noopener noreferrer">Nostrbook MCP</a> for queryable documentation</li>
