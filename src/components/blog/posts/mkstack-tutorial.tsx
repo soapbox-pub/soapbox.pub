@@ -62,7 +62,7 @@ export default function MKStackTutorial() {
       </div>
 
       <h2>What Is Stacks?</h2>
-      <p><b><a href="https://soapbox.pub/tools/stacks">Stacks</a> is a powerful system designed to make app creation accessible to everyone, not just developers.</b> Instead of writing code or setting up complex tools, you simply choose a Stack: a ready-made project template that includes everything you need to launch.Think of it as starting your project with a smart blueprint and an AI co-pilot who guides you every step of the way.</p>
+      <p><b><a href="https://soapbox.pub/tools/stacks">Stacks</a> is a powerful system designed to make app creation accessible to everyone, not just developers.</b> Instead of writing code or setting up complex tools, you simply choose a Stack: a ready-made project template that includes everything you need to launch. Think of it as starting your project with a smart blueprint and an AI co-pilot who guides you every step of the way.</p>
       <p>Whether you want to create a social platform, build an AI chatbot, or launch your own web app, Stacks lets you do it all with just a few prompts.</p>
 
       <h2>What is MKStack?</h2>
@@ -111,7 +111,7 @@ export default function MKStackTutorial() {
 
       <h2>&lt;[0_o]&gt; Meet Dork!</h2>
       <p>
-        The true power behind Stacks and MKStack is <strong>Dork</strong>, an AI agent that brings your ideas to life. Just tell Dork what features you want, such as a blog, a feed, or a live chat, and Dork takes care of everything. Using the MKStack template and the full Nostr technology stack, Dork combines user interface elements and backend tools, then works with your favorite AI language model to build your app right before your eyes, handling all the complex details for you.
+        The true power behind Stacks and MKStack is <strong>Dork</strong>, an AI agent that brings your ideas to life. Just tell Dork what features you want, such as a blog, a feed, or a live chat, and Dork takes care of the rest. Using the MKStack template and the full Nostr technology stack, Dork works with your favorite AI model to build your app right before your eyes, handling all the complex details for you.
       </p>
 
       <h2>Building Your First App</h2>
@@ -167,7 +167,7 @@ export default function MKStackTutorial() {
       <h3>Step 4: Start building your project with Dork</h3>
 
       <p>
-        Now you're ready to start building your first Nostr app! Even if you're new to development, Stacks and MKStack have you covered. You'll see that <code>CONTEXT.md</code> has been loaded, which means all the technical parts - the tools, Nostr integrations, UI components, and everything else - are set up and ready to go behind the scenes. With the framework in place, your AI agent, Dork, is waiting for you to simply describe what you want in natural language. Just tell Dork your idea, and it will take care of the rest.
+        Now you're ready to start building your first Nostr app! Even if you're new to development, Stacks and MKStack have you covered. You'll see that <code>CONTEXT.md</code> has been found, which means all the technical parts - the tools, Nostr integrations, UI components, and everything else - are set up and ready to go behind the scenes. With the framework in place, your AI agent, Dork, is waiting for you to simply describe what you want in natural language. Just tell Dork your idea, and it will take care of the rest.
       </p>
 
       <div className="not-prose my-12">
@@ -186,7 +186,7 @@ export default function MKStackTutorial() {
 
       <h2>Go Deeper</h2>
       <p>
-        To explore NIPs and better understand the Nostr protocol, <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">Nostrhub.io</a> is a valuable resource. It allows users to search and browse official and custom NIPs, look up event kinds or keywords, and participate in community discussions. It's especially helpful when trying to describe a feature more clearly or when additional technical insight is needed.
+        To explore NIPs and better understand the Nostr protocol, <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">NostrHub.io</a> is a valuable resource. It allows users to search and browse official and custom NIPs, look up event kinds or keywords, and participate in community discussions. It's especially helpful when trying to describe a feature more clearly or when additional technical insight is needed.
       </p>
 
       <p>
