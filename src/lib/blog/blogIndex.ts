@@ -22,6 +22,7 @@ import * as howtoinstalldittomobile from '../../components/blog/posts/how-to-ins
 import * as howtojoinnostrbrazilcobrafuma from '../../components/blog/posts/how-to-join-nostr-brazil-cobrafuma';
 import * as mostrfediversenostrbridge from '../../components/blog/posts/mostr-fediverse-nostr-bridge';
 import * as mostrzaps from '../../components/blog/posts/mostr-zaps';
+import * as mkstacktutorial from '../../components/blog/posts/mkstack-tutorial';
 import * as nostr101 from '../../components/blog/posts/nostr101';
 import * as nostrbookmcp from '../../components/blog/posts/nostrbook-mcp';
 import * as releasingsoapbox30 from '../../components/blog/posts/releasing-soapbox-3.0';
@@ -75,6 +76,7 @@ export const blogPosts: BlogPost[] = [
   futureisdecentralized.meta,
   howtoinstalldittomobile.meta,
   howtojoinnostrbrazilcobrafuma.meta,
+  mkstacktutorial.meta,
   mostrfediversenostrbridge.meta,
   mostrzaps.meta,
   nostr101.meta,
@@ -140,6 +142,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/how-to-install-ditto-mobile')).default;
     case 'howtojoinnostrbrazilcobrafuma':
       return (await import('../../components/blog/posts/how-to-join-nostr-brazil-cobrafuma')).default;
+    case 'mkstacktutorial':
+      return (await import('../../components/blog/posts/mkstack-tutorial')).default;
     case 'mostrfediversenostrbridge':
       return (await import('../../components/blog/posts/mostr-fediverse-nostr-bridge')).default;
     case 'mostrzaps':

@@ -76,9 +76,9 @@ export default function MKStack() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-                  <a href="https://zap.stream/naddr1qqjr2ce5xqengvnp95unjetz956x2etx95ungc3s95mkydtpx5erqvpjve3xzqg3waehxw309ahx7um5wgh8w6twv5hszxthwden5te0wfjkccte9eekummjwsh8xmmrd9skctcppemhxue69uhkummn9ekx7mp0qy2hwumn8ghj7un9d3shjtnyv9kh2uewd9hj7qghwaehxw309aex2mrp0yhxummnw3ezucnpdejz7qg3waehxw309ahx7um5wghxcctwvshsz8nhwden5te0dehhxarj94c82c3wwajkcmr0wfjx2u3wdejhgtcpz4mhxue69uhhyetvv9ujumn0wd68ytnzvuhsz9thwden5te0dehhxarj9ehhsarj9ejx2a30qyv8wumn8ghj7un9d3shjtnxda6kuarpd9hzuend9upzpn6956apxcad0mfp8grcuugdysg44eepex68h50t73zcathmfs49qvzqqqrkvuluxh2x" target="_blank" rel="noopener noreferrer">
+                  <a href="/blog/mkstack-tutorial" rel="noopener noreferrer">
                     <PlayCircle className="mr-2 h-5 w-5" />
-                    View Demo
+                    Tutorial
                   </a>
                 </Button>
               </div>
