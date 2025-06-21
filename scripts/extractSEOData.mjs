@@ -32,7 +32,7 @@ const pageRoutes = [
     extractSEO: extractGenericSEO
   },
   {
-    path: '/tools/mkstack',
+    path: '/mkstack',
     file: 'src/pages/tools/MKStack.tsx',
     extractSEO: extractGenericSEO
   },

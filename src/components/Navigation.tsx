@@ -80,7 +80,7 @@ export function Navigation() {
               className="bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200 hover:border-purple-300 transition-all duration-200"
               size="sm"
             >
-              <Link to="/tools/mkstack" className="flex items-center space-x-2">
+              <Link to="/mkstack" className="flex items-center space-x-2">
                 <Bot className="h-4 w-4" />
                 <span>MKStack</span>
               </Link>
@@ -168,7 +168,7 @@ export function Navigation() {
                   size="sm"
                 >
                   <Link 
-                    to="/tools/mkstack" 
+                    to="/mkstack" 
                     className="flex items-center justify-center space-x-2"
                     onClick={() => setIsOpen(false)}
                   >

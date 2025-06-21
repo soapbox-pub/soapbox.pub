@@ -221,7 +221,7 @@ export default function AnnouncingTreasures() {
       </div>
 
       <h2>Built on MKStack</h2>
-      <p>Treasures was built by <strong><a href="https://ditto.pub/@chad@chadwick.site" target="_blank" rel="noopener noreferrer">Chad Curtis</a></strong> using <strong><a href="/tools/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a></strong>, a revolutionary new vibe-coding tool for Nostr applications. MKStack enables rapid development of decentralized applications with a focus on user experience and protocol integration. It provides:</p>
+      <p>Treasures was built by <strong><a href="https://ditto.pub/@chad@chadwick.site" target="_blank" rel="noopener noreferrer">Chad Curtis</a></strong> using <strong><a href="/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a></strong>, a revolutionary new vibe-coding tool for Nostr applications. MKStack enables rapid development of decentralized applications with a focus on user experience and protocol integration. It provides:</p>
       <ul>
         <li>Pre-built Nostr integration patterns</li>
         <li>Responsive UI components optimized for mobile and desktop</li>

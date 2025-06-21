@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 
 import Index from "./pages/Index";
@@ -31,9 +31,12 @@ export function AppRouter() {
         <Route path="/tools/ditto" element={<Ditto />} />
         <Route path="/tools/nostrify" element={<Nostrify />} />
         <Route path="/tools/stacks" element={<Stacks />} />
-        <Route path="/tools/mkstack" element={<MKStack />} />
         <Route path="/tools/nostrbook" element={<Nostrbook />} />
         <Route path="/tools/nostrhub" element={<NostrHub />} />
+        {/* New primary route for MKStack */}
+        <Route path="/mkstack" element={<MKStack />} />
+        {/* Backwards compatibility redirect */}
+        <Route path="/tools/mkstack" element={<Navigate to="/mkstack" replace />} />
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />

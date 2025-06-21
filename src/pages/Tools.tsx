@@ -97,7 +97,7 @@ export default function Tools() {
                   
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button className="bg-violet-500 hover:bg-violet-600 text-white" asChild>
-                      <Link to="/tools/mkstack">
+                      <Link to="/mkstack">
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>

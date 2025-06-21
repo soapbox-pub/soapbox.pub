@@ -202,7 +202,7 @@ export default function Index() {
                   </div>
                 </div>
                 <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/mkstack">
+                  <Link to="/mkstack">
                     Explore MKStack
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
