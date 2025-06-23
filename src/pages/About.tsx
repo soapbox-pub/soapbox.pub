@@ -32,20 +32,20 @@ const teamMembers = [
     npub: "npub1nl8r463jkdtr0qu0k3dht03jt9t59cttk0j8gtxg9wea2russlnq2zf9d0"
   },
   {
-    name: "Patrick dos Reis",
-    role: "Developer",
-    bio: "Patrick is interested in being a masterful interpreter of the Light.",
-    avatar: "/assets/avatars/patrick.png",
-    follow: "https://ditto.pub/@patrick@patrickdosreis.com",
-    npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
-  },
-  {
     name: "Derek Ross",
     role: "Developer Relations",
     bio: "The purple pill helps the orange pill go down. Nostr is the social glue that binds all of your apps together.",
     avatar: "/assets/avatars/derek.jpg",
     follow: "https://ditto.pub/@derekross@grownostr.org",
     npub: "npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424"
+  },
+  {
+    name: "Patrick dos Reis",
+    role: "Developer",
+    bio: "Patrick is interested in being a masterful interpreter of the Light.",
+    avatar: "/assets/avatars/patrick.png",
+    follow: "https://ditto.pub/@patrick@patrickdosreis.com",
+    npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
   },
   {
     name: "shantaram",
