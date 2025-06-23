@@ -17,11 +17,19 @@ const teamMembers = [
   },
   {
     name: "M. K. Fain",
-    role: "Director of Product",
+    role: "Chief Product Officer",
     bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
     avatar: "/assets/avatars/mk.jpg",
     follow: "https://ditto.pub/@mk@ditto.pub",
     npub: "npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc"
+  },
+  {
+    name: "Heather Larson",
+    role: "Marketing Director",
+    bio: "Tech Marketing | Bitcoin & Nostr Community Growth | Broadcast Media Veteran | *I've probably ghostwritten something you read online*",
+    avatar: "/assets/avatars/heather.jpg",
+    follow: "https://ditto.pub/@heather@nostrplebs.com",
+    npub: "npub1nl8r463jkdtr0qu0k3dht03jt9t59cttk0j8gtxg9wea2russlnq2zf9d0"
   },
   {
     name: "Patrick dos Reis",
@@ -30,6 +38,14 @@ const teamMembers = [
     avatar: "/assets/avatars/patrick.png",
     follow: "https://ditto.pub/@patrick@patrickdosreis.com",
     npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
+  },
+  {
+    name: "Derek Ross",
+    role: "Developer Relations",
+    bio: "The purple pill helps the orange pill go down. Nostr is the social glue that binds all of your apps together.",
+    avatar: "/assets/avatars/derek.jpg",
+    follow: "https://ditto.pub/@derekross@grownostr.org",
+    npub: "npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424"
   },
   {
     name: "shantaram",
@@ -54,6 +70,14 @@ const teamMembers = [
     avatar: "/assets/avatars/chad.jpeg",
     follow: "https://ditto.pub/@chad@chadwick.site",
     npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
+  },
+  {
+    name: "Ana Domingos",
+    role: "Marketing Coordinator",
+    bio: "Educator & Creative Marketer | Published Author | Digital Content & Social Media Specialist",
+    avatar: "/assets/avatars/farfallica.jpg",
+    follow: "https://ditto.pub/@farfallica@nostrplebs.com",
+    npub: "npub1erhg86xl307d46pla66aycr6sjpy9esnrffysr98l5pjvt2fdgeq8wru26"
   }
 ];
 

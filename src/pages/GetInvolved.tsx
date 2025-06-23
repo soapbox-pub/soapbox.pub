@@ -52,24 +52,6 @@ const openPositions = [
     ],
     tags: ["Backend", "Databases", "SQL", "Distributed Systems", "Cryptography"],
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
-  },
-  {
-    title: "Marketing and Communications Assistant",
-    department: "Marketing",
-    type: "Part-time/Contract",
-    location: "Remote",
-    description: "Help us spread the word about our mission to build free, decentralized social platforms. Create content, manage community outreach, and support our marketing initiatives.",
-    compensation: "Hourly contract position, depends on experience and time commitment, max budget $50/hr for 20 hours/week.",
-    requirements: [
-      "2+ years of marketing or communications experience",
-      "Excellent written and verbal communication skills",
-      "Experience with social media management and content creation",
-      "Interest in decentralization and open source technology",
-      "Basic technical understanding of Nostr",
-      "Junior-dev level experience and comfort in a command line is a huge plus"
-    ],
-    tags: ["Content Marketing", "Social Media", "Community", "Writing"],
-    applicationInstructions: "To apply, please email mk@marykatefain.com with a link to your website or portfolio and a letter of interest."
   }
 ];
 
