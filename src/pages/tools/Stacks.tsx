@@ -74,9 +74,11 @@ export default function Stacks() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
+                <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+                  <a href="https://youtu.be/a2UGh6F0Mbg?si=cNrkdwAtiVSy5Keu" target="_blank" rel="noopener noreferrer">
                   <PlayCircle className="mr-2 h-5 w-5" />
                   Watch Demo
+                  </a>
                 </Button>
               </div>
 
