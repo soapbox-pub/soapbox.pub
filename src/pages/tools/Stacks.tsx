@@ -418,13 +418,13 @@ export default function Stacks() {
               </div>
               <h3 className="text-2xl font-bold">Deploy</h3>
               <p className="text-gray-600">
-                Deploy your application instantly with built-in Surge integration. 
+                Deploy your application instantly with built-in NostrDeploy.com integration. 
                 Your app goes live with just one command.
               </p>
               <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white overflow-hidden">
                 <div className="text-green-400">$ npm run dev</div>
                 <div className="text-green-400 mt-1">$ npm run deploy</div>
-                <div className="text-blue-400 mt-1 break-words">🚀 Deployed to surge.sh!</div>
+                <div className="text-blue-400 mt-1 break-words">🚀 Deployed to nostrdeploy.com!</div>
               </div>
             </div>
           </div>

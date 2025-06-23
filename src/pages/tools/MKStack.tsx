@@ -145,7 +145,7 @@ export default function MKStack() {
                           <Rocket className="h-4 w-4 text-blue-600 mr-2" />
                           <span className="text-sm font-semibold text-blue-700">Deploy Instantly</span>
                         </div>
-                        <div className="text-xs text-gray-700">One command deployment with Surge</div>
+                        <div className="text-xs text-gray-700">One command deployment with NostrDeploy.com</div>
                       </div>
                     </div>
                   </div>
@@ -477,16 +477,16 @@ export default function MKStack() {
               Step 3: Deploy
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Deploy your Nostr app instantly with built-in Surge integration. Your app goes live in seconds with just one command.
+              Deploy your Nostr app instantly with built-in NostrDeploy.com integration. Your app goes live in seconds with just one command.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Built-in Deployment with Surge</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Built-in Deployment with NostrDeploy.com</h3>
                 <p className="text-gray-600">
-                  MKStack comes with pre-configured Surge deployment. No complex setup, no server management, 
+                  MKStack comes with pre-configured NostrDeploy.com deployment. No complex setup, no server management, 
                   no configuration files. Just run one command and your app is live on the web.
                 </p>
               </div>
@@ -505,10 +505,10 @@ export default function MKStack() {
                     <div className="text-green-400">$ npm run deploy</div>
                     <div className="text-gray-400 mt-2">Building for production...</div>
                     <div className="text-gray-400">✓ Built in 2.3s</div>
-                    <div className="text-gray-400 mt-2">Deploying to Surge...</div>
+                    <div className="text-gray-400 mt-2">Deploying to NostrDeploy.com...</div>
                     <div className="text-gray-400">✓ Uploaded 15 files</div>
                     <div className="text-blue-400 mt-2">🚀 Success! Published to:</div>
-                    <div className="text-blue-400">   https://mkstack-demo.surge.sh</div>
+                    <div className="text-blue-400">   https://mkstack-demo.nostrdeploy.com</div>
                   </div>
                 </div>
               </div>
@@ -980,12 +980,12 @@ export default function MKStack() {
               </div>
               <h3 className="text-2xl font-bold">Deploy</h3>
               <p className="text-gray-600">
-                Deploy your Nostr app instantly with built-in Surge integration. 
+                Deploy your Nostr app instantly with built-in NostrDeploy.com integration. 
                 Your app goes live in seconds.
               </p>
               <div className="bg-gray-900 rounded-lg p-4 text-left font-mono text-sm text-white">
                 <div>$ npm run deploy</div>
-                <div>✅ App deployed to Surge!</div>
+                <div>✅ App deployed to NostrDeploy.com!</div>
               </div>
             </div>
           </div>
