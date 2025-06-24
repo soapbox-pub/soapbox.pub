@@ -14,6 +14,7 @@ const TEAM_NPUBS = [
   'npub1e6tnvlr46lv3lwdu80r07kanhk6jcxy5r07w9umgv9kuhu9dl5hsk9gqft', // Danidfra
   'npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8', // Chad Curtis
   'npub1erhg86xl307d46pla66aycr6sjpy9esnrffysr98l5pjvt2fdgeq8wru26', // Ana Domingos
+  'npub18c556t7n8xa3df2q82rwxejfglw5przds7sqvefylzjh8tjne28qld0we7', // Sep
 ];
 
 export function useTeamPosts() {

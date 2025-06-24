@@ -78,6 +78,23 @@ const teamMembers = [
     avatar: "/assets/avatars/farfallica.jpg",
     follow: "https://ditto.pub/@farfallica@nostrplebs.com",
     npub: "npub1erhg86xl307d46pla66aycr6sjpy9esnrffysr98l5pjvt2fdgeq8wru26"
+  },
+  {
+    name: "Sep",
+    role: "Developer",
+    bio: "Humble Other Stuff Builder",
+    avatar: "/assets/avatars/sep.jpeg",
+    follow: "https://ditto.pub/@pinja.in",
+    npub: "npub18c556t7n8xa3df2q82rwxejfglw5przds7sqvefylzjh8tjne28qld0we7"
+  }
+  ,
+  {
+    name: "& Other Stuff",
+    role: "Organizational Partner",
+    bio: "Supporting the transition from an experimental protocol to a widely adopted, sustainable ecosystem through a focus on 5 key pillars.",
+    avatar: "/assets/avatars/aos.png",
+    follow: "https://ditto.pub/@AOS@andotherstuff.org",
+    npub: "npub1t5u3wp5kj78jwnuphpf5mhx00nwwtfwq56d6j8atnu89gd454wcs6aj4c2"
   }
 ];
 
