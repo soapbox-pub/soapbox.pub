@@ -104,16 +104,6 @@ export function MKStackAppsFeed() {
           <AppCard key={`${app.pubkey}-${app.tags.find(([name]) => name === 'd')?.[1]}`} event={app} />
         ))}
       </div>
-      
-      {/* Browse More Apps Button */}
-      <div className="text-center mt-12">
-        <Button variant="outline" size="lg" className="px-8 py-3" asChild>
-          <a href="https://nostrhub.io/apps/t/mkstack/" target="_blank" rel="noopener noreferrer">
-            Browse More MKStack Apps on NostrHub
-            <ExternalLink className="ml-2 h-5 w-5" />
-          </a>
-        </Button>
-      </div>
     </>
   );
 }

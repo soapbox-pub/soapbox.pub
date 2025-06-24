@@ -13,6 +13,7 @@ interface AppMetadata {
   banner?: string;
   about?: string;
   web?: string;
+  website?: string;
   nip05?: string;
   lud16?: string;
 }
@@ -48,7 +49,7 @@ export function AppCard({ event }: AppCardProps) {
   const appName = appMetadata.display_name || appMetadata.name || dTag;
   const appDescription = appMetadata.about || 'A Nostr application built with MKStack';
   const appIcon = appMetadata.picture;
-  const appWebsite = appMetadata.web || webUrl?.replace('/<bech32>', '');
+  const appWebsite = appMetadata.website || appMetadata.web || webUrl?.replace('/<bech32>', '');
 
   // Generate fallback initials for avatar
   const initials = appName
