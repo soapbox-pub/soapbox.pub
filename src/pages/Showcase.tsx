@@ -382,6 +382,16 @@ export default function Showcase() {
               </CardContent>
             </Card>
           </div>
+
+          {/* Browse More Apps Button */}
+          <div className="text-center mt-16">
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-azure-200 text-azure-700 hover:bg-azure-50" asChild>
+              <a href="https://nostrhub.io/apps/t/mkstack/" target="_blank" rel="noopener noreferrer">
+                Browse More Apps Made with MKStack
+                <ExternalLink className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
