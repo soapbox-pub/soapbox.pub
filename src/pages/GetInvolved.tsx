@@ -19,7 +19,7 @@ const openPositions = [
       "Experience with modern web frameworks and databases",
       "Strong problem-solving and architectural skills"
     ],
-    tags: ["Full Stack", "React", "Node.js", "Database Design"],
+    tags: ["Typescript", "React", "Node.js", "Database Design"],
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
@@ -50,7 +50,7 @@ const openPositions = [
       "Strong knowledge of distributed systems and APIs",
       "Understanding of cryptography and decentralized protocols"
     ],
-    tags: ["Backend", "Databases", "SQL", "Distributed Systems", "Cryptography"],
+    tags: ["Typescript", "Databases", "SQL", "Distributed Systems", "Cryptography"],
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   }
 ];
