@@ -26,6 +26,7 @@ import * as mkstacktutorial from '../../components/blog/posts/mkstack-tutorial';
 import * as nostr101 from '../../components/blog/posts/nostr101';
 import * as nostrbookmcp from '../../components/blog/posts/nostrbook-mcp';
 import * as releasingsoapbox30 from '../../components/blog/posts/releasing-soapbox-3.0';
+import * as revivelegacywebsite from '../../components/blog/posts/revive-legacy-website';
 import * as releasingsoapboxbev11 from '../../components/blog/posts/releasing-soapbox-be-v1.1';
 import * as serversafetyandmoderation from '../../components/blog/posts/server-safety-and-moderation';
 import * as soapboxawardedgrant from '../../components/blog/posts/soapbox-awarded-grant';
@@ -83,6 +84,7 @@ export const blogPosts: BlogPost[] = [
   nostrbookmcp.meta,
   releasingsoapbox30.meta,
   releasingsoapboxbev11.meta,
+  revivelegacywebsite.meta,
   serversafetyandmoderation.meta,
   soapboxawardedgrant.meta,
   soapboxbeisnowrebased.meta,
@@ -154,6 +156,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/nostrbook-mcp')).default;
     case 'releasingsoapbox30':
       return (await import('../../components/blog/posts/releasing-soapbox-3.0')).default;
+    case 'revivelegacywebsite':
+      return (await import('../../components/blog/posts/revive-legacy-website')).default;
     case 'releasingsoapboxbev11':
       return (await import('../../components/blog/posts/releasing-soapbox-be-v1.1')).default;
     case 'serversafetyandmoderation':
