@@ -81,11 +81,12 @@ export default function ReviveLegacyWebsite() {
       <h2>AI-Powered Website Modernization</h2>
       <p>
         <b>
-          With <strong>mkstack</strong>, you can breathe new life into your
+          With <strong>MKStack</strong>, you can breathe new life into your
           existing website—without starting from scratch.
         </b>{" "}
         Whether your site is made of old HTML files, Markdown posts, or a mix of
-        legacy pages, mkstack makes it easy to bring it all into the modern era.
+        legacy pages, <strong>MKStack</strong> makes it easy to bring it all
+        into the modern era.
       </p>
       <p>
         You don't need to be a designer or developer. Just run two simple
@@ -114,13 +115,13 @@ export default function ReviveLegacyWebsite() {
       </div>
 
       <p>
-        Enter a few guided prompts and the beauty and ease behind the mkstack
-        template will be revealed. <strong>Dork</strong>, the name of the Stacks
-        agent, will begin by cleaning up your layout, applying a fresh, modern
-        design, and ensuring everything looks great on mobile devices. Dork will
-        improve the overall user experience, preserve your original content and
-        structure, and even suggest new pages or features to help your site
-        evolve.
+        Enter a few guided prompts and the beauty and ease behind the{" "}
+        <strong>MKStack</strong> template will be revealed.{" "}
+        <strong>Dork</strong>, the name of the Stacks agent, will begin by
+        cleaning up your layout, applying a fresh, modern design, and ensuring
+        everything looks great on mobile devices. Dork will improve the overall
+        user experience, preserve your original content and structure, and even
+        suggest new pages or features to help your site evolve.
       </p>
       <p className="text-lg font-semibold text-violet-600">
         In just minutes, your old site is transformed before your very eyes.
@@ -134,8 +135,8 @@ export default function ReviveLegacyWebsite() {
           Whether you're a <strong>creator</strong> looking to revive an old
           blog or portfolio, a <strong>community organizer</strong> modernizing
           your group's homepage, or a <strong>business owner</strong> updating a
-          static site to include social reach and a fresh design; mkstack is
-          built for you.
+          static site to include social reach and a fresh design;{" "}
+          <strong>MKStack</strong> is built for you.
         </b>{" "}
         It's designed to empower anyone who wants to preserve their existing
         content while making it relevant for today's web, complete with modern
@@ -226,7 +227,7 @@ export default function ReviveLegacyWebsite() {
 
       <h2>What kind of content can you integrate?</h2>
       <p>
-        The beauty of this <strong>mkstack</strong> lies in the rich diversity
+        The beauty of this <strong>MKStack</strong> lies in the rich diversity
         of content you can pull from Nostr to dynamically enhance your website.
         It's about bringing your entire digital presence to life and showcasing
         it to the world.
@@ -288,9 +289,9 @@ export default function ReviveLegacyWebsite() {
 
       <p>
         Once the installation is complete, you can create your new website
-        project using the mkstack template. This command will create a new
-        folder for your project and kick off an interactive session with{" "}
-        <strong>Dork</strong>, your AI agent.
+        project using the <strong>MKStack</strong> template. This command will
+        create a new folder for your project and kick off an interactive session
+        with <strong>Dork</strong>, your AI agent.
       </p>
 
       <div className="not-prose my-12">
@@ -324,15 +325,15 @@ export default function ReviveLegacyWebsite() {
 
       <h3>Step 2: Bring your old website in</h3>
       <p>
-        Now, you need to give mkstack access to your old website's files. Locate
-        the directory on your computer where your old site is stored (e.g.,
-        ~/Documents/MyOldSite).
+        Now, you need to give <strong>MKStack</strong> access to your old
+        website's files. Locate the directory on your computer where your old
+        site is stored (e.g., ~/Documents/MyOldSite).
       </p>
       <p>
-        Copy that entire folder and place it inside the new mkstack project
-        directory you just created. For clarity, let's say you've copied it and
-        named the folder old-site. Your project structure might now look
-        something like this:
+        Copy that entire folder and place it inside the new{" "}
+        <strong>MKStack</strong> project directory you just created. For
+        clarity, let's say you've copied it and named the folder old-site. Your
+        project structure might now look something like this:
       </p>
       <div className="not-prose my-12">
         <img
@@ -569,8 +570,8 @@ export default function ReviveLegacyWebsite() {
 
       <h3>The "After": Modern, Dynamic, and Connected</h3>
       <p>
-        Now, here's that same website after being transformed with mkstack and
-        enhanced with Nostr integration.
+        Now, here's that same website after being transformed with{" "}
+        <strong>MKStack</strong> and enhanced with Nostr integration.
       </p>
 
       <div className="not-prose my-12">
@@ -628,7 +629,7 @@ export default function ReviveLegacyWebsite() {
       <p>
         Transforming your website from a static relic into a dynamic, living hub
         is no longer a daunting, code-heavy, expensive task. With{" "}
-        <strong>mkstack</strong>, it's as easy as having a conversation. It
+        <strong>MKStack</strong>, it's as easy as having a conversation. It
         bridges your timeless content with the decentralized power of{" "}
         <strong>Nostr</strong>, turning your site into more than just a
         redesign; it becomes a living extension of your digital identity. Your
@@ -648,8 +649,8 @@ export default function ReviveLegacyWebsite() {
           </h2>
           <p className="text-xl text-violet-100 mb-8 max-w-3xl mx-auto">
             Ready to transform your legacy website into a modern, dynamic hub?
-            Install Stacks and MKStack to begin your journey into AI-powered
-            website modernization with Nostr integration.
+            Install Stacks and <strong>MKStack</strong> to begin your journey
+            into AI-powered website modernization with Nostr integration.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
