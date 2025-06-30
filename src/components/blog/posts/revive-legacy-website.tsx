@@ -30,14 +30,14 @@ export const meta: BlogPostMeta = {
   title: "Revive Your Legacy Website with MKStack",
   excerpt:
     "Transform your old website from a static archive into a dynamic, Nostr-powered hub. Breathe new life into legacy content with AI-powered modernization and live decentralized feeds.",
-  coverImage: "/assets/blog/revive-legacy-website/revive-legacy-website.png",
+  coverImage: "/assets/blog/revive-legacy-website/website-revive-og.png",
   date: "2025-06-30",
   author: {
     name: "Derek Ross",
     picture: "/assets/avatars/derek.jpg",
   },
   ogImage: {
-    url: "/assets/blog/revive-legacy-website/revive-legacy-website.png",
+    url: "/assets/blog/revive-legacy-website/website-revive-og.png",
   },
 };
 
@@ -51,7 +51,7 @@ export default function ReviveLegacyWebsite() {
             className="mb-4 bg-violet-50 text-violet-700 border-violet-200"
           >
             <RefreshCw className="w-3 h-3 mr-1" />
-            Website Modernization
+            Tutorial
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Revive Your Legacy
