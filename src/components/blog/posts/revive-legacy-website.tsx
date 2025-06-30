@@ -334,6 +334,13 @@ export default function ReviveLegacyWebsite() {
         named the folder old-site. Your project structure might now look
         something like this:
       </p>
+      <div className="not-prose my-12">
+        <img
+          src="/assets/blog/revive-legacy-website/directory.png"
+          alt="Directory, including structure of the old website"
+          className="mx-auto rounded-lg shadow-lg"
+        />
+      </div>
 
       <h3>Step 3: Tell Dork what to do</h3>
       <p>
