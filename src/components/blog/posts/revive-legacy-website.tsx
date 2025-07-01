@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { EmailSignupForm } from "../../EmailSignupForm";
-import { DerekRossLatestPost } from "../../DerekRossLatestPost";
 
 export interface BlogPostMeta {
   slug: string;
@@ -65,9 +64,9 @@ export default function ReviveLegacyWebsite() {
       </div>
 
       <p>
-        Do you have an old personal site collecting digital dust? Maybe a
+        <strong>Do you have an old personal site collecting digital dust? Maybe a
         community homepage that hasn't changed since the early 2000s? Or a
-        business website that's still functional, but stuck in the past?
+        business website that's still functional, but stuck in the past?</strong>
       </p>
       <p>You're not alone.</p>
       <p>
@@ -224,7 +223,43 @@ export default function ReviveLegacyWebsite() {
         values of freedom and self-ownership.
       </p>
 
-      <h2>Real-World Success Story: Soapbox.pub</h2>
+      <h2>What kind of content can you integrate?</h2>
+      <p>
+        The beauty of this <strong>MKStack</strong> lies in the rich diversity
+        of content you can pull from Nostr to dynamically enhance your website.
+        It's about bringing your entire digital presence to life and showcasing
+        it to the world.
+      </p>
+      <ul>
+        <li>
+          You can seamlessly embed your <strong>latest posts to create a "Micro-blog" feed</strong>.
+        </li>
+        <li>
+          For writers, your <strong>long-form articles</strong> can automatically populate your
+          blog page, creating a self-updating portfolio.
+        </li>
+        <li>
+          Photographers and artists can build stunning <strong>photo galleries and video
+          showcases</strong> by pulling media directly from their posts, even filtering
+          by specific hashtags.
+        </li>
+        <li>
+          You can even embed live streams to capture your audience the moment
+          you go live.
+        </li>
+        <li>
+          You can display a public list of <strong>calendar events</strong>, community meetups, and online gatherings.
+        </li>
+      </ul>
+      <p>
+        Essentially, almost any type of activity you share on the Nostr protocol
+        can become a living component of your website, transforming it from a
+        simple page into a comprehensive hub for you, your content, your
+        community, or your business.
+      </p>
+
+
+      <h2>See Nostr in Action on Soapbox.pub</h2>
       <p>
         <strong>This very method was used to revive Soapbox.pub itself!</strong> The{" "}
         <a
@@ -237,77 +272,24 @@ export default function ReviveLegacyWebsite() {
         </a>{" "}
         was a static site that hadn't been updated in years. Using this process,
         we transformed it into the dynamic, Nostr-powered hub that pulls in live profiles,
-        social media posts, app showcases, and protocol specifications.
-      </p>
-      <p>
-        <strong>Every page demonstrates different ways to weave decentralized content into
-        a modern web experience. We encourage you to explore this site</strong> to discover the many
+        social media posts, app showcases, and protocol specifications. 
+        <strong> We encourage you to explore this site</strong> to discover the many
         creative ways dynamic Nostr content has been integrated. From the team
         posts on our About page to the live developer feeds throughout the site,
-        you'll find inspiration for your own Nostr-powered website.
+        you'll find inspiration for your own Nostr-powered website!
       </p>
 
-      {/* Live Nostr Integration Example */}
       <div className="not-prose my-12">
-        <div className="bg-gradient-to-r from-violet-100 to-purple-100 rounded-2xl p-8">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              🔴 Live Nostr Integration Example
-            </h3>
-            <p className="text-gray-700 max-w-2xl mx-auto">
-              Here's a real-time example! Below is the latest post from one of our Soapbox team members, pulled directly from Nostr as you read this.
-            </p>
-          </div>
-          
-          <div className="max-w-2xl mx-auto">
-            {/* LIVE TEAM POST EXAMPLE HERE */}
-          </div>
-          
-          <div className="text-center mt-6">
-            <p className="text-sm text-gray-600">
-              This content updates automatically. No manual updates required! ⚡
-            </p>
-          </div>
-        </div>
+        <img
+          src="/assets/blog/revive-legacy-website/example-integrations.png"
+          alt="Screenshot of the revived Soapbox.pub website"
+          className="rounded-lg shadow-lg border border-gray-200 mx-auto"
+        />
+        <p className="text-sm text-gray-600 mt-2 text-center">
+          The revived Soapbox.pub, showcasing dynamic Nostr content
+        </p>
       </div>
 
-      <h2>What kind of content can you integrate?</h2>
-      <p>
-        The beauty of this <strong>MKStack</strong> lies in the rich diversity
-        of content you can pull from Nostr to dynamically enhance your website.
-        It's about bringing your entire digital presence to life and showcasing
-        it to the world.
-      </p>
-      <ul>
-        <li>
-          You can seamlessly embed your short notes to create a "Latest
-          Thoughts" or "Micro-blog" feed, showing visitors what's on your mind
-          right now.
-        </li>
-        <li>
-          For writers, your long-form articles can automatically populate your
-          blog page, creating a self-updating portfolio.
-        </li>
-        <li>
-          Photographers and artists can build stunning photo galleries and video
-          showcases by pulling media directly from their posts, even filtering
-          by specific hashtags.
-        </li>
-        <li>
-          You can even embed live streams to capture your audience the moment
-          you go live.
-        </li>
-        <li>
-          If you attend or host meetups, no problem. You can display a public
-          list of calendar events, community meetups, and online gatherings.
-        </li>
-      </ul>
-      <p>
-        Essentially, almost any type of activity you share on the Nostr protocol
-        can become a living component of your website, transforming it from a
-        simple page into a comprehensive hub for you, your content, your
-        community, or your business.
-      </p>
 
       <h2>Upgrading your Legacy Website</h2>
       <h3>Step 1: Install Stacks and create your project</h3>
