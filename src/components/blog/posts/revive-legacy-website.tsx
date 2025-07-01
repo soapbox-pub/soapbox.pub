@@ -8,12 +8,11 @@ import {
   Zap,
   Code,
   Globe,
-  Unlock,
-  Smartphone,
   RefreshCw,
   Sparkles,
 } from "lucide-react";
 import { EmailSignupForm } from "../../EmailSignupForm";
+import { DerekRossLatestPost } from "../../DerekRossLatestPost";
 
 export interface BlogPostMeta {
   slug: string;
@@ -224,6 +223,53 @@ export default function ReviveLegacyWebsite() {
         collection of pages, but a true, decentralized hub that reflects your
         values of freedom and self-ownership.
       </p>
+
+      <h2>Real-World Success Story: Soapbox.pub</h2>
+      <p>
+        <strong>This very method was used to revive Soapbox.pub itself!</strong> The{" "}
+        <a
+          href="https://web.archive.org/web/20240920212157/http://soapbox.pub/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-violet-600 hover:text-violet-800 underline"
+        >
+          old Soapbox website
+        </a>{" "}
+        was a static site that hadn't been updated in years. Using this process,
+        we transformed it into the dynamic, Nostr-powered hub that pulls in live profiles,
+        social media posts, app showcases, and protocol specifications.
+      </p>
+      <p>
+        <strong>Every page demonstrates different ways to weave decentralized content into
+        a modern web experience. We encourage you to explore this site</strong> to discover the many
+        creative ways dynamic Nostr content has been integrated. From the team
+        posts on our About page to the live developer feeds throughout the site,
+        you'll find inspiration for your own Nostr-powered website.
+      </p>
+
+      {/* Live Nostr Integration Example */}
+      <div className="not-prose my-12">
+        <div className="bg-gradient-to-r from-violet-100 to-purple-100 rounded-2xl p-8">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              🔴 Live Nostr Integration Example
+            </h3>
+            <p className="text-gray-700 max-w-2xl mx-auto">
+              Here's a real-time example! Below is the latest post from one of our Soapbox team members, pulled directly from Nostr as you read this.
+            </p>
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            {/* LIVE TEAM POST EXAMPLE HERE */}
+          </div>
+          
+          <div className="text-center mt-6">
+            <p className="text-sm text-gray-600">
+              This content updates automatically. No manual updates required! ⚡
+            </p>
+          </div>
+        </div>
+      </div>
 
       <h2>What kind of content can you integrate?</h2>
       <p>
