@@ -23,18 +23,18 @@ export interface BlogPostMeta {
 }
 
 export const meta: BlogPostMeta = {
-  slug: "mkstack-tutorial",
-  title: "MKStack: Vibe Coding for Everyone",
-  excerpt:
+  "slug": "mkstack-tutorial",
+  "title": "MKStack: Vibe Coding for Everyone",
+  "excerpt":
     "A comprehensive guide to building Nostr apps without coding experience using Stacks, MKStack, and AI-powered vibe coding with Dork.",
-  coverImage: "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
-  date: "2025-06-21",
-  author: {
-    name: "Derek Ross",
-    picture: "/assets/avatars/derek.jpg",
+  "coverImage": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
+  "date": "2025-06-21",
+  "author": {
+    "name": "Derek Ross",
+    "picture": "/assets/avatars/derek.jpg",
   },
-  ogImage: {
-    url: "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
+  "ogImage": {
+    "url": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
   },
 };
 

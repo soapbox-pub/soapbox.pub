@@ -24,18 +24,18 @@ export interface BlogPostMeta {
 }
 
 export const meta: BlogPostMeta = {
-  slug: "revive-legacy-website",
-  title: "Revive Your Legacy Website with MKStack",
-  excerpt:
+  "slug": "revive-legacy-website",
+  "title": "Revive Your Legacy Website with MKStack",
+  "excerpt":
     "Transform your old website from a static archive into a dynamic, Nostr-powered hub. Breathe new life into legacy content with AI-powered modernization and live decentralized feeds.",
-  coverImage: "/assets/blog/revive-legacy-website/website-revive-og.png",
-  date: "2025-06-30",
-  author: {
-    name: "Derek Ross",
-    picture: "/assets/avatars/derek.jpg",
+  "coverImage": "/assets/blog/revive-legacy-website/website-revive-og.png",
+  "date": "2025-06-30",
+  "author": {
+    "name": "Derek Ross",
+    "picture": "/assets/avatars/derek.jpg",
   },
-  ogImage: {
-    url: "/assets/blog/revive-legacy-website/website-revive-og.png",
+  "ogImage": {
+    "url": "/assets/blog/revive-legacy-website/website-revive-og.png",
   },
 };
 
