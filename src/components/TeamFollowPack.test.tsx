@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { TestApp } from '@/test/TestApp';
-import { FollowPack } from './FollowPack';
+import { TeamFollowPack } from './TeamFollowPack';
 
-describe('FollowPack', () => {
+describe('TeamFollowPack', () => {
   it('renders loading state initially', () => {
     const { container } = render(
       <TestApp>
-        <FollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
+        <TeamFollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
       </TestApp>
     );
 
@@ -19,14 +19,14 @@ describe('FollowPack', () => {
   it('renders with custom className', () => {
     const { container } = render(
       <TestApp>
-        <FollowPack 
+        <TeamFollowPack 
           naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" 
           className="custom-class" 
         />
       </TestApp>
     );
 
-    const card = container.querySelector('.custom-class');
-    expect(card).toBeInTheDocument();
+    const element = container.querySelector('.custom-class');
+    expect(element).toBeInTheDocument();
   });
 });
