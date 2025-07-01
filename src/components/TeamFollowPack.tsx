@@ -1,17 +1,13 @@
 import { useFollowPack } from '@/hooks/useFollowPack';
 import { useAuthor } from '@/hooks/useAuthor';
-import { useCurrentUser } from '@/hooks/useCurrentUser';
-import { useNostrPublish } from '@/hooks/useNostrPublish';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Users, UserPlus, ExternalLink } from 'lucide-react';
+import { Users, ExternalLink } from 'lucide-react';
 import { genUserName } from '@/lib/genUserName';
-import { getTeamMemberByPubkey, type TeamMember } from '@/lib/teamData';
-import { useState } from 'react';
-import { useToast } from '@/hooks/useToast';
+import { getTeamMemberByPubkey } from '@/lib/teamData';
 import { Link } from 'react-router-dom';
 
 interface TeamFollowPackProps {
@@ -93,46 +89,6 @@ function EnhancedProfileCard({ pubkey, petname }: EnhancedProfileCardProps) {
 
 export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
   const { data: followPack, isLoading, error } = useFollowPack(naddr);
-  const { user } = useCurrentUser();
-  const { mutate: publishEvent, isPending: isPublishing } = useNostrPublish();
-  const [isFollowing, setIsFollowing] = useState(false);
-  const { toast } = useToast();
-
-  const handleFollowAll = async () => {
-    if (!user || !followPack) return;
-
-    try {
-      setIsFollowing(true);
-
-      // Create a follow list event (kind 3) with all the profiles
-      const tags = followPack.profiles.map(profile => {
-        const tag = ['p', profile.pubkey];
-        if (profile.relay) tag.push(profile.relay);
-        if (profile.petname) tag.push(profile.petname);
-        return tag;
-      });
-
-      publishEvent({
-        kind: 3,
-        content: '',
-        tags,
-      });
-
-      toast({
-        title: 'Success!',
-        description: `Following ${followPack.profiles.length} team members from the pack.`,
-      });
-    } catch (error) {
-      console.error('Error following pack:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to follow the pack. Please try again.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsFollowing(false);
-    }
-  };
 
   if (isLoading) {
     return (
@@ -145,7 +101,7 @@ export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
           </div>
           <Skeleton className="h-6 w-96 mx-auto mb-6" />
           <div className="flex gap-2 justify-center">
-            <Skeleton className="h-10 w-32" />
+
             <Skeleton className="h-10 w-40" />
           </div>
         </div>
@@ -195,55 +151,32 @@ export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
           </h2>
         </div>
         
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
           {followPack.description || 'The passionate individuals building the future of decentralized social media.'}
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-          {user && (
-            <Button 
-              onClick={handleFollowAll}
-              disabled={isFollowing || isPublishing}
-              className="bg-azure hover:bg-azure/90 text-white flex items-center gap-2"
-              size="lg"
-            >
-              <UserPlus className="h-4 w-4" />
-              {isFollowing || isPublishing ? 'Following...' : 'Follow All on Nostr'}
-            </Button>
-          )}
-          
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
           <Button size="lg" className="bg-azure hover:bg-azure/90 text-white" asChild>
             <Link to="/get-involved" className="inline-flex items-center">
               We're hiring! View open positions
             </Link>
           </Button>
-        </div>
-        
-        <div className="flex items-center justify-center gap-4">
-          <div className="flex items-center gap-2">
-            <Badge variant="secondary">
-              {followPack.profiles.length} team members
-            </Badge>
-            <Badge variant="outline">
-              Nostr Follow Pack
-            </Badge>
-          </div>
           
-          <Button 
+            <Button 
+            size="lg" 
             variant="outline" 
-            size="sm"
             asChild
-          >
+            className="flex items-center gap-2"
+            >
             <a 
               href={`https://following.space/d/${followPack.event.tags.find(([name]) => name === 'd')?.[1]}?p=${followPack.event.pubkey}`}
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2"
             >
-              <ExternalLink className="h-3 w-3" />
+              <ExternalLink className="h-4 w-4" />
               View pack on following.space
             </a>
-          </Button>
+            </Button>
         </div>
       </div>
       
