@@ -11,22 +11,51 @@ import { useSEO } from '@/hooks/useSEO';
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const allPosts = getAllPosts();
+  const featuredPost = allPosts[0]; // Most recent post as featured
   
-  // Set custom SEO for blog index
+  // Set custom SEO for blog index with featured post data
   useSEO({
     title: 'Soapbox Blog - Insights on Decentralized Social Media',
-    description: 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
+    description: featuredPost 
+      ? `Latest: ${featuredPost.title}. ${featuredPost.excerpt.slice(0, 100)}...` 
+      : 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
     type: 'website',
-    image: '/og-image.png',
-    keywords: 'soapbox blog, decentralized social media news, open source updates, nostr insights'
+    image: featuredPost?.ogImage?.url || featuredPost?.coverImage || '/og-image.png',
+    keywords: `soapbox blog, decentralized social media news, open source updates, nostr insights${featuredPost ? `, ${featuredPost.title}` : ''}`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Soapbox Blog",
+      "description": "Insights on decentralized social media, open source development, and community building",
+      "url": window.location.origin + "/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Soapbox",
+        "url": window.location.origin,
+        "logo": {
+          "@type": "ImageObject",
+          "url": window.location.origin + "/assets/logo.svg"
+        }
+      },
+      "blogPost": allPosts.slice(0, 5).map(post => ({
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "url": window.location.origin + `/blog/${post.slug}`,
+        "datePublished": post.date + 'T00:00:00Z',
+        "author": {
+          "@type": "Person",
+          "name": post.author.name || "Soapbox Team"
+        },
+        "image": post.ogImage?.url || post.coverImage ? window.location.origin + (post.ogImage?.url || post.coverImage) : undefined
+      }))
+    }
   });
   
   const filteredPosts = allPosts.filter(post =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const featuredPost = allPosts[0]; // Most recent post as featured
 
   return (
     <Layout>

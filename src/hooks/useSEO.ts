@@ -64,10 +64,18 @@ function updateCanonicalUrl(url: string) {
 }
 
 function updateStructuredData(data: Record<string, unknown>) {
-  const element = document.getElementById('structured-data');
-  if (element) {
-    element.textContent = JSON.stringify(data, null, 2);
+  // Remove existing structured data script
+  const existingScript = document.getElementById('structured-data');
+  if (existingScript) {
+    existingScript.remove();
   }
+  
+  // Create new structured data script
+  const script = document.createElement('script');
+  script.id = 'structured-data';
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(data, null, 2);
+  document.head.appendChild(script);
 }
 
 function getFullUrl(path: string): string {
@@ -112,12 +120,39 @@ export function useSEO(seoData: SEOData = {}) {
     if (fullImageUrl) {
       updateMetaTag('og:image', fullImageUrl);
       updateMetaTag('image', fullImageUrl); // General image meta tag
+      updateMetaTag('og:image:width', '1200');
+      updateMetaTag('og:image:height', '630');
+      updateMetaTag('og:image:type', 'image/jpeg');
     }
     if (currentUrl) {
       updateMetaTag('og:url', currentUrl);
     }
     if (finalSEO.type) {
       updateMetaTag('og:type', finalSEO.type);
+      
+      // Add article-specific meta tags for blog posts
+      if (finalSEO.type === 'article') {
+        if (finalSEO.author) {
+          updateMetaTag('article:author', finalSEO.author);
+        }
+        // Add published time if available in structured data
+        if (finalSEO.structuredData && 'datePublished' in finalSEO.structuredData) {
+          updateMetaTag('article:published_time', finalSEO.structuredData.datePublished as string);
+        }
+        // Add modified time if available in structured data
+        if (finalSEO.structuredData && 'dateModified' in finalSEO.structuredData) {
+          updateMetaTag('article:modified_time', finalSEO.structuredData.dateModified as string);
+        }
+        // Add article section
+        updateMetaTag('article:section', 'Technology');
+        // Add article tags from keywords
+        if (finalSEO.keywords) {
+          const tags = finalSEO.keywords.split(', ').slice(0, 5); // Limit to 5 tags
+          tags.forEach(tag => {
+            updateMetaTag('article:tag', tag);
+          });
+        }
+      }
     }
     if (finalSEO.siteName) {
       updateMetaTag('og:site_name', finalSEO.siteName);

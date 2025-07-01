@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Layout } from '@/components/Layout';
-import { getPostBySlug, formatDate, getReadingTime } from '@/lib/blog/utils';
+import { getPostBySlug, formatDate, getReadingTime, extractSEOData } from '@/lib/blog/utils';
 import { wrapVideoEmbeds } from '@/lib/blog/videoUtils';
 import { BlogPost } from '@/lib/blog/types';
 import { useSEO } from '@/hooks/useSEO';
@@ -29,34 +29,16 @@ export default function BlogPostPage() {
       .finally(() => setLoading(false));
   }, [slug]);
 
-  // Set dynamic SEO for blog post
-  useSEO({
-    title: post ? `${post.title} - Soapbox Blog` : 'Loading... - Soapbox Blog',
-    description: post?.excerpt || 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
-    type: 'article',
-    image: post?.coverImage || '/og-image.png',
-    keywords: post ? `${post.title}, soapbox blog, decentralized social media, open source` : 'soapbox blog',
-    structuredData: post ? {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": post.title,
-      "description": post.excerpt,
-      "image": post.coverImage ? window.location.origin + post.coverImage : undefined,
-      "datePublished": post.date,
-      "dateModified": post.date,
-      "author": {
-        "@type": "Person",
-        "name": post.author.name || "Soapbox Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Soapbox",
-        "logo": {
-          "@type": "ImageObject",
-          "url": window.location.origin + "/assets/logo.svg"
-        }
-      }
-    } : undefined
+  // Set dynamic SEO for blog post with rich metadata extraction
+  useSEO(post ? {
+    ...extractSEOData(post),
+    twitterCard: 'summary_large_image'
+  } : {
+    title: 'Loading... - Soapbox Blog',
+    description: 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
+    type: 'article' as const,
+    image: '/og-image.png',
+    keywords: 'soapbox blog'
   });
 
   if (loading) {

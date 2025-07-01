@@ -104,7 +104,7 @@ function extractIndexSEO(content) {
   return {
     ...defaultSEO,
     title: 'Soapbox - Build Your Decentralized Platform',
-    description: 'Create your own social platforms, communities, and applications with Soapbox\'s open-source toolkit. Tools for Nostr, ActivityPub, and the decentralized web.',
+    description: "Create your own social platforms, communities, and applications with Soapbox's open-source toolkit. Tools for Nostr, ActivityPub, and the decentralized web.",
     keywords: 'soapbox, nostr, decentralized, social media, open source, ditto, fediverse, activitypub, platform builder'
   };
 }
