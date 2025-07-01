@@ -3,100 +3,11 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamPostsFeed } from "@/components/TeamPostsFeed";
+import { TeamFollowPack } from "@/components/TeamFollowPack";
 import { ExternalLink, Heart, Users, Zap } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
-const teamMembers = [
-  {
-    name: "Alex Gleason",
-    role: "Founder & CEO",
-    bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on ActivityPub and the Fediverse. He is still learning, and still dreaming.",
-    avatar: "/assets/avatars/alex.png",
-    follow: "https://gleasonator.dev/@alex@gleasonator.dev",
-    npub: "npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxckmzddywnws6cd26p"
-  },
-  {
-    name: "M. K. Fain",
-    role: "Chief Product Officer",
-    bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
-    avatar: "/assets/avatars/mk.jpg",
-    follow: "https://ditto.pub/@mk@ditto.pub",
-    npub: "npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc"
-  },
-  {
-    name: "Heather Larson",
-    role: "Marketing Director",
-    bio: "Tech Marketing | Bitcoin & Nostr Community Growth | Broadcast Media Veteran | *I've probably ghostwritten something you read online*",
-    avatar: "/assets/avatars/heather.jpg",
-    follow: "https://ditto.pub/@heather@nostrplebs.com",
-    npub: "npub1nl8r463jkdtr0qu0k3dht03jt9t59cttk0j8gtxg9wea2russlnq2zf9d0"
-  },
-  {
-    name: "Derek Ross",
-    role: "Developer Relations",
-    bio: "The purple pill helps the orange pill go down. Nostr is the social glue that binds all of your apps together.",
-    avatar: "/assets/avatars/derek.jpg",
-    follow: "https://ditto.pub/@derekross@grownostr.org",
-    npub: "npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424"
-  },
-  {
-    name: "Patrick dos Reis",
-    role: "Developer",
-    bio: "Patrick is interested in being a masterful interpreter of the Light.",
-    avatar: "/assets/avatars/patrick.png",
-    follow: "https://ditto.pub/@patrick@patrickdosreis.com",
-    npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
-  },
-  {
-    name: "shantaram",
-    role: "Software Engineer",
-    bio: "Self-taught software engineer writing software to achieve a net good effect on the world.",
-    avatar: "/assets/avatars/shantaram.jpeg",
-    follow: "https://ditto.pub/@shan@shantaram.xyz",
-    npub: "npub1q469xmf77nt9ltu4ks3excgts36ayt6v99ryn4rv2r2axmm4ye7q3vnkqp"
-  },
-  {
-    name: "Danidfra",
-    role: "Developer",
-    bio: "Danidfra is a programmer with an interest in both code and music. He believes that technology can transform the world, and is always looking for new ways to create a positive impact.",
-    avatar: "/assets/avatars/danidfra.jpeg",
-    follow: "https://ditto.pub/@danidfra@danidfra.com",
-    npub: "npub1e6tnvlr46lv3lwdu80r07kanhk6jcxy5r07w9umgv9kuhu9dl5hsk9gqft"
-  },
-  {
-    name: "Chad Curtis",
-    role: "Developer",
-    bio: "Chad is hobbyist who enjoys creating open source solutions for everyone. He also enjoys creating art, tinkering with GNU/Linux, and playing Magic: The Gathering",
-    avatar: "/assets/avatars/chad.jpeg",
-    follow: "https://ditto.pub/@chad@chadwick.site",
-    npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
-  },
-  {
-    name: "Ana Domingos",
-    role: "Marketing Coordinator",
-    bio: "Educator & Creative Marketer | Published Author | Digital Content & Social Media Specialist",
-    avatar: "/assets/avatars/farfallica.jpg",
-    follow: "https://ditto.pub/@farfallica@nostrplebs.com",
-    npub: "npub1erhg86xl307d46pla66aycr6sjpy9esnrffysr98l5pjvt2fdgeq8wru26"
-  },
-  {
-    name: "Sep",
-    role: "Developer",
-    bio: "Humble Other Stuff Builder",
-    avatar: "/assets/avatars/sep.jpeg",
-    follow: "https://ditto.pub/@pinja.in",
-    npub: "npub18c556t7n8xa3df2q82rwxejfglw5przds7sqvefylzjh8tjne28qld0we7"
-  }
-  ,
-  {
-    name: "& Other Stuff",
-    role: "Organizational Partner",
-    bio: "Supporting the transition from an experimental protocol to a widely adopted, sustainable ecosystem through a focus on 5 key pillars.",
-    avatar: "/assets/avatars/aos.png",
-    follow: "https://ditto.pub/@AOS@andotherstuff.org",
-    npub: "npub1t5u3wp5kj78jwnuphpf5mhx00nwwtfwq56d6j8atnu89gd454wcs6aj4c2"
-  }
-];
+
 
 const missionValues = [
   {
@@ -187,47 +98,7 @@ export default function About() {
         {/* Team Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
-                Meet the Team
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-                The passionate individuals building the future of decentralized social media.
-              </p>
-              <Button size="lg" className="bg-azure hover:bg-azure/90 text-white" asChild>
-                <Link to="/get-involved" className="inline-flex items-center">
-                  We're hiring! View open positions
-                </Link>
-              </Button>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-0">
-                    <img 
-                      src={member.avatar} 
-                      alt={member.name}
-                      className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-gray-100"
-                    />
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-azure font-medium mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {member.bio}
-                    </p>
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={member.follow} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                        Follow <ExternalLink className="ml-1 h-3 w-3" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <TeamFollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
           </div>
         </section>
 
