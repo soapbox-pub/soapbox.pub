@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  
+  <!-- Background pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#333" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main content area -->
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="600" y="150" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="bold">
+    Loomly → Zapier → Nostr
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="200" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="24">
+    Solving Team Collaboration on Nostr
+  </text>
+  
+  <!-- Flow diagram -->
+  <!-- Loomly box -->
+  <rect x="150" y="280" width="200" height="80" rx="10" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+  <text x="250" y="330" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    Loomly
+  </text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 370 320 L 420 320" stroke="#888" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Zapier box -->
+  <rect x="440" y="280" width="200" height="80" rx="10" fill="#ff6b35" stroke="#e55a2b" stroke-width="2"/>
+  <text x="540" y="330" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    Zapier
+  </text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 660 320 L 710 320" stroke="#888" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Nostr box -->
+  <rect x="730" y="280" width="200" height="80" rx="10" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+  <text x="830" y="330" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    Nostr
+  </text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#888"/>
+    </marker>
+  </defs>
+  
+  <!-- Bottom text -->
+  <text x="600" y="450" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="18">
+    Bridge content scheduling to decentralized publishing
+  </text>
+  
+  <!-- Soapbox branding -->
+  <text x="600" y="520" text-anchor="middle" fill="#444" font-family="Arial, sans-serif" font-size="16">
+    soapbox.pub
+  </text>
+</svg>

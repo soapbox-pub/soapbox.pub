@@ -20,6 +20,7 @@ import * as followthreads from '../../components/blog/posts/follow-threads';
 import * as futureisdecentralized from '../../components/blog/posts/future-is-decentralized';
 import * as howtoinstalldittomobile from '../../components/blog/posts/how-to-install-ditto-mobile';
 import * as howtojoinnostrbrazilcobrafuma from '../../components/blog/posts/how-to-join-nostr-brazil-cobrafuma';
+import * as loomlyzapiernostrbridge from '../../components/blog/posts/loomly-zapier-nostr-bridge';
 import * as mostrfediversenostrbridge from '../../components/blog/posts/mostr-fediverse-nostr-bridge';
 import * as mostrzaps from '../../components/blog/posts/mostr-zaps';
 import * as mkstacktutorial from '../../components/blog/posts/mkstack-tutorial';
@@ -77,6 +78,7 @@ export const blogPosts: BlogPost[] = [
   futureisdecentralized.meta,
   howtoinstalldittomobile.meta,
   howtojoinnostrbrazilcobrafuma.meta,
+  loomlyzapiernostrbridge.meta,
   mkstacktutorial.meta,
   mostrfediversenostrbridge.meta,
   mostrzaps.meta,
@@ -144,6 +146,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/how-to-install-ditto-mobile')).default;
     case 'howtojoinnostrbrazilcobrafuma':
       return (await import('../../components/blog/posts/how-to-join-nostr-brazil-cobrafuma')).default;
+    case 'loomlyzapiernostrbridge':
+      return (await import('../../components/blog/posts/loomly-zapier-nostr-bridge')).default;
     case 'mkstacktutorial':
       return (await import('../../components/blog/posts/mkstack-tutorial')).default;
     case 'mostrfediversenostrbridge':
