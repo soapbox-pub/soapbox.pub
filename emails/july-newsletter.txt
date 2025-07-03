@@ -1,0 +1,31 @@
+﻿July 3, 2025
+
+
+ICYMI, Alex Gleason was on an episode of Citadel Dispatch with O’Dell. Listen as they talk Nostr, AI, and Bitcoin. You’ll also hear the story about the role Alex played in President Donald Trump’s social network, Truth Social. 
+
+https://fountain.fm/episode/JW2vxjNFYb941SUSQQg9 
+
+
+
+You can build a Game Boy app with Soapbox tools like the Stacks template. See how one dad had a fun day building this with his kid! 
+
+https://www.youtube.com/watch?app=desktop&v=dhWvP72fSY0&ab_channel=mccormix 
+
+
+
+Nostr user bitcoin_rene used Derek Ross’ tutorial to revamp his website through vibe coding. Check out his project and Derek’s tutorial. 
+
+(rene-vobe-exmaple.png image) with link to: https://primal.net/e/nevent1qvzqqqqqqypzqqnnfuvu4eu9peau5mq29wm22d832t26e0vxam8p62lm6ht9qgqrqyv8wumn8ghj7enfd36x2u3wdehhxarj9emkjmn99uq3zamnwvaz7tmwdaehgu3wwa5kuef0qqsr0xxse7schncf485lew72207edqjypcnq4ker03y23q7gg74dg2qxfk6ua
+
+https://soapbox.pub/blog/revive-legacy-website/ 
+
+
+Follow Soapbox on Nostr! 
+
+
+Follow us on X: https://x.com/SoapboxTech 
+
+
+Follow us on LinkedIn: https://www.linkedin.com/company/soapbox-technology 
+
+We're hiring! Seeking Senior Developers who care about FOSS and decentralization. Check out our open positions here: 
