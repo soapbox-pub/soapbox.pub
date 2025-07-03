@@ -54,6 +54,7 @@ export interface BlogPost {
   ogImage: {
     url?: string;
   };
+  featured?: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
