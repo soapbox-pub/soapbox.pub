@@ -101,7 +101,7 @@ export default function LoomlyZapierNostrBridge() {
         className="rounded-lg shadow-md"
       />
 
-      <h2>Security Considerations</h2>
+      <h2>Security Considerations 🚨</h2>
 
       <p>The biggest downside of this approach is that <strong>you do have to provide your nsec to Zapier</strong>. This means trusting Zapier to keep it secure, which is a trade-off some teams may be uncomfortable with. Zapier is a reputable platform, but it's still a third party. In the future, someone may expand on what we've started here to allow for another signing pattern that does not requiring putting the nsec into Zapier. However, for now this solution meets the needs of our team.</p>
 
