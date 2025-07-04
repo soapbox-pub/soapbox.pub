@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="July 2025 Soapbox Newsletter - Alex Gleason on Citadel Dispatch, Game Boy apps with MKStack, and more decentralized development updates.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Soapbox July Newsletter - AI Coding on Nostr">
+    <meta property="og:description" content="July 2025 Soapbox Newsletter - Alex Gleason on Citadel Dispatch, Game Boy apps with MKStack, and more decentralized development updates.">
+    <link rel="manifest" href="/manifest.json">
+    <title>Soapbox July Newsletter - AI Coding on Nostr
+    </title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+        
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+        }
+        
+        /* Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px;
+        }
+        
+        .header-content {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .logo-container .logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+        
+        .logo-container h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+        
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .header h1 {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        /* Content sections */
+        .section {
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin: 0 0 30px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #f3e8ff;
+            color: #7c3aed;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 20px;
+            border: 1px solid #e9d5ff;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text {
+            font-size: 20px;
+            color: #475569;
+            margin: 0 0 40px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: table;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-buttons .btn {
+            display: inline-block;
+            margin: 8px;
+            vertical-align: top;
+        }
+        
+        /* Content cards */
+        .content-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+        }
+        
+        .content-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            font-size: 24px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 60px;
+            display: block;
+        }
+        
+        .podcast-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .gameboy-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .tutorial-icon { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+        .social-icon { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+        .hiring-icon { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        
+        .content-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+        
+        .content-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin: 0 0 15px;
+            text-align: center;
+        }
+        
+        .content-description {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.5;
+            text-align: left;
+        }
+        
+        /* Image showcase */
+        .image-showcase {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .showcase-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 0 0 15px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff !important;
+        }
+        
+        .btn-secondary {
+            background: #ffffff;
+            color: #3b82f6 !important;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-podcast {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff !important;
+        }
+        
+        .btn-gameboy {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff !important;
+        }
+        
+        .btn-tutorial {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff !important;
+        }
+        
+        /* Force button colors in all email clients */
+        .btn-primary, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-secondary, .btn-secondary:visited, .btn-secondary:hover, .btn-secondary:active {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-podcast, .btn-podcast:visited, .btn-podcast:hover, .btn-podcast:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-gameboy, .btn-gameboy:visited, .btn-gameboy:hover, .btn-gameboy:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-tutorial, .btn-tutorial:visited, .btn-tutorial:hover, .btn-tutorial:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        /* Social links section */
+        .social-links {
+            background: #f8fafc;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .social-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-item {
+            display: table-cell;
+            width: 33.33%;
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+        
+        .social-link {
+            display: block;
+            padding: 15px 10px;
+            background: #ffffff;
+            border-radius: 12px;
+            text-decoration: none !important;
+            color: #1e293b !important;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        }
+        
+        .social-link, .social-link:visited, .social-link:hover, .social-link:active {
+            color: #1e293b !important;
+            text-decoration: none !important;
+        }
+        
+        .social-icon-small {
+            font-size: 24px;
+            margin: 0 0 8px;
+            display: block;
+        }
+        
+        .social-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+        }
+        
+        /* CTA section */
+        .cta {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 15px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            color: #e2e8f0;
+            margin: 0 0 30px;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 5px 0;
+        }
+        
+        .footer a {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+        
+        .footer a:visited, .footer a:hover, .footer a:active {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+        
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .logo {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-text {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                display: block;
+                text-align: center;
+            }
+            
+            .hero-buttons .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 280px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .content-card {
+                padding: 25px 15px;
+            }
+            
+            .social-item {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://media.ditto.pub/227b98784c11af32a9694b9571aa9ecddc47017b909a6230436b0c6e30647d55.png" alt="Soapbox Logo" class="logo">
+                    <h1>Soapbox</h1>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-badge">📅 July 3, 2025</div>
+            <h1 class="hero-title">
+                AI Coding on <span class="gradient-text">Nostr</span>
+            </h1>
+            <p class="hero-text">
+                Catch up on the latest from the Soapbox community: Alex Gleason on Citadel Dispatch, 
+                Game Boy apps built with MKStack, and inspiring vibe coding projects.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://soapbox.pub/tools/mkstack" class="btn btn-primary">Try MKStack</a>
+                <a href="https://soapbox.pub/showcase" class="btn btn-secondary">View Showcase</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="section">
+            <h2 class="section-title">Recent Highlights</h2>
+            <p class="section-subtitle">Discover what's happening in the decentralized development community</p>
+            
+            <!-- Alex Gleason Podcast -->
+            <div class="content-card">
+                <div class="content-icon podcast-icon">🎙️</div>
+                <h3 class="content-title">Alex Gleason on Citadel Dispatch</h3>
+                <p class="content-subtitle">Truth Social, Nostr, and the AI future</p>
+                <p class="content-description">
+                    ICYMI, Alex Gleason was on an episode of Citadel Dispatch with O'Dell. Listen as they talk Nostr and the vibe coding future. 
+                    You'll also hear the story about the role Alex played in President Donald Trump's social network, Truth Social.
+                </p>
+                
+                <div class="image-showcase">
+                    <a href="https://primal.net/e/nevent1qqs96kxmxc7mufgt6n2rxpphg8ptyx2kl47a7rj389jrwmvjy6rhuhgmfel87" target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.ditto.pub/798aa605dc0a5a5c35730e7dc6f6082f135a1189ab6459cd894266c1641bd8d4.png" alt="Citadel Dispatch Podcast with Alex Gleason" class="showcase-image">
+                    </a>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="https://fountain.fm/episode/JW2vxjNFYb941SUSQQg9" class="btn btn-podcast">Listen on Fountain</a>
+                </div>
+            </div>
+            
+            <!-- Game Boy App -->
+            <div class="content-card">
+                <div class="content-icon gameboy-icon">🎮</div>
+                <h3 class="content-title">Build a Game Boy App with MKStack</h3>
+                <p class="content-subtitle">Fun family coding project</p>
+                <p class="content-description">
+                    You can build a Game Boy app with Soapbox tools like the Stacks template. See how one dad had a fun day building this with his kid! 
+                    This is a perfect example of how accessible our tools have become for developers of all skill levels.
+                </p>
+                
+                <div class="image-showcase">
+                    <a href="https://www.youtube.com/watch?app=desktop&v=dhWvP72fSY0&ab_channel=mccormix" target="_blank" rel="noopener noreferrer">
+                        <img src="https://i.ytimg.com/vi/dhWvP72fSY0/maxresdefault.jpg" alt="Game Boy App Tutorial Video" class="showcase-image">
+                    </a>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com/watch?app=desktop&v=dhWvP72fSY0&ab_channel=mccormix" class="btn btn-gameboy">Watch Tutorial</a>
+                </div>
+            </div>
+            
+            <!-- Derek Ross Tutorial & Rene's Project -->
+            <div class="content-card">
+                <div class="content-icon tutorial-icon">🚀</div>
+                <h3 class="content-title">Vibe Coding Success Story</h3>
+                <p class="content-subtitle">Website revamp with Derek's tutorial</p>
+                <p class="content-description">
+                    Nostr user bitcoin_rene used Derek Ross' tutorial to revamp his website through vibe coding. 
+                    Check out his project and Derek's tutorial to see how easy it is to transform your web presence with our tools.
+                </p>
+                
+                <div class="image-showcase">
+                    <img src="https://pbs.twimg.com/media/Gu9OT3-XgAAzNzU?format=jpg&name=large" alt="Rene's Website Revamp" class="showcase-image">
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="https://primal.net/e/nevent1qvzqqqqqqypzqqnnfuvu4eu9peau5mq29wm22d832t26e0vxam8p62lm6ht9qgqrqyv8wumn8ghj7enfd36x2u3wdehhxarj9emkjmn99uq3zamnwvaz7tmwdaehgu3wwa5kuef0qqsr0xxse7schncf485lew72207edqjypcnq4ker03y23q7gg74dg2qxfk6ua" class="btn btn-tutorial">View Project</a>
+                    <a href="https://soapbox.pub/blog/revive-legacy-website/" class="btn btn-secondary">Read Tutorial</a>
+                </div>
+            </div>
+            
+            <!-- Hiring Section -->
+            <div class="content-card">
+                <div class="content-icon hiring-icon">💼</div>
+                <h3 class="content-title">We're Hiring!</h3>
+                <p class="content-subtitle">Join the decentralized future</p>
+                <p class="content-description">
+                    Seeking Senior Developers who care about FOSS and decentralization. 
+                    Help us build the tools that will power the next generation of decentralized applications and communities.
+                </p>
+                <div style="text-align: center;">
+                    <a href="https://soapbox.pub/get-involved" class="btn btn-primary">View Open Positions</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Social Links Section -->
+        <div class="social-links">
+            <h2 class="section-title">Stay Connected</h2>
+            <p class="section-subtitle">Follow Soapbox across all platforms</p>
+            
+            <div class="social-grid">
+                <div class="social-item">
+                    <a href="https://ditto.pub/@soapbox@ditto.pub" class="social-link">
+                        <div class="social-icon-small">⚡</div>
+                        <div class="social-label">Nostr</div>
+                    </a>
+                </div>
+                <div class="social-item">
+                    <a href="https://x.com/SoapboxTech" class="social-link">
+                        <div class="social-icon-small">🐦</div>
+                        <div class="social-label">X (Twitter)</div>
+                    </a>
+                </div>
+                <div class="social-item">
+                    <a href="https://www.linkedin.com/company/soapbox-technology" class="social-link">
+                        <div class="social-icon-small">💼</div>
+                        <div class="social-label">LinkedIn</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta">
+            <h2>Ready to Start Building?</h2>
+            <p>Join the revolution in decentralized development. Turn your ideas into reality with AI-powered tools and the Nostr protocol.</p>
+            <a href="https://soapbox.pub/tools/mkstack" class="btn" style="background: #ffffff !important; color: #3b82f6 !important; margin: 10px; text-decoration: none !important;">Try MKStack Now</a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> - Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> | 
+                <a href="https://soapbox.pub/blog">Blog</a> | 
+                <a href="https://github.com/soapbox-pub">GitHub</a> | 
+                <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+    
+    <!-- MailChimp Footer -->
+    <center>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+            <tr>
+                <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                        <tr>
+                            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                <br/>
+                                <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                <br/>
+                                *|LIST:ADDRESSLINE|*
+                                <br/>
+                                <br/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <style type="text/css">
+            @media only screen and (max-width: 480px){
+                table#canspamBar td{font-size:14px !important;}
+                table#canspamBar td a{display:block !important; margin-top:10px !important;}
+            }
+        </style>
+    </center>
+</body>
+</html>
