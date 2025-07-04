@@ -55,7 +55,7 @@ export function Footer() {
               <li><Link to="/about" className="hover:text-white transition-colors">Team</Link></li>
               <li><Link to="/get-involved" className="hover:text-white transition-colors">Get Involved</Link></li>
               <li><a href="https://gitlab.com/groups/soapbox-pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitLab</a></li>
-              <li><a href="https://njump.me/npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxbm755fcea5s9cqrwq" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostr</a></li>
+              <li><a href="https://njump.me/npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostr</a></li>
             </ul>
           </div>
         </div>
