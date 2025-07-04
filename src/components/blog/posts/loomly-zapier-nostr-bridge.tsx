@@ -39,7 +39,8 @@ export default function LoomlyZapierNostrBridge() {
 
       <h2>Content Scheduling: Loomly + Zapier → Nostr</h2>
 
-      <p>To solve this porblem, we built a bridge that connects <a href="https://www.loomly.com/" target="_blank" rel="noopener noreferrer">Loomly</a> (a content scheduling platform) to Nostr through Zapier. <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> is an automation platform that serves as a middle-man to APIs provided by many popular applications. While it's not the most "pure-Nostr" approach and it relies on proprietary platforms, it's a practical solution that actually works for real marketing teams with collaboration needs. We are sharing this solution in case it helps your team, too! <strong>The bridge works in four steps:</strong></p>
+      <p>To solve this problem, we built a bridge that connects <a href="https://www.loomly.com/" target="_blank" rel="noopener noreferrer">Loomly</a> (a content scheduling platform) to Nostr through Zapier. <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> is automation tool for connecting the APIs of popular applications. While it's not the most "pure-Nostr" approach and it relies on proprietary platforms, it's a practical solution that actually works for real marketing teams with collaboration needs. We are sharing this solution in case it helps your team, too! <strong>The bridge works in four steps:</strong></p>
+
 
       <h3>Step 1: Configure Loomly Trigger in Zapier</h3>
       <p>We set up a Zapier trigger that watches for a "Post Manual Publish" event in Loomly. This means whenever a team member schedules a post on a "custom channel" to go live, it triggers our Zap.</p>
@@ -93,7 +94,7 @@ export default function LoomlyZapierNostrBridge() {
 
       <h2>Publishing Nostr Content on Loomly via the Zapier Bridge</h2>
 
-      <p>Once the Zap is configured, team members can schedule posts in Loomly's custom channel. This works much the same as scheduling any other social post, accept for tagging users. This requires adding the user's npub and hex pubkey into the text of the post manually to be parsed and converted into p tags. (See more documentation on formatting Nostr posts in Loomly <a href="https://docs.google.com/document/d/16Co1-SgItKDeRV_9YVlouSHun66PAzbtKFrqsSCRwHY/edit?usp=sharing" target='_blank' rel="noopener noreferrer">here</a>.)</p>
+      <p>Once the Zap is configured, team members can schedule posts in Loomly's custom channel. This works much the same as scheduling any other social post, except for tagging users. This requires adding the user's npub and hex pubkey into the text of the post manually to be parsed and converted into p tags. (See more documentation on formatting Nostr posts in Loomly <a href="https://docs.google.com/document/d/16Co1-SgItKDeRV_9YVlouSHun66PAzbtKFrqsSCRwHY/edit?usp=sharing" target='_blank' rel="noopener noreferrer">here</a>.)</p>
 
       <img
         src="/assets/blog/loomly-zapier-nostr-bridge/loomly-to-nostr-example.png"
@@ -101,7 +102,7 @@ export default function LoomlyZapierNostrBridge() {
         className="rounded-lg shadow-md"
       />
 
-      <h2>Security Considerations</h2>
+      <h2>Security Considerations 🚨</h2>
 
       <p>The biggest downside of this approach is that <strong>you do have to provide your nsec to Zapier</strong>. This means trusting Zapier to keep it secure, which is a trade-off some teams may be uncomfortable with. Zapier is a reputable platform, but it's still a third party. In the future, someone may expand on what we've started here to allow for another signing pattern that does not requiring putting the nsec into Zapier. However, for now this solution meets the needs of our team.</p>
 
