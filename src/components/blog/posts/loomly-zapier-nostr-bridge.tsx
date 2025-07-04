@@ -93,7 +93,7 @@ export default function LoomlyZapierNostrBridge() {
 
       <h2>Publishing Nostr Content on Loomly via the Zapier Bridge</h2>
 
-      <p>Once the Zap is configured, team members can schedule posts in Loomly's custom channel. This works much the same as scheduling any other social post, accept for tagging users. This requires adding the user's npub and hex pubkey into the text of the post manually to be parsed and converted into p tags. (See more documentation on formatting Nostr posts in Loomly <a href="https://docs.google.com/document/d/16Co1-SgItKDeRV_9YVlouSHun66PAzbtKFrqsSCRwHY/edit?usp=sharing" target='_blank' rel="noopener noreferrer">here</a>.)</p>
+      <p>Once the Zap is configured, team members can schedule posts in Loomly's custom channel. This works much the same as scheduling any other social post, except for tagging users. This requires adding the user's npub and hex pubkey into the text of the post manually to be parsed and converted into p tags. (See more documentation on formatting Nostr posts in Loomly <a href="https://docs.google.com/document/d/16Co1-SgItKDeRV_9YVlouSHun66PAzbtKFrqsSCRwHY/edit?usp=sharing" target='_blank' rel="noopener noreferrer">here</a>.)</p>
 
       <img
         src="/assets/blog/loomly-zapier-nostr-bridge/loomly-to-nostr-example.png"
