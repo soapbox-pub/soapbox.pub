@@ -39,7 +39,7 @@ export default function LoomlyZapierNostrBridge() {
 
       <h2>Content Scheduling: Loomly + Zapier → Nostr</h2>
 
-      <p>To solve this porblem, we built a bridge that connects <a href="https://www.loomly.com/" target="_blank" rel="noopener noreferrer">Loomly</a> (a content scheduling platform) to Nostr through <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> automation. While it's not the most "pure-Nostr" approach and it relies on proprietary platforms, it's a practical solution that actually works for real marketing teams with collaboration needs. We are sharing this solution in case it helps your team, too! <strong>The bridge works in four steps:</strong></p>
+      <p>To solve this problem, we built a bridge that connects <a href="https://www.loomly.com/" target="_blank" rel="noopener noreferrer">Loomly</a> (a content scheduling platform) to Nostr through <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> automation. While it's not the most "pure-Nostr" approach and it relies on proprietary platforms, it's a practical solution that actually works for real marketing teams with collaboration needs. We are sharing this solution in case it helps your team, too! <strong>The bridge works in four steps:</strong></p>
 
       <h3>Step 1: Configure Loomly Trigger in Zapier</h3>
       <p>We set up a Zapier trigger that watches for a "Post Manual Publish" event in Loomly. This means whenever a team member schedules a post on a "custom channel" to go live, it triggers our Zap.</p>
