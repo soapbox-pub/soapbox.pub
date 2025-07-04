@@ -13,6 +13,7 @@ export interface BlogPostMeta {
   ogImage: {
     url?: string;
   };
+  featured?: boolean;
 }
 
 export interface BlogPost extends BlogPostMeta {

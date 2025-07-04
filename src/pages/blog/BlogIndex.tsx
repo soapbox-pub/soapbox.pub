@@ -5,13 +5,13 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { BlogList } from '@/components/blog/BlogList';
 import { Layout } from '@/components/Layout';
-import { getAllPosts, formatDate } from '@/lib/blog/utils';
+import { getAllPosts, formatDate, getFeaturedPost } from '@/lib/blog/utils';
 import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const allPosts = getAllPosts();
-  const featuredPost = allPosts[0]; // Most recent post as featured
+  const featuredPost = getFeaturedPost();
   
   // Set custom SEO for blog index with featured post data
   useSEO({
@@ -56,6 +56,9 @@ export default function BlogIndex() {
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Get posts excluding the featured post for the "All Posts" section
+  const nonFeaturedPosts = filteredPosts.filter(post => post.slug !== featuredPost?.slug);
 
   return (
     <Layout>
@@ -135,7 +138,7 @@ export default function BlogIndex() {
           <h2 className="text-3xl font-display font-bold text-gray-900 mb-8 text-center">
             {searchTerm ? 'Search Results' : 'All Posts'}
           </h2>
-          <BlogList posts={filteredPosts.slice(1)} /> {/* Skip featured post */}
+          <BlogList posts={nonFeaturedPosts} />
         </div>
 
         {/* Stats */}

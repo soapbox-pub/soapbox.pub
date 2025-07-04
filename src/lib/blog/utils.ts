@@ -27,6 +27,16 @@ export function getLatestPost() {
   return blogPosts[0] || null;
 }
 
+export function getFeaturedPost() {
+  // Find the most recent featured post
+  const featuredPosts = blogPosts.filter(post => post.featured);
+  if (featuredPosts.length > 0) {
+    return featuredPosts[0]; // Already sorted by date, so first is most recent
+  }
+  // If no featured posts, return the latest post
+  return getLatestPost();
+}
+
 export function getRecentPostsSkipFirst(limit: number = 3) {
   return blogPosts.slice(1, 1 + limit);
 }

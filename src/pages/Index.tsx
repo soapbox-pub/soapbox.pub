@@ -8,11 +8,11 @@ import { Footer } from "@/components/Footer";
 import { RotatingText } from "@/components/RotatingText";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { SoapboxPostsSection } from "@/components/SoapboxPostsSection";
-import { getLatestPost, formatDate } from "@/lib/blog/utils";
+import { getFeaturedPost, formatDate } from "@/lib/blog/utils";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Index() {
-  const latestPost = getLatestPost();
+  const featuredPost = getFeaturedPost();
   
   // Set custom SEO for home page
   useSEO({
@@ -79,21 +79,21 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Column - Latest Blog Post */}
-            {latestPost && (
+            {/* Right Column - Featured Blog Post */}
+            {featuredPost && (
               <div className="lg:pl-8">
                 <div className="mb-4">
                   <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
-                    Latest from Our Blog
+                    ✨ Featured from Our Blog
                   </Badge>
                 </div>
                 <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-azure-200 bg-white/80 backdrop-blur">
-                  <Link to={`/blog/${latestPost.slug}`}>
-                    {latestPost.coverImage && (
+                  <Link to={`/blog/${featuredPost.slug}`}>
+                    {featuredPost.coverImage && (
                       <div className="aspect-video overflow-hidden rounded-t-lg">
                         <img
-                          src={latestPost.coverImage}
-                          alt={latestPost.title}
+                          src={featuredPost.coverImage}
+                          alt={featuredPost.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
@@ -101,14 +101,20 @@ export default function Index() {
                     <CardHeader className="pb-2">
                       <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
                         <Calendar className="w-4 h-4" />
-                        <time dateTime={latestPost.date}>{formatDate(latestPost.date)}</time>
+                        <time dateTime={featuredPost.date}>{formatDate(featuredPost.date)}</time>
+                        {featuredPost.author?.name && (
+                          <>
+                            <span>•</span>
+                            <span>by {featuredPost.author.name}</span>
+                          </>
+                        )}
                       </div>
                       <CardTitle className="text-xl group-hover:text-azure transition-colors line-clamp-2">
-                        {latestPost.title}
+                        {featuredPost.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 line-clamp-3 mb-4">{latestPost.excerpt}</p>
+                      <p className="text-gray-600 line-clamp-3 mb-4">{featuredPost.excerpt}</p>
                       <div className="flex items-center text-azure group-hover:text-azure-600 transition-colors">
                         <span className="text-sm font-medium">Read More</span>
                         <ArrowRight className="ml-2 h-4 w-4" />
