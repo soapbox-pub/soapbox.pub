@@ -237,6 +237,7 @@ export default function Tools() {
                 </div>
               </CardContent>
             </Card>
+
           </div>
 
           {/* Additional Tools */}

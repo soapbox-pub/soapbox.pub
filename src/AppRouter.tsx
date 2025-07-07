@@ -18,6 +18,7 @@ import Stacks from "./pages/tools/Stacks";
 import MKStack from "./pages/tools/MKStack";
 import Nostrbook from "./pages/tools/Nostrbook";
 import NostrHub from "./pages/tools/NostrHub";
+import Shakespeare from "./pages/tools/Shakespeare";
 
 export function AppRouter() {
   return (
@@ -33,6 +34,7 @@ export function AppRouter() {
         <Route path="/tools/stacks" element={<Stacks />} />
         <Route path="/tools/nostrbook" element={<Nostrbook />} />
         <Route path="/tools/nostrhub" element={<NostrHub />} />
+        <Route path="/tools/shakespeare" element={<Shakespeare />} />
         {/* New primary route for MKStack */}
         <Route path="/mkstack" element={<MKStack />} />
         {/* Backwards compatibility redirect */}
