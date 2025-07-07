@@ -14,8 +14,8 @@ describe('Index (Home Page)', () => {
     // Check that the featured post section is displayed
     expect(screen.getByText('✨ Featured from Our Blog')).toBeInTheDocument();
     
-    // Check that the NSPs blog post (featured post) is displayed
-    expect(screen.getByText('🔧 Understanding Nostr Service Providers (NSPs): The Future of Decentralized AI Services')).toBeInTheDocument();
+    // Check that the Shakespeare blog post (featured post) is displayed
+    expect(screen.getByText('🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr')).toBeInTheDocument();
     expect(screen.getByText('by Alex Gleason')).toBeInTheDocument();
   });
 

@@ -31,8 +31,7 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/understanding-nostr-service-providers/nsp-cover.svg"
-  },
-  "featured": true
+  }
 };
 
 export default function UnderstandingNostrServiceProviders() {

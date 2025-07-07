@@ -37,7 +37,6 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
   },
-  "featured": true,
 };
 
 export default function MKStackTutorial() {

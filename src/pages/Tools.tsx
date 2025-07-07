@@ -44,6 +44,105 @@ export default function Tools() {
       <section className="pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            {/* Shakespeare - Featured */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-200 lg:col-span-2">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-2xl flex items-center justify-center">
+                      <span className="text-3xl">🎭</span>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-display font-bold">Shakespeare</h2>
+                      <p className="text-lg text-gray-600">AI-Powered Website Builder</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-lg text-gray-700 mb-6">
+                    Build professional websites through natural conversation with AI assistants. 
+                    Shakespeare runs entirely on the Nostr protocol, giving you true freedom and 
+                    control over your data and identity.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Conversational AI building
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Live preview system
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Instant deployment
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        True freedom from Big Tech
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Transparent pay-per-use pricing
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Powered by Nostr Service Providers
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button className="bg-blue-500 hover:bg-blue-600 text-white" asChild>
+                      <Link to="/tools/shakespeare">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button variant="outline" asChild>
+                      <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                        Start Building
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-br from-blue-100 to-yellow-100 p-4 lg:p-6 flex flex-col justify-center">
+                  <div className="w-full">
+                    <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
+                      <iframe
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Shakespeare Demo Video"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="text-center space-y-2">
+                      <p className="text-sm text-gray-600">See Shakespeare in action</p>
+                      <div className="flex justify-center gap-2 flex-wrap">
+                        <a href="https://shakespeare.diy/" target="_blank" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Try Shakespeare
+                          </Badge>
+                        </a>
+                        <a href="/blog/announcing-shakespeare" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Read Announcement
+                          </Badge>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
             {/* MKStack - Featured */}
             <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-violet-200 lg:col-span-2">
               <div className="grid lg:grid-cols-2 gap-0">
@@ -114,14 +213,7 @@ export default function Tools() {
                 <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-4 lg:p-6 flex flex-col justify-center">
                   <div className="w-full">
                     <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
-                      <iframe
-                        src="https://www.youtube.com/embed/kJRwAGmAmGI"
-                        title="MKStack Demo Video"
-                        className="w-full h-full"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/a2UGh6F0Mbg?si=UV2F6QUUoRmQJ2bi" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     </div>
                     <div className="text-center space-y-2">
                       <p className="text-sm text-gray-600">See MKStack in action</p>
