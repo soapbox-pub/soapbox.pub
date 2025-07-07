@@ -217,7 +217,7 @@ export default function Shakespeare() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Websites are automatically deployed with public URLs the moment they're created. Download source code as ZIP with one click.
+                  Websites are automatically deployed with public URLs the moment they're created. Download source code as ZIP, import existing projects, or submit pull requests.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
@@ -226,11 +226,11 @@ export default function Shakespeare() {
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Public URLs
+                    GitHub/GitLab import
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Source download
+                    Pull request creation
                   </div>
                 </div>
               </CardContent>
@@ -313,9 +313,9 @@ export default function Shakespeare() {
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">3</div>
                   <div>
-                    <h3 className="font-semibold mb-2">💬 Start Building</h3>
+                    <h3 className="font-semibold mb-2">💬 Start Building or Import</h3>
                     <p className="text-sm text-muted-foreground">
-                      Describe your website in natural language. The AI begins working immediately, showing progress in real-time through the live preview window.
+                      Create a new project by describing your website in natural language, or import an existing project from GitHub/GitLab to build upon. The AI begins working immediately, showing progress in real-time through the live preview window.
                     </p>
                   </div>
                 </div>
@@ -341,9 +341,9 @@ export default function Shakespeare() {
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">5</div>
                   <div>
-                    <h3 className="font-semibold mb-2">🚀 Deploy & Share</h3>
+                    <h3 className="font-semibold mb-2">🚀 Deploy & Collaborate</h3>
                     <p className="text-sm text-muted-foreground">
-                      Your website is automatically deployed with a public URL. Download the complete source code as a ZIP file or share your live website immediately.
+                      Your website is automatically deployed with a public URL. Download the complete source code as a ZIP file, share your live website immediately, or submit pull requests to existing GitHub/GitLab repositories for collaborative development.
                     </p>
                   </div>
                 </div>
@@ -394,7 +394,7 @@ export default function Shakespeare() {
               <Card className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
                 <CardContent className="p-4">
                   <p className="text-sm italic">
-                    "Make a cryptocurrency dashboard that tracks Bitcoin and Ethereum prices with charts and price alerts."
+                    "Import my existing React portfolio from GitHub and add a blog section with dark mode support."
                   </p>
                 </CardContent>
               </Card>
@@ -441,6 +441,122 @@ export default function Shakespeare() {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Project Import & Collaboration */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-emerald-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Import & Collaborate
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don't start from scratch. Import existing projects from GitHub or GitLab and enhance them with AI, then contribute back to the community with pull requests.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">🔗 Import Existing Projects</h3>
+                <p className="text-gray-600">
+                  Shakespeare can import and work with existing codebases from GitHub and GitLab repositories. 
+                  Whether it's your own project or an open-source repository you want to contribute to, 
+                  simply provide the repository URL and start building upon existing work.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <Code className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">GitHub & GitLab Support</h4>
+                    <p className="text-gray-600">Import public and private repositories with full context understanding</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <Sparkles className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">AI Code Understanding</h4>
+                    <p className="text-gray-600">AI analyzes existing codebase structure and patterns for intelligent modifications</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <Users className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Pull Request Creation</h4>
+                    <p className="text-gray-600">Generate pull requests with your improvements back to the original repository</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 border-green-200 dark:border-green-800">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">🚀 Example Workflow</h4>
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-green-600">1</span>
+                      </div>
+                      <p>Import a React project from GitHub</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-blue-600">2</span>
+                      </div>
+                      <p>Ask AI to "Add a dark mode toggle" or "Improve mobile responsiveness"</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-purple-600">3</span>
+                      </div>
+                      <p>Review changes in live preview</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-yellow-600">4</span>
+                      </div>
+                      <p>Submit pull request with AI-generated improvements</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950 border-purple-200 dark:border-purple-800">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-3 text-purple-700 dark:text-purple-300">🌟 Perfect For</h4>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                      Contributing to open-source projects
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                      Modernizing legacy codebases
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                      Adding features to existing projects
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                      Learning from real-world code
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
         </div>
       </section>
 
