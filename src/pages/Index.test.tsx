@@ -14,9 +14,9 @@ describe('Index (Home Page)', () => {
     // Check that the featured post section is displayed
     expect(screen.getByText('✨ Featured from Our Blog')).toBeInTheDocument();
     
-    // Check that the MKStack tutorial (featured post) is displayed
-    expect(screen.getByText('MKStack: Vibe Coding for Everyone')).toBeInTheDocument();
-    expect(screen.getByText('by Derek Ross')).toBeInTheDocument();
+    // Check that the Shakespeare announcement (featured post) is displayed
+    expect(screen.getByText('🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr')).toBeInTheDocument();
+    expect(screen.getByText('by Alex Gleason')).toBeInTheDocument();
   });
 
   it('renders the main hero content', () => {

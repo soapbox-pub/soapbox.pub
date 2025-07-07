@@ -1,5 +1,6 @@
 // Auto-generated blog posts index
 import * as announcingditto from '../../components/blog/posts/announcing-ditto';
+import * as announcingshakespeare from '../../components/blog/posts/announcing-shakespeare';
 import * as announcinghenhouse from '../../components/blog/posts/announcing-henhouse';
 import * as announcingnostrify from '../../components/blog/posts/announcing-nostrify';
 import * as announcingnostrhub from '../../components/blog/posts/announcing-nostrhub';
@@ -58,6 +59,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  announcingshakespeare.meta,
   announcingditto.meta,
   announcinghenhouse.meta,
   announcingnostrify.meta,
@@ -105,6 +107,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
   
   switch (normalizedSlug) {
+    case 'announcingshakespeare':
+      return (await import('../../components/blog/posts/announcing-shakespeare')).default;
     case 'announcingditto':
       return (await import('../../components/blog/posts/announcing-ditto')).default;
     case 'announcinghenhouse':
