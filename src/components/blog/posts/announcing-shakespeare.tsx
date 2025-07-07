@@ -459,7 +459,7 @@ export default function AnnouncingShakespeare() {
               </div>
             </CardContent>
           </Card>
-
+{/* 
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
@@ -472,7 +472,7 @@ export default function AnnouncingShakespeare() {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
 
@@ -496,48 +496,6 @@ export default function AnnouncingShakespeare() {
           </CardContent>
         </Card>
       </div>
-
-      <h3>Update Your Nostr Projects</h3>
-
-      <p>
-        Have a Nostr project that's been sitting in your GitHub repository, waiting for that feature you've always wanted to add? Shakespeare makes it incredibly easy to breathe new life into your existing Nostr applications.
-      </p>
-
-      <p>
-        Simply import your Nostr project and tell Shakespeare what you want to add: "Add NIP-57 Lightning Zaps support," "Implement NIP-65 relay list metadata," or "Create a better user profile interface." The AI understands Nostr protocols and can help you implement complex features with ease.
-      </p>
-
-      <div className="not-prose my-6">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-purple-900 dark:text-purple-100">⚡ Nostr Enhancement Examples</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div className="space-y-2">
-                <div className="font-medium text-purple-700 dark:text-purple-300">Protocol Features</div>
-                <ul className="text-muted-foreground space-y-1">
-                  <li>• Add Lightning Zaps (NIP-57)</li>
-                  <li>• Implement encrypted DMs (NIP-44)</li>
-                  <li>• Add relay recommendations (NIP-65)</li>
-                  <li>• Support long-form content (NIP-23)</li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <div className="font-medium text-pink-700 dark:text-pink-300">User Experience</div>
-                <ul className="text-muted-foreground space-y-1">
-                  <li>• Better profile management</li>
-                  <li>• Real-time notifications</li>
-                  <li>• Advanced search and filtering</li>
-                  <li>• Mobile-responsive design</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <p>
-        <strong>Finally, you can update that Nostr project with the feature you've been wanting!</strong> No more putting off improvements because of time constraints or technical complexity. Shakespeare brings your ideas to life through simple conversation.
-      </p>
 
       <h2>Powered by Nostr Service Providers (NSPs)</h2>
 
