@@ -27,8 +27,8 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-cover.svg",
   "date": "2025-07-06",
   "author": {
-    "name": "Alex Gleason",
-    "picture": "/assets/avatars/alex.png"
+    "name": "M.K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
     "url": "/assets/blog/announcing-shakespeare/shakespeare-cover.svg"

@@ -16,7 +16,7 @@ describe('Index (Home Page)', () => {
     
     // Check that the Shakespeare blog post (featured post) is displayed
     expect(screen.getByText('🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr')).toBeInTheDocument();
-    expect(screen.getByText('by Alex Gleason')).toBeInTheDocument();
+    expect(screen.getByText('by M.K. Fain')).toBeInTheDocument();
   });
 
   it('renders the main hero content', () => {

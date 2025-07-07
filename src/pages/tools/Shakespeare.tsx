@@ -109,26 +109,14 @@ export default function Shakespeare() {
                 </div>
                 
                 <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
-                  {/* Video placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-yellow-50">
-                    <div className="text-center space-y-4">
-                      <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
-                        <PlayCircle className="h-8 w-8 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Video Tutorial Coming Soon</h4>
-                        <p className="text-sm text-gray-600">Watch how to build websites with Shakespeare</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Placeholder for YouTube embed */}
+                  {/* YouTube embed */}
                   <iframe
-                    className="absolute inset-0 w-full h-full hidden"
-                    src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID"
-                    title="Shakespeare Tutorial"
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/LNUZ8kwShj4?si=EEwfv02tgyGCjI-5"
+                    title="YouTube video player"
                     frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                   ></iframe>
                 </div>

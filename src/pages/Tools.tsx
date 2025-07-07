@@ -115,11 +115,12 @@ export default function Tools() {
                   <div className="w-full">
                     <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
                       <iframe
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="Shakespeare Demo Video"
+                        src="https://www.youtube.com/embed/LNUZ8kwShj4?si=EEwfv02tgyGCjI-5"
+                        title="YouTube video player"
                         className="w-full h-full"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
                       />
                     </div>

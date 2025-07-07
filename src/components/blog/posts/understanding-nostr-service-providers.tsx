@@ -26,8 +26,8 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/understanding-nostr-service-providers/nsp-cover.svg",
   "date": "2025-07-07",
   "author": {
-    "name": "Alex Gleason",
-    "picture": "/assets/avatars/alex.png"
+    "name": "M.K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
     "url": "/assets/blog/understanding-nostr-service-providers/nsp-cover.svg"

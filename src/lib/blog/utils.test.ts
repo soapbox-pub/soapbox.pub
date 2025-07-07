@@ -8,7 +8,7 @@ describe('getFeaturedPost', () => {
     expect(featuredPost).toBeDefined();
     expect(featuredPost?.slug).toBe('announcing-shakespeare');
     expect(featuredPost?.title).toBe('🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr');
-    expect(featuredPost?.author.name).toBe('Alex Gleason');
+    expect(featuredPost?.author.name).toBe('M.K. Fain');
     expect(featuredPost?.featured).toBe(true);
   });
 
