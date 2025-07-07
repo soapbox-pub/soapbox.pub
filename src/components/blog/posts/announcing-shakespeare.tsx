@@ -370,6 +370,175 @@ export default function AnnouncingShakespeare() {
         </div>
       </div>
 
+      <h2>Import & Collaborate with Git Repositories</h2>
+
+      <p>
+        Shakespeare isn't just for building new projects from scratch — it's also a powerful tool for importing, editing, and collaborating on existing projects. Whether you want to enhance your own repositories or contribute to open source projects, Shakespeare makes it incredibly easy.
+      </p>
+
+      <h3>Import Any GitHub or GitLab Project</h3>
+
+      <p>
+        Simply provide a GitHub or GitLab clone URL, and Shakespeare will import the entire project into your workspace. The AI assistant can then help you understand the codebase, make improvements, add features, or fix bugs — all through natural conversation.
+      </p>
+{/* 
+      <div className="not-prose my-8">
+        <div className="space-y-4">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
+            <CardContent className="p-4">
+              <p className="text-sm italic">
+                "Import https://github.com/username/my-portfolio and help me add a dark mode toggle to the navigation."
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+            <CardContent className="p-4">
+              <p className="text-sm italic">
+                "Load https://gitlab.com/project/awesome-app and add a new user authentication system with login and signup forms."
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
+            <CardContent className="p-4">
+              <p className="text-sm italic">
+                "Import this React component library and help me create a new date picker component that matches the existing design system."
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div> */}
+
+      <h3>Seamless Pull Request Workflow</h3>
+
+      <p>
+        After making changes to an imported project, Shakespeare makes it easy to contribute back to the original repository. The platform generates clean, well-documented pull requests that maintainers will love to review.
+      </p>
+
+      <div className="not-prose my-8">
+        <div className="space-y-6">
+          <Card className="border-l-4 border-green-500">
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div>
+                  <h4 className="font-semibold mb-2">📥 Import Project</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Paste any GitHub or GitLab clone URL and Shakespeare imports the entire project, understanding its structure and dependencies.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-blue-500">
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div>
+                  <h4 className="font-semibold mb-2">🤖 AI-Assisted Editing</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Chat with the AI to understand the codebase, add features, fix bugs, or refactor code. The AI maintains context about the project's architecture and coding patterns.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-purple-500">
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div>
+                  <h4 className="font-semibold mb-2">🔄 Live Testing</h4>
+                  <p className="text-sm text-muted-foreground">
+                    See your changes in real-time through the live preview. Test functionality, verify fixes, and iterate quickly without leaving the browser.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-orange-500">
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-orange-100 dark:bg-orange-900 rounded-full p-2 text-orange-600 dark:text-orange-400 font-bold text-sm min-w-[2rem] text-center">4</div>
+                <div>
+                  <h4 className="font-semibold mb-2">📤 Submit Pull Request</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Shakespeare generates a clean pull request with detailed commit messages, change summaries, and documentation — ready for maintainer review.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <h3>Perfect for Open Source Contributions</h3>
+
+      <p>
+        Shakespeare democratizes open source contribution by removing technical barriers. Whether you're a seasoned developer or someone with great ideas but limited coding experience, you can now meaningfully contribute to projects you care about.
+      </p>
+
+      <div className="not-prose my-6">
+        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🌟 Contribution Examples</h4>
+            <ul className="text-sm space-y-2 text-muted-foreground">
+              <li>• <strong>Bug Fixes:</strong> "This button doesn't work on mobile — can you fix the responsive layout?"</li>
+              <li>• <strong>Feature Additions:</strong> "Add a search function to this documentation site"</li>
+              <li>• <strong>UI Improvements:</strong> "Make this form more accessible with proper ARIA labels"</li>
+              <li>• <strong>Performance Optimizations:</strong> "Optimize these images and add lazy loading"</li>
+              <li>• <strong>Documentation:</strong> "Add code examples to this README file"</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h3>Update Your Nostr Projects</h3>
+
+      <p>
+        Have a Nostr project that's been sitting in your GitHub repository, waiting for that feature you've always wanted to add? Shakespeare makes it incredibly easy to breathe new life into your existing Nostr applications.
+      </p>
+
+      <p>
+        Simply import your Nostr project and tell Shakespeare what you want to add: "Add NIP-57 Lightning Zaps support," "Implement NIP-65 relay list metadata," or "Create a better user profile interface." The AI understands Nostr protocols and can help you implement complex features with ease.
+      </p>
+
+      <div className="not-prose my-6">
+        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-purple-900 dark:text-purple-100">⚡ Nostr Enhancement Examples</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div className="space-y-2">
+                <div className="font-medium text-purple-700 dark:text-purple-300">Protocol Features</div>
+                <ul className="text-muted-foreground space-y-1">
+                  <li>• Add Lightning Zaps (NIP-57)</li>
+                  <li>• Implement encrypted DMs (NIP-44)</li>
+                  <li>• Add relay recommendations (NIP-65)</li>
+                  <li>• Support long-form content (NIP-23)</li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <div className="font-medium text-pink-700 dark:text-pink-300">User Experience</div>
+                <ul className="text-muted-foreground space-y-1">
+                  <li>• Better profile management</li>
+                  <li>• Real-time notifications</li>
+                  <li>• Advanced search and filtering</li>
+                  <li>• Mobile-responsive design</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <p>
+        <strong>Finally, you can update that Nostr project with the feature you've been wanting!</strong> No more putting off improvements because of time constraints or technical complexity. Shakespeare brings your ideas to life through simple conversation.
+      </p>
+
       <h2>Powered by Nostr Service Providers (NSPs)</h2>
 
       <p>
