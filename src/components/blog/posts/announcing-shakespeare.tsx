@@ -108,10 +108,10 @@ export default function AnnouncingShakespeare() {
         <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              🎬 Demo Video Coming Soon
+              🎬 Watch the Tutorial
             </h3>
             <p className="text-muted-foreground mb-4">
-              Watch Shakespeare build a complete website in real-time through AI conversation
+              Watch Shakespeare build a complete website with Derek Ross
             </p>
             <div className="aspect-video rounded-lg overflow-hidden">
               <img 
@@ -127,33 +127,16 @@ export default function AnnouncingShakespeare() {
       <h2>What is Shakespeare?</h2>
       
       <p>
-        Shakespeare represents a fundamental shift in how websites are built. Instead of wrestling with complex website builders or learning to code, you simply describe what you want in plain English, and Shakespeare's AI assistants bring your vision to life in real-time.
+        <strong>Shakespeare is a web interface where you can build websites through conversation with AI assistants. It combines the power of AI with the freedom of the <a href="/blog/nostr101" className="text-blue-600 hover:underline">Nostr protocol</a>, allowing you to create dynamic web apps without any coding or technical expertise.</strong>
       </p>
 
       <p>
-        Built entirely on the Nostr protocol, Shakespeare offers true freedom from the limitations of centralized, proprietary systems like Lovable. Unlike traditional website builders that lock you into their platforms, Shakespeare is decentralized, censorship-resistant, and puts you in complete control of your data and creations.
+        Unlike similar proprietary and centralized services like <strong>Lovable</strong>, Shakespeare offers true freedom through user choice. While other website builders that lock you into their platforms, with Shakespeare you can choose from multiple Nostr Service Providers (NSPs) to power your AI conversations. This means you can select the AI capabilities that best fit your needs, including the available tools and the price you want to pay.
       </p>
 
-      <div className="not-prose my-8">
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-3 text-blue-900 dark:text-blue-100">
-              💡 Example Conversation
-            </h3>
-            <div className="space-y-3 text-sm">
-              <div className="bg-white dark:bg-gray-800 p-3 rounded-lg border-l-4 border-blue-500">
-                <strong>You:</strong> "Build me a modern portfolio website for a web developer with project showcases, an about section, and a contact form. Use a dark theme with blue accents."
-              </div>
-              <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg border-l-4 border-blue-600">
-                <strong>Shakespeare AI:</strong> "I'll create a sleek portfolio site for you! Starting with a dark theme and blue accents. Let me build the header, hero section, and project showcase..."
-              </div>
-              <div className="text-center text-xs text-muted-foreground">
-                ⚡ Watch your website appear in real-time as the AI works
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <p>
+        This combination of AI web building + decenentralization is completely unique, and only possible on Nostr!
+      </p>
 
       <h2>Revolutionary Features</h2>
 
@@ -162,7 +145,7 @@ export default function AnnouncingShakespeare() {
         Shakespeare's natural language interface understands context and remembers your project history. Choose from multiple Nostr Service Providers (NSPs), each offering unique AI capabilities and specializations. Whether you're building a simple landing page or a complex web application, just describe what you want and watch it come to life.
       </p>
 
-      <div className="not-prose my-6">
+      {/* <div className="not-prose my-6">
         <Card>
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -175,14 +158,14 @@ export default function AnnouncingShakespeare() {
             </div>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <h3>Live Preview System</h3>
       <p>
         Desktop users enjoy a side-by-side view with the chat interface on one side and a live preview of their website on the other. Every change appears instantly — no refreshing, no waiting for builds. Mobile users get a seamless experience with easy switching between chat and preview modes.
       </p>
 
-      <div className="not-prose my-6">
+      {/* <div className="not-prose my-6">
         <Card>
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Live Preview Screenshot</h4>
@@ -195,7 +178,7 @@ export default function AnnouncingShakespeare() {
             </div>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <h3>Instant Deployment</h3>
       <p>
@@ -215,9 +198,9 @@ export default function AnnouncingShakespeare() {
 
       <h3>Transparent Pay-Per-Use</h3>
       <p>
-        No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Simple sites typically cost $2-5, complex applications $10-25, and small changes just $0.50-2. Pay with USD via Stripe or Bitcoin Lightning.
+        No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Pay Nostr Service Providers (NSPs) directly with USD via Stripe or Bitcoin Lightning. Shakespeare only takes a cut if you use our paid NSP: MKStack + Claude Sonnet 4. 
       </p>
-
+{/* 
       <div className="not-prose my-8">
         <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800">
           <CardContent className="p-6">
@@ -243,65 +226,7 @@ export default function AnnouncingShakespeare() {
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      <h2>What You Can Build</h2>
-
-      <p>
-        Shakespeare's AI can create virtually any type of website or web application. Here are just a few examples:
-      </p>
-
-      <div className="not-prose my-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-3 text-blue-600 dark:text-blue-400">📄 Business & Marketing</h3>
-              <ul className="space-y-1 text-sm">
-                <li>• Professional landing pages</li>
-                <li>• Portfolio websites</li>
-                <li>• Company websites</li>
-                <li>• Marketing sites with lead capture</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-3 text-green-600 dark:text-green-400">🛒 E-commerce Solutions</h3>
-              <ul className="space-y-1 text-sm">
-                <li>• Online stores with product catalogs</li>
-                <li>• Shopping cart functionality</li>
-                <li>• Product galleries</li>
-                <li>• Inventory management interfaces</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-3 text-purple-600 dark:text-purple-400">📱 Web Applications</h3>
-              <ul className="space-y-1 text-sm">
-                <li>• Social media platforms</li>
-                <li>• Dashboard interfaces</li>
-                <li>• Content management systems</li>
-                <li>• User authentication systems</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-3 text-orange-600 dark:text-orange-400">🎮 Interactive Experiences</h3>
-              <ul className="space-y-1 text-sm">
-                <li>• Browser-based games</li>
-                <li>• Interactive galleries</li>
-                <li>• Educational tools and quizzes</li>
-                <li>• Creative multimedia experiences</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      </div> */}
 
       <h2>How Shakespeare Works</h2>
 
@@ -379,7 +304,35 @@ export default function AnnouncingShakespeare() {
         </div>
       </div>
 
-      <h2>Example Prompts to Try</h2>
+
+      <h2>What You Can Build</h2>
+
+      <p>
+        Shakespeare's AI can create virtually any type of website or web application. To see real examples of what's possible with our technology stack, check out our showcase of live projects and applications.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-purple-200 dark:border-purple-800">
+          <CardContent className="p-6 text-center">
+            <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              🎨 View Live Examples
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Explore our showcase of real websites and applications built with our technology stack.
+            </p>
+            <Button 
+              asChild 
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            >
+              <a href="/showcase" rel="noopener noreferrer">
+                Visit Showcase →
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h3>Example Prompts to Try</h3>
 
       <div className="not-prose my-8">
         <div className="space-y-4">
