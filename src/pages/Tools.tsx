@@ -213,7 +213,15 @@ export default function Tools() {
                 <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-4 lg:p-6 flex flex-col justify-center">
                   <div className="w-full">
                     <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/a2UGh6F0Mbg?si=UV2F6QUUoRmQJ2bi" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                      <iframe
+                        src="https://www.youtube.com/embed/a2UGh6F0Mbg?si=UV2F6QUUoRmQJ2bi"
+                        title="MKStack Demo Video"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
                     </div>
                     <div className="text-center space-y-2">
                       <p className="text-sm text-gray-600">See MKStack in action</p>
