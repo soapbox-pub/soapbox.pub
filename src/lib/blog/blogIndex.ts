@@ -39,6 +39,7 @@ import * as soapboxfev13cryptocurrencyrelease from '../../components/blog/posts/
 import * as stacks from '../../components/blog/posts/stacks';
 import * as takedownbigtechwithgreatux from '../../components/blog/posts/take-down-big-tech-with-great-ux';
 import * as threadsserverblocking from '../../components/blog/posts/threads-server-blocking';
+import * as understandingnostrserviceproviders from '../../components/blog/posts/understanding-nostr-service-providers';
 import * as unlockingmastodonapps from '../../components/blog/posts/unlocking-mastodon-apps';
 import * as whatisthefediverse from '../../components/blog/posts/what-is-the-fediverse';
 
@@ -59,6 +60,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  understandingnostrserviceproviders.meta,
   announcingshakespeare.meta,
   announcingditto.meta,
   announcinghenhouse.meta,
@@ -107,6 +109,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
   
   switch (normalizedSlug) {
+    case 'understandingnostrserviceproviders':
+      return (await import('../../components/blog/posts/understanding-nostr-service-providers')).default;
     case 'announcingshakespeare':
       return (await import('../../components/blog/posts/announcing-shakespeare')).default;
     case 'announcingditto':

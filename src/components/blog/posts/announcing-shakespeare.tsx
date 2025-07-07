@@ -370,28 +370,14 @@ export default function AnnouncingShakespeare() {
         </div>
       </div>
 
-      <h2>Nostr Service Providers (NSPs)</h2>
+      <h2>Powered by Nostr Service Providers (NSPs)</h2>
 
       <p>
-        Shakespeare is powered by <strong>Nostr Service Providers (NSPs)</strong> — a revolutionary new way to access AI tools and services through the decentralized Nostr protocol. NSPs are the backbone that makes Shakespeare's AI-powered website building possible.
-      </p>
-
-      <h3>What are NSPs?</h3>
-      <p>
-        NSPs (Nostr Service Providers) are decentralized services that provide AI capabilities, tools, and resources through the Nostr protocol. Think of them as specialized AI assistants that you can connect to and use for different tasks. Each NSP offers unique capabilities, from different AI models to specialized tools for specific use cases.
+        Shakespeare is powered by <strong>Nostr Service Providers (NSPs)</strong> — a revolutionary new way to access AI tools and services through the decentralized Nostr protocol. NSPs were created specifically for Shakespeare and represent a breakthrough in decentralized AI services.
       </p>
 
       <p>
-        The tools you're using in Shakespeare — including which AI model powers your conversations — are all provided through NSPs. This means you have choice and flexibility in selecting the AI provider that best fits your needs and budget.
-      </p>
-
-      <h3>MKStack NSP: Bringing MKStack to the Web</h3>
-      <p>
-        One of the most powerful NSPs available is the <strong>MKStack NSP</strong>, which brings the full power of our <a href="/tools/mkstack" className="text-blue-600 hover:underline">MKStack framework</a> directly to your browser through Shakespeare. Anything you could build before with MKStack's command-line tools, you can now build in the web with Shakespeare thanks to the MKStack NSP!
-      </p>
-
-      <p>
-        The MKStack NSP provides comprehensive Nostr development capabilities, including 50+ NIPs, React components, TypeScript support, and instant deployment — all accessible through natural conversation in Shakespeare.
+        Unlike traditional AI services that lock you into a single provider, Shakespeare lets you choose from multiple NSPs, each offering different AI models, capabilities, and pricing. This means you get the freedom to select the AI provider that best fits your specific needs and budget.
       </p>
 
       <div className="not-prose my-6">
@@ -414,63 +400,25 @@ export default function AnnouncingShakespeare() {
         </Card>
       </div>
 
-      <h3>How NSPs Work</h3>
       <p>
-        NSP providers are hosted separately from Shakespeare and distributed over the Nostr network, which means anyone can create and run their own NSP. This creates a competitive marketplace where providers can offer different AI models, specialized tools, pricing models, and capabilities.
+        The <strong>MKStack NSP</strong> brings the full power of our <a href="/tools/mkstack" className="text-blue-600 hover:underline">MKStack framework</a> directly to your browser through Shakespeare, providing comprehensive Nostr development capabilities with 50+ NIPs, React components, and instant deployment.
       </p>
-
-      <p>
-        Similar to how <a href="https://openrouter.ai" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">OpenRouter</a> works, you buy credits on the NSP to access their services. The key difference is that NSPs are decentralized, censorship-resistant, and give you the freedom to choose from multiple providers rather than being locked into traditional proprietary APIs.
-      </p>
-
-      <h3>Anyone Can Make an NSP</h3>
-      <p>
-        The beauty of the NSP system is that it's completely open. Developers, AI researchers, and service providers can create their own NSPs offering specialized capabilities:
-      </p>
-
-      <ul>
-        <li><strong>Specialized AI Models:</strong> Fine-tuned models for specific domains like design, coding, or content creation</li>
-        <li><strong>Custom Tools:</strong> Unique development tools, APIs, or services</li>
-        <li><strong>Different Pricing:</strong> Competitive pricing models, subscription options, or even free tiers</li>
-        <li><strong>Regional Services:</strong> NSPs optimized for specific regions or languages</li>
-      </ul>
 
       <div className="not-prose my-6">
         <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🔗 Learn More About MKStack NSP</h4>
+            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🔍 Learn More About NSPs</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Explore the technical details and see examples of what you can build with the MKStack NSP.
+              Discover how to choose the right NSP for your projects and learn how developers can create their own NSPs.
             </p>
-            <div className="space-y-3">
-              <Button 
-                asChild 
-                variant="outline"
-                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
-              >
-                <a href="https://gitlab.com/soapbox-pub/mkstack-nsp" target="_blank" rel="noopener noreferrer">
-                  📚 MKStack NSP Documentation
-                </a>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline"
-                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
-              >
-                <a href="/tools/mkstack" rel="noopener noreferrer">
-                  🛠️ Explore MKStack Framework
-                </a>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline"
-                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
-              >
-                <a href="/showcase" rel="noopener noreferrer">
-                  🎨 View MKStack Showcase
-                </a>
-              </Button>
-            </div>
+            <Button 
+              asChild 
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+            >
+              <a href="/blog/understanding-nostr-service-providers">
+                📚 Complete Guide to NSPs →
+              </a>
+            </Button>
           </CardContent>
         </Card>
       </div>
@@ -492,7 +440,7 @@ export default function AnnouncingShakespeare() {
         <li><strong>Innovation is Accelerated:</strong> Rapid prototyping and iteration through AI collaboration</li>
       </ul>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card>
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Future Vision Screenshot</h4>
@@ -504,7 +452,7 @@ export default function AnnouncingShakespeare() {
             </div>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <h2>🎭 Get Started with Shakespeare</h2>
 
