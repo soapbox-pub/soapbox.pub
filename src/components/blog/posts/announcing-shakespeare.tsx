@@ -48,7 +48,7 @@ export default function AnnouncingShakespeare() {
             🤖 AI-Powered
           </Badge>
           <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-            🔐 Nostr Native
+            🗽 Truly Free
           </Badge>
           <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
             ⚡ Beta Launch
@@ -131,7 +131,7 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <p>
-        Built entirely on the Nostr protocol, Shakespeare is decentralized, censorship-resistant, and puts you in complete control of your data. There are no central servers collecting your information, and all communication between you and the AI is encrypted using Nostr's NIP-44 encryption standard.
+        Built entirely on the Nostr protocol, Shakespeare offers true freedom from the limitations of centralized, proprietary systems like Lovable. Unlike traditional website builders that lock you into their platforms, Shakespeare is decentralized, censorship-resistant, and puts you in complete control of your data and creations.
       </p>
 
       <div className="not-prose my-8">
@@ -202,15 +202,15 @@ export default function AnnouncingShakespeare() {
         Your websites are automatically deployed and accessible via public URLs the moment they're created. No setup required, no configuration headaches. Want the source code? Download the complete project as a ZIP file with one click.
       </p>
 
-      <h3>Nostr-Native Security</h3>
+      <h3>True Freedom from Big Tech</h3>
       <p>
-        Shakespeare leverages Nostr's decentralized architecture for unprecedented security and privacy:
+        Shakespeare breaks free from the constraints of centralized, proprietary website builders that lock you into their ecosystems:
       </p>
       <ul>
-        <li><strong>No Central Servers:</strong> Your data never touches centralized platforms</li>
-        <li><strong>End-to-End Encryption:</strong> All AI communication encrypted with NIP-44</li>
-        <li><strong>Self-Sovereign Identity:</strong> You control your identity through Nostr keys</li>
-        <li><strong>Open Source:</strong> Fully auditable codebase under AGPL 3.0 license</li>
+        <li><strong>No Platform Lock-in:</strong> Your websites and data belong to you, not a corporation</li>
+        <li><strong>Censorship Resistance:</strong> No single company can shut down your projects or restrict your creativity</li>
+        <li><strong>Self-Sovereign Identity:</strong> You control your identity through Nostr keys, not corporate accounts</li>
+        <li><strong>Open Source:</strong> Fully auditable codebase under AGPL 3.0 license — no proprietary black boxes</li>
       </ul>
 
       <h3>Transparent Pay-Per-Use</h3>
@@ -312,9 +312,9 @@ export default function AnnouncingShakespeare() {
               <div className="flex items-start space-x-4">
                 <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
                 <div>
-                  <h3 className="font-semibold mb-2">🔐 Connect with Nostr</h3>
+                  <h3 className="font-semibold mb-2">🗽 Connect with Freedom</h3>
                   <p className="text-sm text-muted-foreground">
-                    Use any Nostr browser extension (Alby, nos2x, Flamingo) as your login. No passwords or email required — your Nostr identity is your key to Shakespeare.
+                    Use any Nostr browser extension (Alby, nos2x, Flamingo) as your login. No corporate accounts or email required — your decentralized identity gives you true ownership and freedom.
                   </p>
                 </div>
               </div>
@@ -328,7 +328,7 @@ export default function AnnouncingShakespeare() {
                 <div>
                   <h3 className="font-semibold mb-2">🤖 Choose Your AI Assistant</h3>
                   <p className="text-sm text-muted-foreground">
-                    Browse available Nostr Service Providers (NSPs), each offering different AI capabilities, specializations, and pricing. Connect through encrypted Nostr communication.
+                    Browse available Nostr Service Providers (NSPs), each offering different AI capabilities, specializations, and pricing. Choose freely from a competitive marketplace instead of being locked into one vendor.
                   </p>
                 </div>
               </div>
@@ -467,7 +467,7 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <p>
-        Similar to how <a href="https://openrouter.ai" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">OpenRouter</a> works, you buy credits on the NSP to access their services. The key difference is that NSPs are decentralized, censorship-resistant, and communicate through encrypted Nostr messages rather than traditional APIs.
+        Similar to how <a href="https://openrouter.ai" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">OpenRouter</a> works, you buy credits on the NSP to access their services. The key difference is that NSPs are decentralized, censorship-resistant, and give you the freedom to choose from multiple providers rather than being locked into traditional proprietary APIs.
       </p>
 
       <h3>Anyone Can Make an NSP</h3>
