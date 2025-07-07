@@ -42,7 +42,7 @@ export default function Shakespeare() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
       <Navigation />
 
       {/* Hero Section */}
@@ -51,25 +51,40 @@ export default function Shakespeare() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
-                  🎭 AI Website Builder
+                <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200">
+                🤖 AI Website Builder
                 </Badge>
                 <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    Shakespeare
-                  </span>
+                    <span className="text-blue-600">
+                    <span className="text-black">🎭</span> Shakespeare
+                    </span>
                 </h1>
                 <p className="text-2xl font-medium text-gray-700">
                   Build Websites Through Conversation with AI
                 </p>
+
+                <div className="flex items-center space-x-6 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    Nostr Protocol
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    AI-Powered
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    Truly Free
+                  </div>
+                </div>
+
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Shakespeare brings the power of AI to everyone with a revolutionary website builder that runs entirely on the Nostr protocol. 
-                  Create professional websites through natural conversation with AI assistants, all while maintaining complete control over your data and identity.
+                  AI-powered website builder that runs entirely on the Nostr protocol. Create and deploy websites in minutes through conversation with AI assistants. Completely decentralized and open-source.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg" asChild>
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg" asChild>
                   <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
                     Start Building
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -83,84 +98,41 @@ export default function Shakespeare() {
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-6 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  Nostr Protocol
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  AI-Powered
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  Truly Free
-                </div>
-              </div>
             </div>
 
             <div className="relative">
-              {/* How It Works Overview */}
+              {/* Video Tutorial */}
               <div className="bg-white rounded-2xl shadow-2xl p-6 border">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Build Websites in 3 Steps</h3>
-                  <p className="text-sm text-gray-600">From conversation to deployment</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Watch Shakespeare in Action</h3>
+                  <p className="text-sm text-gray-600">See how easy it is to build websites with AI</p>
                 </div>
                 
-                <div className="space-y-4">
-                  {/* Step 1 */}
-                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-4 border border-purple-200">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
-                      <div className="flex-1">
-                        <div className="flex items-center mb-2">
-                          <MessageSquare className="h-4 w-4 text-purple-600 mr-2" />
-                          <span className="text-sm font-semibold text-purple-700">Describe Your Vision</span>
-                        </div>
-                        <div className="text-xs text-gray-700">Tell the AI what website you want to build</div>
+                <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                  {/* Video placeholder */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-yellow-50">
+                    <div className="text-center space-y-4">
+                      <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
+                        <PlayCircle className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Video Tutorial Coming Soon</h4>
+                        <p className="text-sm text-gray-600">Watch how to build websites with Shakespeare</p>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Step 2 */}
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
-                      <div className="flex-1">
-                        <div className="flex items-center mb-2">
-                          <Zap className="h-4 w-4 text-blue-600 mr-2" />
-                          <span className="text-sm font-semibold text-blue-700">Watch It Build</span>
-                        </div>
-                        <div className="text-xs text-gray-700">See your website come to life in real-time</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Step 3 */}
-                  <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border border-green-200">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
-                      <div className="flex-1">
-                        <div className="flex items-center mb-2">
-                          <Rocket className="h-4 w-4 text-green-600 mr-2" />
-                          <span className="text-sm font-semibold text-green-700">Deploy Instantly</span>
-                        </div>
-                        <div className="text-xs text-gray-700">Your website goes live automatically</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Call to Action */}
-                  <div className="mt-6 pt-4 border-t border-gray-200">
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500 mb-3">Ready to start building?</div>
-                      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg p-3 text-center">
-                        <div className="text-sm font-semibold">Visit shakespeare.diy</div>
-                        <div className="text-xs opacity-90">Connect with Nostr & start building</div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Placeholder for YouTube embed */}
+                  <iframe
+                    className="absolute inset-0 w-full h-full hidden"
+                    src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID"
+                    title="Shakespeare Tutorial"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -180,9 +152,9 @@ export default function Shakespeare() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-2 hover:border-purple-200 transition-colors">
+            <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <MessageSquare className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Conversational AI Building</CardTitle>
@@ -193,24 +165,24 @@ export default function Shakespeare() {
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
                     Context-aware AI
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
                     Project memory
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
                     Multiple NSPs
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-blue-200 transition-colors">
+            <Card className="border-2 hover:border-yellow-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Live Preview System</CardTitle>
@@ -221,24 +193,24 @@ export default function Shakespeare() {
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
                     Real-time updates
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
                     Desktop & mobile
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
                     Instant feedback
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-green-200 transition-colors">
+            <Card className="border-2 hover:border-blue-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Rocket className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>Instant Deployment</CardTitle>
@@ -249,24 +221,24 @@ export default function Shakespeare() {
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
                     Auto deployment
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
                     Public URLs
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
                     Source download
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-orange-200 transition-colors">
+            <Card className="border-2 hover:border-yellow-200 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle>True Freedom</CardTitle>
@@ -277,15 +249,15 @@ export default function Shakespeare() {
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
                     No lock-in
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
                     Censorship resistant
                   </div>
                   <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
                     Open source
                   </div>
                 </div>
@@ -296,7 +268,7 @@ export default function Shakespeare() {
       </section>
 
       {/* How Shakespeare Works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-yellow-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -308,10 +280,10 @@ export default function Shakespeare() {
           </div>
 
           <div className="space-y-8">
-            <Card className="border-l-4 border-purple-500">
+            <Card className="border-l-4 border-blue-500">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
                   <div>
                     <h3 className="font-semibold mb-2">🗽 Connect with Freedom</h3>
                     <p className="text-sm text-muted-foreground">
@@ -322,10 +294,10 @@ export default function Shakespeare() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-blue-500">
+            <Card className="border-l-4 border-yellow-500">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                  <div className="bg-yellow-100 dark:bg-yellow-900 rounded-full p-2 text-yellow-600 dark:text-yellow-400 font-bold text-sm min-w-[2rem] text-center">2</div>
                   <div>
                     <h3 className="font-semibold mb-2">🤖 Choose Your AI Assistant</h3>
                     <p className="text-sm text-muted-foreground">
@@ -336,10 +308,10 @@ export default function Shakespeare() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-green-500">
+            <Card className="border-l-4 border-blue-500">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">3</div>
                   <div>
                     <h3 className="font-semibold mb-2">💬 Start Building</h3>
                     <p className="text-sm text-muted-foreground">
@@ -350,10 +322,10 @@ export default function Shakespeare() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-orange-500">
+            <Card className="border-l-4 border-yellow-500">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 dark:bg-orange-900 rounded-full p-2 text-orange-600 dark:text-orange-400 font-bold text-sm min-w-[2rem] text-center">4</div>
+                  <div className="bg-yellow-100 dark:bg-yellow-900 rounded-full p-2 text-yellow-600 dark:text-yellow-400 font-bold text-sm min-w-[2rem] text-center">4</div>
                   <div>
                     <h3 className="font-semibold mb-2">🔄 Iterate & Refine</h3>
                     <p className="text-sm text-muted-foreground">
@@ -364,10 +336,10 @@ export default function Shakespeare() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-red-500">
+            <Card className="border-l-4 border-blue-500">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-red-100 dark:bg-red-900 rounded-full p-2 text-red-600 dark:text-red-400 font-bold text-sm min-w-[2rem] text-center">5</div>
+                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">5</div>
                   <div>
                     <h3 className="font-semibold mb-2">🚀 Deploy & Share</h3>
                     <p className="text-sm text-muted-foreground">
@@ -395,7 +367,7 @@ export default function Shakespeare() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-4">
-              <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+              <Card className="bg-gradient-to-r from-blue-50 to-yellow-50 dark:from-blue-950 dark:to-yellow-950">
                 <CardContent className="p-4">
                   <p className="text-sm italic">
                     "Build a modern portfolio website for a web developer with project showcases, an about section, and a contact form. Use a dark theme with blue accents."
@@ -403,7 +375,7 @@ export default function Shakespeare() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950">
+              <Card className="bg-gradient-to-r from-yellow-50 to-blue-50 dark:from-yellow-950 dark:to-blue-950">
                 <CardContent className="p-4">
                   <p className="text-sm italic">
                     "Create a Twitter-like social media app for Nostr with user profiles, real-time feeds, and the ability to post notes and images."
@@ -658,7 +630,7 @@ export default function Shakespeare() {
       {/* Get Started */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
               🎭 Get Started with Shakespeare
             </h2>
@@ -667,15 +639,10 @@ export default function Shakespeare() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Ready to Build the Future?</h3>
-                <p className="text-gray-600">
-                  Join thousands of creators, developers, and visionaries who are already building with Shakespeare. 
-                  Experience the future of web development through natural conversation with AI.
-                </p>
-              </div>
+          {/* Waitlist Form */}
+          <div className="max-w-2xl mx-auto">
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 text-center">Ready to Build the Future?</h3>
 
               <div className="space-y-4">
                 <Button 
@@ -692,51 +659,6 @@ export default function Shakespeare() {
                 </p>
               </div>
             </div>
-
-            <div className="space-y-6">
-              <Card className="border-purple-200 dark:border-purple-800">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
-                    🚀 Try Shakespeare Now
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Visit our website to explore Shakespeare and request beta access directly.
-                  </p>
-                  <Button 
-                    asChild 
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-                  >
-                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                      Visit shakespeare.diy →
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-blue-200 dark:border-blue-800">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
-                    📚 Learn More
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Read our announcement blog post to learn more about Shakespeare's revolutionary features.
-                  </p>
-                  <Button 
-                    asChild 
-                    variant="outline"
-                    className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
-                  >
-                    <a href="/blog/announcing-shakespeare">
-                      Read Announcement →
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Waitlist Form */}
-          <div className="max-w-2xl mx-auto">
             <ShakespeareMailchimpForm />
           </div>
         </div>
