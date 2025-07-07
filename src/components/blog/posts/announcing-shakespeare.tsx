@@ -131,7 +131,7 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <p>
-        Unlike similar proprietary and centralized services like <strong>Lovable</strong>, Shakespeare offers true freedom through user choice. While other website builders that lock you into their platforms, with Shakespeare you can choose from multiple Nostr Service Providers (NSPs) to power your AI conversations. This means you can select the AI capabilities that best fit your needs, including the available tools and the price you want to pay.
+        Unlike similar proprietary and centralized services like <strong>Lovable</strong>, Shakespeare offers true freedom through user choice. While other website builders that lock you into their platforms, with Shakespeare you can choose from multiple <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> to power your AI conversations. This means you can select the AI capabilities that best fit your needs, including the available tools and the price you want to pay.
       </p>
 
       <p>
@@ -198,7 +198,7 @@ export default function AnnouncingShakespeare() {
 
       <h3>Transparent Pay-Per-Use</h3>
       <p>
-        No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Pay Nostr Service Providers (NSPs) directly with USD via Stripe or Bitcoin Lightning. Shakespeare only takes a cut if you use our paid NSP: MKStack + Claude Sonnet 4. 
+        No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Pay <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> directly with USD via Stripe or Bitcoin Lightning. Shakespeare only takes a cut if you use our paid NSP: MKStack + Claude Sonnet 4. 
       </p>
 {/* 
       <div className="not-prose my-8">
@@ -253,7 +253,7 @@ export default function AnnouncingShakespeare() {
                 <div>
                   <h3 className="font-semibold mb-2">🤖 Choose Your AI Assistant</h3>
                   <p className="text-sm text-muted-foreground">
-                    Browse available Nostr Service Providers (NSPs), each offering different AI capabilities, specializations, and pricing. Choose freely from a competitive marketplace instead of being locked into one vendor.
+                    Browse available <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a>, each offering different AI capabilities, specializations, and pricing. Choose freely from a competitive marketplace instead of being locked into one vendor.
                   </p>
                 </div>
               </div>
