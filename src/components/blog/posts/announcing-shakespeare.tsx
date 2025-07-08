@@ -22,7 +22,7 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "announcing-shakespeare",
-  "title": "🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr",
+  "title": "🎭 Introducing Shakespeare: <BREAK-LINE-HERE> AI-Powered Website Builder on Nostr",
   "excerpt": "Shakespeare brings the power of MKStack to everyone with a revolutionary AI-powered website builder that runs entirely on the Nostr protocol. Build professional websites through natural conversation with AI assistants, all while maintaining complete control over your data and identity.",
   "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png",
   "date": "2025-07-09",
