@@ -240,7 +240,7 @@ export default function UnderstandingNostrServiceProviders() {
                     The flagship NSP that brings the full power of the <a href="/tools/mkstack" className="text-blue-600 hover:underline">MKStack framework</a> to Shakespeare. Offers comprehensive Nostr development capabilities with 50+ NIPs, React components, TypeScript support, and instant deployment.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="text-xs">Claude Sonnet 3.5</Badge>
+                    <Badge variant="outline" className="text-xs">Claude Sonnet 4</Badge>
                     <Badge variant="outline" className="text-xs">Nostr Specialized</Badge>
                     <Badge variant="outline" className="text-xs">Pay-per-use</Badge>
                   </div>
