@@ -139,7 +139,7 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <p>
-        This combination of AI web building + decenentralization is completely unique, and only possible on Nostr!
+        This combination of AI web building + decentralization is completely unique, and only possible on Nostr!
       </p>
 
       <h2>Building Nostr Apps has Never Been Easier</h2>
