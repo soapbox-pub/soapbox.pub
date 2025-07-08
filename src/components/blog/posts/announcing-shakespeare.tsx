@@ -176,33 +176,6 @@ export default function AnnouncingShakespeare() {
       <p>
         No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Pay <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> directly with USD via Stripe or Bitcoin Lightning. Shakespeare only takes a cut if you use our paid NSP: MKStack + Claude Sonnet 4. 
       </p>
-{/* 
-      <div className="not-prose my-8">
-        <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-3 text-green-900 dark:text-green-100">
-              💸 Pricing Examples
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
-                <div className="font-semibold text-green-600 dark:text-green-400">Simple Landing Page</div>
-                <div className="text-2xl font-bold">$2-5</div>
-                <div className="text-muted-foreground">Portfolio, business card site</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
-                <div className="font-semibold text-blue-600 dark:text-blue-400">Complex Web App</div>
-                <div className="text-2xl font-bold">$10-25</div>
-                <div className="text-muted-foreground">E-commerce, dashboards</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
-                <div className="font-semibold text-purple-600 dark:text-purple-400">Small Changes</div>
-                <div className="text-2xl font-bold">$0.50-2</div>
-                <div className="text-muted-foreground">Tweaks, color changes</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div> */}
 
       <h2>How Shakespeare Works</h2>
 
@@ -449,7 +422,7 @@ export default function AnnouncingShakespeare() {
       <p>
         Shakespeare democratizes open source contribution by removing technical barriers. Whether you're a seasoned developer or someone with great ideas but limited coding experience, you can now meaningfully contribute to projects you care about.
       </p>
-
+{/* 
       <div className="not-prose my-6">
         <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
           <CardContent className="p-6">
@@ -463,7 +436,7 @@ export default function AnnouncingShakespeare() {
             </ul>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <h2>Powered by Nostr Service Providers (NSPs)</h2>
 
@@ -473,6 +446,17 @@ export default function AnnouncingShakespeare() {
 
       <p>
         Unlike traditional AI services that lock you into a single provider, Shakespeare lets you choose from multiple NSPs, each offering different AI models, capabilities, and pricing. This means you get the freedom to select the AI provider that best fits your specific needs and budget.
+      </p>
+
+
+      <img 
+        src="/assets/blog/announcing-shakespeare/choose-nsp.png" 
+        alt="Shakespeare Example Project"
+        className="rounded-lg shadow-md"
+      />
+
+      <p>
+        The <strong>MKStack NSP</strong> brings the full power of our <a href="/tools/mkstack" className="text-blue-600 hover:underline">MKStack framework</a> directly to your browser through Shakespeare, providing comprehensive Nostr development capabilities with 50+ NIPs, React components, and instant deployment.
       </p>
 
       <div className="not-prose my-6">
@@ -494,10 +478,6 @@ export default function AnnouncingShakespeare() {
           </CardContent>
         </Card>
       </div>
-
-      <p>
-        The <strong>MKStack NSP</strong> brings the full power of our <a href="/tools/mkstack" className="text-blue-600 hover:underline">MKStack framework</a> directly to your browser through Shakespeare, providing comprehensive Nostr development capabilities with 50+ NIPs, React components, and instant deployment.
-      </p>
 
       <div className="not-prose my-6">
         <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800">
