@@ -107,20 +107,20 @@ export default function Shakespeare() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Watch Shakespeare in Action</h3>
                   <p className="text-sm text-gray-600">See how easy it is to build websites with AI</p>
                 </div>
-                
+
                 <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
                   {/* YouTube embed */}
                   <iframe
                     className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/LNUZ8kwShj4?si=EEwfv02tgyGCjI-5"
-                    title="YouTube video player"
+                    src="https://www.youtube.com/embed/pK9gHjQr7nc?si=aoT84KgpSJ3iruZw"
+                    title="Shakespeare Tutorial with Derek Ross"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                   ></iframe>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -397,8 +397,8 @@ export default function Shakespeare() {
                   <p className="text-muted-foreground mb-4">
                     Explore our showcase of real websites and applications built with our technology stack.
                   </p>
-                  <Button 
-                    asChild 
+                  <Button
+                    asChild
                     className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
                   >
                     <a href="/showcase" rel="noopener noreferrer">
@@ -416,8 +416,8 @@ export default function Shakespeare() {
                   <p className="text-muted-foreground mb-4">
                     Shakespeare uses the MKStack framework for comprehensive Nostr development capabilities.
                   </p>
-                  <Button 
-                    asChild 
+                  <Button
+                    asChild
                     variant="outline"
                     className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
                   >
@@ -449,8 +449,8 @@ export default function Shakespeare() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900">🔗 Import Existing Projects</h3>
                 <p className="text-gray-600">
-                  Shakespeare can import and work with existing codebases from GitHub and GitLab repositories. 
-                  Whether it's your own project or an open-source repository you want to contribute to, 
+                  Shakespeare can import and work with existing codebases from GitHub and GitLab repositories.
+                  Whether it's your own project or an open-source repository you want to contribute to,
                   simply provide the repository URL and start building upon existing work.
                 </p>
               </div>
@@ -565,8 +565,8 @@ export default function Shakespeare() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900">Choose Your AI Provider</h3>
                 <p className="text-gray-600">
-                  Unlike traditional AI services that lock you into a single provider, Shakespeare lets you choose from multiple NSPs, 
-                  each offering different AI models, capabilities, and pricing. This means you get the freedom to select the AI provider 
+                  Unlike traditional AI services that lock you into a single provider, Shakespeare lets you choose from multiple NSPs,
+                  each offering different AI models, capabilities, and pricing. This means you get the freedom to select the AI provider
                   that best fits your specific needs and budget.
                 </p>
               </div>
@@ -642,8 +642,8 @@ export default function Shakespeare() {
                 <p className="text-muted-foreground mb-4">
                   Discover how to choose the right NSP for your projects and learn how developers can create their own NSPs.
                 </p>
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                 >
                   <a href="/blog/understanding-nostr-service-providers">
@@ -749,8 +749,8 @@ export default function Shakespeare() {
               <h3 className="text-2xl font-bold text-gray-900 text-center">Ready to Build the Future?</h3>
 
               <div className="space-y-4">
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   size="lg"
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
                 >

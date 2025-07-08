@@ -71,8 +71,8 @@ export default function AnnouncingShakespeare() {
               <p className="text-muted-foreground mb-4">
                 Visit our website to explore Shakespeare and request beta access directly.
               </p>
-              <Button 
-                asChild 
+              <Button
+                asChild
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
               >
                 <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
@@ -90,8 +90,8 @@ export default function AnnouncingShakespeare() {
               <p className="text-muted-foreground mb-4">
                 Get notified when your beta invite is ready and receive updates.
               </p>
-              <Button 
-                asChild 
+              <Button
+                asChild
                 variant="outline"
                 className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
               >
@@ -114,18 +114,22 @@ export default function AnnouncingShakespeare() {
               Watch Shakespeare build a complete website with Derek Ross
             </p>
             <div className="aspect-video rounded-lg overflow-hidden">
-              <img 
-                src="/assets/blog/announcing-shakespeare/demo-video-placeholder.svg" 
-                alt="Shakespeare Demo Video Placeholder"
-                className="w-full h-full object-cover"
-              />
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/pK9gHjQr7nc?si=aoT84KgpSJ3iruZw"
+                title="Shakespeare Tutorial with Derek Ross"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
           </CardContent>
         </Card>
       </div>
 
       <h2>What is Shakespeare?</h2>
-      
+
       <p>
         <strong>Shakespeare is a web interface where you can build websites through conversation with AI assistants. It combines the power of AI with the freedom of the <a href="/blog/nostr101" className="text-blue-600 hover:underline">Nostr protocol</a>, allowing you to create dynamic web apps without any coding or technical expertise.</strong>
       </p>
@@ -150,8 +154,8 @@ export default function AnnouncingShakespeare() {
         Desktop users enjoy a side-by-side view with the chat interface on one side and a live preview of their website on the other. Every change appears instantly — no refreshing, no waiting for builds. Mobile users get a seamless experience with easy switching between chat and preview modes.
       </p>
 
-      <img 
-        src="/assets/blog/announcing-shakespeare/shakespeare-example-project.png" 
+      <img
+        src="/assets/blog/announcing-shakespeare/shakespeare-example-project.png"
         alt="Shakespeare Example Project"
         className="rounded-lg shadow-md"
       />
@@ -174,7 +178,7 @@ export default function AnnouncingShakespeare() {
 
       <h3>Transparent Pay-Per-Use</h3>
       <p>
-        No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Pay <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> directly with USD via Stripe or Bitcoin Lightning. Shakespeare only takes a cut if you use our paid NSP: MKStack + Claude Sonnet 4. 
+        No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking. Pay <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> directly with USD via Stripe or Bitcoin Lightning. Shakespeare only takes a cut if you use our paid NSP: MKStack + Claude Sonnet 4.
       </p>
 
       <h2>How Shakespeare Works</h2>
@@ -269,8 +273,8 @@ export default function AnnouncingShakespeare() {
             <p className="text-muted-foreground mb-4">
               Explore our showcase of real websites and applications built with our technology stack.
             </p>
-            <Button 
-              asChild 
+            <Button
+              asChild
               className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
             >
               <a href="/showcase" rel="noopener noreferrer">
@@ -322,7 +326,7 @@ export default function AnnouncingShakespeare() {
       <p>
         Simply provide a GitHub or GitLab clone URL, and Shakespeare will import the entire project into your workspace. The AI assistant can then help you understand the codebase, make improvements, add features, or fix bugs — all through natural conversation.
       </p>
-{/* 
+{/*
       <div className="not-prose my-8">
         <div className="space-y-4">
           <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
@@ -394,7 +398,7 @@ export default function AnnouncingShakespeare() {
               </div>
             </CardContent>
           </Card>
-{/* 
+{/*
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
@@ -416,7 +420,7 @@ export default function AnnouncingShakespeare() {
       <p>
         Shakespeare democratizes open source contribution by removing technical barriers. Whether you're a seasoned developer or someone with great ideas but limited coding experience, you can now meaningfully contribute to projects you care about.
       </p>
-{/* 
+{/*
       <div className="not-prose my-6">
         <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
           <CardContent className="p-6">
@@ -443,8 +447,8 @@ export default function AnnouncingShakespeare() {
       </p>
 
 
-      <img 
-        src="/assets/blog/announcing-shakespeare/choose-nsp.png" 
+      <img
+        src="/assets/blog/announcing-shakespeare/choose-nsp.png"
         alt="Shakespeare Example Project"
         className="rounded-lg shadow-md"
       />
@@ -460,8 +464,8 @@ export default function AnnouncingShakespeare() {
             <p className="text-muted-foreground mb-4">
               We're currently offering a <strong>free Gemini Flash NSP</strong> so you can try Shakespeare without adding credits! This gives you access to Google's Gemini Flash model at no cost during the beta period.
             </p>
-            <Button 
-              asChild 
+            <Button
+              asChild
               variant="outline"
               className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
             >
@@ -480,8 +484,8 @@ export default function AnnouncingShakespeare() {
             <p className="text-sm text-muted-foreground mb-4">
               Discover how to choose the right NSP for your projects and learn how developers can create their own NSPs.
             </p>
-            <Button 
-              asChild 
+            <Button
+              asChild
               className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
             >
               <a href="/blog/understanding-nostr-service-providers">
@@ -545,8 +549,8 @@ export default function AnnouncingShakespeare() {
               Join thousands of creators, developers, and visionaries who are already building with Shakespeare.
             </p>
             <div className="space-y-4">
-              <Button 
-                asChild 
+              <Button
+                asChild
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
               >
@@ -566,7 +570,7 @@ export default function AnnouncingShakespeare() {
 
       <p className="text-sm text-muted-foreground text-center">
         <em>
-          Shakespeare is developed by the team behind Soapbox, Ditto, and Nostrify. 
+          Shakespeare is developed by the team behind Soapbox, Ditto, and Nostrify.
           Follow our journey on Nostr and stay updated with the latest developments in decentralized web technology.
         </em>
       </p>
