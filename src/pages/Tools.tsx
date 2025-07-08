@@ -49,7 +49,7 @@ export default function Tools() {
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-yellow-100 to-blue-100 rounded-2xl flex items-center justify-center">
                       <span className="text-3xl">🎭</span>
                     </div>
                     <div>

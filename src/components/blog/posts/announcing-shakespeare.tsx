@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "announcing-shakespeare",
   "title": "🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr",
   "excerpt": "Shakespeare brings the power of MKStack to everyone with a revolutionary AI-powered website builder that runs entirely on the Nostr protocol. Build professional websites through natural conversation with AI assistants, all while maintaining complete control over your data and identity.",
-  "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-cover.svg",
+  "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png",
   "date": "2025-07-06",
   "author": {
     "name": "M.K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-shakespeare/shakespeare-cover.svg"
+    "url": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png"
   },
   "featured": true
 };
