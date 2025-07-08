@@ -351,12 +351,6 @@ export default function AnnouncingShakespeare() {
         </div>
       </div> */}
 
-      <h3>Seamless Pull Request Workflow</h3>
-
-      <p>
-        After making changes to an imported project, Shakespeare makes it easy to contribute back to the original repository. The platform generates clean, well-documented pull requests that maintainers will love to review.
-      </p>
-
       <div className="not-prose my-8">
         <div className="space-y-6">
           <Card className="border-l-4 border-green-500">
