@@ -746,22 +746,20 @@ export default function Shakespeare() {
           {/* Waitlist Form */}
           <div className="max-w-2xl mx-auto">
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 text-center">Ready to Build the Future?</h3>
-
-              <div className="space-y-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-                >
-                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                    🚀 Start Building at shakespeare.diy
-                  </a>
-                </Button>
-                <p className="text-sm text-muted-foreground text-center">
-                  Or join the waitlist below for email updates and priority access
-                </p>
-              </div>
+                <div className="flex flex-col items-center space-y-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
+                  >
+                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                      🚀 Start Building at shakespeare.diy
+                    </a>
+                  </Button>
+                  <p className="text-sm text-muted-foreground text-center">
+                    Or join the waitlist below for email updates and priority access
+                  </p>
+                </div>
             </div>
             <ShakespeareMailchimpForm />
           </div>
