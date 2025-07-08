@@ -138,47 +138,23 @@ export default function AnnouncingShakespeare() {
         This combination of AI web building + decenentralization is completely unique, and only possible on Nostr!
       </p>
 
-      <h2>Revolutionary Features</h2>
+      <h2>Building Nostr Apps has Never Been Easier</h2>
 
       <h3>Conversational AI Building</h3>
       <p>
         Shakespeare's natural language interface understands context and remembers your project history. Choose from multiple Nostr Service Providers (NSPs), each offering unique AI capabilities and specializations. Whether you're building a simple landing page or a complex web application, just describe what you want and watch it come to life.
       </p>
 
-      {/* <div className="not-prose my-6">
-        <Card>
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="aspect-video rounded-lg overflow-hidden">
-              <img 
-                src="/assets/blog/announcing-shakespeare/chat-interface.svg" 
-                alt="Shakespeare Chat Interface"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </CardContent>
-        </Card>
-      </div> */}
-
       <h3>Live Preview System</h3>
       <p>
         Desktop users enjoy a side-by-side view with the chat interface on one side and a live preview of their website on the other. Every change appears instantly — no refreshing, no waiting for builds. Mobile users get a seamless experience with easy switching between chat and preview modes.
       </p>
 
-      {/* <div className="not-prose my-6">
-        <Card>
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">📸 Live Preview Screenshot</h4>
-            <div className="aspect-video rounded-lg overflow-hidden">
-              <img 
-                src="/assets/blog/announcing-shakespeare/live-preview.svg" 
-                alt="Shakespeare Live Preview"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </CardContent>
-        </Card>
-      </div> */}
+      <img 
+        src="/assets/blog/announcing-shakespeare/shakespeare-example-project.png" 
+        alt="Shakespeare Example Project"
+        className="rounded-lg shadow-md"
+      />
 
       <h3>Instant Deployment</h3>
       <p>
@@ -355,15 +331,7 @@ export default function AnnouncingShakespeare() {
           <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
             <CardContent className="p-4">
               <p className="text-sm italic">
-                "Build an e-commerce store for handmade jewelry with product galleries, shopping cart, and a clean, elegant design."
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
-            <CardContent className="p-4">
-              <p className="text-sm italic">
-                "Make a cryptocurrency dashboard that tracks Bitcoin and Ethereum prices with charts and price alerts."
+                "Design a travel blog with comments, and the ability to like and share posts."
               </p>
             </CardContent>
           </Card>
