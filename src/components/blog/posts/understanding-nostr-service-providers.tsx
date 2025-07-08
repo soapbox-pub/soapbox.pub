@@ -23,14 +23,14 @@ export const meta: BlogPostMeta = {
   "slug": "understanding-nostr-service-providers",
   "title": "🔧 Understanding Nostr Service Providers (NSPs): The Future of Decentralized AI Services",
   "excerpt": "Discover how Nostr Service Providers (NSPs) are revolutionizing AI services through decentralization. Learn how to choose the right NSP for your Shakespeare projects and explore how developers can create their own NSPs to serve the growing ecosystem.",
-  "coverImage": "/assets/blog/understanding-nostr-service-providers/nsp-cover.svg",
-  "date": "2025-07-07",
+  "coverImage": "/assets/blog/announcing-shakespeare/nsp-cover.png",
+  "date": "2025-07-08",
   "author": {
     "name": "M.K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/understanding-nostr-service-providers/nsp-cover.svg"
+    "url": "/assets/blog/announcing-shakespeare/nsp-cover.png"
   }
 };
 
