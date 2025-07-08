@@ -171,7 +171,7 @@ export default function AnnouncingShakespeare() {
       </p>
       <ul>
         <li><strong>No Platform Lock-in:</strong> Your websites and data belong to you, not to a corporation</li>
-        <li><strong>Censorship Resistance:</strong> No single company can shut down your projects or restrict your creativity</li>
+        <li><strong>Censorship Resistance:</strong> No single company or government can shut down your projects or restrict your creativity</li>
         <li><strong>Self-Sovereign Identity:</strong> You control your identity through Nostr keys, not corporate accounts</li>
         <li><strong>Open Source:</strong> Fully auditable codebase under AGPL 3.0 license — no proprietary black boxes</li>
       </ul>
