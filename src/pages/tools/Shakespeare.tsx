@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ShakespeareMailchimpForm } from "@/components/ShakespeareMailchimpForm";
+import { RotatingText } from "@/components/RotatingText";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Shakespeare() {
@@ -131,8 +132,24 @@ export default function Shakespeare() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Revolutionary Features
+            {/* Rotating Banner */}
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">
+              "Shakespeare, build me a{" "}
+              <RotatingText
+                words={[
+                  { text: "portfolio", color: "text-blue-600" },
+                  { text: "blog", color: "text-purple-600" },
+                  { text: "website", color: "text-green-600" },
+                  { text: "dashboard", color: "text-orange-500" },
+                  { text: "community", color: "text-pink-600" },
+                  { text: "Twitter clone", color: "text-indigo-600" },
+                  { text: "storefront", color: "text-red-500" },
+                  { text: "video feed", color: "text-teal-600" }
+                ]}
+                interval={2500}
+                className="font-display font-bold"
+              />
+              "
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Shakespeare combines the power of AI with the freedom of the Nostr protocol, creating a completely unique website building experience.
