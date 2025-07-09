@@ -126,33 +126,41 @@
 
         /* Hero section */
         .hero {
-            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 50%, #fef3c7 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%);
             padding: 60px 20px;
             text-align: center;
         }
 
         .hero-badge {
             display: inline-block;
-            background: #f3e8ff;
-            color: #7c3aed;
+            background: #dbeafe;
+            color: #1d4ed8;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
             margin: 0 0 20px;
-            border: 1px solid #e9d5ff;
+            border: 1px solid #93c5fd;
         }
 
         .hero-title {
             font-size: 48px;
             font-weight: bold;
             color: #1e293b;
-            margin: 0 0 20px;
+            margin: 0 0 10px;
             line-height: 1.1;
         }
 
+        .hero-subtitle {
+            font-size: 32px;
+            font-weight: 600;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+
         .hero-title .gradient-text {
-            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -206,11 +214,6 @@
             line-height: 60px;
             display: block;
         }
-
-        .shakespeare-icon { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); }
-        .ai-icon { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
-        .freedom-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
-        .nsp-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
 
         .content-title {
             font-size: 24px;
@@ -298,8 +301,9 @@
         }
 
         .btn-shakespeare {
-            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-            color: #ffffff !important;
+            background: #ffffff;
+            color: #000000 !important;
+            border: 2px solid #f59e0b;
         }
 
         .btn-free {
@@ -319,7 +323,7 @@
         }
 
         .btn-shakespeare, .btn-shakespeare:visited, .btn-shakespeare:hover, .btn-shakespeare:active {
-            color: #ffffff !important;
+            color: #000000 !important;
             text-decoration: none !important;
         }
 
@@ -349,7 +353,7 @@
 
         /* CTA section */
         .cta {
-            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%);
             padding: 50px 20px;
             text-align: center;
         }
@@ -357,13 +361,13 @@
         .cta h2 {
             font-size: 32px;
             font-weight: bold;
-            color: #ffffff;
+            color: #1e293b;
             margin: 0 0 15px;
         }
 
         .cta p {
             font-size: 18px;
-            color: #e2e8f0;
+            color: #475569;
             margin: 0 0 30px;
             line-height: 1.5;
         }
@@ -410,6 +414,10 @@
                 font-size: 32px;
             }
 
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
             .hero-text {
                 font-size: 18px;
             }
@@ -448,7 +456,7 @@
         <div class="header">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="https://soapbox.pub/logo.svg" alt="Soapbox Logo" class="logo">
+                    <img src="https://media.ditto.pub/227b98784c11af32a9694b9571aa9ecddc47017b909a6230436b0c6e30647d55.png" alt="Soapbox Logo" class="logo">
                     <h1>Soapbox</h1>
                 </div>
             </div>
@@ -456,41 +464,43 @@
 
         <!-- Hero Section -->
         <div class="hero">
-            <div class="hero-badge">🎭 Introducing Shakespeare</div>
             <h1 class="hero-title">
-                AI-Powered <span class="gradient-text">Website Builder</span>
+                🎭&nbsp;Shakespeare
             </h1>
+            <h2 class="hero-subtitle">
+                AI-Powered <span class="gradient-text">Website Builder</span> on&nbsp;Nostr
+            </h2>
             <p class="hero-text">
                 Build professional websites through natural conversation with AI assistants,
                 all while maintaining complete control over your data and identity on Nostr.
             </p>
             <div class="hero-buttons">
                 <a href="https://shakespeare.diy" class="btn btn-shakespeare">Try Shakespeare Now</a>
-                <a href="https://www.youtube.com/watch?v=pK9gHjQr7nc" class="btn btn-secondary">🎬 Watch Derek's Tutorial</a>
+                <a href="https://soapbox.pub/blog/announcing-shakespeare" class="btn btn-primary">📖 Read the Announcement</a>
             </div>
         </div>
 
         <!-- Tutorial Video Feature -->
         <div class="section">
             <h2 class="section-title">🎬 Watch Shakespeare in Action</h2>
-            <p class="section-subtitle">See Derek Ross build a complete website through conversation with AI</p>
+            <p class="section-subtitle">See Derek Ross build a complete website with Shakespeare</p>
 
-            <div class="content-card" style="border: 3px solid #7c3aed; background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 100%);">
+            <div class="content-card" style="border: 3px solid #3b82f6; background: linear-gradient(135deg, #dbeafe 0%, #ffffff 100%);">
                 <div class="image-showcase">
                     <a href="https://www.youtube.com/watch?v=pK9gHjQr7nc" target="_blank" rel="noopener noreferrer">
-                        <img src="https://i.ytimg.com/vi/pK9gHjQr7nc/maxresdefault.jpg" alt="Shakespeare Tutorial with Derek Ross" class="showcase-image" style="border-radius: 12px; box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);">
+                        <img src="https://i.ytimg.com/vi/pK9gHjQr7nc/maxresdefault.jpg" alt="Shakespeare Tutorial with Derek Ross" class="showcase-image" style="border-radius: 12px; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);">
                     </a>
                 </div>
 
-                <h3 class="content-title" style="color: #7c3aed;">Derek Ross Builds with Shakespeare</h3>
+                <h3 class="content-title" style="color: #3b82f6;">Derek Ross Builds with Shakespeare</h3>
                 <p class="content-description" style="text-align: center; font-size: 18px; color: #475569;">
                     Watch as Derek Ross demonstrates the power of conversational web development. In this tutorial,
                     you'll see how Shakespeare transforms simple English descriptions into fully functional websites
                     in real-time.
                 </p>
 
-                <div style="background: rgba(124, 58, 237, 0.1); padding: 20px; border-radius: 12px; margin: 20px 0;">
-                    <h4 style="color: #7c3aed; margin: 0 0 10px; font-size: 16px;">What you'll learn:</h4>
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #3b82f6; margin: 0 0 10px; font-size: 16px;">What you'll learn:</h4>
                     <ul class="feature-list">
                         <li>How to start a conversation with Shakespeare's AI</li>
                         <li>Building websites through natural language</li>
@@ -511,7 +521,9 @@
             <p class="section-subtitle">Revolutionary AI-powered website builder on the Nostr protocol</p>
 
             <div class="content-card">
-                <div class="content-icon shakespeare-icon">🎭</div>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="https://media.ditto.pub/d8349276a8d912450a53bda4c8c518eb5264d80bc1798efbef138e9fbe2be651.png" alt="Shakespeare Project Screenshot" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                </div>
                 <p class="content-description" style="text-align: center; font-size: 18px;">
                     Shakespeare is a web interface where you can build websites through conversation with AI assistants.
                     Simply describe what you want in plain English, and watch as professional websites come to life in real-time.
@@ -524,34 +536,6 @@
                     <li>Built on decentralized Nostr protocol</li>
                     <li>Free Gemini Flash AI available</li>
                 </ul>
-                <div style="text-align: center;">
-                    <a href="https://shakespeare.diy" class="btn btn-shakespeare">Start Building Now</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Example Projects -->
-        <div class="section" style="background: #ffffff;">
-            <h2 class="section-title">What You Can Build</h2>
-            <p class="section-subtitle">From simple landing pages to complex web applications</p>
-
-            <div class="content-card" style="background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 100%);">
-                <h4 style="font-size: 18px; font-weight: 600; margin: 0 0 15px; color: #7c3aed;">Example Prompts to Try:</h4>
-                <div style="space-y: 10px;">
-                    <p style="font-style: italic; color: #64748b; margin: 10px 0; padding: 10px; background: rgba(124, 58, 237, 0.1); border-radius: 8px;">
-                        "Build a modern portfolio website for a web developer with project showcases, an about section, and a contact form. Use a dark theme with blue accents."
-                    </p>
-                    <p style="font-style: italic; color: #64748b; margin: 10px 0; padding: 10px; background: rgba(124, 58, 237, 0.1); border-radius: 8px;">
-                        "Create a Twitter-like social media app for Nostr with user profiles, real-time feeds, and the ability to post notes and images."
-                    </p>
-                    <p style="font-style: italic; color: #64748b; margin: 10px 0; padding: 10px; background: rgba(124, 58, 237, 0.1); border-radius: 8px;">
-                        "Design a travel blog with comments, and the ability to like and share posts."
-                    </p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="https://soapbox.pub/showcase" class="btn btn-secondary">View Live Examples</a>
             </div>
         </div>
 
@@ -559,7 +543,7 @@
         <div class="cta">
             <h2>Ready to Build the Future?</h2>
             <p>Join creators, developers, and visionaries who are already building with Shakespeare. Experience the future of web development today.</p>
-            <a href="https://shakespeare.diy" class="btn" style="background: #ffffff !important; color: #7c3aed !important; margin: 10px; text-decoration: none !important;">🎭 Request Beta Access</a>
+            <a href="https://shakespeare.diy" class="btn" style="background: #ffffff !important; color: #000000 !important; border: 2px solid #f59e0b !important; margin: 10px; text-decoration: none !important;">🎭 Request Beta Access</a>
         </div>
 
         <!-- Footer -->
@@ -568,6 +552,7 @@
             <p>
                 <a href="https://soapbox.pub">Website</a> |
                 <a href="https://soapbox.pub/blog">Blog</a> |
+                <a href="https://soapbox.pub/blog/announcing-shakespeare">Shakespeare Announcement</a> |
                 <a href="https://github.com/soapbox-pub">GitHub</a> |
                 <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
             </p>
