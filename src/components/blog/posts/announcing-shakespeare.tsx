@@ -135,7 +135,7 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <p>
-        Unlike similar proprietary and centralized services like <strong>Lovable</strong>, Shakespeare offers true freedom through user choice. While other website builders that lock you into their platforms, with Shakespeare you can choose from multiple <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> to power your AI conversations. This means you can select the AI capabilities that best fit your needs, including the available tools and the price you want to pay.
+        Unlike similar proprietary and centralized services like <strong>Lovable</strong>, Shakespeare offers true freedom through user choice. While other website builders lock you into their platforms, with Shakespeare you can choose from multiple <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a> to power your AI conversations. This means you can select the AI capabilities that best fit your needs, including the available tools and the price you want to pay.
       </p>
 
       <p>
