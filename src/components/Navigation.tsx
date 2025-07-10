@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Bot } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 
@@ -23,66 +23,66 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className={`transition-colors ${
-                isActive('/') 
-                  ? 'text-azure font-medium' 
+                isActive('/')
+                  ? 'text-azure font-medium'
                   : 'text-gray-600 hover:text-azure'
               }`}
             >
               Home
             </Link>
-            <Link 
-              to="/tools" 
+            <Link
+              to="/tools"
               className={`transition-colors ${
-                isActive('/tools') 
-                  ? 'text-azure font-medium' 
+                isActive('/tools')
+                  ? 'text-azure font-medium'
                   : 'text-gray-600 hover:text-azure'
               }`}
             >
               Tools
             </Link>
-            <Link 
-              to="/showcase" 
+            <Link
+              to="/showcase"
               className={`transition-colors ${
-                isActive('/showcase') 
-                  ? 'text-azure font-medium' 
+                isActive('/showcase')
+                  ? 'text-azure font-medium'
                   : 'text-gray-600 hover:text-azure'
               }`}
             >
               Showcase
             </Link>
-            <Link 
-              to="/about" 
+            <Link
+              to="/about"
               className={`transition-colors ${
-                isActive('/about') 
-                  ? 'text-azure font-medium' 
+                isActive('/about')
+                  ? 'text-azure font-medium'
                   : 'text-gray-600 hover:text-azure'
               }`}
             >
               About
             </Link>
-            <Link 
-              to="/blog" 
+            <Link
+              to="/blog"
               className={`transition-colors ${
-                isBlogActive() 
-                  ? 'text-azure font-medium' 
+                isBlogActive()
+                  ? 'text-azure font-medium'
                   : 'text-gray-600 hover:text-azure'
               }`}
             >
               Blog
             </Link>
-            
-            {/* Special MKStack Button */}
-            <Button 
-              asChild 
-              className="bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200 hover:border-purple-300 transition-all duration-200"
+
+            {/* Special Shakespeare Button */}
+            <Button
+              asChild
+              className="bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-200 hover:border-blue-300 transition-all duration-200"
               size="sm"
             >
-              <Link to="/mkstack" className="flex items-center space-x-2">
-                <Bot className="h-4 w-4" />
-                <span>MKStack</span>
+              <Link to="/tools/shakespeare" className="flex items-center space-x-2">
+                <span className="text-sm">🎭</span>
+                <span>Shakespeare</span>
               </Link>
             </Button>
           </div>
@@ -159,21 +159,21 @@ export function Navigation() {
               >
                 Blog
               </Link>
-              
-              {/* Special MKStack Button for Mobile */}
+
+              {/* Special Shakespeare Button for Mobile */}
               <div className="px-3 py-2">
-                <Button 
-                  asChild 
-                  className="w-full bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200 hover:border-purple-300 transition-all duration-200"
+                <Button
+                  asChild
+                  className="w-full bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-200 hover:border-blue-300 transition-all duration-200"
                   size="sm"
                 >
-                  <Link 
-                    to="/mkstack" 
+                  <Link
+                    to="/tools/shakespeare"
                     className="flex items-center justify-center space-x-2"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Bot className="h-4 w-4" />
-                    <span>MKStack</span>
+                    <span className="text-sm">🎭</span>
+                    <span>Shakespeare</span>
                   </Link>
                 </Button>
               </div>

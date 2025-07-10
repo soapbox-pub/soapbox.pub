@@ -10,14 +10,14 @@ import { SEO } from "@/components/SEO";
 export default function Tools() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
-      <SEO 
-        title="Soapbox Tools - Build Decentralized Platforms" 
+      <SEO
+        title="Soapbox Tools - Build Decentralized Platforms"
         description="Discover our comprehensive toolkit for building decentralized platforms: MKStack for rapid app development, Ditto for communities, Nostrify framework, and more open source tools."
         type="website"
         image="/assets/images/tools-showcase.png"
         keywords="soapbox tools, mkstack, ditto, nostrify, decentralized development, nostr tools, open source platform builder"
       />
-      
+
       <Navigation />
 
       {/* Hero Section */}
@@ -33,8 +33,8 @@ export default function Tools() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Soapbox provides a complete ecosystem of tools that empower you to create your own platforms, 
-            communities, and applications. Each tool is designed to work independently or together as part 
+            Soapbox provides a complete ecosystem of tools that empower you to create your own platforms,
+            communities, and applications. Each tool is designed to work independently or together as part
             of a larger vision.
           </p>
         </div>
@@ -44,6 +44,106 @@ export default function Tools() {
       <section className="pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            {/* Shakespeare - Featured */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-200 lg:col-span-2">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-yellow-100 to-blue-100 rounded-2xl flex items-center justify-center">
+                      <span className="text-3xl">🎭</span>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-display font-bold">Shakespeare</h2>
+                      <p className="text-lg text-gray-600">AI-Powered Website Builder</p>
+                    </div>
+                  </div>
+
+                  <p className="text-lg text-gray-700 mb-6">
+                    Build professional websites through natural conversation with AI assistants.
+                    Shakespeare runs entirely on the Nostr protocol, giving you true freedom and
+                    control over your data and identity.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Conversational AI building
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Live preview system
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Instant deployment
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        True freedom from Big Tech
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Transparent pay-per-use pricing
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        Powered by Nostr Service Providers
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button className="bg-blue-500 hover:bg-blue-600 text-white" asChild>
+                      <Link to="/tools/shakespeare">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button variant="outline" asChild>
+                      <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                        Start Building
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-100 to-yellow-100 p-4 lg:p-6 flex flex-col justify-center">
+                  <div className="w-full">
+                    <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
+                      <iframe
+                        src="https://www.youtube.com/embed/pK9gHjQr7nc?si=aoT84KgpSJ3iruZw"
+                        title="Shakespeare Tutorial with Derek Ross"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="text-center space-y-2">
+                      <p className="text-sm text-gray-600">See Shakespeare in action</p>
+                      <div className="flex justify-center gap-2 flex-wrap">
+                        <a href="https://shakespeare.diy/" target="_blank" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Try Shakespeare
+                          </Badge>
+                        </a>
+                        <a href="/blog/announcing-shakespeare" rel="noopener noreferrer">
+                          <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 transition-colors">
+                            Read Announcement
+                          </Badge>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
             {/* MKStack - Featured */}
             <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-violet-200 lg:col-span-2">
               <div className="grid lg:grid-cols-2 gap-0">
@@ -57,13 +157,13 @@ export default function Tools() {
                       <p className="text-lg text-gray-600">Build Nostr Apps with AI</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-lg text-gray-700 mb-6">
-                    Create custom social platforms and applications with our flexible framework. 
-                    Build in minutes, edit with Dork AI, and deploy instantly. 
+                    Create custom social platforms and applications with our flexible framework.
+                    Build in minutes, edit with Dork AI, and deploy instantly.
                     Baked in Nostr support for decentralized, censorship-resistant applications.
                   </p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-600">
@@ -94,7 +194,7 @@ export default function Tools() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button className="bg-violet-500 hover:bg-violet-600 text-white" asChild>
                       <Link to="/mkstack">
@@ -110,16 +210,17 @@ export default function Tools() {
                     </Button>
                   </div>
                 </div>
-                
+
                 <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-4 lg:p-6 flex flex-col justify-center">
                   <div className="w-full">
                     <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
                       <iframe
-                        src="https://www.youtube.com/embed/kJRwAGmAmGI"
+                        src="https://www.youtube.com/embed/a2UGh6F0Mbg?si=UV2F6QUUoRmQJ2bi"
                         title="MKStack Demo Video"
                         className="w-full h-full"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
                       />
                     </div>
@@ -159,10 +260,10 @@ export default function Tools() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-gray-600">
-                  Build decentralized, censorship-resistant communities on Nostr with built-in monetization, 
+                  Build decentralized, censorship-resistant communities on Nostr with built-in monetization,
                   custom themes, and cross-platform compatibility. Perfect for creating your own social space.
                 </p>
-                
+
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
@@ -181,7 +282,7 @@ export default function Tools() {
                     ActivityPub bridge
                   </div>
                 </div>
-                
+
                 <div className="pt-4">
                   <Button variant="outline" className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
                     <Link to="/tools/ditto">
@@ -204,10 +305,10 @@ export default function Tools() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-gray-600">
-                  Explore and understand Nostr Implementation Possibilities (NIPs) with our comprehensive 
+                  Explore and understand Nostr Implementation Possibilities (NIPs) with our comprehensive
                   database and tools for developers. Publish custom NIPs and discover implementation guides.
                 </p>
-                
+
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
@@ -226,7 +327,7 @@ export default function Tools() {
                     Developer resources
                   </div>
                 </div>
-                
+
                 <div className="pt-4">
                   <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
                     <Link to="/tools/nostrhub">
@@ -237,6 +338,7 @@ export default function Tools() {
                 </div>
               </CardContent>
             </Card>
+
           </div>
 
           {/* Additional Tools */}
@@ -252,7 +354,7 @@ export default function Tools() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600 text-sm">
-                  Comprehensive registry of Nostr documentation. Structured, detailed knowledge 
+                  Comprehensive registry of Nostr documentation. Structured, detailed knowledge
                   about Nostr for both humans and AI.
                 </p>
                 <div className="space-y-2">
@@ -289,7 +391,7 @@ export default function Tools() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600 text-sm">
-                  Bring your projects to life on Nostr with simple tools for relays, storage, 
+                  Bring your projects to life on Nostr with simple tools for relays, storage,
                   signers, and moderation. Pure TypeScript framework.
                 </p>
                 <div className="space-y-2">
@@ -326,7 +428,7 @@ export default function Tools() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600 text-sm">
-                  Share and discover AI project templates on our decentralized platform. 
+                  Share and discover AI project templates on our decentralized platform.
                   Find the perfect starter for your next AI project or share your own templates.
                 </p>
                 <div className="space-y-2">
@@ -366,7 +468,7 @@ export default function Tools() {
               Built with the philosophy of empowerment and freedom
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-azure rounded-2xl flex items-center justify-center mx-auto">
@@ -377,7 +479,7 @@ export default function Tools() {
                 All our tools are free and open source, giving you complete control and transparency.
               </p>
             </div>
-            
+
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mx-auto">
                 <Globe className="h-8 w-8 text-white" />
@@ -387,7 +489,7 @@ export default function Tools() {
                 Built on decentralized protocols to ensure your independence and data sovereignty.
               </p>
             </div>
-            
+
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto">
                 <Rocket className="h-8 w-8 text-white" />
