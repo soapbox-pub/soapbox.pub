@@ -13,7 +13,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
           Join the Shakespeare Beta Waitlist
         </CardTitle>
         <CardDescription>
-          Be among the first to build websites with AI on Nostr. We'll notify you when your invite is ready.
+          We'll notify you when your invite is ready. Your account will be linked to your npub.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -82,12 +82,12 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
             `}
           </style>
           <div id="mc_embed_signup">
-            <form 
-              action="https://pub.us7.list-manage.com/subscribe/post?u=f1f718a93795f42a604d558d8&id=f7271442a0&f_id=00ffa3e4f0" 
-              method="post" 
-              id="mc-embedded-subscribe-form" 
-              name="mc-embedded-subscribe-form" 
-              className="validate" 
+            <form
+              action="https://pub.us7.list-manage.com/subscribe/post?u=f1f718a93795f42a604d558d8&id=f7271442a0&f_id=00ffa3e4f0"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
               target="_blank"
             >
               <div id="mc_embed_signup_scroll">
@@ -95,19 +95,28 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   <span className="asterisk">*</span> indicates required
                 </div>
                 <div className="mc-field-group">
-                  <label htmlFor="mce-NPUB">Nostr Public Key (npub)</label>
-                  <input type="text" name="NPUB" className="text" id="mce-NPUB" placeholder="npub1..." />
+                  <label htmlFor="mce-NPUB">
+                    Nostr Public Key (npub) <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="NPUB"
+                    className="required text"
+                    id="mce-NPUB"
+                    required
+                    placeholder="npub1..."
+                  />
                 </div>
                 <div className="mc-field-group">
                   <label htmlFor="mce-EMAIL">
                     Email Address <span className="asterisk">*</span>
                   </label>
-                  <input 
-                    type="email" 
-                    name="EMAIL" 
-                    className="required email" 
-                    id="mce-EMAIL" 
-                    required 
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    className="required email"
+                    id="mce-EMAIL"
+                    required
                     placeholder="your@email.com"
                   />
                 </div>
@@ -130,7 +139,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
           <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
           <script type="text/javascript">
             {`(function($) {
-              window.fnames = new Array(); 
+              window.fnames = new Array();
               window.ftypes = new Array();
               fnames[6]='NPUB';ftypes[6]='text';
               fnames[0]='EMAIL';ftypes[0]='email';
