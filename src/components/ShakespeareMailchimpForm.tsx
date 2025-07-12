@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
@@ -6,6 +7,35 @@ interface ShakespeareMailchimpFormProps {
 }
 
 export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpFormProps) {
+  const [npubValue, setNpubValue] = useState('');
+  const [npubError, setNpubError] = useState('');
+
+  const validateNpub = (value: string) => {
+    if (!value.startsWith('npub')) {
+      setNpubError('Nostr public key must start with "npub"');
+      return false;
+    }
+    setNpubError('');
+    return true;
+  };
+
+  const handleNpubChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setNpubValue(value);
+    if (value) {
+      validateNpub(value);
+    } else {
+      setNpubError('');
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    if (!validateNpub(npubValue)) {
+      e.preventDefault();
+      return;
+    }
+  };
+
   return (
     <Card className={cn("w-full max-w-2xl mx-auto", className)}>
       <CardHeader className="text-center">
@@ -48,6 +78,9 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                 font-size: 14px;
                 background: white;
               }
+              #mc_embed_signup input.error {
+                border-color: #ef4444 !important;
+              }
               #mc_embed_signup .button {
                 background: linear-gradient(to right, #8B5CF6, #3B82F6) !important;
                 border: none !important;
@@ -79,6 +112,9 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
               .dark #mc_embed_signup label {
                 color: #f9fafb;
               }
+              .dark #mc_embed_signup input.error {
+                border-color: #ef4444 !important;
+              }
             `}
           </style>
           <div id="mc_embed_signup">
@@ -89,6 +125,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
               name="mc-embedded-subscribe-form"
               className="validate"
               target="_blank"
+              onSubmit={handleSubmit}
             >
               <div id="mc_embed_signup_scroll">
                 <div className="indicates-required">
@@ -101,11 +138,18 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   <input
                     type="text"
                     name="NPUB"
-                    className="required text"
+                    className={`required text ${npubError ? 'error' : ''}`}
                     id="mce-NPUB"
                     required
                     placeholder="npub1..."
+                    value={npubValue}
+                    onChange={handleNpubChange}
                   />
+                  {npubError && (
+                    <div className="error-message" style={{ color: '#ef4444', fontSize: '12px', marginTop: '0.25rem' }}>
+                      {npubError}
+                    </div>
+                  )}
                 </div>
                 <div className="mc-field-group">
                   <label htmlFor="mce-EMAIL">
