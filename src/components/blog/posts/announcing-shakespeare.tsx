@@ -51,7 +51,7 @@ export default function AnnouncingShakespeare() {
             🗽 Truly Free
           </Badge>
           <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
-            ⚡ Beta Launch
+            ⚡ Now Available
           </Badge>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function AnnouncingShakespeare() {
                 🚀 Try Shakespeare Now
               </h3>
               <p className="text-muted-foreground mb-4">
-                Visit our website to explore Shakespeare and request beta access directly.
+                Visit our website to start building with Shakespeare today.
               </p>
               <Button
                 asChild
@@ -85,18 +85,18 @@ export default function AnnouncingShakespeare() {
           <Card className="border-blue-200 dark:border-blue-800">
             <CardContent className="p-6 text-center">
               <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
-                📧 Join the Waitlist
+                📧 Join the Community
               </h3>
               <p className="text-muted-foreground mb-4">
-                Get notified when your beta invite is ready and receive updates.
+                Stay updated with the latest features and announcements.
               </p>
               <Button
                 asChild
                 variant="outline"
                 className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
               >
-                <a href="#waitlist-form">
-                  Join Waitlist Below ↓
+                <a href="#community-form">
+                  Join Community Below ↓
                 </a>
               </Button>
             </CardContent>
@@ -462,7 +462,7 @@ export default function AnnouncingShakespeare() {
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3 text-purple-700 dark:text-purple-300">🚀 Free Gemini Flash NSP</h4>
             <p className="text-muted-foreground mb-4">
-              We're currently offering a <strong>free Gemini Flash NSP</strong> so you can try Shakespeare without adding credits! This gives you access to Google's Gemini Flash model at no cost during the beta period.
+              We're currently offering a <strong>free Gemini Flash NSP</strong> so you can try Shakespeare without adding credits! This gives you access to Google's Gemini Flash model at no cost.
             </p>
             <Button
               asChild
@@ -530,11 +530,11 @@ export default function AnnouncingShakespeare() {
       <h2>🎭 Get Started with Shakespeare</h2>
 
       <p>
-        Shakespeare is currently in private beta with invite-only access. We're carefully onboarding users to ensure the best possible experience as we refine the platform.
+        Shakespeare is now available for everyone to use. Start building your next website with AI-powered assistance today.
       </p>
 
 
-      <div className="not-prose my-12" id="waitlist-form">
+      <div className="not-prose my-12" id="community-form">
         <ShakespeareMailchimpForm />
       </div>
 
@@ -559,7 +559,7 @@ export default function AnnouncingShakespeare() {
                 </a>
               </Button>
               <p className="text-sm text-muted-foreground">
-                Or join the waitlist above for email updates and priority access
+                Or join our community above for updates and support
               </p>
             </div>
           </CardContent>

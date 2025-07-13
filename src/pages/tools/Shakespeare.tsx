@@ -638,12 +638,12 @@ export default function Shakespeare() {
                 <CardContent className="p-6">
                   <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">🆓 Free Gemini Flash NSP</h4>
                   <p className="text-muted-foreground mb-4">
-                    Currently offered for free during Shakespeare's beta period. Powered by Google's Gemini Flash model, perfect for trying out Shakespeare.
+                    Currently offered for free. Powered by Google's Gemini Flash model, perfect for trying out Shakespeare.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="text-xs">Gemini Flash</Badge>
                     <Badge variant="outline" className="text-xs">Free Tier</Badge>
-                    <Badge variant="outline" className="text-xs">Beta Access</Badge>
+                    <Badge variant="outline" className="text-xs">Free Tier</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -756,11 +756,11 @@ export default function Shakespeare() {
               🎭 Get Started with Shakespeare
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Shakespeare is currently in private beta with invite-only access. We're carefully onboarding users to ensure the best possible experience.
+              Start building your next website with AI-powered assistance. Experience the future of web development through natural conversation.
             </p>
           </div>
 
-          {/* Waitlist Form */}
+          {/* Get Started */}
           <div className="max-w-2xl mx-auto">
             <div className="mb-12">
                 <div className="flex flex-col items-center space-y-4">
@@ -774,7 +774,7 @@ export default function Shakespeare() {
                     </a>
                   </Button>
                   <p className="text-sm text-muted-foreground text-center">
-                    Or join the waitlist below for email updates and priority access
+                    Join our community for updates and support
                   </p>
                 </div>
             </div>

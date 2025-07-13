@@ -11,7 +11,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
   const [npubError, setNpubError] = useState('');
 
   const validateNpub = (value: string) => {
-    if (!value.startsWith('npub')) {
+    if (value && !value.startsWith('npub')) {
       setNpubError('Nostr public key must start with "npub"');
       return false;
     }
@@ -30,7 +30,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    if (!validateNpub(npubValue)) {
+    if (npubValue && !validateNpub(npubValue)) {
       e.preventDefault();
       return;
     }
@@ -40,10 +40,10 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
     <Card className={cn("w-full max-w-2xl mx-auto", className)}>
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-          Join the Shakespeare Beta Waitlist
+          Join the Shakespeare Community
         </CardTitle>
         <CardDescription>
-          We'll notify you when your invite is ready. Your account will be linked to your npub.
+          Stay updated with the latest features and announcements. Optionally provide your npub to link your account.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -133,14 +133,13 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                 </div>
                 <div className="mc-field-group">
                   <label htmlFor="mce-NPUB">
-                    Nostr Public Key (npub) <span className="asterisk">*</span>
+                    Nostr Public Key (npub) <span style={{ color: '#6b7280', fontWeight: 'normal' }}>(optional)</span>
                   </label>
                   <input
                     type="text"
                     name="NPUB"
-                    className={`required text ${npubError ? 'error' : ''}`}
+                    className={`text ${npubError ? 'error' : ''}`}
                     id="mce-NPUB"
-                    required
                     placeholder="npub1..."
                     value={npubValue}
                     onChange={handleNpubChange}
@@ -165,7 +164,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   />
                 </div>
                 <div hidden>
-                  <input type="hidden" name="tags" value="8981997,8981998" />
+                  <input type="hidden" name="tags" value="8981997" />
                 </div>
                 <div id="mce-responses" className="clear">
                   <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
@@ -175,7 +174,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   <input type="text" name="b_f1f718a93795f42a604d558d8_f7271442a0" tabIndex={-1} />
                 </div>
                 <div className="clear">
-                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Join Waitlist" />
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Join Community" />
                 </div>
               </div>
             </form>
