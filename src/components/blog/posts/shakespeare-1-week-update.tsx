@@ -153,7 +153,7 @@ export default function Shakespeare1WeekUpdate() {
               
               <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-green-200 dark:border-green-700 mb-4">
                 <p className="text-sm">
-                  <strong>By:</strong> <a href="https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@Keith Molina</a>
+                  <strong>By:</strong> <a href="https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@Keith Meola</a>
                 </p>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
                   Peer-to-peer betting with Lightning on Nostr
