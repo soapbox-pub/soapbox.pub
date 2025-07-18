@@ -1,0 +1,45 @@
+1 week after Shakespeare launch updates 
+
+1. Thank you to everyone who signed up and tried Shakespeare!
+
+
+2. Over 200 of you tried Shakespeare, and you created some amazing things! Here are some of our favorite projects from the community so far: 
+
+- Reviewstr: Share your experiences and discover amazing places on Nostr
+By: TravelTelly (profile: https://njump.me/npub105em547c5m5gdxslr4fp2f29jav54sxml6cpk6gda7xyvxuzmv6s84a642)
+
+Link: https://nostr-react-boilerplate-mbpz.shakespeare.to/
+
+Screenshot: https://media.ditto.pub/c2ee51a5966017fdde501c6767fe0f1df16e7d1673960a8ba4e680c887e33f9b.png
+
+- Hashman: Pacman-style game 
+By: QW (profile: https://njump.me/nprofile1qqs9kqvr4dkruv3t7n2pc6e6a7v9v2s5fprmwjv4gde8c4fe5y29v0sd595dt)
+Link: https://npub173vexauak3y5zctuapqh2p90pjnscyqr6zfh4vqa8r0pfsmkp5lqtjfk7c.shakespeare.to/
+
+Screenshot: https://media.ditto.pub/17cf92e31df69fa6ef083f626f2b3d4cf9aadb25844759866a5896026c11cb5a.png
+
+- Betstr: peer-to-peer betting with lightning on Nostr
+By: Keith Molina (profile: https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5)
+
+Link: https://project-betstr-description-i-want-to-w8ll.shakespeare.to/
+
+Screenshot: https://media.ditto.pub/fb45fc546730d246b469c0f5a3ae1b119b2ebd924d53702dc2a5a830dc7137fa.png
+
+
+- Did you make something cool? Share it with us and the community! Use #ShakespeareDIY and tag us on Nostr!
+
+
+3. Shakespeare was featured in Tech Crunch! 
+
+https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/
+
+Screenshot of article: https://media.ditto.pub/6b2b8ca0dcae01bcaa01957f1478dd17d570dd80a0d3b720466a764d4a22a6b1.png
+
+
+4. Whats next on our roadmap? 
+
+- Full git integration for version control and rollback
+- Ability to publish your site on custom domains
+- Support for Kimi K2 open source agent
+- Improving MKStack support for Zaps 
+

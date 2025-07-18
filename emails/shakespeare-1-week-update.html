@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="Shakespeare 1 Week Update - Amazing community projects, TechCrunch feature, and roadmap updates for AI-powered website building on Nostr.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="🎭 Shakespeare 1 Week Update - Amazing Community Projects">
+    <meta property="og:description" content="Over 200 users tried Shakespeare and created incredible projects. See featured community builds, TechCrunch coverage, and what's coming next.">
+    <link rel="manifest" href="/manifest.json">
+    <title>🎭 Shakespeare 1 Week Update - Amazing Community Projects</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style type="text/css">
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0f172a !important;
+                color: #e2e8f0 !important;
+            }
+            .email-container {
+                background-color: #1e293b !important;
+            }
+            .header {
+                background: #1e293b !important;
+                border-bottom: 1px solid #334155 !important;
+            }
+            .hero {
+                background: linear-gradient(135deg, #334155 0%, #1e293b 50%, #475569 100%) !important;
+            }
+            .content-card {
+                background: #1e293b !important;
+                border: 2px solid #334155 !important;
+            }
+            .section {
+                background: #0f172a !important;
+            }
+            .press-section {
+                background: #1e293b !important;
+            }
+            .roadmap-section {
+                background: #0f172a !important;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+        }
+
+        /* Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .logo-container .logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+
+        .logo-container h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+
+        .header h1 {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Content sections */
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin: 0 0 30px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 20px;
+            border: 1px solid #93c5fd;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: #475569;
+            margin: 0 0 40px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Content cards */
+        .content-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 20px 10px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+        }
+
+        .content-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            font-size: 24px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 60px;
+            display: block;
+        }
+
+        .roadmap-icon { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+
+        .content-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+
+        .content-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin: 0 0 15px;
+            text-align: center;
+        }
+
+        .content-description {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .project-meta {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .project-meta strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .project-meta a {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        /* Feature list */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+            text-align: left;
+        }
+
+        .feature-list li {
+            font-size: 16px;
+            color: #64748b;
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Image showcase */
+        .image-showcase {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .showcase-image {
+            max-width: 100%;
+            height: auto;
+            margin: 0 0 0px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff !important;
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #3b82f6 !important;
+            border: 2px solid #3b82f6;
+        }
+
+        .btn-shakespeare {
+            background: #ffffff;
+            color: #000000 !important;
+            border: 2px solid #f59e0b;
+        }
+
+        .btn-community {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff !important;
+        }
+
+        .btn-press {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff !important;
+        }
+
+        /* Force button colors in all email clients */
+        .btn-primary, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-secondary, .btn-secondary:visited, .btn-secondary:hover, .btn-secondary:active {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        .btn-shakespeare, .btn-shakespeare:visited, .btn-shakespeare:hover, .btn-shakespeare:active {
+            color: #000000 !important;
+            text-decoration: none !important;
+        }
+
+        .btn-community, .btn-community:visited, .btn-community:hover, .btn-community:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-press, .btn-press:visited, .btn-press:hover, .btn-press:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        /* Special sections */
+        .press-section {
+            background: #d1fae5;
+            padding: 40px 20px;
+        }
+
+        .roadmap-section {
+            background: #ede9fe;
+            padding: 40px 20px;
+        }
+
+        /* Stats highlight */
+        .stats-highlight {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 30px 0;
+        }
+
+        .stats-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .stats-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* CTA section */
+        .cta {
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 15px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: #475569;
+            margin: 0 0 30px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        .footer a:visited, .footer a:hover, .footer a:active {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .logo {
+                width: 28px;
+                height: 28px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-text {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content-card {
+                padding: 25px 15px;
+            }
+
+            .stats-number {
+                font-size: 36px;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://media.ditto.pub/227b98784c11af32a9694b9571aa9ecddc47017b909a6230436b0c6e30647d55.png" alt="Soapbox Logo" class="logo">
+                    <h1>Soapbox</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-badge">🎉 1 Week Update</div>
+            <h1 class="hero-title">
+                🎭&nbsp;<span class="gradient-text">Shakespeare</span>
+            </h1>
+            <h2 class="hero-subtitle">
+                Thank you to everyone who tried Shakespeare!
+            </h2>
+            <p class="hero-text">
+                <strong>More than 200 of you tried Shakespeare</strong> in the first week of our Beta launch.
+                We are so grateful to all of you who shared your ideas, helped us find bugs, and inspired our next steps.
+            </p>
+            <p class="hero-text">
+                Thanks to your feedback, we've already improved Shakespeare significantly in just one week, with more to come! Here's a look at some of the projects you've already build, and what's to come.
+            </p>
+        </div>
+        <!-- Community Projects -->
+        <div class="section">
+            <h2 class="section-title">🌟 Featured Community Projects</h2>
+            <p class="section-subtitle">Here are some of our favorite projects from the community so far</p>
+
+            <!-- Reviewstr -->
+            <div class="content-card">
+                <h3 class="content-title">Reviewstr</h3>
+                
+                <div class="project-meta">
+                    <strong>By:</strong> <a href="https://njump.me/npub105em547c5m5gdxslr4fp2f29jav54sxml6cpk6gda7xyvxuzmv6s84a642" target="_blank" rel="noopener noreferrer">@TravelTelly</a>
+                    <p style="margin-top: 10px; color: #6b7280;">Share your experiences and discover amazing places on Nostr</p>
+                </div>
+
+                <div class="image-showcase">
+                    <a href="https://nostr-react-boilerplate-mbpz.shakespeare.to/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.ditto.pub/c2ee51a5966017fdde501c6767fe0f1df16e7d1673960a8ba4e680c887e33f9b.png" alt="Reviewstr Screenshot" class="showcase-image">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hashman Game -->
+            <div class="content-card">
+                <h3 class="content-title">Hashman</h3>
+                
+                <div class="project-meta">
+                    <strong>By:</strong> <a href="https://njump.me/nprofile1qqs9kqvr4dkruv3t7n2pc6e6a7v9v2s5fprmwjv4gde8c4fe5y29v0sd595dt" target="_blank" rel="noopener noreferrer">@QW</a>
+                    <p style="margin-top: 10px; color: #6b7280;">Pacman-style game built with Shakespeare</p>
+                </div>
+
+                <div class="image-showcase">
+                    <a href="https://npub173vexauak3y5zctuapqh2p90pjnscyqr6zfh4vqa8r0pfsmkp5lqtjfk7c.shakespeare.to/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.ditto.pub/17cf92e31df69fa6ef083f626f2b3d4cf9aadb25844759866a5896026c11cb5a.png" alt="Hashman Screenshot" class="showcase-image">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Betstr -->
+            <div class="content-card">
+                <h3 class="content-title">Betstr</h3>
+                
+                <div class="project-meta">
+                    <strong>By:</strong> <a href="https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5" target="_blank" rel="noopener noreferrer">@Keith Molina</a>
+                    <p style="margin-top: 10px; color: #6b7280;">Peer-to-peer betting with Lightning on Nostr</p>
+
+                </div>
+
+                <div class="image-showcase">
+                    <a href="https://project-betstr-description-i-want-to-w8ll.shakespeare.to/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.ditto.pub/fb45fc546730d246b469c0f5a3ae1b119b2ebd924d53702dc2a5a830dc7137fa.png" alt="Betstr Screenshot" class="showcase-image">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Community Call to Action -->
+            <div class="content-card" style="border: 3px solid #8b5cf6; background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 100%);">
+                <h3 class="content-title" style="color: #7c3aed;">Share Your Project!</h3>
+                <p class="content-description" style="text-align: center; font-size: 18px;">
+                    Did you make something cool with Shakespeare? We'd love to see it! Share it with us and the community.
+                </p>
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <p style="text-align: center; font-size: 16px; color: #7c3aed; margin: 0;">
+                        <strong>Use #ShakespeareDIY and tag us on Nostr!</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TechCrunch Feature -->
+        <div class="press-section">
+            <div class="content-card">
+                <div class="content-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">📰</div>
+                <h2 class="section-title">Shakespeare Featured in TechCrunch!</h2>
+
+                <div class="image-showcase">
+                    <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.ditto.pub/b77d551fa74134acc35bfc3b3a4af68ecf4dde643be02d08518f12151728d0ab.png" alt="TechCrunch Article Screenshot" class="showcase-image">
+                    </a>
+                </div>
+
+                <p class="content-description">
+                    Shakespeare was featured in a recent TechCrunch article about Jack Dorsey's investment in Nostr. 
+                    The article highlights how Shakespeare represents the future of AI-powered development on decentralized protocols.
+                </p>
+
+                <div style="text-align: center;">
+                    <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" class="btn btn-press">Read Article</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap Section -->
+        <div class="roadmap-section">
+            <div class="content-card">
+                <div class="content-icon roadmap-icon">🚀</div>
+                <h3 class="content-title">Coming Soon</h3>
+                
+                <ul class="feature-list">
+                    <li><strong>Full Git Integration</strong> - Complete version control and rollback capabilities for your projects</li>
+                    <li><strong>Custom Domains</strong> - Publish your Shakespeare-built sites on your own custom domains</li>
+                    <li><strong>Kimi K2 Support</strong> - Integration with the powerful open source AI agent for enhanced capabilities</li>
+                    <li><strong>Enhanced MKStack Support</strong> - Improved Zaps integration and Lightning Network features</li>
+                </ul>
+
+                <div style="background: rgba(236, 72, 153, 0.1); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <p style="text-align: center; font-size: 16px; color: #000000; margin: 0;"></p>
+                        <strong>🎯 Our goal:</strong> Make building on the decentralized web open and accessible to everyone
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta">
+            <h2>Ready to Build Something Amazing?</h2>
+            <p>Join hundreds of creators who are already building the future with Shakespeare. Turn your ideas into reality through natural conversation with AI.</p>
+            <a href="https://shakespeare.diy" class="btn" style="background: #ffffff !important; color: #000000 !important; border: 2px solid #f59e0b !important; margin: 10px; text-decoration: none !important;">🎭 Try Shakespeare</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> - Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> |
+                <a href="https://soapbox.pub/blog">Blog</a> |
+                <a href="https://soapbox.pub/blog/announcing-shakespeare">Shakespeare Announcement</a> |
+                <a href="https://github.com/soapbox-pub">GitHub</a> |
+                <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MailChimp Footer -->
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+            <tr>
+                <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                        <tr>
+                            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                <br>
+                                <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                <br>
+                                *|LIST:ADDRESSLINE|*
+                                <br>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <style type="text/css">
+            @media only screen and (max-width: 480px){
+                table#canspamBar td{font-size:14px !important;}
+                table#canspamBar td a{display:block !important; margin-top:10px !important;}
+            }
+        </style>
+    </center>
+</body>
+</html>

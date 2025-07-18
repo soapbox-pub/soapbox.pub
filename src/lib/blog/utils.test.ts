@@ -2,13 +2,13 @@ import { describe, it, expect } from 'vitest';
 import { getFeaturedPost } from './utils';
 
 describe('getFeaturedPost', () => {
-  it('returns the Shakespeare blog post as the featured post', () => {
+  it('returns the Shakespeare 1-week update blog post as the featured post', () => {
     const featuredPost = getFeaturedPost();
     
     expect(featuredPost).toBeDefined();
-    expect(featuredPost?.slug).toBe('announcing-shakespeare');
-    expect(featuredPost?.title).toBe('🎭 Introducing Shakespeare: AI-Powered Website Builder on Nostr');
-    expect(featuredPost?.author.name).toBe('M.K. Fain');
+    expect(featuredPost?.slug).toBe('shakespeare-1-week-update');
+    expect(featuredPost?.title).toBe('🎭 Shakespeare 1 Week Update - Amazing Community Projects');
+    expect(featuredPost?.author.name).toBe('Soapbox Team');
     expect(featuredPost?.featured).toBe(true);
   });
 
