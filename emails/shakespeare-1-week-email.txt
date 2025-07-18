@@ -16,6 +16,8 @@ Screenshot: https://media.ditto.pub/c2ee51a5966017fdde501c6767fe0f1df16e7d167396
 By: QW (profile: https://njump.me/nprofile1qqs9kqvr4dkruv3t7n2pc6e6a7v9v2s5fprmwjv4gde8c4fe5y29v0sd595dt)
 Link: https://npub173vexauak3y5zctuapqh2p90pjnscyqr6zfh4vqa8r0pfsmkp5lqtjfk7c.shakespeare.to/
 
+Screenshot: https://media.ditto.pub/17cf92e31df69fa6ef083f626f2b3d4cf9aadb25844759866a5896026c11cb5a.png
+
 - Betstr: peer-to-peer betting with lightning on Nostr
 By: Keith Molina (profile: https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5)
 
