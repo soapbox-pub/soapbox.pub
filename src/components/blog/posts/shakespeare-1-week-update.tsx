@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardContent } from '../../ui/card';
-import { Badge } from '../../ui/badge';
 import { Button } from '../../ui/button';
 
 export interface BlogPostMeta {
@@ -22,12 +21,12 @@ export interface BlogPostMeta {
 export const meta: BlogPostMeta = {
   "slug": "shakespeare-1-week-update",
   "title": "🎭 Shakespeare 1 Week Update - Amazing Community Projects",
-  "excerpt": "Over 200 users tried Shakespeare and created incredible projects. See featured community builds, TechCrunch coverage, and what's coming next for AI-powered website building on Nostr.",
+  "excerpt": "More than 200 users tried Shakespeare and created incredible projects. See featured community builds, TechCrunch coverage, and what's coming next for AI-powered website building on Nostr.",
   "coverImage": "/assets/blog/shakespeare-1-week-update/shakespeare-cover.png",
   "date": "2025-07-18",
   "author": {
-    "name": "Soapbox Team",
-    "picture": "/assets/avatars/soapbox.jpg"
+    "name": "M.K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
     "url": "/assets/blog/shakespeare-1-week-update/shakespeare-cover.png"
@@ -207,20 +206,11 @@ export default function Shakespeare1WeekUpdate() {
         <Card className="border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
           <CardContent className="p-8">
             <div className="text-center mb-6">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-3xl">
-                📰
-              </div>
-              <h3 className="text-2xl font-bold text-green-800 dark:text-green-200 mb-4">
-                Shakespeare Featured in TechCrunch!
-              </h3>
-            </div>
-
-            <div className="text-center mb-6">
               <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer" className="block">
                 <img
                   src="https://media.ditto.pub/b77d551fa74134acc35bfc3b3a4af68ecf4dde643be02d08518f12151728d0ab.png"
                   alt="TechCrunch Article Screenshot"
-                  className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full"
+                  className="hover:shadow-lg transition-shadow duration-300 w-full"
                 />
               </a>
             </div>
@@ -286,9 +276,24 @@ export default function Shakespeare1WeekUpdate() {
               </div>
             </div>
 
+            <div className="bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-800 dark:to-cyan-800 p-6 rounded-xl border border-blue-200 dark:border-blue-600 mb-6">
+              <h4 className="font-bold text-blue-900 dark:text-blue-100 mb-3 flex items-center">
+                🔧 Built-in Nostr Issue Tracker
+              </h4>
+              <p className="text-blue-800 dark:text-blue-200 text-sm mb-4">
+                We've built a revolutionary issue tracker directly into Shakespeare that runs entirely on Nostr! 
+                Track bugs, request features, and collaborate on improvements using decentralized protocols.
+              </p>
+              <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <a href="https://shakespeare.diy/issues" target="_blank" rel="noopener noreferrer">
+                  View Open Issues →
+                </a>
+              </Button>
+            </div>
+
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-800 dark:to-pink-800 p-6 rounded-xl border border-purple-200 dark:border-purple-600">
               <p className="text-center font-bold text-purple-900 dark:text-purple-100">
-                🎯 Our goal: Make Shakespeare the most powerful and accessible AI website builder on the decentralized web
+                🎯 Our goal: Make on the decentralized web open and acessible to everyone.
               </p>
             </div>
           </CardContent>
@@ -328,25 +333,6 @@ export default function Shakespeare1WeekUpdate() {
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      <hr className="my-12" />
-
-      <div className="text-center">
-        <p className="text-sm text-muted-foreground mb-4">
-          <strong>Soapbox</strong> - Building tools for the decentralized web
-        </p>
-        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-          <a href="https://soapbox.pub" className="text-blue-600 hover:underline">Website</a>
-          <span>|</span>
-          <a href="https://soapbox.pub/blog" className="text-blue-600 hover:underline">Blog</a>
-          <span>|</span>
-          <a href="https://soapbox.pub/blog/announcing-shakespeare" className="text-blue-600 hover:underline">Shakespeare Announcement</a>
-          <span>|</span>
-          <a href="https://github.com/soapbox-pub" className="text-blue-600 hover:underline">GitHub</a>
-          <span>|</span>
-          <a href="https://ditto.pub/@soapbox@ditto.pub" className="text-blue-600 hover:underline">Nostr</a>
-        </div>
       </div>
     </article>
   );
