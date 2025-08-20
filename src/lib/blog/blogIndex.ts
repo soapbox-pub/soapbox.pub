@@ -38,6 +38,7 @@ import * as soapboxfev11release from '../../components/blog/posts/soapbox-fe-v1.
 import * as soapboxfev12release from '../../components/blog/posts/soapbox-fe-v1.2-release';
 import * as soapboxfev13cryptocurrencyrelease from '../../components/blog/posts/soapbox-fe-v1.3-cryptocurrency-release';
 import * as stacks from '../../components/blog/posts/stacks';
+import * as announcingstacks10 from '../../components/blog/posts/announcing-stacks-1.0';
 import * as takedownbigtechwithgreatux from '../../components/blog/posts/take-down-big-tech-with-great-ux';
 import * as threadsserverblocking from '../../components/blog/posts/threads-server-blocking';
 import * as understandingnostrserviceproviders from '../../components/blog/posts/understanding-nostr-service-providers';
@@ -61,6 +62,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  announcingstacks10.meta,
   shakespeare1weekupdate.meta,
   understandingnostrserviceproviders.meta,
   announcingshakespeare.meta,
@@ -109,7 +111,7 @@ export const blogPosts: BlogPost[] = [
 
 export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
-  
+
   switch (normalizedSlug) {
     case 'shakespeare1weekupdate':
       return (await import('../../components/blog/posts/shakespeare-1-week-update')).default;
@@ -199,6 +201,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/unlocking-mastodon-apps')).default;
     case 'whatisthefediverse':
       return (await import('../../components/blog/posts/what-is-the-fediverse')).default;
+    case 'announcingstacks10':
+      return (await import('../../components/blog/posts/announcing-stacks-1.0')).default;
     default:
       return null;
   }
