@@ -30,7 +30,7 @@ export const meta: BlogPostMeta = {
 export default function AnnouncingStacks1() {
   return (
     <article className="prose prose-lg max-w-none">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-azure">Stacks 1.0: Easily switch between models in the terminal</h1>
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-azure">Stacks 1.0: The freedom to choose your AI provider and model</h1>
       <p className="text-xl text-gray-600 mb-8">Stacks 1.0 is here! Run multiple AI providers, use slash commands, save your AI chat history, and enjoy a totally overhauled experience for building with Stacks. Upgrade now and unlock the next level of AI-first development.</p>
        <div className="aspect-video rounded-lg overflow-hidden">
         <iframe
@@ -70,13 +70,35 @@ export default function AnnouncingStacks1() {
         <li><strong>Overhauled menus:</strong> Every menu has been redesigned for a smoother, more intuitive experience.</li>
       </ul>
 
+    <h2 className="text-3xl font-bold text-azure mb-4">Quickly swap between providers and models</h2>
+      <p>Stacks 1.0 makes it easier than ever to manage multiple AI providers and models. Store your settings for providers like OpenRouter, PayPerQ, and more, and even use different providers for different models..</p>
+
+      <div className="not-prose my-8">
+        <img
+          src="/assets/blog/stacks-1.0/slash-providers.png"
+          alt="Stacks 1.0 Multiple Providers UI"
+          className="rounded-lg shadow-md mx-auto"
+        />
+      </div>
+
+      <p>You can access models from any provider with a slash `/`. So, GPT-4o on OpenAI's official API would be called `openai/gpt-4o`, while accessing it on OpenRouter would be `openrouter/openai/gpt-4o`</p>
+
+      <div className="not-prose my-8">
+        <img
+          src="/assets/blog/stacks-1.0/slash-model.png"
+          alt="Stacks 1.0 Multiple Providers UI"
+          className="rounded-lg shadow-md mx-auto"
+        />
+      </div>
+
+      <p>Once you use a model, stacks will remember it and suggest it for easy swaps in the future.</p>
+
       <div className="not-prose my-8">
         <img
           src="/assets/blog/stacks-1.0/recent-models.png"
           alt="Stacks 1.0 Multiple Providers UI"
           className="rounded-lg shadow-md mx-auto"
         />
-        <figcaption className="text-center text-gray-500 text-sm mt-2">New: Easily manage multiple AI providers and models in Stacks 1.0</figcaption>
       </div>
 
       <h2 className="text-2xl font-bold text-azure mt-10 mb-4">Slash Commands: Power at Your Fingertips</h2>
