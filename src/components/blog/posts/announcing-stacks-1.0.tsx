@@ -23,7 +23,7 @@ export const meta: BlogPostMeta = {
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/stacks-1.0/stacks-upgrade.png",
+    "url": "/assets/blog/stacks-1-0/stacks-upgrade.png",
   },
 };
 
@@ -41,6 +41,21 @@ export default function AnnouncingStacks1() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           ></iframe>
+      </div>
+
+      <h2 className="text-3xl font-bold text-azure mb-4">What is Stacks?</h2>
+      <p>Stacks decentralized AI template-sharing platform built on Nostr, designed specifically to jumpstart development using templates and tools alongside LLMs. Anyone can publish a stack, which allows others to use their templates as a starting point for AI-first coding. <a href="/mkstack" className="text-azure hover:underline">MKstack</a>, a tool for building Nostr apps with AI, is one such stack!</p>
+      <p>Stacks includes a CLI tool for managing and communicating with AI models through the terminal.</p>
+
+      <div className="not-prose my-8">
+        <img
+          src="/assets/blog/stacks-1.0/stacks.png"
+          alt="Example stacks "
+          className="rounded-lg shadow-md mx-auto"
+        />
+        <figcaption className="text-center text-gray-500 text-sm mt-2">
+          Featured stacks. Explore more on <a href="https://getstacks.dev" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">getstacks.dev</a>
+        </figcaption>
       </div>
 
       <h2 className="text-3xl font-bold text-azure mb-4">What’s New in Stacks 1.0?</h2>
