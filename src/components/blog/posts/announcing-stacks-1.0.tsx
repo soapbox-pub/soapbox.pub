@@ -12,46 +12,35 @@ export interface BlogPostMeta {
 }
 
 export const meta: BlogPostMeta = {
-  slug: 'announcing-stacks-1.0',
-  title: 'Announcing Stacks 1.0: Be Your Own Open Router',
-  excerpt:
-    'Stacks 1.0 is here! Run multiple AI providers, use slash commands, save your AI chat history, and enjoy a totally overhauled experience for building with Stacks. Upgrade now and unlock the next level of AI-first development.',
-  coverImage: '/assets/blog/announcing-stacks-1.0/cover.png',
-  date: '2025-08-20',
-  author: {
-    name: 'Soapbox Team',
-    picture: '/assets/avatars/soapbox.png',
+  "slug": "announcing-stacks-1.0",
+  "title": " Stacks 1.0 Released",
+  "excerpt":
+    "Be your own OpenRouter",
+  "coverImage": "/assets/blog/stacks-1.0/stacks-upgrade.png",
+  "date": "2025-08-20",
+  "author": {
+    "name": "M.K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
-  ogImage: {
-    url: '/assets/blog/announcing-stacks-1.0/og.png',
+  "ogImage": {
+    "url": "/assets/blog/stacks-1.0/stacks-upgrade.png",
   },
 };
 
 export default function AnnouncingStacks1() {
   return (
     <article className="prose prose-lg max-w-none">
-      <div className="not-prose mb-10">
-        <img
-          src="/assets/blog/announcing-stacks-1.0/cover.png"
-          alt="Stacks 1.0 Release Cover"
-          className="rounded-xl shadow-lg w-full max-h-96 object-cover mb-6"
-        />
-      </div>
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-azure">Announcing Stacks 1.0: Be Your Own Open Router</h1>
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-azure">Stacks 1.0: Easily switch between models in the terminal</h1>
       <p className="text-xl text-gray-600 mb-8">Stacks 1.0 is here! Run multiple AI providers, use slash commands, save your AI chat history, and enjoy a totally overhauled experience for building with Stacks. Upgrade now and unlock the next level of AI-first development.</p>
-      <div className="not-prose mb-10">
-        <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg">
-          {/* Video tutorial placeholder */}
-          <iframe
-            src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID"
-            title="Stacks 1.0 Upgrade & Tutorial"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full"
+       <div className="aspect-video rounded-lg overflow-hidden">
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/HewEE6uf6cA?si=0agSOSNYRvRnVnYs"
+          title="Stacks 1.0 Upgrade & Tutorial"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
           ></iframe>
-        </div>
-        <p className="text-center text-gray-500 mt-2 text-sm">Watch: How to upgrade and use Stacks 1.0</p>
       </div>
 
       <h2 className="text-3xl font-bold text-azure mb-4">What’s New in Stacks 1.0?</h2>
@@ -68,7 +57,7 @@ export default function AnnouncingStacks1() {
 
       <div className="not-prose my-8">
         <img
-          src="/assets/blog/announcing-stacks-1.0/providers.png"
+          src="/assets/blog/stacks-1.0/recent-models.png"
           alt="Stacks 1.0 Multiple Providers UI"
           className="rounded-lg shadow-md mx-auto"
         />
@@ -86,7 +75,7 @@ export default function AnnouncingStacks1() {
       </ul>
       <div className="not-prose my-8">
         <img
-          src="/assets/blog/announcing-stacks-1.0/slash-commands.png"
+          src="/assets/blog/stacks-1.0/slash-commands.png"
           alt="Stacks 1.0 Slash Commands UI"
           className="rounded-lg shadow-md mx-auto"
         />
@@ -97,7 +86,7 @@ export default function AnnouncingStacks1() {
       <p>Every chat with your AI agent is now saved in a <code>.ai</code> folder in your project—just like <code>.git</code>. Reload any previous session, pick up where you left off, or review your progress at any time. Each project keeps its own settings and history, so you can use GPT for one project and GLM for another, with no conflicts.</p>
       <div className="not-prose my-8">
         <img
-          src="/assets/blog/announcing-stacks-1.0/history.png"
+          src="/assets/blog/stacks-1.0/history.png"
           alt="Stacks 1.0 AI Chat History UI"
           className="rounded-lg shadow-md mx-auto"
         />
@@ -113,7 +102,7 @@ export default function AnnouncingStacks1() {
       </ol>
       <div className="not-prose my-8">
         <img
-          src="/assets/blog/announcing-stacks-1.0/upgrade.png"
+          src="/assets/blog/stacks-1.0/update.png"
           alt="Stacks 1.0 Upgrade CLI"
           className="rounded-lg shadow-md mx-auto"
         />
@@ -123,25 +112,9 @@ export default function AnnouncingStacks1() {
       <h2 className="text-2xl font-bold text-azure mt-10 mb-4">A Foundation for the Future</h2>
       <p>The new <code>.ai</code> folder is inspired by <code>.git</code> and lays the groundwork for the next phase of AI-first, decentralized development. This is a major step toward our vision to <strong>#FreeGit</strong> and paves the way for Shakespeare Act 2 and beyond.</p>
       <p>We’ve also moved provider config from <code>agent.json</code> to <code>.mcp.json</code> for a cleaner, more flexible setup.</p>
-      <div className="not-prose my-8">
-        <img
-          src="/assets/blog/announcing-stacks-1.0/ai-folder.png"
-          alt="Stacks 1.0 .ai Folder"
-          className="rounded-lg shadow-md mx-auto"
-        />
-        <figcaption className="text-center text-gray-500 text-sm mt-2">The new <code>.ai</code> folder keeps your AI chat history organized</figcaption>
-      </div>
 
       <h2 className="text-2xl font-bold text-azure mt-10 mb-4">Try It Now</h2>
       <p>Ready to experience the new Stacks? Upgrade today and unlock the most powerful, flexible AI-first development workflow yet.</p>
-      <div className="not-prose my-8">
-        <img
-          src="/assets/blog/announcing-stacks-1.0/try-now.png"
-          alt="Try Stacks 1.0 Now"
-          className="rounded-lg shadow-md mx-auto"
-        />
-        <figcaption className="text-center text-gray-500 text-sm mt-2">Start building with Stacks 1.0 today</figcaption>
-      </div>
 
       <h2 className="text-2xl font-bold text-azure mt-10 mb-4">Get Notified of New Releases</h2>
       <EmailSignupForm tags={['Stacks']} />
