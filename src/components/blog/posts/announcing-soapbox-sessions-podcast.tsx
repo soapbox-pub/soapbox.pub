@@ -22,9 +22,9 @@ export interface BlogPostMeta {
 export const meta: BlogPostMeta = {
   "slug": "announcing-soapbox-sessions-podcast",
   "title": "🎙️ Announcing: The Soapbox Sessions Podcast",
-  "excerpt": "Heather Larson and Derek Ross bring you the latest news and tips about Nostr, AI, and building the decentralized future.",
+  "excerpt": "Heather Larson and Derek Ross bring you the latest news and tips about Nostr, AI, and building the decentralized future. Every Thursday, tune in for a fresh episode!",
   "coverImage": "/assets/blog/announcing-soapbox-sessions-podcast/podcast-cover.png",
-  "date": "2025-09-01",
+  "date": "2025-09-04",
   "author": {
     "name": "Heather Larson",
     "picture": "/assets/avatars/heather.jpg"
@@ -167,7 +167,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
         Learn about this idea in <a href="https://value4value.info/pieces/" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">Podcasting 2.0</a> and about <a href="https://podcastindex-org.github.io/docs-api/#get-/recent/soundbites" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">Value Time Splits for developers</a>.
       </p>
 
-      <h2>Weekly Nostr News Plus Tips for Building The No-Code Future</h2>
+      <h2>Weekly Nostr News Plus Building The Decentralized Future</h2>
 
       <p>
         Listen to Soapbox Sessions for a weekly dose of news and inspiration about what people are building on Nostr. We'll also be sharing our tips about building the no-code future along with how to use the coolest new apps out there. Heather likes to share from her non-developer point-of-view and Derek takes a more technical track to navigate the worlds of Nostr and AI. This ensures there's something for everyone who listens in or watches on YouTube.
@@ -232,7 +232,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
               Ready to Join the Decentralized Future?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Tune in to Soapbox Sessions every week for the latest in Nostr, AI, and decentralized web building.
+              Tune in to Soapbox Sessions every Thursday for the latest in Nostr, AI, and decentralized web building.
             </p>
             <div className="space-y-4">
               <Button
