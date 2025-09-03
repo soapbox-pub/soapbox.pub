@@ -98,34 +98,18 @@ export default function AnnouncingSoapboxSessionsPodcast() {
         We want to help you learn what's out there and available to you. It's probably easier for you to build than you think. Our conversational AI-builder, <a href="/showcase" className="text-azure-600 hover:underline">Shakespeare</a>, is brand new. But it's already helping people build websites and apps to solve problems or support their interests.
       </p>
 
-      <h2>Listen on Podstr: A New Podcasting App for Nostr</h2>
-
-      <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
-          <CardContent className="p-8 text-center">
-            <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
-              📱 Podstr App: Made with MKstack
-            </h3>
-            <div className="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-4xl mb-2">📱</div>
-                <p className="text-sm text-muted-foreground">Podstr App Interface</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <h2>Listen on Nostr</h2>
 
       <p>
-        Now that we're entering an age of being able to build with AI and absolutely no writing of code, we decided to see if we could launch a podcast with a podcasting app we built ourselves. The result is Podstr, an app Derek Ross built using <a href="/mkstack" className="text-azure-600 hover:underline">MKStack</a>.
+        Now that we're entering an age of being able to build with AI and absolutely no writing of code, we decided to see if we could launch a podcast with a podcasting app we built ourselves. The result is <a href="https://podstr.org" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">Podstr</a>, an app Derek Ross built using <a href="/mkstack" className="text-azure-600 hover:underline">MKStack</a>.
       </p>
 
       <p>
-        To listen to Soapbox Sessions, you can give Podstr a spin. For the best experience, sign up for Nostr and log in. Then you can comment and become part of our community. Empowering communities to form, grow, and thrive in the decentralized web is one of the key goals of our mission.
+        To listen to Soapbox Sessions, you can give Podstr a spin or visit our dedicated podcast site at <a href="https://sessions.soapbox.pub/" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">sessions.soapbox.pub</a>. For the best experience, sign up for Nostr and log in. Then you can comment and become part of our community. Empowering communities to form, grow, and thrive in the decentralized web is one of the key goals of our mission.
       </p>
 
       <p>
-        You can also listen to Soapbox Sessions wherever you get your podcasts. We'll even post the video version on our YouTube channel.
+        Soapbox Sessions is also available via <a href="https://sessions.soapbox.pub/rss.xml" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">RSS</a> and <a href="https://youtu.be/c_LxrSyMpSI" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">YouTube</a>.
       </p>
 
       <div className="not-prose my-8">
@@ -137,27 +121,28 @@ export default function AnnouncingSoapboxSessionsPodcast() {
             <p className="text-muted-foreground mb-4">
               Subscribe to our YouTube channel for video episodes and more content.
             </p>
-            <Button
-              asChild
-              className="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700"
-            >
-              <a href="https://www.youtube.com/@SoapboxTechnology" target="_blank" rel="noopener noreferrer">
-                Visit YouTube Channel →
-              </a>
-            </Button>
+            <div className="space-y-3">
+              <Button
+                asChild
+                className="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700"
+              >
+                <a href="https://youtu.be/c_LxrSyMpSI" target="_blank" rel="noopener noreferrer">
+                  🎬 Watch Episode 1 →
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-red-200 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-300"
+              >
+                <a href="https://www.youtube.com/@SoapboxTechnology" target="_blank" rel="noopener noreferrer">
+                  Subscribe to Channel →
+                </a>
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </div>
-
-      <h2>If We Can Do It, You Can Do it</h2>
-
-      <p>
-        By using MKStack to build Podstr, we created a way to host our podcast by using our own Soapbox technology. Neither one of us is a software developer. Derek, being our DevRel, naturally took the path towards creating Podstr by prompting in MKStack. It helps you build powerful Nostr applications with AI-first development. Install it and use in your terminal.
-      </p>
-
-      <p>
-        If you're not a developer and have no idea what a terminal even is, we have <a href="/tools/shakespeare" className="text-azure-600 hover:underline">Shakespeare</a> for you! It's our conversational AI builder anyone can use, especially if you have no technical knowledge at all. This is what Heather likes to use to build websites and apps.
-      </p>
 
       <p>
         Soapbox Sessions is self-hosted and we use Podcasting 2.0 technology like wallet splits, or value time splits. This means that if people send value to our podcast in the form of a payment, it can be split between our hosts, Soapbox, <a href="https://ainsleycostello.com/" className="text-azure-600 hover:underline" target="_blank" rel="noopener noreferrer">Ainsley Costello</a> who recorded our intro, and our charity of choice, The Human Rights Foundation (HRF). This will help us cover server costs, pay Ainsley, and help HRF!
@@ -186,17 +171,17 @@ export default function AnnouncingSoapboxSessionsPodcast() {
           <Card className="border-purple-200 dark:border-purple-800">
             <CardContent className="p-6 text-center">
               <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
-                🎧 Listen on Podstr
+                🎧 Listen to Soapbox Sessions
               </h3>
               <p className="text-muted-foreground mb-4">
-                Try our custom-built podcasting app powered by MKStack.
+                Visit our podcast site or try our custom-built Podstr app powered by MKStack.
               </p>
               <Button
                 asChild
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
               >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  [Placeholder: Podstr Link] →
+                <a href="https://sessions.soapbox.pub/" target="_blank" rel="noopener noreferrer">
+                  🎙️ Listen Now →
                 </a>
               </Button>
             </CardContent>
@@ -235,15 +220,27 @@ export default function AnnouncingSoapboxSessionsPodcast() {
               Tune in to Soapbox Sessions every Thursday for the latest in Nostr, AI, and decentralized web building.
             </p>
             <div className="space-y-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-              >
-                <a href="https://www.youtube.com/@SoapboxTechnology" target="_blank" rel="noopener noreferrer">
-                  🎬 Subscribe on YouTube
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
+                >
+                  <a href="https://sessions.soapbox.pub/" target="_blank" rel="noopener noreferrer">
+                    🎙️ Listen Now
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300 font-semibold px-8 py-3"
+                >
+                  <a href="https://www.youtube.com/@SoapboxTechnology" target="_blank" rel="noopener noreferrer">
+                    🎬 Subscribe on YouTube
+                  </a>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground">
                 Available wherever you get your podcasts
               </p>
