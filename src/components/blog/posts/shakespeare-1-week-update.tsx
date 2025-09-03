@@ -50,11 +50,11 @@ export default function Shakespeare1WeekUpdate() {
           </h3>
           <div className="space-y-4 max-w-2xl mx-auto">
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              <strong>More than 200 of you tried Shakespeare</strong> in the first week of our Beta launch. 
+              <strong>More than 200 of you tried Shakespeare</strong> in the first week of our Beta launch.
               We are so grateful to all of you who shared your ideas, helped us find bugs, and inspired our next steps.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Thanks to your feedback, we've already improved Shakespeare significantly in just one week, with more to come! 
+              Thanks to your feedback, we've already improved Shakespeare significantly in just one week, with more to come!
               Here's a look at some of the projects you've already built, and what's to come.
             </p>
           </div>
@@ -72,7 +72,7 @@ export default function Shakespeare1WeekUpdate() {
               <h3 className="text-2xl font-bold mb-4 text-purple-800 dark:text-purple-200">
                 Reviewstr
               </h3>
-              
+
               <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-purple-200 dark:border-purple-700 mb-4">
                 <p className="text-sm">
                   <strong>By:</strong> <a href="https://njump.me/npub105em547c5m5gdxslr4fp2f29jav54sxml6cpk6gda7xyvxuzmv6s84a642" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@TravelTelly</a>
@@ -82,7 +82,7 @@ export default function Shakespeare1WeekUpdate() {
                 </p>
               </div>
             </div>
-            
+
             <div className="p-6">
               <div className="text-center">
                 <a href="https://nostr-react-boilerplate-mbpz.shakespeare.to/" target="_blank" rel="noopener noreferrer">
@@ -111,7 +111,7 @@ export default function Shakespeare1WeekUpdate() {
               <h3 className="text-2xl font-bold mb-4 text-blue-800 dark:text-blue-200">
                 Hashman
               </h3>
-              
+
               <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-blue-200 dark:border-blue-700 mb-4">
                 <p className="text-sm">
                   <strong>By:</strong> <a href="https://njump.me/nprofile1qqs9kqvr4dkruv3t7n2pc6e6a7v9v2s5fprmwjv4gde8c4fe5y29v0sd595dt" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@QW</a>
@@ -121,7 +121,7 @@ export default function Shakespeare1WeekUpdate() {
                 </p>
               </div>
             </div>
-            
+
             <div className="p-6">
               <div className="text-center">
                 <a href="https://npub173vexauak3y5zctuapqh2p90pjnscyqr6zfh4vqa8r0pfsmkp5lqtjfk7c.shakespeare.to/" target="_blank" rel="noopener noreferrer">
@@ -150,7 +150,7 @@ export default function Shakespeare1WeekUpdate() {
               <h3 className="text-2xl font-bold mb-4 text-green-800 dark:text-green-200">
                 Betstr
               </h3>
-              
+
               <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-green-200 dark:border-green-700 mb-4">
                 <p className="text-sm">
                   <strong>By:</strong> <a href="https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@Keith Meola</a>
@@ -160,7 +160,7 @@ export default function Shakespeare1WeekUpdate() {
                 </p>
               </div>
             </div>
-            
+
             <div className="p-6">
               <div className="text-center">
                 <a href="https://project-betstr-description-i-want-to-w8ll.shakespeare.to/" target="_blank" rel="noopener noreferrer">
@@ -216,7 +216,7 @@ export default function Shakespeare1WeekUpdate() {
             </div>
 
             <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-              Shakespeare was featured in a recent TechCrunch article about Jack Dorsey's investment in Nostr. 
+              Shakespeare was featured in a recent TechCrunch article about Jack Dorsey's investment in Nostr.
               The article highlights how Shakespeare represents the future of AI-powered development on decentralized protocols.
             </p>
 
@@ -281,7 +281,7 @@ export default function Shakespeare1WeekUpdate() {
                 🔧 Built-in Nostr Issue Tracker
               </h4>
               <p className="text-blue-800 dark:text-blue-200 text-sm mb-4">
-                We've built a revolutionary issue tracker directly into Shakespeare that runs entirely on Nostr! 
+                We've built a revolutionary issue tracker directly into Shakespeare that runs entirely on Nostr!
                 Track bugs, request features, and collaborate on improvements using decentralized protocols.
               </p>
               <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
@@ -303,7 +303,7 @@ export default function Shakespeare1WeekUpdate() {
       <h2>Ready to Build Something Amazing?</h2>
 
       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-        Join hundreds of creators who are already building the future with Shakespeare. 
+        Join hundreds of creators who are already building the future with Shakespeare.
         Turn your ideas into reality through natural conversation with AI.
       </p>
 
