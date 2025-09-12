@@ -62,6 +62,52 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </p>
 
       <div className="not-prose my-8">
+        <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">📋 Table of Contents</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+              <a href="#section-1" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                1. Write the Script Before You Speak
+              </a>
+              <a href="#section-2" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                2. Plot the User's Experience
+              </a>
+              <a href="#section-3" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                3. Define the Design Direction
+              </a>
+              <a href="#section-4" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                4. Prompt by Component, Not Full Page
+              </a>
+              <a href="#section-5" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                5. Use Real Copy, Not Placeholder
+              </a>
+              <a href="#section-6" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                6. Speak Clearly and with Direction
+              </a>
+              <a href="#section-7" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                7. Use Mood Words to Shape Tone
+              </a>
+              <a href="#section-8" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                8. Use Layout Patterns Like Stage Directions
+              </a>
+              <a href="#section-9" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                9. Bring Visuals Onto the Stage
+              </a>
+              <a href="#section-10" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                10. Edit with Precision, Not Complete Rewrites
+              </a>
+              <a href="#section-11" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                11. Design as if It's Already Live
+              </a>
+              <a href="#section-12" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                12. Advanced Troubleshooting
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="not-prose my-8">
         <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
@@ -100,7 +146,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>1. Write the Script Before You Speak</h2>
+      <h2 id="section-1">1. Write the Script Before You Speak</h2>
 
       <p>
         Before you type into Shakespeare, take a pause. Great builds start with clarity and direction. Skipping this step is like walking onto stage without knowing your lines; confusion follows.
@@ -158,7 +204,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>2. Plot the User's Experience</h2>
+      <h2 id="section-2">2. Plot the User's Experience</h2>
 
       <p>
         Shakespeare doesn't just spit out pages. It shapes user experiences. An application that works isn't random sections stacked together. It's a story with momentum.
@@ -190,7 +236,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>3. Define the Design Direction</h2>
+      <h2 id="section-3">3. Define the Design Direction</h2>
 
       <p>
         Design decisions made late = messy results. With Shakespeare, the earlier you define your style language, the more consistent your site will feel.
@@ -225,7 +271,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>4. Prompt by Component, Not Full Page</h2>
+      <h2 id="section-4">4. Prompt by Component, Not Full Page</h2>
 
       <p>
         A full-page prompt = noise. A section-based prompt = clarity.
@@ -283,7 +329,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>5. Use Real Copy, Not Placeholder</h2>
+      <h2 id="section-5">5. Use Real Copy, Not Placeholder</h2>
 
       <p>
         "Lorem ipsum" is design trash. It fills space but starves your build of meaning and interpretation.
@@ -320,7 +366,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>6. Speak Clearly and with Direction: Buttons, Cards, Modals</h2>
+      <h2 id="section-6">6. Speak Clearly and with Direction: Buttons, Cards, Modals</h2>
 
       <p>
         Shakespeare builds your application using small components. These individual pieces like buttons, cards, modals, and grids combine to create your complete project. The more specific you are about each component, the more cohesive your final application becomes.
@@ -382,7 +428,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>7. Use Mood Words to Shape Tone</h2>
+      <h2 id="section-7">7. Use Mood Words to Shape Tone</h2>
 
       <p>
         Design isn't just what's on the page, it's how it feels. Shakespeare responds strongly to mood words, which act like emotional shorthand for your design. Words like minimal, cinematic, playful, premium, futuristic, developer focused aren't fluff. They're direction.
@@ -448,7 +494,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>8. Use Layout Patterns Like Stage Directions</h2>
+      <h2 id="section-8">8. Use Layout Patterns Like Stage Directions</h2>
 
       <p>
         When you're working with Shakespeare, think of yourself as a director giving stage cues. The clearer your stage directions, the smoother the performance. Layout patterns are those directions—they tell Shakespeare what goes where and how it should behave.
@@ -513,7 +559,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>9. Bring Visuals Onto the Stage</h2>
+      <h2 id="section-9">9. Bring Visuals Onto the Stage</h2>
 
       <p>
         Visual content transforms good designs into memorable experiences. Shakespeare handles text and layout brilliantly, but images, videos, and interactive media bring your vision to life. Think of visuals as your supporting actors. They should enhance the story.
@@ -564,7 +610,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>10. Edit with Precision, Not Complete Rewrites</h2>
+      <h2 id="section-10">10. Edit with Precision, Not Complete Rewrites</h2>
 
       <p>
         The biggest mistake people make with AI tools is starting over when they just need to adjust one element. Think of edits like a director calling for minor adjustments between takes.
@@ -639,7 +685,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>11. Design as if It's Already Live</h2>
+      <h2 id="section-11">11. Design as if It's Already Live</h2>
 
       <p>
         The gap between prototype and production kills most projects. Don't build a pretty demo. Build a functional foundation that's ready for real users, real data, and real business logic.
