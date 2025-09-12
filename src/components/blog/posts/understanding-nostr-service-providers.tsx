@@ -17,6 +17,7 @@ export interface BlogPostMeta {
     url?: string;
   };
   featured?: boolean;
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -31,7 +32,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/announcing-shakespeare/nsp-cover.png"
-  }
+  },
+  "tags": ["nostr", "ai", "development"]
 };
 
 export default function UnderstandingNostrServiceProviders() {
@@ -68,8 +70,8 @@ export default function UnderstandingNostrServiceProviders() {
               <p className="text-muted-foreground mb-4">
                 Experience NSPs in action by building websites with Shakespeare's AI-powered interface.
               </p>
-              <Button 
-                asChild 
+              <Button
+                asChild
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
               >
                 <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
@@ -87,8 +89,8 @@ export default function UnderstandingNostrServiceProviders() {
               <p className="text-muted-foreground mb-4">
                 Learn how Shakespeare uses NSPs to democratize website building through AI.
               </p>
-              <Button 
-                asChild 
+              <Button
+                asChild
                 variant="outline"
                 className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
               >
@@ -384,8 +386,8 @@ export default function UnderstandingNostrServiceProviders() {
               Access the complete source code, documentation, and protocol specification for building your own NSP.
             </p>
             <div className="space-y-3">
-              <Button 
-                asChild 
+              <Button
+                asChild
                 className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
               >
                 <a href="https://gitlab.com/soapbox-pub/mkstack-nsp" target="_blank" rel="noopener noreferrer">
@@ -393,8 +395,8 @@ export default function UnderstandingNostrServiceProviders() {
                 </a>
               </Button>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   variant="outline"
                   className="border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
                 >
@@ -402,8 +404,8 @@ export default function UnderstandingNostrServiceProviders() {
                     🛠️ Explore MKStack Framework
                   </a>
                 </Button>
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   variant="outline"
                   className="border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
                 >
@@ -502,8 +504,8 @@ export default function UnderstandingNostrServiceProviders() {
             <p className="text-sm text-muted-foreground mb-4">
               The complete protocol specification is available in the MKStack NSP repository. It includes detailed information about event structures, RPC methods, error handling, and security considerations.
             </p>
-            <Button 
-              asChild 
+            <Button
+              asChild
               variant="outline"
               className="w-full"
             >
@@ -585,8 +587,8 @@ export default function UnderstandingNostrServiceProviders() {
               Whether you're building websites with Shakespeare or creating your own NSP, you're part of a movement that's democratizing AI and breaking free from Big Tech control.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Button 
-                asChild 
+              <Button
+                asChild
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
               >
@@ -594,8 +596,8 @@ export default function UnderstandingNostrServiceProviders() {
                   🎭 Try Shakespeare
                 </a>
               </Button>
-              <Button 
-                asChild 
+              <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
@@ -653,9 +655,9 @@ export default function UnderstandingNostrServiceProviders() {
 
       <p className="text-sm text-muted-foreground text-center">
         <em>
-          NSPs are part of the broader Nostr ecosystem that's building a more open, decentralized internet. 
-          Learn more about our other projects including <a href="/blog/announcing-shakespeare" className="text-blue-600 hover:underline">Shakespeare</a>, 
-          <a href="/tools/mkstack" className="text-blue-600 hover:underline"> MKStack</a>, and 
+          NSPs are part of the broader Nostr ecosystem that's building a more open, decentralized internet.
+          Learn more about our other projects including <a href="/blog/announcing-shakespeare" className="text-blue-600 hover:underline">Shakespeare</a>,
+          <a href="/tools/mkstack" className="text-blue-600 hover:underline"> MKStack</a>, and
           <a href="/tools/ditto" className="text-blue-600 hover:underline"> Ditto</a>.
         </em>
       </p>

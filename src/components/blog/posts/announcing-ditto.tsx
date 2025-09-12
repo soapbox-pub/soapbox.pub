@@ -14,6 +14,7 @@ export interface BlogPostMeta {
   ogImage: {
     url?: string;
   };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -28,7 +29,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/announcing-ditto.jpeg"
-  }
+  },
+  "tags": ["ditto", "announcement", "nostr"]
 };
 
 export default function AnnouncingDitto() {

@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   ogImage: {
     url: "/assets/blog/what-is-the-fediverse/What-is-the-Fediverse-1.png"
-  }
+  },
+  "tags": ["fediverse", "tutorial", "beginner"]
 };
 
 export default function WhatIsTheFediverse() {

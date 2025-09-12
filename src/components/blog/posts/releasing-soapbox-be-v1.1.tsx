@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/releasing-soapbox-be-v1.1/be-1-1-thumb.png"
-  }
+  },
+  "tags": ["soapbox", "release", "backend"]
 };
 
 export default function ReleasingSoapboxBeV11() {

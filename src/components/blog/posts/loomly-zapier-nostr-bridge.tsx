@@ -13,6 +13,7 @@ export interface BlogPostMeta {
   ogImage: {
     url?: string;
   };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -27,14 +28,15 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/loomly-zapier-nostr-bridge/loomly-zapier-nostr-bridge.png"
-  }
+  },
+  "tags": ["automation", "bridge", "collaboration"]
 };
 
 export default function LoomlyZapierNostrBridge() {
   return (
     <article className="prose prose-lg max-w-none">
       <p>As our <a href="/about" target="_blank" rel="noopener noreferrer">team at Soapbox has grown</a>, we've faced a common challenge in the Nostr ecosystem: <strong>how do you enable multiple team members to schedule and publish content without sharing your private key (nsec) with each team member?</strong></p>
-      
+
       <p>This is a fundamental problem that many Nostr teams encounter. Your nsec is your identity on Nostr - sharing it compromises security and makes it impossible to know who actually published what. Yet traditional social media management tools don't support Nostr natively.</p>
 
       <h2>Content Scheduling: Loomly + Zapier → Nostr</h2>

@@ -10,6 +10,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 
@@ -25,7 +26,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/stacks-homepage.png"
-  }
+  },
+  "tags": ["stacks", "ai", "development"]
 };
 
 export default function Stacks() {

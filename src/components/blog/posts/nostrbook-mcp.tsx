@@ -9,6 +9,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -23,7 +24,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/images/nostrbook.png"
-  }
+  },
+  "tags": ["nostrbook", "ai", "development"]
 };
 
 export default function NostrbookMcp() {
@@ -51,7 +53,7 @@ export default function NostrbookMcp() {
       <p>Instead of trying to parse random Github pages, Nostrbook MCP delivers clean, normalized representations of the entire Nostr spec in AI-friendly markdown pages. Our llms.txt file at the root of the site also provides a structured overview of key resources for AI agents.</p>
 
       <p>This means you (or your AI assistant) can now do things like:</p>
-      
+
       <ul>
         <li>Find exactly how a specific tag works in a given NIP</li>
         <li>Get a complete schema of a Nostr event, including all fields and their constraints</li>

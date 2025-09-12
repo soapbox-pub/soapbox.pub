@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/server-safety-and-moderation/Soapbox-Moderation.png"
-  }
+  },
+  "tags": ["soapbox", "moderation", "safety"]
 };
 
 export default function ServerSafetyAndModeration() {

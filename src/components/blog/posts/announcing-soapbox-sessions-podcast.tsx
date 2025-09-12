@@ -17,6 +17,7 @@ export interface BlogPostMeta {
     url?: string;
   };
   featured?: boolean;
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -32,7 +33,8 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/announcing-soapbox-sessions-podcast/soapbox-sessions-cover.png"
   },
-  "featured": true
+  "featured": true,
+  "tags": ["podcast", "announcement", "soapbox"]
 };
 
 export default function AnnouncingSoapboxSessionsPodcast() {

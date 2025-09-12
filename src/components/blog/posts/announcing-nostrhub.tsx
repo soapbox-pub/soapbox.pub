@@ -12,6 +12,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -26,18 +27,19 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/announcing-nostrhub/nostrhub-blog.png"
-  }
+  },
+  "tags": ["nostrhub", "announcement", "development"]
 };
 
 export default function AnnouncingNostrHub() {
   return (
     <article className="prose prose-lg max-w-none">
       <p><strong>The Nostr ecosystem is growing rapidly,</strong> but developers have been scattered across different resources, documentation sites, and communities. Finding the right NIPs, discovering compatible apps, sharing projects, and connecting with other developers has been a fragmented experience.</p>
-      
+
       <p>Today, we're excited to announce <strong><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">NostrHub</a></strong> — a comprehensive platform that brings together everything you need as a Nostr developer in one place.</p>
 
       <h2>What is NostrHub?</h2>
-      
+
       <p><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">NostrHub</a> is your one-stop shop for Nostr development, designed to streamline the developer experience and foster collaboration within the Nostr ecosystem. Whether you're just getting started with Nostr or you're building the next breakthrough application, NostrHub has the resources you need — plus a truly social experience where you can comment and discuss every NIP, app, and repository. Now featuring a <strong>DVM marketplace (beta)</strong> where you can discover and use AI-powered Data Vending Machines for on-demand data processing.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
@@ -144,8 +146,8 @@ export default function AnnouncingNostrHub() {
       <p>Access the complete collection of Nostr Improvement Proposals (NIPs) in one place. Browse official NIPs from the main repository alongside community-submitted custom NIPs. Whether you're implementing existing standards or exploring innovative extensions to the protocol, NostrHub provides comprehensive documentation and real-world examples for every NIP.</p>
 
       <div className="my-8 not-prose">
-        <img 
-          src="/assets/blog/announcing-nostrhub/announcing-nostrhub.png" 
+        <img
+          src="/assets/blog/announcing-nostrhub/announcing-nostrhub.png"
           alt="NostrHub NIPs page showing official and custom Nostr Improvement Proposals"
           className="w-full rounded-lg shadow-lg border"
         />
@@ -156,8 +158,8 @@ export default function AnnouncingNostrHub() {
       <p>Browse Nostr applications organized by the event kinds they support. Whether you're looking for a client that handles NIP-04 encrypted messages or want to showcase your new NIP-23 long-form content app, the app discovery platform makes it easy to find and share compatible applications.</p>
 
       <div className="my-8 not-prose">
-        <img 
-          src="/assets/blog/announcing-nostrhub/Nostr-apps.png" 
+        <img
+          src="/assets/blog/announcing-nostrhub/Nostr-apps.png"
           alt="NostrHub Apps page showing Nostr applications organized by supported event kinds"
           className="w-full rounded-lg shadow-lg border"
         />
@@ -168,8 +170,8 @@ export default function AnnouncingNostrHub() {
       <p>Share your open-source Nostr projects and discover interesting repositories from other developers. This feature helps you find collaborators, showcase your work, and contribute to the growing ecosystem of Nostr tools and applications. <strong>You can also submit issues and patches directly on repository pages</strong>, making it easy to report bugs, request features, and contribute code improvements to projects you're interested in.</p>
 
       <div className="my-8 not-prose">
-        <img 
-          src="/assets/blog/announcing-nostrhub/nostrhub-repos.png" 
+        <img
+          src="/assets/blog/announcing-nostrhub/nostrhub-repos.png"
           alt="NostrHub Repositories page showcasing open-source Nostr projects"
           className="w-full rounded-lg shadow-lg border"
         />
@@ -180,8 +182,8 @@ export default function AnnouncingNostrHub() {
       <p>A built-in NIP-72 community space specifically for Nostr developers. Connect with peers, share ideas, get help with implementation challenges, and collaborate on the future of decentralized social media.</p>
 
       <div className="my-8 not-prose">
-        <img 
-          src="/assets/blog/announcing-nostrhub/nostrhub-community.png" 
+        <img
+          src="/assets/blog/announcing-nostrhub/nostrhub-community.png"
           alt="NostrHub Community page showing developer discussions and collaboration"
           className="w-full rounded-lg shadow-lg border"
         />
@@ -192,8 +194,8 @@ export default function AnnouncingNostrHub() {
       <p>Discover and use <strong>Data Vending Machines</strong> - AI-powered services that process your data on-demand. From text translation to image generation, find the perfect service for your needs. The DVM marketplace connects you with decentralized AI services running on the Nostr network, enabling everything from content moderation to creative assistance.</p>
 
       <div className="my-8 not-prose">
-        <img 
-          src="/assets/blog/announcing-nostrhub/notrhub-dvms.png" 
+        <img
+          src="/assets/blog/announcing-nostrhub/notrhub-dvms.png"
           alt="NostrHub DVM Marketplace showing AI-powered Data Vending Machines for on-demand data processing"
           className="w-full rounded-lg shadow-lg border"
         />
@@ -222,8 +224,8 @@ export default function AnnouncingNostrHub() {
         <Card className="hover:shadow-lg transition-all duration-300">
           <CardContent className="p-6">
             <div className="flex items-center gap-4 mb-4">
-              <img 
-                src="/assets/avatars/alex.png" 
+              <img
+                src="/assets/avatars/alex.png"
                 alt="Alex Gleason"
                 className="w-12 h-12 rounded-full object-cover border-2 border-border"
               />
@@ -232,8 +234,8 @@ export default function AnnouncingNostrHub() {
                 <p className="text-sm text-muted-foreground">Ditto & Soapbox Developer</p>
               </div>
             </div>
-            <img 
-              src="/assets/blog/announcing-nostrhub/alex-nostrhub-profile.png" 
+            <img
+              src="/assets/blog/announcing-nostrhub/alex-nostrhub-profile.png"
               alt="Alex Gleason's NostrHub profile page"
               className="w-full rounded-lg shadow-sm border mb-4"
             />
@@ -249,8 +251,8 @@ export default function AnnouncingNostrHub() {
         <Card className="hover:shadow-lg transition-all duration-300">
           <CardContent className="p-6">
             <div className="flex items-center gap-4 mb-4">
-              <img 
-                src="/assets/avatars/derek.jpg" 
+              <img
+                src="/assets/avatars/derek.jpg"
                 alt="Derek Ross"
                 className="w-12 h-12 rounded-full object-cover border-2 border-border"
               />
@@ -259,8 +261,8 @@ export default function AnnouncingNostrHub() {
                 <p className="text-sm text-muted-foreground">Nostr Advocate & Builder</p>
               </div>
             </div>
-            <img 
-              src="/assets/blog/announcing-nostrhub/derek-nostrhub-profile.png" 
+            <img
+              src="/assets/blog/announcing-nostrhub/derek-nostrhub-profile.png"
               alt="Derek Ross's NostrHub profile page"
               className="w-full rounded-lg shadow-sm border mb-4"
             />
@@ -293,7 +295,7 @@ export default function AnnouncingNostrHub() {
       </div>
 
       <h2 className="text-center">Start Building with NostrHub 🚀</h2>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8 not-prose">
         <Button asChild size="lg" className="h-auto py-4">
           <a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
