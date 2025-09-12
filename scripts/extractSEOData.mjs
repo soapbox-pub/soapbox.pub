@@ -70,6 +70,11 @@ const pageRoutes = [
     path: '/blog',
     file: 'src/pages/blog/BlogIndex.tsx',
     extractSEO: extractGenericSEO
+  },
+  {
+    path: '/shakespeare-resources',
+    file: 'src/pages/ShakespeareResources.tsx',
+    extractSEO: extractGenericSEO
   }
 ];
 
@@ -100,7 +105,7 @@ function extractIndexSEO(content) {
       console.warn('Failed to parse SEO data from Index.tsx:', error.message);
     }
   }
-  
+
   return {
     ...defaultSEO,
     title: 'Soapbox - Build Your Decentralized Platform',
@@ -122,7 +127,7 @@ function extractGenericSEO(content, filePath) {
       console.warn(`Failed to parse SEO data from ${filePath}:`, error.message);
     }
   }
-  
+
   // Generate fallback SEO based on file path
   const fileName = path.basename(filePath, '.tsx');
   return generateFallbackSEO(fileName);
@@ -132,15 +137,15 @@ function extractUseSEOCall(content) {
   // More robust extraction that handles nested objects
   const useSEOStart = content.indexOf('useSEO(');
   if (useSEOStart === -1) return null;
-  
+
   // Find the opening brace
   const openBraceStart = content.indexOf('{', useSEOStart);
   if (openBraceStart === -1) return null;
-  
+
   // Find the matching closing brace by counting braces
   let braceCount = 1;
   let pos = openBraceStart + 1;
-  
+
   while (pos < content.length && braceCount > 0) {
     const char = content[pos];
     if (char === '{') {
@@ -158,18 +163,18 @@ function extractUseSEOCall(content) {
     }
     pos++;
   }
-  
+
   if (braceCount === 0) {
     // Extract the content between the braces
     return content.substring(openBraceStart + 1, pos - 1);
   }
-  
+
   return null;
 }
 
 function parseUseSEOObject(seoContent) {
   const seo = {};
-  
+
   // Helper function to extract string values, handling multi-line strings
   function extractStringValue(property) {
     // Match property with various quote types and handle multi-line
@@ -177,7 +182,7 @@ function parseUseSEOObject(seoContent) {
       new RegExp(`${property}:\\s*['"\`]([^'"\`]*)['"\`]`, 's'),
       new RegExp(`${property}:\\s*['"\`]([\\s\\S]*?)['"\`](?=\\s*[,}])`, 's')
     ];
-    
+
     for (const pattern of patterns) {
       const match = seoContent.match(pattern);
       if (match) {
@@ -186,23 +191,23 @@ function parseUseSEOObject(seoContent) {
     }
     return null;
   }
-  
+
   // Extract all SEO properties
   const title = extractStringValue('title');
   if (title) seo.title = title;
-  
+
   const description = extractStringValue('description');
   if (description) seo.description = description;
-  
+
   const image = extractStringValue('image');
   if (image) seo.image = image;
-  
+
   const type = extractStringValue('type');
   if (type) seo.type = type;
-  
+
   const keywords = extractStringValue('keywords');
   if (keywords) seo.keywords = keywords;
-  
+
   return seo;
 }
 
@@ -265,7 +270,7 @@ function generateFallbackSEO(fileName) {
       keywords: 'soapbox blog, decentralized social media news, open source updates, nostr insights'
     }
   };
-  
+
   return { ...defaultSEO, ...(fallbacks[fileName] || {}) };
 }
 
@@ -273,48 +278,48 @@ async function getBlogPosts() {
   try {
     const blogIndexPath = path.resolve(__dirname, '../src/lib/blog/blogIndex.ts');
     const blogIndexContent = fs.readFileSync(blogIndexPath, 'utf8');
-    
+
     // Extract blog post imports and metadata
     const blogPosts = [];
     const importMatches = blogIndexContent.match(/import \* as (\w+) from '([^']+)'/g);
-    
+
     if (importMatches) {
       for (const importMatch of importMatches) {
         const [, varName, filePath] = importMatch.match(/import \* as (\w+) from '([^']+)'/);
         const fullPath = path.resolve(__dirname, '../src/components/blog/posts/' + path.basename(filePath) + '.tsx');
-        
+
         try {
           const postContent = fs.readFileSync(fullPath, 'utf8');
           const metaMatch = postContent.match(/export const meta: BlogPostMeta = \{([^}]+)\}/s);
-          
+
           if (metaMatch) {
             const metaContent = metaMatch[1];
             const post = {};
-            
+
             // Extract slug
             const slugMatch = metaContent.match(/["']slug["']:\s*["']([^"']+)["']/);
             if (slugMatch) post.slug = slugMatch[1];
-            
+
             // Extract title
             const titleMatch = metaContent.match(/["']title["']:\s*["']([^"']+)["']/);
             if (titleMatch) post.title = titleMatch[1];
-            
+
             // Extract excerpt
             const excerptMatch = metaContent.match(/["']excerpt["']:\s*["']([^"']+)["']/);
             if (excerptMatch) post.excerpt = excerptMatch[1];
-            
+
             // Extract coverImage
             const coverImageMatch = metaContent.match(/["']coverImage["']:\s*["']([^"']+)["']/);
             if (coverImageMatch) post.coverImage = coverImageMatch[1];
-            
+
             // Extract date
             const dateMatch = metaContent.match(/["']date["']:\s*["']([^"']+)["']/);
             if (dateMatch) post.date = dateMatch[1];
-            
+
             // Extract author name
             const authorMatch = metaContent.match(/["']name["']:\s*["']([^"']+)["']/);
             if (authorMatch) post.author = { name: authorMatch[1] };
-            
+
             if (post.slug && post.title) {
               blogPosts.push(post);
             }
@@ -324,7 +329,7 @@ async function getBlogPosts() {
         }
       }
     }
-    
+
     return blogPosts;
   } catch (error) {
     console.warn('Failed to extract blog posts:', error.message);
@@ -334,14 +339,14 @@ async function getBlogPosts() {
 
 export async function extractAllSEOData() {
   const routes = [];
-  
+
   // Extract SEO data from regular pages
   for (const route of pageRoutes) {
     try {
       const filePath = path.resolve(__dirname, '../' + route.file);
       const content = fs.readFileSync(filePath, 'utf8');
       const seoData = route.extractSEO(content, route.file);
-      
+
       routes.push({
         path: route.path,
         ...seoData
@@ -355,7 +360,7 @@ export async function extractAllSEOData() {
       });
     }
   }
-  
+
   // Extract blog posts
   const blogPosts = await getBlogPosts();
   for (const post of blogPosts) {
@@ -370,7 +375,7 @@ export async function extractAllSEOData() {
       author: post.author?.name || 'Soapbox Team'
     });
   }
-  
+
   return routes;
 }
 
