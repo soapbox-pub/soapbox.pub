@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/follow-bluesky/follow-bluesky.png"
-  }
+  },
+  "tags": ["bluesky", "tutorial", "bridge"]
 };
 
 export default function FollowBluesky() {
@@ -65,16 +67,16 @@ We'll have a separate guide on that, coming soon!
       <p>Please keep in mind that both the Mostr Bridge and Bridgy Fed are new services, still undergoing improvement, and may not be reliable. In addition, Nostr and AtProto are also both young protocols - this is a recipe for bugs! </p>
       <p>It can take 15 minutes+ for posts and follows to federate through both bridges. Maybe even longer. Please be patient! </p>
       <h2>Sample Accounts to Follow over the Bridge</h2>
-      
+
       <p>Over 1.2k Bluesky users have already opted into the bridge! Here's a few to get you started:</p>
-      
+
       <ul>
         <li>Jay, Bluesky CEO (<a href="https://bsky.app/profile/jay.bsky.team" target="_blank" rel="noopener noreferrer">@jay.bsky.team</a> | <a href="https://njump.me/nprofile1qqsvuef74pfa6xfyl072p8wcdffahh0s8gsctnjjrwgxmvlkszmxlfcpz4mhxue69uhhyetvv9ujumt0wd68ytnsw43q92uehx" target="_blank" rel="noopener noreferrer">NJump</a>)</li>
         <li>Ricardo Grego (<a href="https://bsky.app/profile/ricgrego.me" target="_blank" rel="noopener noreferrer">@ricgrego.me</a> | <a href="https://njump.me/nprofile1qqst6pneyz35k2tq6p6kej2cvkc6aqnjxtcrlm7n3vm4rh6jngv4hrspz4mhxue69uhhyetvv9ujumt0wd68ytnsw43qyq3txp" target="_blank" rel="noopener noreferrer">NJump</a>)</li>
         <li>Keeley (<a href="https://bsky.app/profile/vertedin.de" target="_blank" rel="noopener noreferrer">@ertedin.de</a> | <a href="https://njump.me/nprofile1qqsd6j6mea2uzvuqcd4ugsw4ckh9q5yy7q0jvs36cusxsxzj66gt88cpz4mhxue69uhhyetvv9ujumt0wd68ytnsw43qj4pd58" target="_blank" rel="noopener noreferrer">NJump</a>)</li>
         <li>Peter (<a href="https://bsky.app/profile/peterdutoit.com" target="_blank" rel="noopener noreferrer">@peterdutoit.com</a> | <a href="https://njump.me/nprofile1qqspv2zs3lgdyw48vetyny8hauldunvqvkng2ttv3mv8r4la0aj42rqpz4mhxue69uhhyetvv9ujumt0wd68ytnsw43qgnl7fq" target="_blank" rel="noopener noreferrer">NJump</a>)</li>
       </ul>
-      
+
       <p><em>Browse all bridged Bluesky accounts to follow <a href="https://bsky.app/profile/ap.brid.gy/followers" target="_blank" rel="noopener noreferrer">here</a></em></p>
     </article>
   );

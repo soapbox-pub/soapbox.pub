@@ -16,6 +16,7 @@ export interface BlogPostMeta {
     url?: string;
   };
   featured?: boolean;
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -31,7 +32,8 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/shakespeare-1-week-update/shakespeare-cover.png"
   },
-  "featured": true
+  "featured": true,
+  "tags": ["shakespeare", "update", "community"]
 };
 
 export default function Shakespeare1WeekUpdate() {

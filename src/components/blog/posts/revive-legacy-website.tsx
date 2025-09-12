@@ -21,6 +21,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string };
   ogImage: { url?: string };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -37,6 +38,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/revive-legacy-website/website-revive-og.png",
   },
+  "tags": ["mkstack", "tutorial", "legacy"]
 };
 
 export default function ReviveLegacyWebsite() {
@@ -272,7 +274,7 @@ export default function ReviveLegacyWebsite() {
         </a>{" "}
         was a static site that hadn't been updated in years. Using this process,
         we transformed it into the dynamic, Nostr-powered hub that pulls in live profiles,
-        social media posts, app showcases, and protocol specifications. 
+        social media posts, app showcases, and protocol specifications.
         <strong> We encourage you to explore this site</strong> to discover the many
         creative ways dynamic Nostr content has been integrated. From the team
         posts on our About page to the live developer feeds throughout the site,

@@ -9,6 +9,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -23,7 +24,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/announcing-nostrify/announcing-nostrify.png"
-  }
+  },
+  "tags": ["nostrify", "announcement", "development"]
 };
 
 export default function AnnouncingNostrify() {

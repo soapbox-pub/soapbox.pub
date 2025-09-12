@@ -60,6 +60,7 @@ export interface BlogPost {
     url?: string;
   };
   featured?: boolean;
+  tags?: string[];
 }
 
 export const blogPosts: BlogPost[] = [

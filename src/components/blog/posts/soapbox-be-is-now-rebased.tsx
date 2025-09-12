@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/soapbox-be-is-now-rebased/signal-2022-08-18-153539_002.png"
-  }
+  },
+  "tags": ["soapbox", "rebased", "backend"]
 };
 
 export default function SoapboxBeIsNowRebased() {

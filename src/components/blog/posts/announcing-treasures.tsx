@@ -12,6 +12,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -26,7 +27,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/announcing-treasures/treasures-blog.png"
-  }
+  },
+  "tags": ["treasures", "announcement", "geocaching"]
 };
 
 export default function AnnouncingTreasures() {
@@ -58,7 +60,7 @@ export default function AnnouncingTreasures() {
               </ul>
             </CardContent>
           </Card>
-          
+
           <Card className="border-emerald-200 bg-emerald-50/50">
             <CardHeader>
               <CardTitle className="text-emerald-800 flex items-center">
@@ -88,17 +90,17 @@ export default function AnnouncingTreasures() {
             Now Live
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            The Future of Geocaching is 
+            The Future of Geocaching is
             <span className="text-emerald-600"> Decentralized</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Join the world's first decentralized geocaching platform built on Nostr. Hide treasures, explore the world, and connect with adventurers worldwide—all without paywalls or platform lock-in.
           </p>
         </div>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg"
             asChild
           >
@@ -108,9 +110,9 @@ export default function AnnouncingTreasures() {
               <ExternalLink className="w-4 h-4 ml-2" />
             </a>
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
+          <Button
+            variant="outline"
+            size="lg"
             className="border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-8 py-3 text-lg"
             asChild
           >
@@ -128,7 +130,7 @@ export default function AnnouncingTreasures() {
       {/* Features showcase with screenshots */}
       <div className="not-prose my-12">
         <h3 className="text-2xl font-bold text-gray-900 mb-8">Core Geocaching Features</h3>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Explore treasures feature */}
           <div className="order-2 lg:order-1">
@@ -150,9 +152,9 @@ export default function AnnouncingTreasures() {
           </div>
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative max-w-xs">
-              <img 
-                src="/assets/blog/announcing-treasures/treasures-explore.png" 
-                alt="Treasures Explore Screen" 
+              <img
+                src="/assets/blog/announcing-treasures/treasures-explore.png"
+                alt="Treasures Explore Screen"
                 className="w-full h-auto rounded-2xl shadow-xl"
               />
             </div>
@@ -163,9 +165,9 @@ export default function AnnouncingTreasures() {
           {/* Interactive map feature */}
           <div className="flex justify-center">
             <div className="relative max-w-xs">
-              <img 
-                src="/assets/blog/announcing-treasures/treasures-map.png" 
-                alt="Treasures Interactive Map" 
+              <img
+                src="/assets/blog/announcing-treasures/treasures-map.png"
+                alt="Treasures Interactive Map"
                 className="w-full h-auto rounded-2xl shadow-xl"
               />
             </div>
@@ -210,9 +212,9 @@ export default function AnnouncingTreasures() {
           </div>
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative max-w-xs">
-              <img 
-                src="/assets/blog/announcing-treasures/treasures-profile.png" 
-                alt="Treasures User Profile" 
+              <img
+                src="/assets/blog/announcing-treasures/treasures-profile.png"
+                alt="Treasures User Profile"
                 className="w-full h-auto rounded-2xl shadow-xl"
               />
             </div>
@@ -232,7 +234,7 @@ export default function AnnouncingTreasures() {
 
       <h2>Getting People Into the Real World</h2>
       <p>One of the most exciting aspects of Treasures is how it encourages people to disconnect from screens and explore the physical world. In an age of increasing digital isolation, geocaching provides:</p>
-      
+
       <ul>
         <li><strong>Physical Adventure</strong>: Real-world exploration and discovery</li>
         <li><strong>Community Connection</strong>: Meeting fellow geocachers and sharing experiences</li>
@@ -240,7 +242,7 @@ export default function AnnouncingTreasures() {
         <li><strong>Local Discovery</strong>: Finding hidden gems and interesting locations in your area</li>
         <li><strong>Family Activity</strong>: Fun for all ages and skill levels</li>
       </ul>
-      
+
       <p>Treasures taps into an existing, passionate IRL community of millions of geocachers worldwide. By bringing this community to Nostr, we're creating a bridge between the digital and physical worlds.</p>
 
       <h2>The Technical Foundation</h2>
@@ -249,7 +251,7 @@ export default function AnnouncingTreasures() {
         <li><strong>Geocache Listing Events (Kind 37515)</strong>: Addressable events that contain all cache information including location, difficulty, terrain, size, and type. These events are owned and maintained by the cache creator.</li>
         <li><strong>Found Logs (Kind 7516)</strong>: Regular events that record when the cache is found.</li>
         <li><strong>Log Comments (Kind 1111)</strong>: Regular events that record other log comments including DNF reports, maintenance notes, and archive notifications.</li>
-      </ul>   
+      </ul>
       <p>This protocol ensures interoperability - any Nostr client can implement geocaching features and interact with Treasures data.</p>
 
       {/* Decentralized benefits section */}
@@ -267,7 +269,7 @@ export default function AnnouncingTreasures() {
               Built on decentralized network with no central authority or censorship
             </CardContent>
           </Card>
-          
+
           <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50">
             <CardHeader>
               <CardTitle className="text-blue-800 text-lg flex items-center">
@@ -279,7 +281,7 @@ export default function AnnouncingTreasures() {
               Your geocaching data belongs to you, never locked in to any platform
             </CardContent>
           </Card>
-          
+
           <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50">
             <CardHeader>
               <CardTitle className="text-purple-800 text-lg flex items-center">
@@ -291,7 +293,7 @@ export default function AnnouncingTreasures() {
               Fully open-source under AGPL v3 license for community development
             </CardContent>
           </Card>
-          
+
           <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-orange-100/50">
             <CardHeader>
               <CardTitle className="text-orange-800 text-lg flex items-center">
@@ -303,7 +305,7 @@ export default function AnnouncingTreasures() {
               Login with Nostr keypair, no personal data required
             </CardContent>
           </Card>
-          
+
           <Card className="border-green-200 bg-gradient-to-br from-green-50 to-green-100/50">
             <CardHeader>
               <CardTitle className="text-green-800 text-lg flex items-center">
@@ -315,7 +317,7 @@ export default function AnnouncingTreasures() {
               All features available without subscription fees or premium tiers
             </CardContent>
           </Card>
-          
+
           <Card className="border-indigo-200 bg-gradient-to-br from-indigo-50 to-indigo-100/50">
             <CardHeader>
               <CardTitle className="text-indigo-800 text-lg flex items-center">
@@ -335,7 +337,7 @@ export default function AnnouncingTreasures() {
       <p>The treasure hunting community has always been about exploration, discovery, and sharing adventures. Geocaching was born as a free, open activity that brought people together through shared adventure. Corporate platforms have tried to monetize and restrict this natural human impulse, but with Treasures on Nostr, we can return to those original values while maintaining true ownership of our data and freedom from platform restrictions.</p>
       <p>Every geocacher who joins Treasures is voting for a future where outdoor adventure remains accessible to everyone, regardless of their ability to pay subscription fees. Together, we can build a geocaching ecosystem that serves the community instead of extracting profit from it.</p>
       <p><strong>The world is full of hidden treasures, and they should be free for everyone to discover.</strong></p>
-      
+
       {/* Treasures CTA */}
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-3xl p-12 text-white text-center">
@@ -343,10 +345,10 @@ export default function AnnouncingTreasures() {
           <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
             Ready to experience the future of geocaching? Join the decentralized treasure hunting revolution and discover hidden treasures around the world—completely free, forever.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-4 text-lg font-semibold"
               asChild
             >
@@ -356,9 +358,9 @@ export default function AnnouncingTreasures() {
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-8 py-4 text-lg font-semibold"
               asChild
             >

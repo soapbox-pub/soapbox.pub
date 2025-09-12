@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/follow-threads/follow-threads.png"
-  }
+  },
+  "tags": ["threads", "tutorial", "bridge"]
 };
 
 export default function FollowThreads() {
@@ -62,9 +64,9 @@ Using the pattern: <code>[username]_at_threads.net@mostr.pub</code>
       <h2>Can I bridge my Nostr account to Threads so they see my posts?</h2>
 At the moment, Threads federation only works one way. We hope Threads will do the right thing and further open their platform in the future. <a href="https://njump.me/npub1d03clrrrma7mlpxm0mz2dehmhkx3nh9rhxqwltgctpwyduztymustepzfs" target="_blank" rel="noopener noreferrer">Follow the Mostr Bridge</a> to stay up to date!
       <h2>Sample Accounts to Follow over the Bridge</h2>
-      
+
       <p>Many threads users have already opted into federation! Here's a few to get you started:</p>
-      
+
       <ul>
         <li>President Biden (<a href="https://www.threads.net/@potus" target="_blank" rel="noopener noreferrer">@potus</a> | <a href="https://njump.me/nprofile1qqs8rddhkd7myyzq8k9fzztgtu699fcgtlptnngm3z6uucdempc99tgpz4mhxue69uhhyetvv9ujumt0wd68ytnsw43qhv5lvu" target="_blank" rel="noopener noreferrer">NJump</a>)</li>
         <li>John Green (<a href="https://www.threads.net/@johngreenwritesbooks" target="_blank" rel="noopener noreferrer">@johngreenwritesbooks</a> | <a href="https://njump.me/nprofile1qqsyghuk7ve59r7e6qkuhwx7galx7pwj0shy790dwfk3u6n4xwncf4qpz4mhxue69uhhyetvv9ujumt0wd68ytnsw43q38djkk" target="_blank" rel="noopener noreferrer">NJump</a>)</li>

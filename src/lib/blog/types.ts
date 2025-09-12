@@ -14,6 +14,7 @@ export interface BlogPostMeta {
     url?: string;
   };
   featured?: boolean;
+  tags?: string[];
 }
 
 export interface BlogPost extends BlogPostMeta {

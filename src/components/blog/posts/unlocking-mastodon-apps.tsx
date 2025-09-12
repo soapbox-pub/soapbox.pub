@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,14 +23,15 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/unlocking-mastodon-apps/unlocking-mastodon-apps.png"
-  }
+  },
+  "tags": ["ditto", "mastodon", "apps"]
 };
 
 export default function UnlockingMastodonApps() {
   return (
     <article className="prose prose-lg max-w-none">
       <h2>How Ditto is unlocking a decade's worth of decentralized projects for use on Nostr</h2>
-      
+
       <p><strong>Before Nostr, there was the Fediverse...</strong></p>
       <p>The Fediverse is a network of decentralized social media sites built on the shared ActivityPub protocol. The Fediverse has been around in some form since 2009, and there are over 20,000 different sites ("servers") on the Fediverse, home to over 4.4 million users. </p>
       <p>Like Nostr, the Fediverse is decentralized and built on free software, however, there are major issues with the premise of ActivityPub for user freedom (primarily, the account portability). This is why Soapbox moved focus to Nostr in 2023. </p>

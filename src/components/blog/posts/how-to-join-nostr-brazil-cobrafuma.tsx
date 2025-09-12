@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/how-to-join-nostr-brazil/Cobarfuma-nostr-brazil-x-banned-twitter-alternative.png"
-  }
+  },
+  "tags": ["cobrafuma", "tutorial", "brazil"]
 };
 
 export default function HowToJoinNostrBrazilCobrafuma() {

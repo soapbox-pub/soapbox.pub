@@ -10,6 +10,7 @@ import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
 import NotFound from "./pages/NotFound";
 import CustomNipPage from "./pages/CustomNipPage";
+import ShakespeareResources from "./pages/ShakespeareResources";
 
 // Tool pages
 import Ditto from "./pages/tools/Ditto";
@@ -43,6 +44,7 @@ export function AppRouter() {
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/nip/:naddr" element={<CustomNipPage />} />
+        <Route path="/shakespeare-resources" element={<ShakespeareResources />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

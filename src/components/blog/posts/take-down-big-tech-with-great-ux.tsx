@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -22,7 +23,8 @@ export const meta: BlogPostMeta = {
   },
   "ogImage": {
     "url": "/assets/blog/take-down-big-tech-with-great-ux/great-ui-2-1.png"
-  }
+  },
+  "tags": ["ux", "decentralization", "social"]
 };
 
 export default function TakeDownBigTechWithGreatUx() {

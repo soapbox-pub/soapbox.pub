@@ -9,6 +9,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -25,6 +26,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/stacks-1-0/stacks-upgrade.png",
   },
+  "tags": ["stacks", "announcement", "ai"]
 };
 
 export default function AnnouncingStacks1() {

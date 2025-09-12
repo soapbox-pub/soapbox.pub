@@ -21,6 +21,7 @@ export interface BlogPostMeta {
   author: { name?: string; picture?: string };
   ogImage: { url?: string };
   featured?: boolean;
+  tags?: string[];
 }
 
 export const meta: BlogPostMeta = {
@@ -37,6 +38,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
   },
+  "tags": ["mkstack", "tutorial", "development"]
 };
 
 export default function MKStackTutorial() {
