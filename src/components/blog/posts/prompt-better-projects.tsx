@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/prompt-better-projects/prompt-better-projects.png"
   },
   "featured": true,
-  "tags": ["shakespeare", "ai", "tutorial", "prompting"]
+  "tags": ["shakespeare", "resources", "actii", "prompting"]
 };
 
 export default function HowToPromptBetterProjectsWithShakespeare() {
@@ -148,12 +148,6 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
                   11. Design as if It's Already Live
-                </button>
-                <button
-                  onClick={() => scrollToSection('section-12')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
-                >
-                  12. Advanced Troubleshooting
                 </button>
               </div>
             </div>
@@ -797,110 +791,11 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-12">12. Advanced Troubleshooting</h2>
-
-      <p>
-        When building complex applications, things don't always work as expected. Advanced users need debugging strategies that go beyond basic prompting. This section covers additional troubleshooting approaches that help Shakespeare understand and fix issues.
-      </p>
-
-      <p><strong>The Debug Hierarchy:</strong></p>
-
-      <ol>
-        <li><strong>Gather Evidence</strong> (Console logs, error messages, network requests)</li>
-        <li><strong>Isolate the Problem</strong> (Specific component, function, or interaction)</li>
-        <li><strong>Provide Context</strong> (Environment, data state, user actions)</li>
-        <li><strong>Test Systematically</strong> (Incremental changes, rollback capability)</li>
-      </ol>
-
-      <p><strong>Opening Developer Tools (Desktop Only):</strong></p>
-
-      <ul>
-        <li><strong>Chrome/Edge:</strong> Press F12 or Ctrl+Shift+I (Windows/Linux) / Cmd+Option+I (Mac)</li>
-        <li><strong>Firefox:</strong> Press F12 or Ctrl+Shift+I (Windows/Linux) / Cmd+Option+I (Mac)</li>
-        <li><strong>Safari:</strong> Press Cmd+Option+I (Mac) - Enable Developer menu first in Preferences</li>
-        <li><strong>Alternative:</strong> Right-click on page → "Inspect" or "Inspect Element"</li>
-      </ul>
-
-      <p>Once open, use the Console tab for error messages, Network tab for API requests, and Elements tab to inspect HTML/CSS issues.</p>
-
-      <p><strong>Essential Debugging Information to Include:</strong></p>
-
-      <ul>
-        <li><strong>Console Output:</strong> Copy exact error messages, warnings, and stack traces</li>
-        <li><strong>Browser DevTools:</strong> Network tab failures, React DevTools component state</li>
-        <li><strong>User Journey:</strong> Step-by-step actions that trigger the issue</li>
-        <li><strong>Environment Details:</strong> Browser version, screen size, data conditions</li>
-        <li><strong>Expected vs. Actual:</strong> What should happen vs. what actually happens</li>
-      </ul>
-
-      <div className="not-prose my-8">
-        <div className="space-y-4">
-          <Card className="border-l-4 border-red-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Console Error Debugging:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "The submit button isn't working. Console shows: 'TypeError: Cannot read properties of undefined (reading 'email')' at line 47 in ContactForm.jsx. This happens when I click submit after filling out the form. Expected: form should submit and show success message. Actual: nothing happens and error appears."
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-l-4 border-orange-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Network Request Debugging:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "API calls are failing intermittently. Network tab shows POST /api/users returning 422 with response: [error: 'validation failed', field: 'email']. This happens about 30% of the time with valid email addresses. Add error handling to retry failed requests and better user feedback."
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      <p><strong>Performance Debugging Techniques:</strong></p>
-
-      <p>For complex applications with performance issues, provide specific metrics and profiling data:</p>
-
-      <div className="not-prose my-8">
-        <div className="space-y-4">
-          <Card className="border-l-4 border-blue-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Performance Analysis:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Dashboard is slow to load. Chrome DevTools Performance tab shows 3.2s total load time. Main thread blocked for 1.8s during component mounting. React DevTools Profiler shows UserList component re-rendering 47 times on initial load. Optimize with React.memo and useMemo for expensive calculations."
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-l-4 border-green-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Memory Leak Detection:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Memory usage increases over time during navigation. Chrome DevTools Memory tab shows heap growing from 25MB to 180MB after 10 page changes. Event listeners not being cleaned up in useEffect. Add proper cleanup functions and dependency arrays to prevent memory leaks."
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-
-      <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
-              💡 Pro Debugging Tip
-            </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
-              Always include before/after code snippets when requesting fixes. This helps the AI understand your current implementation and provide more targeted solutions. Use console.log statements strategically to track data flow, then include the output in your debugging prompt.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-
-      <hr className="my-12" />
-
       <p>
         You've now got the playbook for building with Shakespeare. From sketching your idea to shaping the flow and dialing in the design, you know how to get clear, sharp results. Don't overthink it. Pick one project and start. Keep prompts simple, keep direction clear, and let Shakespeare do the heavy lifting. This isn't about perfection, it's about progress. The more you build, the more comfortable you'll become, and the better you'll get. Now go and build something truly remarkable. Happy prompting!
       </p>
 
-      <div className="not-prose my-12">
+      <div className="not-prose my-12 space-y-8">
         <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
@@ -924,6 +819,27 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
                 Transform your ideas into production-ready applications
               </p>
             </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
+          <CardContent className="p-6 text-center">
+            <div className="text-3xl mb-3">🔧</div>
+            <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              Need Help Debugging?
+            </h3>
+            <p className="text-muted-foreground mb-4 text-sm">
+              When things don't work as expected, learn advanced troubleshooting techniques for Shakespeare.
+            </p>
+            <Button
+              asChild
+              variant="outline"
+              className="border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900"
+            >
+              <a href="/blog/debugging-in-shakespeare">
+                Learn Debugging Techniques →
+              </a>
+            </Button>
           </CardContent>
         </Card>
       </div>
