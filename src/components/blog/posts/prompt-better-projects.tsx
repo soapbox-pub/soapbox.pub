@@ -366,14 +366,14 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-6">6. Speak Clearly and with Direction: Buttons, Cards, Modals</h2>
+      <h2 id="section-6">6. Speak Clearly and With Direction</h2>
 
       <p>
-        Shakespeare builds your application using small components. These individual pieces like buttons, cards, modals, and grids combine to create your complete project. The more specific you are about each component, the more cohesive your final application becomes.
+        Shakespeare builds your application using small components. These individual pieces like <strong>buttons</strong>, <strong>cards</strong>, <strong>modals</strong>, and <strong>grids</strong> combine to create your complete project. The more specific you are about each component, the more cohesive your final application becomes.
       </p>
 
       <p>
-        Use component vocabulary that Shakespeare understands: button, grid, card, modal, page, form, navigation, hero, footer, etc. These design terms are instructions that help Shakespeare structure your application intelligently.
+        Use component vocabulary that Shakespeare understands: <strong>button</strong>, <strong>grid</strong>, <strong>card</strong>, <strong>modal</strong>, <strong>page</strong>, <strong>form</strong>, <strong>navigation</strong>, <strong>hero</strong>, <strong>footer</strong>, etc. These design terms are instructions that help Shakespeare structure your application intelligently.
       </p>
 
       <p>
@@ -843,7 +843,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <hr className="my-12" />
 
       <p>
-        You now have the director's toolkit for bringing ideas to life with Shakespeare. From scripting your vision to shaping the flow, defining the style, and building block by block, you know how to guide every step with clarity. Start small—one project, one scene—and apply these principles as you go. Each prompt is a cue, each component a performance. Remember: Shakespeare isn't just a tool, it's your creative partner. The more direction you give, the stronger the results. So take the stage, trust the process, and build something remarkable.
+        You've now got the playbook for building with Shakespeare. From sketching your idea to shaping the flow and dialing in the design, you know how to get clear, sharp results. Don't overthink it. Pick one project and start. Keep prompts simple, keep direction clear, and let Shakespeare do the heavy lifting. This isn't about perfection, it's about progress. The more you build, the more comfortable you'll become, and the better you'll get. Now go and build something truly remarkable. Happy prompting!
       </p>
 
       <div className="not-prose my-12">
