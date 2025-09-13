@@ -75,6 +75,11 @@ const pageRoutes = [
     path: '/shakespeare-resources',
     file: 'src/pages/ShakespeareResources.tsx',
     extractSEO: extractGenericSEO
+  },
+  {
+    path: '/soapbox-sessions',
+    file: 'src/pages/SoapboxSessions.tsx',
+    extractSEO: extractGenericSEO
   }
 ];
 
