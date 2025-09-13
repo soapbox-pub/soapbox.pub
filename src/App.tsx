@@ -4,7 +4,6 @@
 import { Suspense } from 'react';
 import NostrProvider from '@/components/NostrProvider'
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NostrLoginProvider } from '@nostrify/react/login';
@@ -42,7 +41,6 @@ export function App() {
           <NostrProvider>
             <TooltipProvider>
               <Toaster />
-              <Sonner />
               <Suspense>
                 <AppRouter />
               </Suspense>
