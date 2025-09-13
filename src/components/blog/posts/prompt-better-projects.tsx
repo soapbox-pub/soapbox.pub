@@ -743,7 +743,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2>12. Advanced Troubleshooting</h2>
+      <h2 id="section-12">12. Advanced Troubleshooting</h2>
 
       <p>
         When building complex applications, things don't always work as expected. Advanced users need debugging strategies that go beyond basic prompting. This section covers additional troubleshooting approaches that help Shakespeare understand and fix issues.
