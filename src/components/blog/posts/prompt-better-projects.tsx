@@ -38,6 +38,20 @@ export const meta: BlogPostMeta = {
 };
 
 export default function HowToPromptBetterProjectsWithShakespeare() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Navigation height (64px) + extra padding (16px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
@@ -67,44 +81,80 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
             <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">📋 Table of Contents</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
               <div className="flex flex-col space-y-2">
-                <a href="#section-1" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                <button
+                  onClick={() => scrollToSection('section-1')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   1. Write the Script Before You Speak
-                </a>
-                <a href="#section-2" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-2')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   2. Plot the User's Experience
-                </a>
-                <a href="#section-3" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-3')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   3. Define the Design Direction
-                </a>
-                <a href="#section-4" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-4')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   4. Prompt by Component, Not Full Page
-                </a>
-                <a href="#section-5" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-5')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   5. Use Real Copy, Not Placeholder
-                </a>
-                <a href="#section-6" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-6')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   6. Speak Clearly and with Direction
-                </a>
+                </button>
               </div>
               <div className="flex flex-col space-y-2">
-                <a href="#section-7" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                <button
+                  onClick={() => scrollToSection('section-7')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   7. Use Mood Words to Shape Tone
-                </a>
-                <a href="#section-8" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-8')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   8. Use Layout Patterns Like Stage Directions
-                </a>
-                <a href="#section-9" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-9')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   9. Bring Visuals Onto the Stage
-                </a>
-                <a href="#section-10" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-10')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   10. Edit with Precision, Not Complete Rewrites
-                </a>
-                <a href="#section-11" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-11')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   11. Design as if It's Already Live
-                </a>
-                <a href="#section-12" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-12')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
                   12. Advanced Troubleshooting
-                </a>
+                </button>
               </div>
             </div>
           </CardContent>
