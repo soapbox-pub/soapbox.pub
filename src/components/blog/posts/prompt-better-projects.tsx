@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "how-to-prompt-better-projects",
   "title": "How to Prompt Better Projects",
   "excerpt": "We're entering uncharted territory. Learn the prompting techniques to master AI-first development and transform your ideas into production-ready applications with Shakespeare.",
-  "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png",
+  "coverImage": "/assets/blog/prompt-better-projects/prompt-better-projects.png",
   "date": "2025-09-14",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/derek.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png"
+    "url": "/assets/blog/prompt-better-projects/prompt-better-projects.png"
   },
   "featured": true,
   "tags": ["shakespeare", "ai", "tutorial", "prompting"]
