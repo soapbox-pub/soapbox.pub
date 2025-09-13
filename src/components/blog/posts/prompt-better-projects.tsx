@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/prompt-better-projects/prompt-better-projects.png"
   },
   "featured": true,
-  "tags": ["shakespeare", "resources", "actii", "prompting"]
+  "tags": ["shakespeare", "shakespeare-resource", "actii", "prompting"]
 };
 
 export default function HowToPromptBetterProjectsWithShakespeare() {

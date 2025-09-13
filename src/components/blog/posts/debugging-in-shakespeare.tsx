@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/shakespeare-debugging/debugging-cover.png"
   },
   "featured": true,
-  "tags": ["shakespeare", "debugging", "resources", "development"]
+  "tags": ["shakespeare", "debugging", "shakespeare-resource", "actii"]
 };
 
 export default function DebuggingInShakespeare() {
