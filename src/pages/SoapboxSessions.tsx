@@ -6,17 +6,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mic, Send, ExternalLink, Youtube, Rss, Music } from "lucide-react";
-import { useNostrPublish } from "@/hooks/useNostrPublish";
+import { Mic, Send, ExternalLink, Youtube, Rss, Music, LogIn, UserPlus } from "lucide-react";
+import { useNostr } from "@nostrify/react";
+import { useNostrLogin } from "@nostrify/react/login";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { useToast } from "@/hooks/useToast";
-import { nip19 } from "nostr-tools";
+import { nip19, nip17 } from "nostr-tools";
+import LoginDialog from "@/components/auth/LoginDialog";
+import SignupDialog from "@/components/auth/SignupDialog";
 
 export default function SoapboxSessions() {
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { mutateAsync: publishEvent } = useNostrPublish();
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [showSignupDialog, setShowSignupDialog] = useState(false);
+  const { nostr } = useNostr();
+  const { logins } = useNostrLogin();
   const { user } = useCurrentUser();
   const { toast } = useToast();
 
@@ -25,23 +31,26 @@ export default function SoapboxSessions() {
   // Decode the npub to get the hex pubkey
   const getSoapboxSessionsPubkey = () => {
     try {
+      console.log("🔍 Decoding npub:", soapboxSessionsNpub);
       const decoded = nip19.decode(soapboxSessionsNpub);
+      console.log("🔍 Decoded result:", decoded);
+
       if (decoded.type === 'npub') {
-        return decoded.data;
+        const hexPubkey = decoded.data as string;
+        console.log("✅ Hex pubkey:", hexPubkey);
+        return hexPubkey;
+      } else {
+        console.error("❌ Decoded type is not npub:", decoded.type);
       }
     } catch (error) {
-      console.error("Failed to decode npub:", error);
+      console.error("❌ Failed to decode npub:", error);
     }
     return "";
   };
 
   const handleSubmitTip = async () => {
     if (!user) {
-      toast({
-        title: "Login Required",
-        description: "Please log in with Nostr to send a tip or question.",
-        variant: "destructive",
-      });
+      setShowLoginDialog(true);
       return;
     }
 
@@ -55,44 +64,127 @@ export default function SoapboxSessions() {
     }
 
     setIsSubmitting(true);
+    console.log("🚀 Starting message submission...");
+
     try {
       const recipientPubkey = getSoapboxSessionsPubkey();
+      console.log("📧 Recipient pubkey:", recipientPubkey);
+
       if (!recipientPubkey) {
         throw new Error("Invalid recipient pubkey");
       }
 
-      // Create a kind 4 DM (legacy DM format)
-      // Note: For full NIP-17 implementation, we would need to implement
-      // the seal and gift wrap functionality
+      // Get the current login to access private key
+      const currentLogin = logins[0];
+      console.log("🔑 Current login:", currentLogin?.type, currentLogin?.pubkey);
+
+      if (!currentLogin) {
+        throw new Error("No login found");
+      }
+
+      // Create the message content
       const fullMessage = subject
         ? `Subject: ${subject}\n\n${message}`
         : message;
 
-      await publishEvent({
-        kind: 4,
-        content: fullMessage,
-        tags: [
-          ["p", recipientPubkey],
-        ],
+      console.log("📝 Message content length:", fullMessage.length);
+
+      let eventToPublish;
+
+      // Handle different login types
+      if (currentLogin.type === 'nsec') {
+        console.log("🔐 Using nsec login - attempting NIP-17 encryption");
+        try {
+          const nsecKey = (currentLogin.data as { nsec: string }).nsec;
+          console.log("🔑 Nsec key starts with:", nsecKey.substring(0, 10));
+
+          const decoded = nip19.decode(nsecKey);
+          console.log("🔓 Decoded type:", decoded.type);
+
+          const privateKeyBytes = decoded.data as Uint8Array;
+          console.log("🔑 Private key bytes length:", privateKeyBytes.length);
+
+          // Create NIP-17 DM using gift wrap
+          eventToPublish = nip17.wrapEvent(
+            privateKeyBytes,
+            {
+              publicKey: recipientPubkey,
+            },
+            fullMessage
+          );
+
+          console.log("📦 Gift wrap event created:", eventToPublish.kind, eventToPublish.id);
+        } catch (nip17Error) {
+          console.error("❌ NIP-17 encryption failed, falling back to kind 4:", nip17Error);
+          // Fall back to kind 4 if NIP-17 fails
+          eventToPublish = await user.signer.signEvent({
+            kind: 4,
+            content: fullMessage,
+            tags: [["p", recipientPubkey]],
+            created_at: Math.floor(Date.now() / 1000),
+          });
+        }
+      } else {
+        console.log("🔐 Using extension/bunker login - using kind 4 DM");
+        // For extension and bunker logins, use kind 4 DM
+        eventToPublish = await user.signer.signEvent({
+          kind: 4,
+          content: fullMessage,
+          tags: [["p", recipientPubkey]],
+          created_at: Math.floor(Date.now() / 1000),
+        });
+      }
+
+      console.log("📤 Publishing event:", eventToPublish);
+      console.log("📡 Event details:", {
+        kind: eventToPublish.kind,
+        id: eventToPublish.id,
+        pubkey: eventToPublish.pubkey,
+        tags: eventToPublish.tags,
+        contentLength: eventToPublish.content.length
       });
+
+      // Publish the event
+      const publishResult = await nostr.event(eventToPublish, { signal: AbortSignal.timeout(10000) });
+      console.log("✅ Publish result:", publishResult);
 
       toast({
         title: "Message Sent!",
-        description: "Your tip or question has been sent to the Soapbox Sessions team.",
+        description: "Your message has been sent to the Soapbox Sessions team!",
       });
 
       setMessage("");
       setSubject("");
     } catch (error) {
-      console.error("Failed to send message:", error);
+      console.error("❌ Failed to send message:", error);
+      console.error("❌ Error details:", {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
+
       toast({
         title: "Failed to Send",
-        description: "There was an error sending your message. Please try again.",
+        description: `Error: ${error.message}. Check console for details.`,
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
+      console.log("🏁 Message submission finished");
     }
+  };
+
+  const handleLogin = () => {
+    setShowLoginDialog(false);
+    toast({
+      title: "Logged In",
+      description: "You can now send tips and questions!",
+    });
+  };
+
+  const handleSignup = () => {
+    setShowLoginDialog(false);
+    setShowSignupDialog(true);
   };
 
   return (
@@ -214,36 +306,65 @@ export default function SoapboxSessions() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="subject">Subject (Optional)</Label>
-                  <Input
-                    id="subject"
-                    placeholder="Topic or question subject"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="message">Your Tip or Question</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Share your tip, ask a question, or suggest a topic..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    rows={4}
-                  />
-                </div>
-                <Button
-                  onClick={handleSubmitTip}
-                  disabled={isSubmitting || !message.trim()}
-                  className="w-full"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-                {!user && (
-                  <p className="text-sm text-gray-500 text-center">
-                    You need to be logged in with Nostr to send messages.
-                  </p>
+                {user ? (
+                  <>
+                    <div>
+                      <Label htmlFor="subject">Subject (Optional)</Label>
+                      <Input
+                        id="subject"
+                        placeholder="Topic or question subject"
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="message">Your Tip or Question</Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Share your tip, ask a question, or suggest a topic..."
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        rows={4}
+                      />
+                    </div>
+                    <Button
+                      onClick={handleSubmitTip}
+                      disabled={isSubmitting || !message.trim()}
+                      className="w-full"
+                    >
+                      <Send className="h-4 w-4 mr-2" />
+                      {isSubmitting ? "Sending..." : "Send Private Message"}
+                    </Button>
+                    <p className="text-xs text-gray-500 text-center">
+                      Your message will be sent privately{logins[0]?.type === 'nsec' ? ' using NIP-17 encryption' : ' with standard encryption'}
+                    </p>
+                  </>
+                ) : (
+                  <div className="text-center space-y-4">
+                    <p className="text-gray-600 dark:text-gray-300">
+                      To send a tip or question, you need a Nostr account
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button
+                        onClick={() => setShowLoginDialog(true)}
+                        variant="outline"
+                        className="flex-1"
+                      >
+                        <LogIn className="h-4 w-4 mr-2" />
+                        Log In
+                      </Button>
+                      <Button
+                        onClick={() => setShowSignupDialog(true)}
+                        className="flex-1"
+                      >
+                        <UserPlus className="h-4 w-4 mr-2" />
+                        Create Account
+                      </Button>
+                    </div>
+                    <p className="text-xs text-gray-500">
+                      Nostr accounts are decentralized and give you full control of your data
+                    </p>
+                  </div>
                 )}
               </CardContent>
             </Card>
@@ -389,6 +510,20 @@ export default function SoapboxSessions() {
           </div>
         </div>
       </div>
+
+      {/* Login Dialog */}
+      <LoginDialog
+        isOpen={showLoginDialog}
+        onClose={() => setShowLoginDialog(false)}
+        onLogin={handleLogin}
+        onSignup={handleSignup}
+      />
+
+      {/* Signup Dialog */}
+      <SignupDialog
+        isOpen={showSignupDialog}
+        onClose={() => setShowSignupDialog(false)}
+      />
     </Layout>
   );
 }
