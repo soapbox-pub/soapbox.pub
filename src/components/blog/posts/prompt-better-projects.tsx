@@ -65,43 +65,47 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
           <CardContent className="p-6">
             <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">📋 Table of Contents</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-              <a href="#section-1" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                1. Write the Script Before You Speak
-              </a>
-              <a href="#section-2" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                2. Plot the User's Experience
-              </a>
-              <a href="#section-3" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                3. Define the Design Direction
-              </a>
-              <a href="#section-4" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                4. Prompt by Component, Not Full Page
-              </a>
-              <a href="#section-5" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                5. Use Real Copy, Not Placeholder
-              </a>
-              <a href="#section-6" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                6. Speak Clearly and with Direction
-              </a>
-              <a href="#section-7" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                7. Use Mood Words to Shape Tone
-              </a>
-              <a href="#section-8" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                8. Use Layout Patterns Like Stage Directions
-              </a>
-              <a href="#section-9" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                9. Bring Visuals Onto the Stage
-              </a>
-              <a href="#section-10" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                10. Edit with Precision, Not Complete Rewrites
-              </a>
-              <a href="#section-11" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                11. Design as if It's Already Live
-              </a>
-              <a href="#section-12" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
-                12. Advanced Troubleshooting
-              </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+              <div className="flex flex-col space-y-2">
+                <a href="#section-1" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  1. Write the Script Before You Speak
+                </a>
+                <a href="#section-2" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  2. Plot the User's Experience
+                </a>
+                <a href="#section-3" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  3. Define the Design Direction
+                </a>
+                <a href="#section-4" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  4. Prompt by Component, Not Full Page
+                </a>
+                <a href="#section-5" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  5. Use Real Copy, Not Placeholder
+                </a>
+                <a href="#section-6" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  6. Speak Clearly and with Direction
+                </a>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <a href="#section-7" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  7. Use Mood Words to Shape Tone
+                </a>
+                <a href="#section-8" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  8. Use Layout Patterns Like Stage Directions
+                </a>
+                <a href="#section-9" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  9. Bring Visuals Onto the Stage
+                </a>
+                <a href="#section-10" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  10. Edit with Precision, Not Complete Rewrites
+                </a>
+                <a href="#section-11" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  11. Design as if It's Already Live
+                </a>
+                <a href="#section-12" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block">
+                  12. Advanced Troubleshooting
+                </a>
+              </div>
             </div>
           </CardContent>
         </Card>
