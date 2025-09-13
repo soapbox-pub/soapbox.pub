@@ -33,7 +33,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/shakespeare-debugging/debugging-cover.png"
   },
-  "featured": true,
+  "featured": false,
   "tags": ["shakespeare", "debugging", "shakespeare-resource", "actii"]
 };
 
