@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
-import { SEO } from "@/components/SEO";
+import { useSEO } from "@/hooks/useSEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,6 +16,15 @@ import LoginDialog from "@/components/auth/LoginDialog";
 import SignupDialog from "@/components/auth/SignupDialog";
 
 export default function SoapboxSessions() {
+  // Set custom SEO for Soapbox Sessions page
+  useSEO({
+    title: 'Soapbox Sessions - Weekly Podcast on Nostr, AI & Decentralized Web',
+    description: 'Join Derek Ross and Heather Larson for weekly insights on Nostr, AI, and the tools building the decentralized future. Listen on Podstr, Spotify, Apple Podcasts, or watch on YouTube.',
+    image: '/assets/blog/announcing-soapbox-sessions-podcast/podcast-cover.png',
+    type: 'website',
+    keywords: 'soapbox sessions, nostr podcast, decentralized web, AI development, derek ross, heather larson, podstr, podcasting 2.0',
+  });
+
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -189,12 +198,6 @@ export default function SoapboxSessions() {
 
   return (
     <Layout>
-      <SEO
-        title="Soapbox Sessions - Weekly Podcast on Nostr, AI & Decentralized Web"
-        description="Join Derek Ross and Heather Larson for weekly insights on Nostr, AI, and the tools building the decentralized future. Listen on Podstr, Spotify, Apple Podcasts, or watch on YouTube."
-        image="/assets/blog/announcing-soapbox-sessions-podcast/podcast-cover.png"
-        type="website"
-      />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-16">
           {/* Hero Section */}
