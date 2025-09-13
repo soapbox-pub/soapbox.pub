@@ -129,7 +129,13 @@ export default function DebuggingInShakespeare() {
                   onClick={() => scrollToSection('section-8')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  8. Pro Debugging Tips
+                  8. Debugging Nostr Events
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-9')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
+                  9. Pro Debugging Tips
                 </button>
               </div>
             </div>
@@ -203,7 +209,7 @@ export default function DebuggingInShakespeare() {
         <li><strong>Performance:</strong> Load times, memory usage, and rendering analysis</li>
       </ul>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -215,7 +221,7 @@ export default function DebuggingInShakespeare() {
             </p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <hr className="my-12" />
 
@@ -250,7 +256,7 @@ export default function DebuggingInShakespeare() {
         </Card>
       </div>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -262,7 +268,7 @@ export default function DebuggingInShakespeare() {
             </p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <hr className="my-12" />
 
@@ -309,7 +315,7 @@ export default function DebuggingInShakespeare() {
         </Card>
       </div>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -321,7 +327,7 @@ export default function DebuggingInShakespeare() {
             </p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <hr className="my-12" />
 
@@ -356,7 +362,7 @@ export default function DebuggingInShakespeare() {
         </Card>
       </div>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -368,7 +374,7 @@ export default function DebuggingInShakespeare() {
             </p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <hr className="my-12" />
 
@@ -402,7 +408,7 @@ export default function DebuggingInShakespeare() {
         </Card>
       </div>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -414,7 +420,7 @@ export default function DebuggingInShakespeare() {
             </p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <hr className="my-12" />
 
@@ -448,7 +454,7 @@ export default function DebuggingInShakespeare() {
         </Card>
       </div>
 
-      <div className="not-prose my-8">
+      {/* <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
@@ -460,11 +466,103 @@ export default function DebuggingInShakespeare() {
             </p>
           </CardContent>
         </Card>
+      </div> */}
+
+      <hr className="my-12" />
+
+      <h2 id="section-8">8. Debugging Nostr Events</h2>
+
+      <p>
+        <strong>Nostr applications require specialized debugging techniques.</strong> When building decentralized applications with Shakespeare, you need to understand what events are being created, signed, and broadcast to the network.
+      </p>
+
+      <p><strong>Essential Nostr Debugging Tools:</strong></p>
+
+      <ul>
+        <li><strong>Alby Extension (Paranoid Mode):</strong> Review every event before signing and broadcasting</li>
+        <li><strong>Nostr DevTools:</strong> Browser extensions that show real-time event streams</li>
+        <li><strong>Relay Logs:</strong> Monitor which relays accept or reject your events</li>
+        <li><strong>Event Validation:</strong> Verify event structure, signatures, and required fields</li>
+        <li><strong>Network Inspection:</strong> Track WebSocket connections to Nostr relays</li>
+      </ul>
+
+      <p>
+        <strong>Use Alby's paranoid mode during development</strong> to see exactly what events your application creates before they're sent to relays. This prevents broadcasting malformed or test events to the live network.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🔧 Enabling Alby Paranoid Mode:</h4>
+            <div className="space-y-2 text-sm">
+              <div><strong>1.</strong> Open Alby extension → Settings → Advanced</div>
+              <div><strong>2.</strong> Enable "Paranoid Mode" or "Review Events"</div>
+              <div><strong>3.</strong> Test your Shakespeare application</div>
+              <div><strong>4.</strong> Copy the event JSON from Alby's review dialog</div>
+              <div><strong>5.</strong> Paste the event data to Shakespeare for analysis</div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <p><strong>Common Nostr Event Issues:</strong></p>
+
+      <ul>
+        <li><strong>Invalid Event Structure:</strong> Missing required fields (id, pubkey, created_at, kind, tags, content, sig)</li>
+        <li><strong>Incorrect Event Kind:</strong> Using wrong kind number for the intended functionality</li>
+        <li><strong>Malformed Tags:</strong> Invalid tag arrays or missing required tag elements</li>
+        <li><strong>Signature Problems:</strong> Events not properly signed or signature verification failures</li>
+        <li><strong>Relay Rejection:</strong> Events rejected by relays due to policy or validation issues</li>
+      </ul>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-purple-500">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3">Nostr Event Debugging Example:</h4>
+            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              "User profile updates aren't saving. Alby paranoid mode shows this event being created: {`{\"id\":\"abc123\",\"pubkey\":\"user_pubkey\",\"created_at\":1694123456,\"kind\":0,\"tags\":[],\"content\":\"{\\\"name\\\":\\\"John\\\",\\\"about\\\":\\\"Developer\\\"}\",\"sig\":\"signature\"}`}. Event structure looks correct for kind 0 (user metadata). Network tab shows WebSocket connection to relay successful. Need to check if relay is accepting the event or if there's a validation issue with the content format."
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <p><strong>Advanced Nostr Debugging Techniques:</strong></p>
+
+      <ul>
+        <li><strong>Event Validation:</strong> Use nostr-tools library to validate event structure before signing</li>
+        <li><strong>Relay Testing:</strong> Test events against multiple relays to identify relay-specific issues</li>
+        <li><strong>Event History:</strong> Track event creation, signing, and broadcast timeline</li>
+        <li><strong>Tag Analysis:</strong> Verify tag arrays contain correct references (e tags, p tags, etc.)</li>
+        <li><strong>Content Inspection:</strong> Ensure event content is properly formatted JSON when required</li>
+      </ul>
+
+      <div className="not-prose my-8">
+        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+              💡 Pro Nostr Debugging Tip
+            </h4>
+            <p className="text-green-700 dark:text-green-300 text-sm">
+              When reporting Nostr issues to Shakespeare, always include the complete event JSON from Alby's paranoid mode. This shows the exact data structure being created, making it much easier to identify formatting, validation, or relay compatibility issues.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-orange-500">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3">Complete Nostr Debugging Report Example:</h4>
+            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              "Direct messages not sending between users. Alby shows event: {`{\"kind\":4,\"tags\":[[\"p\",\"recipient_pubkey\"]],\"content\":\"encrypted_content_here\",\"created_at\":1694123456}`}. Event structure appears correct for kind 4 (encrypted DM). WebSocket shows successful connection to 3 relays. Issue: recipient not receiving messages. Suspect: encryption/decryption mismatch or relay propagation delay. Need to verify NIP-04 encryption implementation and test with different relay sets."
+            </p>
+          </CardContent>
+        </Card>
       </div>
 
       <hr className="my-12" />
 
-      <h2 id="section-8">8. Pro Debugging Tips</h2>
+      <h2 id="section-9">9. Pro Debugging Tips</h2>
 
       <p>
         <strong>Advanced debugging requires strategic thinking.</strong> These professional techniques help you solve complex issues faster and communicate more effectively with Shakespeare.
