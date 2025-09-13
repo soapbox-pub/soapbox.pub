@@ -797,8 +797,6 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         <strong>Think Beyond the Happy Path:</strong> Your initial designs probably show perfect scenarios: testimonials with glowing reviews, feature lists with compelling copy, signup forms that never error. But production applications need to handle edge cases, empty states, error conditions, and dynamic content.
       </p>
 
-      <p><strong>Key Areas to Consider:</strong></p>
-
       <p><strong>Authentication States:</strong></p>
 
       <ul>
