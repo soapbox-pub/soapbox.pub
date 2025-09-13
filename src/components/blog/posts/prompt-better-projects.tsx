@@ -203,11 +203,11 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <h2 id="section-1">1. Write the Script Before You Speak</h2>
 
       <p>
-        Before you type into Shakespeare, take a pause. Great builds start with clarity and direction. Skipping this step is like walking onto stage without knowing your lines; confusion follows.
+        Before you type into Shakespeare, take a pause. <strong>Great builds start with clarity and direction.</strong> Skipping this step is like walking onto stage without knowing your lines; confusion follows.
       </p>
 
       <p>
-        Think of this as your project pitch in one paragraph. You don't need a technical spec sheet; just a quick outline that tells Shakespeare what you want and why it matters. Write it out on paper, in your notes app, or directly into Shakespeare's prompt box.
+        Think of this as your <strong>project pitch in one paragraph.</strong> You don't need a technical spec sheet; just a quick outline that tells Shakespeare what you want and why it matters. Write it out on paper, in your notes app, or directly into Shakespeare's prompt box.
       </p>
 
       <p>Ask yourself:</p>
@@ -253,7 +253,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </div>
 
       <p>
-        Shakespeare doesn't need a novel, just direction. The clearer your script, the stronger the performance.
+        <strong>Shakespeare doesn't need a novel, just direction.</strong> The clearer your script, the stronger the performance.
       </p>
 
       <hr className="my-12" />
@@ -261,7 +261,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <h2 id="section-2">2. Plot the User's Experience</h2>
 
       <p>
-        Shakespeare doesn't just spit out pages. It shapes user experiences. An application that works isn't random sections stacked together. It's a story with momentum.
+        Shakespeare doesn't just spit out pages. <strong>It shapes user experiences.</strong> An application that works isn't random sections stacked together. It's a story with momentum.
       </p>
 
       <p>Before you prompt, sketch the flow of your visitor's experience:</p>
@@ -328,7 +328,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <h2 id="section-4">4. Prompt by Component, Not Full Page</h2>
 
       <p>
-        A full-page prompt = noise. A section-based prompt = clarity.
+        <strong>A full-page prompt = noise. A section-based prompt = clarity.</strong>
       </p>
 
       <p>
@@ -346,7 +346,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         <li>Footer</li>
       </ul>
 
-      <p>Prompt, refine, and approve one block at a time. Then connect them.</p>
+      <p><strong>Prompt, refine, and approve one block at a time. Then connect them.</strong></p>
 
       <p>This modular approach:</p>
 
@@ -485,7 +485,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <h2 id="section-7">7. Use Mood Words to Shape Tone</h2>
 
       <p>
-        Design isn't just what's on the page, it's how it feels. Shakespeare responds strongly to mood words, which act like emotional shorthand for your design. Words like minimal, cinematic, playful, premium, futuristic, developer focused aren't fluff. They're direction.
+        Design isn't just what's on the page, it's how it feels. Shakespeare responds strongly to <strong>mood words</strong>, which act like emotional shorthand for your design. Words like minimal, cinematic, playful, premium, futuristic, developer focused aren't fluff. <strong>They're direction.</strong>
       </p>
 
       <p>They help Shakespeare:</p>
@@ -498,7 +498,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </ul>
 
       <p>
-        By setting the tone early, you keep your design consistent instead of mixing mismatched styles. You can also shift moods strategically between sections to control how your users feel as they scroll.
+        <strong>By setting the tone early, you keep your design consistent</strong> instead of mixing mismatched styles. You can also shift moods strategically between sections to control how your users feel as they scroll.
       </p>
 
       <div className="not-prose my-8">
@@ -515,7 +515,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         </Card>
       </div>
 
-      <p>Your mood words are like stage directions. They tell Shakespeare not just what to build, but how the audience should experience it.</p>
+      <p><strong>Your mood words are like stage directions.</strong> They tell Shakespeare not just what to build, but <strong>how the audience should experience it.</strong></p>
 
       <div className="not-prose my-8">
         <div className="space-y-4">
