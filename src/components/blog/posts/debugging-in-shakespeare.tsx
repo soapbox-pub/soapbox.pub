@@ -113,29 +113,19 @@ export default function DebuggingInShakespeare() {
                 >
                   5. Network Request Debugging
                 </button>
+
+
                 <button
                   onClick={() => scrollToSection('section-6')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  6. Performance Analysis
+                  6. Debugging Nostr Events
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  7. Memory Leak Detection
-                </button>
-                <button
-                  onClick={() => scrollToSection('section-8')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
-                >
-                  8. Debugging Nostr Events
-                </button>
-                <button
-                  onClick={() => scrollToSection('section-9')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
-                >
-                  9. Pro Debugging Tips
+                  7. Pro Debugging Tips
                 </button>
               </div>
             </div>
@@ -309,7 +299,7 @@ export default function DebuggingInShakespeare() {
               💡 Pro Tip
             </h4>
             <p className="text-green-700 dark:text-green-300 text-sm">
-              Use console.log statements strategically to track data flow before the error occurs. Add logs like console.log('formData:', formData) to see what data is available at each step.
+              The AI will often add console.log messages to help you debug. If you see these, include them in your report to Shakespeare as they provide additional context about variable states leading up to the error. Don't forget to ask them to be removed after!
             </p>
           </CardContent>
         </Card>
@@ -378,99 +368,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-6">6. Performance Analysis</h2>
-
-      <p>
-        <strong>Performance issues require different debugging approaches.</strong> When your Shakespeare application feels slow or unresponsive, you need to measure and identify bottlenecks rather than guess at solutions.
-      </p>
-
-      <p><strong>Performance Debugging Tools:</strong></p>
-
-      <ul>
-        <li><strong>Performance Tab:</strong> Record and analyze page load times and rendering</li>
-        <li><strong>React DevTools Profiler:</strong> Identify component re-rendering issues</li>
-        <li><strong>Lighthouse:</strong> Automated performance auditing and recommendations</li>
-        <li><strong>Memory Tab:</strong> Track memory usage and identify leaks</li>
-      </ul>
-
-      <p>
-        <strong>Provide specific metrics</strong> when reporting performance issues. "It's slow" doesn't help; "3.2 second load time with 1.8s blocked main thread" gives Shakespeare actionable data.
-      </p>
-
-      <div className="not-prose my-8">
-        <Card className="border-l-4 border-blue-500">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">Performance Analysis Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "Dashboard loads slowly on initial visit. Chrome DevTools Performance tab shows 3.2s total load time. Main thread blocked for 1.8s during component mounting. React DevTools Profiler shows UserList component re-rendering 47 times on initial load. Large dataset (500+ users) being processed on every render. Need optimization with React.memo and useMemo for expensive calculations."
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="bg-gray-300 dark:bg-gray-700 h-48 rounded flex items-center justify-center text-gray-600 dark:text-gray-400">
-              [Screenshot: Performance tab showing timeline with main thread blocking and component render times]
-            </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              Performance timeline showing main thread activity, component rendering, and timing bottlenecks.
-            </p>
-          </CardContent>
-        </Card>
-      </div> */}
-
-      <hr className="my-12" />
-
-      <h2 id="section-7">7. Memory Leak Detection</h2>
-
-      <p>
-        <strong>Memory leaks cause applications to slow down over time.</strong> If your Shakespeare application becomes sluggish after extended use or navigation, you may have memory management issues.
-      </p>
-
-      <p><strong>Signs of Memory Leaks:</strong></p>
-
-      <ul>
-        <li><strong>Increasing Memory Usage:</strong> Memory consumption grows during normal use</li>
-        <li><strong>Degraded Performance:</strong> Application becomes slower over time</li>
-        <li><strong>Browser Warnings:</strong> "Page unresponsive" or crash messages</li>
-        <li><strong>Event Listener Buildup:</strong> Multiple listeners attached to the same elements</li>
-      </ul>
-
-      <p>
-        <strong>Use the Memory tab to track heap growth</strong> and identify components that aren't properly cleaning up resources.
-      </p>
-
-      <div className="not-prose my-8">
-        <Card className="border-l-4 border-green-500">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">Memory Leak Detection Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "Application memory usage increases over time during navigation. Chrome DevTools Memory tab shows heap growing from 25MB to 180MB after 10 page changes. Suspect event listeners not being cleaned up in useEffect hooks. Components: ChatWidget, NotificationPanel, and UserSearch all attach window event listeners. Need proper cleanup functions and dependency arrays to prevent memory leaks."
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="bg-gray-300 dark:bg-gray-700 h-48 rounded flex items-center justify-center text-gray-600 dark:text-gray-400">
-              [Screenshot: Memory tab showing heap size growth over time with snapshots]
-            </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              Memory usage timeline showing increasing heap size and memory snapshots for comparison.
-            </p>
-          </CardContent>
-        </Card>
-      </div> */}
-
-      <hr className="my-12" />
-
-      <h2 id="section-8">8. Debugging Nostr Events</h2>
+      <h2 id="section-6">6. Debugging Nostr Events</h2>
 
       <p>
         <strong>Nostr applications require specialized debugging techniques.</strong> When building decentralized applications with Shakespeare, you need to understand what events are being created, signed, and broadcast to the network.
@@ -562,7 +460,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-9">9. Pro Debugging Tips</h2>
+      <h2 id="section-7">7. Pro Debugging Tips</h2>
 
       <p>
         <strong>Advanced debugging requires strategic thinking.</strong> These professional techniques help you solve complex issues faster and communicate more effectively with Shakespeare.
@@ -572,14 +470,14 @@ export default function DebuggingInShakespeare() {
 
       <ul>
         <li><strong>Minimal Reproduction:</strong> Create the simplest possible example that demonstrates the issue</li>
-        <li><strong>Binary Search:</strong> Disable half the features to isolate which section causes problems</li>
-        <li><strong>Version Comparison:</strong> Test the same code in different environments or browsers</li>
+        <li><strong>Version Control:</strong> Revert to previous versions of the application to determine when the issue was introduced</li>
         <li><strong>Incremental Testing:</strong> Make one change at a time and test the result</li>
+        <li><strong>Version Comparison:</strong> Test the same code in different environments or browsers</li>
         <li><strong>Documentation:</strong> Keep detailed logs of what you tried and what happened</li>
       </ul>
 
       <p>
-        <strong>When communicating with Shakespeare, always include before/after code snippets.</strong> This helps the AI understand your current implementation and provide targeted solutions.
+        <strong>When communicating with Shakespeare, include before/after code snippets.</strong> This helps the AI understand your current implementation and provide targeted solutions.
       </p>
 
       <div className="not-prose my-8">
