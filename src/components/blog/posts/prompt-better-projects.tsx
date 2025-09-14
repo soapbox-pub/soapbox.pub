@@ -88,60 +88,42 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
                   1. Write the Script Before You Speak
                 </button>
                 <button
-                  onClick={() => scrollToSection('section-2')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
-                >
-                  2. Plot the User's Experience
-                </button>
-                <button
                   onClick={() => scrollToSection('section-3')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  3. Define the Design Direction and Tone
-                </button>
-                <button
-                  onClick={() => scrollToSection('section-4')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
-                >
-                  4. Build with Components and Layout Patterns
+                  2. Define the Design Direction and Tone
                 </button>
                 <button
                   onClick={() => scrollToSection('section-5')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  5. Use Real Copy, Not Placeholder
-                </button>
-              </div>
-              <div className="flex flex-col space-y-2">
-                <button
-                  onClick={() => scrollToSection('section-6')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
-                >
-                  6. Speak Clearly and with Direction
+                  3. Use Real Copy, Not Placeholder
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  7. Bring Visuals Onto the Stage
+                  4. Bring Visuals Onto the Stage
                 </button>
+              </div>
+              <div className="flex flex-col space-y-2">
                 <button
                   onClick={() => scrollToSection('section-8')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  8. Leverage Shakespeare's Nostr Knowledge
+                  5. Leverage Shakespeare's Nostr Knowledge
                 </button>
                 <button
                   onClick={() => scrollToSection('section-9')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  9. Edit with Precision, Not Complete Rewrites
+                  6. Edit with Precision, Not Complete Rewrites
                 </button>
                 <button
                   onClick={() => scrollToSection('section-10')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  10. Design as if It's Already Live
+                  7. Design as if It's Already Live
                 </button>
               </div>
             </div>
@@ -246,39 +228,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-2">2. Plot the User's Experience</h2>
-
-      <p>
-        Shakespeare doesn't just spit out pages. <strong>It shapes user experiences.</strong> An application that works isn't random sections stacked together. It's a story with momentum.
-      </p>
-
-      <p>Before you prompt, sketch the flow of your visitor's experience:</p>
-
-      <ul>
-        <li>What do they see first? (The hero headline, image, or animation that sets the tone.)</li>
-        <li>What builds trust? (Proof points, testimonials, stats, recognizable logos.)</li>
-        <li>What helps them take action? (Clear CTAs, forms, buttons, or purchase flows.)</li>
-        <li>What happens after they click? (Thank-you pages, sign-up confirmations, or redirects.)</li>
-      </ul>
-
-      <p>Even a simple outline like this makes a huge difference: <strong>Hero → Value → Proof → CTA</strong></p>
-
-      <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
-              💡 Pro Tip
-            </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
-              Write the experience down in bullet points and paste it into your prompt. Shakespeare will follow the sequence you set.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <hr className="my-12" />
-
-      <h2 id="section-3">3. Define the Design Direction and Tone</h2>
+      <h2 id="section-3">2. Define the Design Direction and Tone</h2>
 
       <p>
         Design decisions made late = messy results. With Shakespeare, the earlier you define your style language and emotional tone, the more consistent your site will feel. Design isn't just what's on the page—it's how it feels.
@@ -338,98 +288,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-4">4. Build with Components and Layout Patterns</h2>
-
-      <p>
-        <strong>A full-page prompt = noise. A component-based prompt = clarity.</strong>
-      </p>
-
-      <p>
-        When you dump "Make me a landing page" into Shakespeare, it has to guess your priorities. You'll get something, but not something you can fine-tune. Instead, think of yourself as a director giving stage cues—break your design into repeatable structures and components.
-      </p>
-
-      <p>Treat your site like building blocks:</p>
-
-      <ul>
-        <li><strong>Hero:</strong> Headline → Subtext → Call-to-Action</li>
-        <li><strong>Navigation:</strong> Logo + Links + CTA Button</li>
-        <li><strong>Features:</strong> Section Title → 3 Cards → Icons + Descriptions</li>
-        <li><strong>Testimonials:</strong> Header → Slider → Profile Image + Quote + Name</li>
-        <li><strong>Pricing:</strong> Header → Plans (3 columns) → CTA buttons</li>
-        <li><strong>Footer:</strong> Links + Social + Contact Info</li>
-      </ul>
-
-      <p><strong>Prompt, refine, and approve one block at a time. Then connect them.</strong></p>
-
-      <p>By giving your prompt a clear recipe (structure + order + behavior), you eliminate ambiguity and make Shakespeare's output more predictable. This modular approach:</p>
-
-      <ul>
-        <li>Gives you control over every piece</li>
-        <li>Keeps your designs consistent</li>
-        <li>Makes it easy to swap or reuse components across projects</li>
-        <li>Creates a personal prompt library—your own "repertoire" of reusable patterns</li>
-      </ul>
-
-      <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">Why it matters:</h4>
-            <div className="space-y-2 text-sm">
-              <div><strong>Reuse</strong> = faster builds across multiple projects</div>
-              <div><strong>Consistency</strong> = a unified brand look and feel</div>
-              <div><strong>Precision</strong> = less time fixing sloppy output</div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <p>Think in patterns, not pages. A feature grid today might be a testimonial layout tomorrow. Direct Shakespeare like an actor—stage by stage.</p>
-
-      <div className="not-prose my-8">
-        <div className="space-y-4">
-          <Card className="border-l-4 border-blue-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Navigation Component:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Create a navigation bar with glassmorphism style. Include logo on the left, links for Home, About, Events, and Contact in the center, and a purple 'Join Now' button on the right."
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-l-4 border-green-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Features Grid Pattern:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Create a features section with centered headline, followed by three cards in a row. Each card has an icon, a title, and a short description. Cards should have soft shadows and lift on hover."
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-l-4 border-purple-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Pricing Table Pattern:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Design a pricing section with headline 'Choose Your Plan.' Show 3 pricing cards side by side: Basic, Pro, and Premium. Each card should include price, feature list, and a purple CTA button. Highlight the Pro plan with a glowing border."
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
-              💡 Pro Tip
-            </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
-              Name and save your best components and patterns. Your future self will thank you when you can quickly reuse a proven testimonial slider or hero layout.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <hr className="my-12" />
-
-      <h2 id="section-5">5. Use Real Copy, Not Placeholder</h2>
+      <h2 id="section-5">3. Use Real Copy, Not Placeholder</h2>
 
       <p>
         "Lorem ipsum" is design trash. It fills space but starves your build of meaning and interpretation.
@@ -502,73 +361,9 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-6">6. Speak Clearly and With Direction</h2>
-
-      <p>
-        Shakespeare builds your application using small components. These individual pieces like <strong>buttons</strong>, <strong>cards</strong>, <strong>modals</strong>, and <strong>grids</strong> combine to create your complete project. The more specific you are about each component, the more cohesive your final application becomes.
-      </p>
-
-      <p>
-        Use component vocabulary that Shakespeare understands: <strong>button</strong>, <strong>grid</strong>, <strong>card</strong>, <strong>modal</strong>, <strong>page</strong>, <strong>form</strong>, <strong>navigation</strong>, <strong>hero</strong>, <strong>footer</strong>, etc. These design terms are instructions that help Shakespeare structure your application intelligently.
-      </p>
-
-      <p>
-        Think of it like directing a play. If you simply say "make a signup form," you'll get something generic and forgettable. But when you specify exactly how each piece should look, feel, and behave, Shakespeare can craft components that work together seamlessly and can be reused throughout your project.
-      </p>
-
-      <div className="not-prose my-8">
-        <div className="space-y-4">
-          <Card className="bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800">
-            <CardContent className="p-4">
-              <p className="text-sm"><strong>Bad prompt (too vague):</strong> "Add a signup form."</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800">
-            <CardContent className="p-4">
-              <p className="text-sm"><strong>Good prompt (specific, directional):</strong> "Signup form with email input, placeholder text 'Enter your email,' and a bold purple rounded CTA button that says 'Join Now.' Centered on the page with plenty of white space."</p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      <p>That extra detail doesn't just improve the single output. It sets a pattern Shakespeare can follow across the whole project.</p>
-
-      <p><strong>Why this works:</strong></p>
-
-      <ul>
-        <li><strong>Consistency.</strong> Your buttons, cards, and modals look like they belong together.</li>
-        <li><strong>Reusability.</strong> Components can be remixed in other pages or projects.</li>
-        <li><strong>Clarity.</strong> You reduce revisions and wasted credits because you got what you wanted the first time.</li>
-      </ul>
-
-      <div className="not-prose my-8">
-        <div className="space-y-4">
-          <Card className="border-l-4 border-blue-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Profile Card Example:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Card with circular profile image on the left, name and username stacked, small verified check badge, and a purple 'Follow' button on the right. Use subtle shadow and rounded corners."
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-l-4 border-purple-500">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3">Modal Example:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "Centered modal with dark overlay, title at the top in bold text, description below in smaller font, and two buttons: one purple primary 'Confirm' button and one gray 'Cancel' button."
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-
-
-
-
       <hr className="my-12" />
 
-      <h2 id="section-7">7. Bring Visuals Onto the Stage</h2>
+      <h2 id="section-7">4. Bring Visuals Onto the Stage</h2>
 
       <p>
         Visual content transforms good designs into memorable experiences. Shakespeare handles text and layout brilliantly, but images, videos, and interactive media bring your vision to life. Think of visuals as your supporting actors. They should enhance the story.
@@ -619,7 +414,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-8">8. Leverage Shakespeare's Nostr Knowledge</h2>
+      <h2 id="section-8">5. Leverage Shakespeare's Nostr Knowledge</h2>
 
       <p>
         Shakespeare isn't just a web development tool—it's built specifically for the Nostr ecosystem. It comes pre-loaded with deep knowledge of the Nostr protocol, NIPs (Nostr Implementation Possibilities), and decentralized social features. This means you can build sophisticated Nostr applications without having to explain the basics.
@@ -712,7 +507,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-9">9. Edit with Precision, Not Complete Rewrites</h2>
+      <h2 id="section-9">6. Edit with Precision, Not Complete Rewrites</h2>
 
       <p>
         The biggest mistake people make with AI tools is starting over when they just need to adjust one element. Think of edits like a director calling for minor adjustments between takes.
@@ -787,7 +582,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-10">10. Design as if It's Already Live</h2>
+      <h2 id="section-10">7. Design as if It's Already Live</h2>
 
       <p>
         The gap between prototype and production kills most projects. Don't build a pretty demo. Build a functional foundation that's ready for real users, real data, and real business logic.
