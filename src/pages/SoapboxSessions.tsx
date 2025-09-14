@@ -40,19 +40,14 @@ export default function SoapboxSessions() {
   // Decode the npub to get the hex pubkey
   const getSoapboxSessionsPubkey = () => {
     try {
-      console.log("🔍 Decoding npub:", soapboxSessionsNpub);
       const decoded = nip19.decode(soapboxSessionsNpub);
-      console.log("🔍 Decoded result:", decoded);
 
       if (decoded.type === 'npub') {
         const hexPubkey = decoded.data as string;
-        console.log("✅ Hex pubkey:", hexPubkey);
         return hexPubkey;
-      } else {
-        console.error("❌ Decoded type is not npub:", decoded.type);
       }
     } catch (error) {
-      console.error("❌ Failed to decode npub:", error);
+      console.error("Failed to decode npub:", error);
     }
     return "";
   };
@@ -73,11 +68,9 @@ export default function SoapboxSessions() {
     }
 
     setIsSubmitting(true);
-    console.log("🚀 Starting message submission...");
 
     try {
       const recipientPubkey = getSoapboxSessionsPubkey();
-      console.log("📧 Recipient pubkey:", recipientPubkey);
 
       if (!recipientPubkey) {
         throw new Error("Invalid recipient pubkey");
@@ -85,7 +78,6 @@ export default function SoapboxSessions() {
 
       // Get the current login to access private key
       const currentLogin = logins[0];
-      console.log("🔑 Current login:", currentLogin?.type, currentLogin?.pubkey);
 
       if (!currentLogin) {
         throw new Error("No login found");
@@ -96,22 +88,14 @@ export default function SoapboxSessions() {
         ? `Subject: ${subject}\n\n${message}`
         : message;
 
-      console.log("📝 Message content length:", fullMessage.length);
-
       let eventToPublish;
 
       // Handle different login types
       if (currentLogin.type === 'nsec') {
-        console.log("🔐 Using nsec login - attempting NIP-17 encryption");
         try {
           const nsecKey = (currentLogin.data as { nsec: string }).nsec;
-          console.log("🔑 Nsec key starts with:", nsecKey.substring(0, 10));
-
           const decoded = nip19.decode(nsecKey);
-          console.log("🔓 Decoded type:", decoded.type);
-
           const privateKeyBytes = decoded.data as Uint8Array;
-          console.log("🔑 Private key bytes length:", privateKeyBytes.length);
 
           // Create NIP-17 DM using gift wrap
           eventToPublish = nip17.wrapEvent(
@@ -121,10 +105,8 @@ export default function SoapboxSessions() {
             },
             fullMessage
           );
-
-          console.log("📦 Gift wrap event created:", eventToPublish.kind, eventToPublish.id);
         } catch (nip17Error) {
-          console.error("❌ NIP-17 encryption failed, falling back to kind 4:", nip17Error);
+          console.error("NIP-17 encryption failed, falling back to kind 4:", nip17Error);
           // Fall back to kind 4 if NIP-17 fails
           eventToPublish = await user.signer.signEvent({
             kind: 4,
@@ -134,7 +116,6 @@ export default function SoapboxSessions() {
           });
         }
       } else {
-        console.log("🔐 Using extension/bunker login - using kind 4 DM");
         // For extension and bunker logins, use kind 4 DM
         eventToPublish = await user.signer.signEvent({
           kind: 4,
@@ -144,18 +125,8 @@ export default function SoapboxSessions() {
         });
       }
 
-      console.log("📤 Publishing event:", eventToPublish);
-      console.log("📡 Event details:", {
-        kind: eventToPublish.kind,
-        id: eventToPublish.id,
-        pubkey: eventToPublish.pubkey,
-        tags: eventToPublish.tags,
-        contentLength: eventToPublish.content.length
-      });
-
       // Publish the event
-      const publishResult = await nostr.event(eventToPublish, { signal: AbortSignal.timeout(10000) });
-      console.log("✅ Publish result:", publishResult);
+      await nostr.event(eventToPublish, { signal: AbortSignal.timeout(10000) });
 
       toast({
         title: "Message Sent!",
@@ -165,21 +136,15 @@ export default function SoapboxSessions() {
       setMessage("");
       setSubject("");
     } catch (error) {
-      console.error("❌ Failed to send message:", error);
-      console.error("❌ Error details:", {
-        message: error.message,
-        stack: error.stack,
-        name: error.name
-      });
+      console.error("Failed to send message:", error);
 
       toast({
         title: "Failed to Send",
-        description: `Error: ${error.message}. Check console for details.`,
+        description: `Error: ${error.message}`,
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
-      console.log("🏁 Message submission finished");
     }
   };
 
