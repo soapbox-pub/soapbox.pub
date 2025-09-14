@@ -71,6 +71,10 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         </div>
       </div>
 
+      <p className="text-xl leading-relaxed text-muted-foreground mb-8">
+        We're entering uncharted territory. For the first time in history, anyone can build sophisticated applications without years of technical training. But this AI-first world demands something unexpected: you now need to have a basic understanding of the full development lifecycle that was once divided among several specialists.
+      </p>
+
       <div className="not-prose my-8">
         <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
           <CardContent className="p-6">
@@ -132,10 +136,6 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           </CardContent>
         </Card>
       </div>
-
-      <p className="text-xl leading-relaxed text-muted-foreground mb-8">
-        We're entering uncharted territory. For the first time in history, anyone can build sophisticated applications without years of technical training. But this AI-first world demands something unexpected: you now need to have a basic understanding of the full development lifecycle that was once divided among several specialists.
-      </p>
 
       <hr className="my-12" />
 
