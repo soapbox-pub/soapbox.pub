@@ -85,25 +85,25 @@ export default function DebuggingInShakespeare() {
                   onClick={() => scrollToSection('section-1')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  1. The Debug Hierarchy
+                  1. Debugging in Shakespeare
                 </button>
                 <button
                   onClick={() => scrollToSection('section-2')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  2. Opening Developer Tools
+                  2. The Debug Hierarchy
                 </button>
                 <button
                   onClick={() => scrollToSection('section-3')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  3. Gathering Essential Evidence
+                  3. Opening Developer Tools
                 </button>
                 <button
                   onClick={() => scrollToSection('section-4')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  4. Console Error Debugging
+                  4. Gathering Essential Evidence
                 </button>
               </div>
               <div className="flex flex-col space-y-2">
@@ -111,21 +111,19 @@ export default function DebuggingInShakespeare() {
                   onClick={() => scrollToSection('section-5')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  5. Network Request Debugging
+                  5. Console Error Debugging
                 </button>
-
-
                 <button
                   onClick={() => scrollToSection('section-6')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  6. Debugging Nostr Events
+                  6. Network Request Debugging
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  7. Pro Debugging Tips
+                  7. Debugging Nostr Events
                 </button>
               </div>
             </div>
@@ -139,7 +137,82 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-1">1. The Debug Hierarchy</h2>
+      <h2 id="section-1">1. Debugging in Shakespeare</h2>
+
+      <p>
+        <strong>Effective debugging with Shakespeare starts with understanding its capabilities and limitations.</strong> Shakespeare is a powerful AI assistant for development, but knowing what it can and cannot see is crucial for getting the help you need.
+      </p>
+
+      <h3>What Shakespeare Can and Cannot See</h3>
+
+      <div className="not-prose my-8">
+        <Card className="border-gray-200 dark:border-gray-800">
+          <CardContent className="p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold mb-4 text-green-800 dark:text-green-200 flex items-center">
+                  ✅ Shakespeare CAN See
+                </h4>
+                <div className="space-y-2 text-sm">
+                  <div>• Your project files and code</div>
+                  <div>• Your project's version history</div>
+                  <div>• Chat history</div>
+                  <div>• Nostr documentation</div>
+                  <div>• Development tools</div>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-4 text-red-800 dark:text-red-200 flex items-center">
+                  ❌ Shakespeare CANNOT See
+                </h4>
+                <div className="space-y-2 text-sm">
+                  <div>• Your screen or browser</div>
+                  <div>• Console errors</div>
+                  <div>• Screenshots</div>
+                  <div>• Live applications</div>
+                  <div>• Network requests directly</div>
+                  <div>• Real-time variable values</div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h3>How to Talk to Shakespeare About Debugging</h3>
+
+      <p><strong>Use the "Expectation vs. Reality" format:</strong></p>
+
+      <ul>
+        <li><strong>What you expect to happen:</strong> "When I click the submit button, the form should create a nostr event and submit it to the relays, then show a success message"</li>
+        <li><strong>What actually happens:</strong> "The button click does nothing, I dont see any nostr event coming through, nor a success message"</li>
+      </ul>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-green-500">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3">Good Debugging Request Example:</h4>
+            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              "My login form isn't working. EXPECTED: After entering email/password and clicking 'Login', user should be authenticated and redirected to dashboard. ACTUAL: Form submits but page just refreshes, no redirect happens. Console shows no errors. Please work with precision to fix this bug, without impacting existing features or functionality."
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="not-prose my-8">
+        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">💡 Pro Tip: Use This Phrase</h4>
+            <p className="text-blue-800 dark:text-blue-200 text-sm">
+              End your debugging requests with: <strong>"Work with precision to fix this bug, without impacting existing features or functionality."</strong> This prompts Shakespeare to make targeted fixes rather than broad changes.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <hr className="my-12" />
+
+      <h2 id="section-2">2. The Debug Hierarchy</h2>
 
       <p>
         <strong>Effective debugging follows a systematic approach.</strong> Instead of randomly trying different solutions, follow this hierarchy to identify and resolve issues efficiently.
@@ -174,7 +247,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-2">2. Opening Developer Tools</h2>
+      <h2 id="section-3">3. Opening Developer Tools</h2>
 
       <p>
         <strong>Developer tools are your debugging microscope.</strong> Every modern browser includes powerful debugging capabilities that reveal what's happening behind the scenes in your Shakespeare application.
@@ -215,7 +288,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-3">3. Gathering Essential Evidence</h2>
+      <h2 id="section-4">4. Gathering Essential Evidence</h2>
 
       <p>
         <strong>Good debugging starts with thorough evidence collection.</strong> The more specific information you provide to Shakespeare, the more targeted and effective the solutions will be.
@@ -262,7 +335,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-4">4. Console Error Debugging</h2>
+      <h2 id="section-5">5. Console Error Debugging</h2>
 
       <p>
         <strong>Console errors are your first clue.</strong> Most JavaScript issues surface in the browser console with specific error messages that point directly to the problem.
@@ -321,7 +394,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-5">5. Network Request Debugging</h2>
+      <h2 id="section-6">6. Network Request Debugging</h2>
 
       <p>
         <strong>Network issues often cause silent failures.</strong> When forms don't submit or data doesn't load, the Network tab reveals what's happening with API calls and server communication.
@@ -368,7 +441,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-6">6. Debugging Nostr Events</h2>
+      <h2 id="section-7">7. Debugging Nostr Events</h2>
 
       <p>
         <strong>Nostr applications require specialized debugging techniques.</strong> When building decentralized applications with Shakespeare, you need to understand what events are being created, signed, and broadcast to the network.
@@ -453,52 +526,6 @@ export default function DebuggingInShakespeare() {
             <h4 className="font-semibold mb-3">Complete Nostr Debugging Report Example:</h4>
             <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
               "Direct messages not sending between users. Alby shows event: {`{\"kind\":4,\"tags\":[[\"p\",\"recipient_pubkey\"]],\"content\":\"encrypted_content_here\",\"created_at\":1694123456}`}. Event structure appears correct for kind 4 (encrypted DM). WebSocket shows successful connection to 3 relays. Issue: recipient not receiving messages. Suspect: encryption/decryption mismatch or relay propagation delay. Need to verify NIP-04 encryption implementation and test with different relay sets."
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <hr className="my-12" />
-
-      <h2 id="section-7">7. Pro Debugging Tips</h2>
-
-      <p>
-        <strong>Advanced debugging requires strategic thinking.</strong> These professional techniques help you solve complex issues faster and communicate more effectively with Shakespeare.
-      </p>
-
-      <p><strong>Essential Debugging Strategies:</strong></p>
-
-      <ul>
-        <li><strong>Minimal Reproduction:</strong> Create the simplest possible example that demonstrates the issue</li>
-        <li><strong>Version Control:</strong> Revert to previous versions of the application to determine when the issue was introduced</li>
-        <li><strong>Incremental Testing:</strong> Make one change at a time and test the result</li>
-        <li><strong>Version Comparison:</strong> Test the same code in different environments or browsers</li>
-        <li><strong>Documentation:</strong> Keep detailed logs of what you tried and what happened</li>
-      </ul>
-
-      <p>
-        <strong>When communicating with Shakespeare, include before/after code snippets.</strong> This helps the AI understand your current implementation and provide targeted solutions.
-      </p>
-
-      <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
-              💡 Pro Debugging Tip
-            </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
-              Create a "debugging checklist" for your most common issues. Include browser compatibility, network connectivity, authentication state, and data validation. This systematic approach catches 80% of issues before they become major problems.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="not-prose my-8">
-        <Card className="border-l-4 border-purple-500">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">Complete Debugging Report Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "User authentication failing on mobile devices only. BEFORE: Login form submits successfully on desktop Chrome/Firefox. AFTER: Same form returns 'Invalid credentials' on mobile Safari/Chrome with identical input. Console shows no errors. Network tab shows successful POST to /api/login with 200 response and valid JWT token. Issue: Token not being stored in localStorage on mobile. SOLUTION NEEDED: Implement alternative storage method for mobile browsers with localStorage limitations."
             </p>
           </CardContent>
         </Card>
