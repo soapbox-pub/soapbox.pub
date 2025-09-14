@@ -140,7 +140,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <h3>Before your Prompt: Chose the Right AI Model</h3>
 
       <p>
-        Shakespeare gives you the freedom to choose your AI model (LLM) that you will use to build your application, but what you pay for is what you get! If you choose a cheap model, you can expect cheap results, no matter how good your prompt. <strong>We highly recommend using advanced models the best results.</strong> 
+        Shakespeare gives you the freedom to choose your AI model (LLM) that you will use to build your application, but what you pay for is what you get! If you choose a cheap model, you can expect cheap results, no matter how good your prompt. <strong>We highly recommend using advanced models the best results.</strong>
       </p>
 
       <hr className="my-12" />
@@ -602,14 +602,17 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       </div>
 
-      <hr className="my-12" />
-
-      <p className="text-sm text-muted-foreground text-center">
-        <em>
-          Shakespeare is developed by the team behind Soapbox, Ditto, and Nostrify.
-          Follow our journey on Nostr and stay updated with the latest developments in decentralized web technology.
-        </em>
-      </p>
+      <div className="not-prose my-12 text-center">
+        <Button
+          asChild
+          variant="outline"
+          className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+        >
+          <a href="/shakespeare-resources">
+            Shakespeare Resource Center →
+          </a>
+        </Button>
+      </div>
     </article>
   );
 }
