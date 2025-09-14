@@ -121,6 +121,12 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
                 >
                   7. Design as if It's Already Live
                 </button>
+                <button
+                  onClick={() => scrollToSection('section-11')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
+                  8. Advanced: Meta Prompting
+                </button>
               </div>
             </div>
           </CardContent>
@@ -136,8 +142,8 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       <h2 id="section-1">1. Prompt with a Purpose</h2>
 
       <p>
-        Before you type into Shakespeare, take a pause. <strong>Great builds start with clarity and direction.</strong> Skipping this step is like walking onto stage without knowing your lines; confusion follows. 
-        Think of this as your <strong>project pitch in one paragraph.</strong> You don't need a technical spec sheet; just a quick outline that tells Shakespeare what you want and why it matters. 
+        Before you type into Shakespeare, take a pause. <strong>Great builds start with clarity and direction.</strong> Skipping this step is like walking onto stage without knowing your lines; confusion follows.
+        Think of this as your <strong>project pitch in one paragraph.</strong> You don't need a technical spec sheet; just a quick outline that tells Shakespeare what you want and why it matters.
       </p>
 
       <p>Ask yourself:</p>
@@ -175,7 +181,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           💡 Pro Tip
         </h4>
         <p className="text-green-700 dark:text-green-300 text-sm">
-          Want help refining your prompt? You can ask Shakespeare to talk to you about your idea before you start building!
+          Want help refining your prompt? You can ask Shakespeare to talk to you about your idea before you start building! (also called <a href="#section-11" className="underline">meta prompting</a>)
         </p>
           </CardContent>
         </Card>
@@ -469,9 +475,96 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <hr className="my-12" />
 
+      <h2 id="section-11">8. Advanced: Meta Prompting</h2>
+
       <p>
-        You've now got the playbook for building with Shakespeare. From sketching your idea to shaping the flow and dialing in the design, you know how to get clear, sharp results. Don't overthink it. Pick one project and start. Keep prompts simple, keep direction clear, and let Shakespeare do the heavy lifting. This isn't about perfection, it's about progress. The more you build, the more comfortable you'll become, and the better you'll get. Now go and build something truly remarkable. Happy prompting!
+        Meta prompting is the art of using Shakespeare to help you craft better prompts. Instead of diving straight into building, you can ask Shakespeare to help you think through your project, refine your requirements, or even generate prompts for future work. This is especially powerful when you're stuck, need to clarify your vision, or want to improve your prompting skills.
       </p>
+
+      <p><strong>Meta Prompting:</strong> Getting help to plan and design before you build.</p>
+
+      <div className="not-prose my-8">
+        <div className="space-y-4">
+          <Card className="border-l-4 border-purple-500">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-3">Project Planning Assistant:</h4>
+              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+                "I want to build a community platform for local book clubs. Can you help me think through what features would be most important and write it out as a detailed prompt I can use to start building?"
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-blue-500">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-3">Feature Prioritization:</h4>
+              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+                "I've built a basic newsletter signup site. Based on what's working well, write a list of the next three features we should implement in order of priority."
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-green-500">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-3">Design Direction Helper:</h4>
+              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+                "Create a detailed design brief for a meditation app landing page that would appeal to busy professionals. Include color palette, typography choices, layout structure, and tone—write it as a prompt I can use."
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <p><strong>Reverse Meta Prompting:</strong> Learning from what went wrong to improve future builds.</p>
+
+      <div className="not-prose my-8">
+        <div className="space-y-4">
+          <Card className="border-l-4 border-orange-500">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-3">Post-Mortem Analysis:</h4>
+              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+                "Summarize the issues we had creating this feature and what he solutions were and create a detailed prompt I can use next time to avoid these problems."
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-yellow-500">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-3">Site theme descriptions:</h4>
+              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+                "I love the final look of this site. Create a prompt for me that descripts the desgin, color palette, typography, and overall tone so I can use it as a starting point for future projects."
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <p>
+        Meta prompting transforms Shakespeare from a tool that executes your ideas into a collaborative partner that helps you think through problems and improve your approach. The more you use it to plan, reflect, and refine, the better your actual builds become.
+      </p>
+
+      <hr className="my-12" />
+
+      <p>
+        <strong>You've now got the playbook for building with Shakespeare.</strong> From sketching your idea to shaping the flow and dialing in the design, you know how to get clear, sharp results. Don't overthink it. Pick one project and start. Keep prompts simple, keep direction clear, and let Shakespeare do the heavy lifting. This isn't about perfection, it's about progress. The more you build, the more comfortable you'll become, and the better you'll get. Now go and build something truly remarkable. Happy prompting!
+      </p>
+
+      <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
+          <CardContent className="p-6 text-center">
+            <div className="text-3xl mb-3">🔧</div>
+            <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              Need Help Debugging?
+            </h3>
+            <p className="text-muted-foreground mb-4 text-sm">
+              When things don't work as expected, learn advanced troubleshooting techniques for Shakespeare.
+            </p>
+            <Button
+              asChild
+              variant="outline"
+              className="border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900"
+            >
+              <a href="/blog/debugging-in-shakespeare">
+                Learn Debugging Techniques →
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
 
       <div className="not-prose my-12 space-y-8">
         <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
@@ -500,26 +593,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           </CardContent>
         </Card>
 
-        <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
-          <CardContent className="p-6 text-center">
-            <div className="text-3xl mb-3">🔧</div>
-            <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              Need Help Debugging?
-            </h3>
-            <p className="text-muted-foreground mb-4 text-sm">
-              When things don't work as expected, learn advanced troubleshooting techniques for Shakespeare.
-            </p>
-            <Button
-              asChild
-              variant="outline"
-              className="border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900"
-            >
-              <a href="/blog/debugging-in-shakespeare">
-                Learn Debugging Techniques →
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
+
       </div>
 
       <hr className="my-12" />
