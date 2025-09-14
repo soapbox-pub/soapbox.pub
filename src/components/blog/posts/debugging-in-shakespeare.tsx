@@ -113,27 +113,24 @@ export default function DebuggingInShakespeare() {
                 >
                   5. Console Error Debugging
                 </button>
+
                 <button
                   onClick={() => scrollToSection('section-6')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  6. Network Request Debugging
+                  6. Debugging Nostr Events
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  7. Debugging Nostr Events
+                  7. Advanced: Meta-Debugging
                 </button>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
-
-      <p>
-        <strong>Debugging is detective work.</strong> When your Shakespeare application doesn't behave as expected, you need to systematically gather clues, isolate the problem, and provide clear evidence to get effective solutions. This guide transforms you from someone who says "it's broken" to someone who can pinpoint exactly what's wrong and how to fix it.
-      </p>
 
       <hr className="my-12" />
 
@@ -179,6 +176,8 @@ export default function DebuggingInShakespeare() {
         </Card>
       </div>
 
+      <p>When Shakespeare cannot see something on it's own, it's up to you to provide that information to the AI so it can use it to help you solve the bug.</p>
+
       <h3>How to Talk to Shakespeare About Debugging</h3>
 
       <p><strong>Use the "Expectation vs. Reality" format:</strong></p>
@@ -209,6 +208,12 @@ export default function DebuggingInShakespeare() {
           </CardContent>
         </Card>
       </div>
+
+      <h3>Choosing the Right AI Model for Debugging</h3>
+
+      <p>
+        Shakespeare gives you the freedom to choose your model, but what you pay for is what you get! If you choose a cheap model, you can expect cheap results. Model selection significantly impacts debugging effectiveness, especially for complex applications. <strong>We highly recommend using advanced models for debugging and complex applications.</strong> 
+      </p>
 
       <hr className="my-12" />
 
@@ -338,20 +343,7 @@ export default function DebuggingInShakespeare() {
       <h2 id="section-5">5. Console Error Debugging</h2>
 
       <p>
-        <strong>Console errors are your first clue.</strong> Most JavaScript issues surface in the browser console with specific error messages that point directly to the problem.
-      </p>
-
-      <p><strong>Common Error Types:</strong></p>
-
-      <ul>
-        <li><strong>TypeError:</strong> Trying to use undefined variables or incorrect data types</li>
-        <li><strong>ReferenceError:</strong> Using variables that don't exist or are out of scope</li>
-        <li><strong>SyntaxError:</strong> Invalid JavaScript syntax or structure</li>
-        <li><strong>Network Errors:</strong> Failed API calls or resource loading issues</li>
-      </ul>
-
-      <p>
-        When reporting console errors to Shakespeare, <strong>include the complete error message and stack trace.</strong> The line numbers and file names help identify exactly where the problem occurs.
+        <strong>Console errors are your first clue.</strong> Most JavaScript issues surface in the browser console with specific error messages that point directly to the problem. When reporting console errors to Shakespeare, <strong>copy/paste the entire console output</strong> to Shakespeare.
       </p>
 
       <div className="not-prose my-8">
@@ -394,54 +386,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-6">6. Network Request Debugging</h2>
-
-      <p>
-        <strong>Network issues often cause silent failures.</strong> When forms don't submit or data doesn't load, the Network tab reveals what's happening with API calls and server communication.
-      </p>
-
-      <p><strong>Key Network Debugging Points:</strong></p>
-
-      <ul>
-        <li><strong>Request Status:</strong> 200 (success), 404 (not found), 500 (server error), 422 (validation failed)</li>
-        <li><strong>Request Payload:</strong> What data is being sent to the server</li>
-        <li><strong>Response Data:</strong> What the server is returning (or error messages)</li>
-        <li><strong>Request Headers:</strong> Authentication tokens, content types, CORS settings</li>
-        <li><strong>Timing:</strong> How long requests take and where delays occur</li>
-      </ul>
-
-      <p>
-        <strong>Look for failed requests (red status codes) or missing requests</strong> when expected actions don't trigger API calls.
-      </p>
-
-      <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">Network Request Debugging Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "API calls are failing intermittently. Network tab shows POST /api/users returning 422 with response: {`{error: 'validation failed', field: 'email'}`}. This happens about 30% of the time with valid email addresses like 'user@domain.com'. Request payload shows correct email format. Need error handling to retry failed requests and better user feedback for validation errors."
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
-          <CardContent className="p-6">
-            <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="bg-gray-300 dark:bg-gray-700 h-48 rounded flex items-center justify-center text-gray-600 dark:text-gray-400">
-              [Screenshot: Network tab showing failed POST request with 422 status and response details]
-            </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              Network tab showing a failed API request with status code, response data, and timing information.
-            </p>
-          </CardContent>
-        </Card>
-      </div> */}
-
-      <hr className="my-12" />
-
-      <h2 id="section-7">7. Debugging Nostr Events</h2>
+      <h2 id="section-6">6. Debugging Nostr Events</h2>
 
       <p>
         <strong>Nostr applications require specialized debugging techniques.</strong> When building decentralized applications with Shakespeare, you need to understand what events are being created, signed, and broadcast to the network.
@@ -533,37 +478,91 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
+      <h2 id="section-7">7. Advanced: Meta-Debugging</h2>
+
+      <p>
+        <strong>Meta-debugging is debugging your debugging process.</strong> When regular debugging techniques aren't working, or when you've spent too many credits without progress, it's time to step back and analyze your approach itself.
+      </p>
+
+      <p>
+        Meta-debugging involves asking Shakespeare to examine your debugging strategy, identify patterns in failed attempts, and suggest more efficient approaches. This is particularly powerful because Shakespeare can review your entire chat history and spot inefficiencies you might miss.
+      </p>
+
+      <h3>Forward Meta-Debugging: When You're Stuck</h3>
+
+      <p>
+        <strong>Use this when a bug persists despite multiple fix attempts.</strong> Instead of trying yet another random solution, ask Shakespeare to analyze what you've already tried and create a systematic plan.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-purple-500">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3">Forward Meta-Debugging Example:</h4>
+            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              "This authentication bug has persisted despite multiple attempts to fix it. We've tried: 1) Updating the JWT token handling, 2) Fixing the login form validation, 3) Modifying the API endpoint response. The user still can't stay logged in after page refresh. Perform an analysis of what we've already tried and create a new systematic plan to resolve this bug. What are we missing?"
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <p><strong>Key phrases for forward meta-debugging:</strong></p>
+
+      <ul>
+        <li>"Analyze what we've already tried and create a new plan"</li>
+        <li>"What patterns do you see in our failed attempts?"</li>
+        <li>"What fundamental assumption might we be missing?"</li>
+        <li>"Create a systematic debugging plan based on our chat history"</li>
+      </ul>
+
+      <h3>Reverse Meta-Debugging: Learning from Inefficiency</h3>
+
+      <p>
+        <strong>Use this after solving a particularly bug to improve your future debugging skills.</strong> Ask Shakespeare to review your debugging session and identify how you could have been more efficient.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-orange-500">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3">Reverse Meta-Debugging Example:</h4>
+            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              "I spent way too many credits trying to solve this form validation bug. We eventually fixed it, but it took 20 messages when it probably should have taken 5. Analyze our chat history and tell me: 1) What information should I have provided earlier? 2) Which debugging steps were unnecessary? 3) How can I be more efficient debugging similar issues next time?"
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <p><strong>Key phrases for reverse meta-debugging:</strong></p>
+
+      <ul>
+        <li>"Analyze our chat and tell me how I can be more efficient next time"</li>
+        <li>"What should I have provided earlier to solve this faster?"</li>
+        <li>"Which steps in our debugging process were unnecessary?"</li>
+        <li>"What debugging pattern should I follow for similar issues?"</li>
+      </ul>
+
+      <div className="not-prose my-8">
+        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">When to Use Meta-Debugging</h4>
+            <div className="space-y-2 text-sm text-blue-800 dark:text-blue-200">
+              <div><strong>Forward:</strong> After 3+ failed fix attempts on the same bug</div>
+              <div><strong>Forward:</strong> When you feel like you're going in circles</div>
+              <div><strong>Forward:</strong> When the bug seems impossible to reproduce consistently</div>
+              <div><strong>Reverse:</strong> After spending more credits than expected on a bug</div>
+              <div><strong>Reverse:</strong> When you want to improve your debugging skills</div>
+              <div><strong>Reverse:</strong> After solving a particularly tricky bug</div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <hr className="my-12" />
+
       <p>
         <strong>Debugging is a skill that improves with practice.</strong> The more systematically you approach problems, the faster you'll identify solutions. Remember: Shakespeare can only help you as effectively as you can describe the problem. Master these debugging techniques, and you'll transform from someone who gets stuck on issues to someone who solves them quickly and confidently.
       </p>
 
       <div className="not-prose my-12 space-y-8">
-        <Card className="border-dashed border-2 border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
-          <CardContent className="p-8 text-center">
-            <div className="text-4xl mb-4">🔧</div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              Ready to Debug Like a Pro?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Apply these debugging techniques to identify and solve issues in your Shakespeare projects.
-            </p>
-            <div className="space-y-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold px-8 py-3"
-              >
-                <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                  🚀 Start Debugging in Shakespeare
-                </a>
-              </Button>
-              <p className="text-sm text-muted-foreground">
-                Put these debugging skills to work on your projects
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
         <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
           <CardContent className="p-6 text-center">
             <div className="text-3xl mb-3">🎭</div>

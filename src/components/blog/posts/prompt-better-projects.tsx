@@ -137,6 +137,12 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         </Card>
       </div>
 
+      <h3>Before your Prompt: Chose the Right AI Model</h3>
+
+      <p>
+        Shakespeare gives you the freedom to choose your AI model (LLM) that you will use to build your application, but what you pay for is what you get! If you choose a cheap model, you can expect cheap results, no matter how good your prompt. <strong>We highly recommend using advanced models the best results.</strong> 
+      </p>
+
       <hr className="my-12" />
 
       <h2 id="section-1">1. Prompt with a Purpose</h2>
