@@ -366,7 +366,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
               💡 Pro Tip
             </h4>
             <p className="text-green-700 dark:text-green-300 text-sm">
-              When in doubt, check the latest NIPs at <a href="https://nostrhub.io/" className="underline font-medium">https://nostrhub.io/</a> or reference specific implementation examples from popular Nostr clients. Shakespeare can work with both established and experimental NIPs.
+              When in doubt, check the latest NIPs at <a href="https://nostrhub.io/" className="underline font-medium">https://nostrhub.io/</a> or reference specific implementation examples from popular Nostr clients. Shakespeare can work with both established and experimental NIPs. You can also ask Shakespeare if any existing kinds/NIPs happen to cover your proposed use case. (e.x., "I want to create a site that hosts Magic: The Gathering decks, does it already exist in nostr?")
             </p>
           </CardContent>
         </Card>
