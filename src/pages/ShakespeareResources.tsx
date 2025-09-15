@@ -85,8 +85,7 @@ export default function ShakespeareResources() {
               <span className="text-purple-600">🎭 Shakespeare</span> Resources
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to know about Shakespeare - the AI-powered website builder running on Nostr.
-              Find answers to common questions and explore our latest blog posts.
+              Find answers to common questions and explore our latest guides.
             </p>
           </div>
         </div>
