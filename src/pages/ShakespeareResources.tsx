@@ -30,43 +30,43 @@ export default function ShakespeareResources() {
   const faqData = [
     {
       question: "What is Shakespeare and how does it work?",
-      answer: "Shakespeare is an AI-powered website builder that runs entirely on the Nostr protocol. You can build professional websites through natural conversation with AI assistants. Simply describe what you want, and Shakespeare creates it in real-time with a live preview system."
+      answer: "Shakespeare is an AI-powered website builder that runs directly in your web browser. Simply describe what type of website you want, and Shakespeare creates it in real-time with a live preview system. You can even view and edit the code, and share your site with a unique URL."
     },
     {
       question: "Do I need coding experience to use Shakespeare?",
-      answer: "No coding experience is required! Shakespeare is designed for everyone - from complete beginners to experienced developers. You interact with the AI using natural language, just like having a conversation with a skilled web developer."
+      answer: "No coding experience is required! Shakespeare is designed for everyone - from complete beginners to experienced developers. You interact with the AI using natural language, just like having a conversation with a skilled web developer. However, if you wish to view and edit the code directly, it's availeable for those with coding knowledge."
     },
     {
       question: "How much does Shakespeare cost?",
-      answer: "Shakespeare uses transparent pay-per-use pricing with no subscriptions or hidden fees. Simple landing pages typically cost $2-5, complex web apps cost $10-25, and small changes cost $0.50-2. You only pay for actual AI generation time."
+      answer: "Shakespeare itself is free, we simply provide a tool to access AI models. The models themselves charge based on usage, ranging from practically free (ex. Google's Gemini Flash) to more premium options (ex. Claude Sonnet 4). We cannot change their pricing, but you can choose which model to use and configure your own providers. For users who do not wish to set up their own AI providers, we offer a default provider with multiple price points."
     },
     {
       question: "What types of websites can I build with Shakespeare?",
-      answer: "You can build virtually any type of website: portfolios, business sites, e-commerce stores, blogs, dashboards, social media apps, and more. Shakespeare can create everything from simple landing pages to complex web applications."
+      answer: "You can build virtually any type of website: portfolios, business sites, e-commerce stores, blogs, dashboards, social media apps, and more. Shakespeare can create everything from simple landing pages to complex web applications. Shakespeare specializes in building Nostr sites, and is capable of creating Nostr clients, explorers, and other tools that interact with the Nostr protocol."
+    },
+    {
+      question: "What types of things can I NOT build with Shakespeare?",
+      answer: "Shakespeare is only for builing sites that run in the browser. You cannot build backend services, mobile apps, or desktop applications. Additionally, we do not reccomend using Shakespeare for building sites to transmit any sensitive or private user data."
+    },
+    {
+      question: "What AI providers does Shakespeare support?",
+      answer: "Shakespeare supports OpenRouter, OpenAI, Anthropic, xAI, PayPerQ, Z.ai, Moonshot, and the ability to add a custom provider. We also have a default provider for users who do not wish to set up their own."
     },
     {
       question: "Can I import existing projects into Shakespeare?",
       answer: "Yes! Shakespeare can import and work with existing codebases from GitHub and GitLab repositories. You can enhance existing projects with AI assistance and even submit pull requests back to the original repositories."
     },
     {
-      question: "What are Nostr Service Providers (NSPs)?",
-      answer: "NSPs are AI service providers that work through the Nostr protocol. Unlike traditional AI services that lock you into one provider, Shakespeare lets you choose from multiple NSPs, each offering different AI models, capabilities, and pricing options."
-    },
-    {
-      question: "How do I get started with Shakespeare?",
-      answer: "Simply visit shakespeare.diy and connect with any Nostr browser extension (like Alby, nos2x, or Flamingo). No email or corporate accounts required - your decentralized identity gives you complete control."
-    },
-    {
-      question: "Is my data secure and private?",
-      answer: "Yes! Shakespeare runs on the Nostr protocol, which means you maintain complete control over your data and identity. There's no vendor lock-in, and you have true data sovereignty with censorship resistance."
-    },
-    {
       question: "Can I download my website's source code?",
-      answer: "Absolutely! You can download the complete source code as a ZIP file, giving you full ownership of your website. You can also deploy it anywhere you want or continue development locally."
+      answer: "Absolutely! You can download the complete source code as a ZIP file, giving you full ownership of your website. You can also deploy it anywhere you want or continue development locally. You can also sync it with your GitHub or GitLab account for version control and collaboration."
+    },
+    {
+      question: "Where is my data stored",
+      answer: "Shakespeare runs entirely in your web browser, so your data is stored locally on your device. We do not store any of your personal data or website content on our servers. If you choose to sign in with a Nostr key, your Nostr events will be submitted to relays."
     },
     {
       question: "What makes Shakespeare different from other website builders?",
-      answer: "Shakespeare combines AI-powered building with the freedom of the Nostr protocol. Unlike traditional website builders, you're not locked into a platform, you maintain data sovereignty, and you can choose from multiple AI providers in a competitive marketplace."
+      answer: "Shakespeare combines AI-powered building with complete user freedom. Unlike traditional website builders, you're not locked into a platform, you maintain data sovereignty, and you can choose from multiple AI providers in a competitive marketplace."
     }
   ];
 
