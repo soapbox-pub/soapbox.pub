@@ -45,6 +45,8 @@ import * as threadsserverblocking from '../../components/blog/posts/threads-serv
 import * as understandingnostrserviceproviders from '../../components/blog/posts/understanding-nostr-service-providers';
 import * as unlockingmastodonapps from '../../components/blog/posts/unlocking-mastodon-apps';
 import * as whatisthefediverse from '../../components/blog/posts/what-is-the-fediverse';
+import * as howtopromptbetterprojectswithshakespeare from '../../components/blog/posts/prompt-better-projects';
+import * as debugginginshakespeare from '../../components/blog/posts/debugging-in-shakespeare';
 
 export interface BlogPost {
   slug: string;
@@ -64,6 +66,8 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  debugginginshakespeare.meta,
+  howtopromptbetterprojectswithshakespeare.meta,
   announcingsoapboxsessionspodcast.meta,
   announcingstacks10.meta,
   shakespeare1weekupdate.meta,
@@ -116,6 +120,10 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'debugginginshakespeare':
+      return (await import('../../components/blog/posts/debugging-in-shakespeare')).default;
+    case 'howtopromptbetterprojects':
+      return (await import('../../components/blog/posts/prompt-better-projects')).default;
     case 'announcingsoapboxsessionspodcast':
       return (await import('../../components/blog/posts/announcing-soapbox-sessions-podcast')).default;
     case 'shakespeare1weekupdate':

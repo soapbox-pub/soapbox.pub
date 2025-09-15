@@ -22,9 +22,9 @@ export default function ShakespeareResources() {
     keywords: 'shakespeare resources, shakespeare faq, shakespeare blog, ai website builder help, shakespeare tutorials',
   });
 
-  // Filter blog posts tagged with "shakespeare"
+  // Filter blog posts tagged with "shakespeare-resource"
   const shakespearePosts = blogPosts.filter(post =>
-    post.tags?.includes('shakespeare')
+    post.tags?.includes('shakespeare-resource')
   );
 
   const faqData = [
@@ -133,11 +133,11 @@ export default function ShakespeareResources() {
             <div className="flex items-center justify-center mb-4">
               <BookOpen className="h-8 w-8 text-blue-600 mr-3" />
               <h2 className="text-4xl font-display font-bold text-gray-900">
-                Shakespeare Blog Posts
+                Shakespeare Guides and Tutorials
               </h2>
             </div>
             <p className="text-lg text-gray-600">
-              Latest updates, tutorials, and insights about Shakespeare
+              Deep dive into becoming a Shakespeare power user
             </p>
           </div>
 
@@ -153,7 +153,7 @@ export default function ShakespeareResources() {
                       No Shakespeare posts found
                     </h3>
                     <p className="text-gray-600">
-                      Blog posts tagged with "shakespeare" will appear here. Check back soon for updates!
+                      Blog posts tagged with "shakespeare-resource" will appear here. Check back soon for updates!
                     </p>
                   </div>
                 </div>
