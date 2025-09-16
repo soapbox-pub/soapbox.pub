@@ -11,7 +11,7 @@ import { useNostr } from "@nostrify/react";
 import { useNostrLogin } from "@nostrify/react/login";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { useToast } from "@/hooks/useToast";
-import { nip19, nip17 } from "nostr-tools";
+import { nip19 } from "nostr-tools";
 import LoginDialog from "@/components/auth/LoginDialog";
 import SignupDialog from "@/components/auth/SignupDialog";
 
@@ -90,39 +90,19 @@ export default function SoapboxSessions() {
 
       let eventToPublish;
 
-      // Handle different login types
-      if (currentLogin.type === 'nsec') {
+      // Always try NIP-17 first if NIP-44 is available, otherwise fall back to NIP-04
+      if (user?.signer?.nip44) {
         try {
-          const nsecKey = (currentLogin.data as { nsec: string }).nsec;
-          const decoded = nip19.decode(nsecKey);
-          const privateKeyBytes = decoded.data as Uint8Array;
-
-          // Create NIP-17 DM using gift wrap
-          eventToPublish = nip17.wrapEvent(
-            privateKeyBytes,
-            {
-              publicKey: recipientPubkey,
-            },
-            fullMessage
-          );
+          // Create proper NIP-17 DM following NIP-59 gift wrap protocol
+          eventToPublish = await createNip17DM(user, recipientPubkey, fullMessage);
         } catch (nip17Error) {
-          console.error("NIP-17 encryption failed, falling back to kind 4:", nip17Error);
-          // Fall back to kind 4 if NIP-17 fails
-          eventToPublish = await user.signer.signEvent({
-            kind: 4,
-            content: fullMessage,
-            tags: [["p", recipientPubkey]],
-            created_at: Math.floor(Date.now() / 1000),
-          });
+          console.error("NIP-17 encryption failed, falling back to NIP-04:", nip17Error);
+          // Fall back to NIP-04 encrypted kind 4 if NIP-17 fails
+          eventToPublish = await createNip04DM(user, recipientPubkey, fullMessage);
         }
       } else {
-        // For extension and bunker logins, use kind 4 DM
-        eventToPublish = await user.signer.signEvent({
-          kind: 4,
-          content: fullMessage,
-          tags: [["p", recipientPubkey]],
-          created_at: Math.floor(Date.now() / 1000),
-        });
+        // For signers without NIP-44, use NIP-04 encrypted kind 4 DM
+        eventToPublish = await createNip04DM(user, recipientPubkey, fullMessage);
       }
 
       // Publish the event
@@ -146,6 +126,58 @@ export default function SoapboxSessions() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Helper function to create proper NIP-17 DM following the universes pattern
+  const createNip17DM = async (user: { signer: { nip44: { encrypt: (pubkey: string, content: string) => Promise<string> }, signEvent: (event: any) => Promise<any> } }, recipientPubkey: string, content: string) => {
+    if (!user?.signer?.nip44) {
+      throw new Error('NIP-44 encryption not available for NIP-17');
+    }
+
+    // Step 1: Create and sign the Kind 14 Private DM event
+    const privateDM = await user.signer.signEvent({
+      kind: 14,
+      content: content,
+      tags: [["p", recipientPubkey]],
+      created_at: Math.floor(Date.now() / 1000),
+    });
+
+    // Step 2: Create Kind 13 Seal event (encrypted to recipient)
+    const seal = await user.signer.signEvent({
+      kind: 13,
+      content: await user.signer.nip44.encrypt(recipientPubkey, JSON.stringify(privateDM)),
+      tags: [], // Seal events have no tags
+      created_at: Math.floor(Date.now() / 1000),
+    });
+
+    // Step 3: Create Kind 1059 Gift Wrap event (for recipient)
+    const giftWrap = await user.signer.signEvent({
+      kind: 1059, // Gift Wrap
+      content: await user.signer.nip44.encrypt(recipientPubkey, JSON.stringify(seal)),
+      tags: [["p", recipientPubkey]], // Recipient can find this via their pubkey
+      created_at: Math.floor(Date.now() / 1000),
+    });
+
+    return giftWrap;
+  };
+
+  // Helper function to create NIP-04 encrypted kind 4 DM (fallback)
+  const createNip04DM = async (user: { signer: { nip04: { encrypt: (pubkey: string, content: string) => Promise<string> }, signEvent: (event: any) => Promise<any> } }, recipientPubkey: string, content: string) => {
+    if (!user?.signer?.nip04) {
+      throw new Error('NIP-04 encryption not available');
+    }
+
+    // Use NIP-04 encryption for kind 4 DMs
+    const encryptedContent = await user.signer.nip04.encrypt(recipientPubkey, content);
+
+    const event = await user.signer.signEvent({
+      kind: 4,
+      content: encryptedContent,
+      tags: [["p", recipientPubkey]],
+      created_at: Math.floor(Date.now() / 1000),
+    });
+
+    return event;
   };
 
   const handleLogin = () => {
@@ -304,7 +336,7 @@ export default function SoapboxSessions() {
                       {isSubmitting ? "Sending..." : "Send Private Message"}
                     </Button>
                     <p className="text-xs text-gray-500 text-center">
-                      Your message will be sent privately{logins[0]?.type === 'nsec' ? ' using NIP-17 encryption' : ' with standard encryption'}
+                      Your message will be sent privately{user?.signer?.nip44 ? ' using NIP-17 gift wrap encryption' : ' using NIP-04 encryption'}
                     </p>
                   </>
                 ) : (
