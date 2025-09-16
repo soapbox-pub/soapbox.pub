@@ -391,7 +391,7 @@ export default function SoapboxSessions() {
           {/* Listen Links */}
           <div className="mb-16">
             <h2 className="font-display text-3xl font-bold text-center mb-8">Where to Listen</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle className="flex items-center">
@@ -407,6 +407,26 @@ export default function SoapboxSessions() {
                     <a href="https://sessions.soapbox.pub/rss.xml" target="_blank" rel="noopener noreferrer">
                       <Rss className="h-4 w-4 mr-2" />
                       RSS Feed
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Music className="h-5 w-5 mr-2 text-orange-500" />
+                    Fountain
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Listen and support the show with Fountain
+                  </p>
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="https://fountain.fm/show/aq7IaS6bdQ6kF6NWDzzc" target="_blank" rel="noopener noreferrer">
+                      <Music className="h-4 w-4 mr-2" />
+                      Open in Fountain
                     </a>
                   </Button>
                 </CardContent>
