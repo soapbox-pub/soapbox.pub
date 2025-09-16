@@ -51,7 +51,7 @@ The project uses shadcn/ui components located in `@/components/ui`. These are un
 - **Badge**: Small status descriptors for UI elements
 - **Breadcrumb**: Navigation aid showing current location in hierarchy
 - **Button**: Customizable button with multiple variants and sizes
-- **Calendar**: Date picker component 
+- **Calendar**: Date picker component
 - **Card**: Container with header, content, and footer sections
 - **Carousel**: Slideshow for cycling through elements
 - **Chart**: Data visualization component
@@ -92,23 +92,171 @@ The project uses shadcn/ui components located in `@/components/ui`. These are un
 
 These components follow a consistent pattern using React's `forwardRef` and use the `cn()` utility for class name merging. Many are built on Radix UI primitives for accessibility and customized with Tailwind CSS.
 
+## System Prompt Management
+
+The AI assistant's behavior and knowledge is defined by the AGENTS.md file, which serves as the system prompt. To modify the assistant's instructions or add new project-specific guidelines:
+
+1. Edit AGENTS.md directly
+2. The changes take effect in the next session
+
 ## Nostr Protocol Integration
 
 This project comes with custom hooks for querying and publishing events on the Nostr network.
 
-### Custom NIP Definition
+### Nostr Implementation Guidelines
 
-The file `NIP.md` is used by this project to define a custom Nostr protocol document. If the file doesn't exist, it means this project doesn't have any custom Nostr events associated with it yet. Typically NIPs define custom event kinds.
+- Always check the full list of existing NIPs before implementing any Nostr features to see what kinds are currently in use across all NIPs.
+- If any existing kind or NIP might offer the required functionality, read the relevant NIPs to investigate thoroughly. Several NIPs may need to be read before making a decision.
+- Only generate new kind numbers if no existing suitable kinds are found after comprehensive research.
 
-Before deciding upon a kind number for a custom event, use `nostr__read_nips_index` to see what kinds are currently in use across all NIPs. The kind number determines the event's behavior and storage characteristics:
+Knowing when to create a new kind versus reusing an existing kind requires careful judgement. Introducing new kinds means the project won't be interoperable with existing clients. But deviating too far from the schema of a particular kind can cause different interoperability issues.
 
-- **Regular Events** (1 ≤ kind < 10000): Expected to be stored by relays permanently. Used for persistent content like notes, articles, etc.
+#### Choosing Between Existing NIPs and Custom Kinds
+
+When implementing features that could use existing NIPs, follow this decision framework:
+
+1. **Thorough NIP Review**: Before considering a new kind, always perform a comprehensive review of existing NIPs and their associated kinds. Get an overview of all NIPs, and then read specific NIPs and kind documentation to investigate any potentially relevant NIPs or kinds in detail. The goal is to find the closest existing solution.
+
+2. **Prioritize Existing NIPs**: Always prefer extending or using existing NIPs over creating custom kinds, even if they require minor compromises in functionality.
+
+3. **Interoperability vs. Perfect Fit**: Consider the trade-off between:
+   - **Interoperability**: Using existing kinds means compatibility with other Nostr clients
+   - **Perfect Schema**: Custom kinds allow perfect data modeling but create ecosystem fragmentation
+
+4. **Extension Strategy**: When existing NIPs are close but not perfect:
+   - Use the existing kind as the base
+   - Add domain-specific tags for additional metadata
+   - Document the extensions in `NIP.md`
+
+5. **When to Generate Custom Kinds**:
+   - No existing NIP covers the core functionality
+   - The data structure is fundamentally different from existing patterns
+   - The use case requires different storage characteristics (regular vs replaceable vs addressable)
+
+6. **Custom Kind Publishing**: When publishing events with custom generated kinds, always include a NIP-31 "alt" tag with a human-readable description of the event's purpose.
+
+**Example Decision Process**:
+```
+Need: Equipment marketplace for farmers
+Options:
+1. NIP-15 (Marketplace) - Too structured for peer-to-peer sales
+2. NIP-99 (Classified Listings) - Good fit, can extend with farming tags
+3. Custom kind - Perfect fit but no interoperability
+
+Decision: Use NIP-99 + farming-specific tags for best balance
+```
+
+#### Tag Design Principles
+
+When designing tags for Nostr events, follow these principles:
+
+1. **Kind vs Tags Separation**:
+   - **Kind** = Schema/structure (how the data is organized)
+   - **Tags** = Semantics/categories (what the data represents)
+   - Don't create different kinds for the same data structure
+
+2. **Use Single-Letter Tags for Categories**:
+   - **Relays only index single-letter tags** for efficient querying
+   - Use `t` tags for categorization, not custom multi-letter tags
+   - Multiple `t` tags allow items to belong to multiple categories
+
+3. **Relay-Level Filtering**:
+   - Design tags to enable efficient relay-level filtering with `#t: ["category"]`
+   - Avoid client-side filtering when relay-level filtering is possible
+   - Consider query patterns when designing tag structure
+
+4. **Tag Examples**:
+   ```json
+   // ❌ Wrong: Multi-letter tag, not queryable at relay level
+   ["product_type", "electronics"]
+
+   // ✅ Correct: Single-letter tag, relay-indexed and queryable
+   ["t", "electronics"]
+   ["t", "smartphone"]
+   ["t", "android"]
+   ```
+
+5. **Querying Best Practices**:
+   ```typescript
+   // ❌ Inefficient: Get all events, filter in JavaScript
+   const events = await nostr.query([{ kinds: [30402] }]);
+   const filtered = events.filter(e => hasTag(e, 'product_type', 'electronics'));
+
+   // ✅ Efficient: Filter at relay level
+   const events = await nostr.query([{ kinds: [30402], '#t': ['electronics'] }]);
+   ```
+
+#### `t` Tag Filtering for Community-Specific Content
+
+For applications focused on a specific community or niche, you can use `t` tags to filter events for the target audience.
+
+**When to Use:**
+- ✅ Community apps: "farmers" → `t: "farming"`, "Poland" → `t: "poland"`
+- ❌ Generic platforms: Twitter clones, general Nostr clients
+
+**Implementation:**
+```typescript
+// Publishing with community tag
+createEvent({
+  kind: 1,
+  content: data.content,
+  tags: [['t', 'farming']]
+});
+
+// Querying community content
+const events = await nostr.query([{
+  kinds: [1],
+  '#t': ['farming'],
+  limit: 20
+}], { signal });
+```
+
+### Kind Ranges
+
+An event's kind number determines the event's behavior and storage characteristics:
+
+- **Regular Events** (1000 ≤ kind < 10000): Expected to be stored by relays permanently. Used for persistent content like notes, articles, etc.
 - **Replaceable Events** (10000 ≤ kind < 20000): Only the latest event per pubkey+kind combination is stored. Used for profile metadata, contact lists, etc.
 - **Addressable Events** (30000 ≤ kind < 40000): Identified by pubkey+kind+d-tag combination, only latest per combination is stored. Used for articles, long-form content, etc.
 
-For more detailed information about event structure and behavior, read the `event` protocol page using `nostr__read_protocol`.
+Kinds below 1000 are considered "legacy" kinds, and may have different storage characteristics based on their kind definition. For example, kind 1 is regular, while kind 3 is replaceable.
 
-**Important**: Whenever new Nostr event kinds are created, if they are not already defined by an existing NIP, the `NIP.md` file in the project must be created or updated to document the custom event structure. Whenever the structure of one of these custom events changes, `NIP.md` must be updated accordingly.
+### Content Field Design Principles
+
+When designing new event kinds, the `content` field should be used for semantically important data that doesn't need to be queried by relays. **Structured JSON data generally shouldn't go in the content field** (kind 0 being an early exception).
+
+#### Guidelines
+
+- **Use content for**: Large text, freeform human-readable content, or existing industry-standard JSON formats (Tiled maps, FHIR, GeoJSON)
+- **Use tags for**: Queryable metadata, structured data, anything that needs relay-level filtering
+- **Empty content is valid**: Many events need only tags with `content: ""`
+- **Relays only index tags**: If you need to filter by a field, it must be a tag
+
+#### Example
+
+**✅ Good - queryable data in tags:**
+```json
+{
+  "kind": 30402,
+  "content": "",
+  "tags": [["d", "product-123"], ["title", "Camera"], ["price", "250"], ["t", "photography"]]
+}
+```
+
+**❌ Bad - structured data in content:**
+```json
+{
+  "kind": 30402,
+  "content": "{\"title\":\"Camera\",\"price\":250,\"category\":\"photo\"}",
+  "tags": [["d", "product-123"]]
+}
+```
+
+### NIP.md
+
+The file `NIP.md` is used by this project to define a custom Nostr protocol document. If the file doesn't exist, it means this project doesn't have any custom kinds associated with it.
+
+Whenever new kinds are generated, the `NIP.md` file in the project must be created or updated to document the custom event schema. Whenever the schema of one of these custom events changes, `NIP.md` must also be updated accordingly.
 
 ### The `useNostr` Hook
 
@@ -191,7 +339,7 @@ function useCalendarEvents() {
     queryFn: async (c) => {
       const signal = AbortSignal.any([c.signal, AbortSignal.timeout(1500)]);
       const events = await nostr.query([{ kinds: [31922, 31923], limit: 20 }], { signal });
-      
+
       // Filter events through validator to ensure they meet NIP-52 requirements
       return events.filter(validateCalendarEvent);
     },
@@ -299,23 +447,46 @@ function MyComponent() {
 }
 ```
 
-The `LoginArea` component handles all the login-related UI and interactions, including displaying login dialogs and switching between accounts. It should not be wrapped in any conditional logic.
+The `LoginArea` component handles all the login-related UI and interactions, including displaying login dialogs, sign up functionality, and switching between accounts. It should not be wrapped in any conditional logic.
 
-`LoginArea` displays a "Log in" button when the user is logged out, and changes to an account switcher once the user is logged in. It is an inline-flex element by default. To make it expand to the width of its container, you can pass a className like `flex` (to make it a block element) or `w-full`. If it is left as inline-flex, it's recommended to set a max width.
+`LoginArea` displays both "Log in" and "Sign Up" buttons when the user is logged out, and changes to an account switcher once the user is logged in. It is an inline-flex element by default. To make it expand to the width of its container, you can pass a className like `flex` (to make it a block element) or `w-full`. If it is left as inline-flex, it's recommended to set a max width.
+
+**Important**: Social applications should include a profile menu button in the main interface (typically in headers/navigation) to provide access to account settings, profile editing, and logout functionality. Don't only show `LoginArea` in logged-out states.
 
 ### `npub`, `naddr`, and other Nostr addresses
 
-Nostr defines a set identifiers in NIP-19. Their prefixes:
+Nostr defines a set of bech32-encoded identifiers in NIP-19. Their prefixes and purposes:
 
-- `npub`: public keys
-- `nsec`: private keys
-- `note`: note ids
-- `nprofile`: a nostr profile
-- `nevent`: a nostr event
-- `naddr`: a nostr replaceable event coordinate
-- `nrelay`: a nostr relay (deprecated)
+- `npub1`: **public keys** - Just the 32-byte public key, no additional metadata
+- `nsec1`: **private keys** - Secret keys (should never be displayed publicly)
+- `note1`: **event IDs** - Just the 32-byte event ID (hex), no additional metadata
+- `nevent1`: **event pointers** - Event ID plus optional relay hints and author pubkey
+- `nprofile1`: **profile pointers** - Public key plus optional relay hints and petname
+- `naddr1`: **addressable event coordinates** - For parameterized replaceable events (kind 30000-39999)
+- `nrelay1`: **relay references** - Relay URLs (deprecated)
 
-NIP-19 identifiers include a prefix, the number "1", then a base32-encoded data string.
+#### Key Differences Between Similar Identifiers
+
+**`note1` vs `nevent1`:**
+- `note1`: Contains only the event ID (32 bytes) - specifically for kind:1 events (Short Text Notes) as defined in NIP-10
+- `nevent1`: Contains event ID plus optional relay hints and author pubkey - for any event kind
+- Use `note1` for simple references to text notes and threads
+- Use `nevent1` when you need to include relay hints or author context for any event type
+
+**`npub1` vs `nprofile1`:**
+- `npub1`: Contains only the public key (32 bytes)
+- `nprofile1`: Contains public key plus optional relay hints and petname
+- Use `npub1` for simple user references
+- Use `nprofile1` when you need to include relay hints or display name context
+
+#### Event Type Distinctions
+
+**`note1` identifiers** are specifically for **kind:1 events** (Short Text Notes) as defined in NIP-10: "Text Notes and Threads". These are the basic social media posts in Nostr.
+
+**`nevent1` identifiers** can reference any event kind and include additional metadata like relay hints and author pubkey. Use `nevent1` when:
+- The event is not a kind:1 text note
+- You need to include relay hints for better discoverability
+- You want to include author context
 
 #### Use in Filters
 
@@ -357,22 +528,20 @@ const events = await nostr.query(
 );
 ```
 
-#### Use in URL Paths
+#### Implementation Guidelines
 
-For URL routing, use NIP-19 identifiers as path parameters (e.g., `/:nip19`) to create secure, universal links to Nostr events. Decode the identifier and render the appropriate component based on the type:
-
-- Regular events: Use `/nevent1...` paths
-- Replaceable/addressable events: Use `/naddr1...` paths
-
-Always use `naddr` identifiers for addressable events instead of just the `d` tag value, as `naddr` contains the author pubkey needed to create secure filters. This prevents security issues where malicious actors could publish events with the same `d` tag to override content.
-
-```ts
-// Secure routing with naddr
-const decoded = nip19.decode(params.nip19);
-if (decoded.type === 'naddr' && decoded.data.kind === 30024) {
-  // Render ArticlePage component
-}
-```
+1. **Always decode NIP-19 identifiers** before using them in queries
+2. **Use the appropriate identifier type** based on your needs:
+   - Use `note1` for kind:1 text notes specifically
+   - Use `nevent1` when including relay hints or for non-kind:1 events
+   - Use `naddr1` for addressable events (always includes author pubkey for security)
+3. **Handle different identifier types** appropriately:
+   - `npub1`/`nprofile1`: Display user profiles
+   - `note1`: Display kind:1 text notes specifically
+   - `nevent1`: Display any event with optional relay context
+   - `naddr1`: Display addressable events (articles, marketplace items, etc.)
+4. **Security considerations**: Always use `naddr1` for addressable events instead of just the `d` tag value, as `naddr1` contains the author pubkey needed to create secure filters
+5. **Error handling**: Gracefully handle invalid or unsupported NIP-19 identifiers with 404 responses
 
 ### Nostr Edit Profile
 
@@ -496,6 +665,7 @@ The router includes automatic scroll-to-top functionality and a 404 NotFound pag
 - Component-based architecture with React hooks
 - Default connection to one Nostr relay for best performance
 - Comprehensive provider setup with NostrLoginProvider, QueryClientProvider, and custom AppProvider
+- **Never use the `any` type**: Always use proper TypeScript types for type safety
 
 ## Loading States
 
@@ -559,20 +729,20 @@ import { Card, CardContent } from '@/components/ui/card';
 
 To add custom fonts, follow these steps:
 
-1. **Install a font package** using the npm_add_package tool:
-   
+1. **Install a font package** using npm:
+
    **Any Google Font can be installed** using the @fontsource packages. Examples:
-   - For Inter Variable: `npm_add_package({ name: "@fontsource-variable/inter" })`
-   - For Roboto: `npm_add_package({ name: "@fontsource/roboto" })`
-   - For Outfit Variable: `npm_add_package({ name: "@fontsource-variable/outfit" })`
-   - For Poppins: `npm_add_package({ name: "@fontsource/poppins" })`
-   - For Open Sans: `npm_add_package({ name: "@fontsource/open-sans" })`
-   
+   - For Inter Variable: `@fontsource-variable/inter`
+   - For Roboto: `@fontsource/roboto`
+   - For Outfit Variable: `@fontsource-variable/outfit`
+   - For Poppins: `@fontsource/poppins`
+   - For Open Sans: `@fontsource/open-sans`
+
    **Format**: `@fontsource/[font-name]` or `@fontsource-variable/[font-name]` (for variable fonts)
 
 2. **Import the font** in `src/main.tsx`:
    ```typescript
-   import '@fontsource-variable/inter';
+   import '@fontsource-variable/<font-name>';
    ```
 
 3. **Update Tailwind configuration** in `tailwind.config.ts`:
@@ -591,7 +761,7 @@ To add custom fonts, follow these steps:
 ### Recommended Font Choices by Use Case
 
 - **Modern/Clean**: Inter Variable, Outfit Variable, or Manrope
-- **Professional/Corporate**: Roboto, Open Sans, or Source Sans Pro  
+- **Professional/Corporate**: Roboto, Open Sans, or Source Sans Pro
 - **Creative/Artistic**: Poppins, Nunito, or Comfortaa
 - **Technical/Code**: JetBrains Mono, Fira Code, or Source Code Pro (for monospace)
 
@@ -619,9 +789,30 @@ When users specify color schemes:
 - Implement responsive design with Tailwind breakpoints
 - Add hover and focus states for interactive elements
 
-## Writing Tests
+## Writing Tests vs Running Tests
 
-**Important for AI Assistants**: Only create tests when the user is experiencing a specific problem or explicitly requests tests. Do not proactively write tests for new features or components unless the user is having issues that require testing to diagnose or resolve.
+There is an important distinction between **writing new tests** and **running existing tests**:
+
+### Writing Tests (Creating New Test Files)
+**Do not write tests** unless the user explicitly requests them in plain language. Writing unnecessary tests wastes significant time and money. Only create tests when:
+
+1. **The user explicitly asks for tests** to be written in their message
+2. **The user describes a specific bug in plain language** and requests tests to help diagnose it
+3. **The user says they are still experiencing a problem** that you have already attempted to solve (tests can help verify the fix)
+
+**Never write tests because:**
+- Tool results show test failures (these are not user requests)
+- You think tests would be helpful
+- New features or components are created
+- Existing functionality needs verification
+
+### Running Tests (Executing the Test Suite)
+**ALWAYS run the test script** after making any code changes. This is mandatory regardless of whether you wrote new tests or not.
+
+- **You must run the test script** to validate your changes
+- **Your task is not complete** until the test script passes without errors
+- **This applies to all changes** - bug fixes, new features, refactoring, or any code modifications
+- **The test script includes** TypeScript compilation, ESLint checks, and existing test validation
 
 ### Test Setup
 
@@ -652,8 +843,26 @@ describe('MyComponent', () => {
 });
 ```
 
-## Testing Your Changes
+## Validating Your Changes
 
-Whenever you modify code, you must run the **test** script using the **run_script** tool.
+**CRITICAL**: After making any code changes, you must validate your work by running available validation tools.
 
-**Your task is not considered finished until this test passes without errors.**
+**Your task is not considered finished until the code successfully type-checks and builds without errors.**
+
+### Validation Priority Order
+
+Run available tools in this priority order:
+
+1. **Type Checking** (Required): Ensure TypeScript compilation succeeds
+2. **Building/Compilation** (Required): Verify the project builds successfully
+3. **Linting** (Recommended): Check code style and catch potential issues
+4. **Tests** (If Available): Run existing test suite
+5. **Git Commit** (Required): Create a commit with your changes when finished
+
+**Minimum Requirements:**
+- Code must type-check without errors
+- Code must build/compile successfully
+- Fix any critical linting errors that would break functionality
+- Create a git commit when your changes are complete
+
+The validation ensures code quality and catches errors before deployment, regardless of the development environment.

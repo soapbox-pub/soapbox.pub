@@ -166,7 +166,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Prompt Example:</h4>
             <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "Build a site for a hiking club at Penn State University. The main thing users do sign up to join the club. The site should also provide resources about local hikes, club information, and upcoming events."
+              "Build a site for a hiking club at Penn State University. The main thing users do is sign up to join the club. The site should also provide resources about local hikes, club information, and upcoming events."
             </p>
             <div className="mt-4">
               <p className="font-semibold mb-2">This works because it:</p>
@@ -205,7 +205,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <ul>
         <li><strong>Specific requirements</strong> (Ex. brand colors and fonts)</li>
-        <li><strong>Mood words</strong> (Ex. light, dark, sleek, modern, futeristic, retro, nostalgic, academic, colorful, fun, professional, etc.)</li>
+        <li><strong>Mood words</strong> (Ex. light, dark, sleek, modern, futuristic, retro, nostalgic, academic, colorful, fun, professional, etc.)</li>
         <li><strong>Devices</strong> (Ex. mobile-first, optimized for desktop, etc.)</li>
       </ul>
 
@@ -382,7 +382,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       <ul>
         <li><strong>Name the element you want to change:</strong> Don't say "Fix the form"—say "Fix the signup form submit button"</li>
-        <li><strong>Name what is right, and what is wrong:</strong> Ex. "The background color of the signup form submit buttom is correct, however the text hover color should be blue instead of white."</li>
+        <li><strong>Name what is right, and what is wrong:</strong> Ex. "The background color of the signup form submit button is correct, however the text hover color should be blue instead of white."</li>
         <li><strong>Preserve what works:</strong> Ex. "Change only the headline font to 'Roboto' while keeping all other typography unchanged"</li>
       </ul>
 
@@ -534,7 +534,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Site theme descriptions:</h4>
               <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-                "I love the final look of this site. Create a prompt for me that descripts the desgin, color palette, typography, and overall tone so I can use it as a starting point for future projects."
+                "I love the final look of this site. Create a prompt for me that describes the desgin, color palette, typography, and overall tone so I can use it as a starting point for future projects."
               </p>
             </CardContent>
           </Card>
