@@ -53,11 +53,11 @@ export default function Nostr101() {
         <ul>
       <li><strong>Public Key (npub_...):</strong> This is your identity, like a username. Anyone can see it and follow you.</li>
         <li><strong>Private Key (nsec_...):</strong> This is your password. <strong>Never share it!</strong> It signs your posts and proves your identity.</li>
-        <li><strong>Username (NIP05 domain):</strong> NIP05 usernames allow users to have an easy-to-read, email-like handle (e.g., user@domain.com). You can pay for usernames from many services, or get one for free on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto.pub</a>.</li>
+        <li><strong>Username (NIP05 domain):</strong> NIP05 usernames allow users to have an easy-to-read, email-like handle (e.g., user@domain.com). You can pay for usernames from many services, or get one for free from various Nostr service providers.</li>
       </ul></ul>
       <h2>Nostr Clients (Apps) vs. Relays</h2>
       <figure style={{ width: '100%', height: 'auto' }}>
-        <img alt="Best Nostr Apps" src="/assets/blog/best-nostr-apps.png" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+        <img alt="Best Nostr Apps" src="/assets/blog/announcing-nostrhub/Nostr-apps.png" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
       </figure>
       <h3>Clients: How You Access Nostr</h3>
       <p>Clients are applications that allow users to read, write, and interact with content on Nostr. They function similarly to social media apps but with full decentralization.</p>
@@ -68,7 +68,7 @@ export default function Nostr101() {
       <li><strong>Primal</strong> (Web, iOS, Android) – Great for discovery and ease of use.</li>
         <li><strong>Damus</strong> (iOS) – A clean, Apple-friendly experience.</li>
         <li><strong>Amethyst</strong> (Android) – A popular choice for Android users.</li>
-        <li><strong>Ditto</strong> (Web, mobile web) – A simple and intuitive way to explore Nostr.</li>
+        <li><strong>Coracle</strong> (Web) – A web-based client with advanced features.</li>
         <li>Explore more clients on <a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer">Nostrapps.com</a>.</li>
       </ul></ul>
       <p>Each client can connect to any relay, and users can switch between clients while keeping the same identity (public/private key pair).</p>
@@ -84,7 +84,7 @@ export default function Nostr101() {
       <h3>How Relays and Clients Work Together</h3>
       <ol>
         <ul>
-      <li>A user posts a message via a client (e.g., Ditto or Primal).</li>
+      <li>A user posts a message via a client (e.g., Primal or Damus).</li>
         <li>The client signs the message with the user's private key.</li>
         <li>The message is sent to multiple relays.</li>
         <li>Other users' clients receive messages from relays they are connected to.</li>
@@ -108,7 +108,7 @@ export default function Nostr101() {
       <p><strong>Mostr Bridge: Connecting Nostr to the Fediverse</strong></p>
       <p>The Mostr Bridge is a powerful tool that connects the Nostr network with the Fediverse (e.g., Mastodon, Pleroma). This allows users to follow and interact with accounts across both ecosystems without needing to switch platforms. Explore the bridge <a href="https://mostr.pub" target="_blank" rel="noopener noreferrer">here</a>.</p>
       <h2>The Easiest Way to Get Started on Nostr</h2>
-      <p>Nostr is a powerful and innovative platform that gives users full control over their online presence. If you want the easiest way to get started, <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">try Ditto.pub</a> and start exploring the Nostr ecosystem today!</p>
+      <p>Nostr is a powerful and innovative platform that gives users full control over their online presence. The easiest way to get started is to choose a client that fits your needs and start exploring the Nostr ecosystem today!</p>
     </article>
   );
 }
