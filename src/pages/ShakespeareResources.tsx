@@ -2,7 +2,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { BlogList } from '@/components/blog/BlogList';
 import { useSEO } from '@/hooks/useSEO';
-import { blogPosts } from '@/lib/blog/blogIndex';
+import { getAllPostsIncludingResources } from '@/lib/blog/utils';
 import {
   Accordion,
   AccordionContent,
@@ -23,7 +23,7 @@ export default function ShakespeareResources() {
   });
 
   // Filter blog posts tagged with "shakespeare-resource"
-  const shakespearePosts = blogPosts.filter(post =>
+  const shakespearePosts = getAllPostsIncludingResources().filter(post =>
     post.tags?.includes('shakespeare-resource')
   );
 

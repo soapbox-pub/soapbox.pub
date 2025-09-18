@@ -2,11 +2,18 @@ import { blogPosts, getPostBySlug as getPostComponent } from './blogIndex';
 import type { BlogPost } from './types';
 
 export function getAllPosts() {
+  // Filter out posts tagged with "shakespeare-resource" from the main blog
+  return blogPosts.filter(post => !post.tags?.includes('shakespeare-resource'));
+}
+
+export function getAllPostsIncludingResources() {
+  // Return all posts including shakespeare-resource posts
   return blogPosts;
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const postMeta = blogPosts.find(post => post.slug === slug);
+  // Search in all posts including shakespeare-resource posts
+  const postMeta = getAllPostsIncludingResources().find(post => post.slug === slug);
   if (!postMeta) return null;
 
   const PostComponent = await getPostComponent(slug);
@@ -20,16 +27,20 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 export function getRecentPosts(limit: number = 5) {
-  return blogPosts.slice(0, limit);
+  // Get recent posts excluding shakespeare-resource posts
+  return getAllPosts().slice(0, limit);
 }
 
 export function getLatestPost() {
-  return blogPosts[0] || null;
+  // Get latest post excluding shakespeare-resource posts
+  const mainBlogPosts = getAllPosts();
+  return mainBlogPosts[0] || null;
 }
 
 export function getFeaturedPost() {
-  // Find the most recent featured post
-  const featuredPosts = blogPosts.filter(post => post.featured);
+  // Find the most recent featured post, excluding shakespeare-resource posts
+  const mainBlogPosts = getAllPosts();
+  const featuredPosts = mainBlogPosts.filter(post => post.featured);
   if (featuredPosts.length > 0) {
     return featuredPosts[0]; // Already sorted by date, so first is most recent
   }
@@ -38,7 +49,8 @@ export function getFeaturedPost() {
 }
 
 export function getRecentPostsSkipFirst(limit: number = 3) {
-  return blogPosts.slice(1, 1 + limit);
+  // Get recent posts excluding shakespeare-resource posts, skipping the first
+  return getAllPosts().slice(1, 1 + limit);
 }
 
 export function formatDate(dateString: string): string {
@@ -58,7 +70,7 @@ export function getReadingTime(content: string): number {
 
 export function extractSEOData(post: BlogPost) {
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
-  
+
   return {
     title: `${post.title} - Soapbox Blog`,
     description: post.excerpt,
@@ -96,7 +108,7 @@ export function extractSEOData(post: BlogPost) {
         "name": post.author.name || "Soapbox Team",
         ...(post.author.picture && {
           "image": {
-            "@type": "ImageObject", 
+            "@type": "ImageObject",
             "url": baseUrl + post.author.picture
           }
         })
