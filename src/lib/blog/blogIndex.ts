@@ -47,6 +47,13 @@ import * as unlockingmastodonapps from '../../components/blog/posts/unlocking-ma
 import * as whatisthefediverse from '../../components/blog/posts/what-is-the-fediverse';
 import * as howtopromptbetterprojectswithshakespeare from '../../components/blog/posts/prompt-better-projects';
 import * as debugginginshakespeare from '../../components/blog/posts/debugging-in-shakespeare';
+import * as shakespeareversioncontrol from '../../components/blog/posts/shakespeare-version-control';
+import * as shakespearelocalaimodel from '../../components/blog/posts/shakespeare-local-ai-model';
+import * as shakespeareconfiguringaiproviders from '../../components/blog/posts/shakespeare-configuring-ai-providers';
+import * as shakespeareaimodelselection from '../../components/blog/posts/shakespeare-ai-model-selection';
+import * as shakespeareimportingexistingprojects from '../../components/blog/posts/shakespeare-importing-existing-projects';
+import * as shakespearedeployingsharingprojects from '../../components/blog/posts/shakespeare-deploying-sharing-projects';
+import * as shakespeareeditingcode from '../../components/blog/posts/shakespeare-editing-code';
 
 export interface BlogPost {
   slug: string;
@@ -66,6 +73,13 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  shakespeareeditingcode.meta,
+  shakespearedeployingsharingprojects.meta,
+  shakespeareimportingexistingprojects.meta,
+  shakespeareaimodelselection.meta,
+  shakespeareconfiguringaiproviders.meta,
+  shakespearelocalaimodel.meta,
+  shakespeareversioncontrol.meta,
   debugginginshakespeare.meta,
   howtopromptbetterprojectswithshakespeare.meta,
   announcingsoapboxsessionspodcast.meta,
@@ -120,6 +134,20 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'shakespeareeditingcode':
+      return (await import('../../components/blog/posts/shakespeare-editing-code')).default;
+    case 'shakespearedeployingsharingprojects':
+      return (await import('../../components/blog/posts/shakespeare-deploying-sharing-projects')).default;
+    case 'shakespeareimportingexistingprojects':
+      return (await import('../../components/blog/posts/shakespeare-importing-existing-projects')).default;
+    case 'shakespeareaimodelselection':
+      return (await import('../../components/blog/posts/shakespeare-ai-model-selection')).default;
+    case 'shakespeareconfiguringaiproviders':
+      return (await import('../../components/blog/posts/shakespeare-configuring-ai-providers')).default;
+    case 'shakespearelocalaimodel':
+      return (await import('../../components/blog/posts/shakespeare-local-ai-model')).default;
+    case 'shakespeareversioncontrol':
+      return (await import('../../components/blog/posts/shakespeare-version-control')).default;
     case 'debugginginshakespeare':
       return (await import('../../components/blog/posts/debugging-in-shakespeare')).default;
     case 'howtopromptbetterprojects':
