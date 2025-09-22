@@ -654,7 +654,25 @@ The project uses React Router with a centralized routing configuration in `AppRo
 <Route path="/your-path" element={<YourComponent />} />
 ```
 
+4. **CRITICAL**: Add the new route to the `routes` array in `vite.config.ts` for prerendering support
+
 The router includes automatic scroll-to-top functionality and a 404 NotFound page for unmatched routes.
+
+### Prerendering Configuration
+
+**IMPORTANT**: Whenever a new blog post or page is added, its route MUST be added to the `routes` array in `vite.config.ts`. This ensures the page is properly prerendered for static deployment.
+
+Example:
+```typescript
+// In vite.config.ts
+routes: [
+  // ... existing routes
+  "/blog/your-new-blog-post",
+  "/your-new-page",
+]
+```
+
+Failure to add routes to this configuration will result in 404 errors in production for the new pages.
 
 ## Development Practices
 
