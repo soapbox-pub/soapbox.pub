@@ -1,6 +1,9 @@
 import path from "node:path";
-import { defineConfig } from "vite";
+import process from "node:process";
+
+import prerender from "@prerenderer/rollup-plugin";
 import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   base: '/',
@@ -8,7 +11,88 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    process.env.PRERENDER ? prerender({
+      routes: [
+        // Main pages
+        "/",
+        "/about",
+        "/get-involved",
+        "/tools",
+        "/showcase",
+        "/blog",
+        "/shakespeare-resources",
+        "/soapbox-sessions",
+
+        // Tool pages
+        "/tools/ditto",
+        "/tools/nostrify",
+        "/tools/stacks",
+        "/tools/nostrbook",
+        "/tools/nostrhub",
+        "/tools/shakespeare",
+        "/mkstack",
+
+        // Blog posts
+        "/blog/shakespeare-editing-code",
+        "/blog/shakespeare-deploying-sharing-projects",
+        "/blog/shakespeare-importing-existing-projects",
+        "/blog/shakespeare-ai-model-selection",
+        "/blog/shakespeare-configuring-ai-providers",
+        "/blog/shakespeare-local-ai-model",
+        "/blog/shakespeare-version-control",
+        "/blog/debugging-in-shakespeare",
+        "/blog/prompt-better-projects",
+        "/blog/announcing-soapbox-sessions-podcast",
+        "/blog/announcing-stacks-1.0",
+        "/blog/shakespeare-1-week-update",
+        "/blog/understanding-nostr-service-providers",
+        "/blog/announcing-shakespeare",
+        "/blog/announcing-ditto",
+        "/blog/announcing-henhouse",
+        "/blog/announcing-nostrify",
+        "/blog/announcing-nostrhub",
+        "/blog/announcing-treasures",
+        "/blog/announcing-soapbox-be-v1.0",
+        "/blog/announcing-soapbox-fe-v1.0",
+        "/blog/choosing-a-backend",
+        "/blog/chorus-vibe-coding",
+        "/blog/como-entrar-no-nostr-brasil-cobrafuma",
+        "/blog/comparing-protocols",
+        "/blog/curated-communities-with-ditto",
+        "/blog/discovering-content",
+        "/blog/ditto-1.1",
+        "/blog/ditto-1.2",
+        "/blog/ditto-1.3",
+        "/blog/follow-bluesky",
+        "/blog/follow-threads",
+        "/blog/future-is-decentralized",
+        "/blog/how-to-install-ditto-mobile",
+        "/blog/how-to-join-nostr-brazil-cobrafuma",
+        "/blog/loomly-zapier-nostr-bridge",
+        "/blog/mkstack-tutorial",
+        "/blog/mostr-fediverse-nostr-bridge",
+        "/blog/mostr-zaps",
+        "/blog/nostr101",
+        "/blog/nostrbook-mcp",
+        "/blog/releasing-soapbox-3.0",
+        "/blog/revive-legacy-website",
+        "/blog/releasing-soapbox-be-v1.1",
+        "/blog/server-safety-and-moderation",
+        "/blog/soapbox-awarded-grant",
+        "/blog/soapbox-be-is-now-rebased",
+        "/blog/soapbox-fe-v1.1-release",
+        "/blog/soapbox-fe-v1.2-release",
+        "/blog/soapbox-fe-v1.3-cryptocurrency-release",
+        "/blog/stacks",
+        "/blog/take-down-big-tech-with-great-ux",
+        "/blog/threads-server-blocking",
+        "/blog/unlocking-mastodon-apps",
+        "/blog/what-is-the-fediverse",
+      ],
+    }) : null,
+  ],
   optimizeDeps: {
     include: ['nostr-tools'],
   },

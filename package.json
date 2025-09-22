@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm i && vite",
-    "build": "npm i && vite build && cp dist/index.html dist/404.html && node scripts/generateStaticHTML.mjs",
-    "generate-static": "node scripts/generateStaticHTML.mjs",
+    "build": "npm i && vite build && cp dist/index.html dist/404.html",
     "test": "npm i && tsc -p tsconfig.app.json --noEmit && eslint && vitest run && npm run build",
     "deploy": "npm run build && npx -y surge@latest dist"
   },
@@ -72,6 +71,8 @@
     "@eslint/js": "^9.9.0",
     "@html-eslint/eslint-plugin": "^0.41.0",
     "@html-eslint/parser": "^0.41.0",
+    "@prerenderer/renderer-puppeteer": "^1.2.4",
+    "@prerenderer/rollup-plugin": "^0.3.12",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.6.3",
