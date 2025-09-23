@@ -40,7 +40,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
     <Card className={cn("w-full max-w-2xl mx-auto", className)}>
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-          Join the Shakespeare Community
+          Get the latest Shakespeare updates and resources
         </CardTitle>
         <CardDescription>
           Stay updated with the latest features and announcements. Optionally provide your npub to link your account.
@@ -164,7 +164,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   />
                 </div>
                 <div hidden>
-                  <input type="hidden" name="tags" value="8981997" />
+                  <input type="hidden" name="tags" value="535095" />
                 </div>
                 <div id="mce-responses" className="clear">
                   <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
@@ -174,7 +174,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   <input type="text" name="b_f1f718a93795f42a604d558d8_f7271442a0" tabIndex={-1} />
                 </div>
                 <div className="clear">
-                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Join Community" />
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Sign Up" />
                 </div>
               </div>
             </form>
