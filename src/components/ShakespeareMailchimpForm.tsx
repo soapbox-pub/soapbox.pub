@@ -164,7 +164,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                   />
                 </div>
                 <div hidden>
-                  <input type="hidden" name="tags" value="535095" />
+                  <input type="hidden" name="tags" value="8982394" />
                 </div>
                 <div id="mce-responses" className="clear">
                   <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
