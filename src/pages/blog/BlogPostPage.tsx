@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Layout } from '@/components/Layout';
+import { ShakespeareMailchimpForm } from '@/components/ShakespeareMailchimpForm';
 import { getPostBySlug, formatDate, getReadingTime, extractSEOData } from '@/lib/blog/utils';
 import { wrapVideoEmbeds } from '@/lib/blog/videoUtils';
 import { BlogPost } from '@/lib/blog/types';
@@ -98,7 +99,7 @@ export default function BlogPostPage() {
           <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-6">
             {post.title}
           </h1>
-          
+
           {post.excerpt && (
             <p className="text-xl text-gray-600 leading-relaxed mb-8 font-medium">
               {post.excerpt}
@@ -112,7 +113,7 @@ export default function BlogPostPage() {
                 {formatDate(post.date)}
               </time>
             </div>
-            
+
             {post.author.name && (
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4" />
@@ -133,6 +134,13 @@ export default function BlogPostPage() {
           )}
         </div>
 
+        {/* Email Signup for Shakespeare Resource Posts */}
+        {post.tags?.includes('shakespeare-resource') && (
+          <div className="mt-16 mb-16">
+            <ShakespeareMailchimpForm />
+          </div>
+        )}
+
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -142,7 +150,7 @@ export default function BlogPostPage() {
                 Back to Blog
               </Button>
             </Link>
-            
+
             {post.author.name && (
               <div className="text-sm text-gray-500">
                 Written by <span className="font-medium text-gray-700">{post.author.name}</span>

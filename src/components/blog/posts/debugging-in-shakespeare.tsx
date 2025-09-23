@@ -572,30 +572,31 @@ export default function DebuggingInShakespeare() {
             <p className="text-muted-foreground mb-4 text-sm">
               Master the fundamentals of effective prompting to build better projects with Shakespeare.
             </p>
-            <Button
-              asChild
-              variant="outline"
-              className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
-            >
-              <a href="/blog/how-to-prompt-better-projects">
-                Learn Prompting Techniques →
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                asChild
+                variant="outline"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+              >
+                <a href="/blog/how-to-prompt-better-projects">
+                  Learn Prompting Techniques →
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+              >
+                <a href="/shakespeare-resources">
+                  Shakespeare Resource Center →
+                </a>
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </div>
 
-      <div className="not-prose my-12 text-center">
-        <Button
-          asChild
-          variant="outline"
-          className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
-        >
-          <a href="/shakespeare-resources">
-            Shakespeare Resource Center →
-          </a>
-        </Button>
-      </div>
+
     </article>
   );
 }

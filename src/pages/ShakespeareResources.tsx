@@ -1,6 +1,7 @@
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { BlogList } from '@/components/blog/BlogList';
+import { ShakespeareMailchimpForm } from '@/components/ShakespeareMailchimpForm';
 import { useSEO } from '@/hooks/useSEO';
 import { getAllPostsIncludingResources } from '@/lib/blog/utils';
 import {
@@ -159,6 +160,13 @@ export default function ShakespeareResources() {
               </CardContent>
             </Card>
           )}
+        </div>
+      </section>
+
+      {/* Email Signup Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <ShakespeareMailchimpForm />
         </div>
       </section>
 

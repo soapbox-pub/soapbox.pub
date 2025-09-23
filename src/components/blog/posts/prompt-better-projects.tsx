@@ -560,15 +560,26 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
             <p className="text-muted-foreground mb-4 text-sm">
               When things don't work as expected, learn advanced troubleshooting techniques for Shakespeare.
             </p>
-            <Button
-              asChild
-              variant="outline"
-              className="border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900"
-            >
-              <a href="/blog/debugging-in-shakespeare">
-                Learn Debugging Techniques →
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                asChild
+                variant="outline"
+                className="border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900"
+              >
+                <a href="/blog/debugging-in-shakespeare">
+                  Learn Debugging Techniques →
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+              >
+                <a href="/shakespeare-resources">
+                  Shakespeare Resource Center →
+                </a>
+              </Button>
+            </div>
           </CardContent>
         </Card>
 
@@ -602,17 +613,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
 
       </div>
 
-      <div className="not-prose my-12 text-center">
-        <Button
-          asChild
-          variant="outline"
-          className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
-        >
-          <a href="/shakespeare-resources">
-            Shakespeare Resource Center →
-          </a>
-        </Button>
-      </div>
+
     </article>
   );
 }
