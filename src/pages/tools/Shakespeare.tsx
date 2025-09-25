@@ -101,7 +101,7 @@ export default function Shakespeare() {
                 </div>
 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Just tell Shakespeare what website you want to build, and watch it create professional sites in minutes.
+                  Just tell Shakespeare what website you want to build, and watch it create professional sites.
                   No coding required, but full code access when you want it. Your files never leave your computer.
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function Shakespeare() {
               <div className="bg-white rounded-3xl shadow-2xl p-8 border-2 border-purple-100">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">🎬 See Shakespeare in Action</h3>
-                  <p className="text-gray-600">Watch Derek Ross build a complete website in minutes</p>
+                  <p className="text-gray-600">Watch Derek Ross build a complete website with Shakespeare</p>
                 </div>
 
                 <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl overflow-hidden shadow-lg">
@@ -153,7 +153,7 @@ export default function Shakespeare() {
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="w-4 h-4 mr-1 text-green-600" />
-                    5 Minutes
+                    Complete Project
                   </div>
                 </div>
               </div>
@@ -374,14 +374,14 @@ export default function Shakespeare() {
                     <p className="text-sm text-gray-600">Your data never leaves your device</p>
                   </div>
                   <div className="bg-blue-50 p-4 rounded-xl">
-                    <Zap className="w-6 h-6 text-blue-600 mb-2" />
-                    <h4 className="font-semibold text-gray-900">Lightning Fast</h4>
-                    <p className="text-sm text-gray-600">No server round-trips needed</p>
+                    <Shield className="w-6 h-6 text-blue-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Secure Storage</h4>
+                    <p className="text-sm text-gray-600">Files stored locally on your device</p>
                   </div>
                   <div className="bg-yellow-50 p-4 rounded-xl">
                     <Globe className="w-6 h-6 text-yellow-600 mb-2" />
-                    <h4 className="font-semibold text-gray-900">Work Offline</h4>
-                    <p className="text-sm text-gray-600">Build without internet</p>
+                    <h4 className="font-semibold text-gray-900">Your Control</h4>
+                    <p className="text-sm text-gray-600">Complete ownership of your projects</p>
                   </div>
                   <div className="bg-green-50 p-4 rounded-xl">
                     <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
@@ -768,7 +768,7 @@ export default function Shakespeare() {
                   alt="Building a portfolio website with AI"
                   className="w-full rounded-xl shadow-lg"
                 />
-                <p className="text-center text-sm text-gray-600">Building a portfolio website in minutes</p>
+                <p className="text-center text-sm text-gray-600">Building a professional portfolio website</p>
               </div>
               <div className="space-y-4">
                 <img
