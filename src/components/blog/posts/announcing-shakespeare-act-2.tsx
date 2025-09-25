@@ -186,7 +186,7 @@ export default function AnnouncingShakespeareAct2() {
       <h2>What You Can Build</h2>
 
       <p>
-        Shakespeare Act 2 can create anything that's possible on the web. Here are examples:
+        Shakespeare Act 2 can create anything that's possible on the web. Here are some examples:
       </p>
 
       <div className="not-prose my-8">
