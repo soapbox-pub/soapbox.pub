@@ -50,7 +50,7 @@ export default function AnnouncingShakespeareAct2() {
       </p>
 
       <p>
-        Tell Shakespeare what you want - like "build me a blog for my photography business" or "create a task management app for my team" - and it writes the code, sets up the files, and creates a working application that you can use right away. Learn <a href="/blog/prompt-better-projects">how to prompt better projects with Shakespeare</a> to get the best results.
+        Tell Shakespeare what you want - like "build me a blog for my photography business" or "create a task management app for my team" - and it writes the code, sets up the files, and creates a working application that you can use right away. Learn <a href="/blog/prompt-better-projects" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">how to prompt better projects with Shakespeare</a> to get the best results.
       </p>
 
       <p>
@@ -65,7 +65,7 @@ export default function AnnouncingShakespeareAct2() {
 
       <h3>AI Provider Choice</h3>
       <p>
-        Unlike other tools that lock you into their AI models, Shakespeare Act 2 supports <strong>any AI provider</strong>. Bring your own API keys for OpenAI, Anthropic, Routstr, PayPerQ, and more, run and connect to your own model locally, or use our pay-per-use Shakespeare AI services. Learn more about <a href="/blog/shakespeare-configuring-ai-providers">configuring AI providers</a>, <a href="/blog/shakespeare-ai-model-selection">choosing the right AI model</a>, and <a href="/blog/shakespeare-local-ai-model">using local AI models</a> for your projects.
+        Unlike other tools that lock you into their AI models, Shakespeare Act 2 supports <strong>any AI provider</strong>. Bring your own API keys for OpenAI, Anthropic, Routstr, PayPerQ, and more, run and connect to your own model locally, or use our pay-per-use Shakespeare AI services. Learn more about <a href="/blog/shakespeare-configuring-ai-providers" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">configuring AI providers</a>, <a href="/blog/shakespeare-ai-model-selection" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">choosing the right AI model</a>, and <a href="/blog/shakespeare-local-ai-model" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">using local AI models</a> for your projects.
       </p>
 
       <div className="not-prose my-8">
@@ -90,7 +90,7 @@ export default function AnnouncingShakespeareAct2() {
                 <div>
                   <h4 className="font-semibold mb-2">Code Editor</h4>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Complete control over your project files. Review and edit the code without leaving your web browser. See our guide on <a href="/blog/shakespeare-editing-code">editing code in Shakespeare</a> for more details.
+                    Complete control over your project files. Review and edit the code without leaving your web browser. See our guide on <a href="/blog/shakespeare-editing-code" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">editing code in Shakespeare</a> for more details.
                   </p>
                   <div className="not-prose my-4">
                     <img
@@ -110,7 +110,7 @@ export default function AnnouncingShakespeareAct2() {
                 <div>
                   <h4 className="font-semibold mb-2">Git Integration</h4>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Use any Git provider you prefer. GitHub, GitLab, or custom providers. Import existing repositories, track changes, and push and pull updates wherever you want. Learn more about <a href="/blog/shakespeare-version-control">using version control in Shakespeare</a>.
+                    Use any Git provider you prefer. GitHub, GitLab, or custom providers. Import existing repositories, track changes, and push and pull updates wherever you want. Learn more about <a href="/blog/shakespeare-version-control" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">using version control in Shakespeare</a>.
                   </p>
                   <div className="not-prose my-4">
                     <img
@@ -150,7 +150,7 @@ export default function AnnouncingShakespeareAct2() {
                 <div>
                   <h4 className="font-semibold mb-2">Deploy and Export</h4>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Use our built-in, free, deployment service or export your complete project and deploy anywhere you choose. No lock-in. No restrictions. No hosting costs. Check out our guide on <a href="/blog/shakespeare-deploying-sharing-projects">deploying and sharing your Shakespeare projects</a>.
+                    Use our built-in, free, deployment service or export your complete project and deploy anywhere you choose. No lock-in. No restrictions. No hosting costs. Check out our guide on <a href="/blog/shakespeare-deploying-sharing-projects" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">deploying and sharing your Shakespeare projects</a>.
                   </p>
                   <div className="not-prose my-4">
                     <img
@@ -168,7 +168,7 @@ export default function AnnouncingShakespeareAct2() {
       <h2>Advancing Web Technology</h2>
 
         <p>
-          Shakespeare Act 2 achieves true user freedom through key technological advances that eliminate centralized services. All your project files are stored locally in your browser using <strong>IndexedDB with LightningFS</strong>, while <strong>isomorphic-git</strong> handles Git operations entirely client-side—including cloning, pushing, and pulling from any provider or even <strong>Nostr Git URLs</strong> (nostr://). This makes it easy to <a href="/blog/shakespeare-importing-existing-projects">import existing projects</a> from any Git repository. Shakespeare connects directly to AI providers with no middleman, using a configurable HTTP proxy only when needed for CORS.
+          Shakespeare Act 2 achieves true user freedom through key technological advances that eliminate centralized services. All your project files are stored locally in your browser using <strong>IndexedDB with LightningFS</strong>, while <strong>isomorphic-git</strong> handles Git operations entirely client-side—including cloning, pushing, and pulling from any provider or even <strong>Nostr Git URLs</strong> (nostr://). This makes it easy to <a href="/blog/shakespeare-importing-existing-projects" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">import existing projects</a> from any Git repository. Shakespeare connects directly to AI providers with no middleman, using a configurable HTTP proxy only when needed for CORS.
         </p>
 
         <p>
