@@ -213,85 +213,94 @@ export default function AnnouncingShakespeareAct2() {
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Platform Freedom</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Locked to Lovable</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Locked to Replit</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Local + any host</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Locked to Vercel</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Locked to Base44</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Deploy anywhere</td>
-              </tr>
-              <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">AI Choice</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">OpenAI/Claude only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Vercel's models</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Any provider + local</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Source Code</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">🗽 Open source</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Pricing</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">$20-200/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">$7-25/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">$20/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Free tier + usage</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Subscription</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Pay-per-use OR free</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 $20-200/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 $7-25/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 $20/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 Free tier + usage</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 Subscription</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">💰 Pay-per-use OR free</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Source Code</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Open source (AGPL-3.0)</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Payment Options</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">⚡ USD or Bitcoin</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">AI Choice</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Fixed selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Fixed selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 OpenAI/Claude only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Vercel's models</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Fixed selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">🗽 Any</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Local LLM Support</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Import Existing Projects</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Project Export</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Full export</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Full export</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Copy code</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Complete ZIP export</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">📤 Limited</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Full export</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Full export</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">📋 Copy code</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">📤 Limited</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Full export</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Git Integration</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Basic GitHub sync</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Full Git support</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Full Git support</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">No Git</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Basic Git</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Full Git + credentials</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔄 Github only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No Git</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">🔄 Basic Git</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Development Approach</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">AI builds projects</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">AI assists coding</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">AI assists coding</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">AI generates components</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">AI builds projects</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">AI builds entire projects</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Nostr Support</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Offline Capability</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">No</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">No</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">No</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">No</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Yes (with local AI)</td>
-              </tr>
-              <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Target User</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Non-coders</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Developers</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Developers</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Designers/devs</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Non-coders</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Everyone</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Privacy</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Private unless you share</td>
               </tr>
             </tbody>
           </table>
