@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { ShakespeareMailchimpForm } from "@/components/ShakespeareMailchimpForm";
 import { RotatingText } from "@/components/RotatingText";
 import { useSEO } from "@/hooks/useSEO";
+import { getAllPostsIncludingResources } from "@/lib/blog/utils";
 
 export default function Shakespeare() {
   // Set custom SEO for Shakespeare page
@@ -789,81 +790,68 @@ export default function Shakespeare() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                New Resource Center
+                Latest Resources
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to master Shakespeare and build amazing projects
+              Stay up to date with the latest Shakespeare tutorials, guides, and feature updates
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">📚 Complete Learning Hub</h3>
-                <p className="text-gray-600 text-lg">
-                  Access comprehensive tutorials, guides, and examples at our new Resource Center.
-                  From beginner basics to advanced techniques, everything is covered.
-                </p>
-              </div>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {getAllPostsIncludingResources()
+              .filter(post => post.tags?.includes('shakespeare-resource'))
+              .slice(0, 3)
+              .map((post) => (
+                <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    {post.coverImage && (
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    )}
+                    <div className="absolute top-3 left-3">
+                      <Badge className="bg-blue-600 text-white">📚 Resource</Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-2">
+                      <time>{new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}</time>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <Button variant="outline" className="w-full" asChild>
+                      <a href={`/blog/${post.slug}`}>
+                        Read More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4 p-4 bg-yellow-50 rounded-xl">
-                  <PlayCircle className="w-6 h-6 text-yellow-600 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Video Tutorials</h4>
-                    <p className="text-sm text-gray-600">Step-by-step guides for every feature</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl">
-                  <FileText className="w-6 h-6 text-purple-600 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Written Guides</h4>
-                    <p className="text-sm text-gray-600">Detailed documentation and best practices</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 p-4 bg-blue-50 rounded-xl">
-                  <Code className="w-6 h-6 text-blue-600 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Code Examples</h4>
-                    <p className="text-sm text-gray-600">Real projects you can import and learn from</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 p-4 bg-green-50 rounded-xl">
-                  <Users className="w-6 h-6 text-green-600 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Community Support</h4>
-                    <p className="text-sm text-gray-600">Get help from other Shakespeare builders</p>
-                  </div>
-                </div>
-              </div>
-
-              <Button
-                size="lg"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                asChild
-              >
-                <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  Visit Resource Center
-                </a>
-              </Button>
-            </div>
-
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-xl">
-                <img
-                  src="/shakespeare-resources/project-settings-export-and-delete.png"
-                  alt="Shakespeare Resource Center interface"
-                  className="w-full rounded-2xl shadow-lg"
-                />
-                <div className="mt-6 text-center">
-                  <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-4 py-2">
-                    🌟 soapbox.pub/shakespeare-resources
-                  </Badge>
-                </div>
-              </div>
-            </div>
+          <div className="text-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4"
+              asChild
+            >
+              <a href="/shakespeare-resources">
+                <ExternalLink className="mr-2 h-5 w-5" />
+                View All Resources
+              </a>
+            </Button>
           </div>
         </div>
       </section>
