@@ -50,7 +50,7 @@ export default function AnnouncingShakespeareAct2() {
       </p>
 
       <p>
-        Tell Shakespeare what you want - like "build me a blog for my photography business" or "create a task management app for my team" - and it writes the code, sets up the files, and creates a working application that you can use right away. Learn <a href="/blog/prompt-better-projects" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">how to prompt better projects with Shakespeare</a> to get the best results.
+        Tell Shakespeare what you want - like "build me a blog for my photography business" or "create a task management app for my team" - and it writes the code, sets up the files, and creates a working application that you can use right away.
       </p>
 
       <p>
