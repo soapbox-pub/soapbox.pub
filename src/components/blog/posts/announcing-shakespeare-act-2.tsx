@@ -214,38 +214,38 @@ export default function AnnouncingShakespeareAct2() {
             <tbody>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Source Code</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Proprietary</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">🗽 Open source</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Pricing</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 $20-200/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 $7-25/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 $20/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 Free tier + usage</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 Subscription</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">$20-200/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">$7-25/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">$20/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Free tier + usage</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Subscription</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">💰 Pay-per-use OR free</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Payment Options</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">💳 USD only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">⚡ USD or Bitcoin</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">USD only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">USD or Bitcoin</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">AI Choice</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 OpenAI/Claude only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Vercel's models</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔒 Fixed selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">OpenAI/Claude only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Vercel's models</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">🗽 Any</td>
               </tr>
               <tr>
@@ -268,20 +268,20 @@ export default function AnnouncingShakespeareAct2() {
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Project Export</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">📤 Limited</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Full export</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Full export</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">📋 Copy code</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">📤 Limited</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Full export</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Copy code</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Git Integration</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔄 Github only</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Github only</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No Git</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">🔄 Basic Git</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Basic Git</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
@@ -294,7 +294,7 @@ export default function AnnouncingShakespeareAct2() {
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Privacy</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Project Privacy</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
