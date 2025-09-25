@@ -58,7 +58,7 @@ export default function AnnouncingShakespeareAct2() {
       </p>
 
       <p>
-        Shakespeare uses MKStack under the hood to make sure all projects can work with the decentralized Nostr protocol for total user freedom and censorship resistance.
+        Shakespeare uses <a href="/tools#mkstack" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">MKStack</a> under the hood to make sure all projects can work with the decentralized Nostr protocol for total user freedom and censorship resistance.
       </p>
 
       <h2>Act II: Total User Freedom</h2>
