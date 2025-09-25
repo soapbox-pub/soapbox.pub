@@ -46,7 +46,7 @@ export default function AnnouncingShakespeareAct2() {
       <p>
         Companies like <strong>Lovable</strong>, <strong>Replit</strong>, and <strong>Cursor</strong> lock you into their platforms, AI models, and hosting solutions. Shakespeare Act 2 gives you complete freedom to choose your AI provider, Git service, deployment platform, and data storage approach.
       </p>
-{/* 
+{/*
       <div className="not-prose my-8">
         <div className="grid md:grid-cols-3 gap-6">
           <Card className="border-red-200 dark:border-red-800">
@@ -298,87 +298,9 @@ export default function AnnouncingShakespeareAct2() {
         </div>
       </div>
 
-      <h2>Improvements from Act 1</h2>
 
-      <p>
-        Act 2 is a complete rewrite with these changes from Act 1:
-      </p>
 
-      <div className="not-prose my-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="border-yellow-200 dark:border-yellow-800">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3 text-yellow-700 dark:text-yellow-300">Act 1</h4>
-              <ul className="text-sm space-y-2 text-muted-foreground">
-                <li>• Simple chat interface</li>
-                <li>• Basic project creation</li>
-                <li>• Limited file access</li>
-                <li>• Cloud-based storage</li>
-                <li>• NSP provider selection</li>
-                <li>• Basic deployment</li>
-                <li>• Simple export</li>
-              </ul>
-            </CardContent>
-          </Card>
 
-          <Card className="border-green-200 dark:border-green-800">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">Act 2</h4>
-              <ul className="text-sm space-y-2 text-muted-foreground">
-                <li>• <strong>Choose any AI provider or local models</strong></li>
-                <li>• <strong>Use any Git service (GitHub, GitLab, custom)</strong></li>
-                <li>• <strong>Deploy to any hosting platform</strong></li>
-                <li>• <strong>Complete project export and migration</strong></li>
-                <li>• <strong>Professional development environment</strong></li>
-                <li>• <strong>Full file editing and asset management</strong></li>
-                <li>• <strong>No vendor lock-in whatsoever</strong></li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      <h3>New Technical Capabilities</h3>
-
-      <div className="not-prose my-6">
-        <div className="space-y-4">
-          <Card className="border-l-4 border-blue-500">
-            <CardContent className="p-4">
-              <h4 className="font-semibold mb-2">Complete Project Control</h4>
-              <p className="text-sm text-muted-foreground">
-                Full access to edit any file, upload any asset, and organize your project however you prefer. No restrictions on file types or project structure.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-green-500">
-            <CardContent className="p-4">
-              <h4 className="font-semibold mb-2">Git Provider Freedom</h4>
-              <p className="text-sm text-muted-foreground">
-                Use any Git provider you prefer. Import repositories from anywhere, push to multiple services, and maintain your preferred development workflow.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-purple-500">
-            <CardContent className="p-4">
-              <h4 className="font-semibold mb-2">AI Provider Freedom</h4>
-              <p className="text-sm text-muted-foreground">
-                Choose from 50+ cloud AI models or run models locally. Switch between providers anytime, use multiple models for different tasks, or go completely offline.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-orange-500">
-            <CardContent className="p-4">
-              <h4 className="font-semibold mb-2">Deployment Freedom</h4>
-              <p className="text-sm text-muted-foreground">
-                Export your complete project and deploy to any platform you choose. Vercel, Netlify, AWS, your own servers, or anywhere else. Complete portability.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
 
       <h2>What You Can Build</h2>
 
@@ -401,12 +323,7 @@ export default function AnnouncingShakespeareAct2() {
                   className="w-full rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex flex-wrap gap-1">
-                <Badge variant="outline" className="text-xs">React</Badge>
-                <Badge variant="outline" className="text-xs">Stripe</Badge>
-                <Badge variant="outline" className="text-xs">Auth</Badge>
-                <Badge variant="outline" className="text-xs">Database</Badge>
-              </div>
+
             </CardContent>
           </Card>
 
@@ -423,34 +340,7 @@ export default function AnnouncingShakespeareAct2() {
                   className="w-full rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex flex-wrap gap-1">
-                <Badge variant="outline" className="text-xs">Real-time</Badge>
-                <Badge variant="outline" className="text-xs">File Upload</Badge>
-                <Badge variant="outline" className="text-xs">Social Features</Badge>
-                <Badge variant="outline" className="text-xs">Responsive</Badge>
-              </div>
-            </CardContent>
-          </Card>
 
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Business Dashboards</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Build an analytics dashboard for tracking my freelance business with client management, project timelines, and revenue charts."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
-                  alt="Business dashboard example - BlockParty"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-              <div className="flex flex-wrap gap-1">
-                <Badge variant="outline" className="text-xs">Charts</Badge>
-                <Badge variant="outline" className="text-xs">Data Viz</Badge>
-                <Badge variant="outline" className="text-xs">CRM</Badge>
-                <Badge variant="outline" className="text-xs">Reports</Badge>
-              </div>
             </CardContent>
           </Card>
 
@@ -467,11 +357,21 @@ export default function AnnouncingShakespeareAct2() {
                   className="w-full rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex flex-wrap gap-1">
-                <Badge variant="outline" className="text-xs">Gamification</Badge>
-                <Badge variant="outline" className="text-xs">Progress</Badge>
-                <Badge variant="outline" className="text-xs">Certificates</Badge>
-                <Badge variant="outline" className="text-xs">Interactive</Badge>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-2">Business Dashboards</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                "Build an analytics dashboard for tracking my freelance business with client management, project timelines, and revenue charts."
+              </p>
+              <div className="not-prose my-3">
+                <img
+                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
+                  alt="Business dashboard example - BlockParty"
+                  className="w-full rounded-lg shadow-sm"
+                />
               </div>
             </CardContent>
           </Card>
