@@ -57,6 +57,10 @@ export default function AnnouncingShakespeareAct2() {
         No downloads or installation required. Shakespeare works completely in your browser, and you maintain full control over your projects. You can edit the code yourself, export everything to use elsewhere, or deploy your project to any hosting service you choose.
       </p>
 
+      <p>
+        Shakespeare uses MKStack under the hood to make sure all projects can work with the decentralized Nostr protocol for total user freedom and censorship resistance.
+      </p>
+
       <h2>Act II: Total User Freedom</h2>
 
       <p>
