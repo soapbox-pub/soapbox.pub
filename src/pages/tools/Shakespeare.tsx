@@ -1,4 +1,4 @@
-import { ArrowRight, MessageSquare, Zap, Rocket, Code, Users, PlayCircle, Palette, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, Download, Upload, GitBranch, Code, FileText, Zap, Shield, Palette, Monitor, Smartphone, PlayCircle, ExternalLink, Star, CheckCircle, Globe, HardDrive, Cpu, Users, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,16 +11,16 @@ import { useSEO } from "@/hooks/useSEO";
 export default function Shakespeare() {
   // Set custom SEO for Shakespeare page
   useSEO({
-    title: 'Shakespeare - AI-Powered Website Builder on Nostr | Build with AI',
-    description: 'Build professional websites through natural conversation with AI assistants. Shakespeare runs entirely on the Nostr protocol, giving you true freedom and control over your data and identity.',
+    title: 'Shakespeare - Open Source AI Website Builder | Any Model, Any Provider, Total User Freedom',
+    description: 'The open-source AI website builder that gives you total freedom with local file storage, any AI provider support, built-in Git integration, and full user control. Import from GitHub, edit code directly, upload files, and export everything.',
     type: 'website',
-    image: '/assets/blog/announcing-shakespeare/shakespeare-cover.svg',
-    keywords: 'shakespeare, ai website builder, nostr, decentralized, ai development, website builder, conversational ai, nsp, nostr service providers',
+    image: '/shakespeare-resources/Screenshot from 2025-09-25 12-58-44.png',
+    keywords: 'shakespeare, ai website builder, local storage, git integration, openrouter, claude, gpt, local ai models, file uploads, code editor',
     structuredData: {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Shakespeare",
-      "description": "AI-powered website builder that runs entirely on the Nostr protocol",
+      "description": "Next-generation AI website builder with local file storage and any AI provider support",
       "applicationCategory": "Development Tools",
       "operatingSystem": "Web Browser",
       "offers": {
@@ -33,84 +33,104 @@ export default function Shakespeare() {
         "name": "Soapbox"
       },
       "featureList": [
-        "Conversational AI building",
-        "Live preview system",
-        "Instant deployment",
-        "True freedom from Big Tech",
-        "Transparent pay-per-use pricing"
+        "Local file storage",
+        "Any AI provider support",
+        "Built-in Git integration",
+        "Web-based code editor",
+        "File uploads",
+        "Project importing",
+        "Data export"
       ]
     }
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      {/* Hero Banner */}
+      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200 text-lg px-4 py-2 mb-8">
+            🎭 Shakespeare 2.0
+          </Badge>
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 leading-tight mb-6">
+            <span className="text-gray-900">Shakespeare, build me a </span>
+            <RotatingText
+              words={[
+                { text: "website", color: "text-purple-600" },
+                { text: "portfolio", color: "text-blue-600" },
+                { text: "community", color: "text-purple-600" },
+                { text: "game", color: "text-blue-600" },
+                { text: "landing page", color: "text-purple-600" },
+                { text: "signup form", color: "text-blue-600" },
+                { text: "chatroom", color: "text-purple-600" },
+                { text: "marketplace", color: "text-blue-600" }
+              ]}
+              interval={2000}
+              className="font-display font-bold text-5xl md:text-6xl"
+            />
+          </h1>
+          <p className="text-2xl font-medium text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto">
+            Open Source • Any Model • Any Provider • Total freedom and control
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200">
-                🤖 AI Website Builder
-                </Badge>
-                <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
-                    <span className="text-blue-600">
-                    <span className="text-black">🎭</span> Shakespeare
-                    </span>
-                </h1>
-                <p className="text-2xl font-medium text-gray-700">
-                  Build Websites Through Conversation with AI
-                </p>
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-gray-900">Revolutionary AI Website Builder</h2>
 
-                <div className="flex items-center space-x-6 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    Nostr Protocol
+                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                  <div className="flex items-center bg-white px-3 py-2 rounded-full shadow-sm">
+                    <HardDrive className="w-4 h-4 mr-2 text-purple-600" />
+                    Local Storage
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    AI-Powered
+                  <div className="flex items-center bg-white px-3 py-2 rounded-full shadow-sm">
+                    <Cpu className="w-4 h-4 mr-2 text-blue-600" />
+                    Any AI Model
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    Truly Free
+                  <div className="flex items-center bg-white px-3 py-2 rounded-full shadow-sm">
+                    <GitBranch className="w-4 h-4 mr-2 text-yellow-600" />
+                    Git Integration
                   </div>
                 </div>
 
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  AI-powered website builder that runs entirely on the Nostr protocol. Create and deploy websites in minutes through conversation with AI assistants. Completely decentralized and open-source.
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Just tell Shakespeare what website you want to build, and watch it create professional sites in minutes.
+                  No coding required, but full code access when you want it. Your files never leave your computer.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg" asChild>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg" asChild>
                   <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                    Start Building
+                    Start Building Free
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-                  <a href="/blog/announcing-shakespeare" rel="noopener noreferrer">
-                    <PlayCircle className="mr-2 h-5 w-5" />
-                    Read Announcement
+                <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-2 border-purple-200 hover:bg-purple-50" asChild>
+                  <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    Resource Center
                   </a>
                 </Button>
               </div>
-
             </div>
 
+            {/* Featured Video Tutorial */}
             <div className="relative">
-              {/* Video Tutorial */}
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border">
+              <div className="bg-white rounded-3xl shadow-2xl p-8 border-2 border-purple-100">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Watch Shakespeare in Action</h3>
-                  <p className="text-sm text-gray-600">See how easy it is to build websites with AI</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">🎬 See Shakespeare in Action</h3>
+                  <p className="text-gray-600">Watch Derek Ross build a complete website in minutes</p>
                 </div>
 
-                <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
-                  {/* YouTube embed */}
+                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl overflow-hidden shadow-lg">
                   <iframe
                     className="absolute inset-0 w-full h-full"
                     src="https://www.youtube.com/embed/pK9gHjQr7nc?si=aoT84KgpSJ3iruZw"
@@ -122,626 +142,726 @@ export default function Shakespeare() {
                   ></iframe>
                 </div>
 
+                <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <PlayCircle className="w-4 h-4 mr-1 text-purple-600" />
+                    Live Demo
+                  </div>
+                  <div className="flex items-center">
+                    <Star className="w-4 h-4 mr-1 text-yellow-500" />
+                    Real Project
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-1 text-green-600" />
+                    5 Minutes
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Revolutionary Features */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            {/* Rotating Banner */}
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">
-              "Shakespeare, build me a{" "}
-              <RotatingText
-                words={[
-                  { text: "portfolio", color: "text-blue-600" },
-                  { text: "blog", color: "text-purple-600" },
-                  { text: "website", color: "text-green-600" },
-                  { text: "dashboard", color: "text-orange-500" },
-                  { text: "community", color: "text-pink-600" },
-                  { text: "Twitter clone", color: "text-indigo-600" },
-                  { text: "storefront", color: "text-red-500" },
-                  { text: "video feed", color: "text-teal-600" }
-                ]}
-                interval={2500}
-                className="font-display font-bold"
-              />
-              "
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Shakespeare combines the power of AI with the freedom of the Nostr protocol, creating a completely unique website building experience.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-2 hover:border-blue-200 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <MessageSquare className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>Conversational AI Building</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Natural language interface that understands context and remembers your project history. Just describe what you want and watch it come to life.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Context-aware AI
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Project memory
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Multiple NSPs
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-yellow-200 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>Live Preview System</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Side-by-side view with chat interface and live preview. Every change appears instantly with no refreshing or waiting for builds.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
-                    Real-time updates
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
-                    Desktop & mobile
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
-                    Instant feedback
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-blue-200 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Rocket className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>Instant Deployment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Websites are automatically deployed with public URLs the moment they're created. Download source code as ZIP, import existing projects, or submit pull requests.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Auto deployment
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    GitHub/GitLab import
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Pull request creation
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-yellow-200 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>True Freedom</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Break free from Big Tech constraints. No platform lock-in, censorship resistance, and self-sovereign identity through Nostr.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
-                    No lock-in
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
-                    Censorship resistant
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3"></div>
-                    Open source
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* How Shakespeare Works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* What can I build with Shakespeare */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              How Shakespeare Works
+              What can I build with Shakespeare?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the future of web development through natural conversation with AI assistants powered by Nostr Service Providers.
+              From simple landing pages to complex web applications - see real examples built by our community
             </p>
           </div>
 
-          <div className="space-y-8">
-            <Card className="border-l-4 border-blue-500">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
-                  <div>
-                    <h3 className="font-semibold mb-2">🗽 Connect with Freedom</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Use any Nostr browser extension (Alby, nos2x, Flamingo) as your login. No corporate accounts or email required — your decentralized identity gives you true ownership and freedom.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-yellow-500">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-100 dark:bg-yellow-900 rounded-full p-2 text-yellow-600 dark:text-yellow-400 font-bold text-sm min-w-[2rem] text-center">2</div>
-                  <div>
-                    <h3 className="font-semibold mb-2">🤖 Choose Your AI Assistant</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Browse available <a href="/blog/understanding-nostr-service-providers" className="text-blue-600 hover:underline">Nostr Service Providers (NSPs)</a>, each offering different AI capabilities, specializations, and pricing. Choose freely from a competitive marketplace instead of being locked into one vendor.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-blue-500">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">3</div>
-                  <div>
-                    <h3 className="font-semibold mb-2">💬 Start Building or Import</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Create a new project by describing your website in natural language, or import an existing project from GitHub/GitLab to build upon. The AI begins working immediately, showing progress in real-time through the live preview window.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-yellow-500">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-100 dark:bg-yellow-900 rounded-full p-2 text-yellow-600 dark:text-yellow-400 font-bold text-sm min-w-[2rem] text-center">4</div>
-                  <div>
-                    <h3 className="font-semibold mb-2">🔄 Iterate & Refine</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Chat with the AI to make changes: "Add a contact form," "Make the header blue," or "Create a pricing section." See changes instantly in the preview.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-blue-500">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">5</div>
-                  <div>
-                    <h3 className="font-semibold mb-2">🚀 Deploy & Collaborate</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Your website is automatically deployed with a public URL. Download the complete source code as a ZIP file, share your live website immediately, or submit pull requests to existing GitHub/GitLab repositories for collaborative development.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* What You Can Build */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              What You Can Build
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Shakespeare's AI can create virtually any type of website or web application. From simple landing pages to complex web apps.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="space-y-4">
-              <Card className="bg-gradient-to-r from-blue-50 to-yellow-50 dark:from-blue-950 dark:to-yellow-950">
-                <CardContent className="p-4">
-                  <p className="text-sm italic">
-                    "Build a modern portfolio website for a web developer with project showcases, an about section, and a contact form. Use a dark theme with blue accents."
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-yellow-50 to-blue-50 dark:from-yellow-950 dark:to-blue-950">
-                <CardContent className="p-4">
-                  <p className="text-sm italic">
-                    "Create a Twitter-like social media app for Nostr with user profiles, real-time feeds, and the ability to post notes and images."
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
-                <CardContent className="p-4">
-                  <p className="text-sm italic">
-                    "Build an e-commerce store for handmade jewelry with product galleries, shopping cart, and a clean, elegant design."
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
-                <CardContent className="p-4">
-                  <p className="text-sm italic">
-                    "Import my existing React portfolio from GitHub and add a blog section with dark mode support."
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="border-purple-200 dark:border-purple-800">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
-                    🎨 View Live Examples
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Explore our showcase of real websites and applications built with our technology stack.
-                  </p>
-                  <Button
-                    asChild
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-                  >
-                    <a href="/showcase" rel="noopener noreferrer">
-                      Visit Showcase →
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-blue-200 dark:border-blue-800">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
-                    🛠️ Powered by MKStack
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Shakespeare uses the MKStack framework for comprehensive Nostr development capabilities.
-                  </p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
-                  >
-                    <a href="/tools/mkstack" rel="noopener noreferrer">
-                      Learn About MKStack →
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Project Import & Collaboration */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-emerald-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Import & Collaborate
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't start from scratch. Import existing projects from GitHub or GitLab and enhance them with AI, then contribute back to the community with pull requests.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">🔗 Import Existing Projects</h3>
-                <p className="text-gray-600">
-                  Shakespeare can import and work with existing codebases from GitHub and GitLab repositories.
-                  Whether it's your own project or an open-source repository you want to contribute to,
-                  simply provide the repository URL and start building upon existing work.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Code className="h-4 w-4 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">GitHub & GitLab Support</h4>
-                    <p className="text-gray-600">Import public and private repositories with full context understanding</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Sparkles className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">AI Code Understanding</h4>
-                    <p className="text-gray-600">AI analyzes existing codebase structure and patterns for intelligent modifications</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Users className="h-4 w-4 text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Pull Request Creation</h4>
-                    <p className="text-gray-600">Generate pull requests with your improvements back to the original repository</p>
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Bookstr - Goodreads Alternative */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="/shakespeare-resources/build-portfolio-example.png"
+                  alt="Bookstr - Goodreads alternative built with Shakespeare"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-purple-600 text-white">📚 Reading Platform</Badge>
                 </div>
               </div>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 border-green-200 dark:border-green-800">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">🚀 Example Workflow</h4>
-                  <div className="space-y-3 text-sm text-muted-foreground">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-bold text-green-600">1</span>
-                      </div>
-                      <p>Import a React project from GitHub</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-bold text-blue-600">2</span>
-                      </div>
-                      <p>Ask AI to "Add a dark mode toggle" or "Improve mobile responsiveness"</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-bold text-purple-600">3</span>
-                      </div>
-                      <p>Review changes in live preview</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-bold text-yellow-600">4</span>
-                      </div>
-                      <p>Submit pull request with AI-generated improvements</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950 border-purple-200 dark:border-purple-800">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 text-purple-700 dark:text-purple-300">🌟 Perfect For</h4>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
-                      Contributing to open-source projects
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
-                      Modernizing legacy codebases
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
-                      Adding features to existing projects
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
-                      Learning from real-world code
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Powered by NSPs */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Powered by Nostr Service Providers
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Shakespeare is powered by NSPs — a revolutionary new way to access AI tools and services through the decentralized Nostr protocol.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Choose Your AI Provider</h3>
-                <p className="text-gray-600">
-                  Unlike traditional AI services that lock you into a single provider, Shakespeare lets you choose from multiple NSPs,
-                  each offering different AI models, capabilities, and pricing. This means you get the freedom to select the AI provider
-                  that best fits your specific needs and budget.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Users className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Multiple Providers</h4>
-                    <p className="text-gray-600">Choose from a competitive marketplace of AI providers</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Sparkles className="h-4 w-4 text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Specialized Capabilities</h4>
-                    <p className="text-gray-600">Each NSP offers unique AI models and specialized tools</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="h-4 w-4 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">True Freedom</h4>
-                    <p className="text-gray-600">No vendor lock-in, switch providers anytime</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 border-purple-200 dark:border-purple-800">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 text-purple-700 dark:text-purple-300">🚀 MKStack NSP</h4>
-                  <p className="text-muted-foreground mb-4">
-                    The flagship NSP that brings the full power of the MKStack framework to Shakespeare. Offers comprehensive Nostr development capabilities with 50+ NIPs.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="text-xs">Claude Sonnet 3.5</Badge>
-                    <Badge variant="outline" className="text-xs">Nostr Specialized</Badge>
-                    <Badge variant="outline" className="text-xs">Pay-per-use</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">🆓 Free Gemini Flash NSP</h4>
-                  <p className="text-muted-foreground mb-4">
-                    Currently offered for free. Powered by Google's Gemini Flash model, perfect for trying out Shakespeare.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="text-xs">Gemini Flash</Badge>
-                    <Badge variant="outline" className="text-xs">Free Tier</Badge>
-                    <Badge variant="outline" className="text-xs">Free Tier</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Card className="border-dashed border-2 border-blue-200 dark:border-blue-800 max-w-2xl mx-auto">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-3 text-blue-700 dark:text-blue-300">
-                  🔍 Learn More About NSPs
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Discover how to choose the right NSP for your projects and learn how developers can create their own NSPs.
-                </p>
-                <Button
-                  asChild
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
-                >
-                  <a href="/blog/understanding-nostr-service-providers">
-                    📚 Complete Guide to NSPs →
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Bookstr</h3>
+                <p className="text-gray-600 mb-4">Goodreads alternative for book lovers with reviews, ratings, and reading lists</p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://bookstr.shakespeare.wtf/" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* BrewCraft - Coffee Shop */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="/shakespeare-resources/make-website-example-ai-model-hub.png"
+                  alt="BrewCraft - Coffee shop website built with Shakespeare"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-blue-600 text-white">☕ Business Site</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">BrewCraft</h3>
+                <p className="text-gray-600 mb-4">Beautiful coffee shop website with menu, locations, and online ordering</p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://brewcraft-phoenix.shakespeare.wtf/" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* GetItDone - Todo App */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="/shakespeare-resources/build-website-for-bookclub-example.png"
+                  alt="GetItDone - Todo list app built with Shakespeare"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-purple-600 text-white">✅ Productivity</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">GetItDone</h3>
+                <p className="text-gray-600 mb-4">Feature-rich todo list app with categories, deadlines, and progress tracking</p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://getitdone.shakespeare.wtf" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* MoonFile - Game Platform */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="/shakespeare-resources/make-website-example-kpop-pulse.png"
+                  alt="MoonFile - Game platform built with Shakespeare"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-blue-600 text-white">🎮 Gaming</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">MoonFile</h3>
+                <p className="text-gray-600 mb-4">Gaming platform with file sharing, community features, and game discovery</p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://moonfile.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Nrello - Trello Clone */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="/shakespeare-resources/project-settings-export-and-delete.png"
+                  alt="Nrello - Trello clone built with Shakespeare"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-purple-600 text-white">📋 Project Management</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Nrello</h3>
+                <p className="text-gray-600 mb-4">Kanban board project management tool inspired by Trello with drag-and-drop</p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://nrello-3.shakespeare.wtf" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* BlockParty - Bitcoin Dashboard */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="/shakespeare-resources/debug-console-error-example.png"
+                  alt="BlockParty - Bitcoin mining dashboard built with Shakespeare"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-blue-600 text-white">₿ Crypto Dashboard</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">BlockParty</h3>
+                <p className="text-gray-600 mb-4">Bitcoin block mining dashboard with real-time stats and analytics</p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://blockparty-dashboard.shakespeare.wtf/blockparty" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
                   </a>
                 </Button>
               </CardContent>
             </Card>
           </div>
+
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-600 mb-6">
+              These are just a few examples. Shakespeare can build virtually any web application you can imagine.
+            </p>
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+              <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                Start Building Your Project
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Transparent Pricing */}
+      {/* Revolutionary Features - Visual First */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Freedom-Respecting Features
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Every feature designed for maximum freedom, control, and flexibility
+            </p>
+          </div>
+
+          {/* Feature 1: Local File Storage */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                  <HardDrive className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900">Your Files, Your Computer</h3>
+                  <p className="text-purple-600 font-medium">True Decentralization</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Files are stored locally on your computer, not on our servers. This means complete control,
+                  instant access, and true data sovereignty.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-purple-50 p-4 rounded-xl">
+                    <Shield className="w-6 h-6 text-purple-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Full Privacy</h4>
+                    <p className="text-sm text-gray-600">Your data never leaves your device</p>
+                  </div>
+                  <div className="bg-blue-50 p-4 rounded-xl">
+                    <Zap className="w-6 h-6 text-blue-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Lightning Fast</h4>
+                    <p className="text-sm text-gray-600">No server round-trips needed</p>
+                  </div>
+                  <div className="bg-yellow-50 p-4 rounded-xl">
+                    <Globe className="w-6 h-6 text-yellow-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Work Offline</h4>
+                    <p className="text-sm text-gray-600">Build without internet</p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl">
+                    <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Own Everything</h4>
+                    <p className="text-sm text-gray-600">Complete project ownership</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl p-8 shadow-xl">
+                <img
+                  src="/shakespeare-resources/signin-to-nostr-settings.png"
+                  alt="Local file storage interface showing files stored on user's computer"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+                <div className="mt-6 text-center">
+                  <Badge variant="outline" className="bg-white text-purple-700 border-purple-200">
+                    Files stored locally - never on servers
+                  </Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 2: Any AI Provider */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="relative order-2 lg:order-1">
+              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-xl">
+                <img
+                  src="/shakespeare-resources/choose-your-model-example.png"
+                  alt="AI provider selection interface showing OpenRouter, Claude, GPT, and local models"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+                <div className="mt-6 space-y-3">
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <Badge className="bg-blue-600 text-white">OpenRouter</Badge>
+                    <Badge className="bg-purple-600 text-white">Claude</Badge>
+                    <Badge className="bg-green-600 text-white">PayperQ</Badge>
+                    <Badge className="bg-orange-600 text-white">Z.ai</Badge>
+                    <Badge className="bg-red-600 text-white">OpenAI</Badge>
+                    <Badge className="bg-indigo-600 text-white">Anthropic</Badge>
+                  </div>
+                  <p className="text-center text-sm text-gray-600">Choose from 50+ AI providers and models</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8 order-1 lg:order-2">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                  <Cpu className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900">Use Any AI Provider</h3>
+                  <p className="text-blue-600 font-medium">Maximum Flexibility</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Break free from vendor lock-in. Choose from dozens of AI providers including OpenRouter,
+                  PayperQ, Z.ai, OpenAI, Anthropic, xAI, and even local models.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4 p-4 bg-blue-50 rounded-xl">
+                    <Globe className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Cloud Providers</h4>
+                      <p className="text-sm text-gray-600">OpenRouter, Claude, GPT-4, Gemini, and 40+ more models</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl">
+                    <Monitor className="w-6 h-6 text-purple-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Local Models</h4>
+                      <p className="text-sm text-gray-600">Run Llama, CodeLlama, and other models on your machine</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4 p-4 bg-yellow-50 rounded-xl">
+                    <Settings className="w-6 h-6 text-yellow-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Custom APIs</h4>
+                      <p className="text-sm text-gray-600">Connect to any compatible API endpoint</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 3: Git Integration */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center">
+                  <GitBranch className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900">Built-in Git Integration</h3>
+                  <p className="text-yellow-600 font-medium">Professional Workflow</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Track changes, roll back to previous states, and collaborate seamlessly with GitHub,
+                  GitLab, or any Git provider. Professional version control built right in.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-yellow-600" />
+                    <span className="text-gray-700">Automatic commit tracking</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-yellow-600" />
+                    <span className="text-gray-700">One-click rollback to any version</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-yellow-600" />
+                    <span className="text-gray-700">Push and pull from remote repositories</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-yellow-600" />
+                    <span className="text-gray-700">Collaborate with team members</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-xl">
+                <img
+                  src="/shakespeare-resources/connect-your-git-account.png"
+                  alt="Git integration interface showing GitHub and GitLab connections"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+                <div className="mt-6 text-center space-y-3">
+                  <div className="flex justify-center space-x-3">
+                    <Badge variant="outline" className="bg-white text-gray-700">GitHub</Badge>
+                    <Badge variant="outline" className="bg-white text-gray-700">GitLab</Badge>
+                    <Badge variant="outline" className="bg-white text-gray-700">Any Git Provider</Badge>
+                  </div>
+                  <p className="text-sm text-gray-600">Professional version control for every project</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 4: Project Importing */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="relative order-2 lg:order-1">
+              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-3xl p-8 shadow-xl">
+                <img
+                  src="/shakespeare-resources/import-repository-example-1.png"
+                  alt="Project import interface showing GitHub repository import with edit badge"
+                  className="w-full rounded-2xl shadow-lg mb-4"
+                />
+                <img
+                  src="/shakespeare-resources/import-repository-example-2.png"
+                  alt="Edit with Shakespeare badge for easy project contribution"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+                <div className="mt-6 text-center">
+                  <Badge className="bg-gradient-to-r from-green-600 to-blue-600 text-white">
+                    "Edit with Shakespeare" Badge Available
+                  </Badge>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8 order-1 lg:order-2">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
+                  <Download className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900">Import from Anywhere</h3>
+                  <p className="text-green-600 font-medium">Build on Existing Work</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Import projects directly from Git repositories and encourage others to contribute
+                  with an "Edit with Shakespeare" badge. Perfect for open source collaboration.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-green-50 rounded-xl">
+                    <h4 className="font-semibold text-gray-900 mb-2">🔗 Direct Repository Import</h4>
+                    <p className="text-sm text-gray-600">Paste any GitHub or GitLab URL to start building immediately</p>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-xl">
+                    <h4 className="font-semibold text-gray-900 mb-2">🏷️ Contribution Badge</h4>
+                    <p className="text-sm text-gray-600">Add a badge to your README to invite Shakespeare contributions</p>
+                  </div>
+                  <div className="p-4 bg-purple-50 rounded-xl">
+                    <h4 className="font-semibold text-gray-900 mb-2">🤝 Open Source Friendly</h4>
+                    <p className="text-sm text-gray-600">Perfect for hackathons, contributions, and collaborative development</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 5: Code Editor & File Uploads */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
+                  <Code className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900">Full Code Control</h3>
+                  <p className="text-purple-600 font-medium">Edit Everything</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Built-in file explorer and code editor let you view and edit every file by hand.
+                  Upload your own images, logos, and assets directly into your project.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-purple-50 p-4 rounded-xl">
+                    <FileText className="w-6 h-6 text-purple-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">File Explorer</h4>
+                    <p className="text-sm text-gray-600">Browse and organize all project files</p>
+                  </div>
+                  <div className="bg-blue-50 p-4 rounded-xl">
+                    <Code className="w-6 h-6 text-blue-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Code Editor</h4>
+                    <p className="text-sm text-gray-600">Syntax highlighting and smart editing</p>
+                  </div>
+                  <div className="bg-yellow-50 p-4 rounded-xl">
+                    <Upload className="w-6 h-6 text-yellow-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">File Uploads</h4>
+                    <p className="text-sm text-gray-600">Drag and drop images and assets</p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl">
+                    <Palette className="w-6 h-6 text-green-600 mb-2" />
+                    <h4 className="font-semibold text-gray-900">Asset Management</h4>
+                    <p className="text-sm text-gray-600">Organize logos, images, and media</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl p-8 shadow-xl">
+                <img
+                  src="/shakespeare-resources/edit-the-code-in-browser.png"
+                  alt="Built-in code editor showing file explorer and syntax highlighting"
+                  className="w-full rounded-2xl shadow-lg mb-4"
+                />
+                <img
+                  src="/shakespeare-resources/file-upload-ezample.png"
+                  alt="File upload interface for adding images and assets"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+                <div className="mt-6 text-center">
+                  <Badge variant="outline" className="bg-white text-purple-700 border-purple-200">
+                    Professional development environment in your browser
+                  </Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Streaming & Interface */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Refined Experience
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Every detail polished for the ultimate development experience
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            <Card className="border-2 border-blue-200 hover:border-blue-300 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">AI Streaming</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Watch your website come to life in real-time as the AI streams changes directly to your preview window.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    Real-time code generation
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    Live preview updates
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    Instant feedback loop
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-200 hover:border-purple-300 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <Monitor className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Refined Interface</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Beautiful, intuitive interface designed for both beginners and professionals. Every interaction is smooth and purposeful.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
+                    Clean, modern design
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
+                    Responsive layout
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
+                    Keyboard shortcuts
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-yellow-200 hover:border-yellow-300 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4">
+                  <Download className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Export Everything</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Export your complete project as a ZIP file, deploy to any hosting service, or push directly to GitHub.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
+                    Complete source code
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
+                    All assets included
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
+                    Deploy anywhere
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Screenshot Gallery */}
+          <div className="space-y-8">
+            <h3 className="text-3xl font-bold text-center text-gray-900">See It In Action</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <img
+                  src="/shakespeare-resources/build-portfolio-example.png"
+                  alt="Building a portfolio website with AI"
+                  className="w-full rounded-xl shadow-lg"
+                />
+                <p className="text-center text-sm text-gray-600">Building a portfolio website in minutes</p>
+              </div>
+              <div className="space-y-4">
+                <img
+                  src="/shakespeare-resources/make-website-example-ai-model-hub.png"
+                  alt="Creating an AI model hub website"
+                  className="w-full rounded-xl shadow-lg"
+                />
+                <p className="text-center text-sm text-gray-600">Creating complex applications with ease</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resource Center */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Transparent Pay-Per-Use Pricing
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                New Resource Center
+              </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              No subscriptions, no hidden fees. Pay only for actual AI generation time with real-time cost tracking.
+              Everything you need to master Shakespeare and build amazing projects
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="border-2 hover:border-green-200 transition-colors">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-green-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <Palette className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Simple Landing Page</h3>
-                <div className="text-3xl font-bold text-green-600 mb-2">$2-5</div>
-                <p className="text-sm text-gray-600">Portfolio, business card sites</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-blue-200 transition-colors">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-blue-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Complex Web App</h3>
-                <div className="text-3xl font-bold text-blue-600 mb-2">$10-25</div>
-                <p className="text-sm text-gray-600">E-commerce, dashboards</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-purple-200 transition-colors">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-purple-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Small Changes</h3>
-                <div className="text-3xl font-bold text-purple-600 mb-2">$0.50-2</div>
-                <p className="text-sm text-gray-600">Tweaks, color changes</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border border-green-200 dark:border-green-800 rounded-xl p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4 text-green-900 dark:text-green-100">
-              💸 How Pricing Works
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-              <div>
-                <h4 className="font-semibold mb-2">Payment Methods:</h4>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• USD via Stripe</li>
-                  <li>• Bitcoin Lightning</li>
-                  <li>• Pay NSPs directly</li>
-                  <li>• Real-time cost tracking</li>
-                </ul>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">📚 Complete Learning Hub</h3>
+                <p className="text-gray-600 text-lg">
+                  Access comprehensive tutorials, guides, and examples at our new Resource Center.
+                  From beginner basics to advanced techniques, everything is covered.
+                </p>
               </div>
-              <div>
-                <h4 className="font-semibold mb-2">What You Pay For:</h4>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• Actual AI generation time</li>
-                  <li>• No monthly subscriptions</li>
-                  <li>• No hidden fees</li>
-                  <li>• Transparent pricing</li>
-                </ul>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4 p-4 bg-yellow-50 rounded-xl">
+                  <PlayCircle className="w-6 h-6 text-yellow-600 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Video Tutorials</h4>
+                    <p className="text-sm text-gray-600">Step-by-step guides for every feature</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl">
+                  <FileText className="w-6 h-6 text-purple-600 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Written Guides</h4>
+                    <p className="text-sm text-gray-600">Detailed documentation and best practices</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-blue-50 rounded-xl">
+                  <Code className="w-6 h-6 text-blue-600 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Code Examples</h4>
+                    <p className="text-sm text-gray-600">Real projects you can import and learn from</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-green-50 rounded-xl">
+                  <Users className="w-6 h-6 text-green-600 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Community Support</h4>
+                    <p className="text-sm text-gray-600">Get help from other Shakespeare builders</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button
+                size="lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                asChild
+              >
+                <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  Visit Resource Center
+                </a>
+              </Button>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-xl">
+                <img
+                  src="/shakespeare-resources/project-settings-export-and-delete.png"
+                  alt="Shakespeare Resource Center interface"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+                <div className="mt-6 text-center">
+                  <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-4 py-2">
+                    🌟 soapbox.pub/shakespeare-resources
+                  </Badge>
+                </div>
               </div>
             </div>
           </div>
@@ -749,35 +869,58 @@ export default function Shakespeare() {
       </section>
 
       {/* Get Started */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-100 to-blue-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              🎭 Get Started with Shakespeare
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Start Building Today
+              </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Start building your next website with AI-powered assistance. Experience the future of web development through natural conversation.
+              Experience the future of web development with complete freedom and control
             </p>
           </div>
 
-          {/* Get Started */}
-          <div className="max-w-2xl mx-auto">
-            <div className="mb-12">
-                <div className="flex flex-col items-center space-y-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-                  >
-                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                      🚀 Start Building at shakespeare.diy
-                    </a>
-                  </Button>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Join our community for updates and support
-                  </p>
-                </div>
+          <div className="max-w-2xl mx-auto text-center space-y-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 text-lg"
+              >
+                <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                  🚀 Launch Shakespeare
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-purple-200 hover:bg-purple-50 px-8 py-4 text-lg"
+              >
+                <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
+                  📚 Learn More
+                </a>
+              </Button>
             </div>
+
+            <div className="grid grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-purple-600">100%</div>
+                <div className="text-sm text-gray-600">Free to Start</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-blue-600">50+</div>
+                <div className="text-sm text-gray-600">AI Models</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-yellow-600">∞</div>
+                <div className="text-sm text-gray-600">Possibilities</div>
+              </div>
+            </div>
+
             <ShakespeareMailchimpForm />
           </div>
         </div>
