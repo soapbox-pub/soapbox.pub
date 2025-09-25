@@ -179,7 +179,7 @@ export default function Shakespeare() {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src="/shakespeare-resources/build-portfolio-example.png"
+                  src="/assets/images/shakespeare-screenshots/bookstr-example.png"
                   alt="Bookstr - Goodreads alternative built with Shakespeare"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -203,7 +203,7 @@ export default function Shakespeare() {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src="/shakespeare-resources/make-website-example-ai-model-hub.png"
+                  src="/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png"
                   alt="BrewCraft - Coffee shop website built with Shakespeare"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -223,23 +223,23 @@ export default function Shakespeare() {
               </CardContent>
             </Card>
 
-            {/* GetItDone - Todo App */}
+            {/* Digital Stage - Band Website */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src="/shakespeare-resources/build-website-for-bookclub-example.png"
-                  alt="GetItDone - Todo list app built with Shakespeare"
+                  src="/assets/images/shakespeare-screenshots/band-website.png"
+                  alt="Digital Stage - Band website built with Shakespeare"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-3 left-3">
-                  <Badge className="bg-purple-600 text-white">✅ Productivity</Badge>
+                  <Badge className="bg-purple-600 text-white">🎵 Music & Entertainment</Badge>
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">GetItDone</h3>
-                <p className="text-gray-600 mb-4">Feature-rich todo list app with categories, deadlines, and progress tracking</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Digital Stage</h3>
+                <p className="text-gray-600 mb-4">Professional band website with music player, tour dates, and fan engagement</p>
                 <Button variant="outline" className="w-full" asChild>
-                  <a href="https://getitdone.shakespeare.wtf" target="_blank" rel="noopener noreferrer">
+                  <a href="https://digital-stage-w5v0.shakespeare.to/" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View Live Site
                   </a>
@@ -251,7 +251,7 @@ export default function Shakespeare() {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src="/shakespeare-resources/make-website-example-kpop-pulse.png"
+                  src="/assets/images/shakespeare-screenshots/moonfile-game-example.png"
                   alt="MoonFile - Game platform built with Shakespeare"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -275,7 +275,7 @@ export default function Shakespeare() {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src="/shakespeare-resources/project-settings-export-and-delete.png"
+                  src="/assets/images/shakespeare-screenshots/kanban-example.png"
                   alt="Nrello - Trello clone built with Shakespeare"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -299,7 +299,7 @@ export default function Shakespeare() {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src="/shakespeare-resources/debug-console-error-example.png"
+                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
                   alt="BlockParty - Bitcoin mining dashboard built with Shakespeare"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
