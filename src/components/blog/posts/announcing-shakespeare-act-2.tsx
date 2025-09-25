@@ -41,57 +41,27 @@ export const meta: BlogPostMeta = {
 export default function AnnouncingShakespeareAct2() {
   return (
     <article className="prose prose-lg max-w-none">
-      <h2>User Freedom and Choice</h2>
+      <h2>What is Shakespeare?</h2>
 
       <p>
-        Companies like <strong>Lovable</strong>, <strong>Replit</strong>, and <strong>Cursor</strong> lock you into their platforms, AI models, and hosting solutions. Shakespeare Act 2 gives you complete freedom to choose your AI provider, Git service, deployment platform, and data storage approach.
+        <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+          Shakespeare
+        </a> is an AI-powered development platform that runs entirely in your web browser. You can create websites, web applications, and software projects by simply describing what you want to build in plain language.
       </p>
-{/*
-      <div className="not-prose my-8">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="border-red-200 dark:border-red-800">
-            <CardContent className="p-6 text-center">
-              <div className="text-3xl mb-4">🔒</div>
-              <h3 className="text-lg font-bold mb-2 text-red-700 dark:text-red-300">Proprietary Tools</h3>
-              <ul className="text-sm text-muted-foreground space-y-1 text-left">
-                <li>• Locked to their AI models</li>
-                <li>• Forced hosting on their platforms</li>
-                <li>• Subscription-only pricing</li>
-                <li>• Proprietary, closed source</li>
-                <li>• Limited export and migration</li>
-              </ul>
-            </CardContent>
-          </Card>
 
-          <Card className="border-yellow-200 dark:border-yellow-800">
-            <CardContent className="p-6 text-center">
-              <div className="text-3xl mb-4">⚡</div>
-              <h3 className="text-lg font-bold mb-2 text-yellow-700 dark:text-yellow-300">Act 1</h3>
-              <ul className="text-sm text-muted-foreground space-y-1 text-left">
-                <li>• Nostr-based conversations</li>
-                <li>• Multiple AI providers</li>
-                <li>• Pay-per-use pricing</li>
-                <li>• Open source foundation</li>
-                <li>• Basic project export</li>
-              </ul>
-            </CardContent>
-          </Card>
+      <p>
+        Tell Shakespeare what you want - like "build me a blog for my photography business" or "create a task management app for my team" - and it writes the code, sets up the files, and creates a working application that you can use right away.
+      </p>
 
-          <Card className="border-green-200 dark:border-green-800">
-            <CardContent className="p-6 text-center">
-              <div className="text-3xl mb-4">🗽</div>
-              <h3 className="text-lg font-bold mb-2 text-green-700 dark:text-green-300">Act 2</h3>
-              <ul className="text-sm text-muted-foreground space-y-1 text-left">
-                <li>• Choose any AI provider + local models</li>
-                <li>• Deploy to any hosting platform</li>
-                <li>• Pay-per-use OR free local AI</li>
-                <li>• 100% open source (AGPL-3.0)</li>
-                <li>• Complete project ownership</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div> */}
+      <p>
+        No downloads or installation required. Shakespeare works completely in your browser, and you maintain full control over your projects. You can edit the code yourself, export everything to use elsewhere, or deploy your project to any hosting service you choose.
+      </p>
+
+      <h2>Act II: Total User Freedom</h2>
+
+      <p>
+        While companies like <strong>Lovable</strong>, <strong>Replit</strong>, and <strong>Cursor</strong> lock you into their platforms, AI models, and hosting solutions, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare Act 2</a> has been rebuilt from the ground up to give you complete freedom to choose your AI provider, Git service, deployment platform, and data storage.
+      </p>
 
       <h3>AI Provider Choice</h3>
       <p>
@@ -195,6 +165,97 @@ export default function AnnouncingShakespeareAct2() {
         </div>
       </div>
 
+      <h2>Advancing Web Technology</h2>
+
+        <p>
+          Shakespeare Act 2 achieves true user freedom through key technological advances that eliminate centralized services. All your project files are stored locally in your browser using <strong>IndexedDB with LightningFS</strong>, while <strong>isomorphic-git</strong> handles Git operations entirely client-side—including cloning, pushing, and pulling from any provider or even <strong>Nostr Git URLs</strong> (nostr://). Shakespeare connects directly to AI providers with no middleman, using a configurable HTTP proxy only when needed for CORS.
+        </p>
+
+        <p>
+          The AI assistant operates with dozens of command-line tools implemented in JavaScript, including a complete virtual Linux environment with commands like <code>cat</code>, <code>grep</code>, <code>ls</code>, <code>mv</code>, <code>rm</code>, <code>head</code>, <code>tail</code>, <code>git</code>, <code>unzip</code>, and <code>hexdump</code>. TypeScript projects compile directly in your browser using <strong>esbuild-wasm</strong>, while an iframe-based embedded web browser provides real-time project previews.
+        </p>
+
+        <p>
+          These advances work together to create a complete professional development environment that requires no downloads, no servers, and no vendor dependencies while maintaining full functionality.
+        </p>
+
+      <h2>What You Can Build</h2>
+
+      <p>
+        Shakespeare Act 2 can create anything that's possible on the web. Here are examples:
+      </p>
+
+      <div className="not-prose my-8">
+        <div className="grid md:grid-cols-2 gap-6">
+
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-2">Social Platforms</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                "Create a Twitter-like platform for my photography community with image uploads, comments, likes, and user profiles."
+              </p>
+              <div className="not-prose my-3">
+                <img
+                  src="/assets/images/shakespeare-screenshots/bookstr-example.png"
+                  alt="Social platform example - Bookstr"
+                  className="w-full rounded-lg shadow-sm"
+                />
+              </div>
+
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-2">Gaming Platforms</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                "Build a gaming platform with file sharing, community features, and game discovery for my gaming community."
+              </p>
+              <div className="not-prose my-3">
+                <img
+                  src="/assets/images/shakespeare-screenshots/moonfile-game-example.png"
+                  alt="MoonFile - Gaming platform built with Shakespeare"
+                  className="w-full rounded-lg shadow-sm"
+                />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-2">Business Dashboards</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                "Build an analytics dashboard for tracking my freelance business with client management, project timelines, and revenue charts."
+              </p>
+              <div className="not-prose my-3">
+                <img
+                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
+                  alt="Business dashboard example - BlockParty"
+                  className="w-full rounded-lg shadow-sm"
+                />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <h4 className="font-semibold mb-2">E-commerce Platforms</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                "Build a marketplace for handmade crafts with user accounts, product catalogs, shopping cart, payment integration, and admin dashboard."
+              </p>
+              <div className="not-prose my-3">
+                <img
+                  src="/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png"
+                  alt="Coffee shop website example"
+                  className="w-full rounded-lg shadow-sm"
+                />
+              </div>
+
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
       <h2>Comparison with Other AI Development Tools</h2>
 
       <div className="not-prose my-6">
@@ -208,7 +269,7 @@ export default function AnnouncingShakespeareAct2() {
                 <th className="border border-gray-300 dark:border-gray-700 p-3 text-left">Cursor</th>
                 <th className="border border-gray-300 dark:border-gray-700 p-3 text-left">v0</th>
                 <th className="border border-gray-300 dark:border-gray-700 p-3 text-left">Base44</th>
-                <th className="border border-gray-300 dark:border-gray-700 p-3 text-left font-bold">Shakespeare Act 2</th>
+                <th className="border border-gray-300 dark:border-gray-700 p-3 text-left font-bold">🎭 Shakespeare</th>
               </tr>
             </thead>
             <tbody>
@@ -224,11 +285,11 @@ export default function AnnouncingShakespeareAct2() {
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Pricing</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">$20-200/month</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">$7-25/month</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">$25/month</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">$20/month</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">Free tier + usage</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">Subscription</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">💰 Pay-per-use OR free</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">Pay-per-use or&nbsp;free</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Payment Options</td>
@@ -241,12 +302,12 @@ export default function AnnouncingShakespeareAct2() {
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">AI Choice</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">OpenAI/Claude only</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Vercel's models</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">Fixed selection</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">🗽 Any</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Large selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Limited selection</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">🗽 Any Provider/model</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Local LLM Support</td>
@@ -280,7 +341,7 @@ export default function AnnouncingShakespeareAct2() {
                 <td className="border border-gray-300 dark:border-gray-700 p-3">Github only</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">✅ Yes</td>
-                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Github only</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">Basic Git</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
@@ -306,88 +367,6 @@ export default function AnnouncingShakespeareAct2() {
           </table>
         </div>
       </div>
-
-
-
-
-
-      <h2>What You Can Build</h2>
-
-      <p>
-        Shakespeare Act 2 can create web applications across multiple categories. Here are examples:
-      </p>
-
-      <div className="not-prose my-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">E-commerce Platforms</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Build a marketplace for handmade crafts with user accounts, product catalogs, shopping cart, payment integration, and admin dashboard."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png"
-                  alt="Coffee shop website example"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Social Platforms</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Create a Twitter-like platform for my photography community with image uploads, comments, likes, and user profiles."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/bookstr-example.png"
-                  alt="Social platform example - Bookstr"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Interactive Apps</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Create a quiz platform for my educational content with progress tracking, leaderboards, and certificate generation."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/kanban-example.png"
-                  alt="Interactive app example - Kanban board"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Business Dashboards</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Build an analytics dashboard for tracking my freelance business with client management, project timelines, and revenue charts."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
-                  alt="Business dashboard example - BlockParty"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-
 
       <div className="not-prose my-8">
         <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
