@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Globe, Rocket, Calendar, FileText } from "lucide-react";
+import { ArrowRight, Code, Users, Globe, Rocket, Calendar, FileText, ExternalLink, GitBranch, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +10,134 @@ import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { SoapboxPostsSection } from "@/components/SoapboxPostsSection";
 import { getFeaturedPost, formatDate } from "@/lib/blog/utils";
 import { useSEO } from "@/hooks/useSEO";
+import { useAppSubmissions } from "@/hooks/useAppSubmissions";
+
+function FeaturedShowcaseApps() {
+  const { data: submissions = [], isLoading } = useAppSubmissions();
+
+  // Get featured apps and top 6 for showcase
+  const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
+  const approvedApps = submissions.filter(app => app.isApproved && !app.isFeatured && !app.isHidden);
+  const showcaseApps = [...featuredApps, ...approvedApps].slice(0, 6);
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-12">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-azure mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading showcase apps...</p>
+      </div>
+    );
+  }
+
+  if (showcaseApps.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-gray-600 mb-6">
+          Be the first to build something amazing with Soapbox tools and submit it to our showcase!
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="bg-azure hover:bg-azure-600 text-white" asChild>
+            <Link to="/tools">
+              Start Building
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link to="/showcase">
+              Submit Your App
+            </Link>
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {showcaseApps.map((app) => {
+        // Get a color scheme based on the app's first tag
+        const getTagColor = (tags: string[]) => {
+          if (tags.length === 0) return { bg: "bg-gray-600", border: "border-gray-200", gradient: "from-gray-500 to-gray-600" };
+
+          const firstTag = tags[0].toLowerCase();
+          if (firstTag.includes('social') || firstTag.includes('community')) return { bg: "bg-blue-600", border: "border-blue-200", gradient: "from-azure to-blue-600" };
+          if (firstTag.includes('game') || firstTag.includes('gaming')) return { bg: "bg-purple-600", border: "border-purple-200", gradient: "from-violet-500 to-purple-600" };
+          if (firstTag.includes('business') || firstTag.includes('commerce')) return { bg: "bg-green-600", border: "border-green-200", gradient: "from-green-500 to-emerald-600" };
+          if (firstTag.includes('creative') || firstTag.includes('art')) return { bg: "bg-pink-600", border: "border-pink-200", gradient: "from-pink-500 to-rose-600" };
+          if (firstTag.includes('crypto') || firstTag.includes('bitcoin')) return { bg: "bg-orange-600", border: "border-orange-200", gradient: "from-orange-500 to-amber-600" };
+          if (firstTag.includes('tool') || firstTag.includes('utility')) return { bg: "bg-indigo-600", border: "border-indigo-200", gradient: "from-indigo-500 to-blue-600" };
+          return { bg: "bg-azure", border: "border-azure-200", gradient: "from-azure to-blue-600" };
+        };
+
+        const colors = getTagColor(app.appTags);
+
+        return (
+          <Card key={app.pubkey + app.created_at} className={`group hover:shadow-xl transition-all duration-300 overflow-hidden border-2 hover:${colors.border}`}>
+            <div className={`h-48 bg-gradient-to-r ${colors.gradient} relative overflow-hidden`}>
+              <img
+                src={app.screenshotUrl}
+                alt={`${app.appName} screenshot`}
+                className="absolute inset-0 w-full h-full object-cover opacity-90"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+              <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient}/70`}></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                {app.isFeatured && (
+                  <Badge className="bg-white/20 text-white border-white/30 mb-2">
+                    <Star className="w-3 h-3 mr-1" />
+                    Featured
+                  </Badge>
+                )}
+                <h3 className="text-xl font-bold">
+                  {app.appName.length > 20 ? `${app.appName.slice(0, 20)}...` : app.appName}
+                </h3>
+              </div>
+            </div>
+            <CardContent className="p-6">
+              <p className="text-gray-600 mb-4">
+                {app.description.length > 120 ? `${app.description.slice(0, 120)}...` : app.description}
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-wrap gap-1">
+                  {app.appTags.slice(0, 2).map((tag) => (
+                    <Badge key={tag} variant="secondary" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                  {app.appTags.length > 2 && (
+                    <Badge variant="secondary" className="text-xs">
+                      +{app.appTags.length - 2}
+                    </Badge>
+                  )}
+                </div>
+                <div className="flex gap-2">
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a
+                      href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Clone with Shakespeare"
+                    >
+                      <GitBranch className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function Index() {
   const featuredPost = getFeaturedPost();
@@ -270,107 +398,41 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              See Our Tools in Action
+              Empowering You to Build Freely
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real platforms built by real people using Soapbox tools. These are examples of what you can build.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              Everything we build is open source and designed for the decentralized web. We're making powerful
+              development tools accessible to everyone, advancing the future of user sovereignty and digital freedom.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-azure rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Code className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">100% Open Source</h3>
+                <p className="text-sm text-gray-600">Complete transparency, community-driven development, and freedom to modify</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Decentralized First</h3>
+                <p className="text-sm text-gray-600">Built on Nostr and ActivityPub for true user ownership and censorship resistance</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Community Powered</h3>
+                <p className="text-sm text-gray-600">Real platforms built by real people, proving decentralization works at scale</p>
+              </div>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              See how our community is using Soapbox tools to build the next generation of platforms and applications.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Ditto.pub */}
-            <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-azure to-blue-600 relative overflow-hidden">
-                <img
-                  src="/assets/images/ditto/ditto-phones.png"
-                  alt="Ditto platform on mobile devices"
-                  className="absolute inset-0 w-full h-full object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-azure/70 to-blue-600/70"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Ditto</Badge>
-                  <h3 className="text-xl font-bold">Ditto.pub</h3>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <p className="text-gray-600 mb-4">
-                  The flagship Ditto community platform showcasing all features with custom themes,
-                  Lightning Zaps, and cross-platform connectivity.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">5,000+ users</span>
-                  <Button variant="ghost" size="sm" asChild>
-                    <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
-                      Visit Platform
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Plektos */}
-            <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-violet-500 to-purple-600 relative overflow-hidden">
-                <img
-                  src="/assets/mkstack-apps/plektos-screenshot.png"
-                  alt="Plektos decentralized events platform"
-                  className="absolute inset-0 w-full h-full object-cover opacity-85"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/70 to-purple-600/70"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with MKStack</Badge>
-                  <h3 className="text-xl font-bold">Plektos</h3>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <p className="text-gray-600 mb-4">
-                  A decentralized events app built with MKStack. Discover, create, and manage events
-                  on the Nostr network with seamless social integration.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Decentralized Events</span>
-                  <Button variant="ghost" size="sm" asChild>
-                    <a href="https://plektos.app" target="_blank" rel="noopener noreferrer">
-                      Visit Platform
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Treasures */}
-            <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-green-500 to-emerald-600 relative overflow-hidden">
-                <img
-                  src="/assets/mkstack-apps/treasures-screenshot.png"
-                  alt="Treasures platform screenshot"
-                  className="absolute inset-0 w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/80 to-emerald-600/80"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <Badge className="bg-white/20 text-white border-white/30 mb-2">Built with Stacks</Badge>
-                  <h3 className="text-xl font-bold">Treasures</h3>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <p className="text-gray-600 mb-4">
-                  Join the decentralized geocaching adventure powered by Nostr. Hide caches, find treasures,
-                  and connect with explorers worldwide. Join the quest!
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Nostr IRL</span>
-                  <Button variant="ghost" size="sm" asChild>
-                    <a href="https://treasures.to" target="_blank" rel="noopener noreferrer">
-                      Visit Platform
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <FeaturedShowcaseApps />
 
           <div className="text-center mt-16">
             <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
