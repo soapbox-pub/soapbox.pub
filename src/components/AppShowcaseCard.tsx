@@ -251,7 +251,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
             <img
               src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
               alt="Edit with Shakespeare"
-              className="h-8 hover:opacity-80 transition-opacity"
+              className="h-6 hover:opacity-80 transition-opacity"
             />
           </a>
           <Button variant="outline" size="sm" asChild>
