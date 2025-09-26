@@ -77,13 +77,12 @@ function FeaturedShowcaseApps() {
               <img
                 src={app.screenshotUrl}
                 alt={`${app.appName} screenshot`}
-                className="absolute inset-0 w-full h-full object-cover opacity-90"
+                className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                 }}
               />
-              <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient}/70`}></div>
               <div className="absolute bottom-4 left-4 text-white">
                 {app.isFeatured && (
                   <Badge className="bg-white/20 text-white border-white/30 mb-2">
