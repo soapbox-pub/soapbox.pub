@@ -72,7 +72,7 @@ function FeaturedShowcaseApps() {
         const colors = getTagColor(app.appTags);
 
         return (
-          <Card key={app.pubkey + app.created_at} className={`group hover:shadow-xl transition-all duration-300 overflow-hidden border-2 hover:${colors.border}`}>
+          <Card key={app.pubkey + app.created_at} className={`group hover:shadow-xl transition-all duration-300 overflow-hidden border-2 hover:${colors.border} h-full flex flex-col`}>
             <div className={`h-48 bg-gradient-to-r ${colors.gradient} relative overflow-hidden`}>
               <img
                 src={app.screenshotUrl}
@@ -95,11 +95,11 @@ function FeaturedShowcaseApps() {
                 </h3>
               </div>
             </div>
-            <CardContent className="p-6">
-              <p className="text-gray-600 mb-4">
+            <CardContent className="p-6 flex flex-col flex-1">
+              <p className="text-gray-600 mb-4 flex-1">
                 {app.description.length > 120 ? `${app.description.slice(0, 120)}...` : app.description}
               </p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-wrap gap-1">
                   {app.appTags.slice(0, 2).map((tag) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
