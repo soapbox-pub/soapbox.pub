@@ -110,13 +110,13 @@ export default function Shakespeare() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg" asChild>
                   <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                    Start Building Free
+                    Start Building
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-2 border-purple-200 hover:bg-purple-50" asChild>
-                  <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-5 w-5" />
+                  <a href="/shakespeare-resources">
+                    <FileText className="mr-2 h-5 w-5" />
                     Resource Center
                   </a>
                 </Button>
@@ -326,8 +326,8 @@ export default function Shakespeare() {
               These are just a few examples. Shakespeare can build virtually any web application you can imagine.
             </p>
             <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
-              <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                Start Building Your Project
+              <a href="/showcase">
+                View more
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -659,133 +659,10 @@ export default function Shakespeare() {
         </div>
       </section>
 
-      {/* AI Streaming & Interface */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Refined Experience
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every detail polished for the ultimate development experience
-            </p>
-          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <Card className="border-2 border-blue-200 hover:border-blue-300 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">AI Streaming</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Watch your website come to life in real-time as the AI streams changes directly to your preview window.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Real-time code generation
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Live preview updates
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Instant feedback loop
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-200 hover:border-purple-300 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <Monitor className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Refined Interface</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Beautiful, intuitive interface designed for both beginners and professionals. Every interaction is smooth and purposeful.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Clean, modern design
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Responsive layout
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Keyboard shortcuts
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-yellow-200 hover:border-yellow-300 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4">
-                  <Download className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Export Everything</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Export your complete project as a ZIP file, deploy to any hosting service, or push directly to GitHub.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
-                    Complete source code
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
-                    All assets included
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
-                    Deploy anywhere
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Screenshot Gallery */}
-          <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center text-gray-900">See It In Action</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <img
-                  src="/shakespeare-resources/build-portfolio-example.png"
-                  alt="Building a portfolio website with AI"
-                  className="w-full rounded-xl shadow-lg"
-                />
-                <p className="text-center text-sm text-gray-600">Building a professional portfolio website</p>
-              </div>
-              <div className="space-y-4">
-                <img
-                  src="/shakespeare-resources/make-website-example-ai-model-hub.png"
-                  alt="Creating an AI model hub website"
-                  className="w-full rounded-xl shadow-lg"
-                />
-                <p className="text-center text-sm text-gray-600">Creating complex applications with ease</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Resource Center */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -848,7 +725,7 @@ export default function Shakespeare() {
               asChild
             >
               <a href="/shakespeare-resources">
-                <ExternalLink className="mr-2 h-5 w-5" />
+                <FileText className="mr-2 h-5 w-5" />
                 View All Resources
               </a>
             </Button>
@@ -888,7 +765,7 @@ export default function Shakespeare() {
                 variant="outline"
                 className="border-2 border-purple-200 hover:bg-purple-50 px-8 py-4 text-lg"
               >
-                <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
+                <a href="/shakespeare-resources">
                   📚 Learn More
                 </a>
               </Button>
