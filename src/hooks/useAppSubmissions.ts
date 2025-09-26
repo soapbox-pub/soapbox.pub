@@ -17,6 +17,9 @@ const MODERATOR_HEX = (() => {
   }
 })();
 
+// Soapbox team follow pack naddr (same as used on About page)
+const SOAPBOX_TEAM_NADDR = 'naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw';
+
 export interface AppSubmission extends NostrEvent {
   appName: string;
   websiteUrl: string;
@@ -37,6 +40,33 @@ export function useAppSubmissions() {
   return useQuery({
     queryKey: ['app-submissions'],
     queryFn: async (): Promise<AppSubmission[]> => {
+      // Get Soapbox team follow pack for auto-approval
+      let teamPubkeys = new Set<string>();
+      try {
+        const decoded = nip19.decode(SOAPBOX_TEAM_NADDR);
+        if (decoded.type === 'naddr') {
+          const addrData = decoded.data;
+          const teamEvents = await nostr.query([{
+            kinds: [addrData.kind],
+            authors: [addrData.pubkey],
+            '#d': [addrData.identifier],
+            limit: 1
+          }]);
+
+          if (teamEvents.length > 0) {
+            const teamEvent = teamEvents[0];
+            // Extract pubkeys from 'p' tags
+            teamEvent.tags
+              .filter(([name]) => name === 'p')
+              .forEach(([, pubkey]) => {
+                if (pubkey) teamPubkeys.add(pubkey);
+              });
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to fetch Soapbox team follow pack:', error);
+      }
+
       // Get all app submissions (kind 31733)
       const submissionEvents = await nostr.query([{
         kinds: [APP_SUBMISSION_KIND],
@@ -168,7 +198,8 @@ export function useAppSubmissions() {
           const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
           const isFeatured = featuredAppCoords.has(appCoordinate);
           const isSubmittedByModerator = event.pubkey === MODERATOR_HEX;
-          const isApproved = approvedAppCoords.has(appCoordinate) || isFeatured || isSubmittedByModerator; // Featured apps and moderator submissions are automatically approved
+          const isSubmittedByTeamMember = teamPubkeys.has(event.pubkey);
+          const isApproved = approvedAppCoords.has(appCoordinate) || isFeatured || isSubmittedByModerator || isSubmittedByTeamMember; // Featured apps, moderator submissions, and team member submissions are automatically approved
           const isHidden = hiddenAppCoords.has(appCoordinate);
 
           submissions.push({
