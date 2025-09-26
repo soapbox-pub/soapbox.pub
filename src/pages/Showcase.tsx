@@ -6,8 +6,118 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MKStackAppsFeed } from "@/components/MKStackAppsFeed";
 import { useSEO } from "@/hooks/useSEO";
+import { useState } from "react";
 
 export default function Showcase() {
+  const [selectedFilter, setSelectedFilter] = useState<string>('all');
+
+  // Shakespeare apps data
+  const shakespeareApps = [
+    {
+      id: 'blockparty',
+      name: 'BlockParty',
+      description: 'Bitcoin block mining dashboard with real-time stats and analytics.',
+      image: '/assets/images/shakespeare-screenshots/blockparty-example.png',
+      url: 'https://blockparty-dashboard.shakespeare.wtf/blockparty',
+      categories: ['crypto', 'dashboard'],
+      gradient: 'from-orange-50 to-yellow-50'
+    },
+    {
+      id: 'digital-stage',
+      name: 'Digital Stage',
+      description: 'Professional band website with music player, tour dates, and fan engagement.',
+      image: '/assets/images/shakespeare-screenshots/band-website.png',
+      url: 'https://digital-stage-w5v0.shakespeare.to/',
+      categories: ['music', 'creative'],
+      gradient: 'from-pink-50 to-red-50'
+    },
+    {
+      id: 'brewcraft',
+      name: 'BrewCraft',
+      description: 'Beautiful coffee shop website with menu, locations, and online ordering.',
+      image: '/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png',
+      url: 'https://brewcraft-phoenix.shakespeare.wtf/',
+      categories: ['business', 'ecommerce'],
+      gradient: 'from-amber-50 to-yellow-50'
+    },
+    {
+      id: 'bookstr',
+      name: 'Bookstr',
+      description: 'Goodreads alternative for book lovers with reviews, ratings, and reading lists.',
+      image: '/assets/images/shakespeare-screenshots/bookstr-example.png',
+      url: 'https://bookstr.shakespeare.wtf/',
+      categories: ['reading', 'social'],
+      gradient: 'from-purple-50 to-blue-50'
+    },
+    {
+      id: 'nrello',
+      name: 'Nrello',
+      description: 'Kanban board project management tool inspired by Trello with drag-and-drop.',
+      image: '/assets/images/shakespeare-screenshots/kanban-example.png',
+      url: 'https://nrello-3.shakespeare.wtf',
+      categories: ['productivity', 'business'],
+      gradient: 'from-violet-50 to-pink-50'
+    },
+    {
+      id: 'moonfile',
+      name: 'MoonFile',
+      description: 'Gaming platform with file sharing, community features, and game discovery.',
+      image: '/assets/images/shakespeare-screenshots/moonfile-game-example.png',
+      url: 'https://moonfile.vercel.app/',
+      categories: ['gaming', 'social'],
+      gradient: 'from-blue-50 to-purple-50'
+    },
+    {
+      id: 'betstr',
+      name: 'Betstr',
+      description: 'Peer-to-peer betting with Lightning on Nostr. Decentralized wagering platform.',
+      image: '/assets/images/shakespeare-screenshots/betstr-week1.png',
+      url: 'https://project-betstr-description-i-want-to-w8ll.shakespeare.to/',
+      categories: ['finance', 'crypto'],
+      gradient: 'from-blue-50 to-purple-50'
+    },
+    {
+      id: 'hashman',
+      name: 'Hashman',
+      description: 'Pacman-style game built with Shakespeare. Classic arcade gaming meets modern web technology.',
+      image: '/assets/images/shakespeare-screenshots/hashman-week1.png',
+      url: 'https://npub173vexauak3y5zctuapqh2p90pjnscyqr6zfh4vqa8r0pfsmkp5lqtjfk7c.shakespeare.to/',
+      categories: ['gaming', 'creative'],
+      gradient: 'from-yellow-50 to-orange-50'
+    },
+    {
+      id: 'reviewstr',
+      name: 'Reviewstr',
+      description: 'Share your experiences and discover amazing places on Nostr. A community-driven review platform.',
+      image: '/assets/images/shakespeare-screenshots/reviewstr-week1.png',
+      url: 'https://nostr-react-boilerplate-mbpz.shakespeare.to/',
+      categories: ['social', 'review'],
+      gradient: 'from-emerald-50 to-blue-50'
+    }
+  ];
+
+  // Category definitions with colors
+  const categories = {
+    all: { label: 'All Apps', color: 'bg-gray-100 text-gray-700' },
+    gaming: { label: 'Gaming', color: 'bg-cyan-100 text-cyan-700' },
+    social: { label: 'Social', color: 'bg-rose-100 text-rose-700' },
+    business: { label: 'Business', color: 'bg-emerald-100 text-emerald-700' },
+    crypto: { label: 'Crypto', color: 'bg-orange-100 text-orange-700' },
+    finance: { label: 'Finance', color: 'bg-yellow-100 text-yellow-700' },
+    creative: { label: 'Creative', color: 'bg-pink-100 text-pink-700' },
+    productivity: { label: 'Productivity', color: 'bg-purple-100 text-purple-700' },
+    reading: { label: 'Reading', color: 'bg-indigo-100 text-indigo-700' },
+    music: { label: 'Music', color: 'bg-pink-100 text-pink-700' },
+    dashboard: { label: 'Dashboard', color: 'bg-slate-100 text-slate-700' },
+    ecommerce: { label: 'E-commerce', color: 'bg-green-100 text-green-700' },
+    review: { label: 'Review', color: 'bg-teal-100 text-teal-700' }
+  };
+
+  // Filter apps based on selected category
+  const filteredApps = selectedFilter === 'all'
+    ? shakespeareApps
+    : shakespeareApps.filter(app => app.categories.includes(selectedFilter));
+
   // Set custom SEO for Showcase page
   useSEO({
     title: 'App Showcase - Shakespeare & MKStack Apps on Nostr | Soapbox',
@@ -70,180 +180,85 @@ export default function Showcase() {
               <span className="text-2xl">🎭</span>
             </div>
             <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">Shakespeare Apps</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
               Creative projects built by our community using Shakespeare AI-powered website builder.
               From games to social platforms, see what's possible with natural language programming.
             </p>
+
+            {/* Filter Bar */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {Object.entries(categories).map(([key, category]) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedFilter(key)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    selectedFilter === key
+                      ? `${category.color} border-2 border-current`
+                      : 'bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  {category.label}
+                  {key !== 'all' && (
+                    <span className="ml-1 text-xs opacity-75">
+                      ({shakespeareApps.filter(app => app.categories.includes(key)).length})
+                    </span>
+                  )}
+                  {key === 'all' && (
+                    <span className="ml-1 text-xs opacity-75">
+                      ({shakespeareApps.length})
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Reviewstr */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center">
-                <img
-                  src="/assets/images/shakespeare-screenshots/build-portfolio-example.png"
-                  alt="Reviewstr Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900">Reviewstr</h3>
-                  <Badge variant="secondary" className="bg-purple-100 text-purple-700">Social</Badge>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Share your experiences and discover amazing places on Nostr. A community-driven review platform.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">By @TravelTelly</span>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href="https://nostr-react-boilerplate-mbpz.shakespeare.to/" target="_blank" rel="noopener noreferrer">
-                      Visit App
+            {filteredApps.map((app) => (
+              <div key={app.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
+                <a href={app.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <div className={`aspect-video bg-gradient-to-br ${app.gradient} flex items-center justify-center`}>
+                    <img
+                      src={app.image}
+                      alt={`${app.name} Screenshot`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </a>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900">{app.name}</h3>
+                    <div className="flex gap-1">
+                      {app.categories.map((category) => (
+                        <Badge
+                          key={category}
+                          variant="secondary"
+                          className={`${categories[category as keyof typeof categories]?.color || 'bg-gray-100 text-gray-700'} cursor-pointer hover:opacity-80 transition-opacity`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setSelectedFilter(category);
+                          }}
+                        >
+                          {categories[category as keyof typeof categories]?.label || category}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    {app.description}
+                  </p>
+                  <div className="flex justify-start">
+                    <a href="https://act2.shakespeare.to/clone?url=..." target="_blank" rel="noopener noreferrer">
+                      <img
+                        src="https://act2.shakespeare.to/badge.svg"
+                        alt="Edit with Shakespeare"
+                        className="h-6 hover:opacity-80 transition-opacity"
+                      />
                     </a>
-                  </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Hashman Game */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-yellow-50 to-orange-50 flex items-center justify-center">
-                <img
-                  src="/assets/images/shakespeare-screenshots/moonfile-game-example.png"
-                  alt="Hashman Game Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900">Hashman</h3>
-                  <Badge variant="secondary" className="bg-orange-100 text-orange-700">Game</Badge>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Pacman-style game built with Shakespeare. Classic arcade gaming meets modern web technology.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">By @QW</span>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href="https://npub173vexauak3y5zctuapqh2p90pjnscyqr6zfh4vqa8r0pfsmkp5lqtjfk7c.shakespeare.to/" target="_blank" rel="noopener noreferrer">
-                      Play Game
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Betstr */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
-                <img
-                  src="/assets/images/shakespeare-screenshots/kanban-example.png"
-                  alt="Betstr Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900">Betstr</h3>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-700">Finance</Badge>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Peer-to-peer betting with Lightning on Nostr. Decentralized wagering platform.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">By @Keith Molina</span>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href="https://project-betstr-description-i-want-to-w8ll.shakespeare.to/" target="_blank" rel="noopener noreferrer">
-                      Visit App
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Portfolio Example */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-violet-50 to-pink-50 flex items-center justify-center">
-                <img
-                  src="/assets/images/shakespeare-screenshots/build-portfolio-example.png"
-                  alt="Portfolio Example Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900">Portfolio Sites</h3>
-                  <Badge variant="secondary" className="bg-violet-100 text-violet-700">Portfolio</Badge>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Professional portfolio websites built in minutes. Showcase your work with style.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Community Examples</span>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                      Build Yours
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Band Website */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-pink-50 to-red-50 flex items-center justify-center">
-                <img
-                  src="/assets/images/shakespeare-screenshots/band-website.png"
-                  alt="Band Website Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900">Band Websites</h3>
-                  <Badge variant="secondary" className="bg-pink-100 text-pink-700">Creative</Badge>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Music and creative websites with integrated media players and event listings.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Community Examples</span>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                      Build Yours
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Coffee Shop */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-amber-50 to-yellow-50 flex items-center justify-center">
-                <img
-                  src="/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png"
-                  alt="Coffee Shop Website Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900">Business Sites</h3>
-                  <Badge variant="secondary" className="bg-amber-100 text-amber-700">Business</Badge>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Local business websites with menus, contact forms, and location information.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Community Examples</span>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                      Build Yours
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Shakespeare CTA */}
