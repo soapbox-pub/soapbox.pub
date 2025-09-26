@@ -33,7 +33,7 @@
     --ring: 207 90% 42%;
 
     --radius: 0.75rem;
-    
+
     /* Soapbox brand colors */
     --azure: 207 90% 42%;
     --azure-50: 207 100% 97%;
@@ -41,6 +41,7 @@
     --azure-500: 207 90% 42%;
     --azure-600: 207 90% 35%;
     --azure-700: 207 90% 28%;
+    --azure-dark: 207 90% 35%;
 
     --sidebar-background: 0 0% 98%;
 
