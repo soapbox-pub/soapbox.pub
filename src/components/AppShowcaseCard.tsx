@@ -12,7 +12,8 @@ import {
   EyeOff,
   MoreVertical,
   CheckCircle,
-  XCircle
+  XCircle,
+  User
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -24,6 +25,7 @@ import type { AppSubmission } from '@/hooks/useAppSubmissions';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
 import { useNostr } from '@nostrify/react';
+import { useAuthor } from '@/hooks/useAuthor';
 import { nip19 } from 'nostr-tools';
 import { toast } from '@/hooks/useToast';
 import { useQueryClient } from '@tanstack/react-query';
@@ -41,6 +43,25 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
   const queryClient = useQueryClient();
   const [imageError, setImageError] = useState(false);
 
+  // Get author pubkey from authorNpub field
+  const authorPubkey = React.useMemo(() => {
+    if (!app.authorNpub) return app.pubkey; // Fallback to event pubkey
+
+    try {
+      // If it's already a hex key, use it directly
+      if (app.authorNpub.length === 64 && /^[0-9a-f]+$/i.test(app.authorNpub)) {
+        return app.authorNpub;
+      }
+
+      // Otherwise try to decode as npub
+      const decoded = nip19.decode(app.authorNpub);
+      return decoded.type === 'npub' ? decoded.data : app.pubkey;
+    } catch {
+      return app.pubkey; // Fallback to event pubkey if decode fails
+    }
+  }, [app.authorNpub, app.pubkey]);
+
+  const { data: authorData } = useAuthor(authorPubkey);
   const isOwner = user?.pubkey === app.pubkey;
   const MODERATOR_NPUB = 'npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc';
   const MODERATOR_HEX = (() => {
@@ -364,31 +385,44 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-900 mb-1">{app.appName}</h3>
-              <div className="flex items-center gap-2">
-                <a
-                  href={app.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-azure hover:text-azure-dark transition-colors"
-                  title="Visit app"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a
-                  href={app.repositoryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                  title="View repository"
-                >
-                  <GitBranch className="w-4 h-4" />
-                </a>
-              </div>
             </div>
           </div>
         </div>
 
-        <p className="text-gray-600 mb-4 line-clamp-3">{app.description}</p>
+        <p className="text-gray-600 mb-3 line-clamp-3">{app.description}</p>
+
+        {/* Author Information */}
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-6 h-6 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+            {authorData?.metadata?.picture ? (
+              <img
+                src={authorData.metadata.picture}
+                alt={`${authorData.metadata.name || 'Author'} avatar`}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><svg class="w-3 h-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg></div>';
+                }}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <User className="w-3 h-3 text-gray-400" />
+              </div>
+            )}
+          </div>
+          <span className="text-sm text-gray-600">
+            by{' '}
+            <a
+              href={`https://ditto.pub/${app.authorNpub || nip19.npubEncode(authorPubkey)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-azure hover:text-azure-dark transition-colors hover:underline"
+            >
+              {authorData?.metadata?.name || authorData?.metadata?.display_name || 'Anonymous'}
+            </a>
+          </span>
+        </div>
 
         {/* Tags */}
         {app.appTags.length > 0 && (
@@ -406,7 +440,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
           </div>
         )}
 
-        {/* Action Buttons */}
+        {/* Action Links */}
         <div className="flex items-center gap-2">
           <a
             href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
@@ -420,6 +454,16 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
               className="h-6 hover:opacity-80 transition-opacity"
             />
           </a>
+          <Button variant="outline" size="sm" asChild>
+            <a
+              href={app.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit app"
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </Button>
           <Button variant="outline" size="sm" asChild>
             <a
               href={app.repositoryUrl}
