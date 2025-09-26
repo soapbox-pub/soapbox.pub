@@ -478,7 +478,7 @@ ollama serve
                 <div>
                   <h4 className="font-semibold mb-2">Configure in Shakespeare</h4>
                   <ol className="space-y-2 text-sm">
-                    <li>1. Open Shakespeare and go to <strong>Settings > AI Settings</strong></li>
+                    <li>1. Open Shakespeare and go to <strong>Settings &gt; AI Settings</strong></li>
                     <li>2. Scroll to <strong>"Add Custom Provider"</strong></li>
                     <li>3. Click to expand the custom provider section</li>
                     <li>4. Enter the following configuration:</li>

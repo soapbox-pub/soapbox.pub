@@ -189,7 +189,7 @@ export default function ShakespeareAIModelSelection() {
                     <strong>When to use:</strong> Most website building tasks, cost-conscious projects
                   </p>
                   <p className="text-sm mb-4">
-                    Here's the game-changer: <strong>Z.ai's GLM 4.5</strong> delivers near Claude level performance at a fraction of the cost. Our extensive testing shows it nearly matches Claude's capabilities in most website building scenarios.
+                    Here's the game-changer: <strong>Z.ai GLM 4.5</strong> delivers near Claude level performance at a fraction of the cost. Our extensive testing shows it nearly matches Claude's capabilities in most website building scenarios.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
