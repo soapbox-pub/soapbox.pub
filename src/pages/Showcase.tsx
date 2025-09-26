@@ -126,7 +126,7 @@ export default function Showcase() {
     title: 'App Showcase - Community-Submitted Apps Built with Soapbox Tools | Soapbox',
     description: 'Discover and submit applications built with Soapbox tools. Browse community-submitted projects, games, social platforms, and business applications. Submit your own app to the showcase.',
     type: 'website',
-    image: '/assets/images/riga-team.png',
+    image: '/assets/images/shakespeare-screenshots/showcase-page-cover.png',
     keywords: 'soapbox apps, nostr applications, app showcase, submit app, community apps, decentralized apps, nostr showcase, soapbox tools, app directory',
     structuredData: {
       "@context": "https://schema.org",
