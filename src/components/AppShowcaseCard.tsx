@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   ExternalLink,
-  Github,
+  GitBranch,
   Edit,
   Star,
   StarOff,
@@ -90,7 +90,12 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
     <Card className="group hover:shadow-lg transition-all duration-300 hover:border-azure-200">
       <div className="relative">
         {/* App Screenshot */}
-        <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-lg overflow-hidden">
+        <a
+          href={app.websiteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block aspect-video bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-lg overflow-hidden cursor-pointer"
+        >
           {!imageError ? (
             <img
               src={app.screenshotUrl}
@@ -108,7 +113,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
               </div>
             </div>
           )}
-        </div>
+        </a>
 
         {/* Featured Badge */}
         {app.isFeatured && (
@@ -199,6 +204,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-azure hover:text-azure-dark transition-colors"
+                  title="Visit app"
                 >
                   <ExternalLink className="w-4 h-4" />
                 </a>
@@ -207,8 +213,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
+                  title="View repository"
                 >
-                  <Github className="w-4 h-4" />
+                  <GitBranch className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -236,13 +243,28 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
         {/* Action Buttons */}
         <div className="flex gap-2">
           <Button asChild className="flex-1">
-            <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
-              Visit App
+            <a
+              href={`https://act2.shakespeare.to/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2"
+            >
+              <img
+                src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
+                alt="Edit with Shakespeare"
+                className="h-4"
+              />
+              Edit with Shakespeare
             </a>
           </Button>
-          <Button variant="outline" asChild>
-            <a href={app.repositoryUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4" />
+          <Button variant="outline" size="sm" asChild>
+            <a
+              href={app.repositoryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View repository"
+            >
+              <GitBranch className="w-4 h-4" />
             </a>
           </Button>
         </div>

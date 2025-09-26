@@ -12,6 +12,7 @@ import { X, Plus, Upload, ExternalLink } from 'lucide-react';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { toast } from '@/hooks/useToast';
+import { nip19 } from 'nostr-tools';
 import type { AppSubmission } from '@/hooks/useAppSubmissions';
 
 const appSubmissionSchema = z.object({
@@ -57,7 +58,7 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
       authorNpub: editingApp.authorNpub,
       tags: editingApp.appTags,
     } : {
-      authorNpub: user?.pubkey || '',
+      authorNpub: user?.pubkey ? nip19.npubEncode(user.pubkey) : '',
       tags: [],
     }
   });
