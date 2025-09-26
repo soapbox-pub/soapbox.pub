@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "shakespeare-configuring-ai-providers",
   "title": "How to Configure AI Providers in Shakespeare",
   "excerpt": "Shakespeare's flexible AI provider system gives you maximum flexibility to choose from dozens of AI providers. With support for 40+ models across cloud providers, local installations, and custom APIs, you're never locked into a single vendor.",
-  "coverImage": "/assets/blog/shakespeare-choosing-models/shakespeare-choosing-models.png",
+  "coverImage": "/assets/blog/shakespeare-configure-providers/shakespeare-configure-providers.png",
   "date": "2025-09-25",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/derek.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/shakespeare-choosing-models/shakespeare-choosing-models.png"
+    "url": "/assets/blog/shakespeare-configure-providers/shakespeare-configure-providers.png"
   },
   "featured": false,
   "tags": ["shakespeare-resource", "ai-providers", "configuration"]
