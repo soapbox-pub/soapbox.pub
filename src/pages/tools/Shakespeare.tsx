@@ -7,9 +7,17 @@ import { Footer } from "@/components/Footer";
 import { ShakespeareMailchimpForm } from "@/components/ShakespeareMailchimpForm";
 import { RotatingText } from "@/components/RotatingText";
 import { useSEO } from "@/hooks/useSEO";
+import { useAppSubmissions } from "@/hooks/useAppSubmissions";
 import { getAllPostsIncludingResources } from "@/lib/blog/utils";
 
 export default function Shakespeare() {
+  const { data: submissions = [], isLoading: isLoadingSubmissions } = useAppSubmissions();
+
+  // Get featured apps and top 6 for showcase
+  const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
+  const approvedApps = submissions.filter(app => app.isApproved && !app.isFeatured && !app.isHidden);
+  const showcaseApps = [...featuredApps, ...approvedApps].slice(0, 6);
+
   // Set custom SEO for Shakespeare page
   useSEO({
     title: 'Shakespeare - Open Source AI Website Builder | Any Model, Any Provider, Total User Freedom',
@@ -110,13 +118,13 @@ export default function Shakespeare() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg" asChild>
                   <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                    Start Building Free
+                    Start Building
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-2 border-purple-200 hover:bg-purple-50" asChild>
-                  <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-5 w-5" />
+                  <a href="/shakespeare-resources">
+                    <FileText className="mr-2 h-5 w-5" />
                     Resource Center
                   </a>
                 </Button>
@@ -175,163 +183,132 @@ export default function Shakespeare() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Bookstr - Goodreads Alternative */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src="/assets/images/shakespeare-screenshots/bookstr-example.png"
-                  alt="Bookstr - Goodreads alternative built with Shakespeare"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-3 left-3">
-                  <Badge className="bg-purple-600 text-white">📚 Reading Platform</Badge>
-                </div>
+          {isLoadingSubmissions ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading showcase apps...</p>
+            </div>
+          ) : showcaseApps.length > 0 ? (
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {showcaseApps.map((app) => {
+                  // Get a color scheme based on the app's first tag
+                  const getTagColor = (tags: string[]) => {
+                    if (tags.length === 0) return { bg: "bg-gray-600", border: "border-gray-200" };
+
+                    const firstTag = tags[0].toLowerCase();
+                    if (firstTag.includes('social') || firstTag.includes('community')) return { bg: "bg-blue-600", border: "border-blue-200" };
+                    if (firstTag.includes('game') || firstTag.includes('gaming')) return { bg: "bg-purple-600", border: "border-purple-200" };
+                    if (firstTag.includes('business') || firstTag.includes('commerce')) return { bg: "bg-green-600", border: "border-green-200" };
+                    if (firstTag.includes('creative') || firstTag.includes('art')) return { bg: "bg-pink-600", border: "border-pink-200" };
+                    if (firstTag.includes('crypto') || firstTag.includes('bitcoin')) return { bg: "bg-orange-600", border: "border-orange-200" };
+                    if (firstTag.includes('tool') || firstTag.includes('utility')) return { bg: "bg-indigo-600", border: "border-indigo-200" };
+                    return { bg: "bg-purple-600", border: "border-purple-200" };
+                  };
+
+                  const colors = getTagColor(app.appTags);
+
+                  return (
+                    <Card key={app.id} className={`group hover:shadow-xl transition-all duration-300 border-2 hover:${colors.border}`}>
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img
+                          src={app.screenshotUrl}
+                          alt={`${app.appName} screenshot`}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/assets/images/default-app-screenshot.png';
+                          }}
+                        />
+                        <div className="absolute top-3 left-3">
+                          {app.isFeatured && (
+                            <Badge className="bg-yellow-500 text-yellow-50">
+                              <Star className="w-3 h-3 mr-1" />
+                              Featured
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
+                            <img
+                              src={app.appIconUrl}
+                              alt={`${app.appName} icon`}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900">
+                            {app.appName.length > 20 ? `${app.appName.slice(0, 20)}...` : app.appName}
+                          </h3>
+                        </div>
+                        <p className="text-gray-600 mb-4 line-clamp-3">
+                          {app.description.length > 120 ? `${app.description.slice(0, 120)}...` : app.description}
+                        </p>
+                        <div className="flex gap-2">
+                          <Button variant="outline" className="flex-1" asChild>
+                            <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              View Live Site
+                            </a>
+                          </Button>
+                          <Button variant="outline" size="sm" asChild>
+                            <a
+                              href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              title="Clone with Shakespeare"
+                            >
+                              <GitBranch className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Bookstr</h3>
-                <p className="text-gray-600 mb-4">Goodreads alternative for book lovers with reviews, ratings, and reading lists</p>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="https://bookstr.shakespeare.wtf/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
+
+              <div className="text-center mt-12">
+                <p className="text-lg text-gray-600 mb-6">
+                  These are just a few examples. Shakespeare can build virtually any web application you can imagine.
+                </p>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+                  <a href="/showcase">
+                    View All Apps in Showcase
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
-
-            {/* BrewCraft - Coffee Shop */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src="/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png"
-                  alt="BrewCraft - Coffee shop website built with Shakespeare"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-3 left-3">
-                  <Badge className="bg-blue-600 text-white">☕ Business Site</Badge>
-                </div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">BrewCraft</h3>
-                <p className="text-gray-600 mb-4">Beautiful coffee shop website with menu, locations, and online ordering</p>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="https://brewcraft-phoenix.shakespeare.wtf/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Code className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">No showcase apps yet</h3>
+              <p className="text-gray-600 mb-6">
+                Be the first to build something amazing with Shakespeare and submit it to our showcase!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                    Start Building
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
-
-            {/* Digital Stage - Band Website */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src="/assets/images/shakespeare-screenshots/band-website.png"
-                  alt="Digital Stage - Band website built with Shakespeare"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-3 left-3">
-                  <Badge className="bg-purple-600 text-white">🎵 Music & Entertainment</Badge>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Digital Stage</h3>
-                <p className="text-gray-600 mb-4">Professional band website with music player, tour dates, and fan engagement</p>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="https://digital-stage-w5v0.shakespeare.to/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
+                <Button size="lg" variant="outline" asChild>
+                  <a href="/showcase">
+                    Submit Your App
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
-
-            {/* MoonFile - Game Platform */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src="/assets/images/shakespeare-screenshots/moonfile-game-example.png"
-                  alt="MoonFile - Game platform built with Shakespeare"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-3 left-3">
-                  <Badge className="bg-blue-600 text-white">🎮 Gaming</Badge>
-                </div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">MoonFile</h3>
-                <p className="text-gray-600 mb-4">Gaming platform with file sharing, community features, and game discovery</p>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="https://moonfile.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Nrello - Trello Clone */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src="/assets/images/shakespeare-screenshots/kanban-example.png"
-                  alt="Nrello - Trello clone built with Shakespeare"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-3 left-3">
-                  <Badge className="bg-purple-600 text-white">📋 Project Management</Badge>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Nrello</h3>
-                <p className="text-gray-600 mb-4">Kanban board project management tool inspired by Trello with drag-and-drop</p>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="https://nrello-3.shakespeare.wtf" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* BlockParty - Bitcoin Dashboard */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
-                  alt="BlockParty - Bitcoin mining dashboard built with Shakespeare"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-3 left-3">
-                  <Badge className="bg-blue-600 text-white">₿ Crypto Dashboard</Badge>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">BlockParty</h3>
-                <p className="text-gray-600 mb-4">Bitcoin block mining dashboard with real-time stats and analytics</p>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="https://blockparty-dashboard.shakespeare.wtf/blockparty" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-lg text-gray-600 mb-6">
-              These are just a few examples. Shakespeare can build virtually any web application you can imagine.
-            </p>
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
-              <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                Start Building Your Project
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -659,133 +636,10 @@ export default function Shakespeare() {
         </div>
       </section>
 
-      {/* AI Streaming & Interface */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Refined Experience
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every detail polished for the ultimate development experience
-            </p>
-          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <Card className="border-2 border-blue-200 hover:border-blue-300 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">AI Streaming</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Watch your website come to life in real-time as the AI streams changes directly to your preview window.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Real-time code generation
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Live preview updates
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                    Instant feedback loop
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-200 hover:border-purple-300 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <Monitor className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Refined Interface</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Beautiful, intuitive interface designed for both beginners and professionals. Every interaction is smooth and purposeful.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Clean, modern design
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Responsive layout
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></div>
-                    Keyboard shortcuts
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-yellow-200 hover:border-yellow-300 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4">
-                  <Download className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Export Everything</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Export your complete project as a ZIP file, deploy to any hosting service, or push directly to GitHub.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
-                    Complete source code
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
-                    All assets included
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
-                    Deploy anywhere
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Screenshot Gallery */}
-          <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center text-gray-900">See It In Action</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <img
-                  src="/shakespeare-resources/build-portfolio-example.png"
-                  alt="Building a portfolio website with AI"
-                  className="w-full rounded-xl shadow-lg"
-                />
-                <p className="text-center text-sm text-gray-600">Building a professional portfolio website</p>
-              </div>
-              <div className="space-y-4">
-                <img
-                  src="/shakespeare-resources/make-website-example-ai-model-hub.png"
-                  alt="Creating an AI model hub website"
-                  className="w-full rounded-xl shadow-lg"
-                />
-                <p className="text-center text-sm text-gray-600">Creating complex applications with ease</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Resource Center */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -848,7 +702,7 @@ export default function Shakespeare() {
               asChild
             >
               <a href="/shakespeare-resources">
-                <ExternalLink className="mr-2 h-5 w-5" />
+                <FileText className="mr-2 h-5 w-5" />
                 View All Resources
               </a>
             </Button>
@@ -888,7 +742,7 @@ export default function Shakespeare() {
                 variant="outline"
                 className="border-2 border-purple-200 hover:bg-purple-50 px-8 py-4 text-lg"
               >
-                <a href="https://soapbox.pub/shakespeare-resources/" target="_blank" rel="noopener noreferrer">
+                <a href="/shakespeare-resources">
                   📚 Learn More
                 </a>
               </Button>

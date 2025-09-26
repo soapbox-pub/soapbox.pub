@@ -1,33 +1,148 @@
-import { Users, Search, Code, Package } from "lucide-react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Plus, Search, Filter, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { MKStackAppsFeed } from "@/components/MKStackAppsFeed";
 import { useSEO } from "@/hooks/useSEO";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
+import { useAppSubmissions } from "@/hooks/useAppSubmissions";
+import { AppSubmissionForm } from "@/components/AppSubmissionForm";
+import { AppShowcaseCard } from "@/components/AppShowcaseCard";
+import LoginDialog from "@/components/auth/LoginDialog";
+import SignupDialog from "@/components/auth/SignupDialog";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { nip19 } from 'nostr-tools';
+import type { AppSubmission } from "@/hooks/useAppSubmissions";
+
+// App submission event kind
+const APP_SUBMISSION_KIND = 31733;
 
 export default function Showcase() {
+  const { user } = useCurrentUser();
+  const { data: submissions = [], isLoading } = useAppSubmissions();
+  const isMobile = useIsMobile();
+  const [showSubmissionForm, setShowSubmissionForm] = useState(false);
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [showSignupDialog, setShowSignupDialog] = useState(false);
+  const [editingApp, setEditingApp] = useState<AppSubmission | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [showAllApps, setShowAllApps] = useState(true);
+  const [showPendingApps, setShowPendingApps] = useState(false);
+  const [showHiddenApps, setShowHiddenApps] = useState(false);
+  const [showAllTags, setShowAllTags] = useState(false);
+
+  const MODERATOR_NPUB = 'npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc';
+  const MODERATOR_HEX = (() => {
+    try {
+      const decoded = nip19.decode(MODERATOR_NPUB);
+      return decoded.type === 'npub' ? decoded.data : '';
+    } catch {
+      return '';
+    }
+  })();
+  const isModerator = user?.pubkey === MODERATOR_HEX;
+
+  // Filter submissions
+  const visibleSubmissions = submissions.filter(app => !app.isHidden);
+  const hiddenSubmissions = submissions.filter(app => app.isHidden);
+  const featuredApps = visibleSubmissions.filter(app => app.isFeatured);
+  const approvedApps = visibleSubmissions.filter(app => app.isApproved && !app.isFeatured);
+  const pendingApps = visibleSubmissions.filter(app => !app.isApproved);
+
+  // Check if current user has any pending submissions (after pendingApps is defined)
+  const userPendingApps = user ? pendingApps.filter(app => app.pubkey === user.pubkey) : [];
+  const hasUserPendingApps = userPendingApps.length > 0;
+
+  // Apply search and tag filters
+  const filterApps = (apps: AppSubmission[]) => {
+    return apps.filter(app => {
+      const matchesSearch = !searchTerm ||
+        app.appName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        app.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        app.appTags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+
+      const matchesTag = !selectedTag || app.appTags.includes(selectedTag);
+
+      return matchesSearch && matchesTag;
+    });
+  };
+
+  const filteredFeaturedApps = filterApps(featuredApps);
+  const filteredApprovedApps = filterApps(approvedApps);
+
+  // For pending apps: moderators see all, users see only their own
+  const pendingAppsToShow = isModerator ? pendingApps : userPendingApps;
+  const filteredPendingApps = filterApps(pendingAppsToShow);
+
+  const filteredHiddenApps = filterApps(hiddenSubmissions);
+
+  // Get all unique tags from approved and featured apps only (exclude pending and hidden apps)
+  const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
+
+  // Get the most popular tags based on frequency
+  const tagCounts = new Map<string, number>();
+  [...featuredApps, ...approvedApps].forEach(app => {
+    app.appTags.forEach(tag => {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  });
+
+  const sortedTags = Array.from(tagCounts.entries())
+    .sort((a, b) => b[1] - a[1]) // Sort by count descending
+    .map(([tag]) => tag); // Extract just the tag names
+
+  // Show fewer tags on mobile, more on desktop
+  const maxTagsToShow = isMobile ? 3 : 5;
+  const popularTags = sortedTags.slice(0, maxTagsToShow);
+  const remainingTags = sortedTags.slice(maxTagsToShow);
+
+  const handleSubmitClick = () => {
+    if (!user) {
+      setShowLoginDialog(true);
+    } else {
+      setShowSubmissionForm(true);
+    }
+  };
+
+  const handleEditApp = (app: AppSubmission) => {
+    setEditingApp(app);
+    setShowSubmissionForm(true);
+  };
+
+  const handleFormClose = () => {
+    setShowSubmissionForm(false);
+    setEditingApp(null);
+  };
+
   // Set custom SEO for Showcase page
   useSEO({
-    title: 'MKStack Apps Showcase - Decentralized Applications on Nostr | Soapbox',
-    description: 'Discover applications built with MKStack and published on the Nostr network. Browse a curated collection of decentralized apps showcasing the power of open-source development.',
+    title: 'App Showcase - Community-Submitted Apps Built with Soapbox Tools | Soapbox',
+    description: 'Discover and submit applications built with Soapbox tools. Browse community-submitted projects, games, social platforms, and business applications. Submit your own app to the showcase.',
     type: 'website',
-    image: '/assets/images/riga-team.png',
-    keywords: 'mkstack apps, nostr applications, decentralized apps, nostr showcase, mkstack showcase, nostr software, decentralized development, nostr ecosystem',
+    image: '/assets/images/shakespeare-screenshots/showcase-page-cover.png',
+    keywords: 'soapbox apps, nostr applications, app showcase, submit app, community apps, decentralized apps, nostr showcase, soapbox tools, app directory',
     structuredData: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "MKStack Apps Showcase",
-      "description": "Collection of applications built with MKStack and published on the Nostr network",
+      "name": "Soapbox App Showcase",
+      "description": "Community-submitted applications built with Soapbox tools",
       "author": {
         "@type": "Organization",
         "name": "Soapbox"
-      },
-      "about": {
-        "@type": "SoftwareApplication",
-        "name": "MKStack",
-        "description": "Framework for building decentralized applications on Nostr"
       }
     }
   });
@@ -38,132 +153,331 @@ export default function Showcase() {
 
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200 mb-6">
-            🚀 Powered by Soapbox Technology
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
-            Apps & Platforms{" "}
-            <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
-              Built with Soapbox
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Discover applications built with MKStack and published on Nostr. 
-            Each app showcases the power of decentralized development and distribution.
-          </p>
-        </div>
-      </section>
-
-      {/* MKStack Apps Feed */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="w-16 h-16 bg-violet-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Package className="h-8 w-8 text-violet-600" />
-            </div>
-            <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">MKStack Apps</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover applications built with MKStack and published on the Nostr network. 
-              Each app demonstrates the power of decentralized development and distribution.
+          <div className="text-center mb-8">
+            <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200 mb-6">
+              🚀 Community Showcase
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
+              App{" "}
+              <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
+                Showcase
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Discover amazing applications built by our community using Soapbox tools.
+              Submit your own app to join the showcase and get discovered.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" onClick={handleSubmitClick} className="bg-azure hover:bg-azure-dark">
+                <Plus className="w-5 h-5 mr-2" />
+                Submit Your App
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="/tools" target="_blank" rel="noopener noreferrer">
+                  Explore Tools
+                </a>
+              </Button>
+            </div>
           </div>
-          
-          <MKStackAppsFeed />
+
+          {/* Search and Filter */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="flex flex-col gap-4 mb-4">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Input
+                  placeholder="Search apps..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+
+              {/* Tag Filters */}
+              <div className="space-y-3">
+                <div className="flex flex-wrap gap-2 justify-start sm:justify-center">
+                  <Button
+                    variant={selectedTag ? "outline" : "default"}
+                    size="sm"
+                    onClick={() => setSelectedTag(null)}
+                    className="shrink-0"
+                  >
+                    All Tags
+                  </Button>
+                  {popularTags.map((tag) => (
+                    <Button
+                      key={tag}
+                      variant={selectedTag === tag ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                      className="shrink-0"
+                    >
+                      {tag}
+                    </Button>
+                  ))}
+
+                  {/* Show More Tags Button */}
+                  {remainingTags.length > 0 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setShowAllTags(!showAllTags)}
+                      className="shrink-0 text-azure hover:text-azure-dark"
+                    >
+                      {showAllTags ? 'Show Less' : `+${remainingTags.length} More`}
+                    </Button>
+                  )}
+                </div>
+
+                {/* Additional Tags (Collapsible) */}
+                {showAllTags && remainingTags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200 justify-start sm:justify-center">
+                    {remainingTags.map((tag) => (
+                      <Button
+                        key={tag}
+                        variant={selectedTag === tag ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                        className="shrink-0"
+                      >
+                        {tag}
+                      </Button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Statistics and Success Metrics */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
+      {/* Main Content */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-16">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">Building the Future of Social</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our tools power a growing ecosystem of decentralized social platforms and communities.
-            </p>
-          </div>
-
-          {/* Key Features Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-azure-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Code className="h-8 w-8 text-azure-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Always Open Source</h3>
-              <p className="text-gray-600 mb-4">
-                Complete transparency and control. Every tool is open source, giving you the freedom to modify, 
-                deploy, and maintain your own infrastructure.
-              </p>
-              <Badge variant="secondary" className="bg-azure-50 text-azure-700">MIT Licensed</Badge>
+          {isLoading ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-azure mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading apps...</p>
             </div>
+          ) : (
+            <>
+              {/* Featured Apps */}
+              {filteredFeaturedApps.length > 0 && (
+                <div className="mb-16">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
+                      <span className="text-xl">⭐</span>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-display font-bold text-gray-900">Featured Apps</h2>
+                      <p className="text-gray-600">Handpicked applications showcasing the best of our community</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredFeaturedApps.map((app) => (
+                      <AppShowcaseCard
+                        key={app.id}
+                        app={app}
+                        onEdit={handleEditApp}
+                        showModerationControls={isModerator}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
 
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-emerald-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Decentralized by Design</h3>
-              <p className="text-gray-600 mb-4">
-                Built on Nostr protocol for true decentralization. No single point of failure, 
-                no platform lock-in, just pure peer-to-peer communication.
-              </p>
-              <Badge variant="secondary" className="bg-emerald-50 text-emerald-700">Nostr Protocol</Badge>
-            </div>
+              {/* All Apps (Approved) */}
+              {filteredApprovedApps.length > 0 && (
+                <div className="mb-16">
+                  <Collapsible open={showAllApps} onOpenChange={setShowAllApps}>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <span className="text-xl">📱</span>
+                          </div>
+                          <div className="text-left">
+                            <h2 className="text-3xl font-display font-bold text-gray-900">
+                              All Apps ({filteredApprovedApps.length})
+                            </h2>
+                            <p className="text-gray-600">
+                              {showAllApps ? 'Click to collapse' : 'Click to view all approved community apps'}
+                            </p>
+                          </div>
+                        </div>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredApprovedApps.map((app) => (
+                          <AppShowcaseCard
+                            key={app.id}
+                            app={app}
+                            onEdit={handleEditApp}
+                            showModerationControls={isModerator}
+                          />
+                        ))}
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              )}
 
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-violet-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Search className="h-8 w-8 text-violet-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Production Ready</h3>
-              <p className="text-gray-600 mb-4">
-                Battle-tested tools powering real communities. From small groups to large networks, 
-                our tools scale with your needs.
-              </p>
-              <Badge variant="secondary" className="bg-violet-50 text-violet-700">Enterprise Scale</Badge>
-            </div>
-          </div>
+              {/* Pending Apps (Moderator + Users with pending apps) */}
+              {(isModerator || hasUserPendingApps) && filteredPendingApps.length > 0 && (
+                <div className="mb-16">
+                  <Collapsible open={showPendingApps} onOpenChange={setShowPendingApps}>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
+                            <span className="text-xl">⏳</span>
+                          </div>
+                          <div className="text-left">
+                            <h2 className="text-3xl font-display font-bold text-gray-900">
+                              {isModerator ? 'Pending Approval' : 'Your Pending Apps'} ({filteredPendingApps.length})
+                            </h2>
+                            <p className="text-gray-600">
+                              {isModerator
+                                ? 'Apps awaiting moderator approval'
+                                : 'Your submitted apps awaiting approval'
+                              }
+                            </p>
+                          </div>
+                        </div>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {!isModerator && (
+                        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                          <div className="flex items-start gap-3">
+                            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <span className="text-white text-sm">ℹ</span>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-blue-900 mb-1">Pending Review</h4>
+                              <p className="text-blue-700 text-sm">
+                                Your app submissions are being reviewed by our moderation team.
+                                Once approved, they will appear in the public showcase. You can edit
+                                your submissions while they're pending.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredPendingApps.map((app) => (
+                          <AppShowcaseCard
+                            key={app.id}
+                            app={app}
+                            onEdit={handleEditApp}
+                            showModerationControls={isModerator}
+                          />
+                        ))}
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              )}
+
+              {/* Hidden Apps (Moderator Only) */}
+              {isModerator && filteredHiddenApps.length > 0 && (
+                <div className="mb-16">
+                  <Collapsible open={showHiddenApps} onOpenChange={setShowHiddenApps}>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                            <EyeOff className="w-6 h-6 text-red-600" />
+                          </div>
+                          <div className="text-left">
+                            <h2 className="text-3xl font-display font-bold text-gray-900">
+                              Hidden Apps ({filteredHiddenApps.length})
+                            </h2>
+                            <p className="text-gray-600">
+                              Moderator view - hidden from public
+                            </p>
+                          </div>
+                        </div>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredHiddenApps.map((app) => (
+                          <AppShowcaseCard
+                            key={app.id}
+                            app={app}
+                            onEdit={handleEditApp}
+                            showModerationControls={true}
+                          />
+                        ))}
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              )}
+
+              {/* Empty State */}
+              {filteredFeaturedApps.length === 0 && filteredApprovedApps.length === 0 && (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Search className="w-8 h-8 text-gray-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No apps found</h3>
+                  <p className="text-gray-600 mb-6">
+                    {searchTerm || selectedTag
+                      ? "Try adjusting your search or filters"
+                      : "Be the first to submit an app to the showcase!"
+                    }
+                  </p>
+                  <Button onClick={handleSubmitClick}>
+                    <Plus className="w-4 h-4 mr-2" />
+                    Submit Your App
+                  </Button>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-8 backdrop-blur-sm">
-            <Code className="h-10 w-10 text-white" />
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Ready to Join Our Ecosystem?
-          </h2>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Explore these amazing platforms built with Soapbox tools, or create your own community 
-            using our open-source frameworks. The future of decentralized social media is here.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg font-semibold" asChild>
-              <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
-                <Users className="mr-2 h-5 w-5" />
-                Try Ditto Platform
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg font-semibold border-white text-white hover:bg-white hover:text-azure" asChild>
-              <Link to="/tools">
-                <Code className="mr-2 h-5 w-5" />
-                Build Your Own
-              </Link>
-            </Button>
-          </div>
-          
-          <div className="pt-8 opacity-75">
-            <p className="text-sm">
-              All tools are open source and production ready. 
-              <a href="https://nostrbook.dev" className="underline hover:opacity-100 transition-opacity ml-1" target="_blank" rel="noopener noreferrer">
-                Learn about Nostr →
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Dialogs */}
+      <Dialog open={showSubmissionForm} onOpenChange={setShowSubmissionForm}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>
+              {editingApp ? 'Edit App Submission' : 'Submit Your App'}
+            </DialogTitle>
+          </DialogHeader>
+          <AppSubmissionForm
+            editingApp={editingApp || undefined}
+            onSuccess={handleFormClose}
+            onCancel={handleFormClose}
+          />
+        </DialogContent>
+      </Dialog>
+
+      <LoginDialog
+        isOpen={showLoginDialog}
+        onClose={() => setShowLoginDialog(false)}
+        onLogin={() => {
+          setShowLoginDialog(false);
+          setShowSubmissionForm(true);
+        }}
+        onSignup={() => {
+          setShowLoginDialog(false);
+          setShowSignupDialog(true);
+        }}
+      />
+
+      <SignupDialog
+        isOpen={showSignupDialog}
+        onClose={() => {
+          setShowSignupDialog(false);
+          setShowSubmissionForm(true);
+        }}
+      />
 
       <Footer />
     </div>

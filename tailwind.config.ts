@@ -38,6 +38,7 @@ export default {
 					500: 'hsl(var(--azure-500))',
 					600: 'hsl(var(--azure-600))',
 					700: 'hsl(var(--azure-700))',
+					dark: 'hsl(var(--azure-dark))',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
