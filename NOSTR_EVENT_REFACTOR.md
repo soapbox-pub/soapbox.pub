@@ -24,7 +24,10 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
   - **Approved Apps List:** `kind: 30267` with `d` tag "soapbox-approved-apps"
   - **Featured Apps List:** `kind: 30267` with `d` tag "soapbox-featured-apps"
   - **Workflow:** Submit → Pending → Approved → (Optionally) Featured
-  - **Auto-approval:** Featuring an app automatically adds it to approved list
+  - **Auto-approval Rules:**
+    - Featuring an app automatically adds it to approved list
+    - Apps submitted by moderators are automatically approved
+    - Moderator submissions skip the pending queue entirely
 - **Benefits:**
   - Quality control for public showcase
   - Clear moderation workflow
@@ -140,6 +143,7 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
    - Added logic to process NIP-56 reports for hidden apps
    - Implemented proper hide/unhide state resolution (latest action wins)
    - Added `isApproved` field to AppSubmission interface
+   - Added auto-approval logic for moderator submissions
 
 3. **`src/components/AppShowcaseCard.tsx`**
    - Refactored moderation actions to use proper event types
@@ -172,6 +176,8 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 6. **Auditability:** Clear trail of all moderation actions
 7. **Quality Control:** Approval workflow ensures only vetted apps appear publicly
 8. **Spam Prevention:** Prevents automatic publication of inappropriate content
+9. **Moderator Efficiency:** Auto-approval for moderator submissions streamlines workflow
+10. **Trust System:** Moderators can publish immediately while maintaining quality control
 
 ## Future Considerations
 
@@ -189,6 +195,12 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 3. **Track Progress:** Users can see their own pending submissions and edit them
 4. **Approval:** Moderator approves app, making it publicly visible
 5. **Featured:** Moderator may optionally feature approved apps
+
+### For Moderators:
+1. **Auto-Approval:** Any app submitted by moderator is automatically approved
+2. **No Pending:** Moderator submissions skip the pending queue entirely
+3. **Instant Visibility:** Moderator apps appear immediately in "All Apps" section
+4. **Can Still Feature:** Moderator can optionally feature their own apps
 
 ### For Moderators:
 1. **Review Pending:** View "Pending Approval" section with all submissions

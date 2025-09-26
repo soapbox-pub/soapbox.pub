@@ -167,7 +167,8 @@ export function useAppSubmissions() {
           // Check if app is featured, approved, or hidden
           const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
           const isFeatured = featuredAppCoords.has(appCoordinate);
-          const isApproved = approvedAppCoords.has(appCoordinate) || isFeatured; // Featured apps are automatically approved
+          const isSubmittedByModerator = event.pubkey === MODERATOR_HEX;
+          const isApproved = approvedAppCoords.has(appCoordinate) || isFeatured || isSubmittedByModerator; // Featured apps and moderator submissions are automatically approved
           const isHidden = hiddenAppCoords.has(appCoordinate);
 
           submissions.push({
