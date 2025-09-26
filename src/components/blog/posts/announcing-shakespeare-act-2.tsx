@@ -350,6 +350,15 @@ export default function AnnouncingShakespeareAct2() {
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold">✅ Yes</td>
               </tr>
               <tr>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Deployment Options</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Paid</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">Paid</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-3 font-bold"> ✅ Free</td>
+              </tr>
+              <tr>
                 <td className="border border-gray-300 dark:border-gray-700 p-3 font-medium">Nostr Support</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-3">❌ No</td>
