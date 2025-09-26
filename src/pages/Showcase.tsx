@@ -73,8 +73,8 @@ export default function Showcase() {
   const filteredRegularApps = filterApps(regularApps);
   const filteredHiddenApps = filterApps(hiddenSubmissions);
 
-  // Get all unique tags
-  const allTags = Array.from(new Set(submissions.flatMap(app => app.appTags))).sort();
+  // Get all unique tags from visible apps only (exclude tags that only appear on hidden apps)
+  const allTags = Array.from(new Set(visibleSubmissions.flatMap(app => app.appTags))).sort();
 
   const handleSubmitClick = () => {
     if (!user) {
