@@ -12,6 +12,7 @@ import { AppSubmissionForm } from "@/components/AppSubmissionForm";
 import { AppShowcaseCard } from "@/components/AppShowcaseCard";
 import LoginDialog from "@/components/auth/LoginDialog";
 import SignupDialog from "@/components/auth/SignupDialog";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import {
   Dialog,
   DialogContent,
@@ -32,6 +33,7 @@ const APP_SUBMISSION_KIND = 31733;
 export default function Showcase() {
   const { user } = useCurrentUser();
   const { data: submissions = [], isLoading } = useAppSubmissions();
+  const isMobile = useIsMobile();
   const [showSubmissionForm, setShowSubmissionForm] = useState(false);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
   const [showSignupDialog, setShowSignupDialog] = useState(false);
@@ -41,6 +43,7 @@ export default function Showcase() {
   const [showAllApps, setShowAllApps] = useState(true);
   const [showPendingApps, setShowPendingApps] = useState(false);
   const [showHiddenApps, setShowHiddenApps] = useState(false);
+  const [showAllTags, setShowAllTags] = useState(false);
 
   const MODERATOR_NPUB = 'npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc';
   const MODERATOR_HEX = (() => {
@@ -90,7 +93,7 @@ export default function Showcase() {
   // Get all unique tags from approved and featured apps only (exclude pending and hidden apps)
   const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
 
-  // Get the 5 most popular tags based on frequency
+  // Get the most popular tags based on frequency
   const tagCounts = new Map<string, number>();
   [...featuredApps, ...approvedApps].forEach(app => {
     app.appTags.forEach(tag => {
@@ -98,10 +101,14 @@ export default function Showcase() {
     });
   });
 
-  const popularTags = Array.from(tagCounts.entries())
+  const sortedTags = Array.from(tagCounts.entries())
     .sort((a, b) => b[1] - a[1]) // Sort by count descending
-    .slice(0, 5) // Take top 5
     .map(([tag]) => tag); // Extract just the tag names
+
+  // Show fewer tags on mobile, more on desktop
+  const maxTagsToShow = isMobile ? 3 : 5;
+  const popularTags = sortedTags.slice(0, maxTagsToShow);
+  const remainingTags = sortedTags.slice(maxTagsToShow);
 
   const handleSubmitClick = () => {
     if (!user) {
@@ -176,8 +183,8 @@ export default function Showcase() {
 
           {/* Search and Filter */}
           <div className="max-w-4xl mx-auto mb-8">
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <div className="relative flex-1">
+            <div className="flex flex-col gap-4 mb-4">
+              <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <Input
                   placeholder="Search apps..."
@@ -186,24 +193,59 @@ export default function Showcase() {
                   className="pl-10"
                 />
               </div>
-              <div className="flex gap-2">
-                <Button
-                  variant={selectedTag ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedTag(null)}
-                >
-                  All Tags
-                </Button>
-                {popularTags.map((tag) => (
+
+              {/* Tag Filters */}
+              <div className="space-y-3">
+                <div className="flex flex-wrap gap-2 justify-start sm:justify-center">
                   <Button
-                    key={tag}
-                    variant={selectedTag === tag ? "default" : "outline"}
+                    variant={selectedTag ? "outline" : "default"}
                     size="sm"
-                    onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                    onClick={() => setSelectedTag(null)}
+                    className="shrink-0"
                   >
-                    {tag}
+                    All Tags
                   </Button>
-                ))}
+                  {popularTags.map((tag) => (
+                    <Button
+                      key={tag}
+                      variant={selectedTag === tag ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                      className="shrink-0"
+                    >
+                      {tag}
+                    </Button>
+                  ))}
+
+                  {/* Show More Tags Button */}
+                  {remainingTags.length > 0 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setShowAllTags(!showAllTags)}
+                      className="shrink-0 text-azure hover:text-azure-dark"
+                    >
+                      {showAllTags ? 'Show Less' : `+${remainingTags.length} More`}
+                    </Button>
+                  )}
+                </div>
+
+                {/* Additional Tags (Collapsible) */}
+                {showAllTags && remainingTags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200 justify-start sm:justify-center">
+                    {remainingTags.map((tag) => (
+                      <Button
+                        key={tag}
+                        variant={selectedTag === tag ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                        className="shrink-0"
+                      >
+                        {tag}
+                      </Button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
