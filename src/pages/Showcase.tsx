@@ -90,6 +90,19 @@ export default function Showcase() {
   // Get all unique tags from approved and featured apps only (exclude pending and hidden apps)
   const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
 
+  // Get the 5 most popular tags based on frequency
+  const tagCounts = new Map<string, number>();
+  [...featuredApps, ...approvedApps].forEach(app => {
+    app.appTags.forEach(tag => {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  });
+
+  const popularTags = Array.from(tagCounts.entries())
+    .sort((a, b) => b[1] - a[1]) // Sort by count descending
+    .slice(0, 5) // Take top 5
+    .map(([tag]) => tag); // Extract just the tag names
+
   const handleSubmitClick = () => {
     if (!user) {
       setShowLoginDialog(true);
@@ -181,7 +194,7 @@ export default function Showcase() {
                 >
                   All Tags
                 </Button>
-                {allTags.slice(0, 5).map((tag) => (
+                {popularTags.map((tag) => (
                   <Button
                     key={tag}
                     variant={selectedTag === tag ? "default" : "outline"}
