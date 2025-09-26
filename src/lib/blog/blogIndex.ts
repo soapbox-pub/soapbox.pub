@@ -54,6 +54,7 @@ import * as shakespeareaimodelselection from '../../components/blog/posts/shakes
 import * as shakespeareimportingexistingprojects from '../../components/blog/posts/shakespeare-importing-existing-projects';
 import * as shakespearedeployingsharingprojects from '../../components/blog/posts/shakespeare-deploying-sharing-projects';
 import * as shakespeareeditingcode from '../../components/blog/posts/shakespeare-editing-code';
+import * as announcingshakespeareact2 from '../../components/blog/posts/announcing-shakespeare-act-2';
 
 export interface BlogPost {
   slug: string;
@@ -73,6 +74,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  announcingshakespeareact2.meta,
   shakespeareeditingcode.meta,
   shakespearedeployingsharingprojects.meta,
   shakespeareimportingexistingprojects.meta,
@@ -134,6 +136,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'announcingshakespeareact2':
+      return (await import('../../components/blog/posts/announcing-shakespeare-act-2')).default;
     case 'shakespeareeditingcode':
       return (await import('../../components/blog/posts/shakespeare-editing-code')).default;
     case 'shakespearedeployingsharingprojects':
