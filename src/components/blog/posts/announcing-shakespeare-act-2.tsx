@@ -3,6 +3,8 @@ import { Card, CardContent } from '../../ui/card';
 import { Badge } from '../../ui/badge';
 import { Button } from '../../ui/button';
 import { ShakespeareMailchimpForm } from '../../ShakespeareMailchimpForm';
+import { useAppSubmissions } from '../../../hooks/useAppSubmissions';
+import { ExternalLink, GitBranch, Star, ArrowRight } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -38,15 +40,161 @@ export const meta: BlogPostMeta = {
   "tags": ["shakespeare", "ai", "announcement", "open-source", "development"]
 };
 
+function FeaturedAppsSection() {
+  const { data: submissions = [], isLoading } = useAppSubmissions();
+
+  // Get featured apps and top 4 for showcase
+  const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
+  const approvedApps = submissions.filter(app => app.isApproved && !app.isFeatured && !app.isHidden);
+  const showcaseApps = [...featuredApps, ...approvedApps].slice(0, 4);
+
+  if (isLoading) {
+    return (
+      <div className="not-prose my-8">
+        <div className="text-center py-12">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading showcase apps...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (showcaseApps.length === 0) {
+    return (
+      <div className="not-prose my-8">
+        <div className="text-center py-12">
+          <p className="text-gray-600 mb-6">
+            Be the first to build something amazing with Shakespeare and submit it to our showcase!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+              <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                Start Building
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="/showcase">
+                Submit Your App
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="not-prose my-8">
+      <div className="grid md:grid-cols-2 gap-6">
+        {showcaseApps.map((app) => {
+          // Get a color scheme based on the app's first tag
+          const getTagColor = (tags: string[]) => {
+            if (tags.length === 0) return { bg: "bg-gray-600", border: "border-gray-200" };
+
+            const firstTag = tags[0].toLowerCase();
+            if (firstTag.includes('social') || firstTag.includes('community')) return { bg: "bg-blue-600", border: "border-blue-200" };
+            if (firstTag.includes('game') || firstTag.includes('gaming')) return { bg: "bg-purple-600", border: "border-purple-200" };
+            if (firstTag.includes('business') || firstTag.includes('commerce')) return { bg: "bg-green-600", border: "border-green-200" };
+            if (firstTag.includes('creative') || firstTag.includes('art')) return { bg: "bg-pink-600", border: "border-pink-200" };
+            if (firstTag.includes('crypto') || firstTag.includes('bitcoin')) return { bg: "bg-orange-600", border: "border-orange-200" };
+            if (firstTag.includes('tool') || firstTag.includes('utility')) return { bg: "bg-indigo-600", border: "border-indigo-200" };
+            return { bg: "bg-purple-600", border: "border-purple-200" };
+          };
+
+          const colors = getTagColor(app.appTags);
+
+          return (
+            <Card key={app.pubkey + app.created_at} className={`group hover:shadow-xl transition-all duration-300 border-2 hover:${colors.border}`}>
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src={app.screenshotUrl}
+                  alt={`${app.appName} screenshot`}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/assets/images/default-app-screenshot.png';
+                  }}
+                />
+                <div className="absolute top-3 left-3">
+                  {app.isFeatured && (
+                    <Badge className="bg-yellow-500 text-yellow-50">
+                      <Star className="w-3 h-3 mr-1" />
+                      Featured
+                    </Badge>
+                  )}
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
+                    <img
+                      src={app.appIconUrl}
+                      alt={`${app.appName} icon`}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {app.appName.length > 20 ? `${app.appName.slice(0, 20)}...` : app.appName}
+                  </h3>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  {app.description.length > 120 ? `${app.description.slice(0, 120)}...` : app.description}
+                </p>
+                <div className="flex gap-2">
+                  <Button variant="outline" className="flex-1" asChild>
+                    <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Live Site
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Clone with Shakespeare"
+                    >
+                      <GitBranch className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+
+      <div className="text-center mt-8">
+        <p className="text-lg text-gray-600 mb-6">
+          These are just a few examples. Shakespeare can build virtually any web application you can imagine.
+        </p>
+        <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+          <a href="/showcase">
+            View More in Showcase
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 export default function AnnouncingShakespeareAct2() {
   return (
     <article className="prose prose-lg max-w-none">
       <h2>What is Shakespeare?</h2>
 
       <p>
-        <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-          Shakespeare
-        </a> is an AI-powered development platform that runs entirely in your web browser. You can create websites, web applications, and software projects by simply describing what you want to build in plain language.
+        <strong>
+          <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+            Shakespeare
+          </a> is an AI-powered development platform that runs entirely in your web browser. You can create websites, web applications, and software projects by simply describing what you want to build in plain language.
+        </strong>
       </p>
 
       <p>
@@ -183,82 +331,13 @@ export default function AnnouncingShakespeareAct2() {
           These advances work together to create a complete professional development environment that requires no downloads, no servers, and no vendor dependencies while maintaining full functionality.
         </p>
 
-      <h2>What You Can Build</h2>
+      <h2>What You Can Build with Shakespeare</h2>
 
       <p>
-        Shakespeare Act 2 can create anything that's possible on the web. Here are some examples:
+        Shakespeare Act 2 can create anything that's possible on the web. Here are real examples built by our community:
       </p>
 
-      <div className="not-prose my-8">
-        <div className="grid md:grid-cols-2 gap-6">
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Social Platforms</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Create a Twitter-like platform for my photography community with image uploads, comments, likes, and user profiles."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/bookstr-example.png"
-                  alt="Social platform example - Bookstr"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Gaming Platforms</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Build a gaming platform with file sharing, community features, and game discovery for my gaming community."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/moonfile-game-example.png"
-                  alt="MoonFile - Gaming platform built with Shakespeare"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">Business Dashboards</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Build an analytics dashboard for tracking my freelance business with client management, project timelines, and revenue charts."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/blockparty-example.png"
-                  alt="Business dashboard example - BlockParty"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <h4 className="font-semibold mb-2">E-commerce Platforms</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                "Build a marketplace for handmade crafts with user accounts, product catalogs, shopping cart, payment integration, and admin dashboard."
-              </p>
-              <div className="not-prose my-3">
-                <img
-                  src="/assets/images/shakespeare-screenshots/coffeeshop-exmaple.png"
-                  alt="Coffee shop website example"
-                  className="w-full rounded-lg shadow-sm"
-                />
-              </div>
-
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      <FeaturedAppsSection />
 
       <h2>Comparison with Other AI Development Tools</h2>
 
