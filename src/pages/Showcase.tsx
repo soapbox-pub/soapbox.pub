@@ -26,6 +26,9 @@ import {
 import { nip19 } from 'nostr-tools';
 import type { AppSubmission } from "@/hooks/useAppSubmissions";
 
+// App submission event kind
+const APP_SUBMISSION_KIND = 31733;
+
 export default function Showcase() {
   const { user } = useCurrentUser();
   const { data: submissions = [], isLoading } = useAppSubmissions();

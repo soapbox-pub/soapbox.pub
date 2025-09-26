@@ -21,8 +21,10 @@ import {
 import type { AppSubmission } from '@/hooks/useAppSubmissions';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
+import { useNostr } from '@nostrify/react';
 import { nip19 } from 'nostr-tools';
 import { toast } from '@/hooks/useToast';
+import { useQueryClient } from '@tanstack/react-query';
 
 interface AppShowcaseCardProps {
   app: AppSubmission;
@@ -32,7 +34,9 @@ interface AppShowcaseCardProps {
 
 export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShowcaseCardProps) {
   const { user } = useCurrentUser();
+  const { nostr } = useNostr();
   const { mutate: publishEvent, isPending } = useNostrPublish();
+  const queryClient = useQueryClient();
   const [imageError, setImageError] = useState(false);
 
   const isOwner = user?.pubkey === app.pubkey;
@@ -48,39 +52,91 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
   const isModerator = user?.pubkey === MODERATOR_HEX;
 
   const handleModerationAction = async (action: 'feature' | 'unfeature' | 'hide' | 'unhide') => {
-    if (!isModerator) return;
+    if (!isModerator || !user) return;
+
+    const dTag = app.tags.find(tag => tag[0] === 'd')?.[1];
+    if (!dTag) {
+      toast({
+        title: 'Error',
+        description: 'Cannot perform moderation action: missing app identifier',
+        variant: 'destructive'
+      });
+      return;
+    }
+
+    const appCoordinate = `31733:${app.pubkey}:${dTag}`;
 
     try {
-      const dTag = app.tags.find(tag => tag[0] === 'd')?.[1];
-      if (!dTag) {
-        toast({
-          title: 'Error',
-          description: 'Cannot perform moderation action: missing app identifier',
-          variant: 'destructive'
+      if (action === 'feature' || action === 'unfeature') {
+        // Get current featured apps list
+        const currentLists = await nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-featured-apps'],
+          limit: 1
+        }]);
+
+        const currentList = currentLists.reduce((latest: any, current: any) =>
+          !latest || current.created_at > latest.created_at ? current : latest,
+          null
+        );
+
+        // Get current featured app coordinates
+        const currentFeaturedApps = new Set<string>();
+        if (currentList) {
+          currentList.tags
+            .filter(tag => tag[0] === 'a')
+            .forEach(tag => currentFeaturedApps.add(tag[1]));
+        }
+
+        // Update the set
+        if (action === 'feature') {
+          currentFeaturedApps.add(appCoordinate);
+        } else {
+          currentFeaturedApps.delete(appCoordinate);
+        }
+
+        // Publish updated featured apps list
+        publishEvent({
+          kind: 30267,
+          content: 'Soapbox featured apps curated by moderators',
+          tags: [
+            ['d', 'soapbox-featured-apps'],
+            ['title', 'Soapbox Featured Apps'],
+            ['description', 'Apps featured in the Soapbox showcase'],
+            ...Array.from(currentFeaturedApps).map(coord => ['a', coord])
+          ],
+          created_at: Math.floor(Date.now() / 1000)
         });
-        return;
+
+      } else if (action === 'hide' || action === 'unhide') {
+        // Create NIP-56 report event
+        publishEvent({
+          kind: 1984,
+          content: `App ${action}den by moderator: "${app.appName}"`,
+          tags: [
+            ['a', appCoordinate, action === 'hide' ? 'spam' : 'other'],
+            ['p', app.pubkey],
+            ['L', 'soapbox.moderation'],
+            ['l', action === 'hide' ? 'hidden' : 'unhidden', 'soapbox.moderation']
+          ],
+          created_at: Math.floor(Date.now() / 1000)
+        });
       }
 
-      await publishEvent({
-        kind: 1,
-        content: `Moderation action: ${action} on app "${app.appName}"`,
-        tags: [
-          ['a', `30023:${app.pubkey}:${dTag}`],
-          ['action', action],
-          ['t', 'soapbox-moderation']
-        ],
-        created_at: Math.floor(Date.now() / 1000)
-      });
+      // Invalidate queries to refresh the data
+      queryClient.invalidateQueries({ queryKey: ['app-submissions'] });
 
       toast({
         title: 'Success!',
-        description: `App ${action}d successfully`
+        description: `App "${app.appName}" ${action}d successfully`
       });
+
     } catch (error) {
       console.error('Moderation action failed:', error);
       toast({
         title: 'Error',
-        description: `Failed to ${action} app`,
+        description: `Failed to ${action} app "${app.appName}"`,
         variant: 'destructive'
       });
     }

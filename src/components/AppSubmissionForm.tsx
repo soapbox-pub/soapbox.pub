@@ -130,7 +130,7 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
       ];
 
       await publishEvent({
-        kind: 30023,
+        kind: 31733, // Custom addressable event kind for app submissions
         content: data.description,
         tags,
         created_at: Math.floor(Date.now() / 1000)

@@ -3,8 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import { nip19 } from 'nostr-tools';
 import type { NostrEvent } from '@nostrify/nostrify';
 
-// Kind 30023 for app submissions (addressable events)
-const APP_SUBMISSION_KIND = 30023;
+// Kind 31733 for app submissions (addressable events)
+const APP_SUBMISSION_KIND = 31733;
 
 // The moderator npub and hex
 const MODERATOR_NPUB = 'npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc';
@@ -36,18 +36,25 @@ export function useAppSubmissions() {
   return useQuery({
     queryKey: ['app-submissions'],
     queryFn: async (): Promise<AppSubmission[]> => {
-      // Get all app submissions
+      // Get all app submissions (kind 31733)
       const submissionEvents = await nostr.query([{
         kinds: [APP_SUBMISSION_KIND],
         '#t': ['soapbox-app-submission'],
         limit: 1000
       }]);
 
-      // Get moderation events (feature/unfeature, hide/unhide)
-      const moderationEvents = await nostr.query([{
-        kinds: [1],
+      // Get featured app lists from moderators (NIP-51 kind 30267)
+      const featuredLists = await nostr.query([{
+        kinds: [30267],
         authors: [MODERATOR_HEX],
-        '#t': ['soapbox-moderation'],
+        '#d': ['soapbox-featured-apps'],
+        limit: 10
+      }]);
+
+      // Get reporting events for hidden apps (NIP-56 kind 1984)
+      const reportEvents = await nostr.query([{
+        kinds: [1984],
+        authors: [MODERATOR_HEX],
         limit: 1000
       }]);
 
@@ -66,6 +73,63 @@ export function useAppSubmissions() {
         }
       }
 
+      // Get the latest featured list
+      const latestFeaturedList = featuredLists.reduce((latest, current) =>
+        !latest || current.created_at > latest.created_at ? current : latest,
+        null as NostrEvent | null
+      );
+
+      // Extract featured app coordinates from the list
+      const featuredAppCoords = new Set<string>();
+      if (latestFeaturedList) {
+        latestFeaturedList.tags
+          .filter(tag => tag[0] === 'a')
+          .forEach(tag => featuredAppCoords.add(tag[1]));
+      }
+
+      // Get hidden app coordinates from reports
+      const hiddenAppCoords = new Set<string>();
+      const appReports = new Map<string, { hidden: number; unhidden: number }>();
+
+      for (const report of reportEvents) {
+        // Look for app coordinate in 'a' tags
+        const aTag = report.tags.find(tag => tag[0] === 'a');
+        if (!aTag || !aTag[1]) continue;
+
+        const appCoord = aTag[1];
+        const reportType = aTag[2];
+
+        // Check if this is a moderation label
+        const moderationLabel = report.tags.find(tag =>
+          tag[0] === 'l' && tag[2] === 'soapbox.moderation'
+        )?.[1];
+
+        if (moderationLabel === 'hidden' && (reportType === 'spam' || reportType === 'other')) {
+          if (!appReports.has(appCoord)) {
+            appReports.set(appCoord, { hidden: 0, unhidden: 0 });
+          }
+          appReports.get(appCoord)!.hidden = Math.max(
+            appReports.get(appCoord)!.hidden,
+            report.created_at
+          );
+        } else if (moderationLabel === 'unhidden' && reportType === 'other') {
+          if (!appReports.has(appCoord)) {
+            appReports.set(appCoord, { hidden: 0, unhidden: 0 });
+          }
+          appReports.get(appCoord)!.unhidden = Math.max(
+            appReports.get(appCoord)!.unhidden,
+            report.created_at
+          );
+        }
+      }
+
+      // Determine which apps are currently hidden (latest action wins)
+      for (const [appCoord, reports] of appReports) {
+        if (reports.hidden > reports.unhidden) {
+          hiddenAppCoords.add(appCoord);
+        }
+      }
+
       // Convert to AppSubmission objects
       for (const [dTag, event] of submissionMap) {
         try {
@@ -77,20 +141,10 @@ export function useAppSubmissions() {
           const authorNpub = event.tags.find(tag => tag[0] === 'author')?.[1] || event.pubkey;
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
 
-          // Check moderation status
-          let isFeatured = false;
-          let isHidden = false;
-
-          for (const modEvent of moderationEvents) {
-            const targetApp = modEvent.tags.find(tag => tag[0] === 'a')?.[1];
-            if (targetApp === `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`) {
-              const action = modEvent.tags.find(tag => tag[0] === 'action')?.[1];
-              if (action === 'feature') isFeatured = true;
-              if (action === 'unfeature') isFeatured = false;
-              if (action === 'hide') isHidden = true;
-              if (action === 'unhide') isHidden = false;
-            }
-          }
+          // Check if app is featured or hidden
+          const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
+          const isFeatured = featuredAppCoords.has(appCoordinate);
+          const isHidden = hiddenAppCoords.has(appCoordinate);
 
           submissions.push({
             ...event,
