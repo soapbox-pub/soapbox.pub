@@ -38,7 +38,7 @@ export default function Showcase() {
   const [editingApp, setEditingApp] = useState<AppSubmission | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [showAllApps, setShowAllApps] = useState(false);
+  const [showAllApps, setShowAllApps] = useState(true);
   const [showPendingApps, setShowPendingApps] = useState(false);
   const [showHiddenApps, setShowHiddenApps] = useState(false);
 
