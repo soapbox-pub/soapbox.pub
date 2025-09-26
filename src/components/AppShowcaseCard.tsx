@@ -384,7 +384,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
               />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-1">{app.appName}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-1" title={app.appName}>
+                {app.appName.length > 50 ? `${app.appName.slice(0, 50)}...` : app.appName}
+              </h3>
             </div>
           </div>
         </div>
