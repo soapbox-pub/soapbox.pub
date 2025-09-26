@@ -153,8 +153,11 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
    - Added APP_SUBMISSION_KIND constant
    - Updated filtering logic for approval workflow
    - Added "Pending Approval" section for moderators
+   - Added "Your Pending Apps" section for users with pending submissions
    - Updated "All Apps" to show only approved apps
    - Updated tag filtering to exclude pending apps
+   - Added privacy controls (users see only their own pending apps)
+   - Added informational message for users about the review process
 
 ### Removed Files
 - **`src/hooks/useAppModeration.ts`** - Functionality moved directly to component
@@ -182,16 +185,23 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 
 ### For Users:
 1. **Submit App:** Fill out form and publish kind 31733 event
-2. **Pending Status:** App shows "Pending" badge, only visible to moderators
-3. **Approval:** Moderator approves app, making it publicly visible
-4. **Featured:** Moderator may optionally feature approved apps
+2. **Pending Status:** App shows "Pending" badge, visible in "Your Pending Apps" section
+3. **Track Progress:** Users can see their own pending submissions and edit them
+4. **Approval:** Moderator approves app, making it publicly visible
+5. **Featured:** Moderator may optionally feature approved apps
 
 ### For Moderators:
-1. **Review Pending:** View "Pending Approval" section
+1. **Review Pending:** View "Pending Approval" section with all submissions
 2. **Approve:** Add app to approved list (kind 30267)
 3. **Feature:** Add app to featured list + auto-approve
 4. **Hide:** Create report event (kind 1984) if inappropriate
 5. **Manage:** Update lists as needed for curation
+
+### Privacy & Visibility:
+- **Public Users:** See only Featured Apps and All Apps (approved)
+- **Submitters:** See their own pending apps in "Your Pending Apps" section
+- **Moderators:** See all pending apps in "Pending Approval" section
+- **Privacy:** Users cannot see other users' pending submissions
 
 ## Migration Notes
 

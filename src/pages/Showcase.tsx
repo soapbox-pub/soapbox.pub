@@ -60,6 +60,10 @@ export default function Showcase() {
   const approvedApps = visibleSubmissions.filter(app => app.isApproved && !app.isFeatured);
   const pendingApps = visibleSubmissions.filter(app => !app.isApproved);
 
+  // Check if current user has any pending submissions (after pendingApps is defined)
+  const userPendingApps = user ? pendingApps.filter(app => app.pubkey === user.pubkey) : [];
+  const hasUserPendingApps = userPendingApps.length > 0;
+
   // Apply search and tag filters
   const filterApps = (apps: AppSubmission[]) => {
     return apps.filter(app => {
@@ -76,7 +80,11 @@ export default function Showcase() {
 
   const filteredFeaturedApps = filterApps(featuredApps);
   const filteredApprovedApps = filterApps(approvedApps);
-  const filteredPendingApps = filterApps(pendingApps);
+
+  // For pending apps: moderators see all, users see only their own
+  const pendingAppsToShow = isModerator ? pendingApps : userPendingApps;
+  const filteredPendingApps = filterApps(pendingAppsToShow);
+
   const filteredHiddenApps = filterApps(hiddenSubmissions);
 
   // Get all unique tags from approved and featured apps only (exclude pending and hidden apps)
@@ -261,8 +269,8 @@ export default function Showcase() {
                 </div>
               )}
 
-              {/* Pending Apps (Moderator Only) */}
-              {isModerator && filteredPendingApps.length > 0 && (
+              {/* Pending Apps (Moderator + Users with pending apps) */}
+              {(isModerator || hasUserPendingApps) && filteredPendingApps.length > 0 && (
                 <div className="mb-16">
                   <Collapsible open={showPendingApps} onOpenChange={setShowPendingApps}>
                     <CollapsibleTrigger asChild>
@@ -273,23 +281,43 @@ export default function Showcase() {
                           </div>
                           <div className="text-left">
                             <h2 className="text-3xl font-display font-bold text-gray-900">
-                              Pending Approval ({filteredPendingApps.length})
+                              {isModerator ? 'Pending Approval' : 'Your Pending Apps'} ({filteredPendingApps.length})
                             </h2>
                             <p className="text-gray-600">
-                              Apps awaiting moderator approval
+                              {isModerator
+                                ? 'Apps awaiting moderator approval'
+                                : 'Your submitted apps awaiting approval'
+                              }
                             </p>
                           </div>
                         </div>
                       </Button>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
+                      {!isModerator && (
+                        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                          <div className="flex items-start gap-3">
+                            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <span className="text-white text-sm">ℹ</span>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-blue-900 mb-1">Pending Review</h4>
+                              <p className="text-blue-700 text-sm">
+                                Your app submissions are being reviewed by our moderation team.
+                                Once approved, they will appear in the public showcase. You can edit
+                                your submissions while they're pending.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredPendingApps.map((app) => (
                           <AppShowcaseCard
                             key={app.id}
                             app={app}
                             onEdit={handleEditApp}
-                            showModerationControls={true}
+                            showModerationControls={isModerator}
                           />
                         ))}
                       </div>
