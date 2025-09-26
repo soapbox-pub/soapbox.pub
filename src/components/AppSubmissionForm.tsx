@@ -18,7 +18,14 @@ import type { AppSubmission } from '@/hooks/useAppSubmissions';
 const appSubmissionSchema = z.object({
   appName: z.string().min(1, 'App name is required'),
   websiteUrl: z.string().url('Please enter a valid URL'),
-  repositoryUrl: z.string().url('Please enter a valid repository URL'),
+  repositoryUrl: z.string()
+    .url('Please enter a valid repository URL')
+    .refine(url => url.startsWith('https://'), {
+      message: 'Repository URL must be an HTTPS URL'
+    })
+    .refine(url => url.endsWith('.git'), {
+      message: 'Repository URL must be the HTTPS clone URL ending with .git'
+    }),
   description: z.string().min(10, 'Description must be at least 10 characters'),
   appIconUrl: z.string().url('Please enter a valid icon URL'),
   screenshotUrl: z.string().url('Please enter a valid screenshot URL'),
@@ -33,6 +40,18 @@ interface AppSubmissionFormProps {
   onSuccess?: () => void;
   onCancel?: () => void;
 }
+
+const SUGGESTED_TAGS = [
+  'Shakespeare',
+  'Bitcoin',
+  'Productivity',
+  'Community',
+  'Fun',
+  'Games',
+  'Shop',
+  'Website',
+  'Social'
+];
 
 export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmissionFormProps) {
   const { user } = useCurrentUser();
@@ -69,6 +88,12 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
     if (tagInput.trim() && !watchedTags.includes(tagInput.trim())) {
       setValue('tags', [...watchedTags, tagInput.trim()]);
       setTagInput('');
+    }
+  };
+
+  const addSuggestedTag = (tag: string) => {
+    if (!watchedTags.includes(tag)) {
+      setValue('tags', [...watchedTags, tag]);
     }
   };
 
@@ -175,12 +200,15 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="repositoryUrl">Repository URL *</Label>
+            <Label htmlFor="repositoryUrl">Repository URL (HTTPS Clone URL) *</Label>
             <Input
               id="repositoryUrl"
               {...register('repositoryUrl')}
-              placeholder="https://github.com/username/repo"
+              placeholder="https://github.com/username/repo.git"
             />
+            <p className="text-sm text-gray-600">
+              Please provide the HTTPS clone URL ending with .git (e.g., https://github.com/username/repo.git or https://gitlab.com/username/repo.git)
+            </p>
             {errors.repositoryUrl && (
               <p className="text-sm text-red-600">{errors.repositoryUrl.message}</p>
             )}
@@ -237,7 +265,7 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
             )}
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <Label>Tags *</Label>
             <div className="flex gap-2">
               <Input
@@ -250,20 +278,49 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
                 <Plus className="w-4 h-4" />
               </Button>
             </div>
-            {watchedTags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-2">
-                {watchedTags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="flex items-center gap-1">
-                    {tag}
-                    <button
-                      type="button"
-                      onClick={() => removeTag(tag)}
-                      className="ml-1 hover:text-red-600"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </Badge>
+
+            {/* Suggested Tags */}
+            <div className="space-y-2">
+              <p className="text-sm text-gray-600">Suggested tags (click to add):</p>
+              <div className="flex flex-wrap gap-2">
+                {SUGGESTED_TAGS.map((suggestedTag) => (
+                  <Button
+                    key={suggestedTag}
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => addSuggestedTag(suggestedTag)}
+                    disabled={watchedTags.includes(suggestedTag)}
+                    className={`text-xs ${
+                      watchedTags.includes(suggestedTag)
+                        ? 'opacity-50 cursor-not-allowed'
+                        : 'hover:bg-azure-50 hover:border-azure-500'
+                    }`}
+                  >
+                    {suggestedTag}
+                  </Button>
                 ))}
+              </div>
+            </div>
+
+            {/* Selected Tags */}
+            {watchedTags.length > 0 && (
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600">Selected tags:</p>
+                <div className="flex flex-wrap gap-2">
+                  {watchedTags.map((tag) => (
+                    <Badge key={tag} variant="secondary" className="flex items-center gap-1">
+                      {tag}
+                      <button
+                        type="button"
+                        onClick={() => removeTag(tag)}
+                        className="ml-1 hover:text-red-600"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </Badge>
+                  ))}
+                </div>
               </div>
             )}
             {errors.tags && (
