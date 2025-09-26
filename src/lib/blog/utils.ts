@@ -2,8 +2,8 @@ import { blogPosts, getPostBySlug as getPostComponent } from './blogIndex';
 import type { BlogPost } from './types';
 
 export function getAllPosts() {
-  // Filter out posts tagged with "shakespeare-resource" from the main blog
-  return blogPosts.filter(post => !post.tags?.includes('shakespeare-resource'));
+  // Return all posts including shakespeare-resource posts
+  return blogPosts;
 }
 
 export function getAllPostsIncludingResources() {
@@ -27,18 +27,18 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 export function getRecentPosts(limit: number = 5) {
-  // Get recent posts excluding shakespeare-resource posts
+  // Get recent posts including shakespeare-resource posts
   return getAllPosts().slice(0, limit);
 }
 
 export function getLatestPost() {
-  // Get latest post excluding shakespeare-resource posts
+  // Get latest post including shakespeare-resource posts
   const mainBlogPosts = getAllPosts();
   return mainBlogPosts[0] || null;
 }
 
 export function getFeaturedPost() {
-  // Find the most recent featured post, excluding shakespeare-resource posts
+  // Find the most recent featured post, including shakespeare-resource posts
   const mainBlogPosts = getAllPosts();
   const featuredPosts = mainBlogPosts.filter(post => post.featured);
   if (featuredPosts.length > 0) {
@@ -49,7 +49,7 @@ export function getFeaturedPost() {
 }
 
 export function getRecentPostsSkipFirst(limit: number = 3) {
-  // Get recent posts excluding shakespeare-resource posts, skipping the first
+  // Get recent posts including shakespeare-resource posts, skipping the first
   return getAllPosts().slice(1, 1 + limit);
 }
 

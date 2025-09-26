@@ -13,7 +13,7 @@ import { useSEO } from "@/hooks/useSEO";
 
 export default function Index() {
   const featuredPost = getFeaturedPost();
-  
+
   // Set custom SEO for home page
   useSEO({
     title: 'Soapbox - Build Your Decentralized Platform',
@@ -22,7 +22,7 @@ export default function Index() {
     image: '/og-image.png',
     keywords: 'soapbox, nostr, decentralized, social media, open source, ditto, fediverse, activitypub, platform builder'
   });
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
       <Navigation />
@@ -41,7 +41,7 @@ export default function Index() {
                     <span className="font-display font-bold text-5xl md:text-6xl bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">Soapbox</span>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
                     🚀 Build the Decentralized Future
@@ -60,12 +60,12 @@ export default function Index() {
                     />
                   </h1>
                   <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                    Soapbox creates tools that put the power back in your hands. Build your own platforms, 
+                    Soapbox creates tools that put the power back in your hands. Build your own platforms,
                     communities, and applications with our open-source toolkit.
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
                   <Link to="/tools">
@@ -136,7 +136,7 @@ export default function Index() {
               Our Tools, Your Vision
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From social platforms to AI development, our comprehensive suite of tools gives you 
+              From social platforms to AI development, our comprehensive suite of tools gives you
               everything you need to build and scale your vision.
             </p>
           </div>
@@ -153,7 +153,7 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
-                  Build decentralized, censorship-resistant communities on Nostr with built-in 
+                  Build decentralized, censorship-resistant communities on Nostr with built-in
                   monetization and customization.
                 </p>
                 <div className="space-y-2">
@@ -179,37 +179,37 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            {/* MKStack */}
+            {/* Shakespeare */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Code className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-2xl font-display">MKStack</CardTitle>
-                <CardDescription className="text-lg">Platform Framework</CardDescription>
+                <CardTitle className="text-2xl font-display">Shakespeare</CardTitle>
+                <CardDescription className="text-lg">AI Website Builder</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
-                  Create custom social platforms and applications with our flexible framework. 
-                  Powers Bookstr, Blobbi, and more.
+                  Build websites and applications with AI in your browser. No downloads,
+                  any AI provider, complete freedom and control.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Flexible architecture
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Local file storage
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Rapid development
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Any AI provider
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                    Production-ready
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Git integration
                   </div>
                 </div>
-                <Button variant="outline" className="w-full group-hover:bg-violet-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/mkstack">
-                    Explore MKStack
+                <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/shakespeare">
+                    Start Building
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -227,7 +227,7 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
-                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive 
+                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive
                   database and tools for developers.
                 </p>
                 <div className="space-y-2">
@@ -281,8 +281,8 @@ export default function Index() {
             {/* Ditto.pub */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-azure to-blue-600 relative overflow-hidden">
-                <img 
-                  src="/assets/images/ditto/ditto-phones.png" 
+                <img
+                  src="/assets/images/ditto/ditto-phones.png"
                   alt="Ditto platform on mobile devices"
                   className="absolute inset-0 w-full h-full object-cover opacity-90"
                 />
@@ -294,7 +294,7 @@ export default function Index() {
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">
-                  The flagship Ditto community platform showcasing all features with custom themes, 
+                  The flagship Ditto community platform showcasing all features with custom themes,
                   Lightning Zaps, and cross-platform connectivity.
                 </p>
                 <div className="flex items-center justify-between">
@@ -312,8 +312,8 @@ export default function Index() {
             {/* Plektos */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-violet-500 to-purple-600 relative overflow-hidden">
-                <img 
-                  src="/assets/mkstack-apps/plektos-screenshot.png" 
+                <img
+                  src="/assets/mkstack-apps/plektos-screenshot.png"
                   alt="Plektos decentralized events platform"
                   className="absolute inset-0 w-full h-full object-cover opacity-85"
                 />
@@ -325,7 +325,7 @@ export default function Index() {
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">
-                  A decentralized events app built with MKStack. Discover, create, and manage events 
+                  A decentralized events app built with MKStack. Discover, create, and manage events
                   on the Nostr network with seamless social integration.
                 </p>
                 <div className="flex items-center justify-between">
@@ -343,8 +343,8 @@ export default function Index() {
             {/* Treasures */}
             <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-green-500 to-emerald-600 relative overflow-hidden">
-                <img 
-                  src="/assets/mkstack-apps/treasures-screenshot.png" 
+                <img
+                  src="/assets/mkstack-apps/treasures-screenshot.png"
                   alt="Treasures platform screenshot"
                   className="absolute inset-0 w-full h-full object-cover opacity-80"
                 />
@@ -356,7 +356,7 @@ export default function Index() {
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">
-                  Join the decentralized geocaching adventure powered by Nostr. Hide caches, find treasures, 
+                  Join the decentralized geocaching adventure powered by Nostr. Hide caches, find treasures,
                   and connect with explorers worldwide. Join the quest!
                 </p>
                 <div className="flex items-center justify-between">
@@ -402,7 +402,7 @@ export default function Index() {
               </div>
               <h3 className="text-xl font-display font-semibold">ActivityPub Bridge</h3>
               <p className="text-gray-600">
-                Follow and interact with users across Nostr, Mastodon, Pleroma, Misskey, and other 
+                Follow and interact with users across Nostr, Mastodon, Pleroma, Misskey, and other
                 ActivityPub platforms seamlessly.
               </p>
             </div>
@@ -413,7 +413,7 @@ export default function Index() {
               </div>
               <h3 className="text-xl font-display font-semibold">Bluesky Integration</h3>
               <p className="text-gray-600">
-                Connect with Bluesky users through our bridge integration with Bridgy Fed, 
+                Connect with Bluesky users through our bridge integration with Bridgy Fed,
                 expanding your social network across protocols.
               </p>
             </div>
@@ -424,7 +424,7 @@ export default function Index() {
               </div>
               <h3 className="text-xl font-display font-semibold">Lightning Payments</h3>
               <p className="text-gray-600">
-                Send Bitcoin Lightning "zaps" across networks, enabling monetization and 
+                Send Bitcoin Lightning "zaps" across networks, enabling monetization and
                 micropayments between different platforms.
               </p>
             </div>
