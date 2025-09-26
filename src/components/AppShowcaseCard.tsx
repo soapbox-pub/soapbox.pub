@@ -248,7 +248,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
   };
 
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:border-azure-200">
+    <Card className="group hover:shadow-lg transition-all duration-300 hover:border-azure-200 h-full flex flex-col">
       <div className="relative">
         {/* App Screenshot */}
         <a
@@ -368,7 +368,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
         )}
       </div>
 
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex flex-col flex-1">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
             {/* App Icon */}
@@ -440,8 +440,11 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
           </div>
         )}
 
+        {/* Spacer to push action links to bottom */}
+        <div className="flex-1"></div>
+
         {/* Action Links */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-auto">
           <a
             href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
             target="_blank"
