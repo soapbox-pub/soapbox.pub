@@ -10,7 +10,9 @@ import {
   StarOff,
   Eye,
   EyeOff,
-  MoreVertical
+  MoreVertical,
+  CheckCircle,
+  XCircle
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -51,7 +53,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
   })();
   const isModerator = user?.pubkey === MODERATOR_HEX;
 
-  const handleModerationAction = async (action: 'feature' | 'unfeature' | 'hide' | 'unhide') => {
+  const handleModerationAction = async (action: 'feature' | 'unfeature' | 'approve' | 'unapprove' | 'hide' | 'unhide') => {
     if (!isModerator || !user) return;
 
     const dTag = app.tags.find(tag => tag[0] === 'd')?.[1];
@@ -69,27 +71,27 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
     try {
       if (action === 'feature' || action === 'unfeature') {
         // Get current featured apps list
-        const currentLists = await nostr.query([{
+        const currentFeaturedLists = await nostr.query([{
           kinds: [30267],
           authors: [MODERATOR_HEX],
           '#d': ['soapbox-featured-apps'],
           limit: 1
         }]);
 
-        const currentList = currentLists.reduce((latest: any, current: any) =>
+        const currentFeaturedList = currentFeaturedLists.reduce((latest: any, current: any) =>
           !latest || current.created_at > latest.created_at ? current : latest,
           null
         );
 
         // Get current featured app coordinates
         const currentFeaturedApps = new Set<string>();
-        if (currentList) {
-          currentList.tags
+        if (currentFeaturedList) {
+          currentFeaturedList.tags
             .filter(tag => tag[0] === 'a')
             .forEach(tag => currentFeaturedApps.add(tag[1]));
         }
 
-        // Update the set
+        // Update the featured set
         if (action === 'feature') {
           currentFeaturedApps.add(appCoordinate);
         } else {
@@ -105,6 +107,88 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
             ['title', 'Soapbox Featured Apps'],
             ['description', 'Apps featured in the Soapbox showcase'],
             ...Array.from(currentFeaturedApps).map(coord => ['a', coord])
+          ],
+          created_at: Math.floor(Date.now() / 1000)
+        });
+
+        // If featuring an app, also ensure it's approved
+        if (action === 'feature') {
+          // Get current approved apps list
+          const currentApprovedLists = await nostr.query([{
+            kinds: [30267],
+            authors: [MODERATOR_HEX],
+            '#d': ['soapbox-approved-apps'],
+            limit: 1
+          }]);
+
+          const currentApprovedList = currentApprovedLists.reduce((latest: any, current: any) =>
+            !latest || current.created_at > latest.created_at ? current : latest,
+            null
+          );
+
+          // Get current approved app coordinates
+          const currentApprovedApps = new Set<string>();
+          if (currentApprovedList) {
+            currentApprovedList.tags
+              .filter(tag => tag[0] === 'a')
+              .forEach(tag => currentApprovedApps.add(tag[1]));
+          }
+
+          // Add to approved list if not already there
+          currentApprovedApps.add(appCoordinate);
+
+          // Publish updated approved apps list
+          publishEvent({
+            kind: 30267,
+            content: 'Soapbox approved apps curated by moderators',
+            tags: [
+              ['d', 'soapbox-approved-apps'],
+              ['title', 'Soapbox Approved Apps'],
+              ['description', 'Apps approved for the Soapbox showcase'],
+              ...Array.from(currentApprovedApps).map(coord => ['a', coord])
+            ],
+            created_at: Math.floor(Date.now() / 1000)
+          });
+        }
+
+      } else if (action === 'approve' || action === 'unapprove') {
+        // Get current approved apps list
+        const currentApprovedLists = await nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-approved-apps'],
+          limit: 1
+        }]);
+
+        const currentApprovedList = currentApprovedLists.reduce((latest: any, current: any) =>
+          !latest || current.created_at > latest.created_at ? current : latest,
+          null
+        );
+
+        // Get current approved app coordinates
+        const currentApprovedApps = new Set<string>();
+        if (currentApprovedList) {
+          currentApprovedList.tags
+            .filter(tag => tag[0] === 'a')
+            .forEach(tag => currentApprovedApps.add(tag[1]));
+        }
+
+        // Update the approved set
+        if (action === 'approve') {
+          currentApprovedApps.add(appCoordinate);
+        } else {
+          currentApprovedApps.delete(appCoordinate);
+        }
+
+        // Publish updated approved apps list
+        publishEvent({
+          kind: 30267,
+          content: 'Soapbox approved apps curated by moderators',
+          tags: [
+            ['d', 'soapbox-approved-apps'],
+            ['title', 'Soapbox Approved Apps'],
+            ['description', 'Apps approved for the Soapbox showcase'],
+            ...Array.from(currentApprovedApps).map(coord => ['a', coord])
           ],
           created_at: Math.floor(Date.now() / 1000)
         });
@@ -171,13 +255,21 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
           )}
         </a>
 
-        {/* Featured Badge */}
-        {app.isFeatured && (
-          <Badge className="absolute top-3 left-3 bg-yellow-500 text-yellow-50">
-            <Star className="w-3 h-3 mr-1" />
-            Featured
-          </Badge>
-        )}
+        {/* Status Badges */}
+        <div className="absolute top-3 left-3 flex flex-col gap-1">
+          {app.isFeatured && (
+            <Badge className="bg-yellow-500 text-yellow-50">
+              <Star className="w-3 h-3 mr-1" />
+              Featured
+            </Badge>
+          )}
+          {!app.isApproved && (
+            <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">
+              <span className="w-2 h-2 bg-orange-500 rounded-full mr-1"></span>
+              Pending
+            </Badge>
+          )}
+        </div>
 
         {/* Actions Menu */}
         {(isOwner || showModerationControls) && (
@@ -197,6 +289,24 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
                 )}
                 {showModerationControls && isModerator && (
                   <>
+                    {!app.isApproved && (
+                      <DropdownMenuItem
+                        onClick={() => handleModerationAction('approve')}
+                        disabled={isPending}
+                      >
+                        <CheckCircle className="w-4 h-4 mr-2" />
+                        Approve
+                      </DropdownMenuItem>
+                    )}
+                    {app.isApproved && !app.isFeatured && (
+                      <DropdownMenuItem
+                        onClick={() => handleModerationAction('unapprove')}
+                        disabled={isPending}
+                      >
+                        <XCircle className="w-4 h-4 mr-2" />
+                        Unapprove
+                      </DropdownMenuItem>
+                    )}
                     <DropdownMenuItem
                       onClick={() => handleModerationAction(app.isFeatured ? 'unfeature' : 'feature')}
                       disabled={isPending}

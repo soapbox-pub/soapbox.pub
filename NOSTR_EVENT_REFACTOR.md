@@ -11,26 +11,26 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 
 - **Why:** Kind 30023 is for long-form articles/blog posts, not app submissions
 - **Solution:** Generated a new unused addressable event kind (31733) specifically for app submissions
-- **Benefits:** 
+- **Benefits:**
   - Proper semantic meaning
   - Addressable events allow updates/replacements
   - Clear separation from other content types
 
-### 2. Featured Apps Management
-**Before:** Used custom `kind: 1` events with moderation tags
-**After:** Used `kind: 30267` (NIP-51 App Curation Sets)
+### 2. App Approval Workflow
+**Before:** All apps automatically appeared in "All Apps" section
+**After:** Apps require moderator approval before being visible
 
-- **Why:** NIP-51 defines standardized list management for curated content
 - **Implementation:**
-  - Moderators maintain a single replaceable list with `d` tag "soapbox-featured-apps"
-  - Each featured app is referenced using an `a` tag with the app's coordinate
-  - When featuring/unfeaturing, the entire list is updated and republished
+  - **Approved Apps List:** `kind: 30267` with `d` tag "soapbox-approved-apps"
+  - **Featured Apps List:** `kind: 30267` with `d` tag "soapbox-featured-apps"
+  - **Workflow:** Submit → Pending → Approved → (Optionally) Featured
+  - **Auto-approval:** Featuring an app automatically adds it to approved list
 - **Benefits:**
-  - Standard Nostr pattern for curation
-  - Atomic updates of the featured list
-  - Easy to query and maintain
+  - Quality control for public showcase
+  - Clear moderation workflow
+  - Prevents spam and inappropriate content
 
-### 3. Hidden Apps Management  
+### 3. Hidden Apps Management
 **Before:** Used custom moderation events
 **After:** Used `kind: 1984` (NIP-56 Reporting)
 
@@ -68,6 +68,22 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 }
 ```
 
+#### Approved Apps List (Kind 30267)
+```json
+{
+  "kind": 30267,
+  "content": "Soapbox approved apps curated by moderators",
+  "tags": [
+    ["d", "soapbox-approved-apps"],
+    ["title", "Soapbox Approved Apps"],
+    ["description", "Apps approved for the Soapbox showcase"],
+    ["a", "31733:pubkey1:app1-id"],
+    ["a", "31733:pubkey2:app2-id"],
+    ["a", "31733:pubkey3:app3-id"]
+  ]
+}
+```
+
 #### Featured Apps List (Kind 30267)
 ```json
 {
@@ -78,8 +94,7 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
     ["title", "Soapbox Featured Apps"],
     ["description", "Apps featured in the Soapbox showcase"],
     ["a", "31733:pubkey1:app1-id"],
-    ["a", "31733:pubkey2:app2-id"],
-    ["a", "31733:pubkey3:app3-id"]
+    ["a", "31733:pubkey2:app2-id"]
   ]
 }
 ```
@@ -120,19 +135,26 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 
 2. **`src/hooks/useAppSubmissions.ts`**
    - Updated to query kind 31733 for app submissions
+   - Added logic to fetch and process NIP-51 approved apps lists
    - Added logic to fetch and process NIP-51 featured apps lists
    - Added logic to process NIP-56 reports for hidden apps
    - Implemented proper hide/unhide state resolution (latest action wins)
+   - Added `isApproved` field to AppSubmission interface
 
 3. **`src/components/AppShowcaseCard.tsx`**
    - Refactored moderation actions to use proper event types
-   - Featured/unfeatured: Updates NIP-51 curation list
+   - Added approve/unapprove actions using NIP-51 approved list
+   - Featured/unfeatured: Updates NIP-51 featured list + auto-approves
    - Hide/unhide: Creates NIP-56 report events
+   - Added visual status badges (Featured, Pending)
    - Added proper error handling and user feedback
 
 4. **`src/pages/Showcase.tsx`**
    - Added APP_SUBMISSION_KIND constant
-   - No major logic changes needed
+   - Updated filtering logic for approval workflow
+   - Added "Pending Approval" section for moderators
+   - Updated "All Apps" to show only approved apps
+   - Updated tag filtering to exclude pending apps
 
 ### Removed Files
 - **`src/hooks/useAppModeration.ts`** - Functionality moved directly to component
@@ -145,6 +167,8 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 4. **Extensibility:** Easy to add more moderation features using standard reporting
 5. **Data Integrity:** Proper event type semantics prevent confusion
 6. **Auditability:** Clear trail of all moderation actions
+7. **Quality Control:** Approval workflow ensures only vetted apps appear publicly
+8. **Spam Prevention:** Prevents automatic publication of inappropriate content
 
 ## Future Considerations
 
@@ -154,11 +178,27 @@ This document outlines the refactoring of the Soapbox app showcase to use proper
 4. **Curation Categories:** Could create multiple featured lists for different categories
 5. **User Reporting:** Allow regular users to report apps using the same NIP-56 pattern
 
+## App Submission Workflow
+
+### For Users:
+1. **Submit App:** Fill out form and publish kind 31733 event
+2. **Pending Status:** App shows "Pending" badge, only visible to moderators
+3. **Approval:** Moderator approves app, making it publicly visible
+4. **Featured:** Moderator may optionally feature approved apps
+
+### For Moderators:
+1. **Review Pending:** View "Pending Approval" section
+2. **Approve:** Add app to approved list (kind 30267)
+3. **Feature:** Add app to featured list + auto-approve
+4. **Hide:** Create report event (kind 1984) if inappropriate
+5. **Manage:** Update lists as needed for curation
+
 ## Migration Notes
 
 - Existing apps submitted with kind 30023 will need to be resubmitted or migrated
 - Old moderation events will be ignored in favor of the new system
 - No data loss occurs as old events remain on relays
 - The system gracefully handles missing or malformed events
+- **New apps require approval** before appearing in public showcase
 
-This refactoring establishes a solid foundation for the app showcase that follows Nostr best practices and can easily integrate with the broader Nostr ecosystem.
+This refactoring establishes a solid foundation for the app showcase that follows Nostr best practices, includes proper quality control, and can easily integrate with the broader Nostr ecosystem.

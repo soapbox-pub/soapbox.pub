@@ -27,6 +27,7 @@ export interface AppSubmission extends NostrEvent {
   appTags: string[];
   authorNpub: string;
   isFeatured: boolean;
+  isApproved: boolean;
   isHidden: boolean;
 }
 
@@ -48,6 +49,14 @@ export function useAppSubmissions() {
         kinds: [30267],
         authors: [MODERATOR_HEX],
         '#d': ['soapbox-featured-apps'],
+        limit: 10
+      }]);
+
+      // Get approved app lists from moderators (NIP-51 kind 30267)
+      const approvedLists = await nostr.query([{
+        kinds: [30267],
+        authors: [MODERATOR_HEX],
+        '#d': ['soapbox-approved-apps'],
         limit: 10
       }]);
 
@@ -79,12 +88,26 @@ export function useAppSubmissions() {
         null as NostrEvent | null
       );
 
+      // Get the latest approved list
+      const latestApprovedList = approvedLists.reduce((latest, current) =>
+        !latest || current.created_at > latest.created_at ? current : latest,
+        null as NostrEvent | null
+      );
+
       // Extract featured app coordinates from the list
       const featuredAppCoords = new Set<string>();
       if (latestFeaturedList) {
         latestFeaturedList.tags
           .filter(tag => tag[0] === 'a')
           .forEach(tag => featuredAppCoords.add(tag[1]));
+      }
+
+      // Extract approved app coordinates from the list
+      const approvedAppCoords = new Set<string>();
+      if (latestApprovedList) {
+        latestApprovedList.tags
+          .filter(tag => tag[0] === 'a')
+          .forEach(tag => approvedAppCoords.add(tag[1]));
       }
 
       // Get hidden app coordinates from reports
@@ -141,9 +164,10 @@ export function useAppSubmissions() {
           const authorNpub = event.tags.find(tag => tag[0] === 'author')?.[1] || event.pubkey;
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
 
-          // Check if app is featured or hidden
+          // Check if app is featured, approved, or hidden
           const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
           const isFeatured = featuredAppCoords.has(appCoordinate);
+          const isApproved = approvedAppCoords.has(appCoordinate) || isFeatured; // Featured apps are automatically approved
           const isHidden = hiddenAppCoords.has(appCoordinate);
 
           submissions.push({
@@ -157,6 +181,7 @@ export function useAppSubmissions() {
             appTags: appTags,
             authorNpub,
             isFeatured,
+            isApproved,
             isHidden
           });
         } catch (error) {
