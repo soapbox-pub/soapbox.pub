@@ -182,7 +182,7 @@ export default function Index() {
             {/* Shakespeare */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4">
                   <Code className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-display">Shakespeare</CardTitle>
@@ -195,19 +195,19 @@ export default function Index() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                     Local file storage
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                     Any AI provider
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                     Git integration
                   </div>
                 </div>
-                <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
+                <Button variant="outline" className="w-full group-hover:bg-yellow-500 group-hover:text-white transition-colors" asChild>
                   <Link to="/tools/shakespeare">
                     Start Building
                     <ArrowRight className="ml-2 h-4 w-4" />
