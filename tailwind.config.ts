@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 import typography from "@tailwindcss/typography";
+import lineClamp from "@tailwindcss/line-clamp";
 
 
 export default {
@@ -38,6 +39,7 @@ export default {
 					500: 'hsl(var(--azure-500))',
 					600: 'hsl(var(--azure-600))',
 					700: 'hsl(var(--azure-700))',
+					dark: 'hsl(var(--azure-dark))',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -244,5 +246,5 @@ export default {
 			}
 		}
 	},
-	plugins: [tailwindcssAnimate, typography],
+	plugins: [tailwindcssAnimate, typography, lineClamp],
 } satisfies Config;
