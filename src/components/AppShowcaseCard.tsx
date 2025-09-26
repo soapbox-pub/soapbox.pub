@@ -243,7 +243,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
         {/* Action Buttons */}
         <div className="flex items-center gap-2">
           <a
-            href={`https://act2.shakespeare.to/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
+            href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"
