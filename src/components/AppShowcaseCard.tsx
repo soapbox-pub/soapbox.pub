@@ -241,22 +241,19 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
         )}
 
         {/* Action Buttons */}
-        <div className="flex gap-2">
-          <Button asChild className="flex-1">
-            <a
-              href={`https://act2.shakespeare.to/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
-            >
-              <img
-                src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
-                alt="Edit with Shakespeare"
-                className="h-4"
-              />
-              Edit with Shakespeare
-            </a>
-          </Button>
+        <div className="flex items-center gap-2">
+          <a
+            href={`https://act2.shakespeare.to/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1"
+          >
+            <img
+              src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
+              alt="Edit with Shakespeare"
+              className="w-full h-auto hover:opacity-80 transition-opacity"
+            />
+          </a>
           <Button variant="outline" size="sm" asChild>
             <a
               href={app.repositoryUrl}
