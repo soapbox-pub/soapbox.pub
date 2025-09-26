@@ -11,6 +11,7 @@ import { useAppSubmissions } from "@/hooks/useAppSubmissions";
 import { AppSubmissionForm } from "@/components/AppSubmissionForm";
 import { AppShowcaseCard } from "@/components/AppShowcaseCard";
 import LoginDialog from "@/components/auth/LoginDialog";
+import SignupDialog from "@/components/auth/SignupDialog";
 import {
   Dialog,
   DialogContent,
@@ -30,6 +31,7 @@ export default function Showcase() {
   const { data: submissions = [], isLoading } = useAppSubmissions();
   const [showSubmissionForm, setShowSubmissionForm] = useState(false);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [showSignupDialog, setShowSignupDialog] = useState(false);
   const [editingApp, setEditingApp] = useState<AppSubmission | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -335,6 +337,18 @@ export default function Showcase() {
         onClose={() => setShowLoginDialog(false)}
         onLogin={() => {
           setShowLoginDialog(false);
+          setShowSubmissionForm(true);
+        }}
+        onSignup={() => {
+          setShowLoginDialog(false);
+          setShowSignupDialog(true);
+        }}
+      />
+
+      <SignupDialog
+        isOpen={showSignupDialog}
+        onClose={() => {
+          setShowSignupDialog(false);
           setShowSubmissionForm(true);
         }}
       />
