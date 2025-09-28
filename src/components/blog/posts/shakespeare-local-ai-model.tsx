@@ -41,20 +41,6 @@ export default function ShakespeareLocalAIModel() {
   return (
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300 dark:border-blue-700">
-            📚 Shakespeare Resource
-          </div>
-          <h2 className="text-4xl font-bold mb-4">
-            🤖 <span className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">How to Use Local AI Models with Shakespeare</span>
-          </h2>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            Enhanced Privacy, Faster Responses & Reduced Costs
-          </h3>
-        </div>
-      </div>
-
-      <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
           <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
             🔒 Complete Privacy

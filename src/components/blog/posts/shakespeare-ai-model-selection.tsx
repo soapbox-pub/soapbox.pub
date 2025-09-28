@@ -40,19 +40,6 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareAIModelSelection() {
   return (
     <article className="prose prose-lg max-w-none">
-      <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300 dark:border-blue-700">
-            📚 Shakespeare Resource
-          </div>
-          <h2 className="text-4xl font-bold mb-4">
-            🧠 <span className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Which AI Model Should I Use with Shakespeare?</span>
-          </h2>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            Choose the right AI model for your project requirements and budget
-          </h3>
-        </div>
-      </div>
 
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">

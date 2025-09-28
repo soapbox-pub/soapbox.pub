@@ -40,19 +40,6 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareConfiguringAIProviders() {
   return (
     <article className="prose prose-lg max-w-none">
-      <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300 dark:border-blue-700">
-            📚 Shakespeare Resource
-          </div>
-          <h2 className="text-4xl font-bold mb-4">
-            ⚙️ <span className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">How to Configure AI Providers</span>
-          </h2>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            Set up and optimize AI providers for your development workflow with 40+ models at your fingertips
-          </h3>
-        </div>
-      </div>
 
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
@@ -127,10 +114,20 @@ export default function ShakespeareConfiguringAIProviders() {
 
       <div className="not-prose my-8">
         <img
-          src="/assets/blog/shakespeare-choosing-models/ai-provider-settings.png"
+          src="/assets/blog/shakespeare-configure-providers/configure-providers.png"
           alt="Shakespeare AI Settings Interface"
           className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800"
         />
+        <p className="text-center mt-2">
+            <a
+          href="https://shakespeare.diy/settings/ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-purple-600 hover:underline"
+            >
+          Edit your AI provider settings
+            </a>
+        </p>
       </div>
 
       <h2>Understanding the Interface</h2>
@@ -362,7 +359,7 @@ export default function ShakespeareConfiguringAIProviders() {
 
       <div className="not-prose my-8">
         <img
-          src="/assets/blog/shakespeare-choosing-models/choose-ai-model.png"
+          src="/assets/blog/shakespeare-configure-providers/drop-down-menu.png"
           alt="Choose AI Model Dropdown in Shakespeare"
           className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800"
         />
