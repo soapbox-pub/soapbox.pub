@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Plus, Search, Filter, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -25,6 +25,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { nip19 } from 'nostr-tools';
+import { shuffleArray } from "@/lib/utils";
 import type { AppSubmission } from "@/hooks/useAppSubmissions";
 
 // App submission event kind
@@ -59,8 +60,16 @@ export default function Showcase() {
   // Filter submissions
   const visibleSubmissions = submissions.filter(app => !app.isHidden);
   const hiddenSubmissions = submissions.filter(app => app.isHidden);
-  const featuredApps = visibleSubmissions.filter(app => app.isFeatured);
-  const approvedApps = visibleSubmissions.filter(app => app.isApproved && !app.isFeatured);
+
+  // Shuffle featured and approved apps on each component mount/render for random display order
+  const featuredApps = useMemo(() =>
+    shuffleArray(visibleSubmissions.filter(app => app.isFeatured)),
+    [visibleSubmissions]
+  );
+  const approvedApps = useMemo(() =>
+    shuffleArray(visibleSubmissions.filter(app => app.isApproved && !app.isFeatured)),
+    [visibleSubmissions]
+  );
   const pendingApps = visibleSubmissions.filter(app => !app.isApproved);
 
   // Check if current user has any pending submissions (after pendingApps is defined)
