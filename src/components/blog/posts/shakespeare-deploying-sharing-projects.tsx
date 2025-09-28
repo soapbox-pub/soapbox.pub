@@ -69,7 +69,7 @@ export default function ShakespeareDeployingSharingProjects() {
                   <img
                     src="/assets/images/shakespeare-screenshots/deploy-button.png"
                     alt="Deploy button in project preview pane menu"
-                    className="rounded-lg w-full max-w-4xl mx-auto border border-gray-200 dark:border-gray-700"
+                    className="rounded-lg w-full max-w-4xl mx-auto"
                   />
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function ShakespeareDeployingSharingProjects() {
                   <img
                     src="/assets/images/shakespeare-screenshots/shakespeare-wf-domain.png"
                     alt="Custom subdomain selection interface"
-                    className="rounded-lg w-full max-w-4xl mx-auto border border-gray-200 dark:border-gray-700"
+                    className="rounded-lg w-full max-w-4xl mx-auto"
                   />
                 </div>
               </div>
