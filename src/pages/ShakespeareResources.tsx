@@ -55,7 +55,7 @@ export default function ShakespeareResources() {
     },
     {
       question: "Can I import existing projects into Shakespeare?",
-      answer: "Yes! Shakespeare can import and work with existing codebases from GitHub and GitLab repositories. You can enhance existing projects with AI assistance and even submit pull requests back to the original repositories."
+      answer: "Yes! Shakespeare can import and work with existing codebases from GitHub, GitLab, and Nostr repositories as we ll as importing via .zip files. You can enhance existing projects with AI assistance and even submit pull requests back to the original repositories."
     },
     {
       question: "Can I download my website's source code?",
@@ -67,7 +67,7 @@ export default function ShakespeareResources() {
     },
     {
       question: "What makes Shakespeare different from other website builders?",
-      answer: "Shakespeare combines AI-powered building with complete user freedom. Unlike traditional website builders, you're not locked into a platform, you maintain data sovereignty, and you can choose from multiple AI providers in a competitive marketplace."
+      answer: "Shakespeare combines AI-powered building with complete user freedom. Unlike traditional website builders, you're not locked into a platform, you maintain data sovereignty, and you can choose from multiple AI providers in a competitive marketplace. Shakespeare is also completely open source and built to work with decentralized and censorship-resistant systems."
     }
   ];
 
