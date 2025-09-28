@@ -528,12 +528,6 @@ export default function ShakespeareAIModelSelection() {
         </Card>
       </div>
 
-      <div className="not-prose mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
-        <p className="text-center text-sm text-muted-foreground italic">
-          The right AI model is the one that matches your project needs, timeline, and budget. With Shakespeare, you're never locked into a single choice.
-        </p>
-      </div>
-
       <div className="not-prose my-12">
         <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
           <CardContent className="p-8 text-center">
@@ -545,15 +539,27 @@ export default function ShakespeareAIModelSelection() {
               Start building amazing projects with AI-powered development on Nostr.
             </p>
             <div className="space-y-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-              >
-                <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                  🎭 Try Shakespeare
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
+                >
+                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                    🎭 Try Shakespeare
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-3"
+                >
+                  <a href="/shakespeare-resources">
+                    📚 More Resources
+                  </a>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground">
                 Turn your ideas into reality through natural conversation with AI
               </p>
