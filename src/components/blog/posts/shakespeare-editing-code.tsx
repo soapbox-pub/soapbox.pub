@@ -38,34 +38,71 @@ export const meta: BlogPostMeta = {
 
 export default function ShakespeareEditingCode() {
   return (
-    <article className="prose prose-lg max-w-none">
-      <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300 dark:border-blue-700">
-            📚 Shakespeare Resource
-          </div>
-          <h2 className="text-4xl font-bold mb-4">
-            💻 <span className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Editing the code in Shakespeare</span>
-          </h2>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            Master the code editor and efficiently edit your projects
-          </h3>
-          <div className="space-y-4 max-w-2xl mx-auto">
-            <div className="not-prose my-12">
-              <Card className="border-dashed border-2 border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-950 dark:to-yellow-950">
-                <CardContent className="p-8 text-center">
-                  <div className="text-4xl mb-4">🚧</div>
-                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
-                    Coming Soon!
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    This detailed guide to using the Shakespeare code editor is currently being written. Check back soon for tips, shortcuts, and best practices.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
+    <article className="prose prose-lg max-w-none [&_img]:shadow-none [&_img]:border-0">
+
+      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+        Shakespeare gives you the freedom to edit your code directly in the web browser and even run a terminal entirely online. Whether you need to make quick adjustments or dive deep into your project files, Shakespeare's built-in tools provide a seamless development experience without leaving your browser.
+      </p>
+
+      <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+        🔧 Editing Code in the Browser
+      </h2>
+
+      <p className="mb-6">
+        From the preview pane, you can easily access Shakespeare's built-in code editor to make changes to your project files.
+      </p>
+
+      <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-200">
+          📝 How to Access the Code Editor
+        </h3>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+          <li>From the preview pane, click the code <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">&lt;&gt;</code> icon in the top right corner</li>
+          <li>This opens Shakespeare's simple text editor with mobile support</li>
+          <li>Make your changes to the code</li>
+          <li>Click <strong>Save</strong> when you're done editing</li>
+          <li>Go to the hamburger menu and select <strong>Rebuild</strong> to see your changes</li>
+        </ol>
+      </div>
+
+      <div className="my-8">
+        <img
+          src="/assets/images/shakespeare-screenshots/edit-the-code.png"
+          alt="Shakespeare code editor interface showing the code icon and editor view"
+        />
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center">
+          The Shakespeare code editor provides a clean, simple interface for editing your project files
+        </p>
+      </div>
+
+      <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+        💻 Terminal Access
+      </h2>
+
+      <p className="mb-6">
+        For more advanced development tasks, Shakespeare also provides terminal access directly in your browser.
+      </p>
+
+      <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-green-800 dark:text-green-200">
+          🖥️ How to Access the Terminal
+        </h3>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+          <li>From the code editor view, click the terminal icon <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">&gt;_</code> in the top right of the pane</li>
+          <li>This opens a web-based terminal with support for basic terminal commands</li>
+          <li>Use standard commands like <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">ls</code>, <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">cd</code>, etc.</li>
+          <li>Perfect for running build commands, installing packages, or debugging</li>
+        </ol>
+      </div>
+
+      <div className="my-8">
+        <img
+          src="/assets/images/shakespeare-screenshots/shakespeare-terminal.png"
+          alt="Shakespeare terminal interface showing command line access in the browser"
+        />
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center">
+          The Shakespeare terminal provides full command-line access without leaving your browser
+        </p>
       </div>
 
       <div className="not-prose my-12">
@@ -79,15 +116,27 @@ export default function ShakespeareEditingCode() {
               Start building amazing projects with AI-powered development on Nostr.
             </p>
             <div className="space-y-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-              >
-                <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                  🎭 Try Shakespeare
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
+                >
+                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                    🎭 Try Shakespeare
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-3"
+                >
+                  <a href="/shakespeare-resources">
+                    📚 More Resources
+                  </a>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground">
                 Turn your ideas into reality through natural conversation with AI
               </p>
