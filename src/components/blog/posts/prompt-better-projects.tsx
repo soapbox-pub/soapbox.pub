@@ -594,15 +594,27 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
               Apply these prompting techniques and start building better projects with AI-powered assistance.
             </p>
             <div className="space-y-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-              >
-                <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                  🚀 Start Building with Shakespeare
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
+                >
+                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                    🚀 Start Building with Shakespeare
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-3"
+                >
+                  <a href="/shakespeare-resources">
+                    📚 More Resources
+                  </a>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground">
                 Transform your ideas into production-ready applications
               </p>

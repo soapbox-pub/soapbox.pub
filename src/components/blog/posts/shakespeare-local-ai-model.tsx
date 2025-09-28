@@ -41,20 +41,6 @@ export default function ShakespeareLocalAIModel() {
   return (
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300 dark:border-blue-700">
-            📚 Shakespeare Resource
-          </div>
-          <h2 className="text-4xl font-bold mb-4">
-            🤖 <span className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">How to Use Local AI Models with Shakespeare</span>
-          </h2>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            Enhanced Privacy, Faster Responses & Reduced Costs
-          </h3>
-        </div>
-      </div>
-
-      <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
           <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
             🔒 Complete Privacy
@@ -558,27 +544,33 @@ ollama serve
               Start building amazing projects with AI-powered development on Nostr.
             </p>
             <div className="space-y-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
-              >
-                <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                  🎭 Try Shakespeare
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3"
+                >
+                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                    🎭 Try Shakespeare
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-3"
+                >
+                  <a href="/shakespeare-resources">
+                    📚 More Resources
+                  </a>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground">
                 Turn your ideas into reality through natural conversation with AI
               </p>
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      <div className="not-prose mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
-        <p className="text-center text-sm text-muted-foreground italic">
-          Shakespeare + Local Models: Where privacy meets performance, with zero ongoing costs.
-        </p>
       </div>
     </article>
   );

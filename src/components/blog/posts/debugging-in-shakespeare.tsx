@@ -97,13 +97,13 @@ export default function DebuggingInShakespeare() {
                   onClick={() => scrollToSection('section-3')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  3. Opening Developer Tools
+                  3. Checking for errors in Shakespeare
                 </button>
                 <button
                   onClick={() => scrollToSection('section-4')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  4. Gathering Essential Evidence
+                  4. Opening Developer Tools
                 </button>
               </div>
               <div className="flex flex-col space-y-2">
@@ -111,20 +111,25 @@ export default function DebuggingInShakespeare() {
                   onClick={() => scrollToSection('section-5')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  5. Console Error Debugging
+                  5. Gathering Essential Evidence
                 </button>
-
                 <button
                   onClick={() => scrollToSection('section-6')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  6. Debugging Nostr Events
+                  6. Console Error Debugging
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
                 >
-                  7. Advanced: Meta-Debugging
+                  7. Debugging Nostr Events
+                </button>
+                <button
+                  onClick={() => scrollToSection('section-8')}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                >
+                  8. Advanced: Meta-Debugging
                 </button>
               </div>
             </div>
@@ -154,8 +159,8 @@ export default function DebuggingInShakespeare() {
                   <div>• Your project files and code</div>
                   <div>• Your project's version history</div>
                   <div>• Chat history</div>
+                  <div>• Console errors (when you share them)</div>
                   <div>• Nostr documentation</div>
-                  <div>• Development tools</div>
                 </div>
               </div>
               <div>
@@ -164,7 +169,6 @@ export default function DebuggingInShakespeare() {
                 </h4>
                 <div className="space-y-2 text-sm">
                   <div>• Your screen or browser</div>
-                  <div>• Console errors</div>
                   <div>• Screenshots</div>
                   <div>• Live applications</div>
                   <div>• Network requests directly</div>
@@ -252,7 +256,64 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-3">3. Opening Developer Tools</h2>
+      <h2 id="section-3">3. Checking for errors in Shakespeare</h2>
+
+      <p>
+        <strong>Shakespeare now has the ability to see console errors directly!</strong> When you're experiencing issues with your project, the first step is to check for errors using Shakespeare's built-in debugging tools. This saves you time and provides immediate insight into what's going wrong.
+      </p>
+
+      <p><strong>How to check for errors in Shakespeare:</strong></p>
+
+      <ol>
+        <li><strong>Look for the bug icon:</strong> In the top right of the preview pane, you'll see a bug icon. Click it to view console errors.</li>
+        <li><strong>Review the errors:</strong> Any JavaScript errors, warnings, or console messages will be displayed</li>
+        <li><strong>Copy and paste:</strong> You can copy these errors and paste them directly into the chat with Shakespeare</li>
+      </ol>
+
+      <div className="not-prose my-8">
+        <img
+          src="/assets/images/shakespeare-screenshots/console-error.png"
+          alt="Shakespeare console error panel showing the bug icon and error messages"
+          className="w-full rounded-lg"
+        />
+        <p className="text-sm text-muted-foreground mt-2 text-center">
+          The bug icon in the top right of the preview pane gives you instant access to console errors.
+        </p>
+      </div>
+
+      <p>
+        <strong>Meet Quilly, the Shakespeare mascot!</strong> From time to time, you may see Quilly pop up with useful information about various errors. We're still working to improve this feature, but it's a great way to get quick tips and context when Shakespeare detects common issues.
+      </p>
+
+      <div className="not-prose my-8 flex justify-center">
+        <div className="max-w-md">
+          <img
+            src="/assets/images/shakespeare-screenshots/quilly.png"
+            alt="Quilly, the Shakespeare mascot, providing helpful debugging information"
+            className="rounded-lg border border-gray-200 dark:border-gray-700"
+          />
+          <p className="text-sm text-muted-foreground mt-2 text-center">
+            Quilly provides helpful tips and error messages.
+          </p>
+        </div>
+      </div>
+
+      <div className="not-prose my-8">
+        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+              💡 Pro Tip
+            </h4>
+            <p className="text-green-700 dark:text-green-300 text-sm">
+              Always check the console errors first! Many issues can be quickly identified and resolved by copying the error messages directly into your chat with Shakespeare. This is much faster than describing symptoms.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <hr className="my-12" />
+
+      <h2 id="section-4">4. Opening Developer Tools</h2>
 
       <p>
         <strong>Developer tools are your debugging microscope.</strong> Every modern browser includes powerful debugging capabilities that reveal what's happening behind the scenes in your Shakespeare application.
@@ -293,7 +354,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-4">4. Gathering Essential Evidence</h2>
+      <h2 id="section-5">5. Gathering Essential Evidence</h2>
 
       <p>
         <strong>Good debugging starts with thorough evidence collection.</strong> The more specific information you provide to Shakespeare, the more targeted and effective the solutions will be.
@@ -340,7 +401,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-5">5. Console Error Debugging</h2>
+      <h2 id="section-6">6. Console Error Debugging</h2>
 
       <p>
         <strong>Console errors are your first clue.</strong> Most JavaScript issues surface in the browser console with specific error messages that point directly to the problem. When reporting console errors to Shakespeare, <strong>copy/paste the entire console output</strong> to Shakespeare.
@@ -386,7 +447,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-6">6. Debugging Nostr Events</h2>
+      <h2 id="section-7">7. Debugging Nostr Events</h2>
 
       <p>
         <strong>Nostr applications require specialized debugging techniques.</strong> When building decentralized applications with Shakespeare, you need to understand what events are being created, signed, and broadcast to the network.
@@ -478,7 +539,7 @@ export default function DebuggingInShakespeare() {
 
       <hr className="my-12" />
 
-      <h2 id="section-7">7. Advanced: Meta-Debugging</h2>
+      <h2 id="section-8">8. Advanced: Meta-Debugging</h2>
 
       <p>
         <strong>Meta-debugging is debugging your debugging process.</strong> When regular debugging techniques aren't working, or when you've spent too many credits without progress, it's time to step back and analyze your approach itself.
