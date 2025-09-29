@@ -25,7 +25,7 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "announcing-shakespeare-act-2",
-  "title": "Shakespeare: Act 2 - Complete AI Development Environment in the Browser",
+  "title": "Shakespeare: Act 2 - Build Freely",
   "excerpt": "Shakespeare Act 2 transforms from a simple AI website builder into a full-featured development environment, entirely in your browser (no downloads required!). With local file storage, any AI provider support, built-in Git integration, and complete project export - all while remaining 100% open source and decentralized.",
   "coverImage": "/assets/blog/shakespeare-act2-cover.png",
   "date": "2025-10-01",
@@ -202,7 +202,7 @@ export default function AnnouncingShakespeareAct2() {
       </p>
 
       <p>
-        No downloads or installation required. Shakespeare works completely in your browser, and you maintain full control over your projects. You can edit the code yourself, export everything to use elsewhere, or deploy your project to any hosting service you choose.
+        <strong>No downloads or installation required. Shakespeare works completely in your browser, and you maintain full control over your projects. You can edit the code yourself, export everything to use elsewhere, or deploy your project to any hosting service you choose.</strong>
       </p>
 
       <p>
@@ -212,7 +212,7 @@ export default function AnnouncingShakespeareAct2() {
       <h2>Act II: Total User Freedom</h2>
 
       <p>
-        While companies like <strong>Lovable</strong>, <strong>Replit</strong>, and <strong>Cursor</strong> lock you into their platforms, AI models, and hosting solutions, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare Act 2</a> has been rebuilt from the ground up to give you complete freedom to choose your AI provider, Git service, deployment platform, and data storage.
+        While companies like <strong>Lovable</strong>, <strong>Replit</strong>, and <strong>Cursor</strong> lock you into their platforms, AI models, and hosting solutions, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare Act 2</a> has been rebuilt from the ground up to give you <strong>complete freedom to choose your AI provider, Git service, deployment platform, and data storage</strong>.
       </p>
 
       <h3>AI Provider Choice</h3>
