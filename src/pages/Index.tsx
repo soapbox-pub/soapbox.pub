@@ -198,8 +198,7 @@ export default function Index() {
               Empowering You to Build Freely
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Everything we build is open source and designed for the decentralized web. We're making powerful
-              development tools accessible to everyone, advancing the future of user sovereignty and digital freedom.
+              We're making powerful development tools accessible to everyone, advancing the future of user sovereignty and digital freedom.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
               <div className="text-center">
@@ -207,7 +206,7 @@ export default function Index() {
                   <Code className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">100% Open Source</h3>
-                <p className="text-sm text-gray-600">Complete transparency, community-driven development, and freedom to modify</p>
+                <p className="text-sm text-gray-600">Complete transparency and freedom to run and modify</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -225,7 +224,7 @@ export default function Index() {
               </div>
             </div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              See how our community is using Soapbox tools to build the next generation of platforms and applications.
+              See real people are using Soapbox tools to build their communities.
             </p>
           </div>
 
