@@ -35,11 +35,11 @@ describe('shuffleArray', () => {
 
   it('should produce different orders when called multiple times (probabilistic test)', () => {
     const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const results = [];
+    const results: string[] = [];
 
     // Run shuffle 10 times
     for (let i = 0; i < 10; i++) {
-      results.push(shuffleArray(input).join(','));
+      results.push(shuffleArray(input).map(String).join(','));
     }
 
     // With 10 elements, it's extremely unlikely all 10 shuffles would be identical

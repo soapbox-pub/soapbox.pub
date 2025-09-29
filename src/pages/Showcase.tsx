@@ -112,7 +112,7 @@ export default function Showcase() {
 
   // Get the most popular tags based on frequency
   const tagCounts = new Map<string, number>();
-  [...featuredApps, ...approvedApps].forEach(app => {
+  [...featuredApps, ...approvedApps, ...templateApps].forEach(app => {
     app.appTags.forEach(tag => {
       tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
     });
@@ -122,10 +122,22 @@ export default function Showcase() {
     .sort((a, b) => b[1] - a[1]) // Sort by count descending
     .map(([tag]) => tag); // Extract just the tag names
 
+  // Always show Template as the first tag if templates exist
+  const topTags: string[] = [];
+  if (templateApps.length > 0) {
+    topTags.push('Template');
+    // Remove Template from sortedTags to avoid duplication
+    const templateIndex = sortedTags.indexOf('Template');
+    if (templateIndex > -1) {
+      sortedTags.splice(templateIndex, 1);
+    }
+  }
+
   // Show fewer tags on mobile, more on desktop
   const maxTagsToShow = isMobile ? 3 : 5;
-  const popularTags = sortedTags.slice(0, maxTagsToShow);
-  const remainingTags = sortedTags.slice(maxTagsToShow);
+  const availableSlots = maxTagsToShow - topTags.length;
+  const popularTags = [...topTags, ...sortedTags.slice(0, availableSlots)];
+  const remainingTags = sortedTags.slice(availableSlots);
 
   const handleSubmitClick = () => {
     if (!user) {
@@ -230,7 +242,7 @@ export default function Showcase() {
                       onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                       className="shrink-0"
                     >
-                      {tag}
+                      {tag === 'Template' ? 'Templates' : tag}
                     </Button>
                   ))}
 
@@ -258,7 +270,7 @@ export default function Showcase() {
                         onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                         className="shrink-0"
                       >
-                        {tag}
+                        {tag === 'Template' ? 'Templates' : tag}
                       </Button>
                     ))}
                   </div>
@@ -279,55 +291,23 @@ export default function Showcase() {
             </div>
           ) : (
             <>
-              {/* Featured Apps */}
-              {filteredFeaturedApps.length > 0 && (
-                <div className="mb-16">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-                      <span className="text-xl">⭐</span>
-                    </div>
-                    <div>
-                      <h2 className="text-3xl font-display font-bold text-gray-900">Featured Apps</h2>
-                      <p className="text-gray-600">Handpicked applications showcasing the best of our community</p>
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredFeaturedApps.map((app) => (
-                      <AppShowcaseCard
-                        key={app.id}
-                        app={app}
-                        onEdit={handleEditApp}
-                        showModerationControls={isModerator}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* All Apps (Approved) */}
-              {filteredApprovedApps.length > 0 && (
-                <div className="mb-16">
-                  <Collapsible open={showAllApps} onOpenChange={setShowAllApps}>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                            <span className="text-xl">📱</span>
-                          </div>
-                          <div className="text-left">
-                            <h2 className="text-3xl font-display font-bold text-gray-900">
-                              All Apps ({filteredApprovedApps.length})
-                            </h2>
-                            <p className="text-gray-600">
-                              {showAllApps ? 'Click to collapse' : 'Click to view all approved community apps'}
-                            </p>
-                          </div>
+              {/* When Template tag is selected, show only Templates */}
+              {selectedTag === 'Template' ? (
+                <>
+                  {/* Templates Section */}
+                  {filteredTemplateApps.length > 0 && (
+                    <div className="mb-16">
+                      <div className="flex items-center gap-3 mb-8">
+                        <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                          <span className="text-xl">📋</span>
                         </div>
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
+                        <div>
+                          <h2 className="text-3xl font-display font-bold text-gray-900">Templates</h2>
+                          <p className="text-gray-600">Ready-to-use templates to kickstart your project</p>
+                        </div>
+                      </div>
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {filteredApprovedApps.map((app) => (
+                        {filteredTemplateApps.map((app) => (
                           <AppShowcaseCard
                             key={app.id}
                             app={app}
@@ -336,80 +316,25 @@ export default function Showcase() {
                           />
                         ))}
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </div>
-              )}
-
-              {/* Templates Section */}
-              {filteredTemplateApps.length > 0 && (
-                <div className="mb-16">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                      <span className="text-xl">📋</span>
                     </div>
-                    <div>
-                      <h2 className="text-3xl font-display font-bold text-gray-900">Templates</h2>
-                      <p className="text-gray-600">Ready-to-use templates to kickstart your project</p>
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredTemplateApps.map((app) => (
-                      <AppShowcaseCard
-                        key={app.id}
-                        app={app}
-                        onEdit={handleEditApp}
-                        showModerationControls={isModerator}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Pending Apps (Moderator + Users with pending apps) */}
-              {(isModerator || hasUserPendingApps) && filteredPendingApps.length > 0 && (
-                <div className="mb-16">
-                  <Collapsible open={showPendingApps} onOpenChange={setShowPendingApps}>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-                            <span className="text-xl">⏳</span>
-                          </div>
-                          <div className="text-left">
-                            <h2 className="text-3xl font-display font-bold text-gray-900">
-                              {isModerator ? 'Pending Approval' : 'Your Pending Apps'} ({filteredPendingApps.length})
-                            </h2>
-                            <p className="text-gray-600">
-                              {isModerator
-                                ? 'Apps awaiting moderator approval'
-                                : 'Your submitted apps awaiting approval'
-                              }
-                            </p>
-                          </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  {/* Featured Apps */}
+                  {filteredFeaturedApps.length > 0 && (
+                    <div className="mb-16">
+                      <div className="flex items-center gap-3 mb-8">
+                        <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
+                          <span className="text-xl">⭐</span>
                         </div>
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
-                      {!isModerator && (
-                        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                          <div className="flex items-start gap-3">
-                            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <span className="text-white text-sm">ℹ</span>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-blue-900 mb-1">Pending Review</h4>
-                              <p className="text-blue-700 text-sm">
-                                Your app submissions are being reviewed by our moderation team.
-                                Once approved, they will appear in the public showcase. You can edit
-                                your submissions while they're pending.
-                              </p>
-                            </div>
-                          </div>
+                        <div>
+                          <h2 className="text-3xl font-display font-bold text-gray-900">Featured Apps</h2>
+                          <p className="text-gray-600">Handpicked applications showcasing the best of our community</p>
                         </div>
-                      )}
+                      </div>
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {filteredPendingApps.map((app) => (
+                        {filteredFeaturedApps.map((app) => (
                           <AppShowcaseCard
                             key={app.id}
                             app={app}
@@ -418,55 +343,186 @@ export default function Showcase() {
                           />
                         ))}
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </div>
-              )}
+                    </div>
+                  )}
 
-              {/* Hidden Apps (Moderator Only) */}
-              {isModerator && filteredHiddenApps.length > 0 && (
-                <div className="mb-16">
-                  <Collapsible open={showHiddenApps} onOpenChange={setShowHiddenApps}>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
-                            <EyeOff className="w-6 h-6 text-red-600" />
+                  {/* All Apps (Approved) */}
+                  {filteredApprovedApps.length > 0 && (
+                    <div className="mb-16">
+                      <Collapsible open={showAllApps} onOpenChange={setShowAllApps}>
+                        <CollapsibleTrigger asChild>
+                          <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <span className="text-xl">📱</span>
+                              </div>
+                              <div className="text-left">
+                                <h2 className="text-3xl font-display font-bold text-gray-900">
+                                  All Apps ({filteredApprovedApps.length})
+                                </h2>
+                                <p className="text-gray-600">
+                                  {showAllApps ? 'Click to collapse' : 'Click to view all approved community apps'}
+                                </p>
+                              </div>
+                            </div>
+                          </Button>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent>
+                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {filteredApprovedApps.map((app) => (
+                              <AppShowcaseCard
+                                key={app.id}
+                                app={app}
+                                onEdit={handleEditApp}
+                                showModerationControls={isModerator}
+                              />
+                            ))}
                           </div>
-                          <div className="text-left">
-                            <h2 className="text-3xl font-display font-bold text-gray-900">
-                              Hidden Apps ({filteredHiddenApps.length})
-                            </h2>
-                            <p className="text-gray-600">
-                              Moderator view - hidden from public
-                            </p>
-                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    </div>
+                  )}
+
+                  {/* Templates Section */}
+                  {filteredTemplateApps.length > 0 && (
+                    <div className="mb-16">
+                      <div className="flex items-center gap-3 mb-8">
+                        <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                          <span className="text-xl">📋</span>
                         </div>
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
+                        <div>
+                          <h2 className="text-3xl font-display font-bold text-gray-900">Templates</h2>
+                          <p className="text-gray-600">Ready-to-use templates to kickstart your project</p>
+                        </div>
+                      </div>
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {filteredHiddenApps.map((app) => (
+                        {filteredTemplateApps.map((app) => (
                           <AppShowcaseCard
                             key={app.id}
                             app={app}
                             onEdit={handleEditApp}
-                            showModerationControls={true}
+                            showModerationControls={isModerator}
                           />
                         ))}
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </div>
+                    </div>
+                  )}
+                </>
+              )}
+
+              {/* Only show pending and hidden apps when not filtering by Template */}
+              {selectedTag !== 'Template' && (
+                <>
+                  {/* Pending Apps (Moderator + Users with pending apps) */}
+                  {(isModerator || hasUserPendingApps) && filteredPendingApps.length > 0 && (
+                    <div className="mb-16">
+                      <Collapsible open={showPendingApps} onOpenChange={setShowPendingApps}>
+                        <CollapsibleTrigger asChild>
+                          <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
+                                <span className="text-xl">⏳</span>
+                              </div>
+                              <div className="text-left">
+                                <h2 className="text-3xl font-display font-bold text-gray-900">
+                                  {isModerator ? 'Pending Approval' : 'Your Pending Apps'} ({filteredPendingApps.length})
+                                </h2>
+                                <p className="text-gray-600">
+                                  {isModerator
+                                    ? 'Apps awaiting moderator approval'
+                                    : 'Your submitted apps awaiting approval'
+                                  }
+                                </p>
+                              </div>
+                            </div>
+                          </Button>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent>
+                          {!isModerator && (
+                            <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                              <div className="flex items-start gap-3">
+                                <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <span className="text-white text-sm">ℹ</span>
+                                </div>
+                                <div>
+                                  <h4 className="font-semibold text-blue-900 mb-1">Pending Review</h4>
+                                  <p className="text-blue-700 text-sm">
+                                    Your app submissions are being reviewed by our moderation team.
+                                    Once approved, they will appear in the public showcase. You can edit
+                                    your submissions while they're pending.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {filteredPendingApps.map((app) => (
+                              <AppShowcaseCard
+                                key={app.id}
+                                app={app}
+                                onEdit={handleEditApp}
+                                showModerationControls={isModerator}
+                              />
+                            ))}
+                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    </div>
+                  )}
+
+                  {/* Hidden Apps (Moderator Only) */}
+                  {isModerator && filteredHiddenApps.length > 0 && (
+                    <div className="mb-16">
+                      <Collapsible open={showHiddenApps} onOpenChange={setShowHiddenApps}>
+                        <CollapsibleTrigger asChild>
+                          <Button variant="ghost" className="p-0 h-auto mb-8 hover:bg-transparent">
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <EyeOff className="w-6 h-6 text-red-600" />
+                              </div>
+                              <div className="text-left">
+                                <h2 className="text-3xl font-display font-bold text-gray-900">
+                                  Hidden Apps ({filteredHiddenApps.length})
+                                </h2>
+                                <p className="text-gray-600">
+                                  Moderator view - hidden from public
+                                </p>
+                              </div>
+                            </div>
+                          </Button>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent>
+                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {filteredHiddenApps.map((app) => (
+                              <AppShowcaseCard
+                                key={app.id}
+                                app={app}
+                                onEdit={handleEditApp}
+                                showModerationControls={true}
+                              />
+                            ))}
+                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    </div>
+                  )}
+                </>
               )}
 
               {/* Empty State */}
-              {filteredFeaturedApps.length === 0 && filteredApprovedApps.length === 0 && filteredTemplateApps.length === 0 && (
+              {(() => {
+                if (selectedTag === 'Template') {
+                  return filteredTemplateApps.length === 0;
+                }
+                return filteredFeaturedApps.length === 0 && filteredApprovedApps.length === 0 && filteredTemplateApps.length === 0;
+              })() && (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <Search className="w-8 h-8 text-gray-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No apps found</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {selectedTag === 'Template' ? 'No templates found' : 'No apps found'}
+                  </h3>
                   <p className="text-gray-600 mb-6">
                     {searchTerm || selectedTag
                       ? "Try adjusting your search or filters"
