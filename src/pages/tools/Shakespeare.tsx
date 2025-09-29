@@ -6,9 +6,11 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ShakespeareMailchimpForm } from "@/components/ShakespeareMailchimpForm";
 import { RotatingText } from "@/components/RotatingText";
+import { AppShowcaseCard } from "@/components/AppShowcaseCard";
 import { useSEO } from "@/hooks/useSEO";
 import { useAppSubmissions } from "@/hooks/useAppSubmissions";
 import { getAllPostsIncludingResources } from "@/lib/blog/utils";
+import { shuffleArray } from "@/lib/utils";
 
 export default function Shakespeare() {
   const { data: submissions = [], isLoading: isLoadingSubmissions } = useAppSubmissions();
@@ -17,6 +19,14 @@ export default function Shakespeare() {
   const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
   const approvedApps = submissions.filter(app => app.isApproved && !app.isFeatured && !app.isHidden);
   const showcaseApps = [...featuredApps, ...approvedApps].slice(0, 6);
+
+  // Get template apps for the template section
+  const templateApps = submissions.filter(app =>
+    app.appTags.includes('Template') &&
+    !app.isHidden &&
+    app.isApproved
+  );
+  const randomTemplateApps = shuffleArray(templateApps).slice(0, 3);
 
   // Set custom SEO for Shakespeare page
   useSEO({
@@ -191,86 +201,13 @@ export default function Shakespeare() {
           ) : showcaseApps.length > 0 ? (
             <>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {showcaseApps.map((app) => {
-                  // Get a color scheme based on the app's first tag
-                  const getTagColor = (tags: string[]) => {
-                    if (tags.length === 0) return { bg: "bg-gray-600", border: "border-gray-200" };
-
-                    const firstTag = tags[0].toLowerCase();
-                    if (firstTag.includes('social') || firstTag.includes('community')) return { bg: "bg-blue-600", border: "border-blue-200" };
-                    if (firstTag.includes('game') || firstTag.includes('gaming')) return { bg: "bg-purple-600", border: "border-purple-200" };
-                    if (firstTag.includes('business') || firstTag.includes('commerce')) return { bg: "bg-green-600", border: "border-green-200" };
-                    if (firstTag.includes('creative') || firstTag.includes('art')) return { bg: "bg-pink-600", border: "border-pink-200" };
-                    if (firstTag.includes('crypto') || firstTag.includes('bitcoin')) return { bg: "bg-orange-600", border: "border-orange-200" };
-                    if (firstTag.includes('tool') || firstTag.includes('utility')) return { bg: "bg-indigo-600", border: "border-indigo-200" };
-                    return { bg: "bg-purple-600", border: "border-purple-200" };
-                  };
-
-                  const colors = getTagColor(app.appTags);
-
-                  return (
-                    <Card key={app.id} className={`group hover:shadow-xl transition-all duration-300 border-2 hover:${colors.border}`}>
-                      <div className="relative overflow-hidden rounded-t-lg">
-                        <img
-                          src={app.screenshotUrl}
-                          alt={`${app.appName} screenshot`}
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = '/assets/images/default-app-screenshot.png';
-                          }}
-                        />
-                        <div className="absolute top-3 left-3">
-                          {app.isFeatured && (
-                            <Badge className="bg-yellow-500 text-yellow-50">
-                              <Star className="w-3 h-3 mr-1" />
-                              Featured
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
-                            <img
-                              src={app.appIconUrl}
-                              alt={`${app.appName} icon`}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                              }}
-                            />
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-900">
-                            {app.appName.length > 20 ? `${app.appName.slice(0, 20)}...` : app.appName}
-                          </h3>
-                        </div>
-                        <p className="text-gray-600 mb-4 line-clamp-3">
-                          {app.description.length > 120 ? `${app.description.slice(0, 120)}...` : app.description}
-                        </p>
-                        <div className="flex gap-2">
-                          <Button variant="outline" className="flex-1" asChild>
-                            <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              View Live Site
-                            </a>
-                          </Button>
-                          <Button variant="outline" size="sm" asChild>
-                            <a
-                              href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              title="Clone with Shakespeare"
-                            >
-                              <GitBranch className="w-4 h-4" />
-                            </a>
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
+                {showcaseApps.map((app) => (
+                  <AppShowcaseCard
+                    key={app.id}
+                    app={app}
+                    showModerationControls={false}
+                  />
+                ))}
               </div>
 
               <div className="text-center mt-12">
@@ -304,6 +241,77 @@ export default function Shakespeare() {
                 <Button size="lg" variant="outline" asChild>
                   <a href="/showcase">
                     Submit Your App
+                  </a>
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Start with a Template */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Start with a{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Template
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Jump-start your project with ready-to-use templates. Clone, customize, and deploy in minutes.
+            </p>
+          </div>
+
+          {isLoadingSubmissions ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading templates...</p>
+            </div>
+          ) : randomTemplateApps.length > 0 ? (
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {randomTemplateApps.map((app) => (
+                  <AppShowcaseCard
+                    key={app.id}
+                    app={app}
+                    showModerationControls={false}
+                  />
+                ))}
+              </div>
+
+              <div className="text-center mt-12">
+                <p className="text-lg text-gray-600 mb-6">
+                  Browse more templates and find the perfect starting point for your project.
+                </p>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+                  <a href="/showcase?tag=Template">
+                    View All Templates
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <FileText className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">No templates available yet</h3>
+              <p className="text-gray-600 mb-6">
+                Templates are coming soon! In the meantime, you can start building from scratch or browse our showcase for inspiration.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white" asChild>
+                  <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                    Start Building
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <a href="/showcase">
+                    Browse Showcase
                   </a>
                 </Button>
               </div>
