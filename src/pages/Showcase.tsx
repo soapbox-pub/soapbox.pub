@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Plus, Search, Filter, Eye, EyeOff } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -35,6 +36,7 @@ export default function Showcase() {
   const { user } = useCurrentUser();
   const { data: submissions = [], isLoading } = useAppSubmissions();
   const isMobile = useIsMobile();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [showSubmissionForm, setShowSubmissionForm] = useState(false);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
   const [showSignupDialog, setShowSignupDialog] = useState(false);
@@ -45,6 +47,14 @@ export default function Showcase() {
   const [showPendingApps, setShowPendingApps] = useState(false);
   const [showHiddenApps, setShowHiddenApps] = useState(false);
   const [showAllTags, setShowAllTags] = useState(false);
+
+  // Initialize selectedTag from URL parameter
+  useEffect(() => {
+    const tagParam = searchParams.get('tag');
+    if (tagParam) {
+      setSelectedTag(tagParam);
+    }
+  }, [searchParams]);
 
   const MODERATOR_NPUB = 'npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc';
   const MODERATOR_HEX = (() => {
@@ -157,6 +167,19 @@ export default function Showcase() {
     setEditingApp(null);
   };
 
+  const handleTagSelect = (tag: string | null) => {
+    setSelectedTag(tag);
+
+    // Update URL parameters
+    const newSearchParams = new URLSearchParams(searchParams);
+    if (tag) {
+      newSearchParams.set('tag', tag);
+    } else {
+      newSearchParams.delete('tag');
+    }
+    setSearchParams(newSearchParams);
+  };
+
   // Set custom SEO for Showcase page
   useSEO({
     title: 'App Showcase - Community-Submitted Apps Built with Soapbox Tools | Soapbox',
@@ -229,7 +252,7 @@ export default function Showcase() {
                   <Button
                     variant={selectedTag ? "outline" : "default"}
                     size="sm"
-                    onClick={() => setSelectedTag(null)}
+                    onClick={() => handleTagSelect(null)}
                     className="shrink-0"
                   >
                     All Tags
@@ -239,7 +262,7 @@ export default function Showcase() {
                       key={tag}
                       variant={selectedTag === tag ? "default" : "outline"}
                       size="sm"
-                      onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                      onClick={() => handleTagSelect(selectedTag === tag ? null : tag)}
                       className="shrink-0"
                     >
                       {tag === 'Template' ? 'Templates' : tag}
@@ -267,7 +290,7 @@ export default function Showcase() {
                         key={tag}
                         variant={selectedTag === tag ? "default" : "outline"}
                         size="sm"
-                        onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                        onClick={() => handleTagSelect(selectedTag === tag ? null : tag)}
                         className="shrink-0"
                       >
                         {tag === 'Template' ? 'Templates' : tag}
