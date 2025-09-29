@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Globe, Rocket, Calendar, FileText, ExternalLink, GitBranch, Star } from "lucide-react";
+import { ArrowRight, Code, Users, Globe, Rocket, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,17 +8,25 @@ import { Footer } from "@/components/Footer";
 import { RotatingText } from "@/components/RotatingText";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { SoapboxPostsSection } from "@/components/SoapboxPostsSection";
+import { AppShowcaseCard } from "@/components/AppShowcaseCard";
 import { getFeaturedPost, formatDate } from "@/lib/blog/utils";
+import { shuffleArray } from "@/lib/utils";
 import { useSEO } from "@/hooks/useSEO";
 import { useAppSubmissions } from "@/hooks/useAppSubmissions";
+import { useMemo } from "react";
 
 function FeaturedShowcaseApps() {
   const { data: submissions = [], isLoading } = useAppSubmissions();
 
-  // Get featured apps and top 6 for showcase
-  const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
-  const approvedApps = submissions.filter(app => app.isApproved && !app.isFeatured && !app.isHidden);
-  const showcaseApps = [...featuredApps, ...approvedApps].slice(0, 6);
+  // Get only featured apps, then randomly shuffle and select up to 6 for showcase
+  const showcaseApps = useMemo(() => {
+    const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
+
+    // Shuffle featured apps and take up to 6
+    const shuffledApps = shuffleArray(featuredApps);
+
+    return shuffledApps.slice(0, 6);
+  }, [submissions]);
 
   if (isLoading) {
     return (
@@ -53,87 +61,14 @@ function FeaturedShowcaseApps() {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {showcaseApps.map((app) => {
-        // Get a color scheme based on the app's first tag
-        const getTagColor = (tags: string[]) => {
-          if (tags.length === 0) return { bg: "bg-gray-600", border: "border-gray-200", gradient: "from-gray-500 to-gray-600" };
-
-          const firstTag = tags[0].toLowerCase();
-          if (firstTag.includes('social') || firstTag.includes('community')) return { bg: "bg-blue-600", border: "border-blue-200", gradient: "from-azure to-blue-600" };
-          if (firstTag.includes('game') || firstTag.includes('gaming')) return { bg: "bg-purple-600", border: "border-purple-200", gradient: "from-violet-500 to-purple-600" };
-          if (firstTag.includes('business') || firstTag.includes('commerce')) return { bg: "bg-green-600", border: "border-green-200", gradient: "from-green-500 to-emerald-600" };
-          if (firstTag.includes('creative') || firstTag.includes('art')) return { bg: "bg-pink-600", border: "border-pink-200", gradient: "from-pink-500 to-rose-600" };
-          if (firstTag.includes('crypto') || firstTag.includes('bitcoin')) return { bg: "bg-orange-600", border: "border-orange-200", gradient: "from-orange-500 to-amber-600" };
-          if (firstTag.includes('tool') || firstTag.includes('utility')) return { bg: "bg-indigo-600", border: "border-indigo-200", gradient: "from-indigo-500 to-blue-600" };
-          return { bg: "bg-azure", border: "border-azure-200", gradient: "from-azure to-blue-600" };
-        };
-
-        const colors = getTagColor(app.appTags);
-
-        return (
-          <Card key={app.pubkey + app.created_at} className={`group hover:shadow-xl transition-all duration-300 overflow-hidden border-2 hover:${colors.border} h-full flex flex-col`}>
-            <div className={`h-48 bg-gradient-to-r ${colors.gradient} relative overflow-hidden`}>
-              <img
-                src={app.screenshotUrl}
-                alt={`${app.appName} screenshot`}
-                className="absolute inset-0 w-full h-full object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-              <div className="absolute bottom-4 left-4 text-white">
-                {app.isFeatured && (
-                  <Badge className="bg-white/20 text-white border-white/30 mb-2">
-                    <Star className="w-3 h-3 mr-1" />
-                    Featured
-                  </Badge>
-                )}
-                <h3 className="text-xl font-bold">
-                  {app.appName.length > 20 ? `${app.appName.slice(0, 20)}...` : app.appName}
-                </h3>
-              </div>
-            </div>
-            <CardContent className="p-6 flex flex-col flex-1">
-              <p className="text-gray-600 mb-4 flex-1">
-                {app.description.length > 120 ? `${app.description.slice(0, 120)}...` : app.description}
-              </p>
-              <div className="flex items-center justify-between mt-auto">
-                <div className="flex flex-wrap gap-1">
-                  {app.appTags.slice(0, 2).map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                  {app.appTags.length > 2 && (
-                    <Badge variant="secondary" className="text-xs">
-                      +{app.appTags.length - 2}
-                    </Badge>
-                  )}
-                </div>
-                <div className="flex gap-2">
-                  <Button variant="ghost" size="sm" asChild>
-                    <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </Button>
-                  <Button variant="ghost" size="sm" asChild>
-                    <a
-                      href={`https://shakespeare.diy/clone?url=${encodeURIComponent(app.repositoryUrl)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Clone with Shakespeare"
-                    >
-                      <GitBranch className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        );
-      })}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {showcaseApps.map((app) => (
+        <AppShowcaseCard
+          key={app.id}
+          app={app}
+          showModerationControls={false}
+        />
+      ))}
     </div>
   );
 }
@@ -255,145 +190,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Tools Section */}
-      <section id="tools" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Our Tools, Your Vision
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From social platforms to AI development, our comprehensive suite of tools gives you
-              everything you need to build and scale your vision.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Ditto */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-azure to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-2xl font-display">Ditto</CardTitle>
-                <CardDescription className="text-lg">Community Platform Builder</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  Build decentralized, censorship-resistant communities on Nostr with built-in
-                  monetization and customization.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Built-in Nostr relay
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Custom themes & branding
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Bitcoin Lightning integration
-                  </div>
-                </div>
-                <Button className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/ditto">
-                    Build Your Community
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Shakespeare */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-2xl font-display">Shakespeare</CardTitle>
-                <CardDescription className="text-lg">AI Website Builder</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  Build websites and applications with AI in your browser. No downloads,
-                  any AI provider, complete freedom and control.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                    Local file storage
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                    Any AI provider
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                    Git integration
-                  </div>
-                </div>
-                <Button variant="outline" className="w-full group-hover:bg-yellow-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/shakespeare">
-                    Start Building
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* NostrHub */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-2xl font-display">NostrHub</CardTitle>
-                <CardDescription className="text-lg">NIP Explorer</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive
-                  database and tools for developers.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Complete NIP database
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Developer tools
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Implementation guides
-                  </div>
-                </div>
-                <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/nostrhub">
-                    Explore NIPs
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-16">
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-              <Link to="/tools">
-                View All Tools
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Showcase Section */}
-      <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
+      <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -437,6 +235,155 @@ export default function Index() {
             <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
               <Link to="/showcase">
                 View Full Showcase
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Section */}
+      <section id="tools" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Our Tools, Your Vision
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From social platforms to AI development, our comprehensive suite of tools gives you
+              everything you need to build and scale your vision.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Ditto */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
+                  <img
+                    src="/assets/images/ditto/ditto-logo.png"
+                    alt="Ditto logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <CardTitle className="text-2xl font-display">Ditto</CardTitle>
+                <CardDescription className="text-lg">Community Platform Builder</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  Build decentralized, censorship-resistant communities on Nostr with built-in
+                  monetization and customization.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    Built-in Nostr relay
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    Custom themes & branding
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
+                    Bitcoin Lightning integration
+                  </div>
+                </div>
+                <Button className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/ditto">
+                    Build Your Community
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Shakespeare */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
+                  <img
+                    src="/assets/blog/announcing-shakespeare/shakespeare-logo.png"
+                    alt="Shakespeare logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <CardTitle className="text-2xl font-display">Shakespeare</CardTitle>
+                <CardDescription className="text-lg">AI Website Builder</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  Build websites and applications with AI in your browser. No downloads,
+                  any AI provider, complete freedom and control.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                    Local file storage
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                    Any AI provider
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                    Git integration
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full group-hover:bg-yellow-500 group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/shakespeare">
+                    Start Building
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* NostrHub */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
+                  <img
+                    src="/assets/images/nostrhub-logo.png"
+                    alt="NostrHub logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <CardTitle className="text-2xl font-display">NostrHub</CardTitle>
+                <CardDescription className="text-lg">NIP Explorer</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive
+                  database and tools for developers.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Complete NIP database
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Developer tools
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Implementation guides
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
+                  <Link to="/tools/nostrhub">
+                    Explore NIPs
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-16">
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+              <Link to="/tools">
+                View All Tools
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
