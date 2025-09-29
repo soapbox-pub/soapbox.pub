@@ -32,6 +32,7 @@ export interface AppSubmission extends NostrEvent {
   isFeatured: boolean;
   isApproved: boolean;
   isHidden: boolean;
+  isHomepage: boolean;
 }
 
 export function useAppSubmissions() {
@@ -90,6 +91,14 @@ export function useAppSubmissions() {
         limit: 10
       }]);
 
+      // Get homepage app lists from moderators (NIP-51 kind 30267)
+      const homepageLists = await nostr.query([{
+        kinds: [30267],
+        authors: [MODERATOR_HEX],
+        '#d': ['soapbox-homepage-apps'],
+        limit: 10
+      }]);
+
       // Get reporting events for hidden apps (NIP-56 kind 1984)
       const reportEvents = await nostr.query([{
         kinds: [1984],
@@ -124,6 +133,12 @@ export function useAppSubmissions() {
         null as NostrEvent | null
       );
 
+      // Get the latest homepage list
+      const latestHomepageList = homepageLists.reduce((latest, current) =>
+        !latest || current.created_at > latest.created_at ? current : latest,
+        null as NostrEvent | null
+      );
+
       // Extract featured app coordinates from the list
       const featuredAppCoords = new Set<string>();
       if (latestFeaturedList) {
@@ -138,6 +153,14 @@ export function useAppSubmissions() {
         latestApprovedList.tags
           .filter(tag => tag[0] === 'a')
           .forEach(tag => approvedAppCoords.add(tag[1]));
+      }
+
+      // Extract homepage app coordinates from the list
+      const homepageAppCoords = new Set<string>();
+      if (latestHomepageList) {
+        latestHomepageList.tags
+          .filter(tag => tag[0] === 'a')
+          .forEach(tag => homepageAppCoords.add(tag[1]));
       }
 
       // Get hidden app coordinates from reports
@@ -194,9 +217,10 @@ export function useAppSubmissions() {
           const authorNpub = event.tags.find(tag => tag[0] === 'author')?.[1] || event.pubkey;
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
 
-          // Check if app is featured, approved, or hidden
+          // Check if app is featured, approved, homepage, or hidden
           const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
           const isFeatured = featuredAppCoords.has(appCoordinate);
+          const isHomepage = homepageAppCoords.has(appCoordinate);
           const isSubmittedByModerator = event.pubkey === MODERATOR_HEX;
           const isSubmittedByTeamMember = teamPubkeys.has(event.pubkey);
           const isApproved = approvedAppCoords.has(appCoordinate) || isFeatured || isSubmittedByModerator || isSubmittedByTeamMember; // Featured apps, moderator submissions, and team member submissions are automatically approved
@@ -214,7 +238,8 @@ export function useAppSubmissions() {
             authorNpub,
             isFeatured,
             isApproved,
-            isHidden
+            isHidden,
+            isHomepage
           });
         } catch (error) {
           console.warn('Failed to parse app submission:', error);

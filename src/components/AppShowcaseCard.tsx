@@ -13,7 +13,9 @@ import {
   MoreVertical,
   CheckCircle,
   XCircle,
-  User
+  User,
+  Home,
+  HomeIcon
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -74,7 +76,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
   })();
   const isModerator = user?.pubkey === MODERATOR_HEX;
 
-  const handleModerationAction = async (action: 'feature' | 'unfeature' | 'approve' | 'unapprove' | 'hide' | 'unhide') => {
+  const handleModerationAction = async (action: 'feature' | 'unfeature' | 'approve' | 'unapprove' | 'hide' | 'unhide' | 'homepage' | 'unhomepage') => {
     if (!isModerator || !user) return;
 
     const dTag = app.tags.find(tag => tag[0] === 'd')?.[1];
@@ -90,7 +92,89 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
     const appCoordinate = `31733:${app.pubkey}:${dTag}`;
 
     try {
-      if (action === 'feature' || action === 'unfeature') {
+      if (action === 'homepage' || action === 'unhomepage') {
+        // Get current homepage apps list
+        const currentHomepageLists = await nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-homepage-apps'],
+          limit: 1
+        }]);
+
+        const currentHomepageList = currentHomepageLists.reduce((latest: any, current: any) =>
+          !latest || current.created_at > latest.created_at ? current : latest,
+          null
+        );
+
+        // Get current homepage app coordinates
+        const currentHomepageApps = new Set<string>();
+        if (currentHomepageList) {
+          currentHomepageList.tags
+            .filter(tag => tag[0] === 'a')
+            .forEach(tag => currentHomepageApps.add(tag[1]));
+        }
+
+        // Update the homepage set
+        if (action === 'homepage') {
+          currentHomepageApps.add(appCoordinate);
+        } else {
+          currentHomepageApps.delete(appCoordinate);
+        }
+
+        // Publish updated homepage apps list
+        publishEvent({
+          kind: 30267,
+          content: 'Soapbox homepage apps curated by moderators',
+          tags: [
+            ['d', 'soapbox-homepage-apps'],
+            ['title', 'Soapbox Homepage Apps'],
+            ['description', 'Apps displayed on the Soapbox homepage'],
+            ...Array.from(currentHomepageApps).map(coord => ['a', coord])
+          ],
+          created_at: Math.floor(Date.now() / 1000)
+        });
+
+        // If adding to homepage, also ensure it's approved
+        if (action === 'homepage') {
+          // Get current approved apps list
+          const currentApprovedLists = await nostr.query([{
+            kinds: [30267],
+            authors: [MODERATOR_HEX],
+            '#d': ['soapbox-approved-apps'],
+            limit: 1
+          }]);
+
+          const currentApprovedList = currentApprovedLists.reduce((latest: any, current: any) =>
+            !latest || current.created_at > latest.created_at ? current : latest,
+            null
+          );
+
+          // Get current approved app coordinates
+          const currentApprovedApps = new Set<string>();
+          if (currentApprovedList) {
+            currentApprovedList.tags
+              .filter(tag => tag[0] === 'a')
+              .forEach(tag => currentApprovedApps.add(tag[1]));
+          }
+
+          // Add to approved list if not already there
+          currentApprovedApps.add(appCoordinate);
+
+          // Publish updated approved apps list
+          publishEvent({
+            kind: 30267,
+            content: 'Soapbox approved apps curated by moderators',
+            tags: [
+              ['d', 'soapbox-approved-apps'],
+              ['title', 'Soapbox Approved Apps'],
+              ['description', 'Apps approved for the Soapbox showcase'],
+              ...Array.from(currentApprovedApps).map(coord => ['a', coord])
+            ],
+            created_at: Math.floor(Date.now() / 1000)
+          });
+        }
+
+      } else if (action === 'feature' || action === 'unfeature') {
         // Get current featured apps list
         const currentFeaturedLists = await nostr.query([{
           kinds: [30267],
@@ -284,6 +368,12 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
               Featured
             </Badge>
           )}
+          {app.isHomepage && isModerator && (
+            <Badge className="bg-blue-500 text-blue-50">
+              <Home className="w-3 h-3 mr-1" />
+              Homepage
+            </Badge>
+          )}
           {!app.isApproved && (
             <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">
               <span className="w-2 h-2 bg-orange-500 rounded-full mr-1"></span>
@@ -341,6 +431,22 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
                         <>
                           <Star className="w-4 h-4 mr-2" />
                           Feature
+                        </>
+                      )}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => handleModerationAction(app.isHomepage ? 'unhomepage' : 'homepage')}
+                      disabled={isPending}
+                    >
+                      {app.isHomepage ? (
+                        <>
+                          <Home className="w-4 h-4 mr-2" />
+                          Remove from Homepage
+                        </>
+                      ) : (
+                        <>
+                          <Home className="w-4 h-4 mr-2" />
+                          Add to Homepage
                         </>
                       )}
                     </DropdownMenuItem>

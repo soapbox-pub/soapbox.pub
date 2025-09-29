@@ -18,12 +18,12 @@ import { useMemo } from "react";
 function FeaturedShowcaseApps() {
   const { data: submissions = [], isLoading } = useAppSubmissions();
 
-  // Get only featured apps, then randomly shuffle and select up to 6 for showcase
+  // Get only homepage apps, then randomly shuffle and select up to 6 for showcase
   const showcaseApps = useMemo(() => {
-    const featuredApps = submissions.filter(app => app.isFeatured && !app.isHidden);
+    const homepageApps = submissions.filter(app => app.isHomepage && !app.isHidden);
 
-    // Shuffle featured apps and take up to 6
-    const shuffledApps = shuffleArray(featuredApps);
+    // Shuffle homepage apps and take up to 6
+    const shuffledApps = shuffleArray(homepageApps);
 
     return shuffledApps.slice(0, 6);
   }, [submissions]);
@@ -41,7 +41,7 @@ function FeaturedShowcaseApps() {
     return (
       <div className="text-center py-12">
         <p className="text-gray-600 mb-6">
-          Be the first to build something amazing with Soapbox tools and submit it to our showcase!
+          Be the first to build something amazing with Soapbox tools and get featured on our homepage!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="bg-azure hover:bg-azure-600 text-white" asChild>
