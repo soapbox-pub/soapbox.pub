@@ -320,6 +320,9 @@ export default function Shakespeare() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="border-t border-gray-200"></div>
+
       {/* Revolutionary Features - Visual First */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
