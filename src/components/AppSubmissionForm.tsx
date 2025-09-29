@@ -19,12 +19,25 @@ const appSubmissionSchema = z.object({
   appName: z.string().min(1, 'App name is required'),
   websiteUrl: z.string().url('Please enter a valid URL'),
   repositoryUrl: z.string()
-    .url('Please enter a valid repository URL')
-    .refine(url => url.startsWith('https://'), {
-      message: 'Repository URL must be an HTTPS URL'
-    })
-    .refine(url => url.endsWith('.git'), {
-      message: 'Repository URL must be the HTTPS clone URL ending with .git'
+    .min(1, 'Repository URL is required')
+    .refine(url => {
+      // Check if it's a Nostr git URL
+      if (url.startsWith('nostr://')) {
+        // Validate Nostr git URL format: nostr://npub.../path/repo
+        // npub is always 63 characters (npub1 + 59 chars)
+        const nostrGitRegex = /^nostr:\/\/npub1[a-z0-9]{58}\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+$/;
+        return nostrGitRegex.test(url);
+      }
+
+      // Check if it's a traditional HTTPS URL
+      try {
+        const parsedUrl = new URL(url);
+        return parsedUrl.protocol === 'https:' && url.endsWith('.git');
+      } catch {
+        return false;
+      }
+    }, {
+      message: 'Repository URL must be either a Nostr git URL (nostr://npub.../path/repo) or an HTTPS clone URL ending with .git'
     }),
   description: z.string().min(10, 'Description must be at least 10 characters'),
   appIconUrl: z.string().url('Please enter a valid icon URL'),
@@ -200,14 +213,16 @@ export function AppSubmissionForm({ editingApp, onSuccess, onCancel }: AppSubmis
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="repositoryUrl">Repository URL (HTTPS Clone URL) *</Label>
+            <Label htmlFor="repositoryUrl">Repository URL *</Label>
             <Input
               id="repositoryUrl"
               {...register('repositoryUrl')}
-              placeholder="https://github.com/username/repo.git"
+              placeholder="https://github.com/username/repo.git or nostr://npub.../repo"
             />
             <p className="text-sm text-gray-600">
-              Please provide the HTTPS clone URL ending with .git (e.g., https://github.com/username/repo.git or https://gitlab.com/username/repo.git)
+              Provide either:
+              <br />• HTTPS clone URL ending with .git (e.g., https://github.com/username/repo.git)
+              <br />• Nostr git URL (e.g., nostr://npub.../path/repo)
             </p>
             {errors.repositoryUrl && (
               <p className="text-sm text-red-600">{errors.repositoryUrl.message}</p>
