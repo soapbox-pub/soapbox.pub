@@ -61,16 +61,23 @@ export default function Showcase() {
   const visibleSubmissions = submissions.filter(app => !app.isHidden);
   const hiddenSubmissions = submissions.filter(app => app.isHidden);
 
+  // Separate template apps from other apps
+  const templateApps = useMemo(() =>
+    shuffleArray(visibleSubmissions.filter(app => app.appTags.includes('Template'))),
+    [visibleSubmissions]
+  );
+  const nonTemplateSubmissions = visibleSubmissions.filter(app => !app.appTags.includes('Template'));
+
   // Shuffle featured and approved apps on each component mount/render for random display order
   const featuredApps = useMemo(() =>
-    shuffleArray(visibleSubmissions.filter(app => app.isFeatured)),
-    [visibleSubmissions]
+    shuffleArray(nonTemplateSubmissions.filter(app => app.isFeatured)),
+    [nonTemplateSubmissions]
   );
   const approvedApps = useMemo(() =>
-    shuffleArray(visibleSubmissions.filter(app => app.isApproved && !app.isFeatured)),
-    [visibleSubmissions]
+    shuffleArray(nonTemplateSubmissions.filter(app => app.isApproved && !app.isFeatured)),
+    [nonTemplateSubmissions]
   );
-  const pendingApps = visibleSubmissions.filter(app => !app.isApproved);
+  const pendingApps = nonTemplateSubmissions.filter(app => !app.isApproved);
 
   // Check if current user has any pending submissions (after pendingApps is defined)
   const userPendingApps = user ? pendingApps.filter(app => app.pubkey === user.pubkey) : [];
@@ -92,6 +99,7 @@ export default function Showcase() {
 
   const filteredFeaturedApps = filterApps(featuredApps);
   const filteredApprovedApps = filterApps(approvedApps);
+  const filteredTemplateApps = filterApps(templateApps);
 
   // For pending apps: moderators see all, users see only their own
   const pendingAppsToShow = isModerator ? pendingApps : userPendingApps;
@@ -99,7 +107,7 @@ export default function Showcase() {
 
   const filteredHiddenApps = filterApps(hiddenSubmissions);
 
-  // Get all unique tags from approved and featured apps only (exclude pending and hidden apps)
+  // Get all unique tags from approved and featured apps only (exclude pending, hidden, and template apps)
   const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
 
   // Get the most popular tags based on frequency
@@ -333,6 +341,31 @@ export default function Showcase() {
                 </div>
               )}
 
+              {/* Templates Section */}
+              {filteredTemplateApps.length > 0 && (
+                <div className="mb-16">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <span className="text-xl">📋</span>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-display font-bold text-gray-900">Templates</h2>
+                      <p className="text-gray-600">Ready-to-use templates to kickstart your project</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredTemplateApps.map((app) => (
+                      <AppShowcaseCard
+                        key={app.id}
+                        app={app}
+                        onEdit={handleEditApp}
+                        showModerationControls={isModerator}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Pending Apps (Moderator + Users with pending apps) */}
               {(isModerator || hasUserPendingApps) && filteredPendingApps.length > 0 && (
                 <div className="mb-16">
@@ -428,7 +461,7 @@ export default function Showcase() {
               )}
 
               {/* Empty State */}
-              {filteredFeaturedApps.length === 0 && filteredApprovedApps.length === 0 && (
+              {filteredFeaturedApps.length === 0 && filteredApprovedApps.length === 0 && filteredTemplateApps.length === 0 && (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <Search className="w-8 h-8 text-gray-400" />

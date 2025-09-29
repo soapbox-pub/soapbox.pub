@@ -469,16 +469,33 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
               <ExternalLink className="w-4 h-4" />
             </a>
           </Button>
-          <Button variant="outline" size="sm" asChild>
-            <a
-              href={app.repositoryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="View repository"
+          {app.repositoryUrl.startsWith('nostr://') ? (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                navigator.clipboard.writeText(app.repositoryUrl);
+                toast({
+                  title: 'Copied!',
+                  description: 'Nostr git URL copied to clipboard'
+                });
+              }}
+              title="Copy Nostr git URL"
             >
               <GitBranch className="w-4 h-4" />
-            </a>
-          </Button>
+            </Button>
+          ) : (
+            <Button variant="outline" size="sm" asChild>
+              <a
+                href={app.repositoryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View repository"
+              >
+                <GitBranch className="w-4 h-4" />
+              </a>
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>
