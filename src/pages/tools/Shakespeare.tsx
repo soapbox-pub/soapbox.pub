@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { ShakespeareMailchimpForm } from "@/components/ShakespeareMailchimpForm";
 import { RotatingText } from "@/components/RotatingText";
 import { AppShowcaseCard } from "@/components/AppShowcaseCard";
+import { EditWithShakespeareButton } from "@/components/EditWithShakespeareButton";
 import { useSEO } from "@/hooks/useSEO";
 import { useAppSubmissions } from "@/hooks/useAppSubmissions";
 import { getAllPostsIncludingResources } from "@/lib/blog/utils";
@@ -174,6 +175,171 @@ export default function Shakespeare() {
                     <CheckCircle className="w-4 h-4 mr-1 text-green-600" />
                     Complete Project
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source & Decentralized */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="bg-green-100 text-green-700 border-green-200 text-lg px-4 py-2 mb-6">
+              🌍 Fully Open Source
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              The Only Fully Open Source &{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Decentralized
+              </span>{" "}
+              AI Web Builder
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Unlike other AI website builders that keep their code secret and lock you into their platforms,
+              Shakespeare is 100% open source and stores everything locally on your computer. True freedom, true control.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-green-100">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Code className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Fully Open Source</h3>
+                    <p className="text-gray-600 mb-4">
+                      Every line of code is available for inspection, modification, and contribution.
+                      No black boxes, no hidden algorithms.
+                    </p>
+                    <Button variant="outline" className="border-green-200 hover:bg-green-50" asChild>
+                      <a href="https://gitlab.com/soapbox-pub/shakespeare" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Source Code
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-blue-100">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <HardDrive className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">True Decentralization</h3>
+                    <p className="text-gray-600 mb-4">
+                      Your files live on your computer, not our servers. Your data, your control, your freedom.
+                      No vendor lock-in, no data mining.
+                    </p>
+                    <div className="flex items-center space-x-2 text-sm text-gray-500">
+                      <Shield className="w-4 h-4 text-blue-600" />
+                      <span>Complete data sovereignty</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-purple-100">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Community Driven</h3>
+                    <p className="text-gray-600 mb-4">
+                      Built by developers, for developers. Contribute features, fix bugs, or fork the entire project.
+                      The community shapes Shakespeare's future.
+                    </p>
+                    <EditWithShakespeareButton
+                      gitUrl="https://gitlab.com/soapbox-pub/shakespeare.git"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white rounded-3xl shadow-2xl p-8 border-2 border-gray-100">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">🆚 Shakespeare vs Others</h3>
+                  <p className="text-gray-600">See how Shakespeare compares to other AI website builders</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="grid grid-cols-3 gap-4 text-sm font-semibold text-gray-700 border-b pb-3">
+                    <div>Feature</div>
+                    <div className="text-center text-purple-600">Shakespeare</div>
+                    <div className="text-center text-gray-400">Others</div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 text-sm py-3 border-b border-gray-100">
+                    <div className="text-gray-700">Open Source</div>
+                    <div className="text-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-red-500 text-xl">✕</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 text-sm py-3 border-b border-gray-100">
+                    <div className="text-gray-700">Local File Storage</div>
+                    <div className="text-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-red-500 text-xl">✕</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 text-sm py-3 border-b border-gray-100">
+                    <div className="text-gray-700">Any AI Provider</div>
+                    <div className="text-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-red-500 text-xl">✕</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 text-sm py-3 border-b border-gray-100">
+                    <div className="text-gray-700">Full Code Access</div>
+                    <div className="text-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-orange-500 text-xl">~</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 text-sm py-3 border-b border-gray-100">
+                    <div className="text-gray-700">No Vendor Lock-in</div>
+                    <div className="text-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-red-500 text-xl">✕</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 text-sm py-3">
+                    <div className="text-gray-700">Data Privacy</div>
+                    <div className="text-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-red-500 text-xl">✕</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
+                  <p className="text-sm text-gray-700 text-center">
+                    <strong>✓</strong> Full Support &nbsp;&nbsp;
+                    <strong className="text-orange-600">~</strong> Limited &nbsp;&nbsp;
+                    <strong className="text-red-600">✕</strong> Not Available
+                  </p>
                 </div>
               </div>
             </div>
