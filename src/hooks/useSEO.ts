@@ -91,7 +91,7 @@ export function useSEO(seoData: SEOData = {}) {
     const finalSEO = { ...defaultSEO, ...seoData };
     
     // Get current URL if not provided
-    const currentUrl = finalSEO.url || window.location.href;
+    const currentUrl = finalSEO.url || new URL(window.location.pathname, "https://soapbox.pub").href;
     const fullImageUrl = finalSEO.image ? getFullUrl(finalSEO.image) : undefined;
     
     // Update title
@@ -199,7 +199,7 @@ export function useSEO(seoData: SEOData = {}) {
         "isPartOf": {
           "@type": "WebSite",
           "name": finalSEO.siteName,
-          "url": window.location.origin
+          "url": "https://soapbox.pub"
         }
       };
       updateStructuredData(defaultStructuredData);
