@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="Shakespeare Act 2: Build Freely - 100% open source AI development platform with local file storage, any AI provider support, Git integration, and complete user freedom.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="🎭 Shakespeare Act 2: Build Freely">
+    <meta property="og:description" content="Break free from vendor lock-in with the only fully open source AI development platform. Local storage, any AI provider, complete Git integration, and total user freedom.">
+    <link rel="manifest" href="/manifest.json">
+    <title>🎭 Shakespeare Act 2: Build Freely</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style type="text/css">
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0f172a !important;
+                color: #e2e8f0 !important;
+            }
+            .email-container {
+                background-color: #1e293b !important;
+            }
+            .header {
+                background: #1e293b !important;
+                border-bottom: 1px solid #334155 !important;
+            }
+            .hero {
+                background: linear-gradient(135deg, #334155 0%, #1e293b 50%, #475569 100%) !important;
+            }
+            .content-card {
+                background: #1e293b !important;
+                border: 2px solid #334155 !important;
+            }
+            .section {
+                background: #0f172a !important;
+            }
+            .edit-feature-section {
+                background: #1e293b !important;
+            }
+            .showcase-section {
+                background: #0f172a !important;
+            }
+            .try-it-section {
+                background: #1e293b !important;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+        }
+
+        /* Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .logo-container .logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+
+        .logo-container h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+
+        .header h1 {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Content sections */
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin: 0 0 30px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 20px;
+            border: 1px solid #93c5fd;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 32px;
+            font-weight: 600;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text {
+            font-size: 20px;
+            color: #475569;
+            margin: 0 0 40px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: table;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-buttons .btn {
+            display: inline-block;
+            margin: 8px;
+            vertical-align: top;
+        }
+
+        /* Content cards */
+        .content-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+        }
+
+        .content-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            font-size: 24px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 60px;
+            display: block;
+        }
+
+        .edit-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+
+        .content-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+
+        .content-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin: 0 0 15px;
+            text-align: center;
+        }
+
+        .content-description {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        /* Feature list */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+            text-align: left;
+        }
+
+        .feature-list li {
+            font-size: 14px;
+            color: #64748b;
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Image showcase */
+        .image-showcase {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .showcase-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 0 0 15px;
+        }
+
+        /* App/Template showcase grid */
+        .showcase-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .showcase-item {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-item:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0 0 15px;
+        }
+
+        .showcase-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 8px;
+        }
+
+        .showcase-item p {
+            font-size: 14px;
+            color: #64748b;
+            margin: 0 0 15px;
+            line-height: 1.4;
+        }
+
+        .showcase-item .btn {
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff !important;
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #3b82f6 !important;
+            border: 2px solid #3b82f6;
+        }
+
+        .btn-shakespeare {
+            background: #ffffff;
+            color: #000000 !important;
+            border: 2px solid #f59e0b;
+        }
+
+        .btn-edit {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff !important;
+        }
+
+        .btn-resources {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff !important;
+        }
+
+        /* Force button colors in all email clients */
+        .btn-primary, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-secondary, .btn-secondary:visited, .btn-secondary:hover, .btn-secondary:active {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        .btn-shakespeare, .btn-shakespeare:visited, .btn-shakespeare:hover, .btn-shakespeare:active {
+            color: #000000 !important;
+            text-decoration: none !important;
+        }
+
+        .btn-edit, .btn-edit:visited, .btn-edit:hover, .btn-edit:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-resources, .btn-resources:visited, .btn-resources:hover, .btn-resources:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        /* Special sections */
+        .edit-feature-section {
+            background: #ecfdf5;
+            padding: 40px 20px;
+        }
+
+        .showcase-section {
+            background: #faf5ff;
+            padding: 40px 20px;
+        }
+
+        .try-it-section {
+            background: #fef3c7;
+            padding: 40px 20px;
+        }
+
+        /* CTA section */
+        .cta {
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 15px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: #475569;
+            margin: 0 0 30px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        .footer a:visited, .footer a:hover, .footer a:active {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .logo {
+                width: 28px;
+                height: 28px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
+            .hero-text {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                display: block;
+                text-align: center;
+            }
+
+            .hero-buttons .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 280px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content-card {
+                padding: 25px 15px;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://media.ditto.pub/227b98784c11af32a9694b9571aa9ecddc47017b909a6230436b0c6e30647d55.png" alt="Soapbox Logo" class="logo">
+                    <h1>Soapbox</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-badge">🎭 Act 2 Now Live</div>
+            <h1 class="hero-title">
+                Shakespeare <span class="gradient-text">Act 2</span>
+            </h1>
+            <h2 class="hero-subtitle">
+                Build Freely
+            </h2>
+            <p class="hero-text">
+                Shakespeare Act 2 transforms from a simple AI website builder into a full-featured
+                development environment, entirely in your browser. With local file storage, any AI
+                provider support, built-in Git integration, and complete project export - all while
+                remaining 100% open source and decentralized.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://shakespeare.diy" class="btn btn-shakespeare">Launch Shakespeare Act 2</a>
+                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2" class="btn btn-primary">📖 Read the Announcement</a>
+            </div>
+        </div>
+
+        <!-- What's New in Act 2 -->
+        <div class="section">
+            <h2 class="section-title">🗽 Total User Freedom</h2>
+            <p class="section-subtitle">Break free from vendor lock-in with complete control over your development environment</p>
+
+            <!-- AI Provider Choice -->
+            <div class="content-card">
+                <div class="image-showcase">
+                    <img src="https://soapbox.pub/shakespeare-resources/choose-your-model-example.png" alt="AI provider selection interface" class="showcase-image">
+                </div>
+                <h3 class="content-title">Any AI Provider</h3>
+                <p class="content-subtitle">Maximum flexibility and choice</p>
+                <p class="content-description">
+                    Unlike other tools that lock you into their AI models, Shakespeare Act 2 supports any AI provider.
+                    Bring your own API keys for OpenAI, Anthropic, Routstr, PayPerQ, and more, run local models,
+                    or use our pay-per-use Shakespeare AI services.
+                </p>
+                <ul class="feature-list">
+                    <li>OpenAI, Anthropic, Claude, GPT-4, Gemini support</li>
+                    <li>Local AI models (Llama, CodeLlama, etc.)</li>
+                    <li>OpenRouter, PayPerQ, Z.ai, and 40+ providers</li>
+                    <li>Custom API endpoint connections</li>
+                    <li>No vendor lock-in or restrictions</li>
+                </ul>
+            </div>
+
+            <!-- Complete Development Environment -->
+            <div class="content-card">
+                <div class="image-showcase">
+                    <img src="https://soapbox.pub/shakespeare-resources/edit-the-code-in-browser.png" alt="Complete development environment with code editor" class="showcase-image">
+                </div>
+                <h3 class="content-title">Complete Development Environment</h3>
+                <p class="content-subtitle">Professional tools in your browser</p>
+                <p class="content-description">
+                    Act 2 provides a complete development environment in the browser. Web text editor, file uploads,
+                    terminal commands in chat, live preview, Git integration, and full project export.
+                    No downloads required.
+                </p>
+                <ul class="feature-list">
+                    <li>Built-in code editor with syntax highlighting</li>
+                    <li>File upload and asset management</li>
+                    <li>Virtual Linux environment with CLI tools</li>
+                    <li>Real-time preview with hot reload</li>
+                    <li>Complete project export capabilities</li>
+                </ul>
+            </div>
+
+            <!-- True Decentralization -->
+            <div class="content-card">
+                <div class="image-showcase">
+                    <img src="https://soapbox.pub/shakespeare-resources/project-settings-export-and-delete.png" alt="Local file storage and project export interface" class="showcase-image">
+                </div>
+                <h3 class="content-title">True Decentralization</h3>
+                <p class="content-subtitle">Your files, your control</p>
+                <p class="content-description">
+                    All project files are stored locally in your browser using IndexedDB with LightningFS.
+                    Git operations run entirely client-side with isomorphic-git. No servers, no data collection,
+                    complete privacy and control.
+                </p>
+                <ul class="feature-list">
+                    <li>Local file storage with IndexedDB</li>
+                    <li>Client-side Git operations</li>
+                    <li>No data collection or tracking</li>
+                    <li>Complete project privacy</li>
+                    <li>Works offline after initial load</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Professional Development Features -->
+        <div class="edit-feature-section">
+            <div class="content-card" style="border: 3px solid #10b981; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);">
+                <h3 class="content-title" style="color: #059669;">Git Integration & Project Import</h3>
+                <p class="content-subtitle" style="color: #065f46;">Import from any repository and track all changes</p>
+
+                <div class="image-showcase">
+                    <img src="https://soapbox.pub/shakespeare-resources/connect-your-git-account.png" alt="Git integration and repository import interface" class="showcase-image" style="border-radius: 12px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);">
+                </div>
+
+                <p class="content-description" style="text-align: center; font-size: 18px; color: #065f46;">
+                    Shakespeare Act 2 includes complete Git integration with the ability to import existing projects
+                    from GitHub, GitLab, or any Git provider. All Git operations run client-side with no servers involved.
+                </p>
+
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #059669; margin: 0 0 10px; font-size: 16px;">Git & Import Features:</h4>
+                    <ul class="feature-list">
+                        <li>Import projects from any Git repository URL</li>
+                        <li>Client-side Git operations with isomorphic-git</li>
+                        <li>Push and pull to GitHub, GitLab, and custom providers</li>
+                        <li>Automatic commit tracking and version history</li>
+                        <li>Support for Nostr Git URLs (nostr://)</li>
+                        <li>Complete project export with Git history</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="https://shakespeare.diy" class="btn btn-edit" style="font-size: 18px; padding: 16px 32px;">🔗 Try Git Integration</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apps & Templates Showcase -->
+        <div class="showcase-section">
+            <h2 class="section-title">🎨 Edit These Apps with Shakespeare</h2>
+            <p class="section-subtitle">Try the "Edit with Shakespeare" feature on these popular applications and templates</p>
+
+            <div class="showcase-grid">
+                <!-- Placeholder App 1 -->
+                <div class="showcase-item">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured App 1" />
+                    <h4>[App Name Placeholder]</h4>
+                    <p>[App description will be populated from Nostr events]</p>
+                    <a href="#" class="btn btn-edit">Edit with Shakespeare</a>
+                </div>
+
+                <!-- Placeholder App 2 -->
+                <div class="showcase-item">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured App 2" />
+                    <h4>[App Name Placeholder]</h4>
+                    <p>[App description will be populated from Nostr events]</p>
+                    <a href="#" class="btn btn-edit">Edit with Shakespeare</a>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; color: #7c3aed; margin: 40px 0 20px;">🎯 Popular Templates</h3>
+
+            <div class="showcase-grid">
+                <!-- Placeholder Template 1 -->
+                <div class="showcase-item">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 1" />
+                    <h4>[Template Name Placeholder]</h4>
+                    <p>[Template description will be populated from Nostr events]</p>
+                    <a href="#" class="btn btn-edit">Edit with Shakespeare</a>
+                </div>
+
+                <!-- Placeholder Template 2 -->
+                <div class="showcase-item">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 2" />
+                    <h4>[Template Name Placeholder]</h4>
+                    <p>[Template description will be populated from Nostr events]</p>
+                    <a href="#" class="btn btn-edit">Edit with Shakespeare</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Try It Section -->
+        <div class="try-it-section">
+            <div class="content-card" style="border: 3px solid #f59e0b; background: linear-gradient(135deg, #fef3c7 0%, #ffffff 100%);">
+                <h2 class="section-title" style="color: #d97706;">🎭 Ready to Build Freely?</h2>
+                <p class="section-subtitle" style="color: #92400e;">
+                    Experience true freedom in web development with Shakespeare Act 2's open source platform
+                </p>
+
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 25px; border-radius: 12px; margin: 25px 0;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #d97706; margin: 0 0 20px; font-size: 24px;">Start Building Today</h3>
+                        <p style="color: #92400e; margin: 0 0 25px; font-size: 16px;">
+                            No downloads, no subscriptions, no vendor lock-in. Just pure creative freedom.
+                        </p>
+
+                        <div style="margin: 20px 0;">
+                            <a href="https://shakespeare.diy" class="btn btn-shakespeare" style="font-size: 18px; padding: 16px 32px; margin: 10px;">🚀 Launch Shakespeare Act 2</a>
+                        </div>
+
+                        <div style="margin: 20px 0;">
+                            <a href="https://soapbox.pub/shakespeare-resources" class="btn btn-resources" style="font-size: 16px; padding: 12px 24px; margin: 10px;">📚 Visit Resource Center</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(245, 158, 11, 0.05); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #d97706; margin: 0 0 10px; font-size: 16px; text-align: center;">Why Shakespeare Act 2?</h4>
+                    <ul class="feature-list" style="max-width: 400px; margin: 0 auto;">
+                        <li>100% open source - inspect and modify everything</li>
+                        <li>Use any AI provider or run models locally</li>
+                        <li>Files stored locally in your browser</li>
+                        <li>Complete Git integration with any provider</li>
+                        <li>Professional development environment</li>
+                        <li>No vendor lock-in or restrictions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta">
+            <h2>Break Free from Vendor Lock-in</h2>
+            <p>
+                While other tools lock you into their platforms and AI models, Shakespeare Act 2 gives you
+                complete freedom to choose your AI provider, Git service, and deployment platform.
+                Experience true user sovereignty in web development.
+            </p>
+            <a href="https://shakespeare.diy" class="btn" style="background: #ffffff !important; color: #000000 !important; border: 2px solid #f59e0b !important; margin: 10px; text-decoration: none !important;">🗽 Build Freely with Shakespeare</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> - Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> |
+                <a href="https://soapbox.pub/blog">Blog</a> |
+                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2">Act 2 Announcement</a> |
+                <a href="https://soapbox.pub/shakespeare-resources">Resource Center</a> |
+                <a href="https://github.com/soapbox-pub">GitHub</a> |
+                <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MailChimp Footer -->
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+            <tr>
+                <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                        <tr>
+                            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                <br>
+                                <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                <br>
+                                *|LIST:ADDRESSLINE|*
+                                <br>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <style type="text/css">
+            @media only screen and (max-width: 480px){
+                table#canspamBar td{font-size:14px !important;}
+                table#canspamBar td a{display:block !important; margin-top:10px !important;}
+            }
+        </style>
+    </center>
+</body>
+</html>
