@@ -69,7 +69,7 @@ export function getReadingTime(content: string): number {
 }
 
 export function extractSEOData(post: BlogPost) {
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
+  const baseUrl = typeof window !== 'undefined' ? "https://soapbox.pub" : '';
 
   return {
     title: `${post.title} - Soapbox Blog`,

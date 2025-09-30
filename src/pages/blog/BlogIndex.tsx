@@ -27,27 +27,27 @@ export default function BlogIndex() {
       "@type": "Blog",
       "name": "Soapbox Blog",
       "description": "Insights on decentralized social media, open source development, and community building",
-      "url": window.location.origin + "/blog",
+      "url": "https://soapbox.pub/blog",
       "publisher": {
         "@type": "Organization",
         "name": "Soapbox",
-        "url": window.location.origin,
+        "url": "https://soapbox.pub",
         "logo": {
           "@type": "ImageObject",
-          "url": window.location.origin + "/assets/logo.svg"
+          "url": "https://soapbox.pub/assets/logo.svg"
         }
       },
       "blogPost": allPosts.slice(0, 5).map(post => ({
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.excerpt,
-        "url": window.location.origin + `/blog/${post.slug}`,
+        "url": `https://soapbox.pub/blog/${post.slug}`,
         "datePublished": post.date + 'T00:00:00Z',
         "author": {
           "@type": "Person",
           "name": post.author.name || "Soapbox Team"
         },
-        "image": post.ogImage?.url || post.coverImage ? window.location.origin + (post.ogImage?.url || post.coverImage) : undefined
+        "image": post.ogImage?.url || post.coverImage ? "https://soapbox.pub" + (post.ogImage?.url || post.coverImage) : undefined
       }))
     }
   });
