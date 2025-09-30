@@ -79,7 +79,7 @@ function updateStructuredData(data: Record<string, unknown>) {
 }
 
 function getFullUrl(path: string): string {
-  const baseUrl = window.location.origin;
+  const baseUrl = "https://soapbox.pub";
   if (path.startsWith('http')) {
     return path;
   }
