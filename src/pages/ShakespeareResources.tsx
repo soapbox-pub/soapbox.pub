@@ -21,6 +21,7 @@ export default function ShakespeareResources() {
     description: 'Complete resource hub for Shakespeare AI website builder. Find answers to frequently asked questions and explore blog posts about Shakespeare features, tutorials, and updates.',
     type: 'website',
     keywords: 'shakespeare resources, shakespeare faq, shakespeare blog, ai website builder help, shakespeare tutorials',
+    image: '/shakespeare-resources/resrouce-center.png',
   });
 
   // Filter blog posts tagged with "shakespeare-resource"
