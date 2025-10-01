@@ -108,16 +108,17 @@
         .logo-container {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 20px;
+            gap: 8px;
+            padding: 8px 16px;
             background: #f8fafc;
-            border-radius: 12px;
+            border-radius: 8px;
             border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
         }
 
         .logo {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
         }
 
         .header h1 {
@@ -564,8 +565,14 @@
             }
 
             .logo {
-                width: 28px;
-                height: 28px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .logo-container {
+                gap: 6px;
+                padding: 6px 12px;
+                margin-bottom: 24px;
             }
 
             .hero {
@@ -627,16 +634,13 @@
 
 <body>
     <div class="email-container">
-        <!-- Header -->
-        <div class="header">
+
+        <!-- Hero Section -->
+        <div class="hero">
             <div class="logo-container">
                 <img src="https://soapbox.pub/logo.svg" alt="Soapbox Logo" class="logo">
                 <h1>Soapbox</h1>
             </div>
-        </div>
-
-        <!-- Hero Section -->
-        <div class="hero">
             <h1 class="hero-title">
                 🎭 Shakespeare: <span class="gradient-text">Act II</span>
             </h1>
@@ -666,7 +670,7 @@
                 <p class="feature-subtitle">Break free from AI vendor lock-in</p>
                 <img src="https://soapbox.pub/shakespeare-resources/choose-your-model-example.png" alt="AI provider selection" class="feature-image">
                 <p class="feature-description">
-                    Choose from 40+ AI providers or run models locally. OpenAI, Anthropic, Claude, 
+                    Choose from 40+ AI providers or run models locally. OpenAI, Anthropic, Claude,
                     local Llama models - the choice is yours.
                 </p>
             </div>
@@ -678,7 +682,7 @@
                 <p class="feature-subtitle">Everything you need, in your browser</p>
                 <img src="https://soapbox.pub/shakespeare-resources/edit-the-code-in-browser.png" alt="Code editor" class="feature-image">
                 <p class="feature-description">
-                    Complete development environment with code editor, file uploads, Git integration, 
+                    Complete development environment with code editor, file uploads, Git integration,
                     live preview, and virtual terminal. No downloads required.
                 </p>
             </div>
@@ -690,7 +694,7 @@
                 <p class="feature-subtitle">Your data never leaves your device</p>
                 <img src="https://soapbox.pub/shakespeare-resources/project-settings-export-and-delete.png" alt="Local storage" class="feature-image">
                 <p class="feature-description">
-                    Revolutionary local-first architecture. Files stored in your browser, 
+                    Revolutionary local-first architecture. Files stored in your browser,
                     Git operations run client-side. Complete privacy, zero data collection.
                 </p>
             </div>
@@ -702,7 +706,7 @@
                 <p class="feature-subtitle">First-ever client-side Git in browser</p>
                 <img src="https://soapbox.pub/shakespeare-resources/connect-your-git-account.png" alt="Git integration" class="feature-image">
                 <p class="feature-description">
-                    Import from GitHub, GitLab, or any provider. Push, pull, and manage versions 
+                    Import from GitHub, GitLab, or any provider. Push, pull, and manage versions
                     without servers. Complete Git functionality in your browser.
                 </p>
             </div>
@@ -806,7 +810,7 @@
             <!-- Templates Section -->
             <div style="margin-top: 50px;">
                 <h3 style="font-size: 28px; text-align: center; color: #f59e0b; margin-bottom: 30px; font-weight: bold;">🎯 Ready-to-Use Templates</h3>
-                
+
                 <!-- Template Placeholder 1 -->
                 <div class="template-card">
                     <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 1" class="showcase-image">
