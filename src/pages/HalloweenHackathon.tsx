@@ -187,7 +187,7 @@ export default function HalloweenHackathon() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-gothic text-4xl font-bold mb-4">
-              Spooky Submissions 👻
+              Community Submissions 🕸️
             </h2>
           </div>
 
@@ -219,9 +219,6 @@ export default function HalloweenHackathon() {
               {/* All Submissions */}
               {regularSubmissions.length > 0 && (
                 <div>
-                  <h3 className="font-gothic text-2xl font-bold text-center mb-8 text-orange-200">
-                    {winnerSubmissions.length > 0 ? 'All Submissions' : 'Community Submissions'}
-                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {regularSubmissions.map((submission) => (
                       <AppShowcaseCard
