@@ -24,6 +24,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
 				display: ['Outfit Variable', 'Outfit', 'system-ui', 'sans-serif'],
+				gothic: ['Creepster', 'Butcherman', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

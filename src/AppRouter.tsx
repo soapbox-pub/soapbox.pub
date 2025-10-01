@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import CustomNipPage from "./pages/CustomNipPage";
 import ShakespeareResources from "./pages/ShakespeareResources";
 import SoapboxSessions from "./pages/SoapboxSessions";
+import HalloweenHackathon from "./pages/HalloweenHackathon";
 
 // Tool pages
 import Ditto from "./pages/tools/Ditto";
@@ -47,6 +48,7 @@ export function AppRouter() {
         <Route path="/nip/:naddr" element={<CustomNipPage />} />
         <Route path="/shakespeare-resources" element={<ShakespeareResources />} />
         <Route path="/soapbox-sessions" element={<SoapboxSessions />} />
+        <Route path="/halloween-hackathon" element={<HalloweenHackathon />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

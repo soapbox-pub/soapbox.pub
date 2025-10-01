@@ -190,6 +190,53 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Halloween Hackathon Announcement */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-600 via-red-600 to-purple-700">
+        <div className="max-w-4xl mx-auto text-center text-white">
+          <div className="space-y-6">
+            <div className="flex justify-center space-x-4 text-4xl animate-bounce">
+              <span>🎃</span>
+              <span>👻</span>
+              <span>💀</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-bold">
+              Halloween Hackathon 2025
+            </h2>
+            <p className="text-xl md:text-2xl text-orange-100">
+              Build spooky apps with Shakespeare and win <span className="font-bold text-yellow-300">87,000 sats each</span> in three categories!
+            </p>
+            <p className="text-lg text-orange-200 max-w-2xl mx-auto">
+              Our first monthly theme challenge is here! Create Halloween-themed applications
+              and compete in three categories: Design, Function, and Judge's Choice.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button
+                size="lg"
+                className="bg-white text-orange-600 hover:bg-orange-50 text-lg px-8 py-3 font-semibold"
+                asChild
+              >
+                <Link to="/halloween-hackathon">
+                  🎃 Join the Hackathon
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-orange-600 text-lg px-8 py-3"
+                asChild
+              >
+                <Link to="/tools/shakespeare">
+                  🎭 Start Building with Shakespeare
+                </Link>
+              </Button>
+            </div>
+            <div className="text-sm text-orange-200">
+              Submissions close October 31st, 2025 • Winners announced November 8th
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Showcase Section */}
       <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
