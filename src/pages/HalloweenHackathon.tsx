@@ -46,7 +46,7 @@ export default function HalloweenHackathon() {
         title="Halloween Hackathon 2025 - Soapbox"
         description="Build spooky apps with Shakespeare and win 87k sats per category in our Halloween theme challenge!"
         keywords="Halloween, hackathon, Shakespeare, Soapbox, coding contest, Bitcoin, Lightning"
-        image="/og-image.png"
+        image="/assets/halloween/Halloween-cover.png"
       />
 
       {/* Hero Section with Background Image */}
