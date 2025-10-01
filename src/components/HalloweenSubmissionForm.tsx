@@ -15,6 +15,7 @@ import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { toast } from '@/hooks/useToast';
 import { nip19 } from 'nostr-tools';
 import LoginDialog from '@/components/auth/LoginDialog';
+import SignupDialog from '@/components/auth/SignupDialog';
 import { useQueryClient } from '@tanstack/react-query';
 
 const halloweenSubmissionSchema = z.object({
@@ -77,6 +78,7 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
   const queryClient = useQueryClient();
   const [tagInput, setTagInput] = useState('');
   const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [showSignupDialog, setShowSignupDialog] = useState(false);
 
   // Check if submissions are closed (November 2, 2025 or later)
   const isSubmissionsClosed = new Date() >= new Date('2025-11-02T00:00:00Z');
@@ -240,6 +242,14 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
           isOpen={showLoginDialog}
           onClose={() => setShowLoginDialog(false)}
           onLogin={() => setShowLoginDialog(false)}
+          onSignup={() => {
+            setShowLoginDialog(false);
+            setShowSignupDialog(true);
+          }}
+        />
+        <SignupDialog
+          isOpen={showSignupDialog}
+          onClose={() => setShowSignupDialog(false)}
         />
       </>
     );
