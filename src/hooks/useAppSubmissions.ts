@@ -75,6 +75,9 @@ export function useAppSubmissions() {
         limit: 1000
       }]);
 
+      // Note: Halloween submissions now use the same kind (31733) but are filtered by tags
+      // They will be included in the main query but can be filtered out if needed
+
       // Get featured app lists from moderators (NIP-51 kind 30267)
       const featuredLists = await nostr.query([{
         kinds: [30267],
@@ -110,7 +113,7 @@ export function useAppSubmissions() {
       const submissions: AppSubmission[] = [];
       const submissionMap = new Map<string, NostrEvent>();
 
-      // Group submissions by d-tag (identifier) to get latest version
+      // Group regular submissions by d-tag (identifier) to get latest version
       for (const event of submissionEvents) {
         const dTag = event.tags.find(tag => tag[0] === 'd')?.[1];
         if (!dTag) continue;
@@ -120,6 +123,9 @@ export function useAppSubmissions() {
           submissionMap.set(dTag, event);
         }
       }
+
+      // Halloween submissions are now included in the main query above
+      // since they use the same event kind (31733)
 
       // Get the latest featured list
       const latestFeaturedList = featuredLists.reduce((latest, current) =>
@@ -218,6 +224,7 @@ export function useAppSubmissions() {
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
 
           // Check if app is featured, approved, homepage, or hidden
+          // All apps now use kind 31733
           const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
           const isFeatured = featuredAppCoords.has(appCoordinate);
           const isHomepage = homepageAppCoords.has(appCoordinate);

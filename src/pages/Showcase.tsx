@@ -78,16 +78,29 @@ export default function Showcase() {
   );
   const nonTemplateSubmissions = visibleSubmissions.filter(app => !app.appTags.includes('Template'));
 
+  // Get Halloween Hackathon 2025 apps that are featured (for main showcase)
+  const halloweenApps = useMemo(() =>
+    shuffleArray(nonTemplateSubmissions.filter(app =>
+      app.appTags.includes('Halloween Hackathon 2025') && app.isFeatured
+    )),
+    [nonTemplateSubmissions]
+  );
+
+  // Filter out Halloween Hackathon 2025 apps from other sections (unless featured, they go in Halloween section)
+  const nonHalloweenSubmissions = nonTemplateSubmissions.filter(app =>
+    !app.appTags.includes('Halloween Hackathon 2025')
+  );
+
   // Shuffle featured and approved apps on each component mount/render for random display order
   const featuredApps = useMemo(() =>
-    shuffleArray(nonTemplateSubmissions.filter(app => app.isFeatured)),
-    [nonTemplateSubmissions]
+    shuffleArray(nonHalloweenSubmissions.filter(app => app.isFeatured)),
+    [nonHalloweenSubmissions]
   );
   const approvedApps = useMemo(() =>
-    shuffleArray(nonTemplateSubmissions.filter(app => app.isApproved && !app.isFeatured)),
-    [nonTemplateSubmissions]
+    shuffleArray(nonHalloweenSubmissions.filter(app => app.isApproved && !app.isFeatured)),
+    [nonHalloweenSubmissions]
   );
-  const pendingApps = nonTemplateSubmissions.filter(app => !app.isApproved);
+  const pendingApps = nonHalloweenSubmissions.filter(app => !app.isApproved);
 
   // Check if current user has any pending submissions (after pendingApps is defined)
   const userPendingApps = user ? pendingApps.filter(app => app.pubkey === user.pubkey) : [];
@@ -108,6 +121,7 @@ export default function Showcase() {
   };
 
   const filteredFeaturedApps = filterApps(featuredApps);
+  const filteredHalloweenApps = filterApps(halloweenApps);
   const filteredApprovedApps = filterApps(approvedApps);
   const filteredTemplateApps = filterApps(templateApps);
 
@@ -120,11 +134,14 @@ export default function Showcase() {
   // Get all unique tags from approved and featured apps only (exclude pending, hidden, and template apps)
   const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
 
-  // Get the most popular tags based on frequency
+  // Get the most popular tags based on frequency (excluding Halloween Hackathon 2025 tag)
   const tagCounts = new Map<string, number>();
   [...featuredApps, ...approvedApps, ...templateApps].forEach(app => {
     app.appTags.forEach(tag => {
-      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+      // Don't include Halloween Hackathon 2025 in the tag filters
+      if (tag !== 'Halloween Hackathon 2025') {
+        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+      }
     });
   });
 
@@ -369,6 +386,31 @@ export default function Showcase() {
                     </div>
                   )}
 
+                  {/* Halloween Hackathon 2025 Apps */}
+                  {filteredHalloweenApps.length > 0 && (
+                    <div className="mb-16">
+                      <div className="flex items-center gap-3 mb-8">
+                        <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                          <span className="text-xl">🎃</span>
+                        </div>
+                        <div>
+                          <h2 className="text-3xl font-display font-bold text-gray-900">Halloween Hackathon 2025</h2>
+                          <p className="text-gray-600">Featured spooky creations from our Halloween hackathon</p>
+                        </div>
+                      </div>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredHalloweenApps.map((app) => (
+                          <AppShowcaseCard
+                            key={app.id}
+                            app={app}
+                            onEdit={handleEditApp}
+                            showModerationControls={isModerator}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* All Apps (Approved) */}
                   {filteredApprovedApps.length > 0 && (
                     <div className="mb-16">
@@ -537,7 +579,7 @@ export default function Showcase() {
                 if (selectedTag === 'Template') {
                   return filteredTemplateApps.length === 0;
                 }
-                return filteredFeaturedApps.length === 0 && filteredApprovedApps.length === 0 && filteredTemplateApps.length === 0;
+                return filteredFeaturedApps.length === 0 && filteredHalloweenApps.length === 0 && filteredApprovedApps.length === 0 && filteredTemplateApps.length === 0;
               })() && (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
