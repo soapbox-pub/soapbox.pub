@@ -4,8 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Trophy, Code, Skull, Ghost, Candy } from 'lucide-react';
 import { HalloweenSubmissionForm } from '@/components/HalloweenSubmissionForm';
-import { HalloweenShowcaseCard } from '@/components/HalloweenShowcaseCard';
-import { useHalloweenSubmissions, useHalloweenSubmissionsWithContacts } from '@/hooks/useHalloweenSubmissions';
+import { AppShowcaseCard } from '@/components/AppShowcaseCard';
+import { useHalloweenSubmissions, useHalloweenSubmissionsWithContacts, type HalloweenSubmission } from '@/hooks/useHalloweenSubmissions';
+import type { AppSubmission } from '@/hooks/useAppSubmissions';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
 
@@ -13,11 +14,31 @@ export default function HalloweenHackathon() {
   const { data: submissions, isLoading: isLoadingSubmissions } = useHalloweenSubmissions();
   const { data: submissionsWithContacts, isModerator } = useHalloweenSubmissionsWithContacts();
 
-  // Filter submissions for display
-  const approvedSubmissions = submissions?.filter(s => s.isApproved && !s.isHidden) || [];
-  const winnerSubmissions = approvedSubmissions.filter(s => s.isWinner);
-  const regularSubmissions = approvedSubmissions.filter(s => !s.isWinner);
-  const moderatorSubmissions = isModerator ? submissionsWithContacts?.filter(s => !s.isHidden) || [] : [];
+  // Function to scroll to submissions section after successful submission
+  const scrollToSubmissions = () => {
+    const submissionsSection = document.getElementById('submissions-section');
+    if (submissionsSection) {
+      submissionsSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  // Convert Halloween submissions to AppSubmission format
+  const convertToAppSubmission = (submission: HalloweenSubmission): AppSubmission => ({
+    ...submission,
+    isFeatured: submission.isWinner, // Winners are considered "featured"
+    isHomepage: false, // Halloween apps don't appear on homepage
+  });
+
+  // Filter submissions for display - show ALL submissions by default, only filter out hidden ones
+  const visibleSubmissions = submissions?.filter(s => !s.isHidden) || [];
+  const winnerSubmissions = visibleSubmissions.filter(s => s.isWinner).map(convertToAppSubmission);
+  const regularSubmissions = visibleSubmissions.filter(s => !s.isWinner).map(convertToAppSubmission);
+
+  // Moderator view: only show hidden Halloween apps (for management purposes)
+  const hiddenSubmissions = isModerator ? submissionsWithContacts?.filter(s => s.isHidden).map(convertToAppSubmission) || [] : [];
 
   return (
     <Layout>
@@ -50,7 +71,7 @@ export default function HalloweenHackathon() {
             <div className="flex items-center justify-center space-x-4 mb-6">
               <Skull className="w-12 h-12 text-orange-400" />
               <span className="bg-orange-600 text-white text-lg px-4 py-2 rounded-full font-semibold">
-                First Monthly Challenge
+                Monthly Challenge
               </span>
               <Ghost className="w-12 h-12 text-purple-400" />
             </div>
@@ -94,16 +115,75 @@ export default function HalloweenHackathon() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Submission Form Section */}
+      <section className="relative bg-black text-white py-20 overflow-hidden">
+        {/* Halloween Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating Halloween elements */}
+          <div className="absolute top-10 left-10 text-6xl animate-bounce opacity-20">🎃</div>
+          <div className="absolute top-20 right-20 text-5xl animate-pulse opacity-20">👻</div>
+          <div className="absolute bottom-20 left-20 text-5xl animate-bounce delay-1000 opacity-20">🦇</div>
+          <div className="absolute bottom-10 right-10 text-6xl animate-pulse delay-500 opacity-20">💀</div>
+          <div className="absolute top-1/2 left-1/4 text-4xl animate-bounce delay-700 opacity-20">🕷️</div>
+          <div className="absolute top-1/3 right-1/3 text-4xl animate-pulse delay-300 opacity-20">🕸️</div>
+          <div className="absolute top-2/3 left-1/2 text-5xl animate-bounce delay-200 opacity-20">🍭</div>
+          <div className="absolute top-1/4 left-3/4 text-4xl animate-pulse delay-800 opacity-20">⚰️</div>
+
+          {/* Gradient overlays for depth */}
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black via-transparent to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+
+          {/* Subtle pattern overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-900/5 via-purple-900/5 to-red-900/5"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <Skull className="w-10 h-10 text-orange-400 animate-pulse" />
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white text-lg px-6 py-3 rounded-full font-bold shadow-lg">
+                🎃 Submit Your Creation 🎃
+              </span>
+              <Ghost className="w-10 h-10 text-purple-400 animate-pulse" />
+            </div>
+
+            <h2 className="font-gothic text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
+              Enter the Hackathon
+            </h2>
+
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Ready to compete for <span className="text-orange-400 font-bold">87,000 sats</span> in prizes?
+              Submit your spooky Shakespeare creation and it will appear in the submissions below! 👻
+            </p>
+
+            <div className="flex justify-center space-x-6 mt-8">
+              <div className="flex items-center space-x-2 text-orange-300">
+                <Candy className="w-5 h-5" />
+                <span className="text-sm font-medium">Design Excellence</span>
+              </div>
+              <div className="flex items-center space-x-2 text-purple-300">
+                <Code className="w-5 h-5" />
+                <span className="text-sm font-medium">Innovation</span>
+              </div>
+              <div className="flex items-center space-x-2 text-red-300">
+                <Trophy className="w-5 h-5" />
+                <span className="text-sm font-medium">Judge's Choice</span>
+              </div>
+            </div>
+          </div>
 
           {/* Submission Form */}
           <div className="max-w-4xl mx-auto">
-            <HalloweenSubmissionForm />
+            <HalloweenSubmissionForm onSuccess={scrollToSubmissions} />
           </div>
         </div>
       </section>
 
-      {/* Prize Categories Section */}
-      <section className="bg-gradient-to-r from-orange-600 via-red-600 to-purple-700 text-white py-16">
+      {/* Spooky Submissions Section */}
+      <section id="submissions-section" className="bg-gradient-to-r from-orange-600 via-red-600 to-purple-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-gothic text-4xl font-bold mb-4">
@@ -126,10 +206,10 @@ export default function HalloweenHackathon() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {winnerSubmissions.map((submission) => (
-                      <HalloweenShowcaseCard
+                      <AppShowcaseCard
                         key={submission.id}
-                        submission={submission}
-                        showModerationInfo={isModerator}
+                        app={submission}
+                        showModerationControls={isModerator}
                       />
                     ))}
                   </div>
@@ -144,10 +224,10 @@ export default function HalloweenHackathon() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {regularSubmissions.map((submission) => (
-                      <HalloweenShowcaseCard
+                      <AppShowcaseCard
                         key={submission.id}
-                        submission={submission}
-                        showModerationInfo={isModerator}
+                        app={submission}
+                        showModerationControls={isModerator}
                       />
                     ))}
                   </div>
@@ -155,7 +235,7 @@ export default function HalloweenHackathon() {
               )}
 
               {/* Empty State */}
-              {approvedSubmissions.length === 0 && (
+              {visibleSubmissions.length === 0 && (
                 <div className="text-center py-12 space-y-4">
                   <div className="text-6xl">🎃</div>
                   <h3 className="font-gothic text-2xl font-bold text-white">
@@ -167,21 +247,21 @@ export default function HalloweenHackathon() {
                 </div>
               )}
 
-              {/* Moderator View */}
-              {isModerator && moderatorSubmissions.length > 0 && (
+              {/* Moderator View - Only show if there are hidden Halloween apps */}
+              {isModerator && hiddenSubmissions.length > 0 && (
                 <div className="mt-12 border-t border-orange-400 pt-12">
-                  <div className="bg-yellow-900/30 border border-yellow-400 rounded-lg p-4 mb-8">
-                    <h3 className="font-bold text-yellow-300 mb-2">🛡️ Moderator View</h3>
-                    <p className="text-yellow-200 text-sm">
-                      Contact information visible for prize distribution.
+                  <div className="bg-red-900/30 border border-red-400 rounded-lg p-4 mb-8">
+                    <h3 className="font-bold text-red-300 mb-2">🛡️ Hidden Halloween Apps ({hiddenSubmissions.length})</h3>
+                    <p className="text-red-200 text-sm">
+                      Halloween apps that have been hidden from public view. These can be unhidden if needed.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {moderatorSubmissions.map((submission) => (
-                      <HalloweenShowcaseCard
+                    {hiddenSubmissions.map((submission) => (
+                      <AppShowcaseCard
                         key={submission.id}
-                        submission={submission}
-                        showModerationInfo={true}
+                        app={submission}
+                        showModerationControls={true}
                       />
                     ))}
                   </div>

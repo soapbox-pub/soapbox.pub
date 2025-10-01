@@ -55,6 +55,7 @@ interface AppSubmissionFormProps {
 }
 
 const SUGGESTED_TAGS = [
+  'Halloween Hackathon 2025',
   'Shakespeare',
   'Bitcoin',
   'Productivity',

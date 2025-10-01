@@ -75,6 +75,13 @@ export function useAppSubmissions() {
         limit: 1000
       }]);
 
+      // Get Halloween hackathon submissions (kind 31734) for main showcase
+      const halloweenSubmissionEvents = await nostr.query([{
+        kinds: [31734], // Halloween hackathon submission kind
+        '#t': ['soapbox-halloween-hackathon'],
+        limit: 1000
+      }]);
+
       // Get featured app lists from moderators (NIP-51 kind 30267)
       const featuredLists = await nostr.query([{
         kinds: [30267],
@@ -110,8 +117,19 @@ export function useAppSubmissions() {
       const submissions: AppSubmission[] = [];
       const submissionMap = new Map<string, NostrEvent>();
 
-      // Group submissions by d-tag (identifier) to get latest version
+      // Group regular submissions by d-tag (identifier) to get latest version
       for (const event of submissionEvents) {
+        const dTag = event.tags.find(tag => tag[0] === 'd')?.[1];
+        if (!dTag) continue;
+
+        const existing = submissionMap.get(dTag);
+        if (!existing || event.created_at > existing.created_at) {
+          submissionMap.set(dTag, event);
+        }
+      }
+
+      // Group Halloween submissions by d-tag (identifier) to get latest version
+      for (const event of halloweenSubmissionEvents) {
         const dTag = event.tags.find(tag => tag[0] === 'd')?.[1];
         if (!dTag) continue;
 
@@ -218,7 +236,8 @@ export function useAppSubmissions() {
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
 
           // Check if app is featured, approved, homepage, or hidden
-          const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
+          // Use the correct kind for the coordinate (31733 for regular apps, 31734 for Halloween apps)
+          const appCoordinate = `${event.kind}:${event.pubkey}:${dTag}`;
           const isFeatured = featuredAppCoords.has(appCoordinate);
           const isHomepage = homepageAppCoords.has(appCoordinate);
           const isSubmittedByModerator = event.pubkey === MODERATOR_HEX;

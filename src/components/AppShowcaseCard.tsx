@@ -15,7 +15,9 @@ import {
   XCircle,
   User,
   Home,
-  HomeIcon
+  HomeIcon,
+  Contact,
+  Copy
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -76,6 +78,37 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
   })();
   const isModerator = user?.pubkey === MODERATOR_HEX;
 
+  // Check if this is a Halloween submission by looking for Halloween tags
+  const isHalloweenSubmission = app.appTags.includes('Halloween Hackathon 2025');
+
+  // Get contact info from Halloween submissions (these have lightning/email tags)
+  const getContactInfo = () => {
+    if (!isHalloweenSubmission) return null;
+
+    // Look for lightning and email tags in the event tags
+    const lightningTag = app.tags?.find(tag => tag[0] === 'lightning')?.[1];
+    const emailTag = app.tags?.find(tag => tag[0] === 'email')?.[1];
+
+    return { lightning: lightningTag, email: emailTag };
+  };
+
+  const handleCopyContactInfo = () => {
+    const contactInfo = getContactInfo();
+    if (!contactInfo) return;
+
+    const info = [];
+    if (contactInfo.lightning) info.push(`Lightning: ${contactInfo.lightning}`);
+    if (contactInfo.email) info.push(`Email: ${contactInfo.email}`);
+
+    const textToCopy = info.join('\n');
+    navigator.clipboard.writeText(textToCopy);
+
+    toast({
+      title: 'Contact Info Copied!',
+      description: `Copied ${info.length} contact method(s) to clipboard`
+    });
+  };
+
   const handleModerationAction = async (action: 'feature' | 'unfeature' | 'approve' | 'unapprove' | 'hide' | 'unhide' | 'homepage' | 'unhomepage') => {
     if (!isModerator || !user) return;
 
@@ -89,7 +122,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
       return;
     }
 
-    const appCoordinate = `31733:${app.pubkey}:${dTag}`;
+    const appCoordinate = `${app.kind}:${app.pubkey}:${dTag}`;
 
     try {
       if (action === 'homepage' || action === 'unhomepage') {
@@ -316,6 +349,12 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
       // Invalidate queries to refresh the data
       queryClient.invalidateQueries({ queryKey: ['app-submissions'] });
 
+      // If this is a Halloween app, also invalidate Halloween queries
+      if (isHalloweenSubmission) {
+        queryClient.invalidateQueries({ queryKey: ['halloween-submissions'] });
+        queryClient.invalidateQueries({ queryKey: ['halloween-submissions-with-contacts'] });
+      }
+
       toast({
         title: 'Success!',
         description: `App "${app.appName}" ${action}d successfully`
@@ -400,6 +439,14 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
                 )}
                 {showModerationControls && isModerator && (
                   <>
+                    {isHalloweenSubmission && getContactInfo() && (getContactInfo()?.lightning || getContactInfo()?.email) && (
+                      <DropdownMenuItem
+                        onClick={handleCopyContactInfo}
+                      >
+                        <Contact className="w-4 h-4 mr-2" />
+                        View Contact Info
+                      </DropdownMenuItem>
+                    )}
                     {!app.isApproved && (
                       <DropdownMenuItem
                         onClick={() => handleModerationAction('approve')}

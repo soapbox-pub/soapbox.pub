@@ -14,6 +14,8 @@ import { useNostrPublish } from '@/hooks/useNostrPublish';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { toast } from '@/hooks/useToast';
 import { nip19 } from 'nostr-tools';
+import LoginDialog from '@/components/auth/LoginDialog';
+import { useQueryClient } from '@tanstack/react-query';
 
 const halloweenSubmissionSchema = z.object({
   appName: z.string().min(1, 'App name is required'),
@@ -44,9 +46,15 @@ const halloweenSubmissionSchema = z.object({
   screenshotUrl: z.string().url('Please enter a valid screenshot URL'),
   authorNpub: z.string().min(1, 'Author npub is required'),
   lightningAddress: z.string().optional(),
-  email: z.string().email('Please enter a valid email').optional(),
+  email: z.string().optional().refine(val => !val || z.string().email().safeParse(val).success, {
+    message: "Please enter a valid email"
+  }),
   tags: z.array(z.string()).min(1, 'At least one tag is required'),
-}).refine(data => data.lightningAddress || data.email, {
+}).refine(data => {
+  const hasLightning = data.lightningAddress && data.lightningAddress.trim().length > 0;
+  const hasEmail = data.email && data.email.trim().length > 0 && z.string().email().safeParse(data.email.trim()).success;
+  return hasLightning || hasEmail;
+}, {
   message: "Please provide either a Lightning address or email for prize distribution",
   path: ["lightningAddress"]
 });
@@ -77,7 +85,9 @@ const HALLOWEEN_SUGGESTED_TAGS = [
 export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmissionFormProps) {
   const { user } = useCurrentUser();
   const { mutate: publishEvent, isPending } = useNostrPublish();
+  const queryClient = useQueryClient();
   const [tagInput, setTagInput] = useState('');
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
 
   // Check if submissions are closed (November 2, 2025 or later)
   const isSubmissionsClosed = new Date() >= new Date('2025-11-02T00:00:00Z');
@@ -160,12 +170,20 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
         created_at: Math.floor(Date.now() / 1000)
       });
 
+      // Invalidate and refetch Halloween submissions to show the new submission immediately
+      await queryClient.invalidateQueries({ queryKey: ['halloween-submissions'] });
+      await queryClient.invalidateQueries({ queryKey: ['halloween-submissions-with-contacts'] });
+
       toast({
         title: '🎃 Spooky Success!',
-        description: 'Your Halloween app has been submitted to the hackathon! Good luck! 👻'
+        description: 'Your Halloween app has been submitted to the hackathon! Check it out in the submissions below! 👻'
       });
       reset();
-      onSuccess?.();
+
+      // Wait a moment for the query to refetch, then scroll to submissions
+      setTimeout(() => {
+        onSuccess?.();
+      }, 1000);
     } catch (error) {
       console.error('Failed to submit Halloween app:', error);
       toast({
@@ -215,22 +233,33 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
 
   if (!user) {
     return (
-      <Card id="submission-form" className="border-orange-500 bg-gray-800/90 backdrop-blur-sm text-white">
-        <CardContent className="p-8 text-center">
-          <div className="space-y-4">
-            <div className="flex justify-center space-x-2 text-4xl">
-              <span>👻</span>
-              <span>🎃</span>
-              <span>💀</span>
+      <>
+        <Card id="submission-form" className="border-orange-500 bg-gray-800/90 backdrop-blur-sm text-white">
+          <CardContent className="p-8 text-center">
+            <div className="space-y-4">
+              <div className="flex justify-center space-x-2 text-4xl">
+                <span>👻</span>
+                <span>🎃</span>
+                <span>💀</span>
+              </div>
+              <h3 className="font-gothic text-2xl font-bold text-white">Join the Halloween Hackathon!</h3>
+              <p className="text-gray-300 mb-6">Please log in to submit your spooky Shakespeare app to the hackathon.</p>
+              <Button
+                variant="outline"
+                className="border-orange-500 text-orange-400 hover:bg-orange-50 hover:text-black"
+                onClick={() => setShowLoginDialog(true)}
+              >
+                Log In to Submit
+              </Button>
             </div>
-            <h3 className="font-gothic text-2xl font-bold text-white">Join the Halloween Hackathon!</h3>
-            <p className="text-gray-300 mb-6">Please log in to submit your spooky Shakespeare app to the hackathon.</p>
-            <Button variant="outline" className="border-orange-500 text-orange-400 hover:bg-orange-50 hover:text-black">
-              Log In to Submit
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+        <LoginDialog
+          isOpen={showLoginDialog}
+          onClose={() => setShowLoginDialog(false)}
+          onLogin={() => setShowLoginDialog(false)}
+        />
+      </>
     );
   }
 
@@ -392,10 +421,10 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
               </div>
             </div>
 
-            {(errors.lightningAddress || errors.email) && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-sm text-red-600">
-                  Please provide either a Lightning address or email for prize distribution.
+            {errors.lightningAddress && (
+              <div className="p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
+                <p className="text-sm text-red-400">
+                  {errors.lightningAddress.message}
                 </p>
               </div>
             )}
