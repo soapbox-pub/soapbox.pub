@@ -188,9 +188,7 @@
             width: 100%;
             max-width: 500px;
             border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             margin: 30px 0;
-            border: 2px solid #e2e8f0;
         }
 
         /* Content sections */
@@ -273,8 +271,6 @@
             width: 100%;
             border-radius: 12px;
             margin: 20px 0;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
         }
 
         /* Comparison table */
@@ -309,6 +305,7 @@
         .shakespeare-col {
             background: linear-gradient(135deg, #f3e8ff 0%, #fef3c7 100%) !important;
             font-weight: 600;
+            color: #1e293b !important;
         }
 
         /* Showcase section */
@@ -638,19 +635,18 @@
         <!-- Hero Section -->
         <div class="hero">
             <div class="logo-container">
-                <img src="https://soapbox.pub/logo.svg" alt="Soapbox Logo" class="logo">
-                <h1>Soapbox</h1>
+                <img src="soapbox-full-logo.png" alt="Soapbox Logo" class="logo">
             </div>
             <h1 class="hero-title">
                 🎭 Shakespeare: <span class="gradient-text">Act II</span>
             </h1>
             <h2 class="hero-subtitle">Build Freely</h2>
             <p class="hero-text">
-                Revolutionary AI development platform with complete creative freedom.
+                Open source AI development platform with complete creative freedom.
                 Local-first architecture, unlimited AI providers, and professional dev tools - all in your browser.
             </p>
 
-            <img src="https://soapbox.pub/shakespeare-resources/Screenshot from 2025-09-25 12-58-44.png" alt="Shakespeare Act 2 Interface" class="hero-image">
+            <img src="https://media.ditto.pub/b59a245d5103db5549562818fce1fccc3643c08902cb5db2ce79e15b62d186b7.png" alt="Shakespeare Act 2 Interface" class="hero-image">
 
             <div style="margin-top: 30px;">
                 <a href="https://shakespeare.diy" class="btn btn-shakespeare">🎭 Launch Act 2</a>
@@ -660,14 +656,10 @@
 
         <!-- Revolutionary Features -->
         <div class="section">
-            <h2 class="section-title">Revolutionary Features</h2>
-            <p class="section-subtitle">Break free from vendor lock-in with cutting-edge technology</p>
-
             <!-- AI Provider Choice -->
             <div class="feature-card">
-                <div class="feature-icon ai-icon">🤖</div>
-                <h3 class="feature-title">Any AI Provider</h3>
-                <p class="feature-subtitle">Break free from AI vendor lock-in</p>
+                <h3 class="feature-title">🤖 Any AI Provider</h3>
+                <p class="feature-subtitle">Break free from Big AI vendor lock-in</p>
                 <img src="https://soapbox.pub/shakespeare-resources/choose-your-model-example.png" alt="AI provider selection" class="feature-image">
                 <p class="feature-description">
                     Choose from 40+ AI providers or run models locally. OpenAI, Anthropic, Claude,
@@ -675,39 +667,35 @@
                 </p>
             </div>
 
+            <!-- Git Integration -->
+            <div class="feature-card">
+                <h3 class="feature-title">🚀 Git Version Control</h3>
+                <p class="feature-subtitle">Seemless integration for any git host</p>
+                <img src="https://soapbox.pub/shakespeare-resources/connect-your-git-account.png" alt="Git integration" class="feature-image">
+                <p class="feature-description">
+                    Import from GitHub, GitLab, Nostr or any provider. Push, pull, and manage versions. Complete Git functionality in your browser.
+                </p>
+            </div>
+
             <!-- Development Environment -->
             <div class="feature-card">
-                <div class="feature-icon dev-icon">💻</div>
-                <h3 class="feature-title">Pro Dev Environment</h3>
-                <p class="feature-subtitle">Everything you need, in your browser</p>
+                <h3 class="feature-title">💻 Pro Dev Environment</h3>
+                <p class="feature-subtitle">Everything you need at your fingertips</p>
                 <img src="https://soapbox.pub/shakespeare-resources/edit-the-code-in-browser.png" alt="Code editor" class="feature-image">
                 <p class="feature-description">
-                    Complete development environment with code editor, file uploads, Git integration,
-                    live preview, and virtual terminal. No downloads required.
+                    Complete development environment with live preview, code editor, file uploads, Git integration,
+                    and virtual terminal - all in your browser.
                 </p>
             </div>
 
             <!-- Local-First Architecture -->
             <div class="feature-card">
-                <div class="feature-icon local-icon">🔒</div>
-                <h3 class="feature-title">Local-First</h3>
-                <p class="feature-subtitle">Your data never leaves your device</p>
+                <h3 class="feature-title">🔒 Local-First</h3>
+                <p class="feature-subtitle">Your projects are stored in the browser</p>
                 <img src="https://soapbox.pub/shakespeare-resources/project-settings-export-and-delete.png" alt="Local storage" class="feature-image">
                 <p class="feature-description">
-                    Revolutionary local-first architecture. Files stored in your browser,
-                    Git operations run client-side. Complete privacy, zero data collection.
-                </p>
-            </div>
-
-            <!-- Git Integration -->
-            <div class="feature-card">
-                <div class="feature-icon git-icon">🚀</div>
-                <h3 class="feature-title">Revolutionary Git</h3>
-                <p class="feature-subtitle">First-ever client-side Git in browser</p>
-                <img src="https://soapbox.pub/shakespeare-resources/connect-your-git-account.png" alt="Git integration" class="feature-image">
-                <p class="feature-description">
-                    Import from GitHub, GitLab, or any provider. Push, pull, and manage versions
-                    without servers. Complete Git functionality in your browser.
+                    Privacy-respecting local-first architecture. Files stored in your browser,
+                    so they only go where you choose to send them.
                 </p>
             </div>
         </div>
@@ -754,7 +742,7 @@
                     <tr>
                         <td><strong>Git Integration</strong></td>
                         <td>Limited</td>
-                        <td class="shakespeare-col">✅ Full client-side</td>
+                        <td class="shakespeare-col">✅ Full, any host</td>
                     </tr>
                 </tbody>
             </table>
@@ -781,30 +769,37 @@
 
         <!-- Showcase Section -->
         <div class="section">
-            <h2 class="section-title">🎨 Build Anything</h2>
+            <h2 class="section-title">🎨 The Web is Your Stage</h2>
             <p class="section-subtitle">See what's possible with Shakespeare Act 2</p>
 
             <!-- Placeholder App Showcase -->
             <div class="showcase-grid">
                 <!-- App Placeholder 1 -->
                 <div class="showcase-card">
-                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured App 1" class="showcase-image">
+                    <img src="https://media.ditto.pub/701b10f7875daff101d1221df1af484af79cd52b85312a3cf893eab91f035c67.png" alt="Featured App 1" class="showcase-image">
                     <div class="showcase-content">
-                        <h3 class="showcase-title">[App Name Placeholder]</h3>
-                        <p class="showcase-description">[App description will be populated from Nostr events when manually inserted]</p>
-                        <a href="#" class="btn btn-edit">✨ Edit with Shakespeare</a>
+                        <h3 class="showcase-title">Bitmap</h3>
+                        <p class="showcase-description">Real-time Bitchat monitoring and visualization of ephemeral Nostr events with geospatial analysis. A heat map application that tracks and displays anonymous, location-based messages across the Nostr network.</p>
+                        <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fchad.curtis%2Fbitmap.git" class="btn btn-edit">✨ Edit with Shakespeare</a>
                     </div>
                 </div>
 
                 <!-- App Placeholder 2 -->
                 <div class="showcase-card">
-                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured App 2" class="showcase-image">
+                    <img src="https://media.ditto.pub/ad475f7a3a845d599b2bc10f1294ab9fa33fd26fe8dac4186e559bc03f712c76.png" alt="Featured App 2" class="showcase-image">
                     <div class="showcase-content">
-                        <h3 class="showcase-title">[App Name Placeholder]</h3>
-                        <p class="showcase-description">[App description will be populated from Nostr events when manually inserted]</p>
-                        <a href="#" class="btn btn-edit">✨ Edit with Shakespeare</a>
+                        <h3 class="showcase-title">Bitcoin Mining Block Party</h3>
+                        <p class="showcase-description">Explore our mining dashboard with hash rates, worker statistics, and party analytics.</p>
+                        <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2FHeatherLarson%2Fblock-party.git" class="btn btn-edit">✨ Edit with Shakespeare</a>
                     </div>
                 </div>
+            </div>
+
+            <!-- View Full Showcase Link -->
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://soapbox.pub/showcase" class="btn btn-primary" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #ffffff !important; font-size: 16px; padding: 12px 24px;">
+                    🌟 View Full Showcase
+                </a>
             </div>
 
             <!-- Templates Section -->
@@ -815,19 +810,19 @@
                 <div class="template-card">
                     <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 1" class="showcase-image">
                     <div class="template-content">
-                        <h4 class="template-title">[Template Name Placeholder]</h4>
-                        <p class="template-description">[Template description will be populated from Nostr events when manually inserted]</p>
-                        <a href="#" class="btn btn-template">🚀 Use Template</a>
+                        <h4 class="template-title">[Template: Petition Site</h4>
+                        <p class="template-description">A template for a petition site with comprehensive ocean conservation campaign features including Nostr-powered signature collection, real-time progress tracking, multi-page advocacy content, and responsive design.</p>
+                        <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Foceanguard-petition" class="btn btn-template">🚀 Use Template</a>
                     </div>
                 </div>
 
                 <!-- Template Placeholder 2 -->
                 <div class="template-card">
-                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 2" class="showcase-image">
+                    <img src="https://media.ditto.pub/dd86180079d954171f0d38a9cd3cf540cf59f509229e7abcd82a345df3d50f99.png" alt="Featured Template 2" class="showcase-image">
                     <div class="template-content">
-                        <h4 class="template-title">[Template Name Placeholder]</h4>
-                        <p class="template-description">[Template description will be populated from Nostr events when manually inserted]</p>
-                        <a href="#" class="btn btn-template">🚀 Use Template</a>
+                        <h4 class="template-title">Template: Small Business</h4>
+                        <p class="template-description">A template for a small business with dramatic hero imagery, professional service showcases, a contact form, blog,  and authentic customer testimonials.</p>
+                        <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Fbizcraft-solutions" class="btn btn-template">🚀 Use Template</a>
                     </div>
                 </div>
             </div>
@@ -846,8 +841,8 @@
                 </a>
             </div>
             <div>
-                <a href="https://soapbox.pub/shakespeare-resources" class="btn btn-secondary" style="color: #ffffff !important; border-color: #ffffff;">📚 Resource Center</a>
-                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2" class="btn btn-secondary" style="color: #ffffff !important; border-color: #ffffff;">📖 Read Full Blog</a>
+                <a href="https://soapbox.pub/shakespeare-resources" class="btn btn-secondary" style="background: transparent !important; color: #ffffff !important; border-color: #ffffff;">📚 Resource Center</a>
+                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2" class="btn btn-secondary" style="background: transparent !important; color: #ffffff !important; border-color: #ffffff;">📖 Read Full Blog</a>
             </div>
         </div>
 
