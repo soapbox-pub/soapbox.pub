@@ -143,11 +143,11 @@ export default function HalloweenHackathon() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center space-x-4 mb-6">
-              <Skull className="w-10 h-10 text-orange-400 animate-pulse" />
-              <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white text-lg px-6 py-3 rounded-full font-bold shadow-lg">
+              <Skull className="w-10 h-10 text-orange-400 animate-pulse hidden sm:block" />
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white text-lg px-6 py-3 rounded-full font-bold shadow-lg hidden sm:inline-block">
                 🎃 Submit Your Creation 🎃
               </span>
-              <Ghost className="w-10 h-10 text-purple-400 animate-pulse" />
+              <Ghost className="w-10 h-10 text-purple-400 animate-pulse hidden sm:block" />
             </div>
 
             <h2 className="font-gothic text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
