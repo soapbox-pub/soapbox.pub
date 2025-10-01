@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="Shakespeare Act 2: Build Freely - Revolutionary AI development platform with complete creative freedom, any AI provider, local storage, and zero vendor lock-in.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="🎭 Shakespeare Act 2: Build Freely">
+    <meta property="og:description" content="Experience the future of web development with complete creative freedom. Local-first architecture, unlimited AI providers, and professional dev tools - all in your browser.">
+    <title>🎭 Shakespeare Act 2: Build Freely</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style type="text/css">
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0f172a !important;
+                color: #e2e8f0 !important;
+            }
+            .email-container {
+                background-color: #1e293b !important;
+            }
+            .header {
+                background-color: #1e293b !important;
+                border-bottom: 1px solid #334155 !important;
+            }
+            .hero {
+                background: linear-gradient(135deg, #334155 0%, #1e293b 50%, #475569 100%) !important;
+            }
+            .feature-card, .showcase-card, .template-card {
+                background-color: #1e293b !important;
+                border: 2px solid #334155 !important;
+            }
+            .section {
+                background-color: #0f172a !important;
+            }
+            .stats {
+                background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+            }
+            .cta {
+                background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+            }
+            .footer {
+                background-color: #1e293b !important;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+        }
+
+        /* Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+
+        .header h1 {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 50%, #fef3c7 100%);
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 900;
+            color: #1e293b;
+            margin: 0 0 15px;
+            line-height: 1.1;
+        }
+
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: #475569;
+            margin: 0 0 35px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            margin: 30px 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        /* Content sections */
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 15px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin: 0 0 35px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Feature cards */
+        .feature-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 25px;
+            margin: 25px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .ai-icon { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+        .dev-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .local-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .git-icon { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+        }
+
+        .feature-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin: 0 0 15px;
+            font-weight: 600;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        .feature-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 15px 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .shakespeare-col {
+            background: linear-gradient(135deg, #f3e8ff 0%, #fef3c7 100%) !important;
+            font-weight: 600;
+        }
+
+        /* Showcase section */
+        .showcase-grid {
+            display: table;
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .showcase-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 0;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-card:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .showcase-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .showcase-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .showcase-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e293b;
+            margin: 0 0 10px;
+        }
+
+        .showcase-description {
+            font-size: 14px;
+            color: #64748b;
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        /* Template cards */
+        .template-card {
+            background: #ffffff;
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 0;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .template-card:hover {
+            border-color: #d97706;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+        }
+
+        .template-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .template-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f59e0b;
+            margin: 0 0 10px;
+        }
+
+        .template-description {
+            font-size: 14px;
+            color: #64748b;
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        /* Stats section */
+        .stats {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            display: table-cell;
+            width: 33.33%;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #3b82f6 !important;
+            border: 2px solid #3b82f6;
+        }
+
+        .btn-secondary:hover {
+            background: #3b82f6;
+            color: #ffffff !important;
+        }
+
+        .btn-shakespeare {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-edit {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff !important;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+
+        .btn-template {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff !important;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+
+        /* Force button colors in all email clients */
+        .btn-primary, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-secondary, .btn-secondary:visited, .btn-secondary:hover, .btn-secondary:active {
+            text-decoration: none !important;
+        }
+
+        .btn-shakespeare, .btn-shakespeare:visited, .btn-shakespeare:hover, .btn-shakespeare:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-edit, .btn-edit:visited, .btn-edit:hover, .btn-edit:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .btn-template, .btn-template:visited, .btn-template:hover, .btn-template:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        /* CTA section */
+        .cta {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 15px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: #e2e8f0;
+            margin: 0 0 30px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 8px 0;
+        }
+
+        .footer a {
+            color: #3b82f6 !important;
+            text-decoration: none !important;
+        }
+
+        .footer a:visited, .footer a:hover, .footer a:active {
+            color: #60a5fa !important;
+            text-decoration: none !important;
+        }
+
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                border-radius: 0;
+                margin: 0;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .logo {
+                width: 28px;
+                height: 28px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .feature-card {
+                padding: 25px 20px;
+            }
+
+            .feature-title {
+                font-size: 20px;
+            }
+
+            .stat-item {
+                display: block;
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 6px;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0;
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://soapbox.pub/logo.svg" alt="Soapbox Logo" class="logo">
+                <h1>Soapbox</h1>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1 class="hero-title">
+                🎭 Shakespeare: <span class="gradient-text">Act II</span>
+            </h1>
+            <h2 class="hero-subtitle">Build Freely</h2>
+            <p class="hero-text">
+                Revolutionary AI development platform with complete creative freedom.
+                Local-first architecture, unlimited AI providers, and professional dev tools - all in your browser.
+            </p>
+
+            <img src="https://soapbox.pub/shakespeare-resources/Screenshot from 2025-09-25 12-58-44.png" alt="Shakespeare Act 2 Interface" class="hero-image">
+
+            <div style="margin-top: 30px;">
+                <a href="https://shakespeare.diy" class="btn btn-shakespeare">🎭 Launch Act 2</a>
+                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2" class="btn btn-secondary">📖 Read More</a>
+            </div>
+        </div>
+
+        <!-- Revolutionary Features -->
+        <div class="section">
+            <h2 class="section-title">Revolutionary Features</h2>
+            <p class="section-subtitle">Break free from vendor lock-in with cutting-edge technology</p>
+
+            <!-- AI Provider Choice -->
+            <div class="feature-card">
+                <div class="feature-icon ai-icon">🤖</div>
+                <h3 class="feature-title">Any AI Provider</h3>
+                <p class="feature-subtitle">Break free from AI vendor lock-in</p>
+                <img src="https://soapbox.pub/shakespeare-resources/choose-your-model-example.png" alt="AI provider selection" class="feature-image">
+                <p class="feature-description">
+                    Choose from 40+ AI providers or run models locally. OpenAI, Anthropic, Claude, 
+                    local Llama models - the choice is yours.
+                </p>
+            </div>
+
+            <!-- Development Environment -->
+            <div class="feature-card">
+                <div class="feature-icon dev-icon">💻</div>
+                <h3 class="feature-title">Pro Dev Environment</h3>
+                <p class="feature-subtitle">Everything you need, in your browser</p>
+                <img src="https://soapbox.pub/shakespeare-resources/edit-the-code-in-browser.png" alt="Code editor" class="feature-image">
+                <p class="feature-description">
+                    Complete development environment with code editor, file uploads, Git integration, 
+                    live preview, and virtual terminal. No downloads required.
+                </p>
+            </div>
+
+            <!-- Local-First Architecture -->
+            <div class="feature-card">
+                <div class="feature-icon local-icon">🔒</div>
+                <h3 class="feature-title">Local-First</h3>
+                <p class="feature-subtitle">Your data never leaves your device</p>
+                <img src="https://soapbox.pub/shakespeare-resources/project-settings-export-and-delete.png" alt="Local storage" class="feature-image">
+                <p class="feature-description">
+                    Revolutionary local-first architecture. Files stored in your browser, 
+                    Git operations run client-side. Complete privacy, zero data collection.
+                </p>
+            </div>
+
+            <!-- Git Integration -->
+            <div class="feature-card">
+                <div class="feature-icon git-icon">🚀</div>
+                <h3 class="feature-title">Revolutionary Git</h3>
+                <p class="feature-subtitle">First-ever client-side Git in browser</p>
+                <img src="https://soapbox.pub/shakespeare-resources/connect-your-git-account.png" alt="Git integration" class="feature-image">
+                <p class="feature-description">
+                    Import from GitHub, GitLab, or any provider. Push, pull, and manage versions 
+                    without servers. Complete Git functionality in your browser.
+                </p>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div class="section">
+            <h2 class="section-title">Why Choose Shakespeare?</h2>
+            <p class="section-subtitle">See how we compare to other AI development tools</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Others</th>
+                        <th class="shakespeare-col">🎭 Shakespeare</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Source Code</strong></td>
+                        <td>Proprietary</td>
+                        <td class="shakespeare-col">🗽 Open Source</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI Choice</strong></td>
+                        <td>Limited selection</td>
+                        <td class="shakespeare-col">🗽 Any Provider</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Local Models</strong></td>
+                        <td>❌ No</td>
+                        <td class="shakespeare-col">✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Privacy</strong></td>
+                        <td>❌ No</td>
+                        <td class="shakespeare-col">✅ Private by default</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deployment</strong></td>
+                        <td>Paid only</td>
+                        <td class="shakespeare-col">✅ Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Git Integration</strong></td>
+                        <td>Limited</td>
+                        <td class="shakespeare-col">✅ Full client-side</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <h2 style="color: #ffffff; margin-bottom: 30px;">The Numbers Speak</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Open Source</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">AI Providers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Showcase Section -->
+        <div class="section">
+            <h2 class="section-title">🎨 Build Anything</h2>
+            <p class="section-subtitle">See what's possible with Shakespeare Act 2</p>
+
+            <!-- Placeholder App Showcase -->
+            <div class="showcase-grid">
+                <!-- App Placeholder 1 -->
+                <div class="showcase-card">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured App 1" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">[App Name Placeholder]</h3>
+                        <p class="showcase-description">[App description will be populated from Nostr events when manually inserted]</p>
+                        <a href="#" class="btn btn-edit">✨ Edit with Shakespeare</a>
+                    </div>
+                </div>
+
+                <!-- App Placeholder 2 -->
+                <div class="showcase-card">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured App 2" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">[App Name Placeholder]</h3>
+                        <p class="showcase-description">[App description will be populated from Nostr events when manually inserted]</p>
+                        <a href="#" class="btn btn-edit">✨ Edit with Shakespeare</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Templates Section -->
+            <div style="margin-top: 50px;">
+                <h3 style="font-size: 28px; text-align: center; color: #f59e0b; margin-bottom: 30px; font-weight: bold;">🎯 Ready-to-Use Templates</h3>
+                
+                <!-- Template Placeholder 1 -->
+                <div class="template-card">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 1" class="showcase-image">
+                    <div class="template-content">
+                        <h4 class="template-title">[Template Name Placeholder]</h4>
+                        <p class="template-description">[Template description will be populated from Nostr events when manually inserted]</p>
+                        <a href="#" class="btn btn-template">🚀 Use Template</a>
+                    </div>
+                </div>
+
+                <!-- Template Placeholder 2 -->
+                <div class="template-card">
+                    <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Featured Template 2" class="showcase-image">
+                    <div class="template-content">
+                        <h4 class="template-title">[Template Name Placeholder]</h4>
+                        <p class="template-description">[Template description will be populated from Nostr events when manually inserted]</p>
+                        <a href="#" class="btn btn-template">🚀 Use Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Try Shakespeare Section -->
+        <div class="cta">
+            <h2>🎭 Ready to Create?</h2>
+            <p>
+                Experience the future of web development with complete creative freedom.
+                Join the movement toward true creative independence.
+            </p>
+            <div style="margin: 30px 0;">
+                <a href="https://shakespeare.diy" class="btn" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff !important; font-size: 18px; padding: 16px 32px; margin: 10px;">
+                    🚀 Launch Shakespeare Act 2
+                </a>
+            </div>
+            <div>
+                <a href="https://soapbox.pub/shakespeare-resources" class="btn btn-secondary" style="color: #ffffff !important; border-color: #ffffff;">📚 Resource Center</a>
+                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2" class="btn btn-secondary" style="color: #ffffff !important; border-color: #ffffff;">📖 Read Full Blog</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> - Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> |
+                <a href="https://soapbox.pub/blog">Blog</a> |
+                <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2">Act 2 Announcement</a> |
+                <a href="https://soapbox.pub/shakespeare-resources">Resource Center</a> |
+                <a href="https://github.com/soapbox-pub">GitHub</a> |
+                <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MailChimp Footer -->
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+            <tr>
+                <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                        <tr>
+                            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                <br>
+                                <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                <br>
+                                *|LIST:ADDRESSLINE|*
+                                <br>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <style type="text/css">
+            @media only screen and (max-width: 480px){
+                table#canspamBar td{font-size:14px !important;}
+                table#canspamBar td a{display:block !important; margin-top:10px !important;}
+            }
+        </style>
+    </center>
+</body>
+</html>

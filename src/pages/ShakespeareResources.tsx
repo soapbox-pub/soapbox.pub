@@ -17,11 +17,11 @@ import { BookOpen, MessageSquare, Sparkles } from 'lucide-react';
 export default function ShakespeareResources() {
   // Set custom SEO for Shakespeare Resources page
   useSEO({
-    title: 'Shakespeare Resources - FAQ & Blog Posts | Soapbox',
-    description: 'Complete resource hub for Shakespeare AI website builder. Find answers to frequently asked questions and explore blog posts about Shakespeare features, tutorials, and updates.',
+    title: 'Shakespeare Resources - FAQ & Guides | Soapbox',
+    description: 'Complete resource hub for Shakespeare AI website builder. Find answers to frequently asked questions and explore tutorials on how to make the most of Shakespeare.',
     type: 'website',
     keywords: 'shakespeare resources, shakespeare faq, shakespeare blog, ai website builder help, shakespeare tutorials',
-    image: '/shakespeare-resources/resrouce-center.png',
+    image: '/public/shakespeare-resources/resrouce-center.png',
   });
 
   // Filter blog posts tagged with "shakespeare-resource"

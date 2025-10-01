@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "npm i && vite",
     "build": "npm i && vite build && cp dist/index.html dist/404.html",
+    "build:prerender": "npm i && PRERENDER=1 vite build && cp dist/index.html dist/404.html",
     "test": "npm i && tsc -p tsconfig.app.json --noEmit && eslint && vitest run && npm run build",
-    "deploy": "npm run build && npx -y surge@latest dist"
+    "deploy": "npm run build && npx -y surge@latest dist",
+    "update-routes": "node scripts/update-routes.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.5",
