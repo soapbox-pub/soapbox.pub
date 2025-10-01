@@ -3,8 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import { nip19 } from 'nostr-tools';
 import type { NostrEvent } from '@nostrify/nostrify';
 
-// Kind 31734 for Halloween hackathon submissions (addressable events)
-const HALLOWEEN_SUBMISSION_KIND = 31734;
+// Kind 31733 for app submissions (same as regular submissions, filtered by tags)
+const APP_SUBMISSION_KIND = 31733;
 
 // The moderator npub and hex
 const MODERATOR_NPUB = 'npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc';
@@ -26,8 +26,6 @@ export interface HalloweenSubmission extends NostrEvent {
   screenshotUrl: string;
   appTags: string[];
   authorNpub: string;
-  lightningAddress?: string;
-  email?: string;
   isApproved: boolean;
   isHidden: boolean;
   isWinner: boolean;
@@ -40,9 +38,9 @@ export function useHalloweenSubmissions() {
   return useQuery({
     queryKey: ['halloween-submissions'],
     queryFn: async (): Promise<HalloweenSubmission[]> => {
-      // Get all Halloween hackathon submissions (kind 31734)
+      // Get all Halloween hackathon submissions (kind 31733 with Halloween tag)
       const submissionEvents = await nostr.query([{
-        kinds: [HALLOWEEN_SUBMISSION_KIND],
+        kinds: [APP_SUBMISSION_KIND],
         '#t': ['soapbox-halloween-hackathon'],
         limit: 1000
       }]);
@@ -171,12 +169,10 @@ export function useHalloweenSubmissions() {
           const appIconUrl = event.tags.find(tag => tag[0] === 'icon')?.[1] || '';
           const screenshotUrl = event.tags.find(tag => tag[0] === 'screenshot')?.[1] || '';
           const authorNpub = event.tags.find(tag => tag[0] === 'author')?.[1] || event.pubkey;
-          const lightningAddress = event.tags.find(tag => tag[0] === 'lightning')?.[1];
-          const email = event.tags.find(tag => tag[0] === 'email')?.[1];
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
 
           // Check if app is approved, hidden, or a winner
-          const appCoordinate = `${HALLOWEEN_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
+          const appCoordinate = `${APP_SUBMISSION_KIND}:${event.pubkey}:${dTag}`;
           const isSubmittedByModerator = event.pubkey === MODERATOR_HEX;
           const isApproved = approvedAppCoords.has(appCoordinate) || isSubmittedByModerator;
           const isHidden = hiddenAppCoords.has(appCoordinate);
@@ -193,8 +189,6 @@ export function useHalloweenSubmissions() {
             screenshotUrl,
             appTags: appTags,
             authorNpub,
-            lightningAddress,
-            email,
             isApproved,
             isHidden,
             isWinner,
@@ -223,23 +217,16 @@ export function useUserHalloweenSubmissions(userPubkey?: string) {
   };
 }
 
-// Hook for moderators to view contact information
+// Hook for moderators - now just returns the same data as useHalloweenSubmissions
+// since contact information is no longer stored
 export function useHalloweenSubmissionsWithContacts() {
   const { data: submissions, ...rest } = useHalloweenSubmissions();
   const { user } = useCurrentUser();
 
-  // Only show contact info if user is a moderator
   const isModerator = user?.pubkey === MODERATOR_HEX;
 
-  const submissionsWithContacts = submissions?.map(submission => ({
-    ...submission,
-    // Only expose contact info to moderators
-    lightningAddress: isModerator ? submission.lightningAddress : undefined,
-    email: isModerator ? submission.email : undefined,
-  })) || [];
-
   return {
-    data: submissionsWithContacts,
+    data: submissions || [],
     isModerator,
     ...rest
   };

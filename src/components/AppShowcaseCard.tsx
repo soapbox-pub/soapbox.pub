@@ -86,8 +86,8 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
     if (!isHalloweenSubmission) return null;
 
     // Look for lightning and email tags in the event tags
-    const lightningTag = app.tags?.find(tag => tag[0] === 'lightning')?.[1];
-    const emailTag = app.tags?.find(tag => tag[0] === 'email')?.[1];
+    const lightningTag = app.tags?.find((tag: string[]) => tag[0] === 'lightning')?.[1];
+    const emailTag = app.tags?.find((tag: string[]) => tag[0] === 'email')?.[1];
 
     return { lightning: lightningTag, email: emailTag };
   };
@@ -96,7 +96,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
     const contactInfo = getContactInfo();
     if (!contactInfo) return;
 
-    const info = [];
+    const info: string[] = [];
     if (contactInfo.lightning) info.push(`Lightning: ${contactInfo.lightning}`);
     if (contactInfo.email) info.push(`Email: ${contactInfo.email}`);
 

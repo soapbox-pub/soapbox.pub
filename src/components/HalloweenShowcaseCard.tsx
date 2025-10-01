@@ -32,8 +32,6 @@ export function HalloweenShowcaseCard({ submission, showModerationInfo = false }
     screenshotUrl,
     appTags,
     authorNpub,
-    lightningAddress,
-    email,
     isWinner,
     winnerCategory,
     created_at
@@ -160,16 +158,9 @@ export function HalloweenShowcaseCard({ submission, showModerationInfo = false }
               <div>
                 <strong>Author:</strong> {authorNpub}
               </div>
-              {lightningAddress && (
-                <div>
-                  <strong>Lightning:</strong> {lightningAddress}
-                </div>
-              )}
-              {email && (
-                <div>
-                  <strong>Email:</strong> {email}
-                </div>
-              )}
+              <div>
+                <strong>Submitted:</strong> {new Date(created_at * 1000).toLocaleDateString()}
+              </div>
             </div>
           </div>
         )}

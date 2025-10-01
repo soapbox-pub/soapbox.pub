@@ -45,18 +45,7 @@ const halloweenSubmissionSchema = z.object({
   appIconUrl: z.string().url('Please enter a valid icon URL'),
   screenshotUrl: z.string().url('Please enter a valid screenshot URL'),
   authorNpub: z.string().min(1, 'Author npub is required'),
-  lightningAddress: z.string().optional(),
-  email: z.string().optional().refine(val => !val || z.string().email().safeParse(val).success, {
-    message: "Please enter a valid email"
-  }),
   tags: z.array(z.string()).min(1, 'At least one tag is required'),
-}).refine(data => {
-  const hasLightning = data.lightningAddress && data.lightningAddress.trim().length > 0;
-  const hasEmail = data.email && data.email.trim().length > 0 && z.string().email().safeParse(data.email.trim()).success;
-  return hasLightning || hasEmail;
-}, {
-  message: "Please provide either a Lightning address or email for prize distribution",
-  path: ["lightningAddress"]
 });
 
 type HalloweenSubmissionFormData = z.infer<typeof halloweenSubmissionSchema>;
@@ -150,21 +139,14 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
         ['icon', data.appIconUrl],
         ['screenshot', data.screenshotUrl],
         ['author', data.authorNpub],
-        ['t', 'soapbox-halloween-hackathon'],
+        ['t', 'soapbox-app-submission'], // Same tag as regular submissions
+        ['t', 'soapbox-halloween-hackathon'], // Additional tag to identify Halloween submissions
         ['t', 'halloween-hackathon-2025'],
         ...data.tags.map(tag => ['app-tag', tag] as [string, string])
       ];
 
-      // Add contact info for prize distribution
-      if (data.lightningAddress) {
-        tags.push(['lightning', data.lightningAddress]);
-      }
-      if (data.email) {
-        tags.push(['email', data.email]);
-      }
-
       await publishEvent({
-        kind: 31734, // Custom addressable event kind for Halloween hackathon submissions
+        kind: 31733, // Same event kind as regular app submissions, differentiated by tags
         content: data.description,
         tags,
         created_at: Math.floor(Date.now() / 1000)
@@ -376,11 +358,11 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
             </div>
           </div>
 
-          {/* Contact Information */}
+          {/* Author Information */}
           <div className="space-y-6">
             <h3 className="font-gothic text-xl font-bold text-white flex items-center gap-2">
               <Zap className="w-5 h-5 text-purple-600" />
-              Contact & Prize Information
+              Author Information
             </h3>
 
             <div className="space-y-2">
@@ -395,39 +377,6 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
                 <p className="text-sm text-red-600">{errors.authorNpub.message}</p>
               )}
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="lightningAddress" className="text-gray-200 font-medium">Lightning Address</Label>
-                <Input
-                  id="lightningAddress"
-                  {...register('lightningAddress')}
-                  placeholder="username@domain.com"
-                  className="border-orange-500 bg-gray-700 text-white placeholder:text-gray-400 focus:border-orange-400"
-                />
-                <p className="text-sm text-gray-400">⚡ For instant Bitcoin prize distribution</p>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-gray-200 font-medium">Email Address</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  {...register('email')}
-                  placeholder="your@email.com"
-                  className="border-orange-500 bg-gray-700 text-white placeholder:text-gray-400 focus:border-orange-400"
-                />
-                <p className="text-sm text-gray-400">📧 Alternative contact for prizes</p>
-              </div>
-            </div>
-
-            {errors.lightningAddress && (
-              <div className="p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
-                <p className="text-sm text-red-400">
-                  {errors.lightningAddress.message}
-                </p>
-              </div>
-            )}
           </div>
 
           {/* Tags */}
