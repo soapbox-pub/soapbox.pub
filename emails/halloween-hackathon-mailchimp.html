@@ -129,18 +129,17 @@
         .halloween-hero::before {
             content: "🎃 👻 🦇 💀 🕷️ 🕸️ 🍭 ⚰️";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: 24px;
             opacity: 0.1;
             pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            text-align: center;
+            white-space: nowrap;
             animation: float 6s ease-in-out infinite;
+            width: 100%;
+            line-height: 1;
         }
 
         @keyframes float {
@@ -220,9 +219,9 @@
             height: 40px;
             margin: 0 auto 15px;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            text-align: center;
+            line-height: 40px;
             font-size: 18px;
             color: #ffffff;
         }
@@ -364,9 +363,9 @@
             height: 60px;
             margin: 0 auto 20px;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            text-align: center;
+            line-height: 60px;
             font-size: 24px;
             color: #ffffff;
         }
