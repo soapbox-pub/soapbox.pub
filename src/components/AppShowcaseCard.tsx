@@ -38,9 +38,10 @@ interface AppShowcaseCardProps {
   app: AppSubmission;
   onEdit?: (app: AppSubmission) => void;
   showModerationControls?: boolean;
+  hideApprovalStatus?: boolean; // Hide pending/approval badges
 }
 
-export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShowcaseCardProps) {
+export function AppShowcaseCard({ app, onEdit, showModerationControls, hideApprovalStatus }: AppShowcaseCardProps) {
   const { user } = useCurrentUser();
   const { nostr } = useNostr();
   const { mutate: publishEvent, isPending } = useNostrPublish();
@@ -413,7 +414,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls }: AppShow
               Homepage
             </Badge>
           )}
-          {!app.isApproved && (
+          {!app.isApproved && !hideApprovalStatus && (
             <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">
               <span className="w-2 h-2 bg-orange-500 rounded-full mr-1"></span>
               Pending

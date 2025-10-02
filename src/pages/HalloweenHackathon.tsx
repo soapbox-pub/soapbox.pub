@@ -210,6 +210,7 @@ export default function HalloweenHackathon() {
                         key={submission.id}
                         app={submission}
                         showModerationControls={isModerator}
+                        hideApprovalStatus={true}
                       />
                     ))}
                   </div>
@@ -225,6 +226,7 @@ export default function HalloweenHackathon() {
                         key={submission.id}
                         app={submission}
                         showModerationControls={isModerator}
+                        hideApprovalStatus={true}
                       />
                     ))}
                   </div>
