@@ -11,6 +11,16 @@
     <meta property="og:description" content="Create Halloween-themed applications with Shakespeare Act 2 and compete for 87,000 sats across three prize categories. Plus catch up on Act 2's revolutionary features.">
     <title>🎃 Halloween Hackathon 2025: Build Spooky Apps & Win 87k Sats</title>
 
+    <!-- Google Fonts - Gothic Halloween Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+
+    <!-- Fallback for email clients that don't support Google Fonts -->
+    <!--[if !mso]><!-->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap');
+    </style>
+    <!--<![endif]-->
+
     <!--[if mso]>
     <noscript>
         <xml>
@@ -127,24 +137,39 @@
 
         /* Animated Halloween Elements */
         .halloween-hero::before {
-            content: "🎃 👻 🦇 💀 🕷️ 🕸️ 🍭 ⚰️";
+            content: "🎃 👻 🦇 💀 🕷️ 🕸️ 🍭 ⚰️ 🔮 🌙 ⚡ 🗡️";
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 24px;
-            opacity: 0.1;
+            font-size: 28px;
+            opacity: 0.15;
             pointer-events: none;
             text-align: center;
             white-space: nowrap;
-            animation: float 6s ease-in-out infinite;
+            animation: spookyFloat 8s ease-in-out infinite;
             width: 100%;
             line-height: 1;
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        @keyframes spookyFloat {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+                opacity: 0.15;
+            }
+            25% {
+                transform: translate(-50%, -55%) rotate(1deg) scale(1.05);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(-50%, -45%) rotate(-1deg) scale(0.95);
+                opacity: 0.1;
+            }
+            75% {
+                transform: translate(-50%, -50%) rotate(0.5deg) scale(1.02);
+                opacity: 0.18;
+            }
         }
 
         .halloween-badge {
@@ -155,28 +180,36 @@
             border-radius: 25px;
             font-size: 14px;
             font-weight: 700;
+            font-family: 'Nosifer', 'Creepster', 'Chiller', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif !important;
             margin: 0 0 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6) !important;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
         }
 
         .halloween-title {
-            font-family: Arial, Helvetica, sans-serif !important;
+            font-family: 'Creepster', 'Nosifer', 'Chiller', 'Ravie', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif !important;
             font-size: 42px !important;
-            font-weight: bold !important;
+            font-weight: normal !important;
             color: #ffffff !important;
             margin: 0 0 15px 0 !important;
             line-height: 1.1 !important;
             text-align: center !important;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 107, 53, 0.4) !important;
+            letter-spacing: 2px !important;
         }
 
         .halloween-subtitle {
-            font-family: Arial, Helvetica, sans-serif !important;
+            font-family: 'Nosifer', 'Creepster', 'Chiller', 'Ravie', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif !important;
             font-size: 28px !important;
-            font-weight: bold !important;
+            font-weight: normal !important;
             margin: 0 0 20px 0 !important;
             color: #ff6b35 !important;
             text-align: center !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 107, 53, 0.3) !important;
+            letter-spacing: 1px !important;
         }
 
         .halloween-text {
@@ -187,6 +220,9 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+            font-family: Georgia, 'Times New Roman', serif !important;
+            font-style: italic;
         }
 
         .prize-grid {
@@ -203,11 +239,25 @@
         }
 
         .prize-card {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             border: 2px solid;
             border-radius: 12px;
             padding: 20px 15px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prize-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .prize-card.design { border-color: #ff6b35; }
@@ -413,7 +463,12 @@
         .btn-halloween {
             background: linear-gradient(135deg, #ff6b35 0%, #d84315 100%);
             color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3), 0 0 20px rgba(255, 107, 53, 0.2);
+            font-family: 'Creepster', 'Nosifer', 'Chiller', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
+            letter-spacing: 1px !important;
+            border: 2px solid rgba(255, 255, 255, 0.2) !important;
+            text-transform: uppercase !important;
         }
 
         .btn-shakespeare {
@@ -569,7 +624,7 @@
         <!-- Header -->
         <div class="header" style="background: #1a1a1a; border-bottom: 1px solid #333; padding: 12px 20px; text-align: center;">
             <div class="hero-logo-container" style="margin-bottom: 0px; text-align: center;">
-                <img src="https://gitlab.com/soapbox-pub/soapbox.pub/-/raw/main/public/assets/soapbox-full-logo-white.png" alt="Soapbox Logo" class="hero-logo" style="max-width: 200px; height: auto; max-height: 60px; object-fit: contain; display: block; margin: 0 auto; border: 0;">
+                <img src="https://soapbox.pub/assets/soapbox-full-logo-white.png" alt="Soapbox Logo" class="hero-logo" style="max-width: 200px; height: auto; max-height: 60px; object-fit: contain; display: block; margin: 0 auto; border: 0;">
             </div>
         </div>
 
@@ -704,7 +759,7 @@
                                 <img src="https://media.ditto.pub/c36e55db8790f5e29d979d66c333bb1194967393f379b37cc58915a4a8fdd09a.png" alt="Podcast Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
                                 <div class="template-content" style="padding: 25px; text-align: center;">
                                     <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Podstr</h4>
-                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">Own Your Podcast Community on Nostr. Receive direct support through Bitcoin Lightning with zero platform fees.</p>
+                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">Own Your Podcast Community on Nostr. Receive direct support through Bitcoin Lightning.</p>
                                     <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fderekross%2Fpodstr.git" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
                                         Use Template
                                     </a>

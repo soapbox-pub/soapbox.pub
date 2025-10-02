@@ -94,15 +94,17 @@ export default function SoapboxSessions() {
       if (user?.signer?.nip44) {
         try {
           // Create proper NIP-17 DM following NIP-59 gift wrap protocol
-          eventToPublish = await createNip17DM(user, recipientPubkey, fullMessage);
+          eventToPublish = await createNip17DM(user as any, recipientPubkey, fullMessage);
         } catch (nip17Error) {
           console.error("NIP-17 encryption failed, falling back to NIP-04:", nip17Error);
           // Fall back to NIP-04 encrypted kind 4 if NIP-17 fails
-          eventToPublish = await createNip04DM(user, recipientPubkey, fullMessage);
+          eventToPublish = await createNip04DM(user as any, recipientPubkey, fullMessage);
         }
-      } else {
+      } else if (user?.signer?.nip04) {
         // For signers without NIP-44, use NIP-04 encrypted kind 4 DM
-        eventToPublish = await createNip04DM(user, recipientPubkey, fullMessage);
+        eventToPublish = await createNip04DM(user as any, recipientPubkey, fullMessage);
+      } else {
+        throw new Error('No encryption method available');
       }
 
       // Publish the event

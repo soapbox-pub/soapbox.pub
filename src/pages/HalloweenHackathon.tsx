@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 import { Trophy, Code, Skull, Ghost, Candy } from 'lucide-react';
 import { HalloweenSubmissionForm } from '@/components/HalloweenSubmissionForm';
 import { AppShowcaseCard } from '@/components/AppShowcaseCard';
@@ -70,17 +70,17 @@ export default function HalloweenHackathon() {
           <div className="text-center space-y-8 mb-16">
             <div className="flex items-center justify-center space-x-4 mb-6">
               <Skull className="w-12 h-12 text-orange-400" />
-              <span className="bg-orange-600 text-white text-lg px-4 py-2 rounded-full font-semibold">
+              <span className="bg-orange-600 text-white text-lg px-4 py-2 rounded-full font-semibold font-gothic tracking-widest text-shadow-dark border-2 border-orange-300/30">
                 Monthly Challenge
               </span>
               <Ghost className="w-12 h-12 text-purple-400" />
             </div>
 
-            <h1 className="font-gothic text-6xl md:text-8xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="font-gothic text-6xl md:text-8xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-shadow-gothic tracking-wider">
               Halloween Hackathon
             </h1>
 
-            <p className="text-2xl md:text-3xl font-medium text-orange-200">
+            <p className="text-2xl md:text-3xl font-medium text-orange-200 text-shadow-spooky font-gothic tracking-wide">
               Build Spooky Apps with Shakespeare
             </p>
 
@@ -144,13 +144,13 @@ export default function HalloweenHackathon() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center space-x-4 mb-6">
               <Skull className="w-10 h-10 text-orange-400 animate-pulse hidden sm:block" />
-              <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white text-lg px-6 py-3 rounded-full font-bold shadow-lg hidden sm:inline-block">
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white text-lg px-6 py-3 rounded-full font-bold shadow-lg hidden sm:inline-block font-gothic tracking-widest text-shadow-dark border-2 border-orange-300/30">
                 🎃 Submit Your Creation 🎃
               </span>
               <Ghost className="w-10 h-10 text-purple-400 animate-pulse hidden sm:block" />
             </div>
 
-            <h2 className="font-gothic text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="font-gothic text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-shadow-gothic tracking-wider">
               Enter the Hackathon
             </h2>
 
@@ -186,7 +186,7 @@ export default function HalloweenHackathon() {
       <section id="submissions-section" className="bg-gradient-to-r from-orange-600 via-red-600 to-purple-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-gothic text-4xl font-bold mb-4">
+            <h2 className="font-gothic text-4xl font-bold mb-4 text-shadow-spooky tracking-wide">
               Community Submissions 🕸️
             </h2>
           </div>
@@ -201,7 +201,7 @@ export default function HalloweenHackathon() {
               {/* Winners Section */}
               {winnerSubmissions.length > 0 && (
                 <div className="mb-12">
-                  <h3 className="font-gothic text-2xl font-bold text-center mb-8 text-yellow-300">
+                  <h3 className="font-gothic text-2xl font-bold text-center mb-8 text-yellow-300 text-shadow-spooky tracking-wide">
                     🏆 Winners! 🏆
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -235,7 +235,7 @@ export default function HalloweenHackathon() {
               {visibleSubmissions.length === 0 && (
                 <div className="text-center py-12 space-y-4">
                   <div className="text-6xl">🎃</div>
-                  <h3 className="font-gothic text-2xl font-bold text-white">
+                  <h3 className="font-gothic text-2xl font-bold text-white text-shadow-spooky tracking-wide">
                     No Submissions Yet!
                   </h3>
                   <p className="text-orange-100 max-w-md mx-auto">
@@ -276,7 +276,7 @@ export default function HalloweenHackathon() {
       {/* Call to Action */}
       <section className="bg-gray-900 text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-gothic text-4xl font-bold mb-6">
+          <h2 className="font-gothic text-4xl font-bold mb-6 text-shadow-spooky tracking-wide">
             Ready to Build Something Spooky? 👻
           </h2>
           <p className="text-xl mb-8 text-orange-100">
