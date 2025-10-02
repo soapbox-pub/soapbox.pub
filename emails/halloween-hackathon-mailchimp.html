@@ -135,42 +135,7 @@
             overflow: hidden;
         }
 
-        /* Animated Halloween Elements */
-        .halloween-hero::before {
-            content: "🎃 👻 🦇 💀 🕷️ 🕸️ 🍭 ⚰️ 🔮 🌙 ⚡ 🗡️";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 28px;
-            opacity: 0.15;
-            pointer-events: none;
-            text-align: center;
-            white-space: nowrap;
-            animation: spookyFloat 8s ease-in-out infinite;
-            width: 100%;
-            line-height: 1;
-            text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
-        }
 
-        @keyframes spookyFloat {
-            0%, 100% {
-                transform: translate(-50%, -50%) rotate(0deg) scale(1);
-                opacity: 0.15;
-            }
-            25% {
-                transform: translate(-50%, -55%) rotate(1deg) scale(1.05);
-                opacity: 0.2;
-            }
-            50% {
-                transform: translate(-50%, -45%) rotate(-1deg) scale(0.95);
-                opacity: 0.1;
-            }
-            75% {
-                transform: translate(-50%, -50%) rotate(0.5deg) scale(1.02);
-                opacity: 0.18;
-            }
-        }
 
         .halloween-badge {
             display: inline-block;
