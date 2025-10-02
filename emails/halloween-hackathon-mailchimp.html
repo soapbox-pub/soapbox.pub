@@ -22,46 +22,52 @@
     <![endif]-->
 
     <style type="text/css">
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Reset styles for maximum email client compatibility */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
         }
 
-        /* Import Gothic Font */
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Chiller&display=swap');
-
+        /* Remove font imports for better compatibility */
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #0f0f0f;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #e2e8f0;
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: #0f0f0f !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            line-height: 1.6 !important;
+            color: #e2e8f0 !important;
+            width: 100% !important;
+            min-width: 100% !important;
         }
 
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #0f0f0f !important;
-                color: #e2e8f0 !important;
-            }
+        /* Force Outlook to provide a "view in browser" menu link */
+        #outlook a { padding: 0; }
+
+        /* Client-specific styles */
+        .ReadMsgBody { width: 100%; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
         }
 
         table {
-            border-collapse: collapse;
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
+            border-collapse: collapse !important;
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+            border-spacing: 0 !important;
+            border: none !important;
+            margin: 0 !important;
         }
 
         img {
-            border: 0;
-            height: auto;
-            line-height: 100%;
-            outline: none;
-            text-decoration: none;
-            max-width: 100%;
+            border: 0 !important;
+            height: auto !important;
+            line-height: 100% !important;
+            outline: none !important;
+            text-decoration: none !important;
+            max-width: 100% !important;
+            display: block !important;
+            -ms-interpolation-mode: bicubic !important;
         }
 
         /* Container */
@@ -156,22 +162,22 @@
         }
 
         .halloween-title {
-            font-family: 'Creepster', cursive;
-            font-size: 42px;
-            font-weight: 900;
-            color: #ffffff;
-            margin: 0 0 15px;
-            line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 42px !important;
+            font-weight: bold !important;
+            color: #ffffff !important;
+            margin: 0 0 15px 0 !important;
+            line-height: 1.1 !important;
+            text-align: center !important;
         }
 
         .halloween-subtitle {
-            font-family: 'Creepster', cursive;
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 20px;
-            color: #ff6b35;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 28px !important;
+            font-weight: bold !important;
+            margin: 0 0 20px 0 !important;
+            color: #ff6b35 !important;
+            text-align: center !important;
         }
 
         .halloween-text {
@@ -498,58 +504,27 @@
         /* Mobile responsiveness */
         @media only screen and (max-width: 600px) {
             .email-container {
-                border-radius: 0;
-                margin: 0;
+                width: 100% !important;
+                margin: 0 !important;
             }
 
-            .hero-logo {
-                max-width: 150px;
-                max-height: 45px;
+            .mobile-center {
+                text-align: center !important;
             }
 
-            .halloween-hero {
-                padding: 40px 20px;
+            .mobile-hide {
+                display: none !important;
             }
 
-            .halloween-title {
-                font-size: 32px;
-            }
-
-            .halloween-subtitle {
-                font-size: 24px;
-            }
-
-            .halloween-text {
-                font-size: 16px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .section-subtitle {
-                font-size: 16px;
-            }
-
-            .feature-card {
-                padding: 25px 20px;
-            }
-
-            .feature-title {
-                font-size: 20px;
+            .mobile-full {
+                width: 100% !important;
+                display: block !important;
             }
 
             .prize-item {
-                display: block;
-                width: 100%;
-                margin: 15px 0;
-            }
-
-            .btn {
-                display: block;
-                margin: 10px 0;
-                font-size: 14px;
-                padding: 12px 20px;
+                display: block !important;
+                width: 100% !important;
+                margin: 15px 0 !important;
             }
 
             .showcase-cell {
@@ -563,29 +538,49 @@
             }
 
             .template-card {
-                margin: 15px 0;
+                margin: 15px 0 !important;
+            }
+
+            .halloween-title {
+                font-size: 32px !important;
+            }
+
+            .halloween-text {
+                font-size: 16px !important;
+            }
+
+            .section-title {
+                font-size: 28px !important;
+            }
+
+            .section-subtitle {
+                font-size: 16px !important;
+            }
+
+            .feature-title {
+                font-size: 20px !important;
             }
         }
     </style>
 </head>
 
-<body>
-    <div class="email-container">
+<body style="margin: 0; padding: 0; background-color: #0f0f0f; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #e2e8f0; width: 100%; min-width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+    <div class="email-container" style="max-width: 600px; margin: 0 auto; background-color: #1a1a1a;">
 
         <!-- Header -->
-        <div class="header">
-            <div class="hero-logo-container">
-                <img src="https://soapbox.pub/assets/soapbox-full-logo-white.png" alt="Soapbox Logo" class="hero-logo">
+        <div class="header" style="background: #1a1a1a; border-bottom: 1px solid #333; padding: 12px 20px; text-align: center;">
+            <div class="hero-logo-container" style="margin-bottom: 0px; text-align: center;">
+                <img src="https://soapbox.pub/assets/soapbox-full-logo-white.png" alt="Soapbox Logo" class="hero-logo" style="max-width: 200px; height: auto; max-height: 60px; object-fit: contain; display: block; margin: 0 auto; border: 0;">
             </div>
         </div>
 
         <!-- Halloween Hero Section -->
-        <div class="halloween-hero">
-            <div class="halloween-badge">Monthly Challenge</div>
-            <h1 class="halloween-title">
+        <div class="halloween-hero" style="background: linear-gradient(135deg, #1a0a00 0%, #330a00 50%, #1a0033 100%); padding: 50px 20px; text-align: center; position: relative; overflow: hidden;">
+            <div class="halloween-badge" style="display: inline-block; background: linear-gradient(135deg, #ff6b35 0%, #d84315 100%); color: #ffffff; padding: 10px 20px; border-radius: 25px; font-size: 14px; font-weight: 700; margin: 0 0 20px; text-transform: uppercase; letter-spacing: 1px;">Monthly Challenge</div>
+            <h1 class="halloween-title" style="font-family: Arial, Helvetica, sans-serif; font-size: 42px; font-weight: bold; color: #ffffff; margin: 0 0 15px 0; line-height: 1.1; text-align: center;">
                 🎃 Halloween Hackathon 👻
             </h1>
-            <p class="halloween-text">
+            <p class="halloween-text" style="font-size: 18px; color: #cbd5e1; margin: 0 0 35px; line-height: 1.6; max-width: 500px; margin-left: auto; margin-right: auto; text-align: center;">
                 Create Halloween-themed applications with Shakespeare and compete for <strong>87,000 sats each</strong> across three prize categories.
             </p>
 
@@ -617,15 +612,15 @@
                 </div>
             </div>
 
-            <div style="margin-top: 30px;">
-                <a href="https://soapbox.pub/halloween-hackathon" class="btn btn-halloween">🎃 Enter Hackathon</a>
-                <a href="https://shakespeare.diy" class="btn btn-secondary">🎭 Start Building</a>
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="https://soapbox.pub/halloween-hackathon" class="btn btn-halloween" style="display: inline-block; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; margin: 8px; border: none; background-color: #ff6b35; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">🎃 Enter Hackathon</a>
+                <a href="https://shakespeare.diy" class="btn btn-secondary" style="display: inline-block; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; margin: 8px; background-color: transparent; color: #e2e8f0; border: 2px solid #475569; font-family: Arial, Helvetica, sans-serif;">🎭 Start Building</a>
             </div>
         </div>
 
         <!-- Act 2 Updates Section -->
-        <div class="act2-section">
-            <h2 class="section-title">🎭 Shakespeare: Act II</h2>
+        <div class="act2-section" style="background: #1e293b; padding: 40px 20px;">
+            <h2 class="section-title" style="font-size: 32px; font-weight: bold; color: #e2e8f0; margin: 0 0 15px; text-align: center;">🎭 Shakespeare: Act II</h2>
             <p class="section-subtitle">
                 The new release of Shakespeare gives you complete freedom to choose your AI provider, Git service, deployment platform, and data storage. Completely open source. No corporate lock-in.
             </p>
@@ -666,9 +661,9 @@
         </div>
 
         <!-- Start with a Template Section -->
-        <div class="templates-section">
-            <h2 class="section-title">Start with a Template</h2>
-            <p class="section-subtitle">
+        <div class="templates-section" style="background: #f8fafc; padding: 40px 20px;">
+            <h2 class="section-title" style="font-size: 32px; font-weight: bold; color: #1e293b; margin: 0 0 15px; text-align: center;">Start with a Template</h2>
+            <p class="section-subtitle" style="font-size: 18px; color: #64748b; margin: 0 0 35px; text-align: center; line-height: 1.5;">
                 Jump-start your project with ready-to-use templates.
             </p>
 
@@ -678,12 +673,12 @@
                     <tr>
                         <td class="showcase-cell">
                             <!-- Template 1 -->
-                            <div class="template-card">
-                                <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Petition Site Template" class="showcase-image">
-                                <div class="template-content">
-                                    <h4 class="template-title">Petition Site</h4>
-                                    <p class="template-description">A petition site including Nostr-powered signature collection, real-time progress tracking, and multi-page advocacy.</p>
-                                    <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Foceanguard-petition" class="btn btn-template" style="font-size: 14px; padding: 10px 20px;">
+                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
+                                <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Petition Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
+                                <div class="template-content" style="padding: 25px; text-align: center;">
+                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Petition Site</h4>
+                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">A petition site including Nostr-powered signature collection, real-time progress tracking, and multi-page advocacy.</p>
+                                    <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Foceanguard-petition" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
                                         Use Template
                                     </a>
                                 </div>
@@ -691,12 +686,12 @@
                         </td>
                         <td class="showcase-cell">
                             <!-- Template 2 -->
-                            <div class="template-card">
-                                <img src="https://media.ditto.pub/6a8915c20eba532b14429fd11cac57c36949f7d8dd79046a7ff00c88fe5059f6.png" alt="Twitter-like site" class="showcase-image">
-                                <div class="template-content">
-                                    <h4 class="template-title">Twitter-like Site</h4>
-                                    <p class="template-description">A simple start to a Twitter-like Nostr client for posting short content and following others. Customize to fit your vibe!</p>
-                                    <a href="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667" class="btn btn-template" style="font-size: 14px; padding: 10px 20px;">
+                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
+                                <img src="https://media.ditto.pub/6a8915c20eba532b14429fd11cac57c36949f7d8dd79046a7ff00c88fe5059f6.png" alt="Twitter-like site" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
+                                <div class="template-content" style="padding: 25px; text-align: center;">
+                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Twitter-like Site</h4>
+                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">A simple start to a Twitter-like Nostr client for posting short content and following others. Customize to fit your vibe!</p>
+                                    <a href="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
                                         Use Template
                                     </a>
                                 </div>
@@ -712,12 +707,12 @@
                     <tr>
                         <td class="showcase-cell">
                             <!-- Template 3 - Duplicate of Petition Site -->
-                            <div class="template-card">
-                                <img src="https://media.ditto.pub/c36e55db8790f5e29d979d66c333bb1194967393f379b37cc58915a4a8fdd09a.png" alt="Podcast Site Template" class="showcase-image">
-                                <div class="template-content">
-                                    <h4 class="template-title">Podstr</h4>
-                                    <p class="template-description">Own Your Podcast Community on Nostr. Receive direct support through Bitcoin Lightning with zero platform fees.</p>
-                                    <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fderekross%2Fpodstr.git" class="btn btn-template" style="font-size: 14px; padding: 10px 20px;">
+                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
+                                <img src="https://media.ditto.pub/c36e55db8790f5e29d979d66c333bb1194967393f379b37cc58915a4a8fdd09a.png" alt="Podcast Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
+                                <div class="template-content" style="padding: 25px; text-align: center;">
+                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Podstr</h4>
+                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">Own Your Podcast Community on Nostr. Receive direct support through Bitcoin Lightning with zero platform fees.</p>
+                                    <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fderekross%2Fpodstr.git" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
                                         Use Template
                                     </a>
                                 </div>
@@ -725,12 +720,12 @@
                         </td>
                         <td class="showcase-cell">
                             <!-- Template 4 - Small Business -->
-                            <div class="template-card">
-                                <img src="https://media.ditto.pub/dd86180079d954171f0d38a9cd3cf540cf59f509229e7abcd82a345df3d50f99.png" alt="Small Business Template" class="showcase-image">
-                                <div class="template-content">
-                                    <h4 class="template-title">Small Business</h4>
-                                    <p class="template-description">A small business site with hero imagery, professional service showcases, a contact form, blog, and customer testimonials.</p>
-                                    <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Fbizcraft-solutions" class="btn btn-template" style="font-size: 14px; padding: 10px 20px;">
+                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
+                                <img src="https://media.ditto.pub/dd86180079d954171f0d38a9cd3cf540cf59f509229e7abcd82a345df3d50f99.png" alt="Small Business Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
+                                <div class="template-content" style="padding: 25px; text-align: center;">
+                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Small Business</h4>
+                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">A small business site with hero imagery, professional service showcases, a contact form, blog, and customer testimonials.</p>
+                                    <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Fbizcraft-solutions" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
                                         Use Template
                                     </a>
                                 </div>
@@ -741,15 +736,15 @@
             </div>
 
             <div style="text-align: center; margin: 40px 0;">
-                <a href="https://soapbox.pub/showcase" class="btn btn-template" style="font-size: 16px; padding: 14px 28px;">
+                <a href="https://soapbox.pub/showcase" class="btn btn-template" style="display: inline-block; padding: 14px 28px; text-decoration: none; font-weight: bold; font-size: 16px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
                     View Full Shakespeare App Showcase →
                 </a>
             </div>
         </div>
 
         <!-- Footer -->
-        <div class="footer">
-            <p><strong>Soapbox</strong> - Building tools for the decentralized web</p>
+        <div class="footer" style="background: #0f172a; padding: 30px 20px; text-align: center;">
+            <p style="font-size: 14px; color: #64748b; margin: 8px 0;"><strong>Soapbox</strong> - Building tools for the decentralized web</p>
             <p>
                 <a href="https://soapbox.pub">Website</a> |
                 <a href="https://soapbox.pub/blog">Blog</a> |
