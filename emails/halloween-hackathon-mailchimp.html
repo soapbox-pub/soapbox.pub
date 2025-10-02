@@ -216,13 +216,17 @@
         }
 
         .template-card {
-            background: #ffffff;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 0;
-            margin: 20px 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            background: #ffffff !important;
+            border: 2px solid #e2e8f0 !important;
+            border-radius: 16px !important;
+            padding: 0 !important;
+            margin: 20px 0 !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            display: table !important;
+            width: 100% !important;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
         }
 
         .template-card:hover {
@@ -233,28 +237,46 @@
 
 
         .showcase-image {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
+            width: 100% !important;
+            height: 140px !important;
+            object-fit: cover !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+            vertical-align: top !important;
         }
 
         .template-content {
-            padding: 25px;
-            text-align: center;
+            padding: 20px 15px !important;
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+            clear: both !important;
+            box-sizing: border-box !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
         }
 
         .template-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1e293b;
-            margin: 0 0 10px;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            color: #1e293b !important;
+            margin: 0 0 10px !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
         }
 
         .template-description {
-            font-size: 14px;
-            color: #64748b;
-            margin: 0 0 20px;
-            line-height: 1.5;
+            font-size: 13px !important;
+            color: #64748b !important;
+            margin: 0 0 15px !important;
+            line-height: 1.4 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
         }
 
         .templates-section .section-title {
@@ -619,29 +641,41 @@
                     <tr>
                         <td class="showcase-cell">
                             <!-- Template 1 -->
-                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
-                                <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Petition Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
-                                <div class="template-content" style="padding: 25px; text-align: center;">
-                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Petition Site</h4>
-                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">A petition site including Nostr-powered signature collection, real-time progress tracking, and multi-page advocacy.</p>
-                                    <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Foceanguard-petition" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
-                                        Use Template
-                                    </a>
-                                </div>
-                            </div>
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; margin: 20px 0; overflow: hidden;">
+                                <tr>
+                                    <td style="padding: 0; margin: 0;">
+                                        <img src="https://media.ditto.pub/30da2005811fca1770a57e2d4688205a074fd9018e898e1e7a738390ddb5e94b.png" alt="Petition Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0; margin: 0; padding: 0;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="template-content" style="padding: 20px 15px; text-align: center; background: #ffffff; width: 100%; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word;">
+                                        <h4 class="template-title" style="font-size: 18px; font-weight: bold; color: #1e293b; margin: 0 0 10px; word-wrap: break-word; overflow-wrap: break-word;">Petition Site</h4>
+                                        <p class="template-description" style="font-size: 13px; color: #64748b; margin: 0 0 15px; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">A petition site including Nostr-powered signature collection, real-time progress tracking, and multi-page advocacy.</p>
+                                        <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Foceanguard-petition" class="btn btn-template" style="display: inline-block; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 6px;">
+                                            Use Template
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                         <td class="showcase-cell">
                             <!-- Template 2 -->
-                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
-                                <img src="https://media.ditto.pub/6a8915c20eba532b14429fd11cac57c36949f7d8dd79046a7ff00c88fe5059f6.png" alt="Twitter-like site" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
-                                <div class="template-content" style="padding: 25px; text-align: center;">
-                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Twitter-like Site</h4>
-                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">A simple start to a Twitter-like Nostr client for posting short content and following others. Customize to fit your vibe!</p>
-                                    <a href="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
-                                        Use Template
-                                    </a>
-                                </div>
-                            </div>
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; margin: 20px 0; overflow: hidden;">
+                                <tr>
+                                    <td style="padding: 0; margin: 0;">
+                                        <img src="https://media.ditto.pub/6a8915c20eba532b14429fd11cac57c36949f7d8dd79046a7ff00c88fe5059f6.png" alt="Twitter-like site" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0; margin: 0; padding: 0;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="template-content" style="padding: 20px 15px; text-align: center; background: #ffffff; width: 100%; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word;">
+                                        <h4 class="template-title" style="font-size: 18px; font-weight: bold; color: #1e293b; margin: 0 0 10px; word-wrap: break-word; overflow-wrap: break-word;">Twitter-like Site</h4>
+                                        <p class="template-description" style="font-size: 13px; color: #64748b; margin: 0 0 15px; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">A Twitter-like Nostr client for posting short content and following others. Customize to fit your vibe!</p>
+                                        <a href="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667" class="btn btn-template" style="display: inline-block; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 6px;">
+                                            Use Template
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>
@@ -652,30 +686,42 @@
                 <table class="showcase-row" cellpadding="0" cellspacing="0" border="0" width="100%">
                     <tr>
                         <td class="showcase-cell">
-                            <!-- Template 3 - Duplicate of Petition Site -->
-                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
-                                <img src="https://media.ditto.pub/c36e55db8790f5e29d979d66c333bb1194967393f379b37cc58915a4a8fdd09a.png" alt="Podcast Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
-                                <div class="template-content" style="padding: 25px; text-align: center;">
-                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Podstr</h4>
-                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">Own Your Podcast Community on Nostr. Receive direct support through Bitcoin Lightning.</p>
-                                    <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fderekross%2Fpodstr.git" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
-                                        Use Template
-                                    </a>
-                                </div>
-                            </div>
+                            <!-- Template 3 - Podstr -->
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; margin: 20px 0; overflow: hidden;">
+                                <tr>
+                                    <td style="padding: 0; margin: 0;">
+                                        <img src="https://media.ditto.pub/c36e55db8790f5e29d979d66c333bb1194967393f379b37cc58915a4a8fdd09a.png" alt="Podcast Site Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0; margin: 0; padding: 0;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="template-content" style="padding: 20px 15px; text-align: center; background: #ffffff; width: 100%; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word;">
+                                        <h4 class="template-title" style="font-size: 18px; font-weight: bold; color: #1e293b; margin: 0 0 10px; word-wrap: break-word; overflow-wrap: break-word;">Podstr</h4>
+                                        <p class="template-description" style="font-size: 13px; color: #64748b; margin: 0 0 15px; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">Publish and own your podcast community on Nostr. Receive direct support through Bitcoin Lightning.</p>
+                                        <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fderekross%2Fpodstr.git" class="btn btn-template" style="display: inline-block; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 6px;">
+                                            Use Template
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                         <td class="showcase-cell">
                             <!-- Template 4 - Small Business -->
-                            <div class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 0; margin: 20px 0; overflow: hidden;">
-                                <img src="https://media.ditto.pub/dd86180079d954171f0d38a9cd3cf540cf59f509229e7abcd82a345df3d50f99.png" alt="Small Business Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
-                                <div class="template-content" style="padding: 25px; text-align: center;">
-                                    <h4 class="template-title" style="font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 10px;">Small Business</h4>
-                                    <p class="template-description" style="font-size: 14px; color: #64748b; margin: 0 0 20px; line-height: 1.5;">A small business site with hero imagery, professional service showcases, a contact form, blog, and customer testimonials.</p>
-                                    <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Fbizcraft-solutions" class="btn btn-template" style="display: inline-block; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 8px;">
-                                        Use Template
-                                    </a>
-                                </div>
-                            </div>
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="template-card" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; margin: 20px 0; overflow: hidden;">
+                                <tr>
+                                    <td style="padding: 0; margin: 0;">
+                                        <img src="https://media.ditto.pub/dd86180079d954171f0d38a9cd3cf540cf59f509229e7abcd82a345df3d50f99.png" alt="Small Business Template" class="showcase-image" style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0; margin: 0; padding: 0;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="template-content" style="padding: 20px 15px; text-align: center; background: #ffffff; width: 100%; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word;">
+                                        <h4 class="template-title" style="font-size: 18px; font-weight: bold; color: #1e293b; margin: 0 0 10px; word-wrap: break-word; overflow-wrap: break-word;">Small Business</h4>
+                                        <p class="template-description" style="font-size: 13px; color: #64748b; margin: 0 0 15px; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">A small business site with professional service showcases, a contact form, blog, and customer testimonials.</p>
+                                        <a href="https://shakespeare.diy/clone?url=nostr%3A%2F%2Fnpub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc%2Fgit.shakespeare.diy%2Fbizcraft-solutions" class="btn btn-template" style="display: inline-block; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; text-align: center; background-color: #3b82f6; color: #ffffff; font-family: Arial, Helvetica, sans-serif; border-radius: 6px;">
+                                            Use Template
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>
