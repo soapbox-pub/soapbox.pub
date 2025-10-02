@@ -226,82 +226,13 @@
         }
 
         .prize-grid {
-            display: table;
             width: 100%;
             margin: 30px 0;
         }
 
-        .prize-item {
-            display: table-cell;
-            width: 33.33%;
-            padding: 20px 10px;
-            text-align: center;
-        }
 
-        .prize-card {
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid;
-            border-radius: 12px;
-            padding: 20px 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
 
-        .prize-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
 
-        .prize-card.design { border-color: #ff6b35; }
-        .prize-card.innovation { border-color: #7b1fa2; }
-        .prize-card.choice { border-color: #d32f2f; }
-
-        .prize-icon {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 15px;
-            border-radius: 8px;
-            display: block;
-            text-align: center;
-            line-height: 40px;
-            font-size: 18px;
-            color: #ffffff;
-        }
-
-        .design-icon { background: linear-gradient(135deg, #ff6b35 0%, #d84315 100%); }
-        .innovation-icon { background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%); }
-        .choice-icon { background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); }
-
-        .prize-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #e2e8f0;
-            margin: 0 0 8px;
-        }
-
-        .prize-amount {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 8px;
-        }
-
-        .prize-card.design .prize-amount { color: #ff6b35; }
-        .prize-card.innovation .prize-amount { color: #7b1fa2; }
-        .prize-card.choice .prize-amount { color: #d32f2f; }
-
-        .prize-description {
-            font-size: 12px;
-            color: #94a3b8;
-            margin: 0;
-        }
 
         /* Template and showcase cards */
         .showcase-grid {
@@ -575,10 +506,14 @@
                 display: block !important;
             }
 
-            .prize-item {
+            .prize-grid td {
                 display: block !important;
                 width: 100% !important;
-                margin: 15px 0 !important;
+                padding: 0 10px !important;
+            }
+
+            .prize-grid table {
+                margin: 10px 0 !important;
             }
 
             .showcase-cell {
@@ -639,29 +574,43 @@
             </p>
 
             <!-- Prize Grid -->
-            <div class="prize-grid">
-                <div class="prize-item">
-                    <div class="prize-card design">
-                        <div class="prize-title">Design Excellence</div>
-                        <div class="prize-amount">87,000 sats</div>
-                        <div class="prize-description">Most visually stunning Halloween design</div>
-                    </div>
-                </div>
-                <div class="prize-item">
-                    <div class="prize-card innovation">
-                        <div class="prize-title">Functional Innovation</div>
-                        <div class="prize-amount">87,000 sats</div>
-                        <div class="prize-description">Best technical implementation</div>
-                    </div>
-                </div>
-                <div class="prize-item">
-                    <div class="prize-card choice">
-                        <div class="prize-title">Judge's<br>Choice</div>
-                        <div class="prize-amount">87,000 sats</div>
-                        <div class="prize-description">Overall favorite of the team</div>
-                    </div>
-                </div>
-            </div>
+            <table class="prize-grid" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 30px 0; border-collapse: collapse;">
+                <tr>
+                    <td width="33.33%" style="padding: 0 10px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse;">
+                            <tr>
+                                <td style="background-color: #1a1a1a; border: 2px solid #ff6b35; border-radius: 8px; padding: 20px 15px; text-align: center; margin: 10px;">
+                                    <div style="font-family: 'Creepster', 'Nosifer', 'Chiller', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #e2e8f0; margin: 0 0 8px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); letter-spacing: 1px;">Design Excellence</div>
+                                    <div style="font-size: 24px; font-weight: bold; margin: 0 0 8px; color: #ff6b35;">87,000 sats</div>
+                                    <div style="font-size: 12px; color: #94a3b8; margin: 0;">Most visually stunning Halloween design</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="33.33%" style="padding: 0 10px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse;">
+                            <tr>
+                                <td style="background-color: #1a1a1a; border: 2px solid #7b1fa2; border-radius: 8px; padding: 20px 15px; text-align: center; margin: 10px;">
+                                    <div style="font-family: 'Creepster', 'Nosifer', 'Chiller', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #e2e8f0; margin: 0 0 8px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); letter-spacing: 1px;">Functional Innovation</div>
+                                    <div style="font-size: 24px; font-weight: bold; margin: 0 0 8px; color: #7b1fa2;">87,000 sats</div>
+                                    <div style="font-size: 12px; color: #94a3b8; margin: 0;">Best technical implementation</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="33.33%" style="padding: 0 10px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse;">
+                            <tr>
+                                <td style="background-color: #1a1a1a; border: 2px solid #d32f2f; border-radius: 8px; padding: 20px 15px; text-align: center; margin: 10px;">
+                                    <div style="font-family: 'Creepster', 'Nosifer', 'Chiller', cursive, 'Impact', 'Arial Black', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #e2e8f0; margin: 0 0 8px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); letter-spacing: 1px;">Judge's<br>Choice</div>
+                                    <div style="font-size: 24px; font-weight: bold; margin: 0 0 8px; color: #d32f2f;">87,000 sats</div>
+                                    <div style="font-size: 12px; color: #94a3b8; margin: 0;">Overall favorite of the team</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
 
             <div style="margin-top: 30px; text-align: center;">
                 <a href="https://soapbox.pub/halloween-hackathon" class="btn btn-halloween" style="display: inline-block; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; margin: 8px; border: none; background-color: #ff6b35; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">🎃 Enter Hackathon</a>
