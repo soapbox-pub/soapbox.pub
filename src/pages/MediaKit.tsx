@@ -137,21 +137,29 @@ export default function MediaKit() {
 
             {/* Latest Press Release */}
             <div className="mt-12 text-left">
-              <div className="flex items-center mb-4">
-                <FileText className="w-6 h-6 text-azure mr-2" />
-                <h2 className="text-2xl font-bold text-gray-900">Latest Press Release</h2>
-              </div>
               {(() => {
                 const allPosts = getAllPosts();
                 const pressReleases = allPosts.filter(post => post.tags?.includes('Press Release'));
                 const latestPR = pressReleases[0];
 
                 if (!latestPR) {
-                  return <p className="text-gray-600">No press releases available.</p>;
+                  return (
+                    <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                      <div className="flex items-center mb-4">
+                        <FileText className="w-6 h-6 text-azure mr-2" />
+                        <h2 className="text-2xl font-bold text-gray-900">Latest Press Release</h2>
+                      </div>
+                      <p className="text-gray-600">No press releases available.</p>
+                    </div>
+                  );
                 }
 
                 return (
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <div className="flex items-center mb-4">
+                      <FileText className="w-6 h-6 text-azure mr-2" />
+                      <h2 className="text-2xl font-bold text-gray-900">Latest Press Release</h2>
+                    </div>
                     <div className="flex items-start space-x-4">
                       <img
                         src={latestPR.coverImage}
@@ -188,7 +196,7 @@ export default function MediaKit() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
 
           {/* Team Members */}
-          <div className="space-y-12 mb-12">
+          <div className="space-y-12 mb-12 mt-16">
             {/* Alex Gleason */}
             <Card className="border-gray-200 overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
@@ -454,9 +462,9 @@ export default function MediaKit() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Left Column - About Section */}
-                <div className="space-y-6">
+              <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Left Column - About Section */}
                   <div>
                     <p className="text-gray-700 leading-relaxed mb-4">
                       Shakespeare is Soapbox's revolutionary AI-powered website builder that runs entirely on the Nostr protocol.
@@ -470,36 +478,37 @@ export default function MediaKit() {
                     </p>
                   </div>
 
-                  <div className="flex flex-col gap-3">
-                    <Button asChild className="bg-azure hover:bg-azure-600 text-white justify-start">
-                      <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
-                        🎭 Try Shakespeare
-                      </a>
-                    </Button>
-                    <Button variant="outline" asChild className="justify-start">
-                      <a href="/shakespeare-resources" target="_blank" rel="noopener noreferrer">
-                        📚 Resource Center
-                      </a>
-                    </Button>
-                    <Button variant="outline" asChild className="justify-start">
-                      <a href="/showcase" target="_blank" rel="noopener noreferrer">
-                        🎨 View Showcase
-                      </a>
-                    </Button>
+                  {/* Right Column - What Makes It Different */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">What Makes Shakespeare Different</h4>
+                    <div className="space-y-3">
+                      {shakespeareFeatures.map((feature, index) => (
+                        <div key={index} className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-gray-700 text-sm leading-relaxed">{feature}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Right Column - What Makes It Different */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">What Makes Shakespeare Different</h4>
-                  <div className="space-y-3">
-                    {shakespeareFeatures.map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-700 text-sm leading-relaxed">{feature}</p>
-                      </div>
-                    ))}
-                  </div>
+                {/* Action Buttons - Below both columns */}
+                <div className="flex flex-wrap gap-3 justify-center">
+                  <Button asChild className="bg-azure hover:bg-azure-600 text-white">
+                    <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
+                      🎭 Try Shakespeare
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="/shakespeare-resources" target="_blank" rel="noopener noreferrer">
+                      📚 Resource Center
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="/showcase" target="_blank" rel="noopener noreferrer">
+                      🎨 View Showcase
+                    </a>
+                  </Button>
                 </div>
               </div>
             </CardContent>
