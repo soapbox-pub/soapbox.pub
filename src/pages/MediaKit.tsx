@@ -332,8 +332,33 @@ export default function MediaKit() {
                     </div>
                   </div>
 
-                  {/* Right Column - Podcast & Video Appearances */}
+                  {/* Right Column - Presentations & Podcast Appearances */}
                   <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
+                      <div className="space-y-3">
+                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <h5 className="font-medium text-gray-900 mb-1">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                              Nostrasia 2023 Keynote
+                            </a>
+                          </h5>
+                          <p className="text-sm text-gray-600 mb-1">Building Community Infrastructure on Nostr</p>
+                          <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
+                        </div>
+
+                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <h5 className="font-medium text-gray-900 mb-1">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                              Baltic Honeybadger 2023
+                            </a>
+                          </h5>
+                          <p className="text-sm text-gray-600 mb-1">Decentralized Social Media and Bitcoin</p>
+                          <span className="text-xs text-gray-500">Riga, Latvia - September 2023</span>
+                        </div>
+                      </div>
+                    </div>
+
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
                       <div className="space-y-2">
@@ -351,27 +376,6 @@ export default function MediaKit() {
                           </a>
                         ))}
                       </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                        <Play className="w-5 h-5 mr-2" />
-                        Video Interviews & Presentations
-                      </h4>
-                      <div className="aspect-video rounded-lg overflow-hidden">
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
-                          title="Alex Gleason - Video Interviews"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      </div>
-                      <p className="text-sm text-gray-600 mt-2">
-                        Watch Alex's interviews and conference presentations on decentralized technology, AI, and the future of social media.
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -443,8 +447,33 @@ export default function MediaKit() {
                     </div>
                   </div>
 
-                  {/* Right Column - Podcast & Video Appearances */}
+                  {/* Right Column - Presentations & Podcast Appearances */}
                   <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
+                      <div className="space-y-3">
+                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <h5 className="font-medium text-gray-900 mb-1">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                              #Hack4Freedom Nigeria
+                            </a>
+                          </h5>
+                          <p className="text-sm text-gray-600 mb-1">Leading Women in Vibe Coding Workshop</p>
+                          <span className="text-xs text-gray-500">Lagos, Nigeria - September 2024</span>
+                        </div>
+
+                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <h5 className="font-medium text-gray-900 mb-1">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                              Women in Open Source Summit
+                            </a>
+                          </h5>
+                          <p className="text-sm text-gray-600 mb-1">Building Inclusive Spaces in Decentralized Tech</p>
+                          <span className="text-xs text-gray-500">Virtual - March 2024</span>
+                        </div>
+                      </div>
+                    </div>
+
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
                       <div className="space-y-2">
@@ -481,27 +510,6 @@ export default function MediaKit() {
                           <ExternalLink className="w-3 h-3" />
                         </a>
                       </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                        <Play className="w-5 h-5 mr-2" />
-                        Video Interviews & Presentations
-                      </h4>
-                      <div className="aspect-video rounded-lg overflow-hidden">
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
-                          title="MK Fain - Video Interviews"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      </div>
-                      <p className="text-sm text-gray-600 mt-2">
-                        Watch MK's discussions on freedom of speech, decentralization, and building inclusive online communities.
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -577,7 +585,7 @@ export default function MediaKit() {
                     </div>
                   </div>
 
-                  {/* Right Column - Achievements & Video Interviews */}
+                  {/* Right Column - Achievements, Presentations & Appearances */}
                   <div className="space-y-6">
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">Achievements & Recognition:</h4>
@@ -592,24 +600,28 @@ export default function MediaKit() {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                        <Play className="w-5 h-5 mr-2" />
-                        Video Interviews & Presentations
-                      </h4>
-                      <div className="aspect-video rounded-lg overflow-hidden">
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
-                          title="Derek Ross - Video Interviews"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
+                      <div className="space-y-3">
+                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <h5 className="font-medium text-gray-900 mb-1">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                              Bitcoin 2024 Conference
+                            </a>
+                          </h5>
+                          <p className="text-sm text-gray-600 mb-1">The Future of Decentralized Social Media</p>
+                          <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
+                        </div>
+
+                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <h5 className="font-medium text-gray-900 mb-1">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                              Nostr Documentary Feature
+                            </a>
+                          </h5>
+                          <p className="text-sm text-gray-600 mb-1">"Social Media is broken. Can we fix it?" by Max DeMarco</p>
+                          <span className="text-xs text-gray-500">Documentary Release - 2024</span>
+                        </div>
                       </div>
-                      <p className="text-sm text-gray-600 mt-2">
-                        Watch Derek's talks on Nostr development, vibe coding, and the future of decentralized applications.
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -626,7 +638,8 @@ export default function MediaKit() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Left Column - Press Coverage */}
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
                   <div className="space-y-4">
@@ -664,20 +677,18 @@ export default function MediaKit() {
                   </div>
                 </div>
 
+                {/* Right Column - Featured Coverage Image */}
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Conference Presentations</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-medium text-gray-900 mb-2">Bitcoin 2024</h5>
-                      <p className="text-sm text-gray-600 mb-2">Derek Ross presented on "The Future of Decentralized Social Media"</p>
-                      <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
-                    </div>
-
-                    <div className="p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-medium text-gray-900 mb-2">Nostrasia</h5>
-                      <p className="text-sm text-gray-600 mb-2">Alex Gleason keynote on "Building Community Infrastructure on Nostr"</p>
-                      <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
-                    </div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Featured Coverage</h4>
+                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <img
+                      src="/assets/images/shakespeare-screenshots/techcrunch-cover.png"
+                      alt="TechCrunch Coverage"
+                      className="w-full h-auto rounded-lg shadow-md"
+                    />
+                    <p className="text-sm text-gray-600 mt-3 text-center">
+                      TechCrunch featured coverage highlighting Soapbox's impact in decentralized social media
+                    </p>
                   </div>
                 </div>
               </div>
