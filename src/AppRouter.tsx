@@ -13,6 +13,7 @@ import CustomNipPage from "./pages/CustomNipPage";
 import ShakespeareResources from "./pages/ShakespeareResources";
 import SoapboxSessions from "./pages/SoapboxSessions";
 import HalloweenHackathon from "./pages/HalloweenHackathon";
+import MediaKit from "./pages/MediaKit";
 
 // Tool pages
 import Ditto from "./pages/tools/Ditto";
@@ -49,6 +50,7 @@ export function AppRouter() {
         <Route path="/shakespeare-resources" element={<ShakespeareResources />} />
         <Route path="/soapbox-sessions" element={<SoapboxSessions />} />
         <Route path="/halloween-hackathon" element={<HalloweenHackathon />} />
+        <Route path="/media-kit" element={<MediaKit />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
