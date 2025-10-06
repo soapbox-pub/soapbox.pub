@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
@@ -34,7 +33,7 @@ export default function MediaKit() {
     name: "Alex Gleason",
     title: "CEO of Soapbox",
     picture: "https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg",
-    npub: "npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxckmzddywnws6cd26p",
+    nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
     bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He is still learning, and still dreaming.",
     subjects: [
       "What makes Shakespeare different from other AI web builders",
@@ -62,7 +61,7 @@ export default function MediaKit() {
     name: "MK Fain",
     title: "CPO of Soapbox",
     picture: "https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg",
-    npub: "npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc",
+    nostrUrl: "https://ditto.pub/@mk@ditto.pub",
     bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
     subjects: [
       "Freedom of speech online",
@@ -84,7 +83,7 @@ export default function MediaKit() {
     name: "Derek Ross",
     title: "DevRel for Soapbox",
     picture: "https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg",
-    npub: "npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424",
+    nostrUrl: "https://ditto.pub/@derekross@grownostr.org",
     quote: "\"The purple pill helps the orange pill go down.\" Nostr is the social glue that binds all of your apps together.",
     bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek.",
     subjects: [
@@ -172,7 +171,16 @@ export default function MediaKit() {
                   <div className="flex-1">
                     <CardTitle className="text-2xl text-gray-900">{alexProfile.name}</CardTitle>
                     <p className="text-lg font-semibold text-azure mb-2">{alexProfile.title}</p>
-                    <Badge variant="outline" className="text-azure border-azure">{alexProfile.npub}</Badge>
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href={alexProfile.nostrUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
+                        View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
@@ -229,7 +237,16 @@ export default function MediaKit() {
                   <div className="flex-1">
                     <CardTitle className="text-2xl text-gray-900">{mkProfile.name}</CardTitle>
                     <p className="text-lg font-semibold text-azure mb-2">{mkProfile.title}</p>
-                    <Badge variant="outline" className="text-azure border-azure">{mkProfile.npub}</Badge>
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href={mkProfile.nostrUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
+                        View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
@@ -272,7 +289,16 @@ export default function MediaKit() {
                   <div className="flex-1">
                     <CardTitle className="text-2xl text-gray-900">{derekProfile.name}</CardTitle>
                     <p className="text-lg font-semibold text-azure mb-2">{derekProfile.title}</p>
-                    <Badge variant="outline" className="text-azure border-azure">{derekProfile.npub}</Badge>
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href={derekProfile.nostrUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
+                        View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
