@@ -138,28 +138,122 @@ export default function MediaKit() {
         </section>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          {/* Shakespeare Differentiators */}
+          {/* Latest Press Release */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <FileText className="w-6 h-6 mr-2" />
+                Latest Press Release
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {(() => {
+                const allPosts = getAllPosts();
+                const pressReleases = allPosts.filter(post => post.tags?.includes('Press Release'));
+                const latestPR = pressReleases[0];
+
+                if (!latestPR) {
+                  return <p className="text-gray-600">No press releases available.</p>;
+                }
+
+                return (
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-4">
+                      <img
+                        src={latestPR.coverImage}
+                        alt={latestPR.title}
+                        className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                      />
+                      <div className="flex-1">
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h4>
+                        <p className="text-gray-600 text-sm mb-3 leading-relaxed">{latestPR.excerpt}</p>
+                        <div className="flex items-center space-x-4">
+                          <span className="text-sm text-gray-500">{latestPR.date}</span>
+                          <Button size="sm" variant="outline" asChild>
+                            <a href={`/blog/${latestPR.slug}`} target="_blank" rel="noopener noreferrer">
+                              Read Full Release
+                              <ExternalLink className="ml-1 h-3 w-3" />
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4">
+                      <Button variant="outline" asChild>
+                        <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
+                          View All Press Releases
+                          <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })()}
+            </CardContent>
+          </Card>
+
+          {/* About Shakespeare */}
           <Card className="mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <MessageCircle className="w-6 h-6 mr-2" />
-                What Makes Shakespeare Different
+                About Shakespeare
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                {shakespeareFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700">{feature}</p>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Shakespeare is Soapbox's revolutionary AI-powered website builder that runs entirely on the Nostr protocol.
+                    It transforms web development from a technical challenge into a natural conversation, allowing anyone to build
+                    professional websites, applications, and digital experiences through simple dialogue with AI assistants.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    With Shakespeare Act 2, we've evolved beyond a simple website builder into a full-featured development
+                    environment that works entirely in your browser. No downloads, no subscriptions, no vendor lock-in -
+                    just pure creative freedom powered by decentralized technology.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <Button asChild className="bg-azure hover:bg-azure-600 text-white">
+                    <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
+                      Try Shakespeare
+                      <ExternalLink className="ml-1 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="/shakespeare-resources" target="_blank" rel="noopener noreferrer">
+                      Resource Center
+                      <ExternalLink className="ml-1 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="/showcase" target="_blank" rel="noopener noreferrer">
+                      View Showcase
+                      <ExternalLink className="ml-1 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">What Makes Shakespeare Different</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {shakespeareFeatures.map((feature, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-gray-700">{feature}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Team Members */}
-          <div className="space-y-12">
+          <div className="space-y-12 mb-12">
             {/* Alex Gleason */}
             <Card className="border-gray-200 overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
@@ -495,6 +589,67 @@ export default function MediaKit() {
             </CardContent>
           </Card>
 
+
+
+          {/* Media Coverage Archive */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <Globe className="w-6 h-6 mr-2" />
+                Media Coverage Archive
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Bitcoin Magazine</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Soapbox's Shakespeare represents a new paradigm in web development, bringing AI-powered creation to decentralized protocols."
+                      </p>
+                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Nostr Report</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Ditto has emerged as the go-to solution for communities wanting to build on Nostr with enterprise-grade features."
+                      </p>
+                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Cypherpunk Times</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Alex Gleason's transition from Fediverse to Nostr development has been one of the most significant moves in decentralized social media."
+                      </p>
+                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Conference Presentations</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h5 className="font-medium text-gray-900 mb-2">Bitcoin 2024</h5>
+                      <p className="text-sm text-gray-600 mb-2">Derek Ross presented on "The Future of Decentralized Social Media"</p>
+                      <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
+                    </div>
+
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h5 className="font-medium text-gray-900 mb-2">Nostrasia</h5>
+                      <p className="text-sm text-gray-600 mb-2">Alex Gleason keynote on "Building Community Infrastructure on Nostr"</p>
+                      <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Company Background & Timeline */}
           <Card className="mb-12 border-azure-200">
             <CardHeader>
@@ -577,120 +732,6 @@ export default function MediaKit() {
                           Nostr and decentralized social media infrastructure.
                         </p>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Latest Press Release */}
-          <Card className="mb-12 border-azure-200">
-            <CardHeader>
-              <CardTitle className="text-2xl text-azure flex items-center">
-                <FileText className="w-6 h-6 mr-2" />
-                Latest Press Release
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              {(() => {
-                const allPosts = getAllPosts();
-                const pressReleases = allPosts.filter(post => post.tags?.includes('Press Release'));
-                const latestPR = pressReleases[0];
-
-                if (!latestPR) {
-                  return <p className="text-gray-600">No press releases available.</p>;
-                }
-
-                return (
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-4">
-                      <img
-                        src={latestPR.coverImage}
-                        alt={latestPR.title}
-                        className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
-                      />
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h4>
-                        <p className="text-gray-600 text-sm mb-3 leading-relaxed">{latestPR.excerpt}</p>
-                        <div className="flex items-center space-x-4">
-                          <span className="text-sm text-gray-500">{latestPR.date}</span>
-                          <Button size="sm" variant="outline" asChild>
-                            <a href={`/blog/${latestPR.slug}`} target="_blank" rel="noopener noreferrer">
-                              Read Full Release
-                              <ExternalLink className="ml-1 h-3 w-3" />
-                            </a>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-4">
-                      <Button variant="outline" asChild>
-                        <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
-                          View All Press Releases
-                          <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                );
-              })()}
-            </CardContent>
-          </Card>
-
-          {/* Media Coverage Archive */}
-          <Card className="mb-12 border-azure-200">
-            <CardHeader>
-              <CardTitle className="text-2xl text-azure flex items-center">
-                <Globe className="w-6 h-6 mr-2" />
-                Media Coverage Archive
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Bitcoin Magazine</h5>
-                      <p className="text-sm text-gray-600 mb-2">
-                        "Soapbox's Shakespeare represents a new paradigm in web development, bringing AI-powered creation to decentralized protocols."
-                      </p>
-                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Nostr Report</h5>
-                      <p className="text-sm text-gray-600 mb-2">
-                        "Ditto has emerged as the go-to solution for communities wanting to build on Nostr with enterprise-grade features."
-                      </p>
-                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Cypherpunk Times</h5>
-                      <p className="text-sm text-gray-600 mb-2">
-                        "Alex Gleason's transition from Fediverse to Nostr development has been one of the most significant moves in decentralized social media."
-                      </p>
-                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Conference Presentations</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-medium text-gray-900 mb-2">Bitcoin 2024</h5>
-                      <p className="text-sm text-gray-600 mb-2">Derek Ross presented on "The Future of Decentralized Social Media"</p>
-                      <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
-                    </div>
-
-                    <div className="p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-medium text-gray-900 mb-2">Nostrasia</h5>
-                      <p className="text-sm text-gray-600 mb-2">Alex Gleason keynote on "Building Community Infrastructure on Nostr"</p>
-                      <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
                     </div>
                   </div>
                 </div>
