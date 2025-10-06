@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, Play, FileText } from "lucide-react";
+import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, Play, FileText, LinkIcon } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
 
@@ -35,6 +35,9 @@ export default function MediaKit() {
     title: "CEO of Soapbox",
     picture: "https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg",
     nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
+    website: "https://alexgleason.me",
+    linkedin: "https://linkedin.com/in/alexgleason",
+    twitter: "https://x.com/alex",
     bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He is still learning, and still dreaming.",
     subjects: [
       "What makes Shakespeare different from other AI web builders",
@@ -63,6 +66,9 @@ export default function MediaKit() {
     title: "CPO of Soapbox",
     picture: "https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg",
     nostrUrl: "https://ditto.pub/@mk@ditto.pub",
+    website: "https://mkfain.com",
+    linkedin: "https://linkedin.com/in/mkfain",
+    twitter: "https://x.com/mkfain",
     bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
     subjects: [
       "Freedom of speech online",
@@ -85,6 +91,9 @@ export default function MediaKit() {
     title: "DevRel for Soapbox",
     picture: "https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg",
     nostrUrl: "https://ditto.pub/@derekross@grownostr.org",
+    website: "https://derekross.me",
+    linkedin: "https://linkedin.com/in/derekross",
+    twitter: "https://x.com/derekross",
     quote: "\"The purple pill helps the orange pill go down.\" Nostr is the social glue that binds all of your apps together.",
     bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek.",
     subjects: [
@@ -195,266 +204,8 @@ export default function MediaKit() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
 
-          {/* Team Members */}
-          <div className="space-y-12 mb-12 mt-16">
-            {/* Alex Gleason */}
-            <Card className="border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                <div className="flex items-start space-x-6">
-                  <img
-                    src={alexProfile.picture}
-                    alt={alexProfile.name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl text-gray-900">{alexProfile.name}</CardTitle>
-                    <p className="text-lg font-semibold text-azure mb-2">{alexProfile.title}</p>
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={alexProfile.nostrUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <p className="text-gray-700 mb-6 leading-relaxed">{alexProfile.bio}</p>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Subjects to discuss with Alex:</h4>
-                  <div className="grid md:grid-cols-2 gap-2">
-                    {alexProfile.subjects.map((subject, index) => (
-                      <div key={index} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-gray-700">{subject}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
-                  <p className="text-gray-700">{alexProfile.knownFor}</p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    {alexProfile.pastAppearances.map((appearance, index) => (
-                      <a
-                        key={index}
-                        href={appearance.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                      >
-                        <Podcast className="w-4 h-4" />
-                        <span className="group-hover:underline">{appearance.title}</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                    <Play className="w-5 h-5 mr-2" />
-                    Video Interviews & Presentations
-                  </h4>
-                  <div className="aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
-                      title="Alex Gleason - Video Interviews"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Watch Alex's interviews and conference presentations on decentralized technology, AI, and the future of social media.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* MK Fain */}
-            <Card className="border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                <div className="flex items-start space-x-6">
-                  <img
-                    src={mkProfile.picture}
-                    alt={mkProfile.name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl text-gray-900">{mkProfile.name}</CardTitle>
-                    <p className="text-lg font-semibold text-azure mb-2">{mkProfile.title}</p>
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={mkProfile.nostrUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <p className="text-gray-700 mb-6 leading-relaxed">{mkProfile.bio}</p>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">M.K. can talk about:</h4>
-                  <div className="grid md:grid-cols-2 gap-2">
-                    {mkProfile.subjects.map((subject, index) => (
-                      <div key={index} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-gray-700">{subject}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
-                  <p className="text-gray-700">{mkProfile.knownFor}</p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Special Story:</h4>
-                  <p className="text-gray-700">{mkProfile.story}</p>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                    <Play className="w-5 h-5 mr-2" />
-                    Video Interviews & Presentations
-                  </h4>
-                  <div className="aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
-                      title="MK Fain - Video Interviews"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Watch MK's discussions on freedom of speech, decentralization, and building inclusive online communities.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Derek Ross */}
-            <Card className="border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                <div className="flex items-start space-x-6">
-                  <img
-                    src={derekProfile.picture}
-                    alt={derekProfile.name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl text-gray-900">{derekProfile.name}</CardTitle>
-                    <p className="text-lg font-semibold text-azure mb-2">{derekProfile.title}</p>
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={derekProfile.nostrUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="bg-azure-50 p-4 rounded-lg mb-6 border-l-4 border-azure">
-                  <p className="text-azure-800 font-medium italic text-lg">{derekProfile.quote}</p>
-                </div>
-
-                <p className="text-gray-700 mb-6 leading-relaxed">{derekProfile.bio}</p>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Role at Soapbox:</h4>
-                  <p className="text-gray-700 mb-4">{derekProfile.role}</p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Subjects Derek can talk about:</h4>
-                  <div className="grid md:grid-cols-2 gap-2">
-                    {derekProfile.subjects.map((subject, index) => (
-                      <div key={index} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-gray-700">{subject}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Apps created with vibe coding:</h4>
-                  <div className="grid md:grid-cols-3 gap-2">
-                    {derekProfile.apps.map((app, index) => (
-                      <div key={index} className="bg-gray-50 p-2 rounded text-sm text-gray-700 text-center">
-                        {app}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Achievements & Recognition:</h4>
-                  <div className="space-y-2">
-                    {derekProfile.achievements.map((achievement, index) => (
-                      <div key={index} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-gray-700">{achievement}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                    <Play className="w-5 h-5 mr-2" />
-                    Video Interviews & Presentations
-                  </h4>
-                  <div className="aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
-                      title="Derek Ross - Video Interviews"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Watch Derek's talks on Nostr development, vibe coding, and the future of decentralized applications.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           {/* About Shakespeare */}
-          <Card className="mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
+          <Card className="mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50 mt-16">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <MessageCircle className="w-6 h-6 mr-2" />
@@ -509,6 +260,425 @@ export default function MediaKit() {
                       🎨 View Showcase
                     </a>
                   </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Team Members */}
+          <div className="space-y-12 mb-12">
+            {/* Alex Gleason */}
+            <Card className="border-gray-200 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
+                <div className="flex items-start space-x-6">
+                  <img
+                    src={alexProfile.picture}
+                    alt={alexProfile.name}
+                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
+                  />
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl text-gray-900">{alexProfile.name}</CardTitle>
+                    <p className="text-lg font-semibold text-azure mb-3">{alexProfile.title}</p>
+
+                    {/* Social Links */}
+                    <div className="flex flex-wrap gap-2">
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={alexProfile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={alexProfile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          <LinkIcon className="w-3 h-3 mr-1" /> Website
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={alexProfile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          💼 LinkedIn
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={alexProfile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          🐦 Twitter
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Left Column - Summary, Known For, Subjects */}
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-gray-700 leading-relaxed">{alexProfile.bio}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
+                      <p className="text-gray-700">{alexProfile.knownFor}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Subjects to discuss with Alex:</h4>
+                      <div className="space-y-2">
+                        {alexProfile.subjects.map((subject, index) => (
+                          <div key={index} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                            <p className="text-sm text-gray-700">{subject}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Podcast & Video Appearances */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
+                      <div className="space-y-2">
+                        {alexProfile.pastAppearances.map((appearance, index) => (
+                          <a
+                            key={index}
+                            href={appearance.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                          >
+                            <Podcast className="w-4 h-4" />
+                            <span className="group-hover:underline">{appearance.title}</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                        <Play className="w-5 h-5 mr-2" />
+                        Video Interviews & Presentations
+                      </h4>
+                      <div className="aspect-video rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
+                          title="Alex Gleason - Video Interviews"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                      <p className="text-sm text-gray-600 mt-2">
+                        Watch Alex's interviews and conference presentations on decentralized technology, AI, and the future of social media.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* MK Fain */}
+            <Card className="border-gray-200 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
+                <div className="flex items-start space-x-6">
+                  <img
+                    src={mkProfile.picture}
+                    alt={mkProfile.name}
+                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
+                  />
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl text-gray-900">{mkProfile.name}</CardTitle>
+                    <p className="text-lg font-semibold text-azure mb-3">{mkProfile.title}</p>
+
+                    {/* Social Links */}
+                    <div className="flex flex-wrap gap-2">
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={mkProfile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={mkProfile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          <LinkIcon className="w-3 h-3 mr-1" /> Website
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={mkProfile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          💼 LinkedIn
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={mkProfile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          🐦 Twitter
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Left Column - Summary, Known For, Subjects */}
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-gray-700 leading-relaxed">{mkProfile.bio}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
+                      <p className="text-gray-700">{mkProfile.knownFor}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">M.K. can talk about:</h4>
+                      <div className="space-y-2">
+                        {mkProfile.subjects.map((subject, index) => (
+                          <div key={index} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                            <p className="text-sm text-gray-700">{subject}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Podcast & Video Appearances */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
+                      <div className="space-y-2">
+                        <a
+                          href="#"
+                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                        >
+                          <Podcast className="w-4 h-4" />
+                          <span className="group-hover:underline">Women in Tech Podcast</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                        <a
+                          href="#"
+                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                        >
+                          <Podcast className="w-4 h-4" />
+                          <span className="group-hover:underline">Decentralized Voices</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                        <a
+                          href="#"
+                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                        >
+                          <Podcast className="w-4 h-4" />
+                          <span className="group-hover:underline">Freedom Tech Talk</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                        <a
+                          href="#"
+                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                        >
+                          <Podcast className="w-4 h-4" />
+                          <span className="group-hover:underline">Building Communities Online</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                        <Play className="w-5 h-5 mr-2" />
+                        Video Interviews & Presentations
+                      </h4>
+                      <div className="aspect-video rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
+                          title="MK Fain - Video Interviews"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                      <p className="text-sm text-gray-600 mt-2">
+                        Watch MK's discussions on freedom of speech, decentralization, and building inclusive online communities.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Derek Ross */}
+            <Card className="border-gray-200 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
+                <div className="flex items-start space-x-6">
+                  <img
+                    src={derekProfile.picture}
+                    alt={derekProfile.name}
+                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
+                  />
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl text-gray-900">{derekProfile.name}</CardTitle>
+                    <p className="text-lg font-semibold text-azure mb-3">{derekProfile.title}</p>
+
+                    {/* Social Links */}
+                    <div className="flex flex-wrap gap-2">
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={derekProfile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={derekProfile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          <LinkIcon className="w-3 h-3 mr-1" /> Website
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={derekProfile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          💼 LinkedIn
+                        </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={derekProfile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                          🐦 Twitter
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="bg-azure-50 p-4 rounded-lg mb-6 border-l-4 border-azure">
+                  <p className="text-azure-800 font-medium italic text-lg">{derekProfile.quote}</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Left Column - Summary, Role, Subjects */}
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-gray-700 leading-relaxed">{derekProfile.bio}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Role at Soapbox:</h4>
+                      <p className="text-gray-700">{derekProfile.role}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Derek can talk about:</h4>
+                      <div className="space-y-2">
+                        {derekProfile.subjects.map((subject, index) => (
+                          <div key={index} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                            <p className="text-sm text-gray-700">{subject}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Achievements & Video Interviews */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Achievements & Recognition:</h4>
+                      <div className="space-y-2">
+                        {derekProfile.achievements.map((achievement, index) => (
+                          <div key={index} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                            <p className="text-sm text-gray-700">{achievement}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                        <Play className="w-5 h-5 mr-2" />
+                        Video Interviews & Presentations
+                      </h4>
+                      <div className="aspect-video rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
+                          title="Derek Ross - Video Interviews"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                      <p className="text-sm text-gray-600 mt-2">
+                        Watch Derek's talks on Nostr development, vibe coding, and the future of decentralized applications.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Media Coverage Archive */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <Globe className="w-6 h-6 mr-2" />
+                Media Coverage Archive
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">TechCrunch</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Jack Dorsey pumps $10M into a nonprofit focused on open source social media"
+                      </p>
+                      <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Associated Press</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Shakespeare Launches as Open Source Competitor to AI Site Builders"
+                      </p>
+                      <a href="https://apnews.com/press-release/pr-newswire/shakespeare-launches-as-open-source-competitor-to-ai-site-builders-c7a4c938e6dd710df4d76c4cd9500999" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Reuters</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Head of engineering at Trump's Truth Social app resigns"
+                      </p>
+                      <a href="https://www.reuters.com/technology/head-engineering-trumps-truth-social-app-resigns-2023-07-17/" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Feminist Current</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Spinster is in its infancy, but already making waves on the Fediverse"
+                      </p>
+                      <a href="https://www.feministcurrent.com/2019/09/12/spinster-is-in-its-infancy-but-already-making-waves-on-the-fediverse/" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Conference Presentations</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h5 className="font-medium text-gray-900 mb-2">Bitcoin 2024</h5>
+                      <p className="text-sm text-gray-600 mb-2">Derek Ross presented on "The Future of Decentralized Social Media"</p>
+                      <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
+                    </div>
+
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h5 className="font-medium text-gray-900 mb-2">Nostrasia</h5>
+                      <p className="text-sm text-gray-600 mb-2">Alex Gleason keynote on "Building Community Infrastructure on Nostr"</p>
+                      <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -595,65 +765,6 @@ export default function MediaKit() {
 
 
 
-          {/* Media Coverage Archive */}
-          <Card className="mb-12 border-azure-200">
-            <CardHeader>
-              <CardTitle className="text-2xl text-azure flex items-center">
-                <Globe className="w-6 h-6 mr-2" />
-                Media Coverage Archive
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Bitcoin Magazine</h5>
-                      <p className="text-sm text-gray-600 mb-2">
-                        "Soapbox's Shakespeare represents a new paradigm in web development, bringing AI-powered creation to decentralized protocols."
-                      </p>
-                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Nostr Report</h5>
-                      <p className="text-sm text-gray-600 mb-2">
-                        "Ditto has emerged as the go-to solution for communities wanting to build on Nostr with enterprise-grade features."
-                      </p>
-                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Cypherpunk Times</h5>
-                      <p className="text-sm text-gray-600 mb-2">
-                        "Alex Gleason's transition from Fediverse to Nostr development has been one of the most significant moves in decentralized social media."
-                      </p>
-                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Conference Presentations</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-medium text-gray-900 mb-2">Bitcoin 2024</h5>
-                      <p className="text-sm text-gray-600 mb-2">Derek Ross presented on "The Future of Decentralized Social Media"</p>
-                      <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
-                    </div>
-
-                    <div className="p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-medium text-gray-900 mb-2">Nostrasia</h5>
-                      <p className="text-sm text-gray-600 mb-2">Alex Gleason keynote on "Building Community Infrastructure on Nostr"</p>
-                      <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
           {/* Company Background & Timeline */}
           <Card className="mb-12 border-azure-200">
             <CardHeader>
@@ -728,12 +839,54 @@ export default function MediaKit() {
                       <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
-                          <span className="font-medium text-gray-900">2023 - Soapbox Foundation</span>
+                          <span className="font-medium text-gray-900">2023 - Move to Nostr</span>
                           <span className="text-sm text-gray-500">Early</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Alex Gleason founded Soapbox, transitioning from Fediverse development to focus on
-                          Nostr and decentralized social media infrastructure.
+                          Soapbox pivoted from Fediverse development to focus on Nostr protocol,
+                          recognizing its potential for truly decentralized social media infrastructure.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2022 - Truth Social Launch</span>
+                          <span className="text-sm text-gray-500">February</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Truth Social deployed using Soapbox technology, demonstrating the platform's
+                          enterprise-grade capabilities and scalability for large-scale social media applications.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2020 - Soapbox Formation</span>
+                          <span className="text-sm text-gray-500">Early</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Alex Gleason founded Soapbox, initially focused on building innovative
+                          Fediverse applications and improving decentralized social media experiences.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2019 - Spinster Launch</span>
+                          <span className="text-sm text-gray-500">August</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Launched Spinster, a women-focused social platform that demonstrated the early
+                          vision for building inclusive, community-driven social media experiences.
                         </p>
                       </div>
                     </div>
