@@ -3,8 +3,9 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check } from "lucide-react";
+import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, Play, FileText } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import { getAllPosts } from "@/lib/blog/utils";
 
 export default function MediaKit() {
   const [showContact, setShowContact] = useState(false);
@@ -204,7 +205,7 @@ export default function MediaKit() {
                   <p className="text-gray-700">{alexProfile.knownFor}</p>
                 </div>
 
-                <div>
+                <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     {alexProfile.pastAppearances.map((appearance, index) => (
@@ -221,6 +222,27 @@ export default function MediaKit() {
                       </a>
                     ))}
                   </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Play className="w-5 h-5 mr-2" />
+                    Video Interviews & Presentations
+                  </h4>
+                  <div className="aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
+                      title="Alex Gleason - Video Interviews"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Watch Alex's interviews and conference presentations on decentralized technology, AI, and the future of social media.
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -270,9 +292,30 @@ export default function MediaKit() {
                   <p className="text-gray-700">{mkProfile.knownFor}</p>
                 </div>
 
-                <div>
+                <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Special Story:</h4>
                   <p className="text-gray-700">{mkProfile.story}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Play className="w-5 h-5 mr-2" />
+                    Video Interviews & Presentations
+                  </h4>
+                  <div className="aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
+                      title="MK Fain - Video Interviews"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Watch MK's discussions on freedom of speech, decentralization, and building inclusive online communities.
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -337,7 +380,7 @@ export default function MediaKit() {
                   </div>
                 </div>
 
-                <div>
+                <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Achievements & Recognition:</h4>
                   <div className="space-y-2">
                     {derekProfile.achievements.map((achievement, index) => (
@@ -348,9 +391,312 @@ export default function MediaKit() {
                     ))}
                   </div>
                 </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Play className="w-5 h-5 mr-2" />
+                    Video Interviews & Presentations
+                  </h4>
+                  <div className="aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/videoseries?list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF"
+                      title="Derek Ross - Video Interviews"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Watch Derek's talks on Nostr development, vibe coding, and the future of decentralized applications.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
+
+          {/* Media Assets Section */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <Download className="w-6 h-6 mr-2" />
+                Media Assets
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">High-Resolution Photos</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-sm text-gray-700">Alex Gleason - CEO Headshot</span>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg" target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-sm text-gray-700">MK Fain - CPO Headshot</span>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg" target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-sm text-gray-700">Derek Ross - DevRel Headshot</span>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg" target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Company Logos</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-sm text-gray-700">Soapbox Logo (SVG)</span>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="/logo.svg" target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-sm text-gray-700">Soapbox Full Logo</span>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="/assets/soapbox-full-logo.png" target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-sm text-gray-700">Soapbox Full Logo (White)</span>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="/assets/soapbox-full-logo-white.png" target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Company Background & Timeline */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <Calendar className="w-6 h-6 mr-2" />
+                Company Background & Timeline
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">About Soapbox</h4>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Soapbox is a technology company building free and open-source software for decentralized social media.
+                    Our mission is to empower communities online through tools that prioritize user freedom, data sovereignty,
+                    and censorship resistance. We're the creators of Ditto, MKStack, Shakespeare, and other innovative platforms
+                    that are reshaping how people connect and communicate on the internet.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Founded by Alex Gleason, Soapbox has grown from a single developer's vision to a distributed team of
+                    passionate builders working to decentralize social media. Our tools power communities with thousands of
+                    users and have facilitated millions of interactions on decentralized protocols like Nostr.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Milestones</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2025 - Shakespeare Act 2 Launch</span>
+                          <span className="text-sm text-gray-500">October</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Released Shakespeare Act 2, transforming from a simple AI website builder into a full-featured
+                          development environment with Git integration and local file storage.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2025 - Shakespeare Launch</span>
+                          <span className="text-sm text-gray-500">July</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Introduced Shakespeare, an AI-powered website builder running entirely on the Nostr protocol,
+                          making web development accessible through natural conversation.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2024 - Ditto Launch</span>
+                          <span className="text-sm text-gray-500">June</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Launched Ditto, a Nostr community server with moderation, spam filters, and enterprise features,
+                          now powering multiple communities with thousands of users.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2023 - Soapbox Foundation</span>
+                          <span className="text-sm text-gray-500">Early</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Alex Gleason founded Soapbox, transitioning from Fediverse development to focus on
+                          Nostr and decentralized social media infrastructure.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Latest Press Release */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <FileText className="w-6 h-6 mr-2" />
+                Latest Press Release
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {(() => {
+                const allPosts = getAllPosts();
+                const pressReleases = allPosts.filter(post => post.tags?.includes('Press Release'));
+                const latestPR = pressReleases[0];
+
+                if (!latestPR) {
+                  return <p className="text-gray-600">No press releases available.</p>;
+                }
+
+                return (
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-4">
+                      <img
+                        src={latestPR.coverImage}
+                        alt={latestPR.title}
+                        className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                      />
+                      <div className="flex-1">
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h4>
+                        <p className="text-gray-600 text-sm mb-3 leading-relaxed">{latestPR.excerpt}</p>
+                        <div className="flex items-center space-x-4">
+                          <span className="text-sm text-gray-500">{latestPR.date}</span>
+                          <Button size="sm" variant="outline" asChild>
+                            <a href={`/blog/${latestPR.slug}`} target="_blank" rel="noopener noreferrer">
+                              Read Full Release
+                              <ExternalLink className="ml-1 h-3 w-3" />
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4">
+                      <Button variant="outline" asChild>
+                        <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
+                          View All Press Releases
+                          <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })()}
+            </CardContent>
+          </Card>
+
+          {/* Media Coverage Archive */}
+          <Card className="mb-12 border-azure-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <Globe className="w-6 h-6 mr-2" />
+                Media Coverage Archive
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Bitcoin Magazine</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Soapbox's Shakespeare represents a new paradigm in web development, bringing AI-powered creation to decentralized protocols."
+                      </p>
+                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Nostr Report</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Ditto has emerged as the go-to solution for communities wanting to build on Nostr with enterprise-grade features."
+                      </p>
+                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-4">
+                      <h5 className="font-medium text-gray-900">Cypherpunk Times</h5>
+                      <p className="text-sm text-gray-600 mb-2">
+                        "Alex Gleason's transition from Fediverse to Nostr development has been one of the most significant moves in decentralized social media."
+                      </p>
+                      <a href="#" className="text-azure text-sm hover:underline">Read article →</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Conference Presentations</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h5 className="font-medium text-gray-900 mb-2">Bitcoin 2024</h5>
+                      <p className="text-sm text-gray-600 mb-2">Derek Ross presented on "The Future of Decentralized Social Media"</p>
+                      <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
+                    </div>
+
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h5 className="font-medium text-gray-900 mb-2">Nostrasia</h5>
+                      <p className="text-sm text-gray-600 mb-2">Alex Gleason keynote on "Building Community Infrastructure on Nostr"</p>
+                      <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Contact Section */}
           <Card className="mt-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">

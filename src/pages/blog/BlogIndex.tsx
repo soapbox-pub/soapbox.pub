@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, BookOpen, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { BlogList } from '@/components/blog/BlogList';
@@ -9,19 +9,23 @@ import { getAllPosts, formatDate, getFeaturedPost } from '@/lib/blog/utils';
 import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogIndex() {
+  const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const allPosts = getAllPosts();
   const featuredPost = getFeaturedPost();
-  
+  const tagFilter = searchParams.get('tag');
+
   // Set custom SEO for blog index with featured post data
   useSEO({
-    title: 'Soapbox Blog - Insights on Decentralized Social Media',
-    description: featuredPost 
-      ? `Latest: ${featuredPost.title}. ${featuredPost.excerpt.slice(0, 100)}...` 
-      : 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
+    title: tagFilter ? `${tagFilter} - Soapbox Blog` : 'Soapbox Blog - Insights on Decentralized Social Media',
+    description: tagFilter
+      ? `Read all posts tagged with "${tagFilter}" from the Soapbox team.`
+      : featuredPost
+        ? `Latest: ${featuredPost.title}. ${featuredPost.excerpt.slice(0, 100)}...`
+        : 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
     type: 'website',
     image: featuredPost?.ogImage?.url || featuredPost?.coverImage || '/og-image.png',
-    keywords: `soapbox blog, decentralized social media news, open source updates, nostr insights${featuredPost ? `, ${featuredPost.title}` : ''}`,
+    keywords: `soapbox blog, decentralized social media news, open source updates, nostr insights${featuredPost ? `, ${featuredPost.title}` : ''}${tagFilter ? `, ${tagFilter}` : ''}`,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Blog",
@@ -51,11 +55,17 @@ export default function BlogIndex() {
       }))
     }
   });
-  
-  const filteredPosts = allPosts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+
+  const filteredPosts = allPosts.filter(post => {
+    // Filter by search term
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+
+    // Filter by tag if specified
+    const matchesTag = !tagFilter || (post.tags && post.tags.includes(tagFilter));
+
+    return matchesSearch && matchesTag;
+  });
 
   // Get posts excluding the featured post for the "All Posts" section
   const nonFeaturedPosts = filteredPosts.filter(post => post.slug !== featuredPost?.slug);
@@ -68,16 +78,26 @@ export default function BlogIndex() {
           <div className="flex items-center justify-center gap-2 mb-6">
             <BookOpen className="w-8 h-8 text-azure" />
             <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
-              Blog
+              {tagFilter ? `${tagFilter}` : 'Blog'}
             </h1>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Insights, updates, and thoughts on decentralized social media, Nostr, and the future of the web.
+            {tagFilter
+              ? `All posts tagged with "${tagFilter}"`
+              : 'Insights, updates, and thoughts on decentralized social media, Nostr, and the future of the web.'
+            }
           </p>
+          {tagFilter && (
+            <div className="mt-4">
+              <Link to="/blog" className="text-azure hover:text-azure-600 underline">
+                ← View all posts
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Featured Post */}
-        {featuredPost && (
+        {featuredPost && !tagFilter && (
           <div className="mb-20">
             <div className="text-center mb-8">
               <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
