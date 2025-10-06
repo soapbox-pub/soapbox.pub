@@ -134,19 +134,13 @@ export default function MediaKit() {
               Meet the Soapbox leadership team available for podcast interviews and media appearances.
               Our team combines decades of experience in decentralized technology, AI innovation, and community building.
             </p>
-          </div>
-        </section>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          {/* Latest Press Release */}
-          <Card className="mb-12 border-azure-200">
-            <CardHeader>
-              <CardTitle className="text-2xl text-azure flex items-center">
-                <FileText className="w-6 h-6 mr-2" />
-                Latest Press Release
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+            {/* Latest Press Release */}
+            <div className="mt-12 text-left">
+              <div className="flex items-center mb-4">
+                <FileText className="w-6 h-6 text-azure mr-2" />
+                <h2 className="text-2xl font-bold text-gray-900">Latest Press Release</h2>
+              </div>
               {(() => {
                 const allPosts = getAllPosts();
                 const pressReleases = allPosts.filter(post => post.tags?.includes('Press Release'));
@@ -157,16 +151,16 @@ export default function MediaKit() {
                 }
 
                 return (
-                  <div className="space-y-4">
+                  <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                     <div className="flex items-start space-x-4">
                       <img
                         src={latestPR.coverImage}
                         alt={latestPR.title}
-                        className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                        className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
                       />
                       <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h4>
-                        <p className="text-gray-600 text-sm mb-3 leading-relaxed">{latestPR.excerpt}</p>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h3>
+                        <p className="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-2">{latestPR.excerpt}</p>
                         <div className="flex items-center space-x-4">
                           <span className="text-sm text-gray-500">{latestPR.date}</span>
                           <Button size="sm" variant="outline" asChild>
@@ -175,82 +169,23 @@ export default function MediaKit() {
                               <ExternalLink className="ml-1 h-3 w-3" />
                             </a>
                           </Button>
+                          <Button size="sm" variant="outline" asChild>
+                            <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
+                              All Press Releases
+                              <ExternalLink className="ml-1 h-3 w-3" />
+                            </a>
+                          </Button>
                         </div>
                       </div>
-                    </div>
-
-                    <div className="border-t pt-4">
-                      <Button variant="outline" asChild>
-                        <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
-                          View All Press Releases
-                          <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
                     </div>
                   </div>
                 );
               })()}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+        </section>
 
-          {/* About Shakespeare */}
-          <Card className="mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
-            <CardHeader>
-              <CardTitle className="text-2xl text-azure flex items-center">
-                <MessageCircle className="w-6 h-6 mr-2" />
-                About Shakespeare
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Shakespeare is Soapbox's revolutionary AI-powered website builder that runs entirely on the Nostr protocol.
-                    It transforms web development from a technical challenge into a natural conversation, allowing anyone to build
-                    professional websites, applications, and digital experiences through simple dialogue with AI assistants.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    With Shakespeare Act 2, we've evolved beyond a simple website builder into a full-featured development
-                    environment that works entirely in your browser. No downloads, no subscriptions, no vendor lock-in -
-                    just pure creative freedom powered by decentralized technology.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild className="bg-azure hover:bg-azure-600 text-white">
-                    <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
-                      Try Shakespeare
-                      <ExternalLink className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="/shakespeare-resources" target="_blank" rel="noopener noreferrer">
-                      Resource Center
-                      <ExternalLink className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="/showcase" target="_blank" rel="noopener noreferrer">
-                      View Showcase
-                      <ExternalLink className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">What Makes Shakespeare Different</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {shakespeareFeatures.map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-700">{feature}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
 
           {/* Team Members */}
           <div className="space-y-12 mb-12">
@@ -509,6 +444,66 @@ export default function MediaKit() {
               </CardContent>
             </Card>
           </div>
+
+          {/* About Shakespeare */}
+          <Card className="mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <MessageCircle className="w-6 h-6 mr-2" />
+                About Shakespeare
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Left Column - About Section */}
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      Shakespeare is Soapbox's revolutionary AI-powered website builder that runs entirely on the Nostr protocol.
+                      It transforms web development from a technical challenge into a natural conversation, allowing anyone to build
+                      professional websites, applications, and digital experiences through simple dialogue with AI assistants.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      With Shakespeare Act 2, we've evolved beyond a simple website builder into a full-featured development
+                      environment that works entirely in your browser. No downloads, no subscriptions, no vendor lock-in -
+                      just pure creative freedom powered by decentralized technology.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-3">
+                    <Button asChild className="bg-azure hover:bg-azure-600 text-white justify-start">
+                      <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
+                        🎭 Try Shakespeare
+                      </a>
+                    </Button>
+                    <Button variant="outline" asChild className="justify-start">
+                      <a href="/shakespeare-resources" target="_blank" rel="noopener noreferrer">
+                        📚 Resource Center
+                      </a>
+                    </Button>
+                    <Button variant="outline" asChild className="justify-start">
+                      <a href="/showcase" target="_blank" rel="noopener noreferrer">
+                        🎨 View Showcase
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Right Column - What Makes It Different */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">What Makes Shakespeare Different</h4>
+                  <div className="space-y-3">
+                    {shakespeareFeatures.map((feature, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-gray-700 text-sm leading-relaxed">{feature}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Media Assets Section */}
           <Card className="mb-12 border-azure-200">
