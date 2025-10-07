@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
+import { YouTubeEmbed } from '../../YouTubeEmbed';
 
 export interface BlogPostMeta {
   slug: string;
@@ -39,6 +40,14 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareEditingCode() {
   return (
     <article className="prose prose-lg max-w-none [&_img]:shadow-none [&_img]:border-0">
+
+      {/* Video Tutorial */}
+      <div className="not-prose mb-12">
+        <YouTubeEmbed
+          src="https://www.youtube.com/embed/A9NFYxDHOw0?si=mRl5T0bLW8sbv24z"
+          title="How to Edit Code in Shakespeare"
+        />
+      </div>
 
       <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
         Shakespeare gives you the freedom to edit your code directly in the web browser and even run a terminal entirely online. Whether you need to make quick adjustments or dive deep into your project files, Shakespeare's built-in tools provide a seamless development experience without leaving your browser.

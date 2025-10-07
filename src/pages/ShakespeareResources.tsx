@@ -12,7 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, MessageSquare, Sparkles } from 'lucide-react';
+import { BookOpen, MessageSquare, Sparkles, Play } from 'lucide-react';
+import { YouTubeEmbed } from '@/components/YouTubeEmbed';
 
 export default function ShakespeareResources() {
   // Set custom SEO for Shakespeare Resources page
@@ -89,6 +90,57 @@ export default function ShakespeareResources() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Find answers to common questions and explore our latest guides.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Tutorials Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <Play className="h-8 w-8 text-purple-600 mr-3" />
+              <h2 className="text-4xl font-display font-bold text-gray-900">
+                Video Tutorial Playlist
+              </h2>
+            </div>
+            <p className="text-lg text-gray-600">
+              Watch our complete video guide series to master Shakespeare
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <YouTubeEmbed
+              src="https://www.youtube.com/embed/videoseries?si=NoONPhl3VGl5cEOX&list=PLPVwsk16NNURX_8MJxm5luRZpGVoZ7Qba"
+              title="Shakespeare Tutorial Playlist - Complete Guide Series"
+              className="max-w-5xl mx-auto"
+            />
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">
+              This playlist includes step-by-step tutorials covering all major Shakespeare features
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <Badge variant="outline" className="border-purple-200 text-purple-700">
+                🔄 Import Projects
+              </Badge>
+              <Badge variant="outline" className="border-blue-200 text-blue-700">
+                📝 Version Control
+              </Badge>
+              <Badge variant="outline" className="border-green-200 text-green-700">
+                💻 Code Editing
+              </Badge>
+              <Badge variant="outline" className="border-orange-200 text-orange-700">
+                🚀 Deployment
+              </Badge>
+              <Badge variant="outline" className="border-pink-200 text-pink-700">
+                🤖 AI Models
+              </Badge>
+              <Badge variant="outline" className="border-indigo-200 text-indigo-700">
+                ⚙️ AI Providers
+              </Badge>
+            </div>
           </div>
         </div>
       </section>

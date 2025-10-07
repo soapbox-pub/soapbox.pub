@@ -4,6 +4,7 @@ import { Button } from '../../ui/button';
 import { EditWithShakespeareButton } from '../../EditWithShakespeareButton';
 import { Badge } from '../../ui/badge';
 import { CheckCircle, GitBranch, Upload, Download } from 'lucide-react';
+import { YouTubeEmbed } from '../../YouTubeEmbed';
 
 export interface BlogPostMeta {
   slug: string;
@@ -42,6 +43,14 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareImportingExistingProjects() {
   return (
     <article className="prose prose-lg max-w-none">
+
+      {/* Video Tutorial */}
+      <div className="not-prose mb-12">
+        <YouTubeEmbed
+          src="https://www.youtube.com/embed/w08Rj6V2EzA?si=tKYBTa9jwDokI-Ea"
+          title="How to Import Projects Into Shakespeare"
+        />
+      </div>
 
       {/* Project Compatibility Requirements */}
       <div className="not-prose mb-12">

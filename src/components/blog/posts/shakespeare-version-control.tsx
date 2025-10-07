@@ -3,6 +3,7 @@ import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
 import { Badge } from '../../ui/badge';
 import { GitBranch, RotateCcw, Github, GitlabIcon, Terminal } from 'lucide-react';
+import { YouTubeEmbed } from '../../YouTubeEmbed';
 
 export interface BlogPostMeta {
   slug: string;
@@ -41,6 +42,14 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareVersionControl() {
   return (
     <article className="prose prose-lg max-w-none">
+
+      {/* Video Tutorial */}
+      <div className="not-prose mb-12">
+        <YouTubeEmbed
+          src="https://www.youtube.com/embed/7jB3ZR3QUIQ?si=zUfgI5JGGAVHYMl6"
+          title="How to Use Git Version Control in Shakespeare"
+        />
+      </div>
 
       {/* What is Version Control */}
       <div className="not-prose mb-12">
