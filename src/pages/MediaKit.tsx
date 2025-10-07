@@ -217,16 +217,25 @@ export default function MediaKit() {
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Left Column - About Section */}
                   <div>
-                    <p className="text-gray-700 leading-relaxed mb-4">
+                    <p className="text-gray-700 leading-relaxed mb-6">
                       Shakespeare is Soapbox's revolutionary AI-powered website builder that runs entirely on the Nostr protocol.
                       It transforms web development from a technical challenge into a natural conversation, allowing anyone to build
                       professional websites, applications, and digital experiences through simple dialogue with AI assistants.
                     </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      With Shakespeare Act 2, we've evolved beyond a simple website builder into a full-featured development
-                      environment that works entirely in your browser. No downloads, no subscriptions, no vendor lock-in -
-                      just pure creative freedom powered by decentralized technology.
-                    </p>
+
+                    {/* Action Buttons - In left column */}
+                    <div className="flex flex-wrap gap-3 justify-center">
+                      <Button asChild className="bg-azure hover:bg-azure-600 text-white">
+                        <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
+                          🎭 Try Shakespeare
+                        </a>
+                      </Button>
+                      <Button variant="outline" asChild>
+                        <a href="/showcase" target="_blank" rel="noopener noreferrer">
+                          🎨 View Showcase
+                        </a>
+                      </Button>
+                    </div>
                   </div>
 
                   {/* Right Column - What Makes It Different */}
@@ -241,25 +250,6 @@ export default function MediaKit() {
                       ))}
                     </div>
                   </div>
-                </div>
-
-                {/* Action Buttons - Below both columns */}
-                <div className="flex flex-wrap gap-3 justify-center">
-                  <Button asChild className="bg-azure hover:bg-azure-600 text-white">
-                    <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
-                      🎭 Try Shakespeare
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="/shakespeare-resources" target="_blank" rel="noopener noreferrer">
-                      📚 Resource Center
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="/showcase" target="_blank" rel="noopener noreferrer">
-                      🎨 View Showcase
-                    </a>
-                  </Button>
                 </div>
               </div>
             </CardContent>
