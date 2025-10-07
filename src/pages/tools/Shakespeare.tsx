@@ -153,7 +153,7 @@ export default function Shakespeare() {
                 <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl overflow-hidden shadow-lg">
                   <iframe
                     className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/pK9gHjQr7nc?si=aoT84KgpSJ3iruZw"
+                    src="https://www.youtube.com/embed/u5YYGO6BSeM?si=KnNgu22KS8fKXFcq"
                     title="Shakespeare Tutorial with Derek Ross"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
