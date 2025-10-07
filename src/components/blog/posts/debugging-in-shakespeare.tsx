@@ -601,6 +601,43 @@ export default function DebuggingInShakespeare() {
         <li>"What debugging pattern should I follow for similar issues?"</li>
       </ul>
 
+      <h3>Starting Fresh: When to Clear the Chat</h3>
+
+      <p>
+        <strong>Sometimes the best debugging move is to start over.</strong> When the AI seems to be spinning its wheels or the cost per prompt is getting too high, it may be time to clear the chat or start a new conversation.
+      </p>
+
+      <p><strong>Signs you should start a new chat:</strong></p>
+
+      <ul>
+        <li><strong>Circular reasoning:</strong> The AI keeps suggesting the same solutions despite them not working</li>
+        <li><strong>Context overload:</strong> The conversation has become so long that each prompt is expensive</li>
+        <li><strong>Lost focus:</strong> The debugging session has strayed far from the original issue</li>
+        <li><strong>Multiple failed approaches:</strong> You've tried many different solutions without progress</li>
+      </ul>
+
+      <p><strong>How to start a new chat in Shakespeare:</strong></p>
+
+      <ol>
+        <li>Click on the 3 dots action overflow menu</li>
+        <li>Choose "New Chat"</li>
+      </ol>
+
+      <p>
+        <strong>How to effectively start fresh:</strong> Before clearing the chat, document what you've learned, what you've tried, and what the current state is. When starting a new chat, provide a concise summary of the issue and what approaches have already failed. This prevents the AI from repeating unsuccessful attempts.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-blue-500">
+          <CardContent className="p-6">
+            <h4 className="font-semibold mb-3">Starting Fresh Example:</h4>
+            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              "Starting a new chat because the previous conversation got too long and costly. Summary: Working on a bug where published Nostr events (kind 1 notes) aren't appearing in the feed. Already tried: 1) Verifying event structure and signature validation, 2) Testing different relay configurations, 3) Checking WebSocket connection status, 4) Adjusting event filters and subscription queries. All failed. Current state: Events publish successfully (verified in Alby paranoid mode), relays accept them (200 OK responses), but they don't appear in the user's feed. Please help debug this with fresh eyes, avoiding the approaches we've already tested."
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="not-prose my-8">
         <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
           <CardContent className="p-6">
@@ -612,6 +649,9 @@ export default function DebuggingInShakespeare() {
               <div><strong>Reverse:</strong> After spending more credits than expected on a bug</div>
               <div><strong>Reverse:</strong> When you want to improve your debugging skills</div>
               <div><strong>Reverse:</strong> After solving a particularly tricky bug</div>
+              <div><strong>Start Fresh:</strong> When costs per prompt are too high due to long conversation</div>
+              <div><strong>Start Fresh:</strong> When the AI seems to be spinning its wheels</div>
+              <div><strong>Start Fresh:</strong> When you've lost track of the original problem</div>
             </div>
           </CardContent>
         </Card>
