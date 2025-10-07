@@ -1,6 +1,6 @@
-import { ArrowRight, Download, Upload, GitBranch, Code, FileText, Zap, Shield, Palette, Monitor, Smartphone, PlayCircle, ExternalLink, Star, CheckCircle, Globe, HardDrive, Cpu, Users, Settings } from "lucide-react";
+import { ArrowRight, Download, Upload, GitBranch, Code, FileText, Shield, Palette, Monitor, PlayCircle, ExternalLink, Star, CheckCircle, Globe, HardDrive, Cpu, Users, Settings, Trophy, Skull, Ghost } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -343,6 +343,78 @@ export default function Shakespeare() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Halloween Hackathon Banner */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-600 via-red-600 to-purple-700 text-white relative overflow-hidden">
+        {/* Animated Halloween Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-10 text-4xl animate-bounce opacity-30">🎃</div>
+          <div className="absolute top-20 right-20 text-3xl animate-pulse opacity-30">👻</div>
+          <div className="absolute bottom-20 left-20 text-4xl animate-bounce delay-1000 opacity-30">🦇</div>
+          <div className="absolute bottom-10 right-10 text-3xl animate-pulse delay-500 opacity-30">💀</div>
+          <div className="absolute top-1/2 left-1/4 text-3xl animate-bounce delay-700 opacity-30">🕷️</div>
+          <div className="absolute top-1/3 right-1/3 text-2xl animate-pulse delay-300 opacity-30">🕸️</div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <Skull className="w-10 h-10 text-orange-400 animate-pulse" />
+            <Badge className="bg-orange-600 text-white text-lg px-4 py-2 border-2 border-orange-300/30 font-gothic tracking-widest">
+              🎃 Halloween Hackathon 🎃
+            </Badge>
+            <Ghost className="w-10 h-10 text-purple-400 animate-pulse" />
+          </div>
+
+          <h2 className="font-gothic text-4xl md:text-5xl font-bold mb-4 text-shadow-gothic tracking-wider">
+            Build Spooky Apps with Shakespeare
+          </h2>
+
+          <p className="text-xl md:text-2xl text-orange-200 mb-6 max-w-3xl mx-auto leading-relaxed">
+            Join our Halloween hackathon and compete for <span className="text-orange-400 font-bold">87,000 sats</span> across three prize categories!
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-4 border border-orange-500">
+              <Trophy className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+              <div className="text-lg font-bold text-orange-400">87,000 sats</div>
+              <p className="text-sm text-gray-300">Design Excellence</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-4 border border-purple-500">
+              <Code className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+              <div className="text-lg font-bold text-purple-400">87,000 sats</div>
+              <p className="text-sm text-gray-300">Innovation</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-4 border border-red-500">
+              <Skull className="w-8 h-8 text-red-400 mx-auto mb-2" />
+              <div className="text-lg font-bold text-red-400">87,000 sats</div>
+              <p className="text-sm text-gray-300">Judge's Choice</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-4 text-lg border-2 border-orange-300/30"
+              asChild
+            >
+              <a href="/halloween-hackathon">
+                🎃 Join Halloween Hackathon
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-orange-200 text-orange-100 hover:bg-orange-100 hover:text-orange-800 px-8 py-4 text-lg"
+              asChild
+            >
+              <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+                Start Building
+              </a>
+            </Button>
           </div>
         </div>
       </section>
