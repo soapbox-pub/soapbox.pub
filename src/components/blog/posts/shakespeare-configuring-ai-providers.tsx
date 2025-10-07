@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
 import { Badge } from '../../ui/badge';
+import { YouTubeEmbed } from '../../YouTubeEmbed';
 
 export interface BlogPostMeta {
   slug: string;
@@ -40,6 +41,14 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareConfiguringAIProviders() {
   return (
     <article className="prose prose-lg max-w-none">
+
+      {/* Video Tutorial */}
+      <div className="not-prose mb-12">
+        <YouTubeEmbed
+          src="https://www.youtube.com/embed/g73dsFNMp04?si=SBg4nyv7etVddlEb"
+          title="How to Choose an AI Provider in Shakespeare"
+        />
+      </div>
 
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
