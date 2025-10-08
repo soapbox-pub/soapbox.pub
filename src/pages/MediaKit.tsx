@@ -352,7 +352,7 @@ export default function MediaKit() {
                       <img
                         src={latestPR.coverImage}
                         alt={latestPR.title}
-                        className="w-full sm:w-20 sm:h-20 h-32 object-cover rounded-lg flex-shrink-0"
+                        className="w-full sm:w-32 sm:h-24 h-32 object-cover rounded-lg flex-shrink-0"
                       />
                       <div className="flex-1">
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h3>
