@@ -3,7 +3,8 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, FileText } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
@@ -41,6 +42,7 @@ interface TeamProfile {
 export default function MediaKit() {
   const [showContact, setShowContact] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ url: string; caption: string } | null>(null);
 
   // Set custom SEO for Media Kit page
   useSEO({
@@ -215,6 +217,35 @@ export default function MediaKit() {
     "You can add a custom provider, too",
     "Shakespeare builds on Nostr, doesn't lock you in, you own your data, no subscription fees",
     "Entirely in the browser: complete freedom and privacy respecting"
+  ];
+
+  // Media assets for the photo grid
+  const mediaAssets = [
+    { url: "https://picsum.photos/400/300?random=1", caption: "Team collaboration at Soapbox headquarters" },
+    { url: "https://picsum.photos/400/300?random=2", caption: "Alex Gleason presenting at Nostrasia conference" },
+    { url: "https://picsum.photos/400/300?random=3", caption: "MK Fain speaking at LibrePlanet event" },
+    { url: "https://picsum.photos/400/300?random=4", caption: "Derek Ross at Nostr World conference" },
+    { url: "https://picsum.photos/400/300?random=5", caption: "Soapbox team working on Shakespeare development" },
+    { url: "https://picsum.photos/400/300?random=6", caption: "Ditto platform interface showcase" },
+    { url: "https://picsum.photos/400/300?random=7", caption: "Community meetup hosted by Soapbox" },
+    { url: "https://picsum.photos/400/300?random=8", caption: "Shakespeare AI builder in action" },
+    { url: "https://picsum.photos/400/300?random=9", caption: "Nostr protocol development session" },
+    { url: "https://picsum.photos/400/300?random=10", caption: "Office workspace with development setup" },
+    { url: "https://picsum.photos/400/300?random=11", caption: "Product launch event for new features" },
+    { url: "https://picsum.photos/400/300?random=12", caption: "Team brainstorming session" },
+    { url: "https://picsum.photos/400/300?random=13", caption: "Conference booth at tech event" },
+    { url: "https://picsum.photos/400/300?random=14", caption: "Behind the scenes development work" },
+    { url: "https://picsum.photos/400/300?random=15", caption: "Community feedback and user testing" },
+    { url: "https://picsum.photos/400/300?random=16", caption: "Partnership announcement ceremony" },
+    { url: "https://picsum.photos/400/300?random=17", caption: "Technical architecture planning" },
+    { url: "https://picsum.photos/400/300?random=18", caption: "User interface design process" },
+    { url: "https://picsum.photos/400/300?random=19", caption: "Quality assurance testing session" },
+    { url: "https://picsum.photos/400/300?random=20", caption: "Company milestone celebration" },
+    { url: "https://picsum.photos/400/300?random=21", caption: "Open source contribution workshop" },
+    { url: "https://picsum.photos/400/300?random=22", caption: "Decentralized technology demonstration" },
+    { url: "https://picsum.photos/400/300?random=23", caption: "Customer success story interview" },
+    { url: "https://picsum.photos/400/300?random=24", caption: "Innovation lab experimentation" },
+    { url: "https://picsum.photos/400/300?random=25", caption: "Future roadmap planning meeting" }
   ];
 
   // Helper function to render social links with icons
@@ -425,9 +456,17 @@ export default function MediaKit() {
                       <p className="text-lg font-semibold text-azure mb-3">{profile.title}</p>
 
                       {/* Social Links */}
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-3">
                         {renderSocialLinks(profile)}
                       </div>
+
+                      {/* Download Headshot Button */}
+                      <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50">
+                        <a href={profile.picture} target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download Headshot
+                        </a>
+                      </Button>
                     </div>
                   </div>
                 </CardHeader>
@@ -653,77 +692,111 @@ export default function MediaKit() {
                 <Download className="w-6 h-6 mr-2" />
                 Media Assets
               </CardTitle>
+              <p className="text-gray-600 mt-2">
+                High-resolution photos available for download. Click any image to view larger version.
+              </p>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">High-Resolution Photos</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">Alex Gleason - CEO Headshot</span>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg" target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </a>
-                      </Button>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">MK Fain - CPO Headshot</span>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg" target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </a>
-                      </Button>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">Derek Ross - DevRel Headshot</span>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg" target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </a>
-                      </Button>
+              {/* Photo Grid - 5x5 on desktop */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {mediaAssets.map((asset, index) => (
+                  <div
+                    key={index}
+                    className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+                    onClick={() => setSelectedImage(asset)}
+                  >
+                    <img
+                      src={asset.url}
+                      alt={asset.caption}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                      loading="lazy"
+                    />
+                    {/* Overlay with download icon */}
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
+                      <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <Download className="w-4 h-4 text-gray-700" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
+              </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Company Logos</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">Soapbox Logo (SVG)</span>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="/logo.svg" target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </a>
-                      </Button>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">Soapbox Full Logo</span>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="/assets/soapbox-full-logo.png" target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </a>
-                      </Button>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">Soapbox Full Logo (White)</span>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="/assets/soapbox-full-logo-white.png" target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </a>
-                      </Button>
-                    </div>
+              {/* Company Logos Section */}
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Company Logos</h4>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <span className="text-sm text-gray-700">Soapbox Logo (SVG)</span>
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="/logo.svg" target="_blank" rel="noopener noreferrer">
+                        <Download className="w-4 h-4 mr-1" />
+                        Download
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <span className="text-sm text-gray-700">Soapbox Full Logo</span>
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="/assets/soapbox-full-logo.png" target="_blank" rel="noopener noreferrer">
+                        <Download className="w-4 h-4 mr-1" />
+                        Download
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <span className="text-sm text-gray-700">Soapbox Full Logo (White)</span>
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="/assets/soapbox-full-logo-white.png" target="_blank" rel="noopener noreferrer">
+                        <Download className="w-4 h-4 mr-1" />
+                        Download
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </div>
             </CardContent>
           </Card>
+
+          {/* Image Lightbox Dialog */}
+          <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+            <DialogContent className="max-w-4xl w-full h-auto max-h-[90vh] p-0 overflow-hidden">
+              {selectedImage && (
+                <>
+                  <DialogHeader className="p-6 pb-0">
+                    <DialogTitle className="text-left">{selectedImage.caption}</DialogTitle>
+                  </DialogHeader>
+                  <div className="relative">
+                    <img
+                      src={selectedImage.url}
+                      alt={selectedImage.caption}
+                      className="w-full h-auto max-h-[70vh] object-contain"
+                    />
+                    <div className="absolute bottom-4 right-4 flex gap-2">
+                      <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white" asChild>
+                        <a
+                          href={selectedImage.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          download
+                        >
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </a>
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="bg-white/90 hover:bg-white"
+                        onClick={() => setSelectedImage(null)}
+                      >
+                        <X className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </DialogContent>
+          </Dialog>
 
 
 
