@@ -37,7 +37,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/shakespeare-act2-cover.png"
   },
   "featured": true,
-  "tags": ["shakespeare", "ai", "announcement", "open-source", "development"]
+  "tags": ["shakespeare", "ai", "announcement", "open-source", "development", "Press Release"]
 };
 
 function FeaturedAppsSection() {

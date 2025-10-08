@@ -35,7 +35,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png"
   },
   "featured": false,
-  "tags": ["shakespeare", "ai", "announcement"]
+  "tags": ["shakespeare", "ai", "announcement", "Press Release"]
 };
 
 export default function AnnouncingShakespeare() {

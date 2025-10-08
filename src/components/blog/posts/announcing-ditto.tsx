@@ -30,7 +30,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/announcing-ditto.jpeg"
   },
-  "tags": ["ditto", "announcement", "nostr"]
+  "tags": ["ditto", "announcement", "nostr", "Press Release"]
 };
 
 export default function AnnouncingDitto() {

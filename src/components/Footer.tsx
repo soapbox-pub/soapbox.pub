@@ -53,6 +53,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">About</h4>
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/about" className="hover:text-white transition-colors">Team</Link></li>
+              <li><Link to="/media-kit" className="hover:text-white transition-colors">Media Kit</Link></li>
               <li><Link to="/soapbox-sessions" className="hover:text-white transition-colors">Soapbox Sessions</Link></li>
               <li><Link to="/get-involved" className="hover:text-white transition-colors">Get Involved</Link></li>
               <li><a href="https://gitlab.com/groups/soapbox-pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitLab</a></li>
