@@ -613,17 +613,7 @@ export default function MediaKit() {
                                     </a>
                                   </h5>
                                   <p className="text-xs sm:text-sm text-gray-600 mb-1">{presentation.description}</p>
-                                  <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
-                                    {presIndex > 0 && (
-                                      <Button size="sm" variant="outline" asChild className="ml-2">
-                                        <a href={presentation.url} target="_blank" rel="noopener noreferrer">
-                                          <ExternalLink className="w-3 h-3 mr-1" />
-                                          <span className="hidden sm:inline">Watch</span>
-                                        </a>
-                                      </Button>
-                                    )}
-                                  </div>
+                                  <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
                                 </div>
                               </div>
                             ))}
