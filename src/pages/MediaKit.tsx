@@ -436,7 +436,7 @@ export default function MediaKit() {
                     </div>
                   )}
 
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid md:grid-cols-[3fr_2fr] gap-8">
                     {/* Left Column - Summary, Known For, Subjects, Past Podcast Appearances */}
                     <div className="space-y-6">
                       <div>
