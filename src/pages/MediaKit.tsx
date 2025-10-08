@@ -67,7 +67,7 @@ export default function MediaKit() {
     {
       name: "Alex Gleason",
       title: "CEO of Soapbox",
-      picture: "https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg",
+      picture: "https://media.ditto.pub/2a20c96caf7652e67829d2ede27114c41ce408f32609f5c6b4e72ebd8bc31d6e.png",
       nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
       website: "https://alexgleason.me",
       linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
@@ -81,7 +81,9 @@ export default function MediaKit() {
         "How does Shakespeare help Nostr win?",
         "The fake \"openness\" of OpenAI and what really open AI would look like",
         "Open source models like GLM and the competitive race with China",
-        "The future of software development with AI (are junior devs over?)"
+        "The future of software development with AI (are junior devs over?)",
+        "How Truth Social ended up built on open source software",
+        "Devin Nunes' cow"
       ],
       knownFor: "Building bridges, Truth Social, the Fediverse, Nostr, Free Software extremism, being Vegan.",
       presentations: [
@@ -122,7 +124,7 @@ export default function MediaKit() {
     {
       name: "MK Fain",
       title: "Chief Product Officer",
-      picture: "https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg",
+      picture: "https://lh3.googleusercontent.com/a/ACg8ocJQRPCTNTPSN1dhFCExCEFyxqLbjinQkbvkk-ObS_CWHcVtjuTx=s317-c-no",
       nostrUrl: "https://ditto.pub/@mk@ditto.pub",
       website: "https://marykatefain.com/",
       linkedin: "https://www.linkedin.com/in/marykatefain/",
@@ -221,31 +223,23 @@ export default function MediaKit() {
 
   // Media assets for the photo grid
   const mediaAssets = [
-    { url: "https://picsum.photos/400/300?random=1", caption: "Team collaboration at Soapbox headquarters" },
-    { url: "https://picsum.photos/400/300?random=2", caption: "Alex Gleason presenting at Nostrasia conference" },
-    { url: "https://picsum.photos/400/300?random=3", caption: "MK Fain speaking at LibrePlanet event" },
-    { url: "https://picsum.photos/400/300?random=4", caption: "Derek Ross at Nostr World conference" },
-    { url: "https://picsum.photos/400/300?random=5", caption: "Soapbox team working on Shakespeare development" },
-    { url: "https://picsum.photos/400/300?random=6", caption: "Ditto platform interface showcase" },
-    { url: "https://picsum.photos/400/300?random=7", caption: "Community meetup hosted by Soapbox" },
-    { url: "https://picsum.photos/400/300?random=8", caption: "Shakespeare AI builder in action" },
-    { url: "https://picsum.photos/400/300?random=9", caption: "Nostr protocol development session" },
-    { url: "https://picsum.photos/400/300?random=10", caption: "Office workspace with development setup" },
-    { url: "https://picsum.photos/400/300?random=11", caption: "Product launch event for new features" },
-    { url: "https://picsum.photos/400/300?random=12", caption: "Team brainstorming session" },
-    { url: "https://picsum.photos/400/300?random=13", caption: "Conference booth at tech event" },
-    { url: "https://picsum.photos/400/300?random=14", caption: "Behind the scenes development work" },
-    { url: "https://picsum.photos/400/300?random=15", caption: "Community feedback and user testing" },
-    { url: "https://picsum.photos/400/300?random=16", caption: "Partnership announcement ceremony" },
-    { url: "https://picsum.photos/400/300?random=17", caption: "Technical architecture planning" },
-    { url: "https://picsum.photos/400/300?random=18", caption: "User interface design process" },
-    { url: "https://picsum.photos/400/300?random=19", caption: "Quality assurance testing session" },
-    { url: "https://picsum.photos/400/300?random=20", caption: "Company milestone celebration" },
-    { url: "https://picsum.photos/400/300?random=21", caption: "Open source contribution workshop" },
-    { url: "https://picsum.photos/400/300?random=22", caption: "Decentralized technology demonstration" },
-    { url: "https://picsum.photos/400/300?random=23", caption: "Customer success story interview" },
-    { url: "https://picsum.photos/400/300?random=24", caption: "Innovation lab experimentation" },
-    { url: "https://picsum.photos/400/300?random=25", caption: "Future roadmap planning meeting" }
+    { url: "https://image.nostr.build/d4c7963cf4c4b754cae889d9f66d39ca37619a23768748875d180425cf9b6167.jpg", caption: "Alex Gleason presents at Nost World, Riga 2024" },
+    { url: "https://soapbox.pub/assets/images/riga-team.png", caption: "Alex Gleason with Soapbox mentee Patrick DosReis, and Jack Dorsey (Nostr World, Riga 2024)" },
+    { url: "https://image.nostr.build/161516025ffe27e1eae1736e26f85742ad0517cf352f84b2e1a2cf4aa0c2979d.jpg", caption: "Alex Gleason presents on Nostrify at Nost World, Riga 2024" },
+    { url: "https://media.ditto.pub/aea6a718ad43063e8a309745417b300920aa95c98c0db467ba36db05e0098e2d.jpeg", caption: "Alex Gleason with Jack Dorsey at NostrAsia 2023" },
+    { url: "https://image.nostr.build/ca0a9db642f6b1345a8a8893ffc364c28ccb17f91874eeb40583afe683719987.jpg", caption: "Alex Gleason with other Nostr developers" },
+    { url: "https://media.ditto.pub/0c36e5dbd52ca9a0a6622099738d9cf59cecffb5a562e844933da4901224b14d.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
+    { url: "https://media.ditto.pub/bc87c79273f4abf66d875459db787c4178fe3d4453c56fbefcc96da77d14167a.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
+    { url: "https://media.ditto.pub/39eba1a6f79e42d8ce222210af8633a9e595e92f4f5264992bfa250a80a63f4f.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
+    { url: "https://media.ditto.pub/568f1de8bc95db362155c5a650e6901dd8b641f1afbd5fbfa3e58277944209ee.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
+    { url: "https://media.ditto.pub/fb91ddcdfd6624f11297877d4bda9a61b43636059cb07460589d83264e85077d.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
+    { url: "https://media.ditto.pub/d27b4e613fc43827bfea62d53243c3f5afcb4d25ccf605e8965ed3b441a90c35.jpeg", caption: "Alex Gleason and Soapbox mentee Patrick DosReis" },
+    { url: "https://media.ditto.pub/220e7248b2620393730a068e03fa63d6e99ab41a50cade3e75025a063f04e751.jpeg", caption: "Alex Gleason presents at NostrRiga 2024" },
+    { url: "https://media.ditto.pub/7ce60667a5c989608a49862e00f3f27e53bf5fe71cd407e957cd6b81f52bbae4.jpeg", caption: "Alex Gleason presents at NostrRiga 2024" },
+    { url: "https://media.ditto.pub/11c2e1e8c5280b51570f3bdc5011c7314f9bf2944164f23337f6992876f8fafb.jpeg", caption: "Alex Gleason presents at NostrRiga 2024" },
+    { url: "https://media.ditto.pub/da3f62a7cff0e126f818e1d07efb8680cf90f6cf3d66afe2490b7419480fc1ea.jpeg", caption: "Alex Gleason presents at Nostr Asia 2023" },
+    { url: "https://media.ditto.pub/6887f699303cf71a66756c45971c1b7b109f3f2e13f3b9fe4ed17eba9dc96022.jpeg", caption: "Alex Gleason presents at Nostr Asia 2023" },
+    { url: "https://media.ditto.pub/339ed7622fa6bf3ad78421a16a66c074ab0d55716c82001464191c90604d1bbb.jpeg", caption: "Alex Gleason presents at Nostr Asia 2023" },
   ];
 
   // Helper function to render social links with icons
@@ -497,7 +491,7 @@ export default function MediaKit() {
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  {/* Special quote for Derek */}
+                  {/* Special quote  */}
                   {profile.quote && (
                     <div className="bg-azure-50 p-4 rounded-lg mb-6 border-l-4 border-azure">
                       <p className="text-azure-800 font-medium italic text-lg">{profile.quote}</p>
@@ -511,23 +505,11 @@ export default function MediaKit() {
                         <p className="text-gray-700 leading-relaxed">{profile.bio}</p>
                       </div>
 
-                      {/* Role (for Derek) */}
+                      {/* Role  */}
                       {profile.role && (
                         <div>
                           <h4 className="text-lg font-semibold text-gray-900 mb-2">Role at Soapbox:</h4>
                           <p className="text-gray-700">{profile.role}</p>
-                        </div>
-                      )}
-
-                      {/* Apps (for Derek) */}
-                      {profile.apps && (
-                        <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-3">Apps Derek has built:</h4>
-                          <div className="grid grid-cols-2 gap-2">
-                            {profile.apps.map((app, appIndex) => (
-                              <div key={appIndex} className="text-sm text-gray-700">{app}</div>
-                            ))}
-                          </div>
                         </div>
                       )}
 
@@ -719,7 +701,7 @@ export default function MediaKit() {
                 Media Assets
               </CardTitle>
               <p className="text-gray-600 mt-2">
-                High-resolution photos available for download. Click any image to view larger version.
+                Soapbox photos available for download. Click any image to view larger version.
               </p>
             </CardHeader>
             <CardContent>
