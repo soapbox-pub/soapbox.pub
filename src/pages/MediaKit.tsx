@@ -256,7 +256,9 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="nostr" variant="outline" size="sm" asChild>
           <a href={profile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+            <span className="hidden sm:inline">View on Nostr</span>
+            <span className="sm:hidden">Nostr</span>
+            <ExternalLink className="ml-1 h-3 w-3" />
           </a>
         </Button>
       );
@@ -266,7 +268,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="website" variant="outline" size="sm" asChild>
           <a href={profile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGlobe className="w-3 h-3 mr-1" /> Website
+            <FaGlobe className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline ml-1">Website</span>
           </a>
         </Button>
       );
@@ -276,7 +279,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="linkedin" variant="outline" size="sm" asChild>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaLinkedin className="w-3 h-3 mr-1" /> LinkedIn
+            <FaLinkedin className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline ml-1">LinkedIn</span>
           </a>
         </Button>
       );
@@ -286,7 +290,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="twitter" variant="outline" size="sm" asChild>
           <a href={profile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaTwitter className="w-3 h-3 mr-1" /> Twitter
+            <FaTwitter className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline ml-1">Twitter</span>
           </a>
         </Button>
       );
@@ -296,7 +301,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="github" variant="outline" size="sm" asChild>
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGithub className="w-3 h-3 mr-1" /> GitHub
+            <FaGithub className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline ml-1">GitHub</span>
           </a>
         </Button>
       );
@@ -306,7 +312,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="gitlab" variant="outline" size="sm" asChild>
           <a href={profile.gitlab} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGitlab className="w-3 h-3 mr-1" /> GitLab
+            <FaGitlab className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline ml-1">GitLab</span>
           </a>
         </Button>
       );
@@ -319,12 +326,12 @@ export default function MediaKit() {
     <Layout>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display text-gray-900 mb-4 sm:mb-6">
               Media Kit
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
               Meet the Soapbox leadership team available for podcast interviews and media appearances.
               Our team combines decades of experience in decentralized technology, AI innovation, and community building.
             </p>
@@ -349,34 +356,38 @@ export default function MediaKit() {
                 }
 
                 return (
-                  <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <div className="bg-gray-50 rounded-lg p-4 sm:p-6 border border-gray-200">
                     <div className="flex items-center mb-4">
-                      <FileText className="w-6 h-6 text-azure mr-2" />
-                      <h2 className="text-2xl font-bold text-gray-900">Latest Press Release</h2>
+                      <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-azure mr-2" />
+                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Latest Press Release</h2>
                     </div>
-                    <div className="flex items-start space-x-4">
+                    <div className="flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-4">
                       <img
                         src={latestPR.coverImage}
                         alt={latestPR.title}
-                        className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                        className="w-full sm:w-20 sm:h-20 h-32 object-cover rounded-lg flex-shrink-0"
                       />
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h3>
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{latestPR.title}</h3>
                         <p className="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-2">{latestPR.excerpt}</p>
-                        <div className="flex items-center space-x-4">
+                        <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                           <span className="text-sm text-gray-500">{latestPR.date}</span>
-                          <Button size="sm" variant="outline" asChild>
-                            <a href={`/blog/${latestPR.slug}`} target="_blank" rel="noopener noreferrer">
-                              Read Full Release
-                              <ExternalLink className="ml-1 h-3 w-3" />
-                            </a>
-                          </Button>
-                          <Button size="sm" variant="outline" asChild>
-                            <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
-                              All Press Releases
-                              <ExternalLink className="ml-1 h-3 w-3" />
-                            </a>
-                          </Button>
+                          <div className="flex flex-col sm:flex-row gap-2">
+                            <Button size="sm" variant="outline" asChild>
+                              <a href={`/blog/${latestPR.slug}`} target="_blank" rel="noopener noreferrer">
+                                <span className="hidden sm:inline">Read Full Release</span>
+                                <span className="sm:hidden">Read Release</span>
+                                <ExternalLink className="ml-1 h-3 w-3" />
+                              </a>
+                            </Button>
+                            <Button size="sm" variant="outline" asChild>
+                              <a href="/blog?tag=Press%20Release" target="_blank" rel="noopener noreferrer">
+                                <span className="hidden sm:inline">All Press Releases</span>
+                                <span className="sm:hidden">All Releases</span>
+                                <ExternalLink className="ml-1 h-3 w-3" />
+                              </a>
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -387,10 +398,10 @@ export default function MediaKit() {
           </div>
         </section>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
 
           {/* About Shakespeare */}
-          <Card className="mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50 mt-16">
+          <Card className="mb-8 sm:mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50 mt-8 sm:mt-12 lg:mt-16">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <MessageCircle className="w-6 h-6 mr-2" />
@@ -399,7 +410,7 @@ export default function MediaKit() {
             </CardHeader>
             <CardContent>
               <div className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
                   {/* Left Column - About Section */}
                   <div>
                     <p className="text-gray-700 leading-relaxed mb-6">
@@ -409,13 +420,13 @@ export default function MediaKit() {
                     </p>
 
                     {/* Action Buttons - In left column */}
-                    <div className="flex flex-wrap gap-3 justify-center">
-                      <Button asChild className="bg-azure hover:bg-azure-600 text-white">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:justify-center">
+                      <Button asChild className="bg-azure hover:bg-azure-600 text-white w-full sm:w-auto">
                         <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
                           🎭 Try Shakespeare
                         </a>
                       </Button>
-                      <Button variant="outline" asChild>
+                      <Button variant="outline" asChild className="w-full sm:w-auto">
                         <a href="/showcase" target="_blank" rel="noopener noreferrer">
                           🎨 View Showcase
                         </a>
@@ -441,23 +452,36 @@ export default function MediaKit() {
           </Card>
 
           {/* Team Members */}
-          <div className="space-y-12 mb-12">
+          <div className="space-y-8 sm:space-y-12 mb-8 sm:mb-12">
             {teamProfiles.map((profile, index) => (
               <Card key={index} className="border-gray-200 overflow-hidden">
                 <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                  <div className="flex items-start space-x-6">
-                    <img
-                      src={profile.picture}
-                      alt={profile.name}
-                      className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between mb-3">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                    <div className="flex items-start space-x-4 sm:space-x-0 w-full sm:w-auto">
+                      <img
+                        src={profile.picture}
+                        alt={profile.name}
+                        className="w-16 h-16 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-md flex-shrink-0"
+                      />
+                      <div className="flex-1 sm:hidden">
+                        <CardTitle className="text-xl sm:text-2xl text-gray-900">{profile.name}</CardTitle>
+                        <p className="text-base sm:text-lg font-semibold text-azure">{profile.title}</p>
+                      </div>
+                      {/* Mobile Download Button */}
+                      <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50 flex-shrink-0 sm:hidden">
+                        <a href={profile.picture} target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
+
+                    <div className="flex-1 w-full sm:w-auto">
+                      {/* Desktop name/title and download button */}
+                      <div className="hidden sm:flex items-start justify-between mb-3">
                         <div>
                           <CardTitle className="text-2xl text-gray-900">{profile.name}</CardTitle>
                           <p className="text-lg font-semibold text-azure">{profile.title}</p>
                         </div>
-                        {/* Download Headshot Button */}
                         <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50 flex-shrink-0">
                           <a href={profile.picture} target="_blank" rel="noopener noreferrer">
                             <Download className="w-4 h-4 mr-1" />
@@ -481,7 +505,7 @@ export default function MediaKit() {
                     </div>
                   )}
 
-                  <div className="grid md:grid-cols-[3fr_2fr] gap-8">
+                  <div className="grid lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8">
                     {/* Left Column - Summary, Known For, Subjects, Past Podcast Appearances */}
                     <div className="space-y-6">
                       <div>
@@ -574,7 +598,7 @@ export default function MediaKit() {
                                         </div>
                                         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
                                           <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                            <ExternalLink className="w-4 h-4 text-gray-700" />
+                                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-gray-700" />
                                           </div>
                                         </div>
                                       </div>
@@ -592,7 +616,7 @@ export default function MediaKit() {
                                         </div>
                                         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
                                           <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                            <ExternalLink className="w-4 h-4 text-gray-700" />
+                                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-gray-700" />
                                           </div>
                                         </div>
                                       </div>
@@ -601,13 +625,13 @@ export default function MediaKit() {
                                 )}
 
                                 {/* Content Section */}
-                                <div className="p-3">
-                                  <h5 className="font-medium text-gray-900 mb-1">
+                                <div className="p-2 sm:p-3">
+                                  <h5 className="font-medium text-gray-900 mb-1 text-sm sm:text-base">
                                     <a href={presentation.url} target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
                                       {presentation.title}
                                     </a>
                                   </h5>
-                                  <p className="text-sm text-gray-600 mb-1">{presentation.description}</p>
+                                  <p className="text-xs sm:text-sm text-gray-600 mb-1">{presentation.description}</p>
                                   <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
                                 </div>
                               </div>
@@ -623,7 +647,7 @@ export default function MediaKit() {
           </div>
 
           {/* Media Coverage Archive */}
-          <Card className="mb-12 border-azure-200">
+          <Card className="mb-8 sm:mb-12 border-azure-200">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <Globe className="w-6 h-6 mr-2" />
@@ -631,55 +655,55 @@ export default function MediaKit() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
                 {/* Left Column - Press Coverage */}
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
                   <div className="space-y-4">
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">TechCrunch</h5>
-                      <p className="text-sm text-gray-600 mb-2">
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">TechCrunch</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "Jack Dorsey pumps $10M into a nonprofit focused on open source social media"
                       </p>
-                      <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                      <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
 
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Associated Press</h5>
-                      <p className="text-sm text-gray-600 mb-2">
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Associated Press</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "Shakespeare Launches as Open Source Competitor to AI Site Builders"
                       </p>
-                      <a href="https://apnews.com/press-release/pr-newswire/shakespeare-launches-as-open-source-competitor-to-ai-site-builders-c7a4c938e6dd710df4d76c4cd9500999" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                      <a href="https://apnews.com/press-release/pr-newswire/shakespeare-launches-as-open-source-competitor-to-ai-site-builders-c7a4c938e6dd710df4d76c4cd9500999" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
 
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Reuters</h5>
-                      <p className="text-sm text-gray-600 mb-2">
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Reuters</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "Head of engineering at Trump's Truth Social app resigns"
                       </p>
-                      <a href="https://www.reuters.com/technology/head-engineering-trumps-truth-social-app-resigns-2023-07-17/" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                      <a href="https://www.reuters.com/technology/head-engineering-trumps-truth-social-app-resigns-2023-07-17/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
 
-                    <div className="border-l-4 border-azure pl-4">
-                      <h5 className="font-medium text-gray-900">Feminist Current</h5>
-                      <p className="text-sm text-gray-600 mb-2">
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Feminist Current</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "Spinster is in its infancy, but already making waves on the Fediverse"
                       </p>
-                      <a href="https://www.feministcurrent.com/2019/09/12/spinster-is-in-its-infancy-but-already-making-waves-on-the-fediverse/" target="_blank" rel="noopener noreferrer" className="text-azure text-sm hover:underline">Read article →</a>
+                      <a href="https://www.feministcurrent.com/2019/09/12/spinster-is-in-its-infancy-but-already-making-waves-on-the-fediverse/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Column - Featured Coverage Image */}
-                <div>
+                <div className="order-first lg:order-last">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Featured Coverage</h4>
-                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200">
                     <img
                       src="/assets/images/shakespeare-screenshots/techcrunch-cover.png"
                       alt="TechCrunch Coverage"
                       className="w-full h-auto rounded-lg shadow-md"
                     />
-                    <p className="text-sm text-gray-600 mt-3 text-center">
+                    <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed">
                       TechCrunch featured coverage highlighting Soapbox's impact in decentralized social media
                     </p>
                   </div>
@@ -689,7 +713,7 @@ export default function MediaKit() {
           </Card>
 
           {/* Media Assets Section */}
-          <Card className="mb-12 border-azure-200">
+          <Card className="mb-8 sm:mb-12 border-azure-200">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <Download className="w-6 h-6 mr-2" />
@@ -725,33 +749,33 @@ export default function MediaKit() {
               </div>
 
               {/* Company Logos Section */}
-              <div className="mt-12 pt-8 border-t border-gray-200">
+              <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
                 <h4 className="text-lg font-semibold text-gray-900 mb-4">Company Logos</h4>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 space-y-2 sm:space-y-0">
                     <span className="text-sm text-gray-700">Soapbox Logo (SVG)</span>
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
                       <a href="/logo.svg" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 mr-1" />
-                        Download
+                        <Download className="w-4 h-4 sm:mr-1" />
+                        <span className="hidden sm:inline ml-1">Download</span>
                       </a>
                     </Button>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 space-y-2 sm:space-y-0">
                     <span className="text-sm text-gray-700">Soapbox Full Logo</span>
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
                       <a href="/assets/soapbox-full-logo.png" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 mr-1" />
-                        Download
+                        <Download className="w-4 h-4 sm:mr-1" />
+                        <span className="hidden sm:inline ml-1">Download</span>
                       </a>
                     </Button>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 space-y-2 sm:space-y-0 sm:col-span-2 lg:col-span-1">
                     <span className="text-sm text-gray-700">Soapbox Full Logo (White)</span>
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
                       <a href="/assets/soapbox-full-logo-white.png" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 mr-1" />
-                        Download
+                        <Download className="w-4 h-4 sm:mr-1" />
+                        <span className="hidden sm:inline ml-1">Download</span>
                       </a>
                     </Button>
                   </div>
@@ -804,7 +828,7 @@ export default function MediaKit() {
 
 
           {/* Company Background & Timeline */}
-          <Card className="mb-12 border-azure-200">
+          <Card className="mb-8 sm:mb-12 border-azure-200">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <Calendar className="w-6 h-6 mr-2" />
@@ -935,7 +959,7 @@ export default function MediaKit() {
           </Card>
 
           {/* Contact Section */}
-          <Card className="mt-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
+          <Card className="mt-8 sm:mt-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Book a Guest?</h3>
               <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
@@ -997,8 +1021,8 @@ export default function MediaKit() {
           </Card>
 
           {/* Footer */}
-          <div className="mt-16 text-center text-gray-600">
-            <Separator className="mb-8" />
+          <div className="mt-8 sm:mt-12 lg:mt-16 text-center text-gray-600">
+            <Separator className="mb-6 sm:mb-8" />
             <p className="text-xs text-gray-500">
               Vibed with <a href="https://soapbox.pub/mkstack" className="text-azure hover:underline">MKStack</a>
             </p>
