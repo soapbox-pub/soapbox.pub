@@ -21,6 +21,7 @@ export default defineConfig({
         "/blog",
         "/get-involved",
         "/halloween-hackathon",
+        "/media-kit",
         "/mkstack",
         "/shakespeare-resources",
         "/showcase",
