@@ -39,7 +39,6 @@ export default function MediaKit() {
       nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
       website: "https://alexgleason.me",
       linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
-      twitter: "https://x.com/alexgleason",
       gitlab: "https://gitlab.com/alexgleason",
       github: "https://github.com/alexgleason",
       bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web. Alex is passionate about building open, free, and censorship-resistant platforms.",
@@ -194,7 +193,9 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="nostr" variant="outline" size="sm" asChild>
           <a href={profile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+            <span className="hidden sm:inline">View on Nostr</span>
+            <span className="sm:hidden">Nostr</span>
+            <ExternalLink className="ml-1 h-3 w-3" />
           </a>
         </Button>
       );
@@ -204,7 +205,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="website" variant="outline" size="sm" asChild>
           <a href={profile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGlobe className="w-3 h-3 mr-1" /> Website
+            <FaGlobe className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline">Website</span>
           </a>
         </Button>
       );
@@ -214,7 +216,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="linkedin" variant="outline" size="sm" asChild>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaLinkedin className="w-3 h-3 mr-1" /> LinkedIn
+            <FaLinkedin className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline">LinkedIn</span>
           </a>
         </Button>
       );
@@ -224,7 +227,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="twitter" variant="outline" size="sm" asChild>
           <a href={profile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaTwitter className="w-3 h-3 mr-1" /> Twitter
+            <FaTwitter className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline">Twitter</span>
           </a>
         </Button>
       );
@@ -234,7 +238,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="github" variant="outline" size="sm" asChild>
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGithub className="w-3 h-3 mr-1" /> GitHub
+            <FaGithub className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline">GitHub</span>
           </a>
         </Button>
       );
@@ -244,7 +249,8 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="gitlab" variant="outline" size="sm" asChild>
           <a href={profile.gitlab} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGitlab className="w-3 h-3 mr-1" /> GitLab
+            <FaGitlab className="w-3 h-3 sm:mr-1" />
+            <span className="hidden sm:inline">GitLab</span>
           </a>
         </Button>
       );
