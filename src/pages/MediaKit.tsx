@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
+import { ExternalLink, Users, Podcast, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
@@ -213,13 +213,7 @@ export default function MediaKit() {
     }
   ];
 
-  const shakespeareFeatures = [
-    "Can pay in BTC for AI credits",
-    "Works with AI providers you already have, like OpenRouter, OpenAI, xAI, Routstr, PayPerQ, Z.ai, and Anthropic",
-    "You can add a custom provider, too",
-    "Shakespeare builds on Nostr, doesn't lock you in, you own your data, no subscription fees",
-    "Entirely in the browser: complete freedom and privacy respecting"
-  ];
+
 
   // Media assets for the photo grid
   const mediaAssets = [
@@ -325,7 +319,7 @@ export default function MediaKit() {
               Media Kit
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
-              Meet the Soapbox leadership team available for podcast interviews and media appearances.
+              Meet the Soapbox leadership team available for interviews, presentations, and media appearances.
               Our team combines decades of experience in decentralized technology, AI innovation, and community building.
             </p>
 
@@ -393,7 +387,7 @@ export default function MediaKit() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
 
-          {/* About Shakespeare */}
+          {/* About Shakespeare
           <Card className="mb-8 sm:mb-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50 mt-8 sm:mt-12 lg:mt-16">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
@@ -404,7 +398,7 @@ export default function MediaKit() {
             <CardContent>
               <div className="space-y-8">
                 <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-                  {/* Left Column - About Section */}
+
                   <div>
                     <p className="text-gray-700 leading-relaxed mb-6">
                       Shakespeare is Soapbox's revolutionary AI-powered website builder that runs entirely on the Nostr protocol.
@@ -412,7 +406,7 @@ export default function MediaKit() {
                       professional websites, applications, and digital experiences through simple dialogue with AI assistants.
                     </p>
 
-                    {/* Action Buttons - In left column */}
+
                     <div className="flex flex-col sm:flex-row gap-3 sm:justify-center">
                       <Button asChild className="bg-azure hover:bg-azure-600 text-white w-full sm:w-auto">
                         <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
@@ -427,7 +421,7 @@ export default function MediaKit() {
                     </div>
                   </div>
 
-                  {/* Right Column - What Makes It Different */}
+
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">What Makes Shakespeare Different</h4>
                     <div className="space-y-3">
@@ -442,10 +436,10 @@ export default function MediaKit() {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Team Members */}
-          <div className="space-y-8 sm:space-y-12 mb-8 sm:mb-12">
+          <div className="space-y-8 sm:space-y-12 mb-8 sm:mb-12 pt-8 sm:pt-12">
             {teamProfiles.map((profile, index) => (
               <Card key={index} className="border-gray-200 overflow-hidden">
                 <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
