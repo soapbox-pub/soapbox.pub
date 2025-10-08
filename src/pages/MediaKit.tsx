@@ -103,13 +103,13 @@ export default function MediaKit() {
           url: "https://www.youtube.com/watch?v=iZyqVGHjDGo&t=4s",
           videoUrl: "https://www.youtube.com/embed/iZyqVGHjDGo"
         },
-        // {
-        //   title: "The State of Decentralized Social Media",
-        //   description: "Oslo Freedom Forum",
-        //   location: "Olso, Norway",
-        //   date: "May 2025",
-        //   url: "https://www.youtube.com/watch?v=QyBtU0cmIb0&list=PLl3t7CttfcxqdUsVTFI5Z6kVYwaHLbUlu&index=3"
-        // }
+        {
+          title: "The State of Decentralized Social Media",
+          description: "Oslo Freedom Forum",
+          location: "Olso, Norway",
+          date: "May 2025",
+          url: "https://www.youtube.com/watch?v=QyBtU0cmIb0&list=PLl3t7CttfcxqdUsVTFI5Z6kVYwaHLbUlu&index=3"
+        }
       ],
       pastAppearances: [
         { title: "Plebchain Radio 128", url: "https://fountain.fm/episode/c4mjizsQ1TIwHTuFPZiu" },
@@ -560,8 +560,8 @@ export default function MediaKit() {
                           <div className="space-y-4">
                             {profile.presentations.map((presentation, presIndex) => (
                               <div key={presIndex} className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
-                                {/* Video/Image Section */}
-                                {(presentation.videoUrl || presentation.imageUrl) && (
+                                {/* Video/Image Section - Only show for first presentation */}
+                                {presIndex === 0 && (presentation.videoUrl || presentation.imageUrl) && (
                                   <div className="relative">
                                     {presentation.videoUrl ? (
                                       <div
@@ -613,7 +613,17 @@ export default function MediaKit() {
                                     </a>
                                   </h5>
                                   <p className="text-xs sm:text-sm text-gray-600 mb-1">{presentation.description}</p>
-                                  <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
+                                  <div className="flex items-center justify-between">
+                                    <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
+                                    {presIndex > 0 && (
+                                      <Button size="sm" variant="outline" asChild className="ml-2">
+                                        <a href={presentation.url} target="_blank" rel="noopener noreferrer">
+                                          <ExternalLink className="w-3 h-3 mr-1" />
+                                          <span className="hidden sm:inline">Watch</span>
+                                        </a>
+                                      </Button>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             ))}
