@@ -876,12 +876,12 @@ export default function MediaKit() {
                       <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
-                          <span className="font-medium text-gray-900">2023 - Move to Nostr</span>
+                          <span className="font-medium text-gray-900">2023 - Build Mostr Bridge</span>
                           <span className="text-sm text-gray-500">July</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Soapbox pivoted from Fediverse development to focus on Nostr protocol,
-                          recognizing its potential for truly decentralized social media infrastructure.
+                          Built the Mostr Bridge, connecting Fediverse and Nostr protocols for seamless cross-platform communication.
+                          This marked Soapbox's strategic pivot to focus on Nostr protocol, recognizing its potential for truly decentralized social media infrastructure.
                         </p>
                       </div>
                     </div>
