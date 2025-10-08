@@ -3,7 +3,8 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, Play, FileText, LinkIcon } from "lucide-react";
+import { ExternalLink, Users, Podcast, MessageCircle, Mail, Copy, Check, Download, Calendar, Globe, FileText } from "lucide-react";
+import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
 
@@ -30,97 +31,152 @@ export default function MediaKit() {
     }
   };
 
-  const alexProfile = {
-    name: "Alex Gleason",
-    title: "CEO of Soapbox",
-    picture: "https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg",
-    nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
-    website: "https://alexgleason.me",
-    linkedin: "https://linkedin.com/in/alexgleason",
-    twitter: "https://x.com/alex",
-    bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He is still learning, and still dreaming.",
-    subjects: [
-      "What makes Shakespeare different from other AI web builders",
-      "Integration with decentralized tech like Nostr and Bitcoin",
-      "Why Nostr? (vs. Fediverse/Mastodon or Bluesky?)",
-      "How does Shakespeare help Nostr win?",
-      "All things AI",
-      "The fake \"openness\" of OpenAI and what really open AI would look like",
-      "Open source models like GLM and the competitive race with China",
-      "The future of software development with AI (are junior devs over?)"
-    ],
-    knownFor: "Truth Social, Fediverse, Ditto, and rescuing turtles while wearing a William Shakespeare costume.",
-    pastAppearances: [
-      { title: "Plebchain Radio 128", url: "https://fountain.fm/episode/c4mjizsQ1TIwHTuFPZiu" },
-      { title: "Episode 6: Stacks on Stacks: Coding at Lightspeed", url: "https://fountain.fm/episode/WGjtZd2tKOrwvhBRwIXR" },
-      { title: "Citadel Dispatch, 174", url: "https://fountain.fm/episode/j8hbpJ9YxmeOXYJCRp3n" },
-      { title: "Citadel Dispatch, 164", url: "https://fountain.fm/episode/JW2vxjNFYb941SUSQQg9" },
-      { title: "Nostr Rising", url: "https://fountain.fm/episode/mERB1JhH9mOmiMiZV8Zy" },
-      { title: "Thank God For Nostr", url: "https://fountain.fm/episode/7IvgMxBTfPXPw6CI60Oc" },
-      { title: "10% Less Productive", url: "https://fountain.fm/episode/yJU8BV1UBDqUW9cBRmej" }
-    ]
-  };
-
-  const mkProfile = {
-    name: "MK Fain",
-    title: "CPO of Soapbox",
-    picture: "https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg",
-    nostrUrl: "https://ditto.pub/@mk@ditto.pub",
-    website: "https://mkfain.com",
-    linkedin: "https://linkedin.com/in/mkfain",
-    twitter: "https://x.com/mkfain",
-    bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
-    subjects: [
-      "Freedom of speech online",
-      "Why decentralization and censorship resistance matters",
-      "Why we created Soapbox to solve this problem",
-      "How AI can be both a threat to free speech online and a tool to empower disenfranchised groups",
-      "How AI tools like Shakespeare empower non-technical users",
-      "How we're using AI to fulfil the promise of open source/FOSS by making it accessible to all",
-      "Her participation in the recent #Hack4Freedom, leading women in Nigeria through their first vibe coding session",
-      "Building spaces for women online",
-      "How she built Henhouse, Spinster—and more importantly—WHY",
-      "Being a leader of an online community of disenfranchised"
-    ],
-    knownFor: "Spinster, 4W, Ovarit, Bookstr, her feminist stance, and being a magical hybrid of software developer and marketing expert.",
-    story: "The story behind why \"MKStack\" is named after her."
-  };
-
-  const derekProfile = {
-    name: "Derek Ross",
-    title: "DevRel for Soapbox",
-    picture: "https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg",
-    nostrUrl: "https://ditto.pub/@derekross@grownostr.org",
-    website: "https://derekross.me",
-    linkedin: "https://linkedin.com/in/derekross",
-    twitter: "https://x.com/derekross",
-    quote: "\"The purple pill helps the orange pill go down.\" Nostr is the social glue that binds all of your apps together.",
-    bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek.",
-    subjects: [
-      "Vibe coding is his favorite thing to talk about besides Nostr!",
-      "Why/How Shakespeare makes creating apps easier and more addictive than ever",
-      "Where Nostr is now and where he sees it going in the future",
-      "The history of Nostr",
-      "Why it's important to create Nostr apps",
-      "Why it's important to maintain Nostr apps",
-      "The Nostr development ecosystem"
-    ],
-    role: "At Soapbox, he's the bridge between our developers and the folks who use our apps. Always quick to answer a Shakespeare question, Derek leads our demos, tutorials, and has become the vibe coding expert of Nostr.",
-    apps: [
-      "🪺 NostrNests.com",
-      "🎙️ YakBak.app",
-      "🖼️ Zappix.app",
-      "🗓️ Plektos.app",
-      "🎶 ZapTrax.app",
-      "📈 Zaplytics.app"
-    ],
-    achievements: [
-      "Derek leads the initiative to grow Nostr: https://grownostr.org",
-      "Derek has spoken at many conferences around the world about Nostr",
-      "Features in the Nostr documentary \"Social Media is broken. Can we fix it?\" by Max DeMarco",
-      "Bitcoin Magazine conference speaker"
-    ]
-  };
+  const teamProfiles = [
+    {
+      name: "Alex Gleason",
+      title: "CEO of Soapbox",
+      picture: "https://media.ditto.pub/3fd58d3db4fdcf40091d69e881242678c8010acc446c3f0d8e95cc9505b12e7a.jpeg",
+      nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
+      website: "https://alexgleason.me",
+      linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
+      twitter: "https://x.com/alexgleason",
+      gitlab: "https://gitlab.com/alexgleason",
+      github: "https://github.com/alexgleason",
+      bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web. Alex is passionate about building open, free, and censorship-resistant platforms.",
+      subjects: [
+        "What makes Shakespeare different from other AI web builders",
+        "Integration with decentralized tech like Nostr and Bitcoin",
+        "How does Nostr compare to the Fediverse/Mastodon or Bluesky?",
+        "How does Shakespeare help Nostr win?",
+        "All things AI",
+        "The fake \"openness\" of OpenAI and what really open AI would look like",
+        "Open source models like GLM and the competitive race with China",
+        "The future of software development with AI (are junior devs over?)"
+      ],
+      knownFor: "Building bridges, Truth Social, Fediverse, Nostr, Free Software extremism, being Vegan.",
+      presentations: [
+        {
+          title: "Nostrasia 2023 Keynote",
+          description: "Building Community Infrastructure on Nostr",
+          location: "Tokyo, Japan",
+          date: "November 2023",
+          url: "#"
+        },
+        {
+          title: "Baltic Honeybadger 2023",
+          description: "Decentralized Social Media and Bitcoin",
+          location: "Riga, Latvia",
+          date: "September 2023",
+          url: "#"
+        }
+      ],
+      pastAppearances: [
+        { title: "Plebchain Radio 128", url: "https://fountain.fm/episode/c4mjizsQ1TIwHTuFPZiu" },
+        { title: "Episode 6: Stacks on Stacks: Coding at Lightspeed", url: "https://fountain.fm/episode/WGjtZd2tKOrwvhBRwIXR" },
+        { title: "Citadel Dispatch, 174", url: "https://fountain.fm/episode/j8hbpJ9YxmeOXYJCRp3n" },
+        { title: "Citadel Dispatch, 164", url: "https://fountain.fm/episode/JW2vxjNFYb941SUSQQg9" },
+        { title: "Nostr Rising", url: "https://fountain.fm/episode/mERB1JhH9mOmiMiZV8Zy" },
+        { title: "Thank God For Nostr", url: "https://fountain.fm/episode/7IvgMxBTfPXPw6CI60Oc" },
+        { title: "10% Less Productive", url: "https://fountain.fm/episode/yJU8BV1UBDqUW9cBRmej" }
+      ]
+    },
+    {
+      name: "MK Fain",
+      title: "Chief Product Officer",
+      picture: "https://media.ditto.pub/60f9ef9a10459a85e35ab6a0c2b1d1f035cb8e1511efff2740160ceaf6b0999b.jpeg",
+      nostrUrl: "https://ditto.pub/@mk@ditto.pub",
+      website: "https://marykatefain.com/",
+      linkedin: "https://www.linkedin.com/in/marykatefain/",
+      twitter: "https://x.com/mkfain",
+      gitlab: "https://gitlab.com/marykatefain",
+      github: "https://github.com/marykatefain",
+      bio: "M. K. is a passionate advocate for digital freedom with a proven track record for building spaces for silenced groups online. In 2019 she founded Spinster, the largest women's community on the decentralized web. She was the Director of Communications for the Women's Liberation Front, and her work has been profiled in multiple outlets including the Atlantic and Vice. She is a prolific writer and speaker on topics of feminism, free speech, and building inclusive communities online.",
+      subjects: [
+        "Why free speech online is not a 'right wing' issue",
+        "Why we created Soapbox to solve censorship and deplatforming",
+        "How AI can be both a threat to free speech online and a tool to empower disenfranchised groups",
+        "Building spaces for women online: Spinster, 4w, Ovarit, and Henhouse",
+        "Being the leader of an online community of disenfranchised groups"
+      ],
+      knownFor: "Spinster, 4W, Ovarit, Bookstr, Animal Rights Activism, WoLF, standing up for cancelled women.",
+      presentations: [
+        {
+          title: "#Hack4Freedom Nigeria",
+          description: "Leading Women in Vibe Coding Workshop",
+          location: "Lagos, Nigeria",
+          date: "September 2024",
+          url: "#"
+        },
+        {
+          title: "Women in Open Source Summit",
+          description: "Building Inclusive Spaces in Decentralized Tech",
+          location: "Virtual",
+          date: "March 2024",
+          url: "#"
+        }
+      ],
+      pastAppearances: [
+        { title: "Women in Tech Podcast", url: "#" },
+        { title: "Decentralized Voices", url: "#" },
+        { title: "Freedom Tech Talk", url: "#" },
+        { title: "Building Communities Online", url: "#" }
+      ]
+    },
+    {
+      name: "Derek Ross",
+      title: "DevRel for Soapbox",
+      picture: "https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg",
+      nostrUrl: "https://ditto.pub/@derekross@grownostr.org",
+      website: "https://derekross.me",
+      linkedin: "https://linkedin.com/in/derekross",
+      twitter: "https://x.com/derekross",
+      github: "https://github.com/derekross",
+      quote: "\"The purple pill helps the orange pill go down.\" Nostr is the social glue that binds all of your apps together.",
+      bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek.",
+      subjects: [
+        "Vibe coding is his favorite thing to talk about besides Nostr!",
+        "Why/How Shakespeare makes creating apps easier and more addictive than ever",
+        "Where Nostr is now and where he sees it going in the future",
+        "The history of Nostr",
+        "Why it's important to create Nostr apps",
+        "Why it's important to maintain Nostr apps",
+        "The Nostr development ecosystem"
+      ],
+      role: "At Soapbox, he's the bridge between our developers and the folks who use our apps. Always quick to answer a Shakespeare question, Derek leads our demos, tutorials, and has become the vibe coding expert of Nostr.",
+      apps: [
+        "🪺 NostrNests.com",
+        "🎙️ YakBak.app",
+        "🖼️ Zappix.app",
+        "🗓️ Plektos.app",
+        "🎶 ZapTrax.app",
+        "📈 Zaplytics.app"
+      ],
+      knownFor: "NostrNests, YakBak, Zappix, Plektos, ZapTrax, Zaplytics, Nostr evangelism, vibe coding.",
+      presentations: [
+        {
+          title: "Bitcoin 2024 Conference",
+          description: "The Future of Decentralized Social Media",
+          location: "Miami, FL",
+          date: "July 2024",
+          url: "#"
+        },
+        {
+          title: "Nostr Documentary Feature",
+          description: "\"Social Media is broken. Can we fix it?\" by Max DeMarco",
+          location: "Documentary Release",
+          date: "2024",
+          url: "#"
+        }
+      ],
+      pastAppearances: [
+        { title: "Bitcoin Magazine Podcast", url: "#" },
+        { title: "Nostr Talk", url: "#" },
+        { title: "Decentralized Everything", url: "#" },
+        { title: "Purple Pill Podcast", url: "#" },
+        { title: "The Nostr Show", url: "#" }
+      ]
+    }
+  ];
 
   const shakespeareFeatures = [
     "Can pay in BTC for AI credits",
@@ -129,6 +185,73 @@ export default function MediaKit() {
     "Shakespeare builds on Nostr, doesn't lock you in, you own your data, no subscription fees",
     "Entirely in the browser: complete freedom and privacy respecting"
   ];
+
+  // Helper function to render social links with icons
+  const renderSocialLinks = (profile: typeof teamProfiles[0]) => {
+    const socialLinks: JSX.Element[] = [];
+
+    if (profile.nostrUrl) {
+      socialLinks.push(
+        <Button key="nostr" variant="outline" size="sm" asChild>
+          <a href={profile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
+          </a>
+        </Button>
+      );
+    }
+
+    if (profile.website) {
+      socialLinks.push(
+        <Button key="website" variant="outline" size="sm" asChild>
+          <a href={profile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            <FaGlobe className="w-3 h-3 mr-1" /> Website
+          </a>
+        </Button>
+      );
+    }
+
+    if (profile.linkedin) {
+      socialLinks.push(
+        <Button key="linkedin" variant="outline" size="sm" asChild>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            <FaLinkedin className="w-3 h-3 mr-1" /> LinkedIn
+          </a>
+        </Button>
+      );
+    }
+
+    if (profile.twitter) {
+      socialLinks.push(
+        <Button key="twitter" variant="outline" size="sm" asChild>
+          <a href={profile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            <FaTwitter className="w-3 h-3 mr-1" /> Twitter
+          </a>
+        </Button>
+      );
+    }
+
+    if (profile.github) {
+      socialLinks.push(
+        <Button key="github" variant="outline" size="sm" asChild>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            <FaGithub className="w-3 h-3 mr-1" /> GitHub
+          </a>
+        </Button>
+      );
+    }
+
+    if (profile.gitlab) {
+      socialLinks.push(
+        <Button key="gitlab" variant="outline" size="sm" asChild>
+          <a href={profile.gitlab} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            <FaGitlab className="w-3 h-3 mr-1" /> GitLab
+          </a>
+        </Button>
+      );
+    }
+
+    return socialLinks;
+  };
 
   return (
     <Layout>
@@ -257,366 +380,125 @@ export default function MediaKit() {
 
           {/* Team Members */}
           <div className="space-y-12 mb-12">
-            {/* Alex Gleason */}
-            <Card className="border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                <div className="flex items-start space-x-6">
-                  <img
-                    src={alexProfile.picture}
-                    alt={alexProfile.name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl text-gray-900">{alexProfile.name}</CardTitle>
-                    <p className="text-lg font-semibold text-azure mb-3">{alexProfile.title}</p>
+            {teamProfiles.map((profile, index) => (
+              <Card key={index} className="border-gray-200 overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
+                  <div className="flex items-start space-x-6">
+                    <img
+                      src={profile.picture}
+                      alt={profile.name}
+                      className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
+                    />
+                    <div className="flex-1">
+                      <CardTitle className="text-2xl text-gray-900">{profile.name}</CardTitle>
+                      <p className="text-lg font-semibold text-azure mb-3">{profile.title}</p>
 
-                    {/* Social Links */}
-                    <div className="flex flex-wrap gap-2">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={alexProfile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={alexProfile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          <LinkIcon className="w-3 h-3 mr-1" /> Website
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={alexProfile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          💼 LinkedIn
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={alexProfile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          🐦 Twitter
-                        </a>
-                      </Button>
+                      {/* Social Links */}
+                      <div className="flex flex-wrap gap-2">
+                        {renderSocialLinks(profile)}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Left Column - Summary, Known For, Subjects */}
-                  <div className="space-y-6">
-                    <div>
-                      <p className="text-gray-700 leading-relaxed">{alexProfile.bio}</p>
+                </CardHeader>
+                <CardContent className="p-6">
+                  {/* Special quote for Derek */}
+                  {profile.quote && (
+                    <div className="bg-azure-50 p-4 rounded-lg mb-6 border-l-4 border-azure">
+                      <p className="text-azure-800 font-medium italic text-lg">{profile.quote}</p>
                     </div>
+                  )}
 
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
-                      <p className="text-gray-700">{alexProfile.knownFor}</p>
-                    </div>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {/* Left Column - Summary, Known For, Subjects */}
+                    <div className="space-y-6">
+                      <div>
+                        <p className="text-gray-700 leading-relaxed">{profile.bio}</p>
+                      </div>
 
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Subjects to discuss with Alex:</h4>
-                      <div className="space-y-2">
-                        {alexProfile.subjects.map((subject, index) => (
-                          <div key={index} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-sm text-gray-700">{subject}</p>
+                      {/* Role (for Derek) */}
+                      {profile.role && (
+                        <div>
+                          <h4 className="text-lg font-semibold text-gray-900 mb-2">Role at Soapbox:</h4>
+                          <p className="text-gray-700">{profile.role}</p>
+                        </div>
+                      )}
+
+                      {/* Apps (for Derek) */}
+                      {profile.apps && (
+                        <div>
+                          <h4 className="text-lg font-semibold text-gray-900 mb-3">Apps Derek has built:</h4>
+                          <div className="grid grid-cols-2 gap-2">
+                            {profile.apps.map((app, appIndex) => (
+                              <div key={appIndex} className="text-sm text-gray-700">{app}</div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column - Presentations & Podcast Appearances */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-gray-900 mb-1">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                              Nostrasia 2023 Keynote
-                            </a>
-                          </h5>
-                          <p className="text-sm text-gray-600 mb-1">Building Community Infrastructure on Nostr</p>
-                          <span className="text-xs text-gray-500">Tokyo, Japan - November 2023</span>
                         </div>
+                      )}
 
-                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-gray-900 mb-1">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                              Baltic Honeybadger 2023
-                            </a>
-                          </h5>
-                          <p className="text-sm text-gray-600 mb-1">Decentralized Social Media and Bitcoin</p>
-                          <span className="text-xs text-gray-500">Riga, Latvia - September 2023</span>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
+                        <p className="text-gray-700">{profile.knownFor}</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                          {profile.name.split(' ')[0]} can talk about:
+                        </h4>
+                        <div className="space-y-2">
+                          {profile.subjects.map((subject, subjectIndex) => (
+                            <div key={subjectIndex} className="flex items-start space-x-2">
+                              <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                              <p className="text-sm text-gray-700">{subject}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
 
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
-                      <div className="space-y-2">
-                        {alexProfile.pastAppearances.map((appearance, index) => (
-                          <a
-                            key={index}
-                            href={appearance.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                          >
-                            <Podcast className="w-4 h-4" />
-                            <span className="group-hover:underline">{appearance.title}</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* MK Fain */}
-            <Card className="border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                <div className="flex items-start space-x-6">
-                  <img
-                    src={mkProfile.picture}
-                    alt={mkProfile.name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl text-gray-900">{mkProfile.name}</CardTitle>
-                    <p className="text-lg font-semibold text-azure mb-3">{mkProfile.title}</p>
-
-                    {/* Social Links */}
-                    <div className="flex flex-wrap gap-2">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={mkProfile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={mkProfile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          <LinkIcon className="w-3 h-3 mr-1" /> Website
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={mkProfile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          💼 LinkedIn
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={mkProfile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          🐦 Twitter
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Left Column - Summary, Known For, Subjects */}
-                  <div className="space-y-6">
-                    <div>
-                      <p className="text-gray-700 leading-relaxed">{mkProfile.bio}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
-                      <p className="text-gray-700">{mkProfile.knownFor}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">M.K. can talk about:</h4>
-                      <div className="space-y-2">
-                        {mkProfile.subjects.map((subject, index) => (
-                          <div key={index} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-sm text-gray-700">{subject}</p>
+                    {/* Right Column - Presentations & Podcast Appearances */}
+                    <div className="space-y-6">
+                      {profile.presentations && (
+                        <div>
+                          <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
+                          <div className="space-y-3">
+                            {profile.presentations.map((presentation, presIndex) => (
+                              <div key={presIndex} className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                                <h5 className="font-medium text-gray-900 mb-1">
+                                  <a href={presentation.url} target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                                    {presentation.title}
+                                  </a>
+                                </h5>
+                                <p className="text-sm text-gray-600 mb-1">{presentation.description}</p>
+                                <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column - Presentations & Podcast Appearances */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-gray-900 mb-1">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                              #Hack4Freedom Nigeria
-                            </a>
-                          </h5>
-                          <p className="text-sm text-gray-600 mb-1">Leading Women in Vibe Coding Workshop</p>
-                          <span className="text-xs text-gray-500">Lagos, Nigeria - September 2024</span>
                         </div>
+                      )}
 
-                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-gray-900 mb-1">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                              Women in Open Source Summit
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
+                        <div className="space-y-2">
+                          {profile.pastAppearances.map((appearance, appearanceIndex) => (
+                            <a
+                              key={appearanceIndex}
+                              href={appearance.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                            >
+                              <Podcast className="w-4 h-4" />
+                              <span className="group-hover:underline">{appearance.title}</span>
+                              <ExternalLink className="w-3 h-3" />
                             </a>
-                          </h5>
-                          <p className="text-sm text-gray-600 mb-1">Building Inclusive Spaces in Decentralized Tech</p>
-                          <span className="text-xs text-gray-500">Virtual - March 2024</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
-                      <div className="space-y-2">
-                        <a
-                          href="#"
-                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                        >
-                          <Podcast className="w-4 h-4" />
-                          <span className="group-hover:underline">Women in Tech Podcast</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                        <a
-                          href="#"
-                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                        >
-                          <Podcast className="w-4 h-4" />
-                          <span className="group-hover:underline">Decentralized Voices</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                        <a
-                          href="#"
-                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                        >
-                          <Podcast className="w-4 h-4" />
-                          <span className="group-hover:underline">Freedom Tech Talk</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                        <a
-                          href="#"
-                          className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                        >
-                          <Podcast className="w-4 h-4" />
-                          <span className="group-hover:underline">Building Communities Online</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Derek Ross */}
-            <Card className="border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
-                <div className="flex items-start space-x-6">
-                  <img
-                    src={derekProfile.picture}
-                    alt={derekProfile.name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl text-gray-900">{derekProfile.name}</CardTitle>
-                    <p className="text-lg font-semibold text-azure mb-3">{derekProfile.title}</p>
-
-                    {/* Social Links */}
-                    <div className="flex flex-wrap gap-2">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={derekProfile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={derekProfile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          <LinkIcon className="w-3 h-3 mr-1" /> Website
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={derekProfile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          💼 LinkedIn
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={derekProfile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                          🐦 Twitter
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="bg-azure-50 p-4 rounded-lg mb-6 border-l-4 border-azure">
-                  <p className="text-azure-800 font-medium italic text-lg">{derekProfile.quote}</p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Left Column - Summary, Role, Subjects */}
-                  <div className="space-y-6">
-                    <div>
-                      <p className="text-gray-700 leading-relaxed">{derekProfile.bio}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Role at Soapbox:</h4>
-                      <p className="text-gray-700">{derekProfile.role}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Derek can talk about:</h4>
-                      <div className="space-y-2">
-                        {derekProfile.subjects.map((subject, index) => (
-                          <div key={index} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-sm text-gray-700">{subject}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column - Achievements, Presentations & Appearances */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Achievements & Recognition:</h4>
-                      <div className="space-y-2">
-                        {derekProfile.achievements.map((achievement, index) => (
-                          <div key={index} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-sm text-gray-700">{achievement}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-gray-900 mb-1">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                              Bitcoin 2024 Conference
-                            </a>
-                          </h5>
-                          <p className="text-sm text-gray-600 mb-1">The Future of Decentralized Social Media</p>
-                          <span className="text-xs text-gray-500">Miami, FL - July 2024</span>
-                        </div>
-
-                        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-gray-900 mb-1">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                              Nostr Documentary Feature
-                            </a>
-                          </h5>
-                          <p className="text-sm text-gray-600 mb-1">"Social Media is broken. Can we fix it?" by Max DeMarco</p>
-                          <span className="text-xs text-gray-500">Documentary Release - 2024</span>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           {/* Media Coverage Archive */}
