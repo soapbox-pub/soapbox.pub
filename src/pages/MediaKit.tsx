@@ -138,12 +138,13 @@ export default function MediaKit() {
       knownFor: "Spinster, 4W, Ovarit, Bookstr, Animal Rights Activism, WoLF, standing up for cancelled women.",
       presentations: [
         {
-          title: "What is Nostr + Vibe Coding Workshop",
-          description: "#HackForFreedom",
-          location: "Lagos, Nigeria",
+          title: "A Dictator's Worst Nightmare: Digital Tools of Empowerment",
+          description: "Nostr vs. the Fediverse",
+          location:"",
           date: "September 2024",
-          url: "#",
-          imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=225&fit=crop"
+          url: "https://www.youtube.com/watch?v=jD-CD8RC5UU",
+          videoUrl: "https://www.youtube.com/embed/jD-CD8RC5UU?si=UK_-YxHe5sW-stXs"
+
         },
         {
           title: "Sparking change: What free software can learn from successful social movements",
@@ -188,8 +189,8 @@ export default function MediaKit() {
           videoUrl: "https://www.youtube.com/embed/NVm_jGdwTjQ"
         },
         {
-          title: "\"Social Media is broken. Can we fix it?\" by Max DeMarco",
-          description: "Nostr Documentary Feature",
+          title: "\"Social Media is broken. Can we fix it?\"",
+          description: "Nostr Documentary Feature by Max DeMarco",
           location: "Documentary Release",
           date: "2024",
           url: "https://www.youtube.com/watch?v=aA-jiiepOrE",
@@ -199,9 +200,11 @@ export default function MediaKit() {
       pastAppearances: [
         { title: "Fractal Bitcoin", url: "https://www.youtube.com/watch?v=2cZtEVikH98&pp=ygULZGVyZWsgcm9zcyw%3D" },
         { title: "Bitcoin Made Simple", url: "https://www.youtube.com/watch?v=Qw00zFa-Boo&pp=ygULZGVyZWsgcm9zcyw%3D" },
+        { title: "Soapbox Sessions", url: "https://sessions.soapbox.pub/" },
+        { title: "Nostr Report", url: "https://www.youtube.com/watch?v=_Dk3NUSlmh8" },
         { title: "Brandon Gentile", url: "https://www.youtube.com/watch?v=VLK2zsfC510" },
         { title: "Ben Wehreman", url: "https://www.youtube.com/watch?v=_jrkUXDReqI&t=2s&pp=ygULZGVyZWsgcm9zcyw%3D" },
-        { title: "Soapbox Sessions", url: "https://sessions.soapbox.pub/" }
+        { title: "Jack Starling", url: "https://www.youtube.com/watch?v=p4yi0qvhxL4&pp=ygURZGVyZWsgcm9zcywgbm9zdHI%3D" }
       ]
     }
   ];
@@ -799,7 +802,7 @@ export default function MediaKit() {
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
                           <span className="font-medium text-gray-900">2023 - Move to Nostr</span>
-                          <span className="text-sm text-gray-500">Early</span>
+                          <span className="text-sm text-gray-500">July</span>
                         </div>
                         <p className="text-sm text-gray-600">
                           Soapbox pivoted from Fediverse development to focus on Nostr protocol,
