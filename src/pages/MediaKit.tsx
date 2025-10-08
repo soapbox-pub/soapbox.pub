@@ -437,7 +437,7 @@ export default function MediaKit() {
                   )}
 
                   <div className="grid md:grid-cols-2 gap-8">
-                    {/* Left Column - Summary, Known For, Subjects */}
+                    {/* Left Column - Summary, Known For, Subjects, Past Podcast Appearances */}
                     <div className="space-y-6">
                       <div>
                         <p className="text-gray-700 leading-relaxed">{profile.bio}</p>
@@ -481,9 +481,28 @@ export default function MediaKit() {
                           ))}
                         </div>
                       </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
+                        <div className="space-y-2">
+                          {profile.pastAppearances.map((appearance, appearanceIndex) => (
+                            <a
+                              key={appearanceIndex}
+                              href={appearance.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
+                            >
+                              <Podcast className="w-4 h-4" />
+                              <span className="group-hover:underline">{appearance.title}</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Right Column - Presentations & Podcast Appearances */}
+                    {/* Right Column - Presentations & Appearances */}
                     <div className="space-y-6">
                       {profile.presentations && (
                         <div>
@@ -551,25 +570,6 @@ export default function MediaKit() {
                           </div>
                         </div>
                       )}
-
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
-                        <div className="space-y-2">
-                          {profile.pastAppearances.map((appearance, appearanceIndex) => (
-                            <a
-                              key={appearanceIndex}
-                              href={appearance.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                            >
-                              <Podcast className="w-4 h-4" />
-                              <span className="group-hover:underline">{appearance.title}</span>
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </CardContent>
