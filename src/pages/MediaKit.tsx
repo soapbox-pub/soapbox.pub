@@ -257,8 +257,7 @@ export default function MediaKit() {
         <Button key="nostr" variant="outline" size="sm" asChild>
           <a href={profile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
             <span className="hidden sm:inline">View on Nostr</span>
-            <span className="sm:hidden">Nostr</span>
-            <ExternalLink className="ml-1 h-3 w-3" />
+            <ExternalLink className="h-3 w-3 sm:ml-1" />
           </a>
         </Button>
       );
