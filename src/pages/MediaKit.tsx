@@ -41,33 +41,39 @@ export default function MediaKit() {
       linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
       gitlab: "https://gitlab.com/alexgleason",
       github: "https://github.com/alexgleason",
-      bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web. Alex is passionate about building open, free, and censorship-resistant platforms.",
+      bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web.",
       subjects: [
         "What makes Shakespeare different from other AI web builders",
         "Integration with decentralized tech like Nostr and Bitcoin",
         "How does Nostr compare to the Fediverse/Mastodon or Bluesky?",
         "How does Shakespeare help Nostr win?",
-        "All things AI",
         "The fake \"openness\" of OpenAI and what really open AI would look like",
         "Open source models like GLM and the competitive race with China",
         "The future of software development with AI (are junior devs over?)"
       ],
-      knownFor: "Building bridges, Truth Social, Fediverse, Nostr, Free Software extremism, being Vegan.",
+      knownFor: "Building bridges, Truth Social, the Fediverse, Nostr, Free Software extremism, being Vegan.",
       presentations: [
         {
-          title: "Nostrasia 2023 Keynote",
-          description: "Building Community Infrastructure on Nostr",
+          title: "The Mostr Bridge",
+          description: "Nostrasia",
           location: "Tokyo, Japan",
           date: "November 2023",
-          url: "#"
+          url: "https://www.youtube.com/watch?v=075wrIJ1vHg"
         },
         {
-          title: "Baltic Honeybadger 2023",
-          description: "Decentralized Social Media and Bitcoin",
+          title: "Building Communities on Nostr",
+          description: "Nostr World",
           location: "Riga, Latvia",
-          date: "September 2023",
-          url: "#"
-        }
+          date: "August 2024",
+          url: "https://www.youtube.com/watch?v=iZyqVGHjDGo&t=4s"
+        },
+        // {
+        //   title: "The State of Decentralized Social Media",
+        //   description: "Oslo Freedom Forum",
+        //   location: "Olso, Norway",
+        //   date: "May 2025",
+        //   url: "https://www.youtube.com/watch?v=QyBtU0cmIb0&list=PLl3t7CttfcxqdUsVTFI5Z6kVYwaHLbUlu&index=3"
+        // }
       ],
       pastAppearances: [
         { title: "Plebchain Radio 128", url: "https://fountain.fm/episode/c4mjizsQ1TIwHTuFPZiu" },
@@ -89,90 +95,77 @@ export default function MediaKit() {
       twitter: "https://x.com/mkfain",
       gitlab: "https://gitlab.com/marykatefain",
       github: "https://github.com/marykatefain",
-      bio: "M. K. is a passionate advocate for digital freedom with a proven track record for building spaces for silenced groups online. In 2019 she founded Spinster, the largest women's community on the decentralized web. She was the Director of Communications for the Women's Liberation Front, and her work has been profiled in multiple outlets including the Atlantic and Vice. She is a prolific writer and speaker on topics of feminism, free speech, and building inclusive communities online.",
+      bio: "M. K. is a passionate advocate for digital freedom with a track record for building spaces for silenced groups online. In 2019 she founded Spinster, the largest women's community on the decentralized web. She is the former Communications Director for the Women's Liberation Front, and her work has been profiled in outlets such as the Atlantic and Vice.",
       subjects: [
         "Why free speech online is not a 'right wing' issue",
         "Why we created Soapbox to solve censorship and deplatforming",
-        "How AI can be both a threat to free speech online and a tool to empower disenfranchised groups",
+        "How AI can be both a threat to freedom and a tool to empower disenfranchised groups",
         "Building spaces for women online: Spinster, 4w, Ovarit, and Henhouse",
         "Being the leader of an online community of disenfranchised groups"
       ],
       knownFor: "Spinster, 4W, Ovarit, Bookstr, Animal Rights Activism, WoLF, standing up for cancelled women.",
       presentations: [
         {
-          title: "#Hack4Freedom Nigeria",
-          description: "Leading Women in Vibe Coding Workshop",
+          title: "What is Nostr + Vibe Coding Workshop",
+          description: "#HackForFreedom",
           location: "Lagos, Nigeria",
           date: "September 2024",
           url: "#"
         },
         {
-          title: "Women in Open Source Summit",
-          description: "Building Inclusive Spaces in Decentralized Tech",
-          location: "Virtual",
-          date: "March 2024",
-          url: "#"
+          title: "Sparking change: What free software can learn from successful social movements",
+          description: "LibrePlanet 2019",
+          location: "Boston, USA",
+          date: "May 2019",
+          url: "https://www.youtube.com/watch?v=C1rAHJ1Ox94&list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF&index=8"
         }
       ],
       pastAppearances: [
-        { title: "Women in Tech Podcast", url: "#" },
-        { title: "Decentralized Voices", url: "#" },
-        { title: "Freedom Tech Talk", url: "#" },
-        { title: "Building Communities Online", url: "#" }
+        { title: "Identity Crisis", url: "https://www.youtube.com/watch?v=3XHRirlcI9M&list=PL_Ahot14Nv3YJDmdfTv6DQepQlsBprSCY&index=10" },
+        { title: "Women's Declaration International'", url: "https://youtu.be/YXHQQZlSM1I?si=i1LfoAidiw5Iv9Ma" },
+        { title: "The Mess We're In", url: "https://www.youtube.com/live/KGvn5gMhn7w?si=VAHSSJ-MesIOriKn" },
+        { title: "Plebity", url: "https://www.youtube.com/watch?v=yunu6Owrvuo&list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF&index=6" }
       ]
     },
     {
       name: "Derek Ross",
-      title: "DevRel for Soapbox",
+      title: "Developer Relations",
       picture: "https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg",
       nostrUrl: "https://ditto.pub/@derekross@grownostr.org",
       website: "https://derekross.me",
-      linkedin: "https://linkedin.com/in/derekross",
-      twitter: "https://x.com/derekross",
+      twitter: "https://x.com/GrowNostrOrg",
+      gitlab: "https://gitlab.com/derekross",
       github: "https://github.com/derekross",
-      quote: "\"The purple pill helps the orange pill go down.\" Nostr is the social glue that binds all of your apps together.",
-      bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek.",
+      bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek. He is passionate about building the Nostr ecosystem through education, evangelism, and creating useful applications.",
       subjects: [
-        "Vibe coding is his favorite thing to talk about besides Nostr!",
-        "Why/How Shakespeare makes creating apps easier and more addictive than ever",
+        "How Shakespeare makes creating Nostr apps easier than ever",
         "Where Nostr is now and where he sees it going in the future",
         "The history of Nostr",
-        "Why it's important to create Nostr apps",
-        "Why it's important to maintain Nostr apps",
-        "The Nostr development ecosystem"
+        "How Nostr relates to Bitcoin Lightning network and permissionless money",
       ],
-      role: "At Soapbox, he's the bridge between our developers and the folks who use our apps. Always quick to answer a Shakespeare question, Derek leads our demos, tutorials, and has become the vibe coding expert of Nostr.",
-      apps: [
-        "🪺 NostrNests.com",
-        "🎙️ YakBak.app",
-        "🖼️ Zappix.app",
-        "🗓️ Plektos.app",
-        "🎶 ZapTrax.app",
-        "📈 Zaplytics.app"
-      ],
-      knownFor: "NostrNests, YakBak, Zappix, Plektos, ZapTrax, Zaplytics, Nostr evangelism, vibe coding.",
+      knownFor: "NostrNests, YakBak, Zappix, Plektos, ZapTrax, Zaplytics, all things vibe coding, Nostr, and Bitcoin.",
       presentations: [
         {
-          title: "Bitcoin 2024 Conference",
-          description: "The Future of Decentralized Social Media",
-          location: "Miami, FL",
-          date: "July 2024",
-          url: "#"
+          title: "Nostr for Beginners",
+          description: "NostrWorld",
+          location: "Riga, Latvia",
+          date: "August 2024",
+          url: "https://www.youtube.com/watch?v=NVm_jGdwTjQ"
         },
         {
-          title: "Nostr Documentary Feature",
-          description: "\"Social Media is broken. Can we fix it?\" by Max DeMarco",
+          title: "\"Social Media is broken. Can we fix it?\" by Max DeMarco",
+          description: "Nostr Documentary Feature",
           location: "Documentary Release",
           date: "2024",
-          url: "#"
+          url: "https://www.youtube.com/watch?v=aA-jiiepOrE"
         }
       ],
       pastAppearances: [
-        { title: "Bitcoin Magazine Podcast", url: "#" },
-        { title: "Nostr Talk", url: "#" },
-        { title: "Decentralized Everything", url: "#" },
-        { title: "Purple Pill Podcast", url: "#" },
-        { title: "The Nostr Show", url: "#" }
+        { title: "Fractal Bitcoin", url: "https://www.youtube.com/watch?v=2cZtEVikH98&pp=ygULZGVyZWsgcm9zcyw%3D" },
+        { title: "Bitcoin Made Simple", url: "https://www.youtube.com/watch?v=Qw00zFa-Boo&pp=ygULZGVyZWsgcm9zcyw%3D" },
+        { title: "Brandon Gentile", url: "https://www.youtube.com/watch?v=VLK2zsfC510" },
+        { title: "Ben Wehreman", url: "https://www.youtube.com/watch?v=_jrkUXDReqI&t=2s&pp=ygULZGVyZWsgcm9zcyw%3D" },
+        { title: "Soapbox Sessions", url: "https://sessions.soapbox.pub/" }
       ]
     }
   ];
@@ -193,9 +186,7 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="nostr" variant="outline" size="sm" asChild>
           <a href={profile.nostrUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <span className="hidden sm:inline">View on Nostr</span>
-            <span className="sm:hidden">Nostr</span>
-            <ExternalLink className="ml-1 h-3 w-3" />
+            View on Nostr <ExternalLink className="ml-1 h-3 w-3" />
           </a>
         </Button>
       );
@@ -205,8 +196,7 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="website" variant="outline" size="sm" asChild>
           <a href={profile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGlobe className="w-3 h-3 sm:mr-1" />
-            <span className="hidden sm:inline">Website</span>
+            <FaGlobe className="w-3 h-3 mr-1" /> Website
           </a>
         </Button>
       );
@@ -216,8 +206,7 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="linkedin" variant="outline" size="sm" asChild>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaLinkedin className="w-3 h-3 sm:mr-1" />
-            <span className="hidden sm:inline">LinkedIn</span>
+            <FaLinkedin className="w-3 h-3 mr-1" /> LinkedIn
           </a>
         </Button>
       );
@@ -227,8 +216,7 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="twitter" variant="outline" size="sm" asChild>
           <a href={profile.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaTwitter className="w-3 h-3 sm:mr-1" />
-            <span className="hidden sm:inline">Twitter</span>
+            <FaTwitter className="w-3 h-3 mr-1" /> Twitter
           </a>
         </Button>
       );
@@ -238,8 +226,7 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="github" variant="outline" size="sm" asChild>
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGithub className="w-3 h-3 sm:mr-1" />
-            <span className="hidden sm:inline">GitHub</span>
+            <FaGithub className="w-3 h-3 mr-1" /> GitHub
           </a>
         </Button>
       );
@@ -249,8 +236,7 @@ export default function MediaKit() {
       socialLinks.push(
         <Button key="gitlab" variant="outline" size="sm" asChild>
           <a href={profile.gitlab} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGitlab className="w-3 h-3 sm:mr-1" />
-            <span className="hidden sm:inline">GitLab</span>
+            <FaGitlab className="w-3 h-3 mr-1" /> GitLab
           </a>
         </Button>
       );
