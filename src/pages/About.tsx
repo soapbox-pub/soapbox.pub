@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamPostsFeed } from "@/components/TeamPostsFeed";
 import { TeamFollowPack } from "@/components/TeamFollowPack";
-import { ExternalLink, Heart, Users, Zap } from "lucide-react";
+import { ExternalLink, Heart, Users, Zap, FileText } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
 
@@ -52,8 +52,8 @@ export default function About() {
             </div>
           <div className="max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="/assets/images/riga-team.png" 
+              <img
+                src="/assets/images/riga-team.png"
                 alt="Soapbox team in Riga"
                 className="w-full h-96 md:h-[500px] object-cover"
               />
@@ -74,7 +74,7 @@ export default function About() {
                 Every project we build is guided by three core principles that shape how we approach technology and community.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {missionValues.map((value, index) => (
                 <Card key={index} className="text-center p-6 border-2 hover:border-azure/50 transition-colors">
@@ -102,6 +102,30 @@ export default function About() {
           </div>
         </section>
 
+        {/* Media Kit Section */}
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-4xl mx-auto text-center">
+            <Card className="border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
+              <CardContent className="p-8">
+                <div className="flex items-center justify-center mb-4">
+                  <FileText className="h-8 w-8 text-azure mr-3" />
+                  <h3 className="text-2xl font-bold text-gray-900">Media Kit</h3>
+                </div>
+                <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">
+                  Looking for team photos, press materials, or want to book our leadership for interviews?
+                  Our media kit has everything you need.
+                </p>
+                <Button size="lg" className="bg-azure hover:bg-azure-600 text-white" asChild>
+                  <Link to="/media-kit" className="inline-flex items-center">
+                    <FileText className="mr-2 h-5 w-5" />
+                    View Media Kit
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Team Posts Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-4xl mx-auto">
@@ -113,7 +137,7 @@ export default function About() {
                 Stay up to date with what our team members are sharing on Nostr.
               </p>
             </div>
-            
+
             <TeamPostsFeed />
           </div>
         </section>
@@ -125,7 +149,7 @@ export default function About() {
               Want to Get Involved?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Soapbox is seeking active contributors to join our volunteer and freelance community. 
+              Soapbox is seeking active contributors to join our volunteer and freelance community.
               We also offer paid mentorships for young or new developers who are passionate about free software.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
