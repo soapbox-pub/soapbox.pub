@@ -8,6 +8,36 @@ import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
 
+interface Presentation {
+  title: string;
+  description: string;
+  location: string;
+  date: string;
+  url: string;
+  videoUrl?: string;
+  imageUrl?: string;
+}
+
+interface TeamProfile {
+  name: string;
+  title: string;
+  picture: string;
+  nostrUrl: string;
+  website?: string;
+  linkedin?: string;
+  twitter?: string;
+  gitlab?: string;
+  github?: string;
+  bio: string;
+  subjects: string[];
+  knownFor: string;
+  presentations?: Presentation[];
+  pastAppearances: { title: string; url: string }[];
+  quote?: string;
+  role?: string;
+  apps?: string[];
+}
+
 export default function MediaKit() {
   const [showContact, setShowContact] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -31,7 +61,7 @@ export default function MediaKit() {
     }
   };
 
-  const teamProfiles = [
+  const teamProfiles: TeamProfile[] = [
     {
       name: "Alex Gleason",
       title: "CEO of Soapbox",
@@ -58,14 +88,16 @@ export default function MediaKit() {
           description: "Nostrasia",
           location: "Tokyo, Japan",
           date: "November 2023",
-          url: "https://www.youtube.com/watch?v=075wrIJ1vHg"
+          url: "https://www.youtube.com/watch?v=075wrIJ1vHg",
+          videoUrl: "https://www.youtube.com/embed/075wrIJ1vHg"
         },
         {
           title: "Building Communities on Nostr",
           description: "Nostr World",
           location: "Riga, Latvia",
           date: "August 2024",
-          url: "https://www.youtube.com/watch?v=iZyqVGHjDGo&t=4s"
+          url: "https://www.youtube.com/watch?v=iZyqVGHjDGo&t=4s",
+          videoUrl: "https://www.youtube.com/embed/iZyqVGHjDGo"
         },
         // {
         //   title: "The State of Decentralized Social Media",
@@ -110,14 +142,16 @@ export default function MediaKit() {
           description: "#HackForFreedom",
           location: "Lagos, Nigeria",
           date: "September 2024",
-          url: "#"
+          url: "#",
+          imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=225&fit=crop"
         },
         {
           title: "Sparking change: What free software can learn from successful social movements",
           description: "LibrePlanet 2019",
           location: "Boston, USA",
           date: "May 2019",
-          url: "https://www.youtube.com/watch?v=C1rAHJ1Ox94&list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF&index=8"
+          url: "https://www.youtube.com/watch?v=C1rAHJ1Ox94&list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF&index=8",
+          videoUrl: "https://www.youtube.com/embed/C1rAHJ1Ox94"
         }
       ],
       pastAppearances: [
@@ -150,14 +184,16 @@ export default function MediaKit() {
           description: "NostrWorld",
           location: "Riga, Latvia",
           date: "August 2024",
-          url: "https://www.youtube.com/watch?v=NVm_jGdwTjQ"
+          url: "https://www.youtube.com/watch?v=NVm_jGdwTjQ",
+          videoUrl: "https://www.youtube.com/embed/NVm_jGdwTjQ"
         },
         {
           title: "\"Social Media is broken. Can we fix it?\" by Max DeMarco",
           description: "Nostr Documentary Feature",
           location: "Documentary Release",
           date: "2024",
-          url: "https://www.youtube.com/watch?v=aA-jiiepOrE"
+          url: "https://www.youtube.com/watch?v=aA-jiiepOrE",
+          videoUrl: "https://www.youtube.com/embed/aA-jiiepOrE"
         }
       ],
       pastAppearances: [
@@ -179,7 +215,7 @@ export default function MediaKit() {
   ];
 
   // Helper function to render social links with icons
-  const renderSocialLinks = (profile: typeof teamProfiles[0]) => {
+  const renderSocialLinks = (profile: TeamProfile) => {
     const socialLinks: JSX.Element[] = [];
 
     if (profile.nostrUrl) {
@@ -452,16 +488,64 @@ export default function MediaKit() {
                       {profile.presentations && (
                         <div>
                           <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
-                          <div className="space-y-3">
+                          <div className="space-y-4">
                             {profile.presentations.map((presentation, presIndex) => (
-                              <div key={presIndex} className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                                <h5 className="font-medium text-gray-900 mb-1">
-                                  <a href={presentation.url} target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                                    {presentation.title}
-                                  </a>
-                                </h5>
-                                <p className="text-sm text-gray-600 mb-1">{presentation.description}</p>
-                                <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
+                              <div key={presIndex} className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+                                {/* Video/Image Section */}
+                                {(presentation.videoUrl || presentation.imageUrl) && (
+                                  <div className="relative">
+                                    {presentation.videoUrl ? (
+                                      <div
+                                        className="relative cursor-pointer group"
+                                        onClick={() => window.open(presentation.url, '_blank')}
+                                      >
+                                        <div className="aspect-video bg-gray-200">
+                                          <iframe
+                                            src={presentation.videoUrl}
+                                            title={presentation.title}
+                                            className="w-full h-full"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                          />
+                                        </div>
+                                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
+                                          <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                            <ExternalLink className="w-4 h-4 text-gray-700" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    ) : presentation.imageUrl && (
+                                      <div
+                                        className="relative cursor-pointer group"
+                                        onClick={() => window.open(presentation.url, '_blank')}
+                                      >
+                                        <div className="aspect-video bg-gray-200">
+                                          <img
+                                            src={presentation.imageUrl}
+                                            alt={presentation.title}
+                                            className="w-full h-full object-cover"
+                                          />
+                                        </div>
+                                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
+                                          <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                            <ExternalLink className="w-4 h-4 text-gray-700" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+
+                                {/* Content Section */}
+                                <div className="p-3">
+                                  <h5 className="font-medium text-gray-900 mb-1">
+                                    <a href={presentation.url} target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                                      {presentation.title}
+                                    </a>
+                                  </h5>
+                                  <p className="text-sm text-gray-600 mb-1">{presentation.description}</p>
+                                  <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
+                                </div>
                               </div>
                             ))}
                           </div>
