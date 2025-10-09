@@ -177,42 +177,87 @@ export default function MediaKit() {
       github: "https://github.com/derekross",
       bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek. He is passionate about building the Nostr ecosystem through education, evangelism, and creating useful applications.",
       subjects: [
-        "How Shakespeare makes creating Nostr apps easier than ever",
+        "Why decentralization matters",
+        "Nostr 101, and how to get started",
         "Where Nostr is now and where he sees it going in the future",
-        "The history of Nostr",
         "How Nostr relates to Bitcoin Lightning network and permissionless money",
+        "How Shakespeare makes creating Nostr apps easier than ever",
+        "The challenges of building on an open protocol",
+        "All things vibe coding",
       ],
-      knownFor: "NostrNests, YakBak, Zappix, Plektos, ZapTrax, Zaplytics, all things vibe coding, Nostr, and Bitcoin.",
+      knownFor: "Being Unofficial Nostr CEO, vibe coding, NostrNests, YakBak, Zappix, Plektos, ZapTrax, Zaplytics.",
       presentations: [
         {
           title: "Nostr for Beginners",
           description: "NostrWorld",
           location: "Riga, Latvia",
-          date: "August 2024",
+          date: "2024",
           url: "https://www.youtube.com/watch?v=NVm_jGdwTjQ",
           videoUrl: "https://www.youtube.com/embed/NVm_jGdwTjQ"
         },
         {
-          title: "\"Social Media is broken. Can we fix it?\"",
-          description: "Nostr Documentary Feature by Max DeMarco",
-          location: "Documentary Release",
+          title: "Open Communities in the Age of Control",
+          description: "Imagine IF Conference",
+          location: "Bitcoin Park",
+          date: "2025",
+          url: "https://www.youtube.com/watch?v=kbMfJtEHHLQ",
+          videoUrl: "https://www.youtube.com/embed/kbMfJtEHHLQ?si=PBPPm6MUn1mj9MZ7"
+        },
+        {
+          title: "Decentralizing Social Media",
+          description: "The Bitcoin Conference",
+          location: "Las Vegas, USA",
+          date: "2025",
+          url: "https://www.youtube.com/watch?v=WYIbTxlVS0Q",
+          videoUrl: "https://www.youtube.com/embed/WYIbTxlVS0Q?si=ARkZrz_OMa3ggWec"
+        },
+        {
+          title: "Nostr for Censorship Resistance",
+          description: "BTCPrague",
+          location: "Prague, Czech Republic",
           date: "2024",
-          url: "https://www.youtube.com/watch?v=aA-jiiepOrE",
-          videoUrl: "https://www.youtube.com/embed/aA-jiiepOrE"
+          url: "https://www.youtube.com/watch?v=J_k3fQThy3s",
+          videoUrl: "https://www.youtube.com/embed/J_k3fQThy3s?si=_LOsQRbA-T4xeTB"
+        },
+        {
+          title: "Nostr: All Your Silos Are Broken",
+          description: "BTCPrague",
+          location: "Prague, Czech Republic",
+          date: "2024",
+          url: "https://www.youtube.com/watch?v=SSFVR5ZXOuA",
+          videoUrl: "https://www.youtube.com/embed/SSFVR5ZXOuA?si=m2IgRbBF4itIQcEE"
+        },
+        {
+          title: "Nostr for Builders",
+          description: "The Bitcoin Conference",
+          location: "Miami, USA",
+          date: "2023",
+          url: "https://www.youtube.com/watch?v=heEZSr8QLew",
+          videoUrl: "https://www.youtube.com/embed/heEZSr8QLew?si=gZE-uf8uZMaCCyPZ"
+        // },
+        // {
+        //   title: "\"Social Media is broken. Can we fix it?\"",
+        //   description: "Nostr Documentary Feature by Max DeMarco",
+        //   location: "Documentary Release",
+        //   date: "2024",
+        //   url: "https://www.youtube.com/watch?v=aA-jiiepOrE",
+        //   videoUrl: "https://www.youtube.com/embed/aA-jiiepOrE"
         }
       ],
       pastAppearances: [
         { title: "Fractal Bitcoin", url: "https://www.youtube.com/watch?v=2cZtEVikH98&pp=ygULZGVyZWsgcm9zcyw%3D" },
         { title: "Bitcoin Made Simple", url: "https://www.youtube.com/watch?v=Qw00zFa-Boo&pp=ygULZGVyZWsgcm9zcyw%3D" },
+        { title: "Bitcoin Infinity Show", url: "https://www.youtube.com/watch?v=aFvog4Vg1zk" },
+        { title: "Plebchain Radio", url: "https://fountain.fm/episode/aDAFZeuYgAnqbPJRaUQh" },
         { title: "Soapbox Sessions", url: "https://sessions.soapbox.pub/" },
         { title: "Nostr Report", url: "https://www.youtube.com/watch?v=_Dk3NUSlmh8" },
+        { title: "Your Bitcoin Story", url: "https://www.youtube.com/watch?v=qN65bgJOah8" },
         { title: "Brandon Gentile", url: "https://www.youtube.com/watch?v=VLK2zsfC510" },
         { title: "Ben Wehreman", url: "https://www.youtube.com/watch?v=_jrkUXDReqI&t=2s&pp=ygULZGVyZWsgcm9zcyw%3D" },
         { title: "Jack Starling", url: "https://www.youtube.com/watch?v=p4yi0qvhxL4&pp=ygURZGVyZWsgcm9zcywgbm9zdHI%3D" }
       ]
     }
   ];
-
 
 
   // Media assets for the photo grid
@@ -652,6 +697,14 @@ export default function MediaKit() {
                     </div>
 
                     <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Bitcoin Magazine</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "Are You Even a Bitcoiner If You’re Not on Nostr?"
+                      </p>
+                      <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
                       <h5 className="font-medium text-gray-900 text-sm sm:text-base">Reuters</h5>
                       <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "Head of engineering at Trump's Truth Social app resigns"
@@ -838,7 +891,7 @@ export default function MediaKit() {
                           <span className="text-sm text-gray-500">October</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Released Shakespeare Act 2, transforming from a simple AI website builder into a full-featured
+                          Released <a href="https://soapbox.pub/blog/announcing-shakespeare-act-2" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Shakespeare Act 2</a>, transforming from a simple AI website builder into a full-featured
                           development environment with Git integration and local file storage.
                         </p>
                       </div>
@@ -852,8 +905,21 @@ export default function MediaKit() {
                           <span className="text-sm text-gray-500">July</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Introduced Shakespeare, an AI-powered website builder running entirely on the Nostr protocol,
+                          Introduced <a href="https://soapbox.pub/blog/announcing-shakespeare/" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Shakespeare</a>, an AI-powered website builder running entirely on the Nostr protocol,
                           making web development accessible through natural conversation.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2025 - Soapbox Joins AOS</span>
+                          <span className="text-sm text-gray-500">May</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Soapbox joined <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">And Other Stuff (AOS)</a>, a collective of open source developers committed to building the Nostr ecosystem
                         </p>
                       </div>
                     </div>
@@ -866,7 +932,7 @@ export default function MediaKit() {
                           <span className="text-sm text-gray-500">June</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Launched Ditto, a Nostr community server with moderation, spam filters, and enterprise features,
+                          Launched <a href="https://soapbox.pub/blog/announcing-ditto/" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Ditto</a>, a Nostr community server with moderation, spam filters, and enterprise features,
                           now powering multiple communities with thousands of users.
                         </p>
                       </div>
@@ -880,7 +946,7 @@ export default function MediaKit() {
                           <span className="text-sm text-gray-500">July</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Built the Mostr Bridge, connecting Fediverse and Nostr protocols for seamless cross-platform communication.
+                          Built the <a href="https://soapbox.pub/blog/mostr-fediverse-nostr-bridge/" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Mostr Bridge</a>, connecting Fediverse and Nostr protocols for seamless cross-platform communication.
                           This marked Soapbox's strategic pivot to focus on Nostr protocol, recognizing its potential for truly decentralized social media infrastructure.
                         </p>
                       </div>
@@ -905,11 +971,11 @@ export default function MediaKit() {
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
                           <span className="font-medium text-gray-900">2020 - Soapbox Formation</span>
-                          <span className="text-sm text-gray-500">Early</span>
+                          <span className="text-sm text-gray-500">June</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Alex Gleason founded Soapbox, initially focused on building innovative
-                          Fediverse applications and improving decentralized social media experiences.
+                          Alex Gleason founded <a href="https://soapbox.pub/blog/announcing-soapbox-fe-v1.0/" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Soapbox</a>, focused on building user-friendly and customizable
+                          Fediverse frontend with a community-centered experience.
                         </p>
                       </div>
                     </div>
@@ -922,8 +988,8 @@ export default function MediaKit() {
                           <span className="text-sm text-gray-500">August</span>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Launched Spinster, a women-focused social platform that demonstrated the early
-                          vision for building inclusive, community-driven social media experiences.
+                          Launched <a href="https://spinster.xyz/" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Spinster</a>, a women-focused social platform that demonstrated the early
+                          vision for building censorship-resistant, community-driven, and decentralized social media.
                         </p>
                       </div>
                     </div>
@@ -995,13 +1061,6 @@ export default function MediaKit() {
             </CardContent>
           </Card>
 
-          {/* Footer */}
-          <div className="mt-8 sm:mt-12 lg:mt-16 text-center text-gray-600">
-            <Separator className="mb-6 sm:mb-8" />
-            <p className="text-xs text-gray-500">
-              Vibed with <a href="https://soapbox.pub/mkstack" className="text-azure hover:underline">MKStack</a>
-            </p>
-          </div>
         </div>
       </div>
     </Layout>
