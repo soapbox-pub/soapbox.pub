@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ExternalLink, Users, Podcast, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
@@ -992,6 +992,62 @@ export default function MediaKit() {
                           vision for building censorship-resistant, community-driven, and decentralized social media.
                         </p>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Cross Promotion Section */}
+          <Card className="mt-8 sm:mt-12 border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50">
+            <CardContent className="p-6 sm:p-8">
+              <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Amplify Your Message</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    When you feature our team, you're not just getting expert insights—you're tapping into
+                    a network that genuinely values great content. We're happy to share compelling interviews
+                    and discussions with our engaged community across platforms.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-medium">200k+ followers</span> across our team's social platforms
+                      </p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-medium">Active Nostr community</span> of developers and builders
+                      </p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-medium">Shakespeare AI credits</span> available for podcast listeners
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center lg:text-right">
+                  <div className="bg-white rounded-lg p-4 sm:p-6 border border-violet-200 shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-bold text-violet-600 mb-2">200k+</div>
+                    <div className="text-sm text-gray-600 mb-3">Combined reach across platforms</div>
+                    <div className="flex flex-wrap justify-center lg:justify-end gap-2">
+                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
+                        Twitter/X
+                      </span>
+                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
+                        Nostr
+                      </span>
+                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
+                        LinkedIn
+                      </span>
+                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
+                        GitHub
+                      </span>
                     </div>
                   </div>
                 </div>
