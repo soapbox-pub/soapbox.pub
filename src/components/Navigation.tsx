@@ -44,6 +44,16 @@ export function Navigation() {
               Tools
             </Link>
             <Link
+              to="/communities"
+              className={`transition-colors ${
+                isActive('/communities')
+                  ? 'text-azure font-medium'
+                  : 'text-gray-600 hover:text-azure'
+              }`}
+            >
+              Communities
+            </Link>
+            <Link
               to="/showcase"
               className={`transition-colors ${
                 isActive('/showcase')
@@ -125,6 +135,17 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Tools
+              </Link>
+              <Link
+                to="/communities"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActive('/communities')
+                    ? 'text-azure bg-azure-50'
+                    : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Communities
               </Link>
               <Link
                 to="/showcase"
