@@ -8,7 +8,6 @@ import { ExternalLink, Users, Podcast, Mail, Copy, Check, Download, Calendar, Gl
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
-import { DerekProfilePreview } from "@/components/DerekProfilePreview";
 
 interface Presentation {
   title: string;
@@ -1033,7 +1032,13 @@ export default function MediaKit() {
                   </div>
                 </div>
                 <div className="text-center lg:text-right">
-                  <DerekProfilePreview />
+                  <div className="bg-white rounded-lg p-4 sm:p-6 border border-violet-200 shadow-sm">
+                    <img
+                      src="/assets/avatars/derek-followers.png"
+                      alt="Derek Ross follower count on Nostr"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
             </CardContent>
