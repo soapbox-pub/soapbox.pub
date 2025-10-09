@@ -1026,7 +1026,7 @@ export default function MediaKit() {
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-sm text-gray-700">
-                        <span className="font-medium">Shakespeare AI credits</span> available for podcast listeners
+                        <span className="font-medium">Ask about Shakespeare AI credits to try it for free!</span> 
                       </p>
                     </div>
                   </div>
