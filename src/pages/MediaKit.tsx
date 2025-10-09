@@ -73,7 +73,7 @@ export default function MediaKit() {
       linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
       gitlab: "https://gitlab.com/alexgleason",
       github: "https://github.com/alexgleason",
-      bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web.",
+      bio: "Alex has more than decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web.",
       subjects: [
         "What makes Shakespeare different from other AI web builders",
         "Integration with decentralized tech like Nostr and Bitcoin",
@@ -128,7 +128,7 @@ export default function MediaKit() {
       nostrUrl: "https://ditto.pub/@mk@ditto.pub",
       website: "https://marykatefain.com/",
       linkedin: "https://www.linkedin.com/in/marykatefain/",
-      twitter: "https://x.com/mkfain",
+      twitter: "https://x.com/mkay_fain",
       gitlab: "https://gitlab.com/marykatefain",
       github: "https://github.com/marykatefain",
       bio: "M. K. is a passionate advocate for digital freedom with a track record for building spaces for silenced groups online. In 2019 she founded Spinster, the largest women's community on the decentralized web. She is the former Communications Director for the Women's Liberation Front, and her work has been profiled in outlets such as the Atlantic and Vice.",
@@ -253,7 +253,7 @@ export default function MediaKit() {
         { title: "Nostr Report", url: "https://www.youtube.com/watch?v=_Dk3NUSlmh8" },
         { title: "Your Bitcoin Story", url: "https://www.youtube.com/watch?v=qN65bgJOah8" },
         { title: "Brandon Gentile", url: "https://www.youtube.com/watch?v=VLK2zsfC510" },
-        { title: "Ben Wehreman", url: "https://www.youtube.com/watch?v=_jrkUXDReqI&t=2s&pp=ygULZGVyZWsgcm9zcyw%3D" },
+        { title: "Ben Wehrman", url: "https://www.youtube.com/watch?v=_jrkUXDReqI&t=2s&pp=ygULZGVyZWsgcm9zcyw%3D" },
         { title: "Jack Starling", url: "https://www.youtube.com/watch?v=p4yi0qvhxL4&pp=ygURZGVyZWsgcm9zcywgbm9zdHI%3D" }
       ]
     }
