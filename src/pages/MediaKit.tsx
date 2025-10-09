@@ -8,6 +8,7 @@ import { ExternalLink, Users, Podcast, Mail, Copy, Check, Download, Calendar, Gl
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
+import { DerekProfilePreview } from "@/components/DerekProfilePreview";
 
 interface Presentation {
   title: string;
@@ -1032,24 +1033,7 @@ export default function MediaKit() {
                   </div>
                 </div>
                 <div className="text-center lg:text-right">
-                  <div className="bg-white rounded-lg p-4 sm:p-6 border border-violet-200 shadow-sm">
-                    <div className="text-2xl sm:text-3xl font-bold text-violet-600 mb-2">200k+</div>
-                    <div className="text-sm text-gray-600 mb-3">Combined reach across platforms</div>
-                    <div className="flex flex-wrap justify-center lg:justify-end gap-2">
-                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
-                        Twitter/X
-                      </span>
-                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
-                        Nostr
-                      </span>
-                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
-                        LinkedIn
-                      </span>
-                      <span className="inline-flex items-center px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
-                        GitHub
-                      </span>
-                    </div>
-                  </div>
+                  <DerekProfilePreview />
                 </div>
               </div>
             </CardContent>
