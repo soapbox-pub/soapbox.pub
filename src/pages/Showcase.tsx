@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { Plus, Search, Filter, Eye, EyeOff } from "lucide-react";
+import { Plus, Search, EyeOff } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -30,7 +30,7 @@ import { shuffleArray } from "@/lib/utils";
 import type { AppSubmission } from "@/hooks/useAppSubmissions";
 
 // App submission event kind
-const APP_SUBMISSION_KIND = 31733;
+// const APP_SUBMISSION_KIND = 31733;
 
 export default function Showcase() {
   const { user } = useCurrentUser();
@@ -132,7 +132,7 @@ export default function Showcase() {
   const filteredHiddenApps = filterApps(hiddenSubmissions);
 
   // Get all unique tags from approved and featured apps only (exclude pending, hidden, and template apps)
-  const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
+  // const allTags = Array.from(new Set([...featuredApps, ...approvedApps].flatMap(app => app.appTags))).sort();
 
   // Get the most popular tags based on frequency (excluding Halloween Hackathon 2025 tag)
   const tagCounts = new Map<string, number>();

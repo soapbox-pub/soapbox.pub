@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Search, BookOpen, Calendar } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/input';

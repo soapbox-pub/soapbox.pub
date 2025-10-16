@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mic, Send, ExternalLink, Youtube, Rss, Music, LogIn, UserPlus } from "lucide-react";
 import { useNostr } from "@nostrify/react";
-import { useNostrLogin } from "@nostrify/react/login";
+import { useNostrLogin, type NUser } from "@nostrify/react/login";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { useToast } from "@/hooks/useToast";
 import { nip19 } from "nostr-tools";
@@ -94,15 +94,15 @@ export default function SoapboxSessions() {
       if (user?.signer?.nip44) {
         try {
           // Create proper NIP-17 DM following NIP-59 gift wrap protocol
-          eventToPublish = await createNip17DM(user as any, recipientPubkey, fullMessage);
+          eventToPublish = await createNip17DM(user as NUser, recipientPubkey, fullMessage);
         } catch (nip17Error) {
           console.error("NIP-17 encryption failed, falling back to NIP-04:", nip17Error);
           // Fall back to NIP-04 encrypted kind 4 if NIP-17 fails
-          eventToPublish = await createNip04DM(user as any, recipientPubkey, fullMessage);
+          eventToPublish = await createNip04DM(user as NUser, recipientPubkey, fullMessage);
         }
       } else if (user?.signer?.nip04) {
         // For signers without NIP-44, use NIP-04 encrypted kind 4 DM
-        eventToPublish = await createNip04DM(user as any, recipientPubkey, fullMessage);
+        eventToPublish = await createNip04DM(user as NUser, recipientPubkey, fullMessage);
       } else {
         throw new Error('No encryption method available');
       }
@@ -131,7 +131,7 @@ export default function SoapboxSessions() {
   };
 
   // Helper function to create proper NIP-17 DM following the universes pattern
-  const createNip17DM = async (user: { signer: { nip44: { encrypt: (pubkey: string, content: string) => Promise<string> }, signEvent: (event: any) => Promise<any> } }, recipientPubkey: string, content: string) => {
+  const createNip17DM = async (user: NUser, recipientPubkey: string, content: string) => {
     if (!user?.signer?.nip44) {
       throw new Error('NIP-44 encryption not available for NIP-17');
     }
@@ -164,7 +164,7 @@ export default function SoapboxSessions() {
   };
 
   // Helper function to create NIP-04 encrypted kind 4 DM (fallback)
-  const createNip04DM = async (user: { signer: { nip04: { encrypt: (pubkey: string, content: string) => Promise<string> }, signEvent: (event: any) => Promise<any> } }, recipientPubkey: string, content: string) => {
+  const createNip04DM = async (user: NUser, recipientPubkey: string, content: string) => {
     if (!user?.signer?.nip04) {
       throw new Error('NIP-04 encryption not available');
     }

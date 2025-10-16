@@ -497,7 +497,7 @@ export default function DebuggingInShakespeare() {
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Nostr Event Debugging Example:</h4>
             <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "User profile updates aren't saving. Alby paranoid mode shows this event being created: {`{\"id\":\"abc123\",\"pubkey\":\"user_pubkey\",\"created_at\":1694123456,\"kind\":0,\"tags\":[],\"content\":\"{\\\"name\\\":\\\"John\\\",\\\"about\\\":\\\"Developer\\\"}\",\"sig\":\"signature\"}`}. Event structure looks correct for kind 0 (user metadata). Network tab shows WebSocket connection to relay successful. Need to check if relay is accepting the event or if there's a validation issue with the content format."
+              "User profile updates aren't saving. Alby paranoid mode shows this event being created: {JSON.stringify({"id":"abc123","pubkey":"user_pubkey","created_at":1694123456,"kind":0,"tags":[],"content":JSON.stringify({"name":"John","about":"Developer"}),"sig":"signature"})}. Event structure looks correct for kind 0 (user metadata). Network tab shows WebSocket connection to relay successful. Need to check if relay is accepting the event or if there's a validation issue with the content format."
             </p>
           </CardContent>
         </Card>
@@ -531,7 +531,7 @@ export default function DebuggingInShakespeare() {
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Complete Nostr Debugging Report Example:</h4>
             <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
-              "Direct messages not sending between users. Alby shows event: {`{\"kind\":4,\"tags\":[[\"p\",\"recipient_pubkey\"]],\"content\":\"encrypted_content_here\",\"created_at\":1694123456}`}. Event structure appears correct for kind 4 (encrypted DM). WebSocket shows successful connection to 3 relays. Issue: recipient not receiving messages. Suspect: encryption/decryption mismatch or relay propagation delay. Need to verify NIP-04 encryption implementation and test with different relay sets."
+              "Direct messages not sending between users. Alby shows event: {JSON.stringify({"kind":4,"tags":[["p","recipient_pubkey"]],"content":"encrypted_content_here","created_at":1694123456})}. Event structure appears correct for kind 4 (encrypted DM). WebSocket shows successful connection to 3 relays. Issue: recipient not receiving messages. Suspect: encryption/decryption mismatch or relay propagation delay. Need to verify NIP-04 encryption implementation and test with different relay sets."
             </p>
           </CardContent>
         </Card>

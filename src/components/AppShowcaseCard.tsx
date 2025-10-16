@@ -15,9 +15,7 @@ import {
   XCircle,
   User,
   Home,
-  HomeIcon,
-  Contact,
-  Copy
+  Contact
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -29,6 +27,7 @@ import type { AppSubmission } from '@/hooks/useAppSubmissions';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
 import { useNostr } from '@nostrify/react';
+import type { NostrEvent } from '@nostrify/nostrify';
 import { useAuthor } from '@/hooks/useAuthor';
 import { nip19 } from 'nostr-tools';
 import { toast } from '@/hooks/useToast';
@@ -135,9 +134,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           limit: 1
         }]);
 
-        const currentHomepageList = currentHomepageLists.reduce((latest: any, current: any) =>
+        const currentHomepageList = currentHomepageLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
-          null
+          null as NostrEvent | null
         );
 
         // Get current homepage app coordinates
@@ -178,9 +177,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
             limit: 1
           }]);
 
-          const currentApprovedList = currentApprovedLists.reduce((latest: any, current: any) =>
+          const currentApprovedList = currentApprovedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
             !latest || current.created_at > latest.created_at ? current : latest,
-            null
+            null as NostrEvent | null
           );
 
           // Get current approved app coordinates
@@ -217,9 +216,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           limit: 1
         }]);
 
-        const currentFeaturedList = currentFeaturedLists.reduce((latest: any, current: any) =>
+        const currentFeaturedList = currentFeaturedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
-          null
+          null as NostrEvent | null
         );
 
         // Get current featured app coordinates
@@ -260,9 +259,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
             limit: 1
           }]);
 
-          const currentApprovedList = currentApprovedLists.reduce((latest: any, current: any) =>
+          const currentApprovedList = currentApprovedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
             !latest || current.created_at > latest.created_at ? current : latest,
-            null
+            null as NostrEvent | null
           );
 
           // Get current approved app coordinates
@@ -299,9 +298,9 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           limit: 1
         }]);
 
-        const currentApprovedList = currentApprovedLists.reduce((latest: any, current: any) =>
+        const currentApprovedList = currentApprovedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
-          null
+          null as NostrEvent | null
         );
 
         // Get current approved app coordinates

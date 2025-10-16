@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Trophy, Skull, Ghost, Candy } from 'lucide-react';
+import { ExternalLink, Github, Trophy } from 'lucide-react';
 import type { HalloweenSubmission } from '@/hooks/useHalloweenSubmissions';
 
 interface HalloweenShowcaseCardProps {
@@ -10,7 +10,7 @@ interface HalloweenShowcaseCardProps {
   showModerationInfo?: boolean;
 }
 
-const categoryColors = {
+const _categoryColors = {
   'design': 'bg-orange-500',
   'function': 'bg-purple-500',
   'judges-choice': 'bg-red-500'
