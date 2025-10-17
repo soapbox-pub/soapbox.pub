@@ -1,25 +1,10 @@
 import { Link } from "react-router-dom";
-import { User } from "lucide-react";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { EmailSignupForm } from "@/components/EmailSignupForm";
 import { RelaySelector } from "@/components/RelaySelector";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import LoginDialog from "@/components/auth/LoginDialog";
-import SignupDialog from "@/components/auth/SignupDialog";
-import { useLoggedInAccounts } from "@/hooks/useLoggedInAccounts";
-import { genUserName } from "@/lib/genUserName";
-import { useState } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { currentUser } = useLoggedInAccounts();
-  const [loginDialogOpen, setLoginDialogOpen] = useState(false);
-  const [signupDialogOpen, setSignupDialogOpen] = useState(false);
-
-  const handleLogin = () => {
-    setLoginDialogOpen(false);
-    setSignupDialogOpen(false);
-  };
 
   return (
     <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
@@ -40,27 +25,9 @@ export function Footer() {
               <h4 className="font-semibold text-sm uppercase tracking-wide">Stay Updated</h4>
               <EmailSignupForm tags={['Soapbox']} />
 
-              {/* Profile and Relay Selector Section */}
-              <div className="flex items-center gap-3 pt-2">
-                <div className="flex-shrink-0">
-                  <Avatar
-                    className="h-8 w-8 cursor-pointer hover:ring-2 hover:ring-white/20 transition-all"
-                    onClick={() => setLoginDialogOpen(true)}
-                  >
-                    {currentUser && currentUser.metadata?.picture ? (
-                      <AvatarImage
-                        src={currentUser.metadata.picture}
-                        alt={currentUser.metadata.name || genUserName(currentUser.pubkey)}
-                      />
-                    ) : null}
-                    <AvatarFallback className="bg-gray-700 text-gray-300">
-                      <User className="h-4 w-4" />
-                    </AvatarFallback>
-                  </Avatar>
-                </div>
-                <div className="flex-1">
-                  <RelaySelector className="w-full" />
-                </div>
+              {/* Relay Selector Section */}
+              <div className="pt-2">
+                <RelaySelector className="w-full" />
               </div>
             </div>
           </div>
@@ -105,19 +72,6 @@ export function Footer() {
           <p>♡{currentYear} Soapbox Technology. Please <a className="underline hover:text-white transition-colors" href="https://gitlab.com/soapbox-pub/soapbox.pub" target="_blank" rel="noopener noreferrer">copy and share</a>.</p>
         </div>
       </div>
-
-      {/* Login/Signup Dialogs */}
-      <LoginDialog
-        isOpen={loginDialogOpen}
-        onClose={() => setLoginDialogOpen(false)}
-        onLogin={handleLogin}
-        onSignup={() => setSignupDialogOpen(true)}
-      />
-
-      <SignupDialog
-        isOpen={signupDialogOpen}
-        onClose={() => setSignupDialogOpen(false)}
-      />
     </footer>
   );
 }
