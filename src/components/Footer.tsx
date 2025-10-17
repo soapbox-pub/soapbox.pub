@@ -40,11 +40,8 @@ export function Footer() {
               <h4 className="font-semibold text-sm uppercase tracking-wide">Stay Updated</h4>
               <EmailSignupForm tags={['Soapbox']} />
 
-              {/* Relay Selector and Profile Section */}
+              {/* Profile and Relay Selector Section */}
               <div className="flex items-center gap-3 pt-2">
-                <div className="flex-1">
-                  <RelaySelector className="w-full" />
-                </div>
                 <div className="flex-shrink-0">
                   <Avatar
                     className="h-8 w-8 cursor-pointer hover:ring-2 hover:ring-white/20 transition-all"
@@ -60,6 +57,9 @@ export function Footer() {
                       <User className="h-4 w-4" />
                     </AvatarFallback>
                   </Avatar>
+                </div>
+                <div className="flex-1">
+                  <RelaySelector className="w-full" />
                 </div>
               </div>
             </div>
