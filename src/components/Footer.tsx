@@ -6,13 +6,13 @@ import { RelaySelector } from "@/components/RelaySelector";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import LoginDialog from "@/components/auth/LoginDialog";
 import SignupDialog from "@/components/auth/SignupDialog";
-import { useCurrentUser } from "@/hooks/useCurrentUser";
+import { useLoggedInAccounts } from "@/hooks/useLoggedInAccounts";
 import { genUserName } from "@/lib/genUserName";
 import { useState } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { user, metadata } = useCurrentUser();
+  const { currentUser } = useLoggedInAccounts();
   const [loginDialogOpen, setLoginDialogOpen] = useState(false);
   const [signupDialogOpen, setSignupDialogOpen] = useState(false);
 
@@ -47,10 +47,10 @@ export function Footer() {
                     className="h-8 w-8 cursor-pointer hover:ring-2 hover:ring-white/20 transition-all"
                     onClick={() => setLoginDialogOpen(true)}
                   >
-                    {user && metadata?.picture ? (
+                    {currentUser && currentUser.metadata?.picture ? (
                       <AvatarImage
-                        src={metadata.picture}
-                        alt={metadata.name || genUserName(user.pubkey)}
+                        src={currentUser.metadata.picture}
+                        alt={currentUser.metadata.name || genUserName(currentUser.pubkey)}
                       />
                     ) : null}
                     <AvatarFallback className="bg-gray-700 text-gray-300">
