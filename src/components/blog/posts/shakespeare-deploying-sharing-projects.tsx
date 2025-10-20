@@ -307,10 +307,10 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card> */}
 
         {/* Method 3: Deploy with GitHub Pages */}
-        <Card id="deploy-github" className="mb-8 border-green-200 dark:border-green-800">
+        <Card id="deploy-github" className="mb-8 border-slate-200 dark:border-slate-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
-              <Github className="h-8 w-8 text-green-600" />
+              <Github className="h-8 w-8 text-slate-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                 3. Deploy with GitHub Pages
               </h3>
@@ -321,7 +321,7 @@ export default function ShakespeareDeployingSharingProjects() {
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">1</Badge>
+                <Badge variant="secondary" className="bg-slate-100 text-slate-800 border-slate-300 mt-1">1</Badge>
                 <div>
                   <p className="text-gray-600 dark:text-gray-400">
                     Connect your repo to GitHub (see the <a href="/blog/shakespeare-git-guide" className="text-blue-600 hover:underline">version control resource blog</a>)
@@ -329,7 +329,7 @@ export default function ShakespeareDeployingSharingProjects() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">2</Badge>
+                <Badge variant="secondary" className="bg-slate-100 text-slate-800 border-slate-300 mt-1">2</Badge>
                 <div>
                   <p className="text-gray-600 dark:text-gray-400">
                     Follow these instructions for setting up GitHub Pages:
@@ -347,11 +347,11 @@ export default function ShakespeareDeployingSharingProjects() {
               </div>
             </div>
 
-            <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-6">
-              <p className="font-semibold text-green-900 dark:text-green-100 mb-2">
+            <div className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-6">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 mb-2">
                 💡 GitHub Pages benefits:
               </p>
-              <ul className="text-green-800 dark:text-green-200 space-y-1">
+              <ul className="text-slate-800 dark:text-slate-200 space-y-1">
                 <li>• Free for public repositories</li>
                 <li>• Custom domain support</li>
                 <li>• Automatic HTTPS</li>
