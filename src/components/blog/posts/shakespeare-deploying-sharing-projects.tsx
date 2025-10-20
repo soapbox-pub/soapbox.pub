@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
 import { Badge } from '../../ui/badge';
-import { Rocket, Github, GitlabIcon as Gitlab, ExternalLink } from 'lucide-react';
+import { Rocket, Github, GitlabIcon as Gitlab, ExternalLink, Globe } from 'lucide-react';
 import { YouTubeEmbed } from '../../YouTubeEmbed';
 
 export interface BlogPostMeta {
@@ -51,11 +51,27 @@ export default function ShakespeareDeployingSharingProjects() {
         />
       </div>
 
+      {/* Table of Contents */}
+      <div className="not-prose mb-12">
+        <Card className="border-gray-200 dark:border-gray-800">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Table of Contents</h2>
+            <nav className="space-y-2">
+              <a href="#deploy-shakespeare" className="block text-blue-600 hover:underline">1. Deploy with Shakespeare</a>
+              <a href="#deploy-netlify" className="block text-blue-600 hover:underline">2. Deploy with Netlify</a>
+              <a href="#deploy-vercel" className="block text-blue-600 hover:underline">3. Deploy with Vercel</a>
+              <a href="#deploy-github" className="block text-blue-600 hover:underline">4. Deploy with GitHub Pages</a>
+              <a href="#deploy-gitlab" className="block text-blue-600 hover:underline">5. Deploy with GitLab Pages</a>
+            </nav>
+          </CardContent>
+        </Card>
+      </div>
+
       {/* Deployment Methods */}
       <div className="not-prose mb-12">
 
         {/* Method 1: Deploy with Shakespeare */}
-        <Card className="mb-8 border-blue-200 dark:border-blue-800">
+        <Card id="deploy-shakespeare" className="mb-8 border-blue-200 dark:border-blue-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Rocket className="h-8 w-8 text-blue-600" />
@@ -114,13 +130,124 @@ export default function ShakespeareDeployingSharingProjects() {
           </CardContent>
         </Card>
 
-        {/* Method 2: Deploy with GitHub Pages */}
-        <Card className="mb-8 border-green-200 dark:border-green-800">
+        {/* Method 2: Deploy with Netlify */}
+        <Card id="deploy-netlify" className="mb-8 border-teal-200 dark:border-teal-800">
+          <CardContent className="p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Globe className="h-8 w-8 text-teal-600" />
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                2. Deploy with Netlify
+              </h3>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              Deploy your project to Netlify for professional hosting with custom domains and advanced features.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-teal-100 text-teal-800 border-teal-300 mt-1">1</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Have an account on Netlify at <a href="https://netlify.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">netlify.com</a>
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-teal-100 text-teal-800 border-teal-300 mt-1">2</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    In Shakespeare, go to Settings → Deployment and add Netlify, then connect your account
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-teal-100 text-teal-800 border-teal-300 mt-1">3</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Click "Deploy" and choose Netlify from the dropdown to deploy your project
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 rounded-lg p-6">
+              <p className="font-semibold text-teal-900 dark:text-teal-100 mb-2">
+                🌐 Netlify benefits:
+              </p>
+              <ul className="text-teal-800 dark:text-teal-200 space-y-1">
+                <li>• Global CDN for fast loading</li>
+                <li>• Custom domain support</li>
+                <li>• Automatic HTTPS</li>
+                <li>• Form handling and serverless functions</li>
+                <li>• Branch previews and rollbacks</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Method 3: Deploy with Vercel */}
+        <Card id="deploy-vercel" className="mb-8 border-black dark:border-white">
+          <CardContent className="p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Globe className="h-8 w-8 text-black dark:text-white" />
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                3. Deploy with Vercel
+              </h3>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              Deploy your project to Vercel for edge-optimized hosting with excellent performance and developer experience.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-gray-100 text-gray-800 border-gray-300 mt-1">1</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Have an account on Vercel at <a href="https://vercel.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-gray-100 text-gray-800 border-gray-300 mt-1">2</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    In Shakespeare, go to Settings → Deployment and add Vercel, then connect your account
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-gray-100 text-gray-800 border-gray-300 mt-1">3</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Click "Deploy" and choose Vercel from the dropdown to deploy your project
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
+              <p className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                ⚡ Vercel benefits:
+              </p>
+              <ul className="text-gray-800 dark:text-gray-200 space-y-1">
+                <li>• Edge network for optimal performance</li>
+                <li>• Custom domain support</li>
+                <li>• Automatic HTTPS</li>
+                <li>• Serverless functions and API routes</li>
+                <li>• Preview deployments for every commit</li>
+                <li>• Built-in analytics and monitoring</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Method 4: Deploy with GitHub Pages */}
+        <Card id="deploy-github" className="mb-8 border-green-200 dark:border-green-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Github className="h-8 w-8 text-green-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                2. Deploy with GitHub Pages
+                4. Deploy with GitHub Pages
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -169,13 +296,13 @@ export default function ShakespeareDeployingSharingProjects() {
           </CardContent>
         </Card>
 
-        {/* Method 3: Deploy with GitLab Pages */}
-        <Card className="mb-8 border-orange-200 dark:border-orange-800">
+        {/* Method 5: Deploy with GitLab Pages */}
+        <Card id="deploy-gitlab" className="mb-8 border-orange-200 dark:border-orange-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Gitlab className="h-8 w-8 text-orange-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                3. Deploy with GitLab Pages
+                5. Deploy with GitLab Pages
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
