@@ -186,10 +186,10 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card>
 
         {/* Method 3: Deploy with Vercel */}
-        <Card id="deploy-vercel" className="mb-8 border-black dark:border-white">
+        <Card id="deploy-vercel" className="mb-8 border-purple-200 dark:border-purple-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
-              <Globe className="h-8 w-8 text-black dark:text-white" />
+              <Globe className="h-8 w-8 text-purple-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                 3. Deploy with Vercel
               </h3>
@@ -200,7 +200,7 @@ export default function ShakespeareDeployingSharingProjects() {
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="bg-gray-100 text-gray-800 border-gray-300 mt-1">1</Badge>
+                <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">1</Badge>
                 <div>
                   <p className="text-gray-600 dark:text-gray-400">
                     Have an account on Vercel at <a href="https://vercel.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
@@ -208,7 +208,7 @@ export default function ShakespeareDeployingSharingProjects() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="bg-gray-100 text-gray-800 border-gray-300 mt-1">2</Badge>
+                <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">2</Badge>
                 <div>
                   <p className="text-gray-600 dark:text-gray-400">
                     In Shakespeare, go to Settings → Deployment and add Vercel, then connect your account
@@ -216,7 +216,7 @@ export default function ShakespeareDeployingSharingProjects() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="bg-gray-100 text-gray-800 border-gray-300 mt-1">3</Badge>
+                <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">3</Badge>
                 <div>
                   <p className="text-gray-600 dark:text-gray-400">
                     Click "Deploy" and choose Vercel from the dropdown to deploy your project
@@ -225,11 +225,11 @@ export default function ShakespeareDeployingSharingProjects() {
               </div>
             </div>
 
-            <div className="bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
-              <p className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            <div className="bg-purple-50 dark:bg-purple-950 border border-purple-200 dark:border-purple-800 rounded-lg p-6">
+              <p className="font-semibold text-purple-900 dark:text-purple-100 mb-2">
                 ⚡ Vercel benefits:
               </p>
-              <ul className="text-gray-800 dark:text-gray-200 space-y-1">
+              <ul className="text-purple-800 dark:text-purple-200 space-y-1">
                 <li>• Edge network for optimal performance</li>
                 <li>• Custom domain support</li>
                 <li>• Automatic HTTPS</li>
