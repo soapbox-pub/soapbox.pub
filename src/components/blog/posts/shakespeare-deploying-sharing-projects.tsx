@@ -58,10 +58,11 @@ export default function ShakespeareDeployingSharingProjects() {
             <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Table of Contents</h2>
             <nav className="space-y-2">
               <a href="#deploy-shakespeare" className="block text-blue-600 hover:underline">1. Deploy with Shakespeare</a>
-              <a href="#deploy-netlify" className="block text-blue-600 hover:underline">2. Deploy with Netlify</a>
-              <a href="#deploy-vercel" className="block text-blue-600 hover:underline">3. Deploy with Vercel</a>
-              <a href="#deploy-github" className="block text-blue-600 hover:underline">4. Deploy with GitHub Pages</a>
-              <a href="#deploy-gitlab" className="block text-blue-600 hover:underline">5. Deploy with GitLab Pages</a>
+              <a href="#deploy-nsite" className="block text-blue-600 hover:underline">2. Deploy with Nsite</a>
+              <a href="#deploy-netlify" className="block text-blue-600 hover:underline">3. Deploy with Netlify</a>
+              <a href="#deploy-vercel" className="block text-blue-600 hover:underline">4. Deploy with Vercel</a>
+              <a href="#deploy-github" className="block text-blue-600 hover:underline">5. Deploy with GitHub Pages</a>
+              <a href="#deploy-gitlab" className="block text-blue-600 hover:underline">6. Deploy with GitLab Pages</a>
             </nav>
           </CardContent>
         </Card>
@@ -130,13 +131,77 @@ export default function ShakespeareDeployingSharingProjects() {
           </CardContent>
         </Card>
 
-        {/* Method 2: Deploy with Netlify */}
+        {/* Method 2: Deploy with Nsite */}
+        <Card id="deploy-nsite" className="mb-8 border-violet-200 dark:border-violet-800">
+          <CardContent className="p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Globe className="h-8 w-8 text-violet-600" />
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                2. Deploy with Nsite
+              </h3>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              Deploy your static website to Nostr blossom servers. Nsite allows you to host websites on the decentralized Nostr network, tied to your npub (Nostr public key).
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">1</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Build your project in Shakespeare and download the static files
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">2</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Visit <a href="https://nsite.lol" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">nsite.lol</a> and connect your Nostr account
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">3</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Upload your static website files to publish on Nostr blossom servers
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">4</Badge>
+                <div>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Your site becomes accessible via your npub - visitors can enter your npub to view your published website
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-violet-50 dark:bg-violet-950 border border-violet-200 dark:border-violet-800 rounded-lg p-6">
+              <p className="font-semibold text-violet-900 dark:text-violet-100 mb-2">
+                🌐 Nsite benefits:
+              </p>
+              <ul className="text-violet-800 dark:text-violet-200 space-y-1">
+                <li>• Decentralized hosting on Nostr network</li>
+                <li>• Website tied to your npub identity</li>
+                <li>• Censorship-resistant hosting</li>
+                <li>• No traditional DNS required</li>
+                <li>• Direct connection to Nostr ecosystem</li>
+                <li>• Gateway access for easy viewing</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Method 3: Deploy with Netlify */}
         <Card id="deploy-netlify" className="mb-8 border-teal-200 dark:border-teal-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="h-8 w-8 text-teal-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                2. Deploy with Netlify
+                3. Deploy with Netlify
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -185,13 +250,13 @@ export default function ShakespeareDeployingSharingProjects() {
           </CardContent>
         </Card>
 
-        {/* Method 3: Deploy with Vercel */}
+        {/* Method 4: Deploy with Vercel */}
         <Card id="deploy-vercel" className="mb-8 border-purple-200 dark:border-purple-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="h-8 w-8 text-purple-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                3. Deploy with Vercel
+                4. Deploy with Vercel
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -241,13 +306,13 @@ export default function ShakespeareDeployingSharingProjects() {
           </CardContent>
         </Card>
 
-        {/* Method 4: Deploy with GitHub Pages */}
+        {/* Method 5: Deploy with GitHub Pages */}
         <Card id="deploy-github" className="mb-8 border-green-200 dark:border-green-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Github className="h-8 w-8 text-green-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                4. Deploy with GitHub Pages
+                5. Deploy with GitHub Pages
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -296,13 +361,13 @@ export default function ShakespeareDeployingSharingProjects() {
           </CardContent>
         </Card>
 
-        {/* Method 5: Deploy with GitLab Pages */}
+        {/* Method 6: Deploy with GitLab Pages */}
         <Card id="deploy-gitlab" className="mb-8 border-orange-200 dark:border-orange-800">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Gitlab className="h-8 w-8 text-orange-600" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                5. Deploy with GitLab Pages
+                6. Deploy with GitLab Pages
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
