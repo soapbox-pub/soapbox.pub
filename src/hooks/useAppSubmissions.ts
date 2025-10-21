@@ -102,11 +102,12 @@ export function useAppSubmissions() {
         limit: 10
       }]);
 
-      // Get reporting events for hidden apps (NIP-56 kind 1984)
-      const reportEvents = await nostr.query([{
-        kinds: [1984],
+      // Get hidden app lists from moderators (NIP-51 kind 30267)
+      const hiddenLists = await nostr.query([{
+        kinds: [30267],
         authors: [MODERATOR_HEX],
-        limit: 1000
+        '#d': ['soapbox-hidden-apps'],
+        limit: 10
       }]);
 
       // Process submissions and apply moderation
@@ -169,47 +170,18 @@ export function useAppSubmissions() {
           .forEach(tag => homepageAppCoords.add(tag[1]));
       }
 
-      // Get hidden app coordinates from reports
+      // Get the latest hidden list
+      const latestHiddenList = hiddenLists.reduce((latest, current) =>
+        !latest || current.created_at > latest.created_at ? current : latest,
+        null as NostrEvent | null
+      );
+
+      // Extract hidden app coordinates from the list
       const hiddenAppCoords = new Set<string>();
-      const appReports = new Map<string, { hidden: number; unhidden: number }>();
-
-      for (const report of reportEvents) {
-        // Look for app coordinate in 'a' tags
-        const aTag = report.tags.find(tag => tag[0] === 'a');
-        if (!aTag || !aTag[1]) continue;
-
-        const appCoord = aTag[1];
-        const reportType = aTag[2];
-
-        // Check if this is a moderation label
-        const moderationLabel = report.tags.find(tag =>
-          tag[0] === 'l' && tag[2] === 'soapbox.moderation'
-        )?.[1];
-
-        if (moderationLabel === 'hidden' && (reportType === 'spam' || reportType === 'other')) {
-          if (!appReports.has(appCoord)) {
-            appReports.set(appCoord, { hidden: 0, unhidden: 0 });
-          }
-          appReports.get(appCoord)!.hidden = Math.max(
-            appReports.get(appCoord)!.hidden,
-            report.created_at
-          );
-        } else if (moderationLabel === 'unhidden' && reportType === 'other') {
-          if (!appReports.has(appCoord)) {
-            appReports.set(appCoord, { hidden: 0, unhidden: 0 });
-          }
-          appReports.get(appCoord)!.unhidden = Math.max(
-            appReports.get(appCoord)!.unhidden,
-            report.created_at
-          );
-        }
-      }
-
-      // Determine which apps are currently hidden (latest action wins)
-      for (const [appCoord, reports] of appReports) {
-        if (reports.hidden > reports.unhidden) {
-          hiddenAppCoords.add(appCoord);
-        }
+      if (latestHiddenList) {
+        latestHiddenList.tags
+          .filter(tag => tag[0] === 'a')
+          .forEach(tag => hiddenAppCoords.add(tag[1]));
       }
 
       // Convert to AppSubmission objects

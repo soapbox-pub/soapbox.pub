@@ -332,15 +332,43 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
         });
 
       } else if (action === 'hide' || action === 'unhide') {
-        // Create NIP-56 report event
+        // Get current hidden apps list
+        const currentHiddenLists = await nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-hidden-apps'],
+          limit: 1
+        }]);
+
+        const currentHiddenList = currentHiddenLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
+          !latest || current.created_at > latest.created_at ? current : latest,
+          null as NostrEvent | null
+        );
+
+        // Get current hidden app coordinates
+        const currentHiddenApps = new Set<string>();
+        if (currentHiddenList) {
+          currentHiddenList.tags
+            .filter(tag => tag[0] === 'a')
+            .forEach(tag => currentHiddenApps.add(tag[1]));
+        }
+
+        // Update the hidden set
+        if (action === 'hide') {
+          currentHiddenApps.add(appCoordinate);
+        } else {
+          currentHiddenApps.delete(appCoordinate);
+        }
+
+        // Publish updated hidden apps list
         publishEvent({
-          kind: 1984,
-          content: `App ${action}den by moderator: "${app.appName}"`,
+          kind: 30267,
+          content: 'Soapbox hidden apps managed by moderators',
           tags: [
-            ['a', appCoordinate, action === 'hide' ? 'spam' : 'other'],
-            ['p', app.pubkey],
-            ['L', 'soapbox.moderation'],
-            ['l', action === 'hide' ? 'hidden' : 'unhidden', 'soapbox.moderation']
+            ['d', 'soapbox-hidden-apps'],
+            ['title', 'Soapbox Hidden Apps'],
+            ['description', 'Apps hidden from public view in the Soapbox showcase'],
+            ...Array.from(currentHiddenApps).map(coord => ['a', coord])
           ],
           created_at: Math.floor(Date.now() / 1000)
         });
