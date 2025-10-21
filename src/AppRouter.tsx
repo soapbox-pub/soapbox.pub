@@ -5,7 +5,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Tools from "./pages/Tools";
-import Communities from "./pages/Communities";
+// import Communities from "./pages/Communities";
 import Showcase from "./pages/Showcase";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
@@ -44,7 +44,7 @@ export function AppRouter() {
         <Route path="/mkstack" element={<MKStack />} />
         {/* Backwards compatibility redirect */}
         <Route path="/tools/mkstack" element={<Navigate to="/mkstack" replace />} />
-        <Route path="/communities" element={<Communities />} />
+        {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />

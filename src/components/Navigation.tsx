@@ -43,7 +43,7 @@ export function Navigation() {
             >
               Tools
             </Link>
-            <Link
+            {/* <Link
               to="/communities"
               className={`transition-colors ${
                 isActive('/communities')
@@ -52,7 +52,7 @@ export function Navigation() {
               }`}
             >
               Communities
-            </Link>
+            </Link> */}
             <Link
               to="/showcase"
               className={`transition-colors ${
@@ -136,7 +136,7 @@ export function Navigation() {
               >
                 Tools
               </Link>
-              <Link
+              {/* <Link
                 to="/communities"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActive('/communities')
@@ -146,7 +146,7 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Communities
-              </Link>
+              </Link> */}
               <Link
                 to="/showcase"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
