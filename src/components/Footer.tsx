@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { EmailSignupForm } from "@/components/EmailSignupForm";
 import { RelaySelector } from "@/components/RelaySelector";
+import { UserFooterSection } from "@/components/UserFooterSection";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-5 gap-8">
+        <div className="grid md:grid-cols-6 gap-8">
           <div className="md:col-span-2 space-y-6">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
@@ -65,6 +66,10 @@ export function Footer() {
               <li><a href="https://gitlab.com/groups/soapbox-pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitLab</a></li>
               <li><a href="https://njump.me/npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostr</a></li>
             </ul>
+          </div>
+
+          <div>
+            <UserFooterSection />
           </div>
         </div>
 
