@@ -468,7 +468,7 @@ ollama serve
                     <li>2. Scroll to <strong>"Add Custom Provider"</strong></li>
                     <li>3. Click to expand the custom provider section</li>
                     <li>4. Enter the following configuration:</li>
-                    <li className="ml-4">• <strong>Provider Name:</strong> "Ollama Local"</li>
+                    <li className="ml-4">• <strong>Provider Name:</strong> "ollama"</li>
                     <li className="ml-4">• <strong>API Endpoint:</strong> <code>http://localhost:11434/v1</code></li>
                   </ol>
                 </div>
