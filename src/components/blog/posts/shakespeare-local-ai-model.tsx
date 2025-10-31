@@ -468,26 +468,8 @@ ollama serve
                     <li>2. Scroll to <strong>"Add Custom Provider"</strong></li>
                     <li>3. Click to expand the custom provider section</li>
                     <li>4. Enter the following configuration:</li>
-                    <li className="ml-4">• <strong>Provider Name:</strong> "Ollama Local"</li>
-                    <li className="ml-4">• <strong>API Endpoint:</strong> <code>http://localhost:11434</code></li>
-                    <li className="ml-4">• <strong>Model Name:</strong> <code>gpt-oss</code> (or your chosen model)</li>
-                    <li className="ml-4">• <strong>API Type:</strong> "Ollama"</li>
-                  </ol>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-orange-500">
-            <CardContent className="p-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-orange-100 dark:bg-orange-900 rounded-full p-2 text-orange-600 dark:text-orange-400 font-bold text-sm min-w-[2rem] text-center">4</div>
-                <div>
-                  <h4 className="font-semibold mb-2">Test the Connection</h4>
-                  <ol className="space-y-1 text-sm">
-                    <li>1. Click "Test Connection" to verify setup</li>
-                    <li>2. If successful, click "Add" to save the provider</li>
-                    <li>3. Select your local model from the configured providers list</li>
+                    <li className="ml-4">• <strong>Provider Name:</strong> "ollama"</li>
+                    <li className="ml-4">• <strong>API Endpoint:</strong> <code>http://localhost:11434/v1</code></li>
                   </ol>
                 </div>
               </div>
