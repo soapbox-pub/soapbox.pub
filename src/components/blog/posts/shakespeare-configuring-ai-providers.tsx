@@ -377,8 +377,9 @@ export default function ShakespeareConfiguringAIProviders() {
       <p>The model selector shows your available options:</p>
 
       <ul>
-        <li><strong>shakespeare/shakespeare</strong> - Soapbox's premium model for high-quality results</li>
-        <li><strong>shakespeare/tybalt</strong> - Soapbox's free model for learning and testing purposes</li>
+        <li><strong>shakespeare/glm-4.5</strong> - Top ranking Open Source model. Excels at updating existing projects on a budget.</li>
+        <li><strong>shakespeare/claude-sonnet-4.5</strong> - Highly capable programming model, able to understand and perform complex tasks.</li>
+        <li><strong>shakespeare/claude-opus-4.1</strong> - If money is no obstacle, this model can get the job done.</li>
         <li><strong>Enter custom model...</strong> - Option to specify any custom model from your configured providers</li>
         <li><strong>Manage providers...</strong> - Quick access to add or configure AI providers</li>
       </ul>
