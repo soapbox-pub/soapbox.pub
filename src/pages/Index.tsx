@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Globe, Rocket, Calendar, Trophy, Skull, Ghost } from "lucide-react";
+import { ArrowRight, Code, Users, Globe, Rocket, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -241,80 +241,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Halloween Hackathon Banner */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white relative overflow-hidden">
-        {/* Animated Halloween Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 text-4xl animate-bounce opacity-20">🎃</div>
-          <div className="absolute top-20 right-20 text-3xl animate-pulse opacity-20">👻</div>
-          <div className="absolute bottom-20 left-20 text-4xl animate-bounce delay-1000 opacity-20">🦇</div>
-          <div className="absolute bottom-10 right-10 text-3xl animate-pulse delay-500 opacity-20">💀</div>
-          <div className="absolute top-1/2 left-1/4 text-3xl animate-bounce delay-700 opacity-20">🕷️</div>
-          <div className="absolute top-1/3 right-1/3 text-2xl animate-pulse delay-300 opacity-20">🕸️</div>
 
-          {/* Dark theme gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-gray-900/50 to-black/30"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-4 mb-6">
-            <Skull className="w-10 h-10 text-orange-400 animate-pulse" />
-            <Badge className="bg-orange-600 text-white text-lg px-4 py-2 border-2 border-orange-400/50 font-gothic tracking-widest shadow-lg">
-              🎃 Halloween Hackathon 🎃
-            </Badge>
-            <Ghost className="w-10 h-10 text-purple-400 animate-pulse" />
-          </div>
-
-          <h2 className="font-gothic text-4xl md:text-5xl font-bold mb-4 text-shadow-gothic tracking-wider">
-            Build Spooky Apps with Shakespeare
-          </h2>
-
-          <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
-            Join our Halloween hackathon and compete for <span className="text-orange-400 font-bold">87,000 sats</span> across three prize categories!
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
-            <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg p-4 border border-orange-500/50 hover:border-orange-400 transition-colors">
-              <Trophy className="w-8 h-8 text-orange-400 mx-auto mb-2" />
-              <div className="text-lg font-bold text-orange-400">87,000 sats</div>
-              <p className="text-sm text-gray-300">Design Excellence</p>
-            </div>
-            <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg p-4 border border-purple-500/50 hover:border-purple-400 transition-colors">
-              <Code className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-              <div className="text-lg font-bold text-purple-400">87,000 sats</div>
-              <p className="text-sm text-gray-300">Innovation</p>
-            </div>
-            <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg p-4 border border-red-500/50 hover:border-red-400 transition-colors">
-              <Skull className="w-8 h-8 text-red-400 mx-auto mb-2" />
-              <div className="text-lg font-bold text-red-400">87,000 sats</div>
-              <p className="text-sm text-gray-300">Judge's Choice</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all"
-              asChild
-            >
-              <Link to="/halloween-hackathon">
-                🎃 Join Halloween Hackathon
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-gray-400 text-gray-300 hover:bg-gray-700 hover:text-white px-8 py-4 text-lg transition-all"
-              asChild
-            >
-              <Link to="/tools/shakespeare">
-                Start Building
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Tools Section */}
       <section id="tools" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
