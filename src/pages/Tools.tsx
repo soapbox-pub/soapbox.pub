@@ -115,7 +115,7 @@ export default function Tools() {
                   <div className="w-full">
                     <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-white mb-4">
                       <iframe
-                        src="https://www.youtube.com/embed/pK9gHjQr7nc?si=aoT84KgpSJ3iruZw"
+                        src="https://www.youtube.com/embed/TtYxFeayDKQ"
                         title="Shakespeare Tutorial with Derek Ross"
                         className="w-full h-full"
                         frameBorder="0"
