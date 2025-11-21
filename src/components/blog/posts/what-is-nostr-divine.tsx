@@ -114,14 +114,24 @@ export default function WhatIsNostrDivine() {
         <strong>diVine is built entirely on the Nostr protocol, bringing the creative spirit of 6-second looping videos to a decentralized platform.</strong> This means your videos, profile, followers, and engagement are all stored on Nostr relays instead of corporate servers. You own your content and your identity.
       </p>
 
-      <h3>What This Means for You</h3>
+      <h3>Nostr Event Kinds Used by diVine</h3>
+
+      <p>
+        diVine implements several standard Nostr event kinds (NIPs) to provide a complete video sharing experience:
+      </p>
 
       <ul>
-        <li><strong>Own Your Content:</strong> Your videos live on decentralized relays, not controlled by any single company.</li>
-        <li><strong>One Identity, Multiple Apps:</strong> Your diVine account works across all Nostr apps—use the same identity for social networking, messaging, and more.</li>
-        <li><strong>No Platform Lock-In:</strong> If you don't like diVine, you can take your content and followers to any other Nostr video app.</li>
-        <li><strong>Censorship Resistance:</strong> No corporation can delete your account or remove your videos from the entire network.</li>
+        <li><strong>Kind 34236 (NIP-71):</strong> Addressable short videos - The core video content format. These events contain video URLs, metadata (title, duration, dimensions), thumbnails, and descriptions. Being addressable (30000-39999 range) allows videos to be updated or replaced.</li>
+        <li><strong>Kind 6 (NIP-18):</strong> Reposts - Share someone else's video to your followers while maintaining attribution to the original creator.</li>
+        <li><strong>Kind 7 (NIP-25):</strong> Reactions - Like and react to videos with emoji reactions.</li>
+        <li><strong>Kind 1 (NIP-01):</strong> Text notes - Comments on videos and general text posts.</li>
+        <li><strong>Kind 3 (NIP-02):</strong> Follow lists - Manage who you follow to build your personalized feed.</li>
+        <li><strong>Kind 0 (NIP-01):</strong> User metadata - Your profile information including name, bio, profile picture, and other details.</li>
       </ul>
+
+      <p>
+        By using these standardized event kinds, diVine ensures compatibility with the broader Nostr ecosystem while providing a specialized video-focused experience.
+      </p>
 
       <h2>Nostr Basics: Keys and Identity</h2>
 
@@ -179,21 +189,7 @@ export default function WhatIsNostrDivine() {
       </ul>
 
       <p>
-        Your diVine videos will be visible in these other clients (if they support video event types), and you can interact with users from any Nostr app.
-      </p>
-
-      <h2>How diVine and Nostr Work Together</h2>
-
-      <ol>
-        <li>You create or upload a 6-second video using diVine.</li>
-        <li>diVine signs the video event with your private key (proving it's yours).</li>
-        <li>The video event is published to Nostr relays (including relay.divine.video).</li>
-        <li>Other users' diVine clients query relays for video events.</li>
-        <li>Users see your video in their feeds, can like, comment, or repost—all through Nostr events.</li>
-      </ol>
-
-      <p>
-        This separation of data storage (relays) and user interfaces (clients like diVine) ensures that the platform remains resilient, censorship-resistant, and user-controlled.
+        This demonstrates the power of Nostr's decentralized identity—one account works across an entire ecosystem of apps, each specialized for different purposes.
       </p>
 
 
