@@ -429,10 +429,6 @@ export default function ShakespeareOriginStory() {
         <li><a href="/blog/nostrbook-mcp">Nostrbook MCP: AI-Readable Nostr Documentation</a></li>
         <li><a href="https://block.xyz/inside/block-open-source-introduces-codename-goose" target="_blank" rel="noopener noreferrer">Block Introduces Codename Goose</a> - Original announcement</li>
       </ul>
-
-      <p className="text-xl text-center font-semibold text-purple-600 mt-12">
-        From Goose to Shakespeare: Making AI development accessible to all. 🎭
-      </p>
     </article>
   );
 }
