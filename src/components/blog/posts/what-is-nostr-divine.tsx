@@ -15,14 +15,14 @@ export const meta: BlogPostMeta = {
   "slug": "what-is-nostr-divine",
   "title": "What is Nostr? The Decentralized Protocol Powering diVine",
   "excerpt": "Understanding the Nostr protocol and how it enables diVine's decentralized approach to short-form video sharing",
-  "coverImage": "/assets/blog/nostr-101.png",
+  "coverImage": "/assets/blog/nostr101/nostr-101-divine-protocol.png",
   "date": "2025-11-20",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/nostr-101.png"
+    "url": "/assets/blog/nostr101/nostr-101-divine-protocol.png"
   },
   "tags": ["nostr", "divine", "decentralization", "tutorial"]
 };
@@ -31,13 +31,13 @@ export default function WhatIsNostrDivine() {
   return (
     <article className="prose prose-lg max-w-none">
       <h2>What is Nostr?</h2>
-      
+
       <p>
         <strong>Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized, censorship-resistant protocol designed to give users control over their online identities and content.</strong> Unlike traditional social media platforms that rely on centralized servers and corporate moderation, Nostr allows users to communicate directly through a network of independent relays. This makes it permissionless—meaning anyone can use it without needing approval from a corporation or government.
       </p>
 
       <h3>Key Features of Nostr</h3>
-      
+
       <ul>
         <li><strong>Decentralized:</strong> No single company controls Nostr; it operates on a distributed network of relays.</li>
         <li><strong>Censorship-Resistant:</strong> Users cannot be banned from the network; they can always find a relay that will host their content.</li>
