@@ -66,9 +66,6 @@ export default function ShakespeareWorkshopGuide() {
               <a href="#timeline" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
                 Workshop Timeline
               </a>
-              <a href="#materials" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Materials Checklist
-              </a>
               <a href="#tips" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
                 Tips for Success
               </a>
@@ -446,53 +443,6 @@ export default function ShakespeareWorkshopGuide() {
         </div>
       </div>
 
-      <h2 id="materials">Materials Checklist</h2>
-
-      <p>
-        Before your workshop, make sure you have:
-      </p>
-
-      <div className="not-prose my-8">
-        <Card>
-          <CardContent className="p-6">
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Projector or large display for main screen</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Presentation slides ready (use Canva template)</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Gift cards purchased and uploaded to faucet</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">QR code displayed prominently for gift card redemption</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Reliable WiFi connection for all participants</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Helpers/supporters briefed on how to assist participants</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Chat or Discord channel for sharing deployed project links</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <input type="checkbox" className="w-5 h-5" disabled />
-                <span className="text-sm">Awards or prizes ready (optional but fun!)</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
-
       <h2 id="tips">Tips for Success</h2>
 
       <h3>Before the Workshop</h3>
@@ -518,6 +468,7 @@ export default function ShakespeareWorkshopGuide() {
       <ul>
         <li><strong>Share Projects:</strong> Compile all deployed URLs and share with participants</li>
         <li><strong>Gather Feedback:</strong> Ask what worked well and what could be improved</li>
+        <li><strong>Share Feedback with Soapbox Team:</strong> Share feedback from participants with the Soapbox team</li>
         <li><strong>Follow Up:</strong> Send resources for continued learning (documentation, tutorials, community links)</li>
         <li><strong>Build Community:</strong> Invite participants to ongoing Nostr development discussions</li>
       </ul>
