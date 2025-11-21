@@ -15,14 +15,14 @@ export const meta: BlogPostMeta = {
   "slug": "nostr101",
   "title": "Nostr 101: A Beginner Guide to the Decentralized Social Network",
   "excerpt": "How to join Nostr, how to create your account on Nostr, and what Nostr apps to use for beginners",
-  "coverImage": "/assets/blog/nostr-101.png",
+  "coverImage": "/assets/blog/nostr101/nostr-101-divine-protocol.png",
   "date": "2025-02-16",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/nostr-101.png"
+    "url": "/assets/blog/nostr101/nostr-101-divine-protocol.png"
   },
   "tags": ["nostr", "tutorial", "beginner"]
 };
