@@ -369,30 +369,6 @@ export default function ShakespeareOriginStory() {
         </Card>
       </div>
 
-      <h2>Why This Evolution Matters</h2>
-
-      <p>
-        The progression from Goose → Stacks → Shakespeare represents a broader shift in how we think about software development:
-      </p>
-
-      <h3>From Tools for Developers to Tools for Everyone</h3>
-
-      <p>
-        Goose was built by engineers, for engineers. Stacks expanded the audience to include Nostr builders with some technical knowledge. Shakespeare completes the journey by making development accessible to anyone who can describe what they want to build.
-      </p>
-
-      <h3>From Terminal to Visual</h3>
-
-      <p>
-        Command-line interfaces are powerful but intimidating for newcomers. Shakespeare's visual interface with live preview makes the development process transparent and approachable while maintaining the power of direct code access for those who want it.
-      </p>
-
-      <h3>From Local to Cloud-Native</h3>
-
-      <p>
-        Traditional development requires local setup: installing languages, package managers, databases, and tools. Shakespeare's browser-based approach means you can start building from any device, anywhere, with nothing but a web browser.
-      </p>
-
       <h2>Standing on the Shoulders of Giants</h2>
 
       <p>
@@ -402,19 +378,6 @@ export default function ShakespeareOriginStory() {
       <p>
         By building on Goose's foundation, adapting it for Nostr through Stacks, and ultimately transforming it into Shakespeare's browser-based environment, we've created a tool that serves a different audience while honoring the original vision: <strong>using AI to give people time back to be their most creative selves</strong>.
       </p>
-
-      <h2>What's Next</h2>
-
-      <p>
-        The evolution continues. Shakespeare Act 2 introduced major improvements like local file storage, Git integration, and support for any AI provider. Future updates will bring:
-      </p>
-
-      <ul>
-        <li><strong>Collaborative Editing:</strong> Multiple users working on the same project in real-time</li>
-        <li><strong>More Templates:</strong> Expanding beyond MKStack to cover more use cases</li>
-        <li><strong>Enhanced MCP Tools:</strong> Deeper integration with Nostr documentation and protocol capabilities</li>
-        <li><strong>Mobile Development:</strong> Better support for building and editing on mobile devices</li>
-      </ul>
 
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white text-center">
