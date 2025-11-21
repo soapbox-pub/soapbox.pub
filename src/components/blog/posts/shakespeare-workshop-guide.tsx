@@ -298,7 +298,7 @@ export default function ShakespeareWorkshopGuide() {
       <h2>Workshop Timeline</h2>
 
       <p>
-        A typical Shakespeare workshop runs 90-120 minutes:
+        A typical Shakespeare workshop runs 60 minutes:
       </p>
 
       <div className="not-prose my-8">
@@ -307,7 +307,7 @@ export default function ShakespeareWorkshopGuide() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="bg-purple-100 rounded-lg p-3 text-purple-700 font-bold text-sm min-w-[5rem] text-center">
-                  0-15 min
+                  0-10 min
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Introduction & Setup</h4>
@@ -323,7 +323,7 @@ export default function ShakespeareWorkshopGuide() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 rounded-lg p-3 text-blue-700 font-bold text-sm min-w-[5rem] text-center">
-                  15-75 min
+                  10-40 min
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Building Session</h4>
@@ -339,7 +339,7 @@ export default function ShakespeareWorkshopGuide() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="bg-green-100 rounded-lg p-3 text-green-700 font-bold text-sm min-w-[5rem] text-center">
-                  75-90 min
+                  40-45 min
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Deployment & Sharing</h4>
@@ -355,12 +355,12 @@ export default function ShakespeareWorkshopGuide() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="bg-orange-100 rounded-lg p-3 text-orange-700 font-bold text-sm min-w-[5rem] text-center">
-                  90-120 min
+                  45-60 min
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Showcase & Wrap-Up</h4>
                   <p className="text-sm text-gray-600">
-                    Each participant presents their project, community feedback, awards or recognition, closing remarks
+                    Each participant presents their project, community feedback, closing remarks
                   </p>
                 </div>
               </div>
