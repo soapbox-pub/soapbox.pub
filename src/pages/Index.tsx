@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Users, Globe, Rocket, Calendar } from "lucide-react";
+import { ArrowRight, Code, Users, Globe, Rocket, Calendar, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -454,6 +454,118 @@ export default function Index() {
                 </a>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Ethics Pledge Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-lg px-4 py-2 bg-blue-600 text-white">
+              Our Commitment
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Built on Principles, Not Profit
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our software ethics pledge holds us accountable to the values of freedom, transparency, and user sovereignty
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Card className="border-2 border-blue-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <Code className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
+                  Always Open Source
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  All our work for public consumption is open source and freely licensed. No black boxes, no proprietary lock-in.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
+                  Decentralized by Design
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  We build exclusively on decentralized protocols. No central servers, no corporate gatekeepers.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-green-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                  <Lock className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
+                  Your Data Is Yours
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  We will never sell user data. Your privacy and ownership are non-negotiable.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-orange-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
+                  Censorship Resistant
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  We fight government censorship and build tools that protect free speech.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-red-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
+                  Resist Corporate Control
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Technology should serve humanity, not shareholders. We reject extractive business models.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-indigo-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                  <Rocket className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
+                  Stay Independent
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  We will never sell to entities that don't share our commitment to user freedom.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white" asChild>
+              <Link to="/ethics">
+                Read Our Full Ethics Pledge
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
