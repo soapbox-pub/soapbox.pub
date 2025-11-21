@@ -65,6 +65,35 @@ export default function ManagingNostrKeys() {
         Unlike traditional social media where companies store your password on their servers, Nostr is decentralized. There's no central authority to reset your password or recover your account. Your private key is the only thing that proves you are you.
       </p>
 
+      <h2>Saving Your Key When You First Sign Up</h2>
+
+      <p>
+        When you create a new Nostr account, many apps and signers will prompt you to copy your private key (nsec) or download a text file containing your key. <strong>This is your only chance to save your key</strong>—take it seriously:
+      </p>
+
+      <ul>
+        <li><strong>Copy it to a password manager immediately:</strong> Use a reputable password manager like 1Password, Bitwarden, or Dashlane. This provides encrypted storage and backup.</li>
+        <li><strong>Download the text file to a secure location:</strong> If the app offers a download option, save it to a secure folder that's not synced to cloud storage. Consider encrypting this file or moving it to an external drive stored offline.</li>
+        <li><strong>Write it down on paper:</strong> Even if you save it digitally, also write your nsec on paper and store it in a safe place (fireproof safe, safety deposit box, etc.).</li>
+        <li><strong>Don't skip this step:</strong> Many users think "I'll do it later" and then lose access to their account permanently. Do it now.</li>
+      </ul>
+
+      <div className="not-prose my-8">
+        <Card className="border-orange-200 bg-orange-50">
+          <CardContent className="p-6">
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
+              <div>
+                <h4 className="font-semibold text-orange-900 mb-2">Don't Close That Window Yet!</h4>
+                <p className="text-sm text-orange-800">
+                  If an app is showing you your private key during signup, don't close it until you've saved the key in at least two different secure locations. Once you close that window, you may never see your key in plain text again.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <h2>Key Management Solutions</h2>
 
       <p>
@@ -74,7 +103,7 @@ export default function ManagingNostrKeys() {
       <h3>1. Browser Extensions (Recommended for Desktop)</h3>
 
       <p>
-        Browser extensions implement <strong>NIP-07</strong>, a standard that allows websites to request signatures from your key without ever seeing the private key itself. The extension holds your key securely and only signs events when you approve.
+        Browser extensions implement <strong><a href="https://nostrhub.io/07" target="_blank" rel="noopener noreferrer">NIP-07</a></strong>, a standard that allows websites to request signatures from your key without ever seeing the private key itself. The extension holds your key securely and only signs events when you approve.
       </p>
 
       <div className="not-prose my-8">
@@ -164,7 +193,7 @@ export default function ManagingNostrKeys() {
       <h3>2. Mobile Signers (Recommended for Mobile)</h3>
 
       <p>
-        Android devices can use dedicated signer apps that implement <strong>NIP-55</strong>, allowing Nostr apps to request signatures through Android's intent system without accessing your private key.
+        Android devices can use dedicated signer apps that implement <strong><a href="https://nostrhub.io/55" target="_blank" rel="noopener noreferrer">NIP-55</a></strong>, allowing Nostr apps to request signatures through Android's intent system without accessing your private key. Many signers and apps also allow you to log in with multiple accounts, making it easy to switch between different identities or separate personal and professional use.
       </p>
 
       <div className="not-prose my-8">
@@ -197,7 +226,7 @@ export default function ManagingNostrKeys() {
       <h3>3. Remote Signers (Advanced)</h3>
 
       <p>
-        <strong>NIP-46 (Nostr Connect)</strong> enables remote signing where your private key lives on a separate device or service, and apps request signatures over Nostr relays. This provides the highest security for advanced users.
+        <strong><a href="https://nostrhub.io/46" target="_blank" rel="noopener noreferrer">NIP-46 (Nostr Connect)</a></strong> enables remote signing where your private key lives on a separate device or service, and apps request signatures over Nostr relays. This provides the highest security for advanced users.
       </p>
 
       <div className="not-prose my-8">
@@ -227,22 +256,7 @@ export default function ManagingNostrKeys() {
         </Card>
       </div>
 
-      <h3>4. Password-Protected Keys (Not Recommended)</h3>
 
-      <p>
-        <strong>NIP-49</strong> defines a method to encrypt your private key with a password, creating an <code>ncryptsec</code> string. While this provides basic protection, it's not recommended as a primary storage method because:
-      </p>
-
-      <ul>
-        <li>Password strength varies widely between users</li>
-        <li>Encrypted keys can be brute-forced if the password is weak</li>
-        <li>You still need to decrypt the key somewhere, which exposes it</li>
-        <li>No protection against keyloggers or clipboard monitoring</li>
-      </ul>
-
-      <p>
-        <strong>Use cases for NIP-49:</strong> Exporting keys for backup or transferring between devices, not daily use.
-      </p>
 
       <h2>Best Practices for Key Storage</h2>
 
@@ -256,14 +270,13 @@ export default function ManagingNostrKeys() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-700 text-sm space-y-2">
-              <p>• Use browser extensions (Alby, nos2x, Flamingo) for desktop</p>
-              <p>• Use mobile signers (Amber) for Android</p>
-              <p>• Use remote signers (nsec.app) for multi-device access</p>
+              <p>• Use browser extensions (<a href="https://getalby.com" target="_blank" rel="noopener noreferrer">Alby</a>, <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer">nos2x</a>, <a href="https://www.getflamingo.org" target="_blank" rel="noopener noreferrer">Flamingo</a>) for desktop</p>
+              <p>• Use mobile signers (<a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer">Amber</a>) for Android</p>
+              <p>• Use remote signers (<a href="https://nsec.app" target="_blank" rel="noopener noreferrer">nsec.app</a>) for multi-device access</p>
               <p>• Write down your private key on paper and store it securely offline</p>
               <p>• Create multiple backups stored in different physical locations</p>
-              <p>• Use password managers to store encrypted backups (NIP-49)</p>
+              <p>• Use password managers to store encrypted backups</p>
               <p>• Test your backup by restoring it on a different device</p>
-              <p>• Use mnemonic seed phrases (NIP-06) if your signer supports them</p>
             </CardContent>
           </Card>
 
@@ -288,99 +301,7 @@ export default function ManagingNostrKeys() {
         </div>
       </div>
 
-      <h2>Recommended Storage Methods by Use Case</h2>
 
-      <h3>For Casual Users (Desktop)</h3>
-
-      <p>
-        <strong>Use a browser extension like Alby or nos2x.</strong> These extensions store your key encrypted on your computer and handle all signing operations. Websites never see your private key—they only receive signed events.
-      </p>
-
-      <p>
-        <strong>Backup strategy:</strong> Write your private key on paper and store it in a safe place (fireproof safe, safety deposit box). Also export an encrypted backup (NIP-49) to a password manager like 1Password or Bitwarden.
-      </p>
-
-      <h3>For Mobile Users (Android)</h3>
-
-      <p>
-        <strong>Use Amber signer.</strong> Install Amber once and use it with all your Nostr apps. Amber keeps your key isolated and protected by Android's security features, and you can enable biometric authentication.
-      </p>
-
-      <p>
-        <strong>Backup strategy:</strong> Write down your private key on paper and store it securely. Consider using multiple backup copies in different locations.
-      </p>
-
-      <h3>For Mobile Users (iOS)</h3>
-
-      <p>
-        <strong>Use nsec.app with remote signing.</strong> Keep your primary key on a desktop device with a browser extension, then use nsec.app on iOS to sign remotely. This keeps your key off your phone entirely.
-      </p>
-
-      <p>
-        <strong>Alternative:</strong> Some iOS Nostr apps have built-in secure storage using iOS Keychain, but this means trusting the app developer.
-      </p>
-
-      <h3>For High-Security Users</h3>
-
-      <p>
-        <strong>Use dedicated hardware or air-gapped devices.</strong> Advanced users can:
-      </p>
-
-      <ul>
-        <li>Keep their private key on a hardware security device that never connects to the internet</li>
-        <li>Use an old phone or computer solely as a signer device</li>
-        <li>Implement NIP-46 remote signing with keys stored on isolated hardware</li>
-        <li>Use multiple keys for different purposes (daily use vs. long-term identity)</li>
-      </ul>
-
-      <h3>For Multi-Device Users</h3>
-
-      <p>
-        <strong>Use NIP-46 remote signing (nsec.app).</strong> This allows you to:
-      </p>
-
-      <ul>
-        <li>Keep your private key on one secure device (your phone with Amber, or desktop with Alby)</li>
-        <li>Use Nostr on multiple other devices (work computer, tablet, etc.) without exposing your key</li>
-        <li>Approve or deny signing requests from your primary device</li>
-        <li>Revoke access to remote devices instantly</li>
-      </ul>
-
-      <h2>Understanding Mnemonic Seed Phrases (NIP-06)</h2>
-
-      <p>
-        <strong>NIP-06</strong> allows deriving Nostr keys from a 12 or 24-word mnemonic seed phrase—the same system used by Bitcoin wallets. This provides several benefits:
-      </p>
-
-      <ul>
-        <li><strong>Easier to Back Up:</strong> Writing down 12 words is less error-prone than copying a long nsec string</li>
-        <li><strong>Multiple Keys:</strong> Generate infinite keys from one seed phrase</li>
-        <li><strong>Standard Format:</strong> Compatible with Bitcoin wallet backup systems</li>
-        <li><strong>Metal Backups:</strong> Can use steel plate backup solutions designed for Bitcoin</li>
-      </ul>
-
-      <p>
-        Not all Nostr clients and signers support NIP-06 yet, but it's becoming more common. Check if your preferred signer offers this option.
-      </p>
-
-      <div className="not-prose my-8">
-        <Card className="border-blue-200">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Key className="w-5 h-5 text-blue-600" />
-              Example Mnemonic Seed Phrase
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-sm">
-            <div className="bg-gray-50 rounded-lg p-4 font-mono text-xs">
-              leader monkey parrot ring guide accident before fence cannon height naive bean
-            </div>
-            <p className="text-gray-600 text-xs mt-3">
-              This phrase can generate your Nostr private key using the BIP39/BIP32 derivation path: m/44'/1237'/0'/0/0
-            </p>
-          </CardContent>
-        </Card>
-      </div>
 
       <h2>What to Do If Your Key Is Compromised</h2>
 
@@ -551,7 +472,7 @@ export default function ManagingNostrKeys() {
       <h2>Multi-Key Strategies</h2>
 
       <p>
-        Advanced users often use multiple keys for different purposes:
+        Advanced users often use multiple keys for different purposes. Many signers and apps allow you to log in with multiple accounts, making it easy to switch between different identities or separate personal and professional use.
       </p>
 
       <div className="not-prose my-8">
@@ -585,60 +506,7 @@ export default function ManagingNostrKeys() {
         </div>
       </div>
 
-      <h2>Creating Secure Backups</h2>
 
-      <h3>Paper Backup (Most Important)</h3>
-
-      <p>
-        The most reliable backup method is writing your private key on paper:
-      </p>
-
-      <ol>
-        <li>Use archival-quality paper and permanent ink</li>
-        <li>Write clearly in large, readable letters</li>
-        <li>Include your public key (npub) for reference</li>
-        <li>Store in a waterproof, fireproof container</li>
-        <li>Create multiple copies in different secure locations</li>
-        <li>Consider laminating or using archival sleeves</li>
-      </ol>
-
-      <p>
-        For maximum durability, some users engrave their keys on metal plates designed for Bitcoin seed phrase backup (Billfodl, Cryptosteel, etc.). This protects against fire and water damage.
-      </p>
-
-      <h3>Encrypted Digital Backup (Secondary)</h3>
-
-      <p>
-        For convenience, you can create an encrypted backup using NIP-49:
-      </p>
-
-      <ol>
-        <li>Use a strong, unique password (20+ characters)</li>
-        <li>Encrypt your nsec to create an ncryptsec string</li>
-        <li>Store the ncryptsec in a password manager (1Password, Bitwarden, etc.)</li>
-        <li><strong>Also store the password</strong>—encrypted backups are useless if you forget the password</li>
-      </ol>
-
-      <p>
-        <strong>Warning:</strong> Digital backups are vulnerable to hacking, cloud breaches, and keyloggers. Use strong passwords and store them only in reputable password managers. Paper backup should always be your primary method.
-      </p>
-
-      <h2>Testing Your Backup</h2>
-
-      <p>
-        A backup that hasn't been tested is not a backup. Before you rely on your backup:
-      </p>
-
-      <ol>
-        <li>Use a different device or browser profile</li>
-        <li>Attempt to restore your account using only your backup</li>
-        <li>Verify you can access your account and post successfully</li>
-        <li>If using mnemonic phrases, test the derivation process</li>
-      </ol>
-
-      <p>
-        Many people discover their backups are incorrect or incomplete only when they actually need them. Test early and test often.
-      </p>
 
       <h2>Common Mistakes to Avoid</h2>
 
@@ -675,101 +543,7 @@ export default function ManagingNostrKeys() {
         </Card>
       </div>
 
-      <h2>Future of Nostr Key Management</h2>
 
-      <p>
-        The Nostr ecosystem continues to develop better key management solutions:
-      </p>
-
-      <ul>
-        <li><strong>Hardware Wallets:</strong> Ledger and other hardware wallet manufacturers are adding Nostr signing support</li>
-        <li><strong>Social Recovery:</strong> Experimental systems where trusted contacts can help recover access (though this requires pre-setup)</li>
-        <li><strong>Improved Remote Signing:</strong> Better UX for NIP-46 remote signing across devices</li>
-        <li><strong>Biometric Integration:</strong> Secure enclave support on mobile devices for key storage</li>
-      </ul>
-
-      <p>
-        As the ecosystem matures, key management will become easier while maintaining security. But the fundamental responsibility remains: <strong>you must protect your private key</strong>.
-      </p>
-
-      <h2>Quick Reference Guide</h2>
-
-      <div className="not-prose my-12">
-        <Card>
-          <CardHeader>
-            <CardTitle>Storage Solutions Summary</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2 px-3">Solution</th>
-                    <th className="text-left py-2 px-3">Platform</th>
-                    <th className="text-left py-2 px-3">Security</th>
-                    <th className="text-left py-2 px-3">Ease of Use</th>
-                  </tr>
-                </thead>
-                <tbody className="text-xs">
-                  <tr className="border-b">
-                    <td className="py-2 px-3 font-semibold">Alby Extension</td>
-                    <td className="py-2 px-3">Desktop Browsers</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐⭐</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-3 font-semibold">nos2x Extension</td>
-                    <td className="py-2 px-3">Desktop Browsers</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐⭐</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-3 font-semibold">Amber Signer</td>
-                    <td className="py-2 px-3">Android</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐⭐</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-3 font-semibold">nsec.app Remote</td>
-                    <td className="py-2 px-3">Multi-Device</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐⭐</td>
-                    <td className="py-2 px-3">⭐⭐⭐</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-3 font-semibold">Paper Backup</td>
-                    <td className="py-2 px-3">Offline</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐⭐</td>
-                    <td className="py-2 px-3">⭐⭐</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-3 font-semibold">Encrypted (NIP-49)</td>
-                    <td className="py-2 px-3">Password Manager</td>
-                    <td className="py-2 px-3">⭐⭐⭐</td>
-                    <td className="py-2 px-3">⭐⭐⭐⭐</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <h2>Recommendations by User Type</h2>
-
-      <h3>New Users: Start Simple, Secure</h3>
-      <p>
-        Install Alby or nos2x browser extension, write your nsec on paper, store the paper somewhere safe. This gives you good security with minimal complexity.
-      </p>
-
-      <h3>Active Users: Add Redundancy</h3>
-      <p>
-        Browser extension + paper backup in two locations + encrypted backup (NIP-49) in password manager. Consider mobile signer if you use Android.
-      </p>
-
-      <h3>Power Users: Maximum Security</h3>
-      <p>
-        Remote signing (NIP-46) with keys on dedicated hardware + multiple paper backups in different locations + mnemonic seed phrase backup (NIP-06) + potential multi-key strategy.
-      </p>
 
       <h2>The Bottom Line</h2>
 
@@ -795,24 +569,24 @@ export default function ManagingNostrKeys() {
             <Card className="bg-white/10 backdrop-blur border-white/20">
               <CardContent className="p-6">
                 <h4 className="font-semibold text-white mb-2">Desktop</h4>
-                <p className="text-sm text-blue-100">
-                  Alby, nos2x, or Flamingo browser extension
+                <p className="text-sm text-blue-100 mb-3">
+                  <a href="https://getalby.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Alby</a>, <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">nos2x</a>, <a href="https://www.getflamingo.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Flamingo</a>, or <a href="https://apps.apple.com/us/app/nostore/id1666553677" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Nostore</a> browser extension
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20">
               <CardContent className="p-6">
                 <h4 className="font-semibold text-white mb-2">Android</h4>
-                <p className="text-sm text-blue-100">
-                  Amber signer for app-level isolation
+                <p className="text-sm text-blue-100 mb-3">
+                  <a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Amber</a> signer for app-level isolation
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20">
               <CardContent className="p-6">
-                <h4 className="font-semibold text-white mb-2">Backup</h4>
-                <p className="text-sm text-blue-100">
-                  Paper + fireproof safe + offsite copy
+                <h4 className="font-semibold text-white mb-2">Remote Signing</h4>
+                <p className="text-sm text-blue-100 mb-3">
+                  <a href="https://nsec.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">nsec.app</a> for multi-device access
                 </p>
               </CardContent>
             </Card>
