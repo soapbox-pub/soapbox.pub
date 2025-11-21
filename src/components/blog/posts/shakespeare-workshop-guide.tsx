@@ -235,10 +235,6 @@ export default function ShakespeareWorkshopGuide() {
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 font-bold">•</span>
-                <span><strong>Start Simple:</strong> Begin with basic elements (header, about section) before adding complexity</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
                 <span><strong>Pause for Questions:</strong> Stop periodically to answer participant questions and check progress</span>
               </li>
               <li className="flex items-start gap-2">
