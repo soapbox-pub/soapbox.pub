@@ -128,7 +128,7 @@ export default function ShakespeareOriginStory() {
       <h2>Chapter 2: Stacks for Nostr</h2>
 
       <p>
-        Inspired by Goose's approach to AI-assisted development, the Soapbox team recognized an opportunity to bring similar capabilities to the <a href="/blog/nostr101">Nostr ecosystem</a>. In May 2025, we released <strong>Stacks</strong>—a decentralized template-sharing platform built specifically for Nostr development.
+        Inspired by Goose's approach to AI-assisted development, the Soapbox team recognized an opportunity to bring similar capabilities to the <a href="/blog/nostr101">Nostr ecosystem</a>. In May 2025, we released <strong><a href="/tools/stacks">Stacks</a></strong>—a decentralized template-sharing platform built specifically for Nostr development.
       </p>
 
       <h3>Why We Built Stacks</h3>
@@ -145,7 +145,7 @@ export default function ShakespeareOriginStory() {
       </ul>
 
       <p>
-        Stacks built on Goose's foundation while adding Nostr-specific features. Like Goose, it included an AI agent (we called it "Dork") that helped developers build projects through conversation. But unlike Goose, Stacks was specifically designed around shareable templates published as Nostr events.
+        Stacks built on Goose's foundation while adding Nostr-specific features. Like Goose, it included an AI agent (we called it "Dork") that helped developers build projects through conversation. But unlike Goose, <a href="/blog/stacks">Stacks</a> was specifically designed around shareable templates published as Nostr events.
       </p>
 
       <div className="not-prose my-12">
@@ -198,7 +198,7 @@ export default function ShakespeareOriginStory() {
       </ul>
 
       <p>
-        MKStack proved that the combination of good templates + AI assistance could dramatically speed up Nostr development. Projects that previously took weeks could be built in days or even hours.
+        MKStack proved that the combination of good templates + AI assistance could dramatically speed up Nostr development. Projects that previously took weeks could be built in days or even hours. You can try Stacks today at <a href="https://getstacks.dev" target="_blank" rel="noopener noreferrer">getstacks.dev</a>.
       </p>
 
       <h2>Chapter 3: Shakespeare Goes Browser-Based</h2>
