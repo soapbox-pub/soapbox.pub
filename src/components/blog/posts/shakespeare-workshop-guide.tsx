@@ -58,46 +58,41 @@ export default function ShakespeareWorkshopGuide() {
         <li>Ideas of things you can build</li>
       </ol>
 
+      <h3>What Shakespeare Can and Cannot Build</h3>
+
       <div className="not-prose my-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-xl">What Shakespeare Can and Cannot Build</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b-2 border-gray-300">
-                    <th className="text-left p-4 bg-green-50 font-semibold text-green-900">✅ What Shakespeare CAN Build</th>
-                    <th className="text-left p-4 bg-red-50 font-semibold text-red-900">❌ What Shakespeare CANNOT Build</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 align-top">Nostr Applications (social feeds, profile pages, content platforms)</td>
-                    <td className="p-4 align-top">Backend Services (server-side code, databases, API endpoints)</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 align-top">Static Websites (landing pages, portfolios, blogs, documentation)</td>
-                    <td className="p-4 align-top">Native Mobile Apps (web apps only, though PWAs are possible)</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 align-top">Interactive Web Apps (forms, calculators, dashboards, client-side tools)</td>
-                    <td className="p-4 align-top"></td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 align-top">Media-Rich Sites (image galleries, video embeds, audio players)</td>
-                    <td className="p-4 align-top"></td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 align-top">Responsive Designs (mobile-friendly layouts for all devices)</td>
-                    <td className="p-4 align-top"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="border-b-2 border-gray-300">
+                <th className="text-left p-4 bg-green-50 font-semibold text-green-900">✅ What Shakespeare CAN Build</th>
+                <th className="text-left p-4 bg-red-50 font-semibold text-red-900">❌ What Shakespeare CANNOT Build</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 align-top">Nostr Applications (social feeds, profile pages, content platforms)</td>
+                <td className="p-4 align-top">Backend Services (server-side code, databases, API endpoints)</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 align-top">Static Websites (landing pages, portfolios, blogs, documentation)</td>
+                <td className="p-4 align-top">Native Mobile Apps (web apps only, though PWAs are possible)</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 align-top">Interactive Web Apps (forms, calculators, dashboards, client-side tools)</td>
+                <td className="p-4 align-top"></td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 align-top">Media-Rich Sites (image galleries, video embeds, audio players)</td>
+                <td className="p-4 align-top"></td>
+              </tr>
+              <tr>
+                <td className="p-4 align-top">Responsive Designs (mobile-friendly layouts for all devices)</td>
+                <td className="p-4 align-top"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <p>
@@ -263,71 +258,9 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h3>Example Workshop Project Ideas</h3>
-
-      <div className="not-prose my-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50">
-            <CardHeader>
-              <CardTitle className="text-purple-800 text-lg">Personal Portfolio</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700 text-sm space-y-2">
-              <p>Build a personal website with:</p>
-              <ul className="space-y-1 text-xs">
-                <li>• Hero section with name and tagline</li>
-                <li>• About me section with bio</li>
-                <li>• Project showcase grid</li>
-                <li>• Contact information</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50">
-            <CardHeader>
-              <CardTitle className="text-blue-800 text-lg">Event Landing Page</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700 text-sm space-y-2">
-              <p>Create an event page with:</p>
-              <ul className="space-y-1 text-xs">
-                <li>• Event details and schedule</li>
-                <li>• Speaker or organizer info</li>
-                <li>• Location and directions</li>
-                <li>• Registration or RSVP button</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-green-100/50">
-            <CardHeader>
-              <CardTitle className="text-green-800 text-lg">Simple Nostr Feed</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700 text-sm space-y-2">
-              <p>Build a basic social app with:</p>
-              <ul className="space-y-1 text-xs">
-                <li>• Global feed of Nostr posts</li>
-                <li>• User profiles with metadata</li>
-                <li>• Like and repost buttons</li>
-                <li>• Nostr login integration</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-orange-100/50">
-            <CardHeader>
-              <CardTitle className="text-orange-800 text-lg">Community Blog</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700 text-sm space-y-2">
-              <p>Create a blog site with:</p>
-              <ul className="space-y-1 text-xs">
-                <li>• Article listing page</li>
-                <li>• Individual article pages</li>
-                <li>• Author information</li>
-                <li>• Categories or tags</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      <p>
+        For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
+      </p>
 
       <h2>Step 4: Share and Celebrate</h2>
 
