@@ -20,7 +20,7 @@ export const meta: BlogPostMeta = {
   "title": "The Open Source Technology Behind diVine",
   "excerpt": "How MKStack and Shakespeare enable rapid development of production-ready Nostr applications like diVine",
   "coverImage": "/assets/blog/mkstack_tutorial/mkstack-divine.png",
-  "date": "2025-11-20",
+  "date": "2025-11-22",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"

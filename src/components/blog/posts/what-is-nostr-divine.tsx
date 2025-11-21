@@ -16,7 +16,7 @@ export const meta: BlogPostMeta = {
   "title": "What is Nostr? The Decentralized Protocol Powering diVine",
   "excerpt": "Understanding the Nostr protocol and how it enables diVine's decentralized approach to short-form video sharing",
   "coverImage": "/assets/blog/nostr101/nostr-101-divine-protocol.png",
-  "date": "2025-11-20",
+  "date": "2025-11-22",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"

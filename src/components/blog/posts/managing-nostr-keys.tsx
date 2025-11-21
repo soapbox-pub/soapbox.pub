@@ -20,7 +20,7 @@ export const meta: BlogPostMeta = {
   "title": "How to Store and Manage Your Nostr Private Key (nsec)",
   "excerpt": "A comprehensive guide to protecting your Nostr identity, understanding key management solutions, and what to do if your private key is lost or compromised",
   "coverImage": "/assets/blog/managing-nostr-keys/understanding-nostr-keys.png",
-  "date": "2025-11-20",
+  "date": "2025-11-22",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
