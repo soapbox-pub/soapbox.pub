@@ -19,14 +19,14 @@ export const meta: BlogPostMeta = {
   "slug": "shakespeare-origin-story",
   "title": "The Shakespeare Origin Story: From Goose to Browser-Based AI Development",
   "excerpt": "How Shakespeare evolved from Block's Goose AI agent framework through Stacks to become a browser-based development environment for building Nostr applications",
-  "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png",
+  "coverImage": "/assets/blog/shakespeare-origin-story/history-of-shakespeare-ai.png",
   "date": "2025-11-20",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png"
+    "url": "/assets/blog/shakespeare-origin-story/history-of-shakespeare-ai.png"
   },
   "tags": ["shakespeare", "history", "goose", "stacks", "development"]
 };
@@ -53,9 +53,9 @@ export default function ShakespeareOriginStory() {
                 </div>
                 <p className="text-sm text-gray-600">AI agent framework<br />for developers</p>
               </div>
-              
+
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
-              
+
               <div className="text-center">
                 <div className="bg-violet-600 text-white rounded-2xl p-6 mb-4 shadow-lg">
                   <h4 className="text-xl font-bold mb-2">Stacks</h4>
@@ -64,9 +64,9 @@ export default function ShakespeareOriginStory() {
                 </div>
                 <p className="text-sm text-gray-600">Template system<br />for Nostr apps</p>
               </div>
-              
+
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
-              
+
               <div className="text-center">
                 <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-2xl p-6 mb-4 shadow-lg">
                   <h4 className="text-xl font-bold mb-2">Shakespeare</h4>
