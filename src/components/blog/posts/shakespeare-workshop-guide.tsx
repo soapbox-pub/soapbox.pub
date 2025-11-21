@@ -38,10 +38,49 @@ export default function ShakespeareWorkshopGuide() {
       <h2>Workshop Overview</h2>
 
       <p>
-        Shakespeare workshops are interactive sessions where participants build Nostr-compatible websites with open source AI tools. These workshops work well for meetups, conferences, hackathons, or educational events. The format is simple: introduce the tool, provide free access through gift cards, build together, and celebrate what everyone creates.
+        Shakespeare workshops are interactive sessions where participants build Nostr-compatible websites with open source AI tools. These workshops work well for meetups, conferences, hackathons, or educational events. The format is simple: set up helpers, introduce the tool, provide free access through gift cards, build together, and celebrate what everyone creates.
       </p>
 
-      <h2>Step 1: Introduce Shakespeare</h2>
+      <h2>Step 1: Set Up Your Helpers</h2>
+
+      <p>
+        Before diving into Shakespeare, identify experienced participants who can assist others throughout the workshop. This peer support system is crucial for a smooth experience.
+      </p>
+
+      <h3>Enlisting Assistants</h3>
+
+      <p>
+        At the very beginning of your workshop, ask these two questions to the group:
+      </p>
+
+      <ol>
+        <li><strong>"Raise your hand if you've ever vibe coded before"</strong> - This identifies participants with AI coding experience</li>
+        <li><strong>"Raise your hand if you're really good at vibe coding"</strong> - This identifies your potential helpers</li>
+      </ol>
+
+      <p>
+        Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can:
+      </p>
+
+      <ul>
+        <li>Walk around during the building session</li>
+        <li>Answer questions about prompting and AI interaction</li>
+        <li>Help troubleshoot issues participants encounter</li>
+        <li>Provide encouragement and creative suggestions</li>
+        <li>Share tips and tricks they've learned</li>
+      </ul>
+
+      <div className="not-prose my-8">
+        <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50">
+          <CardContent className="py-6 px-8">
+            <p className="text-sm text-gray-700 mb-0">
+              <strong>Pro Tip:</strong> Having 1 helper for every 5-10 participants creates a supportive environment where everyone can get help quickly without overwhelming the main facilitator.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h2>Step 2: Introduce Shakespeare</h2>
 
       <p>
         Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template linked above to cover the key points:
@@ -126,7 +165,7 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2>Step 2: Provide Free Access with Gift Cards</h2>
+      <h2>Step 3: Provide Free Access with Gift Cards</h2>
 
       <p>
         Shakespeare makes it easy to provide free AI credits to workshop participants through gift cards. This ensures everyone can participate without needing their own API keys or payment setup.
@@ -192,7 +231,7 @@ export default function ShakespeareWorkshopGuide() {
         <li><strong>Professional Experience:</strong> Everyone gets the same quality AI models and capabilities</li>
       </ul>
 
-      <h2>Step 3: Build Together</h2>
+      <h2>Step 4: Build Together</h2>
 
       <p>
         The core of the workshop is collaborative building. One facilitator builds an example project on the main screen while participants work on their own projects simultaneously.
@@ -258,7 +297,7 @@ export default function ShakespeareWorkshopGuide() {
         For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
       </p>
 
-      <h2>Step 4: Share and Celebrate</h2>
+      <h2>Step 5: Share and Celebrate</h2>
 
       <p>
         The final phase of the workshop is where the magic happens. Participants deploy their creations and share them with the community.
@@ -308,7 +347,7 @@ export default function ShakespeareWorkshopGuide() {
                 <div>
                   <h4 className="font-semibold mb-1">Introduction & Setup</h4>
                   <p className="text-sm text-gray-600">
-                    Present Shakespeare overview, demonstrate capabilities, share QR code for gift card redemption
+                    Enlist helpers by asking about vibe coding experience, present Shakespeare overview, demonstrate capabilities, share QR code for gift card redemption
                   </p>
                 </div>
               </div>
