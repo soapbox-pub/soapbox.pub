@@ -944,6 +944,35 @@ The project uses React Router with a centralized routing configuration in `AppRo
 
 The router includes automatic scroll-to-top functionality and a 404 NotFound page for unmatched routes.
 
+### Blog Posts and Pre-rendering
+
+When adding new blog posts to the project, you must update the `vite.config.ts` file to include the new blog post routes in the pre-render configuration. This ensures the blog posts are statically generated during the build process for better performance and SEO.
+
+**Steps to add a new blog post:**
+
+1. Create the blog post component in `/src/components/blog/posts/`
+2. Update `/src/lib/blog/blogIndex.ts` to include the new post (this is typically auto-generated)
+3. **Update `vite.config.ts`** to add the new blog post route to the `routes` array in the prerender plugin configuration
+
+**Example:**
+
+```typescript
+// In vite.config.ts, add to the Blog posts section:
+prerender({
+  routes: [
+    // ... other routes ...
+
+    // Blog posts
+    "/blog/my-new-blog-post",  // <- Add new blog post here
+    "/blog/managing-nostr-keys",
+    "/blog/shakespeare-workshop-guide",
+    // ... other blog posts ...
+  ],
+})
+```
+
+**Important:** Always add new blog posts at the top of the blog posts section in `vite.config.ts`, maintaining reverse chronological order (newest first). This keeps the configuration consistent with the blog index ordering.
+
 ## Development Practices
 
 - Uses React Query for data fetching and caching

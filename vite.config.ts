@@ -37,6 +37,11 @@ export default defineConfig({
         "/tools/shakespeare",
 
         // Blog posts
+        "/blog/managing-nostr-keys",
+        "/blog/shakespeare-workshop-guide",
+        "/blog/shakespeare-origin-story",
+        "/blog/what-is-nostr-divine",
+        "/blog/divine-open-source-tech",
         "/blog/announcing-ditto",
         "/blog/announcing-henhouse",
         "/blog/announcing-nostrhub",
