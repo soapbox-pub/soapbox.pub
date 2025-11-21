@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { MoreHorizontal } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { MoreHorizontal, ChevronDown } from 'lucide-react';
 import type { NostrEvent } from '@nostrify/nostrify';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
@@ -23,15 +23,27 @@ interface NostrPostProps {
   event: NostrEvent;
   className?: string;
   showBadge?: boolean;
+  maxHeight?: number;
 }
 
-export function NostrPost({ event, className, showBadge = true }: NostrPostProps) {
+export function NostrPost({ event, className, showBadge = true, maxHeight }: NostrPostProps) {
   const { user } = useCurrentUser();
   const author = useAuthor(event.pubkey);
   const { mutate: publishEvent } = useNostrPublish();
   const { data: interactions, isLoading: interactionsLoading } = usePostInteractions(event.id);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
   const [showPostModal, setShowPostModal] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Check if content is truncated
+  useEffect(() => {
+    if (maxHeight && contentRef.current) {
+      const contentHeight = contentRef.current.scrollHeight;
+      setIsTruncated(contentHeight > maxHeight);
+    }
+  }, [maxHeight, event.content]);
 
   // Handle repost events (kind 6)
   const isRepost = event.kind === 6;
@@ -82,7 +94,7 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
       setShowLoginDialog(true);
       return;
     }
-    
+
     publishEvent({
       kind: 7,
       content: '+',
@@ -98,7 +110,7 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
       setShowLoginDialog(true);
       return;
     }
-    
+
     publishEvent({
       kind: 6,
       content: JSON.stringify(targetEvent),
@@ -129,7 +141,7 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
   // If this is a repost, show a simplified repost view
   if (isRepost) {
     const displayEvent = originalEvent || event;
-    
+
     return (
       <Card className={cn("group hover:shadow-lg transition-all duration-300", className)}>
         <div className="px-4 pt-3 pb-1">
@@ -137,14 +149,14 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
             <span>Repost</span>
           </div>
         </div>
-        
+
         <CardHeader className="pb-3 pt-2">
           <div className="flex items-start space-x-3">
             <Avatar className="w-12 h-12">
               <AvatarImage src={profileImage} alt={displayName} />
               <AvatarFallback>{displayName.slice(0, 2).toUpperCase()}</AvatarFallback>
             </Avatar>
-            
+
             <div className="flex-1 min-w-0">
               <div className="flex items-center space-x-2">
                 <h3 className="font-semibold text-gray-900 truncate">{displayName}</h3>
@@ -161,10 +173,33 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
             </div>
           </div>
         </CardHeader>
-        
+
         <CardContent className="pt-0">
-          <div className="text-gray-900 leading-relaxed">
-            <NoteContent event={displayEvent} />
+          <div className="relative">
+            <div
+              ref={contentRef}
+              className={cn(
+                "text-gray-900 leading-relaxed overflow-hidden transition-all duration-300",
+                !isExpanded && maxHeight && "relative"
+              )}
+              style={!isExpanded && maxHeight ? { maxHeight: `${maxHeight}px` } : undefined}
+            >
+              <NoteContent event={displayEvent} />
+              {!isExpanded && isTruncated && (
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+              )}
+            </div>
+            {isTruncated && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="w-full mt-2 text-azure hover:text-azure-600"
+              >
+                {isExpanded ? 'Show less' : 'Read more'}
+                <ChevronDown className={cn("ml-2 h-4 w-4 transition-transform", isExpanded && "rotate-180")} />
+              </Button>
+            )}
           </div>
         </CardContent>
 
@@ -192,7 +227,7 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
             <AvatarImage src={profileImage} alt={displayName} />
             <AvatarFallback>{displayName.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
-          
+
           <div className="flex-1 min-w-0">
             <div className="flex items-center space-x-2">
               <h3 className="font-semibold text-gray-900 truncate">{displayName}</h3>
@@ -207,25 +242,48 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
               <p className="text-sm text-gray-600 mt-1 line-clamp-1">{about}</p>
             )}
           </div>
-          
+
           <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
             <MoreHorizontal className="h-4 w-4" />
           </Button>
         </div>
       </CardHeader>
-      
+
       <CardContent className="pt-0">
         <div className="space-y-4">
           {/* Post Content */}
-          <div className="text-gray-900 leading-relaxed">
-            <NoteContent event={event} hideQuoteReferences={isQuotePost} />
+          <div className="relative">
+            <div
+              ref={contentRef}
+              className={cn(
+                "text-gray-900 leading-relaxed overflow-hidden transition-all duration-300",
+                !isExpanded && maxHeight && "relative"
+              )}
+              style={!isExpanded && maxHeight ? { maxHeight: `${maxHeight}px` } : undefined}
+            >
+              <NoteContent event={event} hideQuoteReferences={isQuotePost} />
+              {!isExpanded && isTruncated && (
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+              )}
+            </div>
+            {isTruncated && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="w-full mt-2 text-azure hover:text-azure-600"
+              >
+                {isExpanded ? 'Show less' : 'Read more'}
+                <ChevronDown className={cn("ml-2 h-4 w-4 transition-transform", isExpanded && "rotate-180")} />
+              </Button>
+            )}
           </div>
-          
+
           {/* Quoted Post */}
           {isQuotePost && qTag && (
             <QuotedPost qTag={qTag} />
           )}
-          
+
           {/* Interaction Buttons */}
           {interactionsLoading ? (
             <PostInteractionsSkeleton />
@@ -247,8 +305,8 @@ export function NostrPost({ event, className, showBadge = true }: NostrPostProps
 
       {/* Comments Section */}
       {!interactionsLoading && interactions && interactions.comments.length > 0 && (
-        <PostComments 
-          comments={interactions.comments} 
+        <PostComments
+          comments={interactions.comments}
           onShowComments={() => setShowPostModal(true)}
         />
       )}
