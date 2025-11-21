@@ -114,25 +114,6 @@ export default function WhatIsNostrDivine() {
         <strong>diVine is built entirely on the Nostr protocol, bringing the creative spirit of 6-second looping videos to a decentralized platform.</strong> This means your videos, profile, followers, and engagement are all stored on Nostr relays instead of corporate servers. You own your content and your identity.
       </p>
 
-      <h3>Nostr Event Kinds Used by diVine</h3>
-
-      <p>
-        diVine implements several standard Nostr event kinds (NIPs) to provide a complete video sharing experience:
-      </p>
-
-      <ul>
-        <li><strong>Kind 34236 (NIP-71):</strong> Addressable short videos - The core video content format. These events contain video URLs, metadata (title, duration, dimensions), thumbnails, and descriptions.</li>
-        <li><strong>Kind 6 (NIP-18):</strong> Reposts - Share someone else's video to your followers while maintaining attribution to the original creator.</li>
-        <li><strong>Kind 7 (NIP-25):</strong> Reactions - Like and react to videos with emoji reactions.</li>
-        <li><strong>Kind 1 (NIP-01):</strong> Text notes - Comments on videos and general text posts.</li>
-        <li><strong>Kind 3 (NIP-02):</strong> Follow lists - Manage who you follow to build your personalized feed.</li>
-        <li><strong>Kind 0 (NIP-01):</strong> User metadata - Your profile information including name, bio, profile picture, and other details.</li>
-      </ul>
-
-      <p>
-        By using these standardized event kinds, diVine ensures compatibility with the broader Nostr ecosystem while providing a specialized video-focused experience.
-      </p>
-
       <h2>Nostr Basics: Keys and Identity</h2>
 
       <p>Unlike traditional social media, Nostr does not require a username-password combination. Instead, it uses <strong>cryptographic keys</strong>:</p>
@@ -142,6 +123,25 @@ export default function WhatIsNostrDivine() {
         <li><strong>Private Key (nsec_...):</strong> This is your password. <strong>Never share it!</strong> It signs your posts and proves your identity. <a href="/blog/managing-nostr-keys">Learn more about protecting your Nostr keys.</a></li>
         <li><strong>Username (NIP05 domain):</strong> Optional email-like handles (e.g., user@divine.video) that make your identity easier to share and verify.</li>
       </ul>
+
+      <h3>Nostr Event Kinds Used by diVine</h3>
+
+      <p>
+        diVine implements several standard Nostr event kinds (NIPs) to provide a complete video sharing experience:
+      </p>
+
+      <ul>
+        <li><strong><a href="https://nostrbook.dev/kinds/34236" target="_blank" rel="noopener noreferrer">Kind 34236</a> (<a href="https://nostrhub.io/71" target="_blank" rel="noopener noreferrer">NIP-71</a>):</strong> Addressable short videos - The core video content format. These events contain video URLs, metadata (title, duration, dimensions), thumbnails, and descriptions.</li>
+        <li><strong><a href="https://nostrbook.dev/kinds/6" target="_blank" rel="noopener noreferrer">Kind 6</a> (<a href="https://nostrhub.io/18" target="_blank" rel="noopener noreferrer">NIP-18</a>):</strong> Reposts - Share someone else's video to your followers.</li>
+        <li><strong><a href="https://nostrbook.dev/kinds/7" target="_blank" rel="noopener noreferrer">Kind 7</a> (<a href="https://nostrhub.io/25" target="_blank" rel="noopener noreferrer">NIP-25</a>):</strong> Reactions - Like and react to videos with emoji reactions.</li>
+        <li><strong><a href="https://nostrbook.dev/kinds/1" target="_blank" rel="noopener noreferrer">Kind 1</a> (<a href="https://nostrhub.io/01" target="_blank" rel="noopener noreferrer">NIP-01</a>):</strong> Text notes - Comments on videos and general text posts.</li>
+        <li><strong><a href="https://nostrbook.dev/kinds/3" target="_blank" rel="noopener noreferrer">Kind 3</a> (<a href="https://nostrhub.io/02" target="_blank" rel="noopener noreferrer">NIP-02</a>):</strong> Follow lists - Manage who you follow to build your personalized feed.</li>
+        <li><strong><a href="https://nostrbook.dev/kinds/0" target="_blank" rel="noopener noreferrer">Kind 0</a> (<a href="https://nostrhub.io/01" target="_blank" rel="noopener noreferrer">NIP-01</a>):</strong> User metadata - Your profile information including name, bio, profile picture, and other details.</li>
+      </ul>
+
+      <p>
+        By using these standardized event kinds, diVine ensures compatibility with the broader Nostr ecosystem while providing a specialized video-focused experience.
+      </p>
 
       <h2>Relays: The Backbone of Nostr</h2>
 
