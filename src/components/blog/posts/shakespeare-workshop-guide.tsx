@@ -47,26 +47,58 @@ export default function ShakespeareWorkshopGuide() {
         Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template linked above to cover the key points:
       </p>
 
-      <h3>What Shakespeare CAN Build</h3>
+      <h3>Main points to cover:</h3>
 
-      <ul>
-        <li><strong>Nostr Applications:</strong> Social feeds, profile pages, content platforms using the Nostr protocol</li>
-        <li><strong>Static Websites:</strong> Landing pages, portfolios, blogs, documentation sites</li>
-        <li><strong>Interactive Web Apps:</strong> Forms, calculators, dashboards, tools with client-side logic</li>
-        <li><strong>Media-Rich Sites:</strong> Image galleries, video embeds, audio players</li>
-        <li><strong>Responsive Designs:</strong> Mobile-friendly layouts that work on all devices</li>
-      </ul>
+      <ol>
+        <li>What is Shakespeare? And basics of how it works</li>
+        <li>Why Shakespeare is more freedom-respecting than alternatives like Lovable or Replit</li>
+        <li>Choosing AI providers and models (recommend Claude Sonnet 4.5 for the best code output)</li>
+        <li>How to push and deploy your code</li>
+        <li>How to edit existing sites on Shakespeare</li>
+        <li>Ideas of things you can build</li>
+      </ol>
 
-      <h3>What Shakespeare CANNOT Build</h3>
-
-      <p>
-        Be clear about Shakespeare's limitations to set proper expectations:
-      </p>
-
-      <ul>
-        <li><strong>Backend Services:</strong> No server-side code, databases, or API endpoints (except Nostr relays)</li>
-        <li><strong>Native Mobile Apps:</strong> Web apps only, though they can be progressive web apps (PWAs)</li>
-      </ul>
+      <div className="not-prose my-8">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-xl">What Shakespeare Can and Cannot Build</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-gray-300">
+                    <th className="text-left p-4 bg-green-50 font-semibold text-green-900">✅ What Shakespeare CAN Build</th>
+                    <th className="text-left p-4 bg-red-50 font-semibold text-red-900">❌ What Shakespeare CANNOT Build</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 align-top">Nostr Applications (social feeds, profile pages, content platforms)</td>
+                    <td className="p-4 align-top">Backend Services (server-side code, databases, API endpoints)</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 align-top">Static Websites (landing pages, portfolios, blogs, documentation)</td>
+                    <td className="p-4 align-top">Native Mobile Apps (web apps only, though PWAs are possible)</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 align-top">Interactive Web Apps (forms, calculators, dashboards, client-side tools)</td>
+                    <td className="p-4 align-top"></td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 align-top">Media-Rich Sites (image galleries, video embeds, audio players)</td>
+                    <td className="p-4 align-top"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 align-top">Responsive Designs (mobile-friendly layouts for all devices)</td>
+                    <td className="p-4 align-top"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
       <p>
         Emphasize that Shakespeare excels at building <strong>Nostr-native applications</strong> and <strong>client-side web experiences</strong>. For projects requiring backend infrastructure, participants should consider other tools or plan to integrate Shakespeare-built frontends with separate backend services.
@@ -328,37 +360,7 @@ export default function ShakespeareWorkshopGuide() {
         <li><strong>Celebrate Creativity:</strong> Highlight unique approaches and creative solutions</li>
       </ul>
 
-      <div className="not-prose my-12">
-        <Card className="border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-orange-100/50">
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <Trophy className="w-6 h-6 text-orange-600" />
-              Make It Special
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-gray-700">
-            <p>Consider adding fun elements to your showcase:</p>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600 font-bold">🏆</span>
-                <span><strong>Awards:</strong> "Most Creative," "Best Design," "Most Ambitious Project"</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600 font-bold">⚡</span>
-                <span><strong>Lightning Prizes:</strong> Zap small amounts of Bitcoin to winners</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600 font-bold">📸</span>
-                <span><strong>Screenshots:</strong> Capture all the deployed projects for social media sharing</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600 font-bold">🎉</span>
-                <span><strong>Community Vote:</strong> Let participants vote for their favorite projects</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
+
 
       <h2>Workshop Timeline</h2>
 
