@@ -96,7 +96,7 @@ export function SoapboxPostsSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <NostrPost key={post.id} event={post} maxHeight={500} />
+            <NostrPost key={post.id} event={post} maxHeight={350} />
           ))}
         </div>
 
