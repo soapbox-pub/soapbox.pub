@@ -19,14 +19,14 @@ export const meta: BlogPostMeta = {
   "slug": "shakespeare-workshop-guide",
   "title": "How to Run a Shakespeare Workshop",
   "excerpt": "A step-by-step guide to hosting an engaging Shakespeare workshop where participants learn to build Nostr websites with AI assistance",
-  "coverImage": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png",
+  "coverImage": "/assets/blog/shakespeare-workshop-guide/how-to-host-shakespeare-workshop.png",
   "date": "2025-11-20",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-shakespeare/shakespeare-blog-cover.png"
+    "url": "/assets/blog/shakespeare-workshop-guide/how-to-host-shakespeare-workshop.png"
   },
   "tags": ["shakespeare", "tutorial", "workshop", "community"]
 };
@@ -67,9 +67,9 @@ export default function ShakespeareWorkshopGuide() {
               Use our pre-made Canva template to introduce Shakespeare to your workshop participants:
             </p>
             <Button size="lg" className="w-full sm:w-auto" asChild>
-              <a 
-                href="https://www.canva.com/design/DAG5St3AQVk/6rb3k_09jG9hK7aMvZkU9A/edit?utm_content=DAG5St3AQVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
-                target="_blank" 
+              <a
+                href="https://www.canva.com/design/DAG5St3AQVk/6rb3k_09jG9hK7aMvZkU9A/edit?utm_content=DAG5St3AQVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
