@@ -171,10 +171,11 @@ export default function WhatIsNostrDivine() {
       <p>While diVine focuses on short-form video, you can use your same Nostr identity across other clients. Browse our <a href="/showcase">Showcase page</a> to discover more Nostr applications:</p>
 
       <ul>
-        <li><strong>Ditto</strong> - Community platform builder for decentralized communities</li>
-        <li><strong>Primal</strong> - General social networking with discovery features</li>
-        <li><strong>Damus</strong> - Clean iOS client for text and media</li>
-        <li><strong>Treasures</strong> (<a href="https://treasures.to" target="_blank" rel="noopener noreferrer">treasures.to</a>) - Decentralized geocaching on Nostr</li>
+        <li><strong><a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a></strong> - Community platform builder for decentralized communities</li>
+        <li><strong><a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a></strong> - General social networking with discovery features</li>
+        <li><strong><a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a></strong> - Clean iOS client for text and media</li>
+        <li><strong><a href="https://treasures.to" target="_blank" rel="noopener noreferrer">Treasures</a></strong> - Decentralized geocaching on Nostr</li>
+        <li><strong><a href="https://flotilla.social" target="_blank" rel="noopener noreferrer">Flotilla</a></strong> - Nostr private communities</li>
       </ul>
 
       <p>
