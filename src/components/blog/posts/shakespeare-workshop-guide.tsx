@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ExternalLink, Users, Presentation, Zap, Trophy, Gift, QrCode, X } from 'lucide-react';
+import { ExternalLink, Presentation, Zap, Gift } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
