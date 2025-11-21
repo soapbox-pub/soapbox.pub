@@ -234,7 +234,7 @@ export default function WhatIsNostrDivine() {
       </p>
 
       <ul>
-        <li><a href="https://nostr.how" target="_blank" rel="noopener noreferrer">Nostr.how</a> - Comprehensive beginner guide to Nostr</li>
+        <li><a href="https://nostrbook.dev" target="_blank" rel="noopener noreferrer">Nostrbook.dev</a> - Comprehensive documentation of Nostr event kinds and protocol</li>
         <li><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">NostrHub</a> - Explore Nostr Improvement Proposals (NIPs) and development</li>
         <li><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer">Nostrapps.com</a> - Discover other Nostr applications</li>
         <li><a href="/blog/nostr101">Nostr 101</a> - Our comprehensive beginner's guide to the protocol</li>
