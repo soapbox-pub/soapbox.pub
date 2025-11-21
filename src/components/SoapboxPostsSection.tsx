@@ -96,13 +96,13 @@ export function SoapboxPostsSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <NostrPost key={post.id} event={post} />
+            <NostrPost key={post.id} event={post} maxHeight={350} />
           ))}
         </div>
 
         <div className="text-center mt-16">
           <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-            <a 
+            <a
               href={`https://ditto.pub/@ditto@ditto.pub`}
               target="_blank"
               rel="noopener noreferrer"

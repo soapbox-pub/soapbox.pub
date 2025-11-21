@@ -15,6 +15,7 @@ import ShakespeareResources from "./pages/ShakespeareResources";
 import SoapboxSessions from "./pages/SoapboxSessions";
 import HalloweenHackathon from "./pages/HalloweenHackathon";
 import MediaKit from "./pages/MediaKit";
+import SoftwareEthicsPledge from "./pages/SoftwareEthicsPledge";
 
 // Tool pages
 import Ditto from "./pages/tools/Ditto";
@@ -53,6 +54,7 @@ export function AppRouter() {
         <Route path="/soapbox-sessions" element={<SoapboxSessions />} />
         <Route path="/halloween-hackathon" element={<HalloweenHackathon />} />
         <Route path="/media-kit" element={<MediaKit />} />
+        <Route path="/ethics" element={<SoftwareEthicsPledge />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

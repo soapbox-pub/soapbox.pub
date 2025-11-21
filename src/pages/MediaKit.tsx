@@ -262,6 +262,11 @@ export default function MediaKit() {
 
   // Media assets for the photo grid
   const mediaAssets = [
+    { url: "/assets/press/satsconf-brazil-2025/shakespeare-workshop.jpeg", caption: "Shakespeare workshop at SatsConf Brazil, November 2025" },
+    { url: "/assets/press/satsconf-brazil-2025/shakespare-workshop.jpeg", caption: "Attendees learning Shakespeare at SatsConf Brazil, November 2025" },
+    { url: "/assets/press/satsconf-brazil-2025/alex-workshop-room.jpeg", caption: "Alex Gleason presenting at SatsConf Brazil, November 2025" },
+    { url: "/assets/press/satsconf-brazil-2025/alex-sam-workshop.jpeg", caption: "Alex Gleason with workshop attendee at SatsConf Brazil, November 2025" },
+    { url: "/assets/press/satsconf-brazil-2025/alex-workshop.jpeg", caption: "Alex Gleason teaching Shakespeare at SatsConf Brazil, November 2025" },
     { url: "https://image.nostr.build/d4c7963cf4c4b754cae889d9f66d39ca37619a23768748875d180425cf9b6167.jpg", caption: "Alex Gleason presents at Nostr World: Riga, 2024" },
     { url: "https://soapbox.pub/assets/images/riga-team.png", caption: "Alex Gleason with Soapbox mentee Patrick DosReis, and Jack Dorsey (Nostr World: Riga, 2024)" },
     { url: "https://image.nostr.build/161516025ffe27e1eae1736e26f85742ad0517cf352f84b2e1a2cf4aa0c2979d.jpg", caption: "Alex Gleason presents on Nostrify at Nostr World: Riga, 2024" },
@@ -1026,7 +1031,7 @@ export default function MediaKit() {
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-sm text-gray-700">
-                        <span className="font-medium">Ask about Shakespeare AI credits to try it for free!</span> 
+                        <span className="font-medium">Ask about Shakespeare AI credits to try it for free!</span>
                       </p>
                     </div>
                   </div>
