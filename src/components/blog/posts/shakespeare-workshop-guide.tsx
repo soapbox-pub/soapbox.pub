@@ -445,33 +445,6 @@ export default function ShakespeareWorkshopGuide() {
         <li><strong>Build Community:</strong> Invite participants to ongoing Nostr development discussions</li>
       </ul>
 
-      <h2>Common Questions</h2>
-
-      <h3>What if participants don't have Nostr accounts?</h3>
-
-      <p>
-        Shakespeare can generate temporary accounts for participants who don't have Nostr browser extensions. However, encourage participants to set up proper Nostr accounts (using Alby, nos2x, or Flamingo extensions) so they can access their projects later.
-      </p>
-
-      <h3>What if someone's gift card doesn't work?</h3>
-
-      <p>
-        Have a few extra gift card codes ready as backup. You can also help participants redeem codes manually if the QR scanning has issues.
-      </p>
-
-      <h3>What if the AI makes mistakes?</h3>
-
-      <p>
-        This is a teaching moment! Show participants how to:
-      </p>
-
-      <ul>
-        <li>Provide clearer, more specific prompts</li>
-        <li>Use the code view to make manual corrections</li>
-        <li>Ask the AI to fix specific issues</li>
-        <li>Iterate and refine rather than expecting perfection immediately</li>
-      </ul>
-
       <h2>Promoting Your Workshop</h2>
 
       <p>
