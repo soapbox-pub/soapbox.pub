@@ -19,14 +19,14 @@ export const meta: BlogPostMeta = {
   "slug": "managing-nostr-keys",
   "title": "How to Store and Manage Your Nostr Private Key (nsec)",
   "excerpt": "A comprehensive guide to protecting your Nostr identity, understanding key management solutions, and what to do if your private key is lost or compromised",
-  "coverImage": "/assets/blog/nostr-101.png",
+  "coverImage": "/assets/blog/managing-nostr-keys/understanding-nostr-keys.png",
   "date": "2025-11-20",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/nostr-101.png"
+    "url": "/assets/blog/managing-nostr-keys/understanding-nostr-keys.png"
   },
   "tags": ["nostr", "security", "tutorial", "keys"]
 };
@@ -41,8 +41,8 @@ export default function ManagingNostrKeys() {
             <div>
               <h3 className="text-2xl font-bold text-red-900 mb-2">Your Private Key is Everything</h3>
               <p className="text-red-800 text-lg">
-                Your Nostr private key (nsec) is your identity, your account, and your security all in one. 
-                If someone gets your private key, they can impersonate you. If you lose it, you lose access to your account forever. 
+                Your Nostr private key (nsec) is your identity, your account, and your security all in one.
+                If someone gets your private key, they can impersonate you. If you lose it, you lose access to your account forever.
                 There is no password reset, no customer support, no account recovery.
               </p>
             </div>
@@ -291,7 +291,7 @@ export default function ManagingNostrKeys() {
       <h2>Recommended Storage Methods by Use Case</h2>
 
       <h3>For Casual Users (Desktop)</h3>
-      
+
       <p>
         <strong>Use a browser extension like Alby or nos2x.</strong> These extensions store your key encrypted on your computer and handle all signing operations. Websites never see your private key—they only receive signed events.
       </p>
@@ -426,8 +426,8 @@ export default function ManagingNostrKeys() {
               <div>
                 <h4 className="font-semibold text-orange-900 mb-2">Important: No Central Authority</h4>
                 <p className="text-sm text-orange-800">
-                  Unlike traditional social media, there's no company that can "restore" your account or "ban" the impersonator. 
-                  Once someone has your private key, they have complete control over that identity. 
+                  Unlike traditional social media, there's no company that can "restore" your account or "ban" the impersonator.
+                  Once someone has your private key, they have complete control over that identity.
                   The only solution is to migrate to a new key and rebuild your presence.
                 </p>
               </div>
