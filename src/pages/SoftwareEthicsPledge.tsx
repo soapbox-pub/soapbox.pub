@@ -186,16 +186,6 @@ export default function SoftwareEthicsPledge() {
               </a>
             </div>
           </div>
-
-          {/* Signature */}
-          <div className="mt-16 text-center">
-            <p className="text-gray-600 text-lg mb-2">
-              Signed by the Soapbox Team
-            </p>
-            <p className="text-gray-500">
-              November 2025
-            </p>
-          </div>
         </div>
       </div>
 
