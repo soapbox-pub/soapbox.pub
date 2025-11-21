@@ -34,51 +34,12 @@ export const meta: BlogPostMeta = {
 export default function ShakespeareWorkshopGuide() {
   return (
     <article className="prose prose-lg max-w-none">
-      <div className="not-prose mb-12">
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 text-white">
-          <div className="flex items-center gap-3 mb-4">
-            <Users className="w-8 h-8" />
-            <h1 className="text-4xl font-bold text-white m-0">
-              How to Run a Shakespeare Workshop
-            </h1>
-          </div>
-          <p className="text-xl text-purple-100 max-w-3xl">
-            Help your community learn to build Nostr websites with AI assistance through hands-on collaboration
-          </p>
-        </div>
-      </div>
 
       <h2>Workshop Overview</h2>
 
       <p>
-        Shakespeare workshops are interactive sessions where participants learn to build Nostr websites through conversation with AI. These workshops work well for meetups, conferences, hackathons, or educational events. The format is simple: introduce the tool, provide free access through gift cards, build together, and celebrate what everyone creates.
+        Shakespeare workshops are interactive sessions where participants build Nostr-compatible websites with open source AI tools. These workshops work well for meetups, conferences, hackathons, or educational events. The format is simple: introduce the tool, provide free access through gift cards, build together, and celebrate what everyone creates.
       </p>
-
-      <div className="not-prose my-12">
-        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <Presentation className="w-6 h-6 text-purple-600" />
-              Presentation Template
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-gray-700">
-              Use our pre-made Canva template to introduce Shakespeare to your workshop participants:
-            </p>
-            <Button size="lg" className="w-full sm:w-auto" asChild>
-              <a
-                href="https://www.canva.com/design/DAG5St3AQVk/6rb3k_09jG9hK7aMvZkU9A/edit?utm_content=DAG5St3AQVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Presentation Template
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
 
       <h2>Step 1: Introduce Shakespeare</h2>
 
@@ -104,15 +65,39 @@ export default function ShakespeareWorkshopGuide() {
 
       <ul>
         <li><strong>Backend Services:</strong> No server-side code, databases, or API endpoints (except Nostr relays)</li>
-        <li><strong>Complex Computations:</strong> Everything runs in the browser—no heavy processing or data analysis</li>
-        <li><strong>E-commerce:</strong> No payment processing beyond Nostr zaps (Lightning payments)</li>
-        <li><strong>User Authentication Systems:</strong> Beyond Nostr login (which is built-in), no custom auth</li>
         <li><strong>Native Mobile Apps:</strong> Web apps only, though they can be progressive web apps (PWAs)</li>
       </ul>
 
       <p>
         Emphasize that Shakespeare excels at building <strong>Nostr-native applications</strong> and <strong>client-side web experiences</strong>. For projects requiring backend infrastructure, participants should consider other tools or plan to integrate Shakespeare-built frontends with separate backend services.
       </p>
+
+
+      <div className="not-prose my-12">
+        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
+          <CardHeader>
+            <CardTitle className="text-2xl flex items-center gap-2">
+              <Presentation className="w-6 h-6 text-purple-600" />
+              Presentation Template
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-gray-700">
+              Use our pre-made template to introduce Shakespeare to your workshop participants:
+            </p>
+            <Button size="lg" className="w-full sm:w-auto" asChild>
+              <a
+                href="https://www.canva.com/design/DAG5St3AQVk/6rb3k_09jG9hK7aMvZkU9A/edit?utm_content=DAG5St3AQVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="w-4 h-4 mr-2" />
+                View Presentation Template
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
 
       <h2>Step 2: Provide Free Access with Gift Cards</h2>
 
