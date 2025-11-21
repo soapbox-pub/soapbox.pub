@@ -19,14 +19,14 @@ export const meta: BlogPostMeta = {
   "slug": "divine-open-source-tech",
   "title": "The Open Source Technology Behind diVine",
   "excerpt": "How MKStack and Shakespeare enable rapid development of production-ready Nostr applications like diVine",
-  "coverImage": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png",
+  "coverImage": "/assets/blog/mkstack_tutorial/mkstack-divine.png",
   "date": "2025-11-20",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/mkstack_tutorial/mkstack-tutorial-cover.png"
+    "url": "/assets/blog/mkstack_tutorial/mkstack-divine.png"
   },
   "tags": ["mkstack", "divine", "open-source", "shakespeare", "development"]
 };
@@ -241,9 +241,9 @@ export default function DivineOpenSourceTech() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100" asChild>
-                <a 
-                  href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fdivine-video%2Fdivine-web.git" 
-                  target="_blank" 
+                <a
+                  href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fdivine-video%2Fdivine-web.git"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src="https://shakespeare.diy/badge.svg" alt="Edit with Shakespeare" className="h-5" />
