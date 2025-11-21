@@ -36,6 +36,15 @@ export default function WhatIsNostrDivine() {
         <strong>Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized, censorship-resistant protocol designed to give users control over their online identities and content.</strong> Unlike traditional social media platforms that rely on centralized servers and corporate moderation, Nostr allows users to communicate directly through a network of independent relays. This makes it permissionless—meaning anyone can use it without needing approval from a corporation or government.
       </p>
 
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/NVm_jGdwTjQ?si=5qcrxgjr4keqblo4"
+        title="Nostr 101 Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+
       <h3>Key Features of Nostr</h3>
 
       <ul>
@@ -44,6 +53,60 @@ export default function WhatIsNostrDivine() {
         <li><strong>Permissionless:</strong> No accounts, phone numbers, or email verification required—just a cryptographic key pair.</li>
         <li><strong>Portable Identity:</strong> Your identity follows you across all Nostr apps, not locked to any single platform.</li>
       </ul>
+
+      <h2>Why Nostr is Different from Big Tech</h2>
+
+      <p>
+        Traditional social media platforms like TikTok, Instagram, and Twitter are centralized—meaning a single company controls the servers, your data, and your account. If you violate their terms of service (or if they change their policies), they can delete your account, remove your content, or ban you entirely.
+      </p>
+
+      <p>
+        <strong>Nostr flips this model completely:</strong>
+      </p>
+
+      <div className="not-prose my-8 overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="border border-gray-300 px-4 py-3 text-left">Feature</th>
+              <th className="border border-gray-300 px-4 py-3 text-left">Big Tech Platforms</th>
+              <th className="border border-gray-300 px-4 py-3 text-left">Nostr</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border border-gray-300 px-4 py-3 font-semibold">Identity Ownership</td>
+              <td className="border border-gray-300 px-4 py-3">Company owns your account</td>
+              <td className="border border-gray-300 px-4 py-3 bg-green-50">You own your cryptographic keys</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-3 font-semibold">Data Control</td>
+              <td className="border border-gray-300 px-4 py-3">Locked in corporate databases</td>
+              <td className="border border-gray-300 px-4 py-3 bg-green-50">Stored on relays you choose</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-3 font-semibold">Censorship</td>
+              <td className="border border-gray-300 px-4 py-3">Can ban you entirely</td>
+              <td className="border border-gray-300 px-4 py-3 bg-green-50">Cannot be banned from network</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-3 font-semibold">Platform Switching</td>
+              <td className="border border-gray-300 px-4 py-3">Start over on each platform</td>
+              <td className="border border-gray-300 px-4 py-3 bg-green-50">One identity across all apps</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-3 font-semibold">Algorithm Control</td>
+              <td className="border border-gray-300 px-4 py-3">Corporate-controlled feed</td>
+              <td className="border border-gray-300 px-4 py-3 bg-green-50">You decide what you see</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-3 font-semibold">Monetization</td>
+              <td className="border border-gray-300 px-4 py-3">Platform takes a cut</td>
+              <td className="border border-gray-300 px-4 py-3 bg-green-50">Direct tips via Bitcoin</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h2>How diVine Uses Nostr</h2>
 
@@ -66,7 +129,7 @@ export default function WhatIsNostrDivine() {
 
       <ul>
         <li><strong>Public Key (npub_...):</strong> This is your identity, like a username. Anyone can see it and follow you.</li>
-        <li><strong>Private Key (nsec_...):</strong> This is your password. <strong>Never share it!</strong> It signs your posts and proves your identity.</li>
+        <li><strong>Private Key (nsec_...):</strong> This is your password. <strong>Never share it!</strong> It signs your posts and proves your identity. <a href="/blog/managing-nostr-keys">Learn more about protecting your Nostr keys.</a></li>
         <li><strong>Username (NIP05 domain):</strong> Optional email-like handles (e.g., user@divine.video) that make your identity easier to share and verify.</li>
       </ul>
 
@@ -105,14 +168,13 @@ export default function WhatIsNostrDivine() {
 
       <h3>Other Nostr Clients</h3>
 
-      <p>While diVine focuses on short-form video, you can use your same Nostr identity across other clients:</p>
+      <p>While diVine focuses on short-form video, you can use your same Nostr identity across other clients. Browse our <a href="/showcase">Showcase page</a> to discover more Nostr applications:</p>
 
       <ul>
         <li><strong>Ditto</strong> - Community platform builder for decentralized communities</li>
         <li><strong>Primal</strong> - General social networking with discovery features</li>
         <li><strong>Damus</strong> - Clean iOS client for text and media</li>
-        <li><strong>Amethyst</strong> - Feature-rich Android client</li>
-        <li><strong>Coracle</strong> - Web-based client with advanced features</li>
+        <li><strong>Treasures</strong> (<a href="https://treasures.to" target="_blank" rel="noopener noreferrer">treasures.to</a>) - Decentralized geocaching on Nostr</li>
       </ul>
 
       <p>
@@ -133,40 +195,7 @@ export default function WhatIsNostrDivine() {
         This separation of data storage (relays) and user interfaces (clients like diVine) ensures that the platform remains resilient, censorship-resistant, and user-controlled.
       </p>
 
-      <h2>Zaps: Tipping with Bitcoin</h2>
 
-      <p>
-        One unique feature of Nostr is <strong>Zaps</strong>—a way to send small Bitcoin payments over the Lightning Network. Users can tip creators directly for valuable content without any intermediary taking a cut.
-      </p>
-
-      <ul>
-        <li><strong>Get a Lightning Address:</strong> Sign up with a service like Alby, Zebedee, or explore other providers at <a href="https://lightningaddress.com" target="_blank" rel="noopener noreferrer">lightningaddress.com</a>.</li>
-        <li><strong>Link Your Address to Your Profile:</strong> Add it in your diVine profile settings.</li>
-        <li><strong>Start Receiving Zaps!</strong> Users can now tip you directly for your creative videos.</li>
-      </ul>
-
-      <h2>How Nostr Differs from Traditional Social Media</h2>
-
-      <p>
-        Traditional social media platforms like TikTok, Instagram, and Twitter are centralized—meaning a single company controls the servers, your data, and your account. If you violate their terms of service (or if they change their policies), they can delete your account, remove your content, or ban you entirely.
-      </p>
-
-      <p>
-        <strong>Nostr flips this model:</strong>
-      </p>
-
-      <ul>
-        <li><strong>You Own Your Identity:</strong> Your cryptographic keys prove ownership—no company can take that away.</li>
-        <li><strong>You Control Your Data:</strong> Content is stored on relays you choose, not locked in corporate databases.</li>
-        <li><strong>You Choose Your Experience:</strong> Don't like how diVine works? Use a different Nostr client with your same account.</li>
-        <li><strong>No Algorithmic Control:</strong> You decide what content you see, not an algorithm optimized for engagement.</li>
-      </ul>
-
-      <h2>The Mostr Bridge: Connecting to the Fediverse</h2>
-
-      <p>
-        The <a href="https://mostr.pub" target="_blank" rel="noopener noreferrer">Mostr Bridge</a> is a tool that connects the Nostr network with the Fediverse (platforms like Mastodon and Pleroma). This allows users to follow and interact with accounts across both ecosystems without needing to switch platforms. While diVine focuses on Nostr-native video content, this bridge demonstrates the interoperability possible with open protocols.
-      </p>
 
       <h2>Why This Matters for diVine</h2>
 
@@ -178,23 +207,27 @@ export default function WhatIsNostrDivine() {
         This also means diVine can focus on building the best creative tools and user experience, while the Nostr protocol handles identity, data storage, and network effects. If diVine ever shuts down, your videos, followers, and identity persist on Nostr—ready to use with any other compatible client.
       </p>
 
-      <h2>Getting Started with diVine and Nostr</h2>
+      <h2>Fork and Customize diVine</h2>
 
       <p>
-        The easiest way to experience Nostr is to start creating on diVine. Download the app, and it will automatically generate your Nostr keys. You can then:
+        <strong>Because diVine is open source and built on the permissionless Nostr protocol, anyone can fork and edit diVine to do whatever you want!</strong> Want to connect to different relays to see different content? Want to add new features or change the design? You have complete freedom to customize the app.
       </p>
 
-      <ol>
-        <li><strong>Create your first 6-second video</strong> and publish it to the Nostr network</li>
-        <li><strong>Follow other creators</strong> on diVine or any other Nostr app</li>
-        <li><strong>Explore your Nostr identity</strong> across different clients to see the full power of portable social networking</li>
-        <li><strong>Set up Lightning payments</strong> to receive zaps for your creative content</li>
-      </ol>
+      <p>
+        diVine is built on <strong>MKStack</strong>—Soapbox's open source framework for rapidly building Nostr applications. This means you get a production-ready foundation with modern web technologies, Nostr protocol integration, and all the tools you need to create your own version of diVine.
+      </p>
+
+      <h3>What You Can Do with a diVine Fork</h3>
+
+      <ul>
+        <li><strong>Connect to Different Relays:</strong> See content that may be removed or hidden from the primary diVine relay by connecting to alternative Nostr relays</li>
+        <li><strong>Create Niche Communities:</strong> Build specialized video platforms for specific interests (gaming clips, cooking tutorials, etc.)</li>
+        <li><strong>Customize the Experience:</strong> Change video length limits, add new features, or redesign the interface</li>
+        <li><strong>Experiment Freely:</strong> Test new ideas without needing permission from anyone</li>
+      </ul>
 
       <p>
-        <strong>
-          diVine makes Nostr accessible to everyone—no technical knowledge required. Just download the app and start creating.
-        </strong>
+        <a href="/blog/divine-open-source-tech">Learn more about the open source technology behind diVine</a> and how MKStack enables rapid development of production-ready Nostr applications.
       </p>
 
       <h2>Learn More About Nostr</h2>
