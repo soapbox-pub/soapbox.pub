@@ -121,7 +121,7 @@ export default function WhatIsNostrDivine() {
       </p>
 
       <ul>
-        <li><strong>Kind 34236 (NIP-71):</strong> Addressable short videos - The core video content format. These events contain video URLs, metadata (title, duration, dimensions), thumbnails, and descriptions. Being addressable (30000-39999 range) allows videos to be updated or replaced.</li>
+        <li><strong>Kind 34236 (NIP-71):</strong> Addressable short videos - The core video content format. These events contain video URLs, metadata (title, duration, dimensions), thumbnails, and descriptions.</li>
         <li><strong>Kind 6 (NIP-18):</strong> Reposts - Share someone else's video to your followers while maintaining attribution to the original creator.</li>
         <li><strong>Kind 7 (NIP-25):</strong> Reactions - Like and react to videos with emoji reactions.</li>
         <li><strong>Kind 1 (NIP-01):</strong> Text notes - Comments on videos and general text posts.</li>
