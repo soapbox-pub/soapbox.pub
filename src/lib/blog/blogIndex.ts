@@ -59,6 +59,7 @@ import * as whatisnostrdivine from '../../components/blog/posts/what-is-nostr-di
 import * as divineopensourcetech from '../../components/blog/posts/divine-open-source-tech';
 import * as shakespeareworkshopguide from '../../components/blog/posts/shakespeare-workshop-guide';
 import * as shakespeareoriginstory from '../../components/blog/posts/shakespeare-origin-story';
+import * as managingnostrkeys from '../../components/blog/posts/managing-nostr-keys';
 
 export interface BlogPost {
   slug: string;
@@ -78,6 +79,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  managingnostrkeys.meta,
   shakespeareworkshopguide.meta,
   shakespeareoriginstory.meta,
   whatisnostrdivine.meta,
@@ -144,6 +146,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'managingnostrkeys':
+      return (await import('../../components/blog/posts/managing-nostr-keys')).default;
     case 'shakespeareworkshopguide':
       return (await import('../../components/blog/posts/shakespeare-workshop-guide')).default;
     case 'shakespeareoriginstory':
