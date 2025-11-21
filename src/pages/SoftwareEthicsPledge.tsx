@@ -55,18 +55,9 @@ export default function SoftwareEthicsPledge() {
                     <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                       We Commit to Open Source Software
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       All of our work intended for public consumption is released as open source, freely licensed software. This means anyone can view, modify, audit, and distribute our code. No black boxes, no proprietary lock-in, no hidden surveillance.
                     </p>
-                    <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
-                      <p className="font-semibold mb-2">What this means in practice:</p>
-                      <ul className="space-y-1 ml-4">
-                        <li>• Complete source code available on GitLab and GitHub</li>
-                        <li>• Permissive licenses (MIT, Apache 2.0, AGPL 3.0) that respect user freedom</li>
-                        <li>• Public development process with community input</li>
-                        <li>• No proprietary dependencies or closed-source components</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -83,18 +74,9 @@ export default function SoftwareEthicsPledge() {
                     <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                       We Commit to Decentralized Protocols
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       We build exclusively on decentralized protocols like Nostr and ActivityPub. We reject centralized platforms that concentrate power in corporate hands. Decentralization isn't just a technical choice—it's a moral imperative for user sovereignty.
                     </p>
-                    <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
-                      <p className="font-semibold mb-2">What this means in practice:</p>
-                      <ul className="space-y-1 ml-4">
-                        <li>• No central servers controlling user data</li>
-                        <li>• Users can switch between apps while keeping their identity</li>
-                        <li>• No single point of failure or censorship</li>
-                        <li>• Open protocols that anyone can implement</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -111,18 +93,9 @@ export default function SoftwareEthicsPledge() {
                     <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                       We Commit to Never Selling User Data
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       Your data is yours, not ours to monetize. We will never sell, trade, or exploit user data for profit. Our business model is built on providing valuable tools and services, not on surveillance capitalism.
                     </p>
-                    <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
-                      <p className="font-semibold mb-2">What this means in practice:</p>
-                      <ul className="space-y-1 ml-4">
-                        <li>• No data mining or behavioral tracking</li>
-                        <li>• No selling user information to advertisers or data brokers</li>
-                        <li>• No hidden data collection or analytics beyond basic usage metrics</li>
-                        <li>• Users own their data and can export or delete it at any time</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -139,18 +112,9 @@ export default function SoftwareEthicsPledge() {
                     <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                       We Commit to Fighting Government Censorship
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       We build tools that resist censorship from any authority. Free speech is not negotiable. We will not implement backdoors, comply with unjust takedown requests, or compromise our users' ability to communicate freely.
                     </p>
-                    <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
-                      <p className="font-semibold mb-2">What this means in practice:</p>
-                      <ul className="space-y-1 ml-4">
-                        <li>• No content filtering or algorithmic suppression</li>
-                        <li>• No compliance with censorship demands from governments</li>
-                        <li>• Users control their own moderation preferences</li>
-                        <li>• Transparent development of all moderation tools</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -167,18 +131,9 @@ export default function SoftwareEthicsPledge() {
                     <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                       We Commit to Resisting Corporate Control
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       Digital resources should not be controlled by corporations seeking to maximize profit at users' expense. We reject extractive business models, walled gardens, and artificial scarcity. Technology should serve humanity, not shareholders.
                     </p>
-                    <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
-                      <p className="font-semibold mb-2">What this means in practice:</p>
-                      <ul className="space-y-1 ml-4">
-                        <li>• No vendor lock-in or proprietary formats</li>
-                        <li>• No artificial feature restrictions or paywalls</li>
-                        <li>• No dark patterns or manipulative design</li>
-                        <li>• Community governance over product direction</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -195,18 +150,9 @@ export default function SoftwareEthicsPledge() {
                     <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                       We Commit to Maintaining Independence
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       We will never sell our products or company to any entity that does not share and uphold these commitments. Our mission is not for sale. We would rather shut down than compromise our principles for profit.
                     </p>
-                    <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
-                      <p className="font-semibold mb-2">What this means in practice:</p>
-                      <ul className="space-y-1 ml-4">
-                        <li>• No acquisition by Big Tech companies</li>
-                        <li>• No venture capital that demands compromising our values</li>
-                        <li>• No partnerships that conflict with user sovereignty</li>
-                        <li>• Sustainable business model aligned with our ethics</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -218,7 +164,7 @@ export default function SoftwareEthicsPledge() {
             <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
               Why This Matters
             </h2>
-            
+
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               The tech industry is dominated by companies that profit from user surveillance, planned obsolescence, and monopolistic control. Users are treated as products to be monetized rather than people to be served. Platforms deplatform users arbitrarily, governments demand censorship, and corporations lock users into walled gardens.
             </p>
