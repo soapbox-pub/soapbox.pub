@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Users, Presentation, Zap, Trophy, Gift, QrCode } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { ExternalLink, Users, Presentation, Zap, Trophy, Gift, QrCode, X } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -32,6 +33,35 @@ export const meta: BlogPostMeta = {
 };
 
 export default function ShakespeareWorkshopGuide() {
+  const [selectedImage, setSelectedImage] = useState<{ url: string; caption: string } | null>(null);
+
+  const workshopPhotos = [
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/chad-shakespeare-workshop.jpeg",
+      caption: "Shakespeare workshop participants building projects"
+    },
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation6.jpg",
+      caption: "Derek Ross presenting Shakespeare at a workshop"
+    },
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg",
+      caption: "Derek Ross demonstrating Shakespeare features"
+    },
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg",
+      caption: "Workshop attendees engaged in building"
+    },
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/alex-workshop-room.jpeg",
+      caption: "Workshop room setup with participants"
+    },
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/alex-sam-workshop.jpeg",
+      caption: "Alex and Sam at a Shakespeare workshop"
+    }
+  ];
+
   return (
     <article className="prose prose-lg max-w-none">
 
@@ -367,7 +397,55 @@ export default function ShakespeareWorkshopGuide() {
         <li><strong>Celebrate Creativity:</strong> Highlight unique approaches and creative solutions</li>
       </ul>
 
+      <div className="not-prose my-16">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Pics from Past Shakespeare Workshops</CardTitle>
+            <p className="text-gray-600 mt-2">
+              See Shakespeare workshops in action. Click any image to view larger version.
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+              {workshopPhotos.map((photo, index) => (
+                <div
+                  key={index}
+                  className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+                  onClick={() => setSelectedImage(photo)}
+                >
+                  <img
+                    src={photo.url}
+                    alt={photo.caption}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
+      {/* Image Lightbox Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl w-full h-auto max-h-[90vh] p-0 overflow-hidden">
+          {selectedImage && (
+            <>
+              <DialogHeader className="p-6 pb-0">
+                <DialogTitle className="text-left">{selectedImage.caption}</DialogTitle>
+              </DialogHeader>
+              <div className="relative">
+                <img
+                  src={selectedImage.url}
+                  alt={selectedImage.caption}
+                  className="w-full h-auto"
+                />
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <h2 id="timeline">Workshop Timeline</h2>
 
