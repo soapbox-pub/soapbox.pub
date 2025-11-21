@@ -41,7 +41,49 @@ export default function ShakespeareWorkshopGuide() {
         Shakespeare workshops are interactive sessions where participants build Nostr-compatible websites with open source AI tools. These workshops work well for meetups, conferences, hackathons, or educational events. The format is simple: set up helpers, introduce the tool, provide free access through gift cards, build together, and celebrate what everyone creates.
       </p>
 
-      <h2>Step 1: Set Up Your Helpers</h2>
+      <div className="not-prose my-12">
+        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50">
+          <CardHeader>
+            <CardTitle className="text-2xl">Table of Contents</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <nav className="space-y-2">
+              <a href="#step-1-helpers" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Step 1: Set Up Your Helpers
+              </a>
+              <a href="#step-2-introduce" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Step 2: Introduce Shakespeare
+              </a>
+              <a href="#step-3-gift-cards" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Step 3: Provide Free Access with Gift Cards
+              </a>
+              <a href="#step-4-build" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Step 4: Build Together
+              </a>
+              <a href="#step-5-celebrate" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Step 5: Share and Celebrate
+              </a>
+              <a href="#timeline" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Workshop Timeline
+              </a>
+              <a href="#materials" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Materials Checklist
+              </a>
+              <a href="#tips" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Tips for Success
+              </a>
+              <a href="#promoting" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Promoting Your Workshop
+              </a>
+              <a href="#resources" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
+                Additional Resources
+              </a>
+            </nav>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h2 id="step-1-helpers">Step 1: Set Up Your Helpers</h2>
 
       <p>
         Before diving into Shakespeare, identify experienced participants who can assist others throughout the workshop. This peer support system is crucial for a smooth experience.
@@ -80,7 +122,7 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2>Step 2: Introduce Shakespeare</h2>
+      <h2 id="step-2-introduce">Step 2: Introduce Shakespeare</h2>
 
       <p>
         Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template linked above to cover the key points:
@@ -165,7 +207,7 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2>Step 3: Provide Free Access with Gift Cards</h2>
+      <h2 id="step-3-gift-cards">Step 3: Provide Free Access with Gift Cards</h2>
 
       <p>
         Shakespeare makes it easy to provide free AI credits to workshop participants through gift cards. This ensures everyone can participate without needing their own API keys or payment setup.
@@ -231,7 +273,7 @@ export default function ShakespeareWorkshopGuide() {
         <li><strong>Professional Experience:</strong> Everyone gets the same quality AI models and capabilities</li>
       </ul>
 
-      <h2>Step 4: Build Together</h2>
+      <h2 id="step-4-build">Step 4: Build Together</h2>
 
       <p>
         The core of the workshop is collaborative building. One facilitator builds an example project on the main screen while participants work on their own projects simultaneously.
@@ -297,7 +339,7 @@ export default function ShakespeareWorkshopGuide() {
         For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
       </p>
 
-      <h2>Step 5: Share and Celebrate</h2>
+      <h2 id="step-5-celebrate">Step 5: Share and Celebrate</h2>
 
       <p>
         The final phase of the workshop is where the magic happens. Participants deploy their creations and share them with the community.
@@ -330,7 +372,7 @@ export default function ShakespeareWorkshopGuide() {
 
 
 
-      <h2>Workshop Timeline</h2>
+      <h2 id="timeline">Workshop Timeline</h2>
 
       <p>
         A typical Shakespeare workshop runs 60 minutes:
@@ -404,7 +446,7 @@ export default function ShakespeareWorkshopGuide() {
         </div>
       </div>
 
-      <h2>Materials Checklist</h2>
+      <h2 id="materials">Materials Checklist</h2>
 
       <p>
         Before your workshop, make sure you have:
@@ -451,7 +493,7 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2>Tips for Success</h2>
+      <h2 id="tips">Tips for Success</h2>
 
       <h3>Before the Workshop</h3>
 
@@ -480,7 +522,7 @@ export default function ShakespeareWorkshopGuide() {
         <li><strong>Build Community:</strong> Invite participants to ongoing Nostr development discussions</li>
       </ul>
 
-      <h2>Promoting Your Workshop</h2>
+      <h2 id="promoting">Promoting Your Workshop</h2>
 
       <p>
         Attract participants by emphasizing:
@@ -544,7 +586,7 @@ export default function ShakespeareWorkshopGuide() {
         </div>
       </div>
 
-      <h2>Additional Resources</h2>
+      <h2 id="resources">Additional Resources</h2>
 
       <ul>
         <li><a href="/blog/announcing-shakespeare-act-2">Shakespeare Act 2: Build Freely</a> - Feature overview</li>
