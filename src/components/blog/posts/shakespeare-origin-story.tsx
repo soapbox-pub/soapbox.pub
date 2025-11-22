@@ -46,11 +46,10 @@ export default function ShakespeareOriginStory() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">The Evolution Path</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
               <div className="text-center">
-                <div className="bg-gray-900 text-white rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                <div className="bg-transparent border-4 border-gray-900 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
                   <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-16 h-16 mb-3 object-contain" />
-                  <h4 className="text-xl font-bold mb-2">Goose</h4>
-                  <p className="text-sm text-gray-300">Terminal-Based</p>
-                  <p className="text-xs text-gray-400 mt-2">Block (2025)</p>
+                  <h4 className="text-xl font-bold mb-2 text-gray-900">Goose</h4>
+                  <p className="text-sm text-gray-700">Terminal-Based</p>
                 </div>
                 <p className="text-sm text-gray-600">AI agent framework<br />for developers</p>
               </div>
@@ -58,11 +57,10 @@ export default function ShakespeareOriginStory() {
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
 
               <div className="text-center">
-                <div className="bg-violet-600 text-white rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                <div className="bg-transparent border-4 border-violet-600 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
                   <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-16 h-16 mb-3 object-contain" />
-                  <h4 className="text-xl font-bold mb-2">Stacks</h4>
-                  <p className="text-sm text-violet-200">Nostr Templates</p>
-                  <p className="text-xs text-violet-300 mt-2">Soapbox (2025)</p>
+                  <h4 className="text-xl font-bold mb-2 text-gray-900">Stacks</h4>
+                  <p className="text-sm text-gray-700">Nostr Templates</p>
                 </div>
                 <p className="text-sm text-gray-600">Template system<br />for Nostr apps</p>
               </div>
@@ -70,11 +68,10 @@ export default function ShakespeareOriginStory() {
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
 
               <div className="text-center">
-                <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                <div className="bg-transparent border-4 border-purple-600 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
                   <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-16 h-16 mb-3 object-contain" />
-                  <h4 className="text-xl font-bold mb-2">Shakespeare</h4>
-                  <p className="text-sm text-purple-200">Browser-Based</p>
-                  <p className="text-xs text-purple-300 mt-2">Soapbox (2025)</p>
+                  <h4 className="text-xl font-bold mb-2 text-gray-900">Shakespeare</h4>
+                  <p className="text-sm text-gray-700">Browser-Based</p>
                 </div>
                 <p className="text-sm text-gray-600">Full development<br />environment</p>
               </div>
@@ -237,9 +234,12 @@ export default function ShakespeareOriginStory() {
           <h3 className="text-2xl font-bold text-gray-900 mb-6">From Terminal to Browser</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-10 h-10 object-contain" />
-                <h4 className="font-semibold text-gray-900">Goose (Terminal)</h4>
+              <div className="flex flex-col items-center mb-3">
+                <div className="flex items-center gap-3 mb-1">
+                  <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-10 h-10 object-contain" />
+                  <h4 className="font-semibold text-gray-900">Goose</h4>
+                </div>
+                <p className="text-xs text-gray-500">(Terminal)</p>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>✓ AI assistance</li>
@@ -250,9 +250,12 @@ export default function ShakespeareOriginStory() {
               </ul>
             </div>
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-10 h-10 object-contain" />
-                <h4 className="font-semibold text-gray-900">Stacks (Terminal)</h4>
+              <div className="flex flex-col items-center mb-3">
+                <div className="flex items-center gap-3 mb-1">
+                  <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-10 h-10 object-contain" />
+                  <h4 className="font-semibold text-gray-900">Stacks</h4>
+                </div>
+                <p className="text-xs text-gray-500">(Terminal)</p>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>✓ AI assistance (Dork)</li>
@@ -264,9 +267,12 @@ export default function ShakespeareOriginStory() {
               </ul>
             </div>
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-10 h-10 object-contain" />
-                <h4 className="font-semibold text-purple-700">Shakespeare (Browser)</h4>
+              <div className="flex flex-col items-center mb-3">
+                <div className="flex items-center gap-3 mb-1">
+                  <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-10 h-10 object-contain" />
+                  <h4 className="font-semibold text-purple-700">Shakespeare</h4>
+                </div>
+                <p className="text-xs text-purple-600">(Browser)</p>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>✓ AI assistance</li>
@@ -309,7 +315,7 @@ export default function ShakespeareOriginStory() {
       <h3>Custom-Built Tools</h3>
 
       <p>
-        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare and Stacks take a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes a <a href="/blog/nostrbook-mcp">custom Nostr tool</a> that gives the AI direct access to Nostr protocol functionality, as well as the js-dev tool which solved several problems we encountered with Goose's original dev tool.
+        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare and Stacks take a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes a custom Nostr tool that gives the AI direct access to Nostr protocol functionality, as well as the js-dev tool which solved several problems we encountered with Goose's original dev tool.
       </p>
 
       <p>
@@ -319,13 +325,13 @@ export default function ShakespeareOriginStory() {
       <h3>Browser-Native Architecture</h3>
 
       <p>
-        Shakespeare runs entirely in the browser using modern Web APIs (IndexedDB for storage, WebAssembly for performance, Service Workers for offline support). This eliminates installation and works on any device with a web browser.
+        Shakespeare runs entirely in the browser. Building this was a major accomplishment—creating a full development environment that runs completely client-side without any server-side processing. This eliminates installation and works on any device with a web browser.
       </p>
 
       <h3>Visual Development Environment</h3>
 
       <p>
-        Unlike terminal-based tools, Shakespeare provides a complete visual interface with live preview, <a href="/blog/shakespeare-editing-code">syntax-highlighted code editor</a>, file explorer, and real-time deployment. Developers can switch between conversational AI assistance and direct code editing as needed.
+        Unlike terminal-based tools, Shakespeare provides a complete visual interface with live preview, <a href="/blog/shakespeare-editing-code">code editor</a>, file explorer, and real-time deployment. The environment also includes an in-browser terminal that supports many basic commands, plus a custom console tool with a built-in assistant named Quilly. Developers can switch between conversational AI assistance and direct code editing as needed.
       </p>
 
       <h3>Nostr-Native Identity</h3>
@@ -337,7 +343,7 @@ export default function ShakespeareOriginStory() {
       <h3>Git Integration</h3>
 
       <p>
-        <a href="/blog/shakespeare-importing-existing-projects">Shakespeare includes built-in Git support</a>, allowing users to version control their projects, push to GitHub/GitLab, and collaborate with others—all from the browser without installing Git locally.
+        <a href="/blog/shakespeare-importing-existing-projects">Shakespeare includes built-in Git support</a>, allowing users to version control their projects, push to GitHub/GitLab, and collaborate with others—all from the browser without installing Git locally. Shakespeare also supports Nostr Git (ngit) for decentralized version control on the Nostr network.
       </p>
 
       <h2>The Stacks Connection</h2>
