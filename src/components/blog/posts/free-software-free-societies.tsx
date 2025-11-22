@@ -14,7 +14,7 @@ export interface BlogPostMeta {
 export const meta: BlogPostMeta = {
   "slug": "free-software-free-societies",
   "title": "Free Software: Free Societies",
-  "excerpt": "We cannot defend freedom without community control over technology. By Heather Larson & M.K. Fain",
+  "excerpt": "We cannot defend freedom without community control over technology.",
   "coverImage": "/assets/blog/free-software/cover.png",
   "date": "2025-11-22",
   "author": {
