@@ -176,7 +176,7 @@ export default function ShakespeareOriginStory() {
             <CardContent className="text-sm text-gray-700 space-y-2">
               <p>• Terminal-based with Dork agent</p>
               <p>• Nostr application templates</p>
-              <p>• Nostrbook MCP for Nostr docs</p>
+              <p>• Custom-built Nostr tools for AI</p>
               <p>• For Nostr builders (all levels)</p>
               <p>• Template sharing via Nostr</p>
             </CardContent>
@@ -276,19 +276,13 @@ export default function ShakespeareOriginStory() {
         Shakespeare carries forward several key concepts from Goose:
       </p>
 
-      <h3>1. Model Context Protocol (MCP)</h3>
+      <h3>1. Provider Independence</h3>
 
       <p>
-        Like Goose, Shakespeare uses MCP to connect AI assistants to specialized tools and knowledge. In Shakespeare's case, this includes <a href="/blog/nostrbook-mcp">Nostrbook MCP</a>—a queryable documentation system that gives the AI deep knowledge of Nostr protocols without requiring users to understand technical details.
+        Goose pioneered the concept of letting users choose their own AI provider rather than being locked to a single vendor. Shakespeare extends this with the Shakespeare AI provider which supports multiple models and accepts payment via either Stripe of Bitcoin Lightning.
       </p>
 
-      <h3>2. Provider Independence</h3>
-
-      <p>
-        Goose pioneered the concept of letting users choose their own AI provider rather than being locked to a single vendor. Shakespeare extends this with Nostr Service Providers (NSPs)—AI providers that accept Bitcoin Lightning payments and can be discovered through the Nostr network.
-      </p>
-
-      <h3>3. Autonomous Task Execution</h3>
+      <h3>2. Autonomous Task Execution</h3>
 
       <p>
         Both Goose and Shakespeare can autonomously handle complex tasks: reading and writing files, managing dependencies, running builds, and deploying projects. The user describes what they want, and the AI handles all the implementation details.
@@ -298,6 +292,16 @@ export default function ShakespeareOriginStory() {
 
       <p>
         While inspired by Goose, Shakespeare introduced several innovations:
+      </p>
+
+      <h3>Custom-Built Tools</h3>
+
+      <p>
+        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare and Stacks take a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes a custom Nostr tool that gives the AI direct access to Nostr protocol functionality, as well as the js-dev tool which solved several problems we encountered with Goose's original dev tool.
+      </p>
+
+      <p>
+        Shakespeare does support connecting to MCP servers over HTTPS for advanced users who want to extend functionality, but the core Nostr capabilities come from our custom-built tools rather than through MCP. This gives us more control over the developer experience and better integration with the browser environment.
       </p>
 
       <h3>Browser-Native Architecture</h3>
@@ -372,11 +376,8 @@ export default function ShakespeareOriginStory() {
       <h2>Standing on the Shoulders of Giants</h2>
 
       <p>
-        Shakespeare wouldn't exist without the pioneering work of the Goose team at Block. Their open-source release of Goose under the Apache License 2.0 enabled the entire ecosystem to benefit from their innovations in AI-assisted development.
-      </p>
-
-      <p>
-        By building on Goose's foundation, adapting it for Nostr through Stacks, and ultimately transforming it into Shakespeare's browser-based environment, we've created a tool that serves a different audience while honoring the original vision: <strong>using AI to give people time back to be their most creative selves</strong>.
+        Shakespeare was directly inspired by the pioneering work of the Goose team at Block. 
+        By adapting their concept for Nostr through Stacks, and ultimately transforming it into Shakespeare's browser-based environment, we've created a tool that serves a different audience while honoring the original vision: <strong>using AI to give people time back to be their most creative selves</strong>.
       </p>
 
       <div className="not-prose my-16">
