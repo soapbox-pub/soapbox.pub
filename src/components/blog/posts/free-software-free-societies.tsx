@@ -102,7 +102,7 @@ export default function FreeSoftwareFreeSocieties() {
       </p>
 
       <p>
-        As Alex Gleason said in a recent talk:
+        As Soapbox CEO, Alex Gleason, said in a recent talk:
       </p>
 
       <blockquote>
