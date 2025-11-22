@@ -228,11 +228,19 @@ export default function ShakespeareWorkshopGuide() {
         <li>✅ Workshop space confirmed with projector/screen</li>
       </ul>
 
-      <img
+      {/* <img
         src="/assets/blog/shakespeare-workshop-guide/alex-workshop-room.jpeg"
         alt="Workshop room setup with participants"
         className="rounded-lg shadow-md"
+      /> */}
+
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg"
+        alt="Workshop attendees engaged in building"
+        className="rounded-lg shadow-md"
       />
+
+      
 
       <h2 id="step-1-introduce">Step 1: Introduce Shakespeare</h2>
 
@@ -255,17 +263,7 @@ export default function ShakespeareWorkshopGuide() {
         Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can support participants who may struggle or have questions during the building session, and provide you an extra set of eyes and ears.
       </p>
 
-      <img
-        src="/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg"
-        alt="Derek Ross demonstrating Shakespeare features"
-        className="rounded-lg shadow-md"
-      />
-
       <h3>Present Shakespeare Overview</h3>
-
-      <p>
-        Cover these main points in your presentation:
-      </p>
 
       <ol>
         <li>What is Shakespeare? And basics of how it works</li>
@@ -377,8 +375,8 @@ export default function ShakespeareWorkshopGuide() {
       </p>
 
       <img
-        src="/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg"
-        alt="Workshop attendees engaged in building"
+        src="/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg"
+        alt="Derek Ross demonstrating Shakespeare features"
         className="rounded-lg shadow-md"
       />
 
