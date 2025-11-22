@@ -107,51 +107,44 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <a
                 href="https://opensats.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center p-8 rounded-lg transition-all hover:shadow-lg hover:scale-105"
+                className="flex items-center justify-center p-4 rounded-lg transition-all hover:shadow-lg hover:scale-105"
               >
                 <img
                   src="/assets/logos/opensats-logo-soapbox.png"
                   alt="OpenSats"
-                  className="max-h-24 w-auto object-contain"
+                  className="max-h-32 md:max-h-40 w-full object-contain"
                 />
               </a>
               <a
                 href="https://hrf.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center p-8 rounded-lg transition-all hover:shadow-lg hover:scale-105"
+                className="flex items-center justify-center p-4 rounded-lg transition-all hover:shadow-lg hover:scale-105"
               >
                 <img
                   src="/assets/logos/hrf-humanrightsfoudnation-logo.png"
                   alt="Human Rights Foundation"
-                  className="max-h-24 w-auto object-contain"
+                  className="max-h-32 md:max-h-40 w-full object-contain"
                 />
               </a>
               <a
                 href="https://andotherstuff.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center p-8 rounded-lg transition-all hover:shadow-lg hover:scale-105"
+                className="flex items-center justify-center p-4 rounded-lg transition-all hover:shadow-lg hover:scale-105"
               >
                 <img
                   src="/assets/logos/aos-andotherstuff-logo-soapbox.png"
                   alt="And Other Stuff"
-                  className="max-h-24 w-auto object-contain"
+                  className="max-h-32 md:max-h-40 w-full object-contain"
                 />
               </a>
             </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <TeamFollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
           </div>
         </section>
 
@@ -176,6 +169,13 @@ export default function About() {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <TeamFollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
           </div>
         </section>
 
