@@ -216,6 +216,14 @@ export default function ShakespeareOriginStory() {
         MKStack proved that the combination of good templates + AI assistance could dramatically speed up Nostr development. Projects that previously took weeks could be built in days or even hours. You can try Stacks today at <a href="https://getstacks.dev" target="_blank" rel="noopener noreferrer">getstacks.dev</a>.
       </p>
 
+      <div className="not-prose my-12">
+        <img
+          src="/assets/blog/announcing-shakespeare/shakespeare-example-project.png"
+          alt="Shakespeare browser-based development environment showing chat interface and live preview"
+          className="rounded-lg shadow-lg border border-gray-200 w-full"
+        />
+      </div>
+
       <h2>Chapter 3: Shakespeare Goes Browser-Based</h2>
 
       <p>
