@@ -189,12 +189,6 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h3>Identify Potential Helpers (Optional)</h3>
-
-      <p>
-        If you know some participants in advance who have experience with AI coding or Shakespeare, reach out to them before the workshop and ask if they'd be willing to help others during the building session. Having pre-identified helpers can make the workshop run even more smoothly, though you can also enlist helpers at the start of the workshop itself.
-      </p>
-
       <h3>Customize Your Presentation</h3>
 
       <p>
@@ -227,6 +221,12 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
+      <h3>Identify Potential Helpers</h3>
+
+      <p>
+        If you know some participants in advance who have experience with AI coding or Shakespeare, reach out to them before the workshop and ask if they'd be willing to help others during the building session. Having pre-identified helpers can make the workshop run even more smoothly, though you can also enlist helpers at the start of the workshop itself by asking who has experience.
+      </p>
+
       <h3>Preparation Checklist</h3>
 
       <ul>
@@ -256,22 +256,7 @@ export default function ShakespeareWorkshopGuide() {
       <p>
         Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template to cover the key points.
       </p>
-
-      <h3>Enlist Helpers</h3>
-
-      <p>
-        At the very beginning of your workshop, ask these two questions to the group:
-      </p>
-
-      <ol>
-        <li><strong>"Raise your hand if you've ever vibe coded before"</strong> - This identifies participants with AI coding experience</li>
-        <li><strong>"Raise your hand if you're really good at vibe coding"</strong> - This identifies your potential helpers</li>
-      </ol>
-
-      <p>
-        Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can support participants who may struggle or have questions during the building session, and provide you an extra set of eyes and ears.
-      </p>
-
+      
       <h3>Present Shakespeare Overview</h3>
 
       <ol>
