@@ -37,6 +37,7 @@ export default defineConfig({
         "/tools/shakespeare",
 
         // Blog posts
+        "/blog/free-software-free-societies",
         "/blog/managing-nostr-keys",
         "/blog/shakespeare-workshop-guide",
         "/blog/shakespeare-origin-story",

@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
 import * as announcingditto from '../../components/blog/posts/announcing-ditto';
 import * as announcingsoapboxsessionspodcast from '../../components/blog/posts/announcing-soapbox-sessions-podcast';
 import * as announcingshakespeare from '../../components/blog/posts/announcing-shakespeare';
@@ -79,6 +80,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  freesoftwarefreesocieties.meta,
   managingnostrkeys.meta,
   shakespeareworkshopguide.meta,
   shakespeareoriginstory.meta,
@@ -146,6 +148,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'freesoftwarefreesocieties':
+      return (await import('../../components/blog/posts/free-software-free-societies')).default;
     case 'managingnostrkeys':
       return (await import('../../components/blog/posts/managing-nostr-keys')).default;
     case 'shakespeareworkshopguide':
