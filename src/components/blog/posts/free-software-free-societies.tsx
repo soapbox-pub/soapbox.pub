@@ -15,14 +15,14 @@ export const meta: BlogPostMeta = {
   "slug": "free-software-free-societies",
   "title": "Free Software: Free Societies",
   "excerpt": "We cannot defend freedom without community control over technology. By Heather Larson & M.K. Fain",
-  "coverImage": "/assets/blog/free-software/cover.jpg",
+  "coverImage": "/assets/blog/free-software/cover.png",
   "date": "2025-11-22",
   "author": {
     "name": "Heather Larson & MK Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/free-software/cover.jpg"
+    "url": "/assets/blog/free-software/cover.png"
   },
   "tags": ["open-source", "freedom", "philosophy", "society", "ai"]
 };
@@ -30,20 +30,6 @@ export const meta: BlogPostMeta = {
 export default function FreeSoftwareFreeSocieties() {
   return (
     <article className="prose prose-lg max-w-none">
-      <div className="not-prose mb-12">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-800 rounded-3xl p-8 text-white">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            Free Software: Free Societies
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl">
-            We cannot defend freedom without community control over technology.
-          </p>
-          <p className="text-lg text-blue-200 mt-2">
-            By Heather Larson & M.K. Fain
-          </p>
-        </div>
-      </div>
-
       <h2>The State of the Internet</h2>
 
       <p>
