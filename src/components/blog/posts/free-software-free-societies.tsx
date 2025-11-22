@@ -85,19 +85,7 @@ export default function FreeSoftwareFreeSocieties() {
         This future is not hypothetical. It is simply the continuation of current trends.
       </p>
 
-      <p>Free software is the only scalable counterweight. When software is open:</p>
-
-      <ul>
-        <li>People can verify what code does.</li>
-        <li>Communities can adapt tools to local needs.</li>
-        <li>Journalists and researchers can hold institutions accountable.</li>
-        <li>Activists and dissidents can build secure channels of communication.</li>
-        <li>Citizens retain control over the infrastructure that powers their lives.</li>
-      </ul>
-
-      <p>
-        Open source enables autonomy at every level of society.
-      </p>
+      <p>Free software is the only scalable counterweight.</p>
 
       <h2>Technology for the People Who Need It Most</h2>
 
