@@ -37,7 +37,7 @@ export default function ShakespeareOriginStory() {
       <h2>The Evolution of AI-Assisted Development</h2>
 
       <p>
-        Shakespeare didn't appear overnight. It's the result of an evolution that started with Block's Goose framework, continued through Soapbox's Stacks project, and culminated in a browser-based development environment that makes building Nostr applications accessible to everyone.
+        <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a> didn't appear overnight. It's the result of an evolution that started with Block's Goose framework, continued through Soapbox's Stacks project, and culminated in a browser-based development environment that makes building Nostr applications accessible to everyone.
       </p>
 
       <div className="not-prose my-12">
@@ -46,7 +46,8 @@ export default function ShakespeareOriginStory() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">The Evolution Path</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
               <div className="text-center">
-                <div className="bg-gray-900 text-white rounded-2xl p-6 mb-4 shadow-lg">
+                <div className="bg-gray-900 text-white rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                  <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2">Goose</h4>
                   <p className="text-sm text-gray-300">Terminal-Based</p>
                   <p className="text-xs text-gray-400 mt-2">Block (2025)</p>
@@ -57,7 +58,8 @@ export default function ShakespeareOriginStory() {
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
 
               <div className="text-center">
-                <div className="bg-violet-600 text-white rounded-2xl p-6 mb-4 shadow-lg">
+                <div className="bg-violet-600 text-white rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                  <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2">Stacks</h4>
                   <p className="text-sm text-violet-200">Nostr Templates</p>
                   <p className="text-xs text-violet-300 mt-2">Soapbox (2025)</p>
@@ -68,7 +70,8 @@ export default function ShakespeareOriginStory() {
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
 
               <div className="text-center">
-                <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-2xl p-6 mb-4 shadow-lg">
+                <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                  <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2">Shakespeare</h4>
                   <p className="text-sm text-purple-200">Browser-Based</p>
                   <p className="text-xs text-purple-300 mt-2">Soapbox (2025)</p>
@@ -208,13 +211,13 @@ export default function ShakespeareOriginStory() {
       </p>
 
       <p>
-        This led to <strong>Shakespeare</strong>—a complete reimagining of the Stacks concept as a browser-based development environment.
+        This led to <strong><a href="/tools/shakespeare">Shakespeare</a></strong>—a complete reimagining of the Stacks concept as a browser-based development environment.
       </p>
 
       <h3>The Browser-Based Revolution</h3>
 
       <p>
-        Shakespeare eliminated all the traditional barriers to development:
+        <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a> eliminated all the traditional barriers to development:
       </p>
 
       <ul>
@@ -234,7 +237,10 @@ export default function ShakespeareOriginStory() {
           <h3 className="text-2xl font-bold text-gray-900 mb-6">From Terminal to Browser</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <h4 className="font-semibold text-gray-900 mb-2">Goose (Terminal)</h4>
+              <div className="flex items-center gap-3 mb-3">
+                <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-10 h-10 object-contain" />
+                <h4 className="font-semibold text-gray-900">Goose (Terminal)</h4>
+              </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>✓ AI assistance</li>
                 <li>✓ Model choice</li>
@@ -244,7 +250,10 @@ export default function ShakespeareOriginStory() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 mb-2">Stacks (Terminal)</h4>
+              <div className="flex items-center gap-3 mb-3">
+                <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-10 h-10 object-contain" />
+                <h4 className="font-semibold text-gray-900">Stacks (Terminal)</h4>
+              </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>✓ AI assistance (Dork)</li>
                 <li>✓ Model choice</li>
@@ -255,7 +264,10 @@ export default function ShakespeareOriginStory() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-purple-700 mb-2">Shakespeare (Browser)</h4>
+              <div className="flex items-center gap-3 mb-3">
+                <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-10 h-10 object-contain" />
+                <h4 className="font-semibold text-purple-700">Shakespeare (Browser)</h4>
+              </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>✓ AI assistance</li>
                 <li>✓ Model choice</li>
@@ -279,7 +291,7 @@ export default function ShakespeareOriginStory() {
       <h3>1. Provider Independence</h3>
 
       <p>
-        Goose pioneered the concept of letting users choose their own AI provider rather than being locked to a single vendor. Shakespeare extends this with the Shakespeare AI provider which supports multiple models and accepts payment via either Stripe of Bitcoin Lightning.
+        Goose pioneered the concept of letting users choose their own AI provider rather than being locked to a single vendor. <a href="/blog/shakespeare-configuring-ai-providers">Shakespeare extends this</a> with the Shakespeare AI provider which supports multiple models and accepts payment via either Stripe of Bitcoin Lightning.
       </p>
 
       <h3>2. Autonomous Task Execution</h3>
@@ -297,7 +309,7 @@ export default function ShakespeareOriginStory() {
       <h3>Custom-Built Tools</h3>
 
       <p>
-        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare and Stacks take a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes a custom Nostr tool that gives the AI direct access to Nostr protocol functionality, as well as the js-dev tool which solved several problems we encountered with Goose's original dev tool.
+        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare and Stacks take a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes a <a href="/blog/nostrbook-mcp">custom Nostr tool</a> that gives the AI direct access to Nostr protocol functionality, as well as the js-dev tool which solved several problems we encountered with Goose's original dev tool.
       </p>
 
       <p>
@@ -313,19 +325,19 @@ export default function ShakespeareOriginStory() {
       <h3>Visual Development Environment</h3>
 
       <p>
-        Unlike terminal-based tools, Shakespeare provides a complete visual interface with live preview, syntax-highlighted code editor, file explorer, and real-time deployment. Developers can switch between conversational AI assistance and direct code editing as needed.
+        Unlike terminal-based tools, Shakespeare provides a complete visual interface with live preview, <a href="/blog/shakespeare-editing-code">syntax-highlighted code editor</a>, file explorer, and real-time deployment. Developers can switch between conversational AI assistance and direct code editing as needed.
       </p>
 
       <h3>Nostr-Native Identity</h3>
 
       <p>
-        Shakespeare integrates Nostr login directly, allowing users to authenticate with browser extensions like Alby or nos2x. Projects are tied to Nostr identities, enabling social features like sharing templates, discovering community projects, and publishing to decentralized hosting.
+        Shakespeare integrates Nostr login directly, allowing users to authenticate with browser extensions like Alby or nos2x. Projects are tied to Nostr identities, enabling social features like <a href="/blog/shakespeare-deploying-sharing-projects">sharing templates, discovering community projects, and publishing to decentralized hosting</a>.
       </p>
 
       <h3>Git Integration</h3>
 
       <p>
-        Shakespeare includes built-in Git support, allowing users to version control their projects, push to GitHub/GitLab, and collaborate with others—all from the browser without installing Git locally.
+        <a href="/blog/shakespeare-importing-existing-projects">Shakespeare includes built-in Git support</a>, allowing users to version control their projects, push to GitHub/GitLab, and collaborate with others—all from the browser without installing Git locally.
       </p>
 
       <h2>The Stacks Connection</h2>
@@ -336,7 +348,7 @@ export default function ShakespeareOriginStory() {
 
       <ul>
         <li><strong>Templates Matter:</strong> Good starter templates dramatically improve AI output quality</li>
-        <li><strong>Context is Key:</strong> Providing AI with project-specific documentation (like Nostrbook MCP) leads to better results</li>
+        <li><strong>Context is Key:</strong> Providing AI with project-specific documentation leads to better results</li>
         <li><strong>Community Sharing:</strong> Publishing templates as Nostr events creates a network effect where everyone benefits</li>
         <li><strong>Nostr-First Works:</strong> Building specifically for Nostr rather than trying to be general-purpose produces better outcomes</li>
       </ul>
@@ -366,7 +378,7 @@ export default function ShakespeareOriginStory() {
               </div>
               <div className="flex gap-4">
                 <div className="text-sm font-semibold text-gray-600 min-w-[120px]">October 2025</div>
-                <div className="text-sm text-gray-700">Shakespeare Act 2 adds local file storage, Git integration, and expanded features</div>
+                <div className="text-sm text-gray-700"><a href="/blog/announcing-shakespeare-act-2">Shakespeare Act 2</a> adds local file storage, Git integration, and expanded features</div>
               </div>
             </div>
           </CardContent>
@@ -376,7 +388,7 @@ export default function ShakespeareOriginStory() {
       <h2>Standing on the Shoulders of Giants</h2>
 
       <p>
-        Shakespeare was directly inspired by the pioneering work of the Goose team at Block. 
+        Shakespeare was directly inspired by the pioneering work of the Goose team at Block.
         By adapting their concept for Nostr through Stacks, and ultimately transforming it into Shakespeare's browser-based environment, we've created a tool that serves a different audience while honoring the original vision: <strong>using AI to give people time back to be their most creative selves</strong>.
       </p>
 
