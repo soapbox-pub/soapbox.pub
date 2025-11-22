@@ -248,7 +248,7 @@ export default function ShakespeareOriginStory() {
         <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 border-2 border-purple-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">From Terminal to Browser</h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <div>
+            <div className="text-center">
               <div className="flex flex-col items-center mb-3">
                 <div className="flex items-center gap-3 mb-1">
                   <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-10 h-10 object-contain" />
@@ -256,7 +256,7 @@ export default function ShakespeareOriginStory() {
                 </div>
                 <p className="text-xs text-gray-500">(Terminal)</p>
               </div>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <ul className="text-sm text-gray-700 space-y-1 text-left inline-block">
                 <li>✓ AI assistance</li>
                 <li>✓ Model choice</li>
                 <li>✓ File operations</li>
@@ -264,7 +264,7 @@ export default function ShakespeareOriginStory() {
                 <li>✗ Terminal-only</li>
               </ul>
             </div>
-            <div>
+            <div className="text-center">
               <div className="flex flex-col items-center mb-3">
                 <div className="flex items-center gap-3 mb-1">
                   <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-10 h-10 object-contain" />
@@ -272,7 +272,7 @@ export default function ShakespeareOriginStory() {
                 </div>
                 <p className="text-xs text-gray-500">(Terminal)</p>
               </div>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <ul className="text-sm text-gray-700 space-y-1 text-left inline-block">
                 <li>✓ AI assistance (Dork)</li>
                 <li>✓ Model choice</li>
                 <li>✓ Nostr templates</li>
@@ -281,7 +281,7 @@ export default function ShakespeareOriginStory() {
                 <li>✗ Terminal-only</li>
               </ul>
             </div>
-            <div>
+            <div className="text-center">
               <div className="flex flex-col items-center mb-3">
                 <div className="flex items-center gap-3 mb-1">
                   <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-10 h-10 object-contain" />
@@ -289,7 +289,7 @@ export default function ShakespeareOriginStory() {
                 </div>
                 <p className="text-xs text-purple-600">(Browser)</p>
               </div>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <ul className="text-sm text-gray-700 space-y-1 text-left inline-block">
                 <li>✓ AI assistance</li>
                 <li>✓ Model choice</li>
                 <li>✓ Nostr templates</li>
