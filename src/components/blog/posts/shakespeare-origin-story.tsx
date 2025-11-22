@@ -276,7 +276,7 @@ export default function ShakespeareOriginStory() {
                 <li>✓ AI assistance</li>
                 <li>✓ Model choice</li>
                 <li>✓ File operations</li>
-                <li>✗ Requires setup</li>
+                <li>✗ Requires installation</li>
                 <li>✗ Terminal-only</li>
               </ul>
             </div>
@@ -293,7 +293,7 @@ export default function ShakespeareOriginStory() {
                 <li>✓ Model choice</li>
                 <li>✓ Nostr templates</li>
                 <li>✓ Template sharing</li>
-                <li>✗ Requires setup</li>
+                <li>✗ Requires installation</li>
                 <li>✗ Terminal-only</li>
               </ul>
             </div>
@@ -310,7 +310,7 @@ export default function ShakespeareOriginStory() {
                 <li>✓ Model choice</li>
                 <li>✓ Nostr templates</li>
                 <li>✓ Live preview</li>
-                <li>✓ Zero setup</li>
+                <li>✓ Zero installation</li>
                 <li>✓ Visual interface</li>
                 <li>✓ Code editing</li>
               </ul>
