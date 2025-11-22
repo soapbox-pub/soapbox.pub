@@ -146,6 +146,14 @@ export default function ShakespeareOriginStory() {
         Inspired by Goose's approach to AI-assisted development, the Soapbox team recognized an opportunity to bring similar capabilities to the <a href="/blog/nostr101">Nostr ecosystem</a>. In May 2025, we released <strong><a href="/tools/stacks">Stacks</a></strong>—a decentralized template-sharing platform built specifically for Nostr development.
       </p>
 
+      <div className="not-prose my-12">
+        <img
+          src="/assets/blog/shakespeare-origin-story/stacks-terminal.png"
+          alt="Stacks terminal interface with Dork AI agent assisting in Nostr development"
+          className="rounded-lg shadow-lg border border-gray-200 w-full"
+        />
+      </div>
+
       <h3>Why We Built Stacks</h3>
 
       <p>
