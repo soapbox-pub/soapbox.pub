@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+
 import { Separator } from '@/components/ui/separator';
 import { MarkdownContent } from './MarkdownContent';
 
@@ -50,15 +50,8 @@ export function BlogPost({ post }: BlogPostProps) {
             </div>
 
             {post.author.name && (
-              <div className="flex items-center gap-2">
-                <Avatar className="h-6 w-6">
-                  {post.author.picture && (
-                    <AvatarImage src={post.author.picture} alt={post.author.name} />
-                  )}
-                  <AvatarFallback className="text-xs">
-                    {post.author.name.split(' ').map(n => n[0]).join('').toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
+              <div className="flex items-center gap-1">
+                <User className="w-4 h-4" />
                 <span>{post.author.name}</span>
               </div>
             )}
