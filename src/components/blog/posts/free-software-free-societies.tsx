@@ -33,7 +33,7 @@ export default function FreeSoftwareFreeSocieties() {
       <h2>The State of the Internet</h2>
 
       <p>
-        The Internet has been reshaped for decades, and not in ways that benefit the people who rely on it. Public frustration with Big Tech™ continues to grow, especially around AI, where incentives, intentions, and governance remain opaque. Closed AI systems now influence what people see, how they communicate, how they work, and how they organize. A small number of corporations effectively control the direction of technological progress.
+        The Internet we use today has been fundamentally reshaped—not by its users, but by the corporations that profit from them. Public frustration with Big Tech™ continues to grow, especially around AI, where incentives, intentions, and governance remain opaque. Closed AI systems now influence what people see, how they communicate, how they work, and how they organize. A small number of corporations effectively control the direction of technological progress.
       </p>
 
       <p>
