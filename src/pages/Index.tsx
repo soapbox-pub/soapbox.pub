@@ -74,7 +74,8 @@ function FeaturedShowcaseApps() {
 }
 
 export default function Index() {
-  const featuredPost = getFeaturedPost();
+  // Use useMemo to keep the random featured post stable during the session
+  const featuredPost = useMemo(() => getFeaturedPost(), []);
 
   // Set custom SEO for home page
   useSEO({

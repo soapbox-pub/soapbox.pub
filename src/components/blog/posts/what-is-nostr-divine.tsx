@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  featured?: boolean;
   tags?: string[];
 }
 
@@ -24,6 +25,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/nostr101/nostr-101-divine-protocol.png"
   },
+  "featured": true,
   "tags": ["nostr", "divine", "decentralization", "tutorial"]
 };
 

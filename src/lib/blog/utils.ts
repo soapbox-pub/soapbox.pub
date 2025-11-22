@@ -37,15 +37,26 @@ export function getLatestPost() {
   return mainBlogPosts[0] || null;
 }
 
-export function getFeaturedPost() {
-  // Find the most recent featured post, including shakespeare-resource posts
+export function getFeaturedPosts() {
+  // Get all featured posts
   const mainBlogPosts = getAllPosts();
-  const featuredPosts = mainBlogPosts.filter(post => post.featured);
+  return mainBlogPosts.filter(post => post.featured);
+}
+
+export function getRandomFeaturedPost() {
+  // Randomly select from featured posts
+  const featuredPosts = getFeaturedPosts();
   if (featuredPosts.length > 0) {
-    return featuredPosts[0]; // Already sorted by date, so first is most recent
+    const randomIndex = Math.floor(Math.random() * featuredPosts.length);
+    return featuredPosts[randomIndex];
   }
   // If no featured posts, return the latest post
   return getLatestPost();
+}
+
+export function getFeaturedPost() {
+  // Alias for backwards compatibility - returns random featured post
+  return getRandomFeaturedPost();
 }
 
 export function getRecentPostsSkipFirst(limit: number = 3) {
