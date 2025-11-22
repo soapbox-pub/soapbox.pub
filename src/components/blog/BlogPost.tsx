@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
 import { MarkdownContent } from './MarkdownContent';
 
@@ -38,7 +38,7 @@ export function BlogPost({ post }: BlogPostProps) {
 
         <div className="space-y-4">
           <h1 className="text-4xl font-bold tracking-tight">{post.title}</h1>
-          
+
           {post.excerpt && (
             <p className="text-xl text-muted-foreground">{post.excerpt}</p>
           )}
@@ -48,14 +48,21 @@ export function BlogPost({ post }: BlogPostProps) {
               <Calendar className="w-4 h-4" />
               <time dateTime={post.date}>{formatDate(post.date)}</time>
             </div>
-            
+
             {post.author.name && (
-              <div className="flex items-center gap-1">
-                <User className="w-4 h-4" />
+              <div className="flex items-center gap-2">
+                <Avatar className="h-6 w-6">
+                  {post.author.picture && (
+                    <AvatarImage src={post.author.picture} alt={post.author.name} />
+                  )}
+                  <AvatarFallback className="text-xs">
+                    {post.author.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
                 <span>{post.author.name}</span>
               </div>
             )}
-            
+
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
               <span>{readingTime} min read</span>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Calendar, User } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { formatDate } from '@/lib/blog/utils';
 import type { BlogPostMeta } from '@/lib/blog/types';
 
@@ -28,8 +29,15 @@ export function BlogCard({ post }: BlogCardProps) {
               <time dateTime={post.date}>{formatDate(post.date)}</time>
             </div>
             {post.author.name && (
-              <div className="flex items-center gap-1">
-                <User className="w-4 h-4" />
+              <div className="flex items-center gap-2">
+                <Avatar className="h-5 w-5">
+                  {post.author.picture && (
+                    <AvatarImage src={post.author.picture} alt={post.author.name} />
+                  )}
+                  <AvatarFallback className="text-xs">
+                    {post.author.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
                 <span>{post.author.name}</span>
               </div>
             )}
