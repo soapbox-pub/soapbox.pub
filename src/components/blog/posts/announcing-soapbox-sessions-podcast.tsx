@@ -33,7 +33,6 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/announcing-soapbox-sessions-podcast/soapbox-sessions-cover.png"
   },
-  "featured": true,
   "tags": ["podcast", "announcement", "soapbox"]
 };
 
