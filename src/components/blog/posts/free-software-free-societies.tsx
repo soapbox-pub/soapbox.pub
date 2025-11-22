@@ -33,7 +33,7 @@ export default function FreeSoftwareFreeSocieties() {
       <h2>The State of the Internet</h2>
 
       <p>
-        The Internet we use today has been fundamentally reshaped—not by its users, but by the corporations that profit from them. Public frustration with Big Tech™ continues to grow, especially around AI, where incentives, intentions, and governance remain opaque. Closed AI systems now influence what people see, how they communicate, how they work, and how they organize. A small number of corporations effectively control the direction of technological progress.
+        <strong>The Internet we use today has been fundamentally reshaped—not by its users, but by the corporations that profit from them.</strong> Public frustration with Big Tech™ continues to grow, especially around AI, where incentives, intentions, and governance remain opaque. Closed AI systems now influence what people see, how they communicate, how they work, and how they organize. A small number of corporations effectively control the direction of technological progress.
       </p>
 
       <p>
@@ -47,7 +47,7 @@ export default function FreeSoftwareFreeSocieties() {
       <h2>Why We Build Open Source</h2>
 
       <p>
-        Technology now mediates nearly every basic human need: housing, food access, personal liberty, communication, and community. When the infrastructure behind those needs is controlled by a handful of corporations—often aligned with governments—the result is predictable: oversight without accountability, power without transparency, and dependence without recourse.
+        <strong>Technology now mediates nearly every basic human need: housing, food access, personal liberty, communication, and community.</strong> When the infrastructure behind those needs is controlled by a handful of corporations—often aligned with governments—the result is predictable: oversight without accountability, power without transparency, and dependence without recourse.
       </p>
 
       <p>The evidence is extensive:</p>
@@ -71,7 +71,7 @@ export default function FreeSoftwareFreeSocieties() {
         These are not isolated incidents. They reveal a structural pattern: when the tools that shape society are closed, society loses the ability to understand, challenge, or change them.
       </p>
 
-      <p>A future governed by closed AI and closed platforms would be one where:</p>
+      <p><strong>A future governed by closed AI and closed platforms would be one where:</strong></p>
 
       <ul>
         <li>Governments gain direct or indirect access to all digital communications.</li>
@@ -90,7 +90,7 @@ export default function FreeSoftwareFreeSocieties() {
       <h2>Technology for the People Who Need It Most</h2>
 
       <p>
-        Open tools matter most for the people with the least protection: journalists, dissidents, activists, nonprofits, and communities navigating censorship or surveillance.
+        <strong>Open tools matter most for the people with the least protection: journalists, dissidents, activists, nonprofits, and communities navigating censorship or surveillance.</strong>
       </p>
 
       <p>
@@ -118,7 +118,7 @@ export default function FreeSoftwareFreeSocieties() {
       <h2>A Different Vision for the Web</h2>
 
       <p>
-        A free and open web is powerful because people can build together. When tools, protocols, and ideas are shared openly, communities can remix each other's work, strengthen it, adapt it, and pass it forward. Progress is not dictated by a single platform, but generated collectively by the people who rely on it.
+        <strong>A free and open web is powerful because people can build together.</strong> When tools, protocols, and ideas are shared openly, communities can remix each other's work, strengthen it, adapt it, and pass it forward. Progress is not dictated by a single platform, but generated collectively by the people who rely on it.
       </p>
 
       <p>
@@ -140,7 +140,7 @@ export default function FreeSoftwareFreeSocieties() {
       <h2>Freedom Shouldn't Require Privilege</h2>
 
       <p>
-        Autonomy should not require technical expertise or reliance on corporate gatekeepers. As AI becomes embedded in daily life, closed‑source systems place enormous power in the hands of a few companies. OpenAI's shift away from transparency shows how quickly a public‑serving mission can be abandoned when profit incentives take over.
+        <strong>Autonomy should not require technical expertise or reliance on corporate gatekeepers. As AI becomes embedded in daily life, closed‑source systems place enormous power in the hands of a few companies. OpenAI's shift away from transparency shows how quickly a public‑serving mission can be abandoned when profit incentives take over.</strong>
       </p>
 
       <p>
