@@ -125,7 +125,7 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2 id="step-0-preparation">Step 0: Preparation (Before the Workshop)</h2>
+      <h2 id="step-0-preparation">Preparation (Before the Workshop)</h2>
 
       <p>
         Proper preparation is key to running a smooth Shakespeare workshop. Complete these tasks before participants arrive to ensure everything runs seamlessly.
@@ -182,13 +182,26 @@ export default function ShakespeareWorkshopGuide() {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Print QR Code on Business Cards or Flyers (Optional)</h4>
                   <p className="text-sm text-gray-700">
-                    For added convenience, consider printing the QR code on business cards or flyers that participants can take with them. This makes it easier for attendees to redeem credits on their own devices.
+                    For added convenience, consider printing the QR code on business cards or flyers that participants can take with them. This makes it easier for attendees to redeem credits on their own devices. You can use our <a href="https://www.canva.com/design/DAG5dCHcfxw/1k7eWYgMuqiYAvrXsWvFyA/edit?utm_content=DAG5dCHcfxw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">printable card template</a> to create professional-looking gift cards.
                   </p>
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="my-8 flex justify-end">
+        <div className="w-64">
+          <img
+            src="/assets/blog/shakespeare-workshop-guide/shakespeare-qr-code-card-closeup.png"
+            alt="Shakespeare QR code gift cards for workshop distribution"
+            className="rounded-lg shadow-sm opacity-80 hover:opacity-100 transition-opacity"
+          />
+          <p className="text-xs text-gray-500 text-center mt-2 italic">
+            Example printable gift cards with QR codes
+          </p>
+        </div>
       </div>
 
       <h3>Customize Your Presentation</h3>
