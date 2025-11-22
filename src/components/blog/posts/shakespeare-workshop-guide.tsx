@@ -98,9 +98,6 @@ export default function ShakespeareWorkshopGuide() {
               <a href="#tips" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
                 Tips for Success
               </a>
-              <a href="#promoting" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Promoting Your Workshop
-              </a>
               <a href="#resources" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
                 Additional Resources
               </a>
@@ -519,50 +516,6 @@ export default function ShakespeareWorkshopGuide() {
           </Card>
         </div>
       </div>
-
-      <h2 id="tips">Tips for Success</h2>
-
-      <h3>Before the Workshop</h3>
-
-      <ul>
-        <li><strong>Test the Faucet:</strong> Make sure your QR code works and credits redeem properly</li>
-        <li><strong>Practice Your Demo:</strong> Build your example project at least once beforehand</li>
-        <li><strong>Prepare Backup Ideas:</strong> Have 2-3 project ideas ready in case participants need inspiration</li>
-        <li><strong>Set Up Support:</strong> Brief helpers on common issues and how to troubleshoot</li>
-      </ul>
-
-      <h3>During the Workshop</h3>
-
-      <ul>
-        <li><strong>Manage Time:</strong> Keep an eye on the clock to ensure time for showcasing</li>
-        <li><strong>Be Encouraging:</strong> Celebrate all attempts, even incomplete projects</li>
-        <li><strong>Share Shortcuts:</strong> Show useful prompts and patterns as you discover them</li>
-        <li><strong>Document Progress:</strong> Take photos or screenshots for future promotion</li>
-      </ul>
-
-      <h3>After the Workshop</h3>
-
-      <ul>
-        <li><strong>Share Projects:</strong> Compile all deployed URLs and share with participants</li>
-        <li><strong>Gather Feedback:</strong> Ask what worked well and what could be improved</li>
-        <li><strong>Share Feedback with Soapbox Team:</strong> Share feedback from participants with the Soapbox team</li>
-        <li><strong>Follow Up:</strong> Send resources for continued learning (documentation, tutorials, community links)</li>
-        <li><strong>Build Community:</strong> Invite participants to ongoing Nostr development discussions</li>
-      </ul>
-
-      <h2 id="promoting">Promoting Your Workshop</h2>
-
-      <p>
-        Attract participants by emphasizing:
-      </p>
-
-      <ul>
-        <li><strong>No Coding Required:</strong> Anyone can participate regardless of technical background</li>
-        <li><strong>Free AI Access:</strong> All participants get free AI credits through gift cards</li>
-        <li><strong>Build Real Projects:</strong> Everyone leaves with a deployed, shareable website</li>
-        <li><strong>Learn Nostr:</strong> Introduction to decentralized web technologies</li>
-        <li><strong>Community Support:</strong> Helpers available throughout the session</li>
-      </ul>
 
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white text-center">
