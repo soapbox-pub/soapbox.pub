@@ -168,40 +168,44 @@ export default function ShakespeareWorkshopGuide() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">4</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Add QR Code to Your Presentation</h4>
-                  <p className="text-sm text-gray-700">
-                    The faucet generates a QR code. Add this QR code to your presentation slides so participants can easily scan and redeem their free AI credits during the workshop.
-                  </p>
+
+              {/* Float image left next to steps 4-5 */}
+              <div className="flex gap-4">
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">4</div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Add QR Code to Your Presentation</h4>
+                      <p className="text-sm text-gray-700">
+                        The faucet generates a QR code. Add this QR code to your presentation slides so participants can easily scan and redeem their free AI credits during the workshop.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">5</div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Print QR Code on Business Cards or Flyers (Optional)</h4>
+                      <p className="text-sm text-gray-700">
+                        For added convenience, consider printing the QR code on business cards or flyers that participants can take with them. This makes it easier for attendees to redeem credits on their own devices. You can use our <a href="https://www.canva.com/design/DAG5dCHcfxw/1k7eWYgMuqiYAvrXsWvFyA/edit?utm_content=DAG5dCHcfxw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">printable card template</a> to create professional-looking gift cards.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">5</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Print QR Code on Business Cards or Flyers (Optional)</h4>
-                  <p className="text-sm text-gray-700">
-                    For added convenience, consider printing the QR code on business cards or flyers that participants can take with them. This makes it easier for attendees to redeem credits on their own devices. You can use our <a href="https://www.canva.com/design/DAG5dCHcfxw/1k7eWYgMuqiYAvrXsWvFyA/edit?utm_content=DAG5dCHcfxw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">printable card template</a> to create professional-looking gift cards.
+
+                <div className="hidden md:block w-48 flex-shrink-0">
+                  <img
+                    src="/assets/blog/shakespeare-workshop-guide/shakespeare-qr-code-card-closeup.png"
+                    alt="Shakespeare QR code gift cards for workshop distribution"
+                    className="rounded-lg shadow-sm opacity-80 hover:opacity-100 transition-opacity sticky top-4"
+                  />
+                  <p className="text-xs text-gray-500 text-center mt-2 italic">
+                    Example gift cards
                   </p>
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      <div className="my-8 flex justify-end">
-        <div className="w-64">
-          <img
-            src="/assets/blog/shakespeare-workshop-guide/shakespeare-qr-code-card-closeup.png"
-            alt="Shakespeare QR code gift cards for workshop distribution"
-            className="rounded-lg shadow-sm opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <p className="text-xs text-gray-500 text-center mt-2 italic">
-            Example printable gift cards with QR codes
-          </p>
-        </div>
       </div>
 
       <h3>Customize Your Presentation</h3>
