@@ -166,44 +166,48 @@ export default function ShakespeareWorkshopGuide() {
       </p>
 
       <div className="not-prose my-8">
-        <div className="space-y-4">
-          <div className="flex items-start gap-3">
-            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">1</div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">Purchase Gift Cards in Shakespeare</h4>
-              <p className="text-sm text-gray-700">
-                Log into <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">shakespeare.diy</a> with your Nostr account, navigate to Settings → AI, and purchase gift cards in bulk using Stripe or Bitcoin Lightning.
-              </p>
+        <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
+          <CardContent className="p-6">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Purchase Gift Cards in Shakespeare</h4>
+                  <p className="text-sm text-gray-700">
+                    Log into <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">shakespeare.diy</a> with your Nostr account, navigate to Settings → AI, and purchase gift cards in bulk using Stripe or Bitcoin Lightning.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Export as CSV</h4>
+                  <p className="text-sm text-gray-700">
+                    After purchase, export your gift cards as a CSV file containing the redeemable codes.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Upload to Faucet</h4>
+                  <p className="text-sm text-gray-700">
+                    Visit <a href="https://faucet.shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">faucet.shakespeare.diy</a> and upload your CSV file to create a shareable faucet page.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">4</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Add QR Code to Your Presentation</h4>
+                  <p className="text-sm text-gray-700">
+                    The faucet generates a QR code. Add this QR code to your presentation slides so participants can easily scan and redeem their free AI credits during the workshop.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">2</div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">Export as CSV</h4>
-              <p className="text-sm text-gray-700">
-                After purchase, export your gift cards as a CSV file containing the redeemable codes.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">3</div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">Upload to Faucet</h4>
-              <p className="text-sm text-gray-700">
-                Visit <a href="https://faucet.shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">faucet.shakespeare.diy</a> and upload your CSV file to create a shareable faucet page.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">4</div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">Add QR Code to Your Presentation</h4>
-              <p className="text-sm text-gray-700">
-                The faucet generates a QR code. Add this QR code to your presentation slides so participants can easily scan and redeem their free AI credits during the workshop.
-              </p>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
 
       <h3>Identify Potential Helpers (Optional)</h3>
