@@ -11,6 +11,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  featured?: boolean;
   tags?: string[];
 }
 
@@ -27,6 +28,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/shakespeare-workshop-guide/how-to-host-shakespeare-workshop.png"
   },
+  "featured": true,
   "tags": ["shakespeare", "tutorial", "workshop", "community"]
 };
 
@@ -256,7 +258,7 @@ export default function ShakespeareWorkshopGuide() {
       <p>
         Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template to cover the key points.
       </p>
-      
+
       <h3>Present Shakespeare Overview</h3>
 
       <ol>

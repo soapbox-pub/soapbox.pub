@@ -12,6 +12,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  featured?: boolean;
   tags?: string[];
 }
 
