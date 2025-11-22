@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ExternalLink, Presentation, Zap } from 'lucide-react';
 
 export interface BlogPostMeta {
@@ -32,31 +31,6 @@ export const meta: BlogPostMeta = {
 };
 
 export default function ShakespeareWorkshopGuide() {
-  const [selectedImage, setSelectedImage] = useState<{ url: string; caption: string } | null>(null);
-
-  const workshopPhotos = [
-    {
-      url: "/assets/blog/shakespeare-workshop-guide/chad-shakespeare-workshop.jpeg",
-      caption: "Shakespeare workshop participants building projects"
-    },
-    {
-      url: "/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg",
-      caption: "Workshop attendees engaged in building"
-    },
-    {
-      url: "/assets/blog/shakespeare-workshop-guide/alex-workshop-room.jpeg",
-      caption: "Workshop room setup with participants"
-    },
-    {
-      url: "/assets/blog/shakespeare-workshop-guide/alex-sam-workshop.jpeg",
-      caption: "Alex and Sam at a Shakespeare workshop"
-    },
-    {
-      url: "/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg",
-      caption: "Derek Ross demonstrating Shakespeare features"
-    },
-  ];
-
   return (
     <article className="prose prose-lg max-w-none">
 
@@ -254,21 +228,11 @@ export default function ShakespeareWorkshopGuide() {
         <li>✅ Workshop space confirmed with projector/screen</li>
       </ul>
 
-      <div className="not-prose my-12">
-        <div
-          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[2])}
-        >
-          <img
-            src={workshopPhotos[2].url}
-            alt={workshopPhotos[2].caption}
-            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-        </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[2].caption}</p>
-      </div>
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/alex-workshop-room.jpeg"
+        alt="Workshop room setup with participants"
+        className="rounded-lg shadow-md"
+      />
 
       <h2 id="step-1-introduce">Step 1: Introduce Shakespeare</h2>
 
@@ -291,21 +255,11 @@ export default function ShakespeareWorkshopGuide() {
         Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can support participants who may struggle or have questions during the building session, and provide you an extra set of eyes and ears.
       </p>
 
-      <div className="not-prose my-12">
-        <div
-          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[4])}
-        >
-          <img
-            src={workshopPhotos[4].url}
-            alt={workshopPhotos[4].caption}
-            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-        </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[4].caption}</p>
-      </div>
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg"
+        alt="Derek Ross demonstrating Shakespeare features"
+        className="rounded-lg shadow-md"
+      />
 
       <h3>Present Shakespeare Overview</h3>
 
@@ -375,21 +329,11 @@ export default function ShakespeareWorkshopGuide() {
         Display the QR code from your faucet page on the projector and have participants scan it with their phones to redeem their free AI credits. Make sure everyone successfully redeems a gift card before moving on to the building session.
       </p>
 
-      <div className="not-prose my-12">
-        <div
-          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[0])}
-        >
-          <img
-            src={workshopPhotos[0].url}
-            alt={workshopPhotos[0].caption}
-            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-        </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[0].caption}</p>
-      </div>
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/chad-shakespeare-workshop.jpeg"
+        alt="Shakespeare workshop participants building projects"
+        className="rounded-lg shadow-md"
+      />
 
       <p>
         The core of the workshop is collaborative building. One facilitator builds an example project on the main screen while participants work on their own projects simultaneously.
@@ -432,21 +376,11 @@ export default function ShakespeareWorkshopGuide() {
         For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
       </p>
 
-      <div className="not-prose my-12">
-        <div
-          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[1])}
-        >
-          <img
-            src={workshopPhotos[1].url}
-            alt={workshopPhotos[1].caption}
-            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-        </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[1].caption}</p>
-      </div>
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg"
+        alt="Workshop attendees engaged in building"
+        className="rounded-lg shadow-md"
+      />
 
       <h2 id="step-3-celebrate">Step 3: Share and Celebrate</h2>
 
@@ -479,41 +413,11 @@ export default function ShakespeareWorkshopGuide() {
 
       </ul>
 
-      <div className="not-prose my-12">
-        <div
-          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[3])}
-        >
-          <img
-            src={workshopPhotos[3].url}
-            alt={workshopPhotos[3].caption}
-            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-        </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[3].caption}</p>
-      </div>
-
-      {/* Image Lightbox Dialog */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl w-full h-auto max-h-[90vh] p-0 overflow-hidden">
-          {selectedImage && (
-            <>
-              <DialogHeader className="p-6 pb-0">
-                <DialogTitle className="text-left">{selectedImage.caption}</DialogTitle>
-              </DialogHeader>
-              <div className="relative">
-                <img
-                  src={selectedImage.url}
-                  alt={selectedImage.caption}
-                  className="w-full h-auto"
-                />
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/alex-sam-workshop.jpeg"
+        alt="Alex and Sam at a Shakespeare workshop"
+        className="rounded-lg shadow-md"
+      />
 
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white text-center">
