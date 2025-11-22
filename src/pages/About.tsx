@@ -95,6 +95,59 @@ export default function About() {
           </div>
         </section>
 
+        {/* Supported By Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
+                Supported by
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                We're grateful for the support of these organizations who believe in our mission.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+              <a
+                href="https://opensats.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center p-8 rounded-lg transition-all hover:shadow-lg hover:scale-105"
+              >
+                <img
+                  src="/assets/logos/opensats-logo-soapbox.png"
+                  alt="OpenSats"
+                  className="max-h-24 w-auto object-contain"
+                />
+              </a>
+              <a
+                href="https://hrf.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center p-8 rounded-lg transition-all hover:shadow-lg hover:scale-105"
+              >
+                <img
+                  src="/assets/logos/hrf-humanrightsfoudnation-logo.png"
+                  alt="Human Rights Foundation"
+                  className="max-h-24 w-auto object-contain"
+                />
+              </a>
+              <a
+                href="https://andotherstuff.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center p-8 rounded-lg transition-all hover:shadow-lg hover:scale-105"
+              >
+                <img
+                  src="/assets/logos/aos-andotherstuff-logo-soapbox.png"
+                  alt="And Other Stuff"
+                  className="max-h-24 w-auto object-contain"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Team Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
