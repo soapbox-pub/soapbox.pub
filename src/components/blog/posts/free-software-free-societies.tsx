@@ -87,6 +87,25 @@ export default function FreeSoftwareFreeSocieties() {
 
       <p>Free software is the only scalable counterweight.</p>
 
+      <div className="not-prose my-8">
+        <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+          <h3 className="text-xl font-bold text-gray-900 mb-3">What is Free Software?</h3>
+          <p className="text-gray-700 mb-4">
+            <strong>Free software</strong> (also called <strong>open source</strong>) is software that respects users' freedom and community.
+            It grants users the <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Four Essential Freedoms</a>:
+          </p>
+          <ol className="text-gray-700 space-y-1 ml-4">
+            <li><strong>0.</strong> The freedom to run the program as you wish, for any purpose</li>
+            <li><strong>1.</strong> The freedom to study how the program works, and change it</li>
+            <li><strong>2.</strong> The freedom to redistribute copies so you can help others</li>
+            <li><strong>3.</strong> The freedom to distribute copies of your modified versions to others</li>
+          </ol>
+          <p className="text-sm text-gray-600 mt-4">
+            Learn more at the <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Free Software Foundation</a>
+          </p>
+        </div>
+      </div>
+
       <h2>Technology for the People Who Need It Most</h2>
 
       <p>
