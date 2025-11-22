@@ -150,7 +150,7 @@ export default function ShakespeareOriginStory() {
         <img
           src="/assets/blog/shakespeare-origin-story/stacks-terminal.png"
           alt="Stacks terminal interface with Dork AI agent assisting in Nostr development"
-          className="rounded-lg shadow-lg border border-gray-200 w-full"
+          className="rounded-lg shadow-lg w-full"
         />
       </div>
 
