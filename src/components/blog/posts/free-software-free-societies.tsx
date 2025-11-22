@@ -18,8 +18,8 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/free-software/cover.png",
   "date": "2025-11-22",
   "author": {
-    "name": "Heather Larson & MK Fain",
-    "picture": "/assets/avatars/mk.jpg"
+    "name": "Heather Larson",
+    "picture": "/assets/avatars/heather.jpg"
   },
   "ogImage": {
     "url": "/assets/blog/free-software/cover.png"
