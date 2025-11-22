@@ -193,14 +193,16 @@ export default function ShakespeareWorkshopGuide() {
                 </div>
 
                 <div className="hidden md:block w-48 flex-shrink-0">
-                  <img
-                    src="/assets/blog/shakespeare-workshop-guide/shakespeare-qr-code-card-closeup.png"
-                    alt="Shakespeare QR code gift cards for workshop distribution"
-                    className="rounded-lg shadow-sm opacity-80 hover:opacity-100 transition-opacity sticky top-4"
-                  />
-                  <p className="text-xs text-gray-500 text-center mt-2 italic">
-                    Example gift cards
-                  </p>
+                  <div className="mt-8">
+                    <img
+                      src="/assets/blog/shakespeare-workshop-guide/shakespeare-qr-code-card-closeup.png"
+                      alt="Shakespeare QR code gift cards for workshop distribution"
+                      className="rounded-lg shadow-sm opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                    <p className="text-xs text-gray-500 text-center mt-2 italic">
+                      Example gift cards
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
