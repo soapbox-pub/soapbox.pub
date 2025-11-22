@@ -40,14 +40,6 @@ export default function ShakespeareWorkshopGuide() {
       caption: "Shakespeare workshop participants building projects"
     },
     {
-      url: "/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation6.jpg",
-      caption: "Derek Ross presenting Shakespeare at a workshop"
-    },
-    {
-      url: "/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg",
-      caption: "Derek Ross demonstrating Shakespeare features"
-    },
-    {
       url: "/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg",
       caption: "Workshop attendees engaged in building"
     },
@@ -58,7 +50,11 @@ export default function ShakespeareWorkshopGuide() {
     {
       url: "/assets/blog/shakespeare-workshop-guide/alex-sam-workshop.jpeg",
       caption: "Alex and Sam at a Shakespeare workshop"
-    }
+    },
+    {
+      url: "/assets/blog/shakespeare-workshop-guide/derek-shakespeare-presentation.jpg",
+      caption: "Derek Ross demonstrating Shakespeare features"
+    },
   ];
 
   return (
@@ -261,17 +257,17 @@ export default function ShakespeareWorkshopGuide() {
       <div className="not-prose my-12">
         <div
           className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[4])}
+          onClick={() => setSelectedImage(workshopPhotos[2])}
         >
           <img
-            src={workshopPhotos[4].url}
-            alt={workshopPhotos[4].caption}
+            src={workshopPhotos[2].url}
+            alt={workshopPhotos[2].caption}
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
         </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[4].caption}</p>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[2].caption}</p>
       </div>
 
       <h2 id="step-1-introduce">Step 1: Introduce Shakespeare</h2>
@@ -298,17 +294,17 @@ export default function ShakespeareWorkshopGuide() {
       <div className="not-prose my-12">
         <div
           className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[1])}
+          onClick={() => setSelectedImage(workshopPhotos[4])}
         >
           <img
-            src={workshopPhotos[1].url}
-            alt={workshopPhotos[1].caption}
+            src={workshopPhotos[4].url}
+            alt={workshopPhotos[4].caption}
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
         </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[1].caption}</p>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[4].caption}</p>
       </div>
 
       <h3>Present Shakespeare Overview</h3>
@@ -370,22 +366,6 @@ export default function ShakespeareWorkshopGuide() {
       <p>
         Emphasize that Shakespeare excels at building <strong>Nostr-native applications</strong> and <strong>client-side web experiences</strong>. For projects requiring backend infrastructure, participants should consider other tools or plan to integrate Shakespeare-built frontends with separate backend services.
       </p>
-
-      <div className="not-prose my-12">
-        <div
-          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[2])}
-        >
-          <img
-            src={workshopPhotos[2].url}
-            alt={workshopPhotos[2].caption}
-            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-        </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[2].caption}</p>
-      </div>
 
       <h2 id="step-2-build">Step 2: Build Together</h2>
 
@@ -455,17 +435,17 @@ export default function ShakespeareWorkshopGuide() {
       <div className="not-prose my-12">
         <div
           className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[3])}
+          onClick={() => setSelectedImage(workshopPhotos[1])}
         >
           <img
-            src={workshopPhotos[3].url}
-            alt={workshopPhotos[3].caption}
+            src={workshopPhotos[1].url}
+            alt={workshopPhotos[1].caption}
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
         </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[3].caption}</p>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[1].caption}</p>
       </div>
 
       <h2 id="step-3-celebrate">Step 3: Share and Celebrate</h2>
@@ -502,17 +482,17 @@ export default function ShakespeareWorkshopGuide() {
       <div className="not-prose my-12">
         <div
           className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-          onClick={() => setSelectedImage(workshopPhotos[5])}
+          onClick={() => setSelectedImage(workshopPhotos[3])}
         >
           <img
-            src={workshopPhotos[5].url}
-            alt={workshopPhotos[5].caption}
+            src={workshopPhotos[3].url}
+            alt={workshopPhotos[3].caption}
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
         </div>
-        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[5].caption}</p>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[3].caption}</p>
       </div>
 
       {/* Image Lightbox Dialog */}
