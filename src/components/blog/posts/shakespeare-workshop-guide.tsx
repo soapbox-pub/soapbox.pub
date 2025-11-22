@@ -212,6 +212,38 @@ export default function ShakespeareWorkshopGuide() {
         If you know some participants in advance who have experience with AI coding or Shakespeare, reach out to them before the workshop and ask if they'd be willing to help others during the building session. Having pre-identified helpers can make the workshop run even more smoothly, though you can also enlist helpers at the start of the workshop itself.
       </p>
 
+      <h3>Customize Your Presentation</h3>
+
+      <p>
+        Use our pre-made presentation template to introduce Shakespeare to your workshop participants. The template covers all the key points you'll need to present.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
+          <CardHeader>
+            <CardTitle className="text-2xl flex items-center gap-2">
+              <Presentation className="w-6 h-6 text-purple-600" />
+              Presentation Template
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-gray-700">
+              Download and customize the template with your workshop details and the faucet QR code.
+            </p>
+            <Button size="lg" className="w-full sm:w-auto" asChild>
+              <a
+                href="https://www.canva.com/design/DAG5St3AQVk/6rb3k_09jG9hK7aMvZkU9A/edit?utm_content=DAG5St3AQVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="w-4 h-4 mr-2" />
+                View Presentation Template
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
       <h3>Preparation Checklist</h3>
 
       <ul>
@@ -264,6 +296,12 @@ export default function ShakespeareWorkshopGuide() {
         Display the QR code from your faucet page on the projector and have participants scan it with their phones to redeem their free AI credits. Make sure everyone successfully redeems a gift card before moving on to the building session.
       </p>
 
+      <h3>Explain What Shakespeare Can Build</h3>
+
+      <p>
+        Help participants understand the scope of what they can create during the workshop by explaining Shakespeare's capabilities and limitations.
+      </p>
+
       <h3>What Shakespeare Can and Cannot Build</h3>
 
       <div className="not-prose my-8">
@@ -304,33 +342,6 @@ export default function ShakespeareWorkshopGuide() {
       <p>
         Emphasize that Shakespeare excels at building <strong>Nostr-native applications</strong> and <strong>client-side web experiences</strong>. For projects requiring backend infrastructure, participants should consider other tools or plan to integrate Shakespeare-built frontends with separate backend services.
       </p>
-
-
-      <div className="not-prose my-12">
-        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <Presentation className="w-6 h-6 text-purple-600" />
-              Presentation Template
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-gray-700">
-              Use our pre-made template to introduce Shakespeare to your workshop participants:
-            </p>
-            <Button size="lg" className="w-full sm:w-auto" asChild>
-              <a
-                href="https://www.canva.com/design/DAG5St3AQVk/6rb3k_09jG9hK7aMvZkU9A/edit?utm_content=DAG5St3AQVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Presentation Template
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
 
       <h2 id="step-2-build">Step 2: Build Together</h2>
 
