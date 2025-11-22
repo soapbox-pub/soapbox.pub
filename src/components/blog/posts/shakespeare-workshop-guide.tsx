@@ -73,35 +73,82 @@ export default function ShakespeareWorkshopGuide() {
       <div className="not-prose my-12">
         <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50">
           <CardHeader>
-            <CardTitle className="text-2xl">Table of Contents</CardTitle>
+            <CardTitle className="text-2xl">Workshop Timeline</CardTitle>
           </CardHeader>
           <CardContent>
-            <nav className="space-y-2">
-              <a href="#step-1-helpers" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Step 1: Set Up Your Helpers
+            <div className="space-y-4">
+              <a href="#step-1-helpers" className="block no-underline">
+                <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-purple-100 rounded-lg p-3 text-purple-700 font-bold text-sm min-w-[5rem] text-center">
+                        0-10 min
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Introduction & Setup</h4>
+                        <p className="text-sm text-gray-600">
+                          Enlist helpers by asking about vibe coding experience, present Shakespeare overview, demonstrate capabilities, share QR code for gift card redemption
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </a>
-              <a href="#step-2-introduce" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Step 2: Introduce Shakespeare
+
+              <a href="#step-4-build" className="block no-underline">
+                <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-blue-100 rounded-lg p-3 text-blue-700 font-bold text-sm min-w-[5rem] text-center">
+                        10-40 min
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Building Session</h4>
+                        <p className="text-sm text-gray-600">
+                          Live demonstration on main screen, participants build their own projects, helpers provide support
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </a>
-              <a href="#step-3-gift-cards" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Step 3: Provide Free Access with Gift Cards
+
+              <a href="#step-5-celebrate" className="block no-underline">
+                <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-green-100 rounded-lg p-3 text-green-700 font-bold text-sm min-w-[5rem] text-center">
+                        40-45 min
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Deployment & Sharing</h4>
+                        <p className="text-sm text-gray-600">
+                          Participants deploy their projects, share links in chat, prepare for presentations
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </a>
-              <a href="#step-4-build" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Step 4: Build Together
+
+              <a href="#step-5-celebrate" className="block no-underline">
+                <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-orange-100 rounded-lg p-3 text-orange-700 font-bold text-sm min-w-[5rem] text-center">
+                        45-60 min
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Showcase & Wrap-Up</h4>
+                        <p className="text-sm text-gray-600">
+                          Each participant presents their project, community feedback, closing remarks
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </a>
-              <a href="#step-5-celebrate" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Step 5: Share and Celebrate
-              </a>
-              <a href="#timeline" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Workshop Timeline
-              </a>
-              <a href="#tips" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Tips for Success
-              </a>
-              <a href="#resources" className="block text-purple-700 hover:text-purple-900 hover:underline font-medium">
-                Additional Resources
-              </a>
-            </nav>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -124,26 +171,8 @@ export default function ShakespeareWorkshopGuide() {
       </ol>
 
       <p>
-        Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can:
+        Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can support participants who may struggle or have questions during the building session, and provide you an extra set of eyes and ears.
       </p>
-
-      <ul>
-        <li>Walk around during the building session</li>
-        <li>Answer questions about prompting and AI interaction</li>
-        <li>Help troubleshoot issues participants encounter</li>
-        <li>Provide encouragement and creative suggestions</li>
-        <li>Share tips and tricks they've learned</li>
-      </ul>
-
-      <div className="not-prose my-8">
-        <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50">
-          <CardContent className="py-6 px-8">
-            <p className="text-sm text-gray-700 mb-0">
-              <strong>Pro Tip:</strong> Having 1 helper for every 5-10 participants creates a supportive environment where everyone can get help quickly without overwhelming the main facilitator.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
 
       <h2 id="step-2-introduce">Step 2: Introduce Shakespeare</h2>
 
@@ -442,80 +471,6 @@ export default function ShakespeareWorkshopGuide() {
           )}
         </DialogContent>
       </Dialog>
-
-      <h2 id="timeline">Workshop Timeline</h2>
-
-      <p>
-        A typical Shakespeare workshop runs 60 minutes:
-      </p>
-
-      <div className="not-prose my-8">
-        <div className="space-y-4">
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-purple-100 rounded-lg p-3 text-purple-700 font-bold text-sm min-w-[5rem] text-center">
-                  0-10 min
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Introduction & Setup</h4>
-                  <p className="text-sm text-gray-600">
-                    Enlist helpers by asking about vibe coding experience, present Shakespeare overview, demonstrate capabilities, share QR code for gift card redemption
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 rounded-lg p-3 text-blue-700 font-bold text-sm min-w-[5rem] text-center">
-                  10-40 min
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Building Session</h4>
-                  <p className="text-sm text-gray-600">
-                    Live demonstration on main screen, participants build their own projects, helpers provide support
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-green-100 rounded-lg p-3 text-green-700 font-bold text-sm min-w-[5rem] text-center">
-                  40-45 min
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Deployment & Sharing</h4>
-                  <p className="text-sm text-gray-600">
-                    Participants deploy their projects, share links in chat, prepare for presentations
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-orange-100 rounded-lg p-3 text-orange-700 font-bold text-sm min-w-[5rem] text-center">
-                  45-60 min
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Showcase & Wrap-Up</h4>
-                  <p className="text-sm text-gray-600">
-                    Each participant presents their project, community feedback, closing remarks
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
 
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white text-center">
