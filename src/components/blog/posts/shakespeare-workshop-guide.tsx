@@ -175,6 +175,15 @@ export default function ShakespeareWorkshopGuide() {
                   </p>
                 </div>
               </div>
+              <div className="flex items-start gap-3">
+                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">5</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Print QR Code on Business Cards or Flyers (Optional)</h4>
+                  <p className="text-sm text-gray-700">
+                    For added convenience, consider printing the QR code on business cards or flyers that participants can take with them. This makes it easier for attendees to redeem credits on their own devices.
+                  </p>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -240,7 +249,7 @@ export default function ShakespeareWorkshopGuide() {
         className="rounded-lg shadow-md"
       />
 
-      
+
 
       <h2 id="step-1-introduce">Step 1: Introduce Shakespeare</h2>
 
@@ -319,6 +328,12 @@ export default function ShakespeareWorkshopGuide() {
         Emphasize that Shakespeare excels at building <strong>Nostr-native applications</strong> and <strong>client-side web experiences</strong>. For projects requiring backend infrastructure, participants should consider other tools or plan to integrate Shakespeare-built frontends with separate backend services.
       </p>
 
+      <img
+        src="/assets/blog/shakespeare-workshop-guide/chad-shakespeare-workshop.jpeg"
+        alt="Shakespeare workshop participants building projects"
+        className="rounded-lg shadow-md"
+      />
+
       <h2 id="step-2-build">Step 2: Build Together</h2>
 
       <h3>Share the Gift Card QR Code</h3>
@@ -326,12 +341,6 @@ export default function ShakespeareWorkshopGuide() {
       <p>
         Display the QR code from your faucet page on the projector and have participants scan it with their phones to redeem their free AI credits. Make sure everyone successfully redeems a gift card before moving on to the building session.
       </p>
-
-      <img
-        src="/assets/blog/shakespeare-workshop-guide/chad-shakespeare-workshop.jpeg"
-        alt="Shakespeare workshop participants building projects"
-        className="rounded-lg shadow-md"
-      />
 
       <p>
         The core of the workshop is collaborative building. One facilitator builds an example project on the main screen while participants work on their own projects simultaneously.
