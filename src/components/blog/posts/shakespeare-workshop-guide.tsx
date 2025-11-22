@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ExternalLink, Presentation, Zap, Gift } from 'lucide-react';
+import { ExternalLink, Presentation, Zap } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -77,7 +77,7 @@ export default function ShakespeareWorkshopGuide() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <a href="#step-1-helpers" className="block no-underline">
+              <a href="#step-1-introduce" className="block no-underline">
                 <Card className="hover:shadow-md transition-shadow cursor-pointer">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
@@ -87,7 +87,7 @@ export default function ShakespeareWorkshopGuide() {
                       <div>
                         <h4 className="font-semibold mb-1">Introduction & Setup</h4>
                         <p className="text-sm text-gray-600">
-                          Enlist helpers by asking about vibe coding experience, present Shakespeare overview, demonstrate capabilities, share QR code for gift card redemption
+                          Present Shakespeare overview, demonstrate capabilities, share QR code for gift card redemption
                         </p>
                       </div>
                     </div>
@@ -95,7 +95,7 @@ export default function ShakespeareWorkshopGuide() {
                 </Card>
               </a>
 
-              <a href="#step-4-build" className="block no-underline">
+              <a href="#step-2-build" className="block no-underline">
                 <Card className="hover:shadow-md transition-shadow cursor-pointer">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
@@ -113,7 +113,7 @@ export default function ShakespeareWorkshopGuide() {
                 </Card>
               </a>
 
-              <a href="#step-5-celebrate" className="block no-underline">
+              <a href="#step-3-celebrate" className="block no-underline">
                 <Card className="hover:shadow-md transition-shadow cursor-pointer">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
@@ -131,7 +131,7 @@ export default function ShakespeareWorkshopGuide() {
                 </Card>
               </a>
 
-              <a href="#step-5-celebrate" className="block no-underline">
+              <a href="#step-3-celebrate" className="block no-underline">
                 <Card className="hover:shadow-md transition-shadow cursor-pointer">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
@@ -153,13 +153,82 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2 id="step-1-helpers">Step 1: Set Up Your Helpers</h2>
+      <h2 id="step-0-preparation">Step 0: Preparation (Before the Workshop)</h2>
 
       <p>
-        Before diving into Shakespeare, identify experienced participants who can assist others throughout the workshop. This peer support system is crucial for a smooth experience.
+        Proper preparation is key to running a smooth Shakespeare workshop. Complete these tasks before participants arrive to ensure everything runs seamlessly.
       </p>
 
-      <h3>Enlisting Assistants</h3>
+      <h3>Purchase and Set Up Gift Cards</h3>
+
+      <p>
+        Shakespeare makes it easy to provide free AI credits to workshop participants through gift cards. This ensures everyone can participate without needing their own API keys or payment setup.
+      </p>
+
+      <div className="not-prose my-8">
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">1</div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Purchase Gift Cards in Shakespeare</h4>
+              <p className="text-sm text-gray-700">
+                Log into <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">shakespeare.diy</a> with your Nostr account, navigate to Settings → AI, and purchase gift cards in bulk using Stripe or Bitcoin Lightning.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">2</div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Export as CSV</h4>
+              <p className="text-sm text-gray-700">
+                After purchase, export your gift cards as a CSV file containing the redeemable codes.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">3</div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Upload to Faucet</h4>
+              <p className="text-sm text-gray-700">
+                Visit <a href="https://faucet.shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">faucet.shakespeare.diy</a> and upload your CSV file to create a shareable faucet page.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">4</div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Add QR Code to Your Presentation</h4>
+              <p className="text-sm text-gray-700">
+                The faucet generates a QR code. Add this QR code to your presentation slides so participants can easily scan and redeem their free AI credits during the workshop.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Identify Potential Helpers (Optional)</h3>
+
+      <p>
+        If you know some participants in advance who have experience with AI coding or Shakespeare, reach out to them before the workshop and ask if they'd be willing to help others during the building session. Having pre-identified helpers can make the workshop run even more smoothly, though you can also enlist helpers at the start of the workshop itself.
+      </p>
+
+      <h3>Preparation Checklist</h3>
+
+      <ul>
+        <li>✅ Gift cards purchased and uploaded to faucet</li>
+        <li>✅ QR code added to presentation slides</li>
+        <li>✅ Presentation template customized (optional)</li>
+        <li>✅ Potential helpers identified (optional)</li>
+        <li>✅ Workshop space confirmed with projector/screen</li>
+      </ul>
+
+      <h2 id="step-1-introduce">Step 1: Introduce Shakespeare</h2>
+
+      <p>
+        Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template to cover the key points.
+      </p>
+
+      <h3>Enlist Helpers</h3>
 
       <p>
         At the very beginning of your workshop, ask these two questions to the group:
@@ -174,13 +243,11 @@ export default function ShakespeareWorkshopGuide() {
         Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can support participants who may struggle or have questions during the building session, and provide you an extra set of eyes and ears.
       </p>
 
-      <h2 id="step-2-introduce">Step 2: Introduce Shakespeare</h2>
+      <h3>Present Shakespeare Overview</h3>
 
       <p>
-        Start your workshop with a brief introduction to Shakespeare and what it can do. Use the presentation template linked above to cover the key points:
+        Cover these main points in your presentation:
       </p>
-
-      <h3>Main points to cover:</h3>
 
       <ol>
         <li>What is Shakespeare? And basics of how it works</li>
@@ -190,6 +257,12 @@ export default function ShakespeareWorkshopGuide() {
         <li>How to edit existing sites on Shakespeare</li>
         <li>Ideas of things you can build</li>
       </ol>
+
+      <h3>Share the Gift Card QR Code</h3>
+
+      <p>
+        Display the QR code from your faucet page on the projector and have participants scan it with their phones to redeem their free AI credits. Make sure everyone successfully redeems a gift card before moving on to the building session.
+      </p>
 
       <h3>What Shakespeare Can and Cannot Build</h3>
 
@@ -259,73 +332,7 @@ export default function ShakespeareWorkshopGuide() {
         </Card>
       </div>
 
-      <h2 id="step-3-gift-cards">Step 3: Provide Free Access with Gift Cards</h2>
-
-      <p>
-        Shakespeare makes it easy to provide free AI credits to workshop participants through gift cards. This ensures everyone can participate without needing their own API keys or payment setup.
-      </p>
-
-      <div className="not-prose my-12">
-        <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <Gift className="w-6 h-6 text-green-600" />
-              Setting Up Gift Cards
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">1</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Purchase Gift Cards in Shakespeare</h4>
-                  <p className="text-sm text-gray-700">
-                    Log into <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">shakespeare.diy</a> with your Nostr account, navigate to Settings → AI, and purchase gift cards in bulk using Stripe or Bitcoin Lightning.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">2</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Export as CSV</h4>
-                  <p className="text-sm text-gray-700">
-                    After purchase, export your gift cards as a CSV file containing the redeemable codes.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">3</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Upload to Faucet</h4>
-                  <p className="text-sm text-gray-700">
-                    Visit <a href="https://faucet.shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">faucet.shakespeare.diy</a> and upload your CSV file to create a shareable faucet page.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 text-green-700 font-bold text-sm min-w-[2rem] text-center">4</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Share QR Code with Participants</h4>
-                  <p className="text-sm text-gray-700">
-                    Display the QR code on a projector or slides so participants can scan and redeem their free AI credits instantly.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <h3>Why Gift Cards Work Great for Workshops</h3>
-
-      <ul>
-        <li><strong>No Setup Friction:</strong> Participants don't need to create accounts or enter payment information</li>
-        <li><strong>Instant Access:</strong> Scan QR code, redeem gift card, start building immediately</li>
-        <li><strong>Controlled Budget:</strong> You decide exactly how much AI credit to provide per participant</li>
-        <li><strong>Professional Experience:</strong> Everyone gets the same quality AI models and capabilities</li>
-      </ul>
-
-      <h2 id="step-4-build">Step 4: Build Together</h2>
+      <h2 id="step-2-build">Step 2: Build Together</h2>
 
       <p>
         The core of the workshop is collaborative building. One facilitator builds an example project on the main screen while participants work on their own projects simultaneously.
@@ -380,7 +387,7 @@ export default function ShakespeareWorkshopGuide() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 font-bold">•</span>
-                <span><strong>Designate Helpers:</strong> Have experienced users roam the room offering assistance</span>
+                <span><strong>Have Helpers Roam:</strong> Experienced users should walk around offering assistance</span>
               </li>
             </ul>
           </CardContent>
@@ -391,7 +398,7 @@ export default function ShakespeareWorkshopGuide() {
         For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
       </p>
 
-      <h2 id="step-5-celebrate">Step 5: Share and Celebrate</h2>
+      <h2 id="step-3-celebrate">Step 3: Share and Celebrate</h2>
 
       <p>
         The final phase of the workshop is where the magic happens. Participants deploy their creations and share them with the community.
