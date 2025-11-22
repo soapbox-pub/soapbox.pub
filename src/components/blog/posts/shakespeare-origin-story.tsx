@@ -46,33 +46,48 @@ export default function ShakespeareOriginStory() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">The Evolution Path</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
               <div className="text-center">
-                <div className="bg-transparent border-4 border-gray-900 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                <a
+                  href="https://block.xyz/inside/block-open-source-introduces-codename-goose"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-transparent border-4 border-gray-900 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center hover:shadow-xl hover:border-gray-700 transition-all"
+                >
                   <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2 text-gray-900">Goose</h4>
                   <p className="text-sm text-gray-700">Terminal-Based</p>
-                </div>
+                </a>
                 <p className="text-sm text-gray-600">AI agent framework<br />for developers</p>
               </div>
 
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
 
               <div className="text-center">
-                <div className="bg-transparent border-4 border-violet-600 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                <a
+                  href="https://getstacks.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-transparent border-4 border-violet-600 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center hover:shadow-xl hover:border-violet-500 transition-all"
+                >
                   <img src="/assets/logos/stacks-logo.png" alt="Stacks Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2 text-gray-900">Stacks</h4>
                   <p className="text-sm text-gray-700">Nostr Templates</p>
-                </div>
+                </a>
                 <p className="text-sm text-gray-600">Template system<br />for Nostr apps</p>
               </div>
 
               <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 md:rotate-0" />
 
               <div className="text-center">
-                <div className="bg-transparent border-4 border-purple-600 rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center">
+                <a
+                  href="https://shakespeare.diy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-transparent border-4 border-[hsl(207,90%,42%)] rounded-2xl p-6 mb-4 shadow-lg flex flex-col items-center hover:shadow-xl hover:border-[hsl(207,90%,50%)] transition-all"
+                >
                   <img src="/assets/logos/shakespeare-logo.png" alt="Shakespeare Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2 text-gray-900">Shakespeare</h4>
                   <p className="text-sm text-gray-700">Browser-Based</p>
-                </div>
+                </a>
                 <p className="text-sm text-gray-600">Full development<br />environment</p>
               </div>
             </div>
