@@ -258,6 +258,22 @@ export default function ShakespeareWorkshopGuide() {
         <li>✅ Workshop space confirmed with projector/screen</li>
       </ul>
 
+      <div className="not-prose my-12">
+        <div
+          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => setSelectedImage(workshopPhotos[4])}
+        >
+          <img
+            src={workshopPhotos[4].url}
+            alt={workshopPhotos[4].caption}
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[4].caption}</p>
+      </div>
+
       <h2 id="step-1-introduce">Step 1: Introduce Shakespeare</h2>
 
       <p>
@@ -279,6 +295,22 @@ export default function ShakespeareWorkshopGuide() {
         Ask the second group (those who raised their hands for being "really good") to serve as assistants to others in the room. These helpers can support participants who may struggle or have questions during the building session, and provide you an extra set of eyes and ears.
       </p>
 
+      <div className="not-prose my-12">
+        <div
+          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => setSelectedImage(workshopPhotos[1])}
+        >
+          <img
+            src={workshopPhotos[1].url}
+            alt={workshopPhotos[1].caption}
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[1].caption}</p>
+      </div>
+
       <h3>Present Shakespeare Overview</h3>
 
       <p>
@@ -294,21 +326,13 @@ export default function ShakespeareWorkshopGuide() {
         <li>Ideas of things you can build</li>
       </ol>
 
-      <h3>Share the Gift Card QR Code</h3>
-
-      <p>
-        Display the QR code from your faucet page on the projector and have participants scan it with their phones to redeem their free AI credits. Make sure everyone successfully redeems a gift card before moving on to the building session.
-      </p>
-
       <h3>Explain What Shakespeare Can Build</h3>
 
       <p>
         Help participants understand the scope of what they can create during the workshop by explaining Shakespeare's capabilities and limitations.
       </p>
 
-      <h3>What Shakespeare Can and Cannot Build</h3>
-
-      <div className="not-prose my-8">
+      <div className="not-prose mb-4">
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300">
             <thead>
@@ -347,38 +371,53 @@ export default function ShakespeareWorkshopGuide() {
         Emphasize that Shakespeare excels at building <strong>Nostr-native applications</strong> and <strong>client-side web experiences</strong>. For projects requiring backend infrastructure, participants should consider other tools or plan to integrate Shakespeare-built frontends with separate backend services.
       </p>
 
+      <div className="not-prose my-12">
+        <div
+          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => setSelectedImage(workshopPhotos[2])}
+        >
+          <img
+            src={workshopPhotos[2].url}
+            alt={workshopPhotos[2].caption}
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[2].caption}</p>
+      </div>
+
       <h2 id="step-2-build">Step 2: Build Together</h2>
+
+      <h3>Share the Gift Card QR Code</h3>
+
+      <p>
+        Display the QR code from your faucet page on the projector and have participants scan it with their phones to redeem their free AI credits. Make sure everyone successfully redeems a gift card before moving on to the building session.
+      </p>
+
+      <div className="not-prose my-12">
+        <div
+          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => setSelectedImage(workshopPhotos[0])}
+        >
+          <img
+            src={workshopPhotos[0].url}
+            alt={workshopPhotos[0].caption}
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[0].caption}</p>
+      </div>
 
       <p>
         The core of the workshop is collaborative building. One facilitator builds an example project on the main screen while participants work on their own projects simultaneously.
       </p>
 
-      <h3>Facilitator's Role</h3>
+      <h3>Lead the Group in Building Projects Together</h3>
 
-      <p>
-        As the workshop leader, you'll build a project live to demonstrate Shakespeare's capabilities:
-      </p>
-
-      <ul>
-        <li><strong>Choose a Simple Project:</strong> Pick something achievable in 30-45 minutes (personal portfolio, event landing page, simple blog)</li>
-        <li><strong>Think Out Loud:</strong> Narrate your prompts and explain why you're asking the AI for specific features</li>
-        <li><strong>Show Iteration:</strong> Demonstrate refining and improving the AI's output through follow-up questions</li>
-        <li><strong>Handle Errors Gracefully:</strong> When things don't work perfectly, show how to troubleshoot and adjust prompts</li>
-      </ul>
-
-      <h3>Participant Experience</h3>
-
-      <p>
-        While you build, participants follow along on their own devices:
-      </p>
-
-      <ul>
-        <li>They can build the same project as you (following along)</li>
-        <li>They can build their own unique projects</li>
-        <li>Supporters and helpers can walk around offering assistance and advice</li>
-      </ul>
-
-      <div className="not-prose my-12">
+      <div className="not-prose my-6">
         <Card className="border-2 border-blue-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -413,6 +452,22 @@ export default function ShakespeareWorkshopGuide() {
         For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
       </p>
 
+      <div className="not-prose my-12">
+        <div
+          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => setSelectedImage(workshopPhotos[3])}
+        >
+          <img
+            src={workshopPhotos[3].url}
+            alt={workshopPhotos[3].caption}
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[3].caption}</p>
+      </div>
+
       <h2 id="step-3-celebrate">Step 3: Share and Celebrate</h2>
 
       <p>
@@ -427,8 +482,7 @@ export default function ShakespeareWorkshopGuide() {
 
       <ol>
         <li><strong>Click Deploy:</strong> Participants use the built-in deployment feature to publish their sites</li>
-        <li><strong>Get Public URL:</strong> Each project receives a unique public URL instantly</li>
-        <li><strong>Share in Chat:</strong> Participants post their links in the meetup chat or Discord</li>
+        <li><strong>Get Public URL:</strong> Each project receives a unique public URL instantly. Share it in a group chat, or outloud</li>
       </ol>
 
       <h3>Showcase Time</h3>
@@ -440,38 +494,25 @@ export default function ShakespeareWorkshopGuide() {
       <ul>
         <li><strong>Screen Sharing:</strong> Pull up participant websites on the main display</li>
         <li><strong>Quick Demos:</strong> Each person gets 1-2 minutes to show what they built and explain their process</li>
-        <li><strong>Community Feedback:</strong> Encourage positive feedback and suggestions</li>
         <li><strong>Celebrate Creativity:</strong> Highlight unique approaches and creative solutions</li>
+        <li><strong>Collaborative Problem Solving:</strong> Showcase time is also an opportunity to share things that went wrong, and get advice from the group!</li>
+
       </ul>
 
-      <div className="not-prose my-16">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Pics from Past Shakespeare Workshops</CardTitle>
-            <p className="text-gray-600 mt-2">
-              See Shakespeare workshops in action. Click any image to view larger version.
-            </p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-              {workshopPhotos.map((photo, index) => (
-                <div
-                  key={index}
-                  className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-                  onClick={() => setSelectedImage(photo)}
-                >
-                  <img
-                    src={photo.url}
-                    alt={photo.caption}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+      <div className="not-prose my-12">
+        <div
+          className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => setSelectedImage(workshopPhotos[5])}
+        >
+          <img
+            src={workshopPhotos[5].url}
+            alt={workshopPhotos[5].caption}
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200" />
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">{workshopPhotos[5].caption}</p>
       </div>
 
       {/* Image Lightbox Dialog */}
