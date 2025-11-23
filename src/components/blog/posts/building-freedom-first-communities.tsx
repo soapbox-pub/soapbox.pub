@@ -170,7 +170,7 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        If you don't know how to code, that's OK! You can start building your censorship-resistant community using <Link to="/blog/announcing-shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>. You can also check out Chorus by AOS, an app we debuted at the Oslo Freedom Forum in May. If you're already a dev, check out our tools like MKStack. Teach yourself Nostr NIPs with <Link to="/tools/nostrhub" className="text-azure hover:text-azure-600 underline">NostrHub</Link>, which lets you explore a complete NIP database and publish custom NIPs.
+        If you don't know how to code, that's OK! You can start building your censorship-resistant community using <Link to="/blog/announcing-shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>. You can also check out <Link to="/blog/chorus-vibe-coding" className="text-azure hover:text-azure-600 underline">Chorus</Link> by AOS, an app we debuted at the Oslo Freedom Forum in May. If you're already a dev, check out our tools like MKStack. Teach yourself Nostr NIPs with <Link to="/tools/nostrhub" className="text-azure hover:text-azure-600 underline">NostrHub</Link>, which lets you explore a complete NIP database and publish custom NIPs.
       </p>
 
       <p>
