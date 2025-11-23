@@ -123,23 +123,6 @@ export default function WhatsInAName() {
         more ideas, experiment faster, and fail cheaper.
       </p>
 
-      <div className="not-prose my-8">
-        <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 border-2 border-purple-200">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">The Math of Infinite Attempts</h3>
-          <div className="text-gray-700 space-y-3">
-            <p className="mb-0">If each vibe-coded app has a 1% chance of being production-ready:</p>
-            <ul className="mt-2 mb-2 space-y-1">
-              <li>10 attempts = ~10% chance of success</li>
-              <li>100 attempts = ~63% chance of success</li>
-              <li>500 attempts = ~99% chance of success</li>
-            </ul>
-            <p className="text-sm text-gray-600 mt-3 mb-0">
-              The more apps we build, the higher our odds of creating something transformative. This is Nostr's moonshot.
-            </p>
-          </div>
-        </div>
-      </div>
-
       <p>
         For Nostr specifically, this approach is revolutionary. <a href="/blog/comparing-protocols">Unlike the Fediverse
         or Bluesky</a>, Nostr is one of the only open protocols where you can build entire frontend clients without
