@@ -141,9 +141,12 @@ export default function WhatsInAName() {
       </div>
 
       <p>
-        For Nostr specifically, this approach is revolutionary. The protocol needs more apps, more experiments, more
-        diverse use cases. If Shakespeare enables hundreds or thousands of people to build Nostr apps—even if 90% of
-        them fail—the 10% that succeed will bring new users, new ideas, and new energy to the ecosystem.
+        For Nostr specifically, this approach is revolutionary. <a href="/blog/comparing-protocols">Unlike the Fediverse
+        or Bluesky</a>, Nostr is one of the only open protocols where you can build entire frontend clients without
+        having to manage your own backend infrastructure. This means anyone can create a Nostr app with just frontend
+        code—no servers, no databases, no DevOps expertise required. The protocol needs more apps, more experiments,
+        more diverse use cases. If Shakespeare enables hundreds or thousands of people to build Nostr apps—even if 90%
+        of them fail—the 10% that succeed will bring new users, new ideas, and new energy to the ecosystem.
       </p>
 
       <p>
