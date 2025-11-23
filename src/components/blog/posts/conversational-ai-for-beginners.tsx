@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface BlogPostMeta {
   slug: string;
@@ -36,7 +37,7 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        You don't need a GitHub to build a website; you don't even need to know what Git is! With our conversational AI builder, Shakespeare, you simply sign in with Nostr.
+        You don't need a GitHub to build a website; you don't even need to know what Git is! With our conversational AI builder, <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, you simply sign in with <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link>.
       </p>
 
       <ul>
@@ -56,7 +57,7 @@ export default function ConversationalAIForBeginners() {
 
       <ul>
         <li>Instant site deployment without asking for your information.</li>
-        <li>Security for your site via the Nostr protocol.</li>
+        <li>Security for your site via the <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> protocol.</li>
         <li>The ability to begin without having a GitHub, GitLab, or other developer account (or need to understand what Git even is). Other AI builders ask for this, we don't.</li>
         <li>No reason to worry about subscriptions or hidden costs. Our MKStack credits are straightforward.</li>
       </ul>
@@ -78,17 +79,17 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        Many call this "vibe coding," but we just call it building with AI for the rest of us. Using Shakespeare is nothing more than entering a conversation prompt to ask it to build whatever you want. For example, you could ask it to, "Build me a website for my upcoming baby shower, so I can share my gift registry and have guests RSVP through it."
+        Many call this "vibe coding," but we just call it building with AI for the rest of us. Using <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is nothing more than entering a conversation prompt to ask it to build whatever you want. For example, you could ask it to, "Build me a website for my upcoming baby shower, so I can share my gift registry and have guests RSVP through it."
       </p>
 
       <p>
-        While a simple prompt like this will work, you will likely soon find this may require more prompting effort on your part to get you the results you want. You'll continue to prompt it, which costs you AI credits unless you use the free Gemini Flash Playground in Shakespeare, which may not work as well. Think of Gemini Flash Playground as perfect for rough drafts and MKStack as good for a polished, final draft.
+        While a simple prompt like this will work, you will likely soon find this may require more prompting effort on your part to get you the results you want. You'll continue to prompt it, which costs you AI credits unless you use the free Gemini Flash Playground in Shakespeare, which may not work as well. Think of Gemini Flash Playground as perfect for rough drafts and MKStack as good for a polished, final draft. <Link to="/blog/prompt-better-projects" className="text-azure hover:text-azure-600 underline">Learn more about prompting effectively</Link>.
       </p>
 
       <h2>What Can I Ask Shakespeare to Do?</h2>
 
       <p>
-        Shakespeare is great at helping you build a website, social feed, dashboard, game, or community. Our users have used it already to build a live streaming website, travel review website, games, content curators, e-commerce stores, or sites to help them with their work, like a decentralized Google Forms rival.
+        <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is great at helping you build a website, social feed, dashboard, game, or community. Our users have used it already to build a live streaming website, travel review website, games, content curators, e-commerce stores, or sites to help them with their work, like a decentralized Google Forms rival.
       </p>
 
       <h2>How To Prompt While Getting the Most From AI Credits</h2>
@@ -121,7 +122,7 @@ export default function ConversationalAIForBeginners() {
       <h2>What If I Encounter a Problem While Vibe Coding?</h2>
 
       <p>
-        You may not know what to expect after giving Shakespeare your first prompt. First, it will get to work on coding your idea. It will even show you its work, most of which is code and none of which you need to understand. You can walk away and just let it cook.
+        You may not know what to expect after giving <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a> your first prompt. First, it will get to work on coding your idea. It will even show you its work, most of which is code and none of which you need to understand. You can walk away and just let it cook.
       </p>
 
       <p>
@@ -129,7 +130,7 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        In both cases, just keep talking to Shakespeare as you did when you gave it the prompt. You still need no technical know-how in order to keep working on your site. Here are some examples of ways you can work with Shakespeare when you don't like a result or the app it produces doesn't work.
+        In both cases, just keep talking to Shakespeare as you did when you gave it the prompt. You still need no technical know-how in order to keep working on your site. Here are some examples of ways you can work with Shakespeare when you don't like a result or the app it produces doesn't work. <Link to="/blog/debugging-in-shakespeare" className="text-azure hover:text-azure-600 underline">Learn more about debugging</Link>.
       </p>
 
       <ul>
@@ -161,11 +162,11 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        The Soapbox team began building on the Fediverse, but soon found even it had sources of failure, like moderators or folks who can just turn a server off at any time. We pivoted to an uncensorable, but lesser known protocol called Nostr and we've been building ever since.
+        The Soapbox team began building on the <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">Fediverse</Link>, but soon found even it had sources of failure, like moderators or folks who can just turn a server off at any time. We pivoted to an uncensorable, but lesser known protocol called Nostr and we've been building ever since.
       </p>
 
       <p>
-        Nostr is limitless and so is Soapbox. We're funded by the non-profit <strong>And Other Stuff</strong>, so there will never be shareholders breathing down our necks. We're not trying to join the Silicon Valley rat race—we're trying to beat it.
+        Nostr is limitless and so is Soapbox. We're funded by <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline"><strong>And Other Stuff</strong></a>, so there will never be shareholders breathing down our necks. We're not trying to join the Silicon Valley rat race—we're trying to beat it.
       </p>
 
       <div className="not-prose my-8">

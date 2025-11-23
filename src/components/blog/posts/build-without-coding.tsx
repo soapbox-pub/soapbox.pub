@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface BlogPostMeta {
   slug: string;
@@ -40,7 +41,7 @@ export default function BuildWithoutCoding() {
       </p>
 
       <p>
-        Thanks to AI-powered tools, like our AI builder Shakespeare, the barriers between imagination and implementation are dissolving, creating unprecedented opportunities for non-technical creators. As Gleason says, "Implementation is becoming commoditized so that if you have a good idea, then you can just build it almost immediately. The implementation is becoming a given."
+        Thanks to AI-powered tools, like our AI builder <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, the barriers between imagination and implementation are dissolving, creating unprecedented opportunities for non-technical creators. As Gleason says, "Implementation is becoming commoditized so that if you have a good idea, then you can just build it almost immediately. The implementation is becoming a given."
       </p>
 
       <h2>A Faster Creator Economy is Primed to Emerge</h2>
@@ -50,7 +51,7 @@ export default function BuildWithoutCoding() {
       </p>
 
       <p>
-        This leads to empowerment. You no longer have to be "technical" to bring ideas to life. Shakespeare helps you create through conversation, just like you are used to doing with AI assistants like ChatGPT, Gemini, or Claude. Instead of getting an answer to your question, you're asking it to create a website or app for you.
+        This leads to empowerment. You no longer have to be "technical" to bring ideas to life. <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a> helps you create through conversation, just like you are used to doing with AI assistants like ChatGPT, Gemini, or Claude. Instead of getting an answer to your question, you're asking it to create a website or app for you.
       </p>
 
       <h2>The Right Mindset For Harnessing the Power of AI</h2>
@@ -83,7 +84,7 @@ export default function BuildWithoutCoding() {
       <h2>Getting Started with AI: It's About the Tools</h2>
 
       <p>
-        For newcomers to AI-powered creation, the most important thing to know isn't about coding—it's which tools to use. Shakespeare is designed to be accessible even on mobile devices. It's for the musician who wants to build a fan club website or the mom who wants to build her book club online. You can type out your idea while away from your computer and come back later to see what AI has built. It allows anyone to turn a shower thought into a working prototype without touching a terminal or writing code.
+        For newcomers to AI-powered creation, the most important thing to know isn't about coding—it's which tools to use. <Link to="/blog/announcing-shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is designed to be accessible even on mobile devices. It's for the musician who wants to build a fan club website or the mom who wants to build her book club online. You can type out your idea while away from your computer and come back later to see what AI has built. It allows anyone to turn a shower thought into a working prototype without touching a terminal or writing code.
       </p>
 
       <h2>The Real-World Impact of AI Builders</h2>

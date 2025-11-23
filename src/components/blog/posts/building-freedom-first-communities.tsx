@@ -45,11 +45,11 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        According to the Human Rights Foundation, AI tools, like Shakespeare from Soapbox, can be used to liberate. "AI tools can be paired with Freedom Tech protocols like Bitcoin and Nostr to ensure that anyone can safely and securely access the world's best intelligence."
+        According to the Human Rights Foundation, AI tools, like <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> from Soapbox, can be used to liberate. "AI tools can be paired with Freedom Tech protocols like Bitcoin and <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> to ensure that anyone can safely and securely access the world's best intelligence."
       </p>
 
       <p>
-        Soapbox uses Nostr's censorship-resistant technology to provide tools for building a free and open Internet. As it's a protocol rather than a company, Nostr remains censorship-resistant, so there is no central control. Nostr lives not on centralized server racks, but on independent relays distributed globally. It's what our conversational AI builder, Shakespeare, builds on for your websites and apps. You build them and they exist on Nostr so there's no need to sign up for a subscription to deploy your creations.
+        Soapbox uses <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr's</Link> censorship-resistant technology to provide tools for building a free and open Internet. As it's a protocol rather than a company, Nostr remains censorship-resistant, so there is no central control. Nostr lives not on centralized server racks, but on independent relays distributed globally. It's what our conversational AI builder, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a>, builds on for your websites and apps. You build them and they exist on Nostr so there's no need to sign up for a subscription to deploy your creations.
       </p>
 
       <div className="not-prose bg-gradient-to-r from-azure-50 to-blue-50 rounded-xl p-8 my-8 border-2 border-azure-200">
@@ -102,7 +102,7 @@ export default function BuildingFreedomFirstCommunities() {
       <h2>Starting with a Clear Tech Decentralization Mission</h2>
 
       <p>
-        In 2019, we witnessed platforms actively censoring women discussing their rights. Existing decentralized platforms like ActivityPub and Mastodon offered partial solutions but didn't solve the core problem: giving communities true independence from centralized control.
+        In 2019, we witnessed platforms actively censoring women discussing their rights. Existing decentralized platforms like <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">ActivityPub and Mastodon</Link> offered partial solutions but didn't solve the core problem: giving communities true independence from centralized control.
       </p>
 
       <p>
@@ -120,11 +120,11 @@ export default function BuildingFreedomFirstCommunities() {
       <h2>Moving to True Online Decentralization</h2>
 
       <p>
-        Our early work revealed a flaw in existing decentralized protocols like Mastodon, which created "mini Twitters" where administrators held ultimate power over user content and identity. The Nostr protocol offered a breakthrough solution.
+        Our early work revealed a flaw in existing decentralized protocols like <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">Mastodon</Link>, which created "mini Twitters" where administrators held ultimate power over user content and identity. The <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> protocol offered a breakthrough solution.
       </p>
 
       <p>
-        Fain says, "We were having the same problem on ActivityPub servers as on Twitter. ActivityPub doesn't work like Nostr where everyone has their own identity. It's a bunch of mini Twitters. One admin controls everything, and each person is dependent on that admin."
+        Fain says, "We were having the same problem on <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">ActivityPub</Link> servers as on Twitter. ActivityPub doesn't work like Nostr where everyone has their own identity. It's a bunch of mini Twitters. One admin controls everything, and each person is dependent on that admin."
       </p>
 
       <p>
@@ -138,7 +138,7 @@ export default function BuildingFreedomFirstCommunities() {
       <h2>Building with And Other Stuff, aka AOS</h2>
 
       <p>
-        Soapbox is now part of And Other Stuff (AOS), a nonprofit collective of innovative Nostr projects. Working with teams from White Noise, Cashu, and Nos, we're focused on:
+        Soapbox is now part of <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">And Other Stuff (AOS)</a>, a collective of innovative Nostr projects. Working with teams from White Noise, Cashu, and Nos, we're focused on:
       </p>
 
       <ul>
@@ -150,7 +150,7 @@ export default function BuildingFreedomFirstCommunities() {
       </ul>
 
       <p>
-        Communities will benefit from other tools in the AOS collective, like the privacy-enhancing tools in Cashu and White Noise. The group's goal is to make Nostr the best social protocol for open-source AI-first development and integration. Together, we want to build Nostr's future so that it's widely adopted and sustainable. Decentralized AI tools, like Shakespeare, will empower non-profits and the oppressed.
+        Communities will benefit from other tools in the <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">AOS</a> collective, like the privacy-enhancing tools in Cashu and White Noise. The group's goal is to make Nostr the best social protocol for <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">open-source</Link> AI-first development and integration. Together, we want to build Nostr's future so that it's widely adopted and sustainable. Decentralized AI tools, like <Link to="/blog/announcing-shakespeare-act-2" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, will empower non-profits and the oppressed.
       </p>
 
       <h2>Join Us in Building a Free and Open Internet</h2>
@@ -170,11 +170,11 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        If you don't know how to code, that's OK! You can start building your censorship-resistant community using Shakespeare. You can also check out Chorus by AOS, an app we debuted at the Oslo Freedom Forum in May. If you're already a dev, check out our tools like MKStack. Teach yourself Nostr NIPs with NostrHub, which lets you explore a complete NIP database and publish custom NIPs.
+        If you don't know how to code, that's OK! You can start building your censorship-resistant community using <Link to="/blog/announcing-shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>. You can also check out Chorus by AOS, an app we debuted at the Oslo Freedom Forum in May. If you're already a dev, check out our tools like MKStack. Teach yourself Nostr NIPs with <Link to="/tools/nostrhub" className="text-azure hover:text-azure-600 underline">NostrHub</Link>, which lets you explore a complete NIP database and publish custom NIPs.
       </p>
 
       <p>
-        Our tools are open source, decentralized, and production-ready.
+        Our tools are <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">open source</Link>, decentralized, and production-ready.
       </p>
 
       <div className="not-prose my-8">
