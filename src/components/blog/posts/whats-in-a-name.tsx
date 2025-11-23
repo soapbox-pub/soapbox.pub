@@ -185,16 +185,16 @@ export default function WhatsInAName() {
       <p>Consider just a few examples:</p>
 
       <ul>
-        <li><strong>The Lion King</strong> (Hamlet) - Disney's highest-grossing traditionally animated film</li>
-        <li><strong>West Side Story</strong> (Romeo and Juliet) - Winner of 10 Academy Awards</li>
-        <li><strong>10 Things I Hate About You</strong> (The Taming of the Shrew) - Defining teen rom-com</li>
-        <li><strong>She's the Man</strong> (Twelfth Night) - Gender-bending comedy</li>
-        <li><strong>Throne of Blood</strong> (Macbeth) - Akira Kurosawa's feudal Japan adaptation</li>
-        <li><strong>Ran</strong> (King Lear) - Kurosawa's epic interpretation</li>
-        <li><strong>Warm Bodies</strong> (Romeo and Juliet) - Zombie romance</li>
-        <li><strong>O</strong> (Othello) - High school basketball drama</li>
-        <li><strong>Gnomeo & Juliet</strong> (Romeo and Juliet) - Animated garden gnome romance</li>
-        <li><strong>Forbidden Planet</strong> (The Tempest) - Classic sci-fi film</li>
+        <li><strong>The Lion King</strong> (Hamlet)</li>
+        <li><strong>West Side Story</strong> (Romeo and Juliet)</li>
+        <li><strong>10 Things I Hate About You</strong> (The Taming of the Shrew)</li>
+        <li><strong>She's the Man</strong> (Twelfth Night)</li>
+        <li><strong>Throne of Blood</strong> (Macbeth)</li>
+        <li><strong>Ran</strong> (King Lear)</li>
+        <li><strong>Warm Bodies</strong> (Romeo and Juliet)</li>
+        <li><strong>O</strong> (Othello)</li>
+        <li><strong>Gnomeo & Juliet</strong> (Romeo and Juliet)</li>
+        <li><strong>Forbidden Planet</strong> (The Tempest)</li>
       </ul>
 
       <p>
@@ -212,9 +212,19 @@ export default function WhatsInAName() {
               When creative works are free, culture flourishes. Artists can build on each other's work, creating
               new perspectives and reaching new audiences. The same principle applies to software and AI.
             </p>
-            <p className="text-sm text-gray-600 mb-0">
+            <p className="text-sm text-gray-600 mb-4">
               Learn more in our post: <a href="/blog/free-software-free-societies" className="text-blue-600 hover:underline">Free Software: Free Societies</a>
             </p>
+            <div className="aspect-video">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/jcvd5JZkUXY?si=QdX-8a9EuaLY7nUf"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </CardContent>
         </Card>
       </div>
