@@ -15,6 +15,7 @@ export interface BlogPostMeta {
   };
   featured?: boolean;
   tags?: string[];
+  hidden?: boolean;
 }
 
 export interface BlogPost extends BlogPostMeta {

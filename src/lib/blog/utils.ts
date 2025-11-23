@@ -2,12 +2,12 @@ import { blogPosts, getPostBySlug as getPostComponent } from './blogIndex';
 import type { BlogPost } from './types';
 
 export function getAllPosts() {
-  // Return all posts including shakespeare-resource posts
-  return blogPosts;
+  // Return all posts excluding hidden ones
+  return blogPosts.filter(post => !post.hidden);
 }
 
 export function getAllPostsIncludingResources() {
-  // Return all posts including shakespeare-resource posts
+  // Return all posts including hidden ones (for direct URL access)
   return blogPosts;
 }
 
