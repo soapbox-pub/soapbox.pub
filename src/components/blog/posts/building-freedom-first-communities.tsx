@@ -11,6 +11,7 @@ export interface BlogPostMeta {
   ogImage: { url?: string; };
   tags?: string[];
   featured?: boolean;
+  hidden?: boolean;
 }
 
 export const meta: BlogPostMeta = {
@@ -26,7 +27,8 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/freedom-communities/cover.png"
   },
-  "tags": ["communities", "freedom", "censorship-resistance", "nostr", "decentralization"]
+  "tags": ["communities", "freedom", "censorship-resistance", "nostr", "decentralization"],
+  "hidden": true
 };
 
 export default function BuildingFreedomFirstCommunities() {

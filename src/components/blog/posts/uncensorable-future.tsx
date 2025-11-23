@@ -11,6 +11,7 @@ export interface BlogPostMeta {
   ogImage: { url?: string; };
   tags?: string[];
   featured?: boolean;
+  hidden?: boolean;
 }
 
 export const meta: BlogPostMeta = {
@@ -26,7 +27,8 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/uncensorable-future/cover.png"
   },
-  "tags": ["decentralization", "ai", "nostr", "freedom", "open-source"]
+  "tags": ["decentralization", "ai", "nostr", "freedom", "open-source"],
+  "hidden": true
 };
 
 export default function UncensorableFuture() {
