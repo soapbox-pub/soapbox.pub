@@ -35,6 +35,12 @@ export const meta: BlogPostMeta = {
 export default function WhatsInAName() {
   return (
     <article className="prose prose-lg max-w-none">
+      <blockquote className="border-l-4 border-purple-600 pl-4 italic text-xl text-gray-700 my-8">
+        "What's in a name? That which we call a rose<br />
+        By any other name would smell as sweet."<br />
+        <footer className="text-sm text-gray-600 mt-2 not-italic">— William Shakespeare, <em>Romeo and Juliet</em></footer>
+      </blockquote>
+
       <p>
         When we launched <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>,
         people immediately asked: "Why Shakespeare?" The name wasn't random—it captures several core truths about
