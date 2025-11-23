@@ -143,7 +143,7 @@ export default function BuildingFreedomFirstCommunities() {
         The worst case scenario is you get booted from a relay. However, with Nostr's decentralized nature, other relays pick up your content, keeping it alive in case of any form of censorship.
       </p>
 
-      <h2>Building with And Other Stuff, aka AOS</h2>
+      <h2>Building with And Other Stuff (AOS)</h2>
 
       <p>
         Soapbox is now part of <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">And Other Stuff (AOS)</a>, a collective of innovative Nostr projects. Working with teams from White Noise, Cashu, and Nos, we're focused on:
