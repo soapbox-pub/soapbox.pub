@@ -164,8 +164,7 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/uncensorable-future')).default;
     case 'buildwithoutcoding':
       return (await import('../../components/blog/posts/build-without-coding')).default;
-    case 'conversationalaiforbeginner':
-    case 'conversationalaiberginners':
+    case 'conversationalaiforbeginners':
       return (await import('../../components/blog/posts/conversational-ai-for-beginners')).default;
     case 'managingnostrkeys':
       return (await import('../../components/blog/posts/managing-nostr-keys')).default;

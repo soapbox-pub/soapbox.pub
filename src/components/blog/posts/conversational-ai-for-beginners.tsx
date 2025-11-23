@@ -14,8 +14,8 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "conversational-ai-for-beginners",
-  "title": "How to Use Conversational AI Even if You're an Absolute Beginner",
-  "excerpt": "Welcome to a future that belongs to everyone, not just those who can code. Learn how to build websites and apps using conversational AI with Shakespeare.",
+  "title": "How to Code with AI: For Beginners",
+  "excerpt": "Welcome to a future that belongs to everyone, not just those who can code. Learn the art of vibe coding and build websites and apps using conversational AI with Shakespeare.",
   "coverImage": "/assets/blog/conversational-ai-beginners/cover.png",
   "date": "2025-10-07",
   "author": {
