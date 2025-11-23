@@ -186,7 +186,6 @@ export default function ShakespeareOriginStory() {
               <p>• Terminal & app-based AI agent</p>
               <p>• Any type of software project</p>
               <p>• Model Context Protocol (MCP)</p>
-              <p>• For professional developers</p>
               <p>• Local development environment</p>
             </CardContent>
           </Card>
@@ -201,8 +200,8 @@ export default function ShakespeareOriginStory() {
             <CardContent className="text-sm text-gray-700 space-y-2">
               <p>• Terminal-based with Dork agent</p>
               <p>• Nostr application templates</p>
-              <p>• Custom-built Nostr tools for AI</p>
-              <p>• For Nostr builders (all levels)</p>
+              <p>• Model Context Protocol (MCP)</p>
+              <p>• For Nostr builders</p>
               <p>• Template sharing via Nostr</p>
             </CardContent>
           </Card>
@@ -259,7 +258,7 @@ export default function ShakespeareOriginStory() {
       </ul>
 
       <p>
-        By moving to the browser, Shakespeare maintained the best parts of Goose (AI-assisted development, MCP support, model choice) and Stacks (Nostr templates, accessible to all skill levels) while removing the technical barriers.
+        By moving to the browser, Shakespeare maintained the best parts of Goose (AI-assisted development, model choice) and Stacks (Nostr templates) while removing the technical barriers.
       </p>
 
       <div className="not-prose my-12">
@@ -348,7 +347,7 @@ export default function ShakespeareOriginStory() {
       <h3>Custom-Built Tools</h3>
 
       <p>
-        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare and Stacks take a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes a custom Nostr tool that gives the AI direct access to Nostr protocol functionality, as well as the js-dev tool which solved several problems we encountered with Goose's original dev tool.
+        While Goose pioneered the use of Model Context Protocol (MCP) for connecting AI to external systems, Shakespeare takes a different approach. Instead of using MCP servers, we built custom tools specifically designed for the needs of our development environment. This includes Nostr tools ported from <a href="https://nostrbook.dev/mcp" target="_blank">Nostr MCP</a>, as well as text editor tools ported from <a href="http://gitlab.com/soapbox-pub/js-dev-mcp" target="_blank">Soapbox's JS Dev MCP</a>.
       </p>
 
       <p>
