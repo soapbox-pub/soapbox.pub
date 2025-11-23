@@ -158,6 +158,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'whatsinaname':
+      return (await import('../../components/blog/posts/whats-in-a-name')).default;
     case 'freesoftwarefreesocieties':
       return (await import('../../components/blog/posts/free-software-free-societies')).default;
     case 'buildingfreedomfirstcommunities':
