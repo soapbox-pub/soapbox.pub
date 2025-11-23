@@ -50,7 +50,7 @@ export default function WhatsInAName() {
       <h2>1. AI is Theater</h2>
 
       <p>
-        <strong>The conversation between you and an AI assistant is structured exactly like a play.</strong> When you
+        <strong>The conversation between you and an AI assistant is structured like a play.</strong> When you
         chat with Shakespeare, you're not just typing messages into a void—you're participating in a performance where
         each participant has a clearly defined role.
       </p>
