@@ -20,7 +20,7 @@ export const meta: BlogPostMeta = {
   "title": "What's in a Name? Why We Named Shakespeare, Shakespeare",
   "excerpt": "From infinite monkeys to infinite apps: how Shakespeare's name reflects our philosophy of accessible creation, open culture, and the democratization of technology.",
   "coverImage": "/assets/blog/whats-in-a-name/cover.png",
-  "date": "2025-11-23",
+  "date": "2025-11-18",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
