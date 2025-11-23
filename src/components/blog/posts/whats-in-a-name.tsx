@@ -252,21 +252,6 @@ export default function WhatsInAName() {
         of innovation that benefits everyone.
       </p>
 
-      <h2>What's in a Name?</h2>
-
-      <p>
-        The name "Shakespeare" captures everything we're trying to build:
-      </p>
-
-      <ul>
-        <li>A tool where <strong>AI performs like actors in a play</strong>, following scripts and taking on roles</li>
-        <li>A platform where <strong>infinite attempts lead to inevitable breakthroughs</strong>, just like infinite monkeys
-        eventually typing Shakespeare</li>
-        <li>A commitment to <strong>democratizing creation</strong>, making tools accessible to everyone regardless of
-        technical background</li>
-        <li>An ethos of <strong>free culture</strong>, where derivative works and remixes drive innovation forward</li>
-      </ul>
-
       <p>
         We believe Nostr's future depends on abundance—more apps, more experiments, more creators. Shakespeare is our
         contribution to that abundance. It won't guarantee success, but it dramatically improves the odds.
