@@ -9,6 +9,7 @@ export interface BlogPostMeta {
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
   tags?: string[];
+  featured?: boolean;
 }
 
 export const meta: BlogPostMeta = {
@@ -24,7 +25,8 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/free-software/cover.png"
   },
-  "tags": ["open-source", "freedom", "philosophy", "society", "ai"]
+  "tags": ["open-source", "freedom", "philosophy", "society", "ai"],
+  "featured": true
 };
 
 export default function FreeSoftwareFreeSocieties() {
