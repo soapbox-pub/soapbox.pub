@@ -17,7 +17,7 @@ export const meta: BlogPostMeta = {
   "title": "How to Use Conversational AI Even if You're an Absolute Beginner",
   "excerpt": "Welcome to a future that belongs to everyone, not just those who can code. Learn how to build websites and apps using conversational AI with Shakespeare.",
   "coverImage": "/assets/blog/conversational-ai-beginners/cover.png",
-  "date": "2024-10-07",
+  "date": "2025-10-07",
   "author": {
     "name": "Heather Larson",
     "picture": "/assets/avatars/heather.jpg"

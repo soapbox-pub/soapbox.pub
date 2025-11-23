@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "title": "Building Freedom-First Communities with Soapbox",
   "excerpt": "Social media platforms are increasingly censoring and deplatforming voices. Soapbox offers a way to build spaces where you control your content. Learn how we're building the future of censorship-resistant communities.",
   "coverImage": "/assets/blog/freedom-communities/cover.png",
-  "date": "2024-11-09",
+  "date": "2025-11-09",
   "author": {
     "name": "Heather Larson",
     "picture": "/assets/avatars/heather.jpg"

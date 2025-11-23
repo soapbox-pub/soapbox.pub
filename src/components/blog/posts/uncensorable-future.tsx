@@ -17,7 +17,7 @@ export const meta: BlogPostMeta = {
   "title": "The Uncensorable Future: How Decentralization and AI are Democratizing the Internet",
   "excerpt": "Instead of fighting the centralization of big tech, we've reached a time when the Internet can truly hatch alternatives. Learn how decentralization and AI are creating a new paradigm.",
   "coverImage": "/assets/blog/uncensorable-future/cover.png",
-  "date": "2024-10-30",
+  "date": "2025-10-30",
   "author": {
     "name": "Heather Larson",
     "picture": "/assets/avatars/heather.jpg"

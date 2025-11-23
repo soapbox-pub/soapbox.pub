@@ -17,7 +17,7 @@ export const meta: BlogPostMeta = {
   "title": "Build Anything Without Coding: AI's Revolution is For Everyone",
   "excerpt": "We're entering an era where having a great idea matters more than knowing how to code. Learn how AI is democratizing creation and making implementation accessible to everyone.",
   "coverImage": "/assets/blog/build-without-coding/cover.png",
-  "date": "2024-10-18",
+  "date": "2025-10-18",
   "author": {
     "name": "Heather Larson",
     "picture": "/assets/avatars/heather.jpg"
