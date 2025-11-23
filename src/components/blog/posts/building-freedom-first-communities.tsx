@@ -89,14 +89,22 @@ export default function BuildingFreedomFirstCommunities() {
           </li>
         </ul>
 
-        <a
-          href="https://shakespeare.diy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors"
-        >
-          Get Started with Shakespeare
-        </a>
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="https://shakespeare.diy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors"
+          >
+            Get Started with Shakespeare
+          </a>
+          <Link
+            to="/showcase"
+            className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
+          >
+            View Community Showcase
+          </Link>
+        </div>
       </div>
 
       <h2>Starting with a Clear Tech Decentralization Mission</h2>
