@@ -56,7 +56,7 @@ export default function ShakespeareOriginStory() {
                 >
                   <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-16 h-16 mb-3 object-contain" />
                   <h4 className="text-xl font-bold mb-2 text-gray-900">Goose</h4>
-                  <p className="text-sm text-gray-700">Terminal-Based</p>
+                  <p className="text-sm text-gray-700">Terminal & App</p>
                 </a>
                 <p className="text-sm text-gray-600">AI agent framework<br />for developers</p>
               </div>
@@ -117,7 +117,7 @@ export default function ShakespeareOriginStory() {
       </ul>
 
       <p>
-        Goose was powerful but required technical knowledge to use. It was a terminal-based tool for developers building traditional software projects.
+        Goose was powerful but required technical knowledge to use. It offered both a terminal-based tool and an installable app for developers building traditional software projects.
       </p>
 
       <div className="not-prose my-8">
@@ -183,7 +183,7 @@ export default function ShakespeareOriginStory() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-gray-700 space-y-2">
-              <p>• Terminal-based AI agent</p>
+              <p>• Terminal & app-based AI agent</p>
               <p>• Any type of software project</p>
               <p>• Model Context Protocol (MCP)</p>
               <p>• For professional developers</p>
@@ -272,14 +272,14 @@ export default function ShakespeareOriginStory() {
                   <img src="/assets/logos/goose-logo.png" alt="Goose Logo" className="w-10 h-10 object-contain" />
                   <h4 className="font-semibold text-gray-900">Goose</h4>
                 </div>
-                <p className="text-xs text-gray-500">(Terminal)</p>
+                <p className="text-xs text-gray-500">(Terminal & App)</p>
               </div>
               <ul className="text-sm text-gray-700 space-y-1 text-left inline-block">
                 <li>✓ AI assistance</li>
                 <li>✓ Model choice</li>
                 <li>✓ File operations</li>
                 <li>✗ Requires installation</li>
-                <li>✗ Terminal-only</li>
+                <li>✗ Local-only</li>
               </ul>
             </div>
             <div className="text-center">
