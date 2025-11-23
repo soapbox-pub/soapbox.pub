@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as whatsinaname from '../../components/blog/posts/whats-in-a-name';
 import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
 import * as buildingfreedomfirstcommunities from '../../components/blog/posts/building-freedom-first-communities';
 import * as uncensorablefuture from '../../components/blog/posts/uncensorable-future';
@@ -84,6 +85,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  whatsinaname.meta,
   freesoftwarefreesocieties.meta,
   buildingfreedomfirstcommunities.meta,
   uncensorablefuture.meta,
