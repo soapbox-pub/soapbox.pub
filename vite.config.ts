@@ -38,6 +38,10 @@ export default defineConfig({
 
         // Blog posts
         "/blog/free-software-free-societies",
+        "/blog/building-freedom-first-communities",
+        "/blog/uncensorable-future",
+        "/blog/build-without-coding",
+        "/blog/conversational-ai-for-beginners",
         "/blog/managing-nostr-keys",
         "/blog/shakespeare-workshop-guide",
         "/blog/shakespeare-origin-story",

@@ -1,5 +1,9 @@
 // Auto-generated blog posts index
 import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
+import * as buildingfreedomfirstcommunities from '../../components/blog/posts/building-freedom-first-communities';
+import * as uncensorablefuture from '../../components/blog/posts/uncensorable-future';
+import * as buildwithoutcoding from '../../components/blog/posts/build-without-coding';
+import * as conversationalaiforbeginner from '../../components/blog/posts/conversational-ai-for-beginners';
 import * as announcingditto from '../../components/blog/posts/announcing-ditto';
 import * as announcingsoapboxsessionspodcast from '../../components/blog/posts/announcing-soapbox-sessions-podcast';
 import * as announcingshakespeare from '../../components/blog/posts/announcing-shakespeare';
@@ -81,6 +85,10 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   freesoftwarefreesocieties.meta,
+  buildingfreedomfirstcommunities.meta,
+  uncensorablefuture.meta,
+  buildwithoutcoding.meta,
+  conversationalaiforbeginner.meta,
   managingnostrkeys.meta,
   shakespeareworkshopguide.meta,
   shakespeareoriginstory.meta,
@@ -150,6 +158,15 @@ export const getPostBySlug = async (slug: string) => {
   switch (normalizedSlug) {
     case 'freesoftwarefreesocieties':
       return (await import('../../components/blog/posts/free-software-free-societies')).default;
+    case 'buildingfreedomfirstcommunities':
+      return (await import('../../components/blog/posts/building-freedom-first-communities')).default;
+    case 'uncensorablefuture':
+      return (await import('../../components/blog/posts/uncensorable-future')).default;
+    case 'buildwithoutcoding':
+      return (await import('../../components/blog/posts/build-without-coding')).default;
+    case 'conversationalaiforbeginner':
+    case 'conversationalaiberginners':
+      return (await import('../../components/blog/posts/conversational-ai-for-beginners')).default;
     case 'managingnostrkeys':
       return (await import('../../components/blog/posts/managing-nostr-keys')).default;
     case 'shakespeareworkshopguide':
