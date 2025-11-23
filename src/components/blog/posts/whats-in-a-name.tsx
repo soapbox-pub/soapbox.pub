@@ -19,14 +19,14 @@ export const meta: BlogPostMeta = {
   "slug": "whats-in-a-name",
   "title": "What's in a Name? Why We Named Shakespeare, Shakespeare",
   "excerpt": "From infinite monkeys to infinite apps: how Shakespeare's name reflects our philosophy of accessible creation, open culture, and the democratization of technology.",
-  "coverImage": "/assets/blog/whats-in-a-name/cover.svg",
+  "coverImage": "/assets/blog/whats-in-a-name/cover.png",
   "date": "2025-11-23",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/whats-in-a-name/cover.svg"
+    "url": "/assets/blog/whats-in-a-name/cover.png"
   },
   "tags": ["shakespeare", "philosophy", "open-source", "ai"],
   "featured": true
@@ -275,6 +275,8 @@ export default function WhatsInAName() {
         like Shakespeare's plays enabled centuries of creative reinterpretation, open AI tools can enable an explosion
         of innovation that benefits everyone.
       </p>
+
+      <h2>Building Through Abundance</h2>
 
       <p>
         We believe Nostr's future depends on abundance—more apps, more experiments, more creators. Shakespeare is our
