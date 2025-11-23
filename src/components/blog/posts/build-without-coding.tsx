@@ -27,8 +27,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/build-without-coding/cover.png"
   },
-  "tags": ["ai", "shakespeare", "no-code", "creativity", "democratization"],
-  "hidden": true
+  "tags": ["ai", "shakespeare", "no-code", "creativity", "democratization"]
 };
 
 export default function BuildWithoutCoding() {

@@ -27,8 +27,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/conversational-ai-beginners/cover.png"
   },
-  "tags": ["ai", "shakespeare", "tutorial", "beginner", "no-code"],
-  "hidden": true
+  "tags": ["ai", "shakespeare", "tutorial", "beginner", "no-code"]
 };
 
 export default function ConversationalAIForBeginners() {
