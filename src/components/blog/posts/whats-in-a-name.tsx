@@ -123,6 +123,14 @@ export default function WhatsInAName() {
         more ideas, experiment faster, and fail cheaper.
       </p>
 
+      <div className="not-prose my-12">
+        <img
+          src="/assets/blog/whats-in-a-name/monkey-on-a-typewriter-building-apps-in-shakespeare.png"
+          alt="Monkey on a typewriter building apps in Shakespeare"
+          className="rounded-lg shadow-lg w-full"
+        />
+      </div>
+
       <p>
         For Nostr specifically, this approach is revolutionary. <a href="/blog/comparing-protocols">Unlike the Fediverse
         or Bluesky</a>, Nostr is one of the only open protocols where you can build entire frontend clients without
@@ -135,7 +143,7 @@ export default function WhatsInAName() {
       <p>
         <strong>Our goal is to help build that one Shakespeare-level app that brings millions of people into Nostr.</strong> We
         don't know which app it will be, who will build it, or when it will happen. But we know it won't come from
-        careful planning and restricted access. It will come from abundance—from giving as many people as possible the
+        gatekeeping or continuing to try things the old way. It will come from abundance—from giving as many people as possible the
         tools to create.
       </p>
 
