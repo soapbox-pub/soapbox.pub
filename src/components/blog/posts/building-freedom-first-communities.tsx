@@ -60,7 +60,7 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        We launched our first project, Spinster, to prove what's possible when communities control their own spaces.
+        We launched our first project, <a href="https://spinster.xyz" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Spinster</a>, to prove what's possible when communities control their own spaces.
       </p>
 
       <p>
@@ -88,6 +88,134 @@ export default function BuildingFreedomFirstCommunities() {
       <p>
         The worst case scenario is you get booted from a relay. However, with Nostr's decentralized nature, other relays pick up your content, keeping it alive in case of any form of censorship.
       </p>
+
+      <h2>Explore Communities Powered by Soapbox</h2>
+
+      <p>
+        See real-world examples of communities built with Soapbox tools. These platforms demonstrate the power of decentralized, censorship-resistant technology in action.
+      </p>
+
+      <div className="not-prose grid md:grid-cols-2 gap-6 my-8">
+        {/* Treasures.to */}
+        <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
+          <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
+            {/* Placeholder for screenshot image */}
+          </div>
+          <div className="p-6 space-y-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <h3 className="text-xl font-display font-bold text-gray-900">Treasures</h3>
+                <p className="text-sm text-gray-600">
+                  {/* Placeholder for description */}
+                  A decentralized geocaching platform built on Nostr
+                </p>
+              </div>
+              {/* Placeholder for logo image */}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href="https://treasures.to"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Visit Site
+              </a>
+              {/* Placeholder for Edit with Shakespeare link */}
+            </div>
+          </div>
+        </div>
+
+        {/* Villager */}
+        <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
+          <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
+            {/* Placeholder for screenshot image */}
+          </div>
+          <div className="p-6 space-y-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <h3 className="text-xl font-display font-bold text-gray-900">Villager</h3>
+                <p className="text-sm text-gray-600">
+                  {/* Placeholder for description */}
+                  A community platform for village life
+                </p>
+              </div>
+              {/* Placeholder for logo image */}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href="https://villager.shakespeare.wtf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Visit Site
+              </a>
+              {/* Placeholder for Edit with Shakespeare link */}
+            </div>
+          </div>
+        </div>
+
+        {/* Divine Video */}
+        <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
+          <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
+            {/* Placeholder for screenshot image */}
+          </div>
+          <div className="p-6 space-y-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <h3 className="text-xl font-display font-bold text-gray-900">Divine</h3>
+                <p className="text-sm text-gray-600">
+                  {/* Placeholder for description */}
+                  A decentralized video platform
+                </p>
+              </div>
+              {/* Placeholder for logo image */}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href="https://divine.video"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Visit Site
+              </a>
+              {/* Placeholder for Edit with Shakespeare link */}
+            </div>
+          </div>
+        </div>
+
+        {/* Bookstr */}
+        <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
+          <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
+            {/* Placeholder for screenshot image */}
+          </div>
+          <div className="p-6 space-y-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <h3 className="text-xl font-display font-bold text-gray-900">Bookstr</h3>
+                <p className="text-sm text-gray-600">
+                  {/* Placeholder for description */}
+                  A decentralized platform for book lovers
+                </p>
+              </div>
+              {/* Placeholder for logo image */}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href="https://bookstr.shakespeare.wtf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Visit Site
+              </a>
+              {/* Placeholder for Edit with Shakespeare link */}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h2>Building with And Other Stuff (AOS)</h2>
 
