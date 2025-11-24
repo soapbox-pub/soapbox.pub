@@ -144,6 +144,41 @@ export default function ConversationalAIForBeginners() {
         AI is still a malleable tool, so sometimes it can add something to your app that you didn't ask for and don't want. It could do this even if you prompt it carefully, thinking through every eventuality it may come up with. You can create the perfect prompt, only to forget something important and have to add it in a later prompt.
       </p>
 
+      {/* Derek Ross Video */}
+      <div className="my-12 bg-white rounded-3xl shadow-2xl p-8 border-2 border-purple-100">
+        <div className="text-center mb-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">🎬 See Shakespeare in Action</h3>
+          <p className="text-gray-600">Watch Derek Ross build a complete website with Shakespeare</p>
+        </div>
+
+        <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl overflow-hidden shadow-lg">
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/TtYxFeayDKQ"
+            title="Shakespeare Tutorial with Derek Ross"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-gray-600">
+          <div className="flex items-center">
+            <span className="mr-1">▶️</span>
+            Live Demo
+          </div>
+          <div className="flex items-center">
+            <span className="mr-1">⭐</span>
+            Real Project
+          </div>
+          <div className="flex items-center">
+            <span className="mr-1">✅</span>
+            Complete Project
+          </div>
+        </div>
+      </div>
+
       <h2>In The AI Race, We're a Little Different</h2>
 
       <p>
