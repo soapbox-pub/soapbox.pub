@@ -102,7 +102,7 @@ export default function BuildingFreedomFirstCommunities() {
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
             <img
-              src="/assets/communities/treasures-screenshot.png"
+              src="https://gitlab.com/chad.curtis/treasures/-/raw/main/public/screenshot.png"
               alt="Treasures screenshot"
               className="w-full h-full object-cover"
             />
@@ -116,7 +116,7 @@ export default function BuildingFreedomFirstCommunities() {
                 </p>
               </div>
               <img
-                src="/assets/communities/treasures-icon.png"
+                src="https://gitlab.com/chad.curtis/treasures/-/raw/main/public/favicon.png"
                 alt="Treasures icon"
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
@@ -152,7 +152,7 @@ export default function BuildingFreedomFirstCommunities() {
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
             <img
-              src="/assets/communities/villager-screenshot.png"
+              src="https://gitlab.com/soapbox-pub/villager/-/raw/main/public/screenshot.png"
               alt="Villager screenshot"
               className="w-full h-full object-cover"
             />
@@ -166,7 +166,7 @@ export default function BuildingFreedomFirstCommunities() {
                 </p>
               </div>
               <img
-                src="/assets/communities/villager-icon.png"
+                src="https://gitlab.com/soapbox-pub/villager/-/raw/main/public/favicon.png"
                 alt="Villager icon"
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
