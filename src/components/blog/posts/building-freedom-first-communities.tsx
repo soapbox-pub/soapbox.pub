@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export interface BlogPostMeta {
   slug: string;
@@ -119,23 +121,29 @@ export default function BuildingFreedomFirstCommunities() {
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
             </div>
-            <div className="flex gap-2">
-              <a
-                href="https://treasures.to"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
-              >
-                Visit Site
-              </a>
+            <div className="flex items-center gap-2">
               <a
                 href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fchad.curtis%2Ftreasures.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+                className="flex-1"
               >
-                Edit with Shakespeare
+                <img
+                  src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
+                  alt="Edit with Shakespeare"
+                  className="h-6 hover:opacity-80 transition-opacity"
+                />
               </a>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href="https://treasures.to"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit app"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -163,23 +171,29 @@ export default function BuildingFreedomFirstCommunities() {
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
             </div>
-            <div className="flex gap-2">
-              <a
-                href="https://villager.shakespeare.wtf/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
-              >
-                Visit Site
-              </a>
+            <div className="flex items-center gap-2">
               <a
                 href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fsoapbox-pub%2Fvillager.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+                className="flex-1"
               >
-                Edit with Shakespeare
+                <img
+                  src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
+                  alt="Edit with Shakespeare"
+                  className="h-6 hover:opacity-80 transition-opacity"
+                />
               </a>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href="https://villager.shakespeare.wtf/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit app"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -207,23 +221,29 @@ export default function BuildingFreedomFirstCommunities() {
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
             </div>
-            <div className="flex gap-2">
-              <a
-                href="https://divine.video"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
-              >
-                Visit Site
-              </a>
+            <div className="flex items-center gap-2">
               <a
                 href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fdivinevideo%2Fdivine-web.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+                className="flex-1"
               >
-                Edit with Shakespeare
+                <img
+                  src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
+                  alt="Edit with Shakespeare"
+                  className="h-6 hover:opacity-80 transition-opacity"
+                />
               </a>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href="https://divine.video"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit app"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -251,23 +271,29 @@ export default function BuildingFreedomFirstCommunities() {
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
             </div>
-            <div className="flex gap-2">
-              <a
-                href="https://bookstr.shakespeare.wtf/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors text-sm"
-              >
-                Visit Site
-              </a>
+            <div className="flex items-center gap-2">
               <a
                 href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fmarykatefain%2Fbookstr2.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+                className="flex-1"
               >
-                Edit with Shakespeare
+                <img
+                  src="https://user-content.gitlab-static.net/dc700236142edffa7bc9a36aae2802eb0d10433f/68747470733a2f2f616374322e7368616b657370656172652e746f2f62616467652e737667"
+                  alt="Edit with Shakespeare"
+                  className="h-6 hover:opacity-80 transition-opacity"
+                />
               </a>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href="https://bookstr.shakespeare.wtf/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit app"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
