@@ -152,7 +152,7 @@ export default function BuildingFreedomFirstCommunities() {
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
             <img
-              src="https://github.com/user-attachments/assets/0cea17dc-6e28-4d9c-ad42-56e1b64385e7"
+              src="/assets/communities/villager-screenshot.png"
               alt="Villager screenshot"
               className="w-full h-full object-cover"
             />
@@ -166,7 +166,7 @@ export default function BuildingFreedomFirstCommunities() {
                 </p>
               </div>
               <img
-                src="https://github.com/user-attachments/assets/7bdd2d9c-dbbc-4c1d-9cd9-cfb38c3f33b5"
+                src="/assets/communities/villager-icon.png"
                 alt="Villager icon"
                 className="w-12 h-12 rounded-lg flex-shrink-0"
               />
