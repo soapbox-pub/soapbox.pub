@@ -150,11 +150,11 @@ export default function OurStanceOnAI() {
       <h2>The Future We Choose</h2>
 
       <p>
-        AI is coming. Actually, it's already here. We can't stop it, and frankly, we wouldn't want to. AI has tremendous potential to improve human thriving, solve complex problems, and remove barriers that have held people back.
+        AI has tremendous potential to improve human thriving, solve complex problems, and remove barriers that have held people back. But AI also has tremendous potential for evil—to concentrate power, enable surveillance, manipulate populations, and strip away human agency.
       </p>
 
       <p>
-        But we can choose what kind of AI future we build. We can choose open over closed. We can choose community over corporate. We can choose freedom over control.
+        We can choose what kind of AI future we build. We can choose open over closed. We can choose community over corporate. We can choose freedom over control.
       </p>
 
       <p>
