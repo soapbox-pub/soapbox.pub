@@ -93,10 +93,6 @@ export default function OurStanceOnAI() {
       </p>
 
       <p>
-        This democratization is powerful. A musician can build a fan club website. A mom can create her book club platform. An activist can launch community organizing tools. All without hiring developers or learning to code.
-      </p>
-
-      <p>
         But this democratization only works if the AI tools themselves are open and accessible. If these tools are controlled by corporations that can change terms, raise prices, or shut down access, then we haven't actually democratized anything—we've just created a new dependency.
       </p>
 
