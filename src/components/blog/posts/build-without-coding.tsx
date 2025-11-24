@@ -53,6 +53,17 @@ export default function BuildWithoutCoding() {
         This leads to empowerment. You no longer have to be "technical" to bring ideas to life. <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a> helps you create through conversation, just like you are used to doing with AI assistants like ChatGPT, Gemini, or Claude. Instead of getting an answer to your question, you're asking it to create a website or app for you.
       </p>
 
+      <div className="not-prose my-8">
+        <img
+          src="/assets/blog/build-without-coding/file-upload-ezample.png"
+          alt="Building a file upload app in one prompt with Shakespeare"
+          className="rounded-lg border-2 border-gray-200 shadow-lg w-full"
+        />
+        <p className="text-sm text-gray-600 mt-2 text-center italic">
+          Building a complete file upload app with a single prompt in Shakespeare
+        </p>
+      </div>
+
       <h2>The Right Mindset For Harnessing the Power of AI</h2>
 
       <p>
