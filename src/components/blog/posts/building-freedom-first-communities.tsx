@@ -102,7 +102,7 @@ export default function BuildingFreedomFirstCommunities() {
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
             <img
-              src="https://gitlab.com/chad.curtis/treasures/-/raw/main/public/screenshot.png"
+              src="/tmp/4b536f5a5085b93d9ec0e656154a4e11a1d166ca83689747be4c52f34d8268f5_1.png"
               alt="Treasures screenshot"
               className="w-full h-full object-cover"
             />
