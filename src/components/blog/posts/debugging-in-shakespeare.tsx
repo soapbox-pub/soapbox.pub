@@ -161,6 +161,7 @@ export default function DebuggingInShakespeare() {
                   <div>• Chat history</div>
                   <div>• Console errors (when you share them)</div>
                   <div>• Nostr documentation</div>
+                  <div>• Uploaded images (via supported models)</div>
                 </div>
               </div>
               <div>
@@ -168,9 +169,9 @@ export default function DebuggingInShakespeare() {
                   ❌ Shakespeare CANNOT See
                 </h4>
                 <div className="space-y-2 text-sm">
-                  <div>• Your screen or browser</div>
-                  <div>• Screenshots</div>
-                  <div>• Live applications</div>
+                  <div>• Your screen or browser directly</div>
+                  <div>• Image links (URLs)</div>
+                  <div>• Live applications in real-time</div>
                   <div>• Network requests directly</div>
                   <div>• Real-time variable values</div>
                 </div>
@@ -181,6 +182,12 @@ export default function DebuggingInShakespeare() {
       </div>
 
       <p>When Shakespeare cannot see something on it's own, it's up to you to provide that information to the AI so it can use it to help you solve the bug.</p>
+
+      <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-6">
+        <p className="text-sm text-blue-900 dark:text-blue-100">
+          <strong>📸 New: Image Upload Support</strong> - Shakespeare can now view and process images that you upload directly into the chat (not image links). This is especially helpful for sharing screenshots of errors, design references, or UI issues. Note that vision capabilities require supported AI models (like Claude Sonnet 4 or GPT-4 Vision).
+        </p>
+      </div>
 
       <h3>How to Talk to Shakespeare About Debugging</h3>
 
