@@ -57,7 +57,7 @@ export default function BuildWithoutCoding() {
         <img
           src="/assets/blog/build-without-coding/file-upload-ezample.png"
           alt="Building a file upload app in one prompt with Shakespeare"
-          className="rounded-lg border-2 border-gray-200 shadow-lg w-full"
+          className="rounded-lg w-full"
         />
         <p className="text-sm text-gray-600 mt-2 text-center italic">
           Building a complete file upload app with a single prompt in Shakespeare
