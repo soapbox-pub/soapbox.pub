@@ -51,6 +51,9 @@ export function AppRouter() {
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/nip/:naddr" element={<CustomNipPage />} />
         <Route path="/shakespeare-resources" element={<ShakespeareResources />} />
+        {/* Redirect common variations to shakespeare-resources */}
+        <Route path="/resource-center" element={<Navigate to="/shakespeare-resources" replace />} />
+        <Route path="/resources" element={<Navigate to="/shakespeare-resources" replace />} />
         <Route path="/soapbox-sessions" element={<SoapboxSessions />} />
         <Route path="/halloween-hackathon" element={<HalloweenHackathon />} />
         <Route path="/media-kit" element={<MediaKit />} />
