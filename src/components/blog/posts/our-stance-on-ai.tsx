@@ -96,44 +96,7 @@ export default function OurStanceOnAI() {
         But this democratization only works if the AI tools themselves are open and accessible. If these tools are controlled by corporations that can change terms, raise prices, or shut down access, then we haven't actually democratized anything—we've just created a new dependency.
       </p>
 
-      <h2>Why Shakespeare Matters</h2>
 
-      <p>
-        <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is our answer to closed, controlled AI development platforms. It's an AI-powered website builder that:
-      </p>
-
-      <ul>
-        <li><strong>Runs entirely in your browser.</strong> Your projects are stored locally, not on our servers. We don't have access to your work.</li>
-        <li><strong>Works with any AI provider.</strong> Use OpenAI, Anthropic, Shakespeare AI with Bitcoin Lightning payments, or even local AI models running on your own computer.</li>
-        <li><strong>Deploys to decentralized infrastructure.</strong> Built on Nostr, your creations can't be censored or taken down by a single company.</li>
-        <li><strong>Is completely open source.</strong> You can inspect the code, modify it, fork it, and run your own version.</li>
-      </ul>
-
-      <p>
-        We built Shakespeare because we believe AI should lower barriers to creation, not create new forms of dependency. As we explain in <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">Free Software: Free Societies</Link>, technology now mediates nearly every basic human need. When that infrastructure is closed and controlled, people lose the ability to understand, challenge, or change the systems that govern their lives.
-      </p>
-
-      <h2>The Question Before Us</h2>
-
-      <p>
-        AI will shape the future. That's not up for debate. The question is: will it be a tool of repression or liberation?
-      </p>
-
-      <p>
-        Will it be controlled by a handful of corporations optimizing for profit, or will it be accessible to everyone who needs it?
-      </p>
-
-      <p>
-        Will governments use it for surveillance and control, or will communities use it for coordination and empowerment?
-      </p>
-
-      <p>
-        Will it create new barriers and dependencies, or will it remove obstacles and enable creation?
-      </p>
-
-      <p>
-        <strong>We argue for liberation.</strong>
-      </p>
 
       <h2>Open Weight, Open Source, Open Access</h2>
 
@@ -187,47 +150,7 @@ export default function OurStanceOnAI() {
         We're not perfect. We're a small team working with limited resources. But we're committed to these principles because we believe they matter.
       </p>
 
-      <h2>Join Us</h2>
 
-      <p>
-        If you believe AI should be open and accessible rather than controlled and proprietary, you can:
-      </p>
-
-      <ul>
-        <li><strong>Use our tools.</strong> Try <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a> to build your next project.</li>
-        <li><strong>Contribute to open source.</strong> Our projects are on <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">GitLab</a>. Fork them, improve them, share them.</li>
-        <li><strong>Support open AI development.</strong> Use and advocate for open weight models and transparent AI systems.</li>
-        <li><strong>Build on Nostr.</strong> Create applications on decentralized infrastructure that can't be shut down or censored.</li>
-        <li><strong>Share your creations.</strong> Show others what's possible when AI tools are accessible to everyone.</li>
-      </ul>
-
-      <div className="not-prose my-16">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-800 rounded-3xl p-12 text-white text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Build with Open AI
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Start creating with AI-powered tools that respect your freedom.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="https://shakespeare.diy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-lg transition-colors inline-flex items-center"
-            >
-              Try Shakespeare
-            </a>
-            <a
-              href="/tools"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg font-semibold rounded-lg transition-colors inline-flex items-center"
-            >
-              Explore Our Tools
-            </a>
-          </div>
-        </div>
-      </div>
 
       <h2>The Future We Choose</h2>
 
