@@ -136,7 +136,6 @@ export default function OurStanceOnAI() {
       <ul>
         <li><strong>Building open source tools.</strong> All <a href="https://gitlab.com/groups/soapbox-pub" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">our projects</a> are <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">free software</Link> that respects the Four Essential Freedoms.</li>
         <li><strong>Supporting open AI models.</strong> We integrate with and promote truly open AI models and providers that meet the <a href="https://opensource.org/ai" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Open Source AI</a> criteria.</li>
-        <li><strong>Creating accessible interfaces.</strong> <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Our tools</Link> work on mobile, support multiple AI providers, and don't require technical expertise.</li>
         <li><strong>Decentralizing infrastructure.</strong> We build on Nostr and other decentralized protocols to prevent single points of control.</li>
         <li><strong>Prioritizing user freedom over profit.</strong> When faced with a choice between maximizing revenue or maximizing user freedom, we choose freedom.</li>
       </ul>
