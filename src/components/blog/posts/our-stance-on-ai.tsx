@@ -85,6 +85,10 @@ export default function OurStanceOnAI() {
       </p>
 
       <p>
+        One of the most exciting aspects of AI development tools is how they lower barriers for people who have been excluded from technical work. You don't need a computer science degree. You don't need to memorize syntax. You don't need expensive bootcamps or mentorship connections.
+      </p>
+
+      <p>
         As we discuss in our article on <Link to="/blog/build-without-coding" className="text-azure hover:text-azure-600 underline">building without coding</Link>, AI is democratizing creation. The barriers between imagination and implementation are dissolving. You no longer need years of programming education to bring your ideas to life. You just need the idea.
       </p>
 
@@ -114,23 +118,7 @@ export default function OurStanceOnAI() {
         This isn't idealism—it's pragmatism. History shows us that closed systems eventually serve the interests of those who control them, not those who depend on them. Open systems create resilience, enable innovation, and distribute power.
       </p>
 
-      <h2>AI as a Force for Inclusion</h2>
 
-      <p>
-        One of the most exciting aspects of AI development tools is how they lower barriers for people who have been excluded from technical work. You don't need a computer science degree. You don't need to memorize syntax. You don't need expensive bootcamps or mentorship connections.
-      </p>
-
-      <p>
-        You just need an idea and the ability to describe it.
-      </p>
-
-      <p>
-        This opens doors for women, people of color, people from non-traditional educational backgrounds, people in developing countries, people with disabilities—anyone who has been told they can't be a developer because they don't fit the mold.
-      </p>
-
-      <p>
-        But again, this only works if the AI tools themselves are accessible. If they're locked behind paywalls, region restrictions, or corporate gatekeeping, we haven't really opened doors. We've just moved the barriers.
-      </p>
 
       <h2>Our Commitment</h2>
 
