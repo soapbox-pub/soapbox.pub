@@ -393,16 +393,13 @@ export default function BuildingFreedomFirstCommunities() {
           >
             View Community Showcase
           </Link>
+          <Link
+            to="/tools"
+            className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
+          >
+            Explore Our Tools
+          </Link>
         </div>
-      </div>
-
-      <div className="not-prose my-8">
-        <Link
-          to="/tools"
-          className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
-        >
-          Explore Our Tools
-        </Link>
       </div>
     </article>
   );
