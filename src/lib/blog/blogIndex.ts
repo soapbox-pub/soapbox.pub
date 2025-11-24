@@ -2,7 +2,7 @@
 import * as whatsinaname from '../../components/blog/posts/whats-in-a-name';
 import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
 import * as buildingfreedomfirstcommunities from '../../components/blog/posts/building-freedom-first-communities';
-import * as uncensorablefuture from '../../components/blog/posts/uncensorable-future';
+
 import * as buildwithoutcoding from '../../components/blog/posts/build-without-coding';
 import * as conversationalaiforbeginner from '../../components/blog/posts/conversational-ai-for-beginners';
 import * as announcingditto from '../../components/blog/posts/announcing-ditto';
@@ -88,7 +88,6 @@ export const blogPosts: BlogPost[] = [
   whatsinaname.meta,
   freesoftwarefreesocieties.meta,
   buildingfreedomfirstcommunities.meta,
-  uncensorablefuture.meta,
   buildwithoutcoding.meta,
   conversationalaiforbeginner.meta,
   managingnostrkeys.meta,
@@ -164,10 +163,10 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/free-software-free-societies')).default;
     case 'buildingfreedomfirstcommunities':
       return (await import('../../components/blog/posts/building-freedom-first-communities')).default;
-    case 'uncensorablefuture':
-      return (await import('../../components/blog/posts/uncensorable-future')).default;
+
     case 'buildwithoutcoding':
       return (await import('../../components/blog/posts/build-without-coding')).default;
+    case 'conversationalaiforbeginner':
     case 'conversationalaiforbeginners':
       return (await import('../../components/blog/posts/conversational-ai-for-beginners')).default;
     case 'managingnostrkeys':
