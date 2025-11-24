@@ -1,0 +1,253 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+export interface BlogPostMeta {
+  slug: string;
+  title: string;
+  excerpt: string;
+  coverImage: string;
+  date: string;
+  author: { name?: string; picture?: string; };
+  ogImage: { url?: string; };
+  tags?: string[];
+  featured?: boolean;
+}
+
+export const meta: BlogPostMeta = {
+  "slug": "our-stance-on-ai",
+  "title": "Our Stance on AI: Open, Not Controlled",
+  "excerpt": "AI is the future whether we like it or not. The question is whether it will be a tool of repression or liberation. We argue for liberation.",
+  "coverImage": "/assets/blog/our-stance-on-ai/cover.png",
+  "date": "2025-11-24",
+  "author": {
+    "name": "MK Fain",
+    "picture": "/assets/avatars/mk.jpg"
+  },
+  "ogImage": {
+    "url": "/assets/blog/our-stance-on-ai/cover.png"
+  },
+  "tags": ["ai", "open-source", "freedom", "shakespeare", "philosophy"],
+  "featured": true
+};
+
+export default function OurStanceOnAI() {
+  return (
+    <article className="prose prose-lg max-w-none">
+      <p className="lead">
+        <strong>AI is the future whether we like it or not. The question isn't whether AI exists—it's who controls it.</strong>
+      </p>
+
+      <p>
+        At Soapbox, we're not against AI. We're against corporations and governments controlling the tools that will shape our future. That's why we need actually open AI.
+      </p>
+
+      <h2>When AI is Bad</h2>
+
+      <p>
+        AI becomes dangerous when:
+      </p>
+
+      <ul>
+        <li><strong>Corporations driven by profits and greed control the AI.</strong> When the primary motive is maximizing shareholder value, user freedom and societal benefit take a back seat.</li>
+        <li><strong>Governments have control or ability to interfere with or censor the AI.</strong> State control over AI creates tools of surveillance and oppression rather than empowerment.</li>
+        <li><strong>AI is used to harm and deceive people.</strong> It's not that the tool is inherently bad—just that it's being used in a bad way. The same technology that can educate can also manipulate.</li>
+        <li><strong>It's closed source, closed weight.</strong> When AI models are proprietary black boxes, users have no way to inspect, understand, or modify them. You're dependent on whatever the company decides to do.</li>
+      </ul>
+
+      <p>
+        These aren't hypothetical concerns. We've seen OpenAI shift from nonprofit promises to corporate control. We've watched governments pressure tech companies to implement censorship. We've witnessed AI systems used to amplify misinformation and manipulate public opinion for profit.
+      </p>
+
+      <h2>When AI is Good</h2>
+
+      <p>
+        AI becomes a force for good when:
+      </p>
+
+      <ul>
+        <li><strong>It improves human thriving.</strong> This means solving problems, removing barriers, taking away the boring and tedious parts of jobs, speeding up processes, and enhancing human creations. AI should serve people, not replace them.</li>
+        <li><strong>It is not controlled by corporations with profits as their motive.</strong> When AI development is driven by community needs rather than quarterly earnings, it serves human interests instead of corporate ones.</li>
+        <li><strong>It is open source, open weight, and available to anyone.</strong> We understand that hosting AI may cost money—but the models themselves should be transparent, inspectable, and freely distributable.</li>
+      </ul>
+
+      <p>
+        This is the AI we're building toward. Tools that empower rather than extract. Systems that respect freedom rather than exploit dependency.
+      </p>
+
+      <h2>AI and the Open Source Movement</h2>
+
+      <p>
+        In the open source world, we're seeing how AI coding agents can empower everyone to build and improve software. This includes groups that have been historically marginalized and pushed out of technical positions.
+      </p>
+
+      <p>
+        As we discuss in our article on <Link to="/blog/build-without-coding" className="text-azure hover:text-azure-600 underline">building without coding</Link>, AI is democratizing creation. The barriers between imagination and implementation are dissolving. You no longer need years of programming education to bring your ideas to life. You just need the idea.
+      </p>
+
+      <p>
+        This democratization is powerful. A musician can build a fan club website. A mom can create her book club platform. An activist can launch community organizing tools. All without hiring developers or learning to code.
+      </p>
+
+      <p>
+        But this democratization only works if the AI tools themselves are open and accessible. If these tools are controlled by corporations that can change terms, raise prices, or shut down access, then we haven't actually democratized anything—we've just created a new dependency.
+      </p>
+
+      <h2>Why Shakespeare Matters</h2>
+
+      <p>
+        <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is our answer to closed, controlled AI development platforms. It's an AI-powered website builder that:
+      </p>
+
+      <ul>
+        <li><strong>Runs entirely in your browser.</strong> Your projects are stored locally, not on our servers. We don't have access to your work.</li>
+        <li><strong>Works with any AI provider.</strong> Use OpenAI, Anthropic, Shakespeare AI with Bitcoin Lightning payments, or even local AI models running on your own computer.</li>
+        <li><strong>Deploys to decentralized infrastructure.</strong> Built on Nostr, your creations can't be censored or taken down by a single company.</li>
+        <li><strong>Is completely open source.</strong> You can inspect the code, modify it, fork it, and run your own version.</li>
+      </ul>
+
+      <p>
+        We built Shakespeare because we believe AI should lower barriers to creation, not create new forms of dependency. As we explain in <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">Free Software: Free Societies</Link>, technology now mediates nearly every basic human need. When that infrastructure is closed and controlled, people lose the ability to understand, challenge, or change the systems that govern their lives.
+      </p>
+
+      <h2>The Question Before Us</h2>
+
+      <p>
+        AI will shape the future. That's not up for debate. The question is: will it be a tool of repression or liberation?
+      </p>
+
+      <p>
+        Will it be controlled by a handful of corporations optimizing for profit, or will it be accessible to everyone who needs it?
+      </p>
+
+      <p>
+        Will governments use it for surveillance and control, or will communities use it for coordination and empowerment?
+      </p>
+
+      <p>
+        Will it create new barriers and dependencies, or will it remove obstacles and enable creation?
+      </p>
+
+      <p>
+        <strong>We argue for liberation.</strong>
+      </p>
+
+      <h2>Open Weight, Open Source, Open Access</h2>
+
+      <p>
+        When we say AI should be open, we mean:
+      </p>
+
+      <ul>
+        <li><strong>Open source:</strong> The code that builds and runs the AI should be transparent and modifiable.</li>
+        <li><strong>Open weight:</strong> The model weights (the "trained brain" of the AI) should be freely distributable, allowing anyone to run the model themselves.</li>
+        <li><strong>Open access:</strong> While hosting costs money, the tools should be available to anyone without gatekeeping or arbitrary restrictions.</li>
+      </ul>
+
+      <p>
+        This isn't idealism—it's pragmatism. History shows us that closed systems eventually serve the interests of those who control them, not those who depend on them. Open systems create resilience, enable innovation, and distribute power.
+      </p>
+
+      <h2>AI as a Force for Inclusion</h2>
+
+      <p>
+        One of the most exciting aspects of AI development tools is how they lower barriers for people who have been excluded from technical work. You don't need a computer science degree. You don't need to memorize syntax. You don't need expensive bootcamps or mentorship connections.
+      </p>
+
+      <p>
+        You just need an idea and the ability to describe it.
+      </p>
+
+      <p>
+        This opens doors for women, people of color, people from non-traditional educational backgrounds, people in developing countries, people with disabilities—anyone who has been told they can't be a developer because they don't fit the mold.
+      </p>
+
+      <p>
+        But again, this only works if the AI tools themselves are accessible. If they're locked behind paywalls, region restrictions, or corporate gatekeeping, we haven't really opened doors. We've just moved the barriers.
+      </p>
+
+      <h2>Our Commitment</h2>
+
+      <p>
+        At Soapbox, we commit to:
+      </p>
+
+      <ul>
+        <li><strong>Building open source tools.</strong> All our projects are free software that respects the Four Essential Freedoms.</li>
+        <li><strong>Supporting open AI models.</strong> We integrate with and promote truly open AI models and providers.</li>
+        <li><strong>Creating accessible interfaces.</strong> Our tools work on mobile, support multiple AI providers, and don't require technical expertise.</li>
+        <li><strong>Decentralizing infrastructure.</strong> We build on Nostr and other decentralized protocols to prevent single points of control.</li>
+        <li><strong>Prioritizing user freedom over profit.</strong> When faced with a choice between maximizing revenue or maximizing user freedom, we choose freedom.</li>
+      </ul>
+
+      <p>
+        We're not perfect. We're a small team working with limited resources. But we're committed to these principles because we believe they matter.
+      </p>
+
+      <h2>Join Us</h2>
+
+      <p>
+        If you believe AI should be open and accessible rather than controlled and proprietary, you can:
+      </p>
+
+      <ul>
+        <li><strong>Use our tools.</strong> Try <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a> to build your next project.</li>
+        <li><strong>Contribute to open source.</strong> Our projects are on <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">GitLab</a>. Fork them, improve them, share them.</li>
+        <li><strong>Support open AI development.</strong> Use and advocate for open weight models and transparent AI systems.</li>
+        <li><strong>Build on Nostr.</strong> Create applications on decentralized infrastructure that can't be shut down or censored.</li>
+        <li><strong>Share your creations.</strong> Show others what's possible when AI tools are accessible to everyone.</li>
+      </ul>
+
+      <div className="not-prose my-16">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-800 rounded-3xl p-12 text-white text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Build with Open AI
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Start creating with AI-powered tools that respect your freedom.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="https://shakespeare.diy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-lg transition-colors inline-flex items-center"
+            >
+              Try Shakespeare
+            </a>
+            <a
+              href="/tools"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg font-semibold rounded-lg transition-colors inline-flex items-center"
+            >
+              Explore Our Tools
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <h2>The Future We Choose</h2>
+
+      <p>
+        AI is coming. Actually, it's already here. We can't stop it, and frankly, we wouldn't want to. AI has tremendous potential to improve human thriving, solve complex problems, and remove barriers that have held people back.
+      </p>
+
+      <p>
+        But we can choose what kind of AI future we build. We can choose open over closed. We can choose community over corporate. We can choose freedom over control.
+      </p>
+
+      <p>
+        That's the choice we're making at Soapbox. We hope you'll join us.
+      </p>
+
+      <h2>Related Reading</h2>
+
+      <ul>
+        <li><Link to="/blog/free-software-free-societies">Free Software: Free Societies</Link></li>
+        <li><Link to="/blog/build-without-coding">Build Anything Without Coding: AI's Revolution is For Everyone</Link></li>
+        <li><Link to="/blog/announcing-shakespeare-act-2">Shakespeare Act 2: Build Freely</Link></li>
+        <li><Link to="/blog/shakespeare-origin-story">The Origin Story of Shakespeare</Link></li>
+        <li><Link to="/tools/shakespeare">Learn More About Shakespeare</Link></li>
+      </ul>
+    </article>
+  );
+}

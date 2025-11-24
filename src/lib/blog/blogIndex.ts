@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as ourstanceonai from '../../components/blog/posts/our-stance-on-ai';
 import * as whatsinaname from '../../components/blog/posts/whats-in-a-name';
 import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
 import * as buildingfreedomfirstcommunities from '../../components/blog/posts/building-freedom-first-communities';
@@ -85,6 +86,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  ourstanceonai.meta,
   whatsinaname.meta,
   freesoftwarefreesocieties.meta,
   buildingfreedomfirstcommunities.meta,
