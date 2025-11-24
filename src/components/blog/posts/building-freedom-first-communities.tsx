@@ -99,18 +99,17 @@ export default function BuildingFreedomFirstCommunities() {
         {/* Treasures.to */}
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
-            {/* Placeholder for screenshot image */}
+            {/* TODO: Add Treasures screenshot */}
           </div>
           <div className="p-6 space-y-4">
-            <div className="flex items-start justify-between">
-              <div className="space-y-1">
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2 flex-1">
                 <h3 className="text-xl font-display font-bold text-gray-900">Treasures</h3>
                 <p className="text-sm text-gray-600">
-                  {/* Placeholder for description */}
-                  A decentralized geocaching platform built on Nostr
+                  Treasures.to is a decentralized geocaching platform built on the Nostr protocol. Discover hidden geocaches, share locations, and connect with explorers worldwide through a censorship-resistant, open network.
                 </p>
               </div>
-              {/* Placeholder for logo image */}
+              {/* TODO: Add Treasures icon */}
             </div>
             <div className="flex gap-2">
               <a
@@ -121,7 +120,14 @@ export default function BuildingFreedomFirstCommunities() {
               >
                 Visit Site
               </a>
-              {/* Placeholder for Edit with Shakespeare link */}
+              <a
+                href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fchad.curtis%2Ftreasures.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Edit with Shakespeare
+              </a>
             </div>
           </div>
         </div>
@@ -129,18 +135,21 @@ export default function BuildingFreedomFirstCommunities() {
         {/* Villager */}
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
-            {/* Placeholder for screenshot image */}
+            {/* TODO: Add Villager screenshot */}
           </div>
           <div className="p-6 space-y-4">
-            <div className="flex items-start justify-between">
-              <div className="space-y-1">
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2 flex-1">
                 <h3 className="text-xl font-display font-bold text-gray-900">Villager</h3>
                 <p className="text-sm text-gray-600">
-                  {/* Placeholder for description */}
-                  A community platform for village life
+                  Connect with your community to share resources, offer help, and build a stronger neighborhood together.
                 </p>
               </div>
-              {/* Placeholder for logo image */}
+              <img
+                src="/assets/communities/villager-icon.png"
+                alt="Villager icon"
+                className="w-12 h-12 rounded-lg flex-shrink-0"
+              />
             </div>
             <div className="flex gap-2">
               <a
@@ -151,7 +160,14 @@ export default function BuildingFreedomFirstCommunities() {
               >
                 Visit Site
               </a>
-              {/* Placeholder for Edit with Shakespeare link */}
+              <a
+                href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fsoapbox-pub%2Fvillager.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Edit with Shakespeare
+              </a>
             </div>
           </div>
         </div>
@@ -159,18 +175,25 @@ export default function BuildingFreedomFirstCommunities() {
         {/* Divine Video */}
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
-            {/* Placeholder for screenshot image */}
+            <img
+              src="/assets/communities/divine-screenshot.png"
+              alt="Divine screenshot"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="p-6 space-y-4">
-            <div className="flex items-start justify-between">
-              <div className="space-y-1">
-                <h3 className="text-xl font-display font-bold text-gray-900">Divine</h3>
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2 flex-1">
+                <h3 className="text-xl font-display font-bold text-gray-900">diVine</h3>
                 <p className="text-sm text-gray-600">
-                  {/* Placeholder for description */}
-                  A decentralized video platform
+                  Divine is a new short-form video app inspired by Vine's creative 6-second format, preserving authentic human creativity.
                 </p>
               </div>
-              {/* Placeholder for logo image */}
+              <img
+                src="/assets/communities/divine-icon.png"
+                alt="Divine icon"
+                className="w-12 h-12 rounded-lg flex-shrink-0"
+              />
             </div>
             <div className="flex gap-2">
               <a
@@ -181,7 +204,14 @@ export default function BuildingFreedomFirstCommunities() {
               >
                 Visit Site
               </a>
-              {/* Placeholder for Edit with Shakespeare link */}
+              <a
+                href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fdivinevideo%2Fdivine-web.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Edit with Shakespeare
+              </a>
             </div>
           </div>
         </div>
@@ -189,18 +219,25 @@ export default function BuildingFreedomFirstCommunities() {
         {/* Bookstr */}
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
-            {/* Placeholder for screenshot image */}
+            <img
+              src="/assets/communities/bookstr-screenshot.png"
+              alt="Bookstr screenshot"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="p-6 space-y-4">
-            <div className="flex items-start justify-between">
-              <div className="space-y-1">
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2 flex-1">
                 <h3 className="text-xl font-display font-bold text-gray-900">Bookstr</h3>
                 <p className="text-sm text-gray-600">
-                  {/* Placeholder for description */}
-                  A decentralized platform for book lovers
+                  Track your reading journey, discover amazing books, and connect with fellow readers on the decentralized web.
                 </p>
               </div>
-              {/* Placeholder for logo image */}
+              <img
+                src="/assets/communities/bookstr-icon.png"
+                alt="Bookstr icon"
+                className="w-12 h-12 rounded-lg flex-shrink-0"
+              />
             </div>
             <div className="flex gap-2">
               <a
@@ -211,7 +248,14 @@ export default function BuildingFreedomFirstCommunities() {
               >
                 Visit Site
               </a>
-              {/* Placeholder for Edit with Shakespeare link */}
+              <a
+                href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fmarykatefain%2Fbookstr2.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors text-sm"
+              >
+                Edit with Shakespeare
+              </a>
             </div>
           </div>
         </div>
