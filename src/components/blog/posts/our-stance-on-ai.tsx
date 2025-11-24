@@ -27,7 +27,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/our-stance-on-ai/cover.png"
   },
   "tags": ["ai", "open-source", "freedom", "shakespeare", "philosophy"],
-  "featured": true
+  "featured": false
 };
 
 export default function OurStanceOnAI() {
