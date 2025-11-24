@@ -453,6 +453,86 @@ export default function Tools() {
                 </Button>
               </CardContent>
             </Card>
+
+            {/* Nostr WS Inspector */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-cyan-200">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <Code className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl font-display">Nostr WS Inspector</CardTitle>
+                <CardDescription>
+                  Developer Browser Extension
+                  <Badge variant="secondary" className="ml-2 text-xs">Developer Tool</Badge>
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-sm">
+                  Hook into Nostr WebSocket traffic to inspect all events your app sends and receives.
+                  Filter, inspect, and learn about the kinds in use for better Nostr development.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></div>
+                    Inspect WebSocket traffic
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></div>
+                    Filter and search events
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></div>
+                    Learn event kinds
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full text-sm" asChild>
+                  <a href="https://chromewebstore.google.com/detail/nostr-ws-inspector/pchfingijipdcdimblhpahbolijmblmn" target="_blank" rel="noopener noreferrer">
+                    Install Extension
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Soapbox Signer */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-violet-200">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-xl font-display">Soapbox Signer</CardTitle>
+                <CardDescription>
+                  NIP-07 Browser Extension
+                  <Badge variant="secondary" className="ml-2 text-xs">User Tool</Badge>
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-sm">
+                  A NIP-07 Nostr signer for Chrome and Firefox. Manage multiple profiles, sign events,
+                  and enjoy NIP-04/NIP-44 encryption with granular permission controls.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2"></div>
+                    Multiple user profiles
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2"></div>
+                    NIP-04/NIP-44 encryption
+                  </div>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2"></div>
+                    Granular permissions
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full text-sm" asChild>
+                  <a href="https://chromewebstore.google.com/detail/soapboxpub-signer/nnodjkgakfpkckcnbacpcjbpmlmbihdd" target="_blank" rel="noopener noreferrer">
+                    Install Extension
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
