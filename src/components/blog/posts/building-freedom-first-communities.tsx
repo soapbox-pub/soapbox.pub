@@ -53,61 +53,6 @@ export default function BuildingFreedomFirstCommunities() {
         Soapbox uses <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr's</Link> censorship-resistant technology to provide tools for building a free and open Internet. As it's a protocol rather than a company, Nostr remains censorship-resistant, so there is no central control. Nostr lives not on centralized server racks, but on independent relays distributed globally. It's what our conversational AI builder, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a>, builds on for your websites and apps. You build them and they exist on Nostr so there's no need to sign up for a subscription to deploy your creations.
       </p>
 
-      <div className="not-prose bg-gradient-to-r from-azure-50 to-blue-50 rounded-xl p-8 my-8 border-2 border-azure-200">
-        <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">
-          Shakespeare helps you build without:
-        </h3>
-        <ul className="space-y-3 mb-6">
-          <li className="flex items-start">
-            <span className="text-azure mr-3">•</span>
-            <span className="text-gray-700">Censorship</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-azure mr-3">•</span>
-            <span className="text-gray-700">Platform lock-in</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-azure mr-3">•</span>
-            <span className="text-gray-700">Monthly subscriptions to build your websites & apps</span>
-          </li>
-        </ul>
-
-        <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">
-          Shakespeare gives you the ability to:
-        </h3>
-        <ul className="space-y-3 mb-8">
-          <li className="flex items-start">
-            <span className="text-azure mr-3">•</span>
-            <span className="text-gray-700">Pay for AI credits with Bitcoin or use a free LLM to get started</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-azure mr-3">•</span>
-            <span className="text-gray-700">Deploy without purchasing a domain (though you can if you want to)</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-azure mr-3">•</span>
-            <span className="text-gray-700">Get started building websites & apps without knowing how to write code</span>
-          </li>
-        </ul>
-
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="https://shakespeare.diy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors"
-          >
-            Get Started with Shakespeare
-          </a>
-          <Link
-            to="/showcase"
-            className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
-          >
-            View Community Showcase
-          </Link>
-        </div>
-      </div>
-
       <h2>Starting with a Clear Tech Decentralization Mission</h2>
 
       <p>
@@ -185,6 +130,61 @@ export default function BuildingFreedomFirstCommunities() {
       <p>
         Our tools are <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">open source</Link>, decentralized, and production-ready.
       </p>
+
+      <div className="not-prose bg-gradient-to-r from-azure-50 to-blue-50 rounded-xl p-8 my-8 border-2 border-azure-200">
+        <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">
+          Shakespeare helps you build without:
+        </h3>
+        <ul className="space-y-3 mb-6">
+          <li className="flex items-start">
+            <span className="text-azure mr-3">•</span>
+            <span className="text-gray-700">Censorship</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-azure mr-3">•</span>
+            <span className="text-gray-700">Platform lock-in</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-azure mr-3">•</span>
+            <span className="text-gray-700">Monthly subscriptions to build your websites & apps</span>
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">
+          Shakespeare gives you the ability to:
+        </h3>
+        <ul className="space-y-3 mb-8">
+          <li className="flex items-start">
+            <span className="text-azure mr-3">•</span>
+            <span className="text-gray-700">Pay for AI credits with Bitcoin or use a free LLM to get started</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-azure mr-3">•</span>
+            <span className="text-gray-700">Deploy without purchasing a domain (though you can if you want to)</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-azure mr-3">•</span>
+            <span className="text-gray-700">Get started building websites & apps without knowing how to write code</span>
+          </li>
+        </ul>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="https://shakespeare.diy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition-colors"
+          >
+            Get Started with Shakespeare
+          </a>
+          <Link
+            to="/showcase"
+            className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
+          >
+            View Community Showcase
+          </Link>
+        </div>
+      </div>
 
       <div className="not-prose my-8">
         <Link
