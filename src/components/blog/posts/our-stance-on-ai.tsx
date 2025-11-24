@@ -47,10 +47,6 @@ export default function OurStanceOnAI() {
 
       <h2>When AI is Bad</h2>
 
-      <p>
-        AI becomes dangerous when:
-      </p>
-
       <ul>
         <li><strong>Corporations driven by profits and greed control the AI.</strong> When the primary motive is maximizing shareholder value, user freedom and societal benefit take a back seat.</li>
         <li><strong>Governments have control or ability to interfere with or censor the AI.</strong> State control over AI creates tools of surveillance and oppression rather than empowerment.</li>
@@ -63,10 +59,6 @@ export default function OurStanceOnAI() {
       </p>
 
       <h2>When AI is Good</h2>
-
-      <p>
-        AI becomes a force for good when:
-      </p>
 
       <ul>
         <li><strong>It improves human thriving.</strong> This means solving problems, removing barriers, taking away the boring and tedious parts of jobs, speeding up processes, and enhancing human creations. AI should serve people, not replace them.</li>
