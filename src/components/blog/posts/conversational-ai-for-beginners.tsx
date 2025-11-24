@@ -38,7 +38,7 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        You don't need a GitHub to build a website; you don't even need to know what Git is! With our conversational AI builder, <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, you simply sign in with <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link>.
+        <strong>You don't need a GitHub to build a website; you don't even need to know what Git is!</strong> With our conversational AI builder, <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, you simply sign in with <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link>.
       </p>
 
       <ul>
@@ -84,14 +84,10 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        While a simple prompt like this will work, you will likely soon find this may require more prompting effort on your part to get you the results you want. You'll continue to prompt it, which costs you AI credits unless you use the free Gemini Flash Playground in Shakespeare, which may not work as well. Think of Gemini Flash Playground as perfect for rough drafts and MKStack as good for a polished, final draft. <Link to="/blog/prompt-better-projects" className="text-azure hover:text-azure-600 underline">Learn more about prompting effectively</Link>.
+        While a simple prompt like this will work, you will likely soon find this may require more prompting effort on your part to get you the results you want. You'll continue to prompt it, which costs you AI credits. Shakespeare now supports glm-4-flash as a cheaper and open source alternative to Claude Sonnet 3.5, however, performance is not as good. <Link to="/blog/prompt-better-projects" className="text-azure hover:text-azure-600 underline">Learn more about prompting effectively</Link>.
       </p>
 
-      <h2>What Can I Ask Shakespeare to Do?</h2>
 
-      <p>
-        <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is great at helping you build a website, social feed, dashboard, game, or community. Our users have used it already to build a live streaming website, travel review website, games, content curators, e-commerce stores, or sites to help them with their work, like a decentralized Google Forms rival.
-      </p>
 
       <h2>How To Prompt While Getting the Most From AI Credits</h2>
 
@@ -104,19 +100,19 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        <strong>Here's a more comprehensive prompt that covers key aspects for building a baby shower website:</strong>
+        <strong>Here's a more comprehensive prompt that covers key aspects for building a book club website:</strong>
       </p>
 
       <blockquote>
         <p>
-          "Create a simple, mobile-friendly website for my upcoming baby shower that includes:
+          Create a simple, mobile-friendly website for a book club that meets at our local library and is open to the public. The website should include:
         </p>
         <ul>
-          <li>A welcoming homepage with event date as October 1, time as 1:00 pm, location as Mary's house at 555 Easy Street, and a short personal message that says, "Please help us welcome our bundle of joy to the world!"</li>
-          <li>A gift registry section with clickable links to my registry items on Target.com.</li>
-          <li>An RSVP form for guests to confirm attendance and add plus-ones.</li>
-          <li>A consistent, playful theme with soft pastel colors and baby-themed icons.</li>
-          <li>Easy sharing via a single link."</li>
+          <li>A welcoming homepage with meeting details (first Tuesday of each month at 6:00 pm at the Main Street Library) and a short message inviting readers to join us.</li>
+          <li>A section displaying our current book selection and upcoming reads.</li>
+          <li>An RSVP form for guests to confirm attendance at the next meeting.</li>
+          <li>A consistent, literary theme with warm colors and book-themed icons.</li>
+          <li>Easy sharing via a single link.</li>
         </ul>
       </blockquote>
 
@@ -155,7 +151,7 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        At Soapbox, we're not backed by VC funding or counting the days until we sell Shakespeare for tens of millions of dollars. Crazy, right? So without millions to motivate us, what gives?
+        <strong>At Soapbox, we're not backed by VC funding or counting the days until we sell Shakespeare for tens of millions of dollars.</strong> Crazy, right? So without millions to motivate us, what gives?
       </p>
 
       <p>
@@ -164,6 +160,10 @@ export default function ConversationalAIForBeginners() {
 
       <p>
         The Soapbox team began building on the <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">Fediverse</Link>, but soon found even it had sources of failure, like moderators or folks who can just turn a server off at any time. We pivoted to an uncensorable, but lesser known protocol called Nostr and we've been building ever since.
+      </p>
+
+      <p>
+        Everything we do is free software and open source. We believe in transparency, user freedom, and building technology that belongs to everyone. When you use our tools, you're not just a customer—you're part of a movement toward a more open and equitable internet. <Link to="/blog/free-software-free-societies" className="text-azure hover:text-azure-600 underline">Learn more about our commitment to free software</Link>.
       </p>
 
       <p>
