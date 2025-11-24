@@ -81,7 +81,7 @@ export default function OurStanceOnAI() {
       <h2>AI and the Open Source Movement</h2>
 
       <p>
-        In the <a href="https://opensource.org" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">open source</a> world, we're seeing how AI coding agents can empower everyone to build and improve software. This includes groups that have been historically marginalized and pushed out of technical positions.
+        We're already seeing how AI coding agents can empower everyone to build and improve <a href="https://opensource.org" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">open source</a> software. This includes groups that have been historically marginalized and pushed out of technical positions.
       </p>
 
       <p>
