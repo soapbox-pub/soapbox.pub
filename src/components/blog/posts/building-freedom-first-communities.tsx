@@ -40,7 +40,7 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        Here's how we're building the future of censorship-resistant communities. We're <em>decentralizing</em> the internet by helping you regain control of your community so a large company, government, or other entity can't silence you.
+        <strong>Here's how we're building the future of censorship-resistant communities.</strong> We're <em>decentralizing</em> the internet by helping you regain control of your community so a large company, government, or other entity can't silence you.
       </p>
 
       <p>
@@ -52,13 +52,13 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        Soapbox uses <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr's</Link> censorship-resistant technology to provide tools for building a free and open Internet. As it's a protocol rather than a company, Nostr remains censorship-resistant, so there is no central control. Nostr lives not on centralized server racks, but on independent relays distributed globally. It's what our conversational AI builder, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a>, builds on for your websites and apps. You build them and they exist on Nostr so there's no need to sign up for a subscription to deploy your creations.
+        <strong>Soapbox uses <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr's</Link> censorship-resistant technology to provide tools for building a free and open Internet.</strong> As it's a protocol rather than a company, Nostr remains censorship-resistant, so there is no central control. Nostr lives not on centralized server racks, but on independent relays distributed globally. It's what our conversational AI builder, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 underline">Shakespeare</a>, builds on for your websites and apps. You build them and they exist on Nostr so there's no need to sign up for a subscription to deploy your creations.
       </p>
 
       <h2>Starting with a Clear Tech Decentralization Mission</h2>
 
       <p>
-        In 2019, we witnessed platforms actively censoring women discussing their rights. Existing decentralized platforms like <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">ActivityPub and Mastodon</Link> offered partial solutions but didn't solve the core problem: giving communities true independence from centralized control.
+        <strong>In 2019, we witnessed platforms actively censoring women discussing their rights.</strong> Existing decentralized platforms like <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">ActivityPub and Mastodon</Link> offered partial solutions but didn't solve the core problem: giving communities true independence from centralized control.
       </p>
 
       <p>
@@ -76,7 +76,7 @@ export default function BuildingFreedomFirstCommunities() {
       <h2>Moving to True Online Decentralization</h2>
 
       <p>
-        Our early work revealed a flaw in existing decentralized protocols like <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">Mastodon</Link>, which created "mini Twitters" where administrators held ultimate power over user content and identity. The <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> protocol offered a breakthrough solution.
+        <strong>Our early work revealed a flaw in existing decentralized protocols like <Link to="/blog/comparing-protocols" className="text-azure hover:text-azure-600 underline">Mastodon</Link>, which created "mini Twitters" where administrators held ultimate power over user content and identity. The <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> protocol offered a breakthrough solution.</strong>
       </p>
 
       <p>
@@ -392,12 +392,6 @@ export default function BuildingFreedomFirstCommunities() {
             className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
           >
             View Community Showcase
-          </Link>
-          <Link
-            to="/tools"
-            className="inline-flex items-center px-6 py-3 bg-azure hover:bg-azure-600 text-white font-semibold rounded-lg transition-colors"
-          >
-            Explore Our Tools
           </Link>
         </div>
       </div>
