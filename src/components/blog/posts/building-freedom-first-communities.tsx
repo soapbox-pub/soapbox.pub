@@ -135,7 +135,11 @@ export default function BuildingFreedomFirstCommunities() {
         {/* Villager */}
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
-            {/* TODO: Add Villager screenshot */}
+            <img
+              src="/assets/communities/villager-screenshot.png"
+              alt="Villager screenshot"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="p-6 space-y-4">
             <div className="flex items-start justify-between gap-4">
