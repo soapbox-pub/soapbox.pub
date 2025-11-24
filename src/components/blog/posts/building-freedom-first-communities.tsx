@@ -99,7 +99,11 @@ export default function BuildingFreedomFirstCommunities() {
         {/* Treasures.to */}
         <div className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-azure-300 hover:shadow-lg transition-all">
           <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100">
-            {/* TODO: Add Treasures screenshot */}
+            <img
+              src="/assets/communities/treasures-screenshot.png"
+              alt="Treasures screenshot"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="p-6 space-y-4">
             <div className="flex items-start justify-between gap-4">
@@ -109,7 +113,11 @@ export default function BuildingFreedomFirstCommunities() {
                   Treasures.to is a decentralized geocaching platform built on the Nostr protocol. Discover hidden geocaches, share locations, and connect with explorers worldwide through a censorship-resistant, open network.
                 </p>
               </div>
-              {/* TODO: Add Treasures icon */}
+              <img
+                src="/assets/communities/treasures-icon.png"
+                alt="Treasures icon"
+                className="w-12 h-12 rounded-lg flex-shrink-0"
+              />
             </div>
             <div className="flex gap-2">
               <a
