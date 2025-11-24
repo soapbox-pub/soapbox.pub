@@ -38,6 +38,10 @@ export default function OurStanceOnAI() {
       </p>
 
       <p>
+        We don't see AI as fundamentally different from other technological advancements—like the internet, or even the printing press. Technology is a tool, and AI, like these other advancements, can be used for both good and evil. AI is, at the end of the day, a set of data plus a computer program. This is not fundamentally different than how computers have always worked.
+      </p>
+
+      <p>
         At Soapbox, we're not against AI. We're against corporations and governments controlling the tools that will shape our future. That's why we need actually open AI.
       </p>
 
