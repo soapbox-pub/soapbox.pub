@@ -15,7 +15,7 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "our-stance-on-ai",
-  "title": "Actually Open AI: Our Stance",
+  "title": "<em>Really</em> Open AI",
   "excerpt": "AI is the future whether we like it or not. The question is whether it will be a tool of repression or liberation. We argue for liberation.",
   "coverImage": "/assets/blog/our-stance-on-ai/cover.png",
   "date": "2025-11-24",
