@@ -34,9 +34,10 @@ export function BlogCard({ post }: BlogCardProps) {
               </div>
             )}
           </div>
-          <h3 className="text-xl font-display font-semibold text-gray-900 line-clamp-2 group-hover:text-azure transition-colors leading-tight">
-            {post.title}
-          </h3>
+          <h3
+            className="text-xl font-display font-semibold text-gray-900 line-clamp-2 group-hover:text-azure transition-colors leading-tight"
+            dangerouslySetInnerHTML={{ __html: post.title }}
+          />
         </CardHeader>
         <CardContent>
           <p className="text-gray-600 line-clamp-3 leading-relaxed">{post.excerpt}</p>
