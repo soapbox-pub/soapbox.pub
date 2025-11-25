@@ -37,7 +37,7 @@ export function BlogPost({ post }: BlogPostProps) {
         )}
 
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">{post.title}</h1>
+          <h1 className="text-4xl font-bold tracking-tight" dangerouslySetInnerHTML={{ __html: post.title }} />
 
           {post.excerpt && (
             <p className="text-xl text-muted-foreground">{post.excerpt}</p>

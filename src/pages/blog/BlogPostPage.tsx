@@ -96,9 +96,10 @@ export default function BlogPostPage() {
       <article className="max-w-4xl mx-auto px-4 pb-16">
         {/* Header */}
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-6">
-            {post.title}
-          </h1>
+          <h1
+            className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-6"
+            dangerouslySetInnerHTML={{ __html: post.title }}
+          />
 
           {post.excerpt && (
             <p className="text-xl text-gray-600 leading-relaxed mb-8 font-medium">
