@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
-import { Image, FileText, Eye } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -65,19 +65,16 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-purple-100 dark:bg-purple-900 rounded-lg p-2">
-                <Image className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-              </div>
-              <h4 className="text-lg font-semibold">Screenshot Placeholder</h4>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center text-gray-500 dark:text-gray-400">
-              <p className="text-sm italic">Add a screenshot showing the image attachment feature in the chat interface</p>
-            </div>
-          </CardContent>
-        </Card>
+        <figure>
+          <img
+            src="/assets/blog/shakespeare-november-2025-update/image-vision.png"
+            alt="Image vision in Shakespeare - building a restaurant reservation site from a wireframe"
+            className="rounded-lg shadow-md border"
+          />
+          <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3">
+            This <a href="https://restaurant-booking.shakespeare.wtf/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">restaurant reservation site</a> was built in a single prompt using image vision—total cost: $1.72.
+          </figcaption>
+        </figure>
       </div>
 
       <h2>🔌 MCP Support</h2>
@@ -127,19 +124,11 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-orange-200 dark:border-orange-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-orange-100 dark:bg-orange-900 rounded-lg p-2">
-                <FileText className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-              </div>
-              <h4 className="text-lg font-semibold">Screenshot Placeholder</h4>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center text-gray-500 dark:text-gray-400">
-              <p className="text-sm italic">Add a screenshot showing the system prompt configuration textarea</p>
-            </div>
-          </CardContent>
-        </Card>
+        <img
+          src="/assets/blog/shakespeare-november-2025-update/system-prompt.png"
+          alt="System prompt configuration in Shakespeare settings"
+          className="rounded-lg shadow-md border"
+        />
       </div>
 
       <h2>🎁 Gift Cards</h2>
