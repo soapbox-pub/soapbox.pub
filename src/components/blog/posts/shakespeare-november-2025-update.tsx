@@ -131,6 +131,16 @@ export default function ShakespeareNovember2025Update() {
         />
       </div>
 
+      <h2>🌐 Mirrored for Resilience</h2>
+
+      <p>
+        True to our commitment to open source and decentralization, Shakespeare is now mirrored at multiple locations. If the main site ever goes down, you can access Shakespeare at <a href="https://shakespeare-diy.github.io/" target="_blank" rel="noopener noreferrer">shakespeare-diy.github.io</a>. You can always find the full list of mirrors in <a href="https://shakespeare.diy/settings/about" target="_blank" rel="noopener noreferrer">Settings → About</a>.
+      </p>
+
+      <p>
+        This ensures Shakespeare remains accessible no matter what. The entire application runs in your browser with no central server dependencies, and now the code itself is hosted in multiple places. That's real decentralization.
+      </p>
+
       <h2>🎁 Gift Cards</h2>
 
       <p>
