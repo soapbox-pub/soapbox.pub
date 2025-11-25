@@ -36,7 +36,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/shakespeare-act2-cover.png"
   },
-  "featured": true,
+  "featured": false,
   "tags": ["shakespeare", "ai", "announcement", "open-source", "development", "Press Release"]
 };
 
