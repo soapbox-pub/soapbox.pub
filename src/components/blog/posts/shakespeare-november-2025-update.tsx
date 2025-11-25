@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
-import { Eye } from 'lucide-react';
+
 
 export interface BlogPostMeta {
   slug: string;
@@ -160,19 +160,11 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-cyan-200 dark:border-cyan-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-cyan-100 dark:bg-cyan-900 rounded-lg p-2">
-                <Eye className="h-6 w-6 text-cyan-600 dark:text-cyan-400" />
-              </div>
-              <h4 className="text-lg font-semibold">Screenshot Placeholder</h4>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center text-gray-500 dark:text-gray-400">
-              <p className="text-sm italic">Add a screenshot or GIF showing the live preview updating as code is written</p>
-            </div>
-          </CardContent>
-        </Card>
+        <img
+          src="/assets/blog/shakespeare-november-2025-update/live-preview.png"
+          alt="Live preview updating in real-time as Shakespeare writes code"
+          className="rounded-lg shadow-md border"
+        />
       </div>
 
       <h2>What's Next?</h2>
