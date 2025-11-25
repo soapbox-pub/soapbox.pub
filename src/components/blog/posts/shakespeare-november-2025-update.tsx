@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
-import { Image, Server, Puzzle, FileText, Gift, Eye } from 'lucide-react';
+import { Image, FileText, Eye } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
@@ -91,19 +91,11 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-blue-200 dark:border-blue-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-blue-100 dark:bg-blue-900 rounded-lg p-2">
-                <Server className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h4 className="text-lg font-semibold">Screenshot Placeholder</h4>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center text-gray-500 dark:text-gray-400">
-              <p className="text-sm italic">Add a screenshot showing the MCP servers configuration section</p>
-            </div>
-          </CardContent>
-        </Card>
+        <img
+          src="/assets/blog/shakespeare-november-2025-update/mcp-servers.png"
+          alt="MCP Servers configuration in Shakespeare settings"
+          className="rounded-lg shadow-md border"
+        />
       </div>
 
       <h2>🧩 Plugin Support (Experimental)</h2>
@@ -117,19 +109,11 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-green-200 dark:border-green-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-green-100 dark:bg-green-900 rounded-lg p-2">
-                <Puzzle className="h-6 w-6 text-green-600 dark:text-green-400" />
-              </div>
-              <h4 className="text-lg font-semibold">Screenshot Placeholder</h4>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center text-gray-500 dark:text-gray-400">
-              <p className="text-sm italic">Add a screenshot showing the plugins configuration section with skills</p>
-            </div>
-          </CardContent>
-        </Card>
+        <img
+          src="/assets/blog/shakespeare-november-2025-update/plugins.png"
+          alt="Plugins configuration in Shakespeare settings"
+          className="rounded-lg shadow-md border"
+        />
       </div>
 
       <h2>📝 Configurable System Prompt</h2>
@@ -169,19 +153,11 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-pink-200 dark:border-pink-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-pink-100 dark:bg-pink-900 rounded-lg p-2">
-                <Gift className="h-6 w-6 text-pink-600 dark:text-pink-400" />
-              </div>
-              <h4 className="text-lg font-semibold">Screenshot Placeholder</h4>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center text-gray-500 dark:text-gray-400">
-              <p className="text-sm italic">Add a screenshot showing the gift card purchase interface</p>
-            </div>
-          </CardContent>
-        </Card>
+        <img
+          src="/assets/blog/shakespeare-november-2025-update/gift-cards.png"
+          alt="Gift card purchase interface in Shakespeare"
+          className="rounded-lg shadow-md border"
+        />
       </div>
 
       <h2>👁️ Live Preview Updates</h2>
