@@ -186,6 +186,21 @@ export default function SoftwareEthicsPledge() {
               </a>
             </div>
           </div>
+
+          {/* See Also */}
+          <div className="mt-12 p-6 bg-gray-50 rounded-xl border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              See Also
+            </h3>
+            <p className="text-gray-700">
+              <a
+                href="/blog/our-stance-on-ai"
+                className="text-blue-600 hover:text-blue-700 font-medium underline"
+              >
+                Read our stance on AI and open source →
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
