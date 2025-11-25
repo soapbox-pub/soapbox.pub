@@ -83,7 +83,7 @@ export default function ShakespeareNovember2025Update() {
       <h2>🔌 MCP Support</h2>
 
       <p>
-        Shakespeare now supports <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a> servers, allowing you to extend the AI's capabilities with external tools and data sources. Configure MCP servers in Settings → AI, and Shakespeare will automatically discover and use the tools they provide.
+        Shakespeare now supports <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a> servers, allowing you to extend the AI's capabilities with external tools and data sources. Configure MCP servers in <a href="https://shakespeare.diy/settings/ai" target="_blank" rel="noopener noreferrer">Settings → AI</a>, and Shakespeare will automatically discover and use the tools they provide.
       </p>
 
       <p>
@@ -109,7 +109,7 @@ export default function ShakespeareNovember2025Update() {
       <h2>🧩 Plugin Support (Experimental)</h2>
 
       <p>
-        We're introducing an experimental plugin system that lets you extend Shakespeare with custom skills. Plugins are Git repositories containing reusable AI workflows that Shakespeare can invoke during conversations. Add a plugin URL in Settings → AI, and Shakespeare will clone it and make its skills available.
+        We're introducing an experimental plugin system that lets you extend Shakespeare with custom skills. Plugins are Git repositories containing reusable AI workflows that Shakespeare can invoke during conversations. Add a plugin URL in <a href="https://shakespeare.diy/settings/ai" target="_blank" rel="noopener noreferrer">Settings → AI</a>, and Shakespeare will clone it and make its skills available.
       </p>
 
       <p>
@@ -135,7 +135,7 @@ export default function ShakespeareNovember2025Update() {
       <h2>📝 Configurable System Prompt</h2>
 
       <p>
-        Power users can now customize Shakespeare's system prompt directly in Settings → System. The system prompt is the instruction set that tells the AI how to behave, what tools it has access to, and how to interact with your projects. It uses <a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener noreferrer">Nunjucks templating</a>, so you can include dynamic information like the current date, user profile, available tools, and project context.
+        Power users can now customize Shakespeare's system prompt directly in <a href="https://shakespeare.diy/settings/system" target="_blank" rel="noopener noreferrer">Settings → System</a>. The system prompt is the instruction set that tells the AI how to behave, what tools it has access to, and how to interact with your projects. It uses <a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener noreferrer">Nunjucks templating</a>, so you can include dynamic information like the current date, user profile, available tools, and project context.
       </p>
 
       <p>
@@ -161,7 +161,7 @@ export default function ShakespeareNovember2025Update() {
       <h2>🎁 Gift Cards</h2>
 
       <p>
-        Want to share Shakespeare with others? You can now purchase gift cards directly in Settings → AI. Gift cards are perfect for <a href="/blog/shakespeare-workshop-guide">hosting Shakespeare workshops</a>, onboarding team members, or just giving the gift of AI-powered development to a friend.
+        Want to share Shakespeare with others? You can now purchase gift cards directly in <a href="https://shakespeare.diy/settings/ai" target="_blank" rel="noopener noreferrer">Settings → AI</a>. Gift cards are perfect for <a href="/blog/shakespeare-workshop-guide">hosting Shakespeare workshops</a>, onboarding team members, or just giving the gift of AI-powered development to a friend.
       </p>
 
       <p>
