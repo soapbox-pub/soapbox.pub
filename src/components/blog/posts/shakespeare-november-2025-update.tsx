@@ -213,7 +213,7 @@ export default function ShakespeareNovember2025Update() {
       <h2>What's Next?</h2>
 
       <p>
-        We're continuing to improve Shakespeare based on community feedback. If you have ideas for features or run into issues, let us know on Nostr using <strong>#ShakespeareDIY</strong> or submit an issue through our <a href="https://shakespeare.diy/issues" target="_blank" rel="noopener noreferrer">built-in issue tracker</a>.
+        We're continuing to improve Shakespeare based on community feedback. If you have ideas for features or run into issues, let us know on Nostr using <strong>#ShakespeareDIY</strong> or submit an issue on <a href="https://gitlab.com/soapbox-pub/shakespeare" target="_blank" rel="noopener noreferrer">GitLab</a>.
       </p>
 
       <div className="not-prose my-12">
