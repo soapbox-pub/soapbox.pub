@@ -265,8 +265,8 @@ export default function ShakespeareWorkshopGuide() {
       /> */}
 
       <img
-        src="/assets/blog/shakespeare-workshop-guide/shakespeare-workshop.jpeg"
-        alt="Workshop attendees engaged in building"
+        src="/assets/blog/shakespeare-workshop-guide/derek-shakespeare-workshop.jpeg"
+        alt="Derek Ross presenting at a Shakespeare workshop at Bitfest"
         className="rounded-lg shadow-md"
       />
 
