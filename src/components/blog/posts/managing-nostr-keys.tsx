@@ -151,19 +151,27 @@ export default function ManagingNostrKeys() {
             <CardHeader>
               <CardTitle className="text-blue-800 text-lg flex items-center gap-2">
                 <Chrome className="w-5 h-5" />
-                Flamingo
+                Soapbox Signer
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-700 text-sm space-y-2">
-              <p><strong>Best For:</strong> Users who want advanced security features</p>
-              <p><strong>Platforms:</strong> Chrome, Brave</p>
-              <p><strong>Features:</strong> Hardware wallet support, advanced permissions, multi-account</p>
-              <Button size="sm" variant="outline" className="mt-2" asChild>
-                <a href="https://www.getflamingo.org" target="_blank" rel="noopener noreferrer">
-                  Get Flamingo
-                  <ExternalLink className="w-3 h-3 ml-2" />
-                </a>
-              </Button>
+              <p><strong>Best For:</strong> Users who want multi-profile support with granular controls</p>
+              <p><strong>Platforms:</strong> Chrome, Firefox</p>
+              <p><strong>Features:</strong> Multiple user profiles, NIP-04/NIP-44 encryption, granular permissions</p>
+              <div className="flex gap-2 mt-2">
+                <Button size="sm" variant="outline" asChild>
+                  <a href="https://chromewebstore.google.com/detail/soapboxpub-signer/nnodjkgakfpkckcnbacpcjbpmlmbihdd" target="_blank" rel="noopener noreferrer">
+                    Chrome
+                    <ExternalLink className="w-3 h-3 ml-2" />
+                  </a>
+                </Button>
+                <Button size="sm" variant="outline" asChild>
+                  <a href="https://addons.mozilla.org/es-ES/firefox/addon/soapbox-pub-signer/" target="_blank" rel="noopener noreferrer">
+                    Firefox
+                    <ExternalLink className="w-3 h-3 ml-2" />
+                  </a>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -171,16 +179,16 @@ export default function ManagingNostrKeys() {
             <CardHeader>
               <CardTitle className="text-green-800 text-lg flex items-center gap-2">
                 <Chrome className="w-5 h-5" />
-                Nostore
+                Nostash
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-700 text-sm space-y-2">
-              <p><strong>Best For:</strong> Privacy-focused users wanting fine-grained control</p>
-              <p><strong>Platforms:</strong> Chrome, Firefox</p>
-              <p><strong>Features:</strong> Per-site permissions, detailed event review, privacy tools</p>
+              <p><strong>Best For:</strong> Safari users on macOS and iOS</p>
+              <p><strong>Platforms:</strong> Safari (macOS, iOS)</p>
+              <p><strong>Features:</strong> Native Safari extension, NIP-07 support, open source</p>
               <Button size="sm" variant="outline" className="mt-2" asChild>
-                <a href="https://apps.apple.com/us/app/nostore/id1666553677" target="_blank" rel="noopener noreferrer">
-                  Get Nostore
+                <a href="https://apps.apple.com/us/app/nostash/id6744309333" target="_blank" rel="noopener noreferrer">
+                  Get Nostash
                   <ExternalLink className="w-3 h-3 ml-2" />
                 </a>
               </Button>
@@ -222,7 +230,55 @@ export default function ManagingNostrKeys() {
         </Card>
       </div>
 
-      <h3>3. Remote Signers (Advanced)</h3>
+      <h3>3. diVine Mobile App (Android & iOS)</h3>
+
+      <p>
+        <strong><a href="https://divine.video" target="_blank" rel="noopener noreferrer">diVine</a></strong> is a mobile app for Android and iOS that includes built-in key management. You can export and backup your private key directly from the app settings, making it easy to save your key for use with other Nostr apps.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-teal-200 bg-gradient-to-br from-teal-50 to-teal-100/50">
+          <CardHeader>
+            <CardTitle className="text-teal-800 text-lg flex items-center gap-2">
+              <Smartphone className="w-5 h-5" />
+              diVine Key Export
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-700 text-sm space-y-3">
+            <p><strong>How to Export Your Key:</strong></p>
+            <ol className="space-y-2 text-xs ml-4 list-decimal">
+              <li>Open diVine and go to <strong>Settings</strong></li>
+              <li>Under the Profile section, tap <strong>Key Management</strong></li>
+              <li>In the Nostr Keys screen, find the <strong>Backup Your Key</strong> section</li>
+              <li>Tap <strong>Copy My Private Key (nsec)</strong> to copy your key to the clipboard</li>
+              <li>Immediately paste it into a secure password manager or write it down</li>
+            </ol>
+            <div className="mt-4 grid grid-cols-2 gap-4">
+              <img
+                src="/assets/blog/managing-nostr-keys/nostr-keys-divine-mobile-1.png"
+                alt="diVine Settings showing Key Management option"
+                className="rounded-lg border border-teal-200 shadow-sm"
+              />
+              <img
+                src="/assets/blog/managing-nostr-keys/nostr-keys-divine-mobile-2.png"
+                alt="diVine Nostr Keys screen with backup option"
+                className="rounded-lg border border-teal-200 shadow-sm"
+              />
+            </div>
+            <p className="text-xs text-teal-700 mt-2">
+              <strong>Note:</strong> You can also import an existing key if you already have a Nostr account. This will replace your current key in diVine.
+            </p>
+            <Button size="sm" variant="outline" className="mt-2" asChild>
+              <a href="https://divine.video" target="_blank" rel="noopener noreferrer">
+                Get diVine
+                <ExternalLink className="w-3 h-3 ml-2" />
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h3>4. Remote Signers (Advanced)</h3>
 
       <p>
         <strong><a href="https://nostrhub.io/46" target="_blank" rel="noopener noreferrer">NIP-46 (Nostr Connect)</a></strong> enables remote signing where your private key lives on a separate device or service, and apps request signatures over Nostr relays. This provides the highest security for advanced users.
@@ -255,7 +311,66 @@ export default function ManagingNostrKeys() {
         </Card>
       </div>
 
+      <h3>5. diVine Login (Email/Password Key Management)</h3>
 
+      <p>
+        <strong><a href="https://login.divine.video" target="_blank" rel="noopener noreferrer">diVine Login</a></strong> provides a familiar email and password experience for managing your Nostr identity. It's a key management system that lets you register, log in, and connect to NIP-46 compatible apps using bunker URLs—no browser extensions required.
+      </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-teal-200 bg-gradient-to-br from-teal-50 to-teal-100/50">
+          <CardHeader>
+            <CardTitle className="text-teal-800 text-lg flex items-center gap-2">
+              <Shield className="w-5 h-5" />
+              diVine Login
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-700 text-sm space-y-3">
+            <p><strong>Key Features:</strong></p>
+            <ul className="space-y-1 text-xs ml-4">
+              <li>• <strong>No Extensions Needed:</strong> Sign in without browser extensions—diVine manages your key so you can focus on the apps</li>
+              <li>• <strong>Use Any Nostr App:</strong> Connect to apps across the Nostr ecosystem through diVine. Your key stays safe with diVine Login</li>
+              <li>• <strong>Manage Connected Apps:</strong> View, add, and remove Nostr apps from your dashboard</li>
+              <li>• <strong>Get Bunker URLs:</strong> Generate NIP-46 bunker URLs to connect with compatible apps</li>
+            </ul>
+
+            <p className="mt-4"><strong>Exporting Your Private Key:</strong></p>
+            <ol className="space-y-2 text-xs ml-4 list-decimal">
+              <li>Log in to <a href="https://login.divine.video" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline">login.divine.video</a></li>
+              <li>Navigate to <strong>Security Settings</strong></li>
+              <li>Click <strong>Unlock Security Settings</strong> and enter your password</li>
+              <li>Once verified, you can view and export your private key (nsec)</li>
+              <li>Use <strong>Copy to Clipboard</strong> to copy your key securely</li>
+            </ol>
+
+            <div className="mt-4 grid grid-cols-2 gap-4">
+              <img
+                src="/assets/blog/managing-nostr-keys/nostr-keys-divine-login-1.png"
+                alt="diVine Login landing page"
+                className="rounded-lg border border-teal-200 shadow-sm"
+              />
+              <img
+                src="/assets/blog/managing-nostr-keys/nostr-keys-divine-login-2.png"
+                alt="diVine Login Security Settings with key export"
+                className="rounded-lg border border-teal-200 shadow-sm"
+              />
+            </div>
+
+            <div className="mt-4 p-3 bg-orange-100 border border-orange-200 rounded-lg">
+              <p className="text-xs text-orange-800">
+                <strong>⚠️ Security Note:</strong> Never share your private key. Anyone with this key controls your Nostr identity. Only export your key when you need to back it up or use it in another trusted app.
+              </p>
+            </div>
+
+            <Button size="sm" variant="outline" className="mt-2" asChild>
+              <a href="https://login.divine.video" target="_blank" rel="noopener noreferrer">
+                Try diVine Login
+                <ExternalLink className="w-3 h-3 ml-2" />
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
 
       <h2>Best Practices for Key Storage</h2>
 
@@ -269,9 +384,9 @@ export default function ManagingNostrKeys() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-700 text-sm space-y-2">
-              <p>• Use browser extensions (<a href="https://getalby.com" target="_blank" rel="noopener noreferrer">Alby</a>, <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer">nos2x</a>, <a href="https://www.getflamingo.org" target="_blank" rel="noopener noreferrer">Flamingo</a>) for desktop</p>
-              <p>• Use mobile signers (<a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer">Amber</a>) for Android</p>
-              <p>• Use remote signers (<a href="https://nsec.app" target="_blank" rel="noopener noreferrer">nsec.app</a>) for multi-device access</p>
+              <p>• Use browser extensions (<a href="https://getalby.com" target="_blank" rel="noopener noreferrer">Alby</a>, <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer">nos2x</a>, <a href="https://chromewebstore.google.com/detail/soapboxpub-signer/nnodjkgakfpkckcnbacpcjbpmlmbihdd" target="_blank" rel="noopener noreferrer">Soapbox Signer</a>) for desktop</p>
+              <p>• Use mobile signers (<a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer">Amber</a>) for Android or <a href="https://divine.video" target="_blank" rel="noopener noreferrer">diVine</a> for Android/iOS</p>
+              <p>• Use remote signers (<a href="https://nsec.app" target="_blank" rel="noopener noreferrer">nsec.app</a>, <a href="https://login.divine.video" target="_blank" rel="noopener noreferrer">diVine Login</a>) for multi-device access</p>
               <p>• Write down your private key on paper and store it securely offline</p>
               <p>• Create multiple backups stored in different physical locations</p>
               <p>• Use password managers to store encrypted backups</p>
@@ -564,20 +679,20 @@ export default function ManagingNostrKeys() {
             Choose a secure storage solution, create backups, and take control of your digital identity.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
             <Card className="bg-white/10 backdrop-blur border-white/20">
               <CardContent className="p-6">
                 <h4 className="font-semibold text-white mb-2">Desktop</h4>
                 <p className="text-sm text-blue-100 mb-3">
-                  <a href="https://getalby.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Alby</a>, <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">nos2x</a>, <a href="https://www.getflamingo.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Flamingo</a>, or <a href="https://apps.apple.com/us/app/nostore/id1666553677" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Nostore</a> browser extension
+                  <a href="https://getalby.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Alby</a>, <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">nos2x</a>, <a href="https://chromewebstore.google.com/detail/soapboxpub-signer/nnodjkgakfpkckcnbacpcjbpmlmbihdd" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Soapbox Signer</a>, or <a href="https://apps.apple.com/us/app/nostash/id6744309333" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Nostash</a> (Safari)
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20">
               <CardContent className="p-6">
-                <h4 className="font-semibold text-white mb-2">Android</h4>
+                <h4 className="font-semibold text-white mb-2">Mobile</h4>
                 <p className="text-sm text-blue-100 mb-3">
-                  <a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Amber</a> signer for app-level isolation
+                  <a href="https://divine.video" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">diVine</a> for Android/iOS or <a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Amber</a> for Android
                 </p>
               </CardContent>
             </Card>
@@ -586,6 +701,14 @@ export default function ManagingNostrKeys() {
                 <h4 className="font-semibold text-white mb-2">Remote Signing</h4>
                 <p className="text-sm text-blue-100 mb-3">
                   <a href="https://nsec.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">nsec.app</a> for multi-device access
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white/10 backdrop-blur border-white/20">
+              <CardContent className="p-6">
+                <h4 className="font-semibold text-white mb-2">Email/Password</h4>
+                <p className="text-sm text-blue-100 mb-3">
+                  <a href="https://login.divine.video" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">diVine Login</a> for familiar login experience
                 </p>
               </CardContent>
             </Card>
@@ -598,6 +721,8 @@ export default function ManagingNostrKeys() {
       <ul>
         <li><a href="/blog/nostr101">Nostr 101: A Beginner's Guide</a> - Understanding Nostr basics</li>
         <li><a href="https://github.com/aljazceru/awesome-nostr#nip-07-browser-extensions" target="_blank" rel="noopener noreferrer">Awesome Nostr: Browser Extensions</a> - Complete list of NIP-07 signers</li>
+        <li><a href="https://divine.video" target="_blank" rel="noopener noreferrer">diVine</a> - Mobile app for Android & iOS with built-in key management</li>
+        <li><a href="https://login.divine.video" target="_blank" rel="noopener noreferrer">diVine Login</a> - Email/password key management with NIP-46 support</li>
         <li><a href="https://nsec.app" target="_blank" rel="noopener noreferrer">nsec.app</a> - Remote signing solution (NIP-46)</li>
         <li><a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer">Amber Signer</a> - Android signing app (NIP-55)</li>
         <li><a href="https://getalby.com" target="_blank" rel="noopener noreferrer">Alby</a> - Browser extension with Lightning wallet</li>
