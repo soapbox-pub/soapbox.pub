@@ -386,7 +386,7 @@ export default function ShakespeareWorkshopGuide() {
       </div>
 
       <p>
-        For workshop project ideas and inspiration, <a href="https://shakespeare.diy/showcase" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
+        For workshop project ideas and inspiration, <a href="https://soapbox.pub/showcase/" target="_blank" rel="noopener noreferrer">browse the Shakespeare showcase</a> to see what other builders have created.
       </p>
 
       <img
