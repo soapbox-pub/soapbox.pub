@@ -68,6 +68,7 @@ import * as shakespeareworkshopguide from '../../components/blog/posts/shakespea
 import * as shakespeareoriginstory from '../../components/blog/posts/shakespeare-origin-story';
 import * as managingnostrkeys from '../../components/blog/posts/managing-nostr-keys';
 import * as divineexportyournostrkeys from '../../components/blog/posts/divine-export-your-nostr-keys';
+import * as announcingsoapboxsigner from '../../components/blog/posts/announcing-soapbox-signer';
 import * as shakespearenovember2025update from '../../components/blog/posts/shakespeare-november-2025-update';
 
 export interface BlogPost {
@@ -95,6 +96,7 @@ export const blogPosts: BlogPost[] = [
   buildwithoutcoding.meta,
   conversationalaiforbeginner.meta,
   shakespearenovember2025update.meta,
+  announcingsoapboxsigner.meta,
   divineexportyournostrkeys.meta,
   managingnostrkeys.meta,
   shakespeareworkshopguide.meta,
@@ -181,6 +183,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/managing-nostr-keys')).default;
     case 'divineexportyournostrkeys':
       return (await import('../../components/blog/posts/divine-export-your-nostr-keys')).default;
+    case 'announcingsoapboxsigner':
+      return (await import('../../components/blog/posts/announcing-soapbox-signer')).default;
     case 'shakespearenovember2025update':
       return (await import('../../components/blog/posts/shakespeare-november-2025-update')).default;
     case 'shakespeareworkshopguide':

@@ -48,6 +48,7 @@ export default defineConfig({
         "/blog/announcing-soapbox-be-v1.0",
         "/blog/announcing-soapbox-fe-v1.0",
         "/blog/announcing-soapbox-sessions-podcast",
+        "/blog/announcing-soapbox-signer",
         "/blog/announcing-stacks-1.0",
         "/blog/announcing-treasures",
         "/blog/build-without-coding",
