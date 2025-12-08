@@ -18,14 +18,14 @@ export const meta: BlogPostMeta = {
   "slug": "announcing-soapbox-signer",
   "title": "Announcing Soapbox Signer: A NIP-07 Browser Extension for Nostr",
   "excerpt": "Introducing Soapbox Signer, our new browser extension for securely managing your Nostr identity with multi-profile support, granular permissions, and NIP-04/NIP-44 encryption.",
-  "coverImage": "/assets/blog/announcing-soapbox-signer/multi-identity-settings.png",
+  "coverImage": "/assets/blog/announcing-soapbox-signer/soapbox-nostr-signer-extension-chrome-firefox.png",
   "date": "2025-12-07",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/derek.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-soapbox-signer/multi-identity-settings.png"
+    "url": "/assets/blog/announcing-soapbox-signer/soapbox-nostr-signer-extension-chrome-firefox.png"
   },
   "tags": ["nostr", "announcement", "security", "signer", "extension"]
 };
