@@ -92,6 +92,7 @@ export default defineConfig({
         "/blog/shakespeare-editing-code",
         "/blog/shakespeare-importing-existing-projects",
         "/blog/shakespeare-local-ai-model",
+        "/blog/shakespeare-mobile-development",
         "/blog/shakespeare-november-2025-update",
         "/blog/shakespeare-origin-story",
         "/blog/shakespeare-version-control",
