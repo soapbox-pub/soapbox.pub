@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "shakespeare-mobile-development",
   "title": "AI-First Development on Mobile: Shakespeare Changes the Game",
   "excerpt": "While other vibe coding apps struggle to gain traction on mobile, Shakespeare delivers a full AI development experience that works beautifully on your phone. Here's how to get started.",
-  "coverImage": "/assets/blog/shakespeare-mobile-development/shakespeare-mobile-pwa-install.png",
+  "coverImage": "/assets/blog/shakespeare-mobile-development/cover.png",
   "date": "2025-12-16",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/aos.png"
   },
   "ogImage": {
-    "url": "/assets/blog/shakespeare-mobile-development/shakespeare-mobile-pwa-install.png"
+    "url": "/assets/blog/shakespeare-mobile-development/cover.png"
   },
   "featured": true,
   "tags": ["shakespeare-resource", "mobile", "pwa", "nostr-git"]
