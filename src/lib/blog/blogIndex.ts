@@ -70,6 +70,7 @@ import * as managingnostrkeys from '../../components/blog/posts/managing-nostr-k
 import * as divineexportyournostrkeys from '../../components/blog/posts/divine-export-your-nostr-keys';
 import * as announcingsoapboxsigner from '../../components/blog/posts/announcing-soapbox-signer';
 import * as shakespearenovember2025update from '../../components/blog/posts/shakespeare-november-2025-update';
+import * as shakespearemobiledevelopment from '../../components/blog/posts/shakespeare-mobile-development';
 
 export interface BlogPost {
   slug: string;
@@ -86,6 +87,7 @@ export interface BlogPost {
   };
   featured?: boolean;
   tags?: string[];
+  hidden?: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -95,6 +97,7 @@ export const blogPosts: BlogPost[] = [
   buildingfreedomfirstcommunities.meta,
   buildwithoutcoding.meta,
   conversationalaiforbeginner.meta,
+  shakespearemobiledevelopment.meta,
   shakespearenovember2025update.meta,
   announcingsoapboxsigner.meta,
   divineexportyournostrkeys.meta,
@@ -187,6 +190,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/announcing-soapbox-signer')).default;
     case 'shakespearenovember2025update':
       return (await import('../../components/blog/posts/shakespeare-november-2025-update')).default;
+    case 'shakespearemobiledevelopment':
+      return (await import('../../components/blog/posts/shakespeare-mobile-development')).default;
     case 'shakespeareworkshopguide':
       return (await import('../../components/blog/posts/shakespeare-workshop-guide')).default;
     case 'shakespeareoriginstory':
