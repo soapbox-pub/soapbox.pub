@@ -584,55 +584,56 @@ function EventCard({ event }: { event: NostrEvent }) {
   const formattedDate = formatEventDate(eventData.start, eventData.kind, eventData.startTzid);
   const isVirtual = eventData.location && isUrl(eventData.location);
 
+  // Generate naddr for addressable events
+  const dTag = event.tags.find(([name]) => name === 'd')?.[1] || '';
+  const naddr = nip19.naddrEncode({
+    kind: event.kind,
+    pubkey: event.pubkey,
+    identifier: dTag,
+  });
+  const plektosUrl = `https://plektos.app/event/${naddr}`;
+
   return (
-    <Card className="hover:shadow-md transition-shadow overflow-hidden dark:bg-gray-800 dark:border-gray-700">
-      {eventData.image && (
-        <div className="aspect-video overflow-hidden">
-          <img
-            src={eventData.image}
-            alt={eventData.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      )}
-      <CardHeader>
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex-1 min-w-0">
-            <CardTitle className="text-lg dark:text-white">{eventData.title}</CardTitle>
-            <div className="flex items-center gap-2 mt-2 text-sm text-gray-600 dark:text-gray-400">
-              <Calendar className="h-4 w-4 flex-shrink-0" />
-              <span>{formattedDate}</span>
-            </div>
-            {eventData.location && (
-              <div className="flex items-center gap-2 mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {isVirtual ? (
-                  <Video className="h-4 w-4 flex-shrink-0" />
-                ) : (
-                  <MapPin className="h-4 w-4 flex-shrink-0" />
-                )}
-                <span className="truncate">
-                  {isVirtual ? 'Virtual Event' : eventData.location}
-                </span>
-              </div>
-            )}
+    <a href={plektosUrl} target="_blank" rel="noopener noreferrer" className="block">
+      <Card className="hover:shadow-md transition-shadow overflow-hidden dark:bg-gray-800 dark:border-gray-700 cursor-pointer">
+        {eventData.image && (
+          <div className="aspect-video overflow-hidden">
+            <img
+              src={eventData.image}
+              alt={eventData.title}
+              className="w-full h-full object-cover"
+            />
           </div>
-        </div>
-        {eventData.summary && (
-          <CardDescription className="mt-2 line-clamp-2 dark:text-gray-400">
-            {eventData.summary}
-          </CardDescription>
         )}
-      </CardHeader>
-      {eventData.references.length > 0 && (
-        <CardContent>
-          <Button asChild variant="outline" size="sm" className="dark:border-gray-600">
-            <a href={eventData.references[0]} target="_blank" rel="noopener noreferrer">
-              Event Details
-              <ExternalLink className="h-3 w-3 ml-2" />
-            </a>
-          </Button>
-        </CardContent>
-      )}
-    </Card>
+        <CardHeader>
+          <div className="flex items-start justify-between gap-2">
+            <div className="flex-1 min-w-0">
+              <CardTitle className="text-lg dark:text-white">{eventData.title}</CardTitle>
+              <div className="flex items-center gap-2 mt-2 text-sm text-gray-600 dark:text-gray-400">
+                <Calendar className="h-4 w-4 flex-shrink-0" />
+                <span>{formattedDate}</span>
+              </div>
+              {eventData.location && (
+                <div className="flex items-center gap-2 mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  {isVirtual ? (
+                    <Video className="h-4 w-4 flex-shrink-0" />
+                  ) : (
+                    <MapPin className="h-4 w-4 flex-shrink-0" />
+                  )}
+                  <span className="truncate">
+                    {isVirtual ? 'Virtual Event' : eventData.location}
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+          {eventData.summary && (
+            <CardDescription className="mt-2 line-clamp-2 dark:text-gray-400">
+              {eventData.summary}
+            </CardDescription>
+          )}
+        </CardHeader>
+      </Card>
+    </a>
   );
 }
