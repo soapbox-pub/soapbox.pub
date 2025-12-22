@@ -17,7 +17,6 @@ import {
   Lightbulb,
   Image,
   LifeBuoy,
-  Hash,
   Users,
   MapPin,
 } from 'lucide-react';
@@ -95,10 +94,9 @@ export default function AnnouncingShakespeareCommunity() {
           </a>
         </Button>
         <Button asChild variant="outline" size="lg">
-          <a href="https://shakespeare.diy/community" target="_blank" rel="noopener noreferrer">
+          <a href="/shakespeare-community">
             <Users className="h-4 w-4 mr-2" />
-            Visit Community Page
-            <ExternalLink className="ml-2 h-4 w-4" />
+            Visit Community
           </a>
         </Button>
       </div>
@@ -177,7 +175,7 @@ export default function AnnouncingShakespeareCommunity() {
           </CardHeader>
           <CardContent className="mt-auto">
             <Button asChild variant="outline" className="w-full">
-              <a href="https://shakespeare.diy/community#events" target="_blank" rel="noopener noreferrer">
+              <a href="/shakespeare-community#events">
                 View Events
                 <ArrowRight className="h-4 w-4 ml-2" />
               </a>
@@ -593,9 +591,8 @@ export default function AnnouncingShakespeareCommunity() {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="https://shakespeare.diy/community" target="_blank" rel="noopener noreferrer">
-                  Visit Community Page
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                <a href="/shakespeare-community">
+                  Visit Community
                 </a>
               </Button>
             </div>

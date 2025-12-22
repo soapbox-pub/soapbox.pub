@@ -100,7 +100,7 @@ export default function Shakespeare() {
       {/* Main Content Section */}
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-8">
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-gray-900">Revolutionary AI Website Builder</h2>
@@ -126,17 +126,23 @@ export default function Shakespeare() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg" asChild>
+              <div className="flex flex-col lg:flex-row flex-wrap gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-4 text-lg" asChild>
                   <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
                     Start Building
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-2 border-purple-200 hover:bg-purple-50" asChild>
+                <Button size="lg" variant="outline" className="px-6 py-4 text-lg border-2 border-purple-200 hover:bg-purple-50" asChild>
                   <a href="/shakespeare-resources">
                     <FileText className="mr-2 h-5 w-5" />
-                    Resource Center
+                    Resources
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="px-6 py-4 text-lg border-2 border-purple-200 hover:bg-purple-50" asChild>
+                  <a href="/shakespeare-community">
+                    <Users className="mr-2 h-5 w-5" />
+                    Community
                   </a>
                 </Button>
               </div>
@@ -906,7 +912,7 @@ export default function Shakespeare() {
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 text-lg"
               >
                 <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                  🚀 Launch Shakespeare
+                  Launch Shakespeare
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -917,7 +923,19 @@ export default function Shakespeare() {
                 className="border-2 border-purple-200 hover:bg-purple-50 px-8 py-4 text-lg"
               >
                 <a href="/shakespeare-resources">
-                  📚 Learn More
+                  <FileText className="mr-2 h-5 w-5" />
+                  Resources
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-purple-200 hover:bg-purple-50 px-8 py-4 text-lg"
+              >
+                <a href="/shakespeare-community">
+                  <Users className="mr-2 h-5 w-5" />
+                  Community
                 </a>
               </Button>
             </div>

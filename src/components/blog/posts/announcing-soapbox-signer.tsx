@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../../ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card';
-import { ExternalLink, Shield, Users, Key, Lock, Settings, Download, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Card, CardContent } from '../../ui/card';
+import { ExternalLink, Shield, Users, Key, Lock, Settings, Download, AlertTriangle } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
