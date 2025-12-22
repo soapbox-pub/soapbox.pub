@@ -23,7 +23,7 @@ function EnhancedProfileCard({ pubkey, petname }: EnhancedProfileCardProps) {
   const author = useAuthor(pubkey);
   const metadata = author.data?.metadata;
   const teamMember = getTeamMemberByPubkey(pubkey);
-  
+
   // Use team data if available, otherwise fall back to Nostr metadata
   const displayName = teamMember?.name || metadata?.display_name || metadata?.name || petname || genUserName(pubkey);
   const role = teamMember?.role;
@@ -54,28 +54,28 @@ function EnhancedProfileCard({ pubkey, petname }: EnhancedProfileCardProps) {
             {displayName.slice(0, 2).toUpperCase()}
           </AvatarFallback>
         </Avatar>
-        
+
         <h3 className="text-xl font-bold text-gray-900 mb-1">
           {displayName}
         </h3>
-        
+
         {role && (
           <p className="text-azure font-medium mb-3">
             {role}
           </p>
         )}
-        
+
         {bio && (
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
             {bio}
           </p>
         )}
-        
+
         <Button variant="outline" size="sm" asChild>
-          <a 
-            href={followUrl || `https://njump.me/${pubkey}`} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={followUrl || `https://njump.me/${pubkey}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center"
           >
             Follow <ExternalLink className="ml-1 h-3 w-3" />
@@ -104,7 +104,7 @@ export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
             <Skeleton className="h-10 w-40" />
           </div>
         </div>
-        
+
         {/* Team Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Array.from({ length: 9 }).map((_, i) => (
@@ -149,27 +149,27 @@ export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
             {followPack.title || 'Meet the Team'}
           </h2>
         </div>
-        
+
         <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
           {followPack.description || 'The passionate individuals building the future of decentralized social media.'}
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
           <Button size="lg" className="bg-azure hover:bg-azure/90 text-white" asChild>
             <Link to="/get-involved" className="inline-flex items-center">
-              We're hiring! View open positions
+              Want to work with us?
             </Link>
           </Button>
-          
-            <Button 
-            size="lg" 
-            variant="outline" 
+
+            <Button
+            size="lg"
+            variant="outline"
             asChild
             className="flex items-center gap-2"
             >
-            <a 
+            <a
               href={`https://following.space/d/${followPack.event.tags.find(([name]) => name === 'd')?.[1]}?p=${followPack.event.pubkey}`}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               <ExternalLink className="h-4 w-4" />
@@ -178,12 +178,12 @@ export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
             </Button>
         </div>
       </div>
-      
+
       {/* Team Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {followPack.profiles.map((profile) => (
-          <EnhancedProfileCard 
-            key={profile.pubkey} 
+          <EnhancedProfileCard
+            key={profile.pubkey}
             pubkey={profile.pubkey}
             petname={profile.petname}
           />
