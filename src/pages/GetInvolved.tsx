@@ -8,7 +8,7 @@ import { useSEO } from "@/hooks/useSEO";
 const openPositions = [
   {
     title: "Senior Full Stack Developer",
-    department: "Engineering", 
+    department: "Engineering",
     type: "Full-time",
     location: "Remote",
     description: "Take ownership of features from concept to deployment. Work across our entire stack to deliver exceptional user experiences on decentralized platforms.",
@@ -23,35 +23,38 @@ const openPositions = [
     applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
   },
   {
-    title: "Senior Frontend Developer",
-    department: "Engineering",
+    title: "UI/UX Designer",
+    department: "Design",
     type: "Full-time",
     location: "Remote",
-    description: "Join our team to build cutting-edge user interfaces for decentralized social platforms. Work with React, TypeScript, and the latest web technologies.",
-    compensation: "Depends on experience and other circumstances, maximum budget $120k. Options available for W2 work + benefits (if in US) or contract outside of US.",
+    description: "Lead the design of Shakespeare and Soapbox products with a focus on user research and creating intuitive, beautiful interfaces. Help shape the user experience of decentralized social platforms.",
+    compensation: "Competitive compensation based on experience and location.",
     requirements: [
-      "5+ years of frontend development experience",
-      "Expert knowledge of React, TypeScript, and modern web standards",
-      "Experience with decentralized protocols (preferred)",
-      "Passion for open source and user privacy"
+      "Experience conducting user research and incorporating feedback into design",
+      "Strong portfolio demonstrating UI/UX design work",
+      "Proficiency with design tools (Figma, Sketch, or similar)",
+      "Understanding of web design principles and accessibility",
+      "Ability to work collaboratively with developers and stakeholders"
     ],
-    tags: ["React", "TypeScript", "Nostr", "APIs"],
-    applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
+    tags: ["UI Design", "UX Research", "User Testing", "Figma", "Accessibility"],
+    applicationInstructions: "To apply, please email mkfain1@gmail.com with your portfolio and a brief introduction."
   },
   {
-    title: "Senior Backend Developer", 
-    department: "Engineering",
-    type: "Full-time",
+    title: "Brand and Marketing Consultant",
+    department: "Marketing",
+    type: "Contract/Part-time",
     location: "Remote",
-    description: "Build robust, scalable backend systems for our decentralized social platforms. Work with modern backend technologies and decentralized protocols.",
-    compensation: "Depends on experience and other circumstances, maximum budget $120k. Options available for W2 work + benefits (if in US) or contract outside of US.",
+    description: "Help shape and amplify the Soapbox and Shakespeare brands. Drive marketing strategy, create compelling visual content, and build our presence in the decentralized web community.",
+    compensation: "Competitive compensation based on experience and scope of work.",
     requirements: [
-      "5+ years of backend development experience",
-      "Strong knowledge of distributed systems and APIs",
-      "Understanding of cryptography and decentralized protocols"
+      "Proven experience in brand strategy and development",
+      "Strong digital marketing skills across multiple channels",
+      "Proficiency with Canva and other graphic design tools",
+      "Excellent written and visual communication skills",
+      "Understanding of or interest in decentralized technologies"
     ],
-    tags: ["Typescript", "Databases", "SQL", "Distributed Systems", "Cryptography"],
-    applicationInstructions: "To apply, please email alex@alexgleason.me with a link to your github or gitlab profile."
+    tags: ["Brand Strategy", "Digital Marketing", "Canva", "Content Creation", "Social Media"],
+    applicationInstructions: "To apply, please email mkfain1@gmail.com with examples of your work and a brief overview of your experience."
   }
 ];
 
@@ -88,12 +91,12 @@ export default function GetInvolved() {
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
-          
+
           {/* Floating Elements */}
           <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/15 rounded-full blur-lg animate-pulse delay-500"></div>
-          
+
           <div className="relative max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
@@ -102,17 +105,17 @@ export default function GetInvolved() {
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                   Open Source Project
                 </div>
-                
+
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-6 leading-tight">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
                     Get Involved
                   </span>
                 </h1>
-                
+
                 <p className="text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
                   Join us in building the future of decentralized social media. Whether you're a developer, designer, writer, or just passionate about free software, there's a place for you in our community.
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8" asChild>
                     <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer">
@@ -122,7 +125,7 @@ export default function GetInvolved() {
 
                 </div>
               </div>
-              
+
               {/* Image/Illustration Side */}
               <div className="relative">
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
@@ -146,7 +149,7 @@ export default function GetInvolved() {
                       <div className="text-orange-400">{'}'}</div>
                     </div>
                   </div>
-                  
+
                   {/* Floating Stats */}
                   <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-2 rounded-lg text-sm font-semibold shadow-lg">
                     <div className="flex items-center gap-2">
@@ -154,7 +157,7 @@ export default function GetInvolved() {
                       Free Software
                     </div>
                   </div>
-                  
+
                   <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-3 py-2 rounded-lg text-sm font-semibold shadow-lg">
                     <div className="flex items-center gap-2">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -164,7 +167,7 @@ export default function GetInvolved() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Additional Decorative Elements */}
                 <div className="absolute top-1/4 -right-8 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 blur-xl"></div>
                 <div className="absolute bottom-1/4 -left-8 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-15 blur-2xl"></div>
@@ -207,14 +210,14 @@ export default function GetInvolved() {
                     <CardDescription className="text-gray-600 mb-4">
                       {position.description}
                     </CardDescription>
-                    
+
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Compensation:</h4>
                       <p className="text-sm text-gray-600 bg-green-50 p-3 rounded-md border-l-4 border-green-500">
                         {position.compensation}
                       </p>
                     </div>
-                    
+
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
                       <ul className="space-y-1">
