@@ -45,6 +45,7 @@ export default defineConfig({
         "/blog/announcing-nostrify",
         "/blog/announcing-shakespeare",
         "/blog/announcing-shakespeare-act-2",
+        "/blog/announcing-shakespeare-community",
         "/blog/announcing-soapbox-be-v1.0",
         "/blog/announcing-soapbox-fe-v1.0",
         "/blog/announcing-soapbox-sessions-podcast",

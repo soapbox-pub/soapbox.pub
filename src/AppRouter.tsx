@@ -12,6 +12,7 @@ import BlogPostPage from "./pages/blog/BlogPostPage";
 import NotFound from "./pages/NotFound";
 import CustomNipPage from "./pages/CustomNipPage";
 import ShakespeareResources from "./pages/ShakespeareResources";
+import ShakespeareCommunity from "./pages/ShakespeareCommunity";
 import SoapboxSessions from "./pages/SoapboxSessions";
 import HalloweenHackathon from "./pages/HalloweenHackathon";
 import MediaKit from "./pages/MediaKit";
@@ -51,6 +52,7 @@ export function AppRouter() {
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/nip/:naddr" element={<CustomNipPage />} />
         <Route path="/shakespeare-resources" element={<ShakespeareResources />} />
+        <Route path="/shakespeare-community" element={<ShakespeareCommunity />} />
         {/* Redirect common variations to shakespeare-resources */}
         <Route path="/resource-center" element={<Navigate to="/shakespeare-resources" replace />} />
         <Route path="/resources" element={<Navigate to="/shakespeare-resources" replace />} />

@@ -69,6 +69,7 @@ import * as shakespeareoriginstory from '../../components/blog/posts/shakespeare
 import * as managingnostrkeys from '../../components/blog/posts/managing-nostr-keys';
 import * as divineexportyournostrkeys from '../../components/blog/posts/divine-export-your-nostr-keys';
 import * as announcingsoapboxsigner from '../../components/blog/posts/announcing-soapbox-signer';
+import * as announcingshakespearecommunity from '../../components/blog/posts/announcing-shakespeare-community';
 import * as shakespearenovember2025update from '../../components/blog/posts/shakespeare-november-2025-update';
 import * as shakespearemobiledevelopment from '../../components/blog/posts/shakespeare-mobile-development';
 
@@ -97,6 +98,7 @@ export const blogPosts: BlogPost[] = [
   buildingfreedomfirstcommunities.meta,
   buildwithoutcoding.meta,
   conversationalaiforbeginner.meta,
+  announcingshakespearecommunity.meta,
   shakespearemobiledevelopment.meta,
   shakespearenovember2025update.meta,
   announcingsoapboxsigner.meta,
@@ -188,6 +190,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/divine-export-your-nostr-keys')).default;
     case 'announcingsoapboxsigner':
       return (await import('../../components/blog/posts/announcing-soapbox-signer')).default;
+    case 'announcingshakespearecommunity':
+      return (await import('../../components/blog/posts/announcing-shakespeare-community')).default;
     case 'shakespearenovember2025update':
       return (await import('../../components/blog/posts/shakespeare-november-2025-update')).default;
     case 'shakespearemobiledevelopment':

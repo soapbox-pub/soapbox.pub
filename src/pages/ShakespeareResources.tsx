@@ -10,9 +10,22 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, MessageSquare, Sparkles, Play } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  BookOpen,
+  MessageSquare,
+  Sparkles,
+  Play,
+  MessageCircle,
+  Calendar,
+  Award,
+  Users,
+  ArrowRight,
+  ExternalLink,
+  Hash,
+} from 'lucide-react';
 import { YouTubeEmbed } from '@/components/YouTubeEmbed';
 
 export default function ShakespeareResources() {
@@ -74,37 +87,95 @@ export default function ShakespeareResources() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-purple-950">
       <Navigation />
 
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="space-y-6">
-            <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
-              📚 Resource Hub
+            <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900 dark:text-purple-200 dark:border-purple-800">
+              Resource Hub
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900">
-              <span className="text-purple-600">🎭 Shakespeare</span> Resources
+            <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 dark:text-white">
+              <span className="text-purple-600 dark:text-purple-400">Shakespeare</span> Resources
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Find answers to common questions and explore our latest guides.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Community CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800/50">
+        <div className="max-w-6xl mx-auto">
+          <Card className="bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/50 dark:to-blue-900/50 border-purple-200 dark:border-purple-700 overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-6">
+              <CardHeader className="pb-0 md:pb-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                  <Badge variant="outline" className="border-purple-300 text-purple-700 dark:border-purple-600 dark:text-purple-300">
+                    Community
+                  </Badge>
+                </div>
+                <CardTitle className="text-2xl dark:text-white">Join the Shakespeare Community</CardTitle>
+                <CardDescription className="text-base dark:text-gray-300">
+                  Connect with builders worldwide, get help with your projects, and be part of the future of AI-powered web development.
+                </CardDescription>
+                <div className="pt-4">
+                  <Button asChild className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+                    <a href="/shakespeare-community">
+                      Visit Community
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </a>
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-6 md:pt-6">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <MessageCircle className="h-4 w-4 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                    <span>Live chat with builders</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <Calendar className="h-4 w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                    <span>Workshops & events</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <Sparkles className="h-4 w-4 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                    <span>#ShakespeareDIY feed</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <Award className="h-4 w-4 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />
+                    <span>Ambassador program</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <Hash className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
+                    <span>Topic-based channels</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <ExternalLink className="h-4 w-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                    <span>Built on Nostr</span>
+                  </div>
+                </div>
+              </CardContent>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Video Tutorials Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-purple-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
-              <Play className="h-8 w-8 text-purple-600 mr-3" />
-              <h2 className="text-4xl font-display font-bold text-gray-900">
+              <Play className="h-8 w-8 text-purple-600 dark:text-purple-400 mr-3" />
+              <h2 className="text-4xl font-display font-bold text-gray-900 dark:text-white">
                 Video Tutorial Playlist
               </h2>
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Watch our complete video guide series to master Shakespeare
             </p>
           </div>
@@ -118,27 +189,27 @@ export default function ShakespeareResources() {
           </div>
 
           <div className="text-center">
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               This playlist includes step-by-step tutorials covering all major Shakespeare features
             </p>
             <div className="flex flex-wrap justify-center gap-2">
-              <Badge variant="outline" className="border-purple-200 text-purple-700">
-                🔄 Import Projects
+              <Badge variant="outline" className="border-purple-200 text-purple-700 dark:border-purple-700 dark:text-purple-300">
+                Import Projects
               </Badge>
-              <Badge variant="outline" className="border-blue-200 text-blue-700">
-                📝 Version Control
+              <Badge variant="outline" className="border-blue-200 text-blue-700 dark:border-blue-700 dark:text-blue-300">
+                Version Control
               </Badge>
-              <Badge variant="outline" className="border-green-200 text-green-700">
-                💻 Code Editing
+              <Badge variant="outline" className="border-green-200 text-green-700 dark:border-green-700 dark:text-green-300">
+                Code Editing
               </Badge>
-              <Badge variant="outline" className="border-orange-200 text-orange-700">
-                🚀 Deployment
+              <Badge variant="outline" className="border-orange-200 text-orange-700 dark:border-orange-700 dark:text-orange-300">
+                Deployment
               </Badge>
-              <Badge variant="outline" className="border-pink-200 text-pink-700">
-                🤖 AI Models
+              <Badge variant="outline" className="border-pink-200 text-pink-700 dark:border-pink-700 dark:text-pink-300">
+                AI Models
               </Badge>
-              <Badge variant="outline" className="border-indigo-200 text-indigo-700">
-                ⚙️ AI Providers
+              <Badge variant="outline" className="border-indigo-200 text-indigo-700 dark:border-indigo-700 dark:text-indigo-300">
+                AI Providers
               </Badge>
             </div>
           </div>
@@ -146,29 +217,29 @@ export default function ShakespeareResources() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800/50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
-              <MessageSquare className="h-8 w-8 text-purple-600 mr-3" />
-              <h2 className="text-4xl font-display font-bold text-gray-900">
+              <MessageSquare className="h-8 w-8 text-purple-600 dark:text-purple-400 mr-3" />
+              <h2 className="text-4xl font-display font-bold text-gray-900 dark:text-white">
                 Frequently Asked Questions
               </h2>
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Get quick answers to the most common questions about Shakespeare
             </p>
           </div>
 
-          <Card className="border-purple-200">
+          <Card className="border-purple-200 dark:border-purple-800 dark:bg-gray-800">
             <CardContent className="p-6">
               <Accordion type="single" collapsible className="w-full">
                 {faqData.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-purple-600">
+                    <AccordionTrigger className="text-left font-semibold text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 leading-relaxed">
+                    <AccordionContent className="text-gray-600 dark:text-gray-400 leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -180,16 +251,16 @@ export default function ShakespeareResources() {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-purple-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
-              <BookOpen className="h-8 w-8 text-blue-600 mr-3" />
-              <h2 className="text-4xl font-display font-bold text-gray-900">
+              <BookOpen className="h-8 w-8 text-blue-600 dark:text-blue-400 mr-3" />
+              <h2 className="text-4xl font-display font-bold text-gray-900 dark:text-white">
                 Shakespeare Guides and Tutorials
               </h2>
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Deep dive into becoming a Shakespeare power user
             </p>
           </div>
@@ -197,15 +268,15 @@ export default function ShakespeareResources() {
           {shakespearePosts.length > 0 ? (
             <BlogList posts={shakespearePosts} />
           ) : (
-            <Card className="border-dashed border-2 border-gray-300">
+            <Card className="border-dashed border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-800">
               <CardContent className="py-12 px-8 text-center">
                 <div className="max-w-sm mx-auto space-y-6">
-                  <Sparkles className="h-12 w-12 text-gray-400 mx-auto" />
+                  <Sparkles className="h-12 w-12 text-gray-400 dark:text-gray-600 mx-auto" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                       No Shakespeare posts found
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-400">
                       Blog posts tagged with "shakespeare-resource" will appear here. Check back soon for updates!
                     </p>
                   </div>
@@ -217,7 +288,7 @@ export default function ShakespeareResources() {
       </section>
 
       {/* Email Signup Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800/50">
         <div className="max-w-4xl mx-auto">
           <ShakespeareMailchimpForm />
         </div>
