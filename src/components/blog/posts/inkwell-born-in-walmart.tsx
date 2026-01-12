@@ -33,7 +33,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/inkwell/inkwell-cover.jpg"
   },
-  "featured": true,
+  "featured": false,
   "tags": ["shakespeare", "nostr", "vibe-coding", "inkwell"]
 };
 
