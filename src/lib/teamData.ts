@@ -13,7 +13,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     name: "Alex Gleason",
-    role: "Founder & CEO",
+    role: "Founder & BDFL",
     bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on ActivityPub and the Fediverse. He is still learning, and still dreaming.",
     avatar: "/assets/avatars/alex.png",
     follow: "https://gleasonator.dev/@alex@gleasonator.dev",
@@ -28,14 +28,6 @@ export const teamMembers: TeamMember[] = [
     npub: "npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc"
   },
   {
-    name: "Heather Larson",
-    role: "Marketing Director",
-    bio: "Tech Marketing | Bitcoin & Nostr Community Growth | Broadcast Media Veteran | *I've probably ghostwritten something you read online*",
-    avatar: "/assets/avatars/heather.jpg",
-    follow: "https://ditto.pub/@heather@nostrplebs.com",
-    npub: "npub1nl8r463jkdtr0qu0k3dht03jt9t59cttk0j8gtxg9wea2russlnq2zf9d0"
-  },
-  {
     name: "Derek Ross",
     role: "Developer Relations",
     bio: "The purple pill helps the orange pill go down. Nostr is the social glue that binds all of your apps together.",
@@ -44,12 +36,20 @@ export const teamMembers: TeamMember[] = [
     npub: "npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424"
   },
   {
-    name: "Patrick dos Reis",
-    role: "Developer",
-    bio: "Patrick is interested in being a masterful interpreter of the Light.",
-    avatar: "/assets/avatars/patrick.png",
-    follow: "https://ditto.pub/@patrick@patrickdosreis.com",
-    npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
+    name: "Chad Curtis",
+    role: "Head of VibeOps",
+    bio: "Chad is hobbyist who enjoys creating open source solutions for everyone. He also enjoys creating art, tinkering with GNU/Linux, and playing Magic: The Gathering",
+    avatar: "/assets/avatars/chad.jpeg",
+    follow: "https://ditto.pub/@chad@chadwick.site",
+    npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
+  },
+  {
+    name: "Heather Larson",
+    role: "Marketing Director",
+    bio: "Tech Marketing | Bitcoin & Nostr Community Growth | Broadcast Media Veteran | *I've probably ghostwritten something you read online*",
+    avatar: "/assets/avatars/heather.jpg",
+    follow: "https://ditto.pub/@heather@nostrplebs.com",
+    npub: "npub1nl8r463jkdtr0qu0k3dht03jt9t59cttk0j8gtxg9wea2russlnq2zf9d0"
   },
   {
     name: "shantaram",
@@ -68,37 +68,21 @@ export const teamMembers: TeamMember[] = [
     npub: "npub1e6tnvlr46lv3lwdu80r07kanhk6jcxy5r07w9umgv9kuhu9dl5hsk9gqft"
   },
   {
-    name: "Chad Curtis",
-    role: "Developer",
-    bio: "Chad is hobbyist who enjoys creating open source solutions for everyone. He also enjoys creating art, tinkering with GNU/Linux, and playing Magic: The Gathering",
-    avatar: "/assets/avatars/chad.jpeg",
-    follow: "https://ditto.pub/@chad@chadwick.site",
-    npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
-  },
-  {
-    name: "Ana Domingos",
-    role: "Marketing Coordinator",
-    bio: "Educator & Creative Marketer | Published Author | Digital Content & Social Media Specialist",
-    avatar: "/assets/avatars/farfallica.jpg",
-    follow: "https://ditto.pub/@farfallica@nostrplebs.com",
-    npub: "npub1erhg86xl307d46pla66aycr6sjpy9esnrffysr98l5pjvt2fdgeq8wru26"
-  },
-  {
-    name: "Sep",
-    role: "Developer",
-    bio: "Humble Other Stuff Builder",
-    avatar: "/assets/avatars/sep.jpeg",
-    follow: "https://ditto.pub/@pinja.in",
-    npub: "npub18c556t7n8xa3df2q82rwxejfglw5przds7sqvefylzjh8tjne28qld0we7"
-  },
-  {
     name: "Lemon",
     role: "Developer",
     bio: "Supporting the transition from an experimental protocol to a widely adopted, sustainable ecosystem through a focus on 5 key pillars.",
     avatar: "/assets/avatars/lemon.png",
     follow: "https://ditto.pub/@lemon@gifbuddy.lol",
     npub: "npub1hee433872q2gen90cqh2ypwcq9z7y5ugn23etrd2l2rrwpruss8qwmrsv6"
-  }
+  },
+  {
+    name: "Patrick dos Reis",
+    role: "Developer",
+    bio: "Patrick is interested in being a masterful interpreter of the Light.",
+    avatar: "/assets/avatars/patrick.png",
+    follow: "https://ditto.pub/@patrick@patrickdosreis.com",
+    npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
+  },
 ];
 
 // Convert npubs to hex pubkeys and create a lookup map
