@@ -35,36 +35,37 @@ export function useTeamPosts() {
         }
       }).filter(Boolean) as string[];
 
-      // Fetch top 3 posts from each team member individually
-      const allPosts: NostrEvent[] = [];
-      
-      for (const pubkey of pubkeys) {
-        try {
-          // Query for text notes (kind 1) only from this specific team member
-          const memberEvents = await nostr.query([
-            {
-              kinds: [1], // Include only text notes (excluding reposts)
-              authors: [pubkey],
-              limit: 20, // Fetch more to account for filtering out replies
-            }
-          ], { signal });
-
-          // Filter out replies for kind 1 events
-          const topLevelPosts = memberEvents.filter(event => {
-            // For text notes (kind 1), exclude replies (events with 'e' tags)
-            return !event.tags.some(tag => tag[0] === 'e');
-          });
-
-          // Sort by creation time (newest first) and take top 3
-          const memberTopPosts = topLevelPosts
-            .sort((a, b) => b.created_at - a.created_at)
-            .slice(0, 3);
-
-          allPosts.push(...memberTopPosts);
-        } catch (error) {
-          // Continue if one member's posts fail to load
-          console.warn(`Failed to load posts for team member ${pubkey}:`, error);
+      // Fetch all team member posts in a single query
+      const allEvents = await nostr.query([
+        {
+          kinds: [1], // Include only text notes (excluding reposts)
+          authors: pubkeys, // Query all team members at once
+          limit: 200, // Fetch enough to get ~3 per member after filtering
         }
+      ], { signal });
+
+      // Filter out replies for kind 1 events
+      const topLevelPosts = allEvents.filter(event => {
+        // For text notes (kind 1), exclude replies (events with 'e' tags)
+        return !event.tags.some(tag => tag[0] === 'e');
+      });
+
+      // Group posts by author and take top 3 per author
+      const postsByAuthor = new Map<string, NostrEvent[]>();
+      for (const post of topLevelPosts) {
+        if (!postsByAuthor.has(post.pubkey)) {
+          postsByAuthor.set(post.pubkey, []);
+        }
+        postsByAuthor.get(post.pubkey)!.push(post);
+      }
+
+      // Sort each author's posts and take top 3
+      const allPosts: NostrEvent[] = [];
+      for (const [, posts] of postsByAuthor) {
+        const topPosts = posts
+          .sort((a, b) => b.created_at - a.created_at)
+          .slice(0, 3);
+        allPosts.push(...topPosts);
       }
 
       // Sort all posts by creation time (newest first)

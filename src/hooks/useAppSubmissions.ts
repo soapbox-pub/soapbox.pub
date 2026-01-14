@@ -40,7 +40,9 @@ export function useAppSubmissions() {
 
   return useQuery({
     queryKey: ['app-submissions'],
-    queryFn: async (): Promise<AppSubmission[]> => {
+    queryFn: async (c): Promise<AppSubmission[]> => {
+      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(5000)]);
+
       // Get Soapbox team follow pack for auto-approval
       const teamPubkeys = new Set<string>();
       try {
@@ -52,7 +54,7 @@ export function useAppSubmissions() {
             authors: [addrData.pubkey],
             '#d': [addrData.identifier],
             limit: 1
-          }]);
+          }], { signal });
 
           if (teamEvents.length > 0) {
             const teamEvent = teamEvents[0];
@@ -73,42 +75,38 @@ export function useAppSubmissions() {
         kinds: [APP_SUBMISSION_KIND],
         '#t': ['soapbox-app-submission'],
         limit: 1000
-      }]);
+      }], { signal });
 
       // Note: Halloween submissions now use the same kind (31733) but are filtered by tags
       // They will be included in the main query but can be filtered out if needed
 
-      // Get featured app lists from moderators (NIP-51 kind 30267)
-      const featuredLists = await nostr.query([{
-        kinds: [30267],
-        authors: [MODERATOR_HEX],
-        '#d': ['soapbox-featured-apps'],
-        limit: 10
-      }]);
-
-      // Get approved app lists from moderators (NIP-51 kind 30267)
-      const approvedLists = await nostr.query([{
-        kinds: [30267],
-        authors: [MODERATOR_HEX],
-        '#d': ['soapbox-approved-apps'],
-        limit: 10
-      }]);
-
-      // Get homepage app lists from moderators (NIP-51 kind 30267)
-      const homepageLists = await nostr.query([{
-        kinds: [30267],
-        authors: [MODERATOR_HEX],
-        '#d': ['soapbox-homepage-apps'],
-        limit: 10
-      }]);
-
-      // Get hidden app lists from moderators (NIP-51 kind 30267)
-      const hiddenLists = await nostr.query([{
-        kinds: [30267],
-        authors: [MODERATOR_HEX],
-        '#d': ['soapbox-hidden-apps'],
-        limit: 10
-      }]);
+      // Get all moderation lists in parallel with abort signals
+      const [featuredLists, approvedLists, homepageLists, hiddenLists] = await Promise.all([
+        nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-featured-apps'],
+          limit: 10
+        }], { signal }),
+        nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-approved-apps'],
+          limit: 10
+        }], { signal }),
+        nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-homepage-apps'],
+          limit: 10
+        }], { signal }),
+        nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['soapbox-hidden-apps'],
+          limit: 10
+        }], { signal }),
+      ]);
 
       // Process submissions and apply moderation
       const submissions: AppSubmission[] = [];

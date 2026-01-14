@@ -37,36 +37,34 @@ export function useHalloweenSubmissions() {
 
   return useQuery({
     queryKey: ['halloween-submissions'],
-    queryFn: async (): Promise<HalloweenSubmission[]> => {
-      // Get all Halloween hackathon submissions (kind 31733 with Halloween tag)
-      const submissionEvents = await nostr.query([{
-        kinds: [APP_SUBMISSION_KIND],
-        '#t': ['soapbox-halloween-hackathon'],
-        limit: 1000
-      }]);
+    queryFn: async (c): Promise<HalloweenSubmission[]> => {
+      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(5000)]);
 
-      // Get approved Halloween apps from moderators (NIP-51 kind 30267)
-      const approvedLists = await nostr.query([{
-        kinds: [30267],
-        authors: [MODERATOR_HEX],
-        '#d': ['halloween-approved-apps'],
-        limit: 10
-      }]);
-
-      // Get Halloween winners from moderators (NIP-51 kind 30267)
-      const winnerLists = await nostr.query([{
-        kinds: [30267],
-        authors: [MODERATOR_HEX],
-        '#d': ['halloween-winners'],
-        limit: 10
-      }]);
-
-      // Get reporting events for hidden apps (NIP-56 kind 1984)
-      const reportEvents = await nostr.query([{
-        kinds: [1984],
-        authors: [MODERATOR_HEX],
-        limit: 1000
-      }]);
+      // Get all Halloween hackathon submissions and moderation data in parallel
+      const [submissionEvents, approvedLists, winnerLists, reportEvents] = await Promise.all([
+        nostr.query([{
+          kinds: [APP_SUBMISSION_KIND],
+          '#t': ['soapbox-halloween-hackathon'],
+          limit: 1000
+        }], { signal }),
+        nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['halloween-approved-apps'],
+          limit: 10
+        }], { signal }),
+        nostr.query([{
+          kinds: [30267],
+          authors: [MODERATOR_HEX],
+          '#d': ['halloween-winners'],
+          limit: 10
+        }], { signal }),
+        nostr.query([{
+          kinds: [1984],
+          authors: [MODERATOR_HEX],
+          limit: 1000
+        }], { signal }),
+      ]);
 
       // Process submissions and apply moderation
       const submissions: HalloweenSubmission[] = [];

@@ -125,6 +125,10 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
     const appCoordinate = `${app.kind}:${app.pubkey}:${dTag}`;
 
     try {
+      // Create abort controller for this action
+      const abortController = new AbortController();
+      const signal = AbortSignal.any([abortController.signal, AbortSignal.timeout(5000)]);
+
       if (action === 'homepage' || action === 'unhomepage') {
         // Get current homepage apps list
         const currentHomepageLists = await nostr.query([{
@@ -132,7 +136,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           authors: [MODERATOR_HEX],
           '#d': ['soapbox-homepage-apps'],
           limit: 1
-        }]);
+        }], { signal });
 
         const currentHomepageList = currentHomepageLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
@@ -175,7 +179,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
             authors: [MODERATOR_HEX],
             '#d': ['soapbox-approved-apps'],
             limit: 1
-          }]);
+          }], { signal });
 
           const currentApprovedList = currentApprovedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
             !latest || current.created_at > latest.created_at ? current : latest,
@@ -214,7 +218,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           authors: [MODERATOR_HEX],
           '#d': ['soapbox-featured-apps'],
           limit: 1
-        }]);
+        }], { signal });
 
         const currentFeaturedList = currentFeaturedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
@@ -257,7 +261,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
             authors: [MODERATOR_HEX],
             '#d': ['soapbox-approved-apps'],
             limit: 1
-          }]);
+          }], { signal });
 
           const currentApprovedList = currentApprovedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
             !latest || current.created_at > latest.created_at ? current : latest,
@@ -296,7 +300,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           authors: [MODERATOR_HEX],
           '#d': ['soapbox-approved-apps'],
           limit: 1
-        }]);
+        }], { signal });
 
         const currentApprovedList = currentApprovedLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
@@ -338,7 +342,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           authors: [MODERATOR_HEX],
           '#d': ['soapbox-hidden-apps'],
           limit: 1
-        }]);
+        }], { signal });
 
         const currentHiddenList = currentHiddenLists.reduce((latest: NostrEvent | null, current: NostrEvent) =>
           !latest || current.created_at > latest.created_at ? current : latest,
