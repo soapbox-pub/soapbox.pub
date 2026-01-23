@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "building-pathos",
   "title": "Building Pathos: From Hackathon to Real-World Activism",
   "excerpt": "We built a censorship-resistant platform for activists in 48 hours. Within hours, Venezuelan activists were using it to organize against authoritarianism.",
-  "coverImage": "/assets/blog/pathos/pathos-cover.jpg",
+  "coverImage": "/assets/blog/pathos/team-selfie.jpg",
   "date": "2026-01-23",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/derek.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/pathos/pathos-cover.jpg"
+    "url": "/assets/blog/pathos/team-selfie.jpg"
   },
   "featured": false,
   "tags": ["nostr", "bitcoin", "activism", "hackathon", "pathos"]
