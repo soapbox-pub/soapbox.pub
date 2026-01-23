@@ -246,7 +246,15 @@ export default function BuildingPathos() {
       </p>
 
       <p>
-        We built it in a weekend. It's already being used in the field. And we're just getting started.
+        This is why Soapbox exists. Every tool we build - <a href="https://soapbox.pub/tools/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Pathos - shares the same DNA: decentralized infrastructure that no single entity can control. We're not building products for the sake of products. We're building the foundation for a world where communication, identity, and money can't be taken away by the powerful.
+      </p>
+
+      <p>
+        Freedom tech isn't a niche. It's the future of the internet. And when that future arrives, the tools need to already exist.
+      </p>
+
+      <p>
+        We built Pathos in a weekend. It's already being used in the field. And we're just getting started.
       </p>
 
       <div className="not-prose my-12">
