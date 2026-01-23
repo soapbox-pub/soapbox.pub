@@ -73,6 +73,7 @@ import * as announcingshakespearecommunity from '../../components/blog/posts/ann
 import * as shakespearenovember2025update from '../../components/blog/posts/shakespeare-november-2025-update';
 import * as shakespearemobiledevelopment from '../../components/blog/posts/shakespeare-mobile-development';
 import * as inkwellborninwalmart from '../../components/blog/posts/inkwell-born-in-walmart';
+import * as buildingpathos from '../../components/blog/posts/building-pathos';
 
 export interface BlogPost {
   slug: string;
@@ -93,6 +94,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  buildingpathos.meta,
   inkwellborninwalmart.meta,
   ourstanceonai.meta,
   whatsinaname.meta,
@@ -172,6 +174,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'buildingpathos':
+      return (await import('../../components/blog/posts/building-pathos')).default;
     case 'inkwellborninwalmart':
       return (await import('../../components/blog/posts/inkwell-born-in-walmart')).default;
     case 'ourstanceonai':
