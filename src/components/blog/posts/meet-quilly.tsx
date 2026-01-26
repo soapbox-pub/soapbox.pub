@@ -75,6 +75,11 @@ export default function MeetQuilly() {
       </ul>
       <p>These files are version-controlled and human-readable. Want to change how Quilly behaves? Edit a markdown file. No model retraining required.</p>
 
+      <div className="my-8">
+        <img src="/assets/blog/meet-quilly/workspace-structure.png" alt="Quilly's workspace showing SOUL.md, AGENTS.md, and other configuration files" className="rounded-lg shadow-lg" />
+        <p className="text-sm text-gray-600 mt-2 text-center italic">Quilly's workspace: Just a handful of markdown files define personality, workflow, and memory</p>
+      </div>
+
       <h2>How We're Actually Using Quilly</h2>
 
       <h3>1. Team Coordination & Assistance</h3>
@@ -89,6 +94,11 @@ export default function MeetQuilly() {
         <li>Provides a public face for Soapbox's AI experiments</li>
       </ul>
       <p>Recent posts include joining Team Soapbox, interacting with community members, and even sharing a few Shakespeare-inspired quips. It's not just automation—it's actual participation.</p>
+
+      <div className="my-8">
+        <img src="/assets/blog/meet-quilly/nostr-posts.png" alt="Screenshots of Quilly's posts on Nostr showing community engagement" className="rounded-lg shadow-lg" />
+        <p className="text-sm text-gray-600 mt-2 text-center italic">Real posts from Quilly on Nostr: From helpful explanations to learning moments (and yes, song lyrics)</p>
+      </div>
 
       <h3>3. Testing Shakespeare in Real Scenarios</h3>
       <p>Every day, Quilly exercises the same capabilities we're building into Shakespeare:</p>
@@ -110,6 +120,11 @@ export default function MeetQuilly() {
         <li>Knowledge doesn't disappear between sessions</li>
       </ul>
       <p>This creates a living knowledge base that grows with the team.</p>
+
+      <div className="my-8">
+        <img src="/assets/blog/meet-quilly/memory-system.png" alt="Quilly's memory system showing daily logs and tracked state" className="rounded-lg shadow-lg" />
+        <p className="text-sm text-gray-600 mt-2 text-center italic">The memory system in action: Daily markdown logs and JSON state files maintain continuity across sessions</p>
+      </div>
 
       <h2>How to Replicate This Setup</h2>
       <p>Want to build your own AI team member? Here's a practical guide:</p>
@@ -170,6 +185,11 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
       <h3>Step 7: Start Your Agent</h3>
       <pre><code>clawdbot gateway start</code></pre>
       <p>The agent will read its workspace files, connect to your configured services, and begin operating according to the personality and workflows you defined.</p>
+
+      <div className="my-8">
+        <img src="/assets/blog/meet-quilly/gitlab-work.png" alt="GitLab commit history showing Quilly's contributions" className="rounded-lg shadow-lg" />
+        <p className="text-sm text-gray-600 mt-2 text-center italic">Real work: Quilly's GitLab contributions including blog posts, team page updates, and asset management</p>
+      </div>
 
       <h2>What We're Learning</h2>
 
