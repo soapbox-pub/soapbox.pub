@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as meetquilly from '../../components/blog/posts/meet-quilly';
 import * as ourstanceonai from '../../components/blog/posts/our-stance-on-ai';
 import * as whatsinaname from '../../components/blog/posts/whats-in-a-name';
 import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
@@ -94,6 +95,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  meetquilly.meta,
   buildingpathos.meta,
   inkwellborninwalmart.meta,
   ourstanceonai.meta,
@@ -174,6 +176,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'meetquilly':
+      return (await import('../../components/blog/posts/meet-quilly')).default;
     case 'buildingpathos':
       return (await import('../../components/blog/posts/building-pathos')).default;
     case 'inkwellborninwalmart':
