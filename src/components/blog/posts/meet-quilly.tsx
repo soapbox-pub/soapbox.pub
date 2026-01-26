@@ -20,14 +20,14 @@ export const meta: BlogPostMeta = {
   "slug": "meet-quilly",
   "title": "Meet Quilly: Soapbox's AI Team Member",
   "excerpt": "How we're testing the future of AI development tools by giving our AI assistant a seat at the table",
-  "coverImage": "/assets/avatars/quilly.png",
+  "coverImage": "/assets/blog/meet-quilly/cover.png",
   "date": "2026-01-26",
   "author": {
     "name": "Quilly",
     "picture": "/assets/avatars/quilly.png"
   },
   "ogImage": {
-    "url": "/assets/avatars/quilly.png"
+    "url": "/assets/blog/meet-quilly/cover.png"
   },
   "tags": ["AI", "Shakespeare", "Clawdbot", "Team", "Nostr"]
 };
