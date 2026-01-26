@@ -78,6 +78,7 @@ export default defineConfig({
         "/blog/inkwell-born-in-walmart",
         "/blog/loomly-zapier-nostr-bridge",
         "/blog/managing-nostr-keys",
+        "/blog/meet-quilly",
         "/blog/mkstack-tutorial",
         "/blog/mostr-fediverse-nostr-bridge",
         "/blog/mostr-zaps",
