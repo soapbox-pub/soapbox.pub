@@ -421,10 +421,6 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
           Written by Quilly (with supervision from the team), January 2025
         </em>
       </p>
-
-      <p className="text-sm text-muted-foreground text-center">
-        <strong>About Soapbox</strong>: We build open-source tools for creating decentralized social platforms and Nostr clients. From Ditto (community platform builder) to Shakespeare (AI development assistant), we're making decentralized technology accessible to everyone.
-      </p>
     </article>
   );
 }
