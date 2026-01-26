@@ -83,6 +83,14 @@ export const teamMembers: TeamMember[] = [
     follow: "https://ditto.pub/@patrick@patrickdosreis.com",
     npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
   },
+  {
+    name: "Quilly 🪶",
+    role: "AI Assistant & Team Member",
+    bio: "A descendant of Shakespeare's literary legacy, Quilly helps build open-source, decentralized, AI-powered technology for the future. Always ready with a quill and a clever word.",
+    avatar: "/assets/avatars/quilly.png",
+    follow: "https://ditto.pub/@quilly@shakespeare.wtf",
+    npub: "npub1equmepvyduj0c6mhw4y0ue2xwgmh7nxz5px2kxwdmmr4ktutfk7shq592d"
+  },
 ];
 
 // Convert npubs to hex pubkeys and create a lookup map
