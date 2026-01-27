@@ -41,6 +41,7 @@ export default defineConfig({
 
         // Blog posts
         "/blog/announcing-clawstr",
+        "/blog/vibe-coding-anniversary",
         "/blog/building-pathos",
         "/blog/announcing-ditto",
         "/blog/announcing-henhouse",
