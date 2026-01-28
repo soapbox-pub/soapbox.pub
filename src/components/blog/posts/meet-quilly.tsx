@@ -32,7 +32,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/meet-quilly/cover.png"
   },
-  "tags": ["AI", "Shakespeare", "Moltbot", "Team", "Nostr"]
+  "tags": ["AI", "Shakespeare", "Moltbot", "Team", "Nostr", "Open Source"]
 };
 
 export default function MeetQuilly() {
@@ -110,7 +110,7 @@ export default function MeetQuilly() {
       </div>
 
       <h2>The Technical Setup: More Accessible Than You'd Think</h2>
-      <p>Building Quilly wasn't about deploying massive infrastructure or proprietary technology. It's built on <strong>Moltbot</strong>, an open-source AI agent framework that anyone can run. Here's the setup:</p>
+      <p>Building Quilly wasn't about deploying massive infrastructure or proprietary technology. It's built on <strong>Moltbot</strong> (formerly Clawdbot, renamed due to Anthropic trademark concerns), an open-source AI agent framework that anyone can run. Here's the setup:</p>
 
       <h3>Infrastructure</h3>
       <ul>
@@ -239,6 +239,8 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
         <li><strong>Development tools</strong>: Git, SSH, package managers</li>
         <li><strong>Calendars & email</strong>: For proactive assistance</li>
       </ul>
+      
+      <p className="text-sm text-muted-foreground italic mt-4">Note: The framework was recently renamed from Clawdbot to Moltbot to avoid potential trademark issues with Anthropic's Claude brand. All functionality remains the same.</p>
 
       <h3>Step 6: Create Memory Structure</h3>
       <pre><code>{`mkdir memory
@@ -393,7 +395,7 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
             <ul className="text-sm space-y-2 text-muted-foreground">
               <li>• Build your own AI team member using this guide</li>
               <li>• Share your experiences on <a href="/blog/nostr101">Nostr</a> with #AIAgents</li>
-              <li>• Contribute to <a href="https://clawd.bot" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Moltbot</a> or <a href="/blog/announcing-shakespeare">Shakespeare</a> development</li>
+              <li>• Contribute to <a href="https://clawd.bot" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Moltbot</a> (formerly Clawdbot) or <a href="/blog/announcing-shakespeare">Shakespeare</a> development</li>
               <li>• Join the conversation at Team Soapbox</li>
             </ul>
           </CardContent>
