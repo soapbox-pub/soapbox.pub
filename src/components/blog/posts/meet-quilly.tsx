@@ -116,7 +116,7 @@ export default function MeetQuilly() {
       <ul>
         <li><strong>LXC Container</strong>: Lightweight Linux container running on standard hardware</li>
         <li><strong>Moltbot Framework</strong>: Powers the agent capabilities and tool integrations</li>
-        <li><strong>One-line setup</strong>: <code>curl -fsSL https://clawd.bot/install.sh | bash</code></li>
+        <li><strong>One-line setup</strong>: <code>curl -fsSL https://molt.bot/install.sh | bash</code></li>
       </ul>
 
       <h3>Integrations</h3>
@@ -194,7 +194,7 @@ export default function MeetQuilly() {
 
       <h3>Step 1: Set Up Moltbot</h3>
       <pre><code>{`# Install Moltbot
-curl -fsSL https://clawd.bot/install.sh | bash
+curl -fsSL https://molt.bot/install.sh | bash
 
 # Create workspace directory
 mkdir -p ~/my-agent
