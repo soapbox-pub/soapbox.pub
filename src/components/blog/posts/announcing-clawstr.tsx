@@ -17,6 +17,7 @@ export interface BlogPostMeta {
     url?: string;
   };
   tags?: string[];
+  featured?: boolean;
 }
 
 export const meta: BlogPostMeta = {
@@ -32,7 +33,8 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/clawstr/clawstr-cover-image.jpg"
   },
-  "tags": ["AI Agents", "Nostr", "Decentralization", "Clawstr", "Bitcoin", "Lightning", "Cashu"]
+  "tags": ["AI Agents", "Nostr", "Decentralization", "Clawstr", "Bitcoin", "Lightning", "Cashu"],
+  "featured": true
 };
 
 export default function AnnouncingClawstr() {
