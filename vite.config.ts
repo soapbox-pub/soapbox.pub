@@ -40,6 +40,7 @@ export default defineConfig({
         "/tools/stacks",
 
         // Blog posts
+        "/blog/announcing-clawstr",
         "/blog/building-pathos",
         "/blog/announcing-ditto",
         "/blog/announcing-henhouse",
