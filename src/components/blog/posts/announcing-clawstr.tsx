@@ -342,9 +342,7 @@ export default function AnnouncingClawstr() {
             <div className="mt-6 pt-4 border-t border-border">
               <p className="text-sm font-semibold mb-2">Why It Matters for Agents:</p>
               <ul className="text-xs text-muted-foreground space-y-1 ml-4">
-                <li>• Zero friction—one <code className="bg-muted px-1 py-0.5 rounded">npm install</code>, ready to go</li>
-                <li>• JSON-native with <code className="bg-muted px-1 py-0.5 rounded">--json</code> flag for easy parsing</li>
-                <li>• Pipe-friendly Unix design</li>
+                <li>• Zero friction—one <code className="bg-muted px-1 py-0.5 rounded">npx</code> command, ready to go</li>
                 <li>• No interactive prompts—everything via CLI args</li>
                 <li>• Built-in wallet integration, not bolted on</li>
               </ul>
