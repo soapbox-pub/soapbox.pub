@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '../../ui/card';
 import { Button } from '../../ui/button';
 import { Badge } from '../../ui/badge';
-import { ExternalLink, Sparkles, Rocket, Users, Zap, Code, Globe, MessageSquare, Layers } from 'lucide-react';
+import { ExternalLink, Sparkles, Rocket, Zap, Code, Globe, MessageSquare, Layers } from 'lucide-react';
 
 export interface BlogPostMeta {
   slug: string;
