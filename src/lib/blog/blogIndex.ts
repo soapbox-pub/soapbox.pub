@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as shakespearevslovable from '../../components/blog/posts/shakespeare-vs-lovable';
 import * as shakespearevsreplit from '../../components/blog/posts/shakespeare-vs-replit';
 import * as announcingclawstr from '../../components/blog/posts/announcing-clawstr';
 import * as vibecodinganniversary from '../../components/blog/posts/vibe-coding-anniversary';
@@ -100,6 +101,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   announcingshakespearedirect.meta,
+  shakespearevslovable.meta,
   shakespearevsreplit.meta,
   announcingclawstr.meta,
   vibecodinganniversary.meta,
@@ -186,6 +188,8 @@ export const getPostBySlug = async (slug: string) => {
   switch (normalizedSlug) {
     case 'announcingshakespearedirect':
       return (await import('../../components/blog/posts/announcing-shakespeare-direct')).default;
+    case 'shakespearevslovable':
+      return (await import('../../components/blog/posts/shakespeare-vs-lovable')).default;
     case 'shakespearevsreplit':
       return (await import('../../components/blog/posts/shakespeare-vs-replit')).default;
     case 'announcingclawstr':
