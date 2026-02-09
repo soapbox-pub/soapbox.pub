@@ -41,6 +41,7 @@ export default defineConfig({
 
         // Blog posts
         "/blog/announcing-shakespeare-direct",
+        "/blog/shakespeare-vs-cursor",
         "/blog/shakespeare-vs-goose",
         "/blog/shakespeare-vs-lovable",
         "/blog/shakespeare-vs-replit",
