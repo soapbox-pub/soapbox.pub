@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as shakespearevsv0 from '../../components/blog/posts/shakespeare-vs-v0';
 import * as shakespearevscursor from '../../components/blog/posts/shakespeare-vs-cursor';
 import * as shakespearevsgoose from '../../components/blog/posts/shakespeare-vs-goose';
 import * as shakespearevslovable from '../../components/blog/posts/shakespeare-vs-lovable';
@@ -103,6 +104,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   announcingshakespearedirect.meta,
+  shakespearevsv0.meta,
   shakespearevscursor.meta,
   shakespearevsgoose.meta,
   shakespearevslovable.meta,
@@ -192,6 +194,8 @@ export const getPostBySlug = async (slug: string) => {
   switch (normalizedSlug) {
     case 'announcingshakespearedirect':
       return (await import('../../components/blog/posts/announcing-shakespeare-direct')).default;
+    case 'shakespearevsv0':
+      return (await import('../../components/blog/posts/shakespeare-vs-v0')).default;
     case 'shakespearevscursor':
       return (await import('../../components/blog/posts/shakespeare-vs-cursor')).default;
     case 'shakespearevsgoose':
