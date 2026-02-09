@@ -78,6 +78,14 @@ export default function GitHubBackupGuide() {
         Once you're logged in, you'll see your dashboard. Look for the green "New" button in the top right corner - that's where we'll start.
       </p>
 
+      <div className="not-prose my-6">
+        <img 
+          src="/assets/blog/github-backup-guide/step2-new-button.png" 
+          alt="GitHub dashboard showing the green New button in the top right corner"
+          className="rounded-lg border shadow-md w-full"
+        />
+      </div>
+
       <p>
         Clicking "New" will take you to the repository creation page. Here's what you need to fill out:
       </p>
@@ -104,9 +112,25 @@ export default function GitHubBackupGuide() {
         </Card>
       </div>
 
+      <div className="not-prose my-6">
+        <img 
+          src="/assets/blog/github-backup-guide/step2-repo-form.png" 
+          alt="GitHub repository creation form showing the name and description fields"
+          className="rounded-lg border shadow-md w-full"
+        />
+      </div>
+
       <p>
         After filling in the details, scroll down and click the green "Create repository" button.
       </p>
+
+      <div className="not-prose my-6">
+        <img 
+          src="/assets/blog/github-backup-guide/step2-create-button.png" 
+          alt="GitHub Create repository button"
+          className="rounded-lg border shadow-md w-full"
+        />
+      </div>
 
       <h2 className="flex items-center gap-2">
         <GitBranch className="h-6 w-6 text-blue-500" />
@@ -117,6 +141,14 @@ export default function GitHubBackupGuide() {
         GitHub will redirect you to your new repository page. The most important thing here is the blue box that shows your repository URL. Copy this URL. You'll need it for the next step.
       </p>
 
+      <div className="not-prose my-6">
+        <img 
+          src="/assets/blog/github-backup-guide/step3-repo-url.png" 
+          alt="GitHub repository page showing the repository URL to copy"
+          className="rounded-lg border shadow-md w-full"
+        />
+      </div>
+
       <h2 className="flex items-center gap-2">
         <Cloud className="h-6 w-6 text-green-500" />
         Step 4: Connect Your Project
@@ -125,6 +157,14 @@ export default function GitHubBackupGuide() {
       <p>
         Now head back to your project in Shakespeare. Look for the cloud icon and select GitHub from the options.
       </p>
+
+      <div className="not-prose my-6">
+        <img 
+          src="/assets/blog/github-backup-guide/step4-shakespeare-connect.png" 
+          alt="Shakespeare interface showing the GitHub connection option"
+          className="rounded-lg border shadow-md w-full"
+        />
+      </div>
 
       <p>
         Paste the URL you copied from GitHub into the connection field and click "Push." Your project will now sync to GitHub!
