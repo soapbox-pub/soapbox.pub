@@ -23,7 +23,7 @@ export interface BlogPostMeta {
 export const meta: BlogPostMeta = {
   "slug": "announcing-shakespeare-direct",
   "title": "🎬 Announcing: Shakespeare Direct",
-  "excerpt": "We just released our Shakespeare Direct presentation, a showcase of our work at Soapbox in the past year. Watch the full video presentation here.",
+  "excerpt": "We just released our latest Shakespeare Direct presentation, a showcase of incredible apps built by our team and community using Shakespeare. Watch the full video presentation here.",
   "coverImage": "/assets/blog/announcing-shakespeare-direct/cover.png",
   "date": "2026-02-10",
   "author": {
@@ -33,7 +33,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/announcing-shakespeare-direct/cover.png"
   },
-  "tags": ["shakespeare", "announcement", "video", "soapbox"]
+  "tags": ["shakespeare", "announcement", "video", "soapbox", "showcase"]
 };
 
 export default function AnnouncingShakespeareDirect() {
@@ -48,13 +48,13 @@ export default function AnnouncingShakespeareDirect() {
             🎭 Shakespeare
           </Badge>
           <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-            Year in Review
+            Showcase
           </Badge>
         </div>
       </div>
 
       <p className="text-xl leading-relaxed text-muted-foreground mb-8">
-        We just released our Shakespeare Direct presentation, a showcase of our work at Soapbox in the past year.
+        We just released our Shakespeare Direct presentation, a showcase of various apps built by our team and the community using Shakespeare.
       </p>
 
       <div className="not-prose my-8">
@@ -89,43 +89,44 @@ export default function AnnouncingShakespeareDirect() {
       </div>
 
       <p>
-        In this presentation, we dive deep into everything we've been building, including updates on Shakespeare, our AI-powered website builder for Nostr. It's been an incredible year of shipping, learning, and iterating.
+        In this presentation, we showcase the incredible versatility of Shakespeare, our AI-powered website builder for Nostr. You'll see real-world examples of applications built entirely through conversation with AI, demonstrating that you don't need to be a coder to build powerful tools.
       </p>
 
       <p>
-        Shakespeare Direct covers our journey, the technical challenges we've overcome, and our vision for the future of decentralized applications. Whether you're a developer, a creator, or just interested in the intersection of AI and Nostr, this presentation has something for you.
+        From community hubs to specialized utilities, the creativity on display is inspiring. This isn't just about what we've built—it's about what <em>you</em> can build.
       </p>
 
-      <h2>What to Expect</h2>
-
-      <ul>
-        <li>A look back at our major milestones over the last year.</li>
-        <li>Deep dives into Shakespeare and how it empowers users.</li>
-        <li>Insights into our development process and community feedback.</li>
-        <li>A glimpse into what's coming next for Soapbox and Shakespeare.</li>
-      </ul>
+      <h2>You Can Do It Too</h2>
 
       <p>
-        We're incredibly proud of what our team and community have achieved. This video is a celebration of that hard work and a roadmap for where we're going.
+        The most exciting part of this showcase is that every single app you see was built using tools available to you right now. Shakespeare empowers anyone to turn an idea into a deployed application in minutes.
+      </p>
+
+      <p>
+        Have an idea for a Nostr app? A community site? A personal portfolio? You don't need to wait for a developer. You have the power to build it yourself, today.
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-green-200 dark:border-green-800">
-          <CardContent className="p-6 text-center">
-            <h3 className="text-xl font-bold mb-4 text-green-700 dark:text-green-300">
-              Build with Shakespeare
+        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20">
+          <CardContent className="p-8 text-center">
+            <h3 className="text-3xl font-bold mb-4 text-green-700 dark:text-green-300">
+              Ready to Build Your Idea?
             </h3>
-            <p className="text-muted-foreground mb-4">
-              Inspired by what you saw? Start building your own decentralized websites today.
+            <p className="text-lg text-muted-foreground mb-6">
+              Join the creators building the decentralized future. It starts with a simple conversation.
             </p>
             <Button
               asChild
-              className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700"
+              size="lg"
+              className="w-full sm:w-auto px-8 py-6 text-lg bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700"
             >
               <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                Try Shakespeare Now →
+                Start Building with Shakespeare →
               </a>
             </Button>
+            <p className="mt-4 text-sm text-muted-foreground">
+              No coding required. Just bring your ideas.
+            </p>
           </CardContent>
         </Card>
       </div>

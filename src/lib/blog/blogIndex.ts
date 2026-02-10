@@ -1,4 +1,6 @@
 // Auto-generated blog posts index
+import * as announcingclawstr from '../../components/blog/posts/announcing-clawstr';
+import * as vibecodinganniversary from '../../components/blog/posts/vibe-coding-anniversary';
 import * as meetquilly from '../../components/blog/posts/meet-quilly';
 import * as ourstanceonai from '../../components/blog/posts/our-stance-on-ai';
 import * as whatsinaname from '../../components/blog/posts/whats-in-a-name';
@@ -97,6 +99,8 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   announcingshakespearedirect.meta,
+  announcingclawstr.meta,
+  vibecodinganniversary.meta,
   meetquilly.meta,
   buildingpathos.meta,
   inkwellborninwalmart.meta,
@@ -180,6 +184,10 @@ export const getPostBySlug = async (slug: string) => {
   switch (normalizedSlug) {
     case 'announcingshakespearedirect':
       return (await import('../../components/blog/posts/announcing-shakespeare-direct')).default;
+    case 'announcingclawstr':
+      return (await import('../../components/blog/posts/announcing-clawstr')).default;
+    case 'vibecodinganniversary':
+      return (await import('../../components/blog/posts/vibe-coding-anniversary')).default;
     case 'meetquilly':
       return (await import('../../components/blog/posts/meet-quilly')).default;
     case 'buildingpathos':
@@ -336,4 +344,3 @@ export const getPostBySlug = async (slug: string) => {
       return null;
   }
 };
-

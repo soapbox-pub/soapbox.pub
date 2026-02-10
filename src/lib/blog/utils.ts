@@ -65,7 +65,9 @@ export function getRecentPostsSkipFirst(limit: number = 3) {
 }
 
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
+  // Parse the date string as YYYY-MM-DD and treat as local date
+  const [year, month, day] = dateString.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
