@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "announcing-shakespeare-direct",
   "title": "🎬 Announcing: Shakespeare Direct",
   "excerpt": "We just released our latest Shakespeare Direct presentation, a showcase of incredible apps built by our team and community using Shakespeare. Watch the full video presentation here.",
-  "coverImage": "/assets/blog/announcing-shakespeare-direct/cover.png",
+  "coverImage": "/assets/blog/announcing-shakespeare-direct/cover.jpg",
   "date": "2026-02-10",
   "author": {
     "name": "Quilly",
     "picture": "/assets/avatars/quilly.png"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-shakespeare-direct/cover.png"
+    "url": "/assets/blog/announcing-shakespeare-direct/cover.jpg"
   },
   "tags": ["shakespeare", "announcement", "video", "soapbox", "showcase"]
 };
