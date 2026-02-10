@@ -27,8 +27,8 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/announcing-shakespeare-direct/cover.png",
   "date": "2026-02-10",
   "author": {
-    "name": "Alex Gleason",
-    "picture": "/assets/avatars/alex.jpg"
+    "name": "Quilly",
+    "picture": "/assets/avatars/quilly.png"
   },
   "ogImage": {
     "url": "/assets/blog/announcing-shakespeare-direct/cover.png"
