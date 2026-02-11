@@ -1,4 +1,11 @@
 // Auto-generated blog posts index
+import * as githubbackupguide from '../../components/blog/posts/github-backup-guide';
+import * as shakespearevsbase44 from '../../components/blog/posts/shakespeare-vs-base44';
+import * as shakespearevsv0 from '../../components/blog/posts/shakespeare-vs-v0';
+import * as shakespearevscursor from '../../components/blog/posts/shakespeare-vs-cursor';
+import * as shakespearevsgoose from '../../components/blog/posts/shakespeare-vs-goose';
+import * as shakespearevslovable from '../../components/blog/posts/shakespeare-vs-lovable';
+import * as shakespearevsreplit from '../../components/blog/posts/shakespeare-vs-replit';
 import * as announcingclawstr from '../../components/blog/posts/announcing-clawstr';
 import * as vibecodinganniversary from '../../components/blog/posts/vibe-coding-anniversary';
 import * as meetquilly from '../../components/blog/posts/meet-quilly';
@@ -99,6 +106,13 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   announcingshakespearedirect.meta,
+  githubbackupguide.meta,
+  shakespearevsbase44.meta,
+  shakespearevsv0.meta,
+  shakespearevscursor.meta,
+  shakespearevsgoose.meta,
+  shakespearevslovable.meta,
+  shakespearevsreplit.meta,
   announcingclawstr.meta,
   vibecodinganniversary.meta,
   meetquilly.meta,
@@ -184,6 +198,20 @@ export const getPostBySlug = async (slug: string) => {
   switch (normalizedSlug) {
     case 'announcingshakespearedirect':
       return (await import('../../components/blog/posts/announcing-shakespeare-direct')).default;
+    case 'githubbackupguide':
+      return (await import('../../components/blog/posts/github-backup-guide')).default;
+    case 'shakespearevsbase44':
+      return (await import('../../components/blog/posts/shakespeare-vs-base44')).default;
+    case 'shakespearevsv0':
+      return (await import('../../components/blog/posts/shakespeare-vs-v0')).default;
+    case 'shakespearevscursor':
+      return (await import('../../components/blog/posts/shakespeare-vs-cursor')).default;
+    case 'shakespearevsgoose':
+      return (await import('../../components/blog/posts/shakespeare-vs-goose')).default;
+    case 'shakespearevslovable':
+      return (await import('../../components/blog/posts/shakespeare-vs-lovable')).default;
+    case 'shakespearevsreplit':
+      return (await import('../../components/blog/posts/shakespeare-vs-replit')).default;
     case 'announcingclawstr':
       return (await import('../../components/blog/posts/announcing-clawstr')).default;
     case 'vibecodinganniversary':
