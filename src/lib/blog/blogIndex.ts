@@ -84,6 +84,7 @@ import * as shakespearenovember2025update from '../../components/blog/posts/shak
 import * as shakespearemobiledevelopment from '../../components/blog/posts/shakespeare-mobile-development';
 import * as inkwellborninwalmart from '../../components/blog/posts/inkwell-born-in-walmart';
 import * as buildingpathos from '../../components/blog/posts/building-pathos';
+import * as codingdoesntdie from '../../components/blog/posts/coding-doesnt-die';
 import * as announcingshakespearedirect from '../../components/blog/posts/announcing-shakespeare-direct';
 
 export interface BlogPost {
@@ -105,6 +106,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  codingdoesntdie.meta,
   announcingshakespearedirect.meta,
   githubbackupguide.meta,
   shakespearevsbase44.meta,
@@ -196,6 +198,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'codingdoesntdie':
+      return (await import('../../components/blog/posts/coding-doesnt-die')).default;
     case 'announcingshakespearedirect':
       return (await import('../../components/blog/posts/announcing-shakespeare-direct')).default;
     case 'githubbackupguide':
