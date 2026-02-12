@@ -1,4 +1,14 @@
 // Auto-generated blog posts index
+import * as githubbackupguide from '../../components/blog/posts/github-backup-guide';
+import * as shakespearevsbase44 from '../../components/blog/posts/shakespeare-vs-base44';
+import * as shakespearevsv0 from '../../components/blog/posts/shakespeare-vs-v0';
+import * as shakespearevscursor from '../../components/blog/posts/shakespeare-vs-cursor';
+import * as shakespearevsgoose from '../../components/blog/posts/shakespeare-vs-goose';
+import * as shakespearevslovable from '../../components/blog/posts/shakespeare-vs-lovable';
+import * as shakespearevsreplit from '../../components/blog/posts/shakespeare-vs-replit';
+import * as announcingclawstr from '../../components/blog/posts/announcing-clawstr';
+import * as vibecodinganniversary from '../../components/blog/posts/vibe-coding-anniversary';
+import * as meetquilly from '../../components/blog/posts/meet-quilly';
 import * as ourstanceonai from '../../components/blog/posts/our-stance-on-ai';
 import * as whatsinaname from '../../components/blog/posts/whats-in-a-name';
 import * as freesoftwarefreesocieties from '../../components/blog/posts/free-software-free-societies';
@@ -74,6 +84,8 @@ import * as shakespearenovember2025update from '../../components/blog/posts/shak
 import * as shakespearemobiledevelopment from '../../components/blog/posts/shakespeare-mobile-development';
 import * as inkwellborninwalmart from '../../components/blog/posts/inkwell-born-in-walmart';
 import * as buildingpathos from '../../components/blog/posts/building-pathos';
+import * as codingdoesntdie from '../../components/blog/posts/coding-doesnt-die';
+import * as announcingshakespearedirect from '../../components/blog/posts/announcing-shakespeare-direct';
 
 export interface BlogPost {
   slug: string;
@@ -94,6 +106,18 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  codingdoesntdie.meta,
+  announcingshakespearedirect.meta,
+  githubbackupguide.meta,
+  shakespearevsbase44.meta,
+  shakespearevsv0.meta,
+  shakespearevscursor.meta,
+  shakespearevsgoose.meta,
+  shakespearevslovable.meta,
+  shakespearevsreplit.meta,
+  announcingclawstr.meta,
+  vibecodinganniversary.meta,
+  meetquilly.meta,
   buildingpathos.meta,
   inkwellborninwalmart.meta,
   ourstanceonai.meta,
@@ -174,6 +198,30 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'codingdoesntdie':
+      return (await import('../../components/blog/posts/coding-doesnt-die')).default;
+    case 'announcingshakespearedirect':
+      return (await import('../../components/blog/posts/announcing-shakespeare-direct')).default;
+    case 'githubbackupguide':
+      return (await import('../../components/blog/posts/github-backup-guide')).default;
+    case 'shakespearevsbase44':
+      return (await import('../../components/blog/posts/shakespeare-vs-base44')).default;
+    case 'shakespearevsv0':
+      return (await import('../../components/blog/posts/shakespeare-vs-v0')).default;
+    case 'shakespearevscursor':
+      return (await import('../../components/blog/posts/shakespeare-vs-cursor')).default;
+    case 'shakespearevsgoose':
+      return (await import('../../components/blog/posts/shakespeare-vs-goose')).default;
+    case 'shakespearevslovable':
+      return (await import('../../components/blog/posts/shakespeare-vs-lovable')).default;
+    case 'shakespearevsreplit':
+      return (await import('../../components/blog/posts/shakespeare-vs-replit')).default;
+    case 'announcingclawstr':
+      return (await import('../../components/blog/posts/announcing-clawstr')).default;
+    case 'vibecodinganniversary':
+      return (await import('../../components/blog/posts/vibe-coding-anniversary')).default;
+    case 'meetquilly':
+      return (await import('../../components/blog/posts/meet-quilly')).default;
     case 'buildingpathos':
       return (await import('../../components/blog/posts/building-pathos')).default;
     case 'inkwellborninwalmart':
@@ -328,4 +376,3 @@ export const getPostBySlug = async (slug: string) => {
       return null;
   }
 };
-

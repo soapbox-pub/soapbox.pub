@@ -32,7 +32,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/meet-quilly/cover.png"
   },
-  "tags": ["AI", "Shakespeare", "Moltbot", "Team", "Nostr"]
+  "tags": ["AI", "Shakespeare", "OpenClaw", "Team", "Nostr"]
 };
 
 export default function MeetQuilly() {
@@ -110,13 +110,13 @@ export default function MeetQuilly() {
       </div>
 
       <h2>The Technical Setup: More Accessible Than You'd Think</h2>
-      <p>Building Quilly wasn't about deploying massive infrastructure or proprietary technology. It's built on <strong>Moltbot</strong>, an open-source AI agent framework that anyone can run. Here's the setup:</p>
+      <p>Building Quilly wasn't about deploying massive infrastructure or proprietary technology. It's built on <strong><a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer">OpenClaw</a></strong>, an open-source AI agent framework that anyone can run. Here's the setup:</p>
 
       <h3>Infrastructure</h3>
       <ul>
         <li><strong>LXC Container</strong>: Lightweight Linux container running on standard hardware</li>
-        <li><strong>Moltbot Framework</strong>: Powers the agent capabilities and tool integrations</li>
-        <li><strong>One-line setup</strong>: <code>curl -fsSL https://clawd.bot/install.sh | bash</code></li>
+        <li><strong>OpenClaw Framework</strong>: Powers the agent capabilities and tool integrations</li>
+        <li><strong>One-line setup</strong>: <code>curl -fsSL https://openclaw.ai/install.sh | bash</code></li>
       </ul>
 
       <h3>Integrations</h3>
@@ -192,9 +192,9 @@ export default function MeetQuilly() {
       <h2>How to Replicate This Setup</h2>
       <p>Want to build your own AI team member? Here's a practical guide:</p>
 
-      <h3>Step 1: Set Up Moltbot</h3>
-      <pre><code>{`# Install Moltbot
-curl -fsSL https://clawd.bot/install.sh | bash
+      <h3>Step 1: Set Up OpenClaw</h3>
+      <pre><code>{`# Install OpenClaw
+curl -fsSL https://openclaw.ai/install.sh | bash
 
 # Create workspace directory
 mkdir -p ~/my-agent
@@ -234,7 +234,7 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
 
       <h3>Step 5: Connect to Your World</h3>
       <ul>
-        <li><strong>Chat platforms</strong>: Signal, Discord, Telegram (via Moltbot integrations)</li>
+        <li><strong>Chat platforms</strong>: Signal, Discord, Telegram (via OpenClaw integrations)</li>
         <li><strong>Social networks</strong>: <a href="/blog/nostr101">Nostr</a>, Twitter, Mastodon</li>
         <li><strong>Development tools</strong>: Git, SSH, package managers</li>
         <li><strong>Calendars & email</strong>: For proactive assistance</li>
@@ -246,7 +246,7 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
 # Create MEMORY.md for long-term context`}</code></pre>
 
       <h3>Step 7: Start Your Agent</h3>
-      <pre><code>moltbot gateway start</code></pre>
+      <pre><code>openclaw gateway start</code></pre>
       <p>The agent will read its workspace files, connect to your configured services, and begin operating according to the personality and workflows you defined.</p>
 
       <div className="my-8">
@@ -393,7 +393,7 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
             <ul className="text-sm space-y-2 text-muted-foreground">
               <li>• Build your own AI team member using this guide</li>
               <li>• Share your experiences on <a href="/blog/nostr101">Nostr</a> with #AIAgents</li>
-              <li>• Contribute to <a href="https://clawd.bot" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Moltbot</a> or <a href="/blog/announcing-shakespeare">Shakespeare</a> development</li>
+              <li>• Contribute to <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">OpenClaw</a> or <a href="/blog/announcing-shakespeare">Shakespeare</a> development</li>
               <li>• Join the conversation at Team Soapbox</li>
             </ul>
           </CardContent>
