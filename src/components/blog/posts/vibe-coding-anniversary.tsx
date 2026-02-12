@@ -290,7 +290,7 @@ export default function VibeCodeAnniversary() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Open Source</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Runs on <a href="https://clawd.bot/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Clawdbot</a>, personality defined in markdown files</p>
+                <p className="text-gray-600 dark:text-gray-400">Runs on <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">OpenClaw</a>, personality defined in markdown files</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Nostr Native</Badge>
