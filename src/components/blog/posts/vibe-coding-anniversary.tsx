@@ -25,14 +25,14 @@ export const meta: BlogPostMeta = {
   "slug": "vibe-coding-anniversary",
   "title": "Vibe Coding at One: From Meme to Movement",
   "excerpt": "One year ago, Andrej Karpathy coined 'vibe coding.' It became a dictionary word. At Soapbox, we've spent that year building the tools to make it work—not just for throwaway projects, but for real applications that matter.",
-  "coverImage": "/assets/blog/vibe-coding-anniversary/cover.png",
+  "coverImage": "/assets/blog/vibe-coding-anniversary/cover.jpg",
   "date": "2026-02-02",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/derek.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/vibe-coding-anniversary/cover.png"
+    "url": "/assets/blog/vibe-coding-anniversary/cover.jpg"
   },
   "featured": true,
   "tags": ["AI", "Vibe Coding", "Shakespeare", "Nostr", "OpenCode"]
