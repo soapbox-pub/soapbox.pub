@@ -107,8 +107,8 @@ export default function AgoraConnectingFreedomFighters() {
           </figure>
           <figure className="m-0">
             <img
-              src="/assets/blog/about-agora/ve-country-home-page.png"
-              alt="Agora Venezuela country home page showing trending posts and community activity"
+              src="/assets/blog/about-agora/ve-map-bubbles.png"
+              alt="Agora world map showing activist activity bubbles across Venezuela and beyond"
               className="w-full rounded-lg"
             />
           </figure>
@@ -128,25 +128,6 @@ export default function AgoraConnectingFreedomFighters() {
             <p className="font-semibold text-blue-700 dark:text-blue-400">— Leopoldo López</p>
           </CardContent>
         </Card>
-      </div>
-
-      <div className="not-prose my-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <figure className="m-0">
-            <img
-              src="/assets/blog/about-agora/ve-example-post.png"
-              alt="Example post from a Venezuelan activist on Agora"
-              className="w-full rounded-lg"
-            />
-          </figure>
-          <figure className="m-0">
-            <img
-              src="/assets/blog/about-agora/ve-map-bubbles.png"
-              alt="Agora world map showing activist activity bubbles across Venezuela and beyond"
-              className="w-full rounded-lg"
-            />
-          </figure>
-        </div>
       </div>
 
       <p>
@@ -188,6 +169,25 @@ export default function AgoraConnectingFreedomFighters() {
       <p>
         Agora supports 26 languages: Spanish, Portuguese, French, German, Italian, Shona, Pashto, Farsi, Khmer, Chinese, Arabic, Russian, Burmese, Turkish, Vietnamese, Bengali, Urdu, Thai, Ukrainian, Swahili, Amharic, Filipino, Hindi, Indonesian, Japanese, and English.
       </p>
+
+      <div className="not-prose my-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <figure className="m-0">
+            <img
+              src="/assets/blog/about-agora/ve-example-post.png"
+              alt="Example post from a Venezuelan activist on Agora"
+              className="w-full rounded-lg"
+            />
+          </figure>
+          <figure className="m-0">
+            <img
+              src="/assets/blog/about-agora/ve-country-home-page.png"
+              alt="Agora Venezuela country home page showing trending posts and community activity"
+              className="w-full rounded-lg"
+            />
+          </figure>
+        </div>
+      </div>
 
       <h2>Why Nostr and Bitcoin?</h2>
 
