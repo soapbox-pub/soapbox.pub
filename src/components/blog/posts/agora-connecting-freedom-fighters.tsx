@@ -100,15 +100,15 @@ export default function AgoraConnectingFreedomFighters() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <figure className="m-0">
             <img
-              src="/assets/blog/about-agora/ve-action.png"
-              alt="Agora active actions feed showing a Venezuela challenge"
+              src="/assets/blog/about-agora/ve-map-bubbles.png"
+              alt="Agora world map showing activist activity bubbles across Venezuela and beyond"
               className="w-full rounded-lg"
             />
           </figure>
           <figure className="m-0">
             <img
-              src="/assets/blog/about-agora/ve-map-bubbles.png"
-              alt="Agora world map showing activist activity bubbles across Venezuela and beyond"
+              src="/assets/blog/about-agora/ve-action.png"
+              alt="Agora active actions feed showing a Venezuela challenge"
               className="w-full rounded-lg"
             />
           </figure>
@@ -174,15 +174,15 @@ export default function AgoraConnectingFreedomFighters() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <figure className="m-0">
             <img
-              src="/assets/blog/about-agora/ve-example-post.png"
-              alt="Example post from a Venezuelan activist on Agora"
+              src="/assets/blog/about-agora/ve-country-home-page.png"
+              alt="Agora Venezuela country home page showing trending posts and community activity"
               className="w-full rounded-lg"
             />
           </figure>
           <figure className="m-0">
             <img
-              src="/assets/blog/about-agora/ve-country-home-page.png"
-              alt="Agora Venezuela country home page showing trending posts and community activity"
+              src="/assets/blog/about-agora/ve-example-post.png"
+              alt="Example post from a Venezuelan activist on Agora"
               className="w-full rounded-lg"
             />
           </figure>
