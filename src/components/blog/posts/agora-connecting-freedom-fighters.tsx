@@ -24,14 +24,14 @@ export const meta: BlogPostMeta = {
   "slug": "agora-connecting-freedom-fighters",
   "title": "Agora: Connecting Freedom Fighters to Uncensorable International Support",
   "excerpt": "Agora gives activists a censorship-resistant platform to organize, document, and receive direct Bitcoin support from a global community.",
-  "coverImage": "/assets/blog/pathos/team-selfie.jpg",
+  "coverImage": "/assets/blog/about-agora/agora-cover.png",
   "date": "2026-02-21",
   "author": {
     "name": "Derek Ross",
     "picture": "/assets/avatars/derek.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/pathos/team-selfie.jpg"
+    "url": "/assets/blog/about-agora/agora-cover.png"
   },
   "featured": true,
   "tags": ["nostr", "bitcoin", "activism", "agora", "venezuela", "freedom"]
