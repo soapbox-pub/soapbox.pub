@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/vibe-coding-anniversary/cover.jpg"
   },
-  "featured": true,
+  "featured": false,
   "tags": ["AI", "Vibe Coding", "Shakespeare", "Nostr", "OpenCode"]
 };
 
