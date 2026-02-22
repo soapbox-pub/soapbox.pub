@@ -27,8 +27,8 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/about-agora/agora-cover.png",
   "date": "2026-02-21",
   "author": {
-    "name": "Derek Ross",
-    "picture": "/assets/avatars/derek.jpg"
+    "name": "M. K. Fain",
+    "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
     "url": "/assets/blog/about-agora/agora-cover.png"
