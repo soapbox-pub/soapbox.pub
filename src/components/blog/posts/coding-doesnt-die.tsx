@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/coding-doesnt-die/cover.jpg"
   },
-  "featured": true,
+  "featured": false,
   "tags": ["AI", "Vibe Coding", "Thought Leadership"]
 };
 
