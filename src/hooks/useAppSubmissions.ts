@@ -40,9 +40,7 @@ export function useAppSubmissions() {
 
   return useQuery({
     queryKey: ['app-submissions'],
-    queryFn: async (c): Promise<AppSubmission[]> => {
-      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(5000)]);
-
+    queryFn: async (): Promise<AppSubmission[]> => {
       // Get Soapbox team follow pack for auto-approval
       const teamPubkeys = new Set<string>();
       try {
@@ -54,7 +52,7 @@ export function useAppSubmissions() {
             authors: [addrData.pubkey],
             '#d': [addrData.identifier],
             limit: 1
-          }], { signal });
+          }], { signal: AbortSignal.timeout(1000) });
 
           if (teamEvents.length > 0) {
             const teamEvent = teamEvents[0];
@@ -75,38 +73,29 @@ export function useAppSubmissions() {
         kinds: [APP_SUBMISSION_KIND],
         '#t': ['soapbox-app-submission'],
         limit: 1000
-      }], { signal });
+      }], { signal: AbortSignal.timeout(5000) });
 
       // Note: Halloween submissions now use the same kind (31733) but are filtered by tags
       // They will be included in the main query but can be filtered out if needed
 
-      // Get all moderation lists in parallel with abort signals
-      const [featuredLists, approvedLists, homepageLists, hiddenLists] = await Promise.all([
-        nostr.query([{
-          kinds: [30267],
-          authors: [MODERATOR_HEX],
-          '#d': ['soapbox-featured-apps'],
-          limit: 10
-        }], { signal }),
-        nostr.query([{
-          kinds: [30267],
-          authors: [MODERATOR_HEX],
-          '#d': ['soapbox-approved-apps'],
-          limit: 10
-        }], { signal }),
-        nostr.query([{
-          kinds: [30267],
-          authors: [MODERATOR_HEX],
-          '#d': ['soapbox-homepage-apps'],
-          limit: 10
-        }], { signal }),
-        nostr.query([{
-          kinds: [30267],
-          authors: [MODERATOR_HEX],
-          '#d': ['soapbox-hidden-apps'],
-          limit: 10
-        }], { signal }),
-      ]);
+      // Get all moderation lists in a single combined query (more efficient)
+      const moderatorListEvents = await nostr.query([{
+        kinds: [30267],
+        authors: [MODERATOR_HEX],
+        '#d': [
+          'soapbox-featured-apps',
+          'soapbox-approved-apps',
+          'soapbox-homepage-apps',
+          'soapbox-hidden-apps',
+        ],
+        limit: 4,
+      }], { signal: AbortSignal.timeout(3000) });
+
+      // Extract individual lists from the combined result
+      const featuredLists = moderatorListEvents.filter(e => e.tags.some(tag => tag[0] === 'd' && tag[1] === 'soapbox-featured-apps'));
+      const approvedLists = moderatorListEvents.filter(e => e.tags.some(tag => tag[0] === 'd' && tag[1] === 'soapbox-approved-apps'));
+      const homepageLists = moderatorListEvents.filter(e => e.tags.some(tag => tag[0] === 'd' && tag[1] === 'soapbox-homepage-apps'));
+      const hiddenLists = moderatorListEvents.filter(e => e.tags.some(tag => tag[0] === 'd' && tag[1] === 'soapbox-hidden-apps'));
 
       // Process submissions and apply moderation
       const submissions: AppSubmission[] = [];
