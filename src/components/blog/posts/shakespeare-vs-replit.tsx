@@ -54,7 +54,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/shakespeare-vs-replit/cover.webp'
   },
-  featured: true,
+  featured: false,
   tags: ['Shakespeare', 'Replit', 'AI', 'Open Source', 'Comparison', 'Privacy', 'Freedom']
 };
 

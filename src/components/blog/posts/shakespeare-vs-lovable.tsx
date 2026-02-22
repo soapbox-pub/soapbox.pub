@@ -55,7 +55,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/shakespeare-vs-lovable/cover.webp'
   },
-  featured: true,
+  featured: false,
   tags: ['Shakespeare', 'Lovable', 'AI', 'Open Source', 'Comparison', 'Privacy', 'Freedom']
 };
 

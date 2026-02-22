@@ -55,7 +55,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/shakespeare-vs-v0/cover.webp'
   },
-  featured: true,
+  featured: false,
   tags: ['Shakespeare', 'v0', 'Vercel', 'AI', 'Open Source', 'Comparison', 'Privacy', 'Freedom']
 };
 
