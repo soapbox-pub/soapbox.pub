@@ -22,7 +22,7 @@ export interface BlogPostMeta {
 
 export const meta: BlogPostMeta = {
   "slug": "building-pathos",
-  "title": "Building Pathos: From Hackathon to Real-World Activism",
+  "title": "Building Agora: From Hackathon to Real-World Activism",
   "excerpt": "We built a censorship-resistant platform for activists in 48 hours. Within hours, Venezuelan activists were using it to organize against authoritarianism.",
   "coverImage": "/assets/blog/pathos/team-selfie.jpg",
   "date": "2026-01-23",
@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/pathos/team-selfie.jpg"
   },
   "featured": false,
-  "tags": ["nostr", "bitcoin", "activism", "hackathon", "pathos"]
+  "tags": ["nostr", "bitcoin", "activism", "hackathon", "agora"]
 };
 
 export default function BuildingPathos() {
@@ -47,7 +47,7 @@ export default function BuildingPathos() {
       <figure className="my-8">
         <img
           src="/assets/blog/pathos/team-selfie.jpg"
-          alt="The Pathos team at Bitcoin Park - Alex, MK, Chad, Derek, and Hzrd149 giving thumbs up around a conference table"
+          alt="The Agora team at Bitcoin Park - Alex, MK, Chad, Derek, and Hzrd149 giving thumbs up around a conference table"
           className="w-full rounded-lg"
         />
         <figcaption className="text-center text-sm text-muted-foreground mt-2">
@@ -95,7 +95,7 @@ export default function BuildingPathos() {
       <figure className="my-8">
         <img
           src="/assets/blog/pathos/team-discussion.jpg"
-          alt="The team in deep discussion around a conference table at Bitcoin Park, planning the Pathos architecture"
+          alt="The team in deep discussion around a conference table at Bitcoin Park, planning the Agora architecture"
           className="w-full rounded-lg"
         />
         <figcaption className="text-center text-sm text-muted-foreground mt-2">
@@ -112,22 +112,22 @@ export default function BuildingPathos() {
       <figure className="my-8">
         <img
           src="/assets/blog/pathos/terminal-dev.jpg"
-          alt="Laptop showing terminal with Pathos development environment running"
+          alt="Laptop showing terminal with Agora development environment running"
           className="w-full rounded-lg"
         />
         <figcaption className="text-center text-sm text-muted-foreground mt-2">
-          Building Pathos - late night development at Bitcoin Park.
+          Building Agora - late night development at Bitcoin Park.
         </figcaption>
       </figure>
 
       <p>
-        <strong><a href="https://pathos.place" target="_blank" rel="noopener noreferrer">Pathos</a></strong> is a decentralized activist platform built on Nostr and Bitcoin. It's designed for people who can't afford to trust centralized infrastructure.
+        <strong><a href="https://agora.spot" target="_blank" rel="noopener noreferrer">Agora</a></strong> is a decentralized activist platform built on Nostr and Bitcoin. It's designed for people who can't afford to trust centralized infrastructure.
       </p>
 
       <figure className="my-8">
         <img
           src="/assets/blog/pathos/team-working.jpg"
-          alt="The full Pathos team working around a conference table with laptops, whiteboards covered in ideas behind them"
+          alt="The full Agora team working around a conference table with laptops, whiteboards covered in ideas behind them"
           className="w-full rounded-lg"
         />
         <figcaption className="text-center text-sm text-muted-foreground mt-2">
@@ -151,17 +151,17 @@ export default function BuildingPathos() {
         <figure>
           <img
             src="/assets/blog/pathos/pathos-feed.jpg"
-            alt="Pathos app showing the Feed tab with posts from Venezuelan activists"
+            alt="Agora app showing the Feed tab with posts from Venezuelan activists"
             className="w-full rounded-lg"
           />
           <figcaption className="text-center text-sm text-muted-foreground mt-2">
-            Real posts from Venezuelan activists on the Pathos feed.
+            Real posts from Venezuelan activists on the Agora feed.
           </figcaption>
         </figure>
         <figure>
           <img
             src="/assets/blog/pathos/pathos-bitchat.png"
-            alt="Pathos Bitchat feature showing Bluetooth mesh messaging between users"
+            alt="Agora Bitchat feature showing Bluetooth mesh messaging between users"
             className="w-full rounded-lg"
           />
           <figcaption className="text-center text-sm text-muted-foreground mt-2">
@@ -187,11 +187,11 @@ export default function BuildingPathos() {
       <figure className="my-8">
         <img
           src="/assets/blog/pathos/pathos-world-map.png"
-          alt="Pathos world map showing user activity across the globe with concentrations in the Americas, Europe, and Asia"
+          alt="Agora world map showing user activity across the globe with concentrations in the Americas, Europe, and Asia"
           className="w-full rounded-lg"
         />
         <figcaption className="text-center text-sm text-muted-foreground mt-2">
-          Global reach: Pathos users spanning multiple continents within days of launch.
+          Global reach: Agora users spanning multiple continents within days of launch.
         </figcaption>
       </figure>
 
@@ -228,7 +228,7 @@ export default function BuildingPathos() {
       </p>
 
       <p>
-        The Android APK is available now at <a href="https://pathos.place" target="_blank" rel="noopener noreferrer">pathos.place</a>. We're also working on additional distribution channels: <a href="https://zapstore.dev" target="_blank" rel="noopener noreferrer">Zapstore</a> support is coming soon, along with official Google Play and Apple App Store releases. Websites can be blocked, but apps distributed through Zapstore can't be censored. That's a critical difference for activists in countries where government censorship is routine.
+        The Android APK is available now at <a href="https://agora.spot" target="_blank" rel="noopener noreferrer">agora.spot</a>. We're also working on additional distribution channels: <a href="https://zapstore.dev" target="_blank" rel="noopener noreferrer">Zapstore</a> support is coming soon, along with official Google Play and Apple App Store releases. Websites can be blocked, but apps distributed through Zapstore can't be censored. That's a critical difference for activists in countries where government censorship is routine.
       </p>
 
       <p>
@@ -242,11 +242,11 @@ export default function BuildingPathos() {
       </p>
 
       <p>
-        That's what Pathos is for. A place where activists can find each other, coordinate action, and support one another - without asking permission from platforms or governments.
+        That's what Agora is for. A place where activists can find each other, coordinate action, and support one another - without asking permission from platforms or governments.
       </p>
 
       <p>
-        This is why Soapbox exists. Every tool we build - <a href="https://soapbox.pub/tools/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Pathos - shares the same DNA: decentralized infrastructure that no single entity can control. We're not building products for the sake of products. We're building the foundation for a world where communication, identity, and money can't be taken away by the powerful.
+        This is why Soapbox exists. Every tool we build - <a href="https://soapbox.pub/tools/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Agora - shares the same DNA: decentralized infrastructure that no single entity can control. We're not building products for the sake of products. We're building the foundation for a world where communication, identity, and money can't be taken away by the powerful.
       </p>
 
       <p>
@@ -254,7 +254,7 @@ export default function BuildingPathos() {
       </p>
 
       <p>
-        We built Pathos in a weekend. It's already being used in the field. And we're just getting started.
+        We built Agora in a weekend. It's already being used in the field. And we're just getting started.
       </p>
 
       <div className="not-prose my-12">
@@ -262,7 +262,7 @@ export default function BuildingPathos() {
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">Freedom needs infrastructure.</div>
             <p className="text-muted-foreground mb-6">
-              Try Pathos, follow development on GitLab, or build your own freedom tech with Shakespeare.
+              Try Agora, follow development on GitLab, or build your own freedom tech with Shakespeare.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -270,8 +270,8 @@ export default function BuildingPathos() {
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold"
               >
-                <a href="https://pathos.place" target="_blank" rel="noopener noreferrer">
-                  Try Pathos
+                <a href="https://agora.spot" target="_blank" rel="noopener noreferrer">
+                  Try Agora
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
               </Button>
@@ -296,6 +296,16 @@ export default function BuildingPathos() {
                 </a>
               </Button>
             </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="not-prose mt-8">
+        <Card className="border border-muted bg-muted/30">
+          <CardContent className="p-6">
+            <p className="text-sm text-muted-foreground">
+              <strong>Note:</strong> This app was originally named <em>Pathos</em> at the time of the hackathon and has since been renamed to <strong>Agora</strong>.
+            </p>
           </CardContent>
         </Card>
       </div>
