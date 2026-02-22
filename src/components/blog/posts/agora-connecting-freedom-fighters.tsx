@@ -96,15 +96,22 @@ export default function AgoraConnectingFreedomFighters() {
         </Card>
       </div>
 
-      {/* Placeholder for Venezuela action screenshots */}
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="aspect-[9/16] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/30">
-            <p className="text-muted-foreground text-sm text-center px-4">Screenshot: Venezuela actions feed</p>
-          </div>
-          <div className="aspect-[9/16] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/30">
-            <p className="text-muted-foreground text-sm text-center px-4">Screenshot: Venezuela activist posts</p>
-          </div>
+          <figure className="m-0">
+            <img
+              src="/assets/blog/about-agora/ve-action.png"
+              alt="Agora active actions feed showing a Venezuela challenge"
+              className="w-full rounded-lg"
+            />
+          </figure>
+          <figure className="m-0">
+            <img
+              src="/assets/blog/about-agora/ve-country-home-page.png"
+              alt="Agora Venezuela country home page showing trending posts and community activity"
+              className="w-full rounded-lg"
+            />
+          </figure>
         </div>
       </div>
 
@@ -121,6 +128,25 @@ export default function AgoraConnectingFreedomFighters() {
             <p className="font-semibold text-blue-700 dark:text-blue-400">— Leopoldo López</p>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="not-prose my-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <figure className="m-0">
+            <img
+              src="/assets/blog/about-agora/ve-example-post.png"
+              alt="Example post from a Venezuelan activist on Agora"
+              className="w-full rounded-lg"
+            />
+          </figure>
+          <figure className="m-0">
+            <img
+              src="/assets/blog/about-agora/ve-map-bubbles.png"
+              alt="Agora world map showing activist activity bubbles across Venezuela and beyond"
+              className="w-full rounded-lg"
+            />
+          </figure>
+        </div>
       </div>
 
       <p>
