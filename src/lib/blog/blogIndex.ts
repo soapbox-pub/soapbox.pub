@@ -83,6 +83,7 @@ import * as announcingshakespearecommunity from '../../components/blog/posts/ann
 import * as shakespearenovember2025update from '../../components/blog/posts/shakespeare-november-2025-update';
 import * as shakespearemobiledevelopment from '../../components/blog/posts/shakespeare-mobile-development';
 import * as inkwellborninwalmart from '../../components/blog/posts/inkwell-born-in-walmart';
+import * as agoraconnectingfreedomfighters from '../../components/blog/posts/agora-connecting-freedom-fighters';
 import * as buildingpathos from '../../components/blog/posts/building-pathos';
 import * as codingdoesntdie from '../../components/blog/posts/coding-doesnt-die';
 import * as announcingshakespearedirect from '../../components/blog/posts/announcing-shakespeare-direct';
@@ -106,6 +107,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  agoraconnectingfreedomfighters.meta,
   codingdoesntdie.meta,
   announcingshakespearedirect.meta,
   githubbackupguide.meta,
@@ -222,6 +224,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/vibe-coding-anniversary')).default;
     case 'meetquilly':
       return (await import('../../components/blog/posts/meet-quilly')).default;
+    case 'agoraconnectingfreedomfighters':
+      return (await import('../../components/blog/posts/agora-connecting-freedom-fighters')).default;
     case 'buildingpathos':
       return (await import('../../components/blog/posts/building-pathos')).default;
     case 'inkwellborninwalmart':
