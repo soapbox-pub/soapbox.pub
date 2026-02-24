@@ -27,7 +27,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/announcing-shakespeare/nsp-cover.png",
   "date": "2025-07-09",
   "author": {
-    "name": "M.K. Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

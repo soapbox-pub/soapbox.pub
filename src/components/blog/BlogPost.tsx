@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { MarkdownContent } from './MarkdownContent';
 
-import { formatDate, getReadingTime } from '@/lib/blog/utils';
+import { formatDate, getReadingTime, authorNameToSlug } from '@/lib/blog/utils';
 import type { BlogPost } from '@/lib/blog/types';
 
 interface BlogPostProps {
@@ -50,10 +50,13 @@ export function BlogPost({ post }: BlogPostProps) {
             </div>
 
             {post.author.name && (
-              <div className="flex items-center gap-1">
+              <Link
+                to={`/blog/author/${authorNameToSlug(post.author.name)}`}
+                className="flex items-center gap-1 hover:text-azure transition-colors"
+              >
                 <User className="w-4 h-4" />
-                <span>{post.author.name}</span>
-              </div>
+                <span className="hover:underline">{post.author.name}</span>
+              </Link>
             )}
 
             <div className="flex items-center gap-1">

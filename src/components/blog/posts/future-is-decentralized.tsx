@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/future-is-decentralized/decentralized-future-1.png",
   "date": "2022-02-13",
   "author": {
-    "name": "Mary Kate Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

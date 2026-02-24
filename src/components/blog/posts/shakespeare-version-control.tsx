@@ -29,7 +29,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/shakespeare-git-guide/shakespeare-git-guide.png",
   "date": "2025-09-18",
   "author": {
-    "name": "M.K. Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

@@ -21,7 +21,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/images/stacks.png",
   "date": "2025-05-10",
   "author": {
-    "name": "M.K. Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

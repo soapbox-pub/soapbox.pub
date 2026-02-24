@@ -39,6 +39,12 @@ export default defineConfig({
         "/tools/shakespeare",
         "/tools/stacks",
 
+        // Blog author pages
+        "/blog/author/alex-gleason",
+        "/blog/author/derek-ross",
+        "/blog/author/heather-larson",
+        "/blog/author/m-k-fain",
+
         // Blog posts
         "/blog/announcing-clawstr",
         "/blog/announcing-ditto",

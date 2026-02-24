@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   coverImage: "/assets/blog/what-is-the-fediverse/What-is-the-Fediverse-1.png",
   date: "2022-01-27",
   author: {
-    name: "Mary Kate Fain",
+    name: "M. K. Fain",
     picture: "/assets/avatars/mk.jpg"
   },
   ogImage: {

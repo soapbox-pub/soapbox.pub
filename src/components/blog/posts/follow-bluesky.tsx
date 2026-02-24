@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/follow-bluesky/follow-bluesky.png",
   "date": "2024-05-10",
   "author": {
-    "name": "Mary Kate Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

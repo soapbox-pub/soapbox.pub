@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/take-down-big-tech-with-great-ux/great-ui-2-1.png",
   "date": "2022-02-01",
   "author": {
-    "name": "Mary Kate Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
