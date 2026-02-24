@@ -42,7 +42,7 @@ export default defineConfig({
         // Blog author pages
         "/blog/author/derek-ross",
         "/blog/author/heather-larson",
-        "/blog/author/mary-kate-fain",
+        "/blog/author/m-k-fain",
 
         // Blog posts
         "/blog/announcing-clawstr",

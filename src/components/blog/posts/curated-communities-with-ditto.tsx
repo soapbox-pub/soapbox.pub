@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/curated-communties/curated-communities-on-nostr.png",
   "date": "2024-04-28",
   "author": {
-    "name": "Mary Kate Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

@@ -19,7 +19,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/chorus/chorus.png",
   "date": "2025-06-04",
   "author": {
-    "name": "M.K. Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {

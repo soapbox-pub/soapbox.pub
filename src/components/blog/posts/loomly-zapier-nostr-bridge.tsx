@@ -23,7 +23,7 @@ export const meta: BlogPostMeta = {
   "coverImage": "/assets/blog/loomly-zapier-nostr-bridge/loomly-zapier-nostr-bridge.png",
   "date": "2025-07-03",
   "author": {
-    "name": "M.K. Fain",
+    "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
