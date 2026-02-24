@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { BlogList } from '@/components/blog/BlogList';
 import { Layout } from '@/components/Layout';
-import { getAllPosts, formatDate, getFeaturedPost } from '@/lib/blog/utils';
+import { getAllPosts, formatDate, getFeaturedPost, authorNameToSlug } from '@/lib/blog/utils';
 import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogIndex() {
@@ -124,7 +124,13 @@ export default function BlogIndex() {
                       </time>
                     </div>
                     {featuredPost.author.name && (
-                      <span>by {featuredPost.author.name}</span>
+                      <Link
+                        to={`/blog/author/${authorNameToSlug(featuredPost.author.name)}`}
+                        className="hover:text-azure hover:underline transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        by {featuredPost.author.name}
+                      </Link>
                     )}
                   </div>
                   <h2

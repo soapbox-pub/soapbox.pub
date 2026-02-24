@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Layout } from '@/components/Layout';
 import { ShakespeareMailchimpForm } from '@/components/ShakespeareMailchimpForm';
-import { getPostBySlug, formatDate, getReadingTime, extractSEOData } from '@/lib/blog/utils';
+import { getPostBySlug, formatDate, getReadingTime, extractSEOData, authorNameToSlug } from '@/lib/blog/utils';
 import { wrapVideoEmbeds } from '@/lib/blog/videoUtils';
 import { BlogPost } from '@/lib/blog/types';
 import { useSEO } from '@/hooks/useSEO';
@@ -116,10 +116,13 @@ export default function BlogPostPage() {
             </div>
 
             {post.author.name && (
-              <div className="flex items-center gap-2">
+              <Link
+                to={`/blog/author/${authorNameToSlug(post.author.name)}`}
+                className="flex items-center gap-2 hover:text-azure transition-colors"
+              >
                 <User className="w-4 h-4" />
-                <span className="font-medium">{post.author.name}</span>
-              </div>
+                <span className="font-medium hover:underline">{post.author.name}</span>
+              </Link>
             )}
           </div>
         </header>
@@ -154,7 +157,13 @@ export default function BlogPostPage() {
 
             {post.author.name && (
               <div className="text-sm text-gray-500">
-                Written by <span className="font-medium text-gray-700">{post.author.name}</span>
+                Written by{' '}
+                <Link
+                  to={`/blog/author/${authorNameToSlug(post.author.name)}`}
+                  className="font-medium text-gray-700 hover:text-azure hover:underline transition-colors"
+                >
+                  {post.author.name}
+                </Link>
               </div>
             )}
           </div>

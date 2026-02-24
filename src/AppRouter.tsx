@@ -9,6 +9,7 @@ import Tools from "./pages/Tools";
 import Showcase from "./pages/Showcase";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
+import AuthorPage from "./pages/blog/AuthorPage";
 import NotFound from "./pages/NotFound";
 import CustomNipPage from "./pages/CustomNipPage";
 import ShakespeareResources from "./pages/ShakespeareResources";
@@ -49,6 +50,7 @@ export function AppRouter() {
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/author/:slug" element={<AuthorPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/nip/:naddr" element={<CustomNipPage />} />
         <Route path="/shakespeare-resources" element={<ShakespeareResources />} />

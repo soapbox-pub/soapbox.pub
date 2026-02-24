@@ -1,5 +1,43 @@
 import { blogPosts, getPostBySlug as getPostComponent } from './blogIndex';
-import type { BlogPost } from './types';
+import type { BlogAuthor, BlogPost } from './types';
+
+/** Convert an author name to a URL-friendly slug. */
+export function authorNameToSlug(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
+/** Get all unique authors across all blog posts. */
+export function getAllAuthors(): BlogAuthor[] {
+  const authorMap = new Map<string, BlogAuthor>();
+
+  for (const post of blogPosts) {
+    const name = post.author.name;
+    if (!name) continue;
+
+    const slug = authorNameToSlug(name);
+    if (!authorMap.has(slug)) {
+      authorMap.set(slug, {
+        name,
+        slug,
+        picture: post.author.picture,
+      });
+    }
+  }
+
+  return Array.from(authorMap.values());
+}
+
+/** Get an author by their slug. */
+export function getAuthorBySlug(slug: string): BlogAuthor | null {
+  return getAllAuthors().find((a) => a.slug === slug) ?? null;
+}
+
+/** Get all posts by a specific author slug (excludes hidden posts). */
+export function getPostsByAuthorSlug(slug: string): BlogPost[] {
+  return getAllPosts().filter(
+    (post) => post.author.name && authorNameToSlug(post.author.name) === slug,
+  ) as BlogPost[];
+}
 
 export function getAllPosts() {
   // Return all posts excluding hidden ones

@@ -1,5 +1,11 @@
 import type { ComponentType } from 'react';
 
+export interface BlogAuthor {
+  name: string;
+  slug: string;
+  picture?: string;
+}
+
 export interface BlogPostMeta {
   slug: string;
   title: string;
