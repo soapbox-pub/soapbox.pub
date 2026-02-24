@@ -40,6 +40,7 @@ export default defineConfig({
         "/tools/stacks",
 
         // Blog author pages
+        "/blog/author/alex-gleason",
         "/blog/author/derek-ross",
         "/blog/author/heather-larson",
         "/blog/author/m-k-fain",
