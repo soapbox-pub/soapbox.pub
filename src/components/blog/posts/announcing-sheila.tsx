@@ -83,6 +83,10 @@ export default function AnnouncingSheila() {
 
       <p>Then I wrote <code>AGENTS.md</code>, a 600-line document that describes the workflows in plain English. When I tell Sheila to "process invoices," the agent reads the instructions and chains the right scripts together in the right order.</p>
 
+      <h2>Human Oversight</h2>
+
+      <p>Sheila is not fully autonomous. She runs in OpenCode, which means I'm sitting in the terminal watching her work. She can draft an email or prepare a payment, but I see what she's doing before it goes out. This is still a drastic time-saver, and maybe someday Sheila will run fully autonomously.</p>
+
       <h2>Why OpenCode</h2>
 
       <p>The best tool for building AI agents today is <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer">OpenCode</a>, not <a href="https://github.com/open-claw/open-claw" target="_blank" rel="noopener noreferrer">OpenClaw</a>. Despite the hype around OpenClaw, and despite the fact that OpenCode is marketed as a coding agent, OpenCode is the better tool for this.</p>
