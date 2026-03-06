@@ -47,6 +47,11 @@ export default function AnnouncingSheila() {
 
       <p>I open a terminal and say "what's the status?" and she tells me what's done, what's pending, and what needs attention.</p>
 
+      <figure>
+        <img src="/assets/blog/announcing-sheila/spreadsheet.png" alt="Google Sheets payment tracker managed by Sheila" />
+        <figcaption>The payment tracker spreadsheet. Sheila maintains this automatically.</figcaption>
+      </figure>
+
       <pre><code>{`AI Agent (Claude Opus 4.6 via OpenCode)
     |
     |-- npm run email:inbox          # Check for new invoices
@@ -57,6 +62,16 @@ export default function AnnouncingSheila() {
     |-- npm run oc:submit            # Submit to OpenCollective
     |-- npm run drive:upload         # Archive to Google Drive
     '-- npm run sheets:update        # Update status`}</code></pre>
+
+      <figure>
+        <img src="/assets/blog/announcing-sheila/email-reply.png" alt="Email from Sheila notifying a contractor that payment was sent" />
+        <figcaption>Sheila emails contractors when their payment is sent.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/blog/announcing-sheila/opencollective.png" alt="OpenCollective expense submitted by Sheila with a comment" />
+        <figcaption>Sheila submits expenses to OpenCollective and comments on them.</figcaption>
+      </figure>
 
       <h2>How I Built It</h2>
 
