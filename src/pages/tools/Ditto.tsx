@@ -33,16 +33,23 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 
-/** Profile theme data for the showcase collage (none should overlap with hero collage images). */
+/** Profile theme data for the showcase grid (none should overlap with hero collage images). */
 const themes = [
-  { name: "Kawaii", src: "/assets/images/ditto/profiles/kawaii.png", rotate: "-3deg" },
-  { name: "Grunge", src: "/assets/images/ditto/profiles/grunge.png", rotate: "2deg" },
   { name: "Gamer", src: "/assets/images/ditto/profiles/gamer.png", rotate: "-1deg" },
-  { name: "MS Paint", src: "/assets/images/ditto/profiles/mspaint.png", rotate: "3deg" },
-  { name: "Midnight", src: "/assets/images/ditto/profiles/midnight.png", rotate: "-2deg" },
-  { name: "Solarpunk", src: "/assets/images/ditto/profiles/solarpunk.png", rotate: "1deg" },
-  { name: "Hacker", src: "/assets/images/ditto/profiles/hacker.png", rotate: "-1.5deg" },
-  { name: "Hiker", src: "/assets/images/ditto/profiles/hiker.png", rotate: "2.5deg" },
+  { name: "MS Paint", src: "/assets/images/ditto/profiles/mspaint.png", rotate: "2deg" },
+  { name: "Retro Pop", src: "/assets/images/ditto/profiles/retropop.png", rotate: "-2deg" },
+  { name: "Bubblegum", src: "/assets/images/ditto/profiles/bubblegum.png", rotate: "1.5deg" },
+  { name: "Midnight", src: "/assets/images/ditto/profiles/midnight.png", rotate: "-1.5deg" },
+  { name: "Hiker", src: "/assets/images/ditto/profiles/hiker.png", rotate: "2deg" },
+  { name: "Hacker", src: "/assets/images/ditto/profiles/hacker.png", rotate: "-2.5deg" },
+  { name: "Clackophile", src: "/assets/images/ditto/profiles/clackophile.png", rotate: "1deg" },
+  { name: "DJ", src: "/assets/images/ditto/profiles/dj.png", rotate: "-1deg" },
+  { name: "Podcast", src: "/assets/images/ditto/profiles/podcast.png", rotate: "3deg" },
+  { name: "Rubik's", src: "/assets/images/ditto/profiles/rubiks.png", rotate: "-3deg" },
+  { name: "Cottage", src: "/assets/images/ditto/profiles/mk-cottage.png", rotate: "2.5deg" },
+  { name: "Synthwave", src: "/assets/images/ditto/profiles/derek.png", rotate: "-1.5deg" },
+  { name: "Cathedral", src: "/assets/images/ditto/profiles/chad.png", rotate: "1deg" },
+  { name: "Halloween", src: "/assets/images/ditto/profiles/alex.png", rotate: "-2deg" },
 ];
 
 /** Content types Ditto supports. */
@@ -208,8 +215,8 @@ export default function Ditto() {
                 style={{ transform: "rotate(3deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/alien.png"
-                  alt="Alien theme profile"
+                  src="/assets/images/ditto/profiles/solarpunk.png"
+                  alt="Solarpunk theme profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -219,8 +226,8 @@ export default function Ditto() {
                 style={{ transform: "rotate(-2deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/dj.png"
-                  alt="DJ theme profile"
+                  src="/assets/images/ditto/profiles/alien.png"
+                  alt="Alien theme profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -231,8 +238,8 @@ export default function Ditto() {
                 style={{ transform: "rotate(-3deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/clackophile.png"
-                  alt="Clackophile theme profile"
+                  src="/assets/images/ditto/profiles/kawaii.png"
+                  alt="Kawaii theme profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -242,8 +249,8 @@ export default function Ditto() {
                 style={{ transform: "rotate(2deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/podcast.png"
-                  alt="Podcast theme profile"
+                  src="/assets/images/ditto/profiles/grunge.png"
+                  alt="Grunge theme profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -272,7 +279,7 @@ export default function Ditto() {
           </div>
 
           {/* Dynamic collage grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-5">
             {themes.map((theme) => (
               <div
                 key={theme.name}
@@ -294,8 +301,7 @@ export default function Ditto() {
           </div>
 
           <p className="text-center text-gray-500 mt-8 text-sm">
-            Kawaii, Grunge, Gamer, MS Paint, Midnight, Solarpunk, Hacker,
-            Hiker -- and thousands more created by the community.
+            15 themes shown. Thousands more created by the community.
           </p>
         </div>
       </section>
