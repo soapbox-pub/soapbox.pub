@@ -294,22 +294,26 @@ export default function Ditto() {
           </div>
         </div>
 
-        {/* Horizontal scrollable carousel */}
-        <div className="relative">
-          <div className="flex gap-5 overflow-x-auto pb-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
-            {/* Left spacer to center first card on large screens */}
-            <div className="shrink-0 w-[max(0px,calc((100vw-80rem)/2))]" />
-            {contentTypes.map(({ name, icon: Icon, image }) => (
-              <div key={name} className="shrink-0 w-[200px] snap-start group">
-                <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white ring-1 ring-black/5 hover:ring-violet-300">
-                  {/* Placeholder -- shows icon+name until real screenshot is provided */}
+        {/* Infinite marquee carousel */}
+        <div className="relative overflow-hidden">
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-violet-50 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-purple-50 to-transparent z-10" />
+
+          <div
+            className="flex gap-5 w-max animate-marquee hover:[animation-play-state:paused]"
+            style={{ animationDuration: "60s" }}
+          >
+            {/* Render items twice for seamless loop */}
+            {[...contentTypes, ...contentTypes].map(({ name, icon: Icon, image }, i) => (
+              <div key={`${name}-${i}`} className="shrink-0 w-[200px] group">
+                <div className="rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-white ring-1 ring-black/5 group-hover:ring-violet-300">
                   <div className="relative aspect-[3/4] bg-gradient-to-br from-violet-100 to-purple-100 overflow-hidden">
                     <img
                       src={image}
                       alt={`${name} in Ditto`}
                       className="absolute inset-0 w-full h-full object-cover"
                       onError={(e) => {
-                        // Hide broken image, show placeholder fallback
                         (e.target as HTMLImageElement).style.display = "none";
                       }}
                     />
@@ -325,8 +329,6 @@ export default function Ditto() {
                 <p className="mt-3 text-sm font-semibold text-gray-900 text-center">{name}</p>
               </div>
             ))}
-            {/* Right spacer */}
-            <div className="shrink-0 w-[max(0px,calc((100vw-80rem)/2))]" />
           </div>
         </div>
       </section>
