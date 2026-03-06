@@ -52,21 +52,6 @@ export default function AnnouncingSheila() {
         <figcaption>The payment tracker spreadsheet. Sheila maintains this automatically.</figcaption>
       </figure>
 
-      <figure>
-        <img src="/assets/blog/announcing-sheila/scripts.png" alt="Sheila's package.json showing available scripts" />
-        <figcaption>Sheila runs TypeScript scripts to perform various tasks.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="/assets/blog/announcing-sheila/email-reply.png" alt="Email from Sheila notifying a contractor that payment was sent" />
-        <figcaption>Sheila emails contractors when their payment is sent.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="/assets/blog/announcing-sheila/opencollective.png" alt="OpenCollective expense submitted by Sheila with a comment" />
-        <figcaption>Sheila submits expenses to OpenCollective and comments on them.</figcaption>
-      </figure>
-
       <h2>How I Built It</h2>
 
       <p>I ran <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer">OpenCode</a> in an empty folder and just started describing what I wanted.</p>
@@ -77,9 +62,19 @@ export default function AnnouncingSheila() {
 
       <p>Then I wrote <code>AGENTS.md</code>, a 600-line document that describes the workflows in plain English. When I tell Sheila to "process invoices," the agent reads the instructions and chains the right scripts together in the right order.</p>
 
+      <figure>
+        <img src="/assets/blog/announcing-sheila/scripts.png" alt="Sheila's package.json showing available scripts" />
+        <figcaption>Sheila runs TypeScript scripts to perform various tasks.</figcaption>
+      </figure>
+
       <h2>Human Oversight</h2>
 
       <p>Sheila is not fully autonomous. She runs in OpenCode, which means I'm sitting in the terminal watching her work. She can draft an email or prepare a payment, but I see what she's doing before it goes out. This is still a drastic time-saver, and maybe someday Sheila will run fully autonomously.</p>
+
+      <figure>
+        <img src="/assets/blog/announcing-sheila/opencollective.png" alt="OpenCollective expense submitted by Sheila with a comment" />
+        <figcaption>Sheila submits expenses to OpenCollective and comments on them.</figcaption>
+      </figure>
 
       <h2>Why OpenCode</h2>
 
@@ -94,6 +89,11 @@ export default function AnnouncingSheila() {
       <p>The AI industry has a top-down bias right now. Build the platform first, design the abstraction layer, create the marketplace, then hope agents emerge. This is backwards. It's a huge waste of money. You can't build a useful agent platform without first understanding what a useful agent looks like, and you can't understand that without building one from scratch.</p>
 
       <p>The AI companies that work will be the ones that put in the hard work to build each agent one at a time from the bottom up. Sheila was built that way. Script by script, workflow by workflow, over weeks of iteration.</p>
+
+      <figure>
+        <img src="/assets/blog/announcing-sheila/email-reply.png" alt="Email from Sheila notifying a contractor that payment was sent" />
+        <figcaption>Sheila emails contractors when their payment is sent.</figcaption>
+      </figure>
 
       <h2>Make Your Own</h2>
 
