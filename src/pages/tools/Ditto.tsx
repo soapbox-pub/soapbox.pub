@@ -33,16 +33,16 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 
-/** Profile theme data for the showcase collage. */
+/** Profile theme data for the showcase collage (none should overlap with hero collage images). */
 const themes = [
-  { name: "Kawaii", src: "/assets/images/ditto/profiles/kawaii.png", rotate: "-3deg", color: "from-pink-400 to-pink-200" },
-  { name: "Grunge", src: "/assets/images/ditto/profiles/grunge.png", rotate: "2deg", color: "from-purple-900 to-gray-800" },
-  { name: "Gamer", src: "/assets/images/ditto/profiles/gamer.png", rotate: "-1deg", color: "from-green-500 to-emerald-900" },
-  { name: "MS Paint", src: "/assets/images/ditto/profiles/mspaint.png", rotate: "3deg", color: "from-blue-400 to-sky-200" },
-  { name: "Retro Pop", src: "/assets/images/ditto/profiles/retropop.png", rotate: "-2deg", color: "from-purple-400 to-violet-300" },
-  { name: "Solarpunk", src: "/assets/images/ditto/profiles/solarpunk.png", rotate: "1deg", color: "from-green-700 to-lime-500" },
-  { name: "Bubblegum", src: "/assets/images/ditto/profiles/bubblegum.png", rotate: "-1.5deg", color: "from-pink-500 to-fuchsia-300" },
-  { name: "Hiker", src: "/assets/images/ditto/profiles/hiker.png", rotate: "2.5deg", color: "from-amber-700 to-yellow-500" },
+  { name: "Kawaii", src: "/assets/images/ditto/profiles/kawaii.png", rotate: "-3deg" },
+  { name: "Grunge", src: "/assets/images/ditto/profiles/grunge.png", rotate: "2deg" },
+  { name: "Gamer", src: "/assets/images/ditto/profiles/gamer.png", rotate: "-1deg" },
+  { name: "MS Paint", src: "/assets/images/ditto/profiles/mspaint.png", rotate: "3deg" },
+  { name: "Midnight", src: "/assets/images/ditto/profiles/midnight.png", rotate: "-2deg" },
+  { name: "Solarpunk", src: "/assets/images/ditto/profiles/solarpunk.png", rotate: "1deg" },
+  { name: "Hacker", src: "/assets/images/ditto/profiles/hacker.png", rotate: "-1.5deg" },
+  { name: "Hiker", src: "/assets/images/ditto/profiles/hiker.png", rotate: "2.5deg" },
 ];
 
 /** Content types Ditto supports. */
@@ -174,7 +174,7 @@ export default function Ditto() {
                   asChild
                 >
                   <a
-                    href="https://docs.ditto.pub"
+                    href="https://about.ditto.pub"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -204,47 +204,47 @@ export default function Ditto() {
             <div className="relative h-[420px] md:h-[520px] lg:h-[560px]">
               {/* Back row */}
               <div
-                className="absolute top-0 right-0 w-[55%] aspect-[3/4] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
+                className="absolute top-0 right-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
                 style={{ transform: "rotate(3deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/gamer.png"
-                  alt="Gamer theme profile"
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/images/ditto/profiles/alien.png"
+                  alt="Alien theme profile"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               <div
-                className="absolute top-12 left-0 w-[55%] aspect-[3/4] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
+                className="absolute top-12 left-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
                 style={{ transform: "rotate(-2deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/solarpunk.png"
-                  alt="Solarpunk theme profile"
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/images/ditto/profiles/dj.png"
+                  alt="DJ theme profile"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Front row */}
               <div
-                className="absolute bottom-8 left-[10%] w-[50%] aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
+                className="absolute bottom-8 left-[10%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
                 style={{ transform: "rotate(-3deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/kawaii.png"
-                  alt="Kawaii theme profile"
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/images/ditto/profiles/clackophile.png"
+                  alt="Clackophile theme profile"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               <div
-                className="absolute bottom-0 right-[5%] w-[50%] aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
+                className="absolute bottom-0 right-[5%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
                 style={{ transform: "rotate(2deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/grunge.png"
-                  alt="Grunge theme profile"
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/images/ditto/profiles/podcast.png"
+                  alt="Podcast theme profile"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -259,9 +259,9 @@ export default function Ditto() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Express yourself.{" "}
+              The old internet{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                Not your algorithm.
+                IS BACK.
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -282,7 +282,7 @@ export default function Ditto() {
                 <img
                   src={theme.src}
                   alt={`${theme.name} theme`}
-                  className="w-full aspect-[3/4] object-cover object-top"
+                  className="w-full aspect-[867/918] object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3 pt-10">
                   <span className="text-white font-semibold text-sm drop-shadow-lg">
@@ -294,7 +294,7 @@ export default function Ditto() {
           </div>
 
           <p className="text-center text-gray-500 mt-8 text-sm">
-            Kawaii, Grunge, Gamer, MS Paint, Retro Pop, Solarpunk, Bubblegum,
+            Kawaii, Grunge, Gamer, MS Paint, Midnight, Solarpunk, Hacker,
             Hiker -- and thousands more created by the community.
           </p>
         </div>
@@ -389,8 +389,8 @@ export default function Ditto() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
+            <div className="flex items-center justify-center">
+              <div className="w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
                 <img
                   src="/assets/images/ditto/wall-posts.png"
                   alt="Wall posts in Ditto -- write on your friends' profiles"
@@ -555,25 +555,12 @@ export default function Ditto() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-violet-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* iPad showcase */}
-            <div className="relative h-[400px] md:h-[480px] order-2 lg:order-1">
-              <div
-                className="absolute top-0 left-[5%] w-[65%] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
-                style={{ transform: "rotate(-2deg)" }}
-              >
+            {/* Shakespeare screenshot */}
+            <div className="order-2 lg:order-1">
+              <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
                 <img
-                  src="/assets/images/ditto/ipads/paint-ipad.png"
-                  alt="MS Paint theme on tablet"
-                  className="w-full h-auto"
-                />
-              </div>
-              <div
-                className="absolute bottom-0 right-[5%] w-[60%] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
-                style={{ transform: "rotate(2deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/ipads/solarpunk-ipad.png"
-                  alt="Solarpunk theme on tablet"
+                  src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
+                  alt="Editing Ditto themes in Shakespeare AI"
                   className="w-full h-auto"
                 />
               </div>
@@ -634,7 +621,21 @@ export default function Ditto() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+                <Button
+                  size="lg"
+                  className="bg-violet-600 hover:bg-violet-700 text-white"
+                  asChild
+                >
+                  <a
+                    href="https://shakespeare.diy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Palette className="mr-2 h-4 w-4" />
+                    Edit with Shakespeare
+                  </a>
+                </Button>
                 <Button
                   size="lg"
                   variant="outline"
@@ -642,7 +643,7 @@ export default function Ditto() {
                   asChild
                 >
                   <a
-                    href="https://docs.ditto.pub/guides/self-hosting"
+                    href="https://about.ditto.pub/guides/self-hosting"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -701,7 +702,7 @@ export default function Ditto() {
               asChild
             >
               <a
-                href="https://docs.ditto.pub"
+                href="https://about.ditto.pub"
                 target="_blank"
                 rel="noopener noreferrer"
               >
