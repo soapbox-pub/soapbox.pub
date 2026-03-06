@@ -22,7 +22,6 @@ import {
   Shield,
   Heart,
   Zap,
-  Lock,
   Server,
   Wrench,
 } from "lucide-react";
@@ -52,46 +51,27 @@ const themes = [
   { name: "Halloween", src: "/assets/images/ditto/profiles/alex.png", rotate: "-2deg" },
 ];
 
-/** Content types Ditto supports. */
+/** Content types Ditto supports. Each has a placeholder image path (300x400 portrait). */
 const contentTypes = [
-  { name: "Posts", icon: MessageSquare, description: "5000 char posts with emoji reactions, zaps, and quote posts" },
-  { name: "Articles", icon: Newspaper, description: "Long-form writing powered by Inkwell" },
-  { name: "Vines", icon: Video, description: "Short videos via diVine" },
-  { name: "Livestreams", icon: Radio, description: "Live streaming via zap.stream" },
-  { name: "Polls", icon: BarChart3, description: "Community polls via Pollerama" },
-  { name: "Follow Packs", icon: Users, description: "Curated follow lists to share" },
-  { name: "Webxdc", icon: Gamepad2, description: "Sandboxed mini-apps and games inside posts" },
-  { name: "Treasures", icon: Map, description: "Real-world geocaching on Nostr" },
-  { name: "Magic Decks", icon: Puzzle, description: "MTG deck lists via Surveil" },
-  { name: "Events", icon: CalendarDays, description: "Community events and meetups" },
-  { name: "Photos", icon: ImageIcon, description: "Instagram-style image sharing" },
-  { name: "Music", icon: Music, description: "Share and discover tracks" },
-  { name: "Podcasts", icon: Podcast, description: "Podcast episodes in your feed" },
-  { name: "Books", icon: BookOpen, description: "Book reviews and discussions" },
-  { name: "Emoji Packs", icon: Smile, description: "Custom emoji collections" },
-  { name: "World", icon: Globe, description: "Comment on countries with Agora" },
+  { name: "Posts", icon: MessageSquare, image: "/assets/images/ditto/content/posts.png" },
+  { name: "Articles", icon: Newspaper, image: "/assets/images/ditto/content/articles.png" },
+  { name: "Vines", icon: Video, image: "/assets/images/ditto/content/vines.png" },
+  { name: "Livestreams", icon: Radio, image: "/assets/images/ditto/content/livestreams.png" },
+  { name: "Polls", icon: BarChart3, image: "/assets/images/ditto/content/polls.png" },
+  { name: "Follow Packs", icon: Users, image: "/assets/images/ditto/content/follow-packs.png" },
+  { name: "Webxdc", icon: Gamepad2, image: "/assets/images/ditto/content/webxdc.png" },
+  { name: "Treasures", icon: Map, image: "/assets/images/ditto/content/treasures.png" },
+  { name: "Magic Decks", icon: Puzzle, image: "/assets/images/ditto/content/magic-decks.png" },
+  { name: "Events", icon: CalendarDays, image: "/assets/images/ditto/content/events.png" },
+  { name: "Photos", icon: ImageIcon, image: "/assets/images/ditto/content/photos.png" },
+  { name: "Music", icon: Music, image: "/assets/images/ditto/content/music.png" },
+  { name: "Podcasts", icon: Podcast, image: "/assets/images/ditto/content/podcasts.png" },
+  { name: "Books", icon: BookOpen, image: "/assets/images/ditto/content/books.png" },
+  { name: "Emoji Packs", icon: Smile, image: "/assets/images/ditto/content/emoji-packs.png" },
+  { name: "World", icon: Globe, image: "/assets/images/ditto/content/world.png" },
 ];
 
-/** Connected apps and protocols. */
-const connectedApps = [
-  { name: "Bluesky", type: "bridge" },
-  { name: "Mastodon", type: "bridge" },
-  { name: "diVine", type: "nostr" },
-  { name: "zap.stream", type: "nostr" },
-  { name: "Inkwell", type: "nostr" },
-  { name: "Pollerama", type: "nostr" },
-  { name: "Treasures", type: "nostr" },
-  { name: "Surveil", type: "nostr" },
-  { name: "following.space", type: "nostr" },
-  { name: "Espy", type: "nostr" },
-  { name: "EmojiVerse", type: "nostr" },
-  { name: "Nodecast", type: "nostr" },
-  { name: "Cashu", type: "nostr" },
-  { name: "Lightning", type: "nostr" },
-  { name: "Shakespeare", type: "nostr" },
-  { name: "Agora", type: "nostr" },
-  { name: "Chorus", type: "nostr" },
-];
+
 
 export default function Ditto() {
   useSEO({
@@ -283,7 +263,7 @@ export default function Ditto() {
             {themes.map((theme) => (
               <div
                 key={theme.name}
-                className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:z-10 hover:scale-[1.03]"
+                className="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:z-10 hover:scale-[1.03]"
                 style={{ transform: `rotate(${theme.rotate})` }}
               >
                 <img
@@ -291,27 +271,18 @@ export default function Ditto() {
                   alt={`${theme.name} theme`}
                   className="w-full aspect-[867/918] object-cover"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3 pt-10">
-                  <span className="text-white font-semibold text-sm drop-shadow-lg">
-                    {theme.name}
-                  </span>
-                </div>
               </div>
             ))}
           </div>
-
-          <p className="text-center text-gray-500 mt-8 text-sm">
-            15 themes shown. Thousands more created by the community.
-          </p>
         </div>
       </section>
 
       {/* ================================================================== */}
       {/* 3. INFINITE CONTENT TYPES                                          */}
       {/* ================================================================== */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
               Infinite Content Types.
             </h2>
@@ -321,31 +292,42 @@ export default function Ditto() {
               music, and so much more.
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {contentTypes.map(({ name, icon: Icon, description }) => (
-              <Card
-                key={name}
-                className="border hover:border-violet-300 transition-colors group"
-              >
-                <CardContent className="p-4 flex flex-col items-start gap-2">
-                  <div className="w-10 h-10 bg-violet-100 group-hover:bg-violet-200 rounded-lg flex items-center justify-center transition-colors">
-                    <Icon className="h-5 w-5 text-violet-600" />
+        {/* Horizontal scrollable carousel */}
+        <div className="relative">
+          <div className="flex gap-5 overflow-x-auto pb-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
+            {/* Left spacer to center first card on large screens */}
+            <div className="shrink-0 w-[max(0px,calc((100vw-80rem)/2))]" />
+            {contentTypes.map(({ name, icon: Icon, image }) => (
+              <div key={name} className="shrink-0 w-[200px] snap-start group">
+                <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white ring-1 ring-black/5 hover:ring-violet-300">
+                  {/* Placeholder -- shows icon+name until real screenshot is provided */}
+                  <div className="relative aspect-[3/4] bg-gradient-to-br from-violet-100 to-purple-100 overflow-hidden">
+                    <img
+                      src={image}
+                      alt={`${name} in Ditto`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      onError={(e) => {
+                        // Hide broken image, show placeholder fallback
+                        (e.target as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                    {/* Placeholder fallback (visible when image fails to load) */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                      <div className="w-14 h-14 bg-violet-200/80 rounded-2xl flex items-center justify-center">
+                        <Icon className="h-7 w-7 text-violet-600" />
+                      </div>
+                      <span className="text-violet-600/60 text-xs font-medium">300 x 400</span>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-gray-900 text-sm">
-                    {name}
-                  </h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">
-                    {description}
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+                <p className="mt-3 text-sm font-semibold text-gray-900 text-center">{name}</p>
+              </div>
             ))}
+            {/* Right spacer */}
+            <div className="shrink-0 w-[max(0px,calc((100vw-80rem)/2))]" />
           </div>
-
-          <p className="text-center text-gray-500 mt-8 text-sm">
-            Each content type can be toggled on or off. You decide what you see.
-          </p>
         </div>
       </section>
 
@@ -422,28 +404,41 @@ export default function Ditto() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               No more managing separate accounts for every new platform. Ditto
-              connects to <strong>Bluesky</strong>, <strong>Mastodon</strong>,
-              and a growing universe of <strong>Nostr</strong> apps. Ditto is
-              your homebase on the indie web.
+              bridges to{" "}
+              <a href="https://soapbox.pub/blog/comparing-protocols" className="text-violet-600 hover:underline font-semibold">Bluesky</a>{" "}
+              and{" "}
+              <a href="https://soapbox.pub/blog/comparing-protocols" className="text-violet-600 hover:underline font-semibold">Mastodon</a>,
+              so your followers can find you no matter what network they're on.
+              Ditto is your homebase on the indie web.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {connectedApps.map((app) => (
-              <span
-                key={app.name}
-                className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  app.type === "bridge"
-                    ? "bg-violet-600 text-white shadow-md"
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-violet-300 hover:text-violet-700 shadow-sm"
-                }`}
-              >
-                {app.name}
-              </span>
-            ))}
+          {/* Protocol pills */}
+          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto mb-16">
+            <a
+              href="https://bsky.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0085ff] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-shadow"
+            >
+              Bluesky
+              <ExternalLink className="h-3.5 w-3.5 opacity-70" />
+            </a>
+            <span className="inline-flex items-center px-6 py-3 rounded-full bg-violet-600 text-white text-sm font-semibold shadow-md">
+              Nostr
+            </span>
+            <a
+              href="https://joinmastodon.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#6364ff] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-shadow"
+            >
+              Mastodon
+              <ExternalLink className="h-3.5 w-3.5 opacity-70" />
+            </a>
           </div>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="text-center border-0 shadow-md bg-white">
               <CardContent className="p-8 space-y-3">
                 <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto">
@@ -466,19 +461,6 @@ export default function Ditto() {
                 <p className="text-gray-600 text-sm">
                   Zap with Bitcoin Lightning and Cashu. Real money, real
                   appreciation, no intermediary.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-md bg-white">
-              <CardContent className="p-8 space-y-3">
-                <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto">
-                  <Lock className="h-6 w-6 text-violet-600" />
-                </div>
-                <h3 className="font-semibold text-lg">Private Messages</h3>
-                <p className="text-gray-600 text-sm">
-                  End-to-end encrypted DMs built in. Your conversations stay
-                  between you and the people you trust.
                 </p>
               </CardContent>
             </Card>
@@ -512,10 +494,11 @@ export default function Ditto() {
                   You own your data
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We don't control your Ditto account. Your identity, your
-                  content, your connections -- they belong to you. No platform
-                  lock-in, no hostage data. Leave anytime and take everything
-                  with you.
+                  We don't control your Ditto account.{" "}
+                  <a href="https://about.ditto.pub/learn/what-is-nostr" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:underline">Your identity</a>,
+                  your content, your connections -- they belong to you. No
+                  platform lock-in, no hostage data. Leave anytime and take
+                  everything with you.
                 </p>
               </CardContent>
             </Card>
@@ -529,9 +512,11 @@ export default function Ditto() {
                   The community owns the project
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Ditto is open source, free software -- anyone can copy,
-                  improve, and build on our work. Built on the free and open
-                  Nostr protocol, the project belongs to everyone.
+                  Ditto is{" "}
+                  <a href="https://github.com/ectosquad/ditto" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:underline">open source</a>,
+                  free software -- anyone can copy, improve, and build on our
+                  work. Built on the free and open Nostr protocol, the project
+                  belongs to everyone.
                 </p>
               </CardContent>
             </Card>
@@ -547,7 +532,8 @@ export default function Ditto() {
                 <p className="text-gray-600 leading-relaxed">
                   No central corporation controlling the data. No ads, no data
                   mining, no tracking, no algorithms you're forced into.
-                  Community servers keep things decentralized.
+                  Community servers keep things decentralized. Read our{" "}
+                  <a href="https://soapbox.pub/ethics/" className="text-violet-600 hover:underline">ethics pledge</a>.
                 </p>
               </CardContent>
             </Card>
@@ -634,7 +620,7 @@ export default function Ditto() {
                   asChild
                 >
                   <a
-                    href="https://shakespeare.diy"
+                    href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fectosquad%2Fditto.git"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
