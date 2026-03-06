@@ -256,37 +256,37 @@ export default function Tools() {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-display">Ditto</CardTitle>
-                <CardDescription className="text-lg">Community Platform Builder</CardDescription>
+                <CardDescription className="text-lg">Fun Social Media</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-gray-600">
-                  Build decentralized, censorship-resistant communities on Nostr with built-in monetization,
-                  custom themes, and cross-platform compatibility. Perfect for creating your own social space.
+                  A social platform for people who want to have fun, not feed the Big Tech machine.
+                  Custom themes, infinite content types, and bridges to Bluesky and Mastodon.
                 </p>
 
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Built-in Nostr relay
+                    Custom themes & self-expression
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Custom themes & branding
+                    27+ content types
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Bitcoin Lightning integration
+                    Bluesky & Mastodon bridges
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    ActivityPub bridge
+                    Deploy anywhere as static files
                   </div>
                 </div>
 
                 <div className="pt-4">
                   <Button variant="outline" className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
                     <Link to="/tools/ditto">
-                      Build Community
+                      Explore Ditto
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
