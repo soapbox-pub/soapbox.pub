@@ -310,7 +310,7 @@ export default function Ditto() {
             {[...contentTypes, ...contentTypes].map(({ name, icon: Icon, image }, i) => (
               <div key={`${name}-${i}`} className="shrink-0 w-[200px] group">
                 <div className="rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-white ring-1 ring-black/5 group-hover:ring-violet-300">
-                  <div className="relative aspect-[3/4] bg-gradient-to-br from-violet-100 to-purple-100 overflow-hidden">
+                  <div className="relative aspect-[375/812] bg-gradient-to-br from-violet-100 to-purple-100 overflow-hidden">
                     <img
                       src={image}
                       alt={`${name} in Ditto`}
@@ -324,7 +324,6 @@ export default function Ditto() {
                       <div className="w-14 h-14 bg-violet-200/80 rounded-2xl flex items-center justify-center">
                         <Icon className="h-7 w-7 text-violet-600" />
                       </div>
-                      <span className="text-violet-600/60 text-xs font-medium">300 x 400</span>
                     </div>
                   </div>
                 </div>
