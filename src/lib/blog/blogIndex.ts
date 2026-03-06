@@ -86,6 +86,7 @@ import * as inkwellborninwalmart from '../../components/blog/posts/inkwell-born-
 import * as agoraconnectingfreedomfighters from '../../components/blog/posts/agora-connecting-freedom-fighters';
 import * as buildingpathos from '../../components/blog/posts/building-pathos';
 import * as codingdoesntdie from '../../components/blog/posts/coding-doesnt-die';
+import * as announcingsheila from '../../components/blog/posts/announcing-sheila';
 import * as announcingshakespearedirect from '../../components/blog/posts/announcing-shakespeare-direct';
 
 export interface BlogPost {
@@ -107,6 +108,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  announcingsheila.meta,
   agoraconnectingfreedomfighters.meta,
   codingdoesntdie.meta,
   announcingshakespearedirect.meta,
@@ -200,6 +202,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'announcingsheila':
+      return (await import('../../components/blog/posts/announcing-sheila')).default;
     case 'codingdoesntdie':
       return (await import('../../components/blog/posts/coding-doesnt-die')).default;
     case 'announcingshakespearedirect':
