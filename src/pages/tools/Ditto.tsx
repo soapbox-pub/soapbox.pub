@@ -22,6 +22,8 @@ import {
   Shield,
   Heart,
   Zap,
+  Link2,
+  Search,
   Server,
   Wrench,
 } from "lucide-react";
@@ -191,7 +193,7 @@ export default function Ditto() {
             <div className="relative h-[420px] md:h-[520px] lg:h-[560px]">
               {/* Back row */}
               <div
-                className="absolute top-0 right-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
+                className="absolute top-0 right-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
                 style={{ transform: "rotate(3deg)" }}
               >
                 <img
@@ -202,7 +204,7 @@ export default function Ditto() {
               </div>
 
               <div
-                className="absolute top-12 left-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-1 ring-black/5"
+                className="absolute top-12 left-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
                 style={{ transform: "rotate(-2deg)" }}
               >
                 <img
@@ -214,7 +216,7 @@ export default function Ditto() {
 
               {/* Front row */}
               <div
-                className="absolute bottom-8 left-[10%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
+                className="absolute bottom-8 left-[10%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
                 style={{ transform: "rotate(-3deg)" }}
               >
                 <img
@@ -225,7 +227,7 @@ export default function Ditto() {
               </div>
 
               <div
-                className="absolute bottom-0 right-[5%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
+                className="absolute bottom-0 right-[5%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
                 style={{ transform: "rotate(2deg)" }}
               >
                 <img
@@ -263,7 +265,7 @@ export default function Ditto() {
             {themes.map((theme) => (
               <div
                 key={theme.name}
-                className="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:z-10 hover:scale-[1.03]"
+                className="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl ring-2 ring-violet-200/60 transition-all duration-300 hover:z-10 hover:scale-[1.03]"
                 style={{ transform: `rotate(${theme.rotate})` }}
               >
                 <img
@@ -301,7 +303,7 @@ export default function Ditto() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-purple-50 to-transparent z-10" />
 
           <div
-            className="flex gap-5 w-max animate-marquee hover:[animation-play-state:paused]"
+            className="flex gap-5 pb-6 w-max animate-marquee hover:[animation-play-state:paused]"
             style={{ animationDuration: "60s" }}
           >
             {/* Render items twice for seamless loop */}
@@ -405,67 +407,130 @@ export default function Ditto() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              No more managing separate accounts for every new platform. Ditto
-              bridges to{" "}
-              <a href="https://soapbox.pub/blog/comparing-protocols" className="text-violet-600 hover:underline font-semibold">Bluesky</a>{" "}
-              and{" "}
-              <a href="https://soapbox.pub/blog/comparing-protocols" className="text-violet-600 hover:underline font-semibold">Mastodon</a>,
-              so your followers can find you no matter what network they're on.
-              Ditto is your homebase on the indie web.
+              Ditto connects three decentralized protocols so your followers
+              can find you no matter what network they're on. One account,
+              three networks, zero lock-in.
             </p>
           </div>
 
-          {/* Protocol pills */}
-          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto mb-16">
-            <a
-              href="https://bsky.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0085ff] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-shadow"
-            >
-              Bluesky
-              <ExternalLink className="h-3.5 w-3.5 opacity-70" />
-            </a>
-            <span className="inline-flex items-center px-6 py-3 rounded-full bg-violet-600 text-white text-sm font-semibold shadow-md">
-              Nostr
-            </span>
-            <a
-              href="https://joinmastodon.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#6364ff] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-shadow"
-            >
-              Mastodon
-              <ExternalLink className="h-3.5 w-3.5 opacity-70" />
-            </a>
+          {/* Three protocol cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Nostr */}
+            <Card className="border-0 shadow-md bg-white overflow-hidden">
+              <div className="h-1.5 bg-violet-600" />
+              <CardContent className="p-8 space-y-4">
+                <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center">
+                  <Shield className="h-6 w-6 text-violet-600" />
+                </div>
+                <h3 className="font-bold text-lg text-gray-900">Nostr</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Your home protocol. Cryptographic keys give you an identity
+                  no one can take away -- no server lock-in, no corporate
+                  gatekeeper. Your posts live across a decentralized network
+                  of relays.
+                </p>
+                <a
+                  href="/blog/comparing-protocols"
+                  className="inline-flex items-center text-sm font-medium text-violet-600 hover:text-violet-800"
+                >
+                  How Nostr compares
+                  <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Mastodon / Fediverse via Mostr */}
+            <Card className="border-0 shadow-md bg-white overflow-hidden">
+              <div className="h-1.5 bg-[#6364ff]" />
+              <CardContent className="p-8 space-y-4">
+                <div className="w-12 h-12 bg-[#6364ff]/10 rounded-xl flex items-center justify-center">
+                  <Link2 className="h-6 w-6 text-[#6364ff]" />
+                </div>
+                <h3 className="font-bold text-lg text-gray-900">
+                  Mastodon{" "}
+                  <span className="text-sm font-normal text-gray-500">
+                    via Mostr
+                  </span>
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  The{" "}
+                  <a href="https://mostr.pub" target="_blank" rel="noopener noreferrer" className="text-[#6364ff] hover:underline font-medium">Mostr Bridge</a>{" "}
+                  translates between Nostr and ActivityPub in real time.
+                  Follow and interact with users on Mastodon, Pleroma,
+                  Misskey, and the entire Fediverse -- right from Ditto.
+                </p>
+                <a
+                  href="/blog/mostr-fediverse-nostr-bridge"
+                  className="inline-flex items-center text-sm font-medium text-[#6364ff] hover:text-[#4f50cc]"
+                >
+                  Learn about Mostr
+                  <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Bluesky via Bridgy Fed */}
+            <Card className="border-0 shadow-md bg-white overflow-hidden">
+              <div className="h-1.5 bg-[#0085ff]" />
+              <CardContent className="p-8 space-y-4">
+                <div className="w-12 h-12 bg-[#0085ff]/10 rounded-xl flex items-center justify-center">
+                  <Globe className="h-6 w-6 text-[#0085ff]" />
+                </div>
+                <h3 className="font-bold text-lg text-gray-900">
+                  Bluesky{" "}
+                  <span className="text-sm font-normal text-gray-500">
+                    via Bridgy Fed
+                  </span>
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Bluesky users opt in through{" "}
+                  <a href="https://fed.brid.gy/docs" target="_blank" rel="noopener noreferrer" className="text-[#0085ff] hover:underline font-medium">Bridgy Fed</a>,
+                  and their posts flow into Ditto through the Mostr Bridge.
+                  Follow Bluesky accounts right from your feed -- no extra
+                  apps needed.
+                </p>
+                <a
+                  href="/blog/follow-bluesky"
+                  className="inline-flex items-center text-sm font-medium text-[#0085ff] hover:text-[#006acc]"
+                >
+                  Follow Bluesky users
+                  <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                </a>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <Card className="text-center border-0 shadow-md bg-white">
-              <CardContent className="p-8 space-y-3">
-                <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto">
-                  <Globe className="h-6 w-6 text-violet-600" />
-                </div>
-                <h3 className="font-semibold text-lg">Cross-Protocol</h3>
-                <p className="text-gray-600 text-sm">
-                  See content from Bluesky and Mastodon users right in your
-                  feed, and they can see yours.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-md bg-white">
-              <CardContent className="p-8 space-y-3">
-                <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto">
-                  <Zap className="h-6 w-6 text-violet-600" />
-                </div>
-                <h3 className="font-semibold text-lg">Lightning Native</h3>
-                <p className="text-gray-600 text-sm">
-                  Zap with Bitcoin Lightning and Cashu. Real money, real
-                  appreciation, no intermediary.
-                </p>
-              </CardContent>
-            </Card>
+          {/* CTA box */}
+          <div className="bg-gradient-to-r from-violet-100/80 to-purple-100/80 rounded-2xl p-8 border border-violet-200 text-center max-w-3xl mx-auto">
+            <h3 className="text-xl font-display font-bold text-gray-900 mb-3">
+              Search Across the Decentralized Web
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Use Mostr.pub to find and connect with anyone on Nostr,
+              Mastodon, or Bluesky.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-700 text-white"
+                asChild
+              >
+                <a
+                  href="https://mostr.pub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Search className="mr-2 h-4 w-4" />
+                  Search on Mostr.pub
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="/blog/comparing-protocols">
+                  Compare Protocols
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
