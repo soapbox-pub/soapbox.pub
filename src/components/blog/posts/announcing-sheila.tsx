@@ -52,16 +52,10 @@ export default function AnnouncingSheila() {
         <figcaption>The payment tracker spreadsheet. Sheila maintains this automatically.</figcaption>
       </figure>
 
-      <pre><code>{`AI Agent (Claude Opus 4.6 via OpenCode)
-    |
-    |-- npm run email:inbox          # Check for new invoices
-    |-- npm run sheets:append        # Record in spreadsheet
-    |-- npm run mercury:send         # Pay via ACH/wire
-    |-- npm run kraken:withdraw      # Pay via BTC
-    |-- npm run boltz:reverse        # Pay via Lightning
-    |-- npm run oc:submit            # Submit to OpenCollective
-    |-- npm run drive:upload         # Archive to Google Drive
-    '-- npm run sheets:update        # Update status`}</code></pre>
+      <figure>
+        <img src="/assets/blog/announcing-sheila/scripts.png" alt="Sheila's package.json showing available scripts" />
+        <figcaption>Sheila runs TypeScript scripts to perform various tasks.</figcaption>
+      </figure>
 
       <figure>
         <img src="/assets/blog/announcing-sheila/email-reply.png" alt="Email from Sheila notifying a contractor that payment was sent" />
