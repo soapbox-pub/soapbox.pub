@@ -206,25 +206,6 @@ export default function AnnouncingDitto2() {
         to view full size.
       </p>
 
-      <h3>Desktop</h3>
-
-      <div className="not-prose grid grid-cols-2 md:grid-cols-3 gap-3 my-6">
-        {themes.map((theme) => (
-          <button
-            key={`desktop-${theme.name}`}
-            onClick={() => openLightbox(theme.desktop, `${theme.name} (desktop)`)}
-            className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
-          >
-            <img
-              src={theme.desktop}
-              alt={`${theme.name} theme -- desktop`}
-              className="w-full aspect-[16/10] object-cover object-top"
-              loading="lazy"
-            />
-          </button>
-        ))}
-      </div>
-
       <h3>Mobile</h3>
 
       <div className="not-prose grid grid-cols-3 sm:grid-cols-6 gap-3 my-6">
@@ -238,6 +219,25 @@ export default function AnnouncingDitto2() {
               src={theme.mobile}
               alt={`${theme.name} theme -- mobile`}
               className="w-full h-auto"
+              loading="lazy"
+            />
+          </button>
+        ))}
+      </div>
+
+      <h3>Desktop</h3>
+
+      <div className="not-prose grid grid-cols-3 gap-3 my-6">
+        {themes.map((theme) => (
+          <button
+            key={`desktop-${theme.name}`}
+            onClick={() => openLightbox(theme.desktop, `${theme.name} (desktop)`)}
+            className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
+          >
+            <img
+              src={theme.desktop}
+              alt={`${theme.name} theme -- desktop`}
+              className="w-full aspect-[16/10] object-cover object-top"
               loading="lazy"
             />
           </button>
