@@ -19,6 +19,7 @@ import {
   ImageIcon,
   CalendarDays,
   Puzzle,
+  Paintbrush,
   Shield,
   Heart,
   Zap,
@@ -53,24 +54,25 @@ const themes = [
   { name: "Halloween", src: "/assets/images/ditto/profiles/alex.png", rotate: "-2deg" },
 ];
 
-/** Content types Ditto supports. Each has a placeholder image path (300x400 portrait). */
+/** Content types Ditto supports. Each has a screenshot image and a link to the corresponding tab on ditto.pub. */
 const contentTypes = [
-  { name: "Posts", icon: MessageSquare, image: "/assets/images/ditto/content/posts.png" },
-  { name: "Articles", icon: Newspaper, image: "/assets/images/ditto/content/articles.png" },
-  { name: "Vines", icon: Video, image: "/assets/images/ditto/content/vines.png" },
-  { name: "Livestreams", icon: Radio, image: "/assets/images/ditto/content/livestreams.png" },
-  { name: "Polls", icon: BarChart3, image: "/assets/images/ditto/content/polls.png" },
-  { name: "Follow Packs", icon: Users, image: "/assets/images/ditto/content/follow-packs.png" },
-  { name: "Webxdc", icon: Gamepad2, image: "/assets/images/ditto/content/webxdc.png" },
-  { name: "Treasures", icon: Map, image: "/assets/images/ditto/content/treasures.png" },
-  { name: "Magic Decks", icon: Puzzle, image: "/assets/images/ditto/content/magic-decks.png" },
-  { name: "Events", icon: CalendarDays, image: "/assets/images/ditto/content/events.png" },
-  { name: "Photos", icon: ImageIcon, image: "/assets/images/ditto/content/photos.png" },
-  { name: "Music", icon: Music, image: "/assets/images/ditto/content/music.png" },
-  { name: "Podcasts", icon: Podcast, image: "/assets/images/ditto/content/podcasts.png" },
-  { name: "Books", icon: BookOpen, image: "/assets/images/ditto/content/books.png" },
-  { name: "Emoji Packs", icon: Smile, image: "/assets/images/ditto/content/emoji-packs.png" },
-  { name: "World", icon: Globe, image: "/assets/images/ditto/content/world.png" },
+  { name: "Posts", icon: MessageSquare, image: "/assets/images/ditto/content/posts.png", href: "https://ditto.pub/" },
+  { name: "Articles", icon: Newspaper, image: "/assets/images/ditto/content/articles.png", href: "https://ditto.pub/articles" },
+  { name: "Vines", icon: Video, image: "/assets/images/ditto/content/vines.png", href: "https://ditto.pub/vines" },
+  { name: "Livestreams", icon: Radio, image: "/assets/images/ditto/content/livestreams.png", href: "https://ditto.pub/videos" },
+  { name: "Polls", icon: BarChart3, image: "/assets/images/ditto/content/polls.png", href: "https://ditto.pub/polls" },
+  { name: "Follow Packs", icon: Users, image: "/assets/images/ditto/content/follow-packs.png", href: "https://ditto.pub/packs" },
+  { name: "Webxdc", icon: Gamepad2, image: "/assets/images/ditto/content/webxdc.png", href: "https://ditto.pub/webxdc" },
+  { name: "Treasures", icon: Map, image: "/assets/images/ditto/content/treasures.png", href: "https://ditto.pub/treasures" },
+  { name: "Magic Decks", icon: Puzzle, image: "/assets/images/ditto/content/magic-decks.png", href: "https://ditto.pub/decks" },
+  { name: "Events", icon: CalendarDays, image: "/assets/images/ditto/content/events.png", href: "https://ditto.pub/events" },
+  { name: "Photos", icon: ImageIcon, image: "/assets/images/ditto/content/photos.png", href: "https://ditto.pub/photos" },
+  { name: "Music", icon: Music, image: "/assets/images/ditto/content/music.png", href: "https://ditto.pub/music" },
+  { name: "Podcasts", icon: Podcast, image: "/assets/images/ditto/content/podcasts.png", href: "https://ditto.pub/podcasts" },
+  { name: "Books", icon: BookOpen, image: "/assets/images/ditto/content/books.png", href: "https://ditto.pub/books" },
+  { name: "Emoji Packs", icon: Smile, image: "/assets/images/ditto/content/emoji-packs.png", href: "https://ditto.pub/emojis" },
+  { name: "Color Moments", icon: Paintbrush, image: "/assets/images/ditto/content/color-moments.png", href: "https://ditto.pub/colors" },
+  { name: "World", icon: Globe, image: "/assets/images/ditto/content/world.png", href: "https://ditto.pub/world" },
 ];
 
 
@@ -250,7 +252,7 @@ export default function Ditto() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
               The old internet{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                IS BACK.
+                IS&nbsp;BACK.
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -262,10 +264,10 @@ export default function Ditto() {
 
           {/* Dynamic collage grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-5">
-            {themes.map((theme) => (
+            {themes.map((theme, i) => (
               <div
                 key={theme.name}
-                className="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl ring-2 ring-violet-200/60 transition-all duration-300 hover:z-10 hover:scale-[1.03]"
+                className={`group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl ring-2 ring-violet-200/60 transition-all duration-300 hover:z-10 hover:scale-[1.03]${i >= 4 ? " hidden sm:block" : ""}`}
                 style={{ transform: `rotate(${theme.rotate})` }}
               >
                 <img
@@ -304,13 +306,13 @@ export default function Ditto() {
 
           <div
             className="flex gap-5 pb-6 w-max animate-marquee hover:[animation-play-state:paused]"
-            style={{ animationDuration: "60s" }}
+            style={{ animationDuration: "80s" }}
           >
             {/* Render items twice for seamless loop */}
-            {[...contentTypes, ...contentTypes].map(({ name, icon: Icon, image }, i) => (
-              <div key={`${name}-${i}`} className="shrink-0 w-[200px] group">
+            {[...contentTypes, ...contentTypes].map(({ name, image, href }, i) => (
+              <a key={`${name}-${i}`} href={href} target="_blank" rel="noopener noreferrer" className="shrink-0 w-[340px] group">
                 <div className="rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-white ring-1 ring-black/5 group-hover:ring-violet-300">
-                  <div className="relative aspect-[375/812] bg-gradient-to-br from-violet-100 to-purple-100 overflow-hidden">
+                  <div className="relative aspect-[3/4] bg-gradient-to-br from-violet-100 to-purple-100 overflow-hidden">
                     <img
                       src={image}
                       alt={`${name} in Ditto`}
@@ -319,16 +321,11 @@ export default function Ditto() {
                         (e.target as HTMLImageElement).style.display = "none";
                       }}
                     />
-                    {/* Placeholder fallback (visible when image fails to load) */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                      <div className="w-14 h-14 bg-violet-200/80 rounded-2xl flex items-center justify-center">
-                        <Icon className="h-7 w-7 text-violet-600" />
-                      </div>
-                    </div>
+
                   </div>
                 </div>
-                <p className="mt-3 text-sm font-semibold text-gray-900 text-center">{name}</p>
-              </div>
+                <p className="mt-3 text-base font-semibold text-gray-900 text-center">{name}</p>
+              </a>
             ))}
           </div>
         </div>
@@ -402,7 +399,7 @@ export default function Ditto() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
               A Bridge to the{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                Open Web
+                Open&nbsp;Web
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
