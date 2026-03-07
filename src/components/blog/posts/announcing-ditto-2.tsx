@@ -27,7 +27,6 @@ const themes = [
   { name: 'Hacker', desktop: '/assets/blog/announcing-ditto-2/hacker-desktop.png', mobile: '/assets/blog/announcing-ditto-2/hacker-mobile.png' },
   { name: 'Clackophile', desktop: '/assets/blog/announcing-ditto-2/clackophile-desktop.png', mobile: '/assets/blog/announcing-ditto-2/clackophile-mobile.png' },
   { name: 'DJ', desktop: '/assets/blog/announcing-ditto-2/dj-desktop.png', mobile: '/assets/blog/announcing-ditto-2/dj-mobile.png' },
-  { name: 'Podcaster', desktop: '/assets/blog/announcing-ditto-2/podcaster-desktop.png', mobile: '/assets/blog/announcing-ditto-2/podcaster-mobile.png' },
   { name: 'Hiker', desktop: '/assets/blog/announcing-ditto-2/hiker-desktop.png', mobile: '/assets/blog/announcing-ditto-2/hiker-mobile.png' },
 ];
 
