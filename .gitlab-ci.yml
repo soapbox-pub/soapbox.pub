@@ -5,6 +5,7 @@ image:
 
 variables:
   PRERENDER: 1
+  PUPPETEER_SKIP_DOWNLOAD: "true"
 
 default:
   interruptible: true
