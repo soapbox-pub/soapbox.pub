@@ -114,22 +114,10 @@ export default function Index() {
 
             {/* Right -- product collage */}
             <div className="relative h-[420px] md:h-[520px] lg:h-[560px]">
-              {/* Back -- Agora cover (dark, wide) */}
+              {/* Back-left -- Shakespeare IDE */}
               <div
-                className="absolute top-0 right-0 w-[65%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-orange-300/40"
-                style={{ transform: "rotate(2deg)" }}
-              >
-                <img
-                  src="/assets/blog/about-agora/agora-cover.png"
-                  alt="Agora -- Power to the People"
-                  className="w-full h-auto"
-                />
-              </div>
-
-              {/* Middle -- Shakespeare IDE */}
-              <div
-                className="absolute top-24 left-0 w-[65%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-purple-200/60"
-                style={{ transform: "rotate(-2deg)" }}
+                className="absolute top-0 left-0 w-[58%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-purple-200/60"
+                style={{ transform: "rotate(-3deg)" }}
               >
                 <img
                   src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
@@ -138,10 +126,22 @@ export default function Index() {
                 />
               </div>
 
-              {/* Front -- Ditto DJ theme (desktop) */}
+              {/* Back-right -- Agora cover */}
               <div
-                className="absolute bottom-0 left-[2%] w-[75%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(-1.5deg)" }}
+                className="absolute top-4 right-0 w-[55%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-orange-300/40"
+                style={{ transform: "rotate(4deg)" }}
+              >
+                <img
+                  src="/assets/blog/about-agora/agora-cover.png"
+                  alt="Agora -- Power to the People"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Front-center -- Ditto DJ theme (desktop) */}
+              <div
+                className="absolute bottom-0 left-[5%] right-[5%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(-1deg)" }}
               >
                 <img
                   src="/assets/images/ditto/dj-desktop.png"
@@ -162,20 +162,10 @@ export default function Index() {
           {/* -- Ditto (image left, text right) -- */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative h-[380px] md:h-[460px]">
-              {/* Back row */}
+              {/* Back-left -- Alien */}
               <div
-                className="absolute top-0 right-0 w-[48%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
-                style={{ transform: "rotate(2deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/gamer.png"
-                  alt="Gamer theme"
-                  className="w-full aspect-[867/918] object-cover"
-                />
-              </div>
-              <div
-                className="absolute top-8 left-0 w-[48%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
-                style={{ transform: "rotate(-2deg)" }}
+                className="absolute top-0 left-0 w-[50%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
+                style={{ transform: "rotate(-3deg)" }}
               >
                 <img
                   src="/assets/images/ditto/profiles/alien.png"
@@ -183,24 +173,25 @@ export default function Index() {
                   className="w-full aspect-[867/918] object-cover"
                 />
               </div>
-              {/* Front row */}
+              {/* Back-right -- Gamer */}
               <div
-                className="absolute bottom-4 left-[8%] w-[44%] rounded-xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(-3deg)" }}
+                className="absolute top-4 right-0 w-[50%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
+                style={{ transform: "rotate(3deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/gamer.png"
+                  alt="Gamer theme"
+                  className="w-full aspect-[867/918] object-cover"
+                />
+              </div>
+              {/* Front-center -- Kawaii */}
+              <div
+                className="absolute bottom-0 left-[15%] right-[15%] rounded-xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(-1deg)" }}
               >
                 <img
                   src="/assets/images/ditto/profiles/kawaii.png"
                   alt="Kawaii theme"
-                  className="w-full aspect-[867/918] object-cover"
-                />
-              </div>
-              <div
-                className="absolute bottom-0 right-[5%] w-[44%] rounded-xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(2.5deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/hacker.png"
-                  alt="Hacker theme"
                   className="w-full aspect-[867/918] object-cover"
                 />
               </div>
