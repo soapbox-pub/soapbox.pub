@@ -6,7 +6,7 @@ export const meta: BlogPostMeta = {
   slug: 'announcing-ditto-2',
   title: 'Soapbox Launches Massive Update to Ditto: Designed for Fun, Built for Freedom',
   excerpt:
-    'Your content. Your vibe. Your rules. Ditto is the world\'s first fully customizable, open source social platform -- and it just got a massive upgrade.',
+    'Your content. Your vibe. Your rules. Ditto is the world\'s first fully customizable, open source, and decentralized social platform -- and it just got a massive upgrade.',
   coverImage: '/assets/images/ditto/ditto2-og.gif',
   date: '2026-03-11',
   author: {
