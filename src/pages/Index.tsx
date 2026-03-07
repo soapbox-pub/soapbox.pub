@@ -138,26 +138,14 @@ export default function Index() {
                 />
               </div>
 
-              {/* Front left -- Ditto Kawaii theme */}
+              {/* Front -- Ditto DJ theme (desktop) */}
               <div
-                className="absolute bottom-4 left-[5%] w-[38%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(-3deg)" }}
+                className="absolute bottom-0 left-[2%] w-[75%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(-1.5deg)" }}
               >
                 <img
-                  src="/assets/images/ditto/profiles/kawaii.png"
-                  alt="Ditto Kawaii theme"
-                  className="w-full h-auto"
-                />
-              </div>
-
-              {/* Front right -- Ditto Solarpunk theme */}
-              <div
-                className="absolute bottom-0 right-[5%] w-[38%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(2.5deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/solarpunk.png"
-                  alt="Ditto Solarpunk theme"
+                  src="/assets/images/ditto/dj-desktop.png"
+                  alt="Ditto DJ theme"
                   className="w-full h-auto"
                 />
               </div>
@@ -173,12 +161,49 @@ export default function Index() {
         <div className="max-w-7xl mx-auto space-y-32">
           {/* -- Ditto (image left, text right) -- */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
-              <img
-                src="/assets/images/ditto/ipads/kawaii-ipad.png"
-                alt="Ditto with Kawaii theme on tablet"
-                className="w-full h-auto"
-              />
+            <div className="relative h-[380px] md:h-[460px]">
+              {/* Back row */}
+              <div
+                className="absolute top-0 right-0 w-[48%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
+                style={{ transform: "rotate(2deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/gamer.png"
+                  alt="Gamer theme"
+                  className="w-full aspect-[867/918] object-cover"
+                />
+              </div>
+              <div
+                className="absolute top-8 left-0 w-[48%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
+                style={{ transform: "rotate(-2deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/alien.png"
+                  alt="Alien theme"
+                  className="w-full aspect-[867/918] object-cover"
+                />
+              </div>
+              {/* Front row */}
+              <div
+                className="absolute bottom-4 left-[8%] w-[44%] rounded-xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(-3deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/kawaii.png"
+                  alt="Kawaii theme"
+                  className="w-full aspect-[867/918] object-cover"
+                />
+              </div>
+              <div
+                className="absolute bottom-0 right-[5%] w-[44%] rounded-xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(2.5deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/hacker.png"
+                  alt="Hacker theme"
+                  className="w-full aspect-[867/918] object-cover"
+                />
+              </div>
             </div>
 
             <div className="space-y-6">
