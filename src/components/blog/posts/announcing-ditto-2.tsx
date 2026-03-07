@@ -81,7 +81,7 @@ export default function AnnouncingDitto2() {
           it's all here, and it's 100% free, open source, and yours to own.
         </p>
       </blockquote>
-      <p className="text-right text-gray-500 -mt-4">-- M.K. Fain, CPO at Soapbox</p>
+      <p className="text-right text-gray-500 -mt-4">&mdash; M.K. Fain, CPO at Soapbox</p>
 
       <h2>What's New in Ditto</h2>
 
