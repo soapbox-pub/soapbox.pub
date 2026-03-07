@@ -4,9 +4,9 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   slug: 'announcing-ditto-2',
-  title: 'Soapbox Launches Major Update to Ditto',
+  title: 'Soapbox Launches Major Update to Ditto, the Social Platform for People Who Want to Have Fun Online Again',
   excerpt:
-    'Soapbox launches a major update to Ditto, the open source social platform for people who want to have fun online again. Custom themes, infinite content types, and bridges to Bluesky and Mastodon.',
+    'Your content. Your vibe. Your rules. Ditto is the world\'s first fully customizable, open source social platform -- and it just got a massive upgrade.',
   coverImage: '/assets/images/ditto/ditto2-og.gif',
   date: '2026-03-11',
   author: {
@@ -20,28 +20,21 @@ export const meta: BlogPostMeta = {
   tags: ['Ditto', 'Nostr', 'Open Source', 'Press Release'],
 };
 
-/** Gallery screenshot data. */
-const screenshots = [
-  { src: '/assets/blog/announcing-ditto-2/kawaii-desktop.png', caption: 'Kawaii theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/solarpunk-desktop.png', caption: 'Solarpunk theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/hacker-desktop.png', caption: 'Hacker theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/clackophile-desktop.png', caption: 'Clackophile theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/dj-desktop.png', caption: 'DJ theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/podcaster-desktop.png', caption: 'Podcaster theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/hiker-desktop.png', caption: 'Hiker theme (desktop)' },
-  { src: '/assets/blog/announcing-ditto-2/kawaii-mobile.png', caption: 'Kawaii theme (mobile)' },
-  { src: '/assets/blog/announcing-ditto-2/solarpunk-mobile.png', caption: 'Solarpunk theme (mobile)' },
-  { src: '/assets/blog/announcing-ditto-2/hacker-mobile.png', caption: 'Hacker theme (mobile)' },
-  { src: '/assets/blog/announcing-ditto-2/mobile-feed.png', caption: 'Feed view' },
-  { src: '/assets/blog/announcing-ditto-2/mobile-themes.png', caption: 'Theme browser' },
-  { src: '/assets/blog/announcing-ditto-2/mobile-world.png', caption: 'World (Agora)' },
-  { src: '/assets/blog/announcing-ditto-2/mobile-vines.png', caption: 'Vines' },
-  { src: '/assets/blog/announcing-ditto-2/mobile-articles.png', caption: 'Articles' },
-  { src: '/assets/blog/announcing-ditto-2/mobile-treasures.png', caption: 'Treasures' },
+/** 7 themes with matching desktop + mobile screenshots. */
+const themes = [
+  { name: 'Kawaii', desktop: '/assets/blog/announcing-ditto-2/kawaii-desktop.png', mobile: '/assets/blog/announcing-ditto-2/kawaii-mobile.png' },
+  { name: 'Solarpunk', desktop: '/assets/blog/announcing-ditto-2/solarpunk-desktop.png', mobile: '/assets/blog/announcing-ditto-2/solarpunk-mobile.png' },
+  { name: 'Hacker', desktop: '/assets/blog/announcing-ditto-2/hacker-desktop.png', mobile: '/assets/blog/announcing-ditto-2/hacker-mobile.png' },
+  { name: 'Clackophile', desktop: '/assets/blog/announcing-ditto-2/clackophile-desktop.png', mobile: '/assets/blog/announcing-ditto-2/clackophile-mobile.png' },
+  { name: 'DJ', desktop: '/assets/blog/announcing-ditto-2/dj-desktop.png', mobile: '/assets/blog/announcing-ditto-2/dj-mobile.png' },
+  { name: 'Podcaster', desktop: '/assets/blog/announcing-ditto-2/podcaster-desktop.png', mobile: '/assets/blog/announcing-ditto-2/podcaster-mobile.png' },
+  { name: 'Hiker', desktop: '/assets/blog/announcing-ditto-2/hiker-desktop.png', mobile: '/assets/blog/announcing-ditto-2/hiker-mobile.png' },
 ];
 
 export default function AnnouncingDitto2() {
-  const [lightbox, setLightbox] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; caption: string } | null>(null);
+
+  const openLightbox = (src: string, caption: string) => setLightbox({ src, caption });
 
   return (
     <article className="prose prose-lg max-w-none">
@@ -60,18 +53,6 @@ export default function AnnouncingDitto2() {
           </a>
         </p>
       </div>
-
-      {/* ── Headline ── */}
-      <h2 className="text-center">
-        Soapbox Launches Major Update to Ditto, the Social Platform for People
-        Who Want to Have Fun Online Again -- Not Feed the Big Tech Machine
-      </h2>
-
-      <p className="lead text-center italic">
-        Your content. Your vibe. Your rules. Ditto is the world's first fully
-        customizable, open source social platform -- and it just got a massive
-        upgrade.
-      </p>
 
       {/* ── Body ── */}
       <p>
@@ -187,68 +168,67 @@ export default function AnnouncingDitto2() {
         .
       </p>
 
-      {/* ── Media Gallery ── */}
+      {/* ── Screenshots ── */}
       <h2>Screenshots</h2>
 
       <p>
-        High-resolution screenshots of Ditto's custom themes and features.
-        Click any image to view full size.
+        High-resolution screenshots of Ditto's custom themes. Click any image
+        to view full size.
       </p>
 
-      <div className="not-prose grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 my-8">
-        {screenshots.map((shot, i) => (
+      <h3>Desktop</h3>
+
+      <div className="not-prose grid grid-cols-2 md:grid-cols-3 gap-3 my-6">
+        {themes.map((theme) => (
           <button
-            key={shot.src}
-            onClick={() => setLightbox(i)}
+            key={`desktop-${theme.name}`}
+            onClick={() => openLightbox(theme.desktop, `${theme.name} (desktop)`)}
             className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
           >
             <img
-              src={shot.src}
-              alt={shot.caption}
-              className="w-full h-auto"
+              src={theme.desktop}
+              alt={`${theme.name} theme -- desktop`}
+              className="w-full aspect-[16/10] object-cover object-top"
               loading="lazy"
             />
           </button>
         ))}
       </div>
 
-      {/* Lightbox overlay */}
-      {lightbox !== null && (
+      <h3>Mobile</h3>
+
+      <div className="not-prose grid grid-cols-4 sm:grid-cols-7 gap-3 my-6">
+        {themes.map((theme) => (
+          <button
+            key={`mobile-${theme.name}`}
+            onClick={() => openLightbox(theme.mobile, `${theme.name} (mobile)`)}
+            className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
+          >
+            <img
+              src={theme.mobile}
+              alt={`${theme.name} theme -- mobile`}
+              className="w-full aspect-[375/812] object-cover object-top"
+              loading="lazy"
+            />
+          </button>
+        ))}
+      </div>
+
+      {/* ── Lightbox overlay ── */}
+      {lightbox && (
         <div
           className="not-prose fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-zoom-out"
           onClick={() => setLightbox(null)}
         >
           <div className="relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center">
             <img
-              src={screenshots[lightbox].src}
-              alt={screenshots[lightbox].caption}
+              src={lightbox.src}
+              alt={lightbox.caption}
               className="max-h-[85vh] w-auto rounded-lg shadow-2xl"
             />
             <p className="text-white/80 text-sm mt-3">
-              {screenshots[lightbox].caption}
+              {lightbox.caption}
             </p>
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-2">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightbox(lightbox > 0 ? lightbox - 1 : screenshots.length - 1);
-                }}
-                className="pointer-events-auto w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white text-xl transition-colors"
-                aria-label="Previous"
-              >
-                &lsaquo;
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightbox(lightbox < screenshots.length - 1 ? lightbox + 1 : 0);
-                }}
-                className="pointer-events-auto w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white text-xl transition-colors"
-                aria-label="Next"
-              >
-                &rsaquo;
-              </button>
-            </div>
           </div>
         </div>
       )}
