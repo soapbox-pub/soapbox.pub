@@ -46,6 +46,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/announcing-ditto-2",
         "/blog/announcing-sheila",
         "/blog/announcing-clawstr",
         "/blog/announcing-ditto",
