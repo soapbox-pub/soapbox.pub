@@ -245,7 +245,7 @@ export default function WhatsInAName() {
 
       <p>
         <strong>This is the ethos behind all of Soapbox's <a href="/tools">open source work</a>.</strong> Every tool
-        we build—<a href="/tools/shakespeare">Shakespeare</a>, <a href="/tools/ditto">Ditto</a>, <a href="/tools/mkstack">MKStack</a>,
+        we build—<a href="/shakespeare">Shakespeare</a>, <a href="/ditto">Ditto</a>, <a href="/mkstack">MKStack</a>,
         <a href="/tools/stacks"> Stacks</a>, <a href="/tools/nostrify">Nostrify</a>—is freely available for anyone to
         use, modify, and build upon.
       </p>

@@ -373,7 +373,7 @@ export default function ShakespeareVsLovable() {
                 size="lg"
                 variant="outline"
               >
-                <Link to="/tools/shakespeare">
+                <Link to="/shakespeare">
                   Learn More
                 </Link>
               </Button>

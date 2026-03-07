@@ -96,7 +96,7 @@ export default function AnnouncingDitto2() {
           profile and theme with color palettes, background images, fonts, and
           more. Think MySpace-level personalization, powered by modern tech.
           Browse and share themes, or build your own with{' '}
-          <a href="/tools/shakespeare">Shakespeare</a>, Soapbox's AI-powered
+          <a href="/shakespeare">Shakespeare</a>, Soapbox's AI-powered
           code editor.
         </li>
         <li>

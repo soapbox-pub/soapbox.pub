@@ -48,7 +48,7 @@ export default function BuildingFreedomFirstCommunities() {
       </p>
 
       <p>
-        According to the Human Rights Foundation, AI tools, like <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> from Soapbox, can be used to liberate. "AI tools can be paired with Freedom Tech protocols like Bitcoin and <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> to ensure that anyone can safely and securely access the world's best intelligence."
+        According to the Human Rights Foundation, AI tools, like <Link to="/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> from Soapbox, can be used to liberate. "AI tools can be paired with Freedom Tech protocols like Bitcoin and <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link> to ensure that anyone can safely and securely access the world's best intelligence."
       </p>
 
       <p>

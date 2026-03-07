@@ -40,7 +40,7 @@ export default function BuildWithoutCoding() {
       </p>
 
       <p>
-        Thanks to AI-powered tools, like our AI builder <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, the barriers between imagination and implementation are dissolving, creating unprecedented opportunities for non-technical creators. As our CEO, Alex Gleason, says, "Implementation is becoming commoditized so that if you have a good idea, then you can just build it almost immediately. The implementation is becoming a given."
+        Thanks to AI-powered tools, like our AI builder <Link to="/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, the barriers between imagination and implementation are dissolving, creating unprecedented opportunities for non-technical creators. As our CEO, Alex Gleason, says, "Implementation is becoming commoditized so that if you have a good idea, then you can just build it almost immediately. The implementation is becoming a given."
       </p>
 
       <h2>A Faster Creator Economy is Primed to Emerge</h2>

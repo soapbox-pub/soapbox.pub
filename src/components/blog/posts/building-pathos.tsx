@@ -246,7 +246,7 @@ export default function BuildingPathos() {
       </p>
 
       <p>
-        This is why Soapbox exists. Every tool we build - <a href="https://soapbox.pub/tools/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Agora - shares the same DNA: decentralized infrastructure that no single entity can control. We're not building products for the sake of products. We're building the foundation for a world where communication, identity, and money can't be taken away by the powerful.
+        This is why Soapbox exists. Every tool we build - <a href="https://soapbox.pub/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Agora - shares the same DNA: decentralized infrastructure that no single entity can control. We're not building products for the sake of products. We're building the foundation for a world where communication, identity, and money can't be taken away by the powerful.
       </p>
 
       <p>

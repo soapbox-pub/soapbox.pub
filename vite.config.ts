@@ -31,12 +31,14 @@ export default defineConfig({
         "/soapbox-sessions",
         "/tools",
 
-        // Tool pages
-        "/tools/ditto",
+        // Tool pages (primary routes)
+        "/ditto",
+        "/shakespeare",
+
+        // Tool pages (under /tools/)
         "/tools/nostrbook",
         "/tools/nostrhub",
         "/tools/nostrify",
-        "/tools/shakespeare",
         "/tools/stacks",
 
         // Blog author pages

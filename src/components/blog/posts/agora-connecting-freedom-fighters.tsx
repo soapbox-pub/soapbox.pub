@@ -243,7 +243,7 @@ export default function AgoraConnectingFreedomFighters() {
       </p>
 
       <p>
-        This is why Soapbox exists. Every tool we build — <a href="https://soapbox.pub/tools/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://mkstack.xyz" target="_blank" rel="noopener noreferrer">MKStack</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Agora — shares the same DNA: decentralized infrastructure that no single entity can control. The full story of how Agora was built is in our <a href="/blog/building-pathos">Building Agora</a> post.
+        This is why Soapbox exists. Every tool we build — <a href="https://soapbox.pub/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://mkstack.xyz" target="_blank" rel="noopener noreferrer">MKStack</a>, <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, and now Agora — shares the same DNA: decentralized infrastructure that no single entity can control. The full story of how Agora was built is in our <a href="/blog/building-pathos">Building Agora</a> post.
       </p>
 
       <div className="not-prose my-12">

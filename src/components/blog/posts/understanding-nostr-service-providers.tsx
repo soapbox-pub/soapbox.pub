@@ -658,7 +658,7 @@ export default function UnderstandingNostrServiceProviders() {
           NSPs are part of the broader Nostr ecosystem that's building a more open, decentralized internet.
           Learn more about our other projects including <a href="/blog/announcing-shakespeare" className="text-blue-600 hover:underline">Shakespeare</a>,
           <a href="/tools/mkstack" className="text-blue-600 hover:underline"> MKStack</a>, and
-          <a href="/tools/ditto" className="text-blue-600 hover:underline"> Ditto</a>.
+          <a href="/ditto" className="text-blue-600 hover:underline"> Ditto</a>.
         </em>
       </p>
     </article>

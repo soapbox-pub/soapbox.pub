@@ -240,7 +240,7 @@ export default function ShakespeareOriginStory() {
       </p>
 
       <p>
-        This led to <strong><a href="/tools/shakespeare">Shakespeare</a></strong>—a complete reimagining of the Stacks concept as a browser-based development environment.
+        This led to <strong><a href="/shakespeare">Shakespeare</a></strong>—a complete reimagining of the Stacks concept as a browser-based development environment.
       </p>
 
       <h3>The Browser-Based Revolution</h3>

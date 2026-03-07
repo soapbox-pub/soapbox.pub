@@ -459,7 +459,7 @@ export default function MediaKit() {
 
                     <div className="flex flex-col sm:flex-row gap-3 sm:justify-center">
                       <Button asChild className="bg-azure hover:bg-azure-600 text-white w-full sm:w-auto">
-                        <a href="/tools/shakespeare" target="_blank" rel="noopener noreferrer">
+                        <a href="/shakespeare" target="_blank" rel="noopener noreferrer">
                           🎭 Try Shakespeare
                         </a>
                       </Button>

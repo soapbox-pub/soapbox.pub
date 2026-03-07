@@ -37,15 +37,18 @@ export function AppRouter() {
         <Route path="/about" element={<About />} />
         <Route path="/get-involved" element={<GetInvolved />} />
         <Route path="/tools" element={<Tools />} />
-        <Route path="/tools/ditto" element={<Ditto />} />
+        {/* Primary routes for promoted tools */}
+        <Route path="/ditto" element={<Ditto />} />
+        <Route path="/shakespeare" element={<Shakespeare />} />
+        <Route path="/mkstack" element={<MKStack />} />
+        {/* Other tool pages */}
         <Route path="/tools/nostrify" element={<Nostrify />} />
         <Route path="/tools/stacks" element={<Stacks />} />
         <Route path="/tools/nostrbook" element={<Nostrbook />} />
         <Route path="/tools/nostrhub" element={<NostrHub />} />
-        <Route path="/tools/shakespeare" element={<Shakespeare />} />
-        {/* New primary route for MKStack */}
-        <Route path="/mkstack" element={<MKStack />} />
-        {/* Backwards compatibility redirect */}
+        {/* Backwards compatibility redirects */}
+        <Route path="/tools/ditto" element={<Navigate to="/ditto" replace />} />
+        <Route path="/tools/shakespeare" element={<Navigate to="/shakespeare" replace />} />
         <Route path="/tools/mkstack" element={<Navigate to="/mkstack" replace />} />
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />

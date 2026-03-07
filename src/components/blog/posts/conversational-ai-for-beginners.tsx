@@ -38,7 +38,7 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        <strong>You don't need a GitHub to build a website; you don't even need to know what Git is!</strong> With our conversational AI builder, <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, you simply sign in with <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link>.
+        <strong>You don't need a GitHub to build a website; you don't even need to know what Git is!</strong> With our conversational AI builder, <Link to="/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link>, you simply sign in with <Link to="/blog/nostr101" className="text-azure hover:text-azure-600 underline">Nostr</Link>.
       </p>
 
       <ul>
@@ -80,7 +80,7 @@ export default function ConversationalAIForBeginners() {
       </p>
 
       <p>
-        Many call this "vibe coding," but we just call it building with AI for the rest of us. Using <Link to="/tools/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is nothing more than entering a conversation prompt to ask it to build whatever you want. For example, you could ask it to, "Build me a website for my upcoming baby shower, so I can share my gift registry and have guests RSVP through it."
+        Many call this "vibe coding," but we just call it building with AI for the rest of us. Using <Link to="/shakespeare" className="text-azure hover:text-azure-600 underline">Shakespeare</Link> is nothing more than entering a conversation prompt to ask it to build whatever you want. For example, you could ask it to, "Build me a website for my upcoming baby shower, so I can share my gift registry and have guests RSVP through it."
       </p>
 
       <p>

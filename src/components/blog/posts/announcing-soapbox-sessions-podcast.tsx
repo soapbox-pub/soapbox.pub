@@ -88,7 +88,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
       </p>
 
       <p>
-        Unlike Nostr, the world of AI is full of hype and far more people are interested in and aware of it. It's moving faster than Nostr, or really, anything in world right now. This makes it worth our focus, especially since Soapbox offers a conversational AI builder that works seamlessly with Nostr. <a href="/tools/shakespeare" className="text-azure-600 hover:underline">Shakespeare</a> helps you build websites and apps with conversational AI while helping you stay away from platform lock-in. You never need to give an email to use it, just Nostr.
+        Unlike Nostr, the world of AI is full of hype and far more people are interested in and aware of it. It's moving faster than Nostr, or really, anything in world right now. This makes it worth our focus, especially since Soapbox offers a conversational AI builder that works seamlessly with Nostr. <a href="/shakespeare" className="text-azure-600 hover:underline">Shakespeare</a> helps you build websites and apps with conversational AI while helping you stay away from platform lock-in. You never need to give an email to use it, just Nostr.
       </p>
 
       <p>

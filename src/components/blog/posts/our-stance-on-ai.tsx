@@ -168,7 +168,7 @@ export default function OurStanceOnAI() {
         <li><Link to="/blog/build-without-coding">Build Anything Without Coding: AI's Revolution is For Everyone</Link></li>
         <li><Link to="/blog/announcing-shakespeare-act-2">Shakespeare Act 2: Build Freely</Link></li>
         <li><Link to="/blog/shakespeare-origin-story">The Origin Story of Shakespeare</Link></li>
-        <li><Link to="/tools/shakespeare">Learn More About Shakespeare</Link></li>
+        <li><Link to="/shakespeare">Learn More About Shakespeare</Link></li>
       </ul>
     </article>
   );

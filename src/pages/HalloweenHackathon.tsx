@@ -299,7 +299,7 @@ export default function HalloweenHackathon() {
               asChild
               className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black text-lg px-8 py-4"
             >
-              <Link to="/tools/shakespeare">
+              <Link to="/shakespeare">
                 Start Building with Shakespeare
               </Link>
             </Button>

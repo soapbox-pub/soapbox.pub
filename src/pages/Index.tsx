@@ -1,10 +1,5 @@
 import {
   ArrowRight,
-  Code,
-  Globe,
-  Eye,
-  ShieldOff,
-  Megaphone,
   Search,
   ExternalLink,
   BookOpen,
@@ -81,7 +76,7 @@ export default function Index() {
                   className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg"
                   asChild
                 >
-                  <Link to="/tools/ditto">
+                  <Link to="/ditto">
                     Explore Ditto
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -112,40 +107,38 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right -- product collage (3 cards, same size, fanned) */}
-            <div className="relative h-[420px] md:h-[520px] lg:h-[560px]">
-              {/* Back-left -- Shakespeare IDE */}
+            {/* Right -- three mobile screenshots fanned */}
+            <div className="flex items-end justify-center gap-3 md:gap-5 px-4">
+              {/* Left -- Ditto Solarpunk */}
               <div
-                className="absolute top-4 left-0 w-[60%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-purple-200/60"
-                style={{ transform: "rotate(-3deg)" }}
+                className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-6"
+                style={{ transform: "rotate(-4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
               >
                 <img
-                  src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
-                  alt="Shakespeare AI IDE"
+                  src="/assets/blog/announcing-ditto-2/solarpunk-mobile.png"
+                  alt="Ditto -- Solarpunk theme"
                   className="w-full h-auto"
                 />
               </div>
-
-              {/* Back-right -- Agora cover */}
+              {/* Center -- Shakespeare (elevated) */}
               <div
-                className="absolute top-0 right-0 w-[60%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-orange-300/40 z-[5]"
-                style={{ transform: "rotate(3deg)" }}
+                className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-10"
+                style={{ transform: "rotate(0deg)", boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
               >
                 <img
-                  src="/assets/blog/about-agora/agora-cover.png"
+                  src="/assets/images/shakespeare-mobile.png"
+                  alt="Shakespeare -- Build apps with AI"
+                  className="w-full h-auto"
+                />
+              </div>
+              {/* Right -- Agora Actions */}
+              <div
+                className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-6"
+                style={{ transform: "rotate(4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
+              >
+                <img
+                  src="/assets/blog/about-agora/ve-action.png"
                   alt="Agora -- Power to the People"
-                  className="w-full h-auto"
-                />
-              </div>
-
-              {/* Front-center -- Ditto DJ theme */}
-              <div
-                className="absolute top-[45%] left-[20%] w-[60%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(-1deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/dj-desktop.png"
-                  alt="Ditto DJ theme"
                   className="w-full h-auto"
                 />
               </div>
@@ -161,11 +154,11 @@ export default function Index() {
         <div className="max-w-7xl mx-auto space-y-32">
           {/* -- Ditto (image left, text right) -- */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative h-[380px] md:h-[460px]">
+            <div className="relative h-[420px] md:h-[520px]">
               {/* Back-left -- Kawaii */}
               <div
-                className="absolute top-0 left-0 w-[45%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
-                style={{ transform: "rotate(-3deg)" }}
+                className="absolute top-0 left-0 w-[55%] rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5"
+                style={{ transform: "rotate(-2deg)" }}
               >
                 <img
                   src="/assets/images/ditto/profiles/kawaii.png"
@@ -175,8 +168,8 @@ export default function Index() {
               </div>
               {/* Back-right -- Alien */}
               <div
-                className="absolute top-4 right-0 w-[45%] rounded-xl shadow-xl overflow-hidden ring-2 ring-violet-200/60 z-[5]"
-                style={{ transform: "rotate(3deg)" }}
+                className="absolute top-6 right-0 w-[55%] rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 z-[5]"
+                style={{ transform: "rotate(2deg)" }}
               >
                 <img
                   src="/assets/images/ditto/profiles/alien.png"
@@ -186,7 +179,7 @@ export default function Index() {
               </div>
               {/* Front-center -- Gamer */}
               <div
-                className="absolute top-[40%] left-[18%] w-[45%] rounded-xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                className="absolute bottom-0 left-[15%] w-[55%] rounded-xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
                 style={{ transform: "rotate(-1deg)" }}
               >
                 <img
@@ -224,7 +217,7 @@ export default function Index() {
                 className="bg-violet-600 hover:bg-violet-700 text-white"
                 asChild
               >
-                <Link to="/tools/ditto">
+                <Link to="/ditto">
                   Explore Ditto
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -260,7 +253,7 @@ export default function Index() {
                 className="bg-blue-600 hover:bg-blue-700 text-white"
                 asChild
               >
-                <Link to="/tools/shakespeare">
+                <Link to="/shakespeare">
                   Start Building
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -324,83 +317,7 @@ export default function Index() {
       </section>
 
       {/* ================================================================ */}
-      {/* 3. NOT BIG TECH -- Dark Manifesto                                */}
-      {/* ================================================================ */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-950 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              Not Big Tech.
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              We build software that serves people, not shareholders.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 bg-azure/20 rounded-xl flex items-center justify-center mb-5">
-                <Code className="h-6 w-6 text-azure" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">100% Open Source</h3>
-              <p className="text-gray-400 leading-relaxed">
-                All our code is public. No black boxes, no proprietary lock-in.
-                Anyone can read, copy, and improve our work.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-5">
-                <Eye className="h-6 w-6 text-purple-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">No Data Mining</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We never sell user data. No ads, no tracking, no algorithms
-                designed to keep you scrolling. Period.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-5">
-                <Globe className="h-6 w-6 text-green-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Decentralized</h3>
-              <p className="text-gray-400 leading-relaxed">
-                No central server. No corporate gatekeeper. Your identity and
-                data live on a network no one controls.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-5">
-                <ShieldOff className="h-6 w-6 text-orange-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Censorship Resistant</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Built to withstand government censorship. If a relay bans you,
-                use another. Your voice can't be silenced.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white hover:text-gray-900"
-              asChild
-            >
-              <Link to="/ethics">
-                Read Our Ethics Pledge
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================ */}
-      {/* 4. BRIDGING THE WEB -- Visual                                    */}
+      {/* 3. BRIDGING THE WEB -- Visual                                    */}
       {/* ================================================================ */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
@@ -466,6 +383,134 @@ export default function Index() {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 4. NOT BIG TECH -- Redacted Dossier                              */}
+      {/* ================================================================ */}
+      <section
+        className="relative py-24 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
+        style={{
+          background: "radial-gradient(ellipse at 30% 20%, #1a1a2e 0%, #0d0d14 50%, #080810 100%)",
+        }}
+      >
+        {/* Scan lines */}
+        <div
+          className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
+          style={{
+            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.07) 2px, rgba(255,255,255,0.07) 3px)",
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-mono font-black tracking-tight mb-4">
+              Not Big Tech.
+            </h2>
+            <p className="text-lg font-mono text-gray-400 max-w-2xl mx-auto tracking-wide">
+              We build software that serves people, not shareholders.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {/* Document 1 -- Source Code Access */}
+            <div className="relative bg-amber-50/95 rounded-lg p-6 pb-8 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500/[0.07] font-mono font-black text-5xl md:text-6xl tracking-[0.15em] uppercase whitespace-nowrap select-none pointer-events-none" style={{ transform: "translate(-50%, -50%) rotate(-12deg)" }}>
+                DECLASSIFIED
+              </div>
+              <div className="relative">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Subject: Big Tech</span>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Classification: <span className="bg-gray-900 text-gray-900 rounded-sm px-6">SECRET</span></span>
+                </div>
+                <h3 className="font-mono text-sm font-bold text-gray-800 uppercase tracking-wide mb-4">Source Code Access</h3>
+                <div className="space-y-2 mb-5 font-mono text-sm text-gray-600 leading-relaxed">
+                  <p>All platform source code is <span className="bg-gray-900 text-gray-900 rounded-sm px-8">proprietary</span> and subject to <span className="bg-gray-900 text-gray-900 rounded-sm px-10">restrictive licensing</span>.</p>
+                  <p>External audit of codebase is <span className="bg-gray-900 text-gray-900 rounded-sm px-12">strictly prohibited</span> under corporate policy <span className="bg-gray-900 text-gray-900 rounded-sm px-6">§12.4</span>.</p>
+                </div>
+                <div className="border-l-2 border-emerald-500 bg-emerald-50 rounded-r-md px-4 py-3">
+                  <p className="font-mono text-sm font-semibold text-emerald-800">SOAPBOX: 100% Open Source -- all our code is public. No black boxes, no lock-in.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Document 2 -- User Data Policy */}
+            <div className="relative bg-amber-50/95 rounded-lg p-6 pb-8 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500/[0.07] font-mono font-black text-5xl md:text-6xl tracking-[0.15em] uppercase whitespace-nowrap select-none pointer-events-none" style={{ transform: "translate(-50%, -50%) rotate(-12deg)" }}>
+                DECLASSIFIED
+              </div>
+              <div className="relative">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Subject: Big Tech</span>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Classification: <span className="bg-gray-900 text-gray-900 rounded-sm px-6">SECRET</span></span>
+                </div>
+                <h3 className="font-mono text-sm font-bold text-gray-800 uppercase tracking-wide mb-4">User Data Policy</h3>
+                <div className="space-y-2 mb-5 font-mono text-sm text-gray-600 leading-relaxed">
+                  <p>All user data <span className="bg-gray-900 text-gray-900 rounded-sm px-6">will be sold</span> to third-party <span className="bg-gray-900 text-gray-900 rounded-sm px-10">advertising networks</span> for <span className="bg-gray-900 text-gray-900 rounded-sm px-8">targeted profiling</span>.</p>
+                  <p>Behavioral <span className="bg-gray-900 text-gray-900 rounded-sm px-10">tracking algorithms</span> are deployed to <span className="bg-gray-900 text-gray-900 rounded-sm px-12">maximize engagement</span>.</p>
+                </div>
+                <div className="border-l-2 border-emerald-500 bg-emerald-50 rounded-r-md px-4 py-3">
+                  <p className="font-mono text-sm font-semibold text-emerald-800">SOAPBOX: No data mining. No ads. No tracking. No algorithms designed to keep you scrolling.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Document 3 -- Network Architecture */}
+            <div className="relative bg-amber-50/95 rounded-lg p-6 pb-8 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500/[0.07] font-mono font-black text-5xl md:text-6xl tracking-[0.15em] uppercase whitespace-nowrap select-none pointer-events-none" style={{ transform: "translate(-50%, -50%) rotate(-12deg)" }}>
+                DECLASSIFIED
+              </div>
+              <div className="relative">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Subject: Big Tech</span>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Classification: <span className="bg-gray-900 text-gray-900 rounded-sm px-6">SECRET</span></span>
+                </div>
+                <h3 className="font-mono text-sm font-bold text-gray-800 uppercase tracking-wide mb-4">Network Architecture</h3>
+                <div className="space-y-2 mb-5 font-mono text-sm text-gray-600 leading-relaxed">
+                  <p>All traffic routes through <span className="bg-gray-900 text-gray-900 rounded-sm px-10">centralized servers</span> under <span className="bg-gray-900 text-gray-900 rounded-sm px-8">sole corporate control</span>.</p>
+                  <p>User accounts subject to <span className="bg-gray-900 text-gray-900 rounded-sm px-10">unilateral termination</span> at <span className="bg-gray-900 text-gray-900 rounded-sm px-8">platform discretion</span>.</p>
+                </div>
+                <div className="border-l-2 border-emerald-500 bg-emerald-50 rounded-r-md px-4 py-3">
+                  <p className="font-mono text-sm font-semibold text-emerald-800">SOAPBOX: Decentralized. No central server. No gatekeeper. Your data lives on a network no one controls.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Document 4 -- Content Moderation */}
+            <div className="relative bg-amber-50/95 rounded-lg p-6 pb-8 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500/[0.07] font-mono font-black text-5xl md:text-6xl tracking-[0.15em] uppercase whitespace-nowrap select-none pointer-events-none" style={{ transform: "translate(-50%, -50%) rotate(-12deg)" }}>
+                DECLASSIFIED
+              </div>
+              <div className="relative">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Subject: Big Tech</span>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400">Classification: <span className="bg-gray-900 text-gray-900 rounded-sm px-6">SECRET</span></span>
+                </div>
+                <h3 className="font-mono text-sm font-bold text-gray-800 uppercase tracking-wide mb-4">Content Moderation Protocol</h3>
+                <div className="space-y-2 mb-5 font-mono text-sm text-gray-600 leading-relaxed">
+                  <p>Platform reserves right to <span className="bg-gray-900 text-gray-900 rounded-sm px-10">suppress or remove</span> any content deemed <span className="bg-gray-900 text-gray-900 rounded-sm px-8">non-compliant</span>.</p>
+                  <p>Appeals process is <span className="bg-gray-900 text-gray-900 rounded-sm px-12">intentionally opaque</span> and outcomes are <span className="bg-gray-900 text-gray-900 rounded-sm px-6">final</span>.</p>
+                </div>
+                <div className="border-l-2 border-emerald-500 bg-emerald-50 rounded-r-md px-4 py-3">
+                  <p className="font-mono text-sm font-semibold text-emerald-800">SOAPBOX: Censorship resistant. If a relay bans you, use another. Your voice can't be silenced.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white hover:text-gray-900"
+              asChild
+            >
+              <Link to="/ethics">
+                Read Our Ethics Pledge
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

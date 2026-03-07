@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 
 const navLinks = [
-  { label: "Ditto", to: "/tools/ditto" },
-  { label: "Shakespeare", to: "/tools/shakespeare" },
+  { label: "Ditto", to: "/ditto" },
+  { label: "Shakespeare", to: "/shakespeare" },
   { label: "Agora", to: "/blog/agora-connecting-freedom-fighters" },
   { label: "About", to: "/about" },
   { label: "Ethics", to: "/ethics" },

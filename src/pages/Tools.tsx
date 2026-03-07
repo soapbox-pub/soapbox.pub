@@ -97,7 +97,7 @@ export default function Tools() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button className="bg-blue-500 hover:bg-blue-600 text-white" asChild>
-                      <Link to="/tools/shakespeare">
+                      <Link to="/shakespeare">
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -285,7 +285,7 @@ export default function Tools() {
 
                 <div className="pt-4">
                   <Button variant="outline" className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
-                    <Link to="/tools/ditto">
+                    <Link to="/ditto">
                       Explore Ditto
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>

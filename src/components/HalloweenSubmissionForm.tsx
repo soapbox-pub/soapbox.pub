@@ -204,7 +204,7 @@ export function HalloweenSubmissionForm({ onSuccess, onCancel }: HalloweenSubmis
             </p>
             <div className="pt-4">
               <Button variant="outline" className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black" asChild>
-                <Link to="/tools/shakespeare">
+                <Link to="/shakespeare">
                   Start Building for Next Month's Challenge
                 </Link>
               </Button>
