@@ -196,7 +196,7 @@ export default function AnnouncingDitto2() {
 
       <h3>Mobile</h3>
 
-      <div className="not-prose grid grid-cols-4 sm:grid-cols-7 gap-3 my-6">
+      <div className="not-prose grid grid-cols-3 sm:grid-cols-6 gap-3 my-6">
         {themes.map((theme) => (
           <button
             key={`mobile-${theme.name}`}
@@ -206,7 +206,7 @@ export default function AnnouncingDitto2() {
             <img
               src={theme.mobile}
               alt={`${theme.name} theme -- mobile`}
-              className="w-full aspect-[375/812] object-cover object-top"
+              className="w-full h-auto"
               loading="lazy"
             />
           </button>
