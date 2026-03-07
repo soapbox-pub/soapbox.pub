@@ -1,594 +1,608 @@
-import { ArrowRight, Code, Users, Globe, Rocket, Calendar } from "lucide-react";
+import {
+  ArrowRight,
+  Code,
+  Globe,
+  Eye,
+  ShieldOff,
+  Megaphone,
+  Search,
+  ExternalLink,
+  BookOpen,
+  Calendar,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { RotatingText } from "@/components/RotatingText";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
-import { SoapboxPostsSection } from "@/components/SoapboxPostsSection";
-import { AppShowcaseCard } from "@/components/AppShowcaseCard";
-import { getFeaturedPost, formatDate } from "@/lib/blog/utils";
-import { shuffleArray } from "@/lib/utils";
 import { useSEO } from "@/hooks/useSEO";
-import { useAppSubmissions } from "@/hooks/useAppSubmissions";
-import { useMemo } from "react";
+import { getFeaturedPosts, formatDate } from "@/lib/blog/utils";
 
-function FeaturedShowcaseApps() {
-  const { data: submissions = [], isLoading } = useAppSubmissions();
-
-  // Get only homepage apps, then randomly shuffle and select up to 6 for showcase
-  const showcaseApps = useMemo(() => {
-    const homepageApps = submissions.filter(app => app.isHomepage && !app.isHidden);
-
-    // Shuffle homepage apps and take up to 6
-    const shuffledApps = shuffleArray(homepageApps);
-
-    return shuffledApps.slice(0, 6);
-  }, [submissions]);
-
-  if (isLoading) {
-    return (
-      <div className="text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-azure mx-auto mb-4"></div>
-        <p className="text-gray-600">Loading showcase apps...</p>
-      </div>
-    );
-  }
-
-  if (showcaseApps.length === 0) {
-    return (
-      <div className="text-center py-12">
-        <p className="text-gray-600 mb-6">
-          Be the first to build something amazing with Soapbox tools and get featured on our homepage!
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-azure hover:bg-azure-600 text-white" asChild>
-            <Link to="/tools">
-              Start Building
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link to="/showcase">
-              Submit Your App
-            </Link>
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {showcaseApps.map((app) => (
-        <AppShowcaseCard
-          key={app.id}
-          app={app}
-          showModerationControls={false}
-        />
-      ))}
-    </div>
-  );
-}
+/** Developer tools shown further down the page. */
+const devTools = [
+  { name: "NostrHub", desc: "NIP Explorer & developer tools", logo: "/assets/images/nostrhub-logo.png", to: "/tools/nostrhub" },
+  { name: "MKStack", desc: "Full-stack Nostr deploy toolkit", logo: "/assets/images/mkstack-og.png", to: "/mkstack" },
+  { name: "Nostrify", desc: "Nostr framework for Deno & web", logo: "/assets/images/nostrify.png", to: "/tools/nostrify" },
+  { name: "Soapbox Signer", desc: "Nostr key management", logo: "/assets/logo.svg", to: "/blog/announcing-soapbox-signer" },
+  { name: "Stacks", desc: "Docker-based Nostr infrastructure", logo: "/assets/logo.svg", to: "/tools/stacks" },
+];
 
 export default function Index() {
-  // Use useMemo to keep the random featured post stable during the session
-  const featuredPost = useMemo(() => getFeaturedPost(), []);
+  const featuredPosts = getFeaturedPosts().slice(0, 3);
 
-  // Set custom SEO for home page
   useSEO({
-    title: 'Soapbox - Build Your Decentralized Platform',
-    description: "Create your own social platforms, communities, and applications with Soapbox's open-source toolkit. Tools for Nostr, ActivityPub, and the decentralized web.",
-    type: 'website',
-    image: '/og-image.png',
-    keywords: 'soapbox, nostr, decentralized, social media, open source, ditto, fediverse, activitypub, platform builder'
+    title: "Soapbox - Software for a Free Internet",
+    description:
+      "Open source tools for social media, AI development, and activism. Decentralized, community-owned, and built to last.",
+    type: "website",
+    image: "/og-image.png",
+    keywords:
+      "soapbox, nostr, decentralized, social media, open source, ditto, shakespeare, agora, fediverse, activitypub",
   });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-azure-50 via-white to-blue-50">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8">
+      {/* ================================================================ */}
+      {/* 1. HERO                                                          */}
+      {/* ================================================================ */}
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Main Hero Content */}
+            {/* Left -- copy */}
             <div className="space-y-8">
               <div className="space-y-6">
-                {/* Large Soapbox Logo */}
-                <div className="flex justify-center lg:justify-start">
-                  <div className="flex items-center space-x-4 drop-shadow-sm">
-                    <SoapboxLogo size={80} className="drop-shadow-md" />
-                    <span className="font-display font-bold text-5xl md:text-6xl bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">Soapbox</span>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <SoapboxLogo size={40} />
+                  <span className="font-display font-bold text-2xl text-gray-900">
+                    Soapbox
+                  </span>
                 </div>
 
-                <div className="space-y-4">
-                  <Badge variant="secondary" className="bg-azure-100 text-azure-700 border-azure-200">
-                    🚀 Build the Decentralized Future
-                  </Badge>
-                  <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 leading-tight">
-                    Build Your{" "}
-                    <RotatingText
-                      words={[
-                        { text: "Platform", color: "text-blue-600" },
-                        { text: "Community", color: "text-purple-600" },
-                        { text: "Protocol", color: "text-pink-600" },
-                        { text: "Project", color: "text-orange-500" }
-                      ]}
-                      interval={2000}
-                      className="font-display font-bold"
-                    />
-                  </h1>
-                  <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                    Soapbox creates tools that put the power back in your hands. Build your own platforms,
-                    communities, and applications with our open-source toolkit.
-                  </p>
-                </div>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1]">
+                  Software for a{" "}
+                  <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
+                    Free Internet
+                  </span>
+                </h1>
+
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+                  Open source tools for social media, AI development, and
+                  activism. Decentralized, community-owned, and built to last.
+                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
-                  <Link to="/tools">
-                    Explore Tools
+                <Button
+                  size="lg"
+                  className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg"
+                  asChild
+                >
+                  <Link to="/tools/ditto">
+                    Explore Ditto
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 py-3 text-lg" asChild>
-                  <Link to="/showcase">View Showcase</Link>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-3 text-lg"
+                  asChild
+                >
+                  <Link to="/about">About Us</Link>
                 </Button>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                  Open Source
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                  Decentralized
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                  Community Owned
+                </div>
               </div>
             </div>
 
-            {/* Right Column - Featured Blog Post */}
-            {featuredPost && (
-              <div className="lg:pl-8">
-                <div className="mb-4">
-                  <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
-                    ✨ Featured from Our Blog
-                  </Badge>
-                </div>
-                <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-azure-200 bg-white/80 backdrop-blur">
-                  <Link to={`/blog/${featuredPost.slug}`}>
-                    {featuredPost.coverImage && (
-                      <div className="aspect-video overflow-hidden rounded-t-lg">
-                        <img
-                          src={featuredPost.coverImage}
-                          alt={featuredPost.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    )}
-                    <CardHeader className="pb-2">
-                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                        <Calendar className="w-4 h-4" />
-                        <time dateTime={featuredPost.date}>{formatDate(featuredPost.date)}</time>
-                        {featuredPost.author?.name && (
-                          <>
-                            <span>•</span>
-                            <span>by {featuredPost.author.name}</span>
-                          </>
-                        )}
-                      </div>
-                      <CardTitle className="text-xl group-hover:text-azure transition-colors line-clamp-2">
-                        {featuredPost.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600 line-clamp-3 mb-4">{featuredPost.excerpt}</p>
-                      <div className="flex items-center text-azure group-hover:text-azure-600 transition-colors">
-                        <span className="text-sm font-medium">Read More</span>
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </div>
-                    </CardContent>
-                  </Link>
-                </Card>
+            {/* Right -- product collage */}
+            <div className="relative h-[420px] md:h-[520px] lg:h-[560px]">
+              {/* Back -- Agora cover (dark, wide) */}
+              <div
+                className="absolute top-0 right-0 w-[65%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-orange-300/40"
+                style={{ transform: "rotate(2deg)" }}
+              >
+                <img
+                  src="/assets/blog/about-agora/agora-cover.png"
+                  alt="Agora -- Power to the People"
+                  className="w-full h-auto"
+                />
               </div>
-            )}
-          </div>
-        </div>
-      </section>
 
-      {/* Showcase Section */}
-      <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Empowering You to Build Freely
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              We're making powerful development tools accessible to everyone, advancing the future of user sovereignty and digital freedom.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-azure rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">100% Open Source</h3>
-                <p className="text-sm text-gray-600">Complete transparency and freedom to run and modify</p>
+              {/* Middle -- Shakespeare IDE */}
+              <div
+                className="absolute top-24 left-0 w-[65%] rounded-2xl shadow-xl overflow-hidden ring-2 ring-purple-200/60"
+                style={{ transform: "rotate(-2deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
+                  alt="Shakespeare AI IDE"
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Decentralized First</h3>
-                <p className="text-sm text-gray-600">Built on Nostr and ActivityPub for true user ownership and censorship resistance</p>
+
+              {/* Front left -- Ditto Kawaii theme */}
+              <div
+                className="absolute bottom-4 left-[5%] w-[38%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(-3deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/kawaii.png"
+                  alt="Ditto Kawaii theme"
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Community Powered</h3>
-                <p className="text-sm text-gray-600">Real platforms built by real people, proving decentralization works at scale</p>
+
+              {/* Front right -- Ditto Solarpunk theme */}
+              <div
+                className="absolute bottom-0 right-[5%] w-[38%] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
+                style={{ transform: "rotate(2.5deg)" }}
+              >
+                <img
+                  src="/assets/images/ditto/profiles/solarpunk.png"
+                  alt="Ditto Solarpunk theme"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              See real people are using Soapbox tools to build their communities.
-            </p>
-          </div>
-
-          <FeaturedShowcaseApps />
-
-          <div className="text-center mt-16">
-            <Button size="lg" className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg" asChild>
-              <Link to="/showcase">
-                View Full Showcase
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
 
-
-
-      {/* Tools Section */}
-      <section id="tools" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Our Tools, Your Vision
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From social platforms to AI development, our comprehensive suite of tools gives you
-              everything you need to build and scale your vision.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Ditto */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
-                  <img
-                    src="/assets/images/ditto/ditto-logo.png"
-                    alt="Ditto logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <CardTitle className="text-2xl font-display">Ditto</CardTitle>
-                <CardDescription className="text-lg">Fun Social Media</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  A social platform for people who want to have fun, not feed the Big Tech machine.
-                  Custom themes, infinite content types, and total freedom.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Custom themes & self-expression
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    27+ content types
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-azure rounded-full mr-3"></div>
-                    Bluesky & Mastodon bridges
-                  </div>
-                </div>
-                <Button className="w-full group-hover:bg-azure group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/ditto">
-                    Explore Ditto
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Shakespeare */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-azure-200">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
-                  <img
-                    src="/assets/blog/announcing-shakespeare/shakespeare-logo.png"
-                    alt="Shakespeare logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <CardTitle className="text-2xl font-display">Shakespeare</CardTitle>
-                <CardDescription className="text-lg">AI Website Builder</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  Build websites and applications with AI in your browser. No downloads,
-                  any AI provider, complete freedom and control.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                    Local file storage
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                    Any AI provider
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                    Git integration
-                  </div>
-                </div>
-                <Button variant="outline" className="w-full group-hover:bg-yellow-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/shakespeare">
-                    Start Building
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* NostrHub */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
-                  <img
-                    src="/assets/images/nostrhub-logo.png"
-                    alt="NostrHub logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <CardTitle className="text-2xl font-display">NostrHub</CardTitle>
-                <CardDescription className="text-lg">NIP Explorer</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  Explore and understand Nostr Improvement Proposals (NIPs) with our comprehensive
-                  database and tools for developers.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Complete NIP database
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Developer tools
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Implementation guides
-                  </div>
-                </div>
-                <Button variant="outline" className="w-full group-hover:bg-purple-500 group-hover:text-white transition-colors" asChild>
-                  <Link to="/tools/nostrhub">
-                    Explore NIPs
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-16">
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-              <Link to="/tools">
-                View All Tools
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Building Bridges Across the Decentralized Web */}
+      {/* ================================================================ */}
+      {/* 2. THE BIG THREE -- Product Showcase                             */}
+      {/* ================================================================ */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Building Bridges Across the Decentralized Web
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Connecting communities across Nostr, ActivityPub, and Bluesky with Mostr
-            </p>
+        <div className="max-w-7xl mx-auto space-y-32">
+          {/* -- Ditto (image left, text right) -- */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
+              <img
+                src="/assets/images/ditto/ipads/kawaii-ipad.png"
+                alt="Ditto with Kawaii theme on tablet"
+                className="w-full h-auto"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <Badge className="bg-violet-100 text-violet-700 border-violet-200">
+                Fun Social Media
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+                  Ditto
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A social platform for people who want to have fun, not feed the
+                Big Tech machine. Custom themes, infinite content types, and
+                total freedom.
+              </p>
+              <div className="space-y-3">
+                {["Custom themes & self-expression", "27+ content types", "Bluesky & Mastodon bridges"].map((item) => (
+                  <div key={item} className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-violet-500 rounded-full mr-3 shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-700 text-white"
+                asChild
+              >
+                <Link to="/tools/ditto">
+                  Explore Ditto
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto">
-                <Globe className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-display font-semibold">ActivityPub Bridge</h3>
-              <p className="text-gray-600">
-                Follow and interact with users across Nostr, Mastodon, Pleroma, Misskey, and other
-                ActivityPub platforms seamlessly.
+          {/* -- Shakespeare (text left, image right) -- */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <Badge className="bg-blue-100 text-blue-700 border-blue-200">
+                AI Website Builder
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Shakespeare
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Build websites and applications with AI in your browser. No
+                downloads, any AI provider, complete freedom and control.
               </p>
+              <div className="space-y-3">
+                {["Build in your browser", "Any AI provider", "Open source & self-hostable"].map((item) => (
+                  <div key={item} className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+                asChild
+              >
+                <Link to="/tools/shakespeare">
+                  Start Building
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-sky-500 rounded-2xl flex items-center justify-center mx-auto">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-display font-semibold">Bluesky Integration</h3>
-              <p className="text-gray-600">
-                Connect with Bluesky users through our bridge integration with Bridgy Fed,
-                expanding your social network across protocols.
-              </p>
-            </div>
-
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto">
-                <Rocket className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-display font-semibold">Lightning Payments</h3>
-              <p className="text-gray-600">
-                Send Bitcoin Lightning "zaps" across networks, enabling monetization and
-                micropayments between different platforms.
-              </p>
+            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 order-1 lg:order-2">
+              <img
+                src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
+                alt="Shakespeare AI IDE editing a Ditto project"
+                className="w-full h-auto"
+              />
             </div>
           </div>
 
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-200">
-              <h3 className="text-2xl font-display font-bold text-gray-900 mb-4">
-                Search Across the Decentralized Web
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Use Mostr.pub to find and connect with users across all supported networks
+          {/* -- Agora (image left, text right) -- */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="rounded-2xl shadow-2xl overflow-hidden">
+              <img
+                src="/assets/blog/about-agora/agora-cover.png"
+                alt="Agora -- Power to the People"
+                className="w-full h-auto"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <Badge className="bg-orange-100 text-orange-700 border-orange-200">
+                Power to the People
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                  Agora
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A censorship-resistant platform for activists. Organize,
+                document, and receive direct Bitcoin support from a global
+                community.
               </p>
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg" asChild>
-                <a href="https://mostr.pub" target="_blank" rel="noopener noreferrer">
-                  Search on Mostr.pub
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+              <div className="space-y-3">
+                {["Censorship-resistant communication", "Direct Bitcoin support via Lightning", "Built on Nostr -- no server to shut down"].map((item) => (
+                  <div key={item} className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <Button
+                size="lg"
+                className="bg-orange-600 hover:bg-orange-700 text-white"
+                asChild
+              >
+                <Link to="/blog/agora-connecting-freedom-fighters">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Software Ethics Pledge Section */}
-      {/* <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50">
+      {/* ================================================================ */}
+      {/* 3. NOT BIG TECH -- Dark Manifesto                                */}
+      {/* ================================================================ */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-950 text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 text-lg px-4 py-2 bg-blue-600 text-white">
-              Our Commitment
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Built on Principles, Not Profit
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              Not Big Tech.
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our software ethics pledge holds us accountable to the values of freedom, transparency, and user sovereignty
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              We build software that serves people, not shareholders.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <Card className="border-2 border-blue-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
-                  Always Open Source
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  All our work for public consumption is open source and freely licensed. No black boxes, no proprietary lock-in.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-12 h-12 bg-azure/20 rounded-xl flex items-center justify-center mb-5">
+                <Code className="h-6 w-6 text-azure" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">100% Open Source</h3>
+              <p className="text-gray-400 leading-relaxed">
+                All our code is public. No black boxes, no proprietary lock-in.
+                Anyone can read, copy, and improve our work.
+              </p>
+            </div>
 
-            <Card className="border-2 border-purple-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <Globe className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
-                  Decentralized by Design
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  We build exclusively on decentralized protocols. No central servers, no corporate gatekeepers.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-5">
+                <Eye className="h-6 w-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">No Data Mining</h3>
+              <p className="text-gray-400 leading-relaxed">
+                We never sell user data. No ads, no tracking, no algorithms
+                designed to keep you scrolling. Period.
+              </p>
+            </div>
 
-            <Card className="border-2 border-green-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
-                  <Lock className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
-                  Your Data Is Yours
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  We will never sell user data. Your privacy and ownership are non-negotiable.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-5">
+                <Globe className="h-6 w-6 text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Decentralized</h3>
+              <p className="text-gray-400 leading-relaxed">
+                No central server. No corporate gatekeeper. Your identity and
+                data live on a network no one controls.
+              </p>
+            </div>
 
-            <Card className="border-2 border-orange-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
-                  Censorship Resistant
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  We fight government censorship and build tools that protect free speech.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-red-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
-                  Resist Corporate Control
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Technology should serve humanity, not shareholders. We reject extractive business models.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-indigo-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
-                  <Rocket className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-2">
-                  Stay Independent
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  We will never sell to entities that don't share our commitment to user freedom.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+              <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-5">
+                <ShieldOff className="h-6 w-6 text-orange-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Censorship Resistant</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Built to withstand government censorship. If a relay bans you,
+                use another. Your voice can't be silenced.
+              </p>
+            </div>
           </div>
 
-          <div className="text-center">
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white" asChild>
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white hover:text-gray-900"
+              asChild
+            >
               <Link to="/ethics">
-                Read Our Full Ethics Pledge
-                <ArrowRight className="ml-2 h-5 w-5" />
+                Read Our Ethics Pledge
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* Latest Posts from Soapbox */}
-      <SoapboxPostsSection />
+      {/* ================================================================ */}
+      {/* 4. BRIDGING THE WEB -- Visual                                    */}
+      {/* ================================================================ */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left -- Mostr screenshot */}
+            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
+              <img
+                src="/assets/images/mostr-search.png"
+                alt="Mostr Bridge -- 46,957 Nostr users and 9,596 Fediverse users connected"
+                className="w-full h-auto"
+              />
+            </div>
 
-      {/* CTA Section */}
+            {/* Right -- copy + protocol pills */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+                  Bridging the{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    Open Web
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Our Mostr Bridge connects three decentralized protocols so
+                  your followers can find you no matter what network they're on.
+                  Over 56,000 users already connected across networks.
+                </p>
+              </div>
+
+              {/* Protocol pills */}
+              <div className="flex flex-wrap gap-3">
+                <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-violet-600 text-white text-sm font-semibold shadow-md">
+                  Nostr
+                </span>
+                <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-[#6364ff] text-white text-sm font-semibold shadow-md">
+                  Mastodon
+                </span>
+                <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-[#0085ff] text-white text-sm font-semibold shadow-md">
+                  Bluesky
+                </span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="bg-purple-600 hover:bg-purple-700 text-white"
+                  asChild
+                >
+                  <a
+                    href="https://mostr.pub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Search className="mr-2 h-4 w-4" />
+                    Search on Mostr.pub
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/blog/comparing-protocols">
+                    Compare Protocols
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 5. FEATURED BLOG POSTS                                           */}
+      {/* ================================================================ */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+              Latest Updates
+            </h2>
+            <p className="text-lg text-gray-600">
+              News, launches, and ideas from the Soapbox team.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredPosts.map((post) => (
+              <Card
+                key={post.slug}
+                className="group hover:shadow-xl transition-all duration-300 border hover:border-azure-200 overflow-hidden"
+              >
+                <Link to={`/blog/${post.slug}`}>
+                  {post.coverImage && (
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    </div>
+                    <CardTitle className="text-lg group-hover:text-azure transition-colors line-clamp-2">
+                      {post.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 text-sm line-clamp-2 mb-3">
+                      {post.excerpt}
+                    </p>
+                    <span className="text-azure text-sm font-medium inline-flex items-center group-hover:text-azure-600 transition-colors">
+                      Read More
+                      <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                    </span>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/blog">
+                View All Updates
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 6. DEVELOPER TOOLS                                               */}
+      {/* ================================================================ */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+              For Developers
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Open source tools and libraries for building on the decentralized
+              web.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {devTools.map((tool) => (
+              <Link
+                key={tool.name}
+                to={tool.to}
+                className="group p-5 rounded-xl bg-white border border-gray-200 hover:border-azure-300 hover:shadow-lg transition-all text-center space-y-3"
+              >
+                <div className="w-10 h-10 rounded-lg overflow-hidden mx-auto">
+                  <img
+                    src={tool.logo}
+                    alt={tool.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="font-semibold text-gray-900 text-sm group-hover:text-azure transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-gray-500">{tool.desc}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button variant="outline" asChild>
+              <Link to="/tools">
+                View All Tools
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 7. FINAL CTA                                                     */}
+      {/* ================================================================ */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Ready to Start Building?
+            Try Ditto Today
           </h2>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Choose your tool, start your project, and join the community of builders creating the decentralized future.
+            No email. No phone number. Just you and the open web.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg" asChild>
-              <Link to="/tools">Explore Tools</Link>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="px-8 py-3 text-lg bg-white text-azure hover:bg-gray-100"
+              asChild
+            >
+              <a
+                href="https://ditto.pub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Launch Ditto
+                <ExternalLink className="ml-2 h-5 w-5" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure" asChild>
-              <Link to="/showcase">View Examples</Link>
+            <Button
+              size="lg"
+              variant="outline"
+              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure"
+              asChild
+            >
+              <Link to="/ethics">
+                <BookOpen className="mr-2 h-5 w-5" />
+                Read Our Ethics Pledge
+              </Link>
             </Button>
           </div>
         </div>
