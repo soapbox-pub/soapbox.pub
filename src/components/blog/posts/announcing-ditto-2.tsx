@@ -80,8 +80,8 @@ export default function AnnouncingDitto2() {
           Custom themes, wall posts, infinite content types, your top friends --
           it's all here, and it's 100% free, open source, and yours to own.
         </p>
-        <p>-- M.K. Fain, CPO at Soapbox</p>
       </blockquote>
+      <p className="text-right text-gray-500 -mt-4">-- M.K. Fain, CPO at Soapbox</p>
 
       <h2>What's New in Ditto</h2>
 
