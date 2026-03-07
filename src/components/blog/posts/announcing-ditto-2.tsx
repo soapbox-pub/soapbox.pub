@@ -4,7 +4,7 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   slug: 'announcing-ditto-2',
-  title: 'Soapbox Launches Major Update to Ditto, the Social Platform for People Who Want to Have Fun Online Again',
+  title: 'Soapbox Launches Massive Update to Ditto: Designed for Fun, Built for Freedom',
   excerpt:
     'Your content. Your vibe. Your rules. Ditto is the world\'s first fully customizable, open source social platform -- and it just got a massive upgrade.',
   coverImage: '/assets/images/ditto/ditto2-og.gif',
