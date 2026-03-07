@@ -579,7 +579,7 @@ export default function Ditto() {
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Ditto is{" "}
-                  <a href="https://github.com/ectosquad/ditto" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:underline">open source</a>,
+                  <a href="https://gitlab.com/soapbox-pub/ditto" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:underline">open source</a>,
                   free software -- anyone can copy, improve, and build on our
                   work. Built on the free and open Nostr protocol, the project
                   belongs to everyone.
@@ -686,7 +686,7 @@ export default function Ditto() {
                   asChild
                 >
                   <a
-                    href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fectosquad%2Fditto.git"
+                    href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fsoapbox-pub%2Fditto.git"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -711,7 +711,7 @@ export default function Ditto() {
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <a
-                    href="https://github.com/ectosquad/ditto"
+                    href="https://gitlab.com/soapbox-pub/ditto"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

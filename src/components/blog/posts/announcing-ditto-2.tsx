@@ -171,7 +171,7 @@ export default function AnnouncingDitto2() {
         The source code is available for reading, copying, and improving
         upon{' '}
         <a
-          href="https://github.com/ectosquad/ditto"
+          href="https://gitlab.com/soapbox-pub/ditto"
           target="_blank"
           rel="noopener noreferrer"
         >
