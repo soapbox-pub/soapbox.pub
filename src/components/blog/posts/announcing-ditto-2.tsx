@@ -167,6 +167,37 @@ export default function AnnouncingDitto2() {
         .
       </p>
 
+      <p>
+        The source code is available for reading, copying, and improving
+        upon{' '}
+        <a
+          href="https://github.com/ectosquad/ditto"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
+        .
+      </p>
+
+      {/* ── Boilerplate ── */}
+      <div className="not-prose mt-12 pt-8 border-t border-gray-200">
+        <h3 className="text-lg font-bold text-gray-900 mb-3">About Soapbox</h3>
+        <p className="text-gray-600 leading-relaxed">
+          Soapbox creates open source software to empower communities, inspire
+          creativity, and promote freedom. We believe copying is not theft, and
+          that the best technology belongs to everyone. Learn more at{' '}
+          <a href="/" className="text-violet-600 hover:underline">
+            soapbox.pub
+          </a>{' '}
+          or view our{' '}
+          <a href="/media-kit" className="text-violet-600 hover:underline">
+            media kit
+          </a>
+          .
+        </p>
+      </div>
+
       {/* ── Screenshots ── */}
       <h2>Screenshots</h2>
 
@@ -232,25 +263,7 @@ export default function AnnouncingDitto2() {
         </div>
       )}
 
-      {/* ── Boilerplate ── */}
-      <div className="not-prose mt-12 pt-8 border-t border-gray-200">
-        <h3 className="text-lg font-bold text-gray-900 mb-3">About Soapbox</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Soapbox creates open source software to empower communities, inspire
-          creativity, and promote freedom. We believe copying is not theft, and
-          that the best technology belongs to everyone. Learn more at{' '}
-          <a href="/" className="text-violet-600 hover:underline">
-            soapbox.pub
-          </a>{' '}
-          or view our{' '}
-          <a href="/media-kit" className="text-violet-600 hover:underline">
-            media kit
-          </a>
-          .
-        </p>
-
-        <p className="text-center text-gray-400 text-2xl mt-8">###</p>
-      </div>
+      <p className="not-prose text-center text-gray-400 text-2xl mt-8">###</p>
     </article>
   );
 }
