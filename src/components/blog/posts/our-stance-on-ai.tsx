@@ -163,7 +163,7 @@ export default function OurStanceOnAI() {
       <h2>Related Reading</h2>
 
       <ul>
-        <li><Link to="/ethics-pledge" className="text-azure hover:text-azure-600 underline">Our Software Ethics Pledge</Link></li>
+        <li><Link to="/ethics" className="text-azure hover:text-azure-600 underline">Our Software Ethics Pledge</Link></li>
         <li><Link to="/blog/free-software-free-societies">Free Software: Free Societies</Link></li>
         <li><Link to="/blog/build-without-coding">Build Anything Without Coding: AI's Revolution is For Everyone</Link></li>
         <li><Link to="/blog/announcing-shakespeare-act-2">Shakespeare Act 2: Build Freely</Link></li>

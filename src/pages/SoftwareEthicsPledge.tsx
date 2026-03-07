@@ -1,4 +1,5 @@
-import { Shield, Code, Globe, Lock, Scale, Building } from "lucide-react";
+import { Shield, Code, Globe, Lock, Scale, Building, ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -58,6 +59,11 @@ export default function SoftwareEthicsPledge() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       All of our work intended for public consumption is released as open source, freely licensed software. This means anyone can view, modify, audit, and distribute our code. No black boxes, no proprietary lock-in, no hidden surveillance.
                     </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm">
+                      <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium">View our code <ExternalLink className="w-3 h-3" /></a>
+                      <Link to="/blog/our-stance-on-ai" className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium">Our Stance on AI <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/blog/free-software-free-societies" className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium">Free Software, Free Societies <ArrowRight className="w-3 h-3" /></Link>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -77,6 +83,11 @@ export default function SoftwareEthicsPledge() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       We build exclusively on decentralized protocols like Nostr and ActivityPub. We reject centralized platforms that concentrate power in corporate hands. Decentralization isn't just a technical choice—it's a moral imperative for user sovereignty.
                     </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm">
+                      <Link to="/blog/nostr101" className="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-medium">Nostr 101 <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/blog/comparing-protocols" className="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-medium">Comparing Protocols <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/blog/future-is-decentralized" className="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-medium">The Future is Decentralized <ArrowRight className="w-3 h-3" /></Link>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -96,6 +107,10 @@ export default function SoftwareEthicsPledge() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       Your data is yours, not ours to monetize. We will never sell, trade, or exploit user data for profit. Our business model is built on providing valuable tools and services, not on surveillance capitalism.
                     </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm">
+                      <Link to="/blog/future-is-decentralized" className="inline-flex items-center gap-1 text-green-600 hover:text-green-800 font-medium">The Future is Decentralized <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/blog/free-software-free-societies" className="inline-flex items-center gap-1 text-green-600 hover:text-green-800 font-medium">Free Software, Free Societies <ArrowRight className="w-3 h-3" /></Link>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -115,6 +130,10 @@ export default function SoftwareEthicsPledge() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       We build tools that resist censorship from any authority. Free speech is not negotiable. We will not implement backdoors, comply with unjust takedown requests, or compromise our users' ability to communicate freely.
                     </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm">
+                      <Link to="/blog/agora-connecting-freedom-fighters" className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-800 font-medium">Agora: Connecting Freedom Fighters <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/blog/building-freedom-first-communities" className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-800 font-medium">Building Freedom-First Communities <ArrowRight className="w-3 h-3" /></Link>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -134,6 +153,10 @@ export default function SoftwareEthicsPledge() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       Digital resources should not be controlled by corporations seeking to maximize profit at users' expense. We reject extractive business models, walled gardens, and artificial scarcity. Technology should serve humanity, not shareholders.
                     </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm">
+                      <Link to="/blog/comparing-protocols" className="inline-flex items-center gap-1 text-red-600 hover:text-red-800 font-medium">Comparing Protocols <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/blog/nostr101" className="inline-flex items-center gap-1 text-red-600 hover:text-red-800 font-medium">Nostr 101 <ArrowRight className="w-3 h-3" /></Link>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -153,6 +176,10 @@ export default function SoftwareEthicsPledge() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       We will never sell our products or company to any entity that does not share and uphold these commitments. Our mission is not for sale. We would rather shut down than compromise our principles for profit.
                     </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm">
+                      <Link to="/about" className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium">About Soapbox <ArrowRight className="w-3 h-3" /></Link>
+                      <Link to="/get-involved" className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium">Get Involved <ArrowRight className="w-3 h-3" /></Link>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -169,7 +196,7 @@ export default function SoftwareEthicsPledge() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/soapbox-pub"
+                href="https://gitlab.com/soapbox-pub"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-lg bg-white text-purple-700 hover:bg-gray-100 transition-colors"
@@ -189,17 +216,26 @@ export default function SoftwareEthicsPledge() {
 
           {/* See Also */}
           <div className="mt-12 p-6 bg-gray-50 rounded-xl border border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
               See Also
             </h3>
-            <p className="text-gray-700">
-              <a
-                href="/blog/our-stance-on-ai"
-                className="text-blue-600 hover:text-blue-700 font-medium underline"
-              >
-                Read our stance on AI and open source →
-              </a>
-            </p>
+            <ul className="space-y-2 text-gray-700">
+              <li>
+                <Link to="/blog/our-stance-on-ai" className="text-blue-600 hover:text-blue-700 font-medium underline">
+                  Read our stance on AI and open source &rarr;
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/free-software-free-societies" className="text-blue-600 hover:text-blue-700 font-medium underline">
+                  Free Software, Free Societies &rarr;
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/future-is-decentralized" className="text-blue-600 hover:text-blue-700 font-medium underline">
+                  The Future is Decentralized &rarr;
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
