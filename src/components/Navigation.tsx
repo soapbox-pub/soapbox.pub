@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Shakespeare", to: "/tools/shakespeare" },
   { label: "Agora", to: "/blog/agora-connecting-freedom-fighters" },
   { label: "About", to: "/about" },
+  { label: "Ethics", to: "/ethics" },
   { label: "Updates", to: "/blog" },
 ];
 
