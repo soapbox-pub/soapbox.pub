@@ -6,11 +6,10 @@ image:
 variables:
   PRERENDER: 1
   PUPPETEER_SKIP_DOWNLOAD: "true"
-  PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
 default:
   interruptible: true
-  timeout: 2 minutes
+  timeout: 5 minutes
 
 stages:
   - build
@@ -19,6 +18,7 @@ stages:
 build:
   stage: build
   script:
+    - npx puppeteer browsers install chrome
     - npm run build
   only:
     variables:
@@ -27,6 +27,7 @@ build:
 pages:
   stage: deploy
   script:
+    - npx puppeteer browsers install chrome
     - npm run build
     - rm -rf public
     - mv dist public
