@@ -31,6 +31,11 @@ export const meta: BlogPostMeta = {
 export default function Ditto11() {
   return (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
+        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
+        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+      </div>
+
       <p>Last month we released Ditto, a powerful new server for building communities on Nostr. This new release adds major stability and performance improvements we discovered after it became adopted by the Nostr community.</p>
       <h2>Database Timeouts</h2>
       <p>After the initial launch of Ditto, we started to see random periods where our sites would freeze (showing a black screen) for a minute or two at a time, with users unable to do anything.</p>

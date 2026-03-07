@@ -30,6 +30,11 @@ export const meta: BlogPostMeta = {
 export default function CuratedCommunitiesWithDitto() {
   return (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
+        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
+        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+      </div>
+
       <p><strong>For five years I have been building communities for women on the free and decentralized web.</strong> In 2019 I created <a href="https://spinster.xyz/" target="_blank" rel="noopener noreferrer">Spinster.xyz</a>, the largest (and, to my knowledge, the only) women-centered Fediverse server, home to  over 20,000 users. We've faced our fair share of harassment and learned a lot about creating curated and intentional sub-communities on a protocol that is inherently censorship resistent. </p>
       <p>Now, as Soapbox moves it's focus to Nostr, history repeats itself.  Nostr, perhaps even moreso than the Fediverse, is built from the ground up to protect users' free speech. This is a good thing, and it's why we're excited to build on Nostr. But the protocol is young, and without robust tools to curate communities people actually enjoy, Nostr runs the risk of alienating the very users that have the opportunity to bring Nostr (and Bitcoin with it) mainstream.</p>
       <p>Ditto provides a solution by allowing users to opt in to curated communities while still remaining connected to the larger Nostr network and enjoying all the benefits of an open protocol. </p>

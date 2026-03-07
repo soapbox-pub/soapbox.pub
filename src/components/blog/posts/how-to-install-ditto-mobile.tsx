@@ -30,6 +30,11 @@ export const meta: BlogPostMeta = {
 export default function HowToInstallDittoMobile() {
   return (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
+        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
+        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+      </div>
+
       <p> Although Ditto does not have a dedicated mobile application, you can still access it seamlessly on your Android and iOS devices by pinning the web app to your home screen. Here’s how:</p>
       <h2>Accessing Ditto on Mobile</h2>
       <p>1. <strong>Open Your Browser</strong>: Launch your favorite mobile browser (such as Chrome on Android or Safari on iOS). 2. <strong>Navigate to Ditto</strong>: Go to <a href="https://Ditto.pub" target="_blank" rel="noopener noreferrer">Ditto.pub</a> (or your preferred Ditto server).</p>

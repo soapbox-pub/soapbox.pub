@@ -36,6 +36,11 @@ export const meta: BlogPostMeta = {
 export default function AnnouncingDitto() {
   return (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
+        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
+        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+      </div>
+
       <p>It's finally here. After a year of work, I'm pleased to announce the first release of Ditto! 🎉</p>
       <p><strong>Ditto is a Nostr community server.</strong> It has a built-in Nostr relay, a web UI, and it implements Mastodon's REST API.</p>
       <p>It has moderation. It has spam filters. It has NIP-05 self-service. It has quote posts, emoji reactions, and zaps. ⚡ The scope of this project is absolutely huge. It aims to take everything that's good about Mastodon and implement it on Nostr, with none of the downsides.</p>

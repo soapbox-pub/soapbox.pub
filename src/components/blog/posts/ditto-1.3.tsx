@@ -31,6 +31,11 @@ export const meta: BlogPostMeta = {
 export default function Ditto13() {
   return (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
+        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
+        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+      </div>
+
       <p><strong>Ditto 1.3 is all about discovery.</strong> From improved search and event fetching to a brand-new Explore tab, this release makes it easier than ever to find people, posts, and conversations across the Nostr network. We've also rolled out user streaks, video improvements, translation upgrades, and key admin tools—all wrapped in a sleeker, smarter experience.</p>
       <h2>New & Improved Features</h2>
       <h3>Explore Tab & Search Filter UI</h3>

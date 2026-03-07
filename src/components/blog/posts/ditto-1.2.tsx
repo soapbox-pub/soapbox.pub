@@ -30,6 +30,11 @@ export const meta: BlogPostMeta = {
 export default function Ditto12() {
   return (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
+        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
+        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+      </div>
+
       <p> We are thrilled to announce the release of Ditto 1.2, packed with enhancements designed to make Ditto communities more user-friendly and engaging. Here's a breakdown of what's new:</p>
       <h2>Ditto PWA & Android App Store Integration</h2>
       <p>Our small team is diligently working to transform Ditto into a Progressive Web App (PWA), paving the way for its submission to Google Play and other Android app stores. While Ditto isn't a native app, the new integration of Web Push enables it to send OS notifications on both iOS and Android devices, ensuring you stay connected wherever you are.</p>

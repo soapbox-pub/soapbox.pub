@@ -892,6 +892,20 @@ export default function MediaKit() {
                       <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2026 - Ditto Relaunch</span>
+                          <span className="text-sm text-gray-500">March</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          Launched a <a href="https://soapbox.pub/blog/announcing-ditto-2" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">massive update to Ditto</a>, the world's first fully customizable, open source, and decentralized social platform.
+                          Introduced deep personalization with themes, backgrounds, and fonts, plus support for infinite content types including articles, music, photos, livestreams, and more.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
                           <span className="font-medium text-gray-900">2025 - Shakespeare Act 2 Launch</span>
                           <span className="text-sm text-gray-500">October</span>
                         </div>
