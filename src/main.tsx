@@ -6,4 +6,8 @@ import './index.css'
 import '@fontsource-variable/inter'
 import '@fontsource-variable/outfit'
 
+import { initPlausible } from '@/lib/plausible'
+
+initPlausible();
+
 createRoot(document.getElementById("root")!).render(<App />);
