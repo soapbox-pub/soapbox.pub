@@ -89,6 +89,7 @@ import * as codingdoesntdie from '../../components/blog/posts/coding-doesnt-die'
 import * as announcingditto2 from '../../components/blog/posts/announcing-ditto-2';
 import * as announcingsheila from '../../components/blog/posts/announcing-sheila';
 import * as announcingshakespearedirect from '../../components/blog/posts/announcing-shakespeare-direct';
+import * as zapping101 from '../../components/blog/posts/zapping-101';
 
 export interface BlogPost {
   slug: string;
@@ -109,6 +110,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  zapping101.meta,
   announcingditto2.meta,
   announcingsheila.meta,
   agoraconnectingfreedomfighters.meta,
@@ -204,6 +206,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'zapping101':
+      return (await import('../../components/blog/posts/zapping-101')).default;
     case 'announcingditto2':
       return (await import('../../components/blog/posts/announcing-ditto-2')).default;
     case 'announcingsheila':
