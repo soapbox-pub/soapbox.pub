@@ -49,6 +49,13 @@ export default function Nostr101() {
         <li><strong>Censorship-Resistant:</strong> Users cannot be banned from the network; they can always find a relay that will host their content.</li>
         <li><strong>Permissionless:</strong> No accounts, phone numbers, or email verification required—just a cryptographic key pair.</li>
       </ul></ul>
+      <h2>Nostr Fixes the Problems of Big Tech</h2>
+      <p>The internet today is controlled by a handful of companies. They decide who gets a platform, what content is allowed, and how your data is used. Nostr is built to fix that.</p>
+      <p><strong>You don't own your account.</strong> On platforms like Twitter, Instagram, or TikTok, your account belongs to the company. They can suspend you, change the rules, or shut down entirely — and everything you've built disappears with them. On Nostr, your identity is yours. No company can take it away, because no company controls it.</p>
+      <p><strong>You can be silenced at any time.</strong> Governments pressure platforms to remove content. Companies deplatform users based on shifting policies. Entire communities get wiped overnight. On Nostr, there's no central authority that can censor you. Your posts are distributed across independent servers, so no single entity can silence your voice.</p>
+      <p><strong>Your data is the product.</strong> Big tech makes money by tracking everything you do and selling your attention to advertisers. Nostr doesn't have a company behind it — there's no one collecting your data, no ads, and no surveillance business model.</p>
+      <p><strong>You're locked into one platform.</strong> Your Instagram followers can't see your tweets. Your Spotify playlists don't carry over to YouTube. Every app is a walled garden. On Nostr, one login works across every app — your followers, your posts, and your identity travel with you.</p>
+      <p>Nostr doesn't fix these problems by promising to do better — plenty of companies have made that promise. It fixes them by being a protocol where it's technically impossible for anyone to take power away from users.</p>
       <h2>How Nostr Differs from the Fediverse and Bluesky</h2>
       <p>Nostr is the only fully decentralized social network, but it shares similarities with the Fediverse and Bluesky. For a deeper dive, read our full <a href="/blog/comparing-protocols">Comparing Protocols</a> guide.</p>
       <figure style={{ width: '100%', height: 'auto' }}>
