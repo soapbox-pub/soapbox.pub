@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   date: string;
   author: { name?: string; picture?: string; };
   ogImage: { url?: string; };
+  featured?: boolean;
   tags?: string[];
 }
 
@@ -15,15 +16,16 @@ export const meta: BlogPostMeta = {
   "slug": "nostr101",
   "title": "Nostr 101: A Beginner Guide to the Decentralized Social Network",
   "excerpt": "How to join Nostr, how to create your account on Nostr, and what Nostr apps to use for beginners",
-  "coverImage": "/assets/blog/nostr-101.png",
-  "date": "2025-02-16",
+  "coverImage": "/assets/images/nostr101-cover.png",
+  "date": "2026-03-11",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
   },
   "ogImage": {
-    "url": "/assets/blog/nostr-101.png"
+    "url": "/assets/images/nostr101-cover.png"
   },
+  "featured": true,
   "tags": ["nostr", "tutorial", "beginner"]
 };
 
@@ -47,68 +49,159 @@ export default function Nostr101() {
         <li><strong>Censorship-Resistant:</strong> Users cannot be banned from the network; they can always find a relay that will host their content.</li>
         <li><strong>Permissionless:</strong> No accounts, phone numbers, or email verification required—just a cryptographic key pair.</li>
       </ul></ul>
-      <h2>How to Create an Account on Nostr</h2>
-      <p>Unlike traditional social media, Nostr does not require a username-password combo. Instead, it uses <strong>cryptographic keys</strong>:</p>
-      <ul>
-        <ul>
-      <li><strong>Public Key (npub_...):</strong> This is your identity, like a username. Anyone can see it and follow you.</li>
-        <li><strong>Private Key (nsec_...):</strong> This is your password. <strong>Never share it!</strong> It signs your posts and proves your identity.</li>
-        <li><strong>Username (NIP05 domain):</strong> NIP05 usernames allow users to have an easy-to-read, email-like handle (e.g., user@domain.com). You can pay for usernames from many services, or get one for free from various Nostr service providers.</li>
-      </ul></ul>
-      <h2>Nostr Clients (Apps) vs. Relays</h2>
-      <figure style={{ width: '100%', height: 'auto' }}>
-        <img alt="Best Nostr Apps" src="/assets/blog/announcing-nostrhub/Nostr-apps.png" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
-      </figure>
-      <h3>Clients: How You Access Nostr</h3>
-      <p>Clients are applications that allow users to read, write, and interact with content on Nostr. They function similarly to social media apps but with full decentralization.</p>
-      <p>There are multiple clients (apps) for accessing Nostr, each with different features. Because Nostr is decentralized, your account is not tied to any single app—you can take your private and public keys to any Nostr client, and your identity, followers, and posts will remain the same. This means you have one account, infinite apps to choose from.</p>
-      <p><strong>Best Nostr Clients:</strong></p>
-      <ul>
-        <ul>
-      <li><strong>Primal</strong> (Web, iOS, Android) – Great for discovery and ease of use.</li>
-        <li><strong>Damus</strong> (iOS) – A clean, Apple-friendly experience.</li>
-        <li><strong>Amethyst</strong> (Android) – A popular choice for Android users.</li>
-        <li><strong>Coracle</strong> (Web) – A web-based client with advanced features.</li>
-        <li>Explore more clients on <a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer">Nostrapps.com</a>.</li>
-      </ul></ul>
-      <p>Each client can connect to any relay, and users can switch between clients while keeping the same identity (public/private key pair).</p>
-      <h3>Relays: The Backbone of Nostr</h3>
-      <p>Relays are servers that store and distribute messages between users. Unlike centralized platforms where a single entity owns the database, Nostr relays operate independently. Users can publish their messages to multiple relays to increase visibility and redundancy.</p>
-      <ul>
-        <ul>
-      <li>Relays do not control user accounts; they only store and transmit messages.</li>
-        <li>Anyone can run a relay, making the network decentralized.</li>
-        <li>Some relays may charge a fee for posting messages to prevent spam.</li>
-        <li>Users should connect to multiple relays to ensure their posts reach a wider audience.</li>
-      </ul></ul>
-      <h3>How Relays and Clients Work Together</h3>
-      <ol>
-        <ul>
-      <li>A user posts a message via a client (e.g., Primal or Damus).</li>
-        <li>The client signs the message with the user's private key.</li>
-        <li>The message is sent to multiple relays.</li>
-        <li>Other users' clients receive messages from relays they are connected to.</li>
-        <li>Users see updates in real-time, depending on which relays they follow.</li>
-      </ul></ol>
-      <p>This separation of data storage (relays) and user interfaces (clients) ensures that Nostr remains resilient, censorship-resistant, and user-controlled.</p>
-      <p>By understanding relays and clients, you can better navigate the Nostr ecosystem and make the most of its decentralized nature!</p>
-      <h2>Zaps: Tipping with Bitcoin</h2>
-      <p>Zaps are a way to send small Bitcoin payments over the Lightning Network. Users can tip others for valuable content.</p>
-      <ul>
-        <ul>
-      <li><strong>Get a Lightning Address:</strong> Sign up with a service like Alby or Zebedee. You can also explore other Lightning address providers at <a href="https://lightningaddress.com" target="_blank" rel="noopener noreferrer">lightningaddress.com</a>.</li>
-        <li><strong>Link Your Address to Your Nostr Profile:</strong> Add it in your profile settings on your chosen client.</li>
-        <li><strong>Start Receiving Zaps!</strong> Users can now tip you directly from Nostr.</li>
-      </ul></ul>
       <h2>How Nostr Differs from the Fediverse and Bluesky</h2>
-      <p>Nostr is the only fully decentralized social network, but it shares similarities with the Fediverse and Bluesky.</p>
+      <p>Nostr is the only fully decentralized social network, but it shares similarities with the Fediverse and Bluesky. For a deeper dive, read our full <a href="/blog/comparing-protocols">Comparing Protocols</a> guide.</p>
       <figure style={{ width: '100%', height: 'auto' }}>
         <img alt="Comparison of Nostr, Fediverse, and Bluesky" src="/assets/blog/protocol-comparison.png" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
       </figure>
       <p><strong>Mostr Bridge: Connecting Nostr to the Fediverse</strong></p>
       <p>The Mostr Bridge is a powerful tool that connects the Nostr network with the Fediverse (e.g., Mastodon, Pleroma). This allows users to follow and interact with accounts across both ecosystems without needing to switch platforms. Explore the bridge <a href="https://mostr.pub" target="_blank" rel="noopener noreferrer">here</a>.</p>
+      <h2>Nostr Apps</h2>
+      <p>Nostr isn't just a Twitter alternative — it's an entire ecosystem of apps spanning every type of content you can imagine. And because your identity lives in your keys (not in any app's database), <strong>one account works everywhere</strong>. No more creating separate logins for your social feed, your music player, your blog, and your calendar. On Nostr, a single key pair is your universal login.</p>
+      <p>Here are just some of the types of content you can create, discover, and interact with across the Nostr ecosystem — all with the same account:</p>
+      <div className="not-prose" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '16px', margin: '24px 0' }}>
+        <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Posts on Nostr" src="/assets/images/ditto/content/posts.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Posts</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>Ditto</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://inkwell.shakespeare.wtf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Articles on Nostr" src="/assets/images/ditto/content/articles.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Articles</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>Inkwell</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://nostr.build" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Photos on Nostr" src="/assets/images/ditto/content/photos.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Photos</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>nostr.build</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://nodecast.xyz" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Music on Nostr" src="/assets/images/ditto/content/music.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Music</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>Nodecast</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://nodecast.xyz" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Podcasts on Nostr" src="/assets/images/ditto/content/podcasts.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Podcasts</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>Nodecast</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://zap.stream" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Livestreams on Nostr" src="/assets/images/ditto/content/livestreams.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Livestreams</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>zap.stream</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://divine.video" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Short Videos on Nostr" src="/assets/images/ditto/content/vines.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Short Videos</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>Divine</div>
+            </div>
+          </div>
+        </a>
+        <a href="https://plektos.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+            <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+              <img alt="Events on Nostr" src="/assets/images/ditto/content/events.png" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+            </div>
+            <div style={{ padding: '10px 12px', textAlign: 'center' }}>
+              <strong style={{ fontSize: '14px' }}>Events</strong>
+              <div style={{ fontSize: '12px', color: '#6b7280' }}>Plektos</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <p>And this is just the beginning — discover more Nostr apps at <a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer">Nostrapps.com</a>.</p>
+      <div className="not-prose" style={{ background: 'linear-gradient(135deg, #f5f3ff, #ede9fe)', borderRadius: '16px', padding: '32px 24px', margin: '32px 0' }}>
+        <h3 style={{ fontSize: '22px', fontWeight: 700, margin: '0 0 16px', color: '#1f2937' }}>Ditto: Best Place to Start</h3>
+        <div className="flex gap-2 mb-5">
+          <img alt="Ditto Kawaii theme" src="/assets/blog/announcing-ditto-2/kawaii-mobile.png" className="flex-1 min-w-0 rounded-lg" />
+          <img alt="Ditto Solarpunk theme" src="/assets/blog/announcing-ditto-2/solarpunk-mobile.png" className="flex-1 min-w-0 rounded-lg" />
+          <img alt="Ditto Hacker theme" src="/assets/blog/announcing-ditto-2/hacker-mobile.png" className="flex-1 min-w-0 rounded-lg" />
+          <img alt="Ditto Clackophile theme" src="/assets/blog/announcing-ditto-2/clackophile-mobile.png" className="hidden sm:block flex-1 min-w-0 rounded-lg" />
+          <img alt="Ditto DJ theme" src="/assets/blog/announcing-ditto-2/dj-mobile.png" className="hidden sm:block flex-1 min-w-0 rounded-lg" />
+          <img alt="Ditto Hiker theme" src="/assets/blog/announcing-ditto-2/hiker-mobile.png" className="hidden sm:block flex-1 min-w-0 rounded-lg" />
+        </div>
+        <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#374151', margin: '0 0 24px' }}>
+          <strong>Ditto</strong> is a full-featured Nostr community platform where you can explore all of these different content types — posts, articles, photos, music, livestreams, events, and more — all in one place. It's fully customizable with themes, and it's the easiest way to experience everything Nostr has to offer.
+        </p>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <a href="/ditto" className="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+            <span className="sm:hidden">Learn More</span>
+            <span className="hidden sm:inline">Learn More About Ditto</span>
+          </a>
+          <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-6 py-3 bg-violet-600 hover:bg-violet-700 active:bg-violet-800 text-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+            <span className="sm:hidden">Try Ditto</span>
+            <span className="hidden sm:inline">Try Ditto Now</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <h3>Other Popular Nostr Apps</h3>
+      <ul>
+        <ul>
+      <li><strong><a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a></strong> (Web, iOS, Android) — Great for discovery and ease of use.</li>
+        <li><strong><a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a></strong> (iOS) — A clean, Apple-friendly experience.</li>
+        <li><strong><a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a></strong> (Android) — A popular choice for Android users.</li>
+      </ul></ul>
+      <h2>Nostr Relays</h2>
+      <p>Relays are the servers that store and deliver your posts. Think of them like different mail carriers — your messages get sent through them to reach other people.</p>
+      <p>You don't need to think about relays to use Nostr; the defaults work great. But if you're curious, you can add or remove relays in Settings &gt; Network.</p>
+      <p>Using multiple relays means your content is backed up in more places, making it harder for anyone to silence you. To dive deeper, read <a href="https://nostr.how/en/relays" target="_blank" rel="noopener noreferrer">Understanding Nostr Relays</a>.</p>
+      <h2>How to Create an Account on Nostr</h2>
+      <p>Getting started on Nostr takes less than a minute. Unlike traditional social media, there's no email address or phone number required — your identity is based on a pair of cryptographic keys. But don't worry, an app like Ditto handles all of that for you. Here's what it looks like:</p>
+      <div className="not-prose flex flex-col sm:flex-row gap-4 my-6 justify-center items-center">
+        <img alt="Ditto create account screen" src="/assets/blog/nostr101/ditto-keygen.png" className="w-full sm:w-[45%] max-w-[300px] rounded-xl border border-gray-200" />
+        <img alt="Ditto save secret key screen" src="/assets/blog/nostr101/ditto-download.png" className="w-full sm:w-[45%] max-w-[300px] rounded-xl border border-gray-200" />
+      </div>
+      <p>When you sign up, the app generates two keys for you:</p>
+      <ul>
+        <ul>
+      <li><strong>Your public key (npub):</strong> This is your identity on Nostr — like a username. It's how people find and follow you, and you can share it freely.</li>
+        <li><strong>Your secret key (nsec):</strong> This is your password. It proves you are who you say you are. Keep it safe — there's no "forgot password" on Nostr, because no company controls your account.</li>
+      </ul></ul>
+      <p>That's what makes Nostr different: <strong>you own your identity</strong>. No company can lock you out, delete your account, or change the rules on you. Your keys are yours forever.</p>
+      <p>Creating your Nostr account is easy on Ditto. <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Get started &rarr;</a></p>
       <h2>The Easiest Way to Get Started on Nostr</h2>
-      <p>Nostr is a powerful and innovative platform that gives users full control over their online presence. The easiest way to get started is to choose a client that fits your needs and start exploring the Nostr ecosystem today!</p>
+      <p>Nostr is a powerful and innovative platform that gives users full control over their online presence. The easiest way to get started is to choose an app that fits your needs and start exploring the Nostr ecosystem today!</p>
     </article>
   );
 }

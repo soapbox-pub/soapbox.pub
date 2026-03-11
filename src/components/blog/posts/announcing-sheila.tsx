@@ -30,7 +30,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/announcing-sheila/cover.jpg"
   },
-  "featured": true,
+  "featured": false,
   "tags": ["AI", "Open Source", "OpenCode"]
 };
 
