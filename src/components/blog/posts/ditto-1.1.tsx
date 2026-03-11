@@ -16,14 +16,14 @@ export const meta: BlogPostMeta = {
   "slug": "ditto-1.1",
   "title": "Ditto 1.1",
   "excerpt": "Last month we released Ditto, a powerful new server for building communities on Nostr. This new release adds major stability and performance improvements we discovered after it became adopted by the Nostr community.",
-  "coverImage": "/assets/blog/announcing-ditto.jpeg",
+  "coverImage": "/assets/blog/ditto-mobile.png",
   "date": "2024-07-15",
   "author": {
     "name": "Alex Gleason",
     "picture": "/assets/avatars/alex.png"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-ditto.jpeg"
+    "url": "/assets/blog/ditto-mobile.png"
   },
   "tags": ["ditto", "release", "update"]
 };

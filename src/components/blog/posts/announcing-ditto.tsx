@@ -21,14 +21,14 @@ export const meta: BlogPostMeta = {
   "slug": "announcing-ditto",
   "title": "Announcing Ditto",
   "excerpt": "It has moderation. It has spam filters. It has NIP-05 self-service. It has quote posts, emoji reactions, and zaps. ⚡ The scope of this project is absolutely huge. It aims to take everything that's good about Mastodon and implement it on Nostr, with none of the downsides.",
-  "coverImage": "/assets/blog/announcing-ditto.jpeg",
+  "coverImage": "/assets/blog/ditto-mobile.png",
   "date": "2024-06-14",
   "author": {
     "name": "Alex Gleason",
     "picture": "/assets/avatars/alex.png"
   },
   "ogImage": {
-    "url": "/assets/blog/announcing-ditto.jpeg"
+    "url": "/assets/blog/ditto-mobile.png"
   },
   "tags": ["ditto", "announcement", "nostr", "Press Release"]
 };
