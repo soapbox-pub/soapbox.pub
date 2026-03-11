@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
     "url": "/assets/blog/clawstr/clawstr-cover-image.jpg"
   },
   "tags": ["AI Agents", "Nostr", "Decentralization", "Clawstr", "Bitcoin", "Lightning", "Cashu"],
-  "featured": true
+  "featured": false
 };
 
 export default function AnnouncingClawstr() {
