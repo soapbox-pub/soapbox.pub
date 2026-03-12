@@ -17,14 +17,14 @@ export const meta: BlogPostMeta = {
   slug: 'zapping-101',
   title: 'Zapping 101: How to Send (and Receive) Bitcoin Tips on Nostr',
   excerpt: "New to Nostr? Learn what zaps are, how to set up a Lightning wallet, and how to send your first Bitcoin tip — even if you've never touched Bitcoin before.",
-  coverImage: '/assets/blog/zapping-101/cover.jpg',
+  coverImage: '/assets/blog/zapping-101/cover.png',
   date: '2026-03-11',
   author: {
     name: 'Derek Ross',
     picture: '/assets/avatars/derek.jpg',
   },
   ogImage: {
-    url: '/assets/blog/zapping-101/cover.jpg',
+    url: '/assets/blog/zapping-101/cover.png',
   },
   tags: ['nostr', 'bitcoin', 'lightning', 'zaps', 'tutorial'],
 };
@@ -44,14 +44,6 @@ export default function Zapping101() {
         In this guide, I'll explain what zaps are, how to set up your wallet so you can receive them, and walk you through sending your first one — even if you've never touched Bitcoin before.
       </p>
 
-      <div className="not-prose my-8">
-        <img
-          src="/assets/blog/zapping-101/cover.jpg"
-          alt="Lightning — the power behind Nostr zaps"
-          className="w-full rounded-xl object-cover max-h-96 shadow-lg"
-        />
-      </div>
-
       <h2>What Is a Zap?</h2>
 
       <p>
@@ -59,7 +51,7 @@ export default function Zapping101() {
       </p>
 
       <p>
-        When you see a post you love, instead of just hitting "like," you can send the creator actual money — instantly, with no middlemen, no fees going to a platform, and no waiting. It goes straight from you to them.
+        When you see content you love, instead of just hitting "like," you can send the creator actual money — instantly, with no middlemen, no fees going to a platform, and no waiting. It goes straight from you to them.
       </p>
 
       <p>
@@ -74,22 +66,32 @@ export default function Zapping101() {
         Take <a href="https://agora.spot" target="_blank" rel="noopener noreferrer"><strong>Agora</strong></a>, a Nostr app built for activists. Organizers post actions — protests, campaigns, awareness drives — and pay real Bitcoin to participants who complete them. Not likes. Not clout. Actual money, sent directly over Lightning.
       </p>
 
-      <div className="not-prose my-6 grid grid-cols-2 gap-4 max-w-lg mx-auto">
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/agora-liberenlos.png"
-            alt="Agora action: Libérenlos a todos — $7.05 Bitcoin bounty by Leopoldo López"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground">$7.05 in Bitcoin for participating in the #LiberenlosATodos campaign</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/agora-amnistia.png"
-            alt="Agora action: Amnistía Ya — $14.10 Bitcoin bounty by Leopoldo López"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground">$14.10 in Bitcoin for the #AmnistiaYa campaign</p>
+      <div className="not-prose my-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/assets/blog/zapping-101/agora-3.png"
+              alt="Agora action detail: Libérenlos a todos campaign with $6.93 bounty, activist submissions including political art"
+              className="rounded-xl shadow-lg w-full"
+            />
+            <p className="text-sm text-center text-muted-foreground">Activists submit photos and earn Bitcoin bounties</p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/assets/blog/zapping-101/agora-2.png"
+              alt="Agora Venezuela Dashboard showing 396 active members, 897 posts, 1.4 million sats in total zaps, and top actions"
+              className="rounded-xl shadow-lg w-full"
+            />
+            <p className="text-sm text-center text-muted-foreground">396 members, 1.4M sats flowing to activists</p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/assets/blog/zapping-101/agora-4.png"
+              alt="Activist Campanita receives 20,000 sats from the Freedom Zap Fund for participating in the campaign"
+              className="rounded-xl shadow-lg w-full"
+            />
+            <p className="text-sm text-center text-muted-foreground"><strong>20,000 sats</strong> from the Freedom Zap Fund to an activist</p>
+          </div>
         </div>
       </div>
 
@@ -101,14 +103,14 @@ export default function Zapping101() {
         That's the power of zaps. And it works just as well for tipping a musician, supporting a writer, or saying thanks to someone who helped you online.
       </p>
 
-      <h2>But Wait... Why Bitcoin?</h2>
+      <h2>Why Do Zaps Use Bitcoin?</h2>
 
       <p>
-        Fair question. A lot of people hear "Bitcoin" and think: scam, complicated, or "isn't that for criminals?"
+        Bitcoin is the best currency for digital freedom. It's open, permissionless, and can't be shut down by any government or corporation.
       </p>
 
       <p>
-        Here's the thing — for sending small tips across the internet to anyone in the world, Bitcoin is actually the perfect tool. Not because it's Bitcoin, but because of what it can do:
+        And for sending small tips across the internet to anyone in the world, nothing else comes close. Here's what Bitcoin can do that no other payment system can:
       </p>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -162,11 +164,7 @@ export default function Zapping101() {
       </div>
 
       <p>
-        No other payment system on the planet does all four of those things. That's why Nostr uses it.
-      </p>
-
-      <p>
-        Beyond payments, Bitcoin matters for freedom. It's open, permissionless, and can't be shut down by any government or corporation. If you want to understand why that matters, these are great places to start:
+        Bitcoin can be used by anyone, anywhere in the world, regardless of borders and governments. This is why Nostr uses Bitcoin for zaps.
       </p>
 
       <div className="not-prose my-6">
@@ -330,17 +328,14 @@ export default function Zapping101() {
         Once you have your wallet and Lightning address, you need to tell Nostr where to send your zaps.
       </p>
 
-      <div className="not-prose my-6 flex justify-center">
+      <div className="not-prose my-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         <img
           src="/assets/blog/zapping-101/edit-profile-lightning.png"
-          alt="Edit Profile in Ditto showing the Lightning address field filled in with derek@npub.cash"
-          className="rounded-xl shadow-lg max-w-xs w-full"
+          alt="Edit Profile in Ditto showing the Lightning address field filled in with mkfain@breez.tips"
+          className="rounded-xl shadow-lg w-full object-cover"
         />
-      </div>
-
-      <div className="not-prose my-6">
-        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/10">
-          <CardContent className="p-6">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/10 flex">
+          <CardContent className="p-6 flex flex-col justify-center">
             <ol className="space-y-3 list-none m-0 p-0">
               {[
                 <>Open your Nostr app (<a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="underline font-medium">Ditto</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer" className="underline font-medium">Primal</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer" className="underline font-medium">Damus</a>, <a href="https://www.amethyst.social" target="_blank" rel="noopener noreferrer" className="underline font-medium">Amethyst</a>, etc.)</>,
@@ -367,25 +362,6 @@ export default function Zapping101() {
 
       <p>Now for the fun part.</p>
 
-      <div className="not-prose my-6 grid grid-cols-2 gap-4 max-w-lg mx-auto">
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/ditto-post-zap-button.png"
-            alt="A post in Ditto showing the ⚡ zap button in the action bar"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground">Tap the <strong>⚡</strong> in the post action bar</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/ditto-zap-dialog.png"
-            alt="Ditto Send a Zap dialog showing preset amounts (21, 50, 100, 250, 1000 sats) and a message field"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground">Choose your amount, add a message, tap <strong>Zap</strong></p>
-        </div>
-      </div>
-
       <div className="not-prose my-6">
         <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-900/10">
           <CardContent className="p-6">
@@ -405,6 +381,35 @@ export default function Zapping101() {
             </ol>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="not-prose my-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/assets/blog/zapping-101/derek-post.png"
+              alt="Derek Ross's post on Ditto with 18 reactions, 5 zaps, and a lightning bolt zap button in the action bar"
+              className="rounded-xl shadow-lg w-full"
+            />
+            <p className="text-sm text-center text-muted-foreground">Find a post and tap the <strong>⚡</strong> zap button</p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/assets/blog/zapping-101/zap-action.png"
+              alt="Send a Zap dialog showing preset amounts (21, 50, 100, 250, 1000 sats) with 100 selected and a message field"
+              className="rounded-xl shadow-lg w-full"
+            />
+            <p className="text-sm text-center text-muted-foreground">Pick an amount, add a message, tap <strong>Zap</strong></p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/assets/blog/zapping-101/list-of-derek-zapped.png"
+              alt="Post interactions showing 5 zaps totaling 126 sats from users like Brave Falcon, TheGrinder, Tanja, and others"
+              className="rounded-xl shadow-lg w-full"
+            />
+            <p className="text-sm text-center text-muted-foreground"><strong>126 sats</strong> from 5 zappers — real money, instantly</p>
+          </div>
+        </div>
       </div>
 
       <p>
@@ -479,46 +484,9 @@ export default function Zapping101() {
         </Card>
       </div>
 
-      <p>Here's the full flow using <strong>Rizful</strong> and <strong>Ditto</strong>:</p>
-
-      <div className="not-prose my-6 grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/rizful-nwc-menu.png"
-            alt="Rizful wallet menu showing the NWC option alongside Settings, New Vault, and Exit"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground"><strong>Step 1:</strong> In Rizful, tap the menu → <strong>NWC</strong></p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/rizful-nwc-get-code.png"
-            alt="Rizful Get NWC Codes screen showing the connection with 250k sats remaining and Get Connection Code button"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground"><strong>Step 2:</strong> Tap <strong>Get Connection Code</strong> and copy it</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/ditto-nwc-settings.png"
-            alt="Ditto Advanced settings showing the Nostr Wallet Connect section with Add button"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground"><strong>Step 3:</strong> In Ditto, go to Settings → Advanced → Wallet → <strong>+ Add</strong></p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img
-            src="/assets/blog/zapping-101/ditto-nwc-connected.png"
-            alt="Ditto showing NWC Wallet connected and Active with Ready status"
-            className="rounded-xl shadow-lg w-full"
-          />
-          <p className="text-sm text-center text-muted-foreground"><strong>Done:</strong> NWC Wallet shows <strong>Active</strong> — one-tap zapping enabled</p>
-        </div>
-      </div>
-
       <h2>Why Zaps Matter</h2>
 
-      <p>Zaps aren't just tipping. They're a signal.</p>
+      <p>Zaps are more than tips, they're proof that someone actually valued what you said.</p>
 
       <p>
         On every other platform, "likes" are free. That means they're gamed, bought, and manipulated. A zap costs something — even if it's just a penny. That makes it real.
@@ -537,7 +505,7 @@ export default function Zapping101() {
           <CardContent className="p-8">
             <Zap className="h-12 w-12 text-orange-500 mx-auto mb-4" />
             <p className="text-xl font-semibold text-orange-900 dark:text-orange-100">
-              That's what makes it different. That's why it matters.
+              Real money. Real people. No permission needed.
             </p>
           </CardContent>
         </Card>
