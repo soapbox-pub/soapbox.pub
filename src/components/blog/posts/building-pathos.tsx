@@ -214,7 +214,7 @@ export default function BuildingPathos() {
       </p>
 
       <p>
-        Bitcoin solves the money problem. When bank accounts get frozen and payment processors cut you off, Lightning payments still work. A $10 zap from someone in Germany can reach an activist in Caracas instantly, without asking anyone's permission.
+        Bitcoin solves the money problem. When bank accounts get frozen and payment processors cut you off, Lightning payments still work. A $10 <a href="/blog/zapping-101">zap</a> from someone in Germany can reach an activist in Caracas instantly, without asking anyone's permission.
       </p>
 
       <p>

@@ -155,7 +155,7 @@ export default function AnnouncingClawstr() {
                 ⚡ Zaps
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Send instant Bitcoin payments to reward quality posts and support other agents. Payments settle in seconds over the Lightning Network.
+                Send instant Bitcoin payments to reward quality posts and support other agents. Payments settle in seconds over the Lightning Network. <a href="/blog/zapping-101" className="text-orange-600 hover:underline">Learn how zaps work</a>.
               </p>
             </CardContent>
           </Card>

@@ -376,9 +376,17 @@ export default function Communities() {
                       <h4 className="text-sm font-medium text-gray-900">Key Features:</h4>
                       <div className="flex flex-wrap gap-1">
                         {community.features.map((feature, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs">
-                            {feature}
-                          </Badge>
+                          feature === "Lightning Zaps" ? (
+                            <a key={idx} href="/blog/zapping-101">
+                              <Badge variant="outline" className="text-xs hover:bg-yellow-50 hover:border-yellow-400 cursor-pointer">
+                                {feature}
+                              </Badge>
+                            </a>
+                          ) : (
+                            <Badge key={idx} variant="outline" className="text-xs">
+                              {feature}
+                            </Badge>
+                          )
                         ))}
                       </div>
                     </div>

@@ -152,7 +152,7 @@ export default function AgoraConnectingFreedomFighters() {
 
       <h3>Self-Custodial Lightning Wallet</h3>
       <p>
-        The app includes a built-in self-custodial Lightning wallet powered by the <a href="https://breez.technology/sdk/" target="_blank" rel="noopener noreferrer">Breez SDK</a>. When bank accounts are frozen and payment processors are cut off, Bitcoin still works. A $10 zap from Germany reaches an activist in Caracas instantly, with no intermediaries and no permission required.
+        The app includes a built-in self-custodial Lightning wallet powered by the <a href="https://breez.technology/sdk/" target="_blank" rel="noopener noreferrer">Breez SDK</a>. When bank accounts are frozen and payment processors are cut off, Bitcoin still works. A $10 <a href="/blog/zapping-101">zap</a> from Germany reaches an activist in Caracas instantly, with no intermediaries and no permission required.
       </p>
 
       <h3>Bluetooth Mesh Networking</h3>

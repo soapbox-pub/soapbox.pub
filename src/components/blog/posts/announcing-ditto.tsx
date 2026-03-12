@@ -106,7 +106,7 @@ export default function AnnouncingDitto() {
         <figcaption>Searching "ditto" on Ditto</figcaption>
       </figure>
       <h2>Zaps</h2>
-      <p>Zaps, small Bitcoin transactions sent over the lightning network, have become central to the Nostr ecosystem. Ditto implements zaps on user profiles and posts. In future releases, we plan to add optional zaps to the selfservice NIP-05 username system, allowing Ditto admins to monetize their platforms.</p>
+      <p>Zaps, small Bitcoin transactions sent over the lightning network, have become central to the Nostr ecosystem. Ditto implements zaps on user profiles and posts. In future releases, we plan to add optional zaps to the selfservice NIP-05 username system, allowing Ditto admins to monetize their platforms. New to zaps? Read our <a href="/blog/zapping-101">Zapping 101 guide</a> to get started.</p>
       <figure>
         <img alt="Zap on Ditto" src="/assets/blog/announcing-ditto/zap2.png"  />
         <figcaption>Zap on Ditto</figcaption>

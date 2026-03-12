@@ -294,10 +294,20 @@ export default function Index() {
                 community.
               </p>
               <div className="space-y-3">
-                {["Censorship-resistant communication", "Direct Bitcoin support via Lightning", "Built on Nostr -- no server to shut down"].map((item) => (
-                  <div key={item} className="flex items-center text-sm text-gray-600">
+                {[
+                  { text: "Censorship-resistant communication" },
+                  { text: "Direct Bitcoin support via Lightning", link: "/blog/zapping-101" },
+                  { text: "Built on Nostr -- no server to shut down" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 shrink-0" />
-                    {item}
+                    {item.link ? (
+                      <Link to={item.link} className="hover:text-orange-600 hover:underline">
+                        {item.text}
+                      </Link>
+                    ) : (
+                      item.text
+                    )}
                   </div>
                 ))}
               </div>

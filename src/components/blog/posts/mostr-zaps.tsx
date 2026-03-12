@@ -87,6 +87,7 @@ export default function MostrZaps() {
         <figcaption>A zap split in Snort</figcaption>
       </figure>
       <p>Users on ActivityPub can opt-out of zap splits by replacing the ⚡ emoji in their profile with the label <code>lud16</code>. This will preserve zap functionality but disable zap splits on your account.</p>
+      <p><strong>Update:</strong> For the latest wallet recommendations and a step-by-step guide to sending and receiving zaps, see our <a href="/blog/zapping-101">Zapping 101 guide</a>.</p>
       <h2>Just the beginning</h2>
       <p>By leveraging existing technology in the ecosystem, sats can now flow between Nostr and the Fediverse. The is a first step in the journey to integrate payments with Soapbox. Keep your eyes out for <a href="https://gitlab.com/soapbox-pub/ditto" target="_blank" rel="noopener noreferrer">Ditto</a>, releasing this year, which includes a very unique Lightning feature never seen before (along with first-class zap integrations). Stay tuned, my friends! And enjoy earning Bitcoin for your posts.</p>
       <p>Special thanks to benthecarman for <a href="https://github.com/benthecarman/zapple-pay-backend/issues/20" target="_blank" rel="noopener noreferrer">debugging Zapple Pay</a> with me!</p></article>

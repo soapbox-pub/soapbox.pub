@@ -515,8 +515,8 @@ export default function Nostrbook() {
                     <p className="text-gray-600 text-sm mb-3">
                       Bitcoin Lightning payment integration for tipping and monetization.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">
-                      Read Documentation
+                    <Button variant="outline" size="sm" className="w-full" asChild>
+                      <a href="/blog/zapping-101">Read Documentation</a>
                     </Button>
                   </CardContent>
                 </Card>

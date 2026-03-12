@@ -778,7 +778,7 @@ export default function MKStack() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  File uploads via Blossom servers, Lightning zaps, and eCash integration for monetization.
+                  File uploads via Blossom servers, <a href="/blog/zapping-101" className="text-orange-600 hover:underline">Lightning zaps</a>, and eCash integration for monetization.
                 </p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center">
@@ -787,7 +787,7 @@ export default function MKStack() {
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
-                    Lightning zaps (NIP-57)
+                    <a href="/blog/zapping-101" className="hover:text-orange-600 hover:underline">Lightning zaps (NIP-57)</a>
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3"></div>
