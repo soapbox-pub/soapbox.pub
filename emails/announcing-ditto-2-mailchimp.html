@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="Ditto just got a massive upgrade. Custom themes, infinite content types, bridges to Bluesky and Mastodon, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ditto Just Got a Massive Upgrade">
+    <meta property="og:description" content="Your content. Your vibe. Your rules. Custom themes, infinite content types, and bridges to Bluesky & Mastodon.">
+    <title>Ditto Just Got a Massive Upgrade</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style type="text/css">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; color: #334155;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0f172a !important; color: #e2e8f0 !important; }
+            .email-container { background-color: #1e293b !important; }
+            .hero { background: linear-gradient(135deg, #2e1065 0%, #1e293b 50%, #4c1d95 100%) !important; }
+            .hero-title { color: #ffffff !important; }
+            .hero-text { color: #cbd5e1 !important; }
+            .feature-card { background-color: #1e293b !important; border: 2px solid #334155 !important; }
+            .section { background-color: #0f172a !important; }
+            .section-title, .feature-title { color: #f1f5f9 !important; }
+            .feature-description, .section-subtitle { color: #94a3b8 !important; }
+            .content-label { color: #94a3b8 !important; }
+            .footer { background-color: #1e293b !important; }
+        }
+
+        table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100%; }
+
+        .email-container {
+            max-width: 600px; margin: 0 auto; background-color: #ffffff;
+            border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #f3e8ff 100%);
+            padding: 50px 30px; text-align: center;
+        }
+        .hero-badge {
+            display: inline-block; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff; padding: 8px 18px; border-radius: 25px; font-size: 13px;
+            font-weight: 700; margin: 0 0 20px; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .hero-title {
+            font-size: 40px; font-weight: 900; color: #1e293b; margin: 0 0 12px; line-height: 1.1;
+        }
+        .hero-tagline {
+            font-size: 22px; font-weight: 700; margin: 0 0 20px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-text {
+            font-size: 17px; color: #475569; margin: 0 0 30px; line-height: 1.6;
+            max-width: 480px; margin-left: auto; margin-right: auto;
+        }
+        .hero-image {
+            width: 100%; max-width: 520px; border-radius: 12px; margin: 0 auto 30px; display: block;
+        }
+
+        /* Sections */
+        .section { padding: 40px 30px; }
+        .section-title { font-size: 28px; font-weight: bold; color: #1e293b; margin: 0 0 12px; text-align: center; }
+        .section-subtitle { font-size: 17px; color: #64748b; margin: 0 0 30px; text-align: center; line-height: 1.5; }
+
+        /* Feature cards */
+        .feature-card {
+            background: #ffffff !important; border: 2px solid #e2e8f0 !important;
+            border-radius: 16px !important; padding: 28px 24px !important;
+            margin: 20px 0 !important; text-align: left !important;
+        }
+        .feature-title {
+            font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 8px;
+        }
+        .feature-description {
+            font-size: 16px; color: #475569; margin: 0; line-height: 1.6;
+        }
+
+        /* Theme grid */
+        .theme-grid {
+            width: 100%; margin: 0 0 30px;
+        }
+        .theme-grid img {
+            width: 16.66%; display: inline-block; border-radius: 8px;
+        }
+
+        /* Content type grid */
+        .content-grid {
+            width: 100%; margin: 20px 0;
+        }
+        .content-cell {
+            width: 25%; vertical-align: top; padding: 6px; text-align: center;
+        }
+        .content-cell img {
+            width: 100%; border-radius: 10px; display: block;
+        }
+        .content-label {
+            font-size: 12px; color: #64748b; margin: 6px 0 0; font-weight: 600;
+        }
+
+        /* Bridge section */
+        .bridge-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 40px 30px; text-align: center;
+        }
+        .bridge-section h2 { color: #ffffff; font-size: 28px; margin: 0 0 12px; }
+        .bridge-section p { color: #cbd5e1; font-size: 16px; line-height: 1.6; margin: 0 0 10px; }
+        .bridge-logos { margin: 24px 0; }
+        .bridge-logos img { width: 48px; height: 48px; margin: 0 10px; border-radius: 50%; }
+
+        /* Values section */
+        .values-section { background: #faf5ff; padding: 40px 30px; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block; padding: 14px 28px; border-radius: 8px;
+            text-decoration: none !important; font-weight: 600; font-size: 16px;
+            text-align: center; margin: 8px; border: none; cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff !important; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        .btn-primary, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+            color: #ffffff !important; text-decoration: none !important;
+        }
+        .btn-secondary {
+            background: #ffffff; color: #7c3aed !important; border: 2px solid #7c3aed;
+        }
+        .btn-secondary, .btn-secondary:visited, .btn-secondary:hover, .btn-secondary:active {
+            text-decoration: none !important;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            padding: 50px 30px; text-align: center;
+        }
+        .cta h2 { font-size: 32px; font-weight: bold; color: #ffffff; margin: 0 0 12px; }
+        .cta p { font-size: 17px; color: #e2e8f0; margin: 0 0 30px; line-height: 1.5; }
+
+        /* Footer */
+        .footer { background: #1e293b; padding: 30px 20px; text-align: center; }
+        .footer p { font-size: 14px; color: #94a3b8; margin: 8px 0; }
+        .footer a { color: #a78bfa !important; text-decoration: none !important; }
+        .footer a:visited, .footer a:hover, .footer a:active { color: #c4b5fd !important; text-decoration: none !important; }
+
+        /* Mobile */
+        @media only screen and (max-width: 600px) {
+            .email-container { border-radius: 0; margin: 0; }
+            .hero { padding: 40px 20px; }
+            .hero-title { font-size: 32px; }
+            .hero-tagline { font-size: 18px; }
+            .hero-text { font-size: 15px; }
+            .section { padding: 30px 20px; }
+            .section-title { font-size: 24px; }
+            .feature-card { padding: 22px 18px !important; }
+            .feature-title { font-size: 18px; }
+            .content-cell { display: block !important; width: 50% !important; float: left !important; }
+            .btn { display: block; margin: 10px 0; font-size: 14px; padding: 12px 20px; }
+            .values-col { display: block !important; width: 100% !important; padding: 0 0 24px !important; }
+            .theme-mobile-hide { display: none !important; mso-hide: all !important; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-badge">Ditto 2.0</div>
+            <h1 class="hero-title">Ditto Just Got a Massive Upgrade</h1>
+            <p class="hero-tagline">Your content. Your vibe. Your rules.</p>
+            <p class="hero-text">
+                Custom themes, infinite content types, wall posts, and a lot more. Ditto is your homebase on the open web.
+            </p>
+
+            <img src="https://soapbox.pub/assets/images/ditto/ditto2-og.gif" alt="Ditto Update" class="hero-image">
+
+            <div style="margin-top: 20px;">
+                <a href="https://soapbox.pub/blog/announcing-ditto-2" class="btn btn-secondary">Read the Announcement</a>
+                <a href="https://ditto.pub" class="btn btn-primary">Launch Ditto &rarr;</a>
+            </div>
+        </div>
+
+        <!-- The Old Internet Is Back -->
+        <div class="section">
+            <h2 class="section-title">The Old Internet Is Back</h2>
+            <p class="section-subtitle">
+                Remember when your profile page actually looked like <em>you</em>? Ditto now lets you customize your entire experience with color palettes, background images, and fonts. Browse themes other people have shared, or build your own.
+            </p>
+
+            <!-- Theme screenshots row -->
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0 0 24px;">
+                <tr>
+                    <td style="padding: 0 2px;"><img src="https://soapbox.pub/assets/blog/announcing-ditto-2/kawaii-mobile.png" alt="Kawaii theme" style="width: 100%; border-radius: 8px; display: block;"></td>
+                    <td style="padding: 0 2px;"><img src="https://soapbox.pub/assets/blog/announcing-ditto-2/solarpunk-mobile.png" alt="Solarpunk theme" style="width: 100%; border-radius: 8px; display: block;"></td>
+                    <td style="padding: 0 2px;"><img src="https://soapbox.pub/assets/blog/announcing-ditto-2/hacker-mobile.png" alt="Hacker theme" style="width: 100%; border-radius: 8px; display: block;"></td>
+                    <td class="theme-mobile-hide" style="padding: 0 2px;"><img src="https://soapbox.pub/assets/blog/announcing-ditto-2/clackophile-mobile.png" alt="Clackophile theme" style="width: 100%; border-radius: 8px; display: block;"></td>
+                    <td class="theme-mobile-hide" style="padding: 0 2px;"><img src="https://soapbox.pub/assets/blog/announcing-ditto-2/dj-mobile.png" alt="DJ theme" style="width: 100%; border-radius: 8px; display: block;"></td>
+                    <td class="theme-mobile-hide" style="padding: 0 2px;"><img src="https://soapbox.pub/assets/blog/announcing-ditto-2/hiker-mobile.png" alt="Hiker theme" style="width: 100%; border-radius: 8px; display: block;"></td>
+                </tr>
+            </table>
+
+            <p style="text-align: center; font-size: 15px; color: #64748b;">
+                This isn't a toggle between light and dark mode. The era of fun, custom profiles is back &mdash; built on modern tech.
+            </p>
+        </div>
+
+        <!-- Infinite Content Types -->
+        <div class="section" style="background: #faf5ff;">
+            <h2 class="section-title">Way More Than Text Posts</h2>
+            <p class="section-subtitle">
+                Ditto is a playground. Discover and create photos, short-form videos, livestreams, articles, polls, podcasts, music, events, books, and more &mdash; all in one feed you design yourself.
+            </p>
+
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="content-grid">
+                <tr>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/posts.png" alt="Posts">
+                        <p class="content-label">Posts</p>
+                    </td>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/articles.png" alt="Articles">
+                        <p class="content-label">Articles</p>
+                    </td>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/photos.png" alt="Photos">
+                        <p class="content-label">Photos</p>
+                    </td>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/music.png" alt="Music">
+                        <p class="content-label">Music</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/podcasts.png" alt="Podcasts">
+                        <p class="content-label">Podcasts</p>
+                    </td>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/livestreams.png" alt="Livestreams">
+                        <p class="content-label">Livestreams</p>
+                    </td>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/vines.png" alt="Short Videos">
+                        <p class="content-label">Short Videos</p>
+                    </td>
+                    <td class="content-cell">
+                        <img src="https://soapbox.pub/assets/images/ditto/content/events.png" alt="Events">
+                        <p class="content-label">Events</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p style="text-align: center; font-size: 15px; color: #64748b;">
+                And if it exists on Ditto, you can comment on it. Posts. URLs. Books. Profiles. Write on your friends' walls. The open web is fun again.
+            </p>
+        </div>
+
+        <!-- Fun Requires Freedom -->
+        <div style="background: linear-gradient(135deg, #2e1065 0%, #4c1d95 50%, #581c87 100%); padding: 50px 30px; text-align: center;">
+            <h2 style="font-size: 30px; font-weight: 900; color: #ffffff; margin: 0 0 8px;">Fun Requires Freedom</h2>
+            <p style="font-size: 16px; color: #c4b5fd; margin: 0 0 36px; line-height: 1.5;">This update isn't just about features. It's about building social media the right way.</p>
+
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td class="values-col" width="33%" style="padding: 0 8px; vertical-align: top; text-align: center;">
+                        <div style="font-size: 36px; margin: 0 0 12px;">&#128272;</div>
+                        <h3 style="font-size: 16px; font-weight: 700; color: #ffffff; margin: 0 0 8px;">You own your data</h3>
+                        <p style="font-size: 13px; color: #c4b5fd; line-height: 1.5; margin: 0;">Your identity, content, and connections belong to you. No platform lock-in.</p>
+                    </td>
+                    <td class="values-col" width="33%" style="padding: 0 8px; vertical-align: top; text-align: center;">
+                        <div style="font-size: 36px; margin: 0 0 12px;">&#129309;</div>
+                        <h3 style="font-size: 16px; font-weight: 700; color: #ffffff; margin: 0 0 8px;">Open source</h3>
+                        <p style="font-size: 13px; color: #c4b5fd; line-height: 1.5; margin: 0;">Free software anyone can copy, improve, and build on. <a href="https://about.ditto.pub/guides/self-hosting" style="color: #a78bfa;">Self-host</a> or <a href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fsoapbox-pub%2Fditto.git" style="color: #a78bfa;">edit in Shakespeare</a>.</p>
+                    </td>
+                    <td class="values-col" width="33%" style="padding: 0 8px; vertical-align: top; text-align: center;">
+                        <div style="font-size: 36px; margin: 0 0 12px;">&#128581;</div>
+                        <h3 style="font-size: 16px; font-weight: 700; color: #ffffff; margin: 0 0 8px;">No Big Tech</h3>
+                        <p style="font-size: 13px; color: #c4b5fd; line-height: 1.5; margin: 0;">No ads. No tracking. No algorithms you're forced into. Read our <a href="https://soapbox.pub/ethics/" style="color: #a78bfa;">ethics pledge</a>.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="cta">
+            <h2>Ready?</h2>
+            <p>No email. No phone number. Just you and a Nostr key.</p>
+            <div style="margin: 30px 0;">
+                <a href="https://ditto.pub" class="btn" style="background: #ffffff; color: #7c3aed !important; font-size: 18px; padding: 16px 32px; font-weight: 700;">
+                    Launch Ditto
+                </a>
+            </div>
+            <div>
+                <a href="https://about.ditto.pub" class="btn" style="background: transparent !important; color: #ffffff !important; border: 2px solid rgba(255,255,255,0.5); font-size: 14px; padding: 10px 20px;">
+                    Read the Docs
+                </a>
+                <a href="https://soapbox.pub/blog/announcing-ditto-2" class="btn" style="background: transparent !important; color: #ffffff !important; border: 2px solid rgba(255,255,255,0.5); font-size: 14px; padding: 10px 20px;">
+                    Full Announcement
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> &mdash; Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> |
+                <a href="https://soapbox.pub/blog">Blog</a> |
+                <a href="https://soapbox.pub/ditto">About Ditto</a> |
+                <a href="https://gitlab.com/soapbox-pub/ditto">Source Code</a> |
+                <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MailChimp Footer -->
+    <center>
+        <br><br><br><br><br><br>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+            <tr>
+                <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                        <tr>
+                            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                <br>
+                                <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                <br>
+                                *|LIST:ADDRESSLINE|*
+                                <br><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <style type="text/css">
+            @media only screen and (max-width: 480px){
+                table#canspamBar td{font-size:14px !important;}
+                table#canspamBar td a{display:block !important; margin-top:10px !important;}
+            }
+        </style>
+    </center>
+</body>
+</html>

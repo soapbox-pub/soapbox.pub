@@ -7,14 +7,14 @@ export const meta: BlogPostMeta = {
   title: 'Soapbox Launches Massive Update to Ditto: Designed for Fun, Built for Freedom',
   excerpt:
     'Your content. Your vibe. Your rules. Ditto is the world\'s first fully customizable, open source, and decentralized social platform -- and it just got a massive upgrade.',
-  coverImage: '/assets/images/ditto/ditto2-og.gif',
+  coverImage: '/assets/blog/announcing-ditto-2/cover.jpg',
   date: '2026-03-11',
   author: {
     name: 'M. K. Fain',
     picture: '/assets/avatars/mk.jpg',
   },
   ogImage: {
-    url: '/assets/images/ditto/ditto2-og.gif',
+    url: '/assets/blog/announcing-ditto-2/cover.jpg',
   },
   featured: true,
   tags: ['Ditto', 'Nostr', 'Open Source', 'Press Release'],
