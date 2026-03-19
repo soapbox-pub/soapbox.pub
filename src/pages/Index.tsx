@@ -55,7 +55,7 @@ export default function Index() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto">
+            <p className="hidden md:block text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto">
               Open source tools for social media, AI development, and
               activism. Decentralized, community-owned, and built to last.
             </p>
