@@ -50,7 +50,7 @@ export default function Index() {
           <div className="text-center space-y-6">
             <h1 className="font-display font-bold text-gray-900 leading-[1.1]">
               <span className="block text-5xl md:text-6xl lg:text-7xl">Building tools for</span>
-              <span className="block text-6xl md:text-8xl lg:text-9xl bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
+              <span className="block text-5xl md:text-8xl lg:text-9xl bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
                 Freedom&nbsp;Online
               </span>
             </h1>
@@ -76,8 +76,8 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Three screenshots -- full width, fanned */}
-          <div className="flex items-end justify-center gap-4 md:gap-6 max-w-5xl mx-auto">
+          {/* Three screenshots -- full width, fanned (hidden on mobile) */}
+          <div className="hidden md:flex items-end justify-center gap-4 md:gap-6 max-w-5xl mx-auto">
             {/* Left -- "Your Content" */}
             <div
               className="w-1/3 rounded-[20px] overflow-hidden mb-6"

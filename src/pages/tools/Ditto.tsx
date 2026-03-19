@@ -167,11 +167,11 @@ export default function Ditto() {
           </div>
 
           {/* First row of app store screenshots (1-4) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
             {Array.from({ length: 4 }, (_, i) => (
               <div
                 key={i}
-                className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
+                className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 shrink-0 w-[70%] md:w-auto snap-center"
               >
                 <img
                   src={`/assets/images/ditto/appstore/${i + 1}.png`}
@@ -277,11 +277,11 @@ export default function Ditto() {
       {/* ================================================================== */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
             {Array.from({ length: 4 }, (_, i) => (
               <div
                 key={i}
-                className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
+                className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 shrink-0 w-[70%] md:w-auto snap-center"
               >
                 <img
                   src={`/assets/images/ditto/appstore/${i + 5}.png`}
