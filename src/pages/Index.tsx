@@ -109,36 +109,36 @@ export default function Index() {
 
             {/* Right -- three mobile screenshots fanned */}
             <div className="flex items-end justify-center gap-3 md:gap-5 px-4">
-              {/* Left -- Ditto Solarpunk */}
+              {/* Left -- "Your Content" */}
               <div
                 className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-6"
                 style={{ transform: "rotate(-4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
               >
                 <img
-                  src="/assets/blog/announcing-ditto-2/solarpunk-mobile.png"
-                  alt="Ditto -- Solarpunk theme"
+                  src="/assets/images/ditto/appstore/1.png"
+                  alt="Ditto -- Your Content"
                   className="w-full h-auto"
                 />
               </div>
-              {/* Center -- Shakespeare (elevated) */}
+              {/* Center -- "Your Vibe" (elevated) */}
               <div
                 className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-10"
                 style={{ transform: "rotate(0deg)", boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
               >
                 <img
-                  src="/assets/images/shakespeare-mobile.png"
-                  alt="Shakespeare -- Build apps with AI"
+                  src="/assets/images/ditto/appstore/2.png"
+                  alt="Ditto -- Your Vibe"
                   className="w-full h-auto"
                 />
               </div>
-              {/* Right -- Agora Actions */}
+              {/* Right -- "Your Rules" */}
               <div
                 className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-6"
                 style={{ transform: "rotate(4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
               >
                 <img
-                  src="/assets/blog/about-agora/ve-action.png"
-                  alt="Agora -- Power to the People"
+                  src="/assets/images/ditto/appstore/3.png"
+                  alt="Ditto -- Your Rules"
                   className="w-full h-auto"
                 />
               </div>
