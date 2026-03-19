@@ -114,131 +114,72 @@ export default function Ditto() {
       {/* 1. HERO                                                            */}
       {/* ================================================================== */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left column -- copy */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge
-                  variant="secondary"
-                  className="bg-violet-100 text-violet-700 border-violet-200"
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Centered title block */}
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
+            <h1 className="text-8xl md:text-9xl font-display font-bold text-gray-900">
+              <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+                Ditto
+              </span>
+            </h1>
+
+            <p className="text-2xl md:text-3xl font-display font-semibold text-gray-800">
+              Your content. Your vibe. Your rules.
+            </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto">
+              A social platform for people who want to have fun, not feed
+              the Big Tech machine. Open source, decentralized, and entirely
+              yours to customize and build upon.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3 text-lg"
+                asChild
+              >
+                <a
+                  href="https://ditto.pub"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Fun Social Media
-                </Badge>
-
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900">
-                  <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                    Ditto
-                  </span>
-                </h1>
-
-                <p className="text-2xl md:text-3xl font-display font-semibold text-gray-800">
-                  Your content. Your vibe. Your rules.
-                </p>
-
-                <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                  A social platform for people who want to have fun, not feed
-                  the Big Tech machine. Open source, decentralized, and entirely
-                  yours to customize and build upon.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-3 text-lg"
-                  asChild
+                  Launch Ditto
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-3 text-lg"
+                asChild
+              >
+                <a
+                  href="https://about.ditto.pub"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <a
-                    href="https://ditto.pub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Launch Ditto
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="px-8 py-3 text-lg"
-                  asChild
-                >
-                  <a
-                    href="https://about.ditto.pub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <BookOpen className="mr-2 h-5 w-5" />
-                    Read the Docs
-                  </a>
-                </Button>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                  Open Source
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                  Static Deploy
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                  No Sign-up Required
-                </div>
-              </div>
+                  <BookOpen className="mr-2 h-5 w-5" />
+                  Read the Docs
+                </a>
+              </Button>
             </div>
+          </div>
 
-            {/* Right column -- dynamic theme collage */}
-            <div className="relative h-[420px] md:h-[520px] lg:h-[560px]">
-              {/* Back row */}
+          {/* First row of app store screenshots (1-4) */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Array.from({ length: 4 }, (_, i) => (
               <div
-                className="absolute top-0 right-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
-                style={{ transform: "rotate(3deg)" }}
+                key={i}
+                className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
               >
                 <img
-                  src="/assets/images/ditto/profiles/solarpunk.png"
-                  alt="Solarpunk theme profile"
-                  className="w-full h-full object-cover"
+                  src={`/assets/images/ditto/appstore/${i + 1}.png`}
+                  alt={`Ditto screenshot ${i + 1}`}
+                  className="w-full h-auto"
                 />
               </div>
-
-              <div
-                className="absolute top-12 left-0 w-[55%] aspect-[867/918] rounded-2xl shadow-xl overflow-hidden ring-2 ring-violet-200/60"
-                style={{ transform: "rotate(-2deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/alien.png"
-                  alt="Alien theme profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Front row */}
-              <div
-                className="absolute bottom-8 left-[10%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(-3deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/kawaii.png"
-                  alt="Kawaii theme profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div
-                className="absolute bottom-0 right-[5%] w-[50%] aspect-[867/918] rounded-2xl shadow-2xl overflow-hidden ring-2 ring-violet-200/60 z-10"
-                style={{ transform: "rotate(2deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/grunge.png"
-                  alt="Grunge theme profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -332,60 +273,24 @@ export default function Ditto() {
       </section>
 
       {/* ================================================================== */}
-      {/* 4. COMMENT ON ANYTHING                                             */}
+      {/* 4. APP STORE SCREENSHOTS (5-8)                                     */}
       {/* ================================================================== */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge
-                  variant="secondary"
-                  className="bg-violet-100 text-violet-700 border-violet-200"
-                >
-                  Nostalgia-maxxing
-                </Badge>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
-                  Comment on{" "}
-                  <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                    anything.
-                  </span>
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Posts. Countries. Links. Profiles. Books. Treasures. If it
-                  exists, you can discuss it. Write on your friends' walls.
-                  Start Top 8 drama. The internet is fun again.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: "Wall Posts", desc: "Write on your friends' walls like it's 2006" },
-                  { label: "URLs", desc: "Comment on any link on the web" },
-                  { label: "Countries", desc: "Discuss places with Agora" },
-                  { label: "Profiles", desc: "Leave notes on anyone's page" },
-                  { label: "Books", desc: "Review and discuss any book" },
-                  { label: "Reactions", desc: "Reply to emoji reactions" },
-                ].map((item) => (
-                  <div key={item.label} className="space-y-1">
-                    <h4 className="font-semibold text-gray-900 text-sm">
-                      {item.label}
-                    </h4>
-                    <p className="text-xs text-gray-500">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center">
-              <div className="w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Array.from({ length: 4 }, (_, i) => (
+              <div
+                key={i}
+                className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
+              >
                 <img
-                  src="/assets/images/ditto/wall-posts.png"
-                  alt="Wall posts in Ditto -- write on your friends' profiles"
+                  src={`/assets/images/ditto/appstore/${i + 5}.png`}
+                  alt={`Ditto screenshot ${i + 5}`}
                   className="w-full h-auto"
+                  loading="lazy"
                 />
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

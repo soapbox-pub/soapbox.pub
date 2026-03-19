@@ -20,15 +20,11 @@ export const meta: BlogPostMeta = {
   tags: ['Ditto', 'Nostr', 'Open Source', 'Press Release'],
 };
 
-/** 7 themes with matching desktop + mobile screenshots. */
-const themes = [
-  { name: 'Kawaii', desktop: '/assets/blog/announcing-ditto-2/kawaii-desktop.png', mobile: '/assets/blog/announcing-ditto-2/kawaii-mobile.png' },
-  { name: 'Solarpunk', desktop: '/assets/blog/announcing-ditto-2/solarpunk-desktop.png', mobile: '/assets/blog/announcing-ditto-2/solarpunk-mobile.png' },
-  { name: 'Hacker', desktop: '/assets/blog/announcing-ditto-2/hacker-desktop.png', mobile: '/assets/blog/announcing-ditto-2/hacker-mobile.png' },
-  { name: 'Clackophile', desktop: '/assets/blog/announcing-ditto-2/clackophile-desktop.png', mobile: '/assets/blog/announcing-ditto-2/clackophile-mobile.png' },
-  { name: 'DJ', desktop: '/assets/blog/announcing-ditto-2/dj-desktop.png', mobile: '/assets/blog/announcing-ditto-2/dj-mobile.png' },
-  { name: 'Hiker', desktop: '/assets/blog/announcing-ditto-2/hiker-desktop.png', mobile: '/assets/blog/announcing-ditto-2/hiker-mobile.png' },
-];
+/** 8 mobile app store screenshots. */
+const screenshots = Array.from({ length: 8 }, (_, i) => ({
+  src: `/assets/blog/announcing-ditto-2/screenshot-${i + 1}.png`,
+  alt: `Ditto screenshot ${i + 1}`,
+}));
 
 export default function AnnouncingDitto2() {
   const [lightbox, setLightbox] = useState<{ src: string; caption: string } | null>(null);
@@ -202,42 +198,20 @@ export default function AnnouncingDitto2() {
       <h2>Screenshots</h2>
 
       <p>
-        High-resolution screenshots of Ditto's custom themes. Click any image
-        to view full size.
+        High-resolution screenshots of Ditto. Click any image to view full size.
       </p>
 
-      <h3>Mobile</h3>
-
-      <div className="not-prose grid grid-cols-3 sm:grid-cols-6 gap-3 my-6">
-        {themes.map((theme) => (
+      <div className="not-prose grid grid-cols-2 sm:grid-cols-4 gap-3 my-6">
+        {screenshots.map((shot, i) => (
           <button
-            key={`mobile-${theme.name}`}
-            onClick={() => openLightbox(theme.mobile, `${theme.name} (mobile)`)}
+            key={i}
+            onClick={() => openLightbox(shot.src, shot.alt)}
             className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
           >
             <img
-              src={theme.mobile}
-              alt={`${theme.name} theme -- mobile`}
+              src={shot.src}
+              alt={shot.alt}
               className="w-full h-auto"
-              loading="lazy"
-            />
-          </button>
-        ))}
-      </div>
-
-      <h3>Desktop</h3>
-
-      <div className="not-prose grid grid-cols-3 gap-3 my-6">
-        {themes.map((theme) => (
-          <button
-            key={`desktop-${theme.name}`}
-            onClick={() => openLightbox(theme.desktop, `${theme.name} (desktop)`)}
-            className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
-          >
-            <img
-              src={theme.desktop}
-              alt={`${theme.name} theme -- desktop`}
-              className="w-full aspect-[16/10] object-cover object-top"
               loading="lazy"
             />
           </button>
