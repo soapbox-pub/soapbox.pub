@@ -79,11 +79,11 @@ const contentTypes = [
 
 export default function Ditto() {
   useSEO({
-    title: "Ditto - Fun Social Media | Open Source Nostr Client",
+    title: "Ditto - Your Content. Your Vibe. Your Rules.",
     description:
       "A social platform for people who want to have fun, not feed the Big Tech machine. Open source, decentralized, and entirely yours to customize and build upon.",
     type: "website",
-    image: "/assets/images/ditto/ditto2-og.gif",
+    image: "/assets/blog/announcing-ditto-2/cover.jpg",
     keywords:
       "ditto, nostr, social media, custom themes, decentralized, open source, fun, self-expression, nostr client, bluesky bridge, mastodon bridge",
     structuredData: {
@@ -91,7 +91,7 @@ export default function Ditto() {
       "@type": "SoftwareApplication",
       name: "Ditto",
       description:
-        "A social platform for people who want to have fun, not feed the Big Tech machine. Open source, decentralized, and entirely yours to customize and build upon.",
+        "Your content. Your vibe. Your rules. A social platform for people who want to have fun, not feed the Big Tech machine.",
       applicationCategory: "Social Networking",
       operatingSystem: "Web",
       offers: {
