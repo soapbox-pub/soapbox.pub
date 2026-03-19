@@ -8,7 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -60,20 +60,7 @@ export default function Index() {
               activism. Decentralized, community-owned, and built to last.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                Open Source
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                Decentralized
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                Community Owned
-              </div>
-            </div>
+
           </div>
 
           {/* Three screenshots -- full width, fanned (hidden on mobile) */}
@@ -118,55 +105,62 @@ export default function Index() {
       {/* ================================================================ */}
       {/* 2. THE BIG THREE -- Product Showcase                             */}
       {/* ================================================================ */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto space-y-32">
-          {/* -- Ditto (image left, text right) -- */}
+      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+           {/* -- Ditto (image left, text right) -- */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative h-[420px] md:h-[520px]">
-              {/* Back-left -- Kawaii */}
-              <div
-                className="absolute top-0 left-0 w-[55%] rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5"
-                style={{ transform: "rotate(-2deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/kawaii.png"
-                  alt="Kawaii theme"
-                  className="w-full aspect-[867/918] object-cover"
-                />
-              </div>
-              {/* Back-right -- Alien */}
-              <div
-                className="absolute top-6 right-0 w-[55%] rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 z-[5]"
-                style={{ transform: "rotate(2deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/alien.png"
-                  alt="Alien theme"
-                  className="w-full aspect-[867/918] object-cover"
-                />
-              </div>
-              {/* Front-center -- Gamer */}
-              <div
-                className="absolute bottom-0 left-[15%] w-[55%] rounded-xl shadow-2xl overflow-hidden ring-1 ring-black/5 z-10"
-                style={{ transform: "rotate(-1deg)" }}
-              >
-                <img
-                  src="/assets/images/ditto/profiles/gamer.png"
-                  alt="Gamer theme"
-                  className="w-full aspect-[867/918] object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <Badge className="bg-violet-100 text-violet-700 border-violet-200">
-                Fun Social Media
-              </Badge>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+            {/* Mobile-only title */}
+            <div className="lg:hidden col-span-full text-center w-[90%] mx-auto space-y-2">
+              <h2 className="text-6xl font-display font-bold text-gray-900">
                 <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
                   Ditto
                 </span>
               </h2>
+              <p className="text-lg text-gray-500 font-medium">Your Content. Your Vibe. Your Rules.</p>
+            </div>
+
+            <div>
+              {/* Desktop: two screenshots side by side */}
+              <div className="hidden md:grid grid-cols-2 gap-4">
+                {[4, 5].map((n) => (
+                  <div
+                    key={n}
+                    className="rounded-[20px] overflow-hidden"
+                    style={{ boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
+                  >
+                    <img
+                      src={`/assets/images/ditto/appstore/${n}.png`}
+                      alt={`Ditto screenshot ${n}`}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile: horizontally scrollable row of 5 screenshots */}
+              <div className="flex md:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4">
+                {[4, 5, 6, 7, 8].map((n) => (
+                  <div
+                    key={n}
+                    className="shrink-0 w-[70%] rounded-[20px] overflow-hidden shadow-lg ring-1 ring-black/5 snap-center"
+                  >
+                    <img
+                      src={`/assets/images/ditto/appstore/${n}.png`}
+                      alt={`Ditto screenshot ${n}`}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="hidden lg:block text-5xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+                  Ditto
+                </span>
+              </h2>
+              <p className="hidden lg:block text-xl text-gray-500 font-medium -mt-2">Your Content. Your Vibe. Your Rules.</p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 A social platform for people who want to have fun, not feed the
                 Big Tech machine. Custom themes, infinite content types, and
@@ -180,30 +174,53 @@ export default function Index() {
                   </div>
                 ))}
               </div>
-              <Button
-                size="lg"
-                className="bg-violet-600 hover:bg-violet-700 text-white"
-                asChild
-              >
-                <Link to="/ditto">
-                  Explore Ditto
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <div className="flex justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="bg-violet-600 hover:bg-violet-700 text-white"
+                  asChild
+                >
+                  <Link to="/ditto">
+                    Explore Ditto
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50/60 to-purple-50/60">
+        <div className="max-w-7xl mx-auto">
           {/* -- Shakespeare (text left, image right) -- */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-6 order-2 lg:order-1">
-              <Badge className="bg-blue-100 text-blue-700 border-blue-200">
-                AI Website Builder
-              </Badge>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+            {/* Mobile-only title */}
+            <div className="lg:hidden col-span-full text-center w-[90%] mx-auto space-y-2">
+              <h2 className="text-6xl font-display font-bold text-gray-900">
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Shakespeare
                 </span>
               </h2>
+              <p className="text-lg text-gray-500 font-medium">All the web's your stage.</p>
+            </div>
+
+            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 order-1 lg:order-2">
+              <img
+                src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
+                alt="Shakespeare AI IDE editing a Ditto project"
+                className="w-full h-auto"
+              />
+            </div>
+
+            <div className="space-y-6 order-2 lg:order-1">
+              <h2 className="hidden lg:block text-5xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Shakespeare
+                </span>
+              </h2>
+              <p className="hidden lg:block text-xl text-gray-500 font-medium -mt-2">All the web's your stage.</p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Build websites and applications with AI in your browser. No
                 downloads, any AI provider, complete freedom and control.
@@ -216,29 +233,38 @@ export default function Index() {
                   </div>
                 ))}
               </div>
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white"
-                asChild
-              >
-                <Link to="/shakespeare">
-                  Start Building
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 order-1 lg:order-2">
-              <img
-                src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
-                alt="Shakespeare AI IDE editing a Ditto project"
-                className="w-full h-auto"
-              />
+              <div className="flex justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                  asChild
+                >
+                  <Link to="/shakespeare">
+                    Start Building
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <section className="pt-12 pb-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
           {/* -- Agora (image left, text right) -- */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Mobile-only title */}
+            <div className="lg:hidden col-span-full text-center w-[90%] mx-auto space-y-2">
+              <h2 className="text-6xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                  Agora
+                </span>
+              </h2>
+              <p className="text-lg text-gray-500 font-medium">Power to the People.</p>
+            </div>
+
             <div className="rounded-2xl shadow-2xl overflow-hidden">
               <img
                 src="/assets/blog/about-agora/agora-cover.png"
@@ -248,14 +274,12 @@ export default function Index() {
             </div>
 
             <div className="space-y-6">
-              <Badge className="bg-orange-100 text-orange-700 border-orange-200">
-                Power to the People
-              </Badge>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+              <h2 className="hidden lg:block text-5xl font-display font-bold text-gray-900">
                 <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                   Agora
                 </span>
               </h2>
+              <p className="hidden lg:block text-xl text-gray-500 font-medium -mt-2">Power to the People.</p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 A censorship-resistant platform for activists. Organize,
                 document, and receive direct Bitcoin support from a global
@@ -279,16 +303,18 @@ export default function Index() {
                   </div>
                 ))}
               </div>
-              <Button
-                size="lg"
-                className="bg-orange-600 hover:bg-orange-700 text-white"
-                asChild
-              >
-                <Link to="/blog/agora-connecting-freedom-fighters">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <div className="flex justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="bg-orange-600 hover:bg-orange-700 text-white"
+                  asChild
+                >
+                  <Link to="/blog/agora-connecting-freedom-fighters">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -300,6 +326,16 @@ export default function Index() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Mobile-only title */}
+            <div className="lg:hidden col-span-full text-center w-[90%] mx-auto space-y-2">
+              <h2 className="text-6xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  Mostr
+                </span>
+              </h2>
+              <p className="text-lg text-gray-500 font-medium">Bridging the open web.</p>
+            </div>
+
             {/* Left -- Mostr screenshot */}
             <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
               <img
@@ -310,23 +346,21 @@ export default function Index() {
             </div>
 
             {/* Right -- copy + protocol pills */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
-                  Bridging the{" "}
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    Open Web
-                  </span>
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Our Mostr Bridge connects three decentralized protocols so
-                  your followers can find you no matter what network they're on.
-                  Over 56,000 users already connected across networks.
-                </p>
-              </div>
+            <div className="space-y-6">
+              <h2 className="hidden lg:block text-5xl font-display font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  Mostr
+                </span>
+              </h2>
+              <p className="hidden lg:block text-xl text-gray-500 font-medium -mt-2">Bridging the open web.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Our Mostr Bridge connects three decentralized protocols so
+                your followers can find you no matter what network they're on.
+                Over 56,000 users already connected across networks.
+              </p>
 
               {/* Protocol pills */}
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-violet-600 text-white text-sm font-semibold shadow-md">
                   Nostr
                 </span>
@@ -338,7 +372,7 @@ export default function Index() {
                 </span>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex justify-center lg:justify-start flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
                   className="bg-purple-600 hover:bg-purple-700 text-white"

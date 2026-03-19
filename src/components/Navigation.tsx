@@ -64,28 +64,29 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    isActive(link.to)
-                      ? 'text-azure bg-azure-50'
-                      : 'text-gray-600 hover:text-azure hover:bg-gray-50'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Navigation -- overlays content */}
+      {isOpen && (
+        <div className="md:hidden absolute left-0 right-0 top-full z-50">
+          <div className="px-4 pt-2 pb-3 space-y-1 bg-white border-t shadow-lg">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActive(link.to)
+                    ? 'text-azure bg-azure-50'
+                    : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
