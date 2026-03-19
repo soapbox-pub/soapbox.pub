@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { SoapboxLogo } from "@/components/SoapboxLogo";
+
 import { useSEO } from "@/hooks/useSEO";
 import { getFeaturedPosts, formatDate } from "@/lib/blog/utils";
 
@@ -45,103 +45,71 @@ export default function Index() {
       {/* 1. HERO                                                          */}
       {/* ================================================================ */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left -- copy */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-3">
-                  <SoapboxLogo size={40} />
-                  <span className="font-display font-bold text-2xl text-gray-900">
-                    Soapbox
-                  </span>
-                </div>
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Centered copy */}
+          <div className="text-center space-y-6">
+            <h1 className="font-display font-bold text-gray-900 leading-[1.1]">
+              <span className="block text-5xl md:text-6xl lg:text-7xl">Building tools for</span>
+              <span className="block text-6xl md:text-8xl lg:text-9xl bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
+                Freedom&nbsp;Online
+              </span>
+            </h1>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1]">
-                  Software for a{" "}
-                  <span className="bg-gradient-to-r from-azure to-blue-600 bg-clip-text text-transparent">
-                    Free Internet
-                  </span>
-                </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto">
+              Open source tools for social media, AI development, and
+              activism. Decentralized, community-owned, and built to last.
+            </p>
 
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-                  Open source tools for social media, AI development, and
-                  activism. Decentralized, community-owned, and built to last.
-                </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                Open Source
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-azure hover:bg-azure-600 text-white px-8 py-3 text-lg"
-                  asChild
-                >
-                  <Link to="/ditto">
-                    Explore Ditto
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="px-8 py-3 text-lg"
-                  asChild
-                >
-                  <Link to="/about">About Us</Link>
-                </Button>
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                Decentralized
               </div>
-
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                  Open Source
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                  Decentralized
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                  Community Owned
-                </div>
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                Community Owned
               </div>
             </div>
+          </div>
 
-            {/* Right -- three mobile screenshots fanned */}
-            <div className="flex items-end justify-center gap-3 md:gap-5 px-4">
-              {/* Left -- "Your Content" */}
-              <div
-                className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-6"
-                style={{ transform: "rotate(-4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
-              >
-                <img
-                  src="/assets/images/ditto/appstore/1.png"
-                  alt="Ditto -- Your Content"
-                  className="w-full h-auto"
-                />
-              </div>
-              {/* Center -- "Your Vibe" (elevated) */}
-              <div
-                className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-10"
-                style={{ transform: "rotate(0deg)", boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
-              >
-                <img
-                  src="/assets/images/ditto/appstore/2.png"
-                  alt="Ditto -- Your Vibe"
-                  className="w-full h-auto"
-                />
-              </div>
-              {/* Right -- "Your Rules" */}
-              <div
-                className="w-[30%] max-w-[200px] rounded-[20px] overflow-hidden mb-6"
-                style={{ transform: "rotate(4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
-              >
-                <img
-                  src="/assets/images/ditto/appstore/3.png"
-                  alt="Ditto -- Your Rules"
-                  className="w-full h-auto"
-                />
-              </div>
+          {/* Three screenshots -- full width, fanned */}
+          <div className="flex items-end justify-center gap-4 md:gap-6 max-w-5xl mx-auto">
+            {/* Left -- "Your Content" */}
+            <div
+              className="w-1/3 rounded-[20px] overflow-hidden mb-6"
+              style={{ transform: "rotate(-4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
+            >
+              <img
+                src="/assets/images/ditto/appstore/1.png"
+                alt="Ditto -- Your Content"
+                className="w-full h-auto"
+              />
+            </div>
+            {/* Center -- "Your Vibe" (elevated) */}
+            <div
+              className="w-1/3 rounded-[20px] overflow-hidden mb-10"
+              style={{ transform: "rotate(0deg)", boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
+            >
+              <img
+                src="/assets/images/ditto/appstore/2.png"
+                alt="Ditto -- Your Vibe"
+                className="w-full h-auto"
+              />
+            </div>
+            {/* Right -- "Your Rules" */}
+            <div
+              className="w-1/3 rounded-[20px] overflow-hidden mb-6"
+              style={{ transform: "rotate(4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
+            >
+              <img
+                src="/assets/images/ditto/appstore/3.png"
+                alt="Ditto -- Your Rules"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
