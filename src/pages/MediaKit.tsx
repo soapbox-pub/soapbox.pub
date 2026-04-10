@@ -371,27 +371,15 @@ export default function MediaKit() {
                         <CardTitle className="text-xl sm:text-2xl text-gray-900">{profile.name}</CardTitle>
                         <p className="text-base sm:text-lg font-semibold text-azure">{profile.title}</p>
                       </div>
-                      {/* Mobile Download Button */}
-                      <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50 flex-shrink-0 sm:hidden">
-                        <a href={profile.picture} target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4" />
-                        </a>
-                      </Button>
                     </div>
 
                     <div className="flex-1 w-full sm:w-auto">
-                      {/* Desktop name/title and download button */}
+                      {/* Desktop name/title */}
                       <div className="hidden sm:flex items-start justify-between mb-3">
                         <div>
                           <CardTitle className="text-2xl text-gray-900">{profile.name}</CardTitle>
                           <p className="text-lg font-semibold text-azure">{profile.title}</p>
                         </div>
-                        <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50 flex-shrink-0">
-                          <a href={profile.picture} target="_blank" rel="noopener noreferrer">
-                            <Download className="w-4 h-4 mr-1" />
-                            Download Headshot
-                          </a>
-                        </Button>
                       </div>
 
                     </div>
@@ -420,9 +408,15 @@ export default function MediaKit() {
                         </div>
                       )}
 
-                      {/* Social Links */}
+                      {/* Social Links + Download Headshot */}
                       <div className="flex flex-wrap gap-2">
                         {renderSocialLinks(profile)}
+                        <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50">
+                          <a href={profile.picture} target="_blank" rel="noopener noreferrer">
+                            <Download className="w-4 h-4 mr-1" />
+                            Download Headshot
+                          </a>
+                        </Button>
                       </div>
                     </div>
 
