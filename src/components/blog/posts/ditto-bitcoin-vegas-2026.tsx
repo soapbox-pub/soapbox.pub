@@ -82,20 +82,29 @@ export default function DittoBitcoinVegas2026() {
       </p>
 
       <p>
-        Ditto is the most customizable social platform on the internet. Users own
-        their identity, their content, and their connections -- no corporate
-        middlemen, no algorithmic manipulation, no ads, and no data mining.
-        Because Ditto is built on Nostr, users can take their entire social graph
-        to any other Nostr-compatible app at any time, with zero friction and zero
-        permission required.
+        Ditto is the most customizable social platform on the internet -- a
+        return to the MySpace era of personal expression and internet whimsy,
+        rebuilt on modern technology that Big Tech can't control. Custom themes,
+        wall posts, virtual pets, decorated letters, top friends -- the playful,
+        creative web that got paved over by algorithmic feeds and engagement
+        farming is back, and this time it's built to last.
+      </p>
+
+      <p>
+        Users own their identity, their content, and their connections -- no
+        corporate middlemen, no algorithmic manipulation, no ads, and no data
+        mining. Because Ditto is built on Nostr, users can take their entire
+        social graph to any other Nostr-compatible app at any time, with zero
+        friction and zero permission required.
       </p>
 
       <blockquote>
         <p>
           Social media used to be creative, personal, and fun -- then Big Tech
-          turned it into a data extraction machine. Ditto brings that era of
-          self-expression back, but this time nobody can take it away from you.
-          Your keys, your data, your rules.
+          turned it into a data extraction machine. We built Ditto to bring that
+          era roaring back. Custom themes, virtual pets, hand-drawn letters --
+          all the whimsy of the old internet, but on infrastructure nobody can
+          take away from you. Your keys, your data, your rules.
         </p>
       </blockquote>
       <p className="text-right text-gray-500 -mt-4">
@@ -203,11 +212,30 @@ export default function DittoBitcoinVegas2026() {
         Nostr key.
       </p>
 
-      <h2>Open Source and Self-Hostable</h2>
+      <h2>Open Source and Decentralized</h2>
 
       <p>
-        Ditto is licensed under AGPL-3.0 and the full source code is available
-        on{' '}
+        Ditto is built on{' '}
+        <a href="/blog/comparing-protocols">Nostr</a>, an open protocol that
+        applies the same principles that made Bitcoin unstoppable to social
+        communication. Just as Bitcoin replaced trusted financial intermediaries
+        with cryptographic keys, Nostr replaces corporate platform accounts with
+        keypair-based identity. Your Nostr key is yours forever -- no company
+        can suspend it, no server can revoke it, and no terms of service can
+        take it away. Where Bitcoin gave people sovereignty over their money,
+        Nostr gives people sovereignty over their voice.
+      </p>
+
+      <p>
+        Payments on Ditto flow through Bitcoin's Lightning Network, meaning
+        creators receive tips (called "zaps") directly -- peer to peer, instant,
+        and borderless. No payment processor takes a percentage. No minimum
+        payout threshold. No bank account required.
+      </p>
+
+      <p>
+        Ditto itself is licensed under AGPL-3.0 and the full source code is
+        available on{' '}
         <a
           href="https://gitlab.com/soapbox-pub/ditto"
           target="_blank"
@@ -215,13 +243,7 @@ export default function DittoBitcoinVegas2026() {
         >
           GitLab
         </a>
-        . Anyone can read it, copy it, improve it, or deploy their own instance
-        on a $5 VPS, GitHub Pages, or a Raspberry Pi. The platform has been
-        upgraded to React 19 with a 50% reduction in bundle size, and supports
-        25+ releases since the initial 2.0 launch in March.
-      </p>
-
-      <p>
+        . Anyone can read it, copy it, improve it, or deploy their own instance.
         Documentation is available at{' '}
         <a
           href="https://about.ditto.pub"
