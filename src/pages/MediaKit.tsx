@@ -394,10 +394,6 @@ export default function MediaKit() {
                         </Button>
                       </div>
 
-                      {/* Social Links */}
-                      <div className="flex flex-wrap gap-2">
-                        {renderSocialLinks(profile)}
-                      </div>
                     </div>
                   </div>
                 </CardHeader>
@@ -410,7 +406,7 @@ export default function MediaKit() {
                   )}
 
                   <div className="grid lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8">
-                    {/* Left Column - Bio */}
+                    {/* Left Column - Bio + Links */}
                     <div className="space-y-6">
                       <div>
                         <p className="text-gray-700 leading-relaxed">{profile.bio}</p>
@@ -423,6 +419,11 @@ export default function MediaKit() {
                           <p className="text-gray-700">{profile.role}</p>
                         </div>
                       )}
+
+                      {/* Social Links */}
+                      <div className="flex flex-wrap gap-2">
+                        {renderSocialLinks(profile)}
+                      </div>
                     </div>
 
                     {/* Right Column - Featured Video */}
