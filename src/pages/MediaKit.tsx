@@ -818,9 +818,8 @@ export default function MediaKit() {
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Amplify Your Message</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    When you feature our team, you're not just getting expert insights—you're tapping into
-                    a network that genuinely values great content. We're happy to share compelling interviews
-                    and discussions with our engaged community across platforms.
+                    Our team has a combined reach of over 200,000 followers across Nostr, X, and other
+                    platforms. We actively share interviews and coverage with our audience.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
