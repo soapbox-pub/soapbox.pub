@@ -6,7 +6,7 @@ export const meta: BlogPostMeta = {
   slug: 'ditto-bitcoin-vegas-2026',
   title: 'Ditto Launches to the Public: The Open Source Social Platform Built on Bitcoin and Nostr',
   excerpt:
-    'Soapbox announces the public launch of Ditto, a fully customizable, open source social media platform built on Nostr. Now available on Android via Google Play and Zapstore, with iOS coming soon. No ads, no data mining, no platform lock-in -- just a social experience you actually own.',
+    'Soapbox announces the public launch of Ditto, a fully customizable, open source social media platform built on Nostr. Now available on Android via Google Play and Zapstore, with iOS coming soon. No ads, no data mining, no platform lock-in. Just a social experience you actually own.',
   coverImage: '/assets/blog/announcing-ditto-2/cover.jpg',
   date: '2026-04-26',
   author: {
@@ -50,14 +50,14 @@ export default function DittoBitcoinVegas2026() {
 
       {/* ── Body ── */}
       <p>
-        <strong>LAS VEGAS, NV</strong> -- Soapbox today announced the public launch of{' '}
+        <strong>LAS VEGAS, NV</strong> &mdash; Soapbox today announced the public launch of{' '}
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           Ditto
         </a>
         , a free, open source social media platform built on the{' '}
         <a href="/blog/comparing-protocols">Nostr protocol</a> and powered by
         the Bitcoin Lightning Network. After months of development and testing
-        within the Nostr community, Ditto is now available to everyone -- on the
+        within the Nostr community, Ditto is now available to everyone: on the
         web at{' '}
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           ditto.pub
@@ -82,16 +82,16 @@ export default function DittoBitcoinVegas2026() {
       </p>
 
       <p>
-        Ditto is the most customizable social platform on the internet -- a
+        Ditto is the most customizable social platform on the internet: a
         return to the MySpace era of personal expression and internet whimsy,
         rebuilt on modern technology that Big Tech can't control. Custom themes,
-        wall posts, virtual pets, decorated letters, top friends -- the playful,
+        wall posts, virtual pets, decorated letters, top friends. The playful,
         creative web that got paved over by algorithmic feeds and engagement
         farming is back, and this time it's built to last.
       </p>
 
       <p>
-        Users own their identity, their content, and their connections -- no
+        Users own their identity, their content, and their connections. No
         corporate middlemen, no algorithmic manipulation, no ads, and no data
         mining. Because Ditto is built on Nostr, users can take their entire
         social graph to any other Nostr-compatible app at any time, with zero
@@ -100,11 +100,11 @@ export default function DittoBitcoinVegas2026() {
 
       <blockquote>
         <p>
-          Social media used to be creative, personal, and fun -- then Big Tech
+          Social media used to be creative, personal, and fun. Then Big Tech
           turned it into a data extraction machine. We built Ditto to bring that
-          era roaring back. Custom themes, virtual pets, hand-drawn letters --
-          all the whimsy of the old internet, but on infrastructure nobody can
-          take away from you. Your keys, your data, your rules.
+          era roaring back. Custom themes, virtual pets, hand-drawn letters. All
+          the whimsy of the old internet, but on infrastructure nobody can take
+          away from you. Your keys, your data, your rules.
         </p>
       </blockquote>
       <p className="text-right text-gray-500 -mt-4">
@@ -130,7 +130,7 @@ export default function DittoBitcoinVegas2026() {
         <li>
           <strong>Every content type in one feed.</strong> Photos, videos,
           short-form Divines, livestreams, long-form articles, polls, podcasts,
-          music, events, webxdc apps, and more -- all in a single timeline you
+          music, events, webxdc apps, and more, all in a single timeline you
           control.
         </li>
         <li>
@@ -146,7 +146,7 @@ export default function DittoBitcoinVegas2026() {
         <li>
           <strong>Built-in article editor.</strong> Write and publish long-form
           content with rich text formatting, inline images, and auto-saving
-          drafts -- without leaving the app.
+          drafts, all without leaving the app.
         </li>
         <li>
           <strong>Badges and custom emoji.</strong> Create and award badges to
@@ -208,7 +208,7 @@ export default function DittoBitcoinVegas2026() {
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           ditto.pub
         </a>{' '}
-        with no download required. No email address, no phone number -- just a
+        with no download required. No email address, no phone number. Just a
         Nostr key.
       </p>
 
@@ -220,7 +220,7 @@ export default function DittoBitcoinVegas2026() {
         applies the same principles that made Bitcoin unstoppable to social
         communication. Just as Bitcoin replaced trusted financial intermediaries
         with cryptographic keys, Nostr replaces corporate platform accounts with
-        keypair-based identity. Your Nostr key is yours forever -- no company
+        keypair-based identity. Your Nostr key is yours forever. No company
         can suspend it, no server can revoke it, and no terms of service can
         take it away. Where Bitcoin gave people sovereignty over their money,
         Nostr gives people sovereignty over their voice.
@@ -228,7 +228,7 @@ export default function DittoBitcoinVegas2026() {
 
       <p>
         Payments on Ditto flow through Bitcoin's Lightning Network, meaning
-        creators receive tips (called "zaps") directly -- peer to peer, instant,
+        creators receive tips (called "zaps") directly: peer to peer, instant,
         and borderless. No payment processor takes a percentage. No minimum
         payout threshold. No bank account required.
       </p>
