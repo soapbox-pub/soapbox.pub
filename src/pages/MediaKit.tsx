@@ -408,16 +408,18 @@ export default function MediaKit() {
                         </div>
                       )}
 
-                      {/* Social Links + Download Headshot */}
+                      {/* Social Links */}
                       <div className="flex flex-wrap gap-2">
                         {renderSocialLinks(profile)}
-                        <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50">
-                          <a href={profile.picture} target="_blank" rel="noopener noreferrer">
-                            <Download className="w-4 h-4 mr-1" />
-                            Download Headshot
-                          </a>
-                        </Button>
                       </div>
+
+                      {/* Download Headshot */}
+                      <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50 w-fit">
+                        <a href={profile.picture} target="_blank" rel="noopener noreferrer">
+                          <Download className="w-4 h-4 mr-1" />
+                          Download Headshot
+                        </a>
+                      </Button>
                     </div>
 
                     {/* Right Column - Featured Video */}
