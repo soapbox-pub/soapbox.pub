@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { ExternalLink, Users, Podcast, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
+import { ExternalLink, Users, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
@@ -30,13 +30,9 @@ interface TeamProfile {
   gitlab?: string;
   github?: string;
   bio: string;
-  subjects: string[];
-  knownFor: string;
   presentations?: Presentation[];
-  pastAppearances: { title: string; url: string }[];
   quote?: string;
   role?: string;
-  apps?: string[];
 }
 
 export default function MediaKit() {
@@ -74,18 +70,6 @@ export default function MediaKit() {
       gitlab: "https://gitlab.com/alexgleason",
       github: "https://github.com/alexgleason",
       bio: "Alex has more than decade of experience building social platforms, and is one of the foremost experts on decentralized social protocols, including Nostr, and the Fediverse. He was the head of engineering at Truth Social from 2022-23, and has built some of the largest communities on the decentralized web.",
-      subjects: [
-        "What makes Shakespeare different from other AI web builders",
-        "Integration with decentralized tech like Nostr and Bitcoin",
-        "How does Nostr compare to the Fediverse/Mastodon or Bluesky?",
-        "How does Shakespeare help Nostr win?",
-        "The fake \"openness\" of OpenAI and what really open AI would look like",
-        "Open source models like GLM and the competitive race with China",
-        "The future of software development with AI (are junior devs over?)",
-        "How Truth Social ended up built on open source software",
-        "Devin Nunes' cow"
-      ],
-      knownFor: "Building bridges, Truth Social, the Fediverse, Nostr, Free Software extremism, being Vegan.",
       presentations: [
         {
           title: "The Mostr Bridge",
@@ -94,31 +78,7 @@ export default function MediaKit() {
           date: "November 2023",
           url: "https://www.youtube.com/watch?v=075wrIJ1vHg",
           videoUrl: "https://www.youtube.com/embed/075wrIJ1vHg"
-        },
-        {
-          title: "Building Communities on Nostr",
-          description: "Nostr World: Riga",
-          location: "Riga, Latvia",
-          date: "August 2024",
-          url: "https://www.youtube.com/watch?v=iZyqVGHjDGo&t=4s",
-          videoUrl: "https://www.youtube.com/embed/iZyqVGHjDGo"
-        },
-        {
-          title: "The State of Decentralized Social Media",
-          description: "Oslo Freedom Forum",
-          location: "Olso, Norway",
-          date: "May 2025",
-          url: "https://www.youtube.com/watch?v=QyBtU0cmIb0&list=PLl3t7CttfcxqdUsVTFI5Z6kVYwaHLbUlu&index=3"
         }
-      ],
-      pastAppearances: [
-        { title: "Plebchain Radio 128", url: "https://fountain.fm/episode/c4mjizsQ1TIwHTuFPZiu" },
-        { title: "Episode 6: Stacks on Stacks: Coding at Lightspeed", url: "https://fountain.fm/episode/WGjtZd2tKOrwvhBRwIXR" },
-        { title: "Citadel Dispatch, 174", url: "https://fountain.fm/episode/j8hbpJ9YxmeOXYJCRp3n" },
-        { title: "Citadel Dispatch, 164", url: "https://fountain.fm/episode/JW2vxjNFYb941SUSQQg9" },
-        { title: "Nostr Rising", url: "https://fountain.fm/episode/mERB1JhH9mOmiMiZV8Zy" },
-        { title: "Thank God For Nostr", url: "https://fountain.fm/episode/7IvgMxBTfPXPw6CI60Oc" },
-        { title: "10% Less Productive", url: "https://fountain.fm/episode/yJU8BV1UBDqUW9cBRmej" }
       ]
     },
     {
@@ -132,38 +92,15 @@ export default function MediaKit() {
       gitlab: "https://gitlab.com/marykatefain",
       github: "https://github.com/marykatefain",
       bio: "M. K. is a passionate advocate for digital freedom with a track record for building spaces for silenced groups online. In 2019 she founded Spinster, the largest women's community on the decentralized web. She is the former Communications Director for the Women's Liberation Front, and her work has been profiled in outlets such as the Atlantic and Vice.",
-      subjects: [
-        "Why free speech online is not a 'right wing' issue",
-        "Why we created Soapbox to solve censorship and deplatforming",
-        "How AI can be both a threat to freedom and a tool to empower disenfranchised groups",
-        "Building spaces for women online: Spinster, 4w, Ovarit, and Henhouse",
-        "Being the leader of an online community of disenfranchised groups"
-      ],
-      knownFor: "Spinster, 4W, Ovarit, Bookstr, Animal Rights Activism, WoLF, standing up for cancelled women.",
       presentations: [
         {
           title: "A Dictator's Worst Nightmare: Digital Tools of Empowerment",
           description: "Nostr vs. the Fediverse",
-          location:"",
+          location: "",
           date: "September 2024",
           url: "https://www.youtube.com/watch?v=jD-CD8RC5UU",
           videoUrl: "https://www.youtube.com/embed/jD-CD8RC5UU?si=UK_-YxHe5sW-stXs"
-
-        },
-        {
-          title: "Sparking change: What free software can learn from successful social movements",
-          description: "LibrePlanet 2019",
-          location: "Boston, USA",
-          date: "May 2019",
-          url: "https://www.youtube.com/watch?v=C1rAHJ1Ox94&list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF&index=8",
-          videoUrl: "https://www.youtube.com/embed/C1rAHJ1Ox94"
         }
-      ],
-      pastAppearances: [
-        { title: "Identity Crisis", url: "https://www.youtube.com/watch?v=3XHRirlcI9M&list=PL_Ahot14Nv3YJDmdfTv6DQepQlsBprSCY&index=10" },
-        { title: "Women's Declaration International'", url: "https://youtu.be/YXHQQZlSM1I?si=i1LfoAidiw5Iv9Ma" },
-        { title: "The Mess We're In", url: "https://www.youtube.com/live/KGvn5gMhn7w?si=VAHSSJ-MesIOriKn" },
-        { title: "Plebity", url: "https://www.youtube.com/watch?v=yunu6Owrvuo&list=PLl3t7CttfcxrzuoeU9ukXnuf_RRmTJBfF&index=6" }
       ]
     },
     {
@@ -176,16 +113,6 @@ export default function MediaKit() {
       gitlab: "https://gitlab.com/derekross",
       github: "https://github.com/derekross",
       bio: "Derek Ross wears many hats, reflected by his many nicknames in the Nostr space. Called \"The Nostr Evangelist\" in all seriousness and, jokingly, \"The Nostr CEO,\" no one loves the open source protocol of Nostr more than Derek. He is passionate about building the Nostr ecosystem through education, evangelism, and creating useful applications.",
-      subjects: [
-        "Why decentralization matters",
-        "Nostr 101, and how to get started",
-        "Where Nostr is now and where he sees it going in the future",
-        "How Nostr relates to Bitcoin Lightning network and permissionless money",
-        "How Shakespeare makes creating Nostr apps easier than ever",
-        "The challenges of building on an open protocol",
-        "All things vibe coding",
-      ],
-      knownFor: "Being Unofficial Nostr CEO, vibe coding, NostrNests, YakBak, Zappix, Plektos, ZapTrax, Zaplytics.",
       presentations: [
         {
           title: "Nostr for Beginners",
@@ -194,67 +121,7 @@ export default function MediaKit() {
           date: "2024",
           url: "https://www.youtube.com/watch?v=NVm_jGdwTjQ",
           videoUrl: "https://www.youtube.com/embed/NVm_jGdwTjQ"
-        },
-        {
-          title: "Open Communities in the Age of Control",
-          description: "Imagine IF Conference",
-          location: "Bitcoin Park",
-          date: "2025",
-          url: "https://www.youtube.com/watch?v=kbMfJtEHHLQ",
-          videoUrl: "https://www.youtube.com/embed/kbMfJtEHHLQ?si=PBPPm6MUn1mj9MZ7"
-        },
-        {
-          title: "Decentralizing Social Media",
-          description: "The Bitcoin Conference",
-          location: "Las Vegas, USA",
-          date: "2025",
-          url: "https://www.youtube.com/watch?v=WYIbTxlVS0Q",
-          videoUrl: "https://www.youtube.com/embed/WYIbTxlVS0Q?si=ARkZrz_OMa3ggWec"
-        },
-        {
-          title: "Nostr for Censorship Resistance",
-          description: "BTCPrague",
-          location: "Prague, Czech Republic",
-          date: "2024",
-          url: "https://www.youtube.com/watch?v=J_k3fQThy3s",
-          videoUrl: "https://www.youtube.com/embed/J_k3fQThy3s?si=_LOsQRbA-T4xeTB"
-        },
-        {
-          title: "Nostr: All Your Silos Are Broken",
-          description: "BTCPrague",
-          location: "Prague, Czech Republic",
-          date: "2024",
-          url: "https://www.youtube.com/watch?v=SSFVR5ZXOuA",
-          videoUrl: "https://www.youtube.com/embed/SSFVR5ZXOuA?si=m2IgRbBF4itIQcEE"
-        },
-        {
-          title: "Nostr for Builders",
-          description: "The Bitcoin Conference",
-          location: "Miami, USA",
-          date: "2023",
-          url: "https://www.youtube.com/watch?v=heEZSr8QLew",
-          videoUrl: "https://www.youtube.com/embed/heEZSr8QLew?si=gZE-uf8uZMaCCyPZ"
-        // },
-        // {
-        //   title: "\"Social Media is broken. Can we fix it?\"",
-        //   description: "Nostr Documentary Feature by Max DeMarco",
-        //   location: "Documentary Release",
-        //   date: "2024",
-        //   url: "https://www.youtube.com/watch?v=aA-jiiepOrE",
-        //   videoUrl: "https://www.youtube.com/embed/aA-jiiepOrE"
         }
-      ],
-      pastAppearances: [
-        { title: "Fractal Bitcoin", url: "https://www.youtube.com/watch?v=2cZtEVikH98&pp=ygULZGVyZWsgcm9zcyw%3D" },
-        { title: "Bitcoin Made Simple", url: "https://www.youtube.com/watch?v=Qw00zFa-Boo&pp=ygULZGVyZWsgcm9zcyw%3D" },
-        { title: "Bitcoin Infinity Show", url: "https://www.youtube.com/watch?v=aFvog4Vg1zk" },
-        { title: "Plebchain Radio", url: "https://fountain.fm/episode/aDAFZeuYgAnqbPJRaUQh" },
-        { title: "Soapbox Sessions", url: "https://sessions.soapbox.pub/" },
-        { title: "Nostr Report", url: "https://www.youtube.com/watch?v=_Dk3NUSlmh8" },
-        { title: "Your Bitcoin Story", url: "https://www.youtube.com/watch?v=qN65bgJOah8" },
-        { title: "Brandon Gentile", url: "https://www.youtube.com/watch?v=VLK2zsfC510" },
-        { title: "Ben Wehrman", url: "https://www.youtube.com/watch?v=_jrkUXDReqI&t=2s&pp=ygULZGVyZWsgcm9zcyw%3D" },
-        { title: "Jack Starling", url: "https://www.youtube.com/watch?v=p4yi0qvhxL4&pp=ygURZGVyZWsgcm9zcywgbm9zdHI%3D" }
       ]
     }
   ];
@@ -543,7 +410,7 @@ export default function MediaKit() {
                   )}
 
                   <div className="grid lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8">
-                    {/* Left Column - Summary, Known For, Subjects, Past Podcast Appearances */}
+                    {/* Left Column - Bio */}
                     <div className="space-y-6">
                       <div>
                         <p className="text-gray-700 leading-relaxed">{profile.bio}</p>
@@ -556,111 +423,36 @@ export default function MediaKit() {
                           <p className="text-gray-700">{profile.role}</p>
                         </div>
                       )}
-
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Known for:</h4>
-                        <p className="text-gray-700">{profile.knownFor}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                          {profile.name.split(' ')[0]} can talk about:
-                        </h4>
-                        <div className="space-y-2">
-                          {profile.subjects.map((subject, subjectIndex) => (
-                            <div key={subjectIndex} className="flex items-start space-x-2">
-                              <div className="w-1.5 h-1.5 bg-azure rounded-full mt-2 flex-shrink-0"></div>
-                              <p className="text-sm text-gray-700">{subject}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-3">Past Podcast Appearances:</h4>
-                        <div className="space-y-2">
-                          {profile.pastAppearances.map((appearance, appearanceIndex) => (
-                            <a
-                              key={appearanceIndex}
-                              href={appearance.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center space-x-2 text-azure hover:text-azure-600 text-sm group"
-                            >
-                              <Podcast className="w-4 h-4" />
-                              <span className="group-hover:underline">{appearance.title}</span>
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          ))}
-                        </div>
-                      </div>
                     </div>
 
-                    {/* Right Column - Presentations & Appearances */}
+                    {/* Right Column - Featured Video */}
                     <div className="space-y-6">
-                      {profile.presentations && (
+                      {profile.presentations && profile.presentations[0] && (
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-3">Presentations & Appearances:</h4>
-                          <div className="space-y-4">
-                            {profile.presentations.map((presentation, presIndex) => (
-                              <div key={presIndex} className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
-                                {/* Video/Image Section - Only show for first presentation */}
-                                {presIndex === 0 && (presentation.videoUrl || presentation.imageUrl) && (
-                                  <div className="relative">
-                                    {presentation.videoUrl ? (
-                                      <div
-                                        className="relative cursor-pointer group"
-                                        onClick={() => window.open(presentation.url, '_blank')}
-                                      >
-                                        <div className="aspect-video bg-gray-200">
-                                          <iframe
-                                            src={presentation.videoUrl}
-                                            title={presentation.title}
-                                            className="w-full h-full"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                          />
-                                        </div>
-                                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
-                                          <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-gray-700" />
-                                          </div>
-                                        </div>
-                                      </div>
-                                    ) : presentation.imageUrl && (
-                                      <div
-                                        className="relative cursor-pointer group"
-                                        onClick={() => window.open(presentation.url, '_blank')}
-                                      >
-                                        <div className="aspect-video bg-gray-200">
-                                          <img
-                                            src={presentation.imageUrl}
-                                            alt={presentation.title}
-                                            className="w-full h-full object-cover"
-                                          />
-                                        </div>
-                                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
-                                          <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-gray-700" />
-                                          </div>
-                                        </div>
-                                      </div>
-                                    )}
-                                  </div>
-                                )}
-
-                                {/* Content Section */}
-                                <div className="p-2 sm:p-3">
-                                  <h5 className="font-medium text-gray-900 mb-1 text-sm sm:text-base">
-                                    <a href={presentation.url} target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
-                                      {presentation.title}
-                                    </a>
-                                  </h5>
-                                  <p className="text-xs sm:text-sm text-gray-600 mb-1">{presentation.description}</p>
-                                  <span className="text-xs text-gray-500">{presentation.location} - {presentation.date}</span>
-                                </div>
+                          <h4 className="text-lg font-semibold text-gray-900 mb-3">Featured Appearance:</h4>
+                          <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+                            {profile.presentations[0].videoUrl && (
+                              <div className="aspect-video bg-gray-200">
+                                <iframe
+                                  src={profile.presentations[0].videoUrl}
+                                  title={profile.presentations[0].title}
+                                  className="w-full h-full"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                />
                               </div>
-                            ))}
+                            )}
+                            <div className="p-2 sm:p-3">
+                              <h5 className="font-medium text-gray-900 mb-1 text-sm sm:text-base">
+                                <a href={profile.presentations[0].url} target="_blank" rel="noopener noreferrer" className="text-azure hover:text-azure-600 hover:underline">
+                                  {profile.presentations[0].title}
+                                </a>
+                              </h5>
+                              <p className="text-xs sm:text-sm text-gray-600 mb-1">{profile.presentations[0].description}</p>
+                              {profile.presentations[0].location && (
+                                <span className="text-xs text-gray-500">{profile.presentations[0].location} - {profile.presentations[0].date}</span>
+                              )}
+                            </div>
                           </div>
                         </div>
                       )}
