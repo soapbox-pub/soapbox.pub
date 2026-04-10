@@ -48,6 +48,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/ditto-bitcoin-vegas-2026",
         "/blog/ditto-updates-april-2026",
         "/blog/zapping-101",
         "/blog/announcing-ditto-2",

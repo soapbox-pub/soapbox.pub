@@ -155,12 +155,25 @@ export default function Ditto() {
                 asChild
               >
                 <a
-                  href="https://about.ditto.pub"
+                  href="https://play.google.com/store/apps/details?id=pub.ditto.app"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BookOpen className="mr-2 h-5 w-5" />
-                  Read the Docs
+                  Get on Google Play
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-3 text-lg"
+                asChild
+              >
+                <a
+                  href="https://zapstore.dev/apps/pub.ditto.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get on Zapstore
                 </a>
               </Button>
             </div>
@@ -662,12 +675,25 @@ export default function Ditto() {
               asChild
             >
               <a
-                href="https://about.ditto.pub"
+                href="https://play.google.com/store/apps/details?id=pub.ditto.app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BookOpen className="mr-2 h-5 w-5" />
-                Read the Docs
+                Get on Google Play
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-violet-600"
+              asChild
+            >
+              <a
+                href="https://zapstore.dev/apps/pub.ditto.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get on Zapstore
               </a>
             </Button>
           </div>

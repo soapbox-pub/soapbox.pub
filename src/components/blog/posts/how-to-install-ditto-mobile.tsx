@@ -14,7 +14,7 @@ export interface BlogPostMeta {
 export const meta: BlogPostMeta = {
   "slug": "how-to-install-ditto-mobile",
   "title": "How to Install Ditto on Android and iOS",
-  "excerpt": "While there isn't a dedicated mobile app for Ditto, this guide explains how to easily access it on your mobile devices.",
+  "excerpt": "Ditto is now available as a native Android app on Google Play and Zapstore, with iOS coming soon. Here's how to get it on your device.",
   "coverImage": "/assets/blog/ditto-mobile.png",
   "date": "2025-02-06",
   "author": {
@@ -31,29 +31,32 @@ export default function HowToInstallDittoMobile() {
   return (
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
-        <p className="text-sm font-semibold text-violet-900 mb-1">A new version of Ditto is here!</p>
-        <p className="text-sm text-violet-700">Ditto has been completely redesigned with themes, infinite content types, and more. <a href="/ditto" className="font-medium text-violet-600 underline hover:text-violet-800">Learn more about Ditto</a> or check out the latest updates on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a>.</p>
+        <p className="text-sm font-semibold text-violet-900 mb-1">Ditto is now on Android!</p>
+        <p className="text-sm text-violet-700">Download Ditto from <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">Google Play</a> or <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">Zapstore</a>, or visit <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a> on any device.</p>
       </div>
 
-      <p> Although Ditto does not have a dedicated mobile application, you can still access it seamlessly on your Android and iOS devices by pinning the web app to your home screen. Here’s how:</p>
-      <h2>Accessing Ditto on Mobile</h2>
-      <p>1. <strong>Open Your Browser</strong>: Launch your favorite mobile browser (such as Chrome on Android or Safari on iOS). 2. <strong>Navigate to Ditto</strong>: Go to <a href="https://Ditto.pub" target="_blank" rel="noopener noreferrer">Ditto.pub</a> (or your preferred Ditto server).</p>
-      <h2>Pinning Ditto to Your Home Screen</h2>
-      <h3>For Android:</h3>
+      <h2>Android: Download the App</h2>
+      <p>Ditto has a dedicated Android app with full push notifications, secure credential storage, native file downloads, and smooth swipe navigation. Install it from either:</p>
       <ul>
-      <ul>
-      <li>Tap on the three vertical dots in the upper-right corner of your browser.</li>
-      <li>Select <strong>Add to Home screen</strong> from the dropdown menu.</li>
-      <li>You will be prompted to name the shortcut. Enter a name for Ditto and tap <strong>Add</strong>. The Ditto icon will now appear on your home screen, allowing for easy access.</li>
-      </ul></ul><h3>For iOS:</h3>
-      <ul>
-      <ul>
-      <li>Tap the Share icon (the square with an arrow pointing up) at the bottom of the screen.</li>
-      <li>Scroll down and select <strong>Add to Home Screen</strong>.</li>
-      <li>You’ll be asked to name the shortcut. Enter a name for Ditto and tap <strong>Add</strong>. The Ditto icon will now be available on your home screen for quick access.</li>
-      </ul></ul><h2>Explore Other Nostr Mobile Apps</h2>
-      <p>Since Nostr is decentralized, you're not limited to accessing your Ditto account only through Ditto. You can log into your Ditto Nostr account from any other Nostr-compatible app. This includes applications like <a href="https://apps.apple.com/us/app/damus/id1628663131" target="_blank" rel="noopener noreferrer">Damus on iOS</a>, <a href="https://play.google.com/store/apps/details?id=net.primal.android&hl=en" target="_blank" rel="noopener noreferrer">Primal</a> on Android, or <a href="https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst&hl=en" target="_blank" rel="noopener noreferrer">Amethyst</a> on Android. This flexibility allows you to enjoy the Nostr network from any application that suits your preference while keeping all your data consistent across platforms.</p>
-      <h2>Enjoy Using Ditto on Mobile</h2>
-      <p>Now with the Ditto web app conveniently located on your home screen, you can enjoy all its features just as you would on your desktop. Stay connected with your Ditto communities anywhere you go! </p></article>
+        <li><strong><a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer">Google Play</a></strong> -- The standard way to install on any Android device.</li>
+        <li><strong><a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer">Zapstore</a></strong> -- A decentralized app store built on Nostr. Great if you prefer to stay outside the Google ecosystem.</li>
+      </ul>
+
+      <h2>iOS: Coming Soon (Use the Web App for Now)</h2>
+      <p>A native iOS app is in development. In the meantime, you can access Ditto on your iPhone or iPad by pinning the web app to your home screen:</p>
+      <ol>
+        <li>Open <strong>Safari</strong> and go to <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a> (or your preferred Ditto server).</li>
+        <li>Tap the <strong>Share</strong> icon (the square with an arrow pointing up) at the bottom of the screen.</li>
+        <li>Scroll down and select <strong>Add to Home Screen</strong>.</li>
+        <li>Name the shortcut and tap <strong>Add</strong>.</li>
+      </ol>
+      <p>The Ditto icon will appear on your home screen and open in a full-screen app-like experience with push notification support.</p>
+
+      <h2>Web: No Download Required</h2>
+      <p>Ditto is always available at <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a> in any modern browser -- desktop or mobile. No account, email, or phone number required to browse. Sign up with just a Nostr key.</p>
+
+      <h2>Use Your Account Everywhere</h2>
+      <p>Because Ditto is built on Nostr, your account isn't locked to any single app. You can log in with the same Nostr key on any Nostr-compatible app, including <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and dozens more. All your posts, follows, and data stay consistent across every app.</p>
+    </article>
   );
 }

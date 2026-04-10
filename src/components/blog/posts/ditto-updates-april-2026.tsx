@@ -30,6 +30,38 @@ export default function DittoUpdatesApril2026() {
         that's new.
       </p>
 
+      {/* ── Android App ── */}
+      <h2>Ditto Is Now on Android</h2>
+
+      <p>
+        The one you've been waiting for: <strong>Ditto now has a dedicated Android app</strong>. Download
+        it for free from{' '}
+        <a
+          href="https://play.google.com/store/apps/details?id=pub.ditto.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Play
+        </a>{' '}
+        or{' '}
+        <a
+          href="https://zapstore.dev/apps/pub.ditto.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zapstore
+        </a>
+        . The app includes full push notifications, secure keychain credential storage, native file
+        downloads, and proper swipe-back navigation. It's not a wrapped web view -- everything feels
+        native, from the bottom navigation to the fullscreen Divines experience.
+      </p>
+
+      <p>
+        <strong>iOS is coming soon.</strong> In the meantime, iOS users can still access Ditto at{' '}
+        <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a> and pin it
+        to their home screen as a PWA.
+      </p>
+
       {/* ── Blobbi Virtual Pets ── */}
       <h2>Blobbi Virtual Pets</h2>
 

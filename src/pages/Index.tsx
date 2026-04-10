@@ -650,7 +650,7 @@ export default function Index() {
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
             No email. No phone number. Just you and the open web.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Button
               size="lg"
               variant="secondary"
@@ -672,10 +672,27 @@ export default function Index() {
               className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure"
               asChild
             >
-              <Link to="/ethics">
-                <BookOpen className="mr-2 h-5 w-5" />
-                Read Our Ethics Pledge
-              </Link>
+              <a
+                href="https://play.google.com/store/apps/details?id=pub.ditto.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get on Google Play
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure"
+              asChild
+            >
+              <a
+                href="https://zapstore.dev/apps/pub.ditto.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get on Zapstore
+              </a>
             </Button>
           </div>
         </div>

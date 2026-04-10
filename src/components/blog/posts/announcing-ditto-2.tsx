@@ -151,8 +151,24 @@ export default function AnnouncingDitto2() {
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           ditto.pub
         </a>{' '}
-        and it's completely free. No email required. No phone number. Learn more
-        at{' '}
+        and it's completely free. No email required. No phone number. Ditto is
+        also available on Android via{' '}
+        <a
+          href="https://play.google.com/store/apps/details?id=pub.ditto.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Play
+        </a>{' '}
+        and{' '}
+        <a
+          href="https://zapstore.dev/apps/pub.ditto.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zapstore
+        </a>
+        , with iOS coming soon. Learn more at{' '}
         <a
           href="https://about.ditto.pub"
           target="_blank"

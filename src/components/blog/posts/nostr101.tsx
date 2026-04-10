@@ -171,14 +171,16 @@ export default function Nostr101() {
           <strong>Ditto</strong> is a full-featured Nostr community platform where you can explore all of these different content types — posts, articles, photos, music, livestreams, events, and more — all in one place. It's fully customizable with themes, and it's the easiest way to experience everything Nostr has to offer.
         </p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-          <a href="/ditto" className="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
-            <span className="sm:hidden">Learn More</span>
-            <span className="hidden sm:inline">Learn More About Ditto</span>
-          </a>
           <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-6 py-3 bg-violet-600 hover:bg-violet-700 active:bg-violet-800 text-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
             <span className="sm:hidden">Try Ditto</span>
             <span className="hidden sm:inline">Try Ditto Now</span>
             <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+            Google Play
+          </a>
+          <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+            Zapstore
           </a>
         </div>
       </div>
