@@ -8,7 +8,7 @@ export const meta: BlogPostMeta = {
   excerpt:
     'Soapbox announces the public launch of Ditto, a fully customizable, open source social media platform built on Nostr. Now available on Android via Google Play and Zapstore, with iOS coming soon. No ads, no data mining, no platform lock-in. Just a social experience you actually own.',
   coverImage: '/assets/blog/announcing-ditto-2/cover.jpg',
-  date: '2026-04-26',
+  date: '2026-04-20',
   author: {
     name: 'M. K. Fain',
     picture: '/assets/avatars/mk.jpg',
@@ -38,7 +38,7 @@ export default function DittoBitcoinVegas2026() {
           For Immediate Release
         </p>
         <p className="text-sm text-gray-500">
-          April 26, 2026 &middot; Bitcoin Vegas Conference
+          April 20, 2026 &middot; Bitcoin Vegas Conference
         </p>
         <p className="text-sm text-gray-500">
           Contact: M.K. Fain, CPO &middot;{' '}
