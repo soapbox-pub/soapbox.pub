@@ -90,6 +90,7 @@ import * as announcingditto2 from '../../components/blog/posts/announcing-ditto-
 import * as announcingsheila from '../../components/blog/posts/announcing-sheila';
 import * as announcingshakespearedirect from '../../components/blog/posts/announcing-shakespeare-direct';
 import * as zapping101 from '../../components/blog/posts/zapping-101';
+import * as dittoupdatesapril2026 from '../../components/blog/posts/ditto-updates-april-2026';
 
 export interface BlogPost {
   slug: string;
@@ -110,6 +111,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  dittoupdatesapril2026.meta,
   zapping101.meta,
   announcingditto2.meta,
   announcingsheila.meta,
@@ -206,6 +208,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'dittoupdatesapril2026':
+      return (await import('../../components/blog/posts/ditto-updates-april-2026')).default;
     case 'zapping101':
       return (await import('../../components/blog/posts/zapping-101')).default;
     case 'announcingditto2':
