@@ -4,7 +4,7 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   slug: 'ditto-bitcoin-vegas-2026',
-  title: 'Ditto Launches to the Public: The Open Source Social Platform Built on Bitcoin and Nostr',
+  title: 'Launching the New Ditto: Customizable, Open Source Social Platform Built on Nostr and Bitcoin',
   excerpt:
     'Soapbox announces the public launch of Ditto, a fully customizable, open source social media platform built on Nostr. Now available on Android via Google Play and Zapstore, with iOS coming soon. No ads, no data mining, no platform lock-in. Just a social experience you actually own.',
   coverImage: '/assets/blog/announcing-ditto-2/cover.jpg',
