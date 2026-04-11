@@ -266,7 +266,7 @@ export default function Communities() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Real communities fighting centralization and creating free, open source alternatives 
+              Real communities fighting centralization and creating <a href="/blog/free-software-free-societies" className="text-azure hover:underline">open source</a> alternatives 
               to big tech platforms. Built by the community, owned by the community.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">

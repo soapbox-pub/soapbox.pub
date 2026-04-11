@@ -556,7 +556,7 @@ export default function Tools() {
               </div>
               <h3 className="text-2xl font-display font-semibold">Always Open Source</h3>
               <p className="text-gray-600">
-                All our tools are free and open source, giving you complete control and transparency.
+                All our tools are <a href="/ethics" className="text-azure hover:underline">open source</a>, giving you complete <a href="/blog/free-software-free-societies" className="text-azure hover:underline">freedom</a>, control, and transparency.
               </p>
             </div>
 

@@ -98,7 +98,7 @@ export default function Transparency() {
                 Support Our Work
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Every donation helps us keep building free, open source tools for the decentralized web. Your support means we never have to compromise on our values.
+                Every donation helps us keep building open source tools for the decentralized web. Your support means we never have to compromise on our values.
               </p>
             </div>
 

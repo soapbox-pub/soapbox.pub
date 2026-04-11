@@ -716,15 +716,33 @@ export default function Ditto() {
       </section>
 
       {/* Community Funded */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <p className="text-gray-600 leading-relaxed">
-            Ditto is built by <a href="/about" className="text-azure hover:underline">Soapbox</a>, a team funded by grants and donations, not ads or data sales.
-            Every feature is free and open source, forever.
-          </p>
-          <a href="/transparency" className="text-sm text-azure hover:underline">
-            Learn how we're funded &rarr;
-          </a>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50/80 via-white to-purple-50/80 p-8 sm:p-10 text-center space-y-5">
+            <div className="flex justify-center">
+              <div className="w-12 h-12 bg-violet-100 rounded-full flex items-center justify-center">
+                <Heart className="h-6 w-6 text-violet-600" />
+              </div>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-gray-900">
+              Community Funded, Not Corporate Funded
+            </h3>
+            <p className="text-gray-600 leading-relaxed max-w-xl mx-auto">
+              Ditto is built by <a href="/about" className="text-violet-600 hover:underline font-medium">Soapbox</a>, a team funded entirely by grants and donations. No ads, no data sales, no investors. Everything we build is <a href="/blog/free-software-free-societies" className="text-violet-600 hover:underline font-medium">open source</a> and belongs to the community.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-1">
+              <Button
+                variant="outline"
+                className="text-violet-600 border-violet-300 hover:bg-violet-50"
+                asChild
+              >
+                <a href="/transparency">
+                  How we're funded
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 

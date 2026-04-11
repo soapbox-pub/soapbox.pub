@@ -26,7 +26,7 @@ export function SupportCard() {
               Soapbox is funded by grants and donations, not ads or data sales.
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Every tool we build is free and open source. Help us keep it that way.
+              Everything we build is <Link to="/blog/free-software-free-societies" className="text-azure hover:underline">open source</Link> and belongs to the community. Help us keep it that way.
             </p>
           </div>
         </div>

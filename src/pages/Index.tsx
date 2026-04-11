@@ -710,12 +710,18 @@ export default function Index() {
           </h2>
           <p className="text-gray-600 leading-relaxed">
             Soapbox is supported by organizations like OpenSats, the Human Rights Foundation, and donors like you.
-            No venture capital. No ads. No data sales. Every tool we build is free and open source, forever.
+            No venture capital. No ads. No data sales. Everything we build is <Link to="/blog/free-software-free-societies" className="text-azure hover:underline font-medium">open source</Link> and belongs to the community.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="outline" asChild>
               <Link to="/transparency">
                 How We're Funded
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link to="/ethics">
+                Our Ethics Pledge
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
