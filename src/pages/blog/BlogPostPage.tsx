@@ -71,7 +71,7 @@ export default function BlogPostPage() {
   return (
     <Layout>
       {/* Navigation */}
-      <div className="max-w-4xl mx-auto px-4 pt-8">
+      <div className="max-w-4xl mx-auto px-4 pt-8" data-print-hide>
         <Link to="/blog">
           <Button variant="ghost" className="mb-8 hover:bg-azure/10">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -82,7 +82,7 @@ export default function BlogPostPage() {
 
       {/* Featured Image */}
       {post.coverImage && (
-        <div className="max-w-6xl mx-auto px-4 mb-12">
+        <div className="max-w-6xl mx-auto px-4 mb-12" data-print-hide>
           <div className="aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl">
             <img
               src={post.coverImage}
@@ -96,7 +96,7 @@ export default function BlogPostPage() {
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 pb-16">
         {/* Header */}
-        <header className="mb-12">
+        <header className="mb-12" data-print-hide>
           <h1
             className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-6"
             dangerouslySetInnerHTML={{ __html: post.title }}
@@ -128,7 +128,7 @@ export default function BlogPostPage() {
           </div>
         </header>
 
-        <Separator className="mb-12" />
+        <Separator className="mb-12" data-print-hide />
 
         {/* Content */}
         <div className="prose prose-lg max-w-none">
@@ -147,10 +147,12 @@ export default function BlogPostPage() {
         )}
 
         {/* Support Card */}
-        <SupportCard />
+        <div data-print-hide>
+          <SupportCard />
+        </div>
 
         {/* Footer */}
-        <div className="mt-16 pt-8 border-t border-gray-200">
+        <div className="mt-16 pt-8 border-t border-gray-200" data-print-hide>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <Link to="/blog">
               <Button variant="outline" className="hover:bg-azure hover:text-white transition-colors">

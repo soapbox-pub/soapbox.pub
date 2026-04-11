@@ -150,8 +150,86 @@
   @media (min-width: 768px) {
     .prose .grid-cols-2 {
       grid-template-columns: repeat(2, 1fr);
-    }
   }
+}
+
+/* ── Press Release Print Stylesheet ── */
+@media print {
+  body.print-press-release {
+    background: white !important;
+    color: black !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Hide site chrome */
+  body.print-press-release nav,
+  body.print-press-release footer,
+  body.print-press-release [data-print-hide],
+  body.print-press-release .support-card-wrapper {
+    display: none !important;
+  }
+
+  /* Clean up article container */
+  body.print-press-release article {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Typography */
+  body.print-press-release h1 {
+    font-size: 20pt !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  body.print-press-release h2 {
+    font-size: 14pt !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 0.5em !important;
+    border-bottom: none !important;
+  }
+
+  body.print-press-release h3 {
+    font-size: 12pt !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+  }
+
+  body.print-press-release p,
+  body.print-press-release li,
+  body.print-press-release blockquote {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-size: 12pt !important;
+    color: black !important;
+  }
+
+  body.print-press-release blockquote {
+    border-left: 2px solid #666 !important;
+    padding-left: 1em !important;
+    margin-left: 0 !important;
+    font-style: italic !important;
+  }
+
+  body.print-press-release a {
+    color: #1a0dab !important;
+    text-decoration: underline !important;
+  }
+
+  /* Show print-only elements */
+  body.print-press-release [data-print-only] {
+    display: block !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 1in;
+    size: letter;
+  }
+}
 
   .prose .grid img {
     margin-top: 0;

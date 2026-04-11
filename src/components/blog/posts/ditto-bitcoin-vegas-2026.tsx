@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { Download } from 'lucide-react';
 
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Button } from '@/components/ui/button';
@@ -31,6 +32,12 @@ export default function DittoBitcoinVegas2026() {
 
   const openLightbox = (src: string, caption: string) => setLightbox({ src, caption });
 
+  const handlePrintPDF = useCallback(() => {
+    document.body.classList.add('print-press-release');
+    window.print();
+    document.body.classList.remove('print-press-release');
+  }, []);
+
   return (
     <article className="prose prose-lg max-w-none">
       {/* ── Press release header ── */}
@@ -50,6 +57,12 @@ export default function DittoBitcoinVegas2026() {
         <p className="text-sm text-gray-500">
           Spokesperson: Derek Ross, Developer Relations &middot; Available for interviews at Bitcoin 2026
         </p>
+        <div className="mt-4" data-print-hide>
+          <Button variant="outline" size="sm" onClick={handlePrintPDF}>
+            <Download className="mr-2 h-4 w-4" />
+            Download as PDF
+          </Button>
+        </div>
       </div>
 
       {/* ── Body ── */}
@@ -86,7 +99,7 @@ export default function DittoBitcoinVegas2026() {
         </a>. iOS coming soon.
       </p>
 
-      <div className="not-prose flex flex-wrap justify-center gap-3 my-6">
+      <div className="not-prose flex flex-wrap justify-center gap-3 my-6" data-print-hide>
         <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
           <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
             Try on Web
@@ -218,28 +231,51 @@ export default function DittoBitcoinVegas2026() {
         </p>
       </div>
 
-      {/* ── Screenshots ── */}
-      <h2>Screenshots</h2>
+      {/* ── Screenshots (web: interactive grid) ── */}
+      <div data-print-hide>
+        <h2>Screenshots</h2>
 
-      <p>
-        High-resolution screenshots of Ditto. Click any image to view full size.
-      </p>
+        <p>
+          High-resolution screenshots of Ditto. Click any image to view full size.
+        </p>
 
-      <div className="not-prose grid grid-cols-4 gap-2 my-6 max-w-lg">
-        {screenshots.map((shot, i) => (
-          <button
-            key={i}
-            onClick={() => openLightbox(shot.src, shot.alt)}
-            className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
-          >
+        <div className="not-prose grid grid-cols-4 gap-2 my-6 max-w-lg">
+          {screenshots.map((shot, i) => (
+            <button
+              key={i}
+              onClick={() => openLightbox(shot.src, shot.alt)}
+              className="group rounded-lg overflow-hidden shadow-sm hover:shadow-lg ring-1 ring-gray-200 hover:ring-violet-300 transition-all cursor-zoom-in"
+            >
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Screenshots (print: formatted grid + download link) ── */}
+      <div data-print-only className="hidden">
+        <h2>Screenshots</h2>
+        <div className="not-prose" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', pageBreakInside: 'avoid' }}>
+          {screenshots.map((shot, i) => (
             <img
+              key={i}
               src={shot.src}
               alt={shot.alt}
-              className="w-full h-auto"
-              loading="lazy"
+              style={{ width: '100%', height: 'auto', borderRadius: '6px', border: '1px solid #ddd' }}
             />
-          </button>
-        ))}
+          ))}
+        </div>
+        <p style={{ marginTop: '12px', fontSize: '10pt' }}>
+          Download high-resolution screenshots and media assets at:{' '}
+          <a href="https://soapbox.pub/blog/ditto-bitcoin-vegas-2026">
+            soapbox.pub/blog/ditto-bitcoin-vegas-2026
+          </a>
+        </p>
       </div>
 
       {/* ── Lightbox overlay ── */}
