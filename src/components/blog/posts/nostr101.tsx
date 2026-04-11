@@ -25,7 +25,6 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/images/nostr101-cover.png"
   },
-  "featured": true,
   "tags": ["nostr", "tutorial", "beginner"]
 };
 
@@ -176,10 +175,12 @@ export default function Nostr101() {
             <span className="hidden sm:inline">Try Ditto Now</span>
             <span aria-hidden="true">&rarr;</span>
           </a>
-          <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+          <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+            <img src="/assets/icons/google-play.svg" alt="" className="h-5 w-5" />
             Google Play
           </a>
-          <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+          <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white active:bg-violet-700 bg-white rounded-lg font-semibold text-base no-underline transition-colors duration-150">
+            <img src="/assets/icons/zapstore.png" alt="" className="h-5 w-5 rounded" />
             Zapstore
           </a>
         </div>

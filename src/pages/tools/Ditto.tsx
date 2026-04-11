@@ -113,8 +113,15 @@ export default function Ditto() {
       {/* ================================================================== */}
       {/* 1. HERO                                                            */}
       {/* ================================================================== */}
-      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+        {/* Decorative planet */}
+        <img
+          src="/assets/images/ditto/planet.png"
+          alt=""
+          className="absolute -top-10 -right-16 w-[320px] md:w-[420px] lg:w-[500px] opacity-60 pointer-events-none select-none"
+          aria-hidden="true"
+        />
+        <div className="max-w-7xl mx-auto space-y-12 relative z-10">
           {/* Centered title block */}
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h1 className="text-8xl md:text-9xl font-display font-bold text-gray-900">
@@ -159,6 +166,7 @@ export default function Ditto() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
                   Get on Google Play
                 </a>
               </Button>
@@ -173,6 +181,7 @@ export default function Ditto() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
                   Get on Zapstore
                 </a>
               </Button>
@@ -679,6 +688,7 @@ export default function Ditto() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
                 Get on Google Play
               </a>
             </Button>
@@ -693,6 +703,7 @@ export default function Ditto() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
                 Get on Zapstore
               </a>
             </Button>

@@ -68,7 +68,7 @@ export default function DittoBitcoinVegas2026() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Google Play
+          <img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play
         </a>{' '}
         and{' '}
         <a
@@ -76,7 +76,7 @@ export default function DittoBitcoinVegas2026() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Zapstore
+          <img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore
         </a>
         , with iOS coming soon.
       </p>
@@ -188,7 +188,7 @@ export default function DittoBitcoinVegas2026() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Google Play
+          <img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play
         </a>{' '}
         and{' '}
         <a
@@ -196,7 +196,7 @@ export default function DittoBitcoinVegas2026() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Zapstore
+          <img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore
         </a>
         . The Android app includes full push notifications, secure keychain
         credential storage, native file downloads, and iOS-style swipe

@@ -16,7 +16,6 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/announcing-ditto-2/cover.jpg',
   },
-  featured: true,
   tags: ['Ditto', 'Nostr', 'Open Source', 'Press Release'],
 };
 
@@ -158,7 +157,7 @@ export default function AnnouncingDitto2() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Google Play
+          <img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play
         </a>{' '}
         and{' '}
         <a
@@ -166,7 +165,7 @@ export default function AnnouncingDitto2() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Zapstore
+          <img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore
         </a>
         , with iOS coming soon. Learn more at{' '}
         <a

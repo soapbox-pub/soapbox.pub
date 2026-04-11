@@ -25,8 +25,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/free-software/cover.png"
   },
-  "tags": ["open-source", "freedom", "philosophy", "society", "ai"],
-  "featured": true
+  "tags": ["open-source", "freedom", "philosophy", "society", "ai"]
 };
 
 export default function FreeSoftwareFreeSocieties() {

@@ -33,7 +33,6 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/about-agora/agora-cover.png"
   },
-  "featured": true,
   "tags": ["nostr", "bitcoin", "activism", "agora", "venezuela", "freedom"]
 };
 

@@ -29,7 +29,6 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/shakespeare-origin-story/history-of-shakespeare-ai.png"
   },
-  "featured": true,
   "tags": ["shakespeare", "history", "goose", "stacks", "development"]
 };
 

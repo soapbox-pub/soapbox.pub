@@ -32,14 +32,14 @@ export default function HowToInstallDittoMobile() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8 rounded-lg border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 p-4">
         <p className="text-sm font-semibold text-violet-900 mb-1">Ditto is now on Android!</p>
-        <p className="text-sm text-violet-700">Download Ditto from <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">Google Play</a> or <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">Zapstore</a>, or visit <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a> on any device.</p>
+        <p className="text-sm text-violet-700">Download Ditto from <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800"><img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play</a> or <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800"><img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore</a>, or visit <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer" className="font-medium text-violet-600 underline hover:text-violet-800">ditto.pub</a> on any device.</p>
       </div>
 
       <h2>Android: Download the App</h2>
       <p>Ditto has a dedicated Android app with full push notifications, secure credential storage, native file downloads, and smooth swipe navigation. Install it from either:</p>
       <ul>
-        <li><strong><a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer">Google Play</a></strong> -- The standard way to install on any Android device.</li>
-        <li><strong><a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer">Zapstore</a></strong> -- A decentralized app store built on Nostr. Great if you prefer to stay outside the Google ecosystem.</li>
+        <li><strong><a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer"><img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play</a></strong>. The standard way to install on any Android device.</li>
+        <li><strong><a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer"><img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore</a></strong>. A decentralized app store built on Nostr. Great if you prefer to stay outside the Google ecosystem.</li>
       </ul>
 
       <h2>iOS: Coming Soon (Use the Web App for Now)</h2>

@@ -678,6 +678,7 @@ export default function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
                 Get on Google Play
               </a>
             </Button>
@@ -692,6 +693,7 @@ export default function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
                 Get on Zapstore
               </a>
             </Button>

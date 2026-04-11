@@ -28,8 +28,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/whats-in-a-name/cover.png"
   },
-  "tags": ["shakespeare", "philosophy", "open-source", "ai"],
-  "featured": true
+  "tags": ["shakespeare", "philosophy", "open-source", "ai"]
 };
 
 export default function WhatsInAName() {

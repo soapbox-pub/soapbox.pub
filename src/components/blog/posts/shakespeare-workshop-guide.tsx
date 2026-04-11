@@ -28,7 +28,6 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/shakespeare-workshop-guide/how-to-host-shakespeare-workshop.png"
   },
-  "featured": true,
   "tags": ["shakespeare", "tutorial", "workshop", "community"]
 };
 
