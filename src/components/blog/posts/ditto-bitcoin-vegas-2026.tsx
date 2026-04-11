@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 
 export const meta: BlogPostMeta = {
   slug: 'ditto-bitcoin-vegas-2026',
-  title: 'Launching the New Ditto: Customizable, Open Source Social Platform Built on Nostr and Bitcoin',
+  title: 'Soapbox Launches Ditto: A Customizable Social Hub for the Open Web, Powered by Bitcoin',
   excerpt:
-    'Soapbox announces the public launch of Ditto, a fully customizable, open source social media platform built on Nostr. Now available on Android via Google Play and Zapstore, with iOS coming soon. No ads, no data mining, no platform lock-in. Just a social experience you actually own.',
+    'Soapbox launches Ditto, a fully customizable social platform that connects Nostr, Bluesky, and Mastodon in one place. Built on open protocols with Bitcoin Lightning payments. Available now on Android and web.',
   coverImage: '/assets/blog/announcing-ditto-2/cover.jpg',
   date: '2026-04-20',
   author: {
@@ -42,28 +42,48 @@ export default function DittoBitcoinVegas2026() {
           April 20, 2026 &middot; Bitcoin Vegas Conference
         </p>
         <p className="text-sm text-gray-500">
-          Contact: M.K. Fain, CPO &middot;{' '}
+          Media contact: M.K. Fain, CPO &middot;{' '}
           <a href="mailto:contact@soapbox.pub" className="text-violet-600 hover:underline">
             contact@soapbox.pub
           </a>
+        </p>
+        <p className="text-sm text-gray-500">
+          Spokesperson: Derek Ross, Developer Relations &middot; Available for interviews at Bitcoin 2026
         </p>
       </div>
 
       {/* ── Body ── */}
       <p>
-        <strong>LAS VEGAS, NV</strong> &mdash; Soapbox today announced the public launch of{' '}
+        <strong>LAS VEGAS, NV</strong> &mdash;{' '}
+        People are tired of social media that treats them like a product. They're
+        tired of algorithmic feeds they can't control, profiles that all look the
+        same, and platforms that can revoke their account at any time. A growing
+        wave of internet nostalgia reflects a deeper hunger: people want the
+        creative, personal web back.
+      </p>
+
+      <p>
+        Today at Bitcoin 2026,{' '}
+        <a href="/">Soapbox</a> announced the public launch of{' '}
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           Ditto
         </a>
-        , a free, open source social media platform built on the{' '}
-        <a href="/blog/comparing-protocols">Nostr protocol</a> and powered by
-        the Bitcoin Lightning Network. After months of development and testing
-        within the Nostr community, Ditto is now available to everyone: on the
-        web at{' '}
+        : a fully customizable, open source social platform that brings that era
+        roaring back. Ditto isn't just another alternative to X or Bluesky. It's a
+        hub for the open web, connecting users across Nostr,{' '}
+        <a href="/blog/follow-bluesky">Bluesky</a>, and{' '}
+        <a href="/blog/mostr-fediverse-nostr-bridge">Mastodon</a> in one
+        place, with Bitcoin Lightning payments built in.
+        Available now on{' '}
+        <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer">
+          Google Play
+        </a>,{' '}
+        <a href="https://zapstore.dev/apps/pub.ditto.app" target="_blank" rel="noopener noreferrer">
+          Zapstore
+        </a>, and the web at{' '}
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           ditto.pub
-        </a>
-        , on Android via Google Play and Zapstore, with iOS coming soon.
+        </a>. iOS coming soon.
       </p>
 
       <div className="not-prose flex flex-wrap justify-center gap-3 my-6">
@@ -79,7 +99,7 @@ export default function DittoBitcoinVegas2026() {
             rel="noopener noreferrer"
           >
             <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
-            Get on Google Play
+            Google Play
           </a>
         </Button>
         <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
@@ -89,35 +109,16 @@ export default function DittoBitcoinVegas2026() {
             rel="noopener noreferrer"
           >
             <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
-            Get on Zapstore
+            Zapstore
           </a>
         </Button>
       </div>
 
-      <p>
-        Ditto is the most customizable social platform on the internet: a
-        return to the MySpace era of personal expression and internet whimsy,
-        rebuilt on modern technology that Big Tech can't control. Custom themes,
-        wall posts, virtual pets, decorated letters, top friends. The playful,
-        creative web that got paved over by algorithmic feeds and engagement
-        farming is back, and this time it's built to last.
-      </p>
-
-      <p>
-        Users own their identity, their content, and their connections. No
-        corporate middlemen, no algorithmic manipulation, no ads, and no data
-        mining. Because Ditto is built on Nostr, users can take their entire
-        social graph to any other Nostr-compatible app at any time, with zero
-        friction and zero permission required.
-      </p>
-
       <blockquote>
         <p>
-          Social media used to be creative, personal, and fun. Then Big Tech
-          turned it into a data extraction machine. We built Ditto to bring that
-          era roaring back. Custom themes, virtual pets, hand-drawn letters. All
-          the whimsy of the old internet, but on infrastructure nobody can take
-          away from you. Your keys, your data, your rules.
+          Social media used to be creative, personal, and fun. Then it became a
+          data extraction machine. Ditto brings the best of the old internet
+          back, but on infrastructure nobody can take away from you.
         </p>
       </blockquote>
       <p className="text-right text-gray-500 -mt-4">
@@ -126,136 +127,50 @@ export default function DittoBitcoinVegas2026() {
 
       <h2>What Makes Ditto Different</h2>
 
-      <p>
-        Unlike conventional social platforms, Ditto gives every user full control
-        over their experience:
-      </p>
-
       <ul>
         <li>
-          <strong>Deep personalization.</strong> Custom themes with color palettes,
-          background images, fonts, and more. Browse themes shared by the
-          community, or build your own with{' '}
-          <a href="/shakespeare">Shakespeare</a>, Soapbox's AI-powered code
-          editor. Think MySpace-level self-expression, powered by modern
-          technology.
+          <strong>Full personalization.</strong> Custom themes with colors,
+          backgrounds, fonts, and layouts. Browse community-created themes or
+          build your own. The era of personal, expressive profiles is back.
         </li>
         <li>
-          <strong>Every content type in one feed.</strong> Photos, videos,
-          short-form Divines, livestreams, long-form articles, polls, podcasts,
-          music, events, webxdc apps, and more, all in a single timeline you
-          control.
+          <strong>A hub, not a silo.</strong> Follow and interact with users
+          on Bluesky and Mastodon without leaving Ditto. Your feed, your rules,
+          across multiple networks.
+        </li>
+        <li>
+          <strong>Bitcoin-native payments.</strong> Creators receive Lightning
+          tips ("zaps") directly on posts and profiles. Peer to peer, instant,
+          borderless. No payment processor takes a cut.
         </li>
         <li>
           <strong>Virtual pets.</strong> Blobbis are Tamagotchi-style companions
-          that live in your feed. Hatch an egg, raise it through 16 evolutionary
-          forms, and watch it follow you around the app reacting to what you do.
+          that live in your feed. Hatch an egg, raise it through 16 forms, and
+          watch it follow you around the app.
         </li>
         <li>
-          <strong>Encrypted letters.</strong> A Wii Mail-inspired inbox with
-          custom stationery, hand-drawn stickers, decorative fonts, and 3D
-          animated envelopes sealed with wax.
+          <strong>Encrypted letters.</strong> Decorated, personal messages with
+          custom stationery, stickers, and 3D animated envelopes.
         </li>
         <li>
-          <strong>Built-in article editor.</strong> Write and publish long-form
-          content with rich text formatting, inline images, and auto-saving
-          drafts, all without leaving the app.
-        </li>
-        <li>
-          <strong>Badges and custom emoji.</strong> Create and award badges to
-          community members. Design emoji packs with drag-and-drop tools and use
-          them everywhere in the app.
-        </li>
-        <li>
-          <strong>Run web apps inside the feed.</strong> Nsites and webxdc apps
-          launch directly inside Ditto. Build a site with Shakespeare, deploy it
-          to Nostr, and anyone on Ditto can discover and run it from their
-          timeline.
-        </li>
-        <li>
-          <strong>Follow packs and QR codes.</strong> Share a link or scannable
-          code that lets anyone follow you with one tap, or curate a list of
-          accounts with a "Follow All" button.
-        </li>
-        <li>
-          <strong>Bridges to Bluesky and Mastodon.</strong> Follow and interact
-          with users on{' '}
-          <a href="/blog/follow-bluesky">Bluesky</a> and{' '}
-          <a href="/blog/mostr-fediverse-nostr-bridge">Mastodon</a> without
-          leaving Ditto.
-        </li>
-        <li>
-          <strong>Bitcoin-native payments.</strong> Send and receive Lightning
-          zaps directly on posts and profiles. No payment processor takes a cut.
-          Read our <a href="/blog/zapping-101">Zapping 101</a> guide to get
-          started.
+          <strong>You own your account.</strong> Built on{' '}
+          <a href="/blog/comparing-protocols">Nostr</a>, users hold their own
+          cryptographic keys. No company can suspend your identity, and you can
+          take your social graph to any compatible app at any time.
         </li>
       </ul>
-
-      <h2>Available Now on Android</h2>
-
-      <p>
-        The Android app includes full push notifications, secure keychain
-        credential storage, native file downloads, and iOS-style swipe
-        navigation. An iOS app is in development and coming soon.
-      </p>
-
-      <div className="not-prose flex flex-wrap justify-center gap-3 my-6">
-        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-          <a
-            href="https://play.google.com/store/apps/details?id=pub.ditto.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
-            Get on Google Play
-          </a>
-        </Button>
-        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
-          <a
-            href="https://zapstore.dev/apps/pub.ditto.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
-            Get on Zapstore
-          </a>
-        </Button>
-      </div>
-
-      <p>
-        Ditto is also available on the web at{' '}
-        <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
-          ditto.pub
-        </a>{' '}
-        with no download required. No email address, no phone number. Just a
-        Nostr key.
-      </p>
 
       <h2>Open Source and Decentralized</h2>
 
       <p>
-        Ditto is built on{' '}
-        <a href="/blog/comparing-protocols">Nostr</a>, an open protocol that
-        applies the same principles that made Bitcoin unstoppable to social
-        communication. Just as Bitcoin replaced trusted financial intermediaries
-        with cryptographic keys, Nostr replaces corporate platform accounts with
-        keypair-based identity. Your Nostr key is yours forever. No company
-        can suspend it, no server can revoke it, and no terms of service can
-        take it away. Where Bitcoin gave people sovereignty over their money,
-        Nostr gives people sovereignty over their voice.
+        Ditto applies the same principles that made Bitcoin unstoppable to social
+        communication. Just as Bitcoin removed trusted intermediaries from money,
+        Nostr removes them from speech. Your key is yours. No platform can revoke it.
       </p>
 
       <p>
-        Payments on Ditto flow through Bitcoin's Lightning Network, meaning
-        creators receive tips (called "zaps") directly: peer to peer, instant,
-        and borderless. No payment processor takes a percentage. No minimum
-        payout threshold. No bank account required.
-      </p>
-
-      <p>
-        Ditto itself is licensed under AGPL-3.0 and the full source code is
-        available on{' '}
+        Ditto is licensed under AGPL-3.0 and the full source code is available
+        on{' '}
         <a
           href="https://gitlab.com/soapbox-pub/ditto"
           target="_blank"
@@ -263,8 +178,8 @@ export default function DittoBitcoinVegas2026() {
         >
           GitLab
         </a>
-        . Anyone can read it, copy it, improve it, or deploy their own instance.
-        Documentation is available at{' '}
+        . Anyone can read, copy, improve, or self-host their own instance.
+        Documentation is at{' '}
         <a
           href="https://about.ditto.pub"
           target="_blank"
@@ -278,10 +193,12 @@ export default function DittoBitcoinVegas2026() {
       {/* ── Boilerplate ── */}
       <div className="not-prose mt-12 pt-8 border-t border-gray-200">
         <h3 className="text-lg font-bold text-gray-900 mb-3">About Soapbox</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Soapbox creates open source software to empower communities, inspire
-          creativity, and promote freedom. We believe copying is not theft, and
-          that the best technology belongs to everyone. Learn more at{' '}
+        <p className="text-gray-600 leading-relaxed mb-3">
+          Soapbox was founded by Alex Gleason, former Head of Engineering at
+          Truth Social. The company builds open source tools for the
+          decentralized web, funded by grants and donations from organizations
+          including OpenSats and the Human Rights Foundation. No ads, no
+          investors, no data sales. Learn more at{' '}
           <a href="/" className="text-violet-600 hover:underline">
             soapbox.pub
           </a>{' '}
@@ -290,6 +207,14 @@ export default function DittoBitcoinVegas2026() {
             media kit
           </a>
           .
+        </p>
+        <p className="text-gray-500 text-sm">
+          <strong>Interview requests:</strong> Derek Ross (Developer Relations) is
+          available for interviews at Bitcoin 2026. Contact{' '}
+          <a href="mailto:derekross@soapbox.pub" className="text-violet-600 hover:underline">
+            derekross@soapbox.pub
+          </a>{' '}
+          to schedule.
         </p>
       </div>
 
@@ -300,7 +225,7 @@ export default function DittoBitcoinVegas2026() {
         High-resolution screenshots of Ditto. Click any image to view full size.
       </p>
 
-      <div className="not-prose grid grid-cols-2 sm:grid-cols-4 gap-3 my-6">
+      <div className="not-prose grid grid-cols-4 gap-2 my-6 max-w-lg">
         {screenshots.map((shot, i) => (
           <button
             key={i}
