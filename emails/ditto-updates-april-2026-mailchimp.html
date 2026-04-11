@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="description" content="25 releases in one month. Virtual pets, encrypted letters, an article editor, badges, custom emoji, nsites, and a whole lot more.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="New Features Launch on Ditto">
+    <meta property="og:description" content="25 releases in one month. Virtual pets, encrypted letters, badges, custom emoji, nsites, and more.">
+    <title>New Features Launch on Ditto</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style type="text/css">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; color: #334155;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0f172a !important; color: #e2e8f0 !important; }
+            .email-container { background-color: #1e293b !important; }
+            .hero { background: linear-gradient(135deg, #2e1065 0%, #1e293b 50%, #4c1d95 100%) !important; }
+            .hero-title { color: #ffffff !important; }
+            .hero-text { color: #cbd5e1 !important; }
+            .feature-card { background-color: #1e293b !important; border: 2px solid #334155 !important; }
+            .section { background-color: #0f172a !important; }
+            .section-alt { background-color: #1e293b !important; }
+            .section-title, .feature-title { color: #f1f5f9 !important; }
+            .feature-description, .section-subtitle { color: #94a3b8 !important; }
+            .footer { background-color: #1e293b !important; }
+        }
+
+        table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100%; }
+
+        .email-container {
+            max-width: 600px; margin: 0 auto; background-color: #ffffff;
+            border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #f3e8ff 100%);
+            padding: 50px 30px; text-align: center;
+        }
+        .hero-badge {
+            display: inline-block; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff; padding: 8px 18px; border-radius: 25px; font-size: 13px;
+            font-weight: 700; margin: 0 0 20px; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .hero-title {
+            font-size: 36px; font-weight: 900; color: #1e293b; margin: 0 0 12px; line-height: 1.15;
+        }
+        .hero-tagline {
+            font-size: 20px; font-weight: 700; margin: 0 0 20px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-text {
+            font-size: 16px; color: #475569; margin: 0 0 30px; line-height: 1.6;
+            max-width: 480px; margin-left: auto; margin-right: auto;
+        }
+        .hero-image {
+            width: 100%; max-width: 540px; border-radius: 12px; margin: 0 auto 30px; display: block;
+        }
+
+        /* Sections */
+        .section { padding: 40px 30px; }
+        .section-alt { padding: 40px 30px; background: #faf5ff; }
+        .section-title { font-size: 26px; font-weight: bold; color: #1e293b; margin: 0 0 12px; text-align: center; }
+        .section-subtitle { font-size: 16px; color: #64748b; margin: 0 0 24px; text-align: center; line-height: 1.6; }
+
+        /* Feature cards */
+        .feature-card {
+            background: #ffffff !important; border: 2px solid #e2e8f0 !important;
+            border-radius: 16px !important; padding: 24px 20px !important;
+            margin: 16px 0 !important; text-align: left !important;
+        }
+        .feature-title {
+            font-size: 20px; font-weight: bold; color: #1e293b; margin: 0 0 8px;
+        }
+        .feature-description {
+            font-size: 15px; color: #475569; margin: 0; line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block; padding: 14px 28px; border-radius: 8px;
+            text-decoration: none !important; font-weight: 600; font-size: 16px;
+            text-align: center; margin: 8px; border: none; cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #ffffff !important; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        .btn-primary, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+            color: #ffffff !important; text-decoration: none !important;
+        }
+        .btn-secondary {
+            background: #ffffff; color: #7c3aed !important; border: 2px solid #7c3aed;
+        }
+        .btn-secondary, .btn-secondary:visited, .btn-secondary:hover, .btn-secondary:active {
+            text-decoration: none !important;
+        }
+        .btn-small {
+            display: inline-block; padding: 10px 20px; border-radius: 8px;
+            text-decoration: none !important; font-weight: 600; font-size: 14px;
+            text-align: center; margin: 6px; border: none; cursor: pointer;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            padding: 50px 30px; text-align: center;
+        }
+        .cta h2 { font-size: 32px; font-weight: bold; color: #ffffff; margin: 0 0 12px; }
+        .cta p { font-size: 17px; color: #e2e8f0; margin: 0 0 30px; line-height: 1.5; }
+
+        /* Footer */
+        .footer { background: #1e293b; padding: 30px 20px; text-align: center; }
+        .footer p { font-size: 14px; color: #94a3b8; margin: 8px 0; }
+        .footer a { color: #a78bfa !important; text-decoration: none !important; }
+        .footer a:visited, .footer a:hover, .footer a:active { color: #c4b5fd !important; text-decoration: none !important; }
+
+        /* Screenshot row */
+        .screenshot-row img {
+            border-radius: 10px; display: block; width: 100%;
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: 600px) {
+            .email-container { border-radius: 0; margin: 0; }
+            .hero { padding: 40px 20px; }
+            .hero-title { font-size: 28px; }
+            .hero-tagline { font-size: 17px; }
+            .hero-text { font-size: 14px; }
+            .section, .section-alt { padding: 30px 20px; }
+            .section-title { font-size: 22px; }
+            .feature-card { padding: 20px 16px !important; }
+            .feature-title { font-size: 18px; }
+            .btn { display: block; margin: 10px 0; font-size: 14px; padding: 12px 20px; }
+            .btn-small { display: block; margin: 8px 0; }
+            .android-col { display: block !important; width: 100% !important; padding: 0 0 12px !important; text-align: center !important; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-badge">Ditto Update</div>
+            <h1 class="hero-title">New Features Launch on Ditto</h1>
+            <p class="hero-tagline">Your content. Your vibe. Your rules.</p>
+
+            <img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/cover.png" alt="Ditto Update: Blobbis, Letters, and more" class="hero-image">
+
+            <div style="margin-top: 20px;">
+                <a href="https://ditto.pub" class="btn-small" style="background: #ffffff; color: #4c1d95 !important; border: 2px solid #7c3aed; border-radius: 8px; text-decoration: none !important;">Try on Web</a>
+                <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" class="btn-small" style="background: #ffffff; color: #4c1d95 !important; border: 2px solid #7c3aed; border-radius: 8px; text-decoration: none !important;">
+                    <img src="https://soapbox.pub/assets/icons/google-play.svg" alt="" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px; display: inline;">Google Play
+                </a>
+                <a href="https://zapstore.dev/apps/pub.ditto.app" class="btn-small" style="background: #ffffff; color: #4c1d95 !important; border: 2px solid #7c3aed; border-radius: 8px; text-decoration: none !important;">
+                    <img src="https://soapbox.pub/assets/icons/zapstore.png" alt="" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px; display: inline; border-radius: 3px;">Zapstore
+                </a>
+            </div>
+            <p style="font-size: 14px; color: #64748b; margin: 16px 0 0;">Now available on Android. iOS coming soon.</p>
+        </div>
+
+        <!-- Blobbi Virtual Pets -->
+        <div class="section-alt">
+            <h2 class="section-title">Blobbi Virtual Pets</h2>
+            <p class="section-subtitle">
+                Meet your <strong>Blobbi</strong>. A virtual pet that lives right inside Ditto. Hatch a mysterious egg, name your creature, and watch it evolve into one of 16 different adult forms. Feed it, clean it, heal it, play music for it. Complete daily quests, earn rewards, and collect items from the shop. Your Blobbi even follows you around the app.
+            </p>
+
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="screenshot-row">
+                <tr>
+                    <td style="padding: 0 3px; width: 33.33%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/blobbi-egg.jpeg" alt="Pur, a pink egg-shaped Blobbi"></td>
+                    <td style="padding: 0 3px; width: 33.33%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/blobbi-owl.jpeg" alt="Vermelhinho, a pink owl Blobbi"></td>
+                    <td style="padding: 0 3px; width: 33.33%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/blobbi-flower.jpeg" alt="Puck, a sunflower Blobbi"></td>
+                </tr>
+            </table>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://ditto.pub" class="btn-small btn-secondary" style="color: #7c3aed !important; border: 2px solid #7c3aed; background: #ffffff; border-radius: 8px;">Hatch Your Blobbi &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Letters -->
+        <div class="section">
+            <h2 class="section-title">Letters</h2>
+            <p class="section-subtitle">
+                <strong>Letters</strong> brings personal, decorated messaging to Ditto. Pick custom stationery, choose a font, add emoji stickers, and even attach a theme as a gift. The recipient gets a 3D interactive envelope they can flip open. It's the most personal way to reach someone on any social platform.
+            </p>
+
+            <!-- Letters screenshots row -->
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="screenshot-row">
+                <tr>
+                    <td style="padding: 0 3px; width: 33.33%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/letters-alex.png" alt="A letter with starry night stationery"></td>
+                    <td style="padding: 0 3px; width: 33.33%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/letters-hearts.png" alt="A letter with hearts border stationery"></td>
+                    <td style="padding: 0 3px; width: 33.33%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/letters-sunshine.png" alt="A letter with cottage garden stationery"></td>
+                </tr>
+            </table>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://ditto.pub/letters" class="btn-small btn-secondary" style="color: #7c3aed !important; border: 2px solid #7c3aed; background: #ffffff; border-radius: 8px;">Try Letters &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Article Editor -->
+        <div class="section-alt">
+            <h2 class="section-title">In-App Article Editor</h2>
+            <p class="section-subtitle">
+                Write long-form content with a full rich-text editor built right into Ditto. Formatting toolbar, inline images, auto-saving drafts, and cloud sync. Toggle between rich text and markdown. It's everything you need to publish without leaving the app.
+            </p>
+
+            <img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/article-editor.png" alt="Ditto's in-app article editor" style="width: 100%; border-radius: 12px; display: block; margin: 0 0 16px;">
+
+            <div style="text-align: center; margin-top: 16px;">
+                <a href="https://ditto.pub/articles" class="btn-small btn-secondary" style="color: #7c3aed !important; border: 2px solid #7c3aed; background: #ffffff; border-radius: 8px;">Try the Article Editor &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Badges & Custom Emoji -->
+        <div class="section">
+            <h2 class="section-title">Badges & Custom Emoji</h2>
+            <p class="section-subtitle">
+                <strong>Badges</strong> display on profiles and can be awarded to other users. Create your own, award them with a multi-select picker, and reorder your showcase with drag-and-drop. <strong>Custom emoji packs</strong> got a full upgrade too, with a new creator, drag-and-drop uploads, and shortcode autocomplete everywhere.
+            </p>
+
+            <!-- Badges screenshots row -->
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="screenshot-row">
+                <tr>
+                    <td style="padding: 0 3px; width: 50%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/badges-showcase.png" alt="Badge collection on a user profile"></td>
+                    <td style="padding: 0 3px; width: 50%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/badges-create.png" alt="Create a Badge dialog"></td>
+                </tr>
+            </table>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://ditto.pub/badges" class="btn-small btn-secondary" style="color: #7c3aed !important; border: 2px solid #7c3aed; background: #ffffff; border-radius: 8px;">Explore Badges &rarr;</a>
+                <a href="https://ditto.pub/emojis" class="btn-small btn-secondary" style="color: #7c3aed !important; border: 2px solid #7c3aed; background: #ffffff; border-radius: 8px;">Browse Emoji Packs &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Nsites -->
+        <div class="section-alt">
+            <h2 class="section-title">Nsites & Nostr Apps</h2>
+            <p class="section-subtitle">
+                Run nsites and web apps directly inside Ditto. Hit the "Run" button on any nsite card and it opens in an overlay without leaving your feed. Build with <a href="https://soapbox.pub/shakespeare" style="color: #7c3aed;">Shakespeare</a>, deploy to Nostr, and anyone on Ditto can discover and launch it from their timeline.
+            </p>
+
+            <!-- Nsites screenshots row -->
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="screenshot-row">
+                <tr>
+                    <td style="padding: 0 3px; width: 50%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/nsite-dev-feed.png" alt="Development feed with nsite cards"></td>
+                    <td style="padding: 0 3px; width: 50%;"><img src="https://soapbox.pub/assets/blog/ditto-updates-april-2026/nsite-polaroids.png" alt="Polaroids nsite running inside Ditto"></td>
+                </tr>
+            </table>
+
+            <div style="text-align: center; margin-top: 16px;">
+                <a href="https://ditto.pub/development" class="btn-small btn-secondary" style="color: #7c3aed !important; border: 2px solid #7c3aed; background: #ffffff; border-radius: 8px;">Explore Nsites &rarr;</a>
+            </div>
+        </div>
+
+        <!-- And More -->
+        <div class="section" style="text-align: center;">
+            <h2 class="section-title">Plus So Much More</h2>
+            <p class="section-subtitle">
+                Follow links and QR codes for easy sharing. Follow packs to onboard communities. Curated home feeds. Poll upgrades. Customizable navigation. Full threaded replies. Pull-to-refresh. A React 19 upgrade with ~50% smaller bundles. And dozens of bug fixes.
+            </p>
+            <a href="https://soapbox.pub/blog/ditto-updates-april-2026" class="btn btn-secondary">Read the Full Update &rarr;</a>
+
+            <div style="margin-top: 16px;">
+                <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" class="btn-small" style="background: #ffffff; color: #4c1d95 !important; border: 2px solid #7c3aed; border-radius: 8px; text-decoration: none !important;">
+                    <img src="https://soapbox.pub/assets/icons/google-play.svg" alt="" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px; display: inline;">Google Play
+                </a>
+                <a href="https://zapstore.dev/apps/pub.ditto.app" class="btn-small" style="background: #ffffff; color: #4c1d95 !important; border: 2px solid #7c3aed; border-radius: 8px; text-decoration: none !important;">
+                    <img src="https://soapbox.pub/assets/icons/zapstore.png" alt="" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px; display: inline; border-radius: 3px;">Zapstore
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soapbox</strong> &mdash; Building tools for the decentralized web</p>
+            <p>
+                <a href="https://soapbox.pub">Website</a> |
+                <a href="https://soapbox.pub/blog">Blog</a> |
+                <a href="https://soapbox.pub/ditto">About Ditto</a> |
+                <a href="https://gitlab.com/soapbox-pub/ditto">Source Code</a> |
+                <a href="https://ditto.pub/@soapbox@ditto.pub">Nostr</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                You're receiving this because you signed up for Soapbox updates.<br>
+                <a href="*|UNSUB|*">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*">Update preferences</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MailChimp Footer -->
+    <center>
+        <br><br><br><br><br><br>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+            <tr>
+                <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                        <tr>
+                            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                <br>
+                                <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                <br>
+                                *|LIST:ADDRESSLINE|*
+                                <br><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <style type="text/css">
+            @media only screen and (max-width: 480px){
+                table#canspamBar td{font-size:14px !important;}
+                table#canspamBar td a{display:block !important; margin-top:10px !important;}
+            }
+        </style>
+    </center>
+</body>
+</html>

@@ -105,12 +105,33 @@ export default function DittoUpdatesApril2026() {
         Social media should be fun, and Blobbis are proof.
       </p>
 
+      <div className="not-prose grid grid-cols-3 gap-3 my-8">
+        <img
+          src="/assets/blog/ditto-updates-april-2026/blobbi-egg.jpeg"
+          alt="Pur, a pink egg-shaped Blobbi with care action icons"
+          className="rounded-xl shadow-lg w-full h-auto"
+          loading="lazy"
+        />
+        <img
+          src="/assets/blog/ditto-updates-april-2026/blobbi-owl.jpeg"
+          alt="Vermelhinho, an angry pink owl Blobbi with green eyes"
+          className="rounded-xl shadow-lg w-full h-auto"
+          loading="lazy"
+        />
+        <img
+          src="/assets/blog/ditto-updates-april-2026/blobbi-flower.jpeg"
+          alt="Puck, a sunflower Blobbi in a red pot"
+          className="rounded-xl shadow-lg w-full h-auto"
+          loading="lazy"
+        />
+      </div>
+
       {/* ── Letters ── */}
       <h2>Letters</h2>
 
       <p>
-        Remember Wii Mail? We loved it too. <strong>Letters</strong> is Ditto's take on personal,
-        decorated messaging, and it goes further than you might expect.
+        <strong>Letters</strong> brings personal, decorated messaging to Ditto, and it goes
+        further than you might expect.
       </p>
 
       <p>
