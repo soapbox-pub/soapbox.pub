@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import type { BlogPostMeta } from '@/lib/blog/types';
+import { Button } from '@/components/ui/button';
 
 export const meta: BlogPostMeta = {
   slug: 'ditto-bitcoin-vegas-2026',
@@ -62,24 +63,36 @@ export default function DittoBitcoinVegas2026() {
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           ditto.pub
         </a>
-        , on Android via{' '}
-        <a
-          href="https://play.google.com/store/apps/details?id=pub.ditto.app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://zapstore.dev/apps/pub.ditto.app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore
-        </a>
-        , with iOS coming soon.
+        , on Android via Google Play and Zapstore, with iOS coming soon.
       </p>
+
+      <div className="not-prose flex flex-wrap justify-center gap-3 my-6">
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
+            Try on Web
+          </a>
+        </Button>
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a
+            href="https://play.google.com/store/apps/details?id=pub.ditto.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
+            Get on Google Play
+          </a>
+        </Button>
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a
+            href="https://zapstore.dev/apps/pub.ditto.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
+            Get on Zapstore
+          </a>
+        </Button>
+      </div>
 
       <p>
         Ditto is the most customizable social platform on the internet: a
@@ -182,26 +195,33 @@ export default function DittoBitcoinVegas2026() {
       <h2>Available Now on Android</h2>
 
       <p>
-        Ditto is available as a free download on{' '}
-        <a
-          href="https://play.google.com/store/apps/details?id=pub.ditto.app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/assets/icons/google-play.svg" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5" />Google Play
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://zapstore.dev/apps/pub.ditto.app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/assets/icons/zapstore.png" alt="" className="inline h-4 w-4 mr-0.5 -mt-0.5 rounded" />Zapstore
-        </a>
-        . The Android app includes full push notifications, secure keychain
+        The Android app includes full push notifications, secure keychain
         credential storage, native file downloads, and iOS-style swipe
         navigation. An iOS app is in development and coming soon.
       </p>
+
+      <div className="not-prose flex flex-wrap justify-center gap-3 my-6">
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a
+            href="https://play.google.com/store/apps/details?id=pub.ditto.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/icons/google-play.svg" alt="" className="mr-2 h-5 w-5" />
+            Get on Google Play
+          </a>
+        </Button>
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a
+            href="https://zapstore.dev/apps/pub.ditto.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
+            Get on Zapstore
+          </a>
+        </Button>
+      </div>
 
       <p>
         Ditto is also available on the web at{' '}
