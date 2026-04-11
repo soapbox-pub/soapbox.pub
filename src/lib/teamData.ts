@@ -45,7 +45,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Heather Larson",
-    role: "Marketing Director",
+    role: "HBIC of Ditto Music",
     bio: "Tech Marketing | Bitcoin & Nostr Community Growth | Broadcast Media Veteran | *I've probably ghostwritten something you read online*",
     avatar: "/assets/avatars/heather.jpg",
     follow: "https://ditto.pub/@heather@nostrplebs.com",

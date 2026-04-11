@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { TeamPostsFeed } from "@/components/TeamPostsFeed";
 import { TeamFollowPack } from "@/components/TeamFollowPack";
 import { ExternalLink, Heart, Users, Zap, FileText } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
@@ -176,22 +175,6 @@ export default function About() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <TeamFollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
-          </div>
-        </section>
-
-        {/* Team Posts Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
-                Latest from the Team
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Stay up to date with what our team members are sharing on Nostr.
-              </p>
-            </div>
-
-            <TeamPostsFeed />
           </div>
         </section>
 
