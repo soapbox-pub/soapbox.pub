@@ -109,13 +109,9 @@ It's not necessary to restart the Pleroma service.
       <p>Groups are in the works! Follow along here:</p>
       <ul>
       <li><strong>Groups ActivityPub document:</strong> <a href="https://gitlab.com/-/snippets/2138031" target="_blank" rel="noopener noreferrer">https://gitlab.com/-/snippets/2138031</a> - <strong>Client-Server API document:</strong> <a href="https://gitlab.com/-/snippets/2137299" target="_blank" rel="noopener noreferrer">https://gitlab.com/-/snippets/2137299</a> - <strong>WIP backend code:</strong> <a href="https://git.pleroma.social/alexgleason/pleroma/-/merge_requests/4" target="_blank" rel="noopener noreferrer">https://git.pleroma.social/alexgleason/pleroma/-/merge_requests/4</a> - <strong>WIP frontend code:</strong> <a href="https://gitlab.com/soapbox-pub/soapbox/-/merge_requests/554" target="_blank" rel="noopener noreferrer">https://gitlab.com/soapbox-pub/soapbox/-/merge_requests/554</a></li>
-      </ul><h2>Fund the Soapbox Project</h2>
-      <p>Soapbox is funded entirely by donations. If you would like to support me, you can send me a donation. Your support is greatly appreciated, and every bit counts.</p>
-      <ul>
-      <li>Credit Card — <a href="https://paypal.me/gleasonator" target="_blank" rel="noopener noreferrer">PayPal</a> (alex@alexgleason.me) <li>Bitcoin — <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code></li>
-<li>Etherium — <code>0xAc9aB5Fc04Dc1cB1789Af75b523Bd23C70B2D717</code></li>
-<li>Dogecoin — <code>D5zVZs6jrRakaPVGiErkQiHt9sayzm6V5D</code> </li>- Ubiq (10grans) — <code>0x541a45cb212b57f41393427fb15335fc89c35851</code> - Monero — <code>45JDCLrjJ4bgVUSbbs2yjy9m5Mf4VLPW8fG7jw9sq5u69rXZZopQogZNeyYkMBnXpkaip4p4QwaaJNhdTotPa9g44DBCzdK</code></li>
-      </ul><h2>Thank you!</h2>
+      </ul><h2>Support the Soapbox Project</h2>
+      <p>Soapbox is funded entirely by grants and donations, not ads or data sales. If you would like to support our work, visit our <a href="/transparency">funding transparency page</a> to learn how we use funds and how to contribute.</p>
+      <h2>Thank you!</h2>
       <p>As always, a HUGE thank you to the contributors of this release. The community has stepped up its game, and I look forward to continuing to build with you.</p></article>
   );
 }

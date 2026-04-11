@@ -30,6 +30,16 @@ export default defineConfig({
         "/showcase",
         "/soapbox-sessions",
         "/tools",
+        "/transparency",
+        "/transparency/feb-apr-2026",
+        "/transparency/nov-2025-jan-2026",
+        "/transparency/aug-oct-2025",
+        "/transparency/may-jul-2025",
+        "/transparency/feb-apr-2025",
+        "/transparency/nov-2024-feb-2025",
+        "/transparency/jul-oct-2024",
+        "/transparency/apr-jun-2024",
+        "/transparency/jul-sep-2023",
 
         // Tool pages (primary routes)
         "/ditto",

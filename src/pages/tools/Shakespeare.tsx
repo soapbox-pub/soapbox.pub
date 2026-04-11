@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SupportCard } from "@/components/SupportCard";
 import { ShakespeareMailchimpForm } from "@/components/ShakespeareMailchimpForm";
 import { RotatingText } from "@/components/RotatingText";
 import { AppShowcaseCard } from "@/components/AppShowcaseCard";
@@ -957,6 +958,12 @@ export default function Shakespeare() {
 
             <ShakespeareMailchimpForm />
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <SupportCard />
         </div>
       </section>
 

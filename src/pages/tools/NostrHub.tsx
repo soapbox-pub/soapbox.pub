@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SupportCard } from "@/components/SupportCard";
 import { RecentNips } from "@/components/RecentNips";
 import { FeaturedDevelopers } from "@/components/FeaturedDevelopers";
 import { useSEO } from "@/hooks/useSEO";
@@ -489,6 +490,12 @@ export default function NostrHub() {
               Developer Community
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <SupportCard />
         </div>
       </section>
 

@@ -102,11 +102,11 @@ export default function About() {
                 Supported by
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                We're grateful for the support of these organizations who believe in our mission.
+                Soapbox receives no revenue from our products or users. We are entirely supported by grants and donations from organizations and individuals who believe in our mission.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
               <a
                 href="https://opensats.org/"
                 target="_blank"
@@ -143,6 +143,15 @@ export default function About() {
                   className="max-h-32 md:max-h-40 w-full object-contain"
                 />
               </a>
+            </div>
+
+            <div className="text-center">
+              <Button variant="outline" asChild>
+                <Link to="/transparency" className="inline-flex items-center">
+                  How We're Funded
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>

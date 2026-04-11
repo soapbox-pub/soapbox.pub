@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SupportCard } from "@/components/SupportCard";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Nostrify() {
@@ -476,6 +477,12 @@ export default function Nostrify() {
               <div className="text-blue-200 text-xs mt-1">Available on JSR ⚡</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <SupportCard />
         </div>
       </section>
 

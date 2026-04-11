@@ -98,13 +98,9 @@ It's not necessary to restart the Pleroma service.
       <p>For <strong>removal</strong>, run: <code>rm /opt/pleroma/instance/static/index.html</code></p>
       <h3>3. Customize it</h3>
       <p>You will probably want to customize your site's logo and color scheme. Follow the <a href="https://gitlab.com/soapbox-pub/soapbox/-/blob/main/docs/customization.md" target="_blank" rel="noopener noreferrer">customization docs</a> for instructions on how to do so.</p>
-      <h2>Fund the Soapbox project</h2>
-      <p>Donations are always optional, but if you'd like to send some money our way you can use one of the following options:</p>
-      <ul>
-      <li>Credit Card — <a href="https://paypal.me/gleasonator" target="_blank" rel="noopener noreferrer">PayPal</a> (alex@alexgleason.me) <li>Bitcoin — <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code></li>
-<li>Etherium — <code>0xAc9aB5Fc04Dc1cB1789Af75b523Bd23C70B2D717</code></li>
-<li>Dogecoin — <code>D5zVZs6jrRakaPVGiErkQiHt9sayzm6V5D</code> </li>- Ubiq (10grans) — <code>0x541a45cb212b57f41393427fb15335fc89c35851</code> - Monero — <code>45JDCLrjJ4bgVUSbbs2yjy9m5Mf4VLPW8fG7jw9sq5u69rXZZopQogZNeyYkMBnXpkaip4p4QwaaJNhdTotPa9g44DBCzdK</code></li>
-      </ul><h2>Special thanks</h2>
+      <h2>Support the Soapbox Project</h2>
+      <p>Soapbox is funded entirely by grants and donations, not ads or data sales. Visit our <a href="/transparency">funding transparency page</a> to learn how we use funds and how to contribute.</p>
+      <h2>Special thanks</h2>
       <p>There were a lot of people who made this release happen. A huge thank you to everyone who got their hands dirty, but also to everyone who expressed enthusiasm, gave moral support, provided feedback, and more. I'm proud of the growing community around this project, and thank you all for being part of this journey.</p>
       <p>In particular, I'd like to thank the following contributors:</p>
       <ul>

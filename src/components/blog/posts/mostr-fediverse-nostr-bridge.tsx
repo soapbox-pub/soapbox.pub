@@ -59,8 +59,7 @@ export default function MostrFediverseNostrBridge() {
       <p>Next, we are going to make Mastodon clients work on Nostr. Not just Soapbox, all of them. This will require a middleware service that acts like a Mastodon "instance" and talks to Nostr relays behind the scenes.</p>
       <p><strong>Update: 5/10/24:</strong> Nostr users can now follow accounts on Bluesky via the Mostr Bridge! <a href="/blog/follow-bluesky/" target="_blank" rel="noopener noreferrer">Learn more here</a>.</p>
       <h2>Support us</h2>
-      <p>If you like what we do, please support us!</p>
-      <p><strong>BTC:</strong> <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code></p>
+      <p>Soapbox is funded entirely by grants and donations, not ads or data sales. Visit our <a href="/transparency">funding transparency page</a> to learn how we use funds and how to contribute.</p>
       <p>Source code: <a href="https://gitlab.com/soapbox-pub/mostr" target="_blank" rel="noopener noreferrer">https://gitlab.com/soapbox-pub/mostr</a></p></article>
   );
 }

@@ -125,13 +125,9 @@ It's not necessary to restart the Pleroma service.
       <h3>3. Customize it</h3>
       <p>After logging in, click your avatar in the topbar, and navigate to Soapbox Config to customize it. Additional settings can be found under Admin Settings in the same menu.</p>
       <img alt="" src="/assets/blog/soapbox-fe-v1.1-release/admin-link.png"  />
-      <h2>Fund the Soapbox Project</h2>
-      <p>Soapbox is funded entirely by donations. If you would like to support me, you can send me a donation. Your support is greatly appreciated, and every bit counts. Thank you!</p>
-      <ul>
-      <li>Credit Card — <a href="https://paypal.me/gleasonator" target="_blank" rel="noopener noreferrer">PayPal</a> (alex@alexgleason.me) <li>Bitcoin — <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code></li>
-<li>Etherium — <code>0xAc9aB5Fc04Dc1cB1789Af75b523Bd23C70B2D717</code></li>
-<li>Dogecoin — <code>D5zVZs6jrRakaPVGiErkQiHt9sayzm6V5D</code> </li>- Ubiq (10grans) — <code>0x541a45cb212b57f41393427fb15335fc89c35851</code> - Monero — <code>45JDCLrjJ4bgVUSbbs2yjy9m5Mf4VLPW8fG7jw9sq5u69rXZZopQogZNeyYkMBnXpkaip4p4QwaaJNhdTotPa9g44DBCzdK</code></li>
-      </ul><h2>Contributors</h2>
+      <h2>Support the Soapbox Project</h2>
+      <p>Soapbox is funded entirely by grants and donations, not ads or data sales. Visit our <a href="/transparency">funding transparency page</a> to learn how we use funds and how to contribute.</p>
+      <h2>Contributors</h2>
       <p>A HUGE thank you to everyone who helped make this release a reality! In particular I'd like to thank M.K. Fain and the Spinster community for pushing to make this release perfect. And of course, the usual suspects. 😉</p>
       <ul>
       <li>Curtis Rock <li>Sean King</li>

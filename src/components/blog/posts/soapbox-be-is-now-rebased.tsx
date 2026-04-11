@@ -56,12 +56,8 @@ export default function SoapboxBeIsNowRebased() {
 <li>Decentralized identity (eg IPFS, Nostr)</li>
 <li>Ethereum integrations</li></li>
       </ul><h2>Support us</h2>
-      <p>To help us make Rebased as awesome as possible, please consider making a donation!</p>
-      <ul>
-      <li>Credit Card — <a href="https://paypal.me/gleasonator" target="_blank" rel="noopener noreferrer">PayPal</a> (alex@alexgleason.me) <li>Bitcoin — <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code></li>
-<li>Etherium — <code>0xAc9aB5Fc04Dc1cB1789Af75b523Bd23C70B2D717</code></li>
-<li>Dogecoin — <code>D5zVZs6jrRakaPVGiErkQiHt9sayzm6V5D</code> </li>- Ubiq (10grans) — <code>0x541a45cb212b57f41393427fb15335fc89c35851</code> - Monero — <code>45JDCLrjJ4bgVUSbbs2yjy9m5Mf4VLPW8fG7jw9sq5u69rXZZopQogZNeyYkMBnXpkaip4p4QwaaJNhdTotPa9g44DBCzdK</code></li>
-      </ul><h2>Thank you!</h2>
+      <p>Soapbox is funded entirely by grants and donations, not ads or data sales. Visit our <a href="/transparency">funding transparency page</a> to learn how we use funds and how to contribute.</p>
+      <h2>Thank you!</h2>
       <p>Thank you to everyone who has helped make Soapbox (and now Rebased) awesome! We look forward to making the Fediverse win!</p></article>
   );
 }

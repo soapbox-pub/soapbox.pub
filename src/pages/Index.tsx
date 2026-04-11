@@ -4,6 +4,7 @@ import {
   ExternalLink,
   BookOpen,
   Calendar,
+  Heart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -693,6 +694,30 @@ export default function Index() {
               >
                 Get on Zapstore
               </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 8. COMMUNITY FUNDED                                              */}
+      {/* ================================================================ */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <Heart className="h-8 w-8 text-red-500 mx-auto" />
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
+            Community Funded, Not Investor Funded
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Soapbox is supported by organizations like OpenSats, the Human Rights Foundation, and donors like you.
+            No venture capital. No ads. No data sales. Every tool we build is free and open source, forever.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button variant="outline" asChild>
+              <Link to="/transparency">
+                How We're Funded
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>

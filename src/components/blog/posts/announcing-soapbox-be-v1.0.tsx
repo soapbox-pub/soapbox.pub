@@ -79,13 +79,9 @@ If you're using the OTP release, you may need to switch to the source version fi
       <li><strong>Can I switch back to Pleroma?</strong> — Yep, you can safely switch between Soapbox BE 1.0 and Pleroma 2.3. This release does not modify the database at all. Future releases will modify the database in reversible, non-destructive ways.</li>
       <li><strong>Can I use Pleroma FE with Soapbox BE?</strong> — Technically, yes. You can remove Soapbox FE as the "primary" frontend within AdminFE, and it will fall back to Pleroma FE. This use case is unsupported by Pleroma FE devs, but it seems to work fine.</li>
       <li><strong>Can I use a customized frontend/custom build?</strong> — Yep. Anything you put in <code>/opt/pleroma/instance</code> will override the default frontend. If you put a custom build here, remember to upgrade the FE and BE separately.</li>
-      </ul><h2>Fund the Soapbox Project</h2>
-      <p>Soapbox is funded entirely by donations. If you would like to support me, you can send me a donation. Your support is greatly appreciated, and every bit counts.</p>
-      <ul>
-      <li>Credit Card — <a href="https://paypal.me/gleasonator" target="_blank" rel="noopener noreferrer">PayPal</a> (alex@alexgleason.me) <li>Bitcoin — <code>bc1q9cx35adpm73aq2fw40ye6ts8hfxqzjr5unwg0n</code></li>
-<li>Etherium — <code>0xAc9aB5Fc04Dc1cB1789Af75b523Bd23C70B2D717</code></li>
-<li>Dogecoin — <code>D5zVZs6jrRakaPVGiErkQiHt9sayzm6V5D</code> </li>- Ubiq (10grans) — <code>0x541a45cb212b57f41393427fb15335fc89c35851</code> - Monero — <code>45JDCLrjJ4bgVUSbbs2yjy9m5Mf4VLPW8fG7jw9sq5u69rXZZopQogZNeyYkMBnXpkaip4p4QwaaJNhdTotPa9g44DBCzdK</code></li>
-      </ul><h2>Thank you!</h2>
+      </ul><h2>Support the Soapbox Project</h2>
+      <p>Soapbox is funded entirely by grants and donations, not ads or data sales. Visit our <a href="/transparency">funding transparency page</a> to learn how we use funds and how to contribute.</p>
+      <h2>Thank you!</h2>
       <p>A huge thank you to everyone who has been so supportive of my efforts, from the donations to the moral support to development help. Thank you to the Pleroma dev team for building a great foundation. I really appreciate you all being a part of this and look forward to advancing the Fediverse together.</p>
     </article>
   );

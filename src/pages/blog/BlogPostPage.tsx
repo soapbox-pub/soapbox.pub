@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Layout } from '@/components/Layout';
+import { SupportCard } from '@/components/SupportCard';
 import { ShakespeareMailchimpForm } from '@/components/ShakespeareMailchimpForm';
 import { getPostBySlug, formatDate, getReadingTime, extractSEOData, authorNameToSlug } from '@/lib/blog/utils';
 import { wrapVideoEmbeds } from '@/lib/blog/videoUtils';
@@ -144,6 +145,9 @@ export default function BlogPostPage() {
             <ShakespeareMailchimpForm />
           </div>
         )}
+
+        {/* Support Card */}
+        <SupportCard />
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-gray-200">

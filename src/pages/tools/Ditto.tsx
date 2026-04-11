@@ -715,6 +715,19 @@ export default function Ditto() {
         </div>
       </section>
 
+      {/* Community Funded */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto text-center space-y-4">
+          <p className="text-gray-600 leading-relaxed">
+            Ditto is built by <a href="/about" className="text-azure hover:underline">Soapbox</a>, a team funded by grants and donations, not ads or data sales.
+            Every feature is free and open source, forever.
+          </p>
+          <a href="/transparency" className="text-sm text-azure hover:underline">
+            Learn how we're funded &rarr;
+          </a>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

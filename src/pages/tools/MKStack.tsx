@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SupportCard } from "@/components/SupportCard";
 import { MKStackPostsFeed } from "@/components/MKStackPostsFeed";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -1008,6 +1009,12 @@ export default function MKStack() {
               </a>
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <SupportCard />
         </div>
       </section>
 

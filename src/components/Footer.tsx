@@ -62,6 +62,7 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/about" className="hover:text-white transition-colors">Team</Link></li>
               <li><Link to="/ethics" className="hover:text-white transition-colors">Ethics Pledge</Link></li>
+              <li><Link to="/transparency" className="hover:text-white transition-colors">Transparency</Link></li>
               <li><Link to="/media-kit" className="hover:text-white transition-colors">Media Kit</Link></li>
               <li><Link to="/soapbox-sessions" className="hover:text-white transition-colors">Soapbox Sessions</Link></li>
               <li><Link to="/get-involved" className="hover:text-white transition-colors">Get Involved</Link></li>
