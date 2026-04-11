@@ -126,6 +126,14 @@ export default function DittoUpdatesApril2026() {
         />
       </div>
 
+      <div className="not-prose flex justify-center my-6">
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a href="https://ditto.pub/blobbi" target="_blank" rel="noopener noreferrer">
+            Try Blobbi on Ditto &rarr;
+          </a>
+        </Button>
+      </div>
+
       {/* ── Letters ── */}
       <h2>Letters</h2>
 
