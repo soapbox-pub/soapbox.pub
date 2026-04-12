@@ -129,13 +129,14 @@ export default function DittoBitcoinVegas2026() {
 
       <blockquote>
         <p>
-          Social media used to be creative, personal, and fun. Then it became a
-          data extraction machine. Ditto brings the best of the old internet
-          back, but on infrastructure nobody can take away from you.
+          Ditto is a place of creation. An endless garden where thousands of
+          flowers can bloom. People can use Shakespeare.diy to create their own
+          apps, then share them on a social network with Ditto. I want to prove
+          that making software is a form of art. Especially with AI.
         </p>
       </blockquote>
       <p className="text-right text-gray-500 -mt-4">
-        &mdash; M.K. Fain, CPO at Soapbox
+        &mdash; Alex Gleason, Founder of Soapbox
       </p>
 
       <h2>What Makes Ditto Different</h2>
@@ -170,6 +171,14 @@ export default function DittoBitcoinVegas2026() {
           <a href="/blog/comparing-protocols">Nostr</a>, users hold their own
           cryptographic keys. No company can suspend your identity, and you can
           take your social graph to any compatible app at any time.
+        </li>
+        <li>
+          <strong>Build and launch your own microapps.</strong> With{' '}
+          <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
+            Shakespeare
+          </a>
+          , anyone can create lightweight apps and publish them directly to the
+          Ditto network. Software as a creative act, powered by AI.
         </li>
       </ul>
 
