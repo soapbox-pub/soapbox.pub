@@ -212,6 +212,37 @@ export default function DittoBitcoinVegas2026() {
         .
       </p>
 
+      {/* ── NosVegas launch party ── */}
+      <h2>See Ditto Live at NosVegas</h2>
+
+      <p>
+        Want to see Ditto in action and hear directly from the team? Join us at{' '}
+        <strong>NosVegas</strong>, the official Nostr community event during
+        Bitcoin 2026 week. Soapbox will be presenting Ditto live, walking through
+        the features, and answering questions. Whether you're a developer, a
+        creator, or just curious about the future of social media, come by and say
+        hello.
+      </p>
+
+      <div className="not-prose bg-gray-50 dark:bg-gray-900 rounded-lg p-6 my-6 border border-gray-200 dark:border-gray-700">
+        <p className="font-semibold text-lg mb-3">NosVegas Event Details</p>
+        <ul className="space-y-1 text-gray-700 dark:text-gray-300 text-base">
+          <li><strong>Date:</strong> Tuesday, April 28, 2026</li>
+          <li><strong>Time:</strong> 7:00 PM &ndash; 1:00 AM</li>
+          <li>
+            <strong>Venue:</strong>{' '}
+            <a
+              href="https://maps.google.com/?q=517+Fremont+St+Las+Vegas+NV+89101"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-violet-600 hover:underline"
+            >
+              WE ALL SCREAM Nightclub, 517 Fremont St., Las Vegas, NV 89101
+            </a>
+          </li>
+        </ul>
+      </div>
+
       {/* ── Boilerplate ── */}
       <div className="not-prose mt-12 pt-8 border-t border-gray-200">
         <h3 className="text-lg font-bold text-gray-900 mb-3">About Soapbox</h3>
