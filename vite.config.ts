@@ -41,6 +41,9 @@ export default defineConfig({
         "/transparency/apr-jun-2024",
         "/transparency/jul-sep-2023",
 
+        // Redirects
+        "/agora",
+
         // Tool pages (primary routes)
         "/ditto",
         "/shakespeare",

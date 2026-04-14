@@ -52,6 +52,8 @@ export function AppRouter() {
         <Route path="/tools/ditto" element={<Navigate to="/ditto" replace />} />
         <Route path="/tools/shakespeare" element={<Navigate to="/shakespeare" replace />} />
         <Route path="/tools/mkstack" element={<Navigate to="/mkstack" replace />} />
+        {/* Agora redirect */}
+        <Route path="/agora" element={<Navigate to="/blog/agora-connecting-freedom-fighters" replace />} />
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/blog" element={<BlogIndex />} />
