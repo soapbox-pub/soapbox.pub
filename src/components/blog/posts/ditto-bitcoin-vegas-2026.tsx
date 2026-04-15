@@ -8,7 +8,7 @@ export const meta: BlogPostMeta = {
   slug: 'ditto-bitcoin-vegas-2026',
   title: 'Soapbox Launches Ditto: A Customizable Social Hub for the Open Web, Powered by Bitcoin',
   excerpt:
-    'Soapbox launches Ditto, a fully customizable social platform that connects Nostr, Bluesky, and Mastodon in one place. Built on open protocols with Bitcoin Lightning payments. Available now on Android and web.',
+    'Soapbox launches Ditto, a fully customizable social platform that connects Nostr, Bluesky, and Mastodon in one place. Built on open protocols with Bitcoin Lightning payments. Available now on iOS, Android, and web.',
   coverImage: '/assets/blog/announcing-ditto-2/cover.jpg',
   date: '2026-04-20',
   author: {
@@ -87,7 +87,10 @@ export default function DittoBitcoinVegas2026() {
         <a href="/blog/follow-bluesky">Bluesky</a>, and{' '}
         <a href="/blog/mostr-fediverse-nostr-bridge">Mastodon</a> in one
         place, with Bitcoin Lightning payments built in.
-        Available now on{' '}
+        Available now on the{' '}
+        <a href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821" target="_blank" rel="noopener noreferrer">
+          App Store
+        </a>,{' '}
         <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer">
           Google Play
         </a>,{' '}
@@ -96,13 +99,23 @@ export default function DittoBitcoinVegas2026() {
         </a>, and the web at{' '}
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           ditto.pub
-        </a>. iOS coming soon.
+        </a>.
       </p>
 
       <div className="not-prose flex flex-wrap justify-center gap-3 my-6" data-print-hide>
         <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
           <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
             Try on Web
+          </a>
+        </Button>
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a
+            href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/icons/app-store.svg" alt="" className="mr-2 h-5 w-5" />
+            App Store
           </a>
         </Button>
         <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
