@@ -43,12 +43,22 @@ export default function DittoUpdatesApril2026() {
       </p>
 
       <p>
-        <strong>iOS is coming soon.</strong> In the meantime, iOS users can still access Ditto at{' '}
-        <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a> and pin it
-        to their home screen as a PWA.
+        Ditto is also available on the{' '}
+        <a href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821" target="_blank" rel="noopener noreferrer">App Store</a> for
+        iOS users.
       </p>
 
       <div className="not-prose flex flex-wrap justify-center gap-3 my-6">
+        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+          <a
+            href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/icons/app-store.svg" alt="" className="mr-2 h-5 w-5" />
+            App Store
+          </a>
+        </Button>
         <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
           <a
             href="https://play.google.com/store/apps/details?id=pub.ditto.app"
