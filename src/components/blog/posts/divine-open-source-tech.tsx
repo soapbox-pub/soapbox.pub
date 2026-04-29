@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Code, Zap, Globe, GitBranch } from 'lucide-react';
 import type { BlogPostMeta } from '@/lib/blog/types';
+import { FAQSection } from '@/components/blog/FAQSection';
 
 export const meta: BlogPostMeta = {
   "slug": "divine-open-source-tech",
@@ -412,37 +413,60 @@ export default function DivineOpenSourceTech() {
 
       <hr className="my-12 border-gray-200" />
 
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Is Divine open source?</h3>
-      <p>
-        Yes. Divine is fully open source. The web client is at <a href="https://github.com/divinevideo/divine-web" target="_blank" rel="noopener noreferrer">github.com/divinevideo/divine-web</a> and the native mobile app is at <a href="https://github.com/divinevideo/divine-mobile" target="_blank" rel="noopener noreferrer">github.com/divinevideo/divine-mobile</a>. Anyone can view the code, fork it, or contribute.
-      </p>
-
-      <h3>Where can I find Divine's source code?</h3>
-      <p>
-        Divine's source code is hosted on GitHub at <a href="https://github.com/divinevideo" target="_blank" rel="noopener noreferrer">github.com/divinevideo</a>. The main repositories are <strong>divine-web</strong> (the web client built on MKStack) and <strong>divine-mobile</strong> (the native iOS and Android app built with Flutter).
-      </p>
-
-      <h3>What is MKStack?</h3>
-      <p>
-        <a href="https://soapbox.pub/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a> is Soapbox's open source framework for building Nostr applications. It provides a production-ready template with React 18, TypeScript, TailwindCSS, ShadCN UI, Vite, and Nostrify for Nostr protocol integration — so developers can build Nostr apps in weeks instead of months.
-      </p>
-
-      <h3>Can I fork Divine and run my own version?</h3>
-      <p>
-        Yes. Because Divine is open source and built on the permissionless Nostr protocol, anyone can fork the codebase and run their own version — with different relays, different features, or a different design. Content published from any Divine fork remains interoperable with the original Divine community via Nostr.
-      </p>
-
-      <h3>What is Nostrify?</h3>
-      <p>
-        <a href="https://nostrify.dev" target="_blank" rel="noopener noreferrer">Nostrify</a> is a TypeScript framework for Nostr development used by MKStack. It handles the low-level protocol work — event signing, relay WebSocket connections, subscriptions, NIP implementations — so you don't have to.
-      </p>
-
-      <h3>Do I need to know how to code to build a Nostr app?</h3>
-      <p>
-        No. With <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, our AI-powered browser-based development environment, you can build Nostr apps by describing what you want in plain language. Shakespeare comes pre-configured with MKStack and handles the code generation and deployment for you. See <a href="/blog/build-without-coding">how to build a Nostr app without coding</a>.
-      </p>
+      <FAQSection
+        items={[
+          {
+            question: "Is Divine open source?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                Yes. Divine is fully open source. The web client is at <a href="https://github.com/divinevideo/divine-web" target="_blank" rel="noopener noreferrer">github.com/divinevideo/divine-web</a> and the native mobile app is at <a href="https://github.com/divinevideo/divine-mobile" target="_blank" rel="noopener noreferrer">github.com/divinevideo/divine-mobile</a>. Anyone can view the code, fork it, or contribute.
+              </p>
+            ),
+          },
+          {
+            question: "Where can I find Divine's source code?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                Divine's source code is hosted on GitHub at <a href="https://github.com/divinevideo" target="_blank" rel="noopener noreferrer">github.com/divinevideo</a>. The main repositories are <strong>divine-web</strong> (the web client built on MKStack) and <strong>divine-mobile</strong> (the native iOS and Android app built with Flutter).
+              </p>
+            ),
+          },
+          {
+            question: "What is MKStack?",
+            answer: (
+              <p>
+                <a href="https://soapbox.pub/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a> is Soapbox's open source framework for building Nostr applications. It provides a production-ready template with React 18, TypeScript, TailwindCSS, ShadCN UI, Vite, and Nostrify for Nostr protocol integration — so developers can build Nostr apps in weeks instead of months.
+              </p>
+            ),
+          },
+          {
+            question: "Can I fork Divine and run my own version?",
+            answer: (
+              <p>
+                Yes. Because Divine is open source and built on the permissionless Nostr protocol, anyone can fork the codebase and run their own version — with different relays, different features, or a different design. Content published from any Divine fork remains interoperable with the original Divine community via Nostr.
+              </p>
+            ),
+          },
+          {
+            question: "What is Nostrify?",
+            answer: (
+              <p>
+                <a href="https://nostrify.dev" target="_blank" rel="noopener noreferrer">Nostrify</a> is a TypeScript framework for Nostr development used by MKStack. It handles the low-level protocol work — event signing, relay WebSocket connections, subscriptions, NIP implementations — so you don't have to.
+              </p>
+            ),
+          },
+          {
+            question: "Do I need to know how to code to build a Nostr app?",
+            answer: (
+              <p>
+                No. With <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, our AI-powered browser-based development environment, you can build Nostr apps by describing what you want in plain language. Shakespeare comes pre-configured with MKStack and handles the code generation and deployment for you. See <a href="/blog/build-without-coding">how to build a Nostr app without coding</a>.
+              </p>
+            ),
+          },
+        ]}
+      />
 
       <h2>Join the Movement</h2>
 

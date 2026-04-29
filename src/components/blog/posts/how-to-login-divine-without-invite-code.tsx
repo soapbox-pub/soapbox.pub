@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, Key, Shield, ExternalLink, Zap, Download } from 'lucide-react';
 import type { BlogPostMeta } from '@/lib/blog/types';
+import { FAQSection } from '@/components/blog/FAQSection';
 
 export const meta: BlogPostMeta = {
   "slug": "how-to-login-divine-without-invite-code",
@@ -292,83 +293,128 @@ export default function HowToLoginDivineWithoutInviteCode() {
 
       <hr className="my-12 border-gray-200" />
 
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>What is Nostr and how does it relate to Divine?</h3>
-      <p>
-        <strong>Divine is built on Nostr, a decentralized social protocol.</strong> That means:
-      </p>
-      <ul>
-        <li><strong>One account, every app.</strong> The account you make on Ditto works on Divine — and on <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and dozens more.</li>
-        <li><strong>No phone number or email required.</strong> You sign up with a username and get a cryptographic key pair.</li>
-        <li><strong>You own your identity.</strong> No company can lock you out or delete your account.</li>
-        <li><strong>No invite codes, ever.</strong> Nostr is permissionless — the invite code is a Divine-specific launch gate, and Nostr login bypasses it.</li>
-      </ul>
-
-      <h3>What is Ditto?</h3>
-      <p>
-        <strong><a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a> is a free, open-source Nostr client built by Soapbox.</strong> It runs in any browser at <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a>, and is also available as a native app for iOS and Android. Because Ditto is built on Nostr, the account you create on Ditto works on Divine, Damus, Primal, Amethyst, and every other Nostr app — one identity, every app. <a href="/ditto">Learn more about Ditto</a>.
-      </p>
-
-      <h3>Do I need an invite code to use Divine?</h3>
-      <p>
-        No. Divine's <em>sign-up</em> flow requires an invite code, but signing in with an existing Nostr account does not. Create a Nostr account anywhere (we recommend Ditto), then log in to Divine with your nsec — that's it.
-      </p>
-
-      <h3>How do I skip the Divine waitlist or invite code?</h3>
-      <p>
-        You don't need to wait for an invite. Create a free Nostr account on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, save your nsec, then tap <strong>Sign in with a different account</strong> in the Divine app and import your Nostr key. You're in — no invite code, no waitlist.
-      </p>
-
-      <h3>What is Divine?</h3>
-      <p>
-        <a href="https://divine.video" target="_blank" rel="noopener noreferrer">Divine</a> is a short-form video app built on the decentralized Nostr protocol. It's often described as a <strong>spiritual successor to Vine</strong>, letting anyone post, watch, and discover looping videos — with an account that works across the entire Nostr ecosystem.
-      </p>
-
-      <h3>Is Divine like Vine?</h3>
-      <p>
-        Yes. Divine is a short-form looping-video app widely called the spiritual successor to Vine, but built on Nostr so your account and content aren't locked to a single company. Your profile, followers, and videos travel with you across any Nostr app.
-      </p>
-
-      <h3>How do I get a Divine invite code?</h3>
-      <p>
-        Two options: either get a code from an existing Divine user, or use your Nostr account to sign in (as shown above). Logging in with Nostr is faster than waiting for an invite, and it gives you a portable account you can take to other apps. <strong>This isn't a workaround — it's a feature of the decentralized Nostr protocol Divine is built on.</strong>
-      </p>
-
-      <h3>Can I use Divine on iPhone and Android?</h3>
-      <p>
-        Yes. Divine is available on both the Apple App Store (iOS) and Google Play (Android). You can also find both download links at <a href="https://divine.video" target="_blank" rel="noopener noreferrer">divine.video</a>.
-      </p>
-
-      <h3>Is Divine free?</h3>
-      <p>
-        Yes. Divine is a free app available in the Apple App Store and Google Play.
-      </p>
-
-      <h3>What is an nsec?</h3>
-      <p>
-        An nsec is your Nostr private key — the credential that proves you own your Nostr account. It looks like a long string starting with <code>nsec1…</code>. Treat it like a master password.
-      </p>
-
-      <h3>Is it safe to paste my nsec into Divine?</h3>
-      <p>
-        Divine is built by our partners at <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer">And Other Stuff</a> and is designed around open Nostr standards. As a general rule, you should only paste your nsec into apps you trust. For extra safety, you can also use a remote signer app like <a href="https://nsec.app" target="_blank" rel="noopener noreferrer">nsec.app</a> or <a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer">Amber</a> instead of pasting your key directly.
-      </p>
-
-      <h3>Can I use my Divine account on other apps?</h3>
-      <p>
-        Yes — that's exactly the point of Nostr. The same account works on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and a bunch more. Your followers and profile follow you everywhere.
-      </p>
-
-      <h3>What happens to my Ditto profile when I log in to Divine?</h3>
-      <p>
-        Nothing bad. Your profile, username, posts, and follower list come with you automatically — because they're not stored on Ditto. They're stored on the Nostr network, and Divine is just a different way to view the same data.
-      </p>
-
-      <h3>Where can I watch divines without downloading Divine?</h3>
-      <p>
-        At <a href="https://ditto.pub/vines" target="_blank" rel="noopener noreferrer">ditto.pub/vines</a>, right in your browser. Every public divine posted on Nostr shows up in that feed, and you can comment on them with the Ditto account you created above.
-      </p>
+      <FAQSection
+        items={[
+          {
+            question: "What is Nostr and how does it relate to Divine?",
+            defaultOpen: true,
+            answer: (
+              <>
+                <p><strong>Divine is built on Nostr, a decentralized social protocol.</strong> That means:</p>
+                <ul>
+                  <li><strong>One account, every app.</strong> The account you make on Ditto works on Divine — and on <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and dozens more.</li>
+                  <li><strong>No phone number or email required.</strong> You sign up with a username and get a cryptographic key pair.</li>
+                  <li><strong>You own your identity.</strong> No company can lock you out or delete your account.</li>
+                  <li><strong>No invite codes, ever.</strong> Nostr is permissionless — the invite code is a Divine-specific launch gate, and Nostr login bypasses it.</li>
+                </ul>
+              </>
+            ),
+          },
+          {
+            question: "What is Ditto?",
+            answer: (
+              <p>
+                <strong><a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a> is a free, open-source Nostr client built by Soapbox.</strong> It runs in any browser at <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a>, and is also available as a native app for iOS and Android. Because Ditto is built on Nostr, the account you create on Ditto works on Divine, Damus, Primal, Amethyst, and every other Nostr app — one identity, every app. <a href="/ditto">Learn more about Ditto</a>.
+              </p>
+            ),
+          },
+          {
+            question: "Do I need an invite code to use Divine?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                No. Divine's <em>sign-up</em> flow requires an invite code, but signing in with an existing Nostr account does not. Create a Nostr account anywhere (we recommend Ditto), then log in to Divine with your nsec — that's it.
+              </p>
+            ),
+          },
+          {
+            question: "How do I skip the Divine waitlist or invite code?",
+            answer: (
+              <p>
+                You don't need to wait for an invite. Create a free Nostr account on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, save your nsec, then tap <strong>Sign in with a different account</strong> in the Divine app and import your Nostr key. You're in — no invite code, no waitlist.
+              </p>
+            ),
+          },
+          {
+            question: "What is Divine?",
+            answer: (
+              <p>
+                <a href="https://divine.video" target="_blank" rel="noopener noreferrer">Divine</a> is a short-form video app built on the decentralized Nostr protocol. It's often described as a <strong>spiritual successor to Vine</strong>, letting anyone post, watch, and discover looping videos — with an account that works across the entire Nostr ecosystem.
+              </p>
+            ),
+          },
+          {
+            question: "Is Divine like Vine?",
+            answer: (
+              <p>
+                Yes. Divine is a short-form looping-video app widely called the spiritual successor to Vine, but built on Nostr so your account and content aren't locked to a single company. Your profile, followers, and videos travel with you across any Nostr app.
+              </p>
+            ),
+          },
+          {
+            question: "How do I get a Divine invite code?",
+            answer: (
+              <p>
+                Two options: either get a code from an existing Divine user, or use your Nostr account to sign in (as shown above). Logging in with Nostr is faster than waiting for an invite, and it gives you a portable account you can take to other apps. <strong>This isn't a workaround — it's a feature of the decentralized Nostr protocol Divine is built on.</strong>
+              </p>
+            ),
+          },
+          {
+            question: "Can I use Divine on iPhone and Android?",
+            answer: (
+              <p>
+                Yes. Divine is available on both the Apple App Store (iOS) and Google Play (Android). You can also find both download links at <a href="https://divine.video" target="_blank" rel="noopener noreferrer">divine.video</a>.
+              </p>
+            ),
+          },
+          {
+            question: "Is Divine free?",
+            answer: (
+              <p>Yes. Divine is a free app available in the Apple App Store and Google Play.</p>
+            ),
+          },
+          {
+            question: "What is an nsec?",
+            answer: (
+              <p>
+                An nsec is your Nostr private key — the credential that proves you own your Nostr account. It looks like a long string starting with <code>nsec1…</code>. Treat it like a master password.
+              </p>
+            ),
+          },
+          {
+            question: "Is it safe to paste my nsec into Divine?",
+            answer: (
+              <p>
+                Divine is built by our partners at <a href="https://andotherstuff.org/" target="_blank" rel="noopener noreferrer">And Other Stuff</a> and is designed around open Nostr standards. As a general rule, you should only paste your nsec into apps you trust. For extra safety, you can also use a remote signer app like <a href="https://nsec.app" target="_blank" rel="noopener noreferrer">nsec.app</a> or <a href="https://github.com/greenart7c3/Amber" target="_blank" rel="noopener noreferrer">Amber</a> instead of pasting your key directly.
+              </p>
+            ),
+          },
+          {
+            question: "Can I use my Divine account on other apps?",
+            answer: (
+              <p>
+                Yes — that's exactly the point of Nostr. The same account works on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and a bunch more. Your followers and profile follow you everywhere.
+              </p>
+            ),
+          },
+          {
+            question: "What happens to my Ditto profile when I log in to Divine?",
+            answer: (
+              <p>
+                Nothing bad. Your profile, username, posts, and follower list come with you automatically — because they're not stored on Ditto. They're stored on the Nostr network, and Divine is just a different way to view the same data.
+              </p>
+            ),
+          },
+          {
+            question: "Where can I watch divines without downloading Divine?",
+            answer: (
+              <p>
+                At <a href="https://ditto.pub/vines" target="_blank" rel="noopener noreferrer">ditto.pub/vines</a>, right in your browser. Every public divine posted on Nostr shows up in that feed, and you can comment on them with the Ditto account you created above.
+              </p>
+            ),
+          },
+        ]}
+      />
 
       <div className="not-prose my-16">
         <div className="bg-gradient-to-r from-teal-600 to-blue-600 rounded-3xl p-12 text-white text-center">

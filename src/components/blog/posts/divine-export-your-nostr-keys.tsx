@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, Shield, Smartphone, Key, ExternalLink } from 'lucide-react';
 import type { BlogPostMeta } from '@/lib/blog/types';
+import { FAQSection } from '@/components/blog/FAQSection';
 
 export const meta: BlogPostMeta = {
   "slug": "divine-export-your-nostr-keys",
@@ -329,42 +330,68 @@ export default function DivineExportYourNostrKeys() {
 
       <hr className="my-12 border-gray-200" />
 
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Where do I find my private key in Divine?</h3>
-      <p>
-        Open the Divine app, go to <strong>Settings</strong>, then tap <strong>Key Management</strong> under the Profile section. In the Nostr Keys screen, you'll see a <strong>Backup Your Key</strong> section with a <strong>Copy My Private Key (nsec)</strong> button.
-      </p>
-
-      <h3>What is an nsec?</h3>
-      <p>
-        An nsec is your Nostr private key — the credential that proves you own your Nostr account. It looks like a long string starting with <code>nsec1…</code>. Treat it like a master password: anyone who has it can post as you.
-      </p>
-
-      <h3>Can I use my Divine key on other Nostr apps?</h3>
-      <p>
-        Yes. Your Divine nsec works on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, <a href="https://nostrudel.ninja" target="_blank" rel="noopener noreferrer">noStrudel</a>, and dozens of other Nostr apps. Your profile, followers, and posts travel with you.
-      </p>
-
-      <h3>What happens if I lose my nsec?</h3>
-      <p>
-        If you lose your private key and haven't backed it up, your account is permanently lost. There is no password reset, no customer support, no account recovery. <strong>Back up your nsec immediately after exporting it.</strong>
-      </p>
-
-      <h3>How should I store my nsec securely?</h3>
-      <p>
-        Save your nsec in an encrypted password manager like 1Password, Bitwarden, or Dashlane. Keep a second backup written on paper in a fireproof safe. Never store it in plain-text notes, cloud documents, screenshots, or messaging apps.
-      </p>
-
-      <h3>Can I share my nsec with Divine support?</h3>
-      <p>
-        <strong>No.</strong> No legitimate support team will ever ask for your nsec. Anyone with your nsec controls your account completely. Divine support never needs your private key to help you.
-      </p>
-
-      <h3>What if my nsec is compromised?</h3>
-      <p>
-        If someone else has your nsec, your account is compromised permanently — Nostr has no way to revoke or rotate keys. Create a new Nostr account with a new key, announce from the new account that your old account was compromised, and rebuild your following list.
-      </p>
+      <FAQSection
+        items={[
+          {
+            question: "Where do I find my private key in Divine?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                Open the Divine app, go to <strong>Settings</strong>, then tap <strong>Key Management</strong> under the Profile section. In the Nostr Keys screen, you'll see a <strong>Backup Your Key</strong> section with a <strong>Copy My Private Key (nsec)</strong> button.
+              </p>
+            ),
+          },
+          {
+            question: "What is an nsec?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                An nsec is your Nostr private key — the credential that proves you own your Nostr account. It looks like a long string starting with <code>nsec1…</code>. Treat it like a master password: anyone who has it can post as you.
+              </p>
+            ),
+          },
+          {
+            question: "Can I use my Divine key on other Nostr apps?",
+            answer: (
+              <p>
+                Yes. Your Divine nsec works on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, <a href="https://nostrudel.ninja" target="_blank" rel="noopener noreferrer">noStrudel</a>, and dozens of other Nostr apps. Your profile, followers, and posts travel with you.
+              </p>
+            ),
+          },
+          {
+            question: "What happens if I lose my nsec?",
+            answer: (
+              <p>
+                If you lose your private key and haven't backed it up, your account is permanently lost. There is no password reset, no customer support, no account recovery. <strong>Back up your nsec immediately after exporting it.</strong>
+              </p>
+            ),
+          },
+          {
+            question: "How should I store my nsec securely?",
+            answer: (
+              <p>
+                Save your nsec in an encrypted password manager like 1Password, Bitwarden, or Dashlane. Keep a second backup written on paper in a fireproof safe. Never store it in plain-text notes, cloud documents, screenshots, or messaging apps.
+              </p>
+            ),
+          },
+          {
+            question: "Can I share my nsec with Divine support?",
+            answer: (
+              <p>
+                <strong>No.</strong> No legitimate support team will ever ask for your nsec. Anyone with your nsec controls your account completely. Divine support never needs your private key to help you.
+              </p>
+            ),
+          },
+          {
+            question: "What if my nsec is compromised?",
+            answer: (
+              <p>
+                If someone else has your nsec, your account is compromised permanently — Nostr has no way to revoke or rotate keys. Create a new Nostr account with a new key, announce from the new account that your old account was compromised, and rebuild your following list.
+              </p>
+            ),
+          },
+        ]}
+      />
 
       <h2>Additional Resources</h2>
 

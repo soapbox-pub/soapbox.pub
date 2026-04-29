@@ -1,5 +1,6 @@
 import React from 'react';
 import type { BlogPostMeta } from '@/lib/blog/types';
+import { FAQSection } from '@/components/blog/FAQSection';
 
 export const meta: BlogPostMeta = {
   "slug": "what-is-nostr-divine",
@@ -257,47 +258,76 @@ export default function WhatIsNostrDivine() {
 
       <hr className="my-12 border-gray-200" />
 
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>What is Nostr in simple terms?</h3>
-      <p>
-        Nostr (Notes and Other Stuff Transmitted by Relays) is an open, decentralized social protocol. Instead of a single company owning your account, you own a cryptographic key pair that works across every Nostr app — no phone number, no email, no central server.
-      </p>
-
-      <h3>Is Divine built on Nostr?</h3>
-      <p>
-        Yes. <a href="https://divine.video" target="_blank" rel="noopener noreferrer">Divine</a>, the short-form video app often called the spiritual successor to Vine, is built entirely on the Nostr protocol. Your videos, profile, followers, and engagement live on Nostr relays, not Divine's private servers.
-      </p>
-
-      <h3>How is Nostr different from Twitter or TikTok?</h3>
-      <p>
-        Twitter and TikTok are centralized — one company controls the servers, your data, and your account, and can ban you at any time. Nostr is decentralized: you own your identity via cryptographic keys, your content lives on a network of independent relays, and no company can lock you out.
-      </p>
-
-      <h3>What is an npub?</h3>
-      <p>
-        An npub is your Nostr public key — the identifier people use to find and follow you. It always starts with <code>npub1</code>. Share it freely; it's the equivalent of a username.
-      </p>
-
-      <h3>What is an nsec?</h3>
-      <p>
-        An nsec is your Nostr private key — the credential that proves you own your account. It always starts with <code>nsec1</code>. Never share it; anyone who has your nsec can post as you, read your DMs, and impersonate you.
-      </p>
-
-      <h3>Can I use my Divine account on other Nostr apps?</h3>
-      <p>
-        Yes — that's the whole point. The same key works on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and dozens of other Nostr clients. Your profile, followers, and posts follow you everywhere.
-      </p>
-
-      <h3>What are Nostr relays?</h3>
-      <p>
-        Relays are servers that store and distribute Nostr events (posts, videos, likes). Anyone can run a relay, and users can connect to as many as they like. Divine uses <code>relay.divine.video</code> as its primary video-optimized relay, but your content can live on any relay you choose.
-      </p>
-
-      <h3>Is Nostr free to use?</h3>
-      <p>
-        Yes. Creating a Nostr account is free, and most relays are free to read and write. Some paid relays offer premium features (spam filtering, higher storage limits), but you never need them to use Nostr.
-      </p>
+      <FAQSection
+        items={[
+          {
+            question: "What is Nostr in simple terms?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                Nostr (Notes and Other Stuff Transmitted by Relays) is an open, decentralized social protocol. Instead of a single company owning your account, you own a cryptographic key pair that works across every Nostr app — no phone number, no email, no central server.
+              </p>
+            ),
+          },
+          {
+            question: "Is Divine built on Nostr?",
+            defaultOpen: true,
+            answer: (
+              <p>
+                Yes. <a href="https://divine.video" target="_blank" rel="noopener noreferrer">Divine</a>, the short-form video app often called the spiritual successor to Vine, is built entirely on the Nostr protocol. Your videos, profile, followers, and engagement live on Nostr relays, not Divine's private servers.
+              </p>
+            ),
+          },
+          {
+            question: "How is Nostr different from Twitter or TikTok?",
+            answer: (
+              <p>
+                Twitter and TikTok are centralized — one company controls the servers, your data, and your account, and can ban you at any time. Nostr is decentralized: you own your identity via cryptographic keys, your content lives on a network of independent relays, and no company can lock you out.
+              </p>
+            ),
+          },
+          {
+            question: "What is an npub?",
+            answer: (
+              <p>
+                An npub is your Nostr public key — the identifier people use to find and follow you. It always starts with <code>npub1</code>. Share it freely; it's the equivalent of a username.
+              </p>
+            ),
+          },
+          {
+            question: "What is an nsec?",
+            answer: (
+              <p>
+                An nsec is your Nostr private key — the credential that proves you own your account. It always starts with <code>nsec1</code>. Never share it; anyone who has your nsec can post as you, read your DMs, and impersonate you.
+              </p>
+            ),
+          },
+          {
+            question: "Can I use my Divine account on other Nostr apps?",
+            answer: (
+              <p>
+                Yes — that's the whole point. The same key works on <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a>, <a href="https://damus.io" target="_blank" rel="noopener noreferrer">Damus</a>, <a href="https://primal.net" target="_blank" rel="noopener noreferrer">Primal</a>, <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">Amethyst</a>, and dozens of other Nostr clients. Your profile, followers, and posts follow you everywhere.
+              </p>
+            ),
+          },
+          {
+            question: "What are Nostr relays?",
+            answer: (
+              <p>
+                Relays are servers that store and distribute Nostr events (posts, videos, likes). Anyone can run a relay, and users can connect to as many as they like. Divine uses <code>relay.divine.video</code> as its primary video-optimized relay, but your content can live on any relay you choose.
+              </p>
+            ),
+          },
+          {
+            question: "Is Nostr free to use?",
+            answer: (
+              <p>
+                Yes. Creating a Nostr account is free, and most relays are free to read and write. Some paid relays offer premium features (spam filtering, higher storage limits), but you never need them to use Nostr.
+              </p>
+            ),
+          },
+        ]}
+      />
 
       <h2>Learn More About Nostr</h2>
 
