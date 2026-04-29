@@ -48,6 +48,7 @@ export const meta: BlogPostMeta = {
     { "question": "Is it safe to paste my nsec into Divine?", "answer": "Divine is built by our partners at And Other Stuff and is designed around open Nostr standards. As a general rule, you should only paste your nsec into apps you trust. For extra safety, you can use a remote signer app like nsec.app or Amber instead of pasting your key directly." },
     { "question": "Can I use my Divine account on other apps?", "answer": "Yes — that's exactly the point of Nostr. The same account works on Ditto, Damus, Primal, Amethyst, and many more. Your followers and profile follow you everywhere." },
     { "question": "What is Nostr and how does it relate to Divine?", "answer": "Divine is built on Nostr, a decentralized social protocol. The account you make on Ditto works on Divine — and on Damus, Primal, Amethyst, and dozens more. No phone number, no email, no invite codes. You own your identity." },
+    { "question": "What is Ditto?", "answer": "Ditto is a free, open-source Nostr client built by Soapbox at ditto.pub. It runs in any browser and is also available as a native app for iOS and Android. Because Ditto is built on Nostr, the account you create on Ditto works on Divine, Damus, Primal, Amethyst, and every other Nostr app — one identity, every app. Learn more at soapbox.pub/ditto." },
     { "question": "What happens to my Ditto profile when I log in to Divine?", "answer": "Nothing bad. Your profile, username, posts, and follower list come with you automatically — they aren't stored on Ditto. They live on the Nostr network, and Divine is just a different way to view the same data." },
     { "question": "Where can I watch divines without downloading Divine?", "answer": "At ditto.pub/vines, right in your browser. Every public divine posted on Nostr shows up in that feed, and you can comment using the Ditto account you created above." }
   ],
@@ -303,6 +304,11 @@ export default function HowToLoginDivineWithoutInviteCode() {
         <li><strong>You own your identity.</strong> No company can lock you out or delete your account.</li>
         <li><strong>No invite codes, ever.</strong> Nostr is permissionless — the invite code is a Divine-specific launch gate, and Nostr login bypasses it.</li>
       </ul>
+
+      <h3>What is Ditto?</h3>
+      <p>
+        <strong><a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">Ditto</a> is a free, open-source Nostr client built by Soapbox.</strong> It runs in any browser at <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">ditto.pub</a>, and is also available as a native app for iOS and Android. Because Ditto is built on Nostr, the account you create on Ditto works on Divine, Damus, Primal, Amethyst, and every other Nostr app — one identity, every app. <a href="/ditto">Learn more about Ditto</a>.
+      </p>
 
       <h3>Do I need an invite code to use Divine?</h3>
       <p>
