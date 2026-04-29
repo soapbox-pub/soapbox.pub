@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/mkstack_tutorial/mkstack-divine.png"
   },
-  "featured": true,
+  "featured": false,
   "tags": [
     "mkstack",
     "divine",
