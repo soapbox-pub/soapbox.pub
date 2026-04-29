@@ -14,6 +14,11 @@ export interface SEOData {
   author?: string;
   canonicalUrl?: string;
   structuredData?: Record<string, unknown>;
+  /**
+   * Additional JSON-LD blocks beyond the primary `structuredData`.
+   * Used to emit FAQPage / HowTo schemas alongside the main BlogPosting schema.
+   */
+  additionalStructuredData?: Record<string, unknown>[];
 }
 
 const defaultSEO: SEOData = {
@@ -69,13 +74,33 @@ function updateStructuredData(data: Record<string, unknown>) {
   if (existingScript) {
     existingScript.remove();
   }
-  
+
   // Create new structured data script
   const script = document.createElement('script');
   script.id = 'structured-data';
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify(data, null, 2);
   document.head.appendChild(script);
+}
+
+/**
+ * Emit an array of additional JSON-LD blocks (e.g., FAQPage, HowTo) with
+ * unique `id` attributes so they can be cleaned up on route change.
+ */
+function updateAdditionalStructuredData(blocks: Record<string, unknown>[]) {
+  // Remove any previously-injected additional blocks
+  document
+    .querySelectorAll('script[data-seo-extra="true"]')
+    .forEach((node) => node.remove());
+
+  blocks.forEach((block, i) => {
+    const script = document.createElement('script');
+    script.setAttribute('data-seo-extra', 'true');
+    script.id = `structured-data-extra-${i}`;
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(block, null, 2);
+    document.head.appendChild(script);
+  });
 }
 
 function getFullUrl(path: string): string {
@@ -122,7 +147,14 @@ export function useSEO(seoData: SEOData = {}) {
       updateMetaTag('image', fullImageUrl); // General image meta tag
       updateMetaTag('og:image:width', '1200');
       updateMetaTag('og:image:height', '630');
-      updateMetaTag('og:image:type', 'image/jpeg');
+      // Infer image MIME type from extension (png, jpg, jpeg, webp, gif)
+      const extMatch = /\.(png|jpe?g|webp|gif)(\?|$)/i.exec(fullImageUrl);
+      const ext = extMatch?.[1].toLowerCase();
+      const mime = ext === 'png' ? 'image/png'
+        : ext === 'webp' ? 'image/webp'
+        : ext === 'gif' ? 'image/gif'
+        : 'image/jpeg';
+      updateMetaTag('og:image:type', mime);
     }
     if (currentUrl) {
       updateMetaTag('og:url', currentUrl);
@@ -204,7 +236,17 @@ export function useSEO(seoData: SEOData = {}) {
       };
       updateStructuredData(defaultStructuredData);
     }
-    
+
+    // Update additional JSON-LD blocks (FAQPage, HowTo, etc.)
+    if (finalSEO.additionalStructuredData && finalSEO.additionalStructuredData.length > 0) {
+      updateAdditionalStructuredData(finalSEO.additionalStructuredData);
+    } else {
+      // Clean up any stale extras from a previous page
+      document
+        .querySelectorAll('script[data-seo-extra="true"]')
+        .forEach((node) => node.remove());
+    }
+
   }, [seoData]);
 }
 

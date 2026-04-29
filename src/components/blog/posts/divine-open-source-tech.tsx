@@ -3,24 +3,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Code, Zap, Globe, GitBranch } from 'lucide-react';
-
-export interface BlogPostMeta {
-  slug: string;
-  title: string;
-  excerpt: string;
-  coverImage: string;
-  date: string;
-  author: { name?: string; picture?: string; };
-  ogImage: { url?: string; };
-  tags?: string[];
-}
+import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   "slug": "divine-open-source-tech",
-  "title": "The Open Source Technology Behind diVine",
-  "excerpt": "How MKStack and Shakespeare enable rapid development of production-ready Nostr applications like diVine",
+  "title": "The Open Source Technology Behind Divine (MKStack + Nostr)",
+  "excerpt": "Divine, the Nostr-powered short-form video app, is built with MKStack — Soapbox's open source framework. Here's the stack that made it possible.",
   "coverImage": "/assets/blog/mkstack_tutorial/mkstack-divine.png",
-  "date": "2025-11-22",
+  "date": "2026-03-25",
   "author": {
     "name": "M. K. Fain",
     "picture": "/assets/avatars/mk.jpg"
@@ -28,7 +18,33 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/mkstack_tutorial/mkstack-divine.png"
   },
-  "tags": ["mkstack", "divine", "open-source", "shakespeare", "development"]
+  "featured": true,
+  "tags": [
+    "mkstack",
+    "divine",
+    "divine app",
+    "open source",
+    "shakespeare",
+    "development",
+    "nostr",
+    "nostrify",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "fork divine",
+    "build nostr apps",
+    "decentralized video",
+    "how to build on nostr"
+  ],
+  "keywords": "divine open source, how is divine built, divine source code, fork divine, divine github, mkstack, build nostr apps, nostr development framework, divine tech stack, how to build a nostr video app, divine react typescript, open source video app, decentralized video platform, shakespeare ai development, divine mkstack",
+  "faq": [
+    { "question": "Is Divine open source?", "answer": "Yes. Divine is fully open source. The web client is at github.com/divinevideo/divine-web and the native mobile app is at github.com/divinevideo/divine-mobile. Anyone can view the code, fork it, or contribute." },
+    { "question": "Where can I find Divine's source code?", "answer": "Divine's source code is hosted on GitHub at github.com/divinevideo. The main repositories are divine-web (the web client built on MKStack) and divine-mobile (the native iOS and Android app built with Flutter)." },
+    { "question": "What is MKStack?", "answer": "MKStack is Soapbox's open source framework for building Nostr applications. It provides a production-ready template with React 18, TypeScript, TailwindCSS, ShadCN UI, Vite, and Nostrify for Nostr protocol integration — so developers can build Nostr apps in weeks instead of months." },
+    { "question": "Can I fork Divine and run my own version?", "answer": "Yes. Because Divine is open source and built on the permissionless Nostr protocol, anyone can fork the codebase and run their own version — with different relays, different features, or a different design. Content published from any Divine fork remains interoperable with the original Divine community via Nostr." },
+    { "question": "What is Nostrify?", "answer": "Nostrify is a TypeScript framework for Nostr development used by MKStack. It handles the low-level protocol work — event signing, relay WebSocket connections, subscriptions, NIP implementations — so you don't have to." },
+    { "question": "Do I need to know how to code to build a Nostr app?", "answer": "No. With Shakespeare, our AI-powered browser-based development environment, you can build Nostr apps by describing what you want in plain language. Shakespeare comes pre-configured with MKStack and handles the code generation and deployment for you." }
+  ]
 };
 
 export default function DivineOpenSourceTech() {
@@ -37,7 +53,7 @@ export default function DivineOpenSourceTech() {
       <div className="not-prose mb-12">
         <div className="bg-gradient-to-r from-violet-600 to-purple-800 rounded-3xl p-8 text-white">
           <h1 className="text-4xl font-bold text-white mb-4">
-            Building diVine with MKStack
+            Building Divine with MKStack
           </h1>
           <p className="text-xl text-violet-100 max-w-3xl">
             How Soapbox's open source technology stack powers a modern, decentralized video platform
@@ -45,14 +61,18 @@ export default function DivineOpenSourceTech() {
         </div>
       </div>
 
+      <p>
+        <strong><a href="https://divine.video" target="_blank" rel="noopener noreferrer">Divine</a>, the short-form video app widely described as a spiritual successor to Vine, launches today on iOS and Android.</strong> Under the hood, Divine is built on <a href="https://soapbox.pub/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a> — Soapbox's open source framework for rapidly building Nostr applications. Divine is fully open source, so you can view the code, fork it, or build your own video platform on top of it.
+      </p>
+
       <h2>The Challenge: Building a Modern Video Platform</h2>
 
       <p>
-        Creating a short-form video app like diVine traditionally requires months of development, significant infrastructure investment, and ongoing maintenance. You need video storage, user authentication, real-time feeds, social features, and a responsive mobile-first interface—all while ensuring scalability and performance.
+        Creating a short-form video app like Divine traditionally requires months of development, significant infrastructure investment, and ongoing maintenance. You need video storage, user authentication, real-time feeds, social features, and a responsive mobile-first interface—all while ensuring scalability and performance.
       </p>
 
       <p>
-        <strong>What if you could build all of this in weeks instead of months?</strong> That's exactly what happened with diVine, thanks to MKStack—an open source framework designed specifically for building Nostr applications rapidly.
+        <strong>What if you could build all of this in weeks instead of months?</strong> That's exactly what happened with Divine, thanks to MKStack—an open source framework designed specifically for building Nostr applications rapidly.
       </p>
 
       <h2>What is MKStack?</h2>
@@ -62,7 +82,7 @@ export default function DivineOpenSourceTech() {
       </p>
 
       <p>
-        The entire diVine frontend is built with MKStack, demonstrating that this framework isn't just for simple projects—it's capable of powering real-world applications with thousands of users and demanding performance requirements.
+        The entire Divine frontend is built with MKStack, demonstrating that this framework isn't just for simple projects—it's capable of powering real-world applications with thousands of users and demanding performance requirements.
       </p>
 
       <div className="not-prose my-12">
@@ -140,10 +160,10 @@ export default function DivineOpenSourceTech() {
         </div>
       </div>
 
-      <h2>How diVine Uses MKStack</h2>
+      <h2>How Divine Uses MKStack</h2>
 
       <p>
-        diVine is a perfect example of what's possible with MKStack. The app handles:
+        Divine is a perfect example of what's possible with MKStack. The app handles:
       </p>
 
       <ul>
@@ -155,7 +175,7 @@ export default function DivineOpenSourceTech() {
       </ul>
 
       <p>
-        All of this was built on top of MKStack's foundation, allowing the diVine team to focus on video-specific features rather than reinventing authentication, relay management, or UI components.
+        All of this was built on top of MKStack's foundation, allowing the Divine team to focus on video-specific features rather than reinventing authentication, relay management, or UI components.
       </p>
 
       <h2>The Role of Nostrify</h2>
@@ -172,7 +192,7 @@ export default function DivineOpenSourceTech() {
       </ul>
 
       <p>
-        For diVine, this means reliable video event handling, fast feed loading, and seamless integration with the broader Nostr ecosystem—all without writing custom relay communication code.
+        For Divine, this means reliable video event handling, fast feed loading, and seamless integration with the broader Nostr ecosystem—all without writing custom relay communication code.
       </p>
 
       <h2>Shakespeare: Building with AI Assistance</h2>
@@ -184,7 +204,7 @@ export default function DivineOpenSourceTech() {
       <h3>How Shakespeare Works with MKStack</h3>
 
       <p>
-        Shakespeare comes pre-configured with MKStack templates, meaning you can start building Nostr apps like diVine through natural language conversations with an AI assistant. Simply describe what you want to build, and Shakespeare generates the code, sets up the infrastructure, and handles deployment.
+        Shakespeare comes pre-configured with MKStack templates, meaning you can start building Nostr apps like Divine through natural language conversations with an AI assistant. Simply describe what you want to build, and Shakespeare generates the code, sets up the infrastructure, and handles deployment.
       </p>
 
       <div className="not-prose my-12">
@@ -223,26 +243,26 @@ export default function DivineOpenSourceTech() {
         </Card>
       </div>
 
-      <h2>Edit diVine in Shakespeare</h2>
+      <h2>Edit Divine in Shakespeare</h2>
 
       <p>
-        Because diVine is built with MKStack and is fully open source, you can fork the project and start customizing it immediately. The entire codebase is available on GitLab, and you can import it directly into Shakespeare for AI-assisted development.
+        Because Divine is built with MKStack and is fully open source, you can fork the project and start customizing it immediately. The entire codebase is available on GitHub, and you can import it directly into Shakespeare for AI-assisted development.
       </p>
 
       <div className="not-prose my-12">
         <div className="bg-gray-900 rounded-lg p-6 text-white">
           <div className="flex items-center mb-4">
             <GitBranch className="w-5 h-5 mr-2 text-green-400" />
-            <span className="text-green-400 font-mono text-sm">Clone diVine</span>
+            <span className="text-green-400 font-mono text-sm">Clone Divine</span>
           </div>
           <div className="space-y-3">
             <p className="text-gray-300 text-sm mb-4">
-              Fork the diVine repository and customize it to build your own video platform:
+              Fork the Divine repository and customize it to build your own video platform:
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100" asChild>
                 <a
-                  href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgitlab.com%2Fdivine-video%2Fdivine-web.git"
+                  href="https://shakespeare.diy/clone?url=https%3A%2F%2Fgithub.com%2Fdivinevideo%2Fdivine-web.git"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -250,7 +270,7 @@ export default function DivineOpenSourceTech() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900" asChild>
-                <a href="https://gitlab.com/divine-video/divine-web" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/divinevideo/divine-web" target="_blank" rel="noopener noreferrer">
                   View Source Code
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
@@ -260,23 +280,38 @@ export default function DivineOpenSourceTech() {
         </div>
       </div>
 
-      <h3>What You Can Build on the diVine Codebase</h3>
+      <h3>What You Can Build on the Divine Codebase</h3>
 
       <ul>
-        <li><strong>Custom Video Platform:</strong> Fork diVine to create niche video communities (gaming clips, recipes, tutorials)</li>
+        <li><strong>Custom Video Platform:</strong> Fork Divine to create niche video communities (gaming clips, recipes, tutorials)</li>
         <li><strong>Different Content Types:</strong> Modify the video length constraints or add support for images, audio, or text</li>
         <li><strong>Specialized Features:</strong> Add custom moderation tools, monetization, or community features</li>
         <li><strong>Experimental UX:</strong> Test new interaction patterns, layouts, or discovery algorithms</li>
       </ul>
 
       <p>
-        Because it's built on Nostr, any content created in your fork can still interact with the original diVine community—or you can create a completely separate community on different relays.
+        Because it's built on Nostr, any content created in your fork can still interact with the original Divine community—or you can create a completely separate community on different relays.
+      </p>
+
+      <h2>Where to Find Divine's Source Code</h2>
+
+      <p>
+        Divine is fully open source and hosted on GitHub under the <a href="https://github.com/divinevideo" target="_blank" rel="noopener noreferrer">divinevideo</a> organization. There are two main repositories:
+      </p>
+
+      <ul>
+        <li><strong><a href="https://github.com/divinevideo/divine-web" target="_blank" rel="noopener noreferrer">divine-web</a></strong> — The web client, built with MKStack. This is the codebase you can fork and customize with Shakespeare.</li>
+        <li><strong><a href="https://github.com/divinevideo/divine-mobile" target="_blank" rel="noopener noreferrer">divine-mobile</a></strong> — The native iOS and Android app, built with Flutter. Where the official App Store / Google Play releases come from.</li>
+      </ul>
+
+      <p>
+        Both repos are public: you can open issues, submit pull requests, browse the release notes, and install pre-built APKs directly from the GitHub releases page. If you're not a coder, see <a href="/blog/build-without-coding">how to build a Nostr app without coding using Shakespeare</a>.
       </p>
 
       <h2>Real-World Production Use</h2>
 
       <p>
-        diVine isn't a demo or proof-of-concept—it's a production application serving real users with demanding requirements:
+        Divine isn't a demo or proof-of-concept — it's a production application, now live on iOS and Android and serving real users with demanding requirements:
       </p>
 
       <ul>
@@ -293,12 +328,12 @@ export default function DivineOpenSourceTech() {
       <h2>The MKStack Advantage</h2>
 
       <p>
-        Building diVine with MKStack provided several key advantages:
+        Building Divine with MKStack provided several key advantages:
       </p>
 
       <h3>Speed to Market</h3>
       <p>
-        Instead of spending months building authentication, relay management, and UI components from scratch, the diVine team could focus immediately on video-specific features. The core infrastructure was ready on day one.
+        Instead of spending months building authentication, relay management, and UI components from scratch, the Divine team could focus immediately on video-specific features. The core infrastructure was ready on day one.
       </p>
 
       <h3>Proven Architecture</h3>
@@ -313,7 +348,7 @@ export default function DivineOpenSourceTech() {
 
       <h3>Future-Proof</h3>
       <p>
-        As new Nostr Improvement Proposals (NIPs) are adopted, MKStack stays current with protocol updates. diVine automatically benefits from these improvements without major refactoring.
+        As new Nostr Improvement Proposals (NIPs) are adopted, MKStack stays current with protocol updates. Divine automatically benefits from these improvements without major refactoring.
       </p>
 
       <h2>Getting Started with MKStack</h2>
@@ -365,7 +400,7 @@ export default function DivineOpenSourceTech() {
       <h2>What's Next for MKStack?</h2>
 
       <p>
-        The success of diVine demonstrates the power of open source tools designed specifically for Nostr development. As the ecosystem grows, MKStack continues to evolve with:
+        The success of Divine demonstrates the power of open source tools designed specifically for Nostr development. As the ecosystem grows, MKStack continues to evolve with:
       </p>
 
       <ul>
@@ -375,10 +410,44 @@ export default function DivineOpenSourceTech() {
         <li><strong>Additional NIPs:</strong> Support for new protocol features as they're standardized</li>
       </ul>
 
+      <hr className="my-12 border-gray-200" />
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Is Divine open source?</h3>
+      <p>
+        Yes. Divine is fully open source. The web client is at <a href="https://github.com/divinevideo/divine-web" target="_blank" rel="noopener noreferrer">github.com/divinevideo/divine-web</a> and the native mobile app is at <a href="https://github.com/divinevideo/divine-mobile" target="_blank" rel="noopener noreferrer">github.com/divinevideo/divine-mobile</a>. Anyone can view the code, fork it, or contribute.
+      </p>
+
+      <h3>Where can I find Divine's source code?</h3>
+      <p>
+        Divine's source code is hosted on GitHub at <a href="https://github.com/divinevideo" target="_blank" rel="noopener noreferrer">github.com/divinevideo</a>. The main repositories are <strong>divine-web</strong> (the web client built on MKStack) and <strong>divine-mobile</strong> (the native iOS and Android app built with Flutter).
+      </p>
+
+      <h3>What is MKStack?</h3>
+      <p>
+        <a href="https://soapbox.pub/mkstack" target="_blank" rel="noopener noreferrer">MKStack</a> is Soapbox's open source framework for building Nostr applications. It provides a production-ready template with React 18, TypeScript, TailwindCSS, ShadCN UI, Vite, and Nostrify for Nostr protocol integration — so developers can build Nostr apps in weeks instead of months.
+      </p>
+
+      <h3>Can I fork Divine and run my own version?</h3>
+      <p>
+        Yes. Because Divine is open source and built on the permissionless Nostr protocol, anyone can fork the codebase and run their own version — with different relays, different features, or a different design. Content published from any Divine fork remains interoperable with the original Divine community via Nostr.
+      </p>
+
+      <h3>What is Nostrify?</h3>
+      <p>
+        <a href="https://nostrify.dev" target="_blank" rel="noopener noreferrer">Nostrify</a> is a TypeScript framework for Nostr development used by MKStack. It handles the low-level protocol work — event signing, relay WebSocket connections, subscriptions, NIP implementations — so you don't have to.
+      </p>
+
+      <h3>Do I need to know how to code to build a Nostr app?</h3>
+      <p>
+        No. With <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a>, our AI-powered browser-based development environment, you can build Nostr apps by describing what you want in plain language. Shakespeare comes pre-configured with MKStack and handles the code generation and deployment for you. See <a href="/blog/build-without-coding">how to build a Nostr app without coding</a>.
+      </p>
+
       <h2>Join the Movement</h2>
 
       <p>
-        diVine shows what's possible when modern web technology meets decentralized protocols. Whether you're building a video platform, social network, marketplace, or something entirely new—MKStack provides the foundation to make it happen quickly and reliably.
+        Divine shows what's possible when modern web technology meets decentralized protocols. Whether you're building a video platform, social network, marketplace, or something entirely new—MKStack provides the foundation to make it happen quickly and reliably.
       </p>
 
       <p>
@@ -393,7 +462,7 @@ export default function DivineOpenSourceTech() {
             Start Building Today
           </h2>
           <p className="text-xl text-violet-100 mb-8 max-w-3xl mx-auto">
-            Explore the diVine source code, learn from the MKStack tutorial, or start your own project with Shakespeare.
+            Explore the Divine source code, learn from the MKStack tutorial, or start your own project with Shakespeare.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -403,12 +472,12 @@ export default function DivineOpenSourceTech() {
               asChild
             >
               <a
-                href="https://gitlab.com/divine-video/divine-web"
+                href="https://github.com/divinevideo/divine-web"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Code className="w-5 h-5 mr-2" />
-                View diVine Source
+                View Divine Source
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
             </Button>
@@ -429,12 +498,14 @@ export default function DivineOpenSourceTech() {
       <h2>Additional Resources</h2>
 
       <ul>
+        <li><a href="/blog/how-to-login-divine-without-invite-code">How to Log In to Divine Without an Invite Code</a></li>
+        <li><a href="/blog/what-is-nostr-divine">What is Nostr? The Protocol Powering Divine</a></li>
         <li><a href="/blog/mkstack-tutorial">MKStack Tutorial: Vibe Coding for Everyone</a></li>
         <li><a href="/blog/announcing-shakespeare-act-2">Shakespeare Act 2: Build Freely</a></li>
         <li><a href="/blog/nostr101">Nostr 101: A Beginner's Guide</a></li>
         <li><a href="https://soapbox.pub/mkstack" target="_blank" rel="noopener noreferrer">MKStack Documentation</a></li>
         <li><a href="https://nostrify.dev" target="_blank" rel="noopener noreferrer">Nostrify Framework</a></li>
-        <li><a href="https://divine.video" target="_blank" rel="noopener noreferrer">Try diVine</a></li>
+        <li><a href="https://divine.video" target="_blank" rel="noopener noreferrer">Try Divine</a></li>
       </ul>
     </article>
   );

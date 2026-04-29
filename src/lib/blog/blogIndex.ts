@@ -92,6 +92,26 @@ import * as announcingshakespearedirect from '../../components/blog/posts/announ
 import * as zapping101 from '../../components/blog/posts/zapping-101';
 import * as dittoupdatesapril2026 from '../../components/blog/posts/ditto-updates-april-2026';
 import * as dittobitcoinvegas2026 from '../../components/blog/posts/ditto-bitcoin-vegas-2026';
+import * as howtologindivinewithoutinvitecode from '../../components/blog/posts/how-to-login-divine-without-invite-code';
+
+export interface BlogFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface BlogHowToStep {
+  name: string;
+  text: string;
+  url?: string;
+  image?: string;
+}
+
+export interface BlogHowTo {
+  name: string;
+  description?: string;
+  totalTime?: string;
+  steps: BlogHowToStep[];
+}
 
 export interface BlogPost {
   slug: string;
@@ -109,11 +129,18 @@ export interface BlogPost {
   featured?: boolean;
   tags?: string[];
   hidden?: boolean;
+  keywords?: string;
+  faq?: BlogFAQ[];
+  howTo?: BlogHowTo;
 }
 
 export const blogPosts: BlogPost[] = [
+  howtologindivinewithoutinvitecode.meta,
+  whatisnostrdivine.meta,
+  divineexportyournostrkeys.meta,
   dittobitcoinvegas2026.meta,
   dittoupdatesapril2026.meta,
+  divineopensourcetech.meta,
   zapping101.meta,
   announcingditto2.meta,
   announcingsheila.meta,
@@ -142,12 +169,9 @@ export const blogPosts: BlogPost[] = [
   shakespearemobiledevelopment.meta,
   shakespearenovember2025update.meta,
   announcingsoapboxsigner.meta,
-  divineexportyournostrkeys.meta,
   managingnostrkeys.meta,
   shakespeareworkshopguide.meta,
   shakespeareoriginstory.meta,
-  whatisnostrdivine.meta,
-  divineopensourcetech.meta,
   announcingshakespeareact2.meta,
   shakespeareeditingcode.meta,
   shakespearedeployingsharingprojects.meta,
@@ -210,6 +234,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'howtologindivinewithoutinvitecode':
+      return (await import('../../components/blog/posts/how-to-login-divine-without-invite-code')).default;
     case 'dittobitcoinvegas2026':
       return (await import('../../components/blog/posts/ditto-bitcoin-vegas-2026')).default;
     case 'dittoupdatesapril2026':

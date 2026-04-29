@@ -122,10 +122,60 @@ export function getReadingTime(content: string): number {
 export function extractSEOData(post: BlogPost) {
   const baseUrl = typeof window !== 'undefined' ? "https://soapbox.pub" : '';
 
+  // Build merged keyword string. Precedence:
+  // 1. Per-post `keywords` field (primary SEO keywords for this post)
+  // 2. Per-post `tags` (pipe-separated, folded in)
+  // 3. Site-wide defaults (appended as a safety net)
+  const sitewideDefaults = 'soapbox blog, decentralized social media, open source, nostr';
+  const tagKeywords = post.tags?.join(', ') ?? '';
+  const perPostKeywords = post.keywords ?? '';
+  const mergedKeywords = [perPostKeywords, tagKeywords, sitewideDefaults]
+    .filter(Boolean)
+    .join(', ');
+
+  const imageUrl = post.ogImage?.url || post.coverImage || '/og-image.png';
+  const fullImageUrl = baseUrl + imageUrl;
+
+  // Optional FAQPage JSON-LD — huge SERP rich-result win when present
+  const faqStructuredData = post.faq && post.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faq.map((entry) => ({
+      "@type": "Question",
+      "name": entry.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": entry.answer
+      }
+    }))
+  } : null;
+
+  // Optional HowTo JSON-LD — step-by-step SERP rich results
+  const howToStructuredData = post.howTo && post.howTo.steps.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": post.howTo.name,
+    ...(post.howTo.description && { "description": post.howTo.description }),
+    ...(post.howTo.totalTime && { "totalTime": post.howTo.totalTime }),
+    "image": fullImageUrl,
+    "step": post.howTo.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "name": step.name,
+      "text": step.text,
+      ...(step.url && { "url": step.url }),
+      ...(step.image && { "image": baseUrl + step.image })
+    }))
+  } : null;
+
+  const additionalStructuredData: Record<string, unknown>[] = [];
+  if (faqStructuredData) additionalStructuredData.push(faqStructuredData);
+  if (howToStructuredData) additionalStructuredData.push(howToStructuredData);
+
   return {
     title: `${post.title} - Soapbox Blog`,
     description: post.excerpt,
-    image: post.ogImage?.url || post.coverImage || '/og-image.png',
+    image: imageUrl,
     url: `${baseUrl}/blog/${post.slug}`,
     type: 'article' as const,
     author: post.author.name || 'Soapbox Team',
@@ -139,7 +189,7 @@ export function extractSEOData(post: BlogPost) {
       'open source',
       'nostr'
     ].flat(),
-    keywords: `${post.title}, ${post.author.name || 'soapbox team'}, soapbox blog, decentralized social media, open source, nostr`,
+    keywords: mergedKeywords,
     canonicalUrl: `${baseUrl}/blog/${post.slug}`,
     structuredData: {
       "@context": "https://schema.org",
@@ -148,7 +198,7 @@ export function extractSEOData(post: BlogPost) {
       "description": post.excerpt,
       "image": {
         "@type": "ImageObject",
-        "url": post.ogImage?.url || post.coverImage ? baseUrl + (post.ogImage?.url || post.coverImage) : baseUrl + '/og-image.png',
+        "url": fullImageUrl,
         "width": 1200,
         "height": 630
       },
@@ -180,8 +230,9 @@ export function extractSEOData(post: BlogPost) {
         "@id": baseUrl + `/blog/${post.slug}`
       },
       "articleSection": "Technology",
-      "keywords": `${post.title}, ${post.author.name || 'soapbox team'}, decentralized social media, open source, nostr`,
+      "keywords": mergedKeywords,
       "inLanguage": "en-US"
-    }
+    },
+    additionalStructuredData
   };
 }

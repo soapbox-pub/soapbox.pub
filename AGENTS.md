@@ -973,6 +973,99 @@ prerender({
 
 **Important:** Always add new blog posts at the top of the blog posts section in `vite.config.ts`, maintaining reverse chronological order (newest first). This keeps the configuration consistent with the blog index ordering.
 
+### SEO for Blog Posts (Required)
+
+**Every new or edited blog post must be optimized for SEO.** Search discoverability is a primary goal of the blog — assume the post will be found by people who don't already know about Soapbox, and write for their queries.
+
+**For every blog post, you MUST:**
+
+1. **Write an SEO-friendly title** (`title` in meta). Include the primary target keyword naturally. Keep under ~60 characters so Google doesn't truncate.
+
+2. **Write an SEO-friendly excerpt** (`excerpt` in meta, used as `meta description`). Keep **≤ 160 characters** so Google doesn't truncate in SERP. Include the primary keyword and a clear value proposition.
+
+3. **Populate the `keywords` field** on the post's `meta` object. This is a **comma-separated string** of target search phrases, ordered by importance. These feed both the `keywords` meta tag and the JSON-LD `keywords` field. Example:
+   ```ts
+   keywords: "divine without invite code, how to log in to divine, divine nostr login, divine invite code, divine app, nsec, how to use divine without invite, divine video app, vine successor"
+   ```
+   Before you write this field, **identify the top 5–15 realistic search queries** someone would type into Google to find this content, mixing:
+   - Head terms (e.g., `divine app`, `nostr`)
+   - Long-tail queries (e.g., `how to log in to divine without invite code`)
+   - Alternate phrasings (e.g., `skip divine invite`, `divine no invite`)
+   - Adjacent / "also asked" queries (e.g., `what is nsec`, `is divine free`)
+
+4. **Populate the `tags` array** with ~8–15 search-relevant tags. These become `article:tag` meta tags and feed the keyword merger. Prefer specific phrases over generic words (e.g., `"divine login"` over just `"login"`).
+
+5. **Use SEO-aware H2/H3 headings.** Each heading should ideally contain a keyword phrase people actually search. Examples:
+   - Good: `<h3>How to Log In to Divine With Nostr</h3>`
+   - Weak: `<h3>The Login Flow</h3>`
+
+6. **Write descriptive image `alt` text that includes relevant keywords.** Image alt attributes are an SEO signal *and* improve accessibility. Reference the app name and context, not just the UI element.
+   - Good: `alt="Divine app welcome screen — Sign in with a different account button to skip invite code"`
+   - Weak: `alt="login screen"`
+
+7. **Add an FAQ section** when the topic has natural Q&A (which is most tutorial/explainer posts), and populate the `faq` field on the post's meta. This emits `FAQPage` JSON-LD, which qualifies for Google's FAQ rich results in SERP — a large discoverability win. Each FAQ `answer` must be a **plain string** (no markup).
+   ```ts
+   faq: [
+     { question: "Do I need an invite code to use Divine?", answer: "No. Divine's sign-up flow requires an invite code, but signing in with an existing Nostr account does not." },
+     // ...
+   ]
+   ```
+   The FAQ content in the component's body should match (or closely paraphrase) the `faq` field — don't let them drift out of sync.
+
+8. **Add a HowTo schema** for step-by-step tutorials. Populate the `howTo` field on meta with 3–8 steps. This qualifies for Google's "How-to" rich results.
+   ```ts
+   howTo: {
+     name: "How to log in to Divine without an invite code",
+     totalTime: "PT5M",
+     steps: [
+       { name: "Create a free Nostr account on Ditto", text: "Go to ditto.pub and tap Sign up, then Generate my key." },
+       { name: "Download the Divine app", text: "Install Divine from the App Store or Google Play." },
+       { name: "Log in with your Nostr nsec", text: "Tap Sign in with a different account → Import Nostr key → paste your nsec." }
+     ]
+   }
+   ```
+
+9. **Link to related internal content** in a "Related Reading" section. Internal links help search engines understand topic clusters and boost rankings across the whole site.
+
+10. **Consider launch-day / recency signals.** When a post is tied to a launch or event, ensure the publication `date` is correct and that the title/excerpt don't imply stale content.
+
+11. **Regenerate the sitemap** after adding a post: `npm run generate-sitemap`. The sitemap is committed to `public/sitemap.xml` and is the canonical list of URLs submitted to Google Search Console.
+
+12. **The `BlogPostMeta` type** (in `src/lib/blog/types.ts`) formally supports: `keywords`, `tags`, `faq`, and `howTo` fields. All are optional, but `keywords`, `tags`, and at least one of `faq`/`howTo` should be populated on every substantive post.
+
+**A complete blog post `meta` example with all SEO fields:**
+
+```ts
+export const meta: BlogPostMeta = {
+  slug: "how-to-login-divine-without-invite-code",
+  title: "How to Log In to Divine Without an Invite Code (Using Nostr)",
+  excerpt: "Divine launches today. No invite code? Skip it: create a free Nostr account on Ditto, then log in to Divine with your nsec — no waitlist.",
+  coverImage: "/assets/blog/how-to-login-divine-without-invite-code/cover.png",
+  date: "2026-04-29",
+  author: { name: "M. K. Fain", picture: "/assets/avatars/mk.jpg" },
+  ogImage: { url: "/assets/blog/how-to-login-divine-without-invite-code/cover.png" },
+  featured: true,
+  tags: ["divine", "divine app", "divine login", "divine invite code", "nostr", "nsec", "ditto", "tutorial", "vine successor", "how to"],
+  keywords: "divine without invite code, how to log in to divine, divine nostr login, divine invite code, divine app, nsec, how to skip divine waitlist, divine video app, vine successor, divine app login",
+  faq: [
+    { question: "Do I need an invite code to use Divine?", answer: "No. Divine's sign-up flow requires an invite code, but signing in with an existing Nostr account does not." },
+    { question: "What is an nsec?", answer: "An nsec is your Nostr private key — the credential that proves you own your Nostr account." },
+  ],
+  howTo: {
+    name: "How to log in to Divine without an invite code",
+    description: "Log in to Divine by importing a Nostr key from Ditto, bypassing the invite-code requirement.",
+    totalTime: "PT5M",
+    steps: [
+      { name: "Create a free Nostr account on Ditto", text: "Go to ditto.pub and tap Sign up, then Generate my key." },
+      { name: "Download the Divine app", text: "Install Divine from the App Store or Google Play." },
+      { name: "Log in with your Nostr nsec", text: "On the Divine welcome screen, tap Sign in with a different account → Import Nostr key, then paste your nsec." }
+    ]
+  }
+};
+```
+
+**Don't create SEO fields with AI slop.** Research real search queries (or ask the user what queries they want to rank for) before filling in `keywords`, `faq`, and `howTo`. Made-up keywords waste the SEO slots.
+
 ## Development Practices
 
 - Uses React Query for data fetching and caching

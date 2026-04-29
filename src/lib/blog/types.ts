@@ -6,6 +6,28 @@ export interface BlogAuthor {
   picture?: string;
 }
 
+/** A single FAQ entry for FAQPage JSON-LD structured data. */
+export interface BlogFAQ {
+  question: string;
+  answer: string;
+}
+
+/** A single step for HowTo JSON-LD structured data. */
+export interface BlogHowToStep {
+  name: string;
+  text: string;
+  url?: string;
+  image?: string;
+}
+
+/** HowTo metadata for JSON-LD structured data. */
+export interface BlogHowTo {
+  name: string;
+  description?: string;
+  totalTime?: string; // ISO 8601 duration, e.g. "PT5M"
+  steps: BlogHowToStep[];
+}
+
 export interface BlogPostMeta {
   slug: string;
   title: string;
@@ -22,6 +44,21 @@ export interface BlogPostMeta {
   featured?: boolean;
   tags?: string[];
   hidden?: boolean;
+  /**
+   * SEO keywords for this post (comma-separated when used as a meta tag).
+   * Merged with site-wide defaults by `extractSEOData`.
+   */
+  keywords?: string;
+  /**
+   * FAQ entries. When present, an `FAQPage` JSON-LD block is emitted
+   * alongside the `BlogPosting` schema for rich SERP results.
+   */
+  faq?: BlogFAQ[];
+  /**
+   * HowTo steps. When present, a `HowTo` JSON-LD block is emitted for
+   * step-by-step SERP rich results.
+   */
+  howTo?: BlogHowTo;
 }
 
 export interface BlogPost extends BlogPostMeta {
