@@ -2,9 +2,9 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   slug: 'conference-recap-bitcoin-2026',
-  title: 'Bitcoin Conference Week 2026: A Breakthrough Week for Nostr, Freedom Tech, and Soapbox',
+  title: 'Soapbox at Bitcoin 2026: Nostr Became Infrastructure',
   excerpt:
-    'Five panels, a moderator slot, a headline NosVegas talk, and a week of meetings with builders, funders, and founders. Here is how Bitcoin Conference Week 2026 played out for Soapbox — and why Nostr finally became infrastructure, not a sidebar.',
+    'How Bitcoin Conference Week 2026 played out for Soapbox: five panels, NosVegas 2.0, V4V music payouts, and Nostr finally landing as infrastructure.',
   coverImage: '/assets/blog/conference-recap-bitcoin-2026/bitcoin-2026-hero.jpg',
   date: '2026-05-04',
   author: {
@@ -15,6 +15,8 @@ export const meta: BlogPostMeta = {
     url: '/assets/blog/conference-recap-bitcoin-2026/bitcoin-2026-hero.jpg',
   },
   tags: ['Bitcoin', 'Nostr', 'Soapbox', 'Ditto', 'Shakespeare', 'Agora', 'NosVegas', 'Bitcoin 2026'],
+  keywords:
+    'bitcoin conference 2026 recap, nosvegas 2026, nostr at bitcoin 2026, soapbox bitcoin vegas, value for value music, v4v music nostr, bitcoin nostr ai freedom tech, shakespeare ai builder nostr, agora venezuelan activists nostr, HRF freedom tech bitcoin 2026, protocol vs platform nostr, nostr git nip-34',
   featured: true,
 };
 
