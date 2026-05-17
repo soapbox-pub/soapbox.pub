@@ -211,9 +211,12 @@ export default function Ditto() {
                 className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 shrink-0 w-[70%] md:w-auto snap-center"
               >
                 <img
-                  src={`/assets/images/ditto/appstore/${i + 1}.png`}
+                  src={`/assets/images/ditto/appstore/${i + 1}.webp`}
                   alt={`Ditto screenshot ${i + 1}`}
                   className="w-full h-auto"
+                  width={1080}
+                  height={1920}
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -321,9 +324,11 @@ export default function Ditto() {
                 className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 shrink-0 w-[70%] md:w-auto snap-center"
               >
                 <img
-                  src={`/assets/images/ditto/appstore/${i + 5}.png`}
+                  src={`/assets/images/ditto/appstore/${i + 5}.webp`}
                   alt={`Ditto screenshot ${i + 5}`}
                   className="w-full h-auto"
+                  width={1080}
+                  height={1920}
                   loading="lazy"
                 />
               </div>
@@ -556,9 +561,12 @@ export default function Ditto() {
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
                 <img
-                  src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
+                  src="/assets/images/ditto/edit-ditto-in-shakespeare.webp"
                   alt="Editing Ditto themes in Shakespeare AI"
                   className="w-full h-auto"
+                  width={1920}
+                  height={1048}
+                  loading="lazy"
                 />
               </div>
             </div>

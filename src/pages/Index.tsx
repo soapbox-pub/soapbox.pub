@@ -2,7 +2,6 @@ import {
   ArrowRight,
   Search,
   ExternalLink,
-  BookOpen,
   Calendar,
   Heart,
 } from "lucide-react";
@@ -72,9 +71,12 @@ export default function Index() {
               style={{ transform: "rotate(-4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
             >
               <img
-                src="/assets/images/ditto/appstore/1.png"
+                src="/assets/images/ditto/appstore/1.webp"
                 alt="Ditto -- Your Content"
                 className="w-full h-auto"
+                width={1080}
+                height={1920}
+                loading="eager"
               />
             </div>
             {/* Center -- "Your Vibe" (elevated) */}
@@ -83,9 +85,13 @@ export default function Index() {
               style={{ transform: "rotate(0deg)", boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
             >
               <img
-                src="/assets/images/ditto/appstore/2.png"
+                src="/assets/images/ditto/appstore/2.webp"
                 alt="Ditto -- Your Vibe"
                 className="w-full h-auto"
+                width={1080}
+                height={1920}
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             {/* Right -- "Your Rules" */}
@@ -94,9 +100,12 @@ export default function Index() {
               style={{ transform: "rotate(4deg)", boxShadow: "0 20px 60px -10px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(0,0,0,0.2)" }}
             >
               <img
-                src="/assets/images/ditto/appstore/3.png"
+                src="/assets/images/ditto/appstore/3.webp"
                 alt="Ditto -- Your Rules"
                 className="w-full h-auto"
+                width={1080}
+                height={1920}
+                loading="eager"
               />
             </div>
           </div>
@@ -130,9 +139,12 @@ export default function Index() {
                     style={{ boxShadow: "0 25px 70px -10px rgba(0,0,0,0.35), 0 10px 25px -6px rgba(0,0,0,0.25)" }}
                   >
                     <img
-                      src={`/assets/images/ditto/appstore/${n}.png`}
+                      src={`/assets/images/ditto/appstore/${n}.webp`}
                       alt={`Ditto screenshot ${n}`}
                       className="w-full h-auto"
+                      width={1080}
+                      height={1920}
+                      loading="lazy"
                     />
                   </div>
                 ))}
@@ -146,9 +158,12 @@ export default function Index() {
                     className="shrink-0 w-[70%] rounded-[20px] overflow-hidden shadow-lg ring-1 ring-black/5 snap-center"
                   >
                     <img
-                      src={`/assets/images/ditto/appstore/${n}.png`}
+                      src={`/assets/images/ditto/appstore/${n}.webp`}
                       alt={`Ditto screenshot ${n}`}
                       className="w-full h-auto"
+                      width={1080}
+                      height={1920}
+                      loading="lazy"
                     />
                   </div>
                 ))}
@@ -209,9 +224,12 @@ export default function Index() {
 
             <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 order-1 lg:order-2">
               <img
-                src="/assets/images/ditto/edit-ditto-in-shakespeare.png"
+                src="/assets/images/ditto/edit-ditto-in-shakespeare.webp"
                 alt="Shakespeare AI IDE editing a Ditto project"
                 className="w-full h-auto"
+                width={1920}
+                height={1048}
+                loading="lazy"
               />
             </div>
 
@@ -268,9 +286,12 @@ export default function Index() {
 
             <div className="rounded-2xl shadow-2xl overflow-hidden">
               <img
-                src="/assets/blog/about-agora/agora-cover.png"
+                src="/assets/blog/about-agora/agora-cover.webp"
                 alt="Agora -- Power to the People"
                 className="w-full h-auto"
+                width={1920}
+                height={1080}
+                loading="lazy"
               />
             </div>
 
@@ -340,9 +361,12 @@ export default function Index() {
             {/* Left -- Mostr screenshot */}
             <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
               <img
-                src="/assets/images/mostr-search.png"
+                src="/assets/images/mostr-search.webp"
                 alt="Mostr Bridge -- 46,957 Nostr users and 9,596 Fediverse users connected"
                 className="w-full h-auto"
+                width={1280}
+                height={800}
+                loading="lazy"
               />
             </div>
 
@@ -555,6 +579,7 @@ export default function Index() {
                         src={post.coverImage}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
                       />
                     </div>
                   )}
@@ -619,6 +644,7 @@ export default function Index() {
                     src={tool.logo}
                     alt={tool.name}
                     className="w-full h-full object-contain"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="font-semibold text-gray-900 text-sm group-hover:text-azure transition-colors">
