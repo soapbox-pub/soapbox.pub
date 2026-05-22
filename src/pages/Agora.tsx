@@ -785,17 +785,19 @@ function GuidesSection() {
 
           {/* Activists */}
           <Card className="overflow-hidden border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-            {/* Cover image — uses the Raised Fists cover from Agora's
-                official action-cover set, served from the same Blossom
-                URL Agora itself loads. */}
+            {/* Cover image — aerial of a "UNITY IN DARKNESS" night
+                rally in a European city square: thousands of people,
+                burning red flares, illuminated palace facade. Reads as
+                scale and collective momentum — exactly the energy of
+                "get funded without permission". */}
             <div className="aspect-[16/9] bg-gray-100 relative overflow-hidden">
               <img
-                src="https://blossom.dreamith.to/a5d3927951b9daae21f9709490f290497fb9fa4221649c72ba9762f28503a7ef.png"
-                alt="Raised fists in the air — symbolic of activism and resistance"
+                src="/assets/agora/activist-guide-unity.png"
+                alt="Aerial view of thousands of protesters gathered at night in a city square with burning red flares, beneath a 'UNITY IN DARKNESS' banner projected on the surrounding buildings"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-agora-900/70 via-agora-900/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-4 left-5 flex items-center gap-3">
                 <div className="size-10 rounded-xl bg-white/95 backdrop-blur flex items-center justify-center shadow">
                   <Megaphone className="size-5 text-agora-600" />
