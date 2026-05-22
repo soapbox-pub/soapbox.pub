@@ -533,10 +533,17 @@ function PublicVsPrivateSection() {
           </Card>
         </div>
 
-        <p className="text-center mt-10 max-w-2xl mx-auto text-gray-600 italic text-sm leading-relaxed">
-          From the donor's side: always just a normal Bitcoin address. No new
-          wallet. No new software. No idea which mode the campaign is using —
-          unless the activist tells them.
+        <p className="text-center mt-10 max-w-2xl mx-auto text-gray-600 text-sm leading-relaxed">
+          Read more about this design and why we chose it:{' '}
+          <a
+            href="https://agora.spot/help"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-agora-600 hover:text-agora-700 underline decoration-agora-300 hover:decoration-agora-500 underline-offset-2 inline-flex items-center gap-1"
+          >
+            agora.spot/help
+            <ExternalLink className="size-3.5" />
+          </a>
         </p>
       </div>
     </section>
