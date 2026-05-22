@@ -49,15 +49,15 @@ import {
 /** Hero background image — agora-glow connected world-map artwork. */
 const HERO_BG = '/assets/agora/world-map-bg.png';
 
-/** Cover from the existing Agora blog post — reused as a fallback graphic. */
-const AGORA_COVER = '/assets/blog/about-agora/agora-cover.png';
+/** Dedicated 1920x1080 OG/Twitter share image for the /agora landing page. */
+const AGORA_OG_IMAGE = '/assets/agora/og-cover.png';
 
 export default function Agora() {
   useSEO({
     title: 'Agora — GoFundMe Without Borders | Soapbox',
     description:
       'Agora is a censorship-resistant donation platform connecting activists to unstoppable funding. Send Bitcoin directly to people fighting for freedom around the world — no frozen bank accounts, no corporate shut-downs.',
-    image: AGORA_COVER,
+    image: AGORA_OG_IMAGE,
     type: 'website',
     keywords:
       'agora, agora.spot, bitcoin donations, censorship resistant, on-chain bitcoin, nostr, soapbox, activist funding, freedom tech, silent payments, political prisoners, venezuela, iran, zimbabwe, cambodia, uganda, nicaragua',
