@@ -721,16 +721,19 @@ function GuidesSection() {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {/* Donors */}
           <Card className="overflow-hidden border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-            {/* Cover image — candlelight "Solidarity & Unity" vigil,
-                evokes the quiet, hopeful support a donor brings. */}
+            {/* Cover image — protesters in dark hooded coats marching
+                through a European city at dusk, holding bright red flares
+                and "FREEDOM" / "LIBERTAD" banners. Reads as serious,
+                committed support across borders — the same energy a
+                donor card needs. */}
             <div className="aspect-[16/9] bg-gray-100 relative overflow-hidden">
               <img
-                src="/assets/agora/donor-guide-solidarity.png"
-                alt="A large crowd holding candles at dusk in front of a city skyline, with a 'Solidarity & Unity' sign above them"
+                src="/assets/agora/donor-guide-freedom-libertad.jpeg"
+                alt="Hooded protesters marching through a European city street at dusk, holding burning red flares and 'FREEDOM' and 'LIBERTAD' banners"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-4 left-5 flex items-center gap-3">
                 <div className="size-10 rounded-xl bg-white/95 backdrop-blur flex items-center justify-center shadow">
                   <HandHeart className="size-5 text-blue-600" />
