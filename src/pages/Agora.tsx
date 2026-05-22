@@ -27,7 +27,6 @@ import {
   Megaphone,
   HandHeart,
   CheckCircle2,
-  AlertTriangle,
   ExternalLink,
   Globe,
   Lock,
@@ -86,13 +85,12 @@ export default function Agora() {
       <Navigation />
 
       <HeroSection />
+      <FeaturedCampaignsSection />
       <HowItWorksSection />
       <PublicVsPrivateSection />
-      <FeaturedCampaignsSection />
       <WhyBitcoinSection />
       <GuidesSection />
       <PullQuoteSection />
-      <PrivacyAlertSection />
       <FinalCtaSection />
 
       <Footer />
@@ -163,14 +161,6 @@ function HeroSection() {
                 variant="outline"
                 className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white font-medium h-12 px-6 text-base"
               >
-                <a href="#how-it-works">How it works</a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="ghost"
-                className="text-white hover:bg-white/10 hover:text-white font-medium h-12 px-4 text-base"
-              >
                 <a
                   href="https://agora.spot/help/activists"
                   target="_blank"
@@ -194,7 +184,7 @@ function HeroSection() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-orange-400" />
-                <span>Built by Team Soapbox</span>
+                <span>Censorship resistant</span>
               </div>
             </div>
           </div>
@@ -286,15 +276,6 @@ function HeroCampaignMockup() {
           </button>
         </CardContent>
       </Card>
-
-      {/* Floating "Live" indicator */}
-      <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full bg-emerald-500 text-white text-xs font-bold shadow-lg flex items-center gap-1.5">
-        <span className="relative flex size-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-          <span className="relative inline-flex rounded-full size-2 bg-white"></span>
-        </span>
-        LIVE
-      </div>
     </div>
   );
 }
@@ -307,37 +288,59 @@ function HowItWorksSection() {
   const steps = [
     {
       n: '01',
-      heading: 'An activist creates a Nostr account.',
+      image: '/assets/agora/step-1-account.jpg',
+      imageAlt:
+        'A glowing orange cryptographic key floating in dark space, symbolizing self-sovereign identity',
+      heading: 'Activists sign up in seconds.',
       body:
-        "Their donation address is derived from their cryptographic key the moment they sign up. No bank. No company. No approval needed.",
+        'No bank. No paperwork. No approval. The moment an activist creates an account on Agora, they have a Bitcoin address ready to receive support — anywhere in the world.',
     },
     {
       n: '02',
+      image: '/assets/agora/step-2-send.jpg',
+      imageAlt:
+        'A glowing Bitcoin coin flying through the air across a dark world map, symbolizing instant cross-border payment',
       heading: 'Donors send Bitcoin directly.',
       body:
-        'From any Bitcoin wallet on earth — Cash App, Coinbase, Strike, a hardware wallet. The funds go straight to the activist. Agora never holds them.',
+        'Donors send Bitcoin from any wallet they already use — Cash App, Coinbase, Strike, a hardware wallet — straight to the activist. Agora never touches the money. There is no platform fee.',
     },
     {
       n: '03',
-      heading: 'The activist spends it like cash.',
+      image: '/assets/agora/step-3-spend.jpg',
+      imageAlt:
+        'An open hand with warm orange light radiating from the palm, symbolizing receiving and agency',
+      heading: 'Support lands where it matters.',
       body:
-        'Move funds to their own wallet, swap to local currency, or use Bitcoin directly. The Donor and Activist guides explain how to do this privately.',
+        'Funds arrive at the activist directly. They keep custody, they keep control. Move it, swap it, or spend it — the guides on Agora explain how to do it privately and safely.',
     },
   ];
 
   return (
-    <section id="how-it-works" className="bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="how-it-works"
+      className="relative bg-[#0a0c14] text-white py-20 md:py-28 overflow-hidden"
+    >
+      {/* Subtle texture from the world map background */}
+      <div
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
+        style={{
+          backgroundImage: `url('${HERO_BG}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-orange-600 mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-orange-400 mb-3">
             How it works
           </p>
-          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
             Three steps. No middleman.
           </h2>
-          <p className="text-lg text-gray-600">
-            Agora never touches the money. Donors send Bitcoin straight to
-            activists — peer to peer.
+          <p className="text-lg text-gray-400">
+            From an activist's first signup to support landing in their hands —
+            no banks, no borders, no permission.
           </p>
         </div>
 
@@ -345,15 +348,28 @@ function HowItWorksSection() {
           {steps.map((step) => (
             <div
               key={step.n}
-              className="relative bg-orange-50/40 rounded-2xl p-7 border border-orange-100"
+              className="relative bg-white rounded-2xl overflow-hidden border border-white/5 shadow-2xl hover:-translate-y-1 transition-transform duration-300"
             >
-              <div className="font-display font-bold text-orange-500 text-6xl leading-none mb-5">
-                {step.n}
+              {/* Step image */}
+              <div className="aspect-[4/3] bg-[#0a0c14] relative overflow-hidden">
+                <img
+                  src={step.image}
+                  alt={step.imageAlt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute top-4 left-4 font-display font-bold text-white text-5xl leading-none drop-shadow-lg">
+                  {step.n}
+                </div>
               </div>
-              <h3 className="font-display font-bold text-gray-900 text-xl mb-3 leading-snug">
-                {step.heading}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">{step.body}</p>
+
+              <div className="p-6 sm:p-7">
+                <h3 className="font-display font-bold text-gray-900 text-xl mb-3 leading-snug">
+                  {step.heading}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{step.body}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -509,7 +525,12 @@ function PublicVsPrivateSection() {
 }
 
 // ───────────────────────────────────────────────────────────────────────────
-// Section: Featured Campaigns (live from Nostr)
+// Section: Featured Campaigns
+//
+// Fetches moderator-featured campaigns live from the network on every
+// render; the data wiring lives in `useAgoraFeaturedCampaigns`. The UI
+// here intentionally does not surface the Nostr plumbing — to a visitor
+// these are just real campaigns from real people.
 // ───────────────────────────────────────────────────────────────────────────
 
 function FeaturedCampaignsSection() {
@@ -524,17 +545,11 @@ function FeaturedCampaignsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-3">
           <div>
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="relative flex size-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full size-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-xs font-semibold tracking-widest uppercase text-orange-600">
-                Live from Nostr
-              </span>
-            </div>
+            <p className="text-xs font-semibold tracking-widest uppercase text-orange-600 mb-3">
+              Featured
+            </p>
             <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-              Featured campaigns on Agora today
+              Campaigns on Agora today
             </h2>
           </div>
           <a
@@ -548,8 +563,9 @@ function FeaturedCampaignsSection() {
           </a>
         </div>
         <p className="text-gray-600 mb-10 max-w-3xl">
-          These cards are fetched live from the Nostr network — the same data
-          stream Agora itself reads from. Click any one to support directly.
+          Real campaigns from real people fighting for freedom around the
+          world. Pick one that speaks to you and send Bitcoin straight to the
+          organizer — no signup, no waiting, no middleman.
         </p>
 
         {showSkeletons && (
@@ -579,9 +595,8 @@ function FeaturedCampaignsSection() {
                   Featured campaigns are loading
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  We couldn't fetch the live moderator-featured campaign labels
-                  from the Nostr network just now. Head over to agora.spot to
-                  see every active campaign.
+                  Head over to agora.spot to see every active campaign and find
+                  one to support.
                 </p>
                 <Button
                   asChild
@@ -645,11 +660,11 @@ function WhyBitcoinSection() {
             By design
           </p>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Why on-chain Bitcoin, not Lightning.
+            Built to be unstoppable.
           </h2>
           <p className="text-lg text-gray-400">
-            Every design choice in Agora is a tradeoff. Here's why we built it
-            this way.
+            Every choice in Agora was made to keep support flowing — even when
+            governments, banks, or platforms try to cut it off.
           </p>
         </div>
 
@@ -697,64 +712,101 @@ function GuidesSection() {
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {/* Donors */}
-          <Card className="border-blue-100 bg-gradient-to-br from-blue-50/60 to-white hover:shadow-lg transition-shadow">
-            <CardContent className="p-8">
-              <div className="size-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-5">
-                <HandHeart className="size-7 text-blue-600" />
+          <Card className="overflow-hidden border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            {/* Cover image — matches the Donor Guide hero on agora.spot */}
+            <div className="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+              <img
+                src="/assets/agora/donor-guide-wlc.webp"
+                alt="World Liberty Congress event — a community of supporters standing together"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-blue-900/10 to-transparent" />
+              <div className="absolute bottom-4 left-5 flex items-center gap-3">
+                <div className="size-10 rounded-xl bg-white/95 backdrop-blur flex items-center justify-center shadow">
+                  <HandHeart className="size-5 text-blue-600" />
+                </div>
+                <span className="text-white text-xs font-semibold uppercase tracking-widest drop-shadow">
+                  For Donors
+                </span>
               </div>
+            </div>
+            <CardContent className="p-7 sm:p-8 flex flex-col flex-1">
               <h3 className="font-display font-bold text-gray-900 text-2xl mb-2">
-                For Donors
+                Support causes the banks won't.
               </h3>
               <p className="text-gray-600 mb-5">
-                Support causes the banks won't.
+                Send Bitcoin directly to activists and movements anywhere in
+                the world — without asking a payment processor for permission.
               </p>
               <ul className="space-y-2.5 mb-7">
                 {[
-                  'Send Bitcoin from any wallet you already use.',
-                  'Pay zero platform fees — every sat reaches the activist.',
-                  'Donate privately using the techniques in the Donor Guide.',
+                  'Use any Bitcoin wallet you already have.',
+                  'Zero platform fees — every sat reaches the activist.',
+                  'Step-by-step privacy techniques in the Donor Guide.',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="size-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="size-4 text-blue-600 shrink-0 mt-0.5" />
                     <span className="text-gray-700 text-sm leading-snug">
                       {b}
                     </span>
                   </li>
                 ))}
               </ul>
-              <Button
-                asChild
-                className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
-              >
-                <a
-                  href="https://agora.spot/help/donors"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <div className="mt-auto">
+                <Button
+                  asChild
+                  className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
                 >
-                  Read the Donor Guide
-                  <ExternalLink className="ml-2 size-4" />
-                </a>
-              </Button>
+                  <a
+                    href="https://agora.spot/help/donors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read the Donor Guide
+                    <ExternalLink className="ml-2 size-4" />
+                  </a>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
           {/* Activists */}
-          <Card className="border-orange-100 bg-gradient-to-br from-orange-50/60 to-white hover:shadow-lg transition-shadow">
-            <CardContent className="p-8">
-              <div className="size-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-5">
-                <Megaphone className="size-7 text-orange-600" />
+          <Card className="overflow-hidden border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            {/* Cover image — uses the Raised Fists cover from Agora's
+                official action-cover set, served from the same Blossom
+                URL Agora itself loads. */}
+            <div className="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+              <img
+                src="https://blossom.dreamith.to/a5d3927951b9daae21f9709490f290497fb9fa4221649c72ba9762f28503a7ef.png"
+                alt="Raised fists in the air — symbolic of activism and resistance"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/70 via-orange-900/10 to-transparent" />
+              <div className="absolute bottom-4 left-5 flex items-center gap-3">
+                <div className="size-10 rounded-xl bg-white/95 backdrop-blur flex items-center justify-center shadow">
+                  <Megaphone className="size-5 text-orange-600" />
+                </div>
+                <span className="text-white text-xs font-semibold uppercase tracking-widest drop-shadow">
+                  For Activists
+                </span>
               </div>
+            </div>
+            <CardContent className="p-7 sm:p-8 flex flex-col flex-1">
               <h3 className="font-display font-bold text-gray-900 text-2xl mb-2">
-                For Activists
+                Get funded without permission.
               </h3>
               <p className="text-gray-600 mb-5">
-                Get funded without permission.
+                Receive support directly from people who believe in your cause
+                — no bank account, no application form, no company in the
+                middle.
               </p>
               <ul className="space-y-2.5 mb-7">
                 {[
-                  'Receive donations the moment you create a Nostr account.',
-                  'No bank account, no company, no application form.',
-                  'Cash out privately using the Activist Guide.',
+                  'Start receiving donations as soon as you sign up.',
+                  'Choose a public or private campaign to fit your situation.',
+                  'Step-by-step cash-out and privacy guidance.',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
                     <CheckCircle2 className="size-4 text-orange-600 shrink-0 mt-0.5" />
@@ -764,19 +816,21 @@ function GuidesSection() {
                   </li>
                 ))}
               </ul>
-              <Button
-                asChild
-                className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto"
-              >
-                <a
-                  href="https://agora.spot/help/activists"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <div className="mt-auto">
+                <Button
+                  asChild
+                  className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto"
                 >
-                  Read the Activist Guide
-                  <ExternalLink className="ml-2 size-4" />
-                </a>
-              </Button>
+                  <a
+                    href="https://agora.spot/help/activists"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read the Activist Guide
+                    <ExternalLink className="ml-2 size-4" />
+                  </a>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -820,57 +874,6 @@ function PullQuoteSection() {
                   Congress
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ───────────────────────────────────────────────────────────────────────────
-// Section: Privacy alert (mirrors the actual /help disclaimer)
-// ───────────────────────────────────────────────────────────────────────────
-
-function PrivacyAlertSection() {
-  return (
-    <section className="bg-white py-12 md:py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border-l-4 border-amber-500 bg-amber-50/60 p-6 sm:p-8">
-          <div className="flex items-start gap-4">
-            <div className="shrink-0 size-10 rounded-full bg-amber-100 flex items-center justify-center">
-              <AlertTriangle className="size-5 text-amber-600" />
-            </div>
-            <div>
-              <h3 className="font-display font-bold text-amber-900 text-lg mb-2">
-                Recommended for above-ground activism.
-              </h3>
-              <p className="text-gray-700 leading-relaxed text-[15px]">
-                Public-mode donations on Agora are visible on the Bitcoin
-                blockchain and on Nostr. For donors and activists who need
-                extra privacy — including protection from state actors — read
-                the{' '}
-                <a
-                  href="https://agora.spot/help/donors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-amber-900 underline decoration-amber-400 hover:decoration-amber-600 underline-offset-2"
-                >
-                  Donor Guide
-                </a>{' '}
-                and{' '}
-                <a
-                  href="https://agora.spot/help/activists"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-amber-900 underline decoration-amber-400 hover:decoration-amber-600 underline-offset-2"
-                >
-                  Activist Guide
-                </a>{' '}
-                before participating, or choose a private campaign so donations
-                are unlinkable on-chain. Privacy is your responsibility — and
-                your right.
-              </p>
             </div>
           </div>
         </div>
