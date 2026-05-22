@@ -13,8 +13,9 @@
  *  - Mirrors Agora's actual /help disclaimer about above-ground
  *    activism rather than over-promising privacy.
  *
- * Visual identity: warm Agora orange (#ff6600 / hsl(14 79% 58%)) on
- * deep near-black hero (#0a0c14), with editorial typography.
+ * Visual identity: official Agora orange (#ed4c18) via the bespoke
+ * `agora-*` color ramp in tailwind.config.ts, on a deep near-black hero
+ * (#0a0c14), with editorial typography.
  */
 
 import { Link } from 'react-router-dom';
@@ -45,7 +46,7 @@ import {
   AgoraCampaignCardSkeleton,
 } from '@/components/agora/AgoraCampaignCard';
 
-/** Hero background image — orange-glow connected world-map artwork. */
+/** Hero background image — agora-glow connected world-map artwork. */
 const HERO_BG = '/assets/agora/world-map-bg.png';
 
 /** Cover from the existing Agora blog post — reused as a fallback graphic. */
@@ -135,7 +136,7 @@ function HeroSection() {
               <span className="relative inline-block align-baseline">
                 <span
                   aria-hidden="true"
-                  className="absolute inset-x-[-0.15em] inset-y-[0.08em] bg-orange-500 -skew-x-2"
+                  className="absolute inset-x-[-0.15em] inset-y-[0.08em] bg-agora-500 -skew-x-2"
                 />
                 <span className="relative">unstoppable</span>
               </span>
@@ -152,7 +153,7 @@ function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-orange-500/25"
+                className="bg-agora-500 hover:bg-agora-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-agora-500/25"
               >
                 <a
                   href="https://agora.spot"
@@ -183,15 +184,15 @@ function HeroSection() {
             {/* Trust signals */}
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-orange-400" />
+                <CheckCircle2 className="size-4 text-agora-400" />
                 <span>0% platform fees</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-orange-400" />
+                <CheckCircle2 className="size-4 text-agora-400" />
                 <span>Open source</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-orange-400" />
+                <CheckCircle2 className="size-4 text-agora-400" />
                 <span>Censorship resistant</span>
               </div>
             </div>
@@ -221,10 +222,10 @@ function HeroCampaignMockup() {
 
       <Card className="relative bg-[#1a1d24] border-white/10 overflow-hidden shadow-2xl rotate-[1.5deg] hover:rotate-0 transition-transform duration-500">
         {/* Banner */}
-        <div className="aspect-[16/9] bg-gradient-to-br from-orange-900 via-red-900 to-orange-800 relative">
+        <div className="aspect-[16/9] bg-gradient-to-br from-agora-900 via-red-900 to-agora-800 relative">
           <img
             src="/assets/agora/venezuela-libertad-presos-politicos.png"
-            alt="Venezuelan protesters holding a 'Libertad Presos Políticos' sign in front of a large Leopoldo López portrait banner"
+            alt="Venezuelan activists at a candlelight vigil holding a sign reading 'Liberen a todos los presos políticos · ¡Cese la represión!'"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -236,7 +237,7 @@ function HeroCampaignMockup() {
           </div>
 
           {/* Mode pill */}
-          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-orange-600/90 backdrop-blur text-white text-[11px] font-semibold flex items-center gap-1.5">
+          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-agora-600/90 backdrop-blur text-white text-[11px] font-semibold flex items-center gap-1.5">
             <Globe className="size-3" />
             <span>Public</span>
           </div>
@@ -248,7 +249,7 @@ function HeroCampaignMockup() {
               V
             </div>
             <span className="text-xs text-gray-400">Venezolanos Libres</span>
-            <span className="text-orange-400">✓</span>
+            <span className="text-agora-400">✓</span>
           </div>
 
           <h3 className="font-display font-bold text-white text-lg leading-tight mb-3">
@@ -263,7 +264,7 @@ function HeroCampaignMockup() {
           {/* Progress bar */}
           <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden mb-2">
             <div
-              className="h-full bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"
+              className="h-full bg-gradient-to-r from-agora-400 to-agora-600 rounded-full"
               style={{ width: '78%' }}
             />
           </div>
@@ -282,7 +283,7 @@ function HeroCampaignMockup() {
             href="https://agora.spot/campaigns"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm h-10 rounded-md flex items-center justify-center gap-2 transition-colors"
+            className="w-full bg-agora-500 hover:bg-agora-600 text-white font-semibold text-sm h-10 rounded-md flex items-center justify-center gap-2 transition-colors"
           >
             <Bitcoin className="size-4" />
             Donate Bitcoin
@@ -345,7 +346,7 @@ function HowItWorksSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-orange-400 mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-agora-400 mb-3">
             How it works
           </p>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
@@ -400,7 +401,7 @@ function PublicVsPrivateSection() {
     <section className="bg-[#faf8f4] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-orange-600 mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-agora-600 mb-3">
             Your campaign, your choice
           </p>
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
@@ -416,14 +417,14 @@ function PublicVsPrivateSection() {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {/* Public */}
           <Card className="overflow-hidden border-gray-200 bg-white shadow-sm">
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-5 text-white">
+            <div className="bg-gradient-to-r from-agora-500 to-agora-600 px-6 py-5 text-white">
               <div className="flex items-center gap-2 mb-1">
                 <Globe className="size-4" />
                 <span className="text-xs font-semibold uppercase tracking-widest">
                   Public Campaign
                 </span>
               </div>
-              <p className="text-orange-50 text-sm">
+              <p className="text-agora-50 text-sm">
                 Fast · Unstoppable · Transparent
               </p>
             </div>
@@ -558,7 +559,7 @@ function FeaturedCampaignsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-3">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-orange-600 mb-3">
+            <p className="text-xs font-semibold tracking-widest uppercase text-agora-600 mb-3">
               Featured
             </p>
             <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
@@ -569,7 +570,7 @@ function FeaturedCampaignsSection() {
             href="https://agora.spot/campaigns"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-600 hover:text-orange-700 font-medium text-sm inline-flex items-center gap-1 group"
+            className="text-agora-600 hover:text-agora-700 font-medium text-sm inline-flex items-center gap-1 group"
           >
             Browse all on agora.spot
             <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
@@ -598,11 +599,11 @@ function FeaturedCampaignsSection() {
         )}
 
         {(showEmpty || isError) && (
-          <Card className="border-dashed border-2 border-orange-200 bg-white/60">
+          <Card className="border-dashed border-2 border-agora-200 bg-white/60">
             <CardContent className="py-12 px-8 text-center">
               <div className="max-w-md mx-auto space-y-4">
-                <div className="size-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto">
-                  <Sparkles className="size-6 text-orange-500" />
+                <div className="size-12 rounded-full bg-agora-100 flex items-center justify-center mx-auto">
+                  <Sparkles className="size-6 text-agora-500" />
                 </div>
                 <h3 className="font-display font-bold text-gray-900 text-xl">
                   Featured campaigns are loading
@@ -613,7 +614,7 @@ function FeaturedCampaignsSection() {
                 </p>
                 <Button
                   asChild
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                  className="bg-agora-500 hover:bg-agora-600 text-white"
                 >
                   <a
                     href="https://agora.spot"
@@ -663,7 +664,7 @@ function WhyBitcoinSection() {
     <section className="bg-[#0a0c14] text-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-orange-400 mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-agora-400 mb-3">
             By design
           </p>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
@@ -681,8 +682,8 @@ function WhyBitcoinSection() {
               key={heading}
               className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 hover:bg-white/[0.06] transition-colors"
             >
-              <div className="size-10 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center mb-5">
-                <Icon className="size-5 text-orange-400" />
+              <div className="size-10 rounded-lg bg-agora-500/15 border border-agora-500/30 flex items-center justify-center mb-5">
+                <Icon className="size-5 text-agora-400" />
               </div>
               <h3 className="font-display font-bold text-white text-lg mb-2.5 leading-snug">
                 {heading}
@@ -705,7 +706,7 @@ function GuidesSection() {
     <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-orange-600 mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-agora-600 mb-3">
             Guides
           </p>
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
@@ -791,10 +792,10 @@ function GuidesSection() {
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/70 via-orange-900/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-agora-900/70 via-agora-900/10 to-transparent" />
               <div className="absolute bottom-4 left-5 flex items-center gap-3">
                 <div className="size-10 rounded-xl bg-white/95 backdrop-blur flex items-center justify-center shadow">
-                  <Megaphone className="size-5 text-orange-600" />
+                  <Megaphone className="size-5 text-agora-600" />
                 </div>
                 <span className="text-white text-xs font-semibold uppercase tracking-widest drop-shadow">
                   For Activists
@@ -817,7 +818,7 @@ function GuidesSection() {
                   'Step-by-step cash-out and privacy guidance.',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="size-4 text-orange-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="size-4 text-agora-600 shrink-0 mt-0.5" />
                     <span className="text-gray-700 text-sm leading-snug">
                       {b}
                     </span>
@@ -827,7 +828,7 @@ function GuidesSection() {
               <div className="mt-auto">
                 <Button
                   asChild
-                  className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto"
+                  className="bg-agora-500 hover:bg-agora-600 text-white w-full sm:w-auto"
                 >
                   <a
                     href="https://agora.spot/help/activists"
@@ -857,7 +858,7 @@ function PullQuoteSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-4">
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 overflow-hidden border-l-4 border-orange-500 shadow-lg">
+            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-agora-100 to-agora-200 overflow-hidden border-l-4 border-agora-500 shadow-lg">
               <img
                 src="/assets/blog/about-agora/agora-cover.png"
                 alt="Leopoldo López"
@@ -872,7 +873,7 @@ function PullQuoteSection() {
               support going in the other direction."
             </blockquote>
             <div className="mt-8 flex items-center gap-4">
-              <div className="h-px w-12 bg-orange-500" />
+              <div className="h-px w-12 bg-agora-500" />
               <div>
                 <p className="font-semibold text-gray-900 tracking-wider uppercase text-sm">
                   Leopoldo López
@@ -896,7 +897,7 @@ function PullQuoteSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#7a1414] via-[#c13a14] to-[#ff6600] text-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#521a07] via-[#a1320d] to-[#ed4c18] text-white py-20 md:py-28">
       {/* Texture overlay */}
       <div
         className="absolute inset-0 opacity-10 mix-blend-overlay"
@@ -922,7 +923,7 @@ function FinalCtaSection() {
           <Button
             asChild
             size="lg"
-            className="bg-white text-orange-700 hover:bg-orange-50 font-bold h-14 px-8 text-lg shadow-2xl"
+            className="bg-white text-agora-700 hover:bg-agora-50 font-bold h-14 px-8 text-lg shadow-2xl"
           >
             <a
               href="https://agora.spot"

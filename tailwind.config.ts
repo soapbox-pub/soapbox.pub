@@ -41,6 +41,22 @@ export default {
 					700: 'hsl(var(--azure-700))',
 					dark: 'hsl(var(--azure-dark))',
 				},
+				// Agora brand palette. The `500` value is the official
+				// brand orange (#ed4c18); the rest are tints/shades derived
+				// from it so we have a full ramp for backgrounds, borders,
+				// hover states, and dark-on-light contrast.
+				agora: {
+					50: '#fef2ec',
+					100: '#fcdfd2',
+					200: '#f9bda6',
+					300: '#f59572',
+					400: '#f1734a',
+					500: '#ed4c18',
+					600: '#c93d10',
+					700: '#a1320d',
+					800: '#7a260a',
+					900: '#521a07',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

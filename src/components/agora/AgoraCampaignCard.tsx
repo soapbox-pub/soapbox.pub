@@ -55,11 +55,11 @@ export function AgoraCampaignCard({ campaign }: Props) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded-2xl"
+      className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-agora-500 focus-visible:ring-offset-2 rounded-2xl"
     >
       <Card className="overflow-hidden border-gray-200 bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 h-full flex flex-col">
         {/* Banner */}
-        <div className="relative aspect-[16/9] bg-gradient-to-br from-orange-100 to-orange-200 overflow-hidden">
+        <div className="relative aspect-[16/9] bg-gradient-to-br from-agora-100 to-agora-200 overflow-hidden">
           {campaign.banner ? (
             <img
               src={campaign.banner}
@@ -68,7 +68,7 @@ export function AgoraCampaignCard({ campaign }: Props) {
               loading="lazy"
             />
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center text-orange-500/50 text-4xl">
+            <div className="absolute inset-0 flex items-center justify-center text-agora-500/50 text-4xl">
               ⚡
             </div>
           )}
@@ -85,7 +85,7 @@ export function AgoraCampaignCard({ campaign }: Props) {
           {/* Mode pill (top-right) */}
           <div
             className={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-white text-[11px] font-semibold flex items-center gap-1.5 ${
-              isPrivate ? 'bg-indigo-600/90' : 'bg-orange-600/90'
+              isPrivate ? 'bg-indigo-600/90' : 'bg-agora-600/90'
             } backdrop-blur`}
             title={
               isPrivate
@@ -110,7 +110,7 @@ export function AgoraCampaignCard({ campaign }: Props) {
                 loading="lazy"
               />
             ) : (
-              <div className="size-6 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-[10px] font-bold">
+              <div className="size-6 rounded-full bg-gradient-to-br from-agora-400 to-agora-600 flex items-center justify-center text-white text-[10px] font-bold">
                 {organizerName.charAt(0).toUpperCase()}
               </div>
             )}
@@ -151,7 +151,7 @@ export function AgoraCampaignCard({ campaign }: Props) {
               {campaign.goalUsd && campaign.goalUsd > 0 && (
                 <div className="h-1.5 w-full rounded-full bg-gray-100 overflow-hidden mb-2">
                   <div
-                    className="h-full bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
+                    className="h-full bg-gradient-to-r from-agora-500 to-agora-600 rounded-full"
                     style={{ width: `${progressPct}%` }}
                   />
                 </div>
@@ -176,7 +176,7 @@ export function AgoraCampaignCard({ campaign }: Props) {
           )}
 
           {/* View link */}
-          <div className="flex items-center gap-1 text-xs font-medium text-orange-600 group-hover:text-orange-700 mt-4 pt-3 border-t border-gray-100">
+          <div className="flex items-center gap-1 text-xs font-medium text-agora-600 group-hover:text-agora-700 mt-4 pt-3 border-t border-gray-100">
             <span>View campaign</span>
             <ExternalLink className="size-3" />
           </div>
