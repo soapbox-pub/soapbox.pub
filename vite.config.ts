@@ -41,7 +41,7 @@ export default defineConfig({
         "/transparency/apr-jun-2024",
         "/transparency/jul-sep-2023",
 
-        // Redirects
+        // Agora landing page
         "/agora",
 
         // Tool pages (primary routes)

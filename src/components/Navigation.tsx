@@ -7,7 +7,7 @@ import { SoapboxLogo } from "@/components/SoapboxLogo";
 const navLinks = [
   { label: "Ditto", to: "/ditto" },
   { label: "Shakespeare", to: "/shakespeare" },
-  { label: "Agora", to: "/blog/agora-connecting-freedom-fighters" },
+  { label: "Agora", to: "/agora" },
   { label: "About", to: "/about" },
   { label: "Ethics", to: "/ethics" },
   { label: "Updates", to: "/blog" },

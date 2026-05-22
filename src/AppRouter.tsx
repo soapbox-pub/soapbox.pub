@@ -5,6 +5,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Tools from "./pages/Tools";
+import Agora from "./pages/Agora";
 // import Communities from "./pages/Communities";
 import Showcase from "./pages/Showcase";
 import BlogIndex from "./pages/blog/BlogIndex";
@@ -52,8 +53,8 @@ export function AppRouter() {
         <Route path="/tools/ditto" element={<Navigate to="/ditto" replace />} />
         <Route path="/tools/shakespeare" element={<Navigate to="/shakespeare" replace />} />
         <Route path="/tools/mkstack" element={<Navigate to="/mkstack" replace />} />
-        {/* Agora redirect */}
-        <Route path="/agora" element={<Navigate to="/blog/agora-connecting-freedom-fighters" replace />} />
+        {/* Agora landing page */}
+        <Route path="/agora" element={<Agora />} />
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/blog" element={<BlogIndex />} />
