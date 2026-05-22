@@ -55,7 +55,7 @@ export default function Agora() {
   useSEO({
     title: 'Agora — GoFundMe Without Borders | Soapbox',
     description:
-      'Agora is a censorship-resistant donation platform built on Nostr and on-chain Bitcoin. Send real Bitcoin directly to activists — no middleman, no platform fees, no account that can be frozen.',
+      'Agora is a censorship-resistant donation platform connecting activists to unstoppable funding. Send Bitcoin directly to people fighting for freedom around the world — no frozen bank accounts, no corporate shut-downs.',
     image: AGORA_COVER,
     type: 'website',
     keywords:
@@ -65,7 +65,7 @@ export default function Agora() {
       '@type': 'WebApplication',
       name: 'Agora',
       description:
-        'A censorship-resistant Bitcoin donation platform for the global freedom movement. Built by Team Soapbox on Nostr and on-chain Bitcoin.',
+        'A censorship-resistant Bitcoin donation platform for the global freedom movement. Connecting activists to unstoppable funding. Built by Team Soapbox.',
       applicationCategory: 'Finance',
       operatingSystem: 'Web, iOS, Android',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -119,24 +119,33 @@ function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy */}
           <div className="lg:col-span-7">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-300 text-xs font-medium tracking-wider uppercase mb-6">
-              <Sparkles className="size-3.5" />
-              <span>GoFundMe Without Borders</span>
-            </div>
-
-            <h1 className="font-display font-bold tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] mb-6">
-              Send real Bitcoin
+            {/*
+              Editorial all-caps italic headline modeled on the Agora PR
+              cover. The word "UNSTOPPABLE" is highlighted with a solid
+              orange block behind it; the rest is white. We render the
+              highlight as an inline-block span so the orange box hugs
+              the text instead of stretching the full line.
+            */}
+            <h1
+              className="font-display font-black italic uppercase text-white tracking-tight text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.95] mb-8"
+              style={{ fontStretch: 'condensed' }}
+            >
+              Connecting<br />
+              activists to{' '}
+              <span className="relative inline-block align-baseline">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-[-0.15em] inset-y-[0.08em] bg-orange-500 -skew-x-2"
+                />
+                <span className="relative">unstoppable</span>
+              </span>
               <br />
-              directly to activists.
-              <br />
-              <span className="text-orange-400">No platform can stop it.</span>
+              funding.
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
               Agora is a censorship-resistant donation platform built on Nostr
-              and on-chain Bitcoin. No middleman. No platform fees. No account
-              that can be frozen.
+              and Bitcoin. No frozen bank accounts. No corporate shut-downs.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -640,7 +649,7 @@ function WhyBitcoinSection() {
       icon: ShieldCheck,
       heading: 'No custodian to shut down',
       body:
-        "Unlike Lightning, on-chain Bitcoin doesn't depend on a custodial service staying online. If Agora itself disappeared tomorrow, public-mode donations would still flow.",
+        "Bitcoin doesn't depend on any company staying online. If Agora itself disappeared tomorrow, public-mode donations would still flow straight to the activists who need them.",
     },
     {
       icon: Eye,
