@@ -713,15 +713,16 @@ function GuidesSection() {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {/* Donors */}
           <Card className="overflow-hidden border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-            {/* Cover image — matches the Donor Guide hero on agora.spot */}
+            {/* Cover image — candlelight "Solidarity & Unity" vigil,
+                evokes the quiet, hopeful support a donor brings. */}
             <div className="aspect-[16/9] bg-gray-100 relative overflow-hidden">
               <img
-                src="/assets/agora/donor-guide-wlc.webp"
-                alt="World Liberty Congress event — a community of supporters standing together"
+                src="/assets/agora/donor-guide-solidarity.png"
+                alt="A large crowd holding candles at dusk in front of a city skyline, with a 'Solidarity & Unity' sign above them"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-blue-900/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <div className="absolute bottom-4 left-5 flex items-center gap-3">
                 <div className="size-10 rounded-xl bg-white/95 backdrop-blur flex items-center justify-center shadow">
                   <HandHeart className="size-5 text-blue-600" />
