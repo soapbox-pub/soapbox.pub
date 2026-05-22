@@ -190,7 +190,7 @@ function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-agora-400" />
-                <span>0% platform fees</span>
+                <span>Decentralized</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-agora-400" />
