@@ -24,7 +24,12 @@ export default {
 			fontFamily: {
 				sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
 				display: ['Outfit Variable', 'Outfit', 'system-ui', 'sans-serif'],
-				gothic: ['Creepster', 'Nosifer', 'Butcherman', 'Chiller', 'Ravie', 'Impact', 'Arial Black', 'serif'],
+				gothic: ['Creepster', 'Nosifer', 'Butcherman', 'Chiller', 'Ravie', 'Impact', 'serif'],
+				// Agora-specific display family: Bebas Neue is the condensed
+				// all-caps display face Agora itself uses on its hero. It
+				// only ships at weight 400, so faux-bold is achieved with
+				// `WebkitTextStroke` instead of synthetic font-weight.
+				agora: ['Bebas Neue', 'Impact', 'Inter Variable', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -121,26 +121,31 @@ function HeroSection() {
           {/* Left: copy */}
           <div className="lg:col-span-7">
             {/*
-              Editorial all-caps italic headline modeled on the Agora PR
-              cover. The word "UNSTOPPABLE" is highlighted with a solid
-              orange block behind it; the rest is white. We render the
-              highlight as an inline-block span so the orange box hugs
-              the text instead of stretching the full line.
+              Hero headline — identical typographic recipe to the Agora
+              app's own hero on agora.spot/campaigns. Bebas Neue at
+              weight 400, italic, all-caps, tight tracking. Because
+              Bebas Neue only ships at weight 400, the apparent
+              weight is added with `WebkitTextStroke` painting a stroke
+              the same color as the fill — much cleaner than synthetic
+              font-weight or font-stretch tricks.
+
+              The word "unstoppable" gets a solid brand-orange
+              highlighter block. The padding is intentionally asymmetric
+              (zero left, extra right) so the U sits flush with the
+              column edge above it; the inner negative-margin nudges
+              the glyph leftward to optically align with the "C" in
+              "Connecting" (Bebas Neue's italic skew shifts the visual
+              left edge of the U rightward of its geometric box).
             */}
             <h1
-              className="font-display font-black italic uppercase text-white tracking-tight text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.95] mb-8"
-              style={{ fontStretch: 'condensed' }}
+              className="font-agora italic font-normal uppercase tracking-wide leading-none text-white text-6xl sm:text-7xl lg:text-8xl mb-8"
+              style={{ WebkitTextStroke: '0.022em currentColor' }}
             >
-              Connecting<br />
-              activists to{' '}
-              <span className="relative inline-block align-baseline">
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-[-0.15em] inset-y-[0.08em] bg-agora-500 -skew-x-2"
-                />
-                <span className="relative">unstoppable</span>
-              </span>
+              Connecting activists to
               <br />
+              <span className="inline-block w-fit pl-0 pr-3 pt-1 pb-0 -mt-1 -mb-3 bg-agora-500 text-white leading-[0.8] align-baseline">
+                <span className="-ml-1 inline-block">unstoppable</span>
+              </span>{' '}
               funding.
             </h1>
 
