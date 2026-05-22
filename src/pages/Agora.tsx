@@ -225,9 +225,9 @@ function HeroCampaignMockup() {
         {/* Banner */}
         <div className="aspect-[16/9] bg-gradient-to-br from-orange-900 via-red-900 to-orange-800 relative">
           <img
-            src="/assets/blog/about-agora/ve-map-bubbles.png"
-            alt="Venezuela campaign map"
-            className="absolute inset-0 w-full h-full object-cover opacity-90"
+            src="/assets/agora/venezuela-libertad-presos-politicos.png"
+            alt="Venezuelan protesters holding a 'Libertad Presos Políticos' sign in front of a large Leopoldo López portrait banner"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
