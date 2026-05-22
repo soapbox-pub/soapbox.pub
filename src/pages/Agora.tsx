@@ -23,7 +23,6 @@ import {
   Bitcoin,
   ShieldCheck,
   Eye,
-  Percent,
   Megaphone,
   HandHeart,
   CheckCircle2,
@@ -270,10 +269,15 @@ function HeroCampaignMockup() {
             247 donors · 12 countries
           </p>
 
-          <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm h-10 rounded-md flex items-center justify-center gap-2 transition-colors">
+          <a
+            href="https://agora.spot/campaigns"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm h-10 rounded-md flex items-center justify-center gap-2 transition-colors"
+          >
             <Bitcoin className="size-4" />
             Donate Bitcoin
-          </button>
+          </a>
         </CardContent>
       </Card>
     </div>
@@ -644,12 +648,6 @@ function WhyBitcoinSection() {
       body:
         'For public campaigns, donors and the world can verify exactly what activists have received. For activists who need privacy, switch to a private campaign and it\'s unlinkable on-chain.',
     },
-    {
-      icon: Percent,
-      heading: 'Zero platform fees',
-      body:
-        'You pay only the Bitcoin network fee that goes to miners. Agora takes nothing. There is no platform business model sitting between donor and activist.',
-    },
   ];
 
   return (
@@ -668,7 +666,7 @@ function WhyBitcoinSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
           {tiles.map(({ icon: Icon, heading, body }) => (
             <div
               key={heading}
