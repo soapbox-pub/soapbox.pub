@@ -413,9 +413,9 @@ function PublicVsPrivateSection() {
             Public or private. Donors don't have to choose.
           </h2>
           <p className="text-lg text-gray-600">
-            Every campaign on Agora picks where it lands on the privacy ↔
-            resilience trade-off. From the donor's side, it's always the same —
-            just a Bitcoin address to send to.
+            Every campaign on Agora picks whether to accept donations publicly
+            or privately. From the donor's side, it's always the same — just a
+            Bitcoin address to send to.
           </p>
         </div>
 
