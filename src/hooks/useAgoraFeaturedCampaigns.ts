@@ -6,16 +6,26 @@
  * /projects/agora/src/pages/CampaignsPage.tsx):
  *
  *  1. Resolve the Team Soapbox follow pack (kind 39089) to a list of
- *     moderator pubkeys. These are the only signers whose `featured`
+ *     moderator pubkeys. These are the only signers whose moderation
  *     labels we honor.
  *  2. Query NIP-32 label events (kind 1985) in the `agora.moderation`
  *     namespace, authored by those moderators, with an `a` tag pointing
  *     at a campaign coordinate (`33863:<pubkey>:<d>`).
- *  3. Fold the labels per-coordinate: newest label per axis wins. Keep
- *     coords whose latest `featured` label is `featured` (not
- *     `unfeatured`) and that are not also `hidden`.
- *  4. Fetch the actual kind 33863 campaign events for those coords.
- *  5. For each campaign, count donation receipts (kind 8333 events
+ *  3. Fold the labels per-coordinate. For each coord, the latest
+ *     `featured`/`unfeatured`, `approved`/`unapproved`, and
+ *     `hidden`/`unhidden` label wins on each axis.
+ *  4. Select up to MAX_FEATURED_CAMPAIGNS coords in two passes:
+ *       a. Featured: coords whose latest featured label is `featured`
+ *          and that aren't currently `hidden`. Sorted by featured-at.
+ *       b. Approved fillers: coords whose latest approval label is
+ *          `approved`, that aren't currently `hidden`, and that aren't
+ *          already in the featured set. Sorted by approval-at. Used to
+ *          backfill the row whenever there are fewer than
+ *          MAX_FEATURED_CAMPAIGNS explicit featureds — the row is
+ *          always full as long as the moderators have approved enough
+ *          campaigns overall.
+ *  5. Fetch the actual kind 33863 campaign events for those coords.
+ *  6. For each campaign, count donation receipts (kind 8333 events
  *     pointing at the campaign via `#a`) and sum the self-reported
  *     `amount` tag values. This is the same first-pass total Agora's
  *     own UI shows before on-chain verification finishes.
@@ -99,8 +109,22 @@ export interface AgoraFeaturedCampaign {
   goalUsd?: number;
   /** ISO 3166-1 alpha-2 country code, if tagged. */
   countryCode?: string;
-  /** When the moderator labeled this campaign as featured (Unix seconds). */
-  featuredAt: number;
+  /**
+   * How this campaign earned its slot on the row:
+   *  - `'featured'` — moderator explicitly labeled it `featured`.
+   *  - `'approved'` — backfill: moderator labeled it `approved`
+   *    (or `featured` then later `unfeatured`) and we needed to fill
+   *    out the row because there were fewer than {@link MAX_FEATURED_CAMPAIGNS}
+   *    explicit featureds.
+   */
+  source: 'featured' | 'approved';
+  /**
+   * When this campaign was surfaced (Unix seconds). For `featured`,
+   * the moderator's `featured`-label timestamp; for `approved`, the
+   * moderator's `approved`-label timestamp. Used for sort ordering
+   * within each source bucket.
+   */
+  surfacedAt: number;
   /** Total self-reported sats raised across donation receipts. Zero for private campaigns. */
   raisedSats: number;
   /** Unique donor count. */
@@ -268,12 +292,23 @@ export function useAgoraFeaturedCampaigns() {
       );
 
       // ── Step 3: fold per-coordinate. Newest label per axis wins. ─────
+      //
+      // We track three axes of moderation state:
+      //  - `featured` / `unfeatured` — explicit "show on the home row"
+      //  - `approved` / `unapproved` — "this campaign is safe to surface"
+      //  - `hidden` / `unhidden`     — kill-switch, wins over everything
+      //
+      // Featured implies approved in practice (you wouldn't feature
+      // something you hadn't approved), but they're independent label
+      // axes — featured-then-unfeatured leaves the campaign in the
+      // approved pool, which is exactly what we want for backfill.
       interface AxisDecision {
         label: string;
         createdAt: number;
       }
       interface State {
         featured?: AxisDecision;
+        approval?: AxisDecision;
         hide?: AxisDecision;
       }
       const byCoord = new Map<string, State>();
@@ -299,6 +334,10 @@ export function useAgoraFeaturedCampaigns() {
           if (!state.featured || ev.created_at > state.featured.createdAt) {
             state.featured = { label: value, createdAt: ev.created_at };
           }
+        } else if (value === 'approved' || value === 'unapproved') {
+          if (!state.approval || ev.created_at > state.approval.createdAt) {
+            state.approval = { label: value, createdAt: ev.created_at };
+          }
         } else if (value === 'hidden' || value === 'unhidden') {
           if (!state.hide || ev.created_at > state.hide.createdAt) {
             state.hide = { label: value, createdAt: ev.created_at };
@@ -307,16 +346,44 @@ export function useAgoraFeaturedCampaigns() {
         byCoord.set(aTag, state);
       }
 
-      // Keep coords whose latest featured label is `featured` AND that
-      // aren't currently `hidden`. Sort by featured-at desc and cap.
-      const featuredCoords: { coord: string; featuredAt: number }[] = [];
+      // Selection in two passes:
+      //  1. Featured (latest featured label is `featured`, not hidden)
+      //     sorted by featured-at desc.
+      //  2. Approved fillers (latest approval label is `approved`,
+      //     not hidden, not already in the featured set) sorted by
+      //     approval-at desc.
+      // Truncate the concatenated list to MAX_FEATURED_CAMPAIGNS.
+      type Pick = {
+        coord: string;
+        source: 'featured' | 'approved';
+        surfacedAt: number;
+      };
+
+      const featuredPicks: Pick[] = [];
+      const approvedPicks: Pick[] = [];
       for (const [coord, state] of byCoord) {
-        if (state.featured?.label !== 'featured') continue;
         if (state.hide?.label === 'hidden') continue;
-        featuredCoords.push({ coord, featuredAt: state.featured.createdAt });
+        if (state.featured?.label === 'featured') {
+          featuredPicks.push({
+            coord,
+            source: 'featured',
+            surfacedAt: state.featured.createdAt,
+          });
+        } else if (state.approval?.label === 'approved') {
+          approvedPicks.push({
+            coord,
+            source: 'approved',
+            surfacedAt: state.approval.createdAt,
+          });
+        }
       }
-      featuredCoords.sort((a, b) => b.featuredAt - a.featuredAt);
-      const top = featuredCoords.slice(0, MAX_FEATURED_CAMPAIGNS);
+      featuredPicks.sort((a, b) => b.surfacedAt - a.surfacedAt);
+      approvedPicks.sort((a, b) => b.surfacedAt - a.surfacedAt);
+
+      const top: Pick[] = [...featuredPicks, ...approvedPicks].slice(
+        0,
+        MAX_FEATURED_CAMPAIGNS,
+      );
 
       if (top.length === 0) return [];
 
@@ -400,9 +467,9 @@ export function useAgoraFeaturedCampaigns() {
         }
       }
 
-      // ── Assemble final result in featured-order, with naddr1 ─────────
+      // ── Assemble final result in surfacing order, with naddr1 ───────
       const result: AgoraFeaturedCampaign[] = [];
-      for (const { coord, featuredAt } of top) {
+      for (const { coord, source, surfacedAt } of top) {
         const p = parsedByCoord.get(coord);
         if (!p) continue;
 
@@ -437,7 +504,8 @@ export function useAgoraFeaturedCampaigns() {
 
         result.push({
           ...p,
-          featuredAt,
+          source,
+          surfacedAt,
           raisedSats,
           donorCount: donorPubkeys.size,
           naddr,
