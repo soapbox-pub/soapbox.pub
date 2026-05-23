@@ -56,7 +56,7 @@ export default function Agora() {
   useSEO({
     title: 'Agora — GoFundMe Without Borders | Soapbox',
     description:
-      'Agora is a censorship-resistant donation platform connecting activists to unstoppable funding. Send Bitcoin directly to people fighting for freedom around the world — wallet-to-wallet, no bridge, no custodian, no platform fee.',
+      'Agora is a censorship-resistant donation platform connecting activists to unstoppable funding. Send Bitcoin directly to people fighting for freedom around the world — wallet-to-wallet, no custodian, no middleman.',
     image: AGORA_OG_IMAGE,
     type: 'website',
     keywords:
@@ -321,7 +321,7 @@ function HowItWorksSection() {
         'A glowing Bitcoin coin flying through the air across a dark world map, symbolizing instant cross-border payment',
       heading: 'Donors send Bitcoin directly.',
       body:
-        'Donors send Bitcoin from any wallet they already use — Cash App, Coinbase, Strike, a hardware wallet — straight to the activist. Agora never touches the money. No bridge, no server in the middle, no platform fee.',
+        'Donors send Bitcoin from any wallet they already use — Cash App, Coinbase, Strike, a hardware wallet — straight to the activist. Agora never touches the money. No server in the middle, no custodian.',
     },
     {
       n: '03',
@@ -403,8 +403,8 @@ function HowItWorksSection() {
 // Activists pick which payment rails to accept when they create a campaign.
 // If they accept both, the donation page produces a single QR code that
 // works for any Bitcoin wallet AND for silent-payments-aware wallets.
-// There is no bridge: donations land directly in the activist's wallet on
-// either rail, and Agora is never in custody.
+// Donations land directly in the activist's wallet on either rail, and
+// Agora is never in custody.
 // ───────────────────────────────────────────────────────────────────────────
 
 function PaymentTypesSection() {
@@ -416,7 +416,7 @@ function PaymentTypesSection() {
             One QR code. Two payment rails.
           </p>
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Activists pick what they accept. One QR carries both.
+            Activists pick what they accept. One&nbsp;QR carries both.
           </h2>
           <p className="text-lg text-gray-600">
             When an activist creates a campaign, they choose which payment
@@ -499,7 +499,7 @@ function PaymentTypesSection() {
             <CardContent className="p-6 space-y-4">
               <div>
                 <h3 className="font-display font-bold text-gray-900 text-xl mb-2">
-                  Unlinkable, on-chain, no bridge
+                  Unlinkable, on-chain, direct
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-[15px]">
                   Donations are sent as BIP-352 silent payments. Each one
@@ -548,7 +548,7 @@ function PaymentTypesSection() {
             </div>
             <div>
               <h3 className="font-display font-bold text-gray-900 text-xl sm:text-2xl mb-1.5">
-                No bridge. No custody. No middleman.
+                No custody. No middleman.
               </h3>
               <p className="text-gray-600 leading-relaxed text-[15px]">
                 Agora never holds funds. There is no Soapbox server standing
@@ -792,7 +792,7 @@ function GuidesSection() {
               <ul className="space-y-2.5 mb-7">
                 {[
                   'Use any Bitcoin wallet you already have.',
-                  'Zero platform fees — every sat reaches the activist.',
+                  'Donations land directly with the activist — no custodian, no middleman.',
                   'For privacy, use a wallet that supports silent payments.',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
@@ -1002,7 +1002,7 @@ function FinalCtaSection() {
           >
             Open source on GitLab
           </a>{' '}
-          · No tracking, no analytics, no platform fee
+          · No tracking, no analytics, no custodian
         </p>
       </div>
     </section>
