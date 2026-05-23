@@ -977,8 +977,8 @@ function PullQuoteSection() {
           <div className="md:col-span-4">
             <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-agora-100 to-agora-200 overflow-hidden border-l-4 border-agora-500 shadow-lg">
               <img
-                src="/assets/blog/about-agora/agora-cover.png"
-                alt="Leopoldo López"
+                src="/assets/agora/leopoldo-lopez.png"
+                alt="Leopoldo López, Venezuelan opposition leader and co-founder of the World Liberty Congress"
                 className="w-full h-full object-cover"
               />
             </div>
