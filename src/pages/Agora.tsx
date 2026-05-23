@@ -56,17 +56,17 @@ export default function Agora() {
   useSEO({
     title: 'Agora — GoFundMe Without Borders | Soapbox',
     description:
-      'Agora is a censorship-resistant donation platform connecting activists to unstoppable funding. Send Bitcoin directly to people fighting for freedom around the world — no frozen bank accounts, no corporate shut-downs.',
+      'Agora is a censorship-resistant donation platform connecting activists to unstoppable funding. Send Bitcoin directly to people fighting for freedom around the world — wallet-to-wallet, no bridge, no custodian, no platform fee.',
     image: AGORA_OG_IMAGE,
     type: 'website',
     keywords:
-      'agora, agora.spot, bitcoin donations, censorship resistant, on-chain bitcoin, nostr, soapbox, activist funding, freedom tech, silent payments, political prisoners, venezuela, iran, zimbabwe, cambodia, uganda, nicaragua',
+      'agora, agora.spot, bitcoin donations, censorship resistant, on-chain bitcoin, nostr, soapbox, activist funding, freedom tech, silent payments, bip-352, dana wallet, ditto wallet, no custodian, political prisoners, venezuela, iran, zimbabwe, cambodia, uganda, nicaragua',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Agora',
       description:
-        'A censorship-resistant Bitcoin donation platform for the global freedom movement. Connecting activists to unstoppable funding. Built by Team Soapbox.',
+        'A censorship-resistant Bitcoin donation platform for the global freedom movement. Donations move wallet-to-wallet — Agora is never the custodian. Built by Team Soapbox.',
       applicationCategory: 'Finance',
       operatingSystem: 'Web, iOS, Android',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -87,7 +87,7 @@ export default function Agora() {
       <HeroSection />
       <FeaturedCampaignsSection />
       <HowItWorksSection />
-      <PublicVsPrivateSection />
+      <PaymentTypesSection />
       <WhyBitcoinSection />
       <GuidesSection />
       <PullQuoteSection />
@@ -321,7 +321,7 @@ function HowItWorksSection() {
         'A glowing Bitcoin coin flying through the air across a dark world map, symbolizing instant cross-border payment',
       heading: 'Donors send Bitcoin directly.',
       body:
-        'Donors send Bitcoin from any wallet they already use — Cash App, Coinbase, Strike, a hardware wallet — straight to the activist. Agora never touches the money. There is no platform fee.',
+        'Donors send Bitcoin from any wallet they already use — Cash App, Coinbase, Strike, a hardware wallet — straight to the activist. Agora never touches the money. No bridge, no server in the middle, no platform fee.',
     },
     {
       n: '03',
@@ -398,58 +398,66 @@ function HowItWorksSection() {
 }
 
 // ───────────────────────────────────────────────────────────────────────────
-// Section: Public vs. Private campaigns
+// Section: Payment types accepted (regular Bitcoin / silent payments)
+//
+// Activists pick which payment rails to accept when they create a campaign.
+// If they accept both, the donation page produces a single QR code that
+// works for any Bitcoin wallet AND for silent-payments-aware wallets.
+// There is no bridge: donations land directly in the activist's wallet on
+// either rail, and Agora is never in custody.
 // ───────────────────────────────────────────────────────────────────────────
 
-function PublicVsPrivateSection() {
+function PaymentTypesSection() {
   return (
     <section className="bg-[#faf8f4] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="text-xs font-semibold tracking-widest uppercase text-agora-600 mb-3">
-            Your campaign, your choice
+            One QR code. Two payment rails.
           </p>
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Public or private. Donors don't have to choose.
+            Activists pick what they accept. One QR carries both.
           </h2>
           <p className="text-lg text-gray-600">
-            Every campaign on Agora picks whether to accept donations publicly
-            or privately. From the donor's side, it's always the same — just a
-            Bitcoin address to send to.
+            When an activist creates a campaign, they choose which payment
+            types to accept: regular Bitcoin, silent payments, or both. If
+            both, the donation page shows a single QR code that works for any
+            wallet — Bitcoin-only senders pay normally, silent-payments
+            wallets pay privately.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {/* Public */}
+          {/* Regular Bitcoin */}
           <Card className="overflow-hidden border-gray-200 bg-white shadow-sm">
             <div className="bg-gradient-to-r from-agora-500 to-agora-600 px-6 py-5 text-white">
               <div className="flex items-center gap-2 mb-1">
                 <Globe className="size-4" />
                 <span className="text-xs font-semibold uppercase tracking-widest">
-                  Public Campaign
+                  Regular Bitcoin
                 </span>
               </div>
               <p className="text-agora-50 text-sm">
-                Fast · Unstoppable · Transparent
+                Universal · Fast · Transparent
               </p>
             </div>
             <CardContent className="p-6 space-y-4">
               <div>
                 <h3 className="font-display font-bold text-gray-900 text-xl mb-2">
-                  Truly censorship-resistant
+                  Works with every wallet on earth
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-[15px]">
                   Donations land at a regular Bitcoin address the activist
-                  controls. No middleman ever sits between donor and recipient —
-                  even Agora is removed from the path.
+                  controls. Anyone with any Bitcoin wallet can send — no new
+                  app, no new account, no learning curve.
                 </p>
               </div>
 
               <ul className="space-y-2.5">
                 {[
-                  'Truly unstoppable — works even if Agora\'s servers go dark',
+                  'Works in every Bitcoin wallet — Cash App, Coinbase, Strike, hardware',
                   'Fastest settlement — Bitcoin confirmations only',
-                  'Verifiable — anyone can see what an activist has received',
+                  'Verifiable on-chain — anyone can see what an activist has received',
                 ].map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2.5">
                     <CheckCircle2 className="size-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -468,33 +476,33 @@ function PublicVsPrivateSection() {
                   </span>
                 </div>
                 <p className="text-sm text-gray-600 leading-snug">
-                  Donations are public on the blockchain. Best for above-ground
-                  activism where transparency is fine — or even an asset.
+                  Public on-chain. Best for above-ground activism where
+                  transparency is fine — or even an asset.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Private */}
+          {/* Silent Payments */}
           <Card className="overflow-hidden border-gray-200 bg-white shadow-sm">
             <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 px-6 py-5 text-white">
               <div className="flex items-center gap-2 mb-1">
                 <Lock className="size-4" />
                 <span className="text-xs font-semibold uppercase tracking-widest">
-                  Private Campaign
+                  Silent Payments
                 </span>
               </div>
               <p className="text-indigo-100 text-sm">
-                Unlinkable · Discreet · Protected
+                Unlinkable · Direct · BIP-352
               </p>
             </div>
             <CardContent className="p-6 space-y-4">
               <div>
                 <h3 className="font-display font-bold text-gray-900 text-xl mb-2">
-                  Built on silent payments
+                  Unlinkable, on-chain, no bridge
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-[15px]">
-                  Donations are routed through BIP-352 silent payments. Each one
+                  Donations are sent as BIP-352 silent payments. Each one
                   lands at a fresh, unlinkable Bitcoin output that an observer
                   staring at the blockchain can't tie back to the campaign.
                 </p>
@@ -504,7 +512,7 @@ function PublicVsPrivateSection() {
                 {[
                   "Donation trail can't be reconstructed on-chain",
                   'Protects activists facing serious adversaries',
-                  'Donor experience is identical — just paste a Bitcoin address',
+                  'Lands directly in the activist\'s wallet — no server in the middle',
                 ].map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2.5">
                     <CheckCircle2 className="size-4 text-indigo-600 shrink-0 mt-0.5" />
@@ -523,14 +531,32 @@ function PublicVsPrivateSection() {
                   </span>
                 </div>
                 <p className="text-sm text-gray-600 leading-snug">
-                  Slightly slower. The Soapbox bridge briefly stands between
-                  donor and activist to convert regular sends into silent
-                  payments, so we re-introduce one trust point for the secrecy
-                  gain.
+                  Donors need a wallet that supports silent payments to send
+                  privately. Otherwise it falls back to a regular Bitcoin
+                  transaction.
                 </p>
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* No-middleman highlight band — the load-bearing claim of the page. */}
+        <div className="mt-10 max-w-5xl mx-auto">
+          <div className="rounded-2xl border border-agora-200 bg-gradient-to-br from-white to-agora-50/40 px-6 py-7 sm:px-8 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="size-12 shrink-0 rounded-xl bg-agora-500/10 border border-agora-500/20 flex items-center justify-center">
+              <ShieldCheck className="size-6 text-agora-600" />
+            </div>
+            <div>
+              <h3 className="font-display font-bold text-gray-900 text-xl sm:text-2xl mb-1.5">
+                No bridge. No custody. No middleman.
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-[15px]">
+                Agora never holds funds. There is no Soapbox server standing
+                between donor and activist on either rail — donations land
+                directly in the activist's wallet, every time.
+              </p>
+            </div>
+          </div>
         </div>
 
         <p className="text-center mt-10 max-w-2xl mx-auto text-gray-600 text-sm leading-relaxed">
@@ -662,13 +688,13 @@ function WhyBitcoinSection() {
       icon: ShieldCheck,
       heading: 'No custodian to shut down',
       body:
-        "Bitcoin doesn't depend on any company staying online. If Agora itself disappeared tomorrow, public-mode donations would still flow straight to the activists who need them.",
+        "Agora is never the custodian. Donations move wallet-to-wallet — there's no Soapbox server in the path. If Agora itself disappeared tomorrow, every campaign would keep working.",
     },
     {
       icon: Eye,
       heading: 'Public is a feature, not a bug',
       body:
-        'For public campaigns, donors and the world can verify exactly what activists have received. For activists who need privacy, switch to a private campaign and it\'s unlinkable on-chain.',
+        "For public campaigns, donors and the world can verify exactly what activists have received. For activists who need privacy, accepting silent payments routes donations to fresh, unlinkable on-chain outputs — without any third party in between.",
     },
   ];
 
@@ -767,7 +793,7 @@ function GuidesSection() {
                 {[
                   'Use any Bitcoin wallet you already have.',
                   'Zero platform fees — every sat reaches the activist.',
-                  'Step-by-step privacy techniques in the Donor Guide.',
+                  'For privacy, use a wallet that supports silent payments.',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
                     <CheckCircle2 className="size-4 text-blue-600 shrink-0 mt-0.5" />
@@ -831,8 +857,8 @@ function GuidesSection() {
               <ul className="space-y-2.5 mb-7">
                 {[
                   'Start receiving donations as soon as you sign up.',
-                  'Choose a public or private campaign to fit your situation.',
-                  'Step-by-step cash-out and privacy guidance.',
+                  'Pick which payment types to accept — regular Bitcoin, silent payments, or both.',
+                  'For private cash-out, send to a silent-payments wallet first, then forward anywhere.',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
                     <CheckCircle2 className="size-4 text-agora-600 shrink-0 mt-0.5" />
