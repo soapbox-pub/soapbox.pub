@@ -61,7 +61,7 @@ export default function OnchainZapsInDitto() {
   return (
     <article className="prose prose-lg max-w-none">
       <p className="lead">
-        Bitcoin needs a hero. As the great clown Mark Cuban said: Bitcoin has{' '}
+        As the great clown Mark Cuban said: Bitcoin has{' '}
         <em>"lost the plot."</em>
       </p>
 
