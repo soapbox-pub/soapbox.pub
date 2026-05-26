@@ -93,6 +93,7 @@ import * as zapping101 from '../../components/blog/posts/zapping-101';
 import * as dittoupdatesapril2026 from '../../components/blog/posts/ditto-updates-april-2026';
 import * as dittobitcoinvegas2026 from '../../components/blog/posts/ditto-bitcoin-vegas-2026';
 import * as howtologindivinewithoutinvitecode from '../../components/blog/posts/how-to-login-divine-without-invite-code';
+import * as onchainzapsinditto from '../../components/blog/posts/onchain-zaps-in-ditto';
 import * as buildingzuka from '../../components/blog/posts/building-zuka';
 import * as conferencerecapbitcoin2026 from '../../components/blog/posts/conference-recap-bitcoin-2026';
 
@@ -137,6 +138,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  onchainzapsinditto.meta,
   buildingzuka.meta,
   conferencerecapbitcoin2026.meta,
   howtologindivinewithoutinvitecode.meta,
@@ -238,6 +240,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'onchainzapsinditto':
+      return (await import('../../components/blog/posts/onchain-zaps-in-ditto')).default;
     case 'buildingzuka':
       return (await import('../../components/blog/posts/building-zuka')).default;
     case 'conferencerecapbitcoin2026':

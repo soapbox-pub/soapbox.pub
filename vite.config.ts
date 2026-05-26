@@ -61,6 +61,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/onchain-zaps-in-ditto",
         "/blog/building-zuka",
         "/blog/conference-recap-bitcoin-2026",
         "/blog/how-to-login-divine-without-invite-code",
