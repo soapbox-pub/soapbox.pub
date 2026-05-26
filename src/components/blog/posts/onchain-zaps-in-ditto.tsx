@@ -567,7 +567,7 @@ export default function OnchainZapsInDitto() {
       <p>
         Bitcoin is, and always has been, unstoppable money. We have been so
         focused on surviving in a high-fee environment that we will die in a
-        low-fee environment. We have to stay focused. The heart of Bitcoin is
+        low-fee environment. The heart of Bitcoin is
         the public ledger &mdash; the same public ledger that made Bitcoin
         legitimate, the same public ledger Mark Cuban thinks Bitcoin has
         outgrown.
