@@ -67,6 +67,13 @@ export default function OnchainZapsInDitto() {
 
       <h2>The Plot</h2>
 
+      <figure>
+        <img
+          alt="Bitcoin's open pasture &mdash; a pirate flag flying over an uncongested digital landscape, symbolizing Bitcoin returning to its freedom-money roots"
+          src="/assets/blog/onchain-zaps-in-ditto/section-plot.jpg"
+        />
+      </figure>
+
       <p>
         Bitcoin is freedom money. It's Open Source money. It's magical
         Internet money.
@@ -88,6 +95,13 @@ export default function OnchainZapsInDitto() {
       <p>Bitcoin is ready for the world. But is the world ready for Bitcoin?</p>
 
       <h2>Nostr</h2>
+
+      <figure>
+        <img
+          alt="Nostr as a black hole &mdash; a cryptographic void waiting to be filled, surrounded by Bitcoin keys swirling into orbit"
+          src="/assets/blog/onchain-zaps-in-ditto/section-nostr.jpg"
+        />
+      </figure>
 
       <p>
         Nostr is Bitcoin Twitter's social network. Except that Bitcoin Twitter
@@ -126,6 +140,13 @@ export default function OnchainZapsInDitto() {
 
       <p>Are you a pirate or an accountant?</p>
 
+      <figure>
+        <img
+          alt="Pirate versus accountant &mdash; Bitcoin's freedom-money UX (a pirate with a treasure chest) contrasted with Lightning's tedious bookkeeping (an accountant buried in spreadsheets)"
+          src="/assets/blog/onchain-zaps-in-ditto/section-pirate-vs-accountant.jpg"
+        />
+      </figure>
+
       <h2>The Reckoning</h2>
 
       <p>
@@ -147,6 +168,13 @@ export default function OnchainZapsInDitto() {
       </p>
 
       <h2>Onchain Zaps in Ditto</h2>
+
+      <figure>
+        <img
+          alt="Ditto 2.12 wallet sending Bitcoin directly between Nostr addresses &mdash; an onchain zap flowing from one cryptographic identity to another, no Lightning required"
+          src="/assets/blog/onchain-zaps-in-ditto/section-onchain-zaps.jpg"
+        />
+      </figure>
 
       <p>
         Starting in Ditto 2.12 we shipped a wallet that lets you transfer
@@ -190,6 +218,13 @@ export default function OnchainZapsInDitto() {
       </p>
 
       <h2>The Backlash</h2>
+
+      <figure>
+        <img
+          alt="The backlash against onchain zaps &mdash; a storm of angry comments and accusations swirling around a steady Bitcoin signal"
+          src="/assets/blog/onchain-zaps-in-ditto/section-backlash.jpg"
+        />
+      </figure>
 
       <p>
         Upon Amethyst releasing the feature, there was a great backlash, to
@@ -256,6 +291,13 @@ export default function OnchainZapsInDitto() {
       </p>
 
       <h2>Silent Payments</h2>
+
+      <figure>
+        <img
+          alt="Silent Payments on Nostr &mdash; cryptographic stealth addresses derived from a Nostr public key, transactions vanishing into the chain like whispers"
+          src="/assets/blog/onchain-zaps-in-ditto/section-silent-payments.jpg"
+        />
+      </figure>
 
       <p>
         Most people won't be targeted, so I am truly not worried about the
@@ -340,6 +382,13 @@ export default function OnchainZapsInDitto() {
 
       <h2>Tradeoffs</h2>
 
+      <figure>
+        <img
+          alt="Tradeoffs of Silent Payments &mdash; a balance scale weighing privacy against the slow blockchain scan required to receive payments"
+          src="/assets/blog/onchain-zaps-in-ditto/section-tradeoffs.jpg"
+        />
+      </figure>
+
       <p>
         The biggest barrier to Silent Payments is adoption by wallets. Most
         Bitcoin software cannot send or receive them. But that's not the only
@@ -364,6 +413,13 @@ export default function OnchainZapsInDitto() {
       </p>
 
       <h2>The Case for Public</h2>
+
+      <figure>
+        <img
+          alt="The case for a public ledger &mdash; Bitcoin transactions illuminated by sunlight in an open town square, citizens watching and participating openly"
+          src="/assets/blog/onchain-zaps-in-ditto/section-case-for-public.jpg"
+        />
+      </figure>
 
       <p>
         Bitcoin's design as a public ledger in many ways contributed to its
@@ -418,6 +474,13 @@ export default function OnchainZapsInDitto() {
 
       <h2>Self-Hatred</h2>
 
+      <figure>
+        <img
+          alt="Bitcoin maximalist self-hatred &mdash; a figure wrapping Bitcoin in chains and ceremonial rules, suppressing its native simplicity"
+          src="/assets/blog/onchain-zaps-in-ditto/section-self-hatred.jpg"
+        />
+      </figure>
+
       <p>
         Something I've learned through this is that Bitcoin's biggest fans
         despise its design on the most basic level. There is a religious
@@ -438,6 +501,13 @@ export default function OnchainZapsInDitto() {
       </p>
 
       <h2>Unstoppable Money</h2>
+
+      <figure>
+        <img
+          alt="Unstoppable money &mdash; Bitcoin flowing freely across borders, breaking through barriers and reaching the people who need it most"
+          src="/assets/blog/onchain-zaps-in-ditto/section-unstoppable-money.jpg"
+        />
+      </figure>
 
       <p>
         Tim Bouma's solution for silent payments on Nostr is aspirational.
