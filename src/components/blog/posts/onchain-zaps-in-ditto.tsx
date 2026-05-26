@@ -459,12 +459,37 @@ export default function OnchainZapsInDitto() {
         have been able to donate to Alexei Navalny in the first place?
       </p>
 
-      <p>
-        Most dissidents are captured through legacy systems, because they
-        already have no privacy. Forcing Bitcoin into a privacy shape detracts
-        from its usage as unstoppable money. The solutions create too many
-        barriers, because it's simply not what Bitcoin is.
-      </p>
+      <div className="not-prose my-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="relative bg-muted/40 rounded-lg p-6 pt-10">
+          <span
+            aria-hidden="true"
+            className="absolute top-1 left-4 text-6xl leading-none font-serif text-orange-500/70 select-none"
+          >
+            &ldquo;
+          </span>
+          <p className="text-lg font-medium text-foreground leading-snug">
+            Whether it's secret or public doesn't matter.
+          </p>
+          <p className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">
+            Citizen in Gaza
+          </p>
+        </div>
+        <div className="relative bg-muted/40 rounded-lg p-6 pt-10">
+          <span
+            aria-hidden="true"
+            className="absolute top-1 left-4 text-6xl leading-none font-serif text-orange-500/70 select-none"
+          >
+            &ldquo;
+          </span>
+          <p className="text-lg font-medium text-foreground leading-snug">
+            There is so much obsession with privacy that it becomes useless
+            by how complicated it becomes.
+          </p>
+          <p className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">
+            Venezuelan activist
+          </p>
+        </div>
+      </div>
 
       <p>
         What matters most is that people can get the money. Is Bitcoin
@@ -500,6 +525,36 @@ export default function OnchainZapsInDitto() {
         Not infinite privacy.
       </p>
 
+      <figure className="not-prose my-12 relative">
+        <div className="relative bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/20 rounded-2xl px-8 py-12 md:px-16 md:py-16 text-center overflow-hidden">
+          <span
+            aria-hidden="true"
+            className="absolute top-2 left-6 text-9xl leading-none font-serif text-orange-500/20 dark:text-orange-400/20 select-none pointer-events-none"
+          >
+            &ldquo;
+          </span>
+          <span
+            aria-hidden="true"
+            className="absolute bottom-[-2.5rem] right-6 text-9xl leading-none font-serif text-orange-500/20 dark:text-orange-400/20 select-none pointer-events-none"
+          >
+            &rdquo;
+          </span>
+          <div className="relative space-y-2 font-serif text-xl md:text-2xl text-foreground leading-relaxed italic">
+            <p>If you love a flower, don't pick it up.</p>
+            <p>
+              Because if you pick it up it dies and it ceases to be what you
+              love.
+            </p>
+            <p>So if you love a flower, let it be.</p>
+            <p>Love is not about possession.</p>
+            <p>Love is about appreciation.</p>
+          </div>
+          <figcaption className="relative mt-8 text-xs uppercase tracking-[0.3em] text-orange-700 dark:text-orange-400">
+            Osho
+          </figcaption>
+        </div>
+      </figure>
+
       <h2>Unstoppable Money</h2>
 
       <figure>
@@ -510,12 +565,12 @@ export default function OnchainZapsInDitto() {
       </figure>
 
       <p>
-        Silent Payments are an option for the future. They are not a
-        replacement, and they never will be. Ditto will offer them where they
-        make sense, but the heart of Ditto is the public ledger &mdash; the
-        same public ledger that let strangers donate to Alexei Navalny, the
-        same public ledger that made Bitcoin legitimate, the same public
-        ledger Mark Cuban thinks Bitcoin has outgrown.
+        Bitcoin is, and always has been, unstoppable money. We have been so
+        focused on surviving in a high-fee environment that we will die in a
+        low-fee environment. We have to stay focused. The heart of Bitcoin is
+        the public ledger &mdash; the same public ledger that made Bitcoin
+        legitimate, the same public ledger Mark Cuban thinks Bitcoin has
+        outgrown.
       </p>
 
       <p>
@@ -531,12 +586,6 @@ export default function OnchainZapsInDitto() {
         received it instantly. Nobody had to ask permission. Nobody had to
         set anything up. That is what Bitcoin was supposed to be, and that
         is what Bitcoin already is, the moment you stop apologizing for it.
-      </p>
-
-      <p>
-        The pirate doesn't ask. The accountant asks. Square is ready. The
-        world is ready. Bitcoin is ready. The only thing left is for
-        Bitcoiners to be ready.
       </p>
 
       <p>
