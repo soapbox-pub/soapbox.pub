@@ -510,31 +510,38 @@ export default function OnchainZapsInDitto() {
       </figure>
 
       <p>
-        Tim Bouma's solution for silent payments on Nostr is aspirational.
-        It's still an area of experimentation. Future versions of Ditto may
-        support it as an option alongside public payments, but never as a
-        replacement.
+        Silent Payments are an option for the future. They are not a
+        replacement, and they never will be. Ditto will offer them where they
+        make sense, but the heart of Ditto is the public ledger &mdash; the
+        same public ledger that let strangers donate to Alexei Navalny, the
+        same public ledger that made Bitcoin legitimate, the same public
+        ledger Mark Cuban thinks Bitcoin has outgrown.
       </p>
 
       <p>
-        Ditto will continue to embrace onchain zaps and the public ledger. I
-        have not been convinced that Bitcoin must be reshaped into something
-        it's not, or even that the community's "best practices" are always
-        correct for every use case.
+        Bitcoin hasn't outgrown anything. Its loudest fans have. They built a
+        religion around the parts of Bitcoin they don't trust, and they call
+        anyone who uses it as designed an idiot. They are the barrier. Not
+        the fees, not the chain, not the world &mdash; Bitcoin's own people.
       </p>
 
       <p>
-        For the people making moral claims that it's "putting people at risk"
-        &mdash; first of all, do you even like Bitcoin? Second of all, I would
-        make the reverse moral claim that STOPPABLE MONEY is an even greater
-        moral risk. All this crap we are building on top of Bitcoin to change
-        its most basic form is making it not work correctly, and as a result
-        life-changing money is not being delievered to people who need it.
+        I gave away $2,000 in a weekend with no Lightning channels, no LNURL
+        servers, no invite codes, no anxiety. People I had never spoken to
+        received it instantly. Nobody had to ask permission. Nobody had to
+        set anything up. That is what Bitcoin was supposed to be, and that
+        is what Bitcoin already is, the moment you stop apologizing for it.
       </p>
 
       <p>
-        We have created too many barriers. Now is the time to remove barriers.
-        UNSTOPPABLE MONEY is the plot.
+        The pirate doesn't ask. The accountant asks. Square is ready. The
+        world is ready. Bitcoin is ready. The only thing left is for
+        Bitcoiners to be ready.
+      </p>
+
+      <p>
+        We have created too many barriers. Now is the time to remove
+        barriers. UNSTOPPABLE MONEY is the plot.
       </p>
 
       <h2>Related Reading</h2>
