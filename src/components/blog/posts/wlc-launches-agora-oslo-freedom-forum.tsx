@@ -63,31 +63,17 @@ export default function WlcLaunchesAgoraOsloFreedomForum() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
-          <CardContent className="p-6 sm:p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              Watch the Agora Launch
-            </h3>
-            <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/A_svIvLGo2M"
-                title="World Liberty Congress Launches Agora at Oslo Freedom Forum"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="mt-6">
-              <Button asChild className="bg-red-600 hover:bg-red-700 text-white">
-                <a href="https://www.youtube.com/watch?v=A_svIvLGo2M" target="_blank" rel="noopener noreferrer">
-                  Watch on YouTube →
-                </a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/A_svIvLGo2M"
+            title="World Liberty Congress Launches Agora at Oslo Freedom Forum"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       <h2>A New Platform for Global Solidarity</h2>
@@ -122,25 +108,6 @@ export default function WlcLaunchesAgoraOsloFreedomForum() {
       <p>
         At launch, Agora features campaigns supporting political prisoners and grassroots human rights movements from multiple regions, including <strong>Uganda, Nicaragua, Zimbabwe, Cambodia, and Palestine</strong>, alongside campaigns organized by members of the World Liberty Congress network.
       </p>
-
-      <div className="not-prose my-8">
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-          {[
-            { flag: "🇺🇬", country: "Uganda" },
-            { flag: "🇳🇮", country: "Nicaragua" },
-            { flag: "🇿🇼", country: "Zimbabwe" },
-            { flag: "🇰🇭", country: "Cambodia" },
-            { flag: "🇵🇸", country: "Palestine" },
-          ].map(({ flag, country }) => (
-            <Card key={country} className="text-center">
-              <CardContent className="p-4">
-                <div className="text-3xl mb-1">{flag}</div>
-                <p className="font-semibold text-sm text-foreground">{country}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
 
       <h2>Unstoppable Infrastructure for Civil Society</h2>
 
