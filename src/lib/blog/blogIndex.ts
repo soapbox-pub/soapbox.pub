@@ -96,6 +96,7 @@ import * as howtologindivinewithoutinvitecode from '../../components/blog/posts/
 import * as onchainzapsinditto from '../../components/blog/posts/onchain-zaps-in-ditto';
 import * as buildingzuka from '../../components/blog/posts/building-zuka';
 import * as conferencerecapbitcoin2026 from '../../components/blog/posts/conference-recap-bitcoin-2026';
+import * as wlclaunchesagoraoslofreedomforum from '../../components/blog/posts/wlc-launches-agora-oslo-freedom-forum';
 
 export interface BlogFAQ {
   question: string;
@@ -138,6 +139,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  wlclaunchesagoraoslofreedomforum.meta,
   onchainzapsinditto.meta,
   buildingzuka.meta,
   conferencerecapbitcoin2026.meta,
@@ -240,6 +242,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'wlclaunchesagoraoslofreedomforum':
+      return (await import('../../components/blog/posts/wlc-launches-agora-oslo-freedom-forum')).default;
     case 'onchainzapsinditto':
       return (await import('../../components/blog/posts/onchain-zaps-in-ditto')).default;
     case 'buildingzuka':
