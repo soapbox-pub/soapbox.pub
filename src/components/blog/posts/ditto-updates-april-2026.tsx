@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
     url: '/assets/blog/ditto-updates-april-2026/cover.png',
   },
   tags: ['Ditto', 'Nostr', 'Update'],
-  featured: true,
+  featured: false,
 };
 
 export default function DittoUpdatesApril2026() {

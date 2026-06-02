@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/building-zuka/cover.jpg',
   },
-  featured: true,
+  featured: false,
   tags: [
     'nostr',
     'bitcoin',

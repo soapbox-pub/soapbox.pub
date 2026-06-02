@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/managing-nostr-keys/understanding-nostr-keys.png"
   },
-  "featured": true,
+  "featured": false,
   "tags": [
     "nostr",
     "divine",

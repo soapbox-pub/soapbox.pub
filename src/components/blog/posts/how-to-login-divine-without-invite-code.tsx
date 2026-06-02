@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/how-to-login-divine-without-invite-code/how-to-log-into-divine-no-invite-code-with-nostr-cover.png"
   },
-  "featured": true,
+  "featured": false,
   "tags": [
     "divine",
     "divine app",

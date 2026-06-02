@@ -17,7 +17,7 @@ export const meta: BlogPostMeta = {
   tags: ['Bitcoin', 'Nostr', 'Soapbox', 'Ditto', 'Shakespeare', 'Agora', 'NosVegas', 'Bitcoin 2026'],
   keywords:
     'bitcoin conference 2026 recap, nosvegas 2026, nostr at bitcoin 2026, soapbox bitcoin vegas, value for value music, v4v music nostr, bitcoin nostr ai freedom tech, shakespeare ai builder nostr, agora venezuelan activists nostr, HRF freedom tech bitcoin 2026, protocol vs platform nostr, nostr git nip-34',
-  featured: true,
+  featured: false,
 };
 
 export default function ConferenceRecapBitcoin2026() {
