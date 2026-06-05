@@ -440,7 +440,8 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       <h3>Campaign addresses</h3>
 
       <p>
-        Silent payments let us skip the coordinating server entirely. The
+        Silent payments are a decentralized solution to address reuse, that 
+        let us skip the coordinating server entirely. The
         freshness step happens inside the donor's wallet, using only public
         information. The activist publishes one static <code>sp1q…</code> in
         their campaign event (a Nostr addressable event, <code>kind 33863</code>
@@ -448,8 +449,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       </p>
 
       <p>
-        The cost: the same <code>sp1q…</code> is shared across all of a single
-        activist's silent-payment campaigns. Agora can't tell, from the
+        Agora can't tell, from the
         silent-payment side alone, which campaign a given donation was intended
         for. The comparison:
       </p>
@@ -516,12 +516,18 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       </div>
 
       <p>
-        This is also why silent-payment donation counts aren't public: the
-        property that makes the donations unlinkable also makes a public
-        progress bar impossible. Activists pick one. Most accept both, and the
+        Activists pick one. Most accept both, and the
         donation page produces a single BIP-21 URI (
         <code>bitcoin:bc1p…?sp=sp1q…</code>) so BIP-352-aware wallets take the
         private endpoint and everything else falls back to on-chain.
+      </p>
+
+      <p>
+        Silent payments are a solution to the problem of static address reuse for fundraisers, 
+        however, they are not a solution for all of Bitcoin's privacy problems. Agora is designed 
+        not for users who require perfect privacy, but for people who need money and are willing to 
+        accept some tradeoffs to get it in the most accessible format. For pure privacy, the 
+        solutions require either a custodian like a Cashu mint or using a different coin entirely, like Monero.
       </p>
 
       <h2 className="!mt-16 !pt-12 border-t border-border">What's next for Agora</h2>
