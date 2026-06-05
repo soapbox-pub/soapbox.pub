@@ -255,9 +255,7 @@ export default function AgoraIsLive() {
             <blockquote className="text-lg italic text-foreground mb-3">
               "A lot of people ask me for help to create a GoFundMe. You need to
               decide: go public and receive the money or go private and find
-              another way. A lot of them all around the world, they don't have
-              the chance to decide, not even just for their life what to eat
-              today or what to study. It's the possibility to decide. A lot of
+              another way. … It's the possibility to decide. A lot of
               people will be waiting to create their campaign and willing to
               raise the risks."
             </blockquote>
