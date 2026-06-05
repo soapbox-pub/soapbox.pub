@@ -4,7 +4,7 @@ import { Globe, Lock } from 'lucide-react';
 
 export const meta: BlogPostMeta = {
   slug: 'agora-is-live',
-  title: 'Agora Launched at Oslo Freedom Forum',
+  title: 'Agora Launched at Oslo Freedom Forum: What we built and why',
   excerpt:
     'On June 2nd we launched our new version of Agora at the Oslo Freedom Forum. Here is the story behind it, how the unstoppable Bitcoin wallet works, and what we are doing next.',
   coverImage: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.png',
@@ -71,7 +71,7 @@ export default function AgoraIsLive() {
         <a href="https://agora.spot" target="_blank" rel="noopener noreferrer">
           Agora
         </a>{' '}
-        on the OFF Freedom Tech stage. Agora was borne out of a 6-month
+        on the OFF Freedom Tech stage. Agora was born out of a 6-month
         partnership with Venezuelan opposition leader{' '}
         <a
           href="https://en.wikipedia.org/wiki/Leopoldo_L%C3%B3pez"
@@ -141,8 +141,11 @@ export default function AgoraIsLive() {
       </figure>
 
       <p>
-        There are already plenty of ways to raise money over Lightning or with
-        custodians, from Zap Goals on Nostr to platforms like{' '}
+        So we reinvisioned Agora as a Bitcoin fundraising platform. Fundraising
+        across borders is a perfect use-case for Bitcoin, but surprisingly few
+        Bitcoin fundraising platforms exist. There are already plenty of ways to
+        raise money over Lightning or with custodians, from Zap Goals on Nostr
+        to platforms like{' '}
         <a
           href="https://geyser.fund"
           target="_blank"
@@ -159,8 +162,8 @@ export default function AgoraIsLive() {
       </p>
 
       <p>
-        Both former political prisoners, Aaron and Leo told us that sometimes
-        $800 is enough to get someone to safety. By then privacy is already out
+        Aaron and Leo, who was held as a political prisoner, told us that
+        sometimes $800 is enough to get someone to safety. By then privacy is already out
         the window. All that matters is receiving and spending the money easily,
         and any barrier to access is the #1 liability. The same pattern held in
         Gaza, where Team Soapbox member Morgan Maksoud-Miller worked with
@@ -178,40 +181,6 @@ export default function AgoraIsLive() {
           donors
         </a>{' '}
         willing to give amounts that make a difference.
-      </p>
-
-      <h2 className="!mt-16 !pt-12 border-t border-border">How we built Agora</h2>
-
-      <p>
-        After six months of partnership and research, we realized we needed to
-        take the entire project back to the drawing board. We scrapped the old
-        code base, and built the new Agora as a fork of{' '}
-        <a
-          href="https://soapbox.pub/ditto"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ditto
-        </a>
-        . Forking Ditto gave us the benefit of a huge context reference for
-        anything we wanted to include and allowed us to work extremely quickly.
-        We ripped out anything we didn't need, rebranded, and dramatically
-        changed and added many core features.
-      </p>
-
-      <p>
-        The largest change and the focus of this work was the wallet. Our work
-        and research proved that accessibility was paramount, but there were
-        also serious privacy concerns with the
-        on-chain zap system Ditto recently implemented. Thanks to the
-        conversation sparked by Ditto's implementation, we were able to harvest
-        ideas and feedback from the Nostr and Bitcoin community to come up with
-        a system to offer Agora users the best of both worlds with minimal
-        tradeoffs to our core accessibility concerns. We would like
-        to thank everyone who worked productively with us on this issue to push
-        towards real solutions, including members of the AOS community and our
-        partners at the HRF
-        who provided leadership and guidance on the final implementation.
       </p>
 
       <h2 className="!mt-16 !pt-12 border-t border-border">Unstoppable funding</h2>
