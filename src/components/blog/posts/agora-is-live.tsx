@@ -216,6 +216,16 @@ export default function AgoraIsLive() {
 
       <h2 className="!mt-16 !pt-12 border-t border-border">Unstoppable funding</h2>
 
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/A_svIvLGo2M"
+        title="Agora at the Oslo Freedom Forum"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="rounded-lg"
+      />
+
       <p>
         To be truly unstoppable funding, Agora could not depend on any server or
         middle-man service (including us) that could be shut down by a
@@ -610,6 +620,14 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       </p>
 
       <h3>Local Pilot Coalitions</h3>
+
+      <figure className="m-0">
+        <img
+          src="/assets/blog/agora-is-live/palestine-campaigns.png"
+          alt="Agora campaigns submitted by Palestinian activists seeking censorship-resistant Bitcoin funding"
+          className="w-full rounded-lg"
+        />
+      </figure>
 
       <p>
         We are developing on three coalitions to battle-test Agora's central
