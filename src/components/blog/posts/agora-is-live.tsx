@@ -7,14 +7,14 @@ export const meta: BlogPostMeta = {
   title: 'Agora Launched at Oslo Freedom Forum: What we built and why',
   excerpt:
     'On June 2nd we launched our new version of Agora at the Oslo Freedom Forum. Here is the story behind it, how the unstoppable Bitcoin wallet works, and what we are doing next.',
-  coverImage: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.png',
+  coverImage: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.webp',
   date: '2026-06-04',
   author: {
     name: 'M. K. Fain',
     picture: '/assets/avatars/mk.jpg',
   },
   ogImage: {
-    url: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.png',
+    url: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.webp',
   },
   featured: true,
   tags: [
@@ -134,7 +134,7 @@ export default function AgoraIsLive() {
 
       <figure className="m-0">
         <img
-          src="/assets/blog/agora-is-live/agora-team-hackathon.png"
+          src="/assets/blog/agora-is-live/agora-team-hackathon.webp"
           alt="The Agora team building the first version of Agora with Leo and Aaron at the HRF AI Hack for Freedom hackathon"
           className="w-full rounded-lg"
         />
@@ -599,7 +599,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
 
       <figure className="m-0">
         <img
-          src="/assets/blog/agora-is-live/palestine-campaigns.png"
+          src="/assets/blog/agora-is-live/palestine-campaigns.webp"
           alt="Agora campaigns submitted by Palestinian activists seeking censorship-resistant Bitcoin funding"
           className="w-full rounded-lg"
         />
