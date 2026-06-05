@@ -61,6 +61,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/agora-is-live",
         "/blog/wlc-launches-agora-oslo-freedom-forum",
         "/blog/onchain-zaps-in-ditto",
         "/blog/building-zuka",
