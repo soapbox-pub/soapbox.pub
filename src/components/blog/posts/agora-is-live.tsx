@@ -580,6 +580,13 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
 
       <h2 className="!mt-16 !pt-12 border-t border-border">What's next for Agora</h2>
 
+      <p>
+        The response since launch has been beyond what we expected. In the first
+        few days alone, over 60 campaigns were created, most of them from
+        Palestinian families, and more than $5,000 worth of Bitcoin has already
+        been donated and distributed directly to recipients.
+      </p>
+
       <h3>Further testing and exploration of privacy systems</h3>
 
       <p>
