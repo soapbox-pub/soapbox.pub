@@ -499,7 +499,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
                 Maximal (every output unlinkable)
               </td>
               <td className="p-3 align-top">
-                <strong>No</strong>
+                No for address generation, but yes for scanning (public indexer, decentralized)
               </td>
               <td className="p-3 align-top">No (by design)</td>
             </tr>
