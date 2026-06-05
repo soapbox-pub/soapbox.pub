@@ -1,13 +1,12 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Card, CardContent } from '../../ui/card';
-import { Button } from '../../ui/button';
-import { ExternalLink, Globe, Lock, ShieldCheck } from 'lucide-react';
+import { Globe, Lock } from 'lucide-react';
 
 export const meta: BlogPostMeta = {
   slug: 'agora-is-live',
-  title: "Launching Agora: How It Works, and What's Next",
+  title: 'Agora Launched at Oslo Freedom Forum',
   excerpt:
-    "We launched Agora at Oslo Freedom Forum 2026. GoFundMe without borders, built on Bitcoin. Here's the story behind the launch, how the wallet actually works, and what we're building next.",
+    'On June 2nd we launched our new version of Agora at the Oslo Freedom Forum. Here is the story behind it, how the unstoppable Bitcoin wallet works, and what we are doing next.',
   coverImage: '/assets/blog/agora-is-live/cover.jpeg',
   date: '2026-06-04',
   author: {
@@ -28,22 +27,23 @@ export const meta: BlogPostMeta = {
     'bip-352',
     'hd wallet',
     'palestine',
+    'venezuela',
     'human rights',
     'censorship resistance',
     'nostr',
   ],
   keywords:
-    'agora launch, agora oslo freedom forum, agora silent payments, agora bitcoin wallet, agora bip-352, how agora works, agora hd wallet, agora palestine pilot, agora roadmap, agora.spot, censorship-resistant fundraising, silent payment donations, bitcoin donations for activists, gofundme without borders, no custodian fundraising',
+    'agora launch, agora oslo freedom forum, agora silent payments, agora bitcoin wallet, agora bip-352, how agora works, agora hd wallet, agora palestine pilot, agora venezuela, agora roadmap, agora.spot, censorship-resistant fundraising, silent payment donations, bitcoin donations for activists, gofundme without borders, no custodian fundraising, leopoldo lopez agora',
   faq: [
     {
       question: 'What is Agora?',
       answer:
-        "Agora is a censorship-resistant Bitcoin donation platform built by Soapbox. It works like GoFundMe without borders. Activists launch campaigns and donors send Bitcoin directly to them, wallet to wallet. Agora never holds the money.",
+        'Agora is a censorship-resistant Bitcoin donation platform built by Soapbox in partnership with the World Liberty Congress. Activists launch campaigns and donors send Bitcoin directly to them, wallet to wallet. Agora never holds the money.',
     },
     {
       question: 'When did Agora launch?',
       answer:
-        "Agora launched on June 2, 2026 at the Oslo Freedom Forum, hosted by the Human Rights Foundation. It is live now at agora.spot on the web and on ZapStore for Android.",
+        'The new version of Agora launched on June 2, 2026 at the Oslo Freedom Forum, on the OFF Freedom Tech stage.',
     },
     {
       question: 'How does Agora keep donations private?',
@@ -56,14 +56,9 @@ export const meta: BlogPostMeta = {
         "No. Donations move directly from the donor's wallet to the activist's wallet on Bitcoin. There is no escrow account, no platform balance, and no operator who could freeze or redirect funds. If Agora disappeared tomorrow, every campaign would keep working.",
     },
     {
-      question: "How does Agora display 'total raised' without a database?",
-      answer:
-        "For public campaigns, Agora reads the cumulative sats sent to the campaign's Bitcoin address from a public block explorer. The number comes from the chain itself. For silent-payment campaigns, no aggregate is shown, because publishing one would defeat the privacy guarantee.",
-    },
-    {
       question: 'What is next for Agora?',
       answer:
-        'An organization-verification model, a pilot with a coalition of Palestinian activists to build a replicable model for onboarding, safety, off-ramping, and verification in high-risk environments, and funding partnerships across the Bitcoin ecosystem.',
+        'A verification system for campaigns, local pilot coalitions in Venezuela, Palestine, and Africa, and marketing and funding partnerships with Bitcoin businesses.',
     },
   ],
 };
@@ -72,18 +67,12 @@ export default function AgoraIsLive() {
   return (
     <article className="prose prose-lg max-w-none">
       <p className="lead">
-        On June 2, we launched{' '}
+        On June 2nd, we launched our new version of{' '}
         <a href="https://agora.spot" target="_blank" rel="noopener noreferrer">
           Agora
-        </a>
-        , a censorship-resistant Bitcoin donation platform. Think{' '}
-        <em>GoFundMe without borders</em>. Activists launch campaigns. Donors
-        send Bitcoin straight to them. No bank, no payment processor, no
-        custodian. Not even us.
-      </p>
-
-      <p>
-        Agora is built by Team Soapbox, in partnership with{' '}
+        </a>{' '}
+        on the OFF Freedom Tech stage. Agora was borne out of a 6-month
+        partnership with Venezuelan opposition leader{' '}
         <a
           href="https://en.wikipedia.org/wiki/Leopoldo_L%C3%B3pez"
           target="_blank"
@@ -91,7 +80,7 @@ export default function AgoraIsLive() {
         >
           Leopoldo López
         </a>{' '}
-        and the{' '}
+        and his team from the{' '}
         <a
           href="https://worldlibertycongress.org"
           target="_blank"
@@ -99,143 +88,221 @@ export default function AgoraIsLive() {
         >
           World Liberty Congress
         </a>
-        , and it grew out of the{' '}
+        , including Aaron Rodriguez, who leads Tech and Freedom initiatives at
+        WLC.
+      </p>
+
+      <h2>Background: Building through collaboration with the HRF and WLC</h2>
+
+      <p>
+        We built our first version of Agora with Leo and Aaron at a January{' '}
         <a href="https://hrf.org" target="_blank" rel="noopener noreferrer">
-          Human Rights Foundation
-        </a>
-        's freedom-tech program.
-      </p>
-
-      {/* SECTION 1: The Launch */}
-
-      <h2>1. Launching at Oslo Freedom Forum 2026</h2>
-
-      <p>
-        Oslo Freedom Forum is the room where freedom movements from dozens of
-        countries find each other and trade strategy. It was the right place
-        to put Agora in front of the people it was built for.
-      </p>
-
-      <p>
-        On June 2, from the OFF stage, the World Liberty Congress announced
-        Agora. Coverage{' '}
-        <a
-          href="https://www.prnewswire.com/news-releases/world-liberty-congress-launches-agora-at-oslo-freedom-forum-to-power-global-support-for-human-rights-movements-302788493.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          went out via PR Newswire
+          HRF
         </a>{' '}
-        the same morning, and we cross-posted{' '}
-        <a href="/blog/wlc-launches-agora-oslo-freedom-forum">
-          the announcement on the Soapbox blog
-        </a>
-        .
-      </p>
-
-      <p>
-        Leopoldo López, the Venezuelan opposition leader, former political
-        prisoner, and co-founder of the World Liberty Congress, captained the
-        team that originally built Agora at the HRF{' '}
         <a
           href="https://hrf.org/latest/announcing-the-ai-hack-for-freedom-hackathon-winners/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          AI Hack for Freedom hackathon
+          AI Hack for Freedom
+        </a>
+        . This version featured voices from around the world rising up against
+        censorship, especially important since sites like Twitter are often
+        banned in countries like Venezuela and other dictatorships. Leo and
+        Aaron onboarded over 1,000 members of their Voluntad Popular community
+        onto Agora.
+      </p>
+
+      <p>
+        But we soon found that this platform format offered little real benefit
+        to the users beyond other Nostr apps like Primal. We analyzed months of
+        data and traffic to the site and found one consistent pattern: people
+        showed up when there was money available. Week after week, people showed
+        up to receive donations Leo was offering through the Freedom Zap Fund,
+        and then disappeared the next day. USDT, a "stablecoin" tied to the US
+        Dollar, has become common currency and a method for storing value where
+        the Venezuelan fiat currency has inflated to worthlessness. Yet, users
+        were not even receiving enough zaps to be able to exchange into the
+        currency they needed.
+      </p>
+
+      <p>
+        Aaron and Leo have both been detained as political prisoners, and told
+        us that sometimes as little as $800 USD is needed to help someone being
+        hunted by the regime escape to safety. By the time they know they need
+        the money, the question of privacy is already out the window. The only
+        thing that matters then is receiving and spending the money as easily as
+        possible. Any barrier to access at this point is the #1 liability. Being
+        "unstoppable" money, including by dictators, corporations, or technical
+        barriers to accessibility was the truly unique value.
+      </p>
+
+      <p>
+        At the same time, Team Soapbox member Morgan Maksoud-Miller was building
+        partnerships with families in Gaza displaced and injured by the war.
+        With the Palestinian financial system in collapse, and the only access
+        to money typically available through Hamas, families turned to
+        cryptocurrencies for buying basics like food and for assistance with
+        evacuation. Like in Venezuela, they were also storing value in USDT.
+        Sending crypto was one of the only accessible ways to get money to a
+        real person in Gaza without an intermediary. GoFundMe and similar
+        platforms rely on having a point of contact in the US or another
+        accepted country to facilitate the transfer of funds. Often, those who
+        are the most vulnerable are the least likely to have access to this.
+      </p>
+
+      <p>
+        Across the world the pattern emerged: crypto was the solution when
+        financial systems collapsed or couldn't be used by people at risk.
+        Sending Bitcoin, which was easily exchanged for stablecoins when needed,
+        provided an actual lifeline. Yet the funds most users were receiving
+        with content-based zaps amounted to pennies, amounts so low it was
+        practically insulting. The only thing missing was a platform to connect
+        people in need with people willing to donate real amounts that could
+        make an actual difference.
+      </p>
+
+      <h2>How we built Agora</h2>
+
+      <p>
+        After six months of partnership and research, we realized we needed to
+        take the entire project back to the drawing board. We scrapped the old
+        code base, and built the new Agora as a fork of{' '}
+        <a
+          href="https://soapbox.pub/ditto"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ditto
+        </a>
+        . Forking Ditto gave us the benefit of a huge context reference for
+        anything we wanted to include and allowed us to work extremely quickly.
+        We ripped out anything we didn't need, rebranded, and dramatically
+        changed and added many core features.
+      </p>
+
+      <p>
+        The largest change and the focus of this work was the wallet. Our work
+        and research proved that accessibility and ease of exchange was
+        paramount, but there were also serious privacy concerns with the
+        on-chain zap system Ditto recently implemented. Thanks to the
+        conversation sparked by Ditto's implementation, we were able to harvest
+        ideas and feedback from the Nostr and Bitcoin community to come up with
+        a system to offer Agora users the best of both worlds with minimal
+        tradeoffs to our core accessibility and exchange concerns. We would like
+        to thank everyone who worked productively with us on this issue to push
+        towards real solutions, including members of the AOS community and our
+        partners and funders at{' '}
+        <a href="https://hrf.org" target="_blank" rel="noopener noreferrer">
+          HRF
         </a>{' '}
-        earlier this year, pairing developers with activists whose bank
-        accounts get frozen, whose payment processors cut them off
-        mid-campaign, and whose platforms get banned the week of a protest.
+        who provided leadership and guidance on the final implementation.
+      </p>
+
+      <h2>Unstoppable funding</h2>
+
+      <p>
+        To be truly unstoppable funding, Agora could not depend on any server or
+        middle-man service (including us) that could be shut down by a
+        government, corporation, or hurricane. There are multiple benefits to
+        operating this way for our users:
+      </p>
+
+      <ol>
+        <li>
+          No third-party can take down/censor their fundraiser (unlike with
+          GoFundMe).
+        </li>
+        <li>
+          No one can rug their funds after they've been donated (unlike with
+          custodial Bitcoin layers).
+        </li>
+        <li>
+          No one can subpoena Agora to receive information about the users (or
+          if they do, we won't have anything to give them).
+        </li>
+        <li>
+          Operating Agora requires practically zero infrastructure set up, which
+          means that if our version of Agora went down anyone in the world could
+          easily spin the code of the website up on a new domain with zero
+          infrastructure or hosting knowledge (unlike with self-hosted solutions
+          like BTCPay servers).
+        </li>
+        <li>
+          With no infrastructure costs, the cost of maintaining Agora in
+          perpetuity is extremely cheap, which means we do not need to charge any
+          platform fees so all funds go directly to the intended recipient
+          (unlike other Bitcoin fundraising platforms).
+        </li>
+      </ol>
+
+      <p>
+        Regular on-chain Bitcoin is the obvious solution to this but comes with
+        privacy tradeoffs, especially for people in high-risk situations.
+        However, concerns about the privacy of Bitcoin came entirely from the
+        Bitcoin community itself, not the activists and people we were speaking
+        to in war-torn regions. Time and time again when we asked real people in
+        desperate need of money if privacy was important if it came at the
+        tradeoff of ease of access, the answer was a resounding no and a
+        frustration with the paternalism of the Bitcoin community.
       </p>
 
       <div className="not-prose my-8">
         <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
-              "We are witnessing a coordinated assault on democratic principles.
-              Agora is the infrastructure for an equally coordinated network of
-              support going in the other direction."
+              "I was kidnapped by the state, you don't need to explain privacy
+              to me. If you ask someone who is about to get caught what they
+              prefer, to receive this money from Agora or to be scared someone
+              will know you will receive the money, they want to receive the
+              money. By the time you get to this point, the decision about
+              privacy is already made by the person."
             </blockquote>
             <p className="font-semibold text-orange-700 dark:text-orange-400">
-              Leopoldo López, on the launch
+              An activist now living in exile
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
+          <CardContent className="p-6">
+            <blockquote className="text-lg italic text-foreground mb-3">
+              "A lot of people ask me for help to create a GoFundMe. You need to
+              decide — go public and receive the money or go private and find
+              another way. A lot of them all around the world, they don't have
+              the chance to decide, not even just for their life what to eat
+              today or what to study. It's the possibility to decide. A lot of
+              people will be waiting to create their campaign and willing to
+              raise the risks."
+            </blockquote>
+            <p className="font-semibold text-blue-700 dark:text-blue-400">
+              An organizer who works with people in authoritarian regimes around
+              the world
             </p>
           </CardContent>
         </Card>
       </div>
 
       <p>
-        At launch, Agora is running real campaigns supporting political
-        prisoners and grassroots movements in <strong>Uganda, Nicaragua,
-        Zimbabwe, Cambodia, and Palestine</strong>, alongside campaigns from
-        the World Liberty Congress network. Browse them at{' '}
-        <a href="https://agora.spot" target="_blank" rel="noopener noreferrer">
-          agora.spot
-        </a>{' '}
-        or grab the Android build from{' '}
-        <a href="https://zapstore.dev" target="_blank" rel="noopener noreferrer">
-          ZapStore
-        </a>
-        . For background, see the <a href="/agora">/agora landing page</a>, the
-        original{' '}
-        <a href="/blog/agora-connecting-freedom-fighters">Agora announcement</a>
-        , and the{' '}
-        <a href="/blog/building-pathos">hackathon story</a>.
+        User choice became the obvious solution. People understand their own
+        situations better than we do. Each user should be free to choose the
+        level of privacy they require. Nostr already naturally provides this, as
+        anyone can create an npub completely anonymously. Silent Payments became
+        the solution for user financial autonomy.
       </p>
 
-      {/* SECTION 2: How Agora Works (Technical Deep Dive) */}
-
-      <h2>2. How Agora Actually Works</h2>
+      <h2>Agora Wallet: BIP-32 HD Wallet + Silent Payments</h2>
 
       <p>
-        Every architectural decision in Agora came out of three months of
-        working closely with opposition-party members in Venezuela, watching
-        them try to actually use earlier versions and tell us where the gaps
-        were. We make no assumptions about what's right for anyone else. The
-        job is to surface real tradeoffs and let people choose.
+        The Bitcoin wallet is derived deterministically from the Nostr secret
+        key. The benefit of this to the user is that they don't have multiple
+        keys to manage and store, their wallet exists automatically at signup,
+        and it can be ported with them to any normal Bitcoin wallet.
       </p>
 
       <p>
-        "No middleman" has to do real technical work. The reason Agora can
-        credibly claim it is that we made three engineering decisions that
-        make a middleman structurally impossible:
-      </p>
-
-      <ol>
-        <li>
-          A self-custodial HD wallet on the user's device, derived
-          deterministically from their Nostr identity.
-        </li>
-        <li>
-          Two donation modes, <strong>Bitcoin Public Payments</strong> and{' '}
-          <strong>Bitcoin Silent Payments</strong>. Both fully on-chain, both
-          settling directly to the activist's wallet.
-        </li>
-        <li>
-          A static silent-payment address per activist. The single tradeoff
-          that lets us avoid running a coordinating server at all.
-        </li>
-      </ol>
-
-      <p>
-        Everything below is in the open-source repo at{' '}
-        <a
-          href="https://gitlab.com/soapbox-pub/agora"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          gitlab.com/soapbox-pub/agora
-        </a>
-        .
-      </p>
-
-      <h3>2.1 One Identity, Two Domains: The HD Wallet</h3>
-
-      <p>
-        Agora users already have a Nostr keypair. Asking them to back up a
-        second seed phrase for a separate Bitcoin wallet was a non-starter,
-        especially in environments where secure storage is hard. So the
-        Bitcoin wallet is derived deterministically from the Nostr secret key
         (<code>src/lib/hdwallet/seed.ts</code>):
       </p>
 
@@ -248,10 +315,10 @@ export default function AgoraIsLive() {
       <p>
         HKDF is one-way, so writing down the 24-word mnemonic doesn't leak the
         Nostr identity. The <code>"agora/v1"</code> info string is a domain
-        separator that lets us rotate the derivation later without touching
-        the Nostr key. And because the output is a standard BIP-39 seed, the
-        wallet roundtrips into Sparrow, Electrum, Trezor, Ledger, or anything
-        else BIP-39 compatible. No Agora-shaped lock-in.
+        separator that lets us rotate the derivation later without touching the
+        Nostr key. And because the output is a standard BIP-39 seed, the wallet
+        roundtrips into Sparrow, Electrum, Trezor, Ledger, or anything else
+        BIP-39 compatible. No Agora-shaped lock-in.
       </p>
 
       <p>
@@ -299,7 +366,7 @@ export default function AgoraIsLive() {
         </Card>
       </div>
 
-      <h3>2.2 How Silent Payments Work</h3>
+      <h3>How Silent Payments Work</h3>
 
       <p>
         Silent payments (
@@ -315,13 +382,15 @@ export default function AgoraIsLive() {
         every donor's wallet uses that address plus the donor's own input keys
         to derive a brand new, one-shot Taproot output that only the recipient
         can find. On-chain, donations to the same activist look like unrelated
-        transactions to unrelated addresses.
+        transactions to unrelated addresses. (For those following the earliest
+        Nostr conversations about silent payments, please note that this is an
+        original implementation not tied to previous public discussions.)
       </p>
 
       <p>
         The <code>sp1q…</code> is two compressed secp256k1 public keys, a scan
-        key <code>B_scan</code> and a spend key <code>B_spend</code>. The
-        donor's wallet computes (<code>src/lib/hdwallet/sp/sender.ts</code>):
+        key <code>B_scan</code> and a spend key <code>B_spend</code>. The donor's
+        wallet computes (<code>src/lib/hdwallet/sp/sender.ts</code>):
       </p>
 
       <pre><code>{`a            = Sum of a_i              # donor's input private keys
@@ -332,8 +401,8 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
 
       <p>
         Different donors produce different <code>P_k</code> values because the
-        ECDH shared secret depends on their own input keys. Even the same
-        donor paying twice produces different outputs.
+        ECDH shared secret depends on their own input keys. Even the same donor
+        paying twice produces different outputs.
       </p>
 
       <p>
@@ -346,85 +415,38 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         >
           BlindBit Oracle
         </a>
-        ) publishes a per-transaction tweak equal to{' '}
-        <code>input_hash * A</code>. The activist's wallet completes the ECDH
-        locally with <code>b_scan</code>, which never leaves the device, and
-        checks candidate <code>P_k</code> values against the block's Taproot
-        outputs. A match means the output belongs to the activist.
+        ) publishes a per-transaction tweak equal to <code>input_hash * A</code>.
+        The activist's wallet completes the ECDH locally with <code>b_scan</code>
+        , which never leaves the device, and checks candidate <code>P_k</code>{' '}
+        values against the block's Taproot outputs. A match means the output
+        belongs to the activist.
       </p>
 
       <p>
         Scanner: <code>src/lib/hdwallet/sp/scanner.ts</code>. Primitives:{' '}
         <code>src/lib/hdwallet/sp/crypto.ts</code>. Spend path:{' '}
         <code>src/lib/hdwallet/sp/spend.ts</code>, which reconstructs{' '}
-        <code>d_k = b_spend + t_k</code> and signs the BIP-341 sighash
-        directly with BIP-340 Schnorr, deliberately bypassing the automatic
-        TapTweak in <code>@scure/btc-signer</code> because <code>P_k</code> is
-        already the output key.
+        <code>d_k = b_spend + t_k</code> and signs the BIP-341 sighash directly
+        with BIP-340 Schnorr, deliberately bypassing the automatic TapTweak in{' '}
+        <code>@scure/btc-signer</code> because <code>P_k</code> is already the
+        output key.
       </p>
 
-      <h3>2.3 What About the Fees?</h3>
-
-      <p>
-        Two answers. <strong>One:</strong> Bitcoin fees are cheap right now,
-        and on-chain forces donations to be a <em>real</em> amount that can
-        make a meaningful difference to someone in Gaza or Venezuela, instead
-        of the borderline-insulting one-penny zaps that pad most Lightning
-        stats. <strong>Two:</strong> onboarding people to Lightning before
-        fees are high is selling them a solution before they understand the
-        problem. Let the fees get high, then let the user choose to opt in
-        with full knowledge of the tradeoffs. Sovereign choice, not
-        paternalism.
-      </p>
-
-      <h3>2.4 Why Not Lightning, BTCPay, or Geyser?</h3>
-
-      <p>
-        We didn't land here by guessing. Here's what we ruled out, and why:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Lightning (Agora v1).</strong> Our first version, built for
-          opposition-party members in Venezuela, ran on Lightning. It worked
-          on paper. In practice, onboarding required hands-on training to
-          even receive a payment, and to our knowledge <em>no user ever
-          successfully off-ramped Lightning funds into something that made a
-          meaningful difference in their life</em>. The numbers were fast,
-          but small to the point of being worthless.
-        </li>
-        <li>
-          <strong>BTCPay Server and other address-rotation tools.</strong>{' '}
-          Fresh address per donor is great for privacy, but it requires a
-          server you have to run and trust. That server is a centralized
-          liability: it can be stopped, subpoenaed, or used to harvest the
-          donor list. It also breaks public "raised so far" totals, because
-          you can't sum a moving target without server-side accounting.
-        </li>
-        <li>
-          <strong>Geyser.</strong> Takes a percentage of every donation and
-          (last we checked) charges a <strong>$25 upfront fee</strong> just
-          to host a campaign. That's not greed, it's the cost of all the
-          middle-manning they've taken on. We didn't want activists to pay
-          for infrastructure they shouldn't need in the first place.
-        </li>
-      </ul>
-
-      <h3>2.5 The Static-Address Tradeoff</h3>
+      <h2>Campaign addresses</h2>
 
       <p>
         Silent payments let us skip the coordinating server entirely. The
         freshness step happens inside the donor's wallet, using only public
         information. The activist publishes one static <code>sp1q…</code> in
-        their campaign event (a Nostr addressable event, <code>kind 33863</code>),
-        and that's it.
+        their campaign event (a Nostr addressable event, <code>kind 33863</code>
+        ), and that's it.
       </p>
 
       <p>
-        The cost: <em>the same </em><code>sp1q…</code><em> is shared across
-        all of a single activist's silent-payment campaigns</em>. Agora can't
-        tell, from the silent-payment side alone, which campaign a given
-        donation was intended for. The comparison:
+        The cost: the same <code>sp1q…</code> is shared across all of a single
+        activist's silent-payment campaigns. Agora can't tell, from the
+        silent-payment side alone, which campaign a given donation was intended
+        for. The comparison:
       </p>
 
       <div className="not-prose my-6 overflow-x-auto">
@@ -489,173 +511,112 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       </div>
 
       <p>
-        This is also why <a href="/agora">/agora</a> says silent-payment
-        donation counts aren't public: the property that makes the donations
-        unlinkable also makes a public progress bar impossible. Activists pick
-        one. Most accept both, and the donation page produces a single BIP-21
-        URI (<code>bitcoin:bc1p…?sp=sp1q…</code>) so BIP-352-aware wallets
-        take the private endpoint and everything else falls back to on-chain.
+        This is also why silent-payment donation counts aren't public: the
+        property that makes the donations unlinkable also makes a public
+        progress bar impossible. Activists pick one. Most accept both, and the
+        donation page produces a single BIP-21 URI (
+        <code>bitcoin:bc1p…?sp=sp1q…</code>) so BIP-352-aware wallets take the
+        private endpoint and everything else falls back to on-chain.
       </p>
 
-      <h3>2.6 Counting Donations Without a Database</h3>
+      <h2>What's next</h2>
 
-      <p>
-        Because there's no platform-side database of donations, the "raised
-        so far" number on a public campaign can't come from a server we
-        control. It doesn't. Agora reads it from the public chain (
-        <code>src/hooks/useCampaignDonations.ts</code>):
-      </p>
-
-      <pre><code>{`totalSats   = chain_stats.funded_txo_sum         // from a public block explorer
-pendingSats = mempool_stats.funded_txo_sum
-            - mempool_stats.spent_txo_sum`}</code></pre>
-
-      <p>
-        One call to the same block explorer anyone else can query, on an
-        address anyone can verify is controlled by the activist. The number
-        can't be inflated by Nostr publishers and can't be censored by us.
-      </p>
-
-      <p>
-        Nostr donation receipts (a custom kind, <code>8333</code>, documented
-        in{' '}
-        <a
-          href="https://gitlab.com/soapbox-pub/agora/-/blob/main/NIP.md"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          NIP.md
-        </a>
-        ) layer on top for donor attribution: names, comments, a
-        recent-donations feed. They are never the source of the headline
-        total, and each receipt is verified against the chain before display.
-        For silent-payment campaigns, no aggregate is shown. If agora.spot
-        disappeared tomorrow, every campaign keeps working: the addresses
-        are still valid, the donations still settle on Bitcoin, the receipts
-        still propagate on Nostr.
-      </p>
-
-      {/* SECTION 3: What's Next */}
-
-      <h2>3. What's Next</h2>
-
-      <h3>3.1 Organization Verification for Campaigns</h3>
+      <h3>Verification System for Campaigns</h3>
 
       <p>
         Anyone can create a campaign on Agora. That's intentional: no central
-        authority decides who gets to ask for help. But donors reasonably want
-        to know a campaign is who it claims to be.
+        authority decides who gets to ask for help. But donors, especially
+        institutional ones, reasonably want to know a campaign is who it claims
+        to be.
       </p>
 
       <p>
         We're building a verification model where signals come from trusted
         civil-society institutions (HRF, the World Liberty Congress, regional
         coalitions) rather than from corporate identity providers, and can be
-        revoked when circumstances change. Verification is a confidence
-        signal, never a permission gate. If verification breaks, campaigns
-        keep running.
+        revoked when circumstances change. Verification is a confidence signal,
+        not a permission gate. If verification breaks, campaigns keep running.
       </p>
 
-      <h3>3.2 The Palestine Pilot</h3>
+      <h3>Local Pilot Coalitions</h3>
 
       <p>
-        Our next major pilot is with a coalition of Palestinian activists,
-        one of the hardest fundraising environments in the world. Payment
-        processors routinely block transactions, bank accounts are frozen,
-        and organizers face physical risk if their identities or funding
-        flows are exposed. It's also the right place to find out whether our
-        privacy assumptions hold up against real adversaries.
+        We are developing on three coalitions to battle-test Agora's central
+        promises and tradeoffs in high-impact communities.
       </p>
 
+      <h4>1. World Liberty Congress members</h4>
+
       <p>
-        We're working alongside the coalition to develop a full model
-        covering onboarding, operational safety, off-ramping, and
-        verification.
+        We are already working closely with Leo and other members of the{' '}
+        <a
+          href="https://worldlibertycongress.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WLC
+        </a>{' '}
+        to pilot Agora in their key countries such as Venezuela, Cambodia,
+        Uganda, Zimbabwe, and Nicaragua. We are planning to host onboarding
+        training and research gathering sessions with leads of these movements.
       </p>
 
+      <h4>2. Palestine aid coalition</h4>
+
       <p>
-        The point of the pilot is a <em>replicable model</em> that other local
-        coalitions can adapt. Each pilot is a case study. We'll also use it as
-        a real-world privacy audit. If silent payments aren't meeting the
-        threat model these activists actually face, what ships next?{' '}
-        <strong>Optional multisig configurations</strong>, for example, so a
-        single device seizure doesn't equal a fund seizure. Better to find
-        that out from a careful pilot than from an incident.
+        Our next major pilot is with a coalition of Palestinian activists, one
+        of the hardest fundraising environments in the world. We're working on
+        building a team of on-the-ground experts from organizations such as{' '}
+        <a
+          href="https://realignforpalestine.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Realign for Palestine
+        </a>{' '}
+        and{' '}
+        <a
+          href="https://www.operationolivebranch.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Operation Olive Branch
+        </a>{' '}
+        to develop a full model covering onboarding, operational safety,
+        off-ramping, and verification. This pilot, especially, will help inform
+        if our current privacy options are sufficient, with additional
+        protection layers such as multi-sig being considered and tested.
       </p>
 
-      <h3>3.3 Funding Partnerships in Bitcoin</h3>
+      <h4>3. African women's sovereignty coalition</h4>
 
       <p>
-        Agora's natural funding base is the Bitcoin community. We're talking
-        to companies and foundations that have been waiting for credible
+        Thanks to the contacts we have developed through Hack4Freedom and the{' '}
+        <a href="https://hrf.org" target="_blank" rel="noopener noreferrer">
+          Human Rights Foundation
+        </a>
+        , we plan to collaborate with multiple organizations in Africa dedicated
+        to women's financial empowerment and sovereignty. We will be traveling
+        to Nairobi next week with multiple meetings scheduled to advance these
+        conversations.
+      </p>
+
+      <h3>Marketing and Funding Partnerships with Bitcoin Businesses</h3>
+
+      <p>
+        Agora's natural funding base is the Bitcoin community. We're talking to
+        companies and foundations that have been waiting for credible
         applications that actually exercise Bitcoin's censorship-resistance
-        properties.
+        properties and who wish to add a charitable element to their business
+        model. If you are one such business, please{' '}
+        <a href="mailto:mk@soapbox.pub">get in touch with us</a>!
       </p>
-
-      <ul>
-        <li>
-          <strong>Bitcoin business and foundation partnerships</strong> to
-          fund continued development and the per-region coalition pilots.
-        </li>
-        <li>
-          <strong>Bitcoin training for World Liberty Congress members.</strong>{' '}
-          Many WLC members are extraordinary political organizers but new to
-          self-custody. We want the people deploying Agora in their countries
-          to defend its threat model in practice.
-        </li>
-        <li>
-          <strong>An off-ramp directory.</strong> A "marketplace" of regional
-          off-ramp services (peer-to-peer exchanges, sympathetic local
-          businesses) with ratings and reviews.{' '}
-          <strong>Agora would not process those payments.</strong> Directory
-          and reputation layer only; the off-ramp relationship stays directly
-          between the activist and the service.
-        </li>
-      </ul>
 
       <p>
-        If you're a Bitcoin business or organization that wants to support
-        this work, get in touch: <a href="mailto:mk@soapbox.pub">mk@soapbox.pub</a>.
+        In the long run, we hope that Agora can also be a mainstream use case
+        for Bitcoin adoption to help everyday people understand the freedom that
+        Bitcoin can bring to the world.
       </p>
-
-      <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-orange-300 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30">
-          <CardContent className="p-8 text-center">
-            <div className="text-4xl mb-2">⚡</div>
-            <div className="text-2xl font-bold mb-3">Try Agora.</div>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Browse live campaigns, launch one of your own, or dig into the
-              code.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold"
-              >
-                <a href="https://agora.spot" target="_blank" rel="noopener noreferrer">
-                  Open Agora
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a
-                  href="https://gitlab.com/soapbox-pub/agora"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View on GitLab
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href="/agora">Learn more</a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
     </article>
   );
 }
-
