@@ -7,14 +7,14 @@ export const meta: BlogPostMeta = {
   title: 'Agora Launched at Oslo Freedom Forum',
   excerpt:
     'On June 2nd we launched our new version of Agora at the Oslo Freedom Forum. Here is the story behind it, how the unstoppable Bitcoin wallet works, and what we are doing next.',
-  coverImage: '/assets/blog/agora-is-live/cover.jpeg',
+  coverImage: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.png',
   date: '2026-06-04',
   author: {
     name: 'M. K. Fain',
     picture: '/assets/avatars/mk.jpg',
   },
   ogImage: {
-    url: '/assets/blog/agora-is-live/cover.jpeg',
+    url: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.png',
   },
   featured: true,
   tags: [
