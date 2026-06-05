@@ -33,7 +33,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: "/assets/blog/wlc-launches-agora-oslo/cover.png"
   },
-  featured: true,
+  featured: false,
   tags: [
     "press release",
     "agora",
