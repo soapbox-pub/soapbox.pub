@@ -92,7 +92,7 @@ export default function AgoraIsLive() {
         WLC.
       </p>
 
-      <h2>Background: Building through collaboration with the HRF and WLC</h2>
+      <h2>Background: Collaboration with the HRF and WLC</h2>
 
       <p>
         We built our first version of Agora with Leo and Aaron at a January{' '}
@@ -122,8 +122,8 @@ export default function AgoraIsLive() {
         and then disappeared the next day. USDT, a "stablecoin" tied to the US
         Dollar, has become common currency and a method for storing value where
         the Venezuelan fiat currency has inflated to worthlessness. Yet, users
-        were not even receiving enough zaps to be able to exchange into the
-        currency they needed.
+        were not even receiving enough zaps to cover the everyday costs they
+        needed the money for.
       </p>
 
       <p>
@@ -154,10 +154,9 @@ export default function AgoraIsLive() {
       <p>
         Across the world the pattern emerged: crypto was the solution when
         financial systems collapsed or couldn't be used by people at risk.
-        Sending Bitcoin, which was easily exchanged for stablecoins when needed,
-        provided an actual lifeline. Yet the funds most users were receiving
-        with content-based zaps amounted to pennies, amounts so low it was
-        practically insulting. The only thing missing was a platform to connect
+        Sending Bitcoin provided an actual lifeline. Yet the funds most users
+        were receiving with content-based zaps amounted to pennies, amounts so
+        low it was practically insulting. The only thing missing was a platform to connect
         people in need with people willing to donate real amounts that could
         make an actual difference.
       </p>
@@ -183,19 +182,16 @@ export default function AgoraIsLive() {
 
       <p>
         The largest change and the focus of this work was the wallet. Our work
-        and research proved that accessibility and ease of exchange was
-        paramount, but there were also serious privacy concerns with the
+        and research proved that accessibility was paramount, but there were
+        also serious privacy concerns with the
         on-chain zap system Ditto recently implemented. Thanks to the
         conversation sparked by Ditto's implementation, we were able to harvest
         ideas and feedback from the Nostr and Bitcoin community to come up with
         a system to offer Agora users the best of both worlds with minimal
-        tradeoffs to our core accessibility and exchange concerns. We would like
+        tradeoffs to our core accessibility concerns. We would like
         to thank everyone who worked productively with us on this issue to push
         towards real solutions, including members of the AOS community and our
-        partners and funders at{' '}
-        <a href="https://hrf.org" target="_blank" rel="noopener noreferrer">
-          HRF
-        </a>{' '}
+        partners at the HRF
         who provided leadership and guidance on the final implementation.
       </p>
 
@@ -318,7 +314,7 @@ export default function AgoraIsLive() {
         separator that lets us rotate the derivation later without touching the
         Nostr key. And because the output is a standard BIP-39 seed, the wallet
         roundtrips into Sparrow, Electrum, Trezor, Ledger, or anything else
-        BIP-39 compatible. No Agora-shaped lock-in.
+        BIP-39 compatible.
       </p>
 
       <p>
@@ -384,7 +380,8 @@ export default function AgoraIsLive() {
         can find. On-chain, donations to the same activist look like unrelated
         transactions to unrelated addresses. (For those following the earliest
         Nostr conversations about silent payments, please note that this is an
-        original implementation not tied to previous public discussions.)
+        original implementation not tied to previous public discussions, 
+        although we did draw important inspiration from the discussions.)
       </p>
 
       <p>
@@ -519,7 +516,22 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         private endpoint and everything else falls back to on-chain.
       </p>
 
-      <h2>What's next</h2>
+      <h2>What's next for Agora</h2>
+
+
+      <h3>Further testing and exploration of privacy systems</h3>
+
+      <p>
+        We are still in the early days of BIP-352 implementation and adption, 
+        with much to be learned and improved upon. We plan to continue battle testing
+        the silent payment wallet against real world scenarios and to explore 
+        further improvements to the implementation and UI to make it more 
+        secure, private, and user-friendly with a focus on empowering users to 
+        make informed decisions about their own privacy and security. 
+        We are also exploring additional privacy layers such as multi-sig for users 
+        concerned about physical security.
+      </p>
+
 
       <h3>Verification System for Campaigns</h3>
 
@@ -548,14 +560,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       <h4>1. World Liberty Congress members</h4>
 
       <p>
-        We are already working closely with Leo and other members of the{' '}
-        <a
-          href="https://worldlibertycongress.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WLC
-        </a>{' '}
+        We are already working closely with Leo and other members of the WLC
         to pilot Agora in their key countries such as Venezuela, Cambodia,
         Uganda, Zimbabwe, and Nicaragua. We are planning to host onboarding
         training and research gathering sessions with leads of these movements.
@@ -565,7 +570,10 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
 
       <p>
         Our next major pilot is with a coalition of Palestinian activists, one
-        of the hardest fundraising environments in the world. We're working on
+        of the hardest fundraising environments in the world. 
+        We already have dozens of Palestinians
+        who have submitted campaigns seeking funding, with the largest barrier
+        to funder engagement being verification and trust. We're working on
         building a team of on-the-ground experts from organizations such as{' '}
         <a
           href="https://realignforpalestine.org"
@@ -582,20 +590,16 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         >
           Operation Olive Branch
         </a>{' '}
-        to develop a full model covering onboarding, operational safety,
-        off-ramping, and verification. This pilot, especially, will help inform
-        if our current privacy options are sufficient, with additional
-        protection layers such as multi-sig being considered and tested.
+        to develop a full model covering onboarding, verification, operational safety,
+        and off-ramping. 
       </p>
 
       <h4>3. African women's sovereignty coalition</h4>
 
       <p>
-        Thanks to the contacts we have developed through Hack4Freedom and the{' '}
-        <a href="https://hrf.org" target="_blank" rel="noopener noreferrer">
-          Human Rights Foundation
-        </a>
-        , we plan to collaborate with multiple organizations in Africa dedicated
+        Thanks to the contacts we have developed through Hack4Freedom and the
+        Human Rights Foundation, we plan to collaborate with 
+        multiple organizations in Africa dedicated
         to women's financial empowerment and sovereignty. We will be traveling
         to Nairobi next week with multiple meetings scheduled to advance these
         conversations.
