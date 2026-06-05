@@ -313,6 +313,14 @@ export default function AgoraIsLive() {
 
       <h2 className="!mt-16 !pt-12 border-t border-border">Agora Wallet: BIP-32 HD Wallet + Silent Payments</h2>
 
+      <figure className="m-0">
+        <img
+          src="/assets/blog/agora-is-live/wallet-ui.png"
+          alt="Agora wallet UI showing separate Public and Private wallet tabs with balance, receive QR, and send flow"
+          className="w-full rounded-lg"
+        />
+      </figure>
+
       <p>
         The Bitcoin wallet is derived deterministically from the Nostr secret
         key. The benefit of this to the user is that they don't have multiple
