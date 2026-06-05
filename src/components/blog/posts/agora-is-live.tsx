@@ -133,6 +133,24 @@ export default function AgoraIsLive() {
       </p>
 
       <p>
+        There are already plenty of ways to raise money over Lightning or with
+        custodians, from Zap Goals on Nostr to platforms like{' '}
+        <a
+          href="https://geyser.fund"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Geyser
+        </a>
+        . If Lightning is what you want, those options exist today and work well.
+        But they are all "stoppable": they lean on a custodian, a server, or a
+        company that can freeze funds, pull a campaign, or be pressured into
+        doing so. We were not interested in building another one of those. We
+        wanted to fill the gap that doesn't yet exist in the ecosystem, truly
+        unstoppable funding that no one can shut down.
+      </p>
+
+      <p>
         Both former political prisoners, Aaron and Leo told us that sometimes
         $800 is enough to get someone to safety. By then privacy is already out
         the window. All that matters is receiving and spending the money easily,
@@ -421,6 +439,20 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         with BIP-340 Schnorr, deliberately bypassing the automatic TapTweak in{' '}
         <code>@scure/btc-signer</code> because <code>P_k</code> is already the
         output key.
+      </p>
+
+      <p>
+        Because the unlinkability of silent payments only holds if the private
+        funds never touch the public wallet, the two are kept strictly isolated.
+        Agora exposes separate Public and Private wallets, each with its own
+        balance, addresses, and history. The two UTXO sets can never be spent
+        together: coin selection only ever sees inputs of the matching kind
+        (public draws from BIP-86, private from silent payments), and
+        private-wallet change is routed back to a fresh silent-payment output
+        rather than a public change address. Combining a private UTXO with a
+        public one, or sending private change to a public address, would link
+        the two on-chain and destroy the very unlinkability silent payments
+        exist to provide.
       </p>
 
       <h3>Campaign addresses</h3>
