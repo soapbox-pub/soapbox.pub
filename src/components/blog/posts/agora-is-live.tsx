@@ -161,28 +161,6 @@ export default function AgoraIsLive() {
         unstoppable funding that no one can shut down.
       </p>
 
-      <p>
-        Aaron and Leo, who was held as a political prisoner, told us that
-        sometimes $800 is enough to get someone to safety. By then privacy is already out
-        the window. All that matters is receiving and spending the money easily,
-        and any barrier to access is the #1 liability. The same pattern held in
-        Gaza, where Team Soapbox member Morgan Maksoud-Miller worked with
-        displaced families turning to crypto for food and evacuation. It was one
-        of the only ways to reach a real person without an intermediary, when
-        GoFundMe requires a contact in an accepted country that the most
-        vulnerable lack. Across the world, "unstoppable" money that no dictator,
-        corporation, or technical barrier could block was the real lifeline. The
-        only thing missing was a platform connecting people in need with{' '}
-        <a
-          href="https://agora.spot/about/donors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          donors
-        </a>{' '}
-        willing to give amounts that make a difference.
-      </p>
-
       <h2 className="!mt-16 !pt-12 border-t border-border">Unstoppable funding</h2>
 
       <iframe
