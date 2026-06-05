@@ -132,6 +132,14 @@ export default function AgoraIsLive() {
         store value as the Venezuelan bolívar inflated to worthlessness.
       </p>
 
+      <figure className="m-0">
+        <img
+          src="/assets/blog/agora-is-live/agora-team-hackathon.png"
+          alt="The Agora team building the first version of Agora with Leo and Aaron at the HRF AI Hack for Freedom hackathon"
+          className="w-full rounded-lg"
+        />
+      </figure>
+
       <p>
         There are already plenty of ways to raise money over Lightning or with
         custodians, from Zap Goals on Nostr to platforms like{' '}
