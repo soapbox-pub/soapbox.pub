@@ -89,13 +89,29 @@ export default function AgoraIsLive() {
           World Liberty Congress
         </a>
         , including Aaron Rodriguez, who leads Tech and Freedom initiatives at
-        WLC.
+        WLC. (
+        <a
+          href="https://agora.spot/about"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          New to Agora? Start here
+        </a>
+        .)
       </p>
 
       <h2>Background: Collaboration with the HRF and WLC</h2>
 
       <p>
-        We built our first version of Agora with Leo and Aaron at a January{' '}
+        We built our{' '}
+        <a
+          href="/blog/agora-connecting-freedom-fighters"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          first version of Agora
+        </a>{' '}
+        with Leo and Aaron at a January{' '}
         <a href="https://hrf.org" target="_blank" rel="noopener noreferrer">
           HRF
         </a>{' '}
@@ -106,62 +122,39 @@ export default function AgoraIsLive() {
         >
           AI Hack for Freedom
         </a>
-        . This version featured voices from around the world rising up against
-        censorship, especially important since sites like Twitter are often
-        banned in countries like Venezuela and other dictatorships. Leo and
-        Aaron onboarded over 1,000 members of their Voluntad Popular community
-        onto Agora.
+        . It featured voices rising up against censorship, which is important
+        since Twitter is banned across Venezuela and other dictatorships, and
+        Leo and Aaron onboarded over 1,000 members of their Voluntad Popular
+        community. But after months of data, we found the format offered little
+        beyond apps like Primal. People showed up only when money was available
+        through the Freedom Zap Fund, then disappeared. And the zaps were
+        pennies, nowhere near enough to cover what people needed, like USDT to
+        store value as the Venezuelan bolívar inflated to worthlessness.
       </p>
 
       <p>
-        But we soon found that this platform format offered little real benefit
-        to the users beyond other Nostr apps like Primal. We analyzed months of
-        data and traffic to the site and found one consistent pattern: people
-        showed up when there was money available. Week after week, people showed
-        up to receive donations Leo was offering through the Freedom Zap Fund,
-        and then disappeared the next day. USDT, a "stablecoin" tied to the US
-        Dollar, has become common currency and a method for storing value where
-        the Venezuelan fiat currency has inflated to worthlessness. Yet, users
-        were not even receiving enough zaps to cover the everyday costs they
-        needed the money for.
+        Both former political prisoners, Aaron and Leo told us that sometimes
+        $800 is enough to get someone to safety. By then privacy is already out
+        the window. All that matters is receiving and spending the money easily,
+        and any barrier to access is the #1 liability. The same pattern held in
+        Gaza, where Team Soapbox member Morgan Maksoud-Miller worked with
+        displaced families turning to crypto for food and evacuation. It was one
+        of the only ways to reach a real person without an intermediary, when
+        GoFundMe requires a contact in an accepted country that the most
+        vulnerable lack. Across the world, "unstoppable" money that no dictator,
+        corporation, or technical barrier could block was the real lifeline. The
+        only thing missing was a platform connecting people in need with{' '}
+        <a
+          href="https://agora.spot/about/donors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          donors
+        </a>{' '}
+        willing to give amounts that make a difference.
       </p>
 
-      <p>
-        Aaron and Leo have both been detained as political prisoners, and told
-        us that sometimes as little as $800 USD is needed to help someone being
-        hunted by the regime escape to safety. By the time they know they need
-        the money, the question of privacy is already out the window. The only
-        thing that matters then is receiving and spending the money as easily as
-        possible. Any barrier to access at this point is the #1 liability. Being
-        "unstoppable" money, including by dictators, corporations, or technical
-        barriers to accessibility was the truly unique value.
-      </p>
-
-      <p>
-        At the same time, Team Soapbox member Morgan Maksoud-Miller was building
-        partnerships with families in Gaza displaced and injured by the war.
-        With the Palestinian financial system in collapse, and the only access
-        to money typically available through Hamas, families turned to
-        cryptocurrencies for buying basics like food and for assistance with
-        evacuation. Like in Venezuela, they were also storing value in USDT.
-        Sending crypto was one of the only accessible ways to get money to a
-        real person in Gaza without an intermediary. GoFundMe and similar
-        platforms rely on having a point of contact in the US or another
-        accepted country to facilitate the transfer of funds. Often, those who
-        are the most vulnerable are the least likely to have access to this.
-      </p>
-
-      <p>
-        Across the world the pattern emerged: crypto was the solution when
-        financial systems collapsed or couldn't be used by people at risk.
-        Sending Bitcoin provided an actual lifeline. Yet the funds most users
-        were receiving with content-based zaps amounted to pennies, amounts so
-        low it was practically insulting. The only thing missing was a platform to connect
-        people in need with people willing to donate real amounts that could
-        make an actual difference.
-      </p>
-
-      <h2>How we built Agora</h2>
+      <h2 className="!mt-16 !pt-12 border-t border-border">How we built Agora</h2>
 
       <p>
         After six months of partnership and research, we realized we needed to
@@ -195,7 +188,7 @@ export default function AgoraIsLive() {
         who provided leadership and guidance on the final implementation.
       </p>
 
-      <h2>Unstoppable funding</h2>
+      <h2 className="!mt-16 !pt-12 border-t border-border">Unstoppable funding</h2>
 
       <p>
         To be truly unstoppable funding, Agora could not depend on any server or
@@ -206,29 +199,31 @@ export default function AgoraIsLive() {
 
       <ol>
         <li>
-          No third-party can take down/censor their fundraiser (unlike with
-          GoFundMe).
+          <strong>No third-party can take down/censor their fundraiser</strong>{' '}
+          (unlike with GoFundMe).
         </li>
         <li>
-          No one can rug their funds after they've been donated (unlike with
-          custodial Bitcoin layers).
+          <strong>No one can rug their funds after they've been donated</strong>{' '}
+          (unlike with custodial Bitcoin layers).
         </li>
         <li>
-          No one can subpoena Agora to receive information about the users (or
-          if they do, we won't have anything to give them).
+          <strong>
+            No one can subpoena Agora to receive information about the users
+          </strong>{' '}
+          (or if they do, we won't have anything to give them).
         </li>
         <li>
-          Operating Agora requires practically zero infrastructure set up, which
-          means that if our version of Agora went down anyone in the world could
-          easily spin the code of the website up on a new domain with zero
+          <strong>Operating Agora requires practically zero infrastructure</strong>,
+          which means that if our version of Agora went down anyone in the world
+          could easily spin the code of the website up on a new domain with zero
           infrastructure or hosting knowledge (unlike with self-hosted solutions
           like BTCPay servers).
         </li>
         <li>
-          With no infrastructure costs, the cost of maintaining Agora in
-          perpetuity is extremely cheap, which means we do not need to charge any
-          platform fees so all funds go directly to the intended recipient
-          (unlike other Bitcoin fundraising platforms).
+          <strong>With no infrastructure costs, maintaining Agora is extremely cheap</strong>,
+          which means we do not need to charge any platform fees so all funds go
+          directly to the intended recipient (unlike other Bitcoin fundraising
+          platforms).
         </li>
       </ol>
 
@@ -255,7 +250,7 @@ export default function AgoraIsLive() {
               privacy is already made by the person."
             </blockquote>
             <p className="font-semibold text-orange-700 dark:text-orange-400">
-              An activist now living in exile
+              - Activist now living in exile
             </p>
           </CardContent>
         </Card>
@@ -266,7 +261,7 @@ export default function AgoraIsLive() {
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "A lot of people ask me for help to create a GoFundMe. You need to
-              decide — go public and receive the money or go private and find
+              decide: go public and receive the money or go private and find
               another way. A lot of them all around the world, they don't have
               the chance to decide, not even just for their life what to eat
               today or what to study. It's the possibility to decide. A lot of
@@ -274,8 +269,7 @@ export default function AgoraIsLive() {
               raise the risks."
             </blockquote>
             <p className="font-semibold text-blue-700 dark:text-blue-400">
-              An organizer who works with people in authoritarian regimes around
-              the world
+              - Organizer helping people in authoritarian regimes
             </p>
           </CardContent>
         </Card>
@@ -289,7 +283,7 @@ export default function AgoraIsLive() {
         the solution for user financial autonomy.
       </p>
 
-      <h2>Agora Wallet: BIP-32 HD Wallet + Silent Payments</h2>
+      <h2 className="!mt-16 !pt-12 border-t border-border">Agora Wallet: BIP-32 HD Wallet + Silent Payments</h2>
 
       <p>
         The Bitcoin wallet is derived deterministically from the Nostr secret
@@ -378,7 +372,7 @@ export default function AgoraIsLive() {
         every donor's wallet uses that address plus the donor's own input keys
         to derive a brand new, one-shot Taproot output that only the recipient
         can find. On-chain, donations to the same activist look like unrelated
-        transactions to unrelated addresses. (For those following the earliest
+        transactions to unrelated addresses. (For those following the earlier
         Nostr conversations about silent payments, please note that this is an
         original implementation not tied to previous public discussions, 
         although we did draw important inspiration from the discussions.)
@@ -429,7 +423,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         output key.
       </p>
 
-      <h2>Campaign addresses</h2>
+      <h3>Campaign addresses</h3>
 
       <p>
         Silent payments let us skip the coordinating server entirely. The
@@ -516,8 +510,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         private endpoint and everything else falls back to on-chain.
       </p>
 
-      <h2>What's next for Agora</h2>
-
+      <h2 className="!mt-16 !pt-12 border-t border-border">What's next for Agora</h2>
 
       <h3>Further testing and exploration of privacy systems</h3>
 
@@ -539,7 +532,15 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         Anyone can create a campaign on Agora. That's intentional: no central
         authority decides who gets to ask for help. But donors, especially
         institutional ones, reasonably want to know a campaign is who it claims
-        to be.
+        to be. (
+        <a
+          href="https://agora.spot/about/activists"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn how Agora works for activists
+        </a>
+        .)
       </p>
 
       <p>
@@ -619,7 +620,8 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
       <p>
         In the long run, we hope that Agora can also be a mainstream use case
         for Bitcoin adoption to help everyday people understand the freedom that
-        Bitcoin can bring to the world.
+        Bitcoin can bring to the world.{' '}
+        <a href="/agora">Learn more about Agora</a>.
       </p>
     </article>
   );
