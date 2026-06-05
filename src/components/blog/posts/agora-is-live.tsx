@@ -154,7 +154,7 @@ export default function AgoraIsLive() {
           Geyser
         </a>
         . If Lightning is what you want, those options exist today and work well.
-        But they are all "stoppable": they lean on a custodian, a server, or a
+        But they are all "stoppable": they lean on a custodian, a single server, or a
         company that can freeze funds, pull a campaign, or be pressured into
         doing so. We were not interested in building another one of those. We
         wanted to fill the gap that doesn't yet exist in the ecosystem, truly
@@ -174,7 +174,7 @@ export default function AgoraIsLive() {
       />
 
       <p>
-        To be truly unstoppable funding, Agora could not depend on any server or
+        To be truly unstoppable funding, Agora could not depend on any one server or
         middle-man service (including us) that could be shut down by a
         government, corporation, or hurricane. There are multiple benefits to
         operating this way for our users:
@@ -211,9 +211,10 @@ export default function AgoraIsLive() {
       </ol>
 
       <p>
-        The only servers Agora relies on at all are Nostr relays, and those are
-        distributed enough that it's unlikely they would all go down at once.
-        Even if they did, no money is lost: a user can import their seed into any
+        The only servers Agora relies on are Nostr relays, which are distrubuted and redundant by design, 
+        and a public indexer for the silent payment wallet, which can be run by anyone and easily switched 
+        if needed (similarly for the Nostr relays). Even if these servers did go down, no 
+        money is lost: a user can import their seed into any
         silent-payment-supporting wallet and rescan the chain to recover every
         payment they've received. Their funds live on Bitcoin, not on our
         servers. This is the opposite of custodial Layer 2 setups, where if the
