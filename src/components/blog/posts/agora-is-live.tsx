@@ -246,6 +246,16 @@ export default function AgoraIsLive() {
       </ol>
 
       <p>
+        The only servers Agora relies on at all are Nostr relays, and those are
+        distributed enough that it's unlikely they would all go down at once.
+        Even if they did, no money is lost: a user can import their seed into any
+        silent-payment-supporting wallet and rescan the chain to recover every
+        payment they've received. Their funds live on Bitcoin, not on our
+        servers. This is the opposite of custodial Layer 2 setups, where if the
+        servers go down the money is essentially gone.
+      </p>
+
+      <p>
         Regular on-chain Bitcoin is the obvious solution to this but comes with
         privacy tradeoffs, especially for people in high-risk situations.
         However, concerns about the privacy of Bitcoin came entirely from the
