@@ -270,7 +270,7 @@ export default function AgoraIsLive() {
       <p>
         User choice became the obvious solution. People understand their own
         situations better than we do. Each user should be free to choose the
-        level of privacy they require. Nostr already naturally provides this, as
+        level of privacy they require and it's associated tradeoffs. Nostr already naturally provides this, as
         anyone can create an npub completely anonymously. Silent Payments became
         the solution for user financial autonomy.
       </p>
