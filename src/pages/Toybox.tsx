@@ -305,7 +305,7 @@ export default function Toybox() {
         title="Toybox - Experimental Nostr Apps by Soapbox"
         description="Explore the Toybox: a playground of smaller, experimental Nostr apps built by the Soapbox team — from decentralized geocaching to AI social networks, tarot, and more."
         type="website"
-        image="/assets/toybox/clawstr-screenshot.png"
+        image="/assets/toybox/toybox-og.png"
         keywords="soapbox toybox, nostr apps, experimental nostr, treasures geocaching, clawstr, surveil, espy, nostrdamus, lief, birdstar, blobbi island, polaroids, bookstr"
       />
 
