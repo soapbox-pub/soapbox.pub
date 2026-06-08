@@ -4,11 +4,11 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
-import Tools from "./pages/Tools";
 import Agora from "./pages/Agora";
 // import Communities from "./pages/Communities";
 import Showcase from "./pages/Showcase";
 import Toybox from "./pages/Toybox";
+import Toolbox from "./pages/Toolbox";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
 import AuthorPage from "./pages/blog/AuthorPage";
@@ -40,7 +40,7 @@ export function AppRouter() {
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/get-involved" element={<GetInvolved />} />
-        <Route path="/tools" element={<Tools />} />
+        <Route path="/tools" element={<Navigate to="/toolbox" replace />} />
         {/* Primary routes for promoted tools */}
         <Route path="/ditto" element={<Ditto />} />
         <Route path="/shakespeare" element={<Shakespeare />} />
@@ -59,6 +59,7 @@ export function AppRouter() {
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/toybox" element={<Toybox />} />
+        <Route path="/toolbox" element={<Toolbox />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/author/:slug" element={<AuthorPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />

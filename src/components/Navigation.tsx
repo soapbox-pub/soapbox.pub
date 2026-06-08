@@ -8,9 +8,8 @@ const navLinks = [
   { label: "Ditto", to: "/ditto" },
   { label: "Shakespeare", to: "/shakespeare" },
   { label: "Agora", to: "/agora" },
+  { label: "Toolbox", to: "/toolbox" },
   { label: "Toybox", to: "/toybox" },
-  { label: "About", to: "/about" },
-  { label: "Ethics", to: "/ethics" },
   { label: "Updates", to: "/blog" },
 ];
 

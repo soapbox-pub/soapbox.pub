@@ -340,16 +340,20 @@ export default function Ditto() {
       {/* ================================================================== */}
       {/* 5. BRIDGE TO THE OPEN WEB                                          */}
       {/* ================================================================== */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-violet-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
+      <section
+        className="relative py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/ditto-background-galaxy.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
               A Bridge to the{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-300 to-purple-300 bg-clip-text text-transparent">
                 Open&nbsp;Web
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Ditto connects three decentralized protocols so your followers
               can find you no matter what network they're on. One account,
               three networks, zero lock-in.
@@ -675,8 +679,12 @@ export default function Ditto() {
       {/* ================================================================== */}
       {/* 8. FINAL CTA                                                       */}
       {/* ================================================================== */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-violet-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section
+        className="relative py-24 px-4 sm:px-6 lg:px-8 text-white bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/ditto-background-galaxy.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
             Ready?
           </h2>
@@ -703,7 +711,7 @@ export default function Ditto() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-violet-600"
+              className="px-8 py-3 text-lg bg-black/40 border-white text-white hover:bg-white hover:text-violet-600 backdrop-blur-sm"
               asChild
             >
               <a
@@ -718,7 +726,7 @@ export default function Ditto() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-violet-600"
+              className="px-8 py-3 text-lg bg-black/40 border-white text-white hover:bg-white hover:text-violet-600 backdrop-blur-sm"
               asChild
             >
               <a
@@ -733,7 +741,7 @@ export default function Ditto() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-violet-600"
+              className="px-8 py-3 text-lg bg-black/40 border-white text-white hover:bg-white hover:text-violet-600 backdrop-blur-sm"
               asChild
             >
               <a
@@ -761,35 +769,33 @@ export default function Ditto() {
               Community Driven
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Community Funded */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50/80 via-white to-purple-50/80 p-8 sm:p-10 text-center space-y-5">
-            <div className="flex justify-center">
-              <div className="w-12 h-12 bg-violet-100 rounded-full flex items-center justify-center">
-                <Heart className="h-6 w-6 text-violet-600" />
+          {/* Community Funded */}
+          <div className="max-w-3xl mx-auto pt-8">
+            <div className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50/80 via-white to-purple-50/80 p-8 sm:p-10 text-center space-y-5">
+              <div className="flex justify-center">
+                <div className="w-12 h-12 bg-violet-100 rounded-full flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-violet-600" />
+                </div>
               </div>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-display font-bold text-gray-900">
-              Community Funded, Not Corporate Funded
-            </h3>
-            <p className="text-gray-600 leading-relaxed max-w-xl mx-auto">
-              Ditto is built by <a href="/about" className="text-violet-600 hover:underline font-medium">Soapbox</a>, a team funded entirely by grants and donations. No ads, no data sales, no investors. Everything we build is <a href="/blog/free-software-free-societies" className="text-violet-600 hover:underline font-medium">open source</a> and belongs to the community.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-1">
-              <Button
-                variant="outline"
-                className="text-violet-600 border-violet-300 hover:bg-violet-50"
-                asChild
-              >
-                <a href="/transparency">
-                  How we're funded
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-gray-900">
+                Community Funded, Not Corporate Funded
+              </h3>
+              <p className="text-gray-600 leading-relaxed max-w-xl mx-auto">
+                Ditto is built by <a href="/about" className="text-violet-600 hover:underline font-medium">Soapbox</a>, a team funded entirely by grants and donations. No ads, no data sales, no investors. Everything we build is <a href="/blog/free-software-free-societies" className="text-violet-600 hover:underline font-medium">open source</a> and belongs to the community.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-1">
+                <Button
+                  variant="outline"
+                  className="text-violet-600 border-violet-300 hover:bg-violet-50"
+                  asChild
+                >
+                  <a href="/transparency">
+                    How we're funded
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

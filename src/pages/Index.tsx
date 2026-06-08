@@ -17,11 +17,11 @@ import { getFeaturedPosts, formatDate } from "@/lib/blog/utils";
 
 /** Developer tools shown further down the page. */
 const devTools = [
-  { name: "NostrHub", desc: "NIP Explorer & developer tools", logo: "/assets/images/nostrhub-logo.png", to: "/tools/nostrhub" },
-  { name: "MKStack", desc: "Full-stack Nostr deploy toolkit", logo: "/assets/images/mkstack-og.png", to: "/mkstack" },
-  { name: "Nostrify", desc: "Nostr framework for Deno & web", logo: "/assets/images/nostrify.png", to: "/tools/nostrify" },
-  { name: "Soapbox Signer", desc: "Nostr key management", logo: "/assets/logo.svg", to: "/blog/announcing-soapbox-signer" },
-  { name: "Stacks", desc: "Docker-based Nostr infrastructure", logo: "/assets/logo.svg", to: "/tools/stacks" },
+  { name: "Shakespeare", desc: "Build Nostr apps by chatting with AI", logo: "/assets/toolbox/shakespeare-icon.png", to: "/toolbox" },
+  { name: "MKStack", desc: "Full-stack Nostr deploy toolkit", logo: "/assets/toolbox/mkstack-icon.png", to: "/toolbox" },
+  { name: "Nostrify", desc: "Nostr framework for Deno & web", logo: "/assets/toolbox/nostrify-icon.png", to: "/toolbox" },
+  { name: "NostrHub", desc: "NIP explorer & protocol tools", logo: "/assets/toolbox/nostrhub-icon.png", to: "/toolbox" },
+  { name: "Stacks", desc: "Docker-based Nostr infrastructure", logo: "/assets/toolbox/stacks-icon.png", to: "/toolbox" },
 ];
 
 export default function Index() {
@@ -331,7 +331,7 @@ export default function Index() {
                   className="bg-orange-600 hover:bg-orange-700 text-white"
                   asChild
                 >
-                  <Link to="/blog/agora-connecting-freedom-fighters">
+                  <Link to="/agora">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -657,8 +657,8 @@ export default function Index() {
 
           <div className="text-center mt-10">
             <Button variant="outline" asChild>
-              <Link to="/tools">
-                View All Tools
+              <Link to="/toolbox">
+                Explore the Toolbox
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -669,8 +669,12 @@ export default function Index() {
       {/* ================================================================ */}
       {/* 7. FINAL CTA                                                     */}
       {/* ================================================================ */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-azure to-blue-600 text-white">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section
+        className="relative py-24 px-4 sm:px-6 lg:px-8 text-white bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/ditto-background-galaxy.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
             Try Ditto Today
           </h2>
@@ -696,7 +700,7 @@ export default function Index() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure"
+              className="px-8 py-3 text-lg bg-black/40 border-white text-white hover:bg-white hover:text-azure backdrop-blur-sm"
               asChild
             >
               <a
@@ -711,7 +715,7 @@ export default function Index() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure"
+              className="px-8 py-3 text-lg bg-black/40 border-white text-white hover:bg-white hover:text-azure backdrop-blur-sm"
               asChild
             >
               <a
@@ -726,7 +730,7 @@ export default function Index() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-azure"
+              className="px-8 py-3 text-lg bg-black/40 border-white text-white hover:bg-white hover:text-azure backdrop-blur-sm"
               asChild
             >
               <a

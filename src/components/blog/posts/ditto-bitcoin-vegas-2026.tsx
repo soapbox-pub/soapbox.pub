@@ -18,6 +18,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/announcing-ditto-2/cover.jpg',
   },
+  featured: true,
   tags: ['Ditto', 'Nostr', 'Bitcoin', 'Press Release'],
 };
 

@@ -15,7 +15,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/blog/nostr101/nostr-101-divine-protocol.png"
   },
-  "featured": false,
+  "featured": true,
   "tags": [
     "nostr",
     "what is nostr",
