@@ -1,21 +1,12 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Copy, Check, ExternalLink } from 'lucide-react';
+import { Heart, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-const BTC_ADDRESS = 'bc1qzz8wvcv87rstc7t5hfm6reazvwsm39jwvyqv8j';
 const OCE_URL = 'https://opencollective.com/aos-collective?hostname=opencollective.com';
+const AGORA_DONATE_URL = 'https://agora.spot/naddr1qvzqqqyygupzq7q6z5ns2hm5c8msyv83qwzxpxe52j8c4d4q5m92wsp9sflelkh9qqx8getpd5khxmmpwp3x77q6va4q9';
 
 export function SupportCard() {
-  const [copied, setCopied] = useState(false);
-
-  const copyBtc = () => {
-    navigator.clipboard.writeText(BTC_ADDRESS);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <Card className="border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50 mt-12">
       <CardContent className="p-6 sm:p-8">
@@ -38,18 +29,11 @@ export function SupportCard() {
               <ExternalLink className="ml-2 h-3.5 w-3.5" />
             </a>
           </Button>
-          <Button size="sm" variant="outline" onClick={copyBtc}>
-            {copied ? (
-              <>
-                <Check className="mr-2 h-3.5 w-3.5 text-green-600" />
-                Copied!
-              </>
-            ) : (
-              <>
-                <Copy className="mr-2 h-3.5 w-3.5" />
-                Copy BTC Address
-              </>
-            )}
+          <Button size="sm" variant="outline" asChild>
+            <a href={AGORA_DONATE_URL} target="_blank" rel="noopener noreferrer">
+              Donate Bitcoin via Agora
+              <ExternalLink className="ml-2 h-3.5 w-3.5" />
+            </a>
           </Button>
         </div>
 

@@ -108,6 +108,53 @@ const apps: ShowcaseApp[] = [
     accent: "from-green-400 to-emerald-600",
   },
   {
+    name: "Nests",
+    tagline: "Your space for live audio. Host conversations, podcasts, and discussions in real-time rooms — powered by Nostr, no gatekeepers.",
+    icon: "/assets/toybox/nests-icon.png",
+    screenshot: "/assets/toybox/nests-screenshot.png",
+    url: "https://nostrnests.com",
+    repo: "https://github.com/nostrnests/nests",
+    repoHost: "github",
+    status: "complete",
+    accent: "from-violet-500 to-pink-500",
+  },
+  {
+    name: "Plektos",
+    tagline: "Discover events and connect with your community. Find your next adventure on a decentralized calendar.",
+    icon: "/assets/toybox/plektos-icon.png",
+    screenshot: "/assets/toybox/plektos-screenshot.png",
+    url: "https://plektos.app",
+    repo: "https://github.com/derekross/plektos",
+    repoHost: "github",
+    builder: "Derek",
+    status: "complete",
+    accent: "from-purple-500 to-fuchsia-600",
+  },
+  {
+    name: "ZapTrax",
+    tagline: "Discover and stream Nostr-native music. Browse by genre, surface trending tracks, and zap the artists you love.",
+    icon: "/assets/toybox/zaptrax-icon.png",
+    screenshot: "/assets/toybox/zaptrax-screenshot.png",
+    url: "https://zaptrax.app",
+    repo: "https://github.com/derekross/zaptrax",
+    repoHost: "github",
+    builder: "Derek",
+    status: "complete",
+    accent: "from-purple-600 to-indigo-700",
+  },
+  {
+    name: "Podstr",
+    tagline: "Own your podcast community. Build on Nostr and receive direct support through Bitcoin Lightning — zero platform fees.",
+    icon: "/assets/toybox/podstr-icon.svg",
+    screenshot: "/assets/toybox/podstr-screenshot.png",
+    url: "https://podstr.org",
+    repo: "https://github.com/derekross/podstr",
+    repoHost: "github",
+    builder: "Derek",
+    status: "complete",
+    accent: "from-violet-500 to-blue-600",
+  },
+  {
     name: "Color Slide",
     tagline: "Rot your brain and stimulate it at the same time. A colorful sliding puzzle — a few test levels in, mechanics mostly there.",
     icon: "/assets/toybox/colorslide-icon.svg",
@@ -169,6 +216,18 @@ const apps: ShowcaseApp[] = [
     status: "wip",
     accent: "from-orange-400 to-red-500",
   },
+  {
+    name: "Zappix",
+    tagline: "A photo and short-video feed on Nostr. Browse trending hashtags and locations. Early days — slow and rough around the edges, but the bones are there.",
+    icon: "/assets/toybox/zappix-icon.png",
+    screenshot: "/assets/toybox/zappix-screenshot.png",
+    url: "https://zappix.app/discover",
+    repo: "https://github.com/derekross/zappix",
+    repoHost: "github",
+    builder: "Derek",
+    status: "wip",
+    accent: "from-orange-400 to-pink-500",
+  },
 
   // ---- Prototype ----
   {
@@ -187,20 +246,11 @@ const apps: ShowcaseApp[] = [
   },
 ];
 
-const sections: { status: string | string[]; heading: string; blurb: string }[] = [
-  {
-    status: "complete",
-    heading: "Ready to play",
-    blurb: "Polished and feature-complete. Open one up and start tinkering.",
-  },
-  {
-    // Work-in-progress and prototype apps live together; each card keeps its
-    // own status badge. Prototypes are ordered last within this section.
-    status: ["wip", "prototype"],
-    heading: "In the workshop",
-    blurb: "Actively being built — from rough prototypes to nearly-there. That's half the fun.",
-  },
-];
+// Display order across the single unified grid. Cards keep their own status
+// pill (Feature complete / Work in progress / Prototype); they're just no
+// longer split into separate sections.
+const STATUS_ORDER = ["complete", "wip", "prototype"];
+const orderedApps = STATUS_ORDER.flatMap((s) => apps.filter((a) => a.status === s));
 
 export default function Toybox() {
   return (
@@ -211,7 +261,7 @@ export default function Toybox() {
         description="Explore the Toybox: a playground of smaller, experimental Nostr apps built by the Soapbox team — from decentralized geocaching to AI social networks, tarot, and more."
         type="website"
         image="/assets/toybox/toybox-og.png"
-        keywords="soapbox toybox, nostr apps, experimental nostr, treasures geocaching, clawstr, surveil, espy, nostrdamus, lief, birdstar, blobbi island, polaroids, bookstr, relaying earth, color slide"
+        keywords="soapbox toybox, nostr apps, experimental nostr, treasures geocaching, clawstr, surveil, espy, nostrdamus, lief, birdstar, blobbi island, polaroids, bookstr, relaying earth, color slide, nostr nests, plektos, zaptrax, podstr, zappix"
       />
 
       <Navigation />
@@ -256,29 +306,16 @@ export default function Toybox() {
         </div>
       </section>
 
-      {/* App sections */}
-      {sections.map((section) => {
-        const statuses = Array.isArray(section.status) ? section.status : [section.status];
-        // Order apps by the status order listed in `statuses` (e.g. wip before prototype).
-        const sectionApps = statuses.flatMap((s) => apps.filter((a) => a.status === s));
-        if (sectionApps.length === 0) return null;
-
-        return (
-          <section key={section.heading} className="px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pt-16">
-            <div className="mx-auto max-w-7xl">
-              <div className="mb-8 flex flex-col gap-1 border-b border-gray-200 pb-4">
-                <h2 className="font-display text-3xl font-bold text-gray-900">{section.heading}</h2>
-                <p className="text-gray-500">{section.blurb}</p>
-              </div>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {sectionApps.map((app) => (
-                  <ShowcaseCard key={app.name} app={app} statusMeta={STATUS_META} />
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })}
+      {/* App grid */}
+      <section className="px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {orderedApps.map((app) => (
+              <ShowcaseCard key={app.name} app={app} statusMeta={STATUS_META} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Build-your-own CTA */}
       <section className="px-4 pb-24 sm:px-6 lg:px-8">

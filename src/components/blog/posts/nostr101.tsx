@@ -25,6 +25,7 @@ export const meta: BlogPostMeta = {
   "ogImage": {
     "url": "/assets/images/nostr101-cover.png"
   },
+  "featured": true,
   "tags": ["nostr", "tutorial", "beginner"]
 };
 

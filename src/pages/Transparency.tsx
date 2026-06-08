@@ -3,14 +3,12 @@ import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useSEO } from '@/hooks/useSEO';
-import { transparencyReports, BTC_ADDRESS, OCE_URL } from '@/lib/transparencyReports';
-import { Heart, ExternalLink, Copy, Check, ArrowRight } from 'lucide-react';
-import { QRCodeSVG } from 'qrcode.react';
-import { useState } from 'react';
+import { transparencyReports, OCE_URL } from '@/lib/transparencyReports';
+import { Heart, ExternalLink, ArrowRight } from 'lucide-react';
+
+const AGORA_DONATE_URL = 'https://agora.spot/naddr1qvzqqqyygupzq7q6z5ns2hm5c8msyv83qwzxpxe52j8c4d4q5m92wsp9sflelkh9qqx8getpd5khxmmpwp3x77q6va4q9';
 
 export default function Transparency() {
-  const [copied, setCopied] = useState(false);
-
   useSEO({
     title: 'Funding Transparency - Soapbox',
     description: 'Soapbox is funded by grants and donations, not ads or data sales. See how we are funded, who supports us, and read our quarterly grant reports.',
@@ -18,12 +16,6 @@ export default function Transparency() {
     image: '/og-image.png',
     keywords: 'soapbox funding, transparency, open source funding, grants, donations, opensats',
   });
-
-  const copyBtc = () => {
-    navigator.clipboard.writeText(BTC_ADDRESS);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <Layout>
@@ -119,31 +111,18 @@ export default function Transparency() {
                 </CardContent>
               </Card>
 
-              {/* Bitcoin */}
+              {/* Bitcoin via Agora */}
               <Card>
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-bold text-gray-900 text-lg mb-3">Donate Bitcoin</h3>
+                  <h3 className="font-bold text-gray-900 text-lg mb-3">Donate Bitcoin via Agora</h3>
                   <p className="text-sm text-gray-600 mb-4">
-                    Send Bitcoin directly. Scan the QR code or copy the address below.
+                    Send Bitcoin directly to Soapbox through Agora, our censorship-resistant donation platform. Wallet to wallet, no custodian.
                   </p>
-                  <div className="flex justify-center mb-4">
-                    <QRCodeSVG value={`bitcoin:${BTC_ADDRESS}`} size={140} />
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-3 mb-3">
-                    <code className="text-xs break-all text-gray-700">{BTC_ADDRESS}</code>
-                  </div>
-                  <Button variant="outline" className="w-full" onClick={copyBtc}>
-                    {copied ? (
-                      <>
-                        <Check className="mr-2 h-4 w-4 text-green-600" />
-                        Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="mr-2 h-4 w-4" />
-                        Copy Address
-                      </>
-                    )}
+                  <Button className="bg-azure hover:bg-azure-600 text-white w-full" asChild>
+                    <a href={AGORA_DONATE_URL} target="_blank" rel="noopener noreferrer">
+                      Donate Bitcoin on Agora
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
