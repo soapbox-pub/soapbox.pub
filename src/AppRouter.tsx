@@ -8,6 +8,7 @@ import Tools from "./pages/Tools";
 import Agora from "./pages/Agora";
 // import Communities from "./pages/Communities";
 import Showcase from "./pages/Showcase";
+import Toybox from "./pages/Toybox";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
 import AuthorPage from "./pages/blog/AuthorPage";
@@ -57,6 +58,7 @@ export function AppRouter() {
         <Route path="/agora" element={<Agora />} />
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
+        <Route path="/toybox" element={<Toybox />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/author/:slug" element={<AuthorPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />

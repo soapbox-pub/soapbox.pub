@@ -30,6 +30,7 @@ export default defineConfig({
         "/showcase",
         "/soapbox-sessions",
         "/tools",
+        "/toybox",
         "/transparency",
         "/transparency/feb-apr-2026",
         "/transparency/nov-2025-jan-2026",
