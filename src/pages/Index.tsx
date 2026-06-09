@@ -314,14 +314,15 @@ export default function Index() {
               </h2>
               <p className="hidden lg:block text-xl text-gray-500 font-medium -mt-2">Power to the People.</p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                A censorship-resistant platform for activists. Organize,
-                document, and receive direct Bitcoin support from a global
-                community.
+                Unstoppable fundraising for activists. Launch a campaign and
+                receive Bitcoin directly, wallet to wallet — with no custodian,
+                no platform fees, and no server that can be shut down.
               </p>
               <div className="space-y-3">
                 {[
-                  { text: "Censorship-resistant communication" },
-                  { text: "Direct Bitcoin support via Lightning", link: "/blog/zapping-101" },
+                  { text: "Unstoppable fundraising — no one can freeze or take down a campaign" },
+                  { text: "Direct, wallet-to-wallet Bitcoin donations — Agora never holds funds", link: "/blog/agora-is-live" },
+                  { text: "Private by design with Bitcoin Silent Payments" },
                   { text: "Built on Nostr -- no server to shut down" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center text-sm text-gray-600">
@@ -369,8 +370,8 @@ export default function Index() {
               <p className="text-lg text-gray-500 font-medium">Bridging the open web.</p>
             </div>
 
-            {/* Left -- Mostr screenshot */}
-            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5">
+            {/* Right -- Mostr screenshot */}
+            <div className="rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 order-1 lg:order-2">
               <img
                 src="/assets/images/mostr-search.webp"
                 alt="Mostr Bridge -- 46,957 Nostr users and 9,596 Fediverse users connected"
@@ -381,8 +382,8 @@ export default function Index() {
               />
             </div>
 
-            {/* Right -- copy + protocol pills */}
-            <div className="space-y-6">
+            {/* Left -- copy + protocol pills */}
+            <div className="space-y-6 order-2 lg:order-1">
               <h2 className="hidden lg:block text-5xl font-display font-bold text-gray-900">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   Mostr

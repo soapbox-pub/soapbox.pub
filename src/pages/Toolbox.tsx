@@ -92,16 +92,6 @@ const tools: ShowcaseApp[] = [
     accent: "from-amber-400 to-orange-600",
   },
   {
-    name: "Stacks",
-    tagline: "One-command Docker infrastructure for Nostr. Spin up relays, services, and full stacks with ease.",
-    icon: "/assets/toolbox/stacks-icon.png",
-    screenshot: "/assets/toolbox/stacks-screenshot.png",
-    url: "https://getstacks.dev",
-    ctaLabel: "Open tool",
-    status: "stable",
-    accent: "from-slate-500 to-blue-700",
-  },
-  {
     name: "Ditto Extension",
     tagline: "A browser extension that turns any page into a Nostr surface — sign in to sites, highlight text, and post to Nostr as you browse.",
     icon: "/assets/toolbox/ditto-extension-icon.png",
@@ -114,6 +104,16 @@ const tools: ShowcaseApp[] = [
     accent: "from-pink-400 to-purple-600",
   },
   {
+    name: "Stacks",
+    tagline: "One-command Docker infrastructure for Nostr. Spin up relays, services, and full stacks with ease.",
+    icon: "/assets/toolbox/stacks-icon.png",
+    screenshot: "/assets/toolbox/stacks-screenshot.png",
+    url: "https://getstacks.dev",
+    ctaLabel: "Open tool",
+    status: "stable",
+    accent: "from-slate-500 to-blue-700",
+  },
+  {
     name: "Nostr WS Inspector",
     tagline: "A Chrome DevTools extension that decodes live Nostr WebSocket traffic — inspect events, kinds, and relays as they fly.",
     icon: "/assets/toolbox/nostr-ws-inspector-icon.png",
@@ -124,6 +124,17 @@ const tools: ShowcaseApp[] = [
     repoHost: "gitlab",
     status: "stable",
     accent: "from-blue-500 to-indigo-600",
+  },
+  {
+    name: "Mi",
+    tagline: "Your personal Nostr archive — a browser-based local relay that stores your events right in your browser, giving you complete control over your data.",
+    icon: "/assets/toolbox/mi-icon.png",
+    screenshot: "/assets/toolbox/mi-screenshot.png",
+    url: "https://mi.shakespeare.wtf/",
+    ctaLabel: "Open app",
+    builder: "Chad",
+    status: "stable",
+    accent: "from-red-500 to-rose-600",
   },
 
   // ---- Work in progress ----
@@ -148,10 +159,10 @@ export default function Toolbox() {
       <ShowcaseHeroStyles />
       <SEO
         title="Toolbox - Developer Tools for Building on Nostr"
-        description="The Soapbox developer Toolbox: Shakespeare, MKStack, Nostrify, NostrHub, Nostrbook, Stacks, the Ditto Extension, the Nostr WS Inspector, and Relay Kit — everything you need to build on Nostr."
+        description="The Soapbox developer Toolbox: Shakespeare, MKStack, Mi, Nostrify, NostrHub, Nostrbook, Stacks, the Ditto Extension, the Nostr WS Inspector, and Relay Kit — everything you need to build on Nostr."
         type="website"
         image="/assets/toolbox/toolbox-og.png"
-        keywords="nostr developer tools, mkstack, shakespeare, ditto relay, nostr relay, nostrify, nostrhub, nostrbook, stacks, ditto extension, nostr ws inspector, relay kit, build on nostr"
+        keywords="nostr developer tools, mkstack, shakespeare, mi, mi nostr archive, ditto relay, nostr relay, nostrify, nostrhub, nostrbook, stacks, ditto extension, nostr ws inspector, relay kit, build on nostr"
       />
 
       <Navigation />
