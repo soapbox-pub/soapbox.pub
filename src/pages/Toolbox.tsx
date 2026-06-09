@@ -37,6 +37,19 @@ const tools: ShowcaseApp[] = [
     accent: "from-yellow-400 to-blue-500",
   },
   {
+    name: "Ditto Relay",
+    tagline: "A high-performance Nostr relay backed by OpenSearch — the relay infrastructure powering Ditto. Self-host your own or connect to the public instance.",
+    icon: "/assets/toolbox/ditto-relay-icon.png",
+    screenshot: "/assets/toolbox/ditto-relay-screenshot.png",
+    url: "https://relay.ditto.pub/",
+    ctaLabel: "Open relay",
+    repo: "https://gitlab.com/soapbox-pub/ditto-relay",
+    repoHost: "gitlab",
+    builder: "Alex",
+    status: "stable",
+    accent: "from-violet-500 to-purple-700",
+  },
+  {
     name: "MKStack",
     tagline: "The full-stack toolkit for shipping Nostr apps fast — scaffolding, hooks, and deploy in one workflow.",
     icon: "/assets/toolbox/mkstack-icon.png",
@@ -138,7 +151,7 @@ export default function Toolbox() {
         description="The Soapbox developer Toolbox: Shakespeare, MKStack, Nostrify, NostrHub, Nostrbook, Stacks, the Ditto Extension, the Nostr WS Inspector, and Relay Kit — everything you need to build on Nostr."
         type="website"
         image="/assets/toolbox/toolbox-og.png"
-        keywords="nostr developer tools, mkstack, shakespeare, nostrify, nostrhub, nostrbook, stacks, ditto extension, nostr ws inspector, relay kit, build on nostr"
+        keywords="nostr developer tools, mkstack, shakespeare, ditto relay, nostr relay, nostrify, nostrhub, nostrbook, stacks, ditto extension, nostr ws inspector, relay kit, build on nostr"
       />
 
       <Navigation />
