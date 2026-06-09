@@ -3,9 +3,10 @@ import {
   Search,
   ExternalLink,
   Calendar,
-  Heart,
+  TerminalSquare,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaGitlab } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -15,13 +16,23 @@ import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 import { getFeaturedPosts, formatDate } from "@/lib/blog/utils";
 
-/** Developer tools shown further down the page. */
+/**
+ * Developer tools shown in the "For Builders" console section.
+ * `accent` is a Tailwind gradient used for each card's glow/ring on hover.
+ */
 const devTools = [
-  { name: "Shakespeare", desc: "Build Nostr apps by chatting with AI", logo: "/assets/toolbox/shakespeare-icon.png", to: "/toolbox" },
-  { name: "MKStack", desc: "Full-stack Nostr deploy toolkit", logo: "/assets/toolbox/mkstack-icon.png", to: "/toolbox" },
-  { name: "Nostrify", desc: "Nostr framework for Deno & web", logo: "/assets/toolbox/nostrify-icon.png", to: "/toolbox" },
-  { name: "NostrHub", desc: "NIP explorer & protocol tools", logo: "/assets/toolbox/nostrhub-icon.png", to: "/toolbox" },
-  { name: "Stacks", desc: "Docker-based Nostr infrastructure", logo: "/assets/toolbox/stacks-icon.png", to: "/toolbox" },
+  { name: "Shakespeare", desc: "Build Nostr apps by chatting with AI", url: "https://shakespeare.diy", logo: "/assets/toolbox/shakespeare-icon.png", accent: "from-yellow-400 to-blue-500" },
+  { name: "MKStack", desc: "Full-stack Nostr deploy toolkit", url: "https://soapbox.pub/mkstack", logo: "/assets/toolbox/mkstack-icon.png", accent: "from-violet-500 to-purple-600" },
+  { name: "Nostrify", desc: "Nostr framework for Deno & web", url: "https://nostrify.dev/", logo: "/assets/toolbox/nostrify-icon.png", accent: "from-sky-400 to-indigo-500" },
+  { name: "NostrHub", desc: "NIP explorer & protocol tools", url: "https://nostrhub.io", logo: "/assets/toolbox/nostrhub-icon.png", accent: "from-fuchsia-500 to-cyan-500" },
+  { name: "Stacks", desc: "Docker-based Nostr infrastructure", url: "https://getstacks.dev", logo: "/assets/toolbox/stacks-icon.png", accent: "from-slate-400 to-blue-600" },
+  { name: "Ditto Relay", desc: "High-performance Nostr relay", url: "https://relay.ditto.pub/", logo: "/assets/toolbox/ditto-relay-icon.png", accent: "from-violet-500 to-purple-700" },
+];
+
+/** Names shown in the scrolling "arsenal" ribbon (duplicated for seamless loop). */
+const devToolMarquee = [
+  "Shakespeare", "MKStack", "Nostrify", "NostrHub", "Stacks", "Ditto Relay",
+  "Nostrbook", "Ditto Extension", "Nostr WS Inspector", "Relay Kit",
 ];
 
 export default function Index() {
@@ -536,7 +547,18 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white hover:text-gray-900"
+              asChild
+            >
+              <Link to="/transparency">
+                Funding Transparency
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
             <Button
               size="lg"
               variant="outline"
@@ -553,9 +575,134 @@ export default function Index() {
       </section>
 
       {/* ================================================================ */}
-      {/* 5. FEATURED BLOG POSTS                                           */}
+      {/* 5. FOR BUILDERS -- dark "console" showcase                      */}
       {/* ================================================================ */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="relative overflow-hidden bg-[#0a0e1a] py-24 px-4 sm:px-6 lg:px-8">
+        {/* Ambient glow accents */}
+        <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-azure/20 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-indigo-500/20 blur-[120px]" />
+        {/* Subtle grid texture */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+
+        <div className="relative mx-auto max-w-6xl">
+          {/* Heading row */}
+          <div className="mb-12 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-azure-100 backdrop-blur">
+                <TerminalSquare className="h-3.5 w-3.5" />
+                <span className="font-mono">~/soapbox</span>
+                <span className="text-white/40">·</span>
+                <span>open source &amp; free forever</span>
+              </div>
+              <h2 className="font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl">
+                For{" "}
+                <span className="bg-gradient-to-r from-azure via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                  Builders
+                </span>
+              </h2>
+              <p className="mt-4 text-lg text-gray-400">
+                A full arsenal of tools for building on the decentralized web —
+                from AI app builders to relay infrastructure and protocol explorers.
+              </p>
+            </div>
+
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <Button
+                size="lg"
+                asChild
+                className="bg-white text-[#0a0e1a] hover:bg-gray-100"
+              >
+                <Link to="/toolbox">
+                  <TerminalSquare className="mr-2 h-4 w-4" />
+                  Explore the Toolbox
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+              >
+                <a
+                  href="https://gitlab.com/soapbox-pub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGitlab className="mr-2 h-4 w-4" />
+                  View on GitLab
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Tool cards */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {devTools.map((tool) => (
+              <a
+                key={tool.name}
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06]"
+              >
+                {/* Per-tool gradient glow on hover */}
+                <div
+                  className={`pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-gradient-to-br ${tool.accent} opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-40`}
+                />
+
+                <div className="relative flex items-center gap-3">
+                  <div
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${tool.accent} p-[1.5px]`}
+                  >
+                    <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[#0d1220]">
+                      <img
+                        src={tool.logo}
+                        alt={tool.name}
+                        className="h-6 w-6 object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display text-base font-semibold text-white">
+                      {tool.name}
+                    </h3>
+                    <p className="truncate text-sm text-gray-400">{tool.desc}</p>
+                  </div>
+                  <ExternalLink className="h-4 w-4 shrink-0 text-gray-600 transition-all group-hover:translate-x-0.5 group-hover:text-white" />
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Scrolling arsenal ribbon */}
+          <div className="relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+            <div className="flex w-max animate-marquee gap-3 [animation-duration:28s] hover:[animation-play-state:paused]">
+              {[...devToolMarquee, ...devToolMarquee].map((name, i) => (
+                <span
+                  key={`${name}-${i}`}
+                  className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 font-mono text-sm text-gray-400"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-azure" />
+                  {name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 6. FEATURED BLOG POSTS                                           */}
+      {/* ================================================================ */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
@@ -610,55 +757,6 @@ export default function Index() {
             <Button size="lg" variant="outline" asChild>
               <Link to="/blog">
                 View All Updates
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================ */}
-      {/* 6. DEVELOPER TOOLS                                               */}
-      {/* ================================================================ */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-azure-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-              For Developers
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Open source tools and libraries for building on the decentralized
-              web.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {devTools.map((tool) => (
-              <Link
-                key={tool.name}
-                to={tool.to}
-                className="group p-5 rounded-xl bg-white border border-gray-200 hover:border-azure-300 hover:shadow-lg transition-all text-center space-y-3"
-              >
-                <div className="w-10 h-10 rounded-lg overflow-hidden mx-auto">
-                  <img
-                    src={tool.logo}
-                    alt={tool.name}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-900 text-sm group-hover:text-azure transition-colors">
-                  {tool.name}
-                </h3>
-                <p className="text-xs text-gray-500">{tool.desc}</p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Button variant="outline" asChild>
-              <Link to="/toolbox">
-                Explore the Toolbox
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -741,36 +839,6 @@ export default function Index() {
                 <img src="/assets/icons/zapstore.png" alt="" className="mr-2 h-5 w-5 rounded" />
                 Get on Zapstore
               </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================ */}
-      {/* 8. COMMUNITY FUNDED                                              */}
-      {/* ================================================================ */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <Heart className="h-8 w-8 text-red-500 mx-auto" />
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
-            Community Funded, Not Investor Funded
-          </h2>
-          <p className="text-gray-600 leading-relaxed">
-            Soapbox is supported by organizations like OpenSats, the Human Rights Foundation, and donors like you.
-            No venture capital. No ads. No data sales. Everything we build is <Link to="/blog/free-software-free-societies" className="text-azure hover:underline font-medium">open source</Link> and belongs to the community.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="outline" asChild>
-              <Link to="/transparency">
-                How We're Funded
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link to="/ethics">
-                Our Ethics Pledge
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
             </Button>
           </div>
         </div>
