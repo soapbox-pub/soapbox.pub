@@ -200,7 +200,7 @@ export default function Toolbox() {
           <div className="shrink-0">
             <div className="flex justify-center">
               <div className="-rotate-6 transition-transform duration-500 hover:rotate-0">
-                <HeroIconGrid apps={tools} />
+                <HeroIconGrid apps={tools} exclude={["Stacks"]} />
               </div>
             </div>
           </div>

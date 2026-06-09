@@ -168,9 +168,47 @@ export function ShowcaseCard({
 }
 
 /** The tilted grid of app icons that headlines a showcase page (matches the OG image). */
-export function HeroIconGrid({ apps }: { apps: ShowcaseApp[] }) {
-  // Apps with a real square logo, in display order, capped at 9 for a 3x3 grid.
-  const iconApps = apps.filter((a) => a.hasIcon !== false).slice(0, 9);
+export function HeroIconGrid({
+  apps,
+  pinLast = [],
+  exclude = [],
+  order,
+}: {
+  apps: ShowcaseApp[];
+  /** App names to force into the final grid slots, in the given order. */
+  pinLast?: string[];
+  /** App names to keep out of the hero grid entirely. */
+  exclude?: string[];
+  /** Fully explicit grid order by app name; overrides pinLast/exclude. */
+  order?: string[];
+}) {
+  let iconApps: ShowcaseApp[];
+
+  if (order && order.length > 0) {
+    // Fully explicit order: take exactly the named apps, in the given order.
+    iconApps = order
+      .map((name) => apps.find((a) => a.name === name && a.hasIcon !== false))
+      .filter((a): a is ShowcaseApp => Boolean(a))
+      .slice(0, 9);
+  } else {
+    const excluded = new Set(exclude);
+    // Apps with a real square logo, in display order.
+    const withIcon = apps.filter(
+      (a) => a.hasIcon !== false && !excluded.has(a.name),
+    );
+
+    // Pull out the pinned apps and append them at the end so they land in the
+    // last grid slots; everything else keeps its display order.
+    const pinned = pinLast
+      .map((name) => withIcon.find((a) => a.name === name))
+      .filter((a): a is ShowcaseApp => Boolean(a));
+    const pinnedNames = new Set(pinned.map((a) => a.name));
+    const rest = withIcon.filter((a) => !pinnedNames.has(a.name));
+
+    // Cap at 9 for a 3x3 grid, keeping the pinned apps in the final positions.
+    const lead = rest.slice(0, Math.max(0, 9 - pinned.length));
+    iconApps = [...lead, ...pinned];
+  }
 
   return (
     <TooltipProvider delayDuration={120}>

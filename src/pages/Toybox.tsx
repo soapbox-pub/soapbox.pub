@@ -299,7 +299,20 @@ export default function Toybox() {
           <div className="shrink-0">
             <div className="flex justify-center">
               <div className="-rotate-6 transition-transform duration-500 hover:rotate-0">
-                <HeroIconGrid apps={apps} />
+                <HeroIconGrid
+                  apps={apps}
+                  order={[
+                    "Treasures",
+                    "Birdstar",
+                    "Surveil",
+                    "Espy",
+                    "Blobbi Island",
+                    "Lief",
+                    "Nests",
+                    "Nostrdamus",
+                    "Polaroids",
+                  ]}
+                />
               </div>
             </div>
           </div>
