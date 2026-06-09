@@ -12,6 +12,7 @@ import Toolbox from "./pages/Toolbox";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPostPage from "./pages/blog/BlogPostPage";
 import AuthorPage from "./pages/blog/AuthorPage";
+import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
 import CustomNipPage from "./pages/CustomNipPage";
 import ShakespeareResources from "./pages/ShakespeareResources";
@@ -75,6 +76,7 @@ export function AppRouter() {
         <Route path="/ethics" element={<SoftwareEthicsPledge />} />
         <Route path="/transparency" element={<Transparency />} />
         <Route path="/transparency/:slug" element={<TransparencyReport />} />
+        <Route path="/search" element={<Search />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

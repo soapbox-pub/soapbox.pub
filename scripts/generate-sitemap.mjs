@@ -23,6 +23,9 @@ const projectRoot = path.resolve(__dirname, '..');
 
 const BASE_URL = 'https://soapbox.pub';
 
+/** Routes that should not appear in the sitemap (utility pages, etc.). */
+const SITEMAP_EXCLUDE = new Set(['/search']);
+
 /**
  * Determine the priority for a route.
  */
@@ -42,7 +45,7 @@ function getChangeFreq(route) {
 }
 
 function generateSitemap() {
-  const routes = discoverRoutes();
+  const routes = discoverRoutes().filter((route) => !SITEMAP_EXCLUDE.has(route));
   const today = new Date().toISOString().split('T')[0];
 
   const urls = routes.map(route => {
