@@ -95,6 +95,7 @@ export default defineConfig({
         "/blog/free-software-free-societies",
         "/blog/future-is-decentralized",
         "/blog/github-backup-guide",
+        "/blog/how-to-disappear-from-the-surveillance-internet",
         "/blog/how-to-install-ditto-mobile",
         "/blog/how-to-join-nostr-brazil-cobrafuma",
         "/blog/how-to-login-divine-without-invite-code",

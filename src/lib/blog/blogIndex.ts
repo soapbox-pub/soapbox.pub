@@ -98,6 +98,7 @@ import * as buildingzuka from '../../components/blog/posts/building-zuka';
 import * as conferencerecapbitcoin2026 from '../../components/blog/posts/conference-recap-bitcoin-2026';
 import * as wlclaunchesagoraoslofreedomforum from '../../components/blog/posts/wlc-launches-agora-oslo-freedom-forum';
 import * as agoraislive from '../../components/blog/posts/agora-is-live';
+import * as howtodisappearfromthesurveillanceinternet from '../../components/blog/posts/how-to-disappear-from-the-surveillance-internet';
 
 export interface BlogFAQ {
   question: string;
@@ -140,6 +141,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  howtodisappearfromthesurveillanceinternet.meta,
   agoraislive.meta,
   wlclaunchesagoraoslofreedomforum.meta,
   onchainzapsinditto.meta,
@@ -244,6 +246,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'howtodisappearfromthesurveillanceinternet':
+      return (await import('../../components/blog/posts/how-to-disappear-from-the-surveillance-internet')).default;
     case 'agoraislive':
       return (await import('../../components/blog/posts/agora-is-live')).default;
     case 'wlclaunchesagoraoslofreedomforum':
