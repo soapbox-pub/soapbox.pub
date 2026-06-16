@@ -43,12 +43,16 @@ export const meta: BlogPostMeta = {
     'bitcoin',
     'nostrvpn',
     'fips',
+    'tor',
+    'tor browser',
+    'privacy VPS',
+    'anonymous hosting',
     'freedom tech',
     'self-sovereign',
     'privacy',
   ],
   keywords:
-    'UK social media ban, under 16 ban, online safety act, age verification, digital ID, VPN ban UK, Nostr, Bitcoin, NostrVPN, FIPS, freedom tech, self-sovereign, privacy',
+    'UK social media ban, under 16 ban, online safety act, age verification, digital ID, VPN ban UK, Nostr, Bitcoin, NostrVPN, FIPS, Tor, Tor Browser, privacy VPS, anonymous VPS hosting, 1984 Hosting, Njalla, OrangeWebsite, freedom tech, self-sovereign, privacy',
 };
 
 export default function HowToDisappearFromTheSurveillanceInternet() {
@@ -709,7 +713,9 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
             </p>
             <ul className="space-y-2 m-0 list-none pl-0">
               <li>
-                <strong className="text-foreground">Pick a VPS:</strong>{' '}
+                <strong className="text-foreground">
+                  Pick a VPS (cheapest):
+                </strong>{' '}
                 <a
                   href="https://www.hetzner.com"
                   target="_blank"
@@ -736,6 +742,49 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                 >
                   Vultr
                 </a>
+                . These are the popular, low-cost options — but they're
+                standard companies that want your real name and card.
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Pick a VPS (for maximum privacy):
+                </strong>{' '}
+                <a
+                  href="https://1984.hosting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-700 dark:text-orange-400 underline"
+                >
+                  1984 Hosting
+                </a>{' '}
+                ·{' '}
+                <a
+                  href="https://njal.la"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-700 dark:text-orange-400 underline"
+                >
+                  Njalla
+                </a>{' '}
+                ·{' '}
+                <a
+                  href="https://www.orangewebsite.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-700 dark:text-orange-400 underline"
+                >
+                  OrangeWebsite
+                </a>
+                . Privacy-first hosts in jurisdictions like Iceland that take
+                minimal data and accept Bitcoin or Monero — pay with the wallet
+                from Step 2 and you can sign up with no real name attached.
+              </li>
+              <li className="text-xs italic">
+                One honest caveat: no host is magic. A provider can still see
+                what runs on the box and is bound by its country's laws — what
+                "private" really buys you is how little they know about{' '}
+                <em>you</em> (anonymous signup, crypto payment) and a friendlier
+                jurisdiction.
               </li>
               <li>
                 <strong className="text-foreground">Build the thing with AI:</strong>{' '}
@@ -834,6 +883,30 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   className="text-orange-700 dark:text-orange-400 underline"
                 >
                   Learn how it works
+                </a>
+                .
+              </li>
+              <li>
+                <a
+                  href="https://www.torproject.org/download/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-700 dark:text-orange-400 underline font-semibold"
+                >
+                  Tor
+                </a>{' '}
+                — not Nostr-native, but the most battle-tested option of all.
+                The Tor Browser routes your traffic through volunteer-run relays
+                to anonymize it and slip past blocks — a nonprofit network with
+                no company to pressure. Free, and as simple as installing a
+                browser.{' '}
+                <a
+                  href="https://tb-manual.torproject.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-700 dark:text-orange-400 underline"
+                >
+                  User guide
                 </a>
                 .
               </li>
