@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "nostr": {
+      "type": "local",
+      "command": ["npx", "-y", "@nostrbook/mcp@latest"]
+    },
+    "openai-image": {
+      "type": "local",
+      "command": ["npx", "-y", "@mindstone/mcp-server-openai-image"],
+      "enabled": true,
+      "timeout": 240000,
+      "environment": {
+        "OPENAI_IMAGE_MODEL": "gpt-image-2",
+        "OPENAI_IMAGE_REQUEST_TIMEOUT_MS": "180000"
+      }
+    }
+  }
+}
