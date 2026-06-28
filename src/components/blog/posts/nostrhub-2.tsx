@@ -100,13 +100,6 @@ export default function NostrHub2() {
         NostrHub from the ground up.
       </p>
 
-      <p>
-        This is the story of how a tool I first made out of spite became a
-        question I didn't expect to answer: not "how do we list NIPs," but{' '}
-        <em>"how does a permissionless network govern itself without a king or a
-        mob?"</em>
-      </p>
-
       <h2>Democracy</h2>
 
       <figure>
@@ -313,12 +306,6 @@ export default function NostrHub2() {
         the rankings rearrange themselves around your trust.
       </p>
 
-      <p>
-        This is the whole philosophy in one mechanism: NostrHub doesn't tell you
-        what's true. It tells you what the people you trust think is true, and
-        lets you choose those people.
-      </p>
-
       <h2>The Community</h2>
 
       <figure>
@@ -351,16 +338,8 @@ export default function NostrHub2() {
         This is what kills the spam that drowned NostrHub 1.0. Not a moderator,
         not a captcha, not a blocklist. Just the shape of the network
         itself. The same community set scopes everything downstream: comments,
-        chat, the plan graph, the apps, the repos. One trust primitive, applied
+        chat, the plan graph, the apps, the repos. One trust primitive applied
         everywhere.
-      </p>
-
-      <p>
-        Curation and participation are cleanly separated. Experts{' '}
-        <em>curate</em> by approving. The community <em>participates</em> by
-        building. Fresh NIP drafts surface the moment a community member
-        publishes them. No approval is required to be seen, but expert approval
-        is required to rise.
       </p>
 
       <h2>Building Nostr Together</h2>
@@ -474,7 +453,7 @@ export default function NostrHub2() {
       </p>
 
       <p>
-        Notice the arc. We started by trying to escape GitHub's oligarchy over
+        We started by trying to escape GitHub's oligarchy over
         the NIPs. We ended up rebuilding the good parts of GitHub itself, the
         proposals, discussion, code, and issues, on a substrate nobody owns,
         governed by a meritocracy you control.
