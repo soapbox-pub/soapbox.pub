@@ -26,12 +26,11 @@ export const meta: BlogPostMeta = {
     'plan graph',
     'nip-34',
     'git on nostr',
-    'borkstr',
     'fiatjaf',
     'decentralization',
   ],
   keywords:
-    'nostrhub, nostrhub 2.0, nostr nips, decentralized nips registry, nostr web of trust, nostr experts, nip approval, meritocracy nostr, git on nostr, nip-34, grasp servers, borkstr compatibility, nostr plan graph, nostr developer hub, custom nips, decentralizing the nips registry',
+    'nostrhub, nostrhub 2.0, nostr nips, decentralized nips registry, nostr web of trust, nostr experts, nip approval, meritocracy nostr, git on nostr, nip-34, grasp servers, nostr plan graph, nostr developer hub, custom nips, decentralizing the nips registry',
   faq: [
     {
       question: 'What is NostrHub?',
@@ -125,7 +124,7 @@ export default function NostrHub2() {
           <em>Decentralizing the NIPs registry</em>
         </a>{' '}
         in which much drama ensued. People were critical of the top-down
-        approach, and rightfully so.
+        approach.
       </p>
 
       <p>
@@ -142,7 +141,15 @@ export default function NostrHub2() {
         slop left open or even merged. We built AI context files to make the AI
         write NIPs in the tone of the NIPs repo. We even created a fake version
         of fiatjaf we argued with, to understand his positions. Recently the
-        real fiatjaf relented and merged geocaching as an official NIP, NIP-CC.
+        real fiatjaf relented and merged geocaching as an official NIP,{' '}
+        <a
+          href="https://github.com/nostr-protocol/nips/blob/master/CC.md"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NIP-CC
+        </a>
+        .
       </p>
 
       <p>
@@ -256,7 +263,7 @@ export default function NostrHub2() {
         experts are? Measuring impact is subjective. Choose the wrong experts
         and you've built an authoritarianism. Choose the right ones and you've
         built a benevolent dictatorship, arguably the rarest and best
-        form of society, and the hardest to keep.
+        form of society.
       </p>
 
       <h2>Meritocracy</h2>
@@ -286,9 +293,7 @@ export default function NostrHub2() {
         Pamplona, PABLOF7z, jb55, Kieran, mattn, and the rest. There are strong
         signals of expertise in that list, and leaning on it keeps my personal
         bias out of the defaults. Since users can customize it, we get the best
-        of both worlds: a <em>subjective</em> meritocracy. There is no objective
-        expert, so I stopped pretending there could be one, and handed you the
-        dial instead.
+        of both worlds: a <em>subjective</em> meritocracy.
       </p>
 
       <p>
@@ -326,12 +331,10 @@ export default function NostrHub2() {
       </p>
 
       <p>
-        So to be <em>seen</em> on NostrHub, you don't need anyone's permission.
-        Nostr is permissionless, and you can publish anything. But to be{' '}
-        <em>rendered</em>, you have to have already earned the attention of
-        people the experts trust. You engage with the developer community
-        through clients like Amethyst, Coracle, and Ditto first. You do good
-        work. The trust flows back through the network to you.
+        So to be <em>seen</em> on NostrHub you have to have already earned the
+        attention of people the experts trust. You engage with the developer
+        community through clients like Amethyst, Coracle, and Ditto first. You
+        do good work. The trust flows back through the network to you.
       </p>
 
       <p>
@@ -426,13 +429,9 @@ export default function NostrHub2() {
         handler events, with no central submission. The community then rates
         how well each app actually implements each NIP, ProtonDB-style:{' '}
         <strong>Flawless</strong>, <strong>Incomplete</strong>,{' '}
-        <strong>Isolated</strong>, or <strong>Borked</strong>. These reports are
-        shared 1:1 with the{' '}
-        <a href="https://borkstr.com" target="_blank" rel="noopener noreferrer">
-          Borkstr
-        </a>{' '}
-        directory, so the ratings flow between clients instead of being trapped
-        in one. Interoperability, measured interoperably.
+        <strong>Isolated</strong>, or <strong>Borked</strong>. Because these
+        reports are themselves Nostr events, the ratings can flow between clients
+        instead of being trapped in one. Interoperability, measured interoperably.
       </p>
 
       <p>
