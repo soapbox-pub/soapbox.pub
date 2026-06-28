@@ -23,6 +23,7 @@ import * as shakespeare1weekupdate from '../../components/blog/posts/shakespeare
 import * as announcinghenhouse from '../../components/blog/posts/announcing-henhouse';
 import * as announcingnostrify from '../../components/blog/posts/announcing-nostrify';
 import * as announcingnostrhub from '../../components/blog/posts/announcing-nostrhub';
+import * as nostrhub2 from '../../components/blog/posts/nostrhub-2';
 import * as announcingtreasures from '../../components/blog/posts/announcing-treasures';
 import * as announcingsoapboxbev10 from '../../components/blog/posts/announcing-soapbox-be-v1.0';
 import * as announcingsoapboxfev10 from '../../components/blog/posts/announcing-soapbox-fe-v1.0';
@@ -141,6 +142,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  nostrhub2.meta,
   howtodisappearfromthesurveillanceinternet.meta,
   agoraislive.meta,
   wlclaunchesagoraoslofreedomforum.meta,
@@ -246,6 +248,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'nostrhub2':
+      return (await import('../../components/blog/posts/nostrhub-2')).default;
     case 'howtodisappearfromthesurveillanceinternet':
       return (await import('../../components/blog/posts/how-to-disappear-from-the-surveillance-internet')).default;
     case 'agoraislive':

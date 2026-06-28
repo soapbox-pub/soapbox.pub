@@ -58,6 +58,7 @@ export default defineConfig({
         "/blog/announcing-henhouse",
         "/blog/announcing-nostrhub",
         "/blog/announcing-nostrify",
+        "/blog/nostrhub-2",
         "/blog/announcing-shakespeare",
         "/blog/announcing-shakespeare-act-2",
         "/blog/announcing-shakespeare-community",
