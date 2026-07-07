@@ -217,17 +217,9 @@ function HeroSection() {
 
             <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
               Servers, channels, threads, voice, and moderation — everything
-              you expect from a chat app, end-to-end encrypted with the{' '}
-              <a
-                href={CONCORD_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-300 hover:text-cyan-200 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
-              >
-                Concord protocol
-              </a>
-              . No company holds your messages. No server decides who's in
-              charge.
+              you expect from a chat app, fully end-to-end encrypted. Nobody
+              can read your messages, sell your data, or shut your community
+              down.
             </p>
 
             <div className="flex flex-wrap gap-3">
