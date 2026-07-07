@@ -5,11 +5,14 @@
  *
  *  - Frames Armada as "Discord without the company" — servers, channels,
  *    voice, and communities on the open Nostr relays.
- *  - Explains the Concord protocol (github.com/concord-protocol/concord):
- *    end-to-end encrypted communities with no central server, where
- *    membership is key possession and authority is a signed roster.
- *  - Covers the second deployment mode: running your own relay server
- *    (NIP-29) for sovereign internal infrastructure.
+ *  - Shows (not tells) the product with animated mockups: a live chat
+ *    window with typing indicators and messages popping in, a
+ *    relay-view-vs-member-view demo of Concord encryption, and a
+ *    terminal running the self-hosted stack.
+ *  - Explains the Concord protocol (github.com/concord-protocol/concord)
+ *    briefly: membership is a key, authority is a signature.
+ *  - Is honest that Armada is early, work-in-progress software, with a
+ *    status board of what's live today vs. not yet.
  *  - Invites visitors to join the official Soapbox Armada community via
  *    an invite link.
  *
@@ -19,15 +22,16 @@
  * monospace type with a shell-prompt motif ("$ … _").
  */
 
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Anchor,
   ArrowRight,
   Bluetooth,
+  BellRing,
   CheckCircle2,
-  ExternalLink,
-  EyeOff,
   Github,
+  Hammer,
   Headphones,
   KeyRound,
   LockKeyhole,
@@ -40,6 +44,7 @@ import {
   Users,
   Waves,
 } from 'lucide-react';
+import { FaGitlab } from 'react-icons/fa6';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -108,7 +113,7 @@ export default function Armada() {
       <HeroSection />
       <ConcordSection />
       <TwoWaysSection />
-      <FeaturesSection />
+      <StatusSection />
       <CommunityCtaSection />
       <FinalCtaSection />
 
@@ -198,6 +203,17 @@ function HeroSection() {
                   Join our community
                 </a>
               </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="ghost"
+                className="text-gray-300 hover:bg-white/10 hover:text-white font-medium h-12 px-5 text-base"
+              >
+                <a href={GITLAB_URL} target="_blank" rel="noopener noreferrer">
+                  <FaGitlab className="mr-2 size-4" />
+                  Source code
+                </a>
+              </Button>
             </div>
 
             {/* Trust signals */}
@@ -212,12 +228,12 @@ function HeroSection() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-cyan-400" />
-                <span>Open source</span>
+                <span>Free &amp; open source</span>
               </div>
             </div>
           </div>
 
-          {/* Right: floating chat mockup */}
+          {/* Right: animated chat mockup */}
           <div className="lg:col-span-5">
             <HeroChatMockup />
           </div>
@@ -227,35 +243,80 @@ function HeroSection() {
   );
 }
 
+/** One scripted line of the hero chat demo. */
+interface DemoMessage {
+  initial: string;
+  color: string;
+  name: string;
+  time: string;
+  text: string;
+  reaction?: string;
+}
+
+const HERO_MESSAGES: DemoMessage[] = [
+  {
+    initial: 'S',
+    color: 'from-pink-500 to-rose-600',
+    name: 'siren',
+    time: '09:42',
+    text: 'weigh anchor — new release is tagged 🚢',
+    reaction: '🔥 3',
+  },
+  {
+    initial: 'K',
+    color: 'from-cyan-400 to-blue-600',
+    name: 'kraken',
+    time: '09:43',
+    text: 'relays only see noise. love it here.',
+  },
+  {
+    initial: 'M',
+    color: 'from-violet-500 to-purple-700',
+    name: 'mkfain',
+    time: '09:45',
+    text: 'hopping into voice, join us ⚓',
+  },
+];
+
 /**
- * A faux Armada channel window built in JSX — Discord-familiar chrome
- * (channel header, avatars, voice bar) so a visitor instantly recognizes
+ * Frame-by-frame script for the hero chat: which messages are visible,
+ * who is "typing", and how many people are in the voice channel. The
+ * component steps through frames on a timer and loops forever.
+ */
+const HERO_FRAMES: Array<{ visible: number; typing?: string; voice: number }> =
+  [
+    { visible: 1, voice: 2 },
+    { visible: 1, typing: 'kraken', voice: 2 },
+    { visible: 2, voice: 2 },
+    { visible: 2, typing: 'mkfain', voice: 2 },
+    { visible: 3, voice: 2 },
+    { visible: 3, voice: 3 },
+    { visible: 3, voice: 3 },
+  ];
+
+/**
+ * A live-feeling Armada channel window built in JSX: typing indicators
+ * appear, messages pop in, a reaction lands, and someone joins voice —
+ * on a loop. Discord-familiar chrome so a visitor instantly recognizes
  * the product category before reading a word of copy.
  */
 function HeroChatMockup() {
-  const messages = [
-    {
-      initial: 'S',
-      color: 'from-pink-500 to-rose-600',
-      name: 'siren',
-      time: '09:42',
-      text: 'weigh anchor — new release is tagged 🚢',
-    },
-    {
-      initial: 'K',
-      color: 'from-cyan-400 to-blue-600',
-      name: 'kraken',
-      time: '09:43',
-      text: 'relays only see noise. love it here.',
-    },
-    {
-      initial: 'M',
-      color: 'from-violet-500 to-purple-700',
-      name: 'mkfain',
-      time: '09:45',
-      text: 'hopping into voice, join us ⚓',
-    },
-  ];
+  const [frame, setFrame] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setFrame((f) => (f + 1) % HERO_FRAMES.length),
+      1400,
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  const { visible, typing, voice } = HERO_FRAMES[frame];
+  const messages = HERO_MESSAGES.slice(0, visible);
+  const voiceColors = ['bg-pink-500', 'bg-cyan-500', 'bg-violet-500'].slice(
+    0,
+    voice,
+  );
 
   return (
     <div className="relative max-w-md mx-auto">
@@ -287,42 +348,72 @@ function HeroChatMockup() {
           </div>
         </div>
 
-        <CardContent className="p-4 space-y-4 text-white">
-          {messages.map((m) => (
-            <div key={m.name} className="flex items-start gap-3">
+        <CardContent className="p-4 text-white">
+          {/* Message timeline — fixed height so the loop doesn't reflow the page */}
+          <div className="h-56 flex flex-col justify-end gap-4 overflow-hidden">
+            {messages.map((m) => (
               <div
-                className={`size-8 shrink-0 rounded-full bg-gradient-to-br ${m.color} flex items-center justify-center text-white text-xs font-bold`}
+                key={m.name}
+                className="flex items-start gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300"
               >
-                {m.initial}
+                <div
+                  className={`size-8 shrink-0 rounded-full bg-gradient-to-br ${m.color} flex items-center justify-center text-white text-xs font-bold`}
+                >
+                  {m.initial}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs mb-0.5">
+                    <span className="font-semibold text-pink-300">
+                      {m.name}
+                    </span>{' '}
+                    <span className="text-gray-500">{m.time}</span>
+                  </p>
+                  <p className="text-sm text-gray-200 leading-snug">{m.text}</p>
+                  {m.reaction && visible >= 2 && (
+                    <span className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-xs animate-in fade-in zoom-in-75 duration-300">
+                      {m.reaction}
+                    </span>
+                  )}
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="text-xs mb-0.5">
-                  <span className="font-semibold text-pink-300">{m.name}</span>{' '}
-                  <span className="text-gray-500">{m.time}</span>
-                </p>
-                <p className="text-sm text-gray-200 leading-snug">{m.text}</p>
+            ))}
+
+            {/* Typing indicator */}
+            {typing && (
+              <div className="flex items-center gap-2 text-xs text-gray-400 animate-in fade-in duration-200">
+                <span className="flex gap-0.5">
+                  <span className="size-1.5 rounded-full bg-pink-400 animate-bounce" />
+                  <span className="size-1.5 rounded-full bg-pink-400 animate-bounce [animation-delay:120ms]" />
+                  <span className="size-1.5 rounded-full bg-pink-400 animate-bounce [animation-delay:240ms]" />
+                </span>
+                <span>
+                  <span className="text-gray-300 font-medium">{typing}</span>{' '}
+                  is typing…
+                </span>
               </div>
-            </div>
-          ))}
+            )}
+          </div>
 
           {/* Voice bar */}
-          <div className="flex items-center justify-between rounded-lg bg-cyan-400/10 border border-cyan-400/25 px-3 py-2.5">
+          <div className="mt-4 flex items-center justify-between rounded-lg bg-cyan-400/10 border border-cyan-400/25 px-3 py-2.5">
             <div className="flex items-center gap-2 text-cyan-300 text-xs font-medium">
               <Headphones className="size-4" />
-              <span>Voice · 3 aboard</span>
+              <span>Voice · {voice} aboard</span>
             </div>
             <div className="flex -space-x-2">
-              {['bg-pink-500', 'bg-cyan-500', 'bg-violet-500'].map((bg) => (
+              {voiceColors.map((bg, i) => (
                 <span
                   key={bg}
-                  className={`size-6 rounded-full ${bg} border-2 border-[#181021]`}
+                  className={`size-6 rounded-full ${bg} border-2 border-[#181021] animate-in zoom-in-50 duration-300 ${
+                    i === 0 ? 'ring-2 ring-cyan-400/60' : ''
+                  }`}
                 />
               ))}
             </div>
           </div>
 
           {/* Composer */}
-          <div className="flex items-center gap-2 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2.5">
+          <div className="mt-4 flex items-center gap-2 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2.5">
             <span className="font-mono text-sm text-gray-500">
               Message #quarterdeck
             </span>
@@ -336,11 +427,6 @@ function HeroChatMockup() {
 
 // ───────────────────────────────────────────────────────────────────────────
 // Section: The Concord protocol
-//
-// The load-bearing differentiator. Concord splits the three jobs of a
-// central chat server into pieces that require no trust: storage becomes
-// dumb relays carrying ciphertext, membership becomes key possession,
-// and authority becomes a signed roster every client re-verifies.
 // ───────────────────────────────────────────────────────────────────────────
 
 function ConcordSection() {
@@ -349,19 +435,19 @@ function ConcordSection() {
       icon: Radio,
       title: 'Storage → dumb relays',
       body:
-        'Messages travel as encrypted blobs addressed to rotating, meaningless labels across interchangeable Nostr relays. Relays, network observers, and non-members see only noise. One misbehaves? Use the others.',
+        'Messages are sealed blobs under rotating, meaningless labels. Relays store noise — and any relay will do.',
     },
     {
       icon: KeyRound,
-      title: 'Membership → key possession',
+      title: 'Membership → a key',
       body:
-        "If you can decrypt the room, you're in it. There's no member list on a server to enforce, leak, or subpoena. Removing someone for real means changing the locks — the community rolls to a new key handed only to who's left.",
+        "If you can decrypt the room, you're in. Banning someone for real means rotating the key to everyone left.",
     },
     {
       icon: ScrollText,
-      title: 'Authority → a signed roster',
+      title: 'Authority → a signature',
       body:
-        "Owners, admins, moderators, roles, kicks, and bans all trace back to signatures rooted in the owner's identity. Every member's client re-checks the math itself — a forged \"ban\" is simply dropped. Authority is cryptography, not a switch a server flips.",
+        'Admins, roles, kicks, and bans are signed commands tracing to the owner. Clients verify the math; forgeries are dropped.',
     },
   ];
 
@@ -381,24 +467,23 @@ function ConcordSection() {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3">
             Powered by the Concord protocol
           </p>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Every group chat has a computer in the middle.
-            <br className="hidden sm:block" />{' '}
-            <span className="text-pink-500">Concord deletes it.</span>
+            No server in the middle.
           </h2>
           <p className="text-lg text-gray-400">
-            The server that holds every message, knows every member, and
-            decides who's in charge can be subpoenaed, hacked, sold, or
-            switched off — and your community dies with it. Concord splits its
-            three jobs into pieces that need to trust nobody.
+            A Concord community is encrypted events on public relays. There's
+            nothing to seize, subpoena, or switch off. See for yourself:
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
+        {/* Show, don't tell: what a relay sees vs. what a member sees */}
+        <RelayVsMemberDemo />
+
+        <div className="grid md:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto mt-12">
           {pillars.map(({ icon: Icon, title, body }) => (
             <div
               key={title}
@@ -415,7 +500,7 @@ function ConcordSection() {
           ))}
         </div>
 
-        {/* Full moderation, zero trust — highlight band */}
+        {/* Specs band */}
         <div className="mt-10 max-w-5xl mx-auto">
           <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-white/[0.04] to-cyan-400/[0.04] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
             <div className="size-12 shrink-0 rounded-xl bg-cyan-400/10 border border-cyan-400/25 flex items-center justify-center">
@@ -423,15 +508,14 @@ function ConcordSection() {
             </div>
             <div className="flex-1">
               <h3 className="font-display font-bold text-white text-xl sm:text-2xl mb-1.5">
-                Full Discord-style moderation. Zero trusted servers.
+                An open spec, not a product.
               </h3>
               <p className="text-gray-400 leading-relaxed text-[15px]">
-                Owners, admins, custom roles, invites that revoke without
-                re-keying, kicks, bans, and even end-to-end encrypted voice,
-                video, and screen sharing — all defined by the open{' '}
-                <span className="font-mono text-cyan-300">CORD</span> specs,
-                the way Nostr is defined by NIPs. Anyone can build a Concord
-                client; Armada is the first.
+                Roles, revocable invites, rekeys, and end-to-end encrypted
+                voice are defined by the open{' '}
+                <span className="font-mono text-cyan-300">CORD</span> documents
+                — like Nostr's NIPs, for private communities. Anyone can build
+                a Concord client; Armada is the first.
               </p>
             </div>
             <Button
@@ -448,6 +532,96 @@ function ConcordSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+/** Alphabet used to render fake ciphertext in the relay-view demo. */
+const NOISE_CHARS =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+function noiseString(length: number): string {
+  let out = '';
+  for (let i = 0; i < length; i++) {
+    out += NOISE_CHARS[Math.floor(Math.random() * NOISE_CHARS.length)];
+  }
+  return out;
+}
+
+/**
+ * Side-by-side demo of Concord's core promise: the left pane shows the
+ * ever-shifting ciphertext a relay actually stores; the right pane shows
+ * the same conversation as a member with the key sees it.
+ */
+function RelayVsMemberDemo() {
+  // Re-render on a timer so the ciphertext visibly churns.
+  const [, setTick] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setTick((t) => t + 1), 350);
+    return () => clearInterval(id);
+  }, []);
+
+  const decrypted = [
+    { name: 'siren', color: 'text-pink-300', text: 'meet at the north dock, 9pm' },
+    { name: 'kraken', color: 'text-cyan-300', text: 'aye. bringing the charts 🗺️' },
+    { name: 'mkfain', color: 'text-violet-300', text: 'roster updated — welcome aboard, finn' },
+  ];
+
+  return (
+    <div className="grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
+      {/* What relays see */}
+      <div className="rounded-2xl border border-white/10 bg-black/40 overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10 bg-white/[0.03]">
+          <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+            What relays see
+          </span>
+          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+            <Radio className="size-3" />
+            wss://relay…
+          </span>
+        </div>
+        <div className="p-4 font-mono text-[11px] leading-relaxed text-gray-600 space-y-2 select-none">
+          {[0, 1, 2].map((i) => (
+            <div key={i}>
+              <span className="text-gray-500">
+                {'{'}"kind":1059,"tags":[["p","{noiseString(8)}…"]],
+              </span>
+              <br />
+              <span className="break-all">
+                "content":"{noiseString(44)}…"{'}'}
+              </span>
+            </div>
+          ))}
+          <p className="pt-1 text-gray-500 not-italic">
+            // sender, community, channel, text: all sealed
+          </p>
+        </div>
+      </div>
+
+      {/* What members see */}
+      <div className="rounded-2xl border border-pink-500/25 bg-[#181021] overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10 bg-white/[0.03]">
+          <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-pink-300">
+            What members see
+          </span>
+          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-pink-300">
+            <KeyRound className="size-3" />
+            key holder
+          </span>
+        </div>
+        <div className="p-4 font-mono text-[13px] leading-relaxed space-y-2">
+          {decrypted.map((m) => (
+            <p key={m.name} className="text-gray-200">
+              <span className={`${m.color} font-semibold`}>{m.name}</span>
+              <span className="text-gray-500">:</span> {m.text}
+            </p>
+          ))}
+          <p className="text-gray-500 text-[11px] pt-1">
+            // same events, decrypted with the community key
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -551,18 +725,19 @@ function TwoWaysSection() {
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-[15px]">
                   Armada ships a complete open-source relay stack built on
-                  Nostr's NIP-29 groups. One command stands up the relay,
-                  voice server, and client — on your hardware, under your
-                  rules.
+                  Nostr's NIP-29 groups — relay, voice server, and client, on
+                  your hardware, under your rules. One command:
                 </p>
               </div>
 
+              {/* Show, don't tell: the stack coming up */}
+              <TerminalDemo />
+
               <ul className="space-y-2.5">
                 {[
-                  'Deploy the full stack with a single ./start.sh',
                   'Channels, roles, moderation, and LiveKit-powered voice out of the box',
                   'Runs air-gapped on an internal network — no outside dependency',
-                  'Standard Nostr underneath: interoperable with other NIP-29 clients',
+                  'Standard NIP-29 underneath: interoperable with other Nostr clients',
                 ].map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2.5">
                     <CheckCircle2 className="size-4 text-cyan-700 shrink-0 mt-0.5" />
@@ -590,63 +765,178 @@ function TwoWaysSection() {
         <p className="text-center mt-10 max-w-2xl mx-auto text-gray-600 text-sm leading-relaxed">
           Either way, your identity is a Nostr keypair you control — log in
           with an nsec, a signer extension, or a remote bunker, and take the
-          same account to any relay or community.{' '}
-          <a
-            href={GITLAB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2 inline-flex items-center gap-1"
-          >
-            Source on GitLab
-            <ExternalLink className="size-3.5" />
-          </a>
+          same account to any relay or community.
         </p>
       </div>
     </section>
   );
 }
 
+/** The command typed in the self-hosting terminal demo. */
+const TERMINAL_CMD = './start.sh';
+
+/** Output lines revealed after the command finishes "typing". */
+const TERMINAL_LINES = [
+  { text: '✔ relay      ws://localhost:5577', color: 'text-emerald-400' },
+  { text: '✔ voice      ws://localhost:7880', color: 'text-emerald-400' },
+  { text: '✔ client     http://localhost:8080', color: 'text-emerald-400' },
+  { text: '⚓ harbor is open', color: 'text-cyan-300' },
+];
+
+/**
+ * A looping terminal mockup that types `./start.sh` and brings the full
+ * self-hosted stack up, line by line.
+ */
+function TerminalDemo() {
+  const CYCLE = 60; // total ticks per loop (~7s at 120ms/tick)
+  const [tick, setTick] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setTick((t) => (t + 1) % CYCLE), 120);
+    return () => clearInterval(id);
+  }, []);
+
+  const typed = TERMINAL_CMD.slice(0, Math.min(tick, TERMINAL_CMD.length));
+  const afterCmd = tick - TERMINAL_CMD.length - 3;
+  const linesShown =
+    afterCmd > 0
+      ? Math.min(Math.ceil(afterCmd / 5), TERMINAL_LINES.length)
+      : 0;
+
+  return (
+    <div
+      className="rounded-lg overflow-hidden border border-gray-800 shadow-inner"
+      style={{ backgroundColor: INK }}
+    >
+      {/* Title bar */}
+      <div className="flex items-center gap-1.5 px-3 py-2 bg-white/[0.04] border-b border-white/10">
+        <span className="size-2.5 rounded-full bg-rose-500/80" />
+        <span className="size-2.5 rounded-full bg-amber-400/80" />
+        <span className="size-2.5 rounded-full bg-emerald-500/80" />
+        <span className="ml-2 font-mono text-[10px] text-gray-500">
+          armada/infra
+        </span>
+      </div>
+
+      <div className="p-4 font-mono text-xs leading-relaxed min-h-[7.5rem]">
+        <p className="text-gray-300">
+          <span className="text-cyan-400">$</span> {typed}
+          {typed.length < TERMINAL_CMD.length && (
+            <span className="text-pink-400 animate-pulse">_</span>
+          )}
+        </p>
+        {TERMINAL_LINES.slice(0, linesShown).map((line) => (
+          <p
+            key={line.text}
+            className={`${line.color} animate-in fade-in slide-in-from-bottom-1 duration-200`}
+          >
+            {line.text}
+          </p>
+        ))}
+        {linesShown === TERMINAL_LINES.length && (
+          <p className="text-gray-300">
+            <span className="text-cyan-400">$</span>{' '}
+            <span className="text-pink-400 animate-pulse">_</span>
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ───────────────────────────────────────────────────────────────────────────
-// Section: Feature grid
+// Section: Status board — what's live today vs. not yet
+//
+// Armada is early, fast-moving software. Rather than over-promising,
+// this section is an honest manifest: every card carries a status pill.
 // ───────────────────────────────────────────────────────────────────────────
 
-function FeaturesSection() {
-  const features = [
+type FeatureStatus = 'live' | 'android' | 'notyet';
+
+const STATUS_STYLES: Record<FeatureStatus, { label: string; className: string }> = {
+  live: {
+    label: 'Live now',
+    className: 'bg-emerald-400/10 border-emerald-400/30 text-emerald-300',
+  },
+  android: {
+    label: 'Live · Android only',
+    className: 'bg-cyan-400/10 border-cyan-400/30 text-cyan-300',
+  },
+  notyet: {
+    label: 'Not yet',
+    className: 'bg-white/5 border-white/15 text-gray-400',
+  },
+};
+
+function StatusSection() {
+  const features: Array<{
+    icon: typeof Headphones;
+    title: string;
+    body: string;
+    status: FeatureStatus;
+  }> = [
+    {
+      icon: LockKeyhole,
+      title: 'Concord encrypted communities',
+      body:
+        'The default for new communities: end-to-end encrypted channels, invites, roles, and moderation with no server in charge.',
+      status: 'live',
+    },
     {
       icon: Headphones,
       title: 'Voice, video & screen share',
       body:
-        'Hop into a voice channel, share your screen, or watch YouTube together in sync. In Concord communities, calls are end-to-end encrypted — the media server only ever forwards ciphertext.',
+        'Voice channels, screen sharing, background-noise removal, and watch-together — end-to-end encrypted in Concord communities.',
+      status: 'live',
     },
     {
       icon: MessagesSquare,
-      title: 'Threads, reactions & everything else',
+      title: 'Threads & the daily comforts',
       body:
-        'Slack-style threads, replies, emoji reactions, custom emoji, pins, mentions, typing indicators, markdown with code blocks, and a Ctrl+K quick switcher. It feels like the chat app you already know.',
+        'Slack-style threads, replies, reactions, custom emoji, pins, mentions, markdown with code blocks, and a Ctrl+K quick switcher.',
+      status: 'live',
     },
     {
       icon: Users,
       title: 'Roles & real moderation',
       body:
-        'Owners, admins, moderators, and custom roles with fine-grained permissions. Kick, ban, hide, and revoke invites — enforced by cryptography in Concord communities, by your relay on your own server.',
+        'Owners, admins, and custom roles with fine-grained permissions; kick, ban, hide, and revocable invites with expiry.',
+      status: 'live',
     },
     {
-      icon: Bluetooth,
-      title: 'Bluetooth mesh, no internet',
+      icon: Server,
+      title: 'Self-hosted relay stack',
       body:
-        'On Android, Armada chats over a Bluetooth mesh with people nearby — no signal, no Wi-Fi, no problem. Compatible with bitchat, so both apps see each other on the same mesh.',
-    },
-    {
-      icon: EyeOff,
-      title: 'Push notifications, no Google',
-      body:
-        'Instant native notifications on Android delivered without Google or any third-party push service — even when the app is closed, with any login method.',
+        'The full NIP-29 server — relay, LiveKit voice, and client — deployable with one command on your own hardware.',
+      status: 'live',
     },
     {
       icon: MonitorSmartphone,
-      title: 'Everywhere you are',
+      title: 'Apps for web & desktop',
       body:
-        'A web app, an installable PWA, an Android app, and Linux/Windows desktop builds with tray support. Offline-first: history is cached on-device and messages queue until you reconnect.',
+        'Web app, installable PWA, and Linux/Windows desktop builds with tray support. Offline-first with on-device history.',
+      status: 'live',
+    },
+    {
+      icon: BellRing,
+      title: 'Push without Google',
+      body:
+        'Instant native notifications delivered with no Google or third-party push service — even when the app is closed.',
+      status: 'android',
+    },
+    {
+      icon: Bluetooth,
+      title: 'Bluetooth mesh chat',
+      body:
+        'Chat with people nearby over a phone-to-phone mesh with zero internet — compatible with bitchat on the same mesh.',
+      status: 'android',
+    },
+    {
+      icon: Hammer,
+      title: 'iOS & macOS apps',
+      body:
+        'No iOS app yet, and macOS is a build-it-yourself affair for now. The web app works on both in the meantime.',
+      status: 'notyet',
     },
   ];
 
@@ -655,25 +945,33 @@ function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
-            Batteries included
+            Status report
           </p>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Nothing to give up.
+            Early software. Honest manifest.
           </h2>
           <p className="text-lg text-gray-400">
-            Sovereignty usually means sacrifice. Armada keeps the comforts of
-            the walled garden — and leaves the walls behind.
+            Armada is a work in progress — version 0.x, weeks old, with
+            releases landing almost daily. Here's exactly what works today,
+            and what doesn't yet.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
-          {features.map(({ icon: Icon, title, body }) => (
+          {features.map(({ icon: Icon, title, body, status }) => (
             <div
               key={title}
-              className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 hover:bg-white/[0.06] transition-colors"
+              className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 hover:bg-white/[0.06] transition-colors flex flex-col"
             >
-              <div className="size-10 rounded-lg bg-cyan-400/10 border border-cyan-400/25 flex items-center justify-center mb-5">
-                <Icon className="size-5 text-cyan-400" />
+              <div className="flex items-start justify-between mb-5">
+                <div className="size-10 rounded-lg bg-cyan-400/10 border border-cyan-400/25 flex items-center justify-center">
+                  <Icon className="size-5 text-cyan-400" />
+                </div>
+                <span
+                  className={`px-2 py-1 rounded-full border text-[10px] font-semibold uppercase tracking-wider ${STATUS_STYLES[status].className}`}
+                >
+                  {STATUS_STYLES[status].label}
+                </span>
               </div>
               <h3 className="font-display font-bold text-white text-lg mb-2.5 leading-snug">
                 {title}
@@ -682,6 +980,21 @@ function FeaturesSection() {
             </div>
           ))}
         </div>
+
+        <p className="text-center mt-10 max-w-2xl mx-auto text-gray-500 text-sm leading-relaxed">
+          The Concord protocol itself is an evolving specification — early
+          communities have already weathered a breaking change or two. Follow
+          progress in the{' '}
+          <a
+            href={`${GITLAB_URL}/-/blob/main/CHANGELOG.md`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 underline hover:text-white"
+          >
+            changelog
+          </a>
+          .
+        </p>
       </div>
     </section>
   );
