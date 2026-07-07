@@ -256,17 +256,6 @@ function HeroSection() {
                   Join our community
                 </a>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="ghost"
-                className="text-gray-300 hover:bg-white/10 hover:text-white font-medium h-12 px-5 text-base"
-              >
-                <a href={GITLAB_URL} target="_blank" rel="noopener noreferrer">
-                  <FaGitlab className="mr-2 size-4" />
-                  Source code
-                </a>
-              </Button>
             </div>
 
             {/* Trust signals */}
@@ -1515,6 +1504,17 @@ function FinalCtaSection() {
               rel="noopener noreferrer"
             >
               Join our community
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white font-medium h-14 px-7 text-base"
+          >
+            <a href={GITLAB_URL} target="_blank" rel="noopener noreferrer">
+              <FaGitlab className="mr-2 size-4" />
+              Source code
             </a>
           </Button>
         </div>
