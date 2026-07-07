@@ -5,6 +5,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Agora from "./pages/Agora";
+import Armada from "./pages/Armada";
 // import Communities from "./pages/Communities";
 import Showcase from "./pages/Showcase";
 import Toybox from "./pages/Toybox";
@@ -57,6 +58,8 @@ export function AppRouter() {
         <Route path="/tools/mkstack" element={<Navigate to="/mkstack" replace />} />
         {/* Agora landing page */}
         <Route path="/agora" element={<Agora />} />
+        {/* Armada landing page */}
+        <Route path="/armada" element={<Armada />} />
         {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/toybox" element={<Toybox />} />

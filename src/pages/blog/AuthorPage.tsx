@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, User } from 'lucide-react';
+import { ArrowLeft, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Layout } from '@/components/Layout';
 import { BlogList } from '@/components/blog/BlogList';
 import { getAuthorBySlug, getPostsByAuthorSlug, formatDate } from '@/lib/blog/utils';

@@ -15,7 +15,6 @@ import {
   Rocket, 
   EyeOff, 
   CheckCircle, 
-  XCircle,
   Bitcoin,
   Server,
   Code,

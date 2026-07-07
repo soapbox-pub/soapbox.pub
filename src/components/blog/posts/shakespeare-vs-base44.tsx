@@ -7,7 +7,6 @@ import {
   ExternalLink, 
   Shield, 
   Lock, 
-  Unlock, 
   DollarSign, 
   Zap, 
   Globe, 
@@ -20,9 +19,7 @@ import {
   Bitcoin,
   Server,
   Code,
-  Download,
-  FileWarning,
-  Database
+  FileWarning
 } from 'lucide-react';
 
 export interface BlogPostMeta {

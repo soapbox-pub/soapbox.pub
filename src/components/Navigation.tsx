@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Ditto", to: "/ditto" },
   { label: "Shakespeare", to: "/shakespeare" },
   { label: "Agora", to: "/agora" },
+  { label: "Armada", to: "/armada" },
   { label: "Toolbox", to: "/toolbox" },
   { label: "Toybox", to: "/toybox" },
   { label: "Updates", to: "/blog" },

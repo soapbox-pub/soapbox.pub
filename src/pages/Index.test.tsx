@@ -11,7 +11,7 @@ describe('Index (Home Page)', () => {
       </TestApp>
     );
 
-    expect(screen.getByText('Build Your')).toBeInTheDocument();
-    expect(screen.getByText('🚀 Build the Decentralized Future')).toBeInTheDocument();
+    expect(screen.getByText('Building tools for')).toBeInTheDocument();
+    expect(screen.getByText('Freedom Online')).toBeInTheDocument();
   });
 });

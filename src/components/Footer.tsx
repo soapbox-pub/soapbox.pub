@@ -66,6 +66,7 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li><a href="https://ditto.pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto.pub</a></li>
               <li><a href="https://agora.spot" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Agora</a></li>
+              <li><a href="https://armada.buzz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Armada</a></li>
               <li><a href="https://treasures.to" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Treasures</a></li>
               <li><a href="https://blobbi.pet" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Blobbi</a></li>
               <li><a href="https://bookstr.xyz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Bookstr</a></li>

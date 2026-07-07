@@ -5,7 +5,6 @@ import { Badge } from '../../ui/badge';
 import { Button } from '../../ui/button';
 import { 
   ExternalLink, 
-  Shield, 
   Lock, 
   Unlock, 
   DollarSign, 
@@ -13,7 +12,6 @@ import {
   Globe, 
   GitBranch, 
   Rocket, 
-  Eye, 
   EyeOff, 
   AlertTriangle, 
   CheckCircle, 

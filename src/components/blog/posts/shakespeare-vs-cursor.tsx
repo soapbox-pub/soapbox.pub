@@ -18,9 +18,7 @@ import {
   Bitcoin,
   Server,
   Code,
-  Download,
   Terminal,
-  Users,
   Eye
 } from 'lucide-react';
 

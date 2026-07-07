@@ -19,6 +19,7 @@ export default defineConfig({
         "/",
         "/about",
         "/agora",
+        "/armada",
         "/blog",
         "/communities",
         "/ditto",
