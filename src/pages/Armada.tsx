@@ -99,7 +99,7 @@ interface Person {
 const PEOPLE = {
   alex: { name: 'Alex', avatar: '/assets/avatars/alex.png' },
   mk: { name: 'M. K.', avatar: '/assets/avatars/mk.jpg' },
-  heather: { name: 'Heather', avatar: '/assets/avatars/heather.jpg' },
+  dani: { name: 'Dani', avatar: '/assets/avatars/danidfra.jpeg' },
   derek: { name: 'Derek', avatar: '/assets/avatars/derek.jpg' },
   patrick: { name: 'Patrick', avatar: '/assets/avatars/patrick.png' },
   lemon: { name: 'Lemon', avatar: '/assets/avatars/lemon.png' },
@@ -312,7 +312,7 @@ const HERO_MESSAGES: DemoMessage[] = [
     reaction: '🎉 4',
   },
   {
-    person: PEOPLE.heather,
+    person: PEOPLE.dani,
     time: '09:43',
     text: 'installing right now',
   },
@@ -334,7 +334,7 @@ const HERO_FRAMES: Array<{
   voice: Person[];
 }> = [
   { visible: 1, voice: [PEOPLE.derek, PEOPLE.lemon] },
-  { visible: 1, typing: PEOPLE.heather, voice: [PEOPLE.derek, PEOPLE.lemon] },
+  { visible: 1, typing: PEOPLE.dani, voice: [PEOPLE.derek, PEOPLE.lemon] },
   { visible: 2, voice: [PEOPLE.derek, PEOPLE.lemon] },
   { visible: 2, typing: PEOPLE.mk, voice: [PEOPLE.derek, PEOPLE.lemon] },
   { visible: 3, voice: [PEOPLE.derek, PEOPLE.lemon] },
@@ -474,7 +474,7 @@ function HeroChatMockup() {
 /** Messages shown in the big app-window mockup. */
 const SHOWCASE_MESSAGES: Array<DemoMessage & { thread?: string }> = [
   {
-    person: PEOPLE.heather,
+    person: PEOPLE.dani,
     time: 'Today at 2:14 PM',
     text: 'movie night friday? I have the projector 🍿',
     reaction: '🔥 3',
@@ -555,7 +555,7 @@ function AppWindowMockup() {
   const members: Array<{ person: Person; role?: 'owner' | 'admin' }> = [
     { person: PEOPLE.alex, role: 'owner' },
     { person: PEOPLE.mk, role: 'admin' },
-    { person: PEOPLE.heather },
+    { person: PEOPLE.dani },
     { person: PEOPLE.derek },
     { person: PEOPLE.patrick },
     { person: PEOPLE.lemon },
@@ -809,7 +809,7 @@ function noiseString(length: number): string {
 
 const PRIVACY_CHAT: DemoMessage[] = [
   {
-    person: PEOPLE.heather,
+    person: PEOPLE.dani,
     time: '',
     text: 'surprise party for Alex is a go 🎂',
   },
@@ -936,7 +936,7 @@ function UnstoppableSection() {
       ? [{ person: PEOPLE.lemon, time: '', text: 'nope, everything still works 👋' }]
       : []),
     ...(armadaExtra >= 2
-      ? [{ person: PEOPLE.heather, time: '', text: "didn't even notice lol" }]
+      ? [{ person: PEOPLE.dani, time: '', text: "didn't even notice lol" }]
       : []),
   ];
 
@@ -972,7 +972,7 @@ function UnstoppableSection() {
                 }`}
               >
                 {[
-                  { person: PEOPLE.heather, text: '3 years of chat history in here 💜' },
+                  { person: PEOPLE.dani, text: '3 years of chat history in here 💜' },
                   { person: PEOPLE.patrick, text: 'best community on the internet' },
                 ].map((m) => (
                   <div key={m.person.name} className="flex items-start gap-2.5">
@@ -1211,11 +1211,11 @@ function NotificationDemoCard() {
             key={cycle}
             className="rounded-xl border border-white/15 bg-white/[0.07] backdrop-blur p-3 flex items-start gap-2.5 shadow-xl animate-in slide-in-from-top-3 fade-in duration-500"
           >
-            <ProfilePic person={PEOPLE.heather} className="size-8" />
+            <ProfilePic person={PEOPLE.dani} className="size-8" />
             <div className="min-w-0 flex-1">
               <div className="flex items-baseline justify-between gap-2">
                 <p className="text-xs font-semibold text-white truncate">
-                  Heather · #general
+                  Dani · #general
                 </p>
                 <span className="text-[9px] text-gray-500 shrink-0">now</span>
               </div>
@@ -1404,7 +1404,7 @@ function CommunityCtaSection() {
               />
               {/* The team, in miniature */}
               <div className="flex -space-x-2">
-                {[PEOPLE.alex, PEOPLE.mk, PEOPLE.heather, PEOPLE.derek, PEOPLE.patrick].map(
+                {[PEOPLE.alex, PEOPLE.mk, PEOPLE.dani, PEOPLE.derek, PEOPLE.patrick].map(
                   (p) => (
                     <img
                       key={p.name}
