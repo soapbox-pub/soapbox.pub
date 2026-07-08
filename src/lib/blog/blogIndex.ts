@@ -100,6 +100,7 @@ import * as conferencerecapbitcoin2026 from '../../components/blog/posts/confere
 import * as wlclaunchesagoraoslofreedomforum from '../../components/blog/posts/wlc-launches-agora-oslo-freedom-forum';
 import * as agoraislive from '../../components/blog/posts/agora-is-live';
 import * as howtodisappearfromthesurveillanceinternet from '../../components/blog/posts/how-to-disappear-from-the-surveillance-internet';
+import * as howsoapboxshipsfast from '../../components/blog/posts/how-soapbox-ships-fast';
 
 export interface BlogFAQ {
   question: string;
@@ -142,6 +143,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  howsoapboxshipsfast.meta,
   nostrhub2.meta,
   howtodisappearfromthesurveillanceinternet.meta,
   agoraislive.meta,
@@ -248,6 +250,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'howsoapboxshipsfast':
+      return (await import('../../components/blog/posts/how-soapbox-ships-fast')).default;
     case 'nostrhub2':
       return (await import('../../components/blog/posts/nostrhub-2')).default;
     case 'howtodisappearfromthesurveillanceinternet':
