@@ -197,7 +197,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "Foreign aid and big NGOs matter, but they were never going to
@@ -206,7 +206,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
               by the people already working alongside them on the ground. That's
               the power of freedom tech."
             </blockquote>
-            <p className="font-semibold text-blue-700 dark:text-blue-400">
+            <p className="font-semibold text-orange-700 dark:text-orange-400">
               - Venezuelan organizer with the local civil society network
               coordinating relief efforts
             </p>
