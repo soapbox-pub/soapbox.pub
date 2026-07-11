@@ -160,10 +160,10 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
         </Card>
       </div>
 
-      <h2>Five earthquake relief campaigns on Agora</h2>
+      <h2>Three earthquake relief campaigns on Agora</h2>
 
       <p>
-        WLC and local organizers are now running five earthquake relief
+        WLC and local organizers are now running three earthquake relief
         campaigns on Agora, each tied to a specific need on the ground:
       </p>
 
@@ -203,18 +203,6 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
           funds and sets up Starlinks to bring connectivity back to shelters and
           displaced communities who have been cut off from communicating with
           their families, each other, and the outside world.
-        </li>
-        <li>
-          <strong>The Emotional Support Network</strong> trains volunteers in
-          psychological first aid for a crisis that's mostly invisible: surveys
-          suggest the vast majority of Venezuelans report being emotionally
-          affected by the earthquake, far more than the number with physical
-          injuries.
-        </li>
-        <li>
-          <strong>Community Kitchens</strong> sets up temporary kitchens in
-          shelters so families who lost their own stoves and cookware can still
-          get a hot meal every day.
         </li>
       </ul>
 
