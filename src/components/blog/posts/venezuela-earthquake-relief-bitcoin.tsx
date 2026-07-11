@@ -36,7 +36,7 @@ const RELIEF_CAMPAIGNS: ReliefCampaign[] = [
     icon: Smile,
     location: 'Vargas · Caracas · Carabobo',
     description:
-      'For children who lost their parents or homes in the earthquake, Proyecto Sonrisa brings toys, art, group activities, and steady companionship to shelters week after week — sustained presence that lets kids be kids again in the middle of the chaos.',
+      'For children who lost their parents or homes in the earthquake, Proyecto Sonrisa brings toys, art, group activities, and steady companionship to shelters week after week. It is a sustained presence that lets kids be kids again in the middle of the chaos.',
   },
   {
     title: 'Connecting Hope: Starlink Antennas',
@@ -47,7 +47,7 @@ const RELIEF_CAMPAIGNS: ReliefCampaign[] = [
     icon: Wifi,
     location: 'La Guaira',
     description:
-      "La Guaira has over 100 shelters, and at least half remain in a total information blackout — no power, no cell service. A student-led team is installing Starlink antennas so rescuers, doctors, and victims can coordinate. In a disaster, connectivity saves lives, and every antenna reaches more people who've been cut off.",
+      "La Guaira has over 100 shelters, and at least half remain in a total information blackout with no power and no cell service. A student-led team is installing Starlink antennas so rescuers, doctors, and victims can coordinate. In a disaster, connectivity saves lives, and every antenna reaches more people who've been cut off.",
   },
   {
     title: 'Agora Venezuela Earthquake Relief Fund',
@@ -58,7 +58,7 @@ const RELIEF_CAMPAIGNS: ReliefCampaign[] = [
     icon: HeartHandshake,
     location: 'All campaigns',
     description:
-      "Not sure which to pick? This collective fund lets you support the whole effort at once. Agora distributes your donation across all the earthquake relief campaigns to the final recipients on the ground — one gift, every cause.",
+      "Not sure which to pick? This collective fund lets you support the whole effort at once. Agora distributes your donation across all the earthquake relief campaigns to the final recipients on the ground. One gift, every cause.",
   },
 ];
 
