@@ -54,7 +54,7 @@ const RELIEF_CAMPAIGNS: ReliefCampaign[] = [
     href: 'https://agora.spot/naddr1qvzqqqyygupzqta5yvt6nq67p74mgpdwh04xccdkktfcf0nla05pykzqkdgkdp0uqqnxzem0wfsj6an9dejh5at9d3sj6etpwf6xsut4v94k2ttjv4kxjetx94n82mny44zetu',
     image: '/assets/blog/venezuela-earthquake-relief-bitcoin/relief-fund.jpeg',
     imageAlt:
-      'Agora Venezuela Earthquake Relief Fund — a collective Bitcoin fund distributing to all the earthquake relief campaigns',
+      'Agora Venezuela Earthquake Relief Fund, a collective Bitcoin fund distributing to all the earthquake relief campaigns',
     icon: HeartHandshake,
     location: 'All campaigns',
     description:
@@ -219,7 +219,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       <p>
         WLC and local organizers are now running three earthquake relief
         campaigns on Agora, each tied to a specific need on the ground. These
-        are real people, doing the work today — and they need sats now. Prefer
+        are real people, doing the work today, and they need sats now. Prefer
         to give to the whole effort at once? A collective relief fund lets you
         do that too:
       </p>
