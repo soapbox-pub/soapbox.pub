@@ -5,7 +5,7 @@ export const meta: BlogPostMeta = {
   slug: 'venezuela-earthquake-relief-bitcoin',
   title: 'Venezuelans Turn to Bitcoin to Fund Earthquake Relief',
   excerpt:
-    'This is a chance for the world to see Bitcoin as borderless money.',
+    '"This is a chance for the world to see Bitcoin as borderless money."',
   coverImage:
     '/assets/blog/venezuela-earthquake-relief-bitcoin/cover.png',
   date: '2026-07-11',
