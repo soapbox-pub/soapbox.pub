@@ -1,6 +1,7 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Card, CardContent } from '../../ui/card';
 import { ArrowRight, HeartHandshake, MapPin, Smile, Stethoscope, Wifi } from 'lucide-react';
+import { VenezuelaReliefCTA } from '../VenezuelaReliefCTA';
 
 interface ReliefCampaign {
   title: string;
@@ -306,25 +307,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
         any wire transfer or NGO channel ever could.
       </p>
 
-      <div className="not-prose my-10">
-        <a
-          href="https://agora.spot/naddr1qvzqqqyygupzqta5yvt6nq67p74mgpdwh04xccdkktfcf0nla05pykzqkdgkdp0uqqnxzem0wfsj6an9dejh5at9d3sj6etpwf6xsut4v94k2ttjv4kxjetx94n82mny44zetu"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block no-underline"
-        >
-          <Card className="border-2 border-orange-500 bg-gradient-to-br from-orange-500 to-orange-600 transition-transform hover:scale-[1.02]">
-            <CardContent className="flex flex-col items-center gap-3 p-8 text-center">
-              <span className="text-2xl font-bold text-white sm:text-3xl">
-                Donate to Venezuela earthquake relief now
-              </span>
-              <span className="text-lg font-medium text-orange-50">
-                agora.spot
-              </span>
-            </CardContent>
-          </Card>
-        </a>
-      </div>
+      <VenezuelaReliefCTA />
     </article>
   );
 }
