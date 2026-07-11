@@ -63,8 +63,7 @@ export function VenezuelaReliefCTA() {
               Fund Venezuela earthquake relief
             </h3>
             <p className="mt-2 text-orange-50">
-              100% of every sat goes straight to organizers on the ground —
-              no bank, no NGO, no border in between.
+              100% of every sat goes to organizers on the ground.
             </p>
 
             {/* Funding bar */}
