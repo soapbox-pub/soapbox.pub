@@ -1,6 +1,6 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Card, CardContent } from '../../ui/card';
-import { ArrowRight, MapPin, Smile, Stethoscope, Wifi } from 'lucide-react';
+import { ArrowRight, HeartHandshake, MapPin, Smile, Stethoscope, Wifi } from 'lucide-react';
 
 interface ReliefCampaign {
   title: string;
@@ -47,6 +47,17 @@ const RELIEF_CAMPAIGNS: ReliefCampaign[] = [
     location: 'La Guaira',
     description:
       "La Guaira has over 100 shelters, and at least half remain in a total information blackout — no power, no cell service. A student-led team is installing Starlink antennas so rescuers, doctors, and victims can coordinate. In a disaster, connectivity saves lives, and every antenna reaches more people who've been cut off.",
+  },
+  {
+    title: 'Agora Venezuela Earthquake Relief Fund',
+    href: 'https://agora.spot/naddr1qvzqqqyygupzqta5yvt6nq67p74mgpdwh04xccdkktfcf0nla05pykzqkdgkdp0uqqnxzem0wfsj6an9dejh5at9d3sj6etpwf6xsut4v94k2ttjv4kxjetx94n82mny44zetu',
+    image: '/assets/blog/venezuela-earthquake-relief-bitcoin/relief-fund.jpeg',
+    imageAlt:
+      'Agora Venezuela Earthquake Relief Fund — a collective Bitcoin fund distributing to all the earthquake relief campaigns',
+    icon: HeartHandshake,
+    location: 'All campaigns',
+    description:
+      "Not sure which to pick? This collective fund lets you support the whole effort at once. Agora distributes your donation across all the earthquake relief campaigns to the final recipients on the ground — one gift, every cause.",
   },
 ];
 
@@ -214,10 +225,12 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       <p>
         WLC and local organizers are now running three earthquake relief
         campaigns on Agora, each tied to a specific need on the ground. These
-        are real people, doing the work today — and they need sats now:
+        are real people, doing the work today — and they need sats now. Prefer
+        to give to the whole effort at once? A collective relief fund lets you
+        do that too:
       </p>
 
-      <div className="not-prose my-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="not-prose my-10 grid gap-8 sm:grid-cols-2">
         {RELIEF_CAMPAIGNS.map((campaign) => {
           const Icon = campaign.icon;
           return (
