@@ -1,5 +1,54 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Card, CardContent } from '../../ui/card';
+import { ArrowRight, MapPin, Smile, Stethoscope, Wifi } from 'lucide-react';
+
+interface ReliefCampaign {
+  title: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  icon: typeof Stethoscope;
+  location: string;
+  description: string;
+}
+
+const RELIEF_CAMPAIGNS: ReliefCampaign[] = [
+  {
+    title: 'Medical Brigades Fund',
+    href: 'https://agora.spot/naddr1qvzqqqyygupzpxxw7qe4p3sk4a0rk0v3jrzex9vf4gdvp7pe2uyk5wra786qdnx2qq2k6etyd93kzmpdvfexjempv3jhxttxw4hxgyhch2j',
+    image:
+      '/assets/blog/venezuela-earthquake-relief-bitcoin/medical-brigades.jpeg',
+    imageAlt:
+      'Volunteer doctors and nurses running a Medical Brigades Fund clinic in a Venezuelan earthquake shelter',
+    icon: Stethoscope,
+    location: 'Carabobo · Yaracuy · Caracas · Vargas',
+    description:
+      'Volunteer doctors and nurses from Universidad de Carabobo deploy to areas where public health infrastructure collapsed after the quakes, running field clinics with consultations, first aid, emergency triage, and an on-site pharmacy. Every sat goes straight to fuel, supplies, and team mobilization.',
+  },
+  {
+    title: 'Proyecto Sonrisa',
+    href: 'https://agora.spot/naddr1qvzqqqyygupzq0ex4zd28uqxvth0y0c9jrwqn565uy6ak22rtaj7peeh74ck3c5gqqg8qun009jkxar094ek7mnjd9ekzf4h06q',
+    image:
+      '/assets/blog/venezuela-earthquake-relief-bitcoin/proyecto-sonrisa.jpeg',
+    imageAlt:
+      'A child at a Proyecto Sonrisa activity for kids displaced by the Venezuela earthquake',
+    icon: Smile,
+    location: 'Vargas · Caracas · Carabobo',
+    description:
+      'For children who lost their parents or homes in the earthquake, Proyecto Sonrisa brings toys, art, group activities, and steady companionship to shelters week after week — sustained presence that lets kids be kids again in the middle of the chaos.',
+  },
+  {
+    title: 'Connecting Hope: Starlink Antennas',
+    href: 'https://agora.spot/naddr1qvzqqqyygupzq73s843ddjwj7r9tut98zw3e9ulvfv06hq275c9hnls44j38f3cuqpqxxmmwdejkxarfdenj66r0wpjj6um5v9exc6twdvkkzmn5v4hxuctn946x7ttnv9mx2ttvd9mx2uedd9hz6argv5khvetwv4a82etvvyrvh5r9',
+    image: '/assets/blog/venezuela-earthquake-relief-bitcoin/starlink.jpeg',
+    imageAlt:
+      'A Starlink antenna installed to restore connectivity in the Venezuelan earthquake disaster zone',
+    icon: Wifi,
+    location: 'La Guaira',
+    description:
+      "La Guaira has over 100 shelters, and at least half remain in a total information blackout — no power, no cell service. A student-led team is installing Starlink antennas so rescuers, doctors, and victims can coordinate. In a disaster, connectivity saves lives, and every antenna reaches more people who've been cut off.",
+  },
+];
 
 export const meta: BlogPostMeta = {
   slug: 'venezuela-earthquake-relief-bitcoin',
@@ -164,47 +213,56 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
 
       <p>
         WLC and local organizers are now running three earthquake relief
-        campaigns on Agora, each tied to a specific need on the ground:
+        campaigns on Agora, each tied to a specific need on the ground. These
+        are real people, doing the work today — and they need sats now:
       </p>
 
-      <ul>
-        <li>
-          <a
-            href="https://agora.spot/naddr1qvzqqqyygupzpxxw7qe4p3sk4a0rk0v3jrzex9vf4gdvp7pe2uyk5wra786qdnx2qq2k6etyd93kzmpdvfexjempv3jhxttxw4hxgyhch2j"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>Community Medical Days</strong>
-          </a>{' '}
-          funds doctors, nurses, and volunteers running recurring clinics in
-          shelters, offering consultations, vaccinations, and medication to
-          people who otherwise can't reach a health center.
-        </li>
-        <li>
-          <a
-            href="https://agora.spot/naddr1qvzqqqyygupzq0ex4zd28uqxvth0y0c9jrwqn565uy6ak22rtaj7peeh74ck3c5gqqg8qun009jkxar094ek7mnjd9ekzf4h06q"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>Children's Day for the Camps</strong>
-          </a>
-          , happening July 19 at seven sites nationwide, funds toys, art
-          supplies, and psychological support for kids dealing with fear and
-          insomnia after the quake.
-        </li>
-        <li>
-          <a
-            href="https://agora.spot/naddr1qvzqqqyygupzq73s843ddjwj7r9tut98zw3e9ulvfv06hq275c9hnls44j38f3cuqpqxxmmwdejkxarfdenj66r0wpjj6um5v9exc6twdvkkzmn5v4hxuctn946x7ttnv9mx2ttvd9mx2uedd9hz6argv5khvetwv4a82etvvyrvh5r9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>Starlink connectivity</strong>
-          </a>{' '}
-          funds and sets up Starlinks to bring connectivity back to shelters and
-          displaced communities who have been cut off from communicating with
-          their families, each other, and the outside world.
-        </li>
-      </ul>
+      <div className="not-prose my-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {RELIEF_CAMPAIGNS.map((campaign) => {
+          const Icon = campaign.icon;
+          return (
+            <a
+              key={campaign.href}
+              href={campaign.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card no-underline shadow-sm transition-all hover:-translate-y-1 hover:border-orange-400 hover:shadow-xl"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <img
+                  src={campaign.image}
+                  alt={campaign.imageAlt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500 text-white shadow-md">
+                  <Icon className="h-5 w-5" />
+                </div>
+              </div>
+
+              <div className="flex flex-1 flex-col p-5">
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-orange-600 dark:text-orange-400">
+                  <MapPin className="h-3.5 w-3.5 shrink-0" />
+                  <span>{campaign.location}</span>
+                </div>
+
+                <h3 className="mb-2 text-lg font-bold leading-snug text-foreground">
+                  {campaign.title}
+                </h3>
+
+                <p className="mb-5 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {campaign.description}
+                </p>
+
+                <span className="mt-auto inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-orange-600">
+                  Donate now
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
 
       <h2>A real-world test for Bitcoin as money</h2>
 
