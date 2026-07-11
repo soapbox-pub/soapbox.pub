@@ -75,7 +75,7 @@ export const meta: BlogPostMeta = {
     picture: '/assets/avatars/mk.jpg',
   },
   ogImage: {
-    url: '/assets/blog/venezuela-earthquake-relief-bitcoin/cover.png',
+    url: '/assets/blog/venezuela-earthquake-relief-bitcoin/cover-og.jpg',
   },
   featured: true,
   tags: [
