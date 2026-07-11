@@ -51,6 +51,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/venezuela-earthquake-relief-bitcoin",
         "/blog/agora-connecting-freedom-fighters",
         "/blog/agora-is-live",
         "/blog/announcing-clawstr",

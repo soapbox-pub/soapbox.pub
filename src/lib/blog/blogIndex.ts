@@ -101,6 +101,7 @@ import * as wlclaunchesagoraoslofreedomforum from '../../components/blog/posts/w
 import * as agoraislive from '../../components/blog/posts/agora-is-live';
 import * as howtodisappearfromthesurveillanceinternet from '../../components/blog/posts/how-to-disappear-from-the-surveillance-internet';
 import * as howsoapboxshipsfast from '../../components/blog/posts/how-soapbox-ships-fast';
+import * as venezuelaearthquakereliefbitcoin from '../../components/blog/posts/venezuela-earthquake-relief-bitcoin';
 
 export interface BlogFAQ {
   question: string;
@@ -145,6 +146,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   howsoapboxshipsfast.meta,
   nostrhub2.meta,
+  venezuelaearthquakereliefbitcoin.meta,
   howtodisappearfromthesurveillanceinternet.meta,
   agoraislive.meta,
   wlclaunchesagoraoslofreedomforum.meta,
@@ -254,6 +256,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/how-soapbox-ships-fast')).default;
     case 'nostrhub2':
       return (await import('../../components/blog/posts/nostrhub-2')).default;
+    case 'venezuelaearthquakereliefbitcoin':
+      return (await import('../../components/blog/posts/venezuela-earthquake-relief-bitcoin')).default;
     case 'howtodisappearfromthesurveillanceinternet':
       return (await import('../../components/blog/posts/how-to-disappear-from-the-surveillance-internet')).default;
     case 'agoraislive':
