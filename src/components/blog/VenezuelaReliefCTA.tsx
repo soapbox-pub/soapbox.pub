@@ -37,7 +37,6 @@ export function VenezuelaReliefCTA() {
 
   const raisedUsd = data?.raisedUsd;
   const progressPct = data?.progressPct ?? 0;
-  const donorCount = data?.donorCount ?? 0;
 
   const handleCopy = async () => {
     try {
@@ -96,11 +95,6 @@ export function VenezuelaReliefCTA() {
                     ? `${Math.round(progressPct)}% funded`
                     : 'Live on-chain total'}
                 </span>
-                {donorCount > 0 && (
-                  <span>
-                    {donorCount} {donorCount === 1 ? 'donor' : 'donors'} so far
-                  </span>
-                )}
               </div>
             </div>
 
@@ -122,6 +116,9 @@ export function VenezuelaReliefCTA() {
 
           {/* Right: QR code + copyable address */}
           <div className="flex flex-col items-center rounded-xl bg-white p-4 shadow-inner">
+            <p className="mb-3 text-sm font-bold text-gray-900">
+              Donate Bitcoin
+            </p>
             <QRCodeSVG
               value={BITCOIN_URI}
               size={160}
@@ -129,13 +126,10 @@ export function VenezuelaReliefCTA() {
               marginSize={0}
               className="h-40 w-40"
             />
-            <p className="mt-3 text-center text-xs font-medium text-gray-500">
-              Scan to donate Bitcoin to the collective fund
-            </p>
             <button
               type="button"
               onClick={handleCopy}
-              className="mt-2 flex max-w-[180px] items-center gap-1.5 rounded-lg bg-gray-100 px-2.5 py-1.5 text-xs font-mono text-gray-700 transition-colors hover:bg-gray-200"
+              className="mt-3 flex max-w-[180px] items-center gap-1.5 rounded-lg bg-gray-100 px-2.5 py-1.5 text-xs font-mono text-gray-700 transition-colors hover:bg-gray-200"
               title="Copy Bitcoin address"
             >
               <span className="truncate">{COLLECTIVE_FUND_ADDRESS}</span>

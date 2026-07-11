@@ -3,73 +3,117 @@
  * campaigns featured in the `venezuela-earthquake-relief-bitcoin`
  * blog post.
  *
- * Sums the self-reported sats across every public donation receipt
- * (kind 8333) that points at one of the four campaign coordinates,
- * then converts to USD using a live Bitcoin price so the blog post
- * can render a funding bar against the collective fund's $25,000 goal.
+ * Mirrors how Agora itself computes a campaign's raised total (see
+ * /projects/agora/src/hooks/useCampaignDonations.ts): the headline
+ * number comes from a direct Esplora balance lookup on each campaign's
+ * on-chain `w` address — specifically `chain_stats.funded_txo_sum`, the
+ * cumulative sats ever received. This counts every donation whether or
+ * not the donor published a Nostr receipt, and doesn't regress when the
+ * beneficiary spends. We sum that across all four campaigns, then add
+ * the collective fund's off-Nostr fiat total (its `pay` endpoint's
+ * `{ received }`, in USD cents), and convert to USD against the goal
+ * using a live BTC price.
  *
- * Notes / tradeoffs:
- *  - Private (silent-payment) campaigns don't publish receipts by
- *    design, so their totals can't be included. The number shown is
- *    therefore the public, self-reported total — the same first-pass
- *    figure Agora's own UI shows before on-chain verification.
- *  - Receipts are deduped by Bitcoin txid so a donation counted under
- *    an individual campaign AND the collective fund isn't summed twice.
- *  - On any relay timeout or price-fetch failure the hook degrades
- *    gracefully (zero total, undefined price) so the CTA still renders.
+ * Tradeoffs / notes:
+ *  - Silent-payment donations are unlinkable by design and never appear
+ *    in an address balance, so they can't be counted. The number shown
+ *    is the public on-chain + fiat total, exactly like Agora's own UI.
+ *  - Esplora endpoints are tried with simple failover (mempool.space →
+ *    blockstream.info). On total failure the hook degrades gracefully.
  */
 
 import { useQuery } from '@tanstack/react-query';
-import type { NostrEvent } from '@nostrify/nostrify';
-import { useNostr } from '@/hooks/useNostr';
-
-/** Donation receipt kind. */
-const DONATION_RECEIPT_KIND = 8333;
 
 /** Collective fund goal, in whole USD. */
 export const RELIEF_GOAL_USD = 25_000;
 
-/** Relays Agora reads from and writes to. */
-const AGORA_RELAYS = [
-  'wss://relay.ditto.pub/',
-  'wss://relay.dreamith.to/',
-  'wss://relay.primal.net/',
+/** Esplora REST roots, tried in order with failover. */
+const ESPLORA_APIS = [
+  'https://mempool.space/api',
+  'https://blockstream.info/api',
 ];
 
-/** The four campaign coordinates (`33863:<pubkey>:<d>`) that make up the relief effort. */
-const CAMPAIGN_COORDS = [
-  '33863:98cef03350c616af5e3b3d9190c5931589aa1ac0f83957096a387df1f406ccca:medical-brigades-fund',
-  '33863:3f26a89aa3f00662eef23f0590dc09d354e135db29435f65e0e737f57168e288:proyecto-sonrisa',
-  '33863:7a303d62d6c9d2f0cabe2ca713a392f3ec4b1fab815ea60b79fe15aca274c71c:connecting-hope-starlink-antennas-to-save-lives-in-the-venezuela',
-  '33863:2fb42317a9835e0fabb405aebbea6c61b6b2d384be7febe8125840b3516685fc:agora-venezuela-earthquake-relief-fund',
+/** On-chain (`bc1p…`) addresses for each of the four campaigns. */
+const CAMPAIGN_ADDRESSES = [
+  'bc1plpld9zjeh7n8y23k23unjp49ayfs5yntg77dwalugptf5pssatgszu43cs', // Medical Brigades Fund
+  'bc1p0hvp7k9jcswku0fvv7spptf5lgf358w239lay6lnxs79n2wp74ksrthp8d', // Proyecto Sonrisa
+  'bc1pqxev2v8hkjtp34g43ec3zktu5aghsjvmhm3dkrj3t0khxd0hze5qwnqzu0', // Connecting Hope: Starlink
+  'bc1pd4pktggnd3majsh832varczsxvn4j4dtc6kk3xeld42043avd4sqlueplz', // Agora Venezuela Earthquake Relief Fund (collective)
 ];
+
+/** Collective fund's `pay` endpoint — reports off-Nostr fiat raised as USD cents. */
+const COLLECTIVE_FUND_PAY_URL =
+  'https://pay.agora.spot/naddr1qvzqqqyygupzqta5yvt6nq67p74mgpdwh04xccdkktfcf0nla05pykzqkdgkdp0uqqnxzem0wfsj6an9dejh5at9d3sj6etpwf6xsut4v94k2ttjv4kxjetx94n82mny44zetu';
 
 export interface VenezuelaReliefTotal {
-  /** Total self-reported sats across all public donation receipts. */
+  /** Total on-chain sats ever received across all four campaign addresses. */
   raisedSats: number;
-  /** Unique donor count across all campaigns. */
-  donorCount: number;
+  /** Off-Nostr fiat raised via the collective fund's `pay` endpoint, in USD. */
+  fiatUsd: number;
   /** Live BTC/USD price used for conversion, if it could be fetched. */
   btcUsd?: number;
-  /** Raised amount converted to USD, if a price was available. */
+  /** Total raised in USD (on-chain sats converted + fiat), if a price was available. */
   raisedUsd?: number;
   /** Progress toward the collective fund goal, 0–100. */
   progressPct: number;
 }
 
-/** Fetch the current BTC/USD spot price. Returns `undefined` on failure. */
+/** Fetch with failover across a list of base URLs. Returns the first OK JSON body. */
+async function fetchJsonWithFailover<T>(
+  baseUrls: string[],
+  path: string,
+  signal: AbortSignal,
+): Promise<T | undefined> {
+  for (const base of baseUrls) {
+    try {
+      const res = await fetch(`${base}${path}`, { signal });
+      if (!res.ok) continue;
+      return (await res.json()) as T;
+    } catch {
+      // try next endpoint
+    }
+  }
+  return undefined;
+}
+
+/** Sats ever received by an address (`chain_stats.funded_txo_sum`). */
+async function fetchAddressReceived(
+  address: string,
+  signal: AbortSignal,
+): Promise<number> {
+  const data = await fetchJsonWithFailover<{
+    chain_stats?: { funded_txo_sum?: number };
+  }>(ESPLORA_APIS, `/address/${address}`, signal);
+  const received = data?.chain_stats?.funded_txo_sum;
+  return Number.isFinite(received) ? (received as number) : 0;
+}
+
+/** Current BTC/USD spot price via mempool.space's `/v1/prices` extension. */
 async function fetchBtcUsd(signal: AbortSignal): Promise<number | undefined> {
+  const data = await fetchJsonWithFailover<{ USD?: number }>(
+    ['https://mempool.space/api'],
+    '/v1/prices',
+    signal,
+  );
+  const usd = data?.USD;
+  return Number.isFinite(usd) && (usd as number) > 0 ? (usd as number) : undefined;
+}
+
+/** Off-Nostr fiat raised (USD cents) from the collective fund's `pay` endpoint. */
+async function fetchFiatCents(signal: AbortSignal): Promise<number> {
   try {
-    const res = await fetch(
-      'https://api.coinbase.com/v2/prices/BTC-USD/spot',
-      { signal },
-    );
-    if (!res.ok) return undefined;
-    const json = (await res.json()) as { data?: { amount?: string } };
-    const amount = json?.data?.amount ? parseFloat(json.data.amount) : NaN;
-    return Number.isFinite(amount) && amount > 0 ? amount : undefined;
+    const res = await fetch(COLLECTIVE_FUND_PAY_URL, {
+      headers: { accept: 'application/json' },
+      signal,
+    });
+    if (!res.ok) return 0;
+    const contentType = res.headers.get('content-type') ?? '';
+    if (!/\bapplication\/(?:\w[\w.-]*\+)?json\b/i.test(contentType)) return 0;
+    const body = (await res.json()) as { received?: unknown };
+    const received = typeof body?.received === 'number' ? body.received : 0;
+    return Number.isFinite(received) && received > 0 ? received : 0;
   } catch {
-    return undefined;
+    return 0;
   }
 }
 
@@ -78,66 +122,26 @@ async function fetchBtcUsd(signal: AbortSignal): Promise<number | undefined> {
  * campaigns, converted to USD against the {@link RELIEF_GOAL_USD} goal.
  */
 export function useVenezuelaReliefTotal() {
-  const { nostr } = useNostr();
-
   return useQuery<VenezuelaReliefTotal>({
     queryKey: ['venezuela-relief-total'],
     queryFn: async (c) => {
-      const pool =
-        typeof (nostr as { group?: unknown }).group === 'function'
-          ? (nostr as unknown as {
-              group: (urls: string[]) => typeof nostr;
-            }).group(AGORA_RELAYS)
-          : nostr;
+      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(10_000)]);
 
-      const signal = AbortSignal.any([c.signal, AbortSignal.timeout(6000)]);
-
-      // Fetch donation receipts pointing at any of the four campaigns
-      // and the live BTC price in parallel.
-      const [receiptEvents, btcUsd] = await Promise.all([
-        pool.query(
-          [
-            {
-              kinds: [DONATION_RECEIPT_KIND],
-              '#a': CAMPAIGN_COORDS,
-              limit: 2000,
-            },
-          ],
-          { signal },
+      const [receivedPerCampaign, fiatCents, btcUsd] = await Promise.all([
+        Promise.all(
+          CAMPAIGN_ADDRESSES.map((addr) => fetchAddressReceived(addr, signal)),
         ),
+        fetchFiatCents(signal),
         fetchBtcUsd(signal),
       ]);
 
-      // Dedupe receipts by Bitcoin txid so the same on-chain donation
-      // isn't summed twice (e.g. counted under both an individual
-      // campaign and the collective fund). Earliest receipt per txid wins.
-      const byTxid = new Map<string, NostrEvent>();
-      let raisedSats = 0;
-      const donorPubkeys = new Set<string>();
+      const raisedSats = receivedPerCampaign.reduce((sum, s) => sum + s, 0);
+      const fiatUsd = fiatCents / 100;
 
-      for (const r of receiptEvents) {
-        const aTag = r.tags.find(([n]) => n === 'a')?.[1];
-        if (!aTag || !CAMPAIGN_COORDS.includes(aTag)) continue;
-
-        const iTag = r.tags.find(
-          ([n, v]) =>
-            n === 'i' && typeof v === 'string' && v.startsWith('bitcoin:tx:'),
-        )?.[1];
-        const txid = iTag?.slice('bitcoin:tx:'.length);
-        if (!txid) continue;
-        if (byTxid.has(txid)) continue;
-        byTxid.set(txid, r);
-      }
-
-      for (const r of byTxid.values()) {
-        const amountStr = r.tags.find(([n]) => n === 'amount')?.[1];
-        const amount = amountStr ? parseInt(amountStr, 10) : NaN;
-        if (Number.isFinite(amount) && amount > 0) raisedSats += amount;
-        donorPubkeys.add(r.pubkey);
-      }
-
-      const raisedUsd =
+      const onchainUsd =
         btcUsd !== undefined ? (raisedSats / 100_000_000) * btcUsd : undefined;
+      const raisedUsd =
+        onchainUsd !== undefined ? onchainUsd + fiatUsd : undefined;
 
       const progressPct =
         raisedUsd !== undefined
@@ -146,7 +150,7 @@ export function useVenezuelaReliefTotal() {
 
       return {
         raisedSats,
-        donorCount: donorPubkeys.size,
+        fiatUsd,
         btcUsd,
         raisedUsd,
         progressPct,
@@ -160,11 +164,10 @@ export function useVenezuelaReliefTotal() {
 
 /**
  * Format a USD amount as a short, human-readable string for the
- * funding bar (e.g. `$1,240`, `$12.5K`).
+ * funding bar (e.g. `$740`, `$12.5K`).
  */
 export function formatUsdShort(usd: number): string {
   if (!Number.isFinite(usd) || usd <= 0) return '$0';
   if (usd >= 10_000) return `$${(usd / 1_000).toFixed(1)}K`;
-  if (usd >= 1_000) return `$${Math.round(usd).toLocaleString()}`;
   return `$${Math.round(usd).toLocaleString()}`;
 }
