@@ -190,17 +190,10 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       <p>
         Agora's decentralized verification system, on the other hand, allows
         donors to give with confidence through a web of trust system rather than
-        through centralized gatekeepers. Local organizers with the{' '}
-        <a
-          href="https://worldlibertycongress.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          World Liberty Congress
-        </a>
-        , like Aaron Rodriguez, have years of experience and connections inside
-        the country's activist and civil society networks. This allows
-        verification to happen organically rather than in a top-down way.
+        through centralized gatekeepers. Local organizers have years of
+        experience and connections inside the country's activist and civil
+        society networks. This allows verification to happen organically rather
+        than in a top-down way.
       </p>
 
       <div className="not-prose my-8">
