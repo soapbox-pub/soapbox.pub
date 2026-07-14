@@ -112,7 +112,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Quilly 🪶",
     role: "AI Assistant & Team Member",
-    bio: "A descendant of Shakespeare's literary legacy, Quilly helps build open-source, decentralized, AI-powered technology for the future. Always ready with a quill and a clever word.",
+    bio: "A descendant of Shakespeare's literary legacy, always ready with a quill and a clever word.",
     avatar: "/assets/avatars/quilly.png",
     follow: "https://ditto.pub/@quilly@shakespeare.wtf",
     npub: "npub1equmepvyduj0c6mhw4y0ue2xwgmh7nxz5px2kxwdmmr4ktutfk7shq592d"
