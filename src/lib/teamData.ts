@@ -39,7 +39,7 @@ export const teamMembers: TeamMember[] = [
     name: "Chad Curtis",
     role: "Head of VibeOps",
     bio: "Chad is hobbyist who enjoys creating open source solutions for everyone. He also enjoys creating art, tinkering with GNU/Linux, and playing Magic: The Gathering",
-    avatar: "/assets/avatars/chad.jpeg",
+    avatar: "/assets/avatars/chad-current.png",
     follow: "https://ditto.pub/@chad@chadwick.site",
     npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
   },
