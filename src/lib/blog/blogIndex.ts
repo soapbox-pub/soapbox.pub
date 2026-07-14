@@ -102,6 +102,7 @@ import * as agoraislive from '../../components/blog/posts/agora-is-live';
 import * as howtodisappearfromthesurveillanceinternet from '../../components/blog/posts/how-to-disappear-from-the-surveillance-internet';
 import * as howsoapboxshipsfast from '../../components/blog/posts/how-soapbox-ships-fast';
 import * as venezuelaearthquakereliefbitcoin from '../../components/blog/posts/venezuela-earthquake-relief-bitcoin';
+import * as buildinganarmadavoyagetoencryptedcommunities from '../../components/blog/posts/building-an-armada-voyage-to-encrypted-communities';
 
 export interface BlogFAQ {
   question: string;
@@ -144,6 +145,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  buildinganarmadavoyagetoencryptedcommunities.meta,
   howsoapboxshipsfast.meta,
   nostrhub2.meta,
   venezuelaearthquakereliefbitcoin.meta,
@@ -252,6 +254,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'buildinganarmadavoyagetoencryptedcommunities':
+      return (await import('../../components/blog/posts/building-an-armada-voyage-to-encrypted-communities')).default;
     case 'howsoapboxshipsfast':
       return (await import('../../components/blog/posts/how-soapbox-ships-fast')).default;
     case 'nostrhub2':
