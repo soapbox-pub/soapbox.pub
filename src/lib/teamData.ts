@@ -3,9 +3,9 @@ import { nip19 } from 'nostr-tools';
 export interface TeamMember {
   name: string;
   role: string;
-  bio: string;
-  avatar: string;
-  follow: string;
+  bio?: string; // falls back to Nostr metadata "about" if omitted
+  avatar?: string; // falls back to Nostr metadata "picture" if omitted
+  follow?: string; // falls back to njump.me link if omitted
   npub: string;
   pubkey?: string; // hex pubkey derived from npub
 }
@@ -44,6 +44,14 @@ export const teamMembers: TeamMember[] = [
     npub: "npub1scvyzz02ayma34hesz62pdrd5nhsmxp74hjq8msmfs9khh3r3drsnw68d8"
   },
   {
+    name: "Morgan Maksoud-Miller",
+    role: "Community & Partnership Coordinator",
+    bio: "BigTech cult escapee who found a safe landing zone with Team Soapbox. Let's chat revolution, meet at the mosh, or if you're really my friend catch an opossum.",
+    avatar: "/assets/avatars/morgan.jpg",
+    follow: "https://ditto.pub/@morganmaksoudmiller@ditto.pub",
+    npub: "npub13afhst5xj05g47m3pdkksxp2m9eew0ygyt92ydamvq5gkyjkw09q33hxdh"
+  },
+  {
     name: "Heather Larson",
     role: "HBIC of Ditto Music",
     bio: "Tech Marketing | Bitcoin & Nostr Community Growth | Broadcast Media Veteran | *I've probably ghostwritten something you read online*",
@@ -53,7 +61,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "shantaram",
-    role: "Software Engineer",
+    role: "Developer",
     bio: "Self-taught software engineer writing software to achieve a net good effect on the world.",
     avatar: "/assets/avatars/shantaram.jpeg",
     follow: "https://ditto.pub/@shan@shantaram.xyz",
@@ -76,12 +84,30 @@ export const teamMembers: TeamMember[] = [
     npub: "npub1hee433872q2gen90cqh2ypwcq9z7y5ugn23etrd2l2rrwpruss8qwmrsv6"
   },
   {
+    name: "Sam",
+    role: "Developer",
+    bio: "Building everyday :) at Soapbox — relayk.it, colorsli.de, relaying.earth, and brainrot.rehab.",
+    npub: "npub1yzfm42rzr3dj2h50flpvdl0uzrv22kv2y4ghve804w5xqu6lzqcqkyfxu5"
+  },
+  {
     name: "Patrick dos Reis",
     role: "Developer",
     bio: "Patrick is interested in being a masterful interpreter of the Light.",
     avatar: "/assets/avatars/patrick.png",
     follow: "https://ditto.pub/@patrick@patrickdosreis.com",
     npub: "npub1gujeqakgt7fyp6zjggxhyy7ft623qtcaay5lkc8n8gkry4cvnrzqd3f67z"
+  },
+  {
+    name: "JSKitty",
+    role: "Concord Developer",
+    bio: "Nostr developer and cyber cat, building Concord and open-source tools with Team Soapbox.",
+    npub: "npub16ye7evyevwnl0fc9hujsxf9zym72e063awn0pvde0huvpyec5nyq4dg4wn"
+  },
+  {
+    name: "danC",
+    role: "ngit Developer",
+    bio: "Freedom tech developer and creator of ngit, gitworkshop.dev, and metadata.nostr.com.",
+    npub: "npub15qydau2hjma6ngxkl2cyar74wzyjshvl65za5k5rl69264ar2exs5cyejr"
   },
   {
     name: "Quilly 🪶",
