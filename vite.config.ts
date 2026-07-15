@@ -14,6 +14,20 @@ export default defineConfig({
   plugins: [
     react(),
     process.env.PRERENDER ? prerender({
+      // Renderer tuned for CI: the default 30s navigation timeout can be
+      // exceeded on constrained runners for image-heavy posts. Give it more
+      // headroom and lower concurrency so no single route times out.
+      renderer: '@prerenderer/renderer-puppeteer',
+      rendererOptions: {
+        maxConcurrentRoutes: 4,
+        timeout: 120000,
+        navigationOptions: {
+          timeout: 120000,
+        },
+        launchOptions: {
+          args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        },
+      },
       routes: [
         // Main pages
         "/",
@@ -51,6 +65,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/building-an-armada-voyage-to-encrypted-communities",
         "/blog/venezuela-earthquake-relief-bitcoin",
         "/blog/agora-connecting-freedom-fighters",
         "/blog/agora-is-live",
