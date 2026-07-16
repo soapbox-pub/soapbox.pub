@@ -72,7 +72,7 @@ const ARMADA_URL = 'https://armada.buzz';
  * so it never reaches any server.
  */
 const COMMUNITY_INVITE_URL =
-  'https://armada.buzz/invite/naddr1qvzqqqyzz5pzqlvfu67gsh2vsa7yu0nyn2cyqdac2zj0kpld399t02eu0jr35ug9qqqqs3sdxq#BAACAwSZuujHSCu-HuGiV8Y_XDJI';
+  'https://armada.buzz/invite/naddr1qvzqqqyzz5pzqrhzn9xj5hgq769hamzvfszp8gzyhkqnxp5tjne0fxfz3jnms6d0qqqq7e8ec9#BAACAwTc8UOnsiLXPVBL2q3pCwUc';
 
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';

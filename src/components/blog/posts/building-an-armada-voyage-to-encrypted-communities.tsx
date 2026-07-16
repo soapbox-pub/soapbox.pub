@@ -715,7 +715,7 @@ export default function BuildingAnArmadaVoyageToEncryptedCommunities() {
 
       <div className="not-prose my-10">
         <a
-          href="https://armada.buzz/invite/naddr1qvzqqqyzz5pzqlvfu67gsh2vsa7yu0nyn2cyqdac2zj0kpld399t02eu0jr35ug9qqqqs3sdxq#BAACAwSZuujHSCu-HuGiV8Y_XDJI"
+          href="https://armada.buzz/invite/naddr1qvzqqqyzz5pzqrhzn9xj5hgq769hamzvfszp8gzyhkqnxp5tjne0fxfz3jnms6d0qqqq7e8ec9#BAACAwTc8UOnsiLXPVBL2q3pCwUc"
           target="_blank"
           rel="noopener noreferrer"
           className="block no-underline"
