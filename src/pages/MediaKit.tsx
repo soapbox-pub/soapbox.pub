@@ -114,7 +114,8 @@ const productScreenshots: ProductScreenshotGroup[] = [
     id: "agora-screenshots",
     name: "Agora",
     desktop: [
-      { url: "/assets/blog/agora-is-live/wallet-ui.png", caption: "Agora — built-in Bitcoin wallet" },
+      { url: "/assets/media-kit/screenshots/agora/desktop-1.webp", caption: "Agora home page with verified campaigns (desktop)" },
+      { url: "/assets/media-kit/screenshots/agora/desktop-2.webp", caption: "Agora — Venezuela Earthquake Relief Fund campaign page (desktop)" },
     ],
     mobile: [
       { url: "/assets/media-kit/screenshots/agora/1.webp", caption: "Agora mobile app" },
