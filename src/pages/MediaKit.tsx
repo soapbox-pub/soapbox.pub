@@ -727,6 +727,20 @@ export default function MediaKit() {
                       <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
+                          <span className="font-medium text-gray-900">2026 - Agora Launch</span>
+                          <span className="text-sm text-gray-500">May</span>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                          <a href="https://soapbox.pub/blog/agora-is-live" target="_blank" rel="noopener noreferrer" className="text-azure hover:underline">Agora launched at Oslo Freedom Forum</a>, a Bitcoin-based crowdfunding platform built in partnership with the World Liberty Congress,
+                          enabling censorship-resistant, peer-to-peer fundraising for human rights movements around the world.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-azure rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
                           <span className="font-medium text-gray-900">2026 - Ditto Relaunch</span>
                           <span className="text-sm text-gray-500">March</span>
                         </div>
