@@ -130,17 +130,6 @@ const productScreenshots: ProductScreenshotGroup[] = [
     ],
   },
   {
-    id: "shakespeare-screenshots",
-    name: "Shakespeare",
-    desktop: [
-      { url: "/assets/toolbox/shakespeare-screenshot.png", caption: "Shakespeare — AI app builder (desktop)" },
-      { url: "/assets/images/shakespeare-screenshots/edit-the-code-in-browser.png", caption: "Shakespeare — editing code in the browser" },
-    ],
-    mobile: [
-      { url: "/assets/images/shakespeare-mobile.png", caption: "Shakespeare mobile" },
-    ],
-  },
-  {
     id: "armada-screenshots",
     name: "Armada",
     desktop: [
@@ -157,6 +146,17 @@ const productScreenshots: ProductScreenshotGroup[] = [
       { url: "/assets/media-kit/screenshots/armada/8.webp", caption: "Armada mobile app" },
       { url: "/assets/media-kit/screenshots/armada/9.webp", caption: "Armada mobile app" },
       { url: "/assets/media-kit/screenshots/armada/10.webp", caption: "Armada mobile app" },
+    ],
+  },
+  {
+    id: "shakespeare-screenshots",
+    name: "Shakespeare",
+    desktop: [
+      { url: "/assets/toolbox/shakespeare-screenshot.png", caption: "Shakespeare — AI app builder (desktop)" },
+      { url: "/assets/images/shakespeare-screenshots/edit-the-code-in-browser.png", caption: "Shakespeare — editing code in the browser" },
+    ],
+    mobile: [
+      { url: "/assets/images/shakespeare-mobile.png", caption: "Shakespeare mobile" },
     ],
   },
 ];
