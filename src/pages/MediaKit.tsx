@@ -71,7 +71,7 @@ export default function MediaKit() {
   const teamProfiles: TeamProfile[] = [
     {
       name: "Alex Gleason",
-      title: "BDFL of Soapbox",
+      title: "CEO & Co-Founder",
       picture: "/assets/avatars/alex-headshot-new.png",
       picturePng: "/assets/avatars/alex-headshot-new.png",
       pictureJpg: "/assets/avatars/alex-headshot-new.jpg",
@@ -94,7 +94,7 @@ export default function MediaKit() {
     },
     {
       name: "MK Fain",
-      title: "Chief Product Officer",
+      title: "Chief Strategy Officer & Co-Founder",
       picture: "/assets/avatars/mk-headshot.png",
       picturePng: "/assets/avatars/mk-headshot.png",
       pictureJpg: "/assets/avatars/mk-headshot.jpg",
