@@ -513,14 +513,14 @@ export default function MediaKit() {
                       href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
+                      className="block group"
                     >
                       <img
                         src="/assets/images/shakespeare-screenshots/techcrunch-cover.png"
                         alt="TechCrunch Coverage"
-                        className="w-full h-auto rounded-lg shadow-md"
+                        className="w-full h-auto rounded-lg shadow-md transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02]"
                       />
-                      <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed">
+                      <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed transition-colors group-hover:text-azure">
                         TechCrunch features Soapbox's open source social media work
                       </p>
                     </a>
@@ -529,14 +529,14 @@ export default function MediaKit() {
                       href="https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
+                      className="block group"
                     >
                       <img
                         src="/assets/media-kit/forbes-bitcoin-crisis-coverage.png"
                         alt="Forbes Coverage"
-                        className="w-full h-auto rounded-lg shadow-md"
+                        className="w-full h-auto rounded-lg shadow-md transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02]"
                       />
-                      <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed">
+                      <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed transition-colors group-hover:text-azure">
                         Forbes covers Bitcoin crisis relief powered by Agora
                       </p>
                     </a>
