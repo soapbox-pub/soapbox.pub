@@ -108,6 +108,8 @@ const productScreenshots: ProductScreenshotGroup[] = [
       { url: "/assets/media-kit/screenshots/ditto/6.webp", caption: "Ditto mobile app" },
       { url: "/assets/media-kit/screenshots/ditto/7.webp", caption: "Ditto mobile app" },
       { url: "/assets/media-kit/screenshots/ditto/8.webp", caption: "Ditto mobile app" },
+      { url: "/assets/media-kit/screenshots/ditto/9.webp", caption: "Ditto mobile app" },
+      { url: "/assets/media-kit/screenshots/ditto/10.webp", caption: "Ditto mobile app" },
     ],
   },
   {
