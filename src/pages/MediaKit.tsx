@@ -403,14 +403,11 @@ export default function MediaKit() {
           </Card> */}
 
           {/* Team Members */}
-          <div id="bios" className="space-y-8 sm:space-y-12 mb-8 sm:mb-12 pt-8 sm:pt-12 scroll-mt-24">
-            <h2 className="text-2xl font-bold text-azure flex items-center">
-              <Users className="w-6 h-6 mr-2" />
-              Team Bios
-              <SectionLinkButton id="bios" />
-            </h2>
-            {teamProfiles.map((profile, index) => (
-              <Card key={index} className="border-gray-200 overflow-hidden">
+          <div className="space-y-8 sm:space-y-12 mb-8 sm:mb-12 pt-8 sm:pt-12">
+            {teamProfiles.map((profile, index) => {
+              const profileId = profile.name.toLowerCase().replace(/\s+/g, '-');
+              return (
+              <Card key={index} id={profileId} className="border-gray-200 overflow-hidden scroll-mt-24">
                 <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
                   <div className="flex flex-col sm:flex-row items-start sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
                     <div className="flex items-start space-x-4 sm:space-x-0 w-full sm:w-auto">
@@ -420,7 +417,10 @@ export default function MediaKit() {
                         className="w-16 h-16 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-md flex-shrink-0"
                       />
                       <div className="flex-1 sm:hidden">
-                        <CardTitle className="text-xl sm:text-2xl text-gray-900">{profile.name}</CardTitle>
+                        <CardTitle className="text-xl sm:text-2xl text-gray-900 flex items-center">
+                          {profile.name}
+                          <SectionLinkButton id={profileId} />
+                        </CardTitle>
                         <p className="text-base sm:text-lg font-semibold text-azure">{profile.title}</p>
                       </div>
                     </div>
@@ -429,7 +429,10 @@ export default function MediaKit() {
                       {/* Desktop name/title */}
                       <div className="hidden sm:flex items-start justify-between mb-3">
                         <div>
-                          <CardTitle className="text-2xl text-gray-900">{profile.name}</CardTitle>
+                          <CardTitle className="text-2xl text-gray-900 flex items-center">
+                            {profile.name}
+                            <SectionLinkButton id={profileId} />
+                          </CardTitle>
                           <p className="text-lg font-semibold text-azure">{profile.title}</p>
                         </div>
                       </div>
@@ -526,7 +529,8 @@ export default function MediaKit() {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+              );
+            })}
           </div>
 
           {/* Media Coverage Archive */}
