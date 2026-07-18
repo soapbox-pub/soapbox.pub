@@ -3,24 +3,27 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamFollowPack } from "@/components/TeamFollowPack";
-import { ExternalLink, Heart, Users, Zap, FileText, MessageSquare, Sparkles, HeartHandshake, Wrench } from "lucide-react";
+import { ExternalLink, FileText, MessageSquare, Sparkles, HeartHandshake, Wrench } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
 
 
 const missionValues = [
   {
-    icon: <Heart className="h-8 w-8 text-red-500" />,
+    image: "/assets/media-kit/alex-presents-nostr-world-riga-2024.jpg",
+    imageAlt: "Alex Gleason presents at Nostr World: Riga, 2024",
     title: "Promoting Freedom",
     description: "We believe in open source software that empowers users to control their own data and digital experiences."
   },
   {
-    icon: <Users className="h-8 w-8 text-blue-500" />,
+    image: "/assets/media-kit/mk-with-bitcoin-babies-merchants-kenya-june-2026-agora.jpg",
+    imageAlt: "MK Fain with Bitcoin Babies merchants in Kenya, June 2026",
     title: "Empowering Communities",
     description: "Building tools that help communities form, grow, and thrive in the decentralized web."
   },
   {
-    icon: <Zap className="h-8 w-8 text-yellow-500" />,
+    image: "/assets/media-kit/alex-awards-hackathon-prize-nairobi-btc++-june-2026.jpg",
+    imageAlt: "Alex Gleason awards a hackathon prize at BTC++ Nairobi, June 2026",
     title: "Inspiring Creativity",
     description: "Creating platforms and tools that unlock new possibilities for creators and innovators worldwide."
   }
@@ -107,11 +110,14 @@ export default function About() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {missionValues.map((value, index) => (
-                <Card key={index} className="text-center p-6 border-2 hover:border-azure/50 transition-colors">
-                  <CardContent className="pt-6">
-                    <div className="flex justify-center mb-4">
-                      {value.icon}
-                    </div>
+                <Card key={index} className="text-center overflow-hidden border-2 hover:border-azure/50 transition-colors">
+                  <img
+                    src={value.image}
+                    alt={value.imageAlt}
+                    className="w-full h-44 object-cover"
+                    loading="lazy"
+                  />
+                  <CardContent className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
                       {value.title}
                     </h3>
