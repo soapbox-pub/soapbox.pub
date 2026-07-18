@@ -20,6 +20,12 @@ interface Presentation {
   imageUrl?: string;
 }
 
+interface MediaAsset {
+  url: string;
+  caption: string;
+  credit?: string;
+}
+
 interface TeamProfile {
   name: string;
   title: string;
@@ -41,7 +47,7 @@ interface TeamProfile {
 export default function MediaKit() {
   const [showContact, setShowContact] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<{ url: string; caption: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<MediaAsset | null>(null);
 
   // Set custom SEO for Media Kit page
   useSEO({
@@ -137,7 +143,17 @@ export default function MediaKit() {
 
 
   // Media assets for the photo grid
-  const mediaAssets = [
+  const mediaAssets: MediaAsset[] = [
+    { url: "/assets/media-kit/alex-presents-nairobi-btc++-june-2026.jpg", caption: "Alex Gleason presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-presents-nairobi-btc++-june-2026-2.jpg", caption: "Alex Gleason presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-presents-nairobi-btc++-june-2026-3.jpg", caption: "Alex Gleason presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/mk-presents-nairobi-btc++-june-2026.jpg", caption: "MK Fain presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/shantaram-presents-nairobi-btc++-june-2026.jpg", caption: "Shantaram presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026.jpg", caption: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-2.jpg", caption: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-3.jpg", caption: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-judge-sam-and-shantaram-hackathon-nairobi-btc++-june-2026.jpg", caption: "Alex Gleason, Sam, and Shantaram judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
+    { url: "/assets/media-kit/alex-awards-hackathon-prize-nairobi-btc++-june-2026.jpg", caption: "Alex Gleason awards a hackathon prize at BTC++ Nairobi, June 2026", credit: "BTC++" },
     { url: "/assets/press/satsconf-brazil-2025/shakespeare-workshop.jpeg", caption: "Shakespeare workshop at SatsConf Brazil, November 2025" },
     { url: "/assets/press/satsconf-brazil-2025/shakespare-workshop.jpeg", caption: "Attendees learning Shakespeare at SatsConf Brazil, November 2025" },
     { url: "/assets/press/satsconf-brazil-2025/alex-workshop-room.jpeg", caption: "Alex Gleason presenting at SatsConf Brazil, November 2025" },
@@ -626,6 +642,9 @@ export default function MediaKit() {
                 <>
                   <DialogHeader className="p-6 pb-0">
                     <DialogTitle className="text-left">{selectedImage.caption}</DialogTitle>
+                    {selectedImage.credit && (
+                      <p className="text-sm text-gray-500 text-left">Photo credit: {selectedImage.credit}</p>
+                    )}
                   </DialogHeader>
                   <div className="relative">
                     <img
