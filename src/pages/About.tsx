@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamFollowPack } from "@/components/TeamFollowPack";
-import { ExternalLink, Heart, Users, Zap, FileText } from "lucide-react";
+import { ExternalLink, Heart, Users, Zap, FileText, MessageSquare, Sparkles, HeartHandshake, Wrench } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
 
@@ -23,6 +23,37 @@ const missionValues = [
     icon: <Zap className="h-8 w-8 text-yellow-500" />,
     title: "Inspiring Creativity",
     description: "Creating platforms and tools that unlock new possibilities for creators and innovators worldwide."
+  }
+];
+
+const whatWeBuild = [
+  {
+    icon: <MessageSquare className="h-8 w-8 text-azure" />,
+    title: "Decentralized Social Platforms",
+    description: "Ditto is the world's first fully customizable, open source, decentralized social platform. No ads, no algorithms working against you, and no company that can take your community away.",
+    link: "/ditto",
+    linkText: "Explore Ditto →"
+  },
+  {
+    icon: <Sparkles className="h-8 w-8 text-purple-500" />,
+    title: "AI-Powered Creation Tools",
+    description: "Shakespeare and MKStack let anyone build and publish real apps through natural conversation — no coding required, with full ownership of everything you create.",
+    link: "/shakespeare",
+    linkText: "Meet Shakespeare →"
+  },
+  {
+    icon: <HeartHandshake className="h-8 w-8 text-red-500" />,
+    title: "Freedom & Humanitarian Tech",
+    description: "Agora, built with the World Liberty Congress, enables censorship-resistant Bitcoin crowdfunding for human rights movements and communities in crisis around the world.",
+    link: "/agora",
+    linkText: "Discover Agora →"
+  },
+  {
+    icon: <Wrench className="h-8 w-8 text-gray-700" />,
+    title: "Open Protocols & Developer Tools",
+    description: "From the Mostr Bridge connecting Nostr and the Fediverse to Nostrify and other open source libraries, we build the infrastructure that makes the decentralized web work.",
+    link: "/toolbox",
+    linkText: "Browse the Toolbox →"
   }
 ];
 
@@ -94,8 +125,47 @@ export default function About() {
           </div>
         </section>
 
-        {/* Supported By Section */}
+        {/* What We Build Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
+                What We Build
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                From social platforms to humanitarian tools, everything we make is free, open source, and built on decentralized protocols.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {whatWeBuild.map((area, index) => (
+                <Card key={index} className="p-6 border-2 hover:border-azure/50 transition-colors">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        {area.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          {area.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                          {area.description}
+                        </p>
+                        <Link to={area.link} className="text-azure font-medium hover:underline inline-flex items-center">
+                          {area.linkText}
+                        </Link>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Supported By Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
@@ -156,6 +226,19 @@ export default function About() {
           </div>
         </section>
 
+        {/* Team Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <TeamFollowPack
+              naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw"
+              excludePubkeys={[
+                // Quilly
+                "c839bc85846f24fc6b777548fe654672377f4cc2a04cab19cddec75b2f8b4dbd",
+              ]}
+            />
+          </div>
+        </section>
+
         {/* Media Kit Section */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
@@ -177,19 +260,6 @@ export default function About() {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <TeamFollowPack
-              naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw"
-              excludePubkeys={[
-                // Quilly
-                "c839bc85846f24fc6b777548fe654672377f4cc2a04cab19cddec75b2f8b4dbd",
-              ]}
-            />
           </div>
         </section>
 
