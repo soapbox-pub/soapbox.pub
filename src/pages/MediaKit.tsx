@@ -26,6 +26,73 @@ interface MediaAsset {
   credit?: string;
 }
 
+interface LogoAsset {
+  name: string;
+  preview: string;
+  darkBg?: boolean;
+  downloads: { label: string; url: string }[];
+}
+
+const logoAssets: LogoAsset[] = [
+  {
+    name: "Soapbox Logo",
+    preview: "/logo.svg",
+    downloads: [{ label: "SVG", url: "/logo.svg" }],
+  },
+  {
+    name: "Soapbox Full Logo",
+    preview: "/assets/soapbox-full-logo.png",
+    downloads: [{ label: "PNG", url: "/assets/soapbox-full-logo.png" }],
+  },
+  {
+    name: "Soapbox Full Logo (White)",
+    preview: "/assets/soapbox-full-logo-white.png",
+    darkBg: true,
+    downloads: [{ label: "PNG", url: "/assets/soapbox-full-logo-white.png" }],
+  },
+  {
+    name: "Ditto Logo",
+    preview: "/ditto-logo-transparent.png",
+    downloads: [{ label: "PNG", url: "/ditto-logo-transparent.png" }],
+  },
+  {
+    name: "Agora Logo",
+    preview: "/assets/media-kit/logos/agora-logo.svg",
+    downloads: [
+      { label: "SVG", url: "/assets/media-kit/logos/agora-logo.svg" },
+      { label: "PNG", url: "/assets/media-kit/logos/agora-logo.png" },
+    ],
+  },
+  {
+    name: "Shakespeare Logo",
+    preview: "/assets/logos/shakespeare-logo.png",
+    downloads: [{ label: "PNG", url: "/assets/logos/shakespeare-logo.png" }],
+  },
+  {
+    name: "Armada Logo",
+    preview: "/assets/media-kit/logos/armada-logo.svg",
+    downloads: [
+      { label: "SVG", url: "/assets/media-kit/logos/armada-logo.svg" },
+      { label: "PNG", url: "/assets/media-kit/logos/armada-logo.png" },
+    ],
+  },
+  {
+    name: "Armada Logo Mark",
+    preview: "/assets/media-kit/logos/armada-logo-mark.svg",
+    downloads: [{ label: "SVG", url: "/assets/media-kit/logos/armada-logo-mark.svg" }],
+  },
+];
+
+const productScreenshots: MediaAsset[] = [
+  { url: "/assets/toolbox/ditto-screenshot.png", caption: "Ditto — customizable decentralized social platform (desktop)" },
+  { url: "/assets/images/ditto/appstore/1.webp", caption: "Ditto mobile app" },
+  { url: "/assets/blog/agora-is-live/wallet-ui.png", caption: "Agora — built-in Bitcoin wallet" },
+  { url: "/assets/blog/about-agora/ve-country-home-page.png", caption: "Agora mobile — Venezuela campaigns page" },
+  { url: "/assets/toolbox/shakespeare-screenshot.png", caption: "Shakespeare — AI app builder (desktop)" },
+  { url: "/assets/images/shakespeare-mobile.png", caption: "Shakespeare mobile" },
+  { url: "/assets/blog/building-an-armada-voyage-to-encrypted-communities/armada-soapbox-community.png", caption: "Armada — encrypted communities" },
+];
+
 interface TeamProfile {
   name: string;
   title: string;
@@ -690,38 +757,85 @@ export default function MediaKit() {
                 ))}
               </div>
 
-              {/* Company Logos Section */}
-              <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Company Logos</h4>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 space-y-2 sm:space-y-0">
-                    <span className="text-sm text-gray-700">Soapbox Logo (SVG)</span>
-                    <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
-                      <a href="/logo.svg" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 sm:mr-1" />
-                        <span className="hidden sm:inline ml-1">Download</span>
-                      </a>
-                    </Button>
+            </CardContent>
+          </Card>
+
+          {/* Logos Section */}
+          <Card id="logos" className="mb-8 sm:mb-12 border-azure-200 scroll-mt-24">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <FileText className="w-6 h-6 mr-2" />
+                Logos
+                <SectionLinkButton id="logos" />
+              </CardTitle>
+              <p className="text-gray-600 mt-2">
+                Official logos for Soapbox and our products, available for press use.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {logoAssets.map((logo, index) => (
+                  <div key={index} className="flex flex-col rounded-lg border border-gray-200 overflow-hidden">
+                    <div className={`h-28 flex items-center justify-center p-4 ${logo.darkBg ? 'bg-gray-900' : 'bg-gray-50'}`}>
+                      <img
+                        src={logo.preview}
+                        alt={logo.name}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="flex flex-col items-center gap-2 p-3">
+                      <span className="text-sm text-gray-700 text-center">{logo.name}</span>
+                      <div className="flex gap-2">
+                        {logo.downloads.map((download) => (
+                          <Button key={download.label} size="sm" variant="outline" asChild>
+                            <a href={download.url} download>
+                              <Download className="w-3 h-3 mr-1" />
+                              {download.label}
+                            </a>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 space-y-2 sm:space-y-0">
-                    <span className="text-sm text-gray-700">Soapbox Full Logo</span>
-                    <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
-                      <a href="/assets/soapbox-full-logo.png" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 sm:mr-1" />
-                        <span className="hidden sm:inline ml-1">Download</span>
-                      </a>
-                    </Button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Product Screenshots Section */}
+          <Card id="screenshots" className="mb-8 sm:mb-12 border-azure-200 scroll-mt-24">
+            <CardHeader>
+              <CardTitle className="text-2xl text-azure flex items-center">
+                <Globe className="w-6 h-6 mr-2" />
+                Product Screenshots
+                <SectionLinkButton id="screenshots" />
+              </CardTitle>
+              <p className="text-gray-600 mt-2">
+                Screenshots of Ditto, Agora, Shakespeare, and Armada. Click any image to view larger version.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {productScreenshots.map((asset, index) => (
+                  <div
+                    key={index}
+                    className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+                    onClick={() => setSelectedImage(asset)}
+                  >
+                    <img
+                      src={asset.url}
+                      alt={asset.caption}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-200"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
+                      <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <Download className="w-4 h-4 text-gray-700" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 space-y-2 sm:space-y-0 sm:col-span-2 lg:col-span-1">
-                    <span className="text-sm text-gray-700">Soapbox Full Logo (White)</span>
-                    <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
-                      <a href="/assets/soapbox-full-logo-white.png" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 sm:mr-1" />
-                        <span className="hidden sm:inline ml-1">Download</span>
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+                ))}
               </div>
             </CardContent>
           </Card>
