@@ -403,7 +403,12 @@ export default function MediaKit() {
           </Card> */}
 
           {/* Team Members */}
-          <div className="space-y-8 sm:space-y-12 mb-8 sm:mb-12 pt-8 sm:pt-12">
+          <div id="bios" className="space-y-8 sm:space-y-12 mb-8 sm:mb-12 pt-8 sm:pt-12 scroll-mt-24">
+            <h2 className="text-2xl font-bold text-azure flex items-center">
+              <Users className="w-6 h-6 mr-2" />
+              Team Bios
+              <SectionLinkButton id="bios" />
+            </h2>
             {teamProfiles.map((profile, index) => (
               <Card key={index} className="border-gray-200 overflow-hidden">
                 <CardHeader className="bg-gradient-to-r from-gray-50 to-blue-50">
