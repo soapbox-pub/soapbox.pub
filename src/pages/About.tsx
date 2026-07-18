@@ -3,15 +3,15 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamFollowPack } from "@/components/TeamFollowPack";
-import { ExternalLink, FileText, MessageSquare, Sparkles, HeartHandshake, Wrench } from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
 
 
 const missionValues = [
   {
-    image: "/assets/media-kit/alex-presents-nostr-world-riga-2024.jpg",
-    imageAlt: "Alex Gleason presents at Nostr World: Riga, 2024",
+    image: "/assets/media-kit/alex-presents-agora-nairobi-btc++-june-2026-2.jpg",
+    imageAlt: "Alex Gleason presents Agora at BTC++ Nairobi, June 2026",
     title: "Promoting Freedom",
     description: "We believe in open source software that empowers users to control their own data and digital experiences."
   },
@@ -31,28 +31,32 @@ const missionValues = [
 
 const whatWeBuild = [
   {
-    icon: <MessageSquare className="h-8 w-8 text-azure" />,
+    image: "/assets/media-kit/alex-presents-nostr-world-riga-2024.jpg",
+    imageAlt: "Alex Gleason presents at Nostr World: Riga, 2024",
     title: "Decentralized Social Platforms",
     description: "Ditto is the world's first fully customizable, open source, decentralized social platform. No ads, no algorithms working against you, and no company that can take your community away.",
     link: "/ditto",
     linkText: "Explore Ditto →"
   },
   {
-    icon: <HeartHandshake className="h-8 w-8 text-red-500" />,
+    image: "/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.webp",
+    imageAlt: "Agora launched at Oslo Freedom Forum by Leopoldo López",
     title: "Freedom & Humanitarian Tech",
     description: "Agora, built with the World Liberty Congress, enables censorship-resistant Bitcoin crowdfunding for human rights movements and communities in crisis around the world.",
     link: "/agora",
     linkText: "Discover Agora →"
   },
   {
-    icon: <Sparkles className="h-8 w-8 text-purple-500" />,
+    image: "/assets/press/satsconf-brazil-2025/alex-workshop-room.jpeg",
+    imageAlt: "Alex Gleason presenting at SatsConf Brazil, November 2025",
     title: "AI-Powered Creation Tools",
     description: "Shakespeare and MKStack let anyone build and publish real apps through natural conversation — no coding required, with full ownership of everything you create.",
     link: "/shakespeare",
     linkText: "Meet Shakespeare →"
   },
   {
-    icon: <Wrench className="h-8 w-8 text-gray-700" />,
+    image: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-2.jpg",
+    imageAlt: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026",
     title: "Open Protocols & Developer Tools",
     description: "From the Mostr Bridge connecting Nostr and the Fediverse to Nostrify and other open source libraries, we build the infrastructure that makes the decentralized web work.",
     link: "/toolbox",
@@ -145,24 +149,23 @@ export default function About() {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {whatWeBuild.map((area, index) => (
-                <Card key={index} className="p-6 border-2 hover:border-azure/50 transition-colors">
-                  <CardContent className="pt-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        {area.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {area.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4">
-                          {area.description}
-                        </p>
-                        <Link to={area.link} className="text-azure font-medium hover:underline inline-flex items-center">
-                          {area.linkText}
-                        </Link>
-                      </div>
-                    </div>
+                <Card key={index} className="overflow-hidden border-2 hover:border-azure/50 transition-colors">
+                  <img
+                    src={area.image}
+                    alt={area.imageAlt}
+                    className="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {area.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {area.description}
+                    </p>
+                    <Link to={area.link} className="text-azure font-medium hover:underline inline-flex items-center">
+                      {area.linkText}
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
