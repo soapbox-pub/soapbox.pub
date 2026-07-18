@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ExternalLink, Users, Mail, Copy, Check, Download, Calendar, Globe, FileText, X, ChevronDown, Link2 } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
@@ -83,14 +84,66 @@ const logoAssets: LogoAsset[] = [
   },
 ];
 
-const productScreenshots: MediaAsset[] = [
-  { url: "/assets/toolbox/ditto-screenshot.png", caption: "Ditto — customizable decentralized social platform (desktop)" },
-  { url: "/assets/images/ditto/appstore/1.webp", caption: "Ditto mobile app" },
-  { url: "/assets/blog/agora-is-live/wallet-ui.png", caption: "Agora — built-in Bitcoin wallet" },
-  { url: "/assets/blog/about-agora/ve-country-home-page.png", caption: "Agora mobile — Venezuela campaigns page" },
-  { url: "/assets/toolbox/shakespeare-screenshot.png", caption: "Shakespeare — AI app builder (desktop)" },
-  { url: "/assets/images/shakespeare-mobile.png", caption: "Shakespeare mobile" },
-  { url: "/assets/blog/building-an-armada-voyage-to-encrypted-communities/armada-soapbox-community.png", caption: "Armada — encrypted communities" },
+interface ProductScreenshotGroup {
+  id: string;
+  name: string;
+  desktop: MediaAsset[];
+  mobile: MediaAsset[];
+}
+
+const productScreenshots: ProductScreenshotGroup[] = [
+  {
+    id: "ditto-screenshots",
+    name: "Ditto",
+    desktop: [
+      { url: "/assets/toolbox/ditto-screenshot.png", caption: "Ditto — customizable decentralized social platform (desktop)" },
+      { url: "/assets/images/ditto/dj-desktop.png", caption: "Ditto with custom DJ theme (desktop)" },
+    ],
+    mobile: [
+      { url: "/assets/images/ditto/appstore/1.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/2.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/3.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/4.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/5.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/6.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/7.webp", caption: "Ditto mobile app" },
+      { url: "/assets/images/ditto/appstore/8.webp", caption: "Ditto mobile app" },
+    ],
+  },
+  {
+    id: "agora-screenshots",
+    name: "Agora",
+    desktop: [
+      { url: "/assets/blog/agora-is-live/wallet-ui.png", caption: "Agora — built-in Bitcoin wallet" },
+    ],
+    mobile: [
+      { url: "/assets/blog/about-agora/ve-country-home-page.png", caption: "Agora mobile — Venezuela campaigns page" },
+      { url: "/assets/blog/about-agora/ve-example-post.png", caption: "Agora mobile — campaign post" },
+      { url: "/assets/blog/about-agora/ve-action.png", caption: "Agora mobile — taking action on a campaign" },
+    ],
+  },
+  {
+    id: "shakespeare-screenshots",
+    name: "Shakespeare",
+    desktop: [
+      { url: "/assets/toolbox/shakespeare-screenshot.png", caption: "Shakespeare — AI app builder (desktop)" },
+      { url: "/assets/images/shakespeare-screenshots/edit-the-code-in-browser.png", caption: "Shakespeare — editing code in the browser" },
+    ],
+    mobile: [
+      { url: "/assets/images/shakespeare-mobile.png", caption: "Shakespeare mobile" },
+    ],
+  },
+  {
+    id: "armada-screenshots",
+    name: "Armada",
+    desktop: [
+      { url: "/assets/blog/building-an-armada-voyage-to-encrypted-communities/armada-soapbox-community.png", caption: "Armada — encrypted communities" },
+    ],
+    mobile: [
+      { url: "/assets/blog/building-an-armada-voyage-to-encrypted-communities/armada-community-relays.png", caption: "Armada mobile — community relays" },
+      { url: "/assets/blog/building-an-armada-voyage-to-encrypted-communities/armada-create-community.png", caption: "Armada mobile — creating a community" },
+    ],
+  },
 ];
 
 interface TeamProfile {
@@ -135,6 +188,79 @@ function SectionLinkButton({ id }: { id: string }) {
     >
       {copied ? <Check className="w-4 h-4 text-green-600" /> : <Link2 className="w-4 h-4" />}
     </button>
+  );
+}
+
+/** Collapsible, linkable screenshot section for a single product */
+function ProductScreenshotSection({
+  product,
+  onSelectImage,
+}: {
+  product: ProductScreenshotGroup;
+  onSelectImage: (asset: MediaAsset) => void;
+}) {
+  // Open by default when deep-linked directly to this product
+  const [open, setOpen] = useState(() => typeof window !== 'undefined' && window.location.hash === `#${product.id}`);
+
+  const renderGrid = (assets: MediaAsset[]) => (
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      {assets.map((asset, index) => (
+        <div
+          key={index}
+          className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          onClick={() => onSelectImage(asset)}
+        >
+          <img
+            src={asset.url}
+            alt={asset.caption}
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-200"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
+            <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <Download className="w-4 h-4 text-gray-700" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const count = product.desktop.length + product.mobile.length;
+
+  return (
+    <Collapsible open={open} onOpenChange={setOpen}>
+      <div id={product.id} className="border border-gray-200 rounded-lg scroll-mt-24">
+        <div className="flex items-center justify-between p-4">
+          <div className="flex items-center">
+            <h4 className="text-lg font-semibold text-gray-900">{product.name}</h4>
+            <SectionLinkButton id={product.id} />
+          </div>
+          <CollapsibleTrigger asChild>
+            <Button variant="ghost" size="sm" className="text-gray-600">
+              {count} screenshot{count === 1 ? '' : 's'}
+              <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${open ? 'rotate-180' : ''}`} />
+            </Button>
+          </CollapsibleTrigger>
+        </div>
+        <CollapsibleContent>
+          <div className="px-4 pb-4 space-y-4">
+            {product.desktop.length > 0 && (
+              <div>
+                <h5 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Desktop</h5>
+                {renderGrid(product.desktop)}
+              </div>
+            )}
+            {product.mobile.length > 0 && (
+              <div>
+                <h5 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Mobile</h5>
+                {renderGrid(product.mobile)}
+              </div>
+            )}
+          </div>
+        </CollapsibleContent>
+      </div>
+    </Collapsible>
   );
 }
 
@@ -816,25 +942,13 @@ export default function MediaKit() {
               </p>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {productScreenshots.map((asset, index) => (
-                  <div
-                    key={index}
-                    className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
-                    onClick={() => setSelectedImage(asset)}
-                  >
-                    <img
-                      src={asset.url}
-                      alt={asset.caption}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-200"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
-                      <div className="bg-white bg-opacity-90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <Download className="w-4 h-4 text-gray-700" />
-                      </div>
-                    </div>
-                  </div>
+              <div className="space-y-3">
+                {productScreenshots.map((product) => (
+                  <ProductScreenshotSection
+                    key={product.id}
+                    product={product}
+                    onSelectImage={setSelectedImage}
+                  />
                 ))}
               </div>
             </CardContent>
@@ -1053,53 +1167,6 @@ export default function MediaKit() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Cross Promotion Section */}
-          <Card id="amplify" className="mt-8 sm:mt-12 border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 scroll-mt-24">
-            <CardContent className="p-6 sm:p-8">
-              <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    Amplify Your Message
-                    <SectionLinkButton id="amplify" />
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Our team has a combined reach of over 200,000 followers across Nostr, X, and other
-                    platforms. We actively share interviews and coverage with our audience.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-700">
-                        <span className="font-medium">200k+ followers</span> across our team's social platforms
-                      </p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-700">
-                        <span className="font-medium">Active Nostr community</span> of developers and builders
-                      </p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-700">
-                        <span className="font-medium">Ask about Shakespeare AI credits to try it for free!</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-center lg:text-right">
-                  <div className="bg-white rounded-lg p-4 sm:p-6 border border-violet-200 shadow-sm">
-                    <img
-                      src="/assets/avatars/derek-followers.png"
-                      alt="Derek Ross follower count on Nostr"
-                      className="w-full h-auto rounded-lg"
-                    />
                   </div>
                 </div>
               </div>
