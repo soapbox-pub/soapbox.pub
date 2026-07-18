@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { ExternalLink, Users, Mail, Copy, Check, Download, Calendar, Globe, FileText, X } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { ExternalLink, Users, Mail, Copy, Check, Download, Calendar, Globe, FileText, X, ChevronDown } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
@@ -23,6 +24,8 @@ interface TeamProfile {
   name: string;
   title: string;
   picture: string;
+  picturePng: string;
+  pictureJpg: string;
   nostrUrl: string;
   website?: string;
   linkedin?: string;
@@ -64,6 +67,8 @@ export default function MediaKit() {
       name: "Alex Gleason",
       title: "BDFL of Soapbox",
       picture: "/assets/avatars/alex-headshot-new.png",
+      picturePng: "/assets/avatars/alex-headshot-new.png",
+      pictureJpg: "/assets/avatars/alex-headshot-new.jpg",
       nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
       website: "https://alexgleason.me",
       linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
@@ -84,7 +89,9 @@ export default function MediaKit() {
     {
       name: "MK Fain",
       title: "Chief Product Officer",
-      picture: "https://lh3.googleusercontent.com/a/ACg8ocJQRPCTNTPSN1dhFCExCEFyxqLbjinQkbvkk-ObS_CWHcVtjuTx=s317-c-no",
+      picture: "/assets/avatars/mk-headshot.png",
+      picturePng: "/assets/avatars/mk-headshot.png",
+      pictureJpg: "/assets/avatars/mk-headshot.jpg",
       nostrUrl: "https://ditto.pub/@mk@ditto.pub",
       website: "https://marykatefain.com/",
       linkedin: "https://www.linkedin.com/in/marykatefain/",
@@ -106,7 +113,9 @@ export default function MediaKit() {
     {
       name: "Derek Ross",
       title: "Developer Relations",
-      picture: "https://blossom.primal.net/b4020f4caf9bd96cd9cc872a9ab8a28696ffc8efb2d063180a2cdf9e24dbb0b3.jpg",
+      picture: "/assets/avatars/derek-headshot.jpg",
+      picturePng: "/assets/avatars/derek-headshot.png",
+      pictureJpg: "/assets/avatars/derek-headshot.jpg",
       nostrUrl: "https://ditto.pub/@derekross@grownostr.org",
       website: "https://derekross.me",
       twitter: "https://x.com/GrowNostrOrg",
@@ -414,12 +423,29 @@ export default function MediaKit() {
                       </div>
 
                       {/* Download Headshot */}
-                      <Button size="sm" variant="outline" asChild className="border-azure text-azure hover:bg-azure-50 w-fit">
-                        <a href={profile.picture} target="_blank" rel="noopener noreferrer">
-                          <Download className="w-4 h-4 mr-1" />
-                          Download Headshot
-                        </a>
-                      </Button>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button size="sm" variant="outline" className="border-azure text-azure hover:bg-azure-50 w-fit">
+                            <Download className="w-4 h-4 mr-1" />
+                            Download Headshot
+                            <ChevronDown className="w-4 h-4 ml-1" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="start">
+                          <DropdownMenuItem asChild>
+                            <a href={profile.picturePng} download={`${profile.name.toLowerCase().replace(/\s+/g, '-')}-headshot.png`}>
+                              <Download className="w-4 h-4 mr-2" />
+                              PNG
+                            </a>
+                          </DropdownMenuItem>
+                          <DropdownMenuItem asChild>
+                            <a href={profile.pictureJpg} download={`${profile.name.toLowerCase().replace(/\s+/g, '-')}-headshot.jpg`}>
+                              <Download className="w-4 h-4 mr-2" />
+                              JPG
+                            </a>
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </div>
 
                     {/* Right Column - Featured Video */}
