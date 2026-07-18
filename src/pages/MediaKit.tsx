@@ -96,8 +96,8 @@ const productScreenshots: ProductScreenshotGroup[] = [
     id: "ditto-screenshots",
     name: "Ditto",
     desktop: [
-      { url: "/assets/toolbox/ditto-screenshot.png", caption: "Ditto — customizable decentralized social platform (desktop)" },
-      { url: "/assets/images/ditto/dj-desktop.png", caption: "Ditto with custom DJ theme (desktop)" },
+      { url: "/assets/media-kit/screenshots/ditto/desktop-1.webp", caption: "Ditto feed with custom galaxy theme (desktop)" },
+      { url: "/assets/media-kit/screenshots/ditto/desktop-2.webp", caption: "Ditto profile page with custom theme (desktop)" },
     ],
     mobile: [
       { url: "/assets/images/ditto/appstore/1.webp", caption: "Ditto mobile app" },
