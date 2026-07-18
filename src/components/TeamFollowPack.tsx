@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 interface TeamFollowPackProps {
   naddr: string;
   className?: string;
+  /** Hex pubkeys to exclude from the rendered team grid */
+  excludePubkeys?: string[];
 }
 
 interface EnhancedProfileCardProps {
@@ -86,7 +88,7 @@ function EnhancedProfileCard({ pubkey, petname }: EnhancedProfileCardProps) {
   );
 }
 
-export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
+export function TeamFollowPack({ naddr, className, excludePubkeys }: TeamFollowPackProps) {
   const { data: followPack, isLoading, error } = useFollowPack(naddr);
 
   if (isLoading) {
@@ -181,13 +183,15 @@ export function TeamFollowPack({ naddr, className }: TeamFollowPackProps) {
 
       {/* Team Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {followPack.profiles.map((profile) => (
-          <EnhancedProfileCard
-            key={profile.pubkey}
-            pubkey={profile.pubkey}
-            petname={profile.petname}
-          />
-        ))}
+        {followPack.profiles
+          .filter((profile) => !excludePubkeys?.includes(profile.pubkey))
+          .map((profile) => (
+            <EnhancedProfileCard
+              key={profile.pubkey}
+              pubkey={profile.pubkey}
+              petname={profile.petname}
+            />
+          ))}
       </div>
     </div>
   );

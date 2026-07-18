@@ -109,14 +109,6 @@ export const teamMembers: TeamMember[] = [
     bio: "Freedom tech developer and creator of ngit, gitworkshop.dev, and metadata.nostr.com.",
     npub: "npub15qydau2hjma6ngxkl2cyar74wzyjshvl65za5k5rl69264ar2exs5cyejr"
   },
-  {
-    name: "Quilly 🪶",
-    role: "AI Assistant & Team Member",
-    bio: "A descendant of Shakespeare's literary legacy, always ready with a quill and a clever word.",
-    avatar: "/assets/avatars/quilly.png",
-    follow: "https://ditto.pub/@quilly@shakespeare.wtf",
-    npub: "npub1equmepvyduj0c6mhw4y0ue2xwgmh7nxz5px2kxwdmmr4ktutfk7shq592d"
-  },
 ];
 
 // Convert npubs to hex pubkeys and create a lookup map

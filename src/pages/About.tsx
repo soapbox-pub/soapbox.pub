@@ -183,7 +183,13 @@ export default function About() {
         {/* Team Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <TeamFollowPack naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw" />
+            <TeamFollowPack
+              naddr="naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw"
+              excludePubkeys={[
+                // Quilly
+                "c839bc85846f24fc6b777548fe654672377f4cc2a04cab19cddec75b2f8b4dbd",
+              ]}
+            />
           </div>
         </section>
 
