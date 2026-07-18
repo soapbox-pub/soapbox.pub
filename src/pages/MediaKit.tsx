@@ -513,7 +513,7 @@ export default function MediaKit() {
                       href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
+                      className="block rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
                     >
                       <img
                         src="/assets/images/shakespeare-screenshots/techcrunch-cover.png"
@@ -529,7 +529,7 @@ export default function MediaKit() {
                       href="https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
+                      className="block rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
                     >
                       <img
                         src="/assets/media-kit/forbes-bitcoin-crisis-coverage.png"
@@ -593,6 +593,22 @@ export default function MediaKit() {
                         "Are You Even a Bitcoiner If You’re Not on Nostr?"
                       </p>
                       <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Reuters</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "Head of engineering at Trump's Truth Social app resigns"
+                      </p>
+                      <a href="https://www.reuters.com/technology/head-engineering-trumps-truth-social-app-resigns-2023-07-17/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Feminist Current</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "Spinster is in its infancy, but already making waves on the Fediverse"
+                      </p>
+                      <a href="https://www.feministcurrent.com/2019/09/12/spinster-is-in-its-infancy-but-already-making-waves-on-the-fediverse/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
                   </div>
                 </div>
