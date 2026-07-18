@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { ExternalLink, Users, Mail, Copy, Check, Download, Calendar, Globe, FileText, X, ChevronDown } from "lucide-react";
+import { ExternalLink, Users, Mail, Copy, Check, Download, Calendar, Globe, FileText, X, ChevronDown, Link2 } from "lucide-react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTwitter, FaGlobe } from "react-icons/fa";
 import { useSEO } from "@/hooks/useSEO";
 import { getAllPosts } from "@/lib/blog/utils";
@@ -42,6 +42,33 @@ interface TeamProfile {
   presentations?: Presentation[];
   quote?: string;
   role?: string;
+}
+
+/** Copies a deep link to a page section, for use next to section headings */
+function SectionLinkButton({ id }: { id: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}#${id}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy section link:', err);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label="Copy link to this section"
+      title="Copy link to this section"
+      className="ml-2 text-gray-400 hover:text-azure transition-colors flex-shrink-0"
+    >
+      {copied ? <Check className="w-4 h-4 text-green-600" /> : <Link2 className="w-4 h-4" />}
+    </button>
+  );
 }
 
 export default function MediaKit() {
@@ -259,7 +286,7 @@ export default function MediaKit() {
             </p>
 
             {/* Latest Press Release */}
-            <div className="mt-12 text-left">
+            <div id="press-release" className="mt-12 text-left scroll-mt-24">
               {(() => {
                 const allPosts = getAllPosts();
                 const pressReleases = allPosts.filter(post => post.tags?.includes('Press Release'));
@@ -271,6 +298,7 @@ export default function MediaKit() {
                       <div className="flex items-center mb-4">
                         <FileText className="w-6 h-6 text-azure mr-2" />
                         <h2 className="text-2xl font-bold text-gray-900">Latest Press Release</h2>
+                        <SectionLinkButton id="press-release" />
                       </div>
                       <p className="text-gray-600">No press releases available.</p>
                     </div>
@@ -282,6 +310,7 @@ export default function MediaKit() {
                     <div className="flex items-center mb-4">
                       <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-azure mr-2" />
                       <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Latest Press Release</h2>
+                      <SectionLinkButton id="press-release" />
                     </div>
                     <div className="flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-4">
                       <img
@@ -496,11 +525,12 @@ export default function MediaKit() {
           </div>
 
           {/* Media Coverage Archive */}
-          <Card className="mb-8 sm:mb-12 border-azure-200">
+          <Card id="media-coverage" className="mb-8 sm:mb-12 border-azure-200 scroll-mt-24">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <Globe className="w-6 h-6 mr-2" />
                 Media Coverage Archive
+                <SectionLinkButton id="media-coverage" />
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -615,11 +645,12 @@ export default function MediaKit() {
           </Card>
 
           {/* Media Assets Section */}
-          <Card className="mb-8 sm:mb-12 border-azure-200">
+          <Card id="media-assets" className="mb-8 sm:mb-12 border-azure-200 scroll-mt-24">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <Download className="w-6 h-6 mr-2" />
                 Media Assets
+                <SectionLinkButton id="media-assets" />
               </CardTitle>
               <p className="text-gray-600 mt-2">
                 Soapbox photos available for download. Click any image to view larger version.
@@ -733,11 +764,12 @@ export default function MediaKit() {
 
 
           {/* Company Background & Timeline */}
-          <Card className="mb-8 sm:mb-12 border-azure-200">
+          <Card id="company-background" className="mb-8 sm:mb-12 border-azure-200 scroll-mt-24">
             <CardHeader>
               <CardTitle className="text-2xl text-azure flex items-center">
                 <Calendar className="w-6 h-6 mr-2" />
                 Company Background & Timeline
+                <SectionLinkButton id="company-background" />
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -905,11 +937,14 @@ export default function MediaKit() {
           </Card>
 
           {/* Cross Promotion Section */}
-          <Card className="mt-8 sm:mt-12 border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50">
+          <Card id="amplify" className="mt-8 sm:mt-12 border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50 scroll-mt-24">
             <CardContent className="p-6 sm:p-8">
               <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Amplify Your Message</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    Amplify Your Message
+                    <SectionLinkButton id="amplify" />
+                  </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Our team has a combined reach of over 200,000 followers across Nostr, X, and other
                     platforms. We actively share interviews and coverage with our audience.
@@ -949,9 +984,12 @@ export default function MediaKit() {
           </Card>
 
           {/* Contact Section */}
-          <Card className="mt-8 sm:mt-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50">
+          <Card id="contact" className="mt-8 sm:mt-12 border-azure-200 bg-gradient-to-r from-azure-50 to-blue-50 scroll-mt-24">
             <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Book a Guest?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+                Ready to Book a Guest?
+                <SectionLinkButton id="contact" />
+              </h3>
               <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
                 Contact us to schedule interviews with our leadership team. We're excited to share our insights
                 on decentralized technology, AI innovation, and the future of digital freedom.
