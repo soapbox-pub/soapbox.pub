@@ -63,7 +63,7 @@ export default function MediaKit() {
     {
       name: "Alex Gleason",
       title: "BDFL of Soapbox",
-      picture: "/assets/avatars/alex.png",
+      picture: "/assets/avatars/alex-headshot-new.png",
       nostrUrl: "https://ditto.pub/@alex@gleasonator.dev",
       website: "https://alexgleason.me",
       linkedin: "https://www.linkedin.com/in/alex-gleason-9743832b3/",
