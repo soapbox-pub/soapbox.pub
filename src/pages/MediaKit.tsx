@@ -202,12 +202,14 @@ function ProductScreenshotSection({
   // Open by default when deep-linked directly to this product
   const [open, setOpen] = useState(() => typeof window !== 'undefined' && window.location.hash === `#${product.id}`);
 
-  const renderGrid = (assets: MediaAsset[]) => (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+  const renderGrid = (assets: MediaAsset[], orientation: 'desktop' | 'mobile') => (
+    <div className={orientation === 'desktop'
+      ? "grid grid-cols-1 sm:grid-cols-2 gap-4"
+      : "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"}>
       {assets.map((asset, index) => (
         <div
           key={index}
-          className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200"
+          className={`group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200 ${orientation === 'desktop' ? 'aspect-video' : 'aspect-[9/16]'}`}
           onClick={() => onSelectImage(asset)}
         >
           <img
@@ -248,13 +250,13 @@ function ProductScreenshotSection({
             {product.desktop.length > 0 && (
               <div>
                 <h5 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Desktop</h5>
-                {renderGrid(product.desktop)}
+                {renderGrid(product.desktop, 'desktop')}
               </div>
             )}
             {product.mobile.length > 0 && (
               <div>
                 <h5 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Mobile</h5>
-                {renderGrid(product.mobile)}
+                {renderGrid(product.mobile, 'mobile')}
               </div>
             )}
           </div>
@@ -477,6 +479,27 @@ export default function MediaKit() {
               Meet the Soapbox leadership team available for interviews, presentations, and media appearances.
               Our team combines decades of experience in decentralized technology, AI innovation, and community building.
             </p>
+
+            {/* Section Navigation */}
+            <nav aria-label="Page sections" className="flex flex-wrap justify-center gap-2">
+              {[
+                { id: "press-release", label: "Press Release" },
+                { id: "media-coverage", label: "Media Coverage" },
+                { id: "media-assets", label: "Photos" },
+                { id: "logos", label: "Logos" },
+                { id: "screenshots", label: "Screenshots" },
+                { id: "company-background", label: "Company Timeline" },
+                { id: "contact", label: "Contact" },
+              ].map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className="px-3 py-1.5 text-sm rounded-full border border-gray-200 text-gray-700 hover:border-azure hover:text-azure transition-colors"
+                >
+                  {section.label}
+                </a>
+              ))}
+            </nav>
 
             {/* Latest Press Release */}
             <div id="press-release" className="mt-12 text-left scroll-mt-24">
