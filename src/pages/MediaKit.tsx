@@ -505,7 +505,45 @@ export default function MediaKit() {
             </CardHeader>
             <CardContent>
               <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-                {/* Left Column - Press Coverage */}
+                {/* Left Column - Featured Coverage */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Featured Coverage</h4>
+                  <div className="space-y-4">
+                    <a
+                      href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
+                    >
+                      <img
+                        src="/assets/images/shakespeare-screenshots/techcrunch-cover.png"
+                        alt="TechCrunch Coverage"
+                        className="w-full h-auto rounded-lg shadow-md"
+                      />
+                      <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed">
+                        TechCrunch features Soapbox's open source social media work
+                      </p>
+                    </a>
+
+                    <a
+                      href="https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 transition-all hover:shadow-lg hover:border-azure/50"
+                    >
+                      <img
+                        src="/assets/media-kit/forbes-bitcoin-crisis-coverage.png"
+                        alt="Forbes Coverage"
+                        className="w-full h-auto rounded-lg shadow-md"
+                      />
+                      <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed">
+                        Forbes covers Bitcoin crisis relief powered by Agora
+                      </p>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right Column - Press Coverage */}
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
                   <div className="space-y-4">
@@ -556,21 +594,6 @@ export default function MediaKit() {
                       </p>
                       <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
-                  </div>
-                </div>
-
-                {/* Right Column - Featured Coverage Image */}
-                <div className="order-first lg:order-last">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Featured Coverage</h4>
-                  <div className="bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200">
-                    <img
-                      src="/assets/images/shakespeare-screenshots/techcrunch-cover.png"
-                      alt="TechCrunch Coverage"
-                      className="w-full h-auto rounded-lg shadow-md"
-                    />
-                    <p className="text-xs sm:text-sm text-gray-600 mt-3 text-center leading-relaxed">
-                      TechCrunch featured coverage highlighting Soapbox's impact in decentralized social media
-                    </p>
                   </div>
                 </div>
               </div>
