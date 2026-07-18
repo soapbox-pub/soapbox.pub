@@ -136,7 +136,8 @@ const productScreenshots: ProductScreenshotGroup[] = [
     id: "armada-screenshots",
     name: "Armada",
     desktop: [
-      { url: "/assets/blog/building-an-armada-voyage-to-encrypted-communities/armada-soapbox-community.png", caption: "Armada — encrypted communities" },
+      { url: "/assets/media-kit/screenshots/armada/desktop-1.webp", caption: "Armada community chat, dark theme (desktop)" },
+      { url: "/assets/media-kit/screenshots/armada/desktop-2.webp", caption: "Armada community chat, light theme (desktop)" },
     ],
     mobile: [
       { url: "/assets/media-kit/screenshots/armada/1.webp", caption: "Armada mobile app" },
