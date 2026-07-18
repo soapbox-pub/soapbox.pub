@@ -507,7 +507,6 @@ export default function MediaKit() {
               <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
                 {/* Left Column - Featured Coverage */}
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Featured Coverage</h4>
                   <div className="space-y-4">
                     <a
                       href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/"
@@ -545,7 +544,6 @@ export default function MediaKit() {
 
                 {/* Right Column - Press Coverage */}
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
                   <div className="space-y-4">
                     <div className="border-l-4 border-azure pl-3 sm:pl-4">
                       <h5 className="font-medium text-gray-900 text-sm sm:text-base">Forbes</h5>
