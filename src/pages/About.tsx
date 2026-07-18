@@ -39,8 +39,8 @@ const whatWeBuild = [
     linkText: "Explore Ditto →"
   },
   {
-    image: "/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.webp",
-    imageAlt: "Agora launched at Oslo Freedom Forum by Leopoldo López",
+    image: "/assets/media-kit/leo-using-agora-oslo-freedom-forum-may-2026.jpg",
+    imageAlt: "Leopoldo López creating an Agora campaign at Oslo Freedom Forum, May 2026",
     title: "Freedom & Humanitarian Tech",
     description: "Agora, built with the World Liberty Congress, enables censorship-resistant Bitcoin crowdfunding for human rights movements and communities in crisis around the world.",
     link: "/agora",
@@ -55,7 +55,7 @@ const whatWeBuild = [
     linkText: "Meet Shakespeare →"
   },
   {
-    image: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-2.jpg",
+    image: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-3.jpg",
     imageAlt: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026",
     title: "Open Protocols & Developer Tools",
     description: "From the Mostr Bridge connecting Nostr and the Fediverse to Nostrify and other open source libraries, we build the infrastructure that makes the decentralized web work.",
