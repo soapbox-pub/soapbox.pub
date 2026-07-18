@@ -79,6 +79,7 @@ export const meta: BlogPostMeta = {
   },
   featured: true,
   tags: [
+    'Press Release',
     'venezuela',
     'venezuela earthquake',
     'earthquake relief',

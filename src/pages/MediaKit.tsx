@@ -151,7 +151,6 @@ export default function MediaKit() {
     { url: "/assets/media-kit/mk-presents-nairobi-btc++-june-2026.jpg", caption: "MK Fain presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
     { url: "/assets/media-kit/sam-presents-nairobi-btc++-june-2026.jpg", caption: "Sam presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
     { url: "/assets/media-kit/shantaram-presents-nairobi-btc++-june-2026.jpg", caption: "Shantaram presents at BTC++ Nairobi, June 2026", credit: "BTC++" },
-    { url: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026.jpg", caption: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
     { url: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-2.jpg", caption: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
     { url: "/assets/media-kit/alex-judge-hackathon-nairobi-btc++-june-2026-3.jpg", caption: "Alex Gleason judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
     { url: "/assets/media-kit/alex-judge-sam-and-shantaram-hackathon-nairobi-btc++-june-2026.jpg", caption: "Alex Gleason, Sam, and Shantaram judging the hackathon at BTC++ Nairobi, June 2026", credit: "BTC++" },
@@ -161,7 +160,6 @@ export default function MediaKit() {
     { url: "/assets/media-kit/team-soapbox-wins-for-breakout-at-aos-hackathon.jpg", caption: "Team Soapbox wins the Breakout award at the AOS Hackathon" },
     { url: "/assets/media-kit/agora-presented-at-oslo-freedom-forum-by-leopoldo-lopez-may-2026.jpg", caption: "Agora presented at Oslo Freedom Forum by Leopoldo López, May 2026" },
     { url: "/assets/media-kit/working-on-agora-at-oslo-freedom-forum-may-2026.jpg", caption: "Working on Agora at Oslo Freedom Forum, May 2026" },
-    { url: "/assets/media-kit/team-soapbox-oslo-norway-may-2026.jpg", caption: "Team Soapbox in Oslo, Norway, May 2026" },
     { url: "/assets/press/satsconf-brazil-2025/shakespeare-workshop.jpeg", caption: "Shakespeare workshop at SatsConf Brazil, November 2025" },
     { url: "/assets/press/satsconf-brazil-2025/shakespare-workshop.jpeg", caption: "Attendees learning Shakespeare at SatsConf Brazil, November 2025" },
     { url: "/assets/press/satsconf-brazil-2025/alex-workshop-room.jpeg", caption: "Alex Gleason presenting at SatsConf Brazil, November 2025" },
@@ -511,6 +509,14 @@ export default function MediaKit() {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Recent Press Mentions</h4>
                   <div className="space-y-4">
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Forbes</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "When The Financial System Can't Reach People In Crisis, Bitcoin Can"
+                      </p>
+                      <a href="https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
                     <div className="border-l-4 border-azure pl-3 sm:pl-4">
                       <h5 className="font-medium text-gray-900 text-sm sm:text-base">TechCrunch</h5>
                       <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
