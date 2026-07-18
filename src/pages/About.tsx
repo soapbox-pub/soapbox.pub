@@ -49,8 +49,8 @@ const whatWeBuild = [
     linkText: "Discover Agora →"
   },
   {
-    image: "/assets/press/satsconf-brazil-2025/alex-workshop-room.jpeg",
-    imageAlt: "Alex Gleason presenting at SatsConf Brazil, November 2025",
+    image: "/assets/press/satsconf-brazil-2025/shakespeare-workshop.jpeg",
+    imageAlt: "Shakespeare workshop at SatsConf Brazil, November 2025",
     imageClass: "scale-125",
     title: "AI-Powered Creation Tools",
     description: "Shakespeare and MKStack let anyone build and publish real apps through natural conversation — no coding required, with full ownership of everything you create.",
