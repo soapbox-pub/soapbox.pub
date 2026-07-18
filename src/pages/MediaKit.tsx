@@ -144,22 +144,9 @@ export default function MediaKit() {
     { url: "/assets/press/satsconf-brazil-2025/alex-sam-workshop.jpeg", caption: "Alex Gleason with workshop attendee at SatsConf Brazil, November 2025" },
     { url: "/assets/press/satsconf-brazil-2025/alex-workshop.jpeg", caption: "Alex Gleason teaching Shakespeare at SatsConf Brazil, November 2025" },
     { url: "https://image.nostr.build/d4c7963cf4c4b754cae889d9f66d39ca37619a23768748875d180425cf9b6167.jpg", caption: "Alex Gleason presents at Nostr World: Riga, 2024" },
-    { url: "https://soapbox.pub/assets/images/riga-team.png", caption: "Alex Gleason with Soapbox mentee Patrick DosReis, and Jack Dorsey (Nostr World: Riga, 2024)" },
+    { url: "/assets/images/riga-team.png", caption: "Alex Gleason with Soapbox mentee Patrick DosReis, and Jack Dorsey (Nostr World: Riga, 2024)" },
     { url: "https://image.nostr.build/161516025ffe27e1eae1736e26f85742ad0517cf352f84b2e1a2cf4aa0c2979d.jpg", caption: "Alex Gleason presents on Nostrify at Nostr World: Riga, 2024" },
-    { url: "https://media.ditto.pub/aea6a718ad43063e8a309745417b300920aa95c98c0db467ba36db05e0098e2d.jpeg", caption: "Alex Gleason with Jack Dorsey at Nostr World: Asia 2023" },
     { url: "https://image.nostr.build/ca0a9db642f6b1345a8a8893ffc364c28ccb17f91874eeb40583afe683719987.jpg", caption: "Alex Gleason with other Nostr developers" },
-    { url: "https://media.ditto.pub/0c36e5dbd52ca9a0a6622099738d9cf59cecffb5a562e844933da4901224b14d.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
-    { url: "https://media.ditto.pub/bc87c79273f4abf66d875459db787c4178fe3d4453c56fbefcc96da77d14167a.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
-    { url: "https://media.ditto.pub/39eba1a6f79e42d8ce222210af8633a9e595e92f4f5264992bfa250a80a63f4f.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
-    { url: "https://media.ditto.pub/568f1de8bc95db362155c5a650e6901dd8b641f1afbd5fbfa3e58277944209ee.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
-    { url: "https://media.ditto.pub/fb91ddcdfd6624f11297877d4bda9a61b43636059cb07460589d83264e85077d.jpeg", caption: "Alex Gleason presents at Oslo Freedom Forum 2025" },
-    { url: "https://media.ditto.pub/d27b4e613fc43827bfea62d53243c3f5afcb4d25ccf605e8965ed3b441a90c35.jpeg", caption: "Alex Gleason and Soapbox mentee Patrick DosReis" },
-    { url: "https://media.ditto.pub/220e7248b2620393730a068e03fa63d6e99ab41a50cade3e75025a063f04e751.jpeg", caption: "Alex Gleason presents at Nostr World: Riga 2024" },
-    { url: "https://media.ditto.pub/7ce60667a5c989608a49862e00f3f27e53bf5fe71cd407e957cd6b81f52bbae4.jpeg", caption: "Alex Gleason presents at Nostr World: Riga 2024" },
-    { url: "https://media.ditto.pub/11c2e1e8c5280b51570f3bdc5011c7314f9bf2944164f23337f6992876f8fafb.jpeg", caption: "Alex Gleason presents at Nostr World: Riga 2024" },
-    { url: "https://media.ditto.pub/da3f62a7cff0e126f818e1d07efb8680cf90f6cf3d66afe2490b7419480fc1ea.jpeg", caption: "Alex Gleason presents at Nostr World: Asia 2023" },
-    { url: "https://media.ditto.pub/6887f699303cf71a66756c45971c1b7b109f3f2e13f3b9fe4ed17eba9dc96022.jpeg", caption: "Alex Gleason presents at Nostr World: Asia 2023" },
-    { url: "https://media.ditto.pub/339ed7622fa6bf3ad78421a16a66c074ab0d55716c82001464191c90604d1bbb.jpeg", caption: "Alex Gleason presents at Nostr World: Asia 2023" },
   ];
 
   // Helper function to render social links with icons
