@@ -13,7 +13,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     name: "Alex Gleason",
-    role: "Founder & BDFL",
+    role: "CEO & Co-Founder",
     bio: "Alex has over a decade of experience building social platforms, and is one of the foremost experts on ActivityPub and the Fediverse. He is still learning, and still dreaming.",
     avatar: "/assets/avatars/alex.png",
     follow: "https://gleasonator.dev/@alex@gleasonator.dev",
@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "M. K. Fain",
-    role: "Chief Product Officer",
+    role: "Chief Strategy Officer & Co-Founder",
     bio: "M. K. is a marketing and communications consultant with a focus on nonprofits and technology. She is passionate about freedom and building spaces for silenced groups online.",
     avatar: "/assets/avatars/mk.jpg",
     follow: "https://ditto.pub/@mk@ditto.pub",
