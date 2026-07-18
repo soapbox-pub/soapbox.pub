@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { TeamFollowPack } from "@/components/TeamFollowPack";
 import { ExternalLink, FileText } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import { cn } from "@/lib/utils";
 
 
 
@@ -33,6 +34,7 @@ const whatWeBuild = [
   {
     image: "/assets/media-kit/alex-presents-nostr-world-riga-2024.jpg",
     imageAlt: "Alex Gleason presents at Nostr World: Riga, 2024",
+    imageClass: "scale-125",
     title: "Decentralized Social Platforms",
     description: "Ditto is the world's first fully customizable, open source, decentralized social platform. No ads, no algorithms working against you, and no company that can take your community away.",
     link: "/ditto",
@@ -49,6 +51,7 @@ const whatWeBuild = [
   {
     image: "/assets/press/satsconf-brazil-2025/alex-workshop-room.jpeg",
     imageAlt: "Alex Gleason presenting at SatsConf Brazil, November 2025",
+    imageClass: "scale-125",
     title: "AI-Powered Creation Tools",
     description: "Shakespeare and MKStack let anyone build and publish real apps through natural conversation — no coding required, with full ownership of everything you create.",
     link: "/shakespeare",
@@ -150,12 +153,14 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {whatWeBuild.map((area, index) => (
                 <Card key={index} className="overflow-hidden border-2 hover:border-azure/50 transition-colors">
-                  <img
-                    src={area.image}
-                    alt={area.imageAlt}
-                    className="w-full h-48 object-cover"
-                    loading="lazy"
-                  />
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={area.image}
+                      alt={area.imageAlt}
+                      className={cn("w-full h-full object-cover", area.imageClass)}
+                      loading="lazy"
+                    />
+                  </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {area.title}
