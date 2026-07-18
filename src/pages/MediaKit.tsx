@@ -556,11 +556,27 @@ export default function MediaKit() {
                     </div>
 
                     <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Forbes</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "How Freedom Tech Is Pushing Back Against Digital Authoritarianism"
+                      </p>
+                      <a href="https://www.forbes.com/sites/digital-assets/2026/06/04/how-freedom-tech-is-pushing-back-against-digital-authoritarianism/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
                       <h5 className="font-medium text-gray-900 text-sm sm:text-base">Associated Press</h5>
                       <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "World Liberty Congress Launches Agora at Oslo Freedom Forum to Power Global Support for Human Rights Movements"
                       </p>
                       <a href="https://apnews.com/press-release/pr-newswire/world-liberty-congress-launches-agora-at-oslo-freedom-forum-to-power-global-support-for-human-rights-movements-8ac37ef4848992ef07a67acb9c1ff370" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Nerds.xyz</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "Ditto wants to bring back the weird customizable internet people actually loved"
+                      </p>
+                      <a href="https://nerds.xyz/2026/05/ditto-decentralized-social-platform/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
 
                     <div className="border-l-4 border-azure pl-3 sm:pl-4">
@@ -593,22 +609,6 @@ export default function MediaKit() {
                         "Are You Even a Bitcoiner If You’re Not on Nostr?"
                       </p>
                       <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
-                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Reuters</h5>
-                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
-                        "Head of engineering at Trump's Truth Social app resigns"
-                      </p>
-                      <a href="https://www.reuters.com/technology/head-engineering-trumps-truth-social-app-resigns-2023-07-17/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
-                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Feminist Current</h5>
-                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
-                        "Spinster is in its infancy, but already making waves on the Fediverse"
-                      </p>
-                      <a href="https://www.feministcurrent.com/2019/09/12/spinster-is-in-its-infancy-but-already-making-waves-on-the-fediverse/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
                   </div>
                 </div>
