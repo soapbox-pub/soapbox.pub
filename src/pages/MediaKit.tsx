@@ -518,6 +518,22 @@ export default function MediaKit() {
                     </div>
 
                     <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Associated Press</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "World Liberty Congress Launches Agora at Oslo Freedom Forum to Power Global Support for Human Rights Movements"
+                      </p>
+                      <a href="https://apnews.com/press-release/pr-newswire/world-liberty-congress-launches-agora-at-oslo-freedom-forum-to-power-global-support-for-human-rights-movements-8ac37ef4848992ef07a67acb9c1ff370" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
+                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">USA Today</h5>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
+                        "Shakespeare AI: Alex Gleason's Open-Source Alternative for AI Web Building"
+                      </p>
+                      <a href="https://www.usatoday.com/story/special/contributor-content/2026/02/01/shakespeare-ai-alex-gleasons-open-source-alternative-for-ai-web-building/88464569007/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
+                    </div>
+
+                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
                       <h5 className="font-medium text-gray-900 text-sm sm:text-base">TechCrunch</h5>
                       <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
                         "Jack Dorsey pumps $10M into a nonprofit focused on open source social media"
@@ -539,22 +555,6 @@ export default function MediaKit() {
                         "Are You Even a Bitcoiner If You’re Not on Nostr?"
                       </p>
                       <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
-                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Reuters</h5>
-                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
-                        "Head of engineering at Trump's Truth Social app resigns"
-                      </p>
-                      <a href="https://www.reuters.com/technology/head-engineering-trumps-truth-social-app-resigns-2023-07-17/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
-                    </div>
-
-                    <div className="border-l-4 border-azure pl-3 sm:pl-4">
-                      <h5 className="font-medium text-gray-900 text-sm sm:text-base">Feminist Current</h5>
-                      <p className="text-xs sm:text-sm text-gray-600 mb-2 leading-relaxed">
-                        "Spinster is in its infancy, but already making waves on the Fediverse"
-                      </p>
-                      <a href="https://www.feministcurrent.com/2019/09/12/spinster-is-in-its-infancy-but-already-making-waves-on-the-fediverse/" target="_blank" rel="noopener noreferrer" className="text-azure text-xs sm:text-sm hover:underline">Read article →</a>
                     </div>
                   </div>
                 </div>
