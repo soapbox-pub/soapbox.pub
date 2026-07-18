@@ -35,18 +35,18 @@ const whatWeBuild = [
     linkText: "Explore Ditto →"
   },
   {
-    icon: <Sparkles className="h-8 w-8 text-purple-500" />,
-    title: "AI-Powered Creation Tools",
-    description: "Shakespeare and MKStack let anyone build and publish real apps through natural conversation — no coding required, with full ownership of everything you create.",
-    link: "/shakespeare",
-    linkText: "Meet Shakespeare →"
-  },
-  {
     icon: <HeartHandshake className="h-8 w-8 text-red-500" />,
     title: "Freedom & Humanitarian Tech",
     description: "Agora, built with the World Liberty Congress, enables censorship-resistant Bitcoin crowdfunding for human rights movements and communities in crisis around the world.",
     link: "/agora",
     linkText: "Discover Agora →"
+  },
+  {
+    icon: <Sparkles className="h-8 w-8 text-purple-500" />,
+    title: "AI-Powered Creation Tools",
+    description: "Shakespeare and MKStack let anyone build and publish real apps through natural conversation — no coding required, with full ownership of everything you create.",
+    link: "/shakespeare",
+    linkText: "Meet Shakespeare →"
   },
   {
     icon: <Wrench className="h-8 w-8 text-gray-700" />,
