@@ -75,7 +75,7 @@ const tools: ShowcaseApp[] = [
     name: "NostrHub",
     tagline: "Explore every NIP, browse event kinds, and publish your own custom NIPs to the protocol universe.",
     icon: "/assets/toolbox/nostrhub-icon.png",
-    screenshot: "/assets/toolbox/nostrhub-screenshot.png",
+    screenshot: "/assets/blog/nostrhub-2/cover.jpg",
     url: "https://nostrhub.io",
     ctaLabel: "Open tool",
     status: "stable",

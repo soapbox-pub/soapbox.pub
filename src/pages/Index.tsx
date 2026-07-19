@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -45,20 +45,56 @@ const showcase = [
   },
 ];
 
+/**
+ * Easter egg tabs in the desktop browser: developer tools that never appear
+ * in the automatic rotation — you have to find and click them yourself.
+ * Screenshots are shared with the Toolbox page.
+ */
+const extras = [
+  {
+    name: "NostrHub",
+    domain: "nostrhub.io",
+    appUrl: "https://nostrhub.io",
+    icon: "/assets/toolbox/nostrhub-icon.png",
+    desktop: "/assets/blog/nostrhub-2/cover.jpg",
+    alt: "NostrHub — your one-stop shop for Nostr development",
+  },
+  {
+    name: "Nostrbook",
+    domain: "nostrbook.dev",
+    appUrl: "https://nostrbook.dev",
+    icon: "/assets/toolbox/nostrbook-icon.png",
+    desktop: "/assets/toolbox/nostrbook-screenshot.png",
+    alt: "Nostrbook — structured Nostr knowledge for humans & AI",
+  },
+  {
+    name: "Nostrify",
+    domain: "nostrify.dev",
+    appUrl: "https://nostrify.dev",
+    icon: "/assets/toolbox/nostrify-icon.png",
+    desktop: "/assets/toolbox/nostrify-screenshot.png",
+    alt: "Nostrify — TypeScript framework for Nostr development",
+  },
+];
+
+/** All browser tabs: the rotating products first, then the easter egg tools. */
+const tabs = [...showcase, ...extras];
+
 /** Desktop hero: a browser with one tab per product. Pages link to the live apps. */
 function BrowserShowcase() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
+  // Auto-rotate through the products only; an open easter egg tab stays put.
   useEffect(() => {
-    if (paused) return;
+    if (paused || active >= showcase.length) return;
     const timer = setInterval(() => {
       setActive((a) => (a + 1) % showcase.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [paused]);
+  }, [paused, active]);
 
-  const current = showcase[active];
+  const current = tabs[active];
 
   return (
     <div
@@ -73,19 +109,30 @@ function BrowserShowcase() {
           <span className="w-2.5 h-2.5 rounded-full bg-gray-300" />
           <span className="w-2.5 h-2.5 rounded-full bg-gray-300" />
         </div>
-        {showcase.map((product, i) => (
-          <button
-            key={product.name}
-            onClick={() => setActive(i)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-t-lg text-sm transition-colors min-w-0 ${
-              i === active
-                ? "bg-white text-gray-900 font-medium"
-                : "text-gray-500 hover:bg-gray-200/60"
-            }`}
-          >
-            <img src={product.icon} alt="" className="w-4 h-4 object-contain flex-shrink-0" />
-            <span className="truncate">{product.name}</span>
-          </button>
+        {tabs.map((product, i) => (
+          <Fragment key={product.name}>
+            {/* Faint divider between tabs; hidden next to the active tab so it
+                reads as connected to the page, like a real browser. */}
+            {i > 0 && (
+              <span
+                aria-hidden="true"
+                className={`h-5 w-px self-center transition-colors ${
+                  i === active || i - 1 === active ? "bg-transparent" : "bg-gray-300/70"
+                }`}
+              />
+            )}
+            <button
+              onClick={() => setActive(i)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-t-lg text-sm transition-colors min-w-0 ${
+                i === active
+                  ? "bg-white text-gray-900 font-medium"
+                  : "text-gray-500 hover:bg-gray-200/60"
+              }`}
+            >
+              <img src={product.icon} alt="" className="w-4 h-4 object-contain flex-shrink-0" />
+              <span className="truncate">{product.name}</span>
+            </button>
+          </Fragment>
         ))}
       </div>
 
@@ -103,7 +150,7 @@ function BrowserShowcase() {
         rel="noopener noreferrer"
         className="block relative aspect-[10/7] bg-gray-100 cursor-pointer"
       >
-        {showcase.map((product, i) => (
+        {tabs.map((product, i) => (
           <img
             key={product.name}
             src={product.desktop}
