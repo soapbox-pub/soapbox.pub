@@ -6,14 +6,14 @@ export const meta: BlogPostMeta = {
   title: 'Mostr Bridge Updates: Reserve Your Nostr Username',
   excerpt:
     'Mostr, the Fediverse-Nostr bridge and #1 Nostr relay with 54.2K active users, now lets Nostr users reserve usernames and browse hot posts from across the bridge.',
-  coverImage: '/assets/blog/mostr-updates-july-2026/ditto-mostr-feed.png',
+  coverImage: '/assets/blog/mostr-updates-july-2026/cover.png',
   date: '2026-07-19',
   author: {
     name: 'Alex Gleason',
     picture: '/assets/avatars/alex.png',
   },
   ogImage: {
-    url: '/assets/blog/mostr-updates-july-2026/ditto-mostr-feed.png',
+    url: '/assets/blog/mostr-updates-july-2026/cover.png',
   },
   featured: true,
   tags: [
