@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, Wrench, Gamepad2, Newspaper, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { SearchDropdown } from "@/components/SearchDropdown";
 
-const navLinks = [
-  { label: "Ditto", to: "/ditto" },
-  { label: "Shakespeare", to: "/shakespeare" },
-  { label: "Agora", to: "/agora" },
-  { label: "Armada", to: "/armada" },
-  { label: "Toolbox", to: "/toolbox" },
-  { label: "Toybox", to: "/toybox" },
-  { label: "Updates", to: "/blog" },
+const navLinks: { label: string; to: string; logo?: string; icon?: LucideIcon }[] = [
+  { label: "Ditto", to: "/ditto", logo: "/ditto-logo-transparent.png" },
+  { label: "Shakespeare", to: "/shakespeare", logo: "/assets/logos/shakespeare-logo.png" },
+  { label: "Agora", to: "/agora", logo: "/assets/media-kit/logos/agora-logo.svg" },
+  { label: "Armada", to: "/armada", logo: "/assets/media-kit/logos/armada-logo.svg" },
+  { label: "Toolbox", to: "/toolbox", icon: Wrench },
+  { label: "Toybox", to: "/toybox", icon: Gamepad2 },
+  { label: "Updates", to: "/blog", icon: Newspaper },
 ];
 
 export function Navigation() {
@@ -25,6 +25,7 @@ export function Navigation() {
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileSearchRef = useRef<HTMLDivElement>(null);
   const desktopInputRef = useRef<HTMLInputElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   const openSearch = () => {
     setIsOpen(false);
@@ -45,6 +46,7 @@ export function Navigation() {
       }
       if (e.key === "Escape") {
         setSearchOpen(false);
+        setIsOpen(false);
       }
     };
     document.addEventListener("keydown", onKeyDown);
@@ -75,6 +77,18 @@ export function Navigation() {
     return () => document.removeEventListener("mousedown", onClick);
   }, [searchOpen]);
 
+  // Close the menu when clicking anywhere outside the nav.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [isOpen]);
+
   const onSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = searchQuery.trim();
@@ -91,33 +105,19 @@ export function Navigation() {
   };
 
   return (
-    <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <nav ref={navRef} className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="relative flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <SoapboxLogo size={32} />
             <span className="font-display font-bold text-xl text-gray-900">Soapbox</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`transition-colors ${
-                  isActive(link.to)
-                    ? 'text-azure font-medium'
-                    : 'text-gray-600 hover:text-azure'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            {/* Desktop search (expands inline, results drop down from nav) */}
-            <div ref={searchRef} className="relative">
+          {/* Search + hamburger menu (used at every screen size) */}
+          <div className="flex items-center gap-1">
+            {/* Inline expanding search on larger screens */}
+            <div ref={searchRef} className="relative hidden sm:block">
               <form
                 onSubmit={onSearchSubmit}
                 className={`flex items-center rounded-md border bg-white/60 text-gray-500 transition-all duration-200 ${
@@ -155,35 +155,63 @@ export function Navigation() {
                 </div>
               )}
             </div>
-          </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-1">
+            {/* Mobile search button (opens the full-width dropdown below) */}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => (searchOpen ? closeSearch() : openSearch())}
               aria-label="Search"
-              className="p-2"
+              className="p-2 sm:hidden"
             >
               <Search className="h-6 w-6" />
             </Button>
+
+            {/* Hamburger */}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Menu"
               className="p-2"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
+
+          {/* Menu dropdown on larger screens: anchored under the hamburger, not full-width */}
+          {isOpen && (
+            <div className="hidden sm:block absolute right-0 top-full mt-2 w-72 rounded-lg border bg-white shadow-lg py-2">
+              {navLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`flex items-center gap-2.5 px-4 py-2 text-sm font-medium transition-colors ${
+                      isActive(link.to)
+                        ? 'text-azure bg-azure-50'
+                        : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.logo && (
+                      <img src={link.logo} alt="" className="h-5 w-5 object-contain" />
+                    )}
+                    {Icon && <Icon className="h-5 w-5" />}
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
 
       </div>
 
       {/* Mobile search dropdown -- hangs from the nav, full width */}
       {searchOpen && (
-        <div className="md:hidden absolute left-0 right-0 top-full z-50" ref={mobileSearchRef}>
+        <div className="sm:hidden absolute left-0 right-0 top-full z-50" ref={mobileSearchRef}>
           <div className="bg-white border-t shadow-lg">
             <form onSubmit={onSearchSubmit} className="flex items-center gap-2 border-b px-4 py-3">
               <Search className="h-5 w-5 shrink-0 text-gray-400" />
@@ -204,24 +232,31 @@ export function Navigation() {
         </div>
       )}
 
-      {/* Mobile Navigation -- overlays content */}
+      {/* Mobile menu -- full-width overlay on small screens */}
       {isOpen && (
-        <div className="md:hidden absolute left-0 right-0 top-full z-50">
+        <div className="sm:hidden absolute left-0 right-0 top-full z-50">
           <div className="px-4 pt-2 pb-3 space-y-1 bg-white border-t shadow-lg">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isActive(link.to)
-                    ? 'text-azure bg-azure-50'
-                    : 'text-gray-600 hover:text-azure hover:bg-gray-50'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`flex items-center gap-2.5 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    isActive(link.to)
+                      ? 'text-azure bg-azure-50'
+                      : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.logo && (
+                    <img src={link.logo} alt="" className="h-5 w-5 object-contain" />
+                  )}
+                  {Icon && <Icon className="h-5 w-5" />}
+                  {link.label}
+                </Link>
+              );
+            })}
             <button
               type="button"
               onClick={openSearch}
