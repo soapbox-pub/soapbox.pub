@@ -81,18 +81,6 @@ export default function BitcoinBabiesCircularEconomyKenya() {
         speculative asset. It's how mothers buy dinner.
       </p>
 
-      <figure className="not-prose my-8">
-        <img
-          src="/assets/blog/bitcoin-babies-kenya/mk-dan-alex-matangi.jpg"
-          alt="M.K. Fain, Dan of Bitcoin Babies, and Alex Gleason giving thumbs up in Matangi, Kenya"
-          className="rounded-xl shadow-lg w-full h-auto"
-          loading="lazy"
-        />
-        <figcaption className="text-center text-sm text-gray-500 mt-2">
-          With Dan from Bitcoin Babies in Matangi, Kenya.
-        </figcaption>
-      </figure>
-
       <h2>What Bitcoin Babies Does</h2>
 
       <p>
@@ -123,16 +111,16 @@ export default function BitcoinBabiesCircularEconomyKenya() {
         </figure>
         <figure className="m-0">
           <img
-            src="/assets/blog/bitcoin-babies-kenya/merchant-baby-supplies.jpg"
-            alt="A smiling merchant sells diapers and baby supplies for Bitcoin at her shop in Matangi, Kenya"
+            src="/assets/blog/bitcoin-babies-kenya/matangi-produce-market.jpg"
+            alt="A produce market in Matangi, Kenya where merchants accept Bitcoin payments"
             className="rounded-xl shadow-lg w-full h-full object-cover"
             loading="lazy"
           />
         </figure>
       </div>
       <p className="not-prose text-center text-sm text-gray-500 -mt-4 mb-8">
-        Left: visiting Miale Medical Centre with Eve. Right: buying baby
-        supplies with Bitcoin.
+        Left: visiting Miale Medical Centre with Eve. Right: a produce market
+        in Matangi where merchants accept Bitcoin.
       </p>
 
       <h2>A Real Circular Economy</h2>
@@ -179,8 +167,8 @@ export default function BitcoinBabiesCircularEconomyKenya() {
         </figure>
         <figure className="m-0">
           <img
-            src="/assets/blog/bitcoin-babies-kenya/matangi-produce-market.jpg"
-            alt="A produce market in Matangi, Kenya where merchants accept Bitcoin payments"
+            src="/assets/blog/bitcoin-babies-kenya/merchant-baby-supplies.jpg"
+            alt="A smiling merchant sells diapers and baby supplies for Bitcoin at her shop in Matangi, Kenya"
             className="rounded-xl shadow-lg w-full h-full object-cover"
             loading="lazy"
           />
@@ -257,17 +245,28 @@ export default function BitcoinBabiesCircularEconomyKenya() {
         payment settled before the bottle hit the counter.
       </p>
 
-      <figure className="not-prose my-8">
-        <img
-          src="/assets/blog/bitcoin-babies-kenya/mk-paying-bitcoin-lightning.jpg"
-          alt="M.K. Fain smiling while paying for a Coca-Cola with a Bitcoin Lightning wallet at a shop in Matangi, Kenya"
-          className="rounded-xl shadow-lg w-full h-auto sm:max-w-md mx-auto"
-          loading="lazy"
-        />
-        <figcaption className="text-center text-sm text-gray-500 mt-2">
-          Paying for a Coke over Lightning in Matangi.
-        </figcaption>
-      </figure>
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+        <figure className="m-0">
+          <img
+            src="/assets/blog/bitcoin-babies-kenya/mk-paying-bitcoin-lightning.jpg"
+            alt="M.K. Fain smiling while paying for a Coca-Cola with a Bitcoin Lightning wallet at a shop in Matangi, Kenya"
+            className="rounded-xl shadow-lg w-full h-full object-cover"
+            loading="lazy"
+          />
+        </figure>
+        <figure className="m-0">
+          <img
+            src="/assets/blog/bitcoin-babies-kenya/mk-dan-alex-matangi.jpg"
+            alt="M.K. Fain, Dan of Bitcoin Babies, and Alex Gleason giving thumbs up in Matangi, Kenya"
+            className="rounded-xl shadow-lg w-full h-full object-cover"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+      <p className="not-prose text-center text-sm text-gray-500 -mt-4 mb-8">
+        Left: paying for a Coke over Lightning. Right: with Dan from Bitcoin
+        Babies in Matangi.
+      </p>
 
       <h2>A Generation Raised on Sovereignty</h2>
 
@@ -280,18 +279,6 @@ export default function BitcoinBabiesCircularEconomyKenya() {
         kids. The next cohort of mothers has role models who look like them
         and live down the street.
       </p>
-
-      <figure className="not-prose my-8">
-        <img
-          src="/assets/blog/bitcoin-babies-kenya/cover.jpg"
-          alt="A Bitcoin Babies team member in front of BitGlam Fashions, an orange storefront in Matangi, Kenya with a painted Bitcoin Accepted Here mural"
-          className="rounded-xl shadow-lg w-full h-auto"
-          loading="lazy"
-        />
-        <figcaption className="text-center text-sm text-gray-500 mt-2">
-          BitGlam Fashions: "Where Life Meets Btc."
-        </figcaption>
-      </figure>
 
       <p>
         Bitcoin Babies is proof of something we believe deeply at Soapbox:
