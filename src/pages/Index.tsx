@@ -119,16 +119,16 @@ function BrowserShowcase() {
   );
 }
 
-/** Easter egg: toybox apps on the mock phone's home screen. Decorative only. */
+/** Easter egg: toybox apps on the mock phone's home screen. Tapping one opens the live app. */
 const homeScreenExtras = [
-  { name: "Treasures", icon: "/assets/toybox/treasures-icon.svg" },
-  { name: "Birdstar", icon: "/assets/toybox/birdstar-icon.png" },
-  { name: "Nests", icon: "/assets/toybox/nests-icon.png" },
-  { name: "Plektos", icon: "/assets/toybox/plektos-icon.png" },
-  { name: "ZapTrax", icon: "/assets/toybox/zaptrax-icon.png" },
-  { name: "Podstr", icon: "/assets/toybox/podstr-icon.svg" },
-  { name: "Espy", icon: "/assets/toybox/espy-icon.png" },
-  { name: "Polaroids", icon: "/assets/toybox/polaroids-icon.jpg" },
+  { name: "Treasures", icon: "/assets/toybox/treasures-icon.svg", url: "https://treasures.to/" },
+  { name: "Birdstar", icon: "/assets/toybox/birdstar-icon.png", url: "https://birdstar.app/" },
+  { name: "Nests", icon: "/assets/toybox/nests-icon.png", url: "https://nostrnests.com" },
+  { name: "Plektos", icon: "/assets/toybox/plektos-icon.png", url: "https://plektos.app" },
+  { name: "ZapTrax", icon: "/assets/toybox/zaptrax-icon.png", url: "https://zaptrax.app" },
+  { name: "Podstr", icon: "/assets/toybox/podstr-icon.svg", url: "https://podstr.org" },
+  { name: "Espy", icon: "/assets/toybox/espy-icon.png", url: "https://espy.you/" },
+  { name: "Polaroids", icon: "/assets/toybox/polaroids-icon.jpg", url: "https://polaroids.shakespeare.wtf/" },
 ];
 
 /**
@@ -213,8 +213,11 @@ function PhoneShowcase() {
             {showcase.map((product, i) => {
               const pressed = phase === "pressing" && appIndex === i;
               return (
-                <button
+                <a
                   key={product.name}
+                  href={product.appUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => { setPaused(true); setAppIndex(i); setPhase("pressing"); }}
                   className="flex flex-col items-center gap-1.5"
                 >
@@ -226,16 +229,22 @@ function PhoneShowcase() {
                     <img src={product.icon} alt="" className="w-full h-full object-contain" />
                   </span>
                   <span className="text-[10px] text-white/90">{product.name}</span>
-                </button>
+                </a>
               );
             })}
             {homeScreenExtras.map((app) => (
-              <span key={app.name} className="flex flex-col items-center gap-1.5" aria-hidden="true">
+              <a
+                key={app.name}
+                href={app.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-1.5"
+              >
                 <span className="w-12 h-12 rounded-2xl bg-white/90 flex items-center justify-center p-2 shadow-lg overflow-hidden">
                   <img src={app.icon} alt="" loading="lazy" className="w-full h-full object-contain" />
                 </span>
                 <span className="text-[10px] text-white/80">{app.name}</span>
-              </span>
+              </a>
             ))}
           </div>
         </div>
