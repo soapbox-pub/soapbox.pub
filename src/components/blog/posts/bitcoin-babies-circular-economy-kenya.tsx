@@ -1,6 +1,4 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
-import { Card, CardContent } from '../../ui/card';
-import { Button } from '../../ui/button';
 import { ExternalLink } from 'lucide-react';
 
 export const meta: BlogPostMeta = {
@@ -298,44 +296,84 @@ export default function BitcoinBabiesCircularEconomyKenya() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-orange-300 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
-          <CardContent className="p-8 text-center">
-            <div className="text-4xl mb-2">🍼</div>
-            <div className="text-2xl font-bold mb-3">
-              The Sovereign Mother
+        <a
+          href="https://agora.spot/bitcoinbabies/bitcoin-babies-the-sovereign-mother"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block overflow-hidden rounded-xl border border-border/70 bg-card no-underline shadow-sm transition-all hover:shadow-lg motion-safe:hover:-translate-y-0.5"
+        >
+          {/* Campaign cover, as it appears on Agora */}
+          <div className="relative w-full bg-gradient-to-br from-orange-500/15 via-orange-500/5 to-secondary">
+            <img
+              src="/assets/blog/bitcoin-babies-kenya/agora-campaign-banner.jpg"
+              alt="The Bitcoin Babies team and mothers posing in front of The Sovereign Mother campaign banner"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+            <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 rounded-full bg-black/35 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-md [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
+              <span>🇰🇪</span>
+              <span>Kenya</span>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Donate sats to Bitcoin Babies on Agora and help mothers in Kenya
-              build financial independence for themselves and their children.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-semibold"
-              >
-                <a
-                  href="https://agora.spot/bitcoinbabies/bitcoin-babies-the-sovereign-mother"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Support Bitcoin Babies on Agora
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a
-                  href="https://bitcoinbabies.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn about Bitcoin Babies
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
+          </div>
+
+          <div className="flex flex-col gap-6 p-6 sm:flex-row">
+            <div className="flex min-w-0 flex-1 flex-col gap-3">
+              <h3 className="text-xl font-bold leading-tight tracking-tight text-foreground">
+                Bitcoin Babies - The Sovereign Mother
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Empowering mothers, transforming futures. This fundraiser
+                supports three active cohorts of mothers in Kenya, Burundi,
+                and Pakistan for a full year: weekly Bitcoin stipends,
+                practical education, and a lifelong community.
+              </p>
+              <div className="text-sm">
+                <span className="font-semibold text-foreground">$5,000 goal</span>{' '}
+                <span className="text-muted-foreground">
+                  · 100% goes directly to the program
+                </span>
+              </div>
+              <div className="mt-auto flex items-center gap-2 border-t border-border/60 pt-3">
+                <img
+                  src="/assets/blog/bitcoin-babies-kenya/bitcoin-babies-avatar.jpg"
+                  alt="Bitcoin Babies Nostr profile picture"
+                  className="h-6 w-6 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <span className="text-xs text-muted-foreground">
+                  Bitcoin Babies 🍼
+                </span>
+              </div>
             </div>
-          </CardContent>
-        </Card>
+
+            <div className="flex shrink-0 flex-col items-center justify-center gap-3 sm:w-44">
+              <img
+                src="/assets/blog/bitcoin-babies-kenya/agora-campaign-qr.png"
+                alt="QR code linking to the Bitcoin Babies campaign on Agora"
+                className="h-32 w-32 rounded-lg border border-border/60 bg-white p-1.5"
+                loading="lazy"
+              />
+              <span className="text-center text-xs text-muted-foreground">
+                Scan to donate
+              </span>
+              <span className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#FF6A00] px-4 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-[#e55f00]">
+                Donate on Agora
+                <ExternalLink className="h-4 w-4" />
+              </span>
+            </div>
+          </div>
+        </a>
+        <p className="mt-3 text-center text-sm text-muted-foreground">
+          Learn more about the program at{' '}
+          <a
+            href="https://bitcoinbabies.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            bitcoinbabies.com
+          </a>
+        </p>
       </div>
 
       <h2>Related Reading</h2>
