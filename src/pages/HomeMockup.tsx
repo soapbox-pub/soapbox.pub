@@ -18,7 +18,7 @@ const showcase = [
     appUrl: "https://ditto.pub",
     icon: "/ditto-logo-transparent.png",
     desktop: "/assets/media-kit/screenshots/ditto/desktop-2.webp",
-    mobile: "/assets/media-kit/screenshots/ditto/1.webp",
+    mobile: "/assets/media-kit/screenshots/ditto/phone.jpeg",
     alt: "Ditto — social media with a custom galaxy theme",
   },
   {
@@ -27,7 +27,7 @@ const showcase = [
     appUrl: "https://agora.spot",
     icon: "/assets/media-kit/logos/agora-logo.svg",
     desktop: "/assets/media-kit/screenshots/agora/desktop-1.webp",
-    mobile: "/assets/media-kit/screenshots/agora/1.webp",
+    mobile: "/assets/media-kit/screenshots/agora/phone.jpeg",
     alt: "Agora — fundraise without borders",
   },
   {
@@ -36,7 +36,7 @@ const showcase = [
     appUrl: "https://armada.buzz",
     icon: "/assets/media-kit/logos/armada-logo.svg",
     desktop: "/assets/media-kit/screenshots/armada/desktop-1.webp",
-    mobile: "/assets/media-kit/screenshots/armada/1.webp",
+    mobile: "/assets/media-kit/screenshots/armada/phone.jpeg",
     alt: "Armada — encrypted community chat",
   },
   {
@@ -124,24 +124,64 @@ function BrowserShowcase() {
   );
 }
 
-/** Mobile hero: a phone that opens and closes the four apps. */
+/** Easter egg: toybox apps on the mock phone's home screen. Decorative only. */
+const homeScreenExtras = [
+  { name: "Treasures", icon: "/assets/toybox/treasures-icon.svg" },
+  { name: "Birdstar", icon: "/assets/toybox/birdstar-icon.png" },
+  { name: "Nests", icon: "/assets/toybox/nests-icon.png" },
+  { name: "Plektos", icon: "/assets/toybox/plektos-icon.png" },
+  { name: "ZapTrax", icon: "/assets/toybox/zaptrax-icon.png" },
+  { name: "Podstr", icon: "/assets/toybox/podstr-icon.svg" },
+  { name: "Espy", icon: "/assets/toybox/espy-icon.png" },
+  { name: "Polaroids", icon: "/assets/toybox/polaroids-icon.jpg" },
+];
+
+/**
+ * Mobile hero: a phone that opens and closes the four apps, mimicking real
+ * mobile OS interactions: icon press → app zooms up from its icon → dwell →
+ * swipe-home (app zooms back down into its icon) → next app.
+ */
+type PhonePhase = "home" | "pressing" | "opening" | "open" | "closing";
+
+/** Where each app's icon sits on the home screen grid (transform origin for the zoom). */
+const iconOrigins = ["20% 13%", "50% 13%", "80% 13%", "20% 28%"];
+
+/** iOS-style spring-ish easing. */
+const phoneEase = "ease-[cubic-bezier(0.32,0.72,0,1)]";
+
 function PhoneShowcase() {
-  const [openApp, setOpenApp] = useState<number | null>(null);
-  const [nextUp, setNextUp] = useState(0);
+  const [appIndex, setAppIndex] = useState(0);
+  const [phase, setPhase] = useState<PhonePhase>("home");
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
-    if (openApp === null) {
-      const timer = setTimeout(() => setOpenApp(nextUp), 1400);
-      return () => clearTimeout(timer);
+    let timer: ReturnType<typeof setTimeout>;
+    switch (phase) {
+      case "home":
+        if (paused) return;
+        timer = setTimeout(() => setPhase("pressing"), 1600);
+        break;
+      case "pressing": // finger holds the icon for a beat
+        timer = setTimeout(() => setPhase("opening"), 240);
+        break;
+      case "opening": // app expands out of the icon
+        timer = setTimeout(() => setPhase("open"), 500);
+        break;
+      case "open":
+        if (paused) return;
+        timer = setTimeout(() => setPhase("closing"), 3200);
+        break;
+      case "closing": // swipe home: app shrinks back into its icon
+        timer = setTimeout(() => {
+          setAppIndex((i) => (i + 1) % showcase.length);
+          setPhase("home");
+        }, 500);
+        break;
     }
-    const timer = setTimeout(() => {
-      setNextUp((openApp + 1) % showcase.length);
-      setOpenApp(null);
-    }, 3600);
     return () => clearTimeout(timer);
-  }, [openApp, nextUp, paused]);
+  }, [phase, paused]);
+
+  const appShowing = phase === "opening" || phase === "open";
 
   return (
     <div
@@ -151,52 +191,102 @@ function PhoneShowcase() {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="relative rounded-[2.2rem] border-[6px] border-gray-900 bg-gray-900 shadow-2xl overflow-hidden aspect-[9/19]">
-        {/* Home screen */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-gray-900 to-violet-950 px-5 pt-10 pb-6 flex flex-col">
-          <div className="grid grid-cols-2 gap-5 mt-4">
-            {showcase.map((product, i) => (
-              <button
-                key={product.name}
-                onClick={() => { setPaused(true); setOpenApp(i); }}
-                className="flex flex-col items-center gap-1.5"
-              >
-                <span className="w-14 h-14 rounded-2xl bg-white/95 flex items-center justify-center p-2.5 shadow-lg">
-                  <img src={product.icon} alt="" className="w-full h-full object-contain" />
+        {/* Home screen: recedes and blurs while an app is open, like iOS */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-br from-indigo-950 via-gray-900 to-violet-950 px-5 pt-3 pb-6 flex flex-col transition-all duration-500 ${phoneEase} ${
+            appShowing ? "scale-125 opacity-0 blur-sm" : "scale-100 opacity-100 blur-0"
+          }`}
+        >
+          {/* Status bar */}
+          <div className="flex items-center justify-between px-1 text-white/80" aria-hidden="true">
+            <span className="text-[10px] font-medium tracking-wide">9:41</span>
+            <span className="flex items-center gap-1">
+              <span className="flex items-end gap-[1.5px]">
+                <span className="w-[2.5px] h-[4px] rounded-[1px] bg-white/80" />
+                <span className="w-[2.5px] h-[6px] rounded-[1px] bg-white/80" />
+                <span className="w-[2.5px] h-[8px] rounded-[1px] bg-white/80" />
+                <span className="w-[2.5px] h-[10px] rounded-[1px] bg-white/40" />
+              </span>
+              <span className="ml-0.5 w-5 h-[10px] rounded-[3px] border border-white/50 relative">
+                <span className="absolute inset-[1.5px] right-[35%] rounded-[1px] bg-white/80" />
+              </span>
+            </span>
+          </div>
+
+          {/* One home-screen grid: the four real apps, then toybox apps as an easter egg */}
+          <div className="grid grid-cols-3 gap-x-3 gap-y-4 mt-8">
+            {showcase.map((product, i) => {
+              const pressed = phase === "pressing" && appIndex === i;
+              return (
+                <button
+                  key={product.name}
+                  onClick={() => { setPaused(true); setAppIndex(i); setPhase("pressing"); }}
+                  className="flex flex-col items-center gap-1.5"
+                >
+                  <span
+                    className={`w-12 h-12 rounded-2xl bg-white/95 flex items-center justify-center p-2 shadow-lg transition-all duration-200 ${
+                      pressed ? "scale-[0.82] brightness-[0.65]" : "scale-100"
+                    }`}
+                  >
+                    <img src={product.icon} alt="" className="w-full h-full object-contain" />
+                  </span>
+                  <span className="text-[10px] text-white/90">{product.name}</span>
+                </button>
+              );
+            })}
+            {homeScreenExtras.map((app) => (
+              <span key={app.name} className="flex flex-col items-center gap-1.5" aria-hidden="true">
+                <span className="w-12 h-12 rounded-2xl bg-white/90 flex items-center justify-center p-2 shadow-lg overflow-hidden">
+                  <img src={app.icon} alt="" loading="lazy" className="w-full h-full object-contain" />
                 </span>
-                <span className="text-[11px] text-white/90">{product.name}</span>
-              </button>
+                <span className="text-[10px] text-white/80">{app.name}</span>
+              </span>
             ))}
           </div>
         </div>
 
-        {/* Open app — links to the live app */}
-        {showcase.map((product, i) => (
-          <a
-            key={product.name}
-            href={product.appUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`absolute inset-0 transition-all duration-300 ${
-              openApp === i ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-            }`}
-          >
-            <img
-              src={product.mobile}
-              alt={product.alt}
-              loading={i === 0 ? "eager" : "lazy"}
-              className="w-full h-full object-cover object-top"
-            />
-          </a>
-        ))}
+        {/* App layers — each zooms out of (and back into) its home screen icon */}
+        {showcase.map((product, i) => {
+          const isActive = i === appIndex;
+          let pose: string;
+          if (isActive && appShowing) {
+            // Full screen
+            pose = "opacity-100 scale-100 translate-y-0 rounded-none";
+          } else if (isActive && phase === "pressing") {
+            // Waiting at its icon, ready to expand
+            pose = "opacity-0 scale-[0.18] translate-y-0 rounded-[4rem] pointer-events-none";
+          } else if (isActive && phase === "closing") {
+            // Swipe home: flick up slightly while shrinking back into the icon
+            pose = "opacity-0 scale-[0.18] -translate-y-10 rounded-[4rem] pointer-events-none";
+          } else {
+            pose = "opacity-0 scale-[0.18] translate-y-0 rounded-[4rem] pointer-events-none";
+          }
+          return (
+            <a
+              key={product.name}
+              href={product.appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ transformOrigin: iconOrigins[i] }}
+              className={`absolute inset-0 overflow-hidden shadow-2xl transition-all duration-500 ${phoneEase} ${pose}`}
+            >
+              <img
+                src={product.mobile}
+                alt={product.alt}
+                loading={i === 0 ? "eager" : "lazy"}
+                className="w-full h-full object-cover object-top"
+              />
+            </a>
+          );
+        })}
 
-        {/* Home indicator: closes the open app */}
+        {/* Home indicator: swipes the open app away */}
         <button
           aria-label="Home"
           onClick={() => {
-            if (openApp !== null) setNextUp((openApp + 1) % showcase.length);
-            setOpenApp(null);
+            if (appShowing) setPhase("closing");
           }}
-          className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-24 h-4 flex items-center justify-center"
+          className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-24 h-4 flex items-center justify-center z-10"
         >
           <span className="w-20 h-1 rounded-full bg-white/70" />
         </button>
@@ -224,7 +314,7 @@ const mosaic: MosaicTile[] = [
     place: "Oslo, Norway",
     title: "Powering human rights movements in 40+ countries",
     href: "/blog/agora-is-live",
-    span: "md:col-span-2 md:row-span-2",
+    span: "col-span-2 row-span-2",
     imageClass: "object-[center_25%]",
   },
   {
@@ -278,7 +368,7 @@ const mosaic: MosaicTile[] = [
     image: "/assets/media-kit/mk-with-bitcoin-babies-merchants-kenya-june-2026-agora.jpg",
     imageAlt: "MK Fain with Bitcoin Babies merchants in Kenya",
     place: "Nairobi, Kenya",
-    title: "Funding mothers and babies, no bank required",
+    title: "Providing financial sovereignty to women in Africa",
     href: "https://agora.spot/bitcoinbabies/bitcoin-babies-the-sovereign-mother",
     external: true,
     span: "md:col-span-2",
@@ -448,8 +538,8 @@ export default function HomeMockup() {
 
             {/* Press coverage */}
             <div className="mt-16 pt-10 border-t border-gray-800/80">
-              <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-                <span className="text-xs uppercase tracking-widest text-gray-600">Covered by</span>
+              <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-6">
+                <span className="w-full sm:w-auto text-center text-xs uppercase tracking-widest text-gray-600">Covered by</span>
                 <a href="https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
                   <img src="/assets/logos/press/forbes.svg" alt="Forbes" className="h-6 w-auto brightness-0 invert" />
                 </a>
@@ -480,18 +570,18 @@ export default function HomeMockup() {
               </h2>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-10 sm:gap-6 text-center">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 text-center">
               <div>
-                <p className="font-display font-bold text-7xl sm:text-8xl tracking-tight text-gray-900">$0</p>
-                <p className="mt-2 text-sm uppercase tracking-widest text-gray-400">from ads</p>
+                <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
+                <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from ads</p>
               </div>
               <div>
-                <p className="font-display font-bold text-7xl sm:text-8xl tracking-tight text-gray-900">$0</p>
-                <p className="mt-2 text-sm uppercase tracking-widest text-gray-400">from investors</p>
+                <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
+                <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from investors</p>
               </div>
               <div>
-                <p className="font-display font-bold text-7xl sm:text-8xl tracking-tight text-gray-900">$0</p>
-                <p className="mt-2 text-sm uppercase tracking-widest text-gray-400">from your data</p>
+                <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
+                <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from your data</p>
               </div>
             </div>
 
@@ -502,10 +592,10 @@ export default function HomeMockup() {
                   regular transparency reports
                 </Link>.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16">
-                <img src="/assets/logos/opensats-logo-soapbox.png" alt="OpenSats" className="h-20 sm:h-28 w-auto" />
-                <img src="/assets/logos/aos-andotherstuff-logo-soapbox.png" alt="And Other Stuff" className="h-20 sm:h-28 w-auto" />
-                <img src="/assets/logos/hrf-humanrightsfoudnation-logo.png" alt="Human Rights Foundation" className="h-20 sm:h-28 w-auto" />
+              <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16">
+                <img src="/assets/logos/opensats-logo-soapbox.png" alt="OpenSats" className="h-14 sm:h-28 w-auto" />
+                <img src="/assets/logos/aos-andotherstuff-logo-soapbox.png" alt="And Other Stuff" className="h-14 sm:h-28 w-auto" />
+                <img src="/assets/logos/hrf-humanrightsfoudnation-logo.png" alt="Human Rights Foundation" className="h-14 sm:h-28 w-auto" />
               </div>
               <Link to="/ethics" className="inline-flex items-center -rotate-1 bg-azure text-white font-medium px-5 py-2.5 hover:bg-azure-600 transition-colors">
                 Read our Ethics Pledge <ArrowRight className="ml-1.5 h-4 w-4" />
@@ -519,7 +609,7 @@ export default function HomeMockup() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
               {/* Left: the claim */}
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 min-w-0">
                 <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Our promises, checkable</p>
                 <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
                   Don't trust. <span className="inline-block -rotate-1 bg-azure text-white px-2">Verify.</span>
@@ -540,23 +630,23 @@ export default function HomeMockup() {
               </div>
 
               {/* Right: the artifacts */}
-              <div className="lg:col-span-3 space-y-5">
-                <div className="rounded-xl bg-gray-950 p-6 font-mono text-sm leading-relaxed shadow-xl">
+              <div className="lg:col-span-3 min-w-0 space-y-5">
+                <div className="rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
                   <div className="flex items-center gap-1.5 mb-4">
                     <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
                     <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
                     <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
                   </div>
-                  <p className="text-gray-500">$ <span className="text-gray-200">git clone https://gitlab.com/soapbox-pub/ditto.git</span></p>
+                  <p className="text-gray-500 break-all">$ <span className="text-gray-200">git clone https://gitlab.com/soapbox-pub/ditto.git</span></p>
                   <p className="text-gray-500 mt-1">Cloning into 'ditto'...</p>
                   <p className="text-gray-500">remote: Enumerating objects: 48213, done.</p>
                   <p className="text-emerald-400 mt-1">✓ Every product. Source and all. Yours.</p>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm">
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm">
                   <p className="text-[11px] uppercase tracking-widest text-gray-400">Your identity on the open web</p>
-                  <p className="mt-2 font-mono text-sm text-gray-700 truncate">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
-                  <div className="mt-4 flex items-center gap-2">
+                  <p className="mt-2 font-mono text-xs sm:text-sm text-gray-700 truncate">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
                     <span className="px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">Nostr</span>
                     <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">Bitcoin</span>
                     <span className="text-xs text-gray-400">A key only you hold. No account for anyone to take.</span>
