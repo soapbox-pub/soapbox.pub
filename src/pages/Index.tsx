@@ -373,7 +373,7 @@ const mosaic: MosaicTile[] = [
     place: "Caracas, Venezuela",
     title: "Earthquake relief with no middlemen",
     href: "/blog/venezuela-earthquake-relief-bitcoin",
-    span: "md:row-span-2",
+    span: "row-span-2",
   },
   {
     image: "/assets/media-kit/gaza-forbes-photo.webp",
@@ -396,7 +396,7 @@ const mosaic: MosaicTile[] = [
     place: "Austin, Texas",
     title: "Building alongside activists",
     href: "/blog/building-zuka",
-    span: "md:col-span-2",
+    span: "col-span-2",
   },
   {
     image: "/assets/media-kit/open-source-ai-training-taipei.webp",
@@ -404,7 +404,7 @@ const mosaic: MosaicTile[] = [
     place: "Taipei, Taiwan",
     title: "Training in open source AI",
     href: "/shakespeare-community",
-    span: "md:row-span-2",
+    span: "row-span-2",
   },
   {
     image: "/assets/media-kit/alex-judge-sam-and-shantaram-hackathon-nairobi-btc++-june-2026.jpg",
@@ -419,7 +419,7 @@ const mosaic: MosaicTile[] = [
     place: "Nairobi, Kenya",
     title: "Providing financial sovereignty to women in Africa",
     href: "/blog/bitcoin-babies-circular-economy-kenya",
-    span: "md:col-span-2",
+    span: "col-span-2",
     imageClass: "object-[center_25%]",
   },
   {
