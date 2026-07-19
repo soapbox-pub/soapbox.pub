@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as mostrupdatesjuly2026 from '../../components/blog/posts/mostr-updates-july-2026';
 import * as githubbackupguide from '../../components/blog/posts/github-backup-guide';
 import * as shakespearevsbase44 from '../../components/blog/posts/shakespeare-vs-base44';
 import * as shakespearevsv0 from '../../components/blog/posts/shakespeare-vs-v0';
@@ -147,6 +148,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  mostrupdatesjuly2026.meta,
   gazafamiliesbitcoincrowdfundingagora.meta,
   bitcoinbabiescirculareconomykenya.meta,
   buildinganarmadavoyagetoencryptedcommunities.meta,
@@ -258,6 +260,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'mostrupdatesjuly2026':
+      return (await import('../../components/blog/posts/mostr-updates-july-2026')).default;
     case 'gazafamiliesbitcoincrowdfundingagora':
       return (await import('../../components/blog/posts/gaza-families-bitcoin-crowdfunding-agora')).default;
     case 'bitcoinbabiescirculareconomykenya':
