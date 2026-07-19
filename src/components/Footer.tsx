@@ -50,37 +50,35 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Tools</h4>
+            <h4 className="font-semibold mb-4">Soapbox</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li><Link to="/about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/ethics" className="hover:text-white transition-colors">Ethics Pledge</Link></li>
+              <li><Link to="/transparency" className="hover:text-white transition-colors">Transparency</Link></li>
+              <li><Link to="/media-kit" className="hover:text-white transition-colors">Media Kit</Link></li>
+              <li><a href="https://gitlab.com/groups/soapbox-pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitLab</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Apps</h4>
             <ul className="space-y-2 text-gray-400">
               <li><a href="https://ditto.pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto</a></li>
+              <li><a href="https://agora.spot" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Agora</a></li>
+              <li><a href="https://armada.buzz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Armada</a></li>
+              <li><a href="https://shakespeare.diy" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Shakespeare</a></li>
+              <li><Link to="/toybox" className="hover:text-white transition-colors">Toybox</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Dev Tools</h4>
+            <ul className="space-y-2 text-gray-400">
               <li><a href="https://mkstack.xyz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">MKStack</a></li>
               <li><a href="https://relay.ditto.pub/" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto Relay</a></li>
               <li><a href="https://chromewebstore.google.com/detail/ditto-extension/fbiegkepanmjielbemkhieckmlckiagi" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto Extension</a></li>
               <li><a href="https://nostrhub.io" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">NostrHub</a></li>
               <li><a href="https://nostrify.dev" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Nostrify</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Communities</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="https://ditto.pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Ditto.pub</a></li>
-              <li><a href="https://agora.spot" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Agora</a></li>
-              <li><a href="https://armada.buzz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Armada</a></li>
-              <li><a href="https://treasures.to" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Treasures</a></li>
-              <li><a href="https://blobbi.pet" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Blobbi</a></li>
-              <li><a href="https://bookstr.xyz" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Bookstr</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">About</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><Link to="/about" className="hover:text-white transition-colors">Team</Link></li>
-              <li><Link to="/ethics" className="hover:text-white transition-colors">Ethics Pledge</Link></li>
-              <li><Link to="/transparency" className="hover:text-white transition-colors">Transparency</Link></li>
-              <li><Link to="/media-kit" className="hover:text-white transition-colors">Media Kit</Link></li>
-              <li><a href="https://gitlab.com/groups/soapbox-pub" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitLab</a></li>
             </ul>
           </div>
 

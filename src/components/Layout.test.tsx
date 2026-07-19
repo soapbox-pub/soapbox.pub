@@ -17,7 +17,7 @@ describe('Layout', () => {
     expect(screen.getByText('Test Content')).toBeInTheDocument();
     
     // Check that navigation is present (look for the Soapbox logo)
-    expect(screen.getAllByText('Soapbox')).toHaveLength(2); // One in nav, one in footer
+    expect(screen.getAllByText('Soapbox')).toHaveLength(3); // Nav logo, footer logo, footer section header
     
     // Check that footer is present (look for footer text)
     expect(screen.getByText(/Software for the next generation of social media/)).toBeInTheDocument();
