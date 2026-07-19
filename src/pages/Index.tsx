@@ -549,7 +549,7 @@ export default function Index() {
                   <img src="/assets/logos/press/usatoday.svg" alt="USA Today" className="h-6 w-auto brightness-0 invert" />
                 </a>
                 <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
-                  <img src="/assets/logos/press/bitcoinmagazine.png" alt="Bitcoin Magazine" className="h-5 w-auto brightness-0 invert" />
+                  <img src="/assets/logos/press/bitcoinmagazine.png" alt="Bitcoin Magazine" className="h-8 w-auto brightness-0 invert" />
                 </a>
               </div>
             </div>
