@@ -11,7 +11,7 @@ describe('Index (Home Page)', () => {
       </TestApp>
     );
 
-    expect(screen.getByText('Building tools for')).toBeInTheDocument();
-    expect(screen.getByText('Freedom Online')).toBeInTheDocument();
+    expect(screen.getByText(/Taking back/)).toBeInTheDocument();
+    expect(screen.getByText(/the internet\./)).toBeInTheDocument();
   });
 });
