@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Component, Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -495,6 +495,436 @@ const mosaic: MosaicTile[] = [
   },
 ];
 
+/* ============ Infrastructure section: live relay pulse + scale anchors ============ */
+
+/** Observe when an element scrolls into view (once). */
+function useInView<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, inView };
+}
+
+/** Animated count-up, starts when `started` becomes true. */
+function CountUp({ value, started, duration = 2000 }: { value: number; started: boolean; duration?: number }) {
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!started) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplay(value);
+      return;
+    }
+    let raf = 0;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplay(Math.round(value * eased));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [started, value, duration]);
+
+  return <>{display.toLocaleString()}</>;
+}
+
+/** Human-readable labels + dot colors for the kinds flowing through the relay. */
+const kindMeta: Record<number, { label: string; dot: string }> = {
+  0: { label: "a profile update", dot: "bg-purple-400" },
+  1: { label: "a post", dot: "bg-sky-400" },
+  3: { label: "a follow list", dot: "bg-indigo-400" },
+  6: { label: "a repost", dot: "bg-emerald-400" },
+  7: { label: "a reaction", dot: "bg-pink-400" },
+  9735: { label: "a zap", dot: "bg-yellow-400" },
+  10002: { label: "a relay list", dot: "bg-cyan-400" },
+  30023: { label: "a long-form post", dot: "bg-teal-400" },
+  30078: { label: "app data", dot: "bg-gray-400" },
+  30311: { label: "a livestream", dot: "bg-red-400" },
+  30382: { label: "a user stats update", dot: "bg-violet-400" },
+  30383: { label: "a post stats update", dot: "bg-fuchsia-400" },
+  33863: { label: "a campaign", dot: "bg-orange-400" },
+  36803: { label: "a voice ping", dot: "bg-amber-400" },
+};
+
+/** Describe any event kind for the feed, including ones we don't know. */
+function describeKind(kind: number): { label: string; dot: string } {
+  const meta = kindMeta[kind];
+  if (meta) return meta;
+  if (kind >= 20000 && kind < 30000) return { label: "an ephemeral event", dot: "bg-gray-500" };
+  return { label: `a kind ${kind} event`, dot: "bg-gray-500" };
+}
+
+/** The relays we operate; the pulse subscribes to everything on both. */
+const PULSE_RELAYS = ["wss://relay.mostr.pub", "wss://relay.ditto.pub"];
+
+interface PulseEvent {
+  id: string;
+  kind: number;
+  at: number;
+  client?: string;
+}
+
+function relativeTime(at: number): string {
+  const seconds = Math.max(0, Math.floor(Date.now() / 1000 - at));
+  if (seconds < 2) return "just now";
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  return `${hours}h ago`;
+}
+
+/**
+ * Terminal-style card streaming live events from the relays we operate.
+ * Subscribes to everything on both relays; metadata only, no post contents
+ * are ever displayed.
+ *
+ * Resilience rules:
+ * - Reports total connection failure via `onFailed` so the parent can hide
+ *   the section silently. Never shows an error state of its own.
+ * - State updates are batched to one flush per second and all buffers are
+ *   capped, so a flooded relay can't churn the rest of the page.
+ */
+function LiveRelayPulse({ active, onFailed }: { active: boolean; onFailed: () => void }) {
+  const [status, setStatus] = useState<"idle" | "connecting" | "live">("idle");
+  const [count, setCount] = useState(0);
+  const [events, setEvents] = useState<PulseEvent[]>([]);
+  const onFailedRef = useRef(onFailed);
+
+  useEffect(() => {
+    onFailedRef.current = onFailed;
+  }, [onFailed]);
+
+  useEffect(() => {
+    if (!active) return;
+    setStatus("connecting");
+
+    let stopped = false;
+    let opened = false;
+    let dead = 0;
+    let failed = false;
+    const sockets: WebSocket[] = [];
+    const seen = new Set<string>();
+    const buffer: PulseEvent[] = [];
+    let pending = 0; // events counted since the last flush
+
+    const fail = () => {
+      if (stopped || failed) return;
+      failed = true;
+      onFailedRef.current();
+    };
+
+    // If neither relay opens in time, give up silently.
+    const timeout = window.setTimeout(() => {
+      if (!opened) {
+        for (const ws of sockets) ws.close();
+        fail();
+      }
+    }, 8000);
+
+    const handleMessage = (raw: string) => {
+      if (stopped) return;
+      if (!raw.includes("EVENT")) return; // skip NOTICE/OK/EOSE without parsing
+      try {
+        const data = JSON.parse(raw);
+        if (data[0] === "EVENT" && data[2]) {
+          const ev = data[2] as { id: string; kind: number; created_at: number; tags: string[][] };
+          if (seen.has(ev.id)) return; // same event can arrive on both relays
+          if (seen.size > 10000) seen.clear(); // bound memory on long sessions
+          seen.add(ev.id);
+          const client = ev.tags.find(([name]) => name === "client")?.[1];
+          pending++;
+          if (buffer.length < 100) {
+            buffer.push({ id: ev.id, kind: ev.kind, at: ev.created_at, client });
+          }
+        }
+      } catch {
+        // ignore malformed messages
+      }
+    };
+
+    for (const url of PULSE_RELAYS) {
+      let ws: WebSocket;
+      try {
+        ws = new WebSocket(url);
+      } catch {
+        dead++;
+        continue;
+      }
+      sockets.push(ws);
+      ws.onopen = () => {
+        if (stopped) return;
+        opened = true;
+        setStatus("live");
+        // limit: 0 → only events that arrive after this moment
+        ws.send(JSON.stringify(["REQ", "soapbox-pulse", { limit: 0 }]));
+      };
+      ws.onmessage = (msg) => handleMessage(msg.data as string);
+      const onDead = () => {
+        dead++;
+        if (!opened && dead === PULSE_RELAYS.length) fail();
+      };
+      ws.onerror = onDead;
+      ws.onclose = onDead;
+    }
+
+    if (sockets.length === 0) {
+      fail();
+      return;
+    }
+
+    // Flush counted + buffered events into state once a second, no matter
+    // how fast the relays are sending. This caps render churn sitewide.
+    const flush = window.setInterval(() => {
+      if (pending === 0 && buffer.length === 0) return;
+      const batch = buffer.splice(0, buffer.length).reverse();
+      setCount((c) => c + pending);
+      pending = 0;
+      if (batch.length > 0) setEvents((prev) => [...batch, ...prev].slice(0, 6));
+    }, 1000);
+
+    return () => {
+      stopped = true;
+      window.clearTimeout(timeout);
+      window.clearInterval(flush);
+      for (const ws of sockets) ws.close();
+    };
+  }, [active]);
+
+  return (
+    <div className="rounded-xl bg-gray-950 border border-white/10 shadow-2xl overflow-hidden">
+      {/* Window chrome + relay identity */}
+      <div className="flex items-center gap-3 px-4 sm:px-5 py-3 border-b border-white/10">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
+          <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
+          <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
+        </div>
+        <p className="font-mono text-xs sm:text-sm text-gray-400 truncate">relay.mostr.pub + relay.ditto.pub</p>
+        <span className="ml-auto inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest">
+          {status === "live" && (
+            <span className="text-emerald-400">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 motion-safe:animate-pulse" /> live
+            </span>
+          )}
+          {(status === "connecting" || status === "idle") && (
+            <span className="text-amber-400">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 motion-safe:animate-pulse" /> connecting
+            </span>
+          )}
+        </span>
+      </div>
+
+      <div className="p-5 sm:p-6">
+      {/* Session counter */}
+        <p className="font-display font-bold text-5xl sm:text-6xl tracking-tight text-white tabular-nums">
+          {count.toLocaleString()}
+        </p>
+        <p className="mt-2 text-xs sm:text-sm text-gray-500">
+          events relayed while you've been on this page
+        </p>
+
+        {/* Live event stream (metadata only) */}
+        <div className="mt-5 min-h-[196px]">
+          <ul className="space-y-2 font-mono text-xs sm:text-sm" aria-live="off">
+            {events.length === 0 && (
+              <li className="text-gray-600">
+                {status === "live" ? "listening for the next event…" : "opening a socket…"}
+              </li>
+            )}
+            {events.map((ev) => {
+              const meta = describeKind(ev.kind);
+              return (
+                <li key={ev.id} className="flex items-center gap-2.5 text-gray-400 motion-safe:animate-feed-in">
+                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${meta.dot}`} />
+                  <span className="text-gray-300 truncate">
+                    {meta.label}
+                    {ev.client && <span className="text-gray-500"> on {ev.client}</span>}
+                  </span>
+                  <span className="ml-auto text-gray-600 shrink-0">{relativeTime(ev.at)}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <p className="mt-4 border-t border-white/5 pt-3 font-mono text-[10px] uppercase tracking-widest text-gray-600">
+          metadata only — no post contents leave the relay
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Scale anchors. Sources: AOS relay stats (July 2026), mostr.pub, and
+ * Ditto's client stats. Numbers are snapshots; update them when fresh
+ * figures are published.
+ */
+const infraStats = [
+  {
+    value: 570215,
+    label: "users on relay.mostr.pub",
+    source: { name: "AOS relay stats", href: "https://stats.andotherstuff.org/" },
+  },
+  {
+    value: 158187,
+    label: "users on relay.ditto.pub",
+    source: { name: "AOS relay stats", href: "https://stats.andotherstuff.org/" },
+  },
+  {
+    value: 59938,
+    label: "users bridged",
+    source: { name: "mostr.pub", href: "https://mostr.pub/" },
+  },
+  {
+    value: 1422,
+    label: "Monthly Ditto users",
+    source: { name: "Ditto trends", href: "https://ditto.pub/trends" },
+  },
+];
+
+/** The four scale anchors. Rendered even when the live pulse is unavailable. */
+function InfraStatsGrid({ started, className }: { started: boolean; className?: string }) {
+  return (
+    <div className={className ?? "mt-16 pt-10 border-t border-gray-800/80 grid grid-cols-2 lg:grid-cols-4 gap-8"}>
+      {infraStats.map((stat) => (
+        <div key={stat.label}>
+          <p className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white tabular-nums">
+            <CountUp value={stat.value} started={started} />
+          </p>
+          <p className="mt-2 text-sm text-gray-400 leading-snug">{stat.label}</p>
+          <a
+            href={stat.source.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1.5 inline-block text-[10px] uppercase tracking-widest text-gray-600 hover:text-gray-400 transition-colors"
+          >
+            Source: {stat.source.name}
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Infrastructure section: narrative + live pulse, degrading to stats-only on failure. */
+function InfrastructureSection() {
+  const pulseView = useInView<HTMLDivElement>();
+  const statsView = useInView<HTMLDivElement>();
+  const [pulseFailed, setPulseFailed] = useState(false);
+
+  return (
+    <section className="relative px-4 sm:px-6 lg:px-8 py-20 sm:py-28 bg-[#0b101d] text-white overflow-hidden border-t border-white/5">
+      {/* Soft glows */}
+      <div aria-hidden="true" className="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-azure/10 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-0 -left-32 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl" />
+
+      <div className="relative max-w-6xl mx-auto">
+        {!pulseFailed && (
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            {/* Left: the story */}
+            <div className="lg:col-span-2 min-w-0">
+              <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Infrastructure</p>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+                <span className="inline-block -rotate-1 mt-1.5 sm:mt-2 bg-azure text-white px-2 pb-0.5">Bridging</span>
+                <br className="hidden md:block" /> the open&nbsp;web
+              </h2>
+              <p className="mt-5 text-gray-400 leading-relaxed">
+                Soapbox operates some of the largest infrastructure on the
+                decentralized web: relays carrying conversations for hundreds of
+                thousands of people, media servers hosting the network's files, and
+                the bridge joining Nostr and the Fediverse into one network. Open
+                and free for everyone.
+              </p>
+              <div className="mt-6 flex flex-col gap-2">
+                <Link to="/blog/mostr-updates-july-2026" className="inline-flex items-center font-medium text-azure-300 hover:text-azure-200">
+                  Latest from the bridge <ArrowRight className="ml-1.5 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: the live pulse */}
+            <div ref={pulseView.ref} className="lg:col-span-3 min-w-0">
+              <LiveRelayPulse active={pulseView.inView} onFailed={() => setPulseFailed(true)} />
+            </div>
+          </div>
+        )}
+
+        {/* Scale anchors: always rendered, even when the pulse is unavailable */}
+        <div ref={statsView.ref}>
+          <InfraStatsGrid
+            started={statsView.inView}
+            className={pulseFailed ? "grid grid-cols-2 lg:grid-cols-4 gap-8" : undefined}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * If anything in the infrastructure section throws, render just the static
+ * stats (plain numbers, no hooks) so the rest of the page is never affected.
+ */
+class InfraErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  componentDidCatch() {
+    // Swallow: the infra section must never break the rest of the page.
+  }
+
+  render() {
+    if (this.state.failed) {
+      return (
+        <section className="relative px-4 sm:px-6 lg:px-8 py-20 sm:py-28 bg-[#0b101d] text-white overflow-hidden border-t border-white/5">
+          <div className="relative max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {infraStats.map((stat) => (
+              <div key={stat.label}>
+                <p className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white tabular-nums">
+                  {stat.value.toLocaleString()}
+                </p>
+                <p className="mt-2 text-sm text-gray-400 leading-snug">{stat.label}</p>
+                <a
+                  href={stat.source.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1.5 inline-block text-[10px] uppercase tracking-widest text-gray-600 hover:text-gray-400 transition-colors"
+                >
+                  Source: {stat.source.name}
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function Index() {
   const featuredPosts = getFeaturedPosts().slice(0, 3);
 
@@ -660,6 +1090,11 @@ export default function Index() {
             </div>
           </div>
         </section>
+
+        {/* ============ INFRASTRUCTURE ============ */}
+        <InfraErrorBoundary>
+          <InfrastructureSection />
+        </InfraErrorBoundary>
 
         {/* ============ $0 STATEMENT ============ */}
         <section className="px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-16">

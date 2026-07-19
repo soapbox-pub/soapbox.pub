@@ -131,18 +131,29 @@ export default {
 						transform: 'translateX(-50%)'
 					}
 				},
-				'dash-flow': {
-					to: {
-						strokeDashoffset: '-120'
-					}
+			'dash-flow': {
+				to: {
+					strokeDashoffset: '-120'
 				}
 			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				marquee: 'marquee linear infinite',
-				'dash-flow': 'dash-flow linear infinite'
-			},
+			'feed-in': {
+				from: {
+					opacity: '0',
+					transform: 'translateY(-8px)'
+				},
+				to: {
+					opacity: '1',
+					transform: 'translateY(0)'
+				}
+			}
+		},
+		animation: {
+			'accordion-down': 'accordion-down 0.2s ease-out',
+			'accordion-up': 'accordion-up 0.2s ease-out',
+			marquee: 'marquee linear infinite',
+			'dash-flow': 'dash-flow linear infinite',
+			'feed-in': 'feed-in 0.4s ease-out'
+		},
 			typography: {
 				DEFAULT: {
 					css: {
