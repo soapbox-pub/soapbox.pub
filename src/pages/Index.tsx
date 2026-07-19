@@ -695,9 +695,12 @@ function LiveRelayPulse({ active, onFailed }: { active: boolean; onFailed: () =>
     // how fast the relays are sending. This caps render churn sitewide.
     const flush = window.setInterval(() => {
       if (pending === 0 && buffer.length === 0) return;
-      const batch = buffer.splice(0, buffer.length).reverse();
-      setCount((c) => c + pending);
+      // Capture synchronously: React invokes state updaters at render time,
+      // after this callback finishes, so they must not read mutable vars.
+      const gained = pending;
       pending = 0;
+      const batch = buffer.splice(0, buffer.length).reverse();
+      setCount((c) => c + gained);
       if (batch.length > 0) setEvents((prev) => [...batch, ...prev].slice(0, 6));
     }, 1000);
 
