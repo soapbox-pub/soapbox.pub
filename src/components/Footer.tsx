@@ -27,7 +27,7 @@ export function Footer() {
     <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-6 gap-8">
-          <div className="md:col-span-2 space-y-6">
+          <div className="md:col-span-2 md:pr-12 lg:pr-20 space-y-6">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <SoapboxLogo size={32} />
