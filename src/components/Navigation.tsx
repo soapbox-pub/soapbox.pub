@@ -5,11 +5,20 @@ import { Button } from "@/components/ui/button";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { SearchDropdown } from "@/components/SearchDropdown";
 
-const navLinks: { label: string; to: string; logo?: string; icon?: LucideIcon }[] = [
+/** Nav links: internal paths ("/ditto") or external URLs ("https://…"). */
+interface NavItem {
+  label: string;
+  to: string;
+  logo?: string;
+  icon?: LucideIcon;
+}
+
+const navLinks: NavItem[] = [
   { label: "Ditto", to: "/ditto", logo: "/ditto-logo-transparent.png" },
-  { label: "Shakespeare", to: "/shakespeare", logo: "/assets/logos/shakespeare-logo.png" },
   { label: "Agora", to: "/agora", logo: "/assets/media-kit/logos/agora-logo.svg" },
   { label: "Armada", to: "/armada", logo: "/assets/media-kit/logos/armada-logo.svg" },
+  { label: "Shakespeare", to: "/shakespeare", logo: "/assets/logos/shakespeare-logo.png" },
+  { label: "Mostr", to: "https://mostr.pub", logo: "/assets/toolbox/mostr-icon.svg" },
   { label: "Toolbox", to: "/toolbox", icon: Wrench },
   { label: "Toybox", to: "/toybox", icon: Gamepad2 },
   { label: "Updates", to: "/blog", icon: Newspaper },
@@ -104,6 +113,51 @@ export function Navigation() {
     return location.pathname === path || location.pathname.startsWith(path + "/");
   };
 
+  /** Renders every nav link (internal or external) with the given row classes. */
+  const renderNavLinks = (baseClass: string) =>
+    navLinks.map((link) => {
+      const Icon = link.icon;
+      const external = link.to.startsWith("http");
+      const className = `${baseClass} transition-colors ${
+        !external && isActive(link.to)
+          ? 'text-azure bg-azure-50'
+          : 'text-gray-600 hover:text-azure hover:bg-gray-50'
+      }`;
+      const content = (
+        <>
+          {link.logo && (
+            <img src={link.logo} alt="" className="h-5 w-5 object-contain" />
+          )}
+          {Icon && <Icon className="h-5 w-5" />}
+          {link.label}
+        </>
+      );
+      if (external) {
+        return (
+          <a
+            key={link.label}
+            href={link.to}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={className}
+            onClick={() => setIsOpen(false)}
+          >
+            {content}
+          </a>
+        );
+      }
+      return (
+        <Link
+          key={link.label}
+          to={link.to}
+          className={className}
+          onClick={() => setIsOpen(false)}
+        >
+          {content}
+        </Link>
+      );
+    });
+
   return (
     <nav ref={navRef} className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,28 +235,8 @@ export function Navigation() {
 
           {/* Menu dropdown on larger screens: anchored under the hamburger, not full-width */}
           {isOpen && (
-            <div className="hidden sm:block absolute right-0 top-full mt-2 w-72 rounded-lg border bg-white shadow-lg py-2">
-              {navLinks.map((link) => {
-                const Icon = link.icon;
-                return (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`flex items-center gap-2.5 px-4 py-2 text-sm font-medium transition-colors ${
-                      isActive(link.to)
-                        ? 'text-azure bg-azure-50'
-                        : 'text-gray-600 hover:text-azure hover:bg-gray-50'
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.logo && (
-                      <img src={link.logo} alt="" className="h-5 w-5 object-contain" />
-                    )}
-                    {Icon && <Icon className="h-5 w-5" />}
-                    {link.label}
-                  </Link>
-                );
-              })}
+            <div className="hidden sm:block absolute right-0 top-full mt-2 w-56 rounded-lg border bg-white shadow-lg py-2 divide-y divide-gray-100">
+              {renderNavLinks("flex items-center gap-2.5 px-4 py-2 text-sm font-medium")}
             </div>
           )}
         </div>
@@ -236,27 +270,7 @@ export function Navigation() {
       {isOpen && (
         <div className="sm:hidden absolute left-0 right-0 top-full z-50">
           <div className="px-4 pt-2 pb-3 space-y-1 bg-white border-t shadow-lg">
-            {navLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`flex items-center gap-2.5 px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    isActive(link.to)
-                      ? 'text-azure bg-azure-50'
-                      : 'text-gray-600 hover:text-azure hover:bg-gray-50'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.logo && (
-                    <img src={link.logo} alt="" className="h-5 w-5 object-contain" />
-                  )}
-                  {Icon && <Icon className="h-5 w-5" />}
-                  {link.label}
-                </Link>
-              );
-            })}
+            {renderNavLinks("flex items-center gap-2.5 px-3 py-2 rounded-md text-base font-medium")}
             <button
               type="button"
               onClick={openSearch}

@@ -104,6 +104,18 @@ const tools: ShowcaseApp[] = [
     accent: "from-pink-400 to-purple-600",
   },
   {
+    name: "Mostr",
+    tagline: "The bridge between Nostr and the Fediverse — find Fediverse accounts on Nostr and follow across networks.",
+    icon: "/assets/toolbox/mostr-icon.svg",
+    screenshot: "https://blossom.ditto.pub/a69b4b1a90d940d0958babaf4464fb62edfa4051b355d5189c4e282107cccfd7.png",
+    url: "https://mostr.pub/",
+    ctaLabel: "Open bridge",
+    repo: "https://gitlab.com/soapbox-pub/mostr",
+    repoHost: "gitlab",
+    status: "stable",
+    accent: "from-purple-500 to-fuchsia-500",
+  },
+  {
     name: "Stacks",
     tagline: "One-command Docker infrastructure for Nostr. Spin up relays, services, and full stacks with ease.",
     icon: "/assets/toolbox/stacks-icon.png",

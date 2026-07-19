@@ -60,20 +60,20 @@ const extras = [
     alt: "NostrHub — your one-stop shop for Nostr development",
   },
   {
-    name: "Nostrbook",
-    domain: "nostrbook.dev",
-    appUrl: "https://nostrbook.dev",
-    icon: "/assets/toolbox/nostrbook-icon.png",
-    desktop: "/assets/toolbox/nostrbook-screenshot.png",
-    alt: "Nostrbook — structured Nostr knowledge for humans & AI",
-  },
-  {
     name: "Nostrify",
     domain: "nostrify.dev",
     appUrl: "https://nostrify.dev",
     icon: "/assets/toolbox/nostrify-icon.png",
     desktop: "/assets/toolbox/nostrify-screenshot.png",
     alt: "Nostrify — TypeScript framework for Nostr development",
+  },
+  {
+    name: "Mostr",
+    domain: "mostr.pub",
+    appUrl: "https://mostr.pub",
+    icon: "/assets/toolbox/mostr-icon.svg",
+    desktop: "https://blossom.ditto.pub/a69b4b1a90d940d0958babaf4464fb62edfa4051b355d5189c4e282107cccfd7.png",
+    alt: "Mostr — Nostr bridged to the Fediverse",
   },
 ];
 
