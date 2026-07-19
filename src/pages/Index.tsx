@@ -290,6 +290,52 @@ function PhoneShowcase() {
   );
 }
 
+/** Press coverage logos for the marquee. Heights tuned so wordmarks match visually. */
+const pressLogos = [
+  {
+    name: "Forbes",
+    src: "/assets/logos/press/forbes.svg",
+    href: "https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/",
+    height: "h-6",
+  },
+  {
+    name: "TechCrunch",
+    src: "/assets/logos/press/techcrunch.svg",
+    href: "https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/",
+    height: "h-5",
+  },
+  {
+    name: "Associated Press",
+    src: "/assets/logos/press/ap.svg",
+    href: "https://apnews.com/press-release/pr-newswire/world-liberty-congress-launches-agora-at-oslo-freedom-forum-to-power-global-support-for-human-rights-movements-8ac37ef4848992ef07a67acb9c1ff370",
+    height: "h-7",
+  },
+  {
+    name: "USA Today",
+    src: "/assets/logos/press/usatoday.svg",
+    href: "https://www.usatoday.com/story/special/contributor-content/2026/02/01/shakespeare-ai-alex-gleasons-open-source-alternative-for-ai-web-building/88464569007/",
+    height: "h-6",
+  },
+  {
+    name: "Bitcoin Magazine",
+    src: "/assets/logos/press/bitcoinmagazine.png",
+    href: "https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr",
+    height: "h-8",
+  },
+  {
+    name: "NERDS.xyz",
+    src: "/assets/logos/press/nerds.png",
+    href: "https://nerds.xyz/2026/05/ditto-decentralized-social-platform/",
+    height: "h-10",
+  },
+  {
+    name: "Yahoo Finance",
+    src: "/assets/logos/press/yahoofinance.svg",
+    href: "https://finance.yahoo.com/sectors/technology/articles/soapbox-launches-ditto-customizable-social-180400117.html",
+    height: "h-6",
+  },
+];
+
 interface MosaicTile {
   image: string;
   imageAlt: string;
@@ -462,7 +508,7 @@ export default function Index() {
         </section>
 
         {/* ============ GLOBAL IMPACT ============ */}
-        <section className="relative px-4 sm:px-6 lg:px-8 py-20 sm:py-28 bg-[#0b101d] text-white overflow-hidden">
+        <section className="relative px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-10 sm:pb-14 bg-[#0b101d] text-white overflow-hidden">
           {/* Subtle map-line backdrop */}
           <svg
             aria-hidden="true"
@@ -532,25 +578,32 @@ export default function Index() {
               })}
             </div>
 
-            {/* Press coverage */}
+            {/* Press coverage: infinite marquee */}
             <div className="mt-16 pt-10 border-t border-gray-800/80">
-              <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-6">
-                <span className="w-full sm:w-auto text-center text-xs uppercase tracking-widest text-gray-600">Covered by</span>
-                <a href="https://www.forbes.com/sites/digital-assets/2026/07/16/when-the-financial-system-cant-reach-people-in-crisis-bitcoin-can/" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
-                  <img src="/assets/logos/press/forbes.svg" alt="Forbes" className="h-6 w-auto brightness-0 invert" />
-                </a>
-                <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
-                  <img src="/assets/logos/press/techcrunch.svg" alt="TechCrunch" className="h-5 w-auto brightness-0 invert" />
-                </a>
-                <a href="https://apnews.com/press-release/pr-newswire/world-liberty-congress-launches-agora-at-oslo-freedom-forum-to-power-global-support-for-human-rights-movements-8ac37ef4848992ef07a67acb9c1ff370" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
-                  <img src="/assets/logos/press/ap.svg" alt="Associated Press" className="h-7 w-auto brightness-0 invert" />
-                </a>
-                <a href="https://www.usatoday.com/story/special/contributor-content/2026/02/01/shakespeare-ai-alex-gleasons-open-source-alternative-for-ai-web-building/88464569007/" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
-                  <img src="/assets/logos/press/usatoday.svg" alt="USA Today" className="h-6 w-auto brightness-0 invert" />
-                </a>
-                <a href="https://bitcoinmagazine.com/conference/a-bitcoiner-must-be-on-nostr" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-90 transition-opacity">
-                  <img src="/assets/logos/press/bitcoinmagazine.png" alt="Bitcoin Magazine" className="h-8 w-auto brightness-0 invert" />
-                </a>
+              <div className="relative overflow-hidden">
+                {/* Fade edges into the section background */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#0b101d] to-transparent z-10" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#0b101d] to-transparent z-10" />
+
+                <div
+                  className="flex items-center w-max animate-marquee hover:[animation-play-state:paused]"
+                  style={{ animationDuration: "30s" }}
+                >
+                  {/* Render logos twice for a seamless loop */}
+                  {[...pressLogos, ...pressLogos].map((press, i) => (
+                    <a
+                      key={`${press.name}-${i}`}
+                      href={press.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 px-7 sm:px-10 opacity-50 hover:opacity-90 transition-opacity"
+                      aria-hidden={i >= pressLogos.length}
+                      tabIndex={i >= pressLogos.length ? -1 : undefined}
+                    >
+                      <img src={press.src} alt={press.name} className={`${press.height} w-auto brightness-0 invert`} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
