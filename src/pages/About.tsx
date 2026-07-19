@@ -87,7 +87,11 @@ export default function About() {
                 About Soapbox
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Building free software that empowers communities online.
+                Soapbox builds open source tools for freedom online. At a time when a handful of corporations
+                control the internet's most important spaces, Soapbox is building the alternative: decentralized
+                social media, censorship-resistant fundraising, encrypted communication, and creative tools that
+                anyone can use and own. Everything Soapbox makes is free and built on open protocols, in service
+                of an open culture and a world where technology works for the people, not against them.
               </p>
             </div>
           <div className="max-w-6xl mx-auto">
