@@ -163,18 +163,27 @@ export default function MostrUpdatesJuly2026() {
       <h2>Reserve Your Nostr Username on the Fediverse</h2>
 
       <p>
-        Until now, Nostr users appeared on the Fediverse under a long
-        npub-based username: a wall of random characters that nobody could
-        read, remember, or mention in a reply. Fediverse users had no good way
-        to talk <em>to</em> you, only <em>at</em> you.
+        The bridge has always worked in both directions, but naming was
+        one-sided. Fediverse users arriving on Nostr automatically got
+        handles like <code>mk@spinster-xyz.mostr.pub</code>. Nostr users
+        heading the other way had no such luxury: you appeared on the
+        Fediverse as your raw npub, a wall of random characters that nobody
+        could read, remember, or mention in a reply. There was simply no
+        way for your npub to not look like an npub over the bridge.
       </p>
 
       <p>
-        That's fixed. <strong>Nostr users can now secure their name on the
-        bridge</strong>, so Fediverse users see a clean, memorable handle
-        instead of the long npub username. Claim <code>you</code> and your
-        account shows up as <code>@you@mostr.pub</code> on Mastodon and every
-        other ActivityPub server.
+        That's fixed. <strong>Nostr users can now register a NIP-05 name at
+        mostr.pub</strong>, and it doubles as their ActivityPub handle.
+        Register <code>you</code> and your account shows up as{' '}
+        <code>@you@mostr.pub</code> on Mastodon and every other ActivityPub
+        server, instead of the long npub username Fediverse users saw
+        before.
+      </p>
+
+      <p>
+        Claiming a name isn't automatic, but we've already registered many
+        popular Nostr accounts, so your name may be waiting for you.
       </p>
 
       <p>A few things make this especially nice:</p>
@@ -191,8 +200,16 @@ export default function MostrUpdatesJuly2026() {
         </li>
         <li>
           <strong>Renames move your followers</strong>: changing your name
-          sends a Move to your Fediverse followers and keeps your old name
-          reserved. You can rename once every 30 days.
+          sends a{' '}
+          <a
+            href="https://docs.joinmastodon.org/spec/activitypub/#Move"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Move activity
+          </a>{' '}
+          to your Fediverse followers and keeps your old name reserved. You
+          can rename once every 30 days.
         </li>
       </ul>
 
