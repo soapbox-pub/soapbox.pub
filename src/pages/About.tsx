@@ -73,7 +73,7 @@ export default function About() {
     title: 'About Soapbox - Our Mission & Team',
     description: 'Learn about Soapbox\'s mission to empower communities with free and open source decentralized social media tools. Meet our team building the future of digital freedom.',
     type: 'website',
-    image: '/assets/images/riga-team.png',
+    image: '/og-image.png',
     keywords: 'soapbox team, about soapbox, decentralized social media, open source, nostr, mission'
   });
 
