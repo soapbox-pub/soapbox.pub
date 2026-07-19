@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 
 import Index from "./pages/Index";
+import HomeMockup from "./pages/HomeMockup";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Agora from "./pages/Agora";
@@ -40,6 +41,8 @@ export function AppRouter() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
+        {/* Design mockup, not linked publicly */}
+        <Route path="/home-mockup" element={<HomeMockup />} />
         <Route path="/about" element={<About />} />
         <Route path="/get-involved" element={<GetInvolved />} />
         <Route path="/tools" element={<Navigate to="/toolbox" replace />} />
