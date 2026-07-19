@@ -1097,44 +1097,51 @@ export default function Index() {
         </InfraErrorBoundary>
 
         {/* ============ $0 STATEMENT ============ */}
-        <section className="px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-16">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 text-center">
-              <div>
-                <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
-                <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from ads</p>
-              </div>
-              <div>
-                <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
-                <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from investors</p>
-              </div>
-              <div>
-                <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
-                <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from your data</p>
+        <section className="px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-24 sm:pb-28">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-14 lg:gap-16 items-center">
+            {/* Left: the words */}
+            <div className="lg:col-span-2 min-w-0 text-center lg:text-left">
+              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
+                Funded by <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>, not ads or data.
+              </h2>
+              <p className="mt-5 text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                We run on grants and donations, and we publish our funders and{" "}
+                <Link to="/transparency" className="text-azure hover:text-azure-600 underline underline-offset-2">
+                  regular transparency reports
+                </Link>.
+              </p>
+              <div className="mt-6">
+                <Link to="/ethics" className="inline-flex items-center -rotate-1 bg-azure text-white font-medium px-5 py-2.5 hover:bg-azure-600 transition-colors">
+                  Read our Ethics Pledge <ArrowRight className="ml-1.5 h-4 w-4" />
+                </Link>
               </div>
             </div>
 
-            <div className="mt-14 flex flex-col items-center gap-10">
-              <div className="flex flex-col items-center gap-4 text-center">
-                <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
-                  Funded by <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>,
-                  <br className="hidden md:block" /> not by ads or data.
-                </h2>
-                <p className="text-gray-600 max-w-lg">
-                  We run on grants and donations, and we publish our funders and{" "}
-                  <Link to="/transparency" className="text-azure hover:text-azure-600 underline underline-offset-2">
-                    regular transparency reports
-                  </Link>.
-                </p>
+            {/* Right: the numbers + the proof */}
+            <div className="lg:col-span-3 min-w-0">
+              <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
+                <div className="px-2 sm:px-6">
+                  <p className="font-display font-bold text-5xl sm:text-7xl tracking-tight text-gray-900">$0</p>
+                  <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from ads</p>
+                </div>
+                <div className="px-2 sm:px-6">
+                  <p className="font-display font-bold text-5xl sm:text-7xl tracking-tight text-gray-900">$0</p>
+                  <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from investors</p>
+                </div>
+                <div className="px-2 sm:px-6">
+                  <p className="font-display font-bold text-5xl sm:text-7xl tracking-tight text-gray-900">$0</p>
+                  <p className="mt-2 text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-widest text-gray-400">from your data</p>
+                </div>
               </div>
-              <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16">
-                <img src="/assets/logos/opensats-logo-soapbox.png" alt="OpenSats" className="h-14 sm:h-28 w-auto" />
-                <img src="/assets/logos/aos-andotherstuff-logo-soapbox.png" alt="And Other Stuff" className="h-14 sm:h-28 w-auto" />
-                <img src="/assets/logos/hrf-humanrightsfoudnation-logo.png" alt="Human Rights Foundation" className="h-14 sm:h-28 w-auto" />
+
+              <div className="mt-12 border-t border-gray-200 pt-8 flex flex-col items-center gap-6">
+                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400">Backed by</p>
+                <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14">
+                  <img src="/assets/logos/opensats-logo-soapbox.png" alt="OpenSats" className="h-12 sm:h-16 w-auto" />
+                  <img src="/assets/logos/aos-andotherstuff-logo-soapbox.png" alt="And Other Stuff" className="h-12 sm:h-16 w-auto" />
+                  <img src="/assets/logos/hrf-humanrightsfoudnation-logo.png" alt="Human Rights Foundation" className="h-12 sm:h-16 w-auto" />
+                </div>
               </div>
-              <Link to="/ethics" className="inline-flex items-center -rotate-1 bg-azure text-white font-medium px-5 py-2.5 hover:bg-azure-600 transition-colors">
-                Read our Ethics Pledge <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Link>
             </div>
           </div>
         </section>
@@ -1142,50 +1149,47 @@ export default function Index() {
         {/* ============ DON'T TRUST. VERIFY. ============ */}
         <section className="px-4 sm:px-6 lg:px-8 py-20 sm:py-28 bg-gradient-to-br from-azure-50 via-white to-blue-50 border-y border-azure-100">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-              {/* Left: the claim */}
-              <div className="lg:col-span-2 min-w-0">
-                <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Our promises, checkable</p>
-                <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
-                  Don't trust. <span className="inline-block -rotate-1 bg-azure text-white px-2">Verify.</span>
-                </h2>
-                <p className="mt-5 text-gray-600 leading-relaxed">
-                  Every claim we make is checkable. The code is public, and your identity is
-                  a key that only you hold. It works in everything we build, and in apps we
-                  didn't build. If we ever let you down, take everything and go.
-                </p>
-                <div className="mt-6 flex flex-col gap-2">
-                  <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center font-medium text-azure hover:text-azure-600">
-                    Browse the code <ExternalLink className="ml-1.5 h-4 w-4" />
-                  </a>
-                  <Link to="/blog/comparing-protocols" className="inline-flex items-center font-medium text-azure hover:text-azure-600">
-                    How Nostr works <ArrowRight className="ml-1.5 h-4 w-4" />
-                  </Link>
+            {/* Centered claim */}
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
+                Don't trust. <span className="inline-block -rotate-1 bg-azure text-white px-2">Verify.</span>
+              </h2>
+              <p className="mt-5 text-gray-600 leading-relaxed">
+                Every claim we make is checkable. The code is public, and your identity is
+                a key that only you hold. It works in everything we build, and in apps we
+                didn't build. If we ever let you down, take everything and go.
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2">
+                <a href="https://gitlab.com/soapbox-pub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center font-medium text-azure hover:text-azure-600">
+                  Browse the code <ExternalLink className="ml-1.5 h-4 w-4" />
+                </a>
+                <Link to="/blog/comparing-protocols" className="inline-flex items-center font-medium text-azure hover:text-azure-600">
+                  How Nostr works <ArrowRight className="ml-1.5 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* The artifacts, side by side */}
+            <div className="mt-12 sm:mt-14 grid md:grid-cols-2 gap-5">
+              <div className="rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
+                <div className="flex items-center gap-1.5 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
                 </div>
+                <p className="text-gray-500 break-all">$ <span className="text-gray-200">git clone https://gitlab.com/soapbox-pub/ditto.git</span></p>
+                <p className="text-gray-500 mt-1">Cloning into 'ditto'...</p>
+                <p className="text-gray-500">remote: Enumerating objects: 48213, done.</p>
+                <p className="text-emerald-400 mt-1">✓ Every product. Source and all. Yours.</p>
               </div>
 
-              {/* Right: the artifacts */}
-              <div className="lg:col-span-3 min-w-0 space-y-5">
-                <div className="rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
-                  <div className="flex items-center gap-1.5 mb-4">
-                    <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
-                  </div>
-                  <p className="text-gray-500 break-all">$ <span className="text-gray-200">git clone https://gitlab.com/soapbox-pub/ditto.git</span></p>
-                  <p className="text-gray-500 mt-1">Cloning into 'ditto'...</p>
-                  <p className="text-gray-500">remote: Enumerating objects: 48213, done.</p>
-                  <p className="text-emerald-400 mt-1">✓ Every product. Source and all. Yours.</p>
-                </div>
-
-                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm">
-                  <p className="text-[11px] uppercase tracking-widest text-gray-400">Your identity on the open web</p>
-                  <p className="mt-2 font-mono text-xs sm:text-sm text-gray-700 truncate">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
-                  <div className="mt-4 flex flex-wrap items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">Nostr</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">Bitcoin</span>
-                    <span className="text-xs text-gray-400">A key only you hold. No account for anyone to take.</span>
-                  </div>
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm flex flex-col justify-center">
+                <p className="text-[11px] uppercase tracking-widest text-gray-400">Your identity on the open web</p>
+                <p className="mt-2 font-mono text-xs sm:text-sm text-gray-700 truncate">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">Nostr</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">Bitcoin</span>
+                  <span className="text-xs text-gray-400">A key only you hold. No account for anyone to take.</span>
                 </div>
               </div>
             </div>
@@ -1197,9 +1201,8 @@ export default function Index() {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Latest</p>
                 <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-                  From the blog
+                  Latest <span className="inline-block -rotate-1 bg-azure text-white px-2">Updates</span>
                 </h2>
               </div>
               <Link to="/blog" className="hidden sm:inline-flex items-center text-sm font-medium text-azure hover:text-azure-600">
