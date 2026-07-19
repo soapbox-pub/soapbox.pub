@@ -130,12 +130,18 @@ export default {
 					to: {
 						transform: 'translateX(-50%)'
 					}
+				},
+				'dash-flow': {
+					to: {
+						strokeDashoffset: '-120'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				marquee: 'marquee linear infinite'
+				marquee: 'marquee linear infinite',
+				'dash-flow': 'dash-flow linear infinite'
 			},
 			typography: {
 				DEFAULT: {

@@ -517,15 +517,16 @@ export default function Index() {
             preserveAspectRatio="xMidYMid slice"
             fill="none"
           >
-            <path d="M-50 220 Q 300 60 620 180 T 1250 140" stroke="white" strokeOpacity="0.07" strokeWidth="1.5" strokeDasharray="5 7" />
-            <path d="M-50 420 Q 350 260 700 360 T 1250 300" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" />
-            <path d="M100 -20 Q 380 320 240 820" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" />
-            <path d="M950 -20 Q 800 350 1050 820" stroke="white" strokeOpacity="0.06" strokeWidth="1.5" strokeDasharray="5 7" />
-            <circle cx="620" cy="180" r="4" fill="white" fillOpacity="0.12" />
-            <circle cx="300" cy="128" r="3" fill="white" fillOpacity="0.1" />
-            <circle cx="700" cy="360" r="3" fill="white" fillOpacity="0.1" />
-            <circle cx="1050" cy="240" r="4" fill="white" fillOpacity="0.12" />
-            <circle cx="330" cy="345" r="3" fill="white" fillOpacity="0.08" />
+            {/* Dashes crawl along the routes; dots pulse gently. Both respect reduced-motion. */}
+            <path d="M-50 220 Q 300 60 620 180 T 1250 140" stroke="white" strokeOpacity="0.07" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "40s" }} />
+            <path d="M-50 420 Q 350 260 700 360 T 1250 300" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "55s", animationDirection: "reverse" }} />
+            <path d="M100 -20 Q 380 320 240 820" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "48s" }} />
+            <path d="M950 -20 Q 800 350 1050 820" stroke="white" strokeOpacity="0.06" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "62s", animationDirection: "reverse" }} />
+            <circle cx="620" cy="180" r="4" fill="white" fillOpacity="0.12" className="motion-safe:animate-pulse" style={{ animationDuration: "5s" }} />
+            <circle cx="300" cy="128" r="3" fill="white" fillOpacity="0.1" className="motion-safe:animate-pulse" style={{ animationDuration: "7s", animationDelay: "1.2s" }} />
+            <circle cx="700" cy="360" r="3" fill="white" fillOpacity="0.1" className="motion-safe:animate-pulse" style={{ animationDuration: "6s", animationDelay: "2.5s" }} />
+            <circle cx="1050" cy="240" r="4" fill="white" fillOpacity="0.12" className="motion-safe:animate-pulse" style={{ animationDuration: "8s", animationDelay: "0.8s" }} />
+            <circle cx="330" cy="345" r="3" fill="white" fillOpacity="0.08" className="motion-safe:animate-pulse" style={{ animationDuration: "6.5s", animationDelay: "3.4s" }} />
           </svg>
 
           <div className="relative max-w-6xl mx-auto">
