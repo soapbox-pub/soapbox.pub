@@ -13,7 +13,7 @@ export default function Transparency() {
     title: 'Funding Transparency - Soapbox',
     description: 'Soapbox is funded by grants and donations, not ads or data sales. See how we are funded, who supports us, and read our quarterly grant reports.',
     type: 'website',
-    image: '/og-image.png',
+    image: '/og-image-v2.png',
     keywords: 'soapbox funding, transparency, open source funding, grants, donations, opensats',
   });
 

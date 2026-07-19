@@ -447,7 +447,7 @@ export default function Index() {
     description:
       "Soapbox builds open source tools for freedom online: decentralized social media, censorship-resistant fundraising, encrypted communities, and creative tools anyone can own.",
     type: "website",
-    image: "/og-image.png",
+    image: "/og-image-v2.png",
     keywords:
       "soapbox, nostr, decentralized, social media, open source, ditto, shakespeare, agora, fediverse, activitypub",
   });

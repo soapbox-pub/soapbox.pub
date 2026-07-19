@@ -234,7 +234,7 @@ export default function Communities() {
     title: 'Communities - Decentralized Platforms Built with Soapbox Tools | Fighting Big Tech',
     description: 'Discover thriving decentralized communities built with Soapbox tools. From Ditto social platforms to MKStack creative communities, see how open source alternatives are challenging big tech monopolies.',
     type: 'website',
-    image: '/og-image.png',
+    image: '/og-image-v2.png',
     keywords: 'decentralized communities, soapbox communities, ditto platforms, mkstack apps, open source alternatives, fight big tech, community platforms, nostr communities',
     structuredData: {
       "@context": "https://schema.org",

@@ -24,7 +24,7 @@ export default function BlogIndex() {
         ? `Latest: ${featuredPost.title}. ${featuredPost.excerpt.slice(0, 100)}...`
         : 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
     type: 'website',
-    image: featuredPost?.ogImage?.url || featuredPost?.coverImage || '/og-image.png',
+    image: featuredPost?.ogImage?.url || featuredPost?.coverImage || '/og-image-v2.png',
     keywords: `soapbox blog, decentralized social media news, open source updates, nostr insights${featuredPost ? `, ${featuredPost.title}` : ''}${tagFilter ? `, ${tagFilter}` : ''}`,
     structuredData: {
       "@context": "https://schema.org",

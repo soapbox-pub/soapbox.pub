@@ -24,7 +24,7 @@ export interface SEOData {
 const defaultSEO: SEOData = {
   title: 'Soapbox',
   description: 'Soapbox is customizable open-source software that puts the power of social media in the hands of the people.',
-  image: '/og-image.png',
+  image: '/og-image-v2.png',
   type: 'website',
   siteName: 'Soapbox',
   locale: 'en_US',

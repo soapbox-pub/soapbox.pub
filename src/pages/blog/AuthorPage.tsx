@@ -18,7 +18,7 @@ export default function AuthorPage() {
     title: `${author.name} - Soapbox Blog`,
     description: `Read all ${posts.length} articles by ${author.name} on the Soapbox blog.`,
     type: 'website',
-    image: author.picture || '/og-image.png',
+    image: author.picture || '/og-image-v2.png',
     keywords: `${author.name}, soapbox blog, author, decentralized social media, nostr`,
     structuredData: {
       "@context": "https://schema.org",

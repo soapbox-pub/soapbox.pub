@@ -87,7 +87,7 @@ const pageRoutes = [
 const defaultSEO = {
   title: 'Soapbox',
   description: 'Soapbox is customizable open-source software that puts the power of social media in the hands of the people.',
-  image: '/og-image.png',
+  image: '/og-image-v2.png',
   type: 'website',
   siteName: 'Soapbox',
   locale: 'en_US',
@@ -373,7 +373,7 @@ export async function extractAllSEOData() {
       path: `/blog/${post.slug}`,
       title: `${post.title} - Soapbox Blog`,
       description: post.excerpt || 'Read the latest updates from the Soapbox team.',
-      image: post.coverImage || '/og-image.png',
+      image: post.coverImage || '/og-image-v2.png',
       keywords: `${post.title}, soapbox blog, decentralized social media, open source`,
       type: 'article',
       publishedTime: post.date,

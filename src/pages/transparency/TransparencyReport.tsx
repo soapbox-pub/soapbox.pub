@@ -18,7 +18,7 @@ export default function TransparencyReport() {
     title: `${report.title} - Soapbox Transparency`,
     description: report.summary,
     type: 'article' as const,
-    image: '/og-image.png',
+    image: '/og-image-v2.png',
     keywords: 'soapbox grant report, transparency, opensats, open source funding',
   } : {
     title: 'Report Not Found - Soapbox',

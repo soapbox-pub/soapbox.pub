@@ -39,7 +39,7 @@ export default function BlogPostPage() {
     title: 'Loading... - Soapbox Blog',
     description: 'Read the latest updates from the Soapbox team about decentralized social media, open source development, and community building.',
     type: 'article' as const,
-    image: '/og-image.png',
+    image: '/og-image-v2.png',
     keywords: 'soapbox blog'
   });
 

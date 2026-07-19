@@ -295,7 +295,7 @@ export default function MediaKit() {
     title: 'Media Kit - Soapbox Leadership Team',
     description: 'Meet the Soapbox leadership team available for podcast interviews and media appearances. Expert insights on decentralized technology, AI innovation, and digital freedom.',
     type: 'website',
-    image: '/og-image.png',
+    image: '/og-image-v2.png',
     keywords: 'soapbox media kit, podcast guests, interviews, alex gleason, mk fain, derek ross, nostr experts, decentralized technology'
   });
 

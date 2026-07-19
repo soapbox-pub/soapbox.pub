@@ -133,7 +133,7 @@ export function extractSEOData(post: BlogPost) {
     .filter(Boolean)
     .join(', ');
 
-  const imageUrl = post.ogImage?.url || post.coverImage || '/og-image.png';
+  const imageUrl = post.ogImage?.url || post.coverImage || '/og-image-v2.png';
   const fullImageUrl = baseUrl + imageUrl;
 
   // Optional FAQPage JSON-LD — huge SERP rich-result win when present
