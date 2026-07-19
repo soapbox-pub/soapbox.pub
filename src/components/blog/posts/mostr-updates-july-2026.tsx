@@ -194,11 +194,6 @@ export default function MostrUpdatesJuly2026() {
           sends a Move to your Fediverse followers and keeps your old name
           reserved. You can rename once every 30 days.
         </li>
-        <li>
-          <strong>Squatter-resistant</strong>: claiming a name requires
-          solving a short puzzle captcha, and role names like{' '}
-          <code>admin</code> and <code>webmaster</code> are off-limits.
-        </li>
       </ul>
 
       <div className="not-prose my-10">
