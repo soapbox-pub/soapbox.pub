@@ -54,6 +54,11 @@ export const meta: BlogPostMeta = {
         'Yes. Renaming sends a Move notification to your Fediverse followers so they keep following you, and your old name stays reserved for you. You can rename once every 30 days.',
     },
     {
+      question: 'What about my existing NIP-05?',
+      answer:
+        'Both are available to you. Reserving a Mostr username does not replace your existing NIP-05 identifier — you can choose which one to use in your Nostr profile at any time.',
+    },
+    {
       question: 'Do Fediverse users need to reserve a name too?',
       answer:
         'No. Fediverse users already have usernames on their own servers, which the bridge uses automatically. Name reservation is specifically for Nostr users, who otherwise only have a public key.',
