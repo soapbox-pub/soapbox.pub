@@ -39,7 +39,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
   return (
     <Card className={cn("w-full max-w-2xl mx-auto", className)}>
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+        <CardTitle className="text-2xl font-bold text-purple-600">
           Get the latest Shakespeare updates and resources
         </CardTitle>
         <CardDescription>
