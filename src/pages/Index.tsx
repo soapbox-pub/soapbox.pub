@@ -767,7 +767,7 @@ function LiveRelayPulse({ active, onFailed }: { active: boolean; onFailed: () =>
         </div>
 
         <p className="mt-4 border-t border-white/5 pt-3 font-mono text-[10px] uppercase tracking-widest text-gray-600">
-          metadata only — no post contents leave the relay
+          real events, streaming live from relays we operate
         </p>
       </div>
     </div>
@@ -844,7 +844,7 @@ function InfrastructureSection() {
             {/* Left: the story */}
             <div className="lg:col-span-2 min-w-0">
               <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Infrastructure</p>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+              <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-6xl tracking-tight">
                 <span className="inline-block -rotate-1 mt-1.5 sm:mt-2 bg-azure text-white px-2 pb-0.5">Bridging</span>
                 <br className="hidden md:block" /> the open&nbsp;web
               </h2>
@@ -1012,7 +1012,7 @@ export default function Index() {
 
           <div className="relative max-w-6xl mx-auto">
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Global impact</p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight max-w-3xl">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-6xl tracking-tight max-w-3xl">
               Building with the people
               <br className="hidden md:block" />{" "}
               on <span className="inline-block -rotate-1 mt-1.5 sm:mt-2 bg-azure text-white px-2 pb-0.5">the front lines</span>.
@@ -1099,13 +1099,6 @@ export default function Index() {
         {/* ============ $0 STATEMENT ============ */}
         <section className="px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-16">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-14">
-              <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Not like other tech companies</p>
-              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl tracking-tight">
-                Funded by <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>, not by ads or data.
-              </h2>
-            </div>
-
             <div className="grid grid-cols-3 gap-3 sm:gap-6 text-center">
               <div>
                 <p className="font-display font-bold text-5xl sm:text-8xl tracking-tight text-gray-900">$0</p>
@@ -1122,12 +1115,18 @@ export default function Index() {
             </div>
 
             <div className="mt-14 flex flex-col items-center gap-10">
-              <p className="text-gray-600 text-center max-w-lg">
-                We run on grants and donations, and we publish our funders and{" "}
-                <Link to="/transparency" className="text-azure hover:text-azure-600 underline underline-offset-2">
-                  regular transparency reports
-                </Link>.
-              </p>
+              <div className="flex flex-col items-center gap-4 text-center">
+                <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
+                  Funded by <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>,
+                  <br className="hidden md:block" /> not by ads or data.
+                </h2>
+                <p className="text-gray-600 max-w-lg">
+                  We run on grants and donations, and we publish our funders and{" "}
+                  <Link to="/transparency" className="text-azure hover:text-azure-600 underline underline-offset-2">
+                    regular transparency reports
+                  </Link>.
+                </p>
+              </div>
               <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16">
                 <img src="/assets/logos/opensats-logo-soapbox.png" alt="OpenSats" className="h-14 sm:h-28 w-auto" />
                 <img src="/assets/logos/aos-andotherstuff-logo-soapbox.png" alt="And Other Stuff" className="h-14 sm:h-28 w-auto" />
@@ -1147,7 +1146,7 @@ export default function Index() {
               {/* Left: the claim */}
               <div className="lg:col-span-2 min-w-0">
                 <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Our promises, checkable</p>
-                <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+                <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
                   Don't trust. <span className="inline-block -rotate-1 bg-azure text-white px-2">Verify.</span>
                 </h2>
                 <p className="mt-5 text-gray-600 leading-relaxed">
@@ -1199,7 +1198,7 @@ export default function Index() {
             <div className="flex items-end justify-between mb-10">
               <div>
                 <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Latest</p>
-                <h2 className="font-display font-bold text-gray-900 text-3xl tracking-tight">
+                <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
                   From the blog
                 </h2>
               </div>
