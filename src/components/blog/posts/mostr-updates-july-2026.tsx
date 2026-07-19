@@ -5,7 +5,7 @@ export const meta: BlogPostMeta = {
   slug: 'mostr-updates-july-2026',
   title: 'Mostr Bridge Updates: Reserve Your Nostr Username',
   excerpt:
-    'Mostr, the Fediverse-Nostr bridge and #1 Nostr relay with 54.2K active users, now lets Nostr users reserve usernames and browse hot posts from across the bridge.',
+    'Mostr, the Fediverse-Nostr bridge and top Nostr relay by traffic, now lets Nostr users reserve usernames and browse hot posts from across the bridge.',
   coverImage: '/assets/blog/mostr-updates-july-2026/cover.png',
   date: '2026-07-19',
   author: {
@@ -36,7 +36,7 @@ export const meta: BlogPostMeta = {
     {
       question: 'What is the Mostr bridge?',
       answer:
-        'Mostr is a bridge between Nostr and the Fediverse (Mastodon and other ActivityPub servers). Posts flow in both directions: Nostr users can follow and interact with Fediverse accounts, and Fediverse users can follow Nostr users. It was the first thing Soapbox ever built for Nostr, and today it serves 54.2K active users, making it the #1 Nostr relay and client.',
+        'Mostr is a bridge between Nostr and the Fediverse (Mastodon and other ActivityPub servers). Posts flow in both directions: Nostr users can follow and interact with Fediverse accounts, and Fediverse users can follow Nostr users. It was the first thing Soapbox ever built for Nostr, and today it serves 54.2K active users, making it the top Nostr relay by traffic and the client with the largest userbase on Nostr.',
     },
     {
       question: 'How do I reserve my username on Mostr?',
@@ -110,18 +110,18 @@ export default function MostrUpdatesJuly2026() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          #1 Nostr relay
-        </a>{' '}
-        and{' '}
+          top Nostr Relay by traffic
+        </a>
+        , and the{' '}
         <a
           href="https://ditto.pub/client/Mostr"
           target="_blank"
           rel="noopener noreferrer"
         >
-          #1 Nostr client
+          client with the largest userbase on Nostr
         </a>{' '}
-        with <strong>54.2K active users</strong>. And this week it got two of
-        its biggest updates yet.
+        — <strong>54.2K active users</strong>. And this week it got two of its
+        biggest updates yet.
       </p>
 
       <p>
@@ -249,6 +249,15 @@ export default function MostrUpdatesJuly2026() {
         the raw firehose instead.
       </p>
 
+      <p>
+        It's the fastest way to answer the question every newcomer asks:{' '}
+        <em>"so what actually crosses the bridge?"</em> Answer: everything from
+        butterfly photography to Bitcoin Core debates to the European
+        Commission's textile policy. Each post links out to its Nostr copy and
+        its Fediverse original, so you can explore whichever side of the bridge
+        you prefer.
+      </p>
+
       <figure>
         <img
           alt="mostr.pub showing hot posts from across the bridge: real posts from the Fediverse appearing on Nostr, with Hot and New tabs"
@@ -258,15 +267,6 @@ export default function MostrUpdatesJuly2026() {
           Hot posts from across the bridge, live on mostr.pub
         </figcaption>
       </figure>
-
-      <p>
-        It's the fastest way to answer the question every newcomer asks:{' '}
-        <em>"so what actually crosses the bridge?"</em> Answer: everything from
-        butterfly photography to Bitcoin Core debates to the European
-        Commission's textile policy. Each post links out to its Nostr copy and
-        its Fediverse original, so you can explore whichever side of the bridge
-        you prefer.
-      </p>
 
       <h2>Under the Hood: Faster, More Reliable Bridging</h2>
 
