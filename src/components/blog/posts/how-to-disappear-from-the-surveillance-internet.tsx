@@ -31,7 +31,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/how-to-disappear-from-the-surveillance-internet/cover.jpg',
   },
-  featured: true,
+  featured: false,
   tags: [
     'UK social media ban',
     'under 16 ban',

@@ -24,7 +24,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/toolbox/toolbox-og.png',
   },
-  featured: true,
+  featured: false,
   tags: [
     'soapbox',
     'nostr',

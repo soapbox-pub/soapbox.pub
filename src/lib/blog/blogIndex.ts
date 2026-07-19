@@ -103,6 +103,7 @@ import * as howtodisappearfromthesurveillanceinternet from '../../components/blo
 import * as howsoapboxshipsfast from '../../components/blog/posts/how-soapbox-ships-fast';
 import * as venezuelaearthquakereliefbitcoin from '../../components/blog/posts/venezuela-earthquake-relief-bitcoin';
 import * as buildinganarmadavoyagetoencryptedcommunities from '../../components/blog/posts/building-an-armada-voyage-to-encrypted-communities';
+import * as gazafamiliesbitcoincrowdfundingagora from '../../components/blog/posts/gaza-families-bitcoin-crowdfunding-agora';
 import * as bitcoinbabiescirculareconomykenya from '../../components/blog/posts/bitcoin-babies-circular-economy-kenya';
 
 export interface BlogFAQ {
@@ -146,6 +147,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  gazafamiliesbitcoincrowdfundingagora.meta,
   bitcoinbabiescirculareconomykenya.meta,
   buildinganarmadavoyagetoencryptedcommunities.meta,
   howsoapboxshipsfast.meta,
@@ -256,6 +258,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'gazafamiliesbitcoincrowdfundingagora':
+      return (await import('../../components/blog/posts/gaza-families-bitcoin-crowdfunding-agora')).default;
     case 'bitcoinbabiescirculareconomykenya':
       return (await import('../../components/blog/posts/bitcoin-babies-circular-economy-kenya')).default;
     case 'buildinganarmadavoyagetoencryptedcommunities':
