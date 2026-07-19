@@ -5,7 +5,7 @@ export const meta: BlogPostMeta = {
   slug: 'mostr-updates-july-2026',
   title: 'Mostr Bridge Updates: Reserve Your Nostr Username',
   excerpt:
-    'Mostr, the Fediverse-Nostr bridge and top Nostr relay by traffic, now lets Nostr users reserve usernames and browse hot posts from across the bridge.',
+    'Mostr, the Fediverse-Nostr bridge, now lets Nostr users reserve usernames and browse hot posts from across the bridge.',
   coverImage: '/assets/blog/mostr-updates-july-2026/cover.png',
   date: '2026-07-19',
   author: {
