@@ -56,7 +56,7 @@ export const meta: BlogPostMeta = {
     {
       question: 'What about my existing NIP-05?',
       answer:
-        'Both are available to you. Reserving a Mostr username does not replace your existing NIP-05 identifier — you can choose which one to use in your Nostr profile at any time.',
+        'Both are available to you. Reserving a Mostr username does not replace your existing NIP-05 identifier. You can choose which one to use in your Nostr profile at any time.',
     },
     {
       question: 'Do Fediverse users need to reserve a name too?',
@@ -81,7 +81,7 @@ export const meta: BlogPostMeta = {
       },
       {
         name: 'Sign in with your Nostr keys',
-        text: 'Approve sign-in with your Nostr signer (such as a NIP-07 browser extension). No password or account is needed — the name is owned by your keys.',
+        text: 'Approve sign-in with your Nostr signer (such as a NIP-07 browser extension). No password or account is needed. The name is owned by your keys.',
       },
       {
         name: 'Choose your username',
@@ -119,8 +119,8 @@ export default function MostrUpdatesJuly2026() {
           rel="noopener noreferrer"
         >
           client with the largest userbase on Nostr
-        </a>{' '}
-        — <strong>54.2K active users</strong>. And this week it got two of its
+        </a>
+        : <strong>54.2K active users</strong>. And this week it got two of its
         biggest updates yet.
       </p>
 
@@ -181,21 +181,21 @@ export default function MostrUpdatesJuly2026() {
 
       <ul>
         <li>
-          <strong>Owned by your Nostr keys</strong> — no password, no account.
+          <strong>Owned by your Nostr keys</strong>: no password, no account.
           You sign with the keys you already have.
         </li>
         <li>
-          <strong>Works as a NIP-05 identifier</strong> — add{' '}
+          <strong>Works as a NIP-05 identifier</strong>: add{' '}
           <code>you@mostr.pub</code> to your Nostr profile and show the
           verified checkmark in any client.
         </li>
         <li>
-          <strong>Renames move your followers</strong> — changing your name
+          <strong>Renames move your followers</strong>: changing your name
           sends a Move to your Fediverse followers and keeps your old name
           reserved. You can rename once every 30 days.
         </li>
         <li>
-          <strong>Squatter-resistant</strong> — claiming a name requires
+          <strong>Squatter-resistant</strong>: claiming a name requires
           solving a short puzzle captcha, and role names like{' '}
           <code>admin</code> and <code>webmaster</code> are off-limits.
         </li>
