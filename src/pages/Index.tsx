@@ -166,7 +166,7 @@ function BrowserShowcase() {
   );
 }
 
-/** Easter egg: toybox apps on the mock phone's home screen. Tapping one opens the live app. */
+/** Easter egg: extra apps on the mock phone's home screen. Tapping one opens the live app. */
 const homeScreenExtras = [
   { name: "Treasures", icon: "/assets/toybox/treasures-icon.svg", url: "https://treasures.to/" },
   { name: "Birdstar", icon: "/assets/toybox/birdstar-icon.png", url: "https://birdstar.app/" },
@@ -176,6 +176,9 @@ const homeScreenExtras = [
   { name: "Podstr", icon: "/assets/toybox/podstr-icon.svg", url: "https://podstr.org" },
   { name: "Espy", icon: "/assets/toybox/espy-icon.png", url: "https://espy.you/" },
   { name: "Polaroids", icon: "/assets/toybox/polaroids-icon.jpg", url: "https://polaroids.shakespeare.wtf/" },
+  { name: "Blobbi", icon: "/assets/toybox/blobbi-island-icon.png", url: "https://blobbi-island.vercel.app/" },
+  { name: "Mi", icon: "/assets/toolbox/mi-icon.png", url: "https://mi.shakespeare.wtf/" },
+  { name: "Mostr", icon: "/assets/toolbox/mostr-icon.svg", url: "https://mostr.pub/" },
 ];
 
 /**
@@ -255,7 +258,7 @@ function PhoneShowcase() {
             </span>
           </div>
 
-          {/* One home-screen grid: the four real apps, then toybox apps as an easter egg */}
+          {/* One home-screen grid: the four real apps, then extra apps as an easter egg */}
           <div className="grid grid-cols-3 gap-x-3 gap-y-4 mt-8">
             {showcase.map((product, i) => {
               const pressed = phase === "pressing" && appIndex === i;
