@@ -412,23 +412,12 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
           rel="noopener noreferrer"
           className="block aspect-video bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-lg overflow-hidden cursor-pointer"
         >
-          {!imageError ? (
-            <img
-              src={app.screenshotUrl}
-              alt={`${app.appName} screenshot`}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              onError={() => setImageError(true)}
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-gray-400">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <ExternalLink className="w-8 h-8" />
-                </div>
-                <p className="text-sm">Screenshot unavailable</p>
-              </div>
-            </div>
-          )}
+          <img
+            src={imageError ? '/assets/app-placeholder.svg' : app.screenshotUrl}
+            alt={`${app.appName} screenshot`}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            onError={() => setImageError(true)}
+          />
         </a>
 
         {/* Status Badges */}
@@ -564,7 +553,7 @@ export function AppShowcaseCard({ app, onEdit, showModerationControls, hideAppro
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
+                  target.src = '/assets/app-placeholder.svg';
                 }}
               />
             </div>
