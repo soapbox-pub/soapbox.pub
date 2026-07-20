@@ -981,7 +981,7 @@ export default function Index() {
         {/* ============ MANIFESTO ============ */}
         <section className="px-4 sm:px-6 lg:px-8 pt-4 pb-24 sm:pb-32">
           <div className="max-w-4xl mx-auto">
-            <p className="font-display font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-gray-300">
+            <p className="font-display font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-gray-900">
               <span className="text-gray-900">
                 The internet used to belong to{" "}
                 <span className="inline-block -rotate-1 bg-azure text-white px-1.5">the people</span> on it.
