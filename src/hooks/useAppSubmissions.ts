@@ -20,6 +20,59 @@ const MODERATOR_HEX = (() => {
 // Soapbox team follow pack naddr (same as used on About page)
 const SOAPBOX_TEAM_NADDR = 'naddr1qvzqqqyckypzpyexz3t34l966ngh5xg7u2q788hthdqmj0av3lv8s2tz9t43zt6dqqxxkdrsx4mnqm3jxfeh2ess5pyrw';
 
+/**
+ * Local image overrides for apps whose original screenshot/icon URLs are dead
+ * (media.ditto.pub 404s, moved GitLab files). Keyed by `<pubkey>:<d-tag>`
+ * event coordinate. Images recovered via the Wayback Machine and hosted
+ * locally in /public/assets/showcase/.
+ */
+const APP_IMAGE_OVERRIDES: Record<string, { screenshotUrl?: string; appIconUrl?: string }> = {
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:agora-1771728450914': {
+    screenshotUrl: '/assets/media-kit/screenshots/agora/desktop-1.webp',
+    appIconUrl: '/assets/media-kit/logos/agora-logo.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:universes-1759077045725': {
+    screenshotUrl: '/assets/showcase/universes-screenshot.jpg',
+    appIconUrl: '/assets/showcase/universes-icon.png',
+  },
+  '781a1527055f74c1f70230f10384609b34548f8ab6a0a6caa74025827f9fdae5:template--petition-site-1759109982133': {
+    screenshotUrl: '/assets/showcase/template-petition-site-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-petition-site-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--restaurant-1759113236001': {
+    screenshotUrl: '/assets/showcase/template-restaurant-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-restaurant-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--local-club-1759112897625': {
+    screenshotUrl: '/assets/showcase/template-local-club-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-local-club-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--personal-portfolio-1759112287386': {
+    screenshotUrl: '/assets/showcase/template-personal-portfolio-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-personal-portfolio-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--blog-1759112017867': {
+    screenshotUrl: '/assets/showcase/template-blog-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-blog-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--small-business-1759111202473': {
+    screenshotUrl: '/assets/showcase/template-small-business-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-small-business-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--conference-website-1759110788134': {
+    screenshotUrl: '/assets/showcase/template-conference-website-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-conference-website-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--nonprofit-organization-1759110597371': {
+    screenshotUrl: '/assets/showcase/template-nonprofit-organization-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-nonprofit-organization-icon.png',
+  },
+  '932614571afcbad4d17a191ee281e39eebbb41b93fac8fd87829622aeb112f4d:template--wedding-site-1759110321566': {
+    screenshotUrl: '/assets/showcase/template-wedding-site-screenshot.jpg',
+    appIconUrl: '/assets/showcase/template-wedding-site-icon.png',
+  },
+};
+
 export interface AppSubmission extends NostrEvent {
   appName: string;
   websiteUrl: string;
@@ -177,10 +230,13 @@ export function useAppSubmissions() {
           const appName = event.tags.find(tag => tag[0] === 'title')?.[1] || '';
           const websiteUrl = event.tags.find(tag => tag[0] === 'website')?.[1] || '';
           const repositoryUrl = event.tags.find(tag => tag[0] === 'repository')?.[1] || '';
-          const appIconUrl = event.tags.find(tag => tag[0] === 'icon')?.[1] || '';
-          const screenshotUrl = event.tags.find(tag => tag[0] === 'screenshot')?.[1] || '';
           const authorNpub = event.tags.find(tag => tag[0] === 'author')?.[1] || event.pubkey;
           const appTags = event.tags.filter(tag => tag[0] === 'app-tag').map(tag => tag[1]);
+
+          // Apply local image overrides for dead screenshot/icon hosts
+          const imageOverride = APP_IMAGE_OVERRIDES[`${event.pubkey}:${dTag}`];
+          const appIconUrl = imageOverride?.appIconUrl ?? event.tags.find(tag => tag[0] === 'icon')?.[1] ?? '';
+          const screenshotUrl = imageOverride?.screenshotUrl ?? event.tags.find(tag => tag[0] === 'screenshot')?.[1] ?? '';
 
           // Check if app is featured, approved, homepage, or hidden
           // All apps now use kind 31733

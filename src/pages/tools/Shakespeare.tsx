@@ -240,7 +240,7 @@ function HeroSection() {
             <div className="flex flex-wrap gap-3 text-sm text-gray-300 mb-6">
               <div className="flex items-center bg-white/5 border border-white/10 px-3 py-2 rounded-full">
                 <HardDrive className="w-4 h-4 mr-2 text-shakespeare-blue-300" />
-                Local Storage
+                Decentralized
               </div>
               <div className="flex items-center bg-white/5 border border-white/10 px-3 py-2 rounded-full">
                 <Cpu className="w-4 h-4 mr-2 text-shakespeare-gold-300" />
@@ -739,17 +739,12 @@ function FeaturesSection() {
           </div>
 
           <div className="relative">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+            <div>
               <img
                 src="/shakespeare-resources/signin-to-nostr-settings.png"
                 alt="Local file storage interface showing files stored on user's computer"
-                className="w-full rounded-2xl shadow-lg"
+                className="w-full rounded-2xl"
               />
-              <div className="mt-6 text-center">
-                <Badge variant="outline" className="bg-white text-shakespeare-blue-700 border-shakespeare-blue-200">
-                  Files stored locally - never on servers
-                </Badge>
-              </div>
             </div>
           </div>
         </div>
@@ -757,23 +752,12 @@ function FeaturesSection() {
         {/* Feature 2: Any AI Provider */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 md:mb-24">
           <div className="relative order-2 lg:order-1">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+            <div>
               <img
                 src="/shakespeare-resources/choose-your-model-example.png"
                 alt="AI provider selection interface showing OpenRouter, Claude, GPT, and local models"
-                className="w-full rounded-2xl shadow-lg"
+                className="w-full rounded-2xl"
               />
-              <div className="mt-6 space-y-3">
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge className="bg-shakespeare-blue-600 text-white">OpenRouter</Badge>
-                  <Badge className="bg-shakespeare-navy-700 text-white">Claude</Badge>
-                  <Badge className="bg-shakespeare-red-500 text-white">PayperQ</Badge>
-                  <Badge className="bg-shakespeare-gold-400 text-shakespeare-navy-900">Z.ai</Badge>
-                  <Badge className="bg-shakespeare-blue-600 text-white">OpenAI</Badge>
-                  <Badge className="bg-shakespeare-navy-700 text-white">Anthropic</Badge>
-                </div>
-                <p className="text-center text-sm text-gray-600">Choose from 50+ AI providers and models</p>
-              </div>
             </div>
           </div>
 
@@ -862,20 +846,12 @@ function FeaturesSection() {
           </div>
 
           <div className="relative">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+            <div>
               <img
                 src="/shakespeare-resources/connect-your-git-account.png"
                 alt="Git integration interface showing GitHub and GitLab connections"
-                className="w-full rounded-2xl shadow-lg"
+                className="w-full rounded-2xl"
               />
-              <div className="mt-6 text-center space-y-3">
-                <div className="flex justify-center space-x-3">
-                  <Badge variant="outline" className="bg-white text-gray-700">GitHub</Badge>
-                  <Badge variant="outline" className="bg-white text-gray-700">GitLab</Badge>
-                  <Badge variant="outline" className="bg-white text-gray-700">Any Git Provider</Badge>
-                </div>
-                <p className="text-sm text-gray-600">Professional version control for every project</p>
-              </div>
             </div>
           </div>
         </div>
@@ -883,22 +859,17 @@ function FeaturesSection() {
         {/* Feature 4: Project Importing */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 md:mb-24">
           <div className="relative order-2 lg:order-1">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+            <div>
               <img
                 src="/shakespeare-resources/import-repository-example-1.png"
                 alt="Project import interface showing GitHub repository import with edit badge"
-                className="w-full rounded-2xl shadow-lg mb-4"
+                className="w-full rounded-2xl mb-4"
               />
               <img
                 src="/shakespeare-resources/import-repository-example-2.png"
                 alt="Edit with Shakespeare badge for easy project contribution"
-                className="w-full rounded-2xl shadow-lg"
+                className="w-full rounded-2xl"
               />
-              <div className="mt-6 text-center">
-                <Badge className="bg-shakespeare-gold-400 text-shakespeare-navy-900">
-                  "Edit with Shakespeare" Badge Available
-                </Badge>
-              </div>
             </div>
           </div>
 
@@ -982,22 +953,17 @@ function FeaturesSection() {
           </div>
 
           <div className="relative">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+            <div>
               <img
                 src="/shakespeare-resources/edit-the-code-in-browser.png"
                 alt="Built-in code editor showing file explorer and syntax highlighting"
-                className="w-full rounded-2xl shadow-lg mb-4"
+                className="w-full rounded-2xl mb-4"
               />
               <img
                 src="/shakespeare-resources/file-upload-ezample.png"
                 alt="File upload interface for adding images and assets"
-                className="w-full rounded-2xl shadow-lg"
+                className="w-full rounded-2xl"
               />
-              <div className="mt-6 text-center">
-                <Badge variant="outline" className="bg-white text-shakespeare-blue-700 border-shakespeare-blue-200">
-                  Professional development environment in your browser
-                </Badge>
-              </div>
             </div>
           </div>
         </div>
