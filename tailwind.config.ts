@@ -62,6 +62,69 @@ export default {
 					800: '#7a260a',
 					900: '#521a07',
 				},
+				// Shakespeare brand palette, extracted from the theater-masks
+				// logo (public/assets/logos/shakespeare-logo.png): sky blue and
+				// gold masks, red curtain tones, deep navy stage. Blue is the
+				// primary UI accent, gold the secondary, red the energetic
+				// highlight used sparingly.
+				shakespeare: {
+					blue: {
+						50: '#eef6fd',
+						100: '#d8ecfa',
+						200: '#b2d9f4',
+						300: '#84c2ec',
+						400: '#5fade4',
+						500: '#429adf', // logo sky blue
+						600: '#2a82c8',
+						700: '#2268a2',
+						800: '#205584',
+						900: '#1f486c',
+					},
+					gold: {
+						50: '#fefbe8',
+						100: '#fdf4c4',
+						200: '#fbe78b',
+						300: '#f9d649',
+						400: '#fcc21b', // logo gold
+						500: '#eaa907',
+						600: '#c98706',
+						700: '#a06309',
+						800: '#844e0e',
+						900: '#6e4111',
+					},
+					red: {
+						50: '#fef3ef',
+						100: '#fde4da',
+						200: '#fbc9b5',
+						300: '#f8a486',
+						400: '#f67a52',
+						500: '#f45125', // logo curtain red-orange
+						600: '#d63f16',
+						700: '#b23313',
+						800: '#8e2c14',
+						900: '#752814',
+					},
+					navy: {
+						50: '#f1f7fa',
+						100: '#e0edf3',
+						200: '#c3d9e4',
+						300: '#94bacd',
+						400: '#5d92ae',
+						500: '#3a7492',
+						600: '#2b5d77',
+						700: '#193d51', // logo deep navy ink
+						800: '#122e3e',
+						900: '#0c2230',
+						950: '#081824',
+						DEFAULT: '#193d51',
+					},
+					bronze: {
+						500: '#b08718',
+						600: '#9b7515', // logo bronze/olive
+						700: '#7c5d10',
+						DEFAULT: '#9b7515',
+					},
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

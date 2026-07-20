@@ -39,7 +39,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
   return (
     <Card className={cn("w-full max-w-2xl mx-auto", className)}>
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold text-purple-600">
+        <CardTitle className="text-2xl font-bold text-shakespeare-navy-700">
           Get the latest Shakespeare updates and resources
         </CardTitle>
         <CardDescription>
@@ -82,7 +82,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                 border-color: #ef4444 !important;
               }
               #mc_embed_signup .button {
-                background: linear-gradient(to right, #8B5CF6, #3B82F6) !important;
+                background: linear-gradient(to right, #429adf, #2a82c8) !important;
                 border: none !important;
                 border-radius: 0.5rem !important;
                 color: white !important;
@@ -93,7 +93,7 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
                 margin-top: 1rem !important;
               }
               #mc_embed_signup .button:hover {
-                background: linear-gradient(to right, #7C3AED, #2563EB) !important;
+                background: linear-gradient(to right, #5fade4, #429adf) !important;
               }
               #mc_embed_signup .indicates-required {
                 font-size: 12px;
