@@ -982,19 +982,22 @@ export default function Index() {
         <section className="px-4 sm:px-6 lg:px-8 pt-4 pb-24 sm:pb-32">
           <div className="max-w-4xl mx-auto">
             <p className="font-display font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-gray-900">
-              <span className="text-gray-900">
-                The internet used to belong to{" "}
-                <span className="inline-block -rotate-1 bg-azure text-white px-1.5">the people</span> on it.
-              </span>{" "}
-              Then a handful of companies fenced it in. Your feed became their algorithm.
-              Your community became their user base. Your work became their product.{" "}
-              <span className="text-gray-900">
-                We're a team of hacktivists{" "}
-                <span className="inline-block -rotate-1 bg-azure text-white px-1.5">taking it back</span>,
-                piece by piece,
-              </span>{" "}
-              with free software on open protocols,{" "}
-              <span className="text-gray-900">owned by no company. Not even ours.</span>
+              The internet used to belong to{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">the&nbsp;people</span>.
+              Then a handful of{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">companies</span>{" "}
+              fenced it in. Your feed became their{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">algorithm</span>.
+              Your community became their{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">user&nbsp;base</span>.
+              Your work became their{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">product</span>.{" "}
+              We're a team of hacktivists{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">taking&nbsp;it&nbsp;back</span>,
+              piece by piece, with{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">free&nbsp;software</span> on{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">open&nbsp;protocols</span>,
+              owned by no company. Not even ours.
             </p>
           </div>
         </section>
