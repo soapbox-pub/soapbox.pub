@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Search, Wrench, Gamepad2, Newspaper, type LucideIcon } from "lucide-react";
+import { Menu, X, Search, Wrench, Gamepad2, Newspaper, Info, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SoapboxLogo } from "@/components/SoapboxLogo";
 import { SearchDropdown } from "@/components/SearchDropdown";
@@ -22,6 +22,7 @@ const navLinks: NavItem[] = [
   { label: "Toolbox", to: "/toolbox", icon: Wrench },
   { label: "Toybox", to: "/toybox", icon: Gamepad2 },
   { label: "Updates", to: "/blog", icon: Newspaper },
+  { label: "About Soapbox", to: "/about", icon: Info },
 ];
 
 export function Navigation() {
