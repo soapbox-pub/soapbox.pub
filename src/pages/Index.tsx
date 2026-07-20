@@ -849,7 +849,6 @@ function InfrastructureSection() {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             {/* Left: the story */}
             <div className="lg:col-span-2 min-w-0">
-              <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Infrastructure</p>
               <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-6xl tracking-tight">
                 <span className="inline-block -rotate-1 mt-1.5 sm:mt-2 bg-azure text-white px-2 pb-0.5">Bridging</span>
                 <br className="hidden md:block" /> the open&nbsp;web
@@ -1095,8 +1094,12 @@ export default function Index() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-14 lg:gap-16 items-center">
             {/* Left: the words */}
             <div className="lg:col-span-2 min-w-0 text-center lg:text-left">
-              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
-                Funded by <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>, not ads or data.
+              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight text-balance">
+                Funded by{" "}
+                <span className="whitespace-nowrap">
+                  <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>,
+                </span>{" "}
+                not ads or&nbsp;data.
               </h2>
               <p className="mt-5 text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 We run on grants and donations, and we publish our funders and{" "}
