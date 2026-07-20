@@ -209,7 +209,7 @@ function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy */}
           <div className="lg:col-span-7">
-            <Badge variant="secondary" className="bg-shakespeare-gold-400/10 text-shakespeare-gold-300 border-shakespeare-gold-400/30 text-sm px-3 py-1 mb-8">
+            <Badge variant="secondary" className="bg-shakespeare-gold-400/10 text-shakespeare-gold-300 border-shakespeare-gold-400/30 text-sm px-3 py-1 mb-8 hover:bg-shakespeare-gold-400/20 hover:text-shakespeare-gold-200 hover:border-shakespeare-gold-400/50">
               🎭 Shakespeare 2.0
             </Badge>
 
