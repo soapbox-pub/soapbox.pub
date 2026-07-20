@@ -1066,6 +1066,21 @@ export const meta: BlogPostMeta = {
 
 **Don't create SEO fields with AI slop.** Research real search queries (or ask the user what queries they want to rank for) before filling in `keywords`, `faq`, and `howTo`. Made-up keywords waste the SEO slots.
 
+### Blog Writing Style (Required)
+
+Write factually and directly. No fluff, no cute phrasing, no hype. These rules apply to all blog copy:
+
+- **Never use em dashes (—) or en dashes (–).** Use commas, periods, or parentheses instead.
+- **No AI-speak framing phrases.** Never use hollow openers and transitions like:
+  - "This is not theoretical."
+  - "That's the model:" / "That's the whole strategy." / "Here's the thing:"
+  - "The question is not X. The question is Y."
+  - "It's not just X, it's Y." / "X isn't about Y. It's about Z."
+  - "In today's fast-paced world" or similar throat-clearing
+- **Avoid aphoristic contrast constructions as filler** ("X doesn't do Y. It does Z.") unless the contrast itself carries real information. If a sentence exists to sound punchy rather than to inform, cut it.
+- **Prefer concrete facts, numbers, and cited sources over adjectives.** "76% of applications contain a flaw on first scan (Veracode)" beats "most software is insecure."
+- **Match the author's voice.** If the post is authored by a specific person, write in first person and don't refer to the author in third person.
+
 ## Development Practices
 
 - Uses React Query for data fetching and caching

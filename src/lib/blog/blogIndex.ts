@@ -106,6 +106,7 @@ import * as venezuelaearthquakereliefbitcoin from '../../components/blog/posts/v
 import * as buildinganarmadavoyagetoencryptedcommunities from '../../components/blog/posts/building-an-armada-voyage-to-encrypted-communities';
 import * as gazafamiliesbitcoincrowdfundingagora from '../../components/blog/posts/gaza-families-bitcoin-crowdfunding-agora';
 import * as bitcoinbabiescirculareconomykenya from '../../components/blog/posts/bitcoin-babies-circular-economy-kenya';
+import * as nostropensourcesecurity from '../../components/blog/posts/nostr-open-source-security';
 
 export interface BlogFAQ {
   question: string;
@@ -148,6 +149,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  nostropensourcesecurity.meta,
   mostrupdatesjuly2026.meta,
   gazafamiliesbitcoincrowdfundingagora.meta,
   bitcoinbabiescirculareconomykenya.meta,
@@ -260,6 +262,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'nostropensourcesecurity':
+      return (await import('../../components/blog/posts/nostr-open-source-security')).default;
     case 'mostrupdatesjuly2026':
       return (await import('../../components/blog/posts/mostr-updates-july-2026')).default;
     case 'gazafamiliesbitcoincrowdfundingagora':
