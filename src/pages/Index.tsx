@@ -1004,21 +1004,6 @@ export default function Index() {
 
         {/* ============ GLOBAL IMPACT ============ */}
         <section className="relative px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-10 sm:pb-14 bg-[#0b101d] text-white overflow-hidden">
-          {/* Subtle map-line backdrop */}
-          <svg
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 1200 800"
-            preserveAspectRatio="xMidYMid slice"
-            fill="none"
-          >
-            {/* Dashes crawl along the routes. Respects reduced-motion. */}
-            <path d="M-50 220 Q 300 60 620 180 T 1250 140" stroke="white" strokeOpacity="0.07" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "40s" }} />
-            <path d="M-50 420 Q 350 260 700 360 T 1250 300" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "55s", animationDirection: "reverse" }} />
-            <path d="M100 -20 Q 380 320 240 820" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "48s" }} />
-            <path d="M950 -20 Q 800 350 1050 820" stroke="white" strokeOpacity="0.06" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "62s", animationDirection: "reverse" }} />
-          </svg>
-
           <div className="relative max-w-6xl mx-auto">
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Global impact</p>
             <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-6xl tracking-tight max-w-3xl">
