@@ -961,8 +961,8 @@ export default function Index() {
                 </span>
               </h1>
               <p className="mt-8 text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto">
-                Open source tools for freedom online. Social media you own, unstoppable money,
-                communities no one can shut down.
+                Open source tools for freedom online: decentralized social media,
+                unstoppable money, sovereign&nbsp;communities.
               </p>
             </div>
 
@@ -1165,7 +1165,7 @@ export default function Index() {
 
             {/* The artifacts, side by side */}
             <div className="mt-12 sm:mt-14 grid md:grid-cols-2 gap-5">
-              <div className="rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
+              <div className="min-w-0 rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
                 <div className="flex items-center gap-1.5 mb-4">
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
@@ -1177,9 +1177,9 @@ export default function Index() {
                 <p className="text-emerald-400 mt-1">✓ Every product. Source and all. Yours.</p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm flex flex-col justify-center">
+              <div className="min-w-0 rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm flex flex-col justify-center">
                 <p className="text-[11px] uppercase tracking-widest text-gray-400">Your identity on the open web</p>
-                <p className="mt-2 font-mono text-xs sm:text-sm text-gray-700 truncate">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
+                <p className="mt-2 min-w-0 font-mono text-xs sm:text-sm text-gray-700 break-all">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
                 <div className="mt-4 flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">Nostr</span>
                   <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">Bitcoin</span>
