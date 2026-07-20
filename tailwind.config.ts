@@ -194,12 +194,7 @@ export default {
 						transform: 'translateX(-50%)'
 					}
 				},
-			'dash-flow': {
-				to: {
-					strokeDashoffset: '-120'
-				}
-			},
-			'feed-in': {
+		'feed-in': {
 				from: {
 					opacity: '0',
 					transform: 'translateY(-8px)'
@@ -213,9 +208,8 @@ export default {
 		animation: {
 			'accordion-down': 'accordion-down 0.2s ease-out',
 			'accordion-up': 'accordion-up 0.2s ease-out',
-			marquee: 'marquee linear infinite',
-			'dash-flow': 'dash-flow linear infinite',
-			'feed-in': 'feed-in 0.4s ease-out'
+		marquee: 'marquee linear infinite',
+		'feed-in': 'feed-in 0.4s ease-out'
 		},
 			typography: {
 				DEFAULT: {

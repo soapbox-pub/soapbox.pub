@@ -166,7 +166,7 @@ function BrowserShowcase() {
   );
 }
 
-/** Easter egg: toybox apps on the mock phone's home screen. Tapping one opens the live app. */
+/** Easter egg: extra apps on the mock phone's home screen. Tapping one opens the live app. */
 const homeScreenExtras = [
   { name: "Treasures", icon: "/assets/toybox/treasures-icon.svg", url: "https://treasures.to/" },
   { name: "Birdstar", icon: "/assets/toybox/birdstar-icon.png", url: "https://birdstar.app/" },
@@ -176,6 +176,9 @@ const homeScreenExtras = [
   { name: "Podstr", icon: "/assets/toybox/podstr-icon.svg", url: "https://podstr.org" },
   { name: "Espy", icon: "/assets/toybox/espy-icon.png", url: "https://espy.you/" },
   { name: "Polaroids", icon: "/assets/toybox/polaroids-icon.jpg", url: "https://polaroids.shakespeare.wtf/" },
+  { name: "Blobbi", icon: "/assets/toybox/blobbi-island-icon.png", url: "https://blobbi-island.vercel.app/" },
+  { name: "Mi", icon: "/assets/toolbox/mi-icon.png", url: "https://mi.shakespeare.wtf/" },
+  { name: "Mostr", icon: "/assets/toolbox/mostr-icon.svg", url: "https://mostr.pub/" },
 ];
 
 /**
@@ -255,7 +258,7 @@ function PhoneShowcase() {
             </span>
           </div>
 
-          {/* One home-screen grid: the four real apps, then toybox apps as an easter egg */}
+          {/* One home-screen grid: the four real apps, then extra apps as an easter egg */}
           <div className="grid grid-cols-3 gap-x-3 gap-y-4 mt-8">
             {showcase.map((product, i) => {
               const pressed = phase === "pressing" && appIndex === i;
@@ -846,7 +849,6 @@ function InfrastructureSection() {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             {/* Left: the story */}
             <div className="lg:col-span-2 min-w-0">
-              <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Infrastructure</p>
               <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-6xl tracking-tight">
                 <span className="inline-block -rotate-1 mt-1.5 sm:mt-2 bg-azure text-white px-2 pb-0.5">Bridging</span>
                 <br className="hidden md:block" /> the open&nbsp;web
@@ -958,8 +960,8 @@ export default function Index() {
                 </span>
               </h1>
               <p className="mt-8 text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto">
-                Open source tools for freedom online. Social media you own, unstoppable money,
-                communities no one can shut down.
+                Open source tools for freedom online: decentralized social media,
+                unstoppable money, sovereign&nbsp;communities.
               </p>
             </div>
 
@@ -978,41 +980,29 @@ export default function Index() {
         {/* ============ MANIFESTO ============ */}
         <section className="px-4 sm:px-6 lg:px-8 pt-4 pb-24 sm:pb-32">
           <div className="max-w-4xl mx-auto">
-            <p className="font-display font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-gray-300">
-              <span className="text-gray-900">
-                The internet used to belong to{" "}
-                <span className="inline-block -rotate-1 bg-azure text-white px-1.5">the people</span> on it.
-              </span>{" "}
-              Then a handful of companies fenced it in. Your feed became their algorithm.
-              Your community became their user base. Your work became their product.{" "}
-              <span className="text-gray-900">
-                We're a team of hacktivists{" "}
-                <span className="inline-block -rotate-1 bg-azure text-white px-1.5">taking it back</span>,
-                piece by piece,
-              </span>{" "}
-              with free software on open protocols,{" "}
-              <span className="text-gray-900">owned by no company. Not even ours.</span>
+            <p className="font-display font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-gray-900">
+              The internet used to belong to{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">the&nbsp;people</span>.
+              Then a handful of{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">companies</span>{" "}
+              fenced it in. Your feed became their{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">algorithm</span>.
+              Your community became their{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">user&nbsp;base</span>.
+              Your work became their{" "}
+              <span className="inline-block -rotate-1 bg-gray-900 text-white px-1.5">product</span>.{" "}
+              We're a team of hacktivists{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">taking&nbsp;it&nbsp;back</span>,
+              piece by piece, with{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">free&nbsp;software</span> on{" "}
+              <span className="inline-block -rotate-1 bg-azure text-white px-1.5">open&nbsp;protocols</span>,
+              owned by no company. Not even ours.
             </p>
           </div>
         </section>
 
         {/* ============ GLOBAL IMPACT ============ */}
         <section className="relative px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-10 sm:pb-14 bg-[#0b101d] text-white overflow-hidden">
-          {/* Subtle map-line backdrop */}
-          <svg
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 1200 800"
-            preserveAspectRatio="xMidYMid slice"
-            fill="none"
-          >
-            {/* Dashes crawl along the routes. Respects reduced-motion. */}
-            <path d="M-50 220 Q 300 60 620 180 T 1250 140" stroke="white" strokeOpacity="0.07" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "40s" }} />
-            <path d="M-50 420 Q 350 260 700 360 T 1250 300" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "55s", animationDirection: "reverse" }} />
-            <path d="M100 -20 Q 380 320 240 820" stroke="white" strokeOpacity="0.05" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "48s" }} />
-            <path d="M950 -20 Q 800 350 1050 820" stroke="white" strokeOpacity="0.06" strokeWidth="1.5" strokeDasharray="5 7" className="motion-safe:animate-dash-flow" style={{ animationDuration: "62s", animationDirection: "reverse" }} />
-          </svg>
-
           <div className="relative max-w-6xl mx-auto">
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">Global impact</p>
             <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-6xl tracking-tight max-w-3xl">
@@ -1104,8 +1094,12 @@ export default function Index() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-14 lg:gap-16 items-center">
             {/* Left: the words */}
             <div className="lg:col-span-2 min-w-0 text-center lg:text-left">
-              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-6xl tracking-tight">
-                Funded by <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>, not ads or data.
+              <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight text-balance">
+                Funded by{" "}
+                <span className="whitespace-nowrap">
+                  <span className="inline-block -rotate-1 bg-azure text-white px-2">the community</span>,
+                </span>{" "}
+                not ads or&nbsp;data.
               </h2>
               <p className="mt-5 text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 We run on grants and donations, and we publish our funders and{" "}
@@ -1174,7 +1168,7 @@ export default function Index() {
 
             {/* The artifacts, side by side */}
             <div className="mt-12 sm:mt-14 grid md:grid-cols-2 gap-5">
-              <div className="rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
+              <div className="min-w-0 rounded-xl bg-gray-950 p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed shadow-xl">
                 <div className="flex items-center gap-1.5 mb-4">
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-700" />
@@ -1186,9 +1180,9 @@ export default function Index() {
                 <p className="text-emerald-400 mt-1">✓ Every product. Source and all. Yours.</p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm flex flex-col justify-center">
+              <div className="min-w-0 rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 shadow-sm flex flex-col justify-center">
                 <p className="text-[11px] uppercase tracking-widest text-gray-400">Your identity on the open web</p>
-                <p className="mt-2 font-mono text-xs sm:text-sm text-gray-700 truncate">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
+                <p className="mt-2 min-w-0 font-mono text-xs sm:text-sm text-gray-700 break-all">npub1jvnpg4c6ljadf5t6ry0w9q0rnm4mksde87kglkrc993z46c39axsgq89sc</p>
                 <div className="mt-4 flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">Nostr</span>
                   <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">Bitcoin</span>
