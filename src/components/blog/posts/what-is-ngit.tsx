@@ -324,6 +324,19 @@ export default function WhatIsNgit() {
         .
       </p>
 
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/what-is-ngit/gitworkshop-repo.png"
+          alt="A Nostr git repository on gitworkshop.dev with code, issues, PRs, a clone button, and GRASP servers listed"
+          className="rounded-lg border shadow-md w-full"
+          loading="lazy"
+        />
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          A repo on gitworkshop.dev: file tree, issues, PRs, and the GRASP
+          servers and relays that host it.
+        </figcaption>
+      </figure>
+
       <h2>First Major Use: Shakespeare</h2>
 
       <p>
@@ -388,6 +401,19 @@ export default function WhatIsNgit() {
         patches are just Nostr events, general-purpose clients can link to
         and render them too.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/what-is-ngit/gitworkshop-profile.png"
+          alt="A gitworkshop.dev profile with 55 Nostr git repositories, most of them built and pushed from Shakespeare"
+          className="rounded-lg border shadow-md w-full"
+          loading="lazy"
+        />
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          One profile, 55 repos on Nostr. Most of these started as
+          Shakespeare projects.
+        </figcaption>
+      </figure>
 
       <h2>Now Shipping Inside Buzz</h2>
 
