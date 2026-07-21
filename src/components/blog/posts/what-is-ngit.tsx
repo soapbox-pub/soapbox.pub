@@ -324,15 +324,6 @@ export default function WhatIsNgit() {
         .
       </p>
 
-      <div className="not-prose my-6">
-        <img
-          src="/assets/blog/what-is-ngit/gitworkshop-repo.png"
-          alt="gitworkshop.dev showing a Nostr git repository with issues and pull requests, a decentralized GitHub alternative"
-          className="rounded-lg border shadow-md w-full"
-          loading="lazy"
-        />
-      </div>
-
       <h2>First Major Use: Shakespeare</h2>
 
       <p>
@@ -355,14 +346,29 @@ export default function WhatIsNgit() {
         actual repositories with actual users.
       </p>
 
-      <div className="not-prose my-6">
+      <figure className="not-prose my-6">
         <img
-          src="/assets/blog/what-is-ngit/shakespeare-nostr-push.png"
-          alt="Shakespeare AI app builder pushing a project to a nostr:// git URL for decentralized backup"
+          src="/assets/blog/what-is-ngit/shakespeare-git-providers.png"
+          alt="Shakespeare AI app builder git sync dialog offering Nostr, GitLab, and Other as code hosting providers"
           className="rounded-lg border shadow-md w-full"
           loading="lazy"
         />
-      </div>
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          In Shakespeare, Nostr is a first-class git provider next to GitLab.
+        </figcaption>
+      </figure>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/what-is-ngit/shakespeare-nostr-push.png"
+          alt="Shakespeare pushing a project to Nostr git with one click, storing the repository on public Nostr git servers"
+          className="rounded-lg border shadow-md w-full"
+          loading="lazy"
+        />
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          One click, a repo identifier, and the project is on Nostr.
+        </figcaption>
+      </figure>
 
       <p>
         Support has since spread across the ecosystem.{' '}
@@ -402,14 +408,30 @@ export default function WhatIsNgit() {
         events.
       </p>
 
-      <div className="not-prose my-6">
+      <figure className="not-prose my-6">
         <img
-          src="/assets/blog/what-is-ngit/buzz-forge.png"
-          alt="Block's Buzz workspace showing its Nostr-based git forge with a pull request, review status, and activity"
+          src="/assets/blog/what-is-ngit/buzz-repositories.png"
+          alt="Buzz repositories tab showing a Nostr-hosted git repo with commits, pull requests, and issues"
           className="rounded-lg border shadow-md w-full"
           loading="lazy"
         />
-      </div>
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          Repositories in Buzz, hosted on Nostr instead of GitHub.
+        </figcaption>
+      </figure>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/what-is-ngit/buzz-overview.png"
+          alt="Buzz projects overview showing repositories, pull requests, and issues, with AI agents and humans collaborating on Nostr git"
+          className="rounded-lg border shadow-md w-full"
+          loading="lazy"
+        />
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          A Buzz project: AI agents open pull requests and file issues, humans
+          make the call.
+        </figcaption>
+      </figure>
 
       <p>
         Block&apos;s reasoning, from{' '}
@@ -443,6 +465,19 @@ export default function WhatIsNgit() {
         </a>
         , and yes, the irony of that URL is exactly why this movement exists.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/what-is-ngit/buzz-forge.png"
+          alt="Buzz git forge pull request view with commits, reviewers, branches, and a merge button, all built on Nostr"
+          className="rounded-lg border shadow-md w-full"
+          loading="lazy"
+        />
+        <figcaption className="text-center text-sm text-muted-foreground mt-2">
+          A pull request in Buzz&apos;s forge: conversation, commits,
+          reviewers, and merge, with every action signed by a Nostr key.
+        </figcaption>
+      </figure>
 
       <h2>Try It in 10 Minutes</h2>
 
