@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as whatisngit from '../../components/blog/posts/what-is-ngit';
 import * as mostrupdatesjuly2026 from '../../components/blog/posts/mostr-updates-july-2026';
 import * as githubbackupguide from '../../components/blog/posts/github-backup-guide';
 import * as shakespearevsbase44 from '../../components/blog/posts/shakespeare-vs-base44';
@@ -149,6 +150,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  whatisngit.meta,
   nostropensourcesecurity.meta,
   mostrupdatesjuly2026.meta,
   gazafamiliesbitcoincrowdfundingagora.meta,
@@ -262,6 +264,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'whatisngit':
+      return (await import('../../components/blog/posts/what-is-ngit')).default;
     case 'nostropensourcesecurity':
       return (await import('../../components/blog/posts/nostr-open-source-security')).default;
     case 'mostrupdatesjuly2026':
