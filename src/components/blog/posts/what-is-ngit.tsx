@@ -361,18 +361,6 @@ export default function WhatIsNgit() {
 
       <figure className="not-prose my-6">
         <img
-          src="/assets/blog/what-is-ngit/shakespeare-git-providers.png"
-          alt="Shakespeare AI app builder git sync dialog offering Nostr, GitLab, and Other as code hosting providers"
-          className="rounded-lg border shadow-md w-full"
-          loading="lazy"
-        />
-        <figcaption className="text-center text-sm text-muted-foreground mt-2">
-          In Shakespeare, Nostr is a first-class git provider next to GitLab.
-        </figcaption>
-      </figure>
-
-      <figure className="not-prose my-6">
-        <img
           src="/assets/blog/what-is-ngit/shakespeare-nostr-push.png"
           alt="Shakespeare pushing a project to Nostr git with one click, storing the repository on public Nostr git servers"
           className="rounded-lg border shadow-md w-full"
