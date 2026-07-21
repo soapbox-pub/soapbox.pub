@@ -6,7 +6,7 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   slug: 'what-is-ngit',
-  title: 'What is Ngit? The New Git Protocol Taking On GitHub',
+  title: 'What is Ngit? The BUZZy New Git Protocol Taking On GitHub',
   excerpt:
     'Ngit lets you host repos, patches, and issues on Nostr instead of GitHub. Built by DanConwayDev, used by Shakespeare, and now shipping inside Block\'s Buzz.',
   coverImage: '/assets/blog/what-is-ngit/cover.png',
