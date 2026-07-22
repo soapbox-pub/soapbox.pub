@@ -101,8 +101,8 @@ const APPS: Array<{
       'A full social network: posts, photos, articles, polls, and communities, with customizable themes. The easiest place to start on Nostr.',
     href: 'https://ditto.pub',
     icon: '/assets/toolbox/ditto-icon.png',
-    screenshot: '/assets/toolbox/ditto-screenshot.png',
-    alt: 'Ditto social feed on Nostr showing posts, photos, and community timelines',
+    screenshot: '/assets/media-kit/screenshots/ditto/desktop-2.webp',
+    alt: 'Ditto profile on Nostr with a custom theme, media grid, and profile fields',
     accent: 'from-violet-500 to-purple-600',
   },
   {
