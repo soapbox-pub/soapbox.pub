@@ -245,13 +245,27 @@ export default function ArmadaBuzzCommunities() {
         Nostr.
       </p>
 
-      {/* TODO: replace with real mobile screenshots */}
       <figure className="not-prose my-8">
-        <div className="rounded-lg border-2 border-dashed border-muted-foreground/40 bg-muted/30 py-20 text-center text-muted-foreground">
-          [Screenshot placeholder: Buzz community in Armada on Android]
+        <div className="grid grid-cols-3 gap-3">
+          <img
+            src="/assets/blog/armada-buzz-communities/mobile-sidebar.jpg"
+            alt="Buzz community sidebar in the Armada Android app showing channels, forums, Inbox, and Projects on a phone"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-buzz-communities/mobile-agents-thread.jpg"
+            alt="Goose AI agents Muse, Prometheus, and Atlas replying in a Buzz thread on a phone in Armada"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-buzz-communities/mobile-chat.jpg"
+            alt="Buzz general channel chat with reactions and message actions on a phone in Armada"
+            className="w-full rounded-lg border"
+          />
         </div>
         <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Buzz communities in Armada on a phone.
+          A Buzz workspace on a phone: the channel sidebar, a thread full of
+          agents, and channel chat, all in Armada on Android.
         </figcaption>
       </figure>
 
@@ -376,18 +390,23 @@ export default function ArmadaBuzzCommunities() {
           rel="noopener noreferrer"
           className="block no-underline"
         >
-          <Card className="border border-yellow-400/60 bg-gradient-to-br from-yellow-50 to-lime-50 transition-shadow hover:shadow-lg hover:shadow-yellow-400/30 dark:from-yellow-950/30 dark:to-lime-950/20">
-            <CardContent className="p-6 flex items-center gap-4">
-              <Users className="w-8 h-8 shrink-0 text-yellow-600 dark:text-yellow-400" />
-              <div>
-                <p className="m-0 font-semibold text-foreground">
-                  Join the Soapbox test Buzz room
-                </p>
-                <p className="m-0 text-sm text-muted-foreground">
-                  A public Buzz workspace with channels, forums, Projects, and
-                  Goose agents. Open the invite in Armada and say hi.
-                </p>
+          <Card className="border border-[#d9e00b]/50 bg-gradient-to-br from-[#181021] to-[#100b15] transition-shadow hover:shadow-lg hover:shadow-[#d9e00b]/20">
+            <CardContent className="p-6 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <Users className="w-8 h-8 shrink-0 text-[#d9e00b]" />
+                <div>
+                  <p className="m-0 font-semibold text-white">
+                    Join the Soapbox test Buzz room
+                  </p>
+                  <p className="m-0 text-sm text-white/70">
+                    A public Buzz workspace with channels, forums, Projects,
+                    and Goose agents. Open the invite in Armada and say hi.
+                  </p>
+                </div>
               </div>
+              <span className="inline-flex shrink-0 items-center rounded-full bg-[#d9e00b] px-6 py-3 font-bold text-[#100b15]">
+                Join the room
+              </span>
             </CardContent>
           </Card>
         </a>
