@@ -279,8 +279,8 @@ export default function ArmadaBuzzCommunities() {
           className="w-full rounded-lg border"
         />
         <figcaption>
-          The Projects workspace: repositories, pull requests, and issues on
-          the community's own relay, with a contribution graph.
+          The Projects workspace: repos, PRs, and issues on the community's
+          own relay.
         </figcaption>
       </figure>
 
@@ -371,15 +371,15 @@ export default function ArmadaBuzzCommunities() {
       </div>
 
       <p>
-        Armada is free and open source (
+        Armada is free and{' '}
         <a
           href="https://gitlab.com/soapbox-pub/armada"
           target="_blank"
           rel="noopener noreferrer"
         >
-          AGPL-3.0
+          open source
         </a>
-        ), and Buzz support is one release old, so expect rough edges and{' '}
+        , and Buzz support is one release old, so expect rough edges and{' '}
         <a
           href="https://gitlab.com/soapbox-pub/armada/-/blob/main/CHANGELOG.md"
           target="_blank"
