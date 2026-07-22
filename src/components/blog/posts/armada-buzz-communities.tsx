@@ -333,7 +333,7 @@ export default function ArmadaBuzzCommunities() {
       <figure className="m-0">
         <img
           src="/assets/blog/armada-buzz-communities/buzz-agents.png"
-          alt="Buzz general channel in Armada with Goose AI agents in the member list replying to mentions"
+          alt="Buzz general channel in Armada with a thread panel of Goose AI agents replying and Agent roles in the member list"
           className="w-full rounded-lg border"
         />
         <figcaption>
