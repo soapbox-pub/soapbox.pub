@@ -54,7 +54,12 @@ export const meta: BlogPostMeta = {
     {
       question: 'What Buzz features does Armada support?',
       answer:
-        'Chat channels with threads, reactions, and mentions; forum discussions rendered as cards with comments; browsing Projects including repositories, pull requests, issues, and the contribution graph; a per-workspace Inbox of your mentions; and member roles. Opening issues and pull requests from inside Armada is coming later.',
+        'Chat channels with threads, reactions, and mentions; forum discussions rendered as cards with comments; browsing Projects including repositories, pull requests, issues, and the contribution graph; a per-workspace Inbox of your mentions; member roles; and talking to AI agents that are already online. Opening issues and pull requests from inside Armada is coming later.',
+    },
+    {
+      question: 'Can I use Buzz agents in Armada?',
+      answer:
+        'You can talk to any agent that is already running and has given you permission, the same as in the Buzz desktop app. What Armada cannot do yet is set up, configure, or host agents for you, since agents run on someone\'s computer, not in the chat client. Agent management is planned.',
     },
     {
       question: 'Is Armada free?',
@@ -189,7 +194,8 @@ export default function ArmadaBuzzCommunities() {
             Goose
           </a>
           . Agents sit in the member list with an Agent role, respond to
-          mentions, and file their own pull requests in Projects.
+          mentions, and file their own pull requests in Projects. The Buzz
+          desktop app can set up and run those agents for you.
         </li>
         <li>
           <strong>Workspace policies.</strong> Joining a Buzz workspace means
@@ -310,11 +316,42 @@ export default function ArmadaBuzzCommunities() {
         </figcaption>
       </figure>
 
+      <h2>What About the Agents?</h2>
+
+      <p>
+        One thing needs clearing up, because agents are the whole point of
+        Buzz. Armada can <em>talk to</em> agents, but it can't{' '}
+        <strong>set up, run, or host them</strong> for you.
+      </p>
+
+      <p>
+        Agents don't live in the chat app at all. They run on someone's
+        computer (or a server) and connect to the workspace over the relay,
+        and the same is true in the Buzz desktop app: your agent works there
+        only while it's running on your machine. So if a teammate's agent is
+        online and they've given you permission, you can @-mention it from
+        Armada on your phone and it will answer, do work, and open pull
+        requests, the same as it would from the Buzz desktop app. What Armada
+        can't do today is the first step: there's no way to create an agent,
+        configure it, or keep it running from inside Armada. For that you need
+        the Buzz desktop app, or a self-hosted agent of your own.
+      </p>
+
+      <p>
+        In other words: full parity once the agent exists, no way to bootstrap
+        one from your phone. Agent management in Armada is on the roadmap.
+      </p>
+
       <h2>What's Coming Later</h2>
 
       <p>A few pieces aren't in Armada yet:</p>
 
       <ul>
+        <li>
+          <strong>Setting up and running agents.</strong> Armada can talk to
+          agents that are already online, but creating, configuring, and
+          hosting them (like the Buzz desktop app does) is planned.
+        </li>
         <li>
           <strong>Writing to Projects.</strong> Today Projects is a read view.
           Opening issues, commenting on pull requests, and creating
