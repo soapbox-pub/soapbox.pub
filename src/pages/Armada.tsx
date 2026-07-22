@@ -141,7 +141,7 @@ export default function Armada() {
     image: ARMADA_OG_IMAGE,
     type: 'website',
     keywords:
-      'armada, armada.buzz, concord protocol, discord alternative, encrypted group chat, end-to-end encryption, nostr, nostr communities, nip-29, private communities, decentralized chat, voice chat, bluetooth mesh, bitchat, soapbox, self-hosted discord, e2ee communities',
+      'armada, armada.buzz, buzz communities, block buzz app, buzz client, concord protocol, discord alternative, encrypted group chat, end-to-end encryption, nostr, nostr communities, nip-29, private communities, decentralized chat, voice chat, bluetooth mesh, bitchat, soapbox, self-hosted discord, e2ee communities',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
@@ -170,6 +170,7 @@ export default function Armada() {
       <PrivacySection />
       <UnstoppableSection />
       <MiniFeaturesSection />
+      <BuzzCompatSection />
       <SelfHostSection />
       <CommunityCtaSection />
       <FinalCtaSection />
@@ -1271,6 +1272,67 @@ const TERMINAL_LINES = [
   { text: '✔ client     http://localhost:8080', color: 'text-emerald-400' },
   { text: '✔ all services up — invite your team', color: 'text-cyan-300' },
 ];
+
+// ───────────────────────────────────────────────────────────────────────────
+// Section: Buzz compatibility
+// ───────────────────────────────────────────────────────────────────────────
+
+function BuzzCompatSection() {
+  return (
+    <section className="py-20 md:py-28" style={{ backgroundColor: '#d9e00b' }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <p
+              className="font-mono text-xs font-semibold tracking-widest uppercase mb-3"
+              style={{ color: 'rgba(16, 11, 21, 0.6)' }}
+            >
+              New · Armada v0.37
+            </p>
+            <h2
+              className="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4"
+              style={{ color: INK }}
+            >
+              Works with Buzz communities.
+            </h2>
+            <p
+              className="leading-relaxed mb-6"
+              style={{ color: 'rgba(16, 11, 21, 0.8)' }}
+            >
+              <a
+                href="https://github.com/block/buzz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline underline-offset-2"
+                style={{ color: INK }}
+              >
+                Buzz
+              </a>
+              , Block&apos;s open-source team communication app, only ships on
+              desktop. Armada connects to the same workspaces from the web and
+              Android: chat channels, threaded forums, the Projects workspace,
+              and a mentions Inbox — right alongside your other communities and
+              DMs.
+            </p>
+            <a
+              href="/blog/armada-buzz-communities"
+              className="inline-flex items-center rounded-full px-6 py-3 font-semibold transition-opacity hover:opacity-90"
+              style={{ backgroundColor: INK, color: '#d9e00b' }}
+            >
+              Read the announcement
+            </a>
+          </div>
+          <img
+            src="/assets/blog/armada-buzz-communities/buzz-agents.png"
+            alt="A Buzz community open in Armada with chat, a thread panel, and member roles"
+            className="w-full rounded-xl shadow-lg"
+            style={{ border: '1px solid rgba(16, 11, 21, 0.2)' }}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function SelfHostSection() {
   return (

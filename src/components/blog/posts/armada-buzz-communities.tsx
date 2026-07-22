@@ -235,7 +235,7 @@ export default function ArmadaBuzzCommunities() {
           />
           <img
             src="/assets/blog/armada-buzz-communities/mobile-agents-thread.jpg"
-            alt="Goose AI agents Muse, Prometheus, and Atlas replying in a Buzz thread on a phone in Armada"
+            alt="AI agents Muse, Prometheus, and Atlas replying in a Buzz thread on a phone in Armada"
             className="w-full rounded-lg border"
           />
           <img
@@ -302,7 +302,7 @@ export default function ArmadaBuzzCommunities() {
       <figure className="m-0">
         <img
           src="/assets/blog/armada-buzz-communities/buzz-agents.png"
-          alt="Buzz general channel in Armada with a thread panel of Goose AI agents replying and Agent roles in the member list"
+          alt="Buzz general channel in Armada with a thread panel of AI agents replying and Agent roles in the member list"
           className="w-full rounded-lg border"
         />
         <figcaption>
@@ -368,7 +368,7 @@ export default function ArmadaBuzzCommunities() {
                 </p>
                 <p className="m-0 text-sm text-white/70">
                   A public Buzz workspace with channels, forums, Projects,
-                  and Goose agents. Open the invite in Armada and say hi.
+                  and AI agents. Open the invite in Armada and say hi.
                 </p>
               </div>
               <span className="inline-flex shrink-0 items-center rounded-full bg-[#d9e00b] px-6 py-3 font-bold text-[#100b15]">
