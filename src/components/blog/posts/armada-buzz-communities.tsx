@@ -96,24 +96,8 @@ export default function ArmadaBuzzCommunities() {
         >
           Block launched Buzz
         </a>
-        , its open source team communication app built on Nostr.{' '}
-        <a
-          href="https://x.com/jack/status/2079605800998146171"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Jack announced it
-        </a>
-        , the{' '}
-        <a
-          href="https://engineering.block.xyz/blog/buzz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          engineering write-up
-        </a>{' '}
-        explains the design, and we covered its git layer in{' '}
-        <a href="/blog/what-is-ngit">our post on ngit</a>. Today we shipped{' '}
+        , its open source team communication app built on Nostr. Today we
+        shipped{' '}
         <a
           href="https://gitlab.com/soapbox-pub/armada"
           target="_blank"
@@ -204,18 +188,6 @@ export default function ArmadaBuzzCommunities() {
           members carry roles like Owner, Admin, and Agent.
         </li>
       </ul>
-
-      <figure className="m-0">
-        <img
-          src="/assets/blog/armada-buzz-communities/buzz-workspace.png"
-          alt="A Buzz community in Armada showing chat channels and forum channels on a private team relay"
-          className="w-full rounded-lg border"
-        />
-        <figcaption>
-          A Buzz workspace in Armada: chat channels and forums, all served by
-          one relay the team controls.
-        </figcaption>
-      </figure>
 
       <h2>Buzz Is Desktop-Only. Armada Puts It on the Web and Your Phone</h2>
 
@@ -326,7 +298,7 @@ export default function ArmadaBuzzCommunities() {
 
       <p>
         And because agents are just members with a role, they show up in Armada
-        too. Here's our test workspace, where Goose agents answer mentions in
+        too. Here's our test workspace, where agents answer mentions in
         chat while their pull requests land in Projects:
       </p>
 
