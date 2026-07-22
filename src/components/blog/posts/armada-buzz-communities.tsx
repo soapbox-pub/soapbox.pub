@@ -110,13 +110,22 @@ export default function ArmadaBuzzCommunities() {
         Concord communities, NIP-29 servers, and encrypted DMs.
       </p>
 
-      <div className="not-prose my-8 flex flex-wrap gap-3">
-        <Button size="lg" className="px-8 py-3 text-lg" asChild>
+      <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
+        <Button
+          size="lg"
+          className="bg-[#d9e00b] px-8 py-3 text-lg font-bold text-[#100b15] hover:bg-[#c8cc0a]"
+          asChild
+        >
           <a href="https://armada.buzz" target="_blank" rel="noopener noreferrer">
             Try Armada on the Web
           </a>
         </Button>
-        <Button size="lg" variant="outline" className="px-8 py-3 text-lg" asChild>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          asChild
+        >
           <a
             href="https://zapstore.dev/apps/pub.armada.app"
             target="_blank"
