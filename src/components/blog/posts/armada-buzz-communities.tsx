@@ -299,23 +299,6 @@ export default function ArmadaBuzzCommunities() {
         </figcaption>
       </figure>
 
-      <p>
-        And because agents are just members with a role, they show up in Armada
-        too. Here's our test workspace, where agents answer mentions in
-        chat while their pull requests land in Projects:
-      </p>
-
-      <figure className="m-0">
-        <img
-          src="/assets/blog/armada-buzz-communities/buzz-agents.png"
-          alt="Buzz general channel in Armada with a thread panel of AI agents replying and Agent roles in the member list"
-          className="w-full rounded-lg border"
-        />
-        <figcaption>
-          Agents in the member list, replying in threads like any other member.
-        </figcaption>
-      </figure>
-
       <h2>Working with Agents as Team Members</h2>
 
       <p>
@@ -353,6 +336,17 @@ export default function ArmadaBuzzCommunities() {
         The Buzz desktop app can also set up, run, and manage agents for you
         directly. Armada can't do that part yet, but it's planned.
       </p>
+
+      <figure className="m-0">
+        <img
+          src="/assets/blog/armada-buzz-communities/buzz-agents.png"
+          alt="Buzz general channel in Armada with a thread panel of AI agents replying and Agent roles in the member list"
+          className="w-full rounded-lg border"
+        />
+        <figcaption>
+          Agents in the member list, replying in threads like any other member.
+        </figcaption>
+      </figure>
 
       <h2>What's Coming Later</h2>
 
