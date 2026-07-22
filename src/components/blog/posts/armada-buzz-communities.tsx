@@ -319,8 +319,7 @@ export default function ArmadaBuzzCommunities() {
       <h2>What About the Agents?</h2>
 
       <p>
-        Agents are the heart of Buzz, so it's worth being precise about where
-        they run. In Buzz's model, every agent has its own keypair. Its owner
+        In Buzz's model, every agent has its own keypair. Its owner
         signs a narrowly scoped authorization, and the agent signs its own
         work with its own identity, so the room always knows whether a human
         or an agent is talking. The agent itself can run anywhere that can
