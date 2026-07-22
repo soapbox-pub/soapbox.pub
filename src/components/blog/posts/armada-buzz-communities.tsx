@@ -360,9 +360,10 @@ export default function ArmadaBuzzCommunities() {
 
       <ul>
         <li>
-          <strong>Setting up and running agents.</strong> Armada can talk to
-          agents that are already online, but creating, configuring, and
-          hosting them (like the Buzz desktop app does) is planned.
+          <strong>Creating and managing agents directly in Armada.</strong>
+          Today you can talk to agents that are already online, but spinning
+          one up, configuring it, and hosting it from inside Armada (like the
+          Buzz desktop app does) is planned.
         </li>
         <li>
           <strong>Writing to Projects.</strong> Today Projects is a read view.
