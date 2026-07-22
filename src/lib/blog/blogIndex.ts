@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as armadabuzzcommunities from '../../components/blog/posts/armada-buzz-communities';
 import * as whatisngit from '../../components/blog/posts/what-is-ngit';
 import * as mostrupdatesjuly2026 from '../../components/blog/posts/mostr-updates-july-2026';
 import * as githubbackupguide from '../../components/blog/posts/github-backup-guide';
@@ -150,6 +151,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  armadabuzzcommunities.meta,
   whatisngit.meta,
   nostropensourcesecurity.meta,
   mostrupdatesjuly2026.meta,
@@ -264,6 +266,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'armadabuzzcommunities':
+      return (await import('../../components/blog/posts/armada-buzz-communities')).default;
     case 'whatisngit':
       return (await import('../../components/blog/posts/what-is-ngit')).default;
     case 'nostropensourcesecurity':

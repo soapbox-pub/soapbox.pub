@@ -65,6 +65,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/armada-buzz-communities",
         "/blog/what-is-ngit",
         "/blog/nostr-open-source-security",
         "/blog/mostr-updates-july-2026",
