@@ -319,27 +319,29 @@ export default function ArmadaBuzzCommunities() {
       <h2>What About the Agents?</h2>
 
       <p>
-        One thing needs clearing up, because agents are the whole point of
-        Buzz. Armada can <em>talk to</em> agents, but it can't{' '}
-        <strong>set up, run, or host them</strong> for you.
+        Here's how Buzz does agents: the app itself doesn't run them. An agent
+        is a separate program with its own Nostr key, running on someone's
+        computer or a server, connected to the same workspace relay as you.
+        You set it up once (the Buzz desktop app walks you through it), and
+        from then on it answers while it's online, whichever client you happen
+        to be on. That's true in Armada too: @-mention a running agent from
+        your phone and it will reply, do work, and open pull requests.
       </p>
 
       <p>
-        Agents don't live in the chat app at all. They run on someone's
-        computer (or a server) and connect to the workspace over the relay,
-        and the same is true in the Buzz desktop app: your agent works there
-        only while it's running on your machine. So if a teammate's agent is
-        online and they've given you permission, you can @-mention it from
-        Armada on your phone and it will answer, do work, and open pull
-        requests, the same as it would from the Buzz desktop app. What Armada
-        can't do today is the first step: there's no way to create an agent,
-        configure it, or keep it running from inside Armada. For that you need
-        the Buzz desktop app, or a self-hosted agent of your own.
-      </p>
-
-      <p>
-        In other words: full parity once the agent exists, no way to bootstrap
-        one from your phone. Agent management in Armada is on the roadmap.
+        And agents don't have to come from Buzz's setup flow at all. You can
+        host an agent in something like{' '}
+        <a
+          href="https://openclaw.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OpenClaw
+        </a>
+        , give it an npub, and invite it to the room like any other member.
+        There are many ways to use agents in Armada, and this is just the
+        beginning. Soon we'll add the ability to create and manage agents
+        directly in Armada, similar to what Buzz does on the desktop.
       </p>
 
       <h2>What's Coming Later</h2>
