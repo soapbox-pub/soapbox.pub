@@ -158,7 +158,7 @@ const APPS: Array<{
     },
   },
   {
-    name: 'gitworkshop.dev',
+    name: 'Ngit',
     category: 'Code & Git',
     description:
       'Git repositories, issues, and pull requests published straight to Nostr with ngit. Code collaboration like GitHub, but nobody can take your repo down.',
@@ -387,84 +387,6 @@ export default function Nostr101() {
         </a>
         .
       </p>
-      <div className="not-prose my-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-100 p-6 sm:p-8 dark:from-violet-950/40 dark:to-purple-950/30">
-        <h3 className="mb-4 text-2xl font-bold text-foreground">
-          Ditto: Best Place to Start
-        </h3>
-        <div className="mb-5 flex gap-2">
-          <img
-            alt="Ditto Kawaii theme"
-            src="/assets/blog/announcing-ditto-2/kawaii-mobile.png"
-            className="min-w-0 flex-1 rounded-lg"
-          />
-          <img
-            alt="Ditto Solarpunk theme"
-            src="/assets/blog/announcing-ditto-2/solarpunk-mobile.png"
-            className="min-w-0 flex-1 rounded-lg"
-          />
-          <img
-            alt="Ditto Hacker theme"
-            src="/assets/blog/announcing-ditto-2/hacker-mobile.png"
-            className="min-w-0 flex-1 rounded-lg"
-          />
-          <img
-            alt="Ditto Clackophile theme"
-            src="/assets/blog/announcing-ditto-2/clackophile-mobile.png"
-            className="hidden min-w-0 flex-1 rounded-lg sm:block"
-          />
-          <img
-            alt="Ditto DJ theme"
-            src="/assets/blog/announcing-ditto-2/dj-mobile.png"
-            className="hidden min-w-0 flex-1 rounded-lg sm:block"
-          />
-          <img
-            alt="Ditto Hiker theme"
-            src="/assets/blog/announcing-ditto-2/hiker-mobile.png"
-            className="hidden min-w-0 flex-1 rounded-lg sm:block"
-          />
-        </div>
-        <p className="mb-6 leading-relaxed text-foreground/80">
-          <strong>Ditto</strong> is a full-featured Nostr community platform
-          where you can explore all of these different content types (posts,
-          articles, photos, music, livestreams, events, and more) all in one
-          place. It's fully customizable with themes, and it's the easiest way
-          to experience everything Nostr has to offer.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="https://ditto.pub"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg bg-violet-600 px-6 py-3 text-base font-semibold text-white no-underline transition-colors duration-150 hover:bg-violet-700 active:bg-violet-800"
-          >
-            <span className="sm:hidden">Try Ditto</span>
-            <span className="hidden sm:inline">Try Ditto Now</span>
-            <span aria-hidden="true">&rarr;</span>
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=pub.ditto.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-violet-600 bg-white px-6 py-3 text-base font-semibold text-violet-600 no-underline transition-colors duration-150 hover:bg-violet-600 hover:text-white active:bg-violet-700"
-          >
-            <img src="/assets/icons/google-play.svg" alt="" className="h-5 w-5" />
-            Google Play
-          </a>
-          <a
-            href="https://zapstore.dev/apps/pub.ditto.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-violet-600 bg-white px-6 py-3 text-base font-semibold text-violet-600 no-underline transition-colors duration-150 hover:bg-violet-600 hover:text-white active:bg-violet-700"
-          >
-            <img
-              src="/assets/icons/zapstore.png"
-              alt=""
-              className="h-5 w-5 rounded"
-            />
-            Zapstore
-          </a>
-        </div>
-      </div>
       <p>
         The wider ecosystem goes far beyond what we build. The most popular
         general-purpose clients are{' '}
@@ -618,6 +540,84 @@ export default function Nostr101() {
           </a>
         </li>
       </ul>
+      <div className="not-prose my-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-100 p-6 sm:p-8 dark:from-violet-950/40 dark:to-purple-950/30">
+        <h3 className="mb-4 text-2xl font-bold text-foreground">
+          Ditto: Best Place to Start
+        </h3>
+        <div className="mb-5 flex gap-2">
+          <img
+            alt="Ditto Kawaii theme"
+            src="/assets/blog/announcing-ditto-2/kawaii-mobile.png"
+            className="min-w-0 flex-1 rounded-lg"
+          />
+          <img
+            alt="Ditto Solarpunk theme"
+            src="/assets/blog/announcing-ditto-2/solarpunk-mobile.png"
+            className="min-w-0 flex-1 rounded-lg"
+          />
+          <img
+            alt="Ditto Hacker theme"
+            src="/assets/blog/announcing-ditto-2/hacker-mobile.png"
+            className="min-w-0 flex-1 rounded-lg"
+          />
+          <img
+            alt="Ditto Clackophile theme"
+            src="/assets/blog/announcing-ditto-2/clackophile-mobile.png"
+            className="hidden min-w-0 flex-1 rounded-lg sm:block"
+          />
+          <img
+            alt="Ditto DJ theme"
+            src="/assets/blog/announcing-ditto-2/dj-mobile.png"
+            className="hidden min-w-0 flex-1 rounded-lg sm:block"
+          />
+          <img
+            alt="Ditto Hiker theme"
+            src="/assets/blog/announcing-ditto-2/hiker-mobile.png"
+            className="hidden min-w-0 flex-1 rounded-lg sm:block"
+          />
+        </div>
+        <p className="mb-6 leading-relaxed text-foreground/80">
+          <strong>Ditto</strong> is a full-featured Nostr community platform
+          where you can explore all of these different content types (posts,
+          articles, photos, music, livestreams, events, and more) all in one
+          place. It's fully customizable with themes, and it's the easiest way
+          to experience everything Nostr has to offer.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://ditto.pub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-lg bg-violet-600 px-6 py-3 text-base font-semibold text-white no-underline transition-colors duration-150 hover:bg-violet-700 active:bg-violet-800"
+          >
+            <span className="sm:hidden">Try Ditto</span>
+            <span className="hidden sm:inline">Try Ditto Now</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=pub.ditto.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-violet-600 bg-white px-6 py-3 text-base font-semibold text-violet-600 no-underline transition-colors duration-150 hover:bg-violet-600 hover:text-white active:bg-violet-700"
+          >
+            <img src="/assets/icons/google-play.svg" alt="" className="h-5 w-5" />
+            Google Play
+          </a>
+          <a
+            href="https://zapstore.dev/apps/pub.ditto.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-violet-600 bg-white px-6 py-3 text-base font-semibold text-violet-600 no-underline transition-colors duration-150 hover:bg-violet-600 hover:text-white active:bg-violet-700"
+          >
+            <img
+              src="/assets/icons/zapstore.png"
+              alt=""
+              className="h-5 w-5 rounded"
+            />
+            Zapstore
+          </a>
+        </div>
+      </div>
       <p>
         Ready to try it? Pick any app above, generate your keys, and you're on
         Nostr. The easiest place to start is{' '}
