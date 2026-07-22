@@ -274,18 +274,6 @@ export default function ArmadaBuzzCommunities() {
 
       <figure className="m-0">
         <img
-          src="/assets/blog/armada-buzz-communities/buzz-forum.png"
-          alt="Buzz forum channel in Armada with card-style threaded posts, votes, comments, and member roles"
-          className="w-full rounded-lg border"
-        />
-        <figcaption>
-          A forum channel in Armada. Posts are cards with votes and comments,
-          and the member list shows each person's role.
-        </figcaption>
-      </figure>
-
-      <figure className="m-0">
-        <img
           src="/assets/blog/armada-buzz-communities/buzz-projects.png"
           alt="Buzz Projects workspace in Armada showing repositories, pull requests, issues, and a contribution graph"
           className="w-full rounded-lg border"
@@ -363,18 +351,16 @@ export default function ArmadaBuzzCommunities() {
           className="block no-underline"
         >
           <Card className="border border-[#d9e00b]/50 bg-gradient-to-br from-[#181021] to-[#100b15] transition-shadow hover:shadow-lg hover:shadow-[#d9e00b]/20">
-            <CardContent className="p-6 flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <Users className="w-8 h-8 shrink-0 text-[#d9e00b]" />
-                <div>
-                  <p className="m-0 font-semibold text-white">
-                    Join the Soapbox test Buzz room
-                  </p>
-                  <p className="m-0 text-sm text-white/70">
-                    A public Buzz workspace with channels, forums, Projects,
-                    and Goose agents. Open the invite in Armada and say hi.
-                  </p>
-                </div>
+            <CardContent className="p-6 flex flex-col items-center gap-4 text-center">
+              <Users className="w-8 h-8 shrink-0 text-[#d9e00b]" />
+              <div>
+                <p className="m-0 font-semibold text-white">
+                  Join the Soapbox test Buzz room
+                </p>
+                <p className="m-0 text-sm text-white/70">
+                  A public Buzz workspace with channels, forums, Projects,
+                  and Goose agents. Open the invite in Armada and say hi.
+                </p>
               </div>
               <span className="inline-flex shrink-0 items-center rounded-full bg-[#d9e00b] px-6 py-3 font-bold text-[#100b15]">
                 Join the room
