@@ -83,86 +83,7 @@ export const meta: BlogPostMeta = {
   },
 };
 
-const NOSTR_APPS: Array<{
-  type: string;
-  app: string;
-  href: string;
-  img: string;
-  alt: string;
-}> = [
-  {
-    type: 'Posts',
-    app: 'Ditto',
-    href: 'https://ditto.pub',
-    img: '/assets/images/ditto/content/posts.png',
-    alt: 'Short posts and social feeds on Nostr in the Ditto app',
-  },
-  {
-    type: 'Articles',
-    app: 'Inkwell',
-    href: 'https://inkwell.shakespeare.wtf',
-    img: '/assets/images/ditto/content/articles.png',
-    alt: 'Long-form articles and blogging on Nostr in Inkwell',
-  },
-  {
-    type: 'Photos',
-    app: 'nostr.build',
-    href: 'https://nostr.build',
-    img: '/assets/images/ditto/content/photos.png',
-    alt: 'Photo sharing on Nostr with nostr.build',
-  },
-  {
-    type: 'Music',
-    app: 'Nodecast',
-    href: 'https://nodecast.xyz',
-    img: '/assets/images/ditto/content/music.png',
-    alt: 'Music streaming on Nostr in Nodecast',
-  },
-  {
-    type: 'Podcasts',
-    app: 'Fountain',
-    href: 'https://fountain.fm',
-    img: '/assets/images/ditto/content/podcasts.png',
-    alt: 'Podcasts on Nostr in the Fountain app',
-  },
-  {
-    type: 'Livestreams',
-    app: 'zap.stream',
-    href: 'https://zap.stream',
-    img: '/assets/images/ditto/content/livestreams.png',
-    alt: 'Live video streaming on Nostr with zap.stream',
-  },
-  {
-    type: 'Short Videos',
-    app: 'Divine',
-    href: 'https://divine.video',
-    img: '/assets/images/ditto/content/vines.png',
-    alt: 'Short looping videos on Nostr in the Divine app, the Vine successor',
-  },
-  {
-    type: 'Events',
-    app: 'Plektos',
-    href: 'https://plektos.app',
-    img: '/assets/images/ditto/content/events.png',
-    alt: 'Event planning and RSVPs on Nostr in Plektos',
-  },
-  {
-    type: 'Books',
-    app: 'Bookstr',
-    href: 'https://bookstr.xyz',
-    img: '/assets/images/ditto/content/books.png',
-    alt: 'Book tracking and reading community on Nostr in Bookstr',
-  },
-  {
-    type: 'Polls',
-    app: 'Ditto',
-    href: 'https://ditto.pub',
-    img: '/assets/images/ditto/content/polls.png',
-    alt: 'Polls and community voting on Nostr in Ditto',
-  },
-];
-
-const FEATURED_APPS: Array<{
+const APPS: Array<{
   name: string;
   category: string;
   description: string;
@@ -171,8 +92,56 @@ const FEATURED_APPS: Array<{
   screenshot: string;
   alt: string;
   accent: string;
-  readMore: { href: string; label: string };
+  readMore?: { href: string; label: string };
 }> = [
+  {
+    name: 'Ditto',
+    category: 'Social Feed & Posts',
+    description:
+      'A full social network: posts, photos, articles, polls, and communities, with customizable themes. The easiest place to start on Nostr.',
+    href: 'https://ditto.pub',
+    icon: '/assets/toolbox/ditto-icon.png',
+    screenshot: '/assets/toolbox/ditto-screenshot.png',
+    alt: 'Ditto social feed on Nostr showing posts, photos, and community timelines',
+    accent: 'from-violet-500 to-purple-600',
+  },
+  {
+    name: 'Divine',
+    category: 'Short Videos',
+    description:
+      'Short looping videos in the spirit of Vine. Watch, film, and share clips that no algorithm buries and no company can delete.',
+    href: 'https://divine.video',
+    icon: '/assets/communities/divine-icon.png',
+    screenshot: '/assets/communities/divine-screenshot.png',
+    alt: 'Divine short video app on Nostr, the Vine successor',
+    accent: 'from-amber-400 to-orange-500',
+    readMore: {
+      href: '/blog/what-is-nostr-divine',
+      label: 'The protocol behind Divine',
+    },
+  },
+  {
+    name: 'Plektos',
+    category: 'Events',
+    description:
+      'Discover events and connect with your community. Find your next adventure on a decentralized calendar.',
+    href: 'https://plektos.app',
+    icon: '/assets/toybox/plektos-icon.png',
+    screenshot: '/assets/toybox/plektos-screenshot.png',
+    alt: 'Plektos event discovery and RSVPs on a decentralized Nostr calendar',
+    accent: 'from-purple-500 to-fuchsia-600',
+  },
+  {
+    name: 'Shakespeare',
+    category: 'Build Your Own',
+    description:
+      'Build Nostr apps by chatting with AI. Describe what you want, preview it live, and deploy in minutes.',
+    href: 'https://shakespeare.diy',
+    icon: '/assets/toolbox/shakespeare-icon.png',
+    screenshot: '/assets/toolbox/shakespeare-screenshot.png',
+    alt: 'Shakespeare AI app builder creating a Nostr app from a chat prompt',
+    accent: 'from-yellow-400 to-blue-500',
+  },
   {
     name: 'Armada',
     category: 'Communities & Chat',
@@ -321,44 +290,13 @@ export default function Nostr101() {
         login.
       </p>
       <p>
-        Here are just some of the types of content you can create, discover,
-        and interact with across the Nostr ecosystem, all with the same
-        account:
-      </p>
-      <div className="not-prose my-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {NOSTR_APPS.map(({ type, app, href, img, alt }) => (
-          <a
-            key={type}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block no-underline"
-          >
-            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  alt={alt}
-                  src={img}
-                  loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="px-3 py-2.5 text-center">
-                <div className="text-sm font-bold text-foreground">{type}</div>
-                <div className="text-xs text-muted-foreground">{app}</div>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-      <h3>Beyond Social: Communities and Code</h3>
-      <p>
-        Nostr goes further than content feeds. Whole categories of apps that
-        used to require a company in the middle, like group chat and code
-        hosting, now run on the same open network, with the same login:
+        The same keys that post to your social feed also publish articles,
+        photos, music, podcasts, livestreams, events, books, and polls. Here
+        are some of the flagship apps, from social feeds to group chat to code
+        hosting, all sharing one login:
       </p>
       <div className="not-prose my-8 grid gap-6 sm:grid-cols-2">
-        {FEATURED_APPS.map(
+        {APPS.map(
           ({
             name,
             category,
@@ -422,12 +360,14 @@ export default function Nostr101() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {description}
                 </p>
-                <a
-                  href={readMore.href}
-                  className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline dark:text-violet-400"
-                >
-                  {readMore.label} &rarr;
-                </a>
+                {readMore && (
+                  <a
+                    href={readMore.href}
+                    className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline dark:text-violet-400"
+                  >
+                    {readMore.label} &rarr;
+                  </a>
+                )}
               </div>
             </div>
           )
@@ -525,48 +465,38 @@ export default function Nostr101() {
           </a>
         </div>
       </div>
-      <h3>Other Popular Nostr Apps</h3>
-      <ul>
-        <li>
-          <strong>
-            <a
-              href="https://primal.net"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Primal
-            </a>
-          </strong>{' '}
-          (Web, iOS, Android): Great for discovery and ease of use, with a
-          built-in Bitcoin wallet for zaps.
-        </li>
-        <li>
-          <strong>
-            <a
-              href="https://damus.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Damus
-            </a>
-          </strong>{' '}
-          (iOS): A clean, Apple-friendly experience from one of the earliest
-          Nostr teams.
-        </li>
-        <li>
-          <strong>
-            <a
-              href="https://amethyst.social"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Amethyst
-            </a>
-          </strong>{' '}
-          (Android): A power-user favorite that supports nearly every Nostr
-          feature.
-        </li>
-      </ul>
+      <p>
+        The wider ecosystem goes far beyond what we build. The most popular
+        general-purpose clients are{' '}
+        <a href="https://primal.net" target="_blank" rel="noopener noreferrer">
+          Primal
+        </a>{' '}
+        (web, iOS, Android, with a built-in Bitcoin wallet),{' '}
+        <a href="https://damus.io" target="_blank" rel="noopener noreferrer">
+          Damus
+        </a>{' '}
+        (iOS), and{' '}
+        <a
+          href="https://amethyst.social"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Amethyst
+        </a>{' '}
+        (Android). For specific media there's{' '}
+        <a href="https://fountain.fm" target="_blank" rel="noopener noreferrer">
+          Fountain
+        </a>{' '}
+        for podcasts,{' '}
+        <a href="https://zap.stream" target="_blank" rel="noopener noreferrer">
+          zap.stream
+        </a>{' '}
+        for livestreams, and{' '}
+        <a href="https://nostr.build" target="_blank" rel="noopener noreferrer">
+          nostr.build
+        </a>{' '}
+        for hosting your media.
+      </p>
       <h2>Nostr Relays</h2>
       <p>
         Relays are the servers that store and deliver your posts. Think of them
