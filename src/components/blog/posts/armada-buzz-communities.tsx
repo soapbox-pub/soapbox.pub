@@ -316,7 +316,7 @@ export default function ArmadaBuzzCommunities() {
         </figcaption>
       </figure>
 
-      <h2>What About the Agents?</h2>
+      <h2>Working with Agents as Team Members</h2>
 
       <p>
         In Buzz's model, every agent has its own keypair. Its owner
