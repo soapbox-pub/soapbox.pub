@@ -1,4 +1,5 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
+import { GitBranch } from 'lucide-react';
 
 export const meta: BlogPostMeta = {
   slug: 'nostr101',
@@ -146,18 +147,58 @@ const NOSTR_APPS: Array<{
     alt: 'Event planning and RSVPs on Nostr in Plektos',
   },
   {
-    type: 'Communities',
-    app: 'Armada',
-    href: 'https://armada.buzz',
-    img: '/assets/blog/armada-buzz-communities/mobile-chat.jpg',
-    alt: 'Group chat and encrypted communities on Nostr in the Armada app',
+    type: 'Books',
+    app: 'Bookstr',
+    href: 'https://bookstr.xyz',
+    img: '/assets/images/ditto/content/books.png',
+    alt: 'Book tracking and reading community on Nostr in Bookstr',
   },
   {
-    type: 'Code',
-    app: 'gitworkshop.dev',
+    type: 'Polls',
+    app: 'Ditto',
+    href: 'https://ditto.pub',
+    img: '/assets/images/ditto/content/polls.png',
+    alt: 'Polls and community voting on Nostr in Ditto',
+  },
+];
+
+const FEATURED_APPS: Array<{
+  name: string;
+  category: string;
+  description: string;
+  href: string;
+  icon: string | null;
+  screenshot: string;
+  alt: string;
+  accent: string;
+  readMore: { href: string; label: string };
+}> = [
+  {
+    name: 'Armada',
+    category: 'Communities & Chat',
+    description:
+      'A Discord-style chat app with end-to-end encrypted communities, voice rooms, and private DMs. It even connects to Buzz, the team workspace app from Block.',
+    href: 'https://armada.buzz',
+    icon: '/assets/armada/icon.png',
+    screenshot: '/assets/media-kit/screenshots/armada/desktop-2.webp',
+    alt: 'Armada community chat on Nostr with channels, emoji reactions, and a member list',
+    accent: 'from-pink-500 to-purple-600',
+    readMore: {
+      href: '/blog/armada-buzz-communities',
+      label: 'How Armada works with Buzz',
+    },
+  },
+  {
+    name: 'gitworkshop.dev',
+    category: 'Code & Git',
+    description:
+      'Git repositories, issues, and pull requests published straight to Nostr with ngit. Code collaboration like GitHub, but nobody can take your repo down.',
     href: 'https://gitworkshop.dev',
-    img: '/assets/blog/nostr101/code-gitworkshop.png',
-    alt: 'Git repositories and code collaboration on Nostr in gitworkshop.dev',
+    icon: null,
+    screenshot: '/assets/blog/nostr101/gitworkshop-wide.png',
+    alt: 'A git repository hosted on Nostr in gitworkshop.dev showing code, files, and pull request tabs',
+    accent: 'from-emerald-500 to-cyan-600',
+    readMore: { href: '/blog/what-is-ngit', label: 'What is Ngit?' },
   },
 ];
 
@@ -310,8 +351,93 @@ export default function Nostr101() {
           </a>
         ))}
       </div>
+      <h3>Beyond Social: Communities and Code</h3>
       <p>
-        And this is just the beginning. Discover more Nostr apps at{' '}
+        Nostr goes further than content feeds. Whole categories of apps that
+        used to require a company in the middle, like group chat and code
+        hosting, now run on the same open network, with the same login:
+      </p>
+      <div className="not-prose my-8 grid gap-6 sm:grid-cols-2">
+        {FEATURED_APPS.map(
+          ({
+            name,
+            category,
+            description,
+            href,
+            icon,
+            screenshot,
+            alt,
+            accent,
+            readMore,
+          }) => (
+            <div
+              key={name}
+              className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block aspect-[16/10] overflow-hidden bg-muted"
+              >
+                <img
+                  src={screenshot}
+                  alt={alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </a>
+              <div className="relative px-6">
+                <div
+                  className={`absolute -top-7 flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${accent} p-[3px] shadow-lg ring-4 ring-card`}
+                >
+                  {icon ? (
+                    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-[13px] bg-white">
+                      <img
+                        src={icon}
+                        alt={`${name} logo`}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <GitBranch className="h-7 w-7 text-white" aria-hidden="true" />
+                  )}
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col px-6 pb-6 pt-10">
+                <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  {category}
+                </div>
+                <h4 className="mt-1 text-xl font-bold text-foreground">
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline hover:underline"
+                  >
+                    {name}
+                  </a>
+                </h4>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+                <a
+                  href={readMore.href}
+                  className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline dark:text-violet-400"
+                >
+                  {readMore.label} &rarr;
+                </a>
+              </div>
+            </div>
+          )
+        )}
+      </div>
+      <p>
+        And this is just the beginning. Browse the rest of our production apps
+        in the <a href="/toolbox">Soapbox Toolbox</a>, see what we're
+        experimenting with in the <a href="/toybox">Toybox</a>, or discover
+        community-built apps at{' '}
         <a
           href="https://nostrapps.com"
           target="_blank"
