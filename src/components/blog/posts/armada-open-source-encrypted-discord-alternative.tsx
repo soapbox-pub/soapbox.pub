@@ -399,30 +399,6 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h2>Features Discord Doesn't Have</h2>
 
-      <figure className="not-prose my-8">
-        <div className="grid grid-cols-3 gap-3">
-          <img
-            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-voice-video.webp"
-            alt="Voice chat and video calls in the Armada Android app, an encrypted Discord alternative"
-            className="w-full rounded-lg border"
-          />
-          <img
-            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-gif-emoji.webp"
-            alt="GIF keyboard and custom emoji in the Armada mobile app"
-            className="w-full rounded-lg border"
-          />
-          <img
-            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-bots-commands.webp"
-            alt="Slash commands and bots in Armada, like Discord bots but on an open protocol"
-            className="w-full rounded-lg border"
-          />
-        </div>
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Armada on Android: a video call in a voice channel, the GIF
-          keyboard, and slash commands with bots.
-        </figcaption>
-      </figure>
-
       <ul>
         <li>
           <strong>Bluetooth mesh chat.</strong> On Android, phones near each
@@ -529,6 +505,30 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         </a>
         .
       </p>
+
+      <figure className="not-prose my-8">
+        <div className="grid grid-cols-3 gap-3">
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-voice-video.webp"
+            alt="Voice chat and video calls in the Armada Android app, an encrypted Discord alternative"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-gif-emoji.webp"
+            alt="GIF keyboard and custom emoji in the Armada mobile app"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-bots-commands.webp"
+            alt="Slash commands and bots in Armada, like Discord bots but on an open protocol"
+            className="w-full rounded-lg border"
+          />
+        </div>
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Armada on Android: a video call in a voice channel, the GIF
+          keyboard, and slash commands with bots.
+        </figcaption>
+      </figure>
 
       <h2>Frequently Asked Questions</h2>
 
