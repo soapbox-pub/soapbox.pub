@@ -16,7 +16,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/best-nostr-apps/cover.png',
   },
-  featured: true,
+  featured: false,
   tags: [
     'best nostr apps',
     'nostr apps',
