@@ -65,7 +65,7 @@ export const meta: BlogPostMeta = {
     steps: [
       {
         name: 'Open a Nostr app',
-        text: 'Go to ditto.pub in your browser (or install Ditto from Google Play or Zap Store) and tap Sign up.',
+        text: 'Go to ditto.pub in your browser (or install Ditto from the App Store, Google Play, or Zap Store) and tap Sign up.',
       },
       {
         name: 'Generate your keys',
@@ -598,6 +598,15 @@ export default function Nostr101() {
             <span className="sm:hidden">Try Ditto</span>
             <span className="hidden sm:inline">Try Ditto Now</span>
             <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a
+            href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-violet-600 bg-white px-6 py-3 text-base font-semibold text-violet-600 no-underline transition-colors duration-150 hover:bg-violet-600 hover:text-white active:bg-violet-700"
+          >
+            <img src="/assets/icons/app-store.svg" alt="" className="h-5 w-5" />
+            App Store
           </a>
           <a
             href="https://play.google.com/store/apps/details?id=pub.ditto.app"

@@ -144,7 +144,7 @@ const COMPARISON: Array<{
   platforms: string;
   bestFor: string;
 }> = [
-  { name: 'Ditto', href: 'https://ditto.pub', platforms: 'Web, Android', bestFor: 'All-in-one starting point' },
+  { name: 'Ditto', href: 'https://ditto.pub', platforms: 'iOS, Android, Web', bestFor: 'All-in-one starting point' },
   { name: 'Primal', href: 'https://primal.net', platforms: 'iOS, Android, Web', bestFor: 'Discovery and a built-in wallet' },
   { name: 'Damus', href: 'https://damus.io', platforms: 'iOS', bestFor: 'Clean, fast iPhone social' },
   { name: 'Amethyst', href: 'https://amethyst.social', platforms: 'Android', bestFor: 'Power users on Android' },
@@ -211,9 +211,10 @@ export default function BestNostrApps() {
               Ditto
             </a>
           </strong>{' '}
-          (web, Android): A full social platform with posts, photos, articles,
-          polls, communities, and custom themes. It runs in any browser, so
-          there is nothing to install to try it.
+          (iOS, Android, web): A full social platform with posts, photos,
+          articles, polls, communities, and custom themes. It runs in any
+          browser, and it is on the App Store and Google Play, so there is
+          nothing to install to try it.
         </li>
         <li>
           <strong>
@@ -776,6 +777,15 @@ export default function BestNostrApps() {
             className="inline-flex items-center gap-1 rounded-lg bg-violet-600 px-6 py-3 text-base font-semibold text-white no-underline transition-colors duration-150 hover:bg-violet-700 active:bg-violet-800"
           >
             Try Ditto <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a
+            href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-violet-600 bg-white px-6 py-3 text-base font-semibold text-violet-600 no-underline transition-colors duration-150 hover:bg-violet-600 hover:text-white active:bg-violet-700"
+          >
+            <img src="/assets/icons/app-store.svg" alt="" className="h-5 w-5" />
+            App Store
           </a>
           <a
             href="/blog/nostr101"
