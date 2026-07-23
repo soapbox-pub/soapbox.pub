@@ -186,19 +186,6 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h3>Is Discord Encrypted? Your Messages Aren't</h3>
 
-      <figure className="m-0">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-dark.webp"
-          alt="Armada desktop app, an open source encrypted Discord alternative, showing channels, threads, a voice message, bots, and member roles in dark theme"
-          className="w-full rounded-lg border"
-        />
-        <figcaption>
-          An encrypted community in Armada on desktop: channels, threads,
-          voice messages, a GIF picker, and bots, with owner and admin roles
-          in the member list.
-        </figcaption>
-      </figure>
-
       <p>
         Discord started encrypting voice and video calls with its DAVE
         protocol in 2024 and made that the default for every call in March
@@ -234,6 +221,19 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         on the implementation. The first payout went out in June: $1,000 for
         a role-revocation flaw that was fixed the same day it was reported.
       </p>
+
+      <figure className="m-0">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-dark.webp"
+          alt="Armada desktop app, an open source encrypted Discord alternative, showing channels, threads, a voice message, bots, and member roles in dark theme"
+          className="w-full rounded-lg border"
+        />
+        <figcaption>
+          An encrypted community in Armada on desktop: channels, threads,
+          voice messages, a GIF picker, and bots, with owner and admin roles
+          in the member list.
+        </figcaption>
+      </figure>
 
       <h3>Data Breaches and ID Verification</h3>
 
