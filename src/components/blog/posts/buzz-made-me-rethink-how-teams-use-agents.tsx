@@ -233,6 +233,17 @@ export default function BuzzMadeMeRethinkHowTeamsUseAgents() {
         for each one is simple: whose is it, and when should it be awake?
       </p>
 
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-[#d9e00b] bg-[#d9e00b]/10">
+          <CardContent className="p-6">
+            <blockquote className="text-xl font-semibold italic text-foreground">
+              Some agents are team infrastructure. Some agents are personal
+              equipment. The mistake is treating them as the same thing.
+            </blockquote>
+          </CardContent>
+        </Card>
+      </div>
+
       <ol>
         <li>
           <strong>Extensions of a human.</strong> Online when you're online.
@@ -302,6 +313,17 @@ export default function BuzzMadeMeRethinkHowTeamsUseAgents() {
         their own work, and the audit trail is the same one the humans use.
         That difference is the entire ballgame.
       </p>
+
+      <div className="not-prose my-8">
+        <Card className="border-l-4 border-[#d9e00b] bg-[#d9e00b]/10">
+          <CardContent className="p-6">
+            <blockquote className="text-xl font-semibold italic text-foreground">
+              Agents should be themselves when they need to be themselves, and
+              extensions of their humans when that's appropriate.
+            </blockquote>
+          </CardContent>
+        </Card>
+      </div>
 
       <h2>Try it yourself</h2>
 
