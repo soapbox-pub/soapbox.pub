@@ -7,7 +7,7 @@ export const meta: BlogPostMeta = {
   slug: 'armada-open-source-encrypted-discord-alternative',
   title: 'Armada: The Open Source, Encrypted Discord Alternative',
   excerpt:
-    'Banned from Discord? Tired of ID scans, data breaches, and ads? Armada is a free, open source, end-to-end encrypted Discord alternative built on Nostr.',
+    'Banned from Discord? Done with ID scans and data breaches? Armada is a free, open source, end-to-end encrypted Discord alternative, now in early access.',
   coverImage: '/assets/blog/armada-open-source-encrypted-discord-alternative/cover.png',
   date: '2026-07-22',
   author: {
@@ -34,7 +34,7 @@ export const meta: BlogPostMeta = {
     'discord privacy',
   ],
   keywords:
-    'discord alternative, open source discord alternative, encrypted discord alternative, banned from discord, discord banned for no reason, discord ban appeal, is discord encrypted, can discord read my messages, discord data breach, discord age verification, discord id verification, self hosted discord alternative, discord alternative without phone number, private discord alternative, free discord alternative, armada app, nostr chat app',
+    'discord alternative, open source discord alternative, encrypted discord alternative, banned from discord, discord banned for no reason, discord ban appeal, is discord encrypted, can discord read my messages, discord data breach, discord age verification, discord id verification, self hosted discord alternative, discord alternative without phone number, private discord alternative, free discord alternative, armada app, armada beta, armada early access, nostr chat app',
   faq: [
     {
       question: 'What is the best open source Discord alternative?',
@@ -47,6 +47,11 @@ export const meta: BlogPostMeta = {
         'Discord added end-to-end encryption for voice and video calls in 2024, but text messages, DMs, and channel history are not end-to-end encrypted. Discord can read, scan, and hand over your messages. Armada encrypts all community messages end to end, so relay operators see only sealed ciphertext.',
     },
     {
+      question: 'Is Armada ready to use?',
+      answer:
+        'Armada is in open beta, still ahead of its v1.0 release. Communities, encrypted DMs, voice and video calls, and the Android app all work today, with new releases landing almost daily. Expect occasional rough edges while it matures.',
+    },
+    {
       question: 'Do I need a phone number or email to use Armada?',
       answer:
         'No. An Armada account is a cryptographic key, so there is no email, phone number, face scan, or ID verification. You generate a key when you sign up and use it to log in anywhere.',
@@ -54,17 +59,17 @@ export const meta: BlogPostMeta = {
     {
       question: 'Can I be banned from Armada?',
       answer:
-        'There is no Armada company account to ban. Community owners moderate their own spaces and can remove members, but no company can delete your identity, wipe your DMs, or take your community down everywhere. Communities live on multiple relays at once, so losing one relay does not end the conversation.',
+        'There is no Armada company account to ban. Community owners moderate their own spaces and can remove members, but no company can delete your identity or take your community down everywhere. Communities live on multiple relays at once, so losing one relay does not end the conversation.',
     },
     {
       question: 'Is Armada free?',
       answer:
-        'Yes. Armada is free and open source under the AGPL-3.0 license, with no ads, no Nitro-style subscription, and no data sales. Use it at armada.buzz or install the Android app from Zap Store.',
+        'Yes. Armada is free and open source under the AGPL-3.0 license. It has no ads and no paid tier. Use it at armada.buzz or install the Android app from Zap Store.',
     },
     {
       question: 'Does Armada have voice chat like Discord?',
       answer:
-        'Yes. Armada communities support voice channels and screen sharing, along with threads, reactions, custom emoji, roles, events with RSVPs, and encrypted direct messages.',
+        'Yes. Armada communities support voice channels with video calls and screen sharing, along with threads, reactions, custom emoji, roles, events with RSVPs, and encrypted direct messages.',
     },
     {
       question: 'Does Armada work on iPhone?',
@@ -89,7 +94,7 @@ export const meta: BlogPostMeta = {
       },
       {
         name: 'Create your key',
-        text: 'Tap Sign up to generate a Nostr key. No email, phone number, or ID is required. Back up your key somewhere safe, because it is your account.',
+        text: 'Tap Sign up to generate a Nostr key. Armada never asks for an email, phone number, or ID. Back up your key somewhere safe, because it is your account.',
       },
       {
         name: 'Create an encrypted community',
@@ -97,7 +102,7 @@ export const meta: BlogPostMeta = {
       },
       {
         name: 'Invite your members',
-        text: 'Share an invite link. Friends join from the browser or the app after the same short signup, with no phone verification step to scare anyone off.',
+        text: 'Share an invite link or invite people directly by name. Friends join from the browser or the app after the same one-minute signup.',
       },
     ],
   },
@@ -114,7 +119,10 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         <a href="/armada">Armada</a> is our answer to all of it: a free, open
         source chat app with servers, channels, voice, and moderation, where
         every community is end-to-end encrypted and no company sits in the
-        middle.
+        middle. Armada is in open beta today, still ahead of its v1.0
+        release, and that is a good time to show up: you get the whole app
+        for free while it is built in the open, new releases land almost
+        daily, and feedback from early users steers the roadmap.
       </p>
 
       <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
@@ -151,11 +159,11 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <h2>Why People Are Looking for a Discord Alternative</h2>
 
       <p>
-        Discord is where the communities are, and that is exactly the problem.
-        One company holds every account, every server, and every message, so
-        when that company makes a bad call, there is nothing you can do about
-        it. The complaints below come up constantly, and they are the ones
-        Armada was built to fix.
+        Discord is where the communities are, and that is exactly the
+        problem. One company holds every account and every message, so when
+        that company makes a bad call, there is nothing you can do about it.
+        The complaints below come up constantly, and they are the ones Armada
+        was built to fix.
       </p>
 
       <h3>Banned From Discord With No Explanation</h3>
@@ -165,10 +173,10 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         identical stories: an account disabled overnight, an appeal form that
         returns an automated denial or nothing at all, and no human to talk
         to. A Discord ban is platform-wide. You lose every server you belong
-        to, every DM, and every year of history at once, even if the supposed
-        violation happened in one server you barely used. Server owners have
-        it worse: entire communities, some with years of accumulated
-        knowledge, get deleted without warning, and there is no backup button.
+        to and every DM at once, even if the supposed violation happened in
+        one server you barely used. Server owners have it worse: entire
+        communities, some with years of accumulated knowledge, get deleted
+        without warning, and there is no backup button.
       </p>
 
       <p>
@@ -184,11 +192,11 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <p>
         Discord added end-to-end encryption for voice and video calls in
-        2024. Text got nothing. Your messages, DMs, and full channel history
-        sit on Discord's servers where the company can read them, scan them
-        with automated systems, and produce them in response to legal
-        requests. If you have ever asked "can Discord read my messages," the
-        answer is yes, all of them, going back years.
+        2024. Text messages got nothing. Your messages, DMs, and full channel
+        history sit on Discord's servers, where the company can read and scan
+        them, and where they can be produced in response to legal requests.
+        If you have ever asked "can Discord read my messages," the answer is
+        yes, all of them, going back years.
       </p>
 
       <p>
@@ -200,11 +208,11 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         >
           Concord protocol
         </a>
-        . Messages are locked on your device before they are sent. The relays
-        that carry them see sealed ciphertext with no readable sender, no
-        community name, and no content. We trust it enough that Team Soapbox
-        shut down our company Signal and moved all internal chat to Armada,
-        and we run a{' '}
+        . Messages are locked on your device before they are sent, and the
+        relays that carry them see only sealed ciphertext, with the sender
+        and even the community's name hidden. We trust it enough that Team
+        Soapbox shut down our company Signal and moved all internal chat to
+        Armada, and we run a{' '}
         <a
           href="https://gitlab.com/soapbox-pub/armada"
           target="_blank"
@@ -237,10 +245,10 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       </p>
 
       <p>
-        Armada's approach is to hold nothing. There is no email, no phone
-        number, no face scan, and no ID upload, so there is no database of
-        your documents waiting to leak. If you want the wider picture on
-        opting out of age-check infrastructure, we wrote about it in{' '}
+        Armada's answer is to hold nothing worth stealing. It never asks for
+        an email, a phone number, a face scan, or an ID upload, so there is
+        no database of your documents waiting to leak. For the wider picture
+        on opting out of age-check infrastructure, we wrote{' '}
         <a href="/blog/how-to-disappear-from-the-surveillance-internet">
           How to Disappear From the Surveillance Internet
         </a>
@@ -254,9 +262,9 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         sponsored Quests in 2024 and video ads on mobile in 2025, with Nitro
         upsells layered on top of features that used to be free. With the
         company reportedly preparing to go public, that pressure only points
-        one direction. Armada is AGPL-3.0 open source with no ads, no premium
-        tier, and no data to sell, because encrypted messages are worthless
-        to advertisers.
+        one direction. Armada is AGPL-3.0 open source, has no ads and no paid
+        tier, and holds no data worth selling, because encrypted messages are
+        worthless to advertisers.
       </p>
 
       <h2>What Is Armada?</h2>
@@ -274,13 +282,14 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <figure className="m-0">
         <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/armada-soapbox-community.png"
-          alt="Armada open source Discord alternative showing an encrypted community with channels, chat, and member list"
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-dark.webp"
+          alt="Armada desktop app, an open source encrypted Discord alternative, showing channels, threads, a voice message, bots, and member roles in dark theme"
           className="w-full rounded-lg border"
         />
         <figcaption>
-          The Soapbox community in Armada: channels, chat, and members in a
-          layout any Discord user already knows.
+          The Team Soapbox community in Armada on desktop: channels, threads,
+          voice messages, a GIF picker, and bots, with owner and admin roles
+          in the member list.
         </figcaption>
       </figure>
 
@@ -289,10 +298,10 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <ul>
         <li>
           <strong>Text channels</strong> with threads, replies, reactions,
-          custom emoji, markdown, and code blocks
+          markdown, and code blocks
         </li>
         <li>
-          <strong>Voice channels</strong> with screen sharing
+          <strong>Voice channels</strong> with video calls and screen sharing
         </li>
         <li>
           <strong>Roles and moderation</strong> so owners and admins can run
@@ -306,10 +315,50 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           community
         </li>
         <li>
-          <strong>A Ctrl+K quick switcher</strong> for jumping between
-          channels
+          <strong>Bots and slash commands</strong>, so the utilities your
+          server relies on come along too
+        </li>
+        <li>
+          <strong>A GIF keyboard, custom emoji, and custom themes</strong>,
+          because a community app should be fun
         </li>
       </ul>
+
+      <figure className="m-0">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-light.webp"
+          alt="Armada light theme showing an encrypted community channel with custom emoji picker, GIFs, reactions, and threaded replies"
+          className="w-full rounded-lg border"
+        />
+        <figcaption>
+          The same community in light theme, with the custom emoji picker
+          open. Armada ships more than a dozen theme presets.
+        </figcaption>
+      </figure>
+
+      <figure className="not-prose my-8">
+        <div className="grid grid-cols-3 gap-3">
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-voice-video.webp"
+            alt="Voice chat and video calls in the Armada Android app, an encrypted Discord alternative"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-gif-emoji.webp"
+            alt="GIF keyboard and custom emoji in the Armada mobile app"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-bots-commands.webp"
+            alt="Slash commands and bots in Armada, like Discord bots but on an open protocol"
+            className="w-full rounded-lg border"
+          />
+        </div>
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Armada on Android: a video call in a voice channel, the GIF
+          keyboard, and slash commands with bots.
+        </figcaption>
+      </figure>
 
       <p>
         The difference is what happens underneath. Every community is
@@ -343,13 +392,13 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <figure className="not-prose my-8">
         <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/armada-community-relays.png"
-          alt="Armada community relay settings showing an encrypted community running on multiple independent relays"
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
+          alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
           className="mx-auto w-full max-w-md rounded-lg border"
         />
         <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          One community, several relays. Losing any one of them changes
-          nothing for the members.
+          A community's settings list its relays. Losing any one of them
+          changes nothing for the members.
         </figcaption>
       </figure>
 
@@ -358,16 +407,28 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <p>
         Signing up for Armada takes about a minute: open the app, tap Sign
         up, and a key is generated for you. That key is the whole account.
-        There is no email confirmation, no SMS verification, no CAPTCHA loop,
-        and no age-verification selfie. The same key logs you in on the web,
-        on Android, and on desktop, and it works across other Nostr apps too,
-        so the identity you create for Armada is yours everywhere. New to the
-        protocol? Start with{' '}
+        Armada skips the email confirmation, the SMS code, and the
+        age-verification selfie entirely. The same key logs you in on the
+        web, on Android, and on desktop, and it works across other Nostr apps
+        too, so the identity you create for Armada is yours everywhere. New
+        to the protocol? Start with{' '}
         <a href="/blog/nostr101">
           Nostr 101: A Beginner Guide to the Decentralized Social Network
         </a>
         .
       </p>
+
+      <figure className="not-prose my-8">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
+          alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
+          className="mx-auto w-full max-w-md rounded-lg border"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Starting an encrypted community on Android. Your key is your
+          membership, and you become the owner.
+        </figcaption>
+      </figure>
 
       <h2>Features Discord Doesn't Have</h2>
 
@@ -396,8 +457,8 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         </li>
         <li>
           <strong>An identity that outlives the app.</strong> Your key works
-          across the whole Nostr ecosystem, so your name, your contacts, and
-          your DMs are yours even if you stop using Armada.
+          across the whole Nostr ecosystem, so your profile, your name, your
+          contacts, and your DMs are yours even if you stop using Armada.
         </li>
       </ul>
 
@@ -425,8 +486,8 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         </li>
         <li>
           <strong>Create your key.</strong> Tap Sign up and a Nostr key is
-          generated for you, with no email, phone number, or ID. Back it up
-          somewhere safe; it is your account.
+          generated for you. Armada never asks for an email, phone number, or
+          ID. Back it up somewhere safe; it is your account.
         </li>
         <li>
           <strong>Create an encrypted community.</strong> Add text and voice
@@ -434,20 +495,34 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           end-to-end encrypted by default.
         </li>
         <li>
-          <strong>Invite your members.</strong> Share an invite link. The
-          unlock key travels inside the link itself and never reaches any
-          server, and joining takes the same one-minute signup.
+          <strong>Invite your members.</strong> Share an invite link or
+          invite people directly by name. The unlock key travels inside the
+          link itself and never reaches any server, and joining takes the
+          same one-minute signup.
         </li>
       </ol>
 
-      <h2>What Armada Doesn't Do Yet</h2>
+      <figure className="not-prose my-8">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
+          alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
+          className="mx-auto w-full max-w-md rounded-lg border"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Invite your crew directly by name or with a shareable link, which
+          you can revoke at any time.
+        </figcaption>
+      </figure>
+
+      <h2>Armada Is in Open Beta</h2>
 
       <p>
         Armada is early software, version 0.x with releases landing almost
-        daily. It runs today on the web, Android, Linux, and Windows. There
-        is no iOS app yet, though the web app works fine on an iPhone in the
-        meantime. Some Discord conveniences are still catching up, and you
-        should expect occasional rough edges. The{' '}
+        daily on the road to v1.0. Everything above works today on the web,
+        Android, Linux, and Windows. There is no iOS app yet, though the web
+        app works fine on an iPhone in the meantime, and some Discord
+        conveniences are still catching up, so expect occasional rough
+        edges. Being this early has an upside: the{' '}
         <a
           href="https://gitlab.com/soapbox-pub/armada/-/blob/main/CHANGELOG.md"
           target="_blank"
@@ -455,8 +530,9 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         >
           changelog
         </a>{' '}
-        moves fast, and the full story of how we got here, including every
-        protocol we tried and abandoned along the way, is in{' '}
+        moves fast, and the people asking for features this month tend to see
+        them ship the next. The full story of how we got here, including
+        every protocol we tried and abandoned along the way, is in{' '}
         <a href="/blog/building-an-armada-voyage-to-encrypted-communities">
           Building an Armada
         </a>
@@ -472,30 +548,37 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         of them. Armada encrypts all community messages end to end.
       </p>
 
+      <h3>Is Armada ready to use?</h3>
+      <p>
+        Armada is in open beta, still ahead of its v1.0 release. Communities,
+        encrypted DMs, voice and video calls, and the Android app all work
+        today, with new releases landing almost daily. Expect occasional
+        rough edges while it matures.
+      </p>
+
       <h3>Do I need a phone number or email to use Armada?</h3>
       <p>
-        No. An Armada account is a cryptographic key. There is no email,
-        phone number, face scan, or ID verification anywhere in the app.
+        No. An Armada account is a cryptographic key. Armada never asks for
+        an email, a phone number, a face scan, or an ID.
       </p>
 
       <h3>Can I be banned from Armada?</h3>
       <p>
         There is no company account to ban. Community owners can remove
         members from their own communities, but no one can delete your
-        identity, wipe your DMs, or take your community down across all of
-        its relays.
+        identity or take your community down across all of its relays.
       </p>
 
       <h3>Is Armada free?</h3>
       <p>
-        Yes. Armada is free and open source under the AGPL-3.0 license, with
-        no ads and no paid tier.
+        Yes. Armada is free and open source under the AGPL-3.0 license. It
+        has no ads and no paid tier.
       </p>
 
       <h3>Does Armada have voice chat?</h3>
       <p>
-        Yes. Voice channels and screen sharing work in communities today,
-        alongside threads, reactions, roles, and events.
+        Yes. Voice channels with video calls and screen sharing work in
+        communities today, alongside threads, reactions, roles, and events.
       </p>
 
       <h3>Does Armada work on iPhone?</h3>
@@ -514,9 +597,9 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <h2>Try It With Us</h2>
 
       <p>
-        The fastest way to judge a chat app is to chat in it. We run our
-        public community on Armada, and anyone can join: open the invite,
-        sign up in a minute, and say hi.
+        The easiest way to judge Armada is inside a live community. We run
+        our public community on Armada, and anyone can join: open the
+        invite, sign up in a minute, and say hi.
       </p>
 
       <div className="not-prose my-10">
@@ -535,8 +618,8 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
                 </p>
                 <p className="m-0 text-sm text-white/70">
                   An end-to-end encrypted community with channels, voice, and
-                  the team that builds Armada. No account required beyond a
-                  key you make on the spot.
+                  the team that builds Armada. Signing up takes a minute,
+                  with a key you create on the spot.
                 </p>
               </div>
               <span className="inline-flex shrink-0 items-center rounded-full bg-[#ec4899] px-6 py-3 font-bold text-white">
