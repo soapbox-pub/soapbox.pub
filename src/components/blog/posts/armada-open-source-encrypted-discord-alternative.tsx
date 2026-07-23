@@ -622,6 +622,37 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         </a>
       </div>
 
+      <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
+        <Button
+          size="lg"
+          className="bg-[#ec4899] px-8 py-3 text-lg font-bold text-white hover:bg-[#db2777]"
+          asChild
+        >
+          <a href="https://armada.buzz" target="_blank" rel="noopener noreferrer">
+            Try Armada on the Web
+          </a>
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          asChild
+        >
+          <a
+            href="https://zapstore.dev/apps/pub.armada.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/assets/icons/zapstore.png"
+              alt=""
+              className="mr-2 h-5 w-5 rounded"
+            />
+            Get on Zap Store
+          </a>
+        </Button>
+      </div>
+
       <h2>Related Reading</h2>
 
       <ul>
