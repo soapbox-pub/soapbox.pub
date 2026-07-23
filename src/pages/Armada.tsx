@@ -272,9 +272,9 @@ function HeroSection() {
             </p>
 
             <h1 className="font-mono font-bold tracking-tight leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl mb-8">
-              Armada: open-source,
+              Armada: encrypted,
               <br />
-              encrypted,
+              open-source,
               <br />
               <span className="text-pink-500">Discord alternative.</span>
             </h1>
