@@ -371,15 +371,28 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h2>Why You Can't Be Banned From Armada</h2>
 
-      <figure className="not-prose my-8 md:float-right md:my-0 md:mb-6 md:ml-8 md:w-64">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
-          alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
-          className="mx-auto w-full max-w-md rounded-lg border"
-        />
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          A community's settings list its relays. Losing any one of them
-          changes nothing for the members.
+      <figure className="not-prose my-10 overflow-x-auto">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-center">
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
+            alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
+            className="h-[420px] w-auto rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
+            alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
+            className="h-[420px] w-auto rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
+            alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
+            className="h-[420px] w-auto rounded-lg border"
+          />
+        </div>
+        <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+          Armada on Android: a community's relays (lose one and nothing
+          changes), starting an encrypted community without an email or phone
+          number, and inviting your crew with a revocable link.
         </figcaption>
       </figure>
 
@@ -405,21 +418,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         headquarters to pressure.
       </p>
 
-      <h2 className="clear-both">
-        Sign Up Without a Phone Number, Email, or ID
-      </h2>
-
-      <figure className="not-prose my-8 md:float-right md:my-0 md:mb-6 md:ml-8 md:w-64">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
-          alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
-          className="mx-auto w-full max-w-md rounded-lg border"
-        />
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Starting an encrypted community on Android. Your key is your
-          membership, and you become the owner.
-        </figcaption>
-      </figure>
+      <h2>Sign Up Without a Phone Number, Email, or ID</h2>
 
       <p>
         Signing up for Armada takes about a minute: open the app, tap Sign
@@ -435,7 +434,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         .
       </p>
 
-      <h2 className="clear-both">Features Discord Doesn't Have</h2>
+      <h2>Features Discord Doesn't Have</h2>
 
       <ul>
         <li>
@@ -468,18 +467,6 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       </ul>
 
       <h2>How to Switch From Discord to Armada</h2>
-
-      <figure className="not-prose my-8 md:float-right md:my-0 md:mb-6 md:ml-8 md:w-64">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
-          alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
-          className="mx-auto w-full max-w-md rounded-lg border"
-        />
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Invite your crew directly by name or with a shareable link, which
-          you can revoke at any time.
-        </figcaption>
-      </figure>
 
       <ol>
         <li>
@@ -519,7 +506,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         </li>
       </ol>
 
-      <h2 className="clear-both">Armada Is in Open Beta</h2>
+      <h2>Armada Is in Open Beta</h2>
 
       <p>
         Armada is early software, version 0.x with releases landing almost
