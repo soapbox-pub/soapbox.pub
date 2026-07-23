@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as buzzmademerethinkhowteamsuseagents from '../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents';
 import * as armadabuzzcommunities from '../../components/blog/posts/armada-buzz-communities';
 import * as armadaopensourceencrypteddiscordalternative from '../../components/blog/posts/armada-open-source-encrypted-discord-alternative';
 import * as whatisngit from '../../components/blog/posts/what-is-ngit';
@@ -153,6 +154,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  buzzmademerethinkhowteamsuseagents.meta,
   armadabuzzcommunities.meta,
   armadaopensourceencrypteddiscordalternative.meta,
   whatisngit.meta,
@@ -270,6 +272,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'buzzmademerethinkhowteamsuseagents':
+      return (await import('../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents')).default;
     case 'armadabuzzcommunities':
       return (await import('../../components/blog/posts/armada-buzz-communities')).default;
     case 'armadaopensourceencrypteddiscordalternative':
