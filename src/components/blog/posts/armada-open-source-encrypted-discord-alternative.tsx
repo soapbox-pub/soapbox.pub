@@ -44,7 +44,7 @@ export const meta: BlogPostMeta = {
     {
       question: 'Is Discord end-to-end encrypted?',
       answer:
-        'Discord added end-to-end encryption for voice and video calls in 2024, but text messages, DMs, and channel history are not end-to-end encrypted. Discord can read, scan, and hand over your messages. Armada encrypts all community messages end to end, so relay operators see only sealed ciphertext.',
+        'Discord encrypts voice and video calls end to end, and made that the default for every call in March 2026. Text messages, DMs, and channel history are not end-to-end encrypted, and Discord has said it has no plans to encrypt them. Armada encrypts all community messages end to end, so relay operators see only sealed ciphertext.',
     },
     {
       question: 'Is Armada ready to use?',
@@ -191,8 +191,10 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <h3>Is Discord Encrypted? Your Messages Aren't</h3>
 
       <p>
-        Discord added end-to-end encryption for voice and video calls in
-        2024. Text messages got nothing. Your messages, DMs, and full channel
+        Discord started encrypting voice and video calls with its DAVE
+        protocol in 2024 and made that the default for every call in March
+        2026. Text messages got nothing, and in May 2026 Discord confirmed it
+        has no plans to change that. Your messages, DMs, and full channel
         history sit on Discord's servers, where the company can read and scan
         them, and where they can be produced in response to legal requests.
         If you have ever asked "can Discord read my messages," the answer is
@@ -227,8 +229,9 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <h3>Data Breaches and ID Verification</h3>
 
       <p>
-        In October 2025, attackers compromised one of Discord's third-party
-        customer support vendors and walked away with data belonging to users
+        In a breach disclosed in October 2025, attackers compromised one of
+        Discord's third-party customer support vendors and walked away with
+        data belonging to users
         who had contacted support, including roughly 70,000 government ID
         photos that people had submitted for age verification appeals. Those
         IDs existed on a vendor's servers because Discord collected them in
@@ -238,10 +241,14 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <p>
         And the collection is expanding. Under the UK's Online Safety Act,
         Discord began requiring UK users to verify their age with a face scan
-        or an ID upload, with similar checks tested in Australia and more
-        countries expected to follow. A chat app now wants your government ID
-        or your biometrics, and the 2025 breach showed exactly what can
-        happen to that data.
+        or an ID upload in 2025, with similar checks in Australia. In
+        February 2026, Discord announced it would take age verification
+        global, defaulting every account to a teen experience until the user
+        proves they are an adult. The backlash was loud enough that Discord
+        delayed the worldwide rollout to the second half of 2026, the window
+        we are in now. A chat app wants your government ID or your
+        biometrics, and the 2025 breach showed exactly what can happen to
+        that data.
       </p>
 
       <p>
@@ -261,8 +268,8 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         Discord spent years promising it would never do ads, then shipped
         sponsored Quests in 2024 and video ads on mobile in 2025, with Nitro
         upsells layered on top of features that used to be free. With the
-        company reportedly preparing to go public, that pressure only points
-        one direction. Armada is AGPL-3.0 open source, has no ads and no paid
+        company reportedly filing confidentially for an IPO in January 2026,
+        that pressure only points one direction. Armada is AGPL-3.0 open source, has no ads and no paid
         tier, and holds no data worth selling, because encrypted messages are
         worthless to advertisers.
       </p>
@@ -368,6 +375,18 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h2>Why You Can't Be Banned From Armada</h2>
 
+      <figure className="not-prose my-8 md:float-right md:my-0 md:mb-6 md:ml-8 md:w-64">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
+          alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
+          className="mx-auto w-full max-w-md rounded-lg border"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          A community's settings list its relays. Losing any one of them
+          changes nothing for the members.
+        </figcaption>
+      </figure>
+
       <p>
         Your Armada account is a key pair, the same kind of key used across
         Nostr. Signing up generates one, and logging in anywhere means
@@ -390,19 +409,21 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         headquarters to pressure.
       </p>
 
-      <figure className="not-prose my-8">
+      <h2 className="clear-both">
+        Sign Up Without a Phone Number, Email, or ID
+      </h2>
+
+      <figure className="not-prose my-8 md:float-right md:my-0 md:mb-6 md:ml-8 md:w-64">
         <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
-          alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
+          alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
           className="mx-auto w-full max-w-md rounded-lg border"
         />
         <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          A community's settings list its relays. Losing any one of them
-          changes nothing for the members.
+          Starting an encrypted community on Android. Your key is your
+          membership, and you become the owner.
         </figcaption>
       </figure>
-
-      <h2>Sign Up Without a Phone Number, Email, or ID</h2>
 
       <p>
         Signing up for Armada takes about a minute: open the app, tap Sign
@@ -418,19 +439,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         .
       </p>
 
-      <figure className="not-prose my-8">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
-          alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
-          className="mx-auto w-full max-w-md rounded-lg border"
-        />
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Starting an encrypted community on Android. Your key is your
-          membership, and you become the owner.
-        </figcaption>
-      </figure>
-
-      <h2>Features Discord Doesn't Have</h2>
+      <h2 className="clear-both">Features Discord Doesn't Have</h2>
 
       <ul>
         <li>
@@ -463,6 +472,18 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       </ul>
 
       <h2>How to Switch From Discord to Armada</h2>
+
+      <figure className="not-prose my-8 md:float-right md:my-0 md:mb-6 md:ml-8 md:w-64">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
+          alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
+          className="mx-auto w-full max-w-md rounded-lg border"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Invite your crew directly by name or with a shareable link, which
+          you can revoke at any time.
+        </figcaption>
+      </figure>
 
       <ol>
         <li>
@@ -502,19 +523,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         </li>
       </ol>
 
-      <figure className="not-prose my-8">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
-          alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
-          className="mx-auto w-full max-w-md rounded-lg border"
-        />
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Invite your crew directly by name or with a shareable link, which
-          you can revoke at any time.
-        </figcaption>
-      </figure>
-
-      <h2>Armada Is in Open Beta</h2>
+      <h2 className="clear-both">Armada Is in Open Beta</h2>
 
       <p>
         Armada is early software, version 0.x with releases landing almost
@@ -543,9 +552,10 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h3>Is Discord end-to-end encrypted?</h3>
       <p>
-        Voice and video calls have been end-to-end encrypted since 2024. Text
-        messages, DMs, and channel history are not, and Discord can read all
-        of them. Armada encrypts all community messages end to end.
+        Voice and video calls are, by default for every call since March
+        2026. Text messages, DMs, and channel history are not, and Discord
+        has said it has no plans to encrypt them. Armada encrypts all
+        community messages end to end.
       </p>
 
       <h3>Is Armada ready to use?</h3>
