@@ -1,50 +1,7 @@
-import { useState } from 'react';
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessagesSquare } from 'lucide-react';
-
-/** One frame of the mobile screenshot carousel. */
-interface PhoneShot {
-  src: string;
-  alt: string;
-  caption: string;
-}
-
-/**
- * A looping phone-mockup carousel: cycles through Armada's Android
- * screenshots so one compact slot on the page can show several features
- * without three tall images stacked on top of each other.
- */
-function PhoneCarousel({ shots }: { shots: PhoneShot[] }) {
-  const [index, setIndex] = useState(0);
-  const shot = shots[index];
-
-  return (
-    <div className="text-center">
-      <img
-        src={shot.src}
-        alt={shot.alt}
-        className="mx-auto w-full max-w-xs rounded-lg border"
-      />
-      <p className="mt-2 text-sm text-muted-foreground">{shot.caption}</p>
-      <div className="mt-3 flex justify-center gap-2">
-        {shots.map((s, i) => (
-          <button
-            key={s.src}
-            type="button"
-            onClick={() => setIndex(i)}
-            aria-label={`Show screenshot ${i + 1}`}
-            aria-current={i === index}
-            className={`size-2 rounded-full transition-colors ${
-              i === index ? 'bg-[#ec4899]' : 'bg-muted-foreground/30 hover:bg-muted-foreground/60'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export const meta: BlogPostMeta = {
   slug: 'armada-open-source-encrypted-discord-alternative',
@@ -339,6 +296,18 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         middle, members on the right.
       </p>
 
+      <figure className="m-0">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-light.webp"
+          alt="Armada light theme showing an encrypted community channel with custom emoji picker, GIFs, reactions, and threaded replies"
+          className="w-full rounded-lg border"
+        />
+        <figcaption>
+          The same community in light theme, with the custom emoji picker
+          open. Armada ships more than a dozen theme presets.
+        </figcaption>
+      </figure>
+
       <p>Everything you would expect is here:</p>
 
       <ul>
@@ -369,18 +338,6 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           because a community app should be fun
         </li>
       </ul>
-
-      <figure className="m-0">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-light.webp"
-          alt="Armada light theme showing an encrypted community channel with custom emoji picker, GIFs, reactions, and threaded replies"
-          className="w-full rounded-lg border"
-        />
-        <figcaption>
-          The same community in light theme, with the custom emoji picker
-          open. Armada ships more than a dozen theme presets.
-        </figcaption>
-      </figure>
 
       <p>
         The difference is what happens underneath. Every community is
@@ -430,6 +387,30 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h2>Features Discord Doesn't Have</h2>
 
+      <figure className="not-prose my-8">
+        <div className="grid grid-cols-3 gap-3">
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-voice-video.webp"
+            alt="Voice chat and video calls in the Armada Android app, an encrypted Discord alternative"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-gif-emoji.webp"
+            alt="GIF keyboard and custom emoji in the Armada mobile app"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-bots-commands.webp"
+            alt="Slash commands and bots in Armada, like Discord bots but on an open protocol"
+            className="w-full rounded-lg border"
+          />
+        </div>
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Armada on Android: a video call in a voice channel, the GIF
+          keyboard, and slash commands with bots.
+        </figcaption>
+      </figure>
+
       <ul>
         <li>
           <strong>Bluetooth mesh chat.</strong> On Android, phones near each
@@ -463,40 +444,27 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <h2>How to Switch From Discord to Armada</h2>
 
       <figure className="not-prose my-8">
-        <PhoneCarousel
-          shots={[
-            {
-              src: '/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-voice-video.webp',
-              alt: 'Voice chat and video calls in the Armada Android app, an encrypted Discord alternative',
-              caption: 'Voice channels with video calls, on your phone.',
-            },
-            {
-              src: '/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-gif-emoji.webp',
-              alt: 'GIF keyboard and custom emoji in the Armada mobile app',
-              caption: 'The GIF keyboard and custom emoji picker.',
-            },
-            {
-              src: '/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-bots-commands.webp',
-              alt: 'Slash commands and bots in Armada, like Discord bots but on an open protocol',
-              caption: 'Bots and slash commands, like your Discord server has.',
-            },
-            {
-              src: '/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp',
-              alt: 'Armada community settings showing channels and the multiple independent relays an encrypted community runs on',
-              caption: "A community's relays. Lose one and nothing changes.",
-            },
-            {
-              src: '/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp',
-              alt: 'Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number',
-              caption: 'Starting an encrypted community. Your key is your membership.',
-            },
-            {
-              src: '/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp',
-              alt: 'Inviting people to an encrypted Armada community with a shareable invite link on Android',
-              caption: 'Invite your crew with a link you can revoke at any time.',
-            },
-          ]}
-        />
+        <div className="grid grid-cols-3 gap-3">
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
+            alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
+            alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
+            alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
+            className="w-full rounded-lg border"
+          />
+        </div>
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Armada on Android: start an encrypted community, see the relays it
+          runs on, and invite your crew with a revocable link.
+        </figcaption>
       </figure>
 
       <ol>
