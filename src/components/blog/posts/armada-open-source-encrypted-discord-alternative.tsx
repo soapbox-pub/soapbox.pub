@@ -640,7 +640,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <ul>
         <li>
-          <a href="/armada">Armada: Discord without the company</a>
+          <a href="/armada">Armada: the open source Discord alternative</a>
         </li>
         <li>
           <a href="/blog/building-an-armada-voyage-to-encrypted-communities">

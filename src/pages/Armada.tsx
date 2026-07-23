@@ -197,7 +197,7 @@ export default function Armada() {
       '@type': 'SoftwareApplication',
       name: 'Armada',
       description:
-        'A Discord-style chat app built on Nostr with end-to-end encrypted communities powered by the Concord protocol. Servers, channels, voice, and moderation — with no company and no central server. Built by Team Soapbox.',
+        'A Discord-style chat app built on Nostr with end-to-end encrypted communities powered by the Concord protocol. Servers, channels, voice, and moderation, with no company and no central server. Built by Team Soapbox.',
       applicationCategory: 'CommunicationApplication',
       operatingSystem: 'Web, Android, Linux, Windows',
       softwareVersion: '0.37',
@@ -272,17 +272,17 @@ function HeroSection() {
             </p>
 
             <h1 className="font-mono font-bold tracking-tight leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl mb-8">
-              Discord without
+              Armada: open-source,
               <br />
-              the company.
+              encrypted,
               <br />
-              <span className="text-pink-500">Your keys. Your people.</span>
+              <span className="text-pink-500">Discord alternative.</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
-              Servers, channels, threads, voice, and moderation — everything
+              Servers, channels, threads, voice, and moderation: everything
               you expect from a chat app, fully end-to-end encrypted. Nobody
-              can read your messages, sell your data, or shut your community
+              can read your messages, and nobody can shut your community
               down.
             </p>
 
@@ -871,12 +871,12 @@ function PrivacySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Nobody reads your chats.
-            <br className="hidden sm:block" /> Not even us.
+            Nobody can read your chats,
+            <br className="hidden sm:block" /> not even us.
           </h2>
           <p className="text-lg text-gray-600">
             Messages are locked on your device before they're sent. Here's the
-            same conversation — with the key, and without it.
+            same conversation with the key, and without it.
           </p>
         </div>
 
@@ -947,7 +947,7 @@ function PrivacySection() {
 
         <p className="text-center mt-10 max-w-2xl mx-auto text-gray-500 text-sm leading-relaxed">
           Who sent it, which community it belongs to, even the community's
-          name — all sealed. Encryption follows the open{' '}
+          name: all sealed. Encryption follows the open{' '}
           <a
             href={CONCORD_URL}
             target="_blank"
@@ -956,7 +956,7 @@ function PrivacySection() {
           >
             Concord protocol
           </a>
-          , so anyone can verify it — or build their own client.
+          , so anyone can verify it or build their own client.
         </p>
       </div>
     </section>
@@ -993,8 +993,8 @@ function UnstoppableSection() {
             A community no one can take away.
           </h2>
           <p className="text-lg text-gray-400">
-            Years of memories, memes, and friendships shouldn't live or die on
-            one company's servers. Watch what happens when things go wrong:
+            Years of memories and friendships shouldn't live or die on one
+            company's servers. Watch what happens when things go wrong:
           </p>
         </div>
 
@@ -1101,7 +1101,7 @@ function UnstoppableSection() {
 
         <p className="text-center mt-10 max-w-2xl mx-auto text-gray-500 text-sm leading-relaxed">
           There's no company account to ban and no headquarters to pressure.
-          Your community lives on many independent relays at once — lose one,
+          Your community lives on many independent relays at once. Lose one,
           lose ten, and the conversation keeps going.
         </p>
       </div>
@@ -1138,8 +1138,8 @@ function MiniFeaturesSection() {
           <p className="text-sm text-gray-600 leading-relaxed">
             <span className="font-semibold text-gray-900">
               Armada is early software
-            </span>{' '}
-            — version 0.x, with new releases landing almost daily. Live today
+            </span>
+            : version 0.x, with new releases landing almost daily. Live today
             on <span className="font-medium text-gray-800">web, Android, Linux, and Windows</span>;
             no iOS app yet (the web app works there in the meantime).{' '}
             <a
@@ -1234,7 +1234,7 @@ function MeshDemoCard() {
       }
       badge="Android · offline"
       title="Chat with zero internet"
-      body="Phones nearby relay messages to each other over Bluetooth — at a festival, on a plane, or during a blackout. Compatible with bitchat."
+      body="Phones nearby relay messages to each other over Bluetooth: at a festival, on a plane, in a blackout, or anywhere else the internet can't reach. Compatible with bitchat."
     />
   );
 }
@@ -1281,7 +1281,7 @@ function NotificationDemoCard() {
       }
       badge="Android"
       title="Notifications, no Google"
-      body="Pings arrive straight from your community — no Google, no third-party push service watching who messages you, even with the app closed."
+      body="Pings arrive straight from your community, even with the app closed. Google and third-party push services never learn who messages you."
     />
   );
 }
@@ -1314,8 +1314,8 @@ function KeyLoginDemoCard() {
           </div>
         </div>
       }
-      title="No account. Just a key."
-      body="Your identity is a key only you hold — no email, no phone number, nothing to hand over. The same key works across every Nostr app."
+      title="Your key is your account."
+      body="Your identity is a key that only you hold, with no email or phone number to hand over. The same key works across every Nostr app."
     />
   );
 }
@@ -1374,7 +1374,7 @@ function BuzzCompatSection() {
               , Block&apos;s open-source team communication app, only ships on
               desktop. Armada connects to the same workspaces from the web and
               Android: chat channels, threaded forums, the Projects workspace,
-              and a mentions Inbox — right alongside your other communities and
+              and a mentions Inbox, right alongside your other communities and
               DMs.
             </p>
             <a
@@ -1410,7 +1410,7 @@ function SelfHostSection() {
               Or run the whole thing yourself.
             </h2>
             <p className="text-gray-400 leading-relaxed mb-6">
-              Communities are serverless by default — but if you want chat as
+              Communities are serverless by default, but if you want chat as
               internal infrastructure, Armada ships a complete open-source
               server stack. One command brings up the relay, voice server, and
               client on your own hardware.
@@ -1418,7 +1418,7 @@ function SelfHostSection() {
             <ul className="space-y-2.5">
               {[
                 'Channels, roles, moderation, and voice out of the box',
-                'Runs air-gapped on an internal network — no outside dependency',
+                'Runs air-gapped on an internal network with no outside dependency',
                 'Standard Nostr (NIP-29) underneath: works with other clients too',
               ].map((bullet) => (
                 <li key={bullet} className="flex items-start gap-2.5">
@@ -1538,7 +1538,7 @@ function CommunityCtaSection() {
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Team Soapbox hangs out in an end-to-end encrypted Armada
-                community — product chat, dev talk, voice hangs, and early
+                community: product chat, dev talk, voice hangs, and early
                 word on everything we ship. The invite link carries its unlock
                 key in the URL fragment, so it never touches a server.
               </p>
@@ -1637,8 +1637,8 @@ function FinalCtaSection() {
         </h2>
         <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
           Armada is open source, built by Team Soapbox, and free for everyone,
-          everywhere — no company, no central server, no one to ask for
-          permission.
+          everywhere. There is no company behind your account and no server
+          anyone can seize.
         </p>
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <Button

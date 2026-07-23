@@ -457,7 +457,7 @@ export default function ArmadaBuzzCommunities() {
           </a>
         </li>
         <li>
-          <a href="/armada">Armada: Discord without the company</a>
+          <a href="/armada">Armada: the open source Discord alternative</a>
         </li>
       </ul>
     </article>
