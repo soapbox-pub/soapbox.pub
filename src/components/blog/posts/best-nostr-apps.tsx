@@ -7,14 +7,14 @@ export const meta: BlogPostMeta = {
   title: 'Best Nostr Apps in 2026: iOS, Android, and Web Clients',
   excerpt:
     'A guide to the best Nostr apps in 2026, from social clients like Damus and Primal to video, photos, music, and chat. One account works across all of them.',
-  coverImage: '/assets/images/nostr101-cover.png',
+  coverImage: '/assets/blog/best-nostr-apps/cover.png',
   date: '2026-07-23',
   author: {
     name: 'M. K. Fain',
     picture: '/assets/avatars/mk.jpg',
   },
   ogImage: {
-    url: '/assets/images/nostr101-cover.png',
+    url: '/assets/blog/best-nostr-apps/cover.png',
   },
   featured: true,
   tags: [
@@ -86,29 +86,14 @@ const SOAPBOX_APPS: Array<{
 }> = [
   {
     name: 'Ditto',
-    category: 'Social Feed',
+    category: 'Your homebase on Nostr',
     description:
-      'A full social network on Nostr: posts, photos, articles, polls, and communities, with custom themes. The easiest all-in-one place to start.',
+      'One app for nearly every kind of content on Nostr: posts, photos, articles, music, podcasts, livestreams, events, books, polls, and short videos. Most apps do one thing; Ditto does it all, with custom themes.',
     href: 'https://ditto.pub',
     icon: '/assets/toolbox/ditto-icon.png',
     screenshot: '/assets/media-kit/screenshots/ditto/desktop-2.webp',
-    alt: 'Ditto Nostr social client showing a profile with a custom theme, media grid, and feed',
+    alt: 'Ditto Nostr homebase showing a profile with a custom theme, media grid, and feed',
     accent: 'from-violet-500 to-purple-600',
-  },
-  {
-    name: 'Divine',
-    category: 'Short Video',
-    description:
-      'Short looping videos in the spirit of Vine. Watch, film, and share clips that no algorithm buries and no company can delete.',
-    href: 'https://divine.video',
-    icon: '/assets/communities/divine-icon.png',
-    screenshot: '/assets/communities/divine-screenshot.png',
-    alt: 'Divine short video Nostr app, the Vine successor, showing a vertical video feed',
-    accent: 'from-amber-400 to-orange-500',
-    readMore: {
-      href: '/blog/what-is-nostr-divine',
-      label: 'The protocol behind Divine',
-    },
   },
   {
     name: 'Armada',
@@ -125,17 +110,6 @@ const SOAPBOX_APPS: Array<{
       label: 'How Armada works with Buzz',
     },
   },
-  {
-    name: 'Shakespeare',
-    category: 'Build Your Own',
-    description:
-      'Build your own Nostr app by chatting with AI. Describe what you want, preview it live, and deploy in minutes. No coding required.',
-    href: 'https://shakespeare.diy',
-    icon: '/assets/toolbox/shakespeare-icon.png',
-    screenshot: '/assets/toolbox/shakespeare-screenshot.png',
-    alt: 'Shakespeare AI app builder generating a Nostr app from a chat prompt',
-    accent: 'from-yellow-400 to-blue-500',
-  },
 ];
 
 const COMPARISON: Array<{
@@ -144,20 +118,21 @@ const COMPARISON: Array<{
   platforms: string;
   bestFor: string;
 }> = [
-  { name: 'Ditto', href: 'https://ditto.pub', platforms: 'iOS, Android, Web', bestFor: 'All-in-one starting point' },
+  { name: 'Ditto', href: 'https://ditto.pub', platforms: 'iOS, Android, Web', bestFor: 'Homebase for every content type' },
   { name: 'Primal', href: 'https://primal.net', platforms: 'iOS, Android, Web', bestFor: 'Discovery and a built-in wallet' },
   { name: 'Damus', href: 'https://damus.io', platforms: 'iOS', bestFor: 'Clean, fast iPhone social' },
   { name: 'Amethyst', href: 'https://amethyst.social', platforms: 'Android', bestFor: 'Power users on Android' },
   { name: 'Nos', href: 'https://nos.social', platforms: 'iOS', bestFor: 'A calmer, human feed' },
-  { name: 'Coracle', href: 'https://coracle.social', platforms: 'Web', bestFor: 'Control over relays and groups' },
   { name: 'Divine', href: 'https://divine.video', platforms: 'iOS, Android', bestFor: 'Short looping video' },
   { name: 'Olas', href: 'https://olas.app', platforms: 'iOS, Android, Web', bestFor: 'Photos and visual posts' },
   { name: 'zap.stream', href: 'https://zap.stream', platforms: 'Web, iOS, Android', bestFor: 'Live streaming' },
   { name: 'Fountain', href: 'https://fountain.fm', platforms: 'iOS, Android', bestFor: 'Podcasts' },
   { name: 'Wavlake', href: 'https://wavlake.com', platforms: 'Web, iOS, Android', bestFor: 'Music' },
+  { name: 'ZapTrax', href: 'https://zaptrax.app', platforms: 'Web', bestFor: 'Nostr-native music' },
+  { name: 'Plektos', href: 'https://plektos.app', platforms: 'Web', bestFor: 'Events and RSVPs' },
+  { name: 'Nests', href: 'https://nostrnests.com', platforms: 'Web', bestFor: 'Live audio rooms' },
   { name: 'Habla', href: 'https://habla.news', platforms: 'Web', bestFor: 'Long-form writing' },
   { name: 'Armada', href: 'https://armada.buzz', platforms: 'Web, iOS, Android', bestFor: 'Encrypted communities and chat' },
-  { name: 'Shakespeare', href: 'https://shakespeare.diy', platforms: 'Web', bestFor: 'Building your own app' },
 ];
 
 export default function BestNostrApps() {
@@ -173,7 +148,8 @@ export default function BestNostrApps() {
         your music player, and your group chat. You create one identity once,
         and it logs you in everywhere. This guide covers the best Nostr apps in
         2026 by category and platform, from the flagship social clients to
-        video, photos, music, and communities.
+        video, photos, music, and communities. If you want one app that does all
+        of it, we recommend Ditto as your homebase.
       </p>
 
       <p>
@@ -213,8 +189,7 @@ export default function BestNostrApps() {
           </strong>{' '}
           (iOS, Android, web): A full social platform with posts, photos,
           articles, polls, communities, and custom themes. It runs in any
-          browser, and it is on the App Store and Google Play, so there is
-          nothing to install to try it.
+          browser, and it is on the App Store and Google Play.
         </li>
         <li>
           <strong>
@@ -228,12 +203,49 @@ export default function BestNostrApps() {
         </li>
       </ul>
 
+      <h2>Ditto: your homebase on Nostr</h2>
+      <p>
+        Most Nostr apps do one thing well. Damus and Nos are for social posts,
+        Olas is for photos, Fountain is for podcasts.{' '}
+        <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
+          Ditto
+        </a>{' '}
+        is the exception. It brings nearly every kind of content on Nostr into
+        one app: posts, photos, articles, music, podcasts, livestreams, events,
+        books, polls, and short videos, all with custom themes to make it yours.
+        If you install only one Nostr app, make it Ditto.
+      </p>
+      <p>
+        It runs in any browser and is on the{' '}
+        <a href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821" target="_blank" rel="noopener noreferrer">
+          App Store
+        </a>{' '}
+        and{' '}
+        <a href="https://play.google.com/store/apps/details?id=pub.ditto.app" target="_blank" rel="noopener noreferrer">
+          Google Play
+        </a>
+        . Because it is built on Nostr, the same account still logs you in to
+        every other app in this guide.
+      </p>
+
       <h2>Best Nostr apps for iOS</h2>
       <p>
         On iPhone and iPad, these are the most popular and actively maintained
         Nostr clients:
       </p>
       <ul>
+        <li>
+          <strong>
+            <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
+              Ditto
+            </a>
+          </strong>
+          : Our pick for an all-in-one iPhone app. On the{' '}
+          <a href="https://apps.apple.com/us/app/ditto-fun-social-media/id6761851821" target="_blank" rel="noopener noreferrer">
+            App Store
+          </a>
+          , with every content type in one place.
+        </li>
         <li>
           <strong>
             <a href="https://damus.io" target="_blank" rel="noopener noreferrer">
@@ -275,27 +287,31 @@ export default function BestNostrApps() {
       <ul>
         <li>
           <strong>
+            <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
+              Ditto
+            </a>
+          </strong>
+          : Our top pick on Android, and the most customizable Nostr app. Themes
+          let you restyle the whole interface, and every content type lives in
+          one place. On Google Play and the App Store.
+        </li>
+        <li>
+          <strong>
             <a href="https://amethyst.social" target="_blank" rel="noopener noreferrer">
               Amethyst
             </a>
           </strong>
-          : The most feature-rich Nostr client on any platform. It supports
-          nearly every content type on the network.
+          : The choice for Nostr power users. The most feature-rich client on any
+          platform, with support for nearly every content type and setting on the
+          network.
         </li>
         <li>
           <strong>
             <a href="https://primal.net" target="_blank" rel="noopener noreferrer">
               Primal
             </a>
-          </strong>{' '}
-          and{' '}
-          <strong>
-            <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
-              Ditto
-            </a>
           </strong>
-          : Both offer strong Android apps if you want something simpler than
-          Amethyst.
+          : A polished, discovery-focused client with a built-in Bitcoin wallet.
         </li>
         <li>
           <strong>
@@ -321,31 +337,17 @@ export default function BestNostrApps() {
             <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
               Ditto
             </a>
-          </strong>{' '}
-          and{' '}
+          </strong>
+          : The most customizable web client, and a full home for every content
+          type.
+        </li>
+        <li>
           <strong>
             <a href="https://primal.net" target="_blank" rel="noopener noreferrer">
               Primal
             </a>
           </strong>
-          : Both have complete web apps, not just mobile.
-        </li>
-        <li>
-          <strong>
-            <a href="https://coracle.social" target="_blank" rel="noopener noreferrer">
-              Coracle
-            </a>
-          </strong>
-          : Built for people who want fine control over relays and private
-          groups.
-        </li>
-        <li>
-          <strong>
-            <a href="https://nostrudel.ninja" target="_blank" rel="noopener noreferrer">
-              noStrudel
-            </a>
-          </strong>
-          : A power-user client that exposes almost everything Nostr can do.
+          : A fast, discovery-focused web app with a built-in wallet.
         </li>
         <li>
           <strong>
@@ -460,6 +462,60 @@ export default function BestNostrApps() {
           : Private, encrypted one-to-one messaging.
         </li>
       </ul>
+
+      <h2>More Nostr apps to explore</h2>
+      <p>
+        The ecosystem keeps growing, and one account reaches all of it. A few
+        newer apps, many built by the Soapbox team and still experimental, show
+        how far Nostr goes beyond a social feed:
+      </p>
+      <ul>
+        <li>
+          <strong>Events:</strong>{' '}
+          <a href="https://plektos.app" target="_blank" rel="noopener noreferrer">
+            Plektos
+          </a>
+          , discover events and RSVP on a decentralized calendar.
+        </li>
+        <li>
+          <strong>Live audio:</strong>{' '}
+          <a href="https://nostrnests.com" target="_blank" rel="noopener noreferrer">
+            Nests
+          </a>
+          , drop-in audio rooms and live podcasts.
+        </li>
+        <li>
+          <strong>Music:</strong>{' '}
+          <a href="https://zaptrax.app" target="_blank" rel="noopener noreferrer">
+            ZapTrax
+          </a>
+          , stream Nostr-native music and zap the artists you love.
+        </li>
+        <li>
+          <strong>Podcasts:</strong>{' '}
+          <a href="https://podstr.org" target="_blank" rel="noopener noreferrer">
+            Podstr
+          </a>
+          , own your podcast community with Lightning support.
+        </li>
+        <li>
+          <strong>Photos and clips:</strong>{' '}
+          <a href="https://zappix.app" target="_blank" rel="noopener noreferrer">
+            Zappix
+          </a>
+          , a trending photo and short-video feed.
+        </li>
+        <li>
+          <strong>Photo scrapbooks:</strong>{' '}
+          <a href="https://polaroids.shakespeare.wtf" target="_blank" rel="noopener noreferrer">
+            Polaroids
+          </a>
+          , photos taped, captioned, and dated the analog way.
+        </li>
+      </ul>
+      <p>
+        See more experiments in the <a href="/toybox">Soapbox Toybox</a>.
+      </p>
 
       <h2>Build your own Nostr app</h2>
       <p>
@@ -599,11 +655,15 @@ export default function BestNostrApps() {
       </div>
       <p>
         Browse the rest of our production apps in the{' '}
-        <a href="/toolbox">Soapbox Toolbox</a>, see what we are experimenting
-        with in the <a href="/toybox">Toybox</a>, or discover the wider
-        community at{' '}
+        <a href="/toolbox">Soapbox Toolbox</a>, and see what we are experimenting
+        with in the <a href="/toybox">Toybox</a>. To find even more clients,
+        browse{' '}
         <a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer">
           Nostrapps.com
+        </a>{' '}
+        or see which apps people are posting from right now on{' '}
+        <a href="https://ditto.pub/trends" target="_blank" rel="noopener noreferrer">
+          Ditto trends
         </a>
         .
       </p>
@@ -764,10 +824,10 @@ export default function BestNostrApps() {
           New to Nostr? Start with Ditto
         </h3>
         <p className="mb-6 leading-relaxed text-foreground/80">
-          <strong>Ditto</strong> is the easiest way to try Nostr. It runs in your
-          browser, creates your account for you, and gives you posts, photos,
-          articles, and communities in one place, all with a single login that
-          works across every app in this guide.
+          <strong>Ditto</strong> is the easiest way to try Nostr, and your
+          homebase once you are in. It creates your account for you and brings
+          posts, photos, articles, music, podcasts, events, and more into one
+          app, with a single login that works across every app in this guide.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
