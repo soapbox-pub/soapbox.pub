@@ -112,17 +112,13 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
   return (
     <article className="prose prose-lg max-w-none">
       <p className="lead">
-        People search for a Discord alternative for concrete reasons: an
-        account ban with no explanation, a prompt to scan their face, a data
-        breach that leaked government IDs, or the slow creep of ads into an
-        app that used to feel like home.{' '}
-        <a href="/armada">Armada</a> is our answer to all of it: a free, open
-        source chat app with servers, channels, voice, and moderation, where
-        every community is end-to-end encrypted and no company sits in the
-        middle. Armada is in open beta today, still ahead of its v1.0
-        release, and that is a good time to show up: you get the whole app
-        for free while it is built in the open, new releases land almost
-        daily, and feedback from early users steers the roadmap.
+        People search for a Discord alternative for concrete reasons:
+        surprise bans, face scans, leaked IDs, ads.{' '}
+        <a href="/armada">Armada</a> is our answer: a free, open source chat
+        app with servers, channels, voice, and moderation, where every
+        community is end-to-end encrypted and no company sits in the middle.
+        It is in open beta ahead of v1.0, so releases land almost daily and
+        early users steer the roadmap.
       </p>
 
       <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
