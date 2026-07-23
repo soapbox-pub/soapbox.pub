@@ -296,15 +296,27 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         middle, members on the right.
       </p>
 
-      <figure className="m-0">
-        <img
-          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-light.webp"
-          alt="Armada light theme showing an encrypted community channel with custom emoji picker, GIFs, reactions, and threaded replies"
-          className="w-full rounded-lg border"
-        />
-        <figcaption>
-          The same community in light theme, with the custom emoji picker
-          open. Armada ships more than a dozen theme presets.
+      <figure className="not-prose my-8">
+        <div className="grid grid-cols-3 gap-3">
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
+            alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
+            alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
+            className="w-full rounded-lg border"
+          />
+          <img
+            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
+            alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
+            className="w-full rounded-lg border"
+          />
+        </div>
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Armada on Android: start an encrypted community, see the relays it
+          runs on, and invite your crew with a revocable link.
         </figcaption>
       </figure>
 
@@ -443,27 +455,15 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <h2>How to Switch From Discord to Armada</h2>
 
-      <figure className="not-prose my-8">
-        <div className="grid grid-cols-3 gap-3">
-          <img
-            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-create-community.webp"
-            alt="Create encrypted community screen in Armada, a decentralized encrypted chat app that signs you up without email or phone number"
-            className="w-full rounded-lg border"
-          />
-          <img
-            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-community-relays.webp"
-            alt="Armada community settings showing channels and the multiple independent relays an encrypted community runs on"
-            className="w-full rounded-lg border"
-          />
-          <img
-            src="/assets/blog/armada-open-source-encrypted-discord-alternative/mobile-invite.webp"
-            alt="Inviting people to an encrypted Armada community with a shareable invite link on Android"
-            className="w-full rounded-lg border"
-          />
-        </div>
-        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-          Armada on Android: start an encrypted community, see the relays it
-          runs on, and invite your crew with a revocable link.
+      <figure className="m-0">
+        <img
+          src="/assets/blog/armada-open-source-encrypted-discord-alternative/desktop-light.webp"
+          alt="Armada light theme showing an encrypted community channel with custom emoji picker, GIFs, reactions, and threaded replies"
+          className="w-full rounded-lg border"
+        />
+        <figcaption>
+          The same community in light theme, with the custom emoji picker
+          open. Armada ships more than a dozen theme presets.
         </figcaption>
       </figure>
 
