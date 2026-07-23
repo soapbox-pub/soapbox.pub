@@ -83,6 +83,56 @@ const GITLAB_URL = 'https://gitlab.com/soapbox-pub/armada';
 /** Armada's dark theme background color. */
 const INK = '#100b15';
 
+/**
+ * FAQ copy, rendered in FaqSection and mirrored verbatim into the FAQPage
+ * JSON-LD block so the visible text and the schema never drift. Written
+ * around real search queries.
+ */
+const ARMADA_FAQ: Array<{
+  question: string;
+  answer: string;
+  link?: { href: string; label: string };
+}> = [
+  {
+    question: 'Is Armada a good Discord alternative?',
+    answer:
+      'If you have used Discord, you already know the layout: communities, channels, threads, voice, and moderation. The difference is underneath. Every community is end-to-end encrypted, your account is a key instead of an email, and communities live on many relays at once, so no company can ban you or delete your server.',
+    link: {
+      href: '/blog/armada-open-source-encrypted-discord-alternative',
+      label: 'Read the full comparison',
+    },
+  },
+  {
+    question: 'Is Armada free?',
+    answer:
+      'Yes. Armada is free and open source under the AGPL-3.0 license, with no ads and no paid tier.',
+  },
+  {
+    question: 'Can I be banned from Armada?',
+    answer:
+      'There is no company account to ban. Community owners moderate their own spaces, but no one can delete your identity or take your community down across all of its relays.',
+  },
+  {
+    question: 'Do I need a phone number or email to sign up?',
+    answer:
+      'No. Signing up generates a cryptographic key, and that key is your whole account, on Armada and across every other Nostr app.',
+    link: {
+      href: '/blog/managing-nostr-keys',
+      label: 'How to store your key',
+    },
+  },
+  {
+    question: 'Does Armada work on iPhone?',
+    answer:
+      'There is no iOS app yet. The web app at armada.buzz works on iPhone, and native apps exist for Android, Linux, and Windows.',
+  },
+  {
+    question: 'Is Armada ready to use?',
+    answer:
+      'Armada is in open beta ahead of its v1.0 release. Communities, encrypted DMs, and voice and video calls all work today, with new releases landing almost daily. Expect occasional rough edges while it matures.',
+  },
+];
+
 /** Slightly lifted surface color used for app-window mockups. */
 const SURFACE = '#181021';
 
@@ -135,13 +185,13 @@ function useTicker(intervalMs: number, modulo: number): number {
 
 export default function Armada() {
   useSEO({
-    title: 'Armada — Discord Without the Company | Soapbox',
+    title: 'Armada: The Open Source, Encrypted Discord Alternative | Soapbox',
     description:
-      'Armada is a Discord-style chat app built on Nostr: servers, channels, voice, and end-to-end encrypted communities powered by the Concord protocol. No central server, no company in the middle. Your keys, your people.',
+      'A free, open source, end-to-end encrypted Discord alternative: servers, channels, voice, and moderation, with no company in the middle. Now in open beta.',
     image: ARMADA_OG_IMAGE,
     type: 'website',
     keywords:
-      'armada, armada.buzz, buzz communities, block buzz app, buzz client, concord protocol, discord alternative, encrypted group chat, end-to-end encryption, nostr, nostr communities, nip-29, private communities, decentralized chat, voice chat, bluetooth mesh, bitchat, soapbox, self-hosted discord, e2ee communities',
+      'armada, armada.buzz, discord alternative, open source discord alternative, encrypted discord alternative, free discord alternative, banned from discord, buzz communities, block buzz app, buzz client, concord protocol, encrypted group chat, end-to-end encryption, nostr, nostr communities, nip-29, private communities, decentralized chat, voice chat, bluetooth mesh, bitchat, soapbox, self-hosted discord, e2ee communities',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
@@ -150,6 +200,7 @@ export default function Armada() {
         'A Discord-style chat app built on Nostr with end-to-end encrypted communities powered by the Concord protocol. Servers, channels, voice, and moderation — with no company and no central server. Built by Team Soapbox.',
       applicationCategory: 'CommunicationApplication',
       operatingSystem: 'Web, Android, Linux, Windows',
+      softwareVersion: '0.37',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url: ARMADA_URL,
       sameAs: [GITLAB_URL, CONCORD_URL],
@@ -159,6 +210,17 @@ export default function Armada() {
         url: 'https://soapbox.pub',
       },
     },
+    additionalStructuredData: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: ARMADA_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        })),
+      },
+    ],
   });
 
   return (
@@ -173,6 +235,7 @@ export default function Armada() {
       <BuzzCompatSection />
       <SelfHostSection />
       <CommunityCtaSection />
+      <FaqSection />
       <FinalCtaSection />
 
       <Footer />
@@ -1507,6 +1570,48 @@ function CommunityCtaSection() {
 }
 
 // ───────────────────────────────────────────────────────────────────────────
+// Section: FAQ — the one deliberately text-first section on a page of
+// mockups. Real prose for readers arriving from search, mirrored into the
+// FAQPage JSON-LD block emitted by useSEO.
+// ───────────────────────────────────────────────────────────────────────────
+
+function FaqSection() {
+  return (
+    <section className="bg-white py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl tracking-tight mb-12 text-center">
+          Frequently asked questions
+        </h2>
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
+          {ARMADA_FAQ.map((item) => (
+            <div key={item.question}>
+              <h3 className="font-semibold text-gray-900 mb-2">
+                {item.question}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {item.answer}
+                {item.link && (
+                  <>
+                    {' '}
+                    <Link
+                      to={item.link.href}
+                      className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
+                    >
+                      {item.link.label}
+                    </Link>
+                    .
+                  </>
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
 // Section: Final CTA
 // ───────────────────────────────────────────────────────────────────────────
 
@@ -1594,7 +1699,14 @@ function FinalCtaSection() {
             className="underline hover:text-white"
           >
             Concord protocol specs
-          </a>
+          </a>{' '}
+          ·{' '}
+          <Link
+            to="/blog/armada-open-source-encrypted-discord-alternative"
+            className="underline hover:text-white"
+          >
+            Why switch from Discord
+          </Link>
         </p>
       </div>
     </section>
