@@ -340,6 +340,7 @@ export default function WhatIsNostrDivine() {
         <li><a href="https://nostrhub.io" target="_blank" rel="noopener noreferrer">NostrHub</a> - Explore Nostr Improvement Proposals (NIPs) and development</li>
         <li><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer">Nostrapps.com</a> - Discover other Nostr applications</li>
         <li><a href="/blog/nostr101">Nostr 101</a> - Our comprehensive beginner's guide to the protocol</li>
+        <li><a href="/blog/best-nostr-apps">Best Nostr Apps in 2026</a> - Compare the top Nostr clients for iOS, Android, and web</li>
       </ul>
 
       <p>

@@ -936,11 +936,36 @@ export default function Index() {
   useSEO({
     title: "Soapbox — Taking back the internet",
     description:
-      "Soapbox builds open source tools for freedom online: decentralized social media, censorship-resistant fundraising, encrypted communities, and creative tools anyone can own.",
+      "Soapbox builds open source tools for freedom online: decentralized social media on Nostr, censorship-resistant fundraising, encrypted communities, and creative tools anyone can own.",
     type: "website",
     image: "/og-image-v2.png",
     keywords:
-      "soapbox, nostr, decentralized, social media, open source, ditto, shakespeare, agora, fediverse, activitypub",
+      "soapbox, nostr, what is nostr, nostr apps, best nostr apps, nostr client, decentralized, social media, open source, ditto, shakespeare, agora, fediverse, activitypub",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Soapbox",
+      url: "https://soapbox.pub",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://soapbox.pub/assets/logo.svg",
+      },
+      description:
+        "Soapbox builds open source, decentralized tools on the Nostr protocol: social media, fundraising, communities, and creative apps that people own.",
+      sameAs: [
+        "https://x.com/soapbox_pub",
+        "https://github.com/soapbox-pub",
+        "https://ditto.pub",
+      ],
+    },
+    additionalStructuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Soapbox",
+        url: "https://soapbox.pub",
+      },
+    ],
   });
 
   return (

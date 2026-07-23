@@ -2,6 +2,7 @@
 import * as armadabuzzcommunities from '../../components/blog/posts/armada-buzz-communities';
 import * as armadaopensourceencrypteddiscordalternative from '../../components/blog/posts/armada-open-source-encrypted-discord-alternative';
 import * as whatisngit from '../../components/blog/posts/what-is-ngit';
+import * as bestnostrapps from '../../components/blog/posts/best-nostr-apps';
 import * as mostrupdatesjuly2026 from '../../components/blog/posts/mostr-updates-july-2026';
 import * as githubbackupguide from '../../components/blog/posts/github-backup-guide';
 import * as shakespearevsbase44 from '../../components/blog/posts/shakespeare-vs-base44';
@@ -155,6 +156,7 @@ export const blogPosts: BlogPost[] = [
   armadabuzzcommunities.meta,
   armadaopensourceencrypteddiscordalternative.meta,
   whatisngit.meta,
+  bestnostrapps.meta,
   nostropensourcesecurity.meta,
   mostrupdatesjuly2026.meta,
   gazafamiliesbitcoincrowdfundingagora.meta,
@@ -274,6 +276,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/armada-open-source-encrypted-discord-alternative')).default;
     case 'whatisngit':
       return (await import('../../components/blog/posts/what-is-ngit')).default;
+    case 'bestnostrapps':
+      return (await import('../../components/blog/posts/best-nostr-apps')).default;
     case 'nostropensourcesecurity':
       return (await import('../../components/blog/posts/nostr-open-source-security')).default;
     case 'mostrupdatesjuly2026':

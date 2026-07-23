@@ -520,6 +520,11 @@ export default function Nostr101() {
       <h2>Related Reading</h2>
       <ul>
         <li>
+          <a href="/blog/best-nostr-apps">
+            Best Nostr Apps in 2026: iOS, Android, and Web Clients
+          </a>
+        </li>
+        <li>
           <a href="/blog/zapping-101">
             Zapping 101: How to Send (and Receive) Bitcoin Tips on Nostr
           </a>

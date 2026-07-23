@@ -65,6 +65,7 @@ export default defineConfig({
         "/blog/author/m-k-fain",
 
         // Blog posts
+        "/blog/best-nostr-apps",
         "/blog/armada-open-source-encrypted-discord-alternative",
         "/blog/armada-buzz-communities",
         "/blog/what-is-ngit",
