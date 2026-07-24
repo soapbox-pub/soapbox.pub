@@ -70,7 +70,7 @@ Bluesky started as a Twitter-funded project in <strong>2019</strong>, with the g
       <li>AtProto allows users to <strong>theoretically</strong> move between different services. However, user keys are controlled by the server admin, and users' ability to move servers is dependent on the server's willingness to cooperate.</li>
       <li>Although AtProto is a decentralized protocol, in practice, <strong>Bluesky is highly centralized</strong> because the vast majority of users rely on <strong>bsky.social</strong>, which can block entire self-hosted servers.</li>
       <li>Self-hosting is highly restricted: servers are <strong>limited to 100 users</strong>, and <strong>Bluesky can refuse to federate with them</strong>.</li>
-      </ul></ul><p>(For a more technical deepdive on Bluesky vs. Nostr, check out <a href="https://habla.news/u/alex@gleasonator.dev/bluesky-vs-nostr" target="_blank" rel="noopener noreferrer">this post</a>.) </p>
+      </ul></ul><p>(For a more technical deepdive on Bluesky vs. Nostr, check out <a href="https://njump.me/naddr1qvzqqqr4gupzqprpljlvcnpnw3pejvkkhrc3y6wvmd7vjuad0fg2ud3dky66gaxaqyt8wumn8ghj7un9d3shjtnyd968gmewwp6kytcqzp3xcat9wd4hjttkwvkkummnw3equfffur" target="_blank" rel="noopener noreferrer">this post</a>.) </p>
       <hr />
       <h2>About Nostr</h2>
       <h3><strong>Background & History</strong></h3>
