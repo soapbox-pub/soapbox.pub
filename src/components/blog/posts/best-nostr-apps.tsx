@@ -124,14 +124,14 @@ const COMPARISON: Array<{
   { name: 'Amethyst', href: 'https://amethyst.social', platforms: 'Android', bestFor: 'Power users on Android' },
   { name: 'Nos', href: 'https://nos.social', platforms: 'iOS', bestFor: 'A calmer, human feed' },
   { name: 'Divine', href: 'https://divine.video', platforms: 'iOS, Android', bestFor: 'Short looping video' },
-  { name: 'Olas', href: 'https://olas.app', platforms: 'iOS, Android, Web', bestFor: 'Photos and visual posts' },
+  { name: 'Zappix', href: 'https://zappix.app', platforms: 'Web, Android', bestFor: 'Photos and visual posts' },
   { name: 'zap.stream', href: 'https://zap.stream', platforms: 'Web, iOS, Android', bestFor: 'Live streaming' },
   { name: 'Fountain', href: 'https://fountain.fm', platforms: 'iOS, Android', bestFor: 'Podcasts' },
   { name: 'Wavlake', href: 'https://wavlake.com', platforms: 'Web, iOS, Android', bestFor: 'Music' },
-  { name: 'ZapTrax', href: 'https://zaptrax.app', platforms: 'Web', bestFor: 'Nostr-native music' },
-  { name: 'Plektos', href: 'https://plektos.app', platforms: 'Web', bestFor: 'Events and RSVPs' },
-  { name: 'Nests', href: 'https://nostrnests.com', platforms: 'Web', bestFor: 'Live audio rooms' },
-  { name: 'Habla', href: 'https://habla.news', platforms: 'Web', bestFor: 'Long-form writing' },
+  { name: 'ZapTrax', href: 'https://zaptrax.app', platforms: 'Web, Android', bestFor: 'Nostr-native music' },
+  { name: 'Plektos', href: 'https://plektos.app', platforms: 'Web, Android', bestFor: 'Events and RSVPs' },
+  { name: 'Nests', href: 'https://nostrnests.com', platforms: 'Web, Android', bestFor: 'Live audio rooms' },
+  { name: 'YakiHonne', href: 'https://www.yakihonne.com', platforms: 'iOS, Android, Web', bestFor: 'Long-form writing' },
   { name: 'Armada', href: 'https://armada.buzz', platforms: 'Web, iOS, Android', bestFor: 'Encrypted communities and chat' },
 ];
 
@@ -206,7 +206,7 @@ export default function BestNostrApps() {
       <h2>Ditto: your homebase on Nostr</h2>
       <p>
         Most Nostr apps do one thing well. Damus and Nos are for social posts,
-        Olas is for photos, Fountain is for podcasts.{' '}
+        Zappix is for photos, Fountain is for podcasts.{' '}
         <a href="https://ditto.pub" target="_blank" rel="noopener noreferrer">
           Ditto
         </a>{' '}
@@ -376,10 +376,10 @@ export default function BestNostrApps() {
         </li>
         <li>
           <strong>Photos:</strong>{' '}
-          <a href="https://olas.app" target="_blank" rel="noopener noreferrer">
-            Olas
+          <a href="https://zappix.app" target="_blank" rel="noopener noreferrer">
+            Zappix
           </a>
-          , an Instagram-style app for visual posts.
+          , a trending feed of photos and short clips, on the web and Android.
         </li>
         <li>
           <strong>Live streaming:</strong>{' '}
@@ -408,15 +408,16 @@ export default function BestNostrApps() {
       <ul>
         <li>
           <strong>
-            <a href="https://habla.news" target="_blank" rel="noopener noreferrer">
-              Habla
+            <a href="https://pareto.space" target="_blank" rel="noopener noreferrer">
+              Pareto
             </a>
           </strong>
-          : A clean blogging client for long-form articles on Nostr.
+          : A publishing client for long-form articles and citizen journalism
+          on Nostr.
         </li>
         <li>
           <strong>
-            <a href="https://yakihonne.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.yakihonne.com" target="_blank" rel="noopener noreferrer">
               YakiHonne
             </a>
           </strong>
@@ -444,14 +445,8 @@ export default function BestNostrApps() {
             <a href="https://flotilla.social" target="_blank" rel="noopener noreferrer">
               Flotilla
             </a>
-          </strong>{' '}
-          and{' '}
-          <strong>
-            <a href="https://chachi.chat" target="_blank" rel="noopener noreferrer">
-              Chachi
-            </a>
           </strong>
-          : Group chat clients built around relay-based communities.
+          : Group chat built around relay-based communities.
         </li>
         <li>
           <strong>
@@ -475,21 +470,23 @@ export default function BestNostrApps() {
           <a href="https://plektos.app" target="_blank" rel="noopener noreferrer">
             Plektos
           </a>
-          , discover events and RSVP on a decentralized calendar.
+          , discover events and RSVP on a decentralized calendar, on the web
+          and Android.
         </li>
         <li>
           <strong>Live audio:</strong>{' '}
           <a href="https://nostrnests.com" target="_blank" rel="noopener noreferrer">
             Nests
           </a>
-          , drop-in audio rooms and live podcasts.
+          , drop-in audio rooms and live podcasts, with web and Android apps.
         </li>
         <li>
           <strong>Music:</strong>{' '}
           <a href="https://zaptrax.app" target="_blank" rel="noopener noreferrer">
             ZapTrax
           </a>
-          , stream Nostr-native music and zap the artists you love.
+          , stream Nostr-native music and zap the artists you love, in the
+          browser or on Android.
         </li>
         <li>
           <strong>Podcasts:</strong>{' '}
@@ -497,13 +494,6 @@ export default function BestNostrApps() {
             Podstr
           </a>
           , own your podcast community with Lightning support.
-        </li>
-        <li>
-          <strong>Photos and clips:</strong>{' '}
-          <a href="https://zappix.app" target="_blank" rel="noopener noreferrer">
-            Zappix
-          </a>
-          , a trending photo and short-video feed.
         </li>
         <li>
           <strong>Photo scrapbooks:</strong>{' '}
