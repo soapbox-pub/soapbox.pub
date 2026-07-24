@@ -65,6 +65,12 @@ const ARMADA_OG_IMAGE = '/assets/armada/og.png';
 /** The Armada web app. */
 const ARMADA_URL = 'https://armada.buzz';
 
+/** Armada on Zapstore, the decentralized Android app store built on Nostr. */
+const ZAPSTORE_URL = 'https://zapstore.dev/apps/pub.armada.app';
+
+/** Zapstore icon used on download buttons. */
+const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
+
 /**
  * Invite link into the official Soapbox community on Armada. The URL
  * fragment carries the unlock token (per CORD-05, invite keys live in an
@@ -303,13 +309,13 @@ function HeroSection() {
                 variant="outline"
                 className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white font-medium h-12 px-6 text-base"
               >
-                <a
-                  href={COMMUNITY_INVITE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessagesSquare className="mr-2 size-4" />
-                  Join our community
+                <a href={ZAPSTORE_URL} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={ZAPSTORE_ICON}
+                    alt=""
+                    className="mr-2 size-5 rounded"
+                  />
+                  Download on Zapstore
                 </a>
               </Button>
             </div>
