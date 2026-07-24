@@ -66,7 +66,7 @@ const ARMADA_OG_IMAGE = '/assets/armada/og.png';
 const ARMADA_URL = 'https://armada.buzz';
 
 /** Armada on Zapstore, the decentralized Android app store built on Nostr. */
-const ZAPSTORE_URL = 'https://zapstore.dev/apps/pub.armada.app';
+const ZAPSTORE_URL = 'https://zapstore.dev/apps/buzz.armada.app';
 
 /** Zapstore icon used on download buttons. */
 const ZAPSTORE_ICON = '/assets/icons/zapstore.png';

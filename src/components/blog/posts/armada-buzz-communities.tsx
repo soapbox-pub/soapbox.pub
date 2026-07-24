@@ -132,7 +132,7 @@ export default function ArmadaBuzzCommunities() {
           asChild
         >
           <a
-            href="https://zapstore.dev/apps/pub.armada.app"
+            href="https://zapstore.dev/apps/buzz.armada.app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -221,7 +221,7 @@ export default function ArmadaBuzzCommunities() {
         </a>
         , or on Android via{' '}
         <a
-          href="https://zapstore.dev/apps/pub.armada.app"
+          href="https://zapstore.dev/apps/buzz.armada.app"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -138,7 +138,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           asChild
         >
           <a
-            href="https://zapstore.dev/apps/pub.armada.app"
+            href="https://zapstore.dev/apps/buzz.armada.app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -455,7 +455,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           </a>{' '}
           in your browser, or install it on Android from{' '}
           <a
-            href="https://zapstore.dev/apps/pub.armada.app"
+            href="https://zapstore.dev/apps/buzz.armada.app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -639,7 +639,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           asChild
         >
           <a
-            href="https://zapstore.dev/apps/pub.armada.app"
+            href="https://zapstore.dev/apps/buzz.armada.app"
             target="_blank"
             rel="noopener noreferrer"
           >
