@@ -3,9 +3,9 @@ import { FAQSection } from '@/components/blog/FAQSection';
 
 export const meta: BlogPostMeta = {
   slug: 'mostr-updates-july-2026',
-  title: 'Mostr Bridge Updates: Reserve Your Nostr Username',
+  title: 'Mostr Bridge Updates: Usernames, Hot Posts, and Encrypted DMs',
   excerpt:
-    'Mostr, the Fediverse-Nostr bridge, now lets Nostr users reserve usernames and browse hot posts from across the bridge.',
+    'Mostr, the Fediverse-Nostr bridge, now lets Nostr users reserve usernames, browse hot posts from across the bridge, and send encrypted DMs to Pleroma chats.',
   coverImage: '/assets/blog/mostr-updates-july-2026/cover.png',
   date: '2026-07-19',
   author: {
@@ -29,9 +29,12 @@ export const meta: BlogPostMeta = {
     'decentralization',
     'soapbox',
     'cross-posting',
+    'direct messages',
+    'nip-04',
+    'pleroma',
   ],
   keywords:
-    'mostr, mostr bridge, mostr pub, reserve nostr username, claim username mostr, nostr fediverse bridge, activitypub nostr bridge, mastodon nostr bridge, nostr nip-05, mostr username, fediverse username, nostr vs fediverse',
+    'mostr, mostr bridge, mostr pub, reserve nostr username, claim username mostr, nostr fediverse bridge, activitypub nostr bridge, mastodon nostr bridge, nostr nip-05, mostr username, fediverse username, nostr vs fediverse, nostr dms, nip-04 encrypted dms, pleroma chat, pleroma chatmessage, nostr fediverse dm bridge',
   faq: [
     {
       question: 'What is the Mostr bridge?',
@@ -62,6 +65,11 @@ export const meta: BlogPostMeta = {
       question: 'Do Fediverse users need to reserve a name too?',
       answer:
         'No. Fediverse users already have usernames on their own servers, which the bridge uses automatically. Name reservation is specifically for Nostr users, who otherwise only have a public key.',
+    },
+    {
+      question: 'Can I send direct messages across the Mostr bridge?',
+      answer:
+        'Yes. NIP-04 encrypted DMs (kind 4) bridge to Pleroma ChatMessages in both directions. A DM sent from a Nostr client to a bridged Fediverse user arrives in their Pleroma chats, and a Pleroma ChatMessage sent to a Nostr user arrives as an encrypted DM. Bridged DMs only travel through relays that require authentication (relay.ditto.pub and relay.dreamith.to), so DM metadata is never exposed on public relays.',
     },
     {
       question: 'Is Mostr open source?',
@@ -120,7 +128,7 @@ export default function MostrUpdatesJuly2026() {
         >
           client with the largest userbase on Nostr
         </a>
-        : <strong>54.2K active users</strong>. And this week it got two of its
+        : <strong>54.2K active users</strong>. And this week it got three of its
         biggest updates yet.
       </p>
 
@@ -279,6 +287,85 @@ export default function MostrUpdatesJuly2026() {
           Hot posts from across the bridge, live on mostr.pub
         </figcaption>
       </figure>
+
+      <h2>Encrypted DMs Now Bridge Between Nostr and Pleroma</h2>
+
+      <p>
+        The third update is private messaging. NIP-04 encrypted DMs (kind 4)
+        now bridge to and from Pleroma ChatMessages, in both directions:
+      </p>
+
+      <ul>
+        <li>
+          A DM sent from any Nostr client to a bridged Fediverse user is
+          decrypted and delivered to their Pleroma chats.
+        </li>
+        <li>
+          A ChatMessage sent from Pleroma to a Nostr user arrives as an
+          encrypted kind 4, readable in any Nostr client with DM support.
+        </li>
+      </ul>
+
+      <p>
+        Privacy was the hard part. A kind 4 event's content is encrypted, but
+        its metadata (who messaged whom, and when) is visible to any relay
+        that stores it. Publishing DMs to ordinary public relays would expose
+        that metadata to the world. So the bridge only publishes and reads
+        kind 4 events on a small set of DM relays,{' '}
+        <code>relay.ditto.pub</code> and <code>relay.dreamith.to</code>, which
+        gate kind 4 behind NIP-42 AUTH. The bridge authenticates to those
+        relays with its own dedicated key, and no DM metadata leaks to the
+        public.
+      </p>
+
+      <p>
+        Only one-on-one conversations are bridged. Decryption works because
+        the bridge controls the derived keys of bridged Fediverse users, the
+        same mechanism it already uses to sign events on their behalf.
+      </p>
+
+      <div className="not-prose my-10">
+        <div className="rounded-xl border bg-card shadow-sm p-5 space-y-4">
+          <div className="flex items-center gap-3">
+            <img
+              src="/assets/avatars/alex.png"
+              alt="Alex Gleason"
+              className="h-10 w-10 rounded-full"
+            />
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-sm text-foreground">
+                Alex Gleason
+              </p>
+              <p className="text-xs text-muted-foreground">July 22, 2026</p>
+            </div>
+          </div>
+          <p className="text-sm text-foreground leading-relaxed">
+            The Mostr bridge now bridges NIP-04 to Pleroma ChatMessage. It
+            only works with relay.ditto.pub which requires AUTH so no metadata
+            is leaked.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <img
+              src="/assets/blog/mostr-updates-july-2026/nostr-client-dm.png"
+              alt="Nostr client showing a NIP-04 encrypted DM conversation with a Fediverse user bridged by Mostr"
+              className="rounded-lg border w-full"
+            />
+            <img
+              src="/assets/blog/mostr-updates-july-2026/pleroma-chats.png"
+              alt="Pleroma Chats screen showing the bridged Nostr DM arriving from Alex Gleason seconds after it was sent"
+              className="rounded-lg border w-full"
+            />
+          </div>
+          <a
+            href="https://ditto.pub/nevent1qgsqgc0uhmxycvm5gwvn944c7yfxnnxm0nyh8tt62zhrvtd3xkj8fhgqyz98n3hgd2m4s9nsuucrma2xqv9ehjqw007umx47fmdcr8aev9x5zlzsyl7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm font-medium text-azure hover:underline"
+          >
+            View post on Ditto &rarr;
+          </a>
+        </div>
+      </div>
 
       <h2>Under the Hood: Faster, More Reliable Bridging</h2>
 
