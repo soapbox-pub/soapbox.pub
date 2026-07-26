@@ -34,6 +34,7 @@ import {
   Bluetooth,
   CheckCircle2,
   ChevronDown,
+  Code,
   Crown,
   Hammer,
   Hash,
@@ -49,7 +50,6 @@ import {
   Users,
   Volume2,
 } from 'lucide-react';
-import { FaGitlab } from 'react-icons/fa6';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -83,8 +83,8 @@ const COMMUNITY_INVITE_URL =
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';
 
-/** Armada source code. */
-const GITLAB_URL = 'https://gitlab.com/soapbox-pub/armada';
+/** Armada source code (canonical ngit repo, browsable on gitworkshop). */
+const SOURCE_URL = 'https://gitworkshop.dev/soapbox.pub/armada';
 
 /** Armada's dark theme background color. */
 const INK = '#100b15';
@@ -209,7 +209,7 @@ export default function Armada() {
       softwareVersion: '0.37',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url: ARMADA_URL,
-      sameAs: [GITLAB_URL, CONCORD_URL],
+      sameAs: [SOURCE_URL, CONCORD_URL],
       publisher: {
         '@type': 'Organization',
         name: 'Soapbox',
@@ -1149,7 +1149,7 @@ function MiniFeaturesSection() {
             on <span className="font-medium text-gray-800">web, Android, Linux, and Windows</span>;
             no iOS app yet (the web app works there in the meantime).{' '}
             <a
-              href={`${GITLAB_URL}/-/blob/main/CHANGELOG.md`}
+              href={SOURCE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
@@ -1677,8 +1677,8 @@ function FinalCtaSection() {
             variant="outline"
             className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white font-medium h-14 px-7 text-base"
           >
-            <a href={GITLAB_URL} target="_blank" rel="noopener noreferrer">
-              <FaGitlab className="mr-2 size-4" />
+            <a href={SOURCE_URL} target="_blank" rel="noopener noreferrer">
+              <Code className="mr-2 size-4" />
               Source code
             </a>
           </Button>
@@ -1690,12 +1690,12 @@ function FinalCtaSection() {
           </Link>{' '}
           ·{' '}
           <a
-            href={GITLAB_URL}
+            href={SOURCE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-white"
           >
-            Open source on GitLab
+            Open source on ngit
           </a>{' '}
           ·{' '}
           <a
