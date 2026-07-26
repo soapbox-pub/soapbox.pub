@@ -111,7 +111,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>♡{currentYear} Soapbox Technology. Please <a className="underline hover:text-white transition-colors" href="https://gitlab.com/soapbox-pub/soapbox.pub" target="_blank" rel="noopener noreferrer">copy and share</a>.</p>
+          <p>♡{currentYear} Soapbox Technology. Please <a className="underline hover:text-white transition-colors" href="https://gitworkshop.dev/soapbox.pub/soapbox-pub" target="_blank" rel="noopener noreferrer">copy and share</a>.</p>
         </div>
       </div>
     </footer>
