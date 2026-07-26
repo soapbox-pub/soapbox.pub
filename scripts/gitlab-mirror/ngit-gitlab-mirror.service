@@ -1,0 +1,30 @@
+[Unit]
+Description=ngit -> GitLab mirror bot for soapbox-pub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Adjust User/paths to your server. The user needs read/write on WorkingDirectory
+# and on the WORKDIR set in the .env file.
+User=mirror
+WorkingDirectory=/opt/ngit-gitlab-mirror
+EnvironmentFile=/opt/ngit-gitlab-mirror/.env
+ExecStart=/usr/bin/node mirror.mjs
+Restart=always
+RestartSec=10
+# git identity for the fetch/push bookkeeping
+Environment=GIT_AUTHOR_NAME=ngit-mirror
+Environment=GIT_AUTHOR_EMAIL=mirror@soapbox.pub
+Environment=GIT_COMMITTER_NAME=ngit-mirror
+Environment=GIT_COMMITTER_EMAIL=mirror@soapbox.pub
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/opt/ngit-gitlab-mirror /var/lib/ngit-gitlab-mirror
+
+[Install]
+WantedBy=multi-user.target

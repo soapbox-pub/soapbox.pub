@@ -1,0 +1,15 @@
+{
+  "name": "ngit-gitlab-mirror",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mirror the canonical ngit repo to GitLab so any merge triggers the GitLab deploy pipeline.",
+  "main": "mirror.mjs",
+  "scripts": {
+    "start": "node mirror.mjs"
+  },
+  "dependencies": {
+    "nostr-tools": "^2.10.0",
+    "ws": "^8.18.0"
+  }
+}
