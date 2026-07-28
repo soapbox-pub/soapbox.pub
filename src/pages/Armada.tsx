@@ -285,8 +285,8 @@ function HeroSection() {
           {/* Left: copy */}
           <div className="lg:col-span-7">
             <p className="font-mono text-sm sm:text-base text-pink-400 mb-6">
-              <span className="text-cyan-400">$</span> private group chat on
-              open infrastructure<span className="animate-pulse">_</span>
+              <span className="text-cyan-400">$</span> now in open beta ·
+              v1.0 incoming<span className="animate-pulse">_</span>
             </p>
 
             <h1 className="font-mono font-bold tracking-tight leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl mb-8">
