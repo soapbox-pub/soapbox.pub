@@ -1586,7 +1586,7 @@ function BridgeSection() {
             New · Discord bridge
           </p>
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Bring your Discord community with you.
+            Bridge your Discord server.
           </h2>
           <p className="text-lg text-gray-600">
             Connect a Discord server to an Armada community and every message
