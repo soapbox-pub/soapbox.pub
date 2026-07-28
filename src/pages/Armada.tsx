@@ -1433,7 +1433,7 @@ interface BridgeMsg {
 
 const BRIDGE_MESSAGES: BridgeMsg[] = [
   {
-    name: 'Sam',
+    name: 'Derek',
     origin: 'discord',
     text: 'is the Armada community actually live yet?',
     avatar: PEOPLE.derek.avatar,
@@ -1446,7 +1446,7 @@ const BRIDGE_MESSAGES: BridgeMsg[] = [
     reaction: { emoji: '🔥', count: 5 },
   },
   {
-    name: 'Jordan',
+    name: 'Morgan',
     origin: 'discord',
     text: 'so I can stay on Discord while you all move over?',
     avatar: PEOPLE.morgan.avatar,
