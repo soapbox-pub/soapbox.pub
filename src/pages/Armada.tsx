@@ -1437,7 +1437,6 @@ const BRIDGE_MESSAGES: BridgeMsg[] = [
     origin: 'discord',
     text: 'is the Armada community actually live yet?',
     avatar: PEOPLE.derek.avatar,
-    reaction: { emoji: '👍', count: 3 },
   },
   {
     name: 'M. K.',
@@ -1451,14 +1450,12 @@ const BRIDGE_MESSAGES: BridgeMsg[] = [
     origin: 'discord',
     text: 'so I can stay on Discord while you all move over?',
     avatar: PEOPLE.morgan.avatar,
-    reaction: { emoji: '😂', count: 4 },
   },
   {
     name: 'Alex',
     origin: 'armada',
     text: 'exactly — every message, names and avatars intact',
     avatar: PEOPLE.alex.avatar,
-    reaction: { emoji: '💜', count: 6 },
   },
 ];
 
@@ -1482,12 +1479,12 @@ function BridgeAvatar({ m, className = 'size-8' }: { m: BridgeMsg; className?: s
 function BridgePanel({
   platform,
   messages,
-  reactionsVisible,
+  reacted,
 }: {
   platform: 'discord' | 'armada';
   messages: BridgeMsg[];
-  /** How many of the messages have had their reaction land, front to back. */
-  reactionsVisible: number;
+  /** Whether the reaction has landed (mirrored onto both panels at once). */
+  reacted: boolean;
 }) {
   const isDiscord = platform === 'discord';
   const surface = isDiscord ? '#313338' : SURFACE;
@@ -1523,11 +1520,11 @@ function BridgePanel({
         </span>
       </div>
 
-      <div className="p-4 space-y-3 min-h-[220px] flex flex-col justify-end">
-        {messages.map((m, i) => {
+      <div className="p-4 space-y-3 h-[240px] flex flex-col justify-end overflow-hidden">
+        {messages.map((m) => {
           // A message is "bridged" on the panel that isn't its origin.
           const bridged = m.origin !== platform;
-          const showReaction = !!m.reaction && i < reactionsVisible;
+          const showReaction = !!m.reaction && reacted;
           return (
             <div
               key={m.name + m.text}
@@ -1593,11 +1590,11 @@ function BridgePanel({
 
 function BridgeSection() {
   // Timeline: reveal the messages one at a time on both panels in sync, then
-  // land each reaction (mirrored to both sides), then hold, then loop.
+  // land the single reaction (mirrored to both sides), then hold, then loop.
   const count = BRIDGE_MESSAGES.length;
-  const tick = useTicker(1300, count * 2 + 2);
+  const tick = useTicker(1300, count + 3);
   const visible = Math.min(tick + 1, count);
-  const reactionsVisible = Math.max(0, Math.min(tick - (count - 1), count));
+  const reacted = tick >= count;
   const messages = BRIDGE_MESSAGES.slice(0, visible);
 
   return (
@@ -1629,16 +1626,8 @@ function BridgeSection() {
             <ArrowLeftRight className="size-6" />
           </div>
 
-          <BridgePanel
-            platform="discord"
-            messages={messages}
-            reactionsVisible={reactionsVisible}
-          />
-          <BridgePanel
-            platform="armada"
-            messages={messages}
-            reactionsVisible={reactionsVisible}
-          />
+          <BridgePanel platform="discord" messages={messages} reacted={reacted} />
+          <BridgePanel platform="armada" messages={messages} reacted={reacted} />
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-4">
