@@ -28,6 +28,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  ArrowLeftRight,
   ArrowRight,
   Ban,
   BellRing,
@@ -82,6 +83,16 @@ const COMMUNITY_INVITE_URL =
 
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';
+
+/**
+ * Hosted setup portal for the Discord <-> Armada bridge. A Discord admin
+ * connects their server to an Armada community here, and messages flow
+ * both ways with each member's name and avatar intact.
+ */
+const BRIDGE_URL = 'https://bridge.armada.buzz/';
+
+/** Discord's brand color, used only to make the Discord side recognizable. */
+const DISCORD_BLURPLE = '#5865f2';
 
 /** Armada source code (canonical ngit repo, browsable on gitworkshop). */
 const SOURCE_URL = 'https://gitworkshop.dev/soapbox.pub/armada';
@@ -239,6 +250,7 @@ export default function Armada() {
       <UnstoppableSection />
       <MiniFeaturesSection />
       <BuzzCompatSection />
+      <BridgeSection />
       <SelfHostSection />
       <CommunityCtaSection />
       <FaqSection />
@@ -1397,6 +1409,234 @@ function BuzzCompatSection() {
             className="w-full rounded-xl shadow-lg"
             style={{ border: '1px solid rgba(16, 11, 21, 0.2)' }}
           />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// Section: Discord bridge — an on-ramp. The same channel rendered twice,
+// once as Discord and once as Armada, with messages appearing on both
+// sides in sync to show the two-way bridge carrying names and avatars.
+// ───────────────────────────────────────────────────────────────────────────
+
+interface BridgeMsg {
+  name: string;
+  origin: 'discord' | 'armada';
+  text: string;
+  /** Armada members carry a real avatar; Discord members get a color chip. */
+  avatar?: string;
+  color?: string;
+}
+
+const BRIDGE_MESSAGES: BridgeMsg[] = [
+  {
+    name: 'Sam',
+    origin: 'discord',
+    text: 'is the Armada community actually live yet?',
+    color: '#5865f2',
+  },
+  {
+    name: 'M. K.',
+    origin: 'armada',
+    text: 'yep — and this whole channel is mirrored both ways',
+    avatar: PEOPLE.mk.avatar,
+  },
+  {
+    name: 'Jordan',
+    origin: 'discord',
+    text: 'so I can stay on Discord while you all move over?',
+    color: '#57f287',
+  },
+  {
+    name: 'Alex',
+    origin: 'armada',
+    text: 'exactly — every message, names and avatars intact',
+    avatar: PEOPLE.alex.avatar,
+  },
+];
+
+/** One message avatar: a photo for Armada members, a color chip for Discord. */
+function BridgeAvatar({ m, className = 'size-8' }: { m: BridgeMsg; className?: string }) {
+  if (m.avatar) {
+    return (
+      <img
+        src={m.avatar}
+        alt={`${m.name}'s profile picture`}
+        className={`${className} shrink-0 rounded-full object-cover`}
+        loading="lazy"
+      />
+    );
+  }
+  return (
+    <div
+      className={`${className} shrink-0 rounded-full flex items-center justify-center text-white text-xs font-bold`}
+      style={{ backgroundColor: m.color }}
+      aria-hidden="true"
+    >
+      {m.name[0]}
+    </div>
+  );
+}
+
+/**
+ * One side of the bridge. `platform` decides the chrome; both panels show
+ * the same messages, and each panel tags the messages that arrived over the
+ * bridge from the other side — the visible proof of two-way attribution.
+ */
+function BridgePanel({
+  platform,
+  messages,
+}: {
+  platform: 'discord' | 'armada';
+  messages: BridgeMsg[];
+}) {
+  const isDiscord = platform === 'discord';
+  const surface = isDiscord ? '#313338' : SURFACE;
+  const header = isDiscord ? '#2b2d31' : 'rgba(255,255,255,0.03)';
+
+  return (
+    <div
+      className="rounded-2xl border border-white/10 overflow-hidden shadow-sm flex flex-col"
+      style={{ backgroundColor: surface }}
+    >
+      {/* Channel header */}
+      <div
+        className="flex items-center justify-between px-4 py-2.5 border-b border-white/10"
+        style={{ backgroundColor: header }}
+      >
+        <div className="flex items-center gap-2 min-w-0">
+          {isDiscord ? (
+            <Hash className="size-4 shrink-0" style={{ color: '#949ba4' }} />
+          ) : (
+            <img src={ARMADA_ICON} alt="Armada app icon" className="size-5 rounded shrink-0" />
+          )}
+          <span className="font-semibold text-sm text-white truncate">general</span>
+        </div>
+        <span
+          className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+          style={
+            isDiscord
+              ? { color: '#c9cdfb', backgroundColor: 'rgba(88,101,242,0.2)' }
+              : { color: '#f9a8d4', backgroundColor: 'rgba(236,72,153,0.15)' }
+          }
+        >
+          {isDiscord ? 'Discord' : 'Armada'}
+        </span>
+      </div>
+
+      <div className="p-4 space-y-3 min-h-[220px] flex flex-col justify-end">
+        {messages.map((m) => {
+          // A message is "bridged" on the panel that isn't its origin.
+          const bridged = m.origin !== platform;
+          return (
+            <div
+              key={m.name + m.text}
+              className="flex items-start gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-300"
+            >
+              <BridgeAvatar m={m} />
+              <div className="min-w-0">
+                <p className="text-xs mb-0.5 flex items-center gap-1.5">
+                  <span
+                    className="font-semibold"
+                    style={{ color: isDiscord ? '#f2f3f5' : '#f9a8d4' }}
+                  >
+                    {m.name}
+                  </span>
+                  {bridged && (
+                    <span
+                      className="px-1.5 py-px rounded text-[9px] font-semibold uppercase tracking-wide"
+                      style={
+                        isDiscord
+                          ? { color: '#c9cdfb', backgroundColor: 'rgba(88,101,242,0.25)' }
+                          : { color: '#93c5fd', backgroundColor: 'rgba(34,211,238,0.15)' }
+                      }
+                    >
+                      {isDiscord ? 'via Armada' : 'via Discord'}
+                    </span>
+                  )}
+                </p>
+                <p
+                  className="text-sm leading-snug"
+                  style={{ color: isDiscord ? '#dbdee1' : '#e5e7eb' }}
+                >
+                  {m.text}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function BridgeSection() {
+  // Reveal messages one at a time on both panels in sync, then hold, then loop.
+  const tick = useTicker(1500, BRIDGE_MESSAGES.length + 2);
+  const visible = Math.min(tick + 1, BRIDGE_MESSAGES.length);
+  const messages = BRIDGE_MESSAGES.slice(0, visible);
+
+  return (
+    <section className="bg-[#faf8fb] py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
+            New · Discord bridge
+          </p>
+          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+            Bring your Discord community with you.
+          </h2>
+          <p className="text-lg text-gray-600">
+            Connect a Discord server to an Armada community and every message
+            flows both ways, names and avatars intact. Nobody has to move all at
+            once.
+          </p>
+        </div>
+
+        {/* The same channel, live on both platforms at once */}
+        <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
+          {/* Bridge connector (desktop) */}
+          <div
+            className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full items-center justify-center shadow-xl border-4 border-[#faf8fb] text-white"
+            style={{
+              background: `linear-gradient(135deg, ${DISCORD_BLURPLE}, #ec4899)`,
+            }}
+          >
+            <ArrowLeftRight className="size-6" />
+          </div>
+
+          <BridgePanel platform="discord" messages={messages} />
+          <BridgePanel platform="armada" messages={messages} />
+        </div>
+
+        <div className="mt-12 flex flex-col items-center gap-4">
+          <Button
+            asChild
+            size="lg"
+            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-pink-500/25"
+          >
+            <a href={BRIDGE_URL} target="_blank" rel="noopener noreferrer">
+              <ArrowLeftRight className="mr-2 size-4" />
+              Connect your server
+            </a>
+          </Button>
+          <p className="max-w-2xl text-center text-gray-500 text-sm leading-relaxed">
+            Set it up at{' '}
+            <a
+              href={BRIDGE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
+            >
+              bridge.armada.buzz
+            </a>{' '}
+            in a few minutes: connect Discord, paste your Armada invite, confirm
+            in-channel. A bridged channel is readable by the bridge to carry
+            messages across, so use it for public community chat, not the rooms
+            you keep end-to-end encrypted.
+          </p>
         </div>
       </div>
     </section>
