@@ -1425,9 +1425,10 @@ interface BridgeMsg {
   name: string;
   origin: 'discord' | 'armada';
   text: string;
-  /** Armada members carry a real avatar; Discord members get a color chip. */
-  avatar?: string;
-  color?: string;
+  /** Every member has a real profile picture, on both sides of the bridge. */
+  avatar: string;
+  /** A reaction that lands after the message and mirrors to the other side. */
+  reaction?: { emoji: string; count: number };
 }
 
 const BRIDGE_MESSAGES: BridgeMsg[] = [
@@ -1435,48 +1436,41 @@ const BRIDGE_MESSAGES: BridgeMsg[] = [
     name: 'Sam',
     origin: 'discord',
     text: 'is the Armada community actually live yet?',
-    color: '#5865f2',
+    avatar: PEOPLE.derek.avatar,
+    reaction: { emoji: '👍', count: 3 },
   },
   {
     name: 'M. K.',
     origin: 'armada',
     text: 'yep — and this whole channel is mirrored both ways',
     avatar: PEOPLE.mk.avatar,
+    reaction: { emoji: '🔥', count: 5 },
   },
   {
     name: 'Jordan',
     origin: 'discord',
     text: 'so I can stay on Discord while you all move over?',
-    color: '#57f287',
+    avatar: PEOPLE.morgan.avatar,
+    reaction: { emoji: '😂', count: 4 },
   },
   {
     name: 'Alex',
     origin: 'armada',
     text: 'exactly — every message, names and avatars intact',
     avatar: PEOPLE.alex.avatar,
+    reaction: { emoji: '💜', count: 6 },
   },
 ];
 
-/** One message avatar: a photo for Armada members, a color chip for Discord. */
+/** One message avatar — a real profile picture on both sides of the bridge. */
 function BridgeAvatar({ m, className = 'size-8' }: { m: BridgeMsg; className?: string }) {
-  if (m.avatar) {
-    return (
-      <img
-        src={m.avatar}
-        alt={`${m.name}'s profile picture`}
-        className={`${className} shrink-0 rounded-full object-cover`}
-        loading="lazy"
-      />
-    );
-  }
   return (
-    <div
-      className={`${className} shrink-0 rounded-full flex items-center justify-center text-white text-xs font-bold`}
-      style={{ backgroundColor: m.color }}
-      aria-hidden="true"
-    >
-      {m.name[0]}
-    </div>
+    <img
+      src={m.avatar}
+      alt={`${m.name}'s profile picture`}
+      className={`${className} shrink-0 rounded-full object-cover`}
+      loading="lazy"
+    />
   );
 }
 
@@ -1488,9 +1482,12 @@ function BridgeAvatar({ m, className = 'size-8' }: { m: BridgeMsg; className?: s
 function BridgePanel({
   platform,
   messages,
+  reactionsVisible,
 }: {
   platform: 'discord' | 'armada';
   messages: BridgeMsg[];
+  /** How many of the messages have had their reaction land, front to back. */
+  reactionsVisible: number;
 }) {
   const isDiscord = platform === 'discord';
   const surface = isDiscord ? '#313338' : SURFACE;
@@ -1527,9 +1524,10 @@ function BridgePanel({
       </div>
 
       <div className="p-4 space-y-3 min-h-[220px] flex flex-col justify-end">
-        {messages.map((m) => {
+        {messages.map((m, i) => {
           // A message is "bridged" on the panel that isn't its origin.
           const bridged = m.origin !== platform;
+          const showReaction = !!m.reaction && i < reactionsVisible;
           return (
             <div
               key={m.name + m.text}
@@ -1563,6 +1561,27 @@ function BridgePanel({
                 >
                   {m.text}
                 </p>
+                {showReaction && (
+                  <span
+                    className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded-full text-xs animate-in fade-in zoom-in-75 duration-300"
+                    style={
+                      isDiscord
+                        ? {
+                            color: '#c9cdfb',
+                            backgroundColor: 'rgba(88,101,242,0.16)',
+                            border: '1px solid rgba(88,101,242,0.4)',
+                          }
+                        : {
+                            color: '#f9a8d4',
+                            backgroundColor: 'rgba(236,72,153,0.15)',
+                            border: '1px solid rgba(236,72,153,0.3)',
+                          }
+                    }
+                  >
+                    <span>{m.reaction!.emoji}</span>
+                    <span className="font-semibold">{m.reaction!.count}</span>
+                  </span>
+                )}
               </div>
             </div>
           );
@@ -1573,9 +1592,12 @@ function BridgePanel({
 }
 
 function BridgeSection() {
-  // Reveal messages one at a time on both panels in sync, then hold, then loop.
-  const tick = useTicker(1500, BRIDGE_MESSAGES.length + 2);
-  const visible = Math.min(tick + 1, BRIDGE_MESSAGES.length);
+  // Timeline: reveal the messages one at a time on both panels in sync, then
+  // land each reaction (mirrored to both sides), then hold, then loop.
+  const count = BRIDGE_MESSAGES.length;
+  const tick = useTicker(1300, count * 2 + 2);
+  const visible = Math.min(tick + 1, count);
+  const reactionsVisible = Math.max(0, Math.min(tick - (count - 1), count));
   const messages = BRIDGE_MESSAGES.slice(0, visible);
 
   return (
@@ -1590,8 +1612,8 @@ function BridgeSection() {
           </h2>
           <p className="text-lg text-gray-600">
             Connect a Discord server to an Armada community and every message
-            flows both ways, names and avatars intact. Nobody has to move all at
-            once.
+            and reaction flows both ways, names and avatars intact. Nobody has
+            to move all at once.
           </p>
         </div>
 
@@ -1607,8 +1629,16 @@ function BridgeSection() {
             <ArrowLeftRight className="size-6" />
           </div>
 
-          <BridgePanel platform="discord" messages={messages} />
-          <BridgePanel platform="armada" messages={messages} />
+          <BridgePanel
+            platform="discord"
+            messages={messages}
+            reactionsVisible={reactionsVisible}
+          />
+          <BridgePanel
+            platform="armada"
+            messages={messages}
+            reactionsVisible={reactionsVisible}
+          />
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-4">
