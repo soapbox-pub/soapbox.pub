@@ -1,7 +1,7 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, Minus, MessagesSquare, X } from 'lucide-react';
+import { Check, Compass, Minus, X } from 'lucide-react';
 
 export const meta: BlogPostMeta = {
   slug: 'best-discord-alternatives-2026',
@@ -701,38 +701,10 @@ export default function BestDiscordAlternatives2026() {
       <h2>Try It With Us</h2>
 
       <p>
-        The easiest way to judge Armada against everything above is inside a live,
-        encrypted community. We run our public community on Armada, and anyone can
-        join: open the invite, sign up in a minute, and say hi.
+        The easiest way to judge Armada against everything above is to open it and
+        look around. Grab the app, then browse the encrypted communities already
+        running on it.
       </p>
-
-      <div className="not-prose my-10">
-        <a
-          href="https://armada.buzz/invite/naddr1qvzqqqyzz5pzqrhzn9xj5hgq769hamzvfszp8gzyhkqnxp5tjne0fxfz3jnms6d0qqqq7e8ec9#BAACAwTc8UOnsiLXPVBL2q3pCwUc"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block no-underline"
-        >
-          <Card className="border border-[#ec4899]/50 bg-gradient-to-br from-[#181021] to-[#100b15] transition-shadow hover:shadow-lg hover:shadow-[#ec4899]/20">
-            <CardContent className="p-6 flex flex-col items-center gap-4 text-center">
-              <MessagesSquare className="w-8 h-8 shrink-0 text-[#ec4899]" />
-              <div>
-                <p className="m-0 font-semibold text-white">
-                  Join the Soapbox community on Armada
-                </p>
-                <p className="m-0 text-sm text-white/70">
-                  An end-to-end encrypted community with channels, voice, and the
-                  team that builds Armada. Signing up takes a minute, with a key you
-                  create on the spot.
-                </p>
-              </div>
-              <span className="inline-flex shrink-0 items-center rounded-full bg-[#ec4899] px-6 py-3 font-bold text-white">
-                Join the community
-              </span>
-            </CardContent>
-          </Card>
-        </a>
-      </div>
 
       <div className="not-prose mt-8 flex flex-wrap justify-center gap-3">
         <Button
@@ -787,6 +759,34 @@ export default function BestDiscordAlternatives2026() {
       <p className="mt-3 text-center text-sm text-muted-foreground">
         An iOS app is coming soon. For now, the web app works on iPhone.
       </p>
+
+      <div className="not-prose my-10">
+        <a
+          href="https://armada.buzz/invite/naddr1qvzqqqyzz5pzp0flk57hwj8x6a969ys0m7f50tl9jlunnadhuxjaqlx4hgh5scktqqqq3w62qc#BAACAwSD_R2taBjMMDl8Ybd670Lq"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block no-underline"
+        >
+          <Card className="border border-[#ec4899]/50 bg-gradient-to-br from-[#181021] to-[#100b15] transition-shadow hover:shadow-lg hover:shadow-[#ec4899]/20">
+            <CardContent className="p-6 flex flex-col items-center gap-4 text-center">
+              <Compass className="w-8 h-8 shrink-0 text-[#ec4899]" />
+              <div>
+                <p className="m-0 font-semibold text-white">
+                  Discover communities on Armada
+                </p>
+                <p className="m-0 text-sm text-white/70">
+                  Browse public, end-to-end encrypted communities already running
+                  on Armada, including the one where the team that builds it hangs
+                  out. Signing up takes a minute, with a key you create on the spot.
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center rounded-full bg-[#ec4899] px-6 py-3 font-bold text-white">
+                Discover communities
+              </span>
+            </CardContent>
+          </Card>
+        </a>
+      </div>
 
       <h2>Related Reading</h2>
 

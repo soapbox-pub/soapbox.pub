@@ -596,7 +596,7 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <div className="not-prose my-10">
         <a
-          href="https://armada.buzz/invite/naddr1qvzqqqyzz5pzqrhzn9xj5hgq769hamzvfszp8gzyhkqnxp5tjne0fxfz3jnms6d0qqqq7e8ec9#BAACAwTc8UOnsiLXPVBL2q3pCwUc"
+          href="https://armada.buzz/invite/naddr1qvzqqqyzz5pzp0flk57hwj8x6a969ys0m7f50tl9jlunnadhuxjaqlx4hgh5scktqqqq3w62qc#BAACAwSD_R2taBjMMDl8Ybd670Lq"
           target="_blank"
           rel="noopener noreferrer"
           className="block no-underline"
