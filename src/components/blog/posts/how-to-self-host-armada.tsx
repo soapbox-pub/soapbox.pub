@@ -52,11 +52,6 @@ export default function HowToSelfHostArmada() {
       <h2>What you actually depend on today</h2>
 
       <p>
-        Start with an honest inventory, because "self-host everything" is a
-        slogan and the useful version is knowing which piece does what.
-      </p>
-
-      <p>
         An Armada community is{' '}
         <a href="/blog/building-an-armada-voyage-to-encrypted-communities">
           already serverless
