@@ -16,7 +16,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/building-an-armada-voyage-to-encrypted-communities/cover.jpg',
   },
-  featured: true,
+  featured: false,
   tags: [
     'soapbox',
     'nostr',
