@@ -414,7 +414,11 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
         <li>
           <strong>Self-hosting.</strong> Run your own relay and your
           community's encrypted data sits on hardware you control. The entire
-          app is AGPL-3.0, so you can audit or fork every line.
+          app is AGPL-3.0, so you can audit or fork every line. Our{' '}
+          <a href="/blog/how-to-self-host-armada">
+            step-by-step self-hosting guide
+          </a>{' '}
+          walks through the app, the relay, and the voice server.
         </li>
         <li>
           <strong>Buzz workspaces.</strong> Armada also connects to{' '}
@@ -583,7 +587,11 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <p>
         Yes. Communities live on relays you can run yourself, and the whole
         client is open source. Even on relays you don't control, your
-        messages are sealed by end-to-end encryption.
+        messages are sealed by end-to-end encryption. See the{' '}
+        <a href="/blog/how-to-self-host-armada">
+          how to self-host Armada guide
+        </a>{' '}
+        for the full walkthrough.
       </p>
 
       <h2>Try It With Us</h2>

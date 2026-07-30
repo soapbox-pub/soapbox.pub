@@ -1694,6 +1694,13 @@ function SelfHostSection() {
                 </li>
               ))}
             </ul>
+            <a
+              href="/blog/how-to-self-host-armada"
+              className="inline-flex items-center gap-1.5 mt-6 font-mono text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              Read the self-hosting guide
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
           <TerminalDemo />
