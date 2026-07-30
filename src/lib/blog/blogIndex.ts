@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as isityourcommunityornot from '../../components/blog/posts/is-it-your-community-or-not';
 import * as buzzmademerethinkhowteamsuseagents from '../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents';
 import * as armadabuzzcommunities from '../../components/blog/posts/armada-buzz-communities';
 import * as bestdiscordalternatives2026 from '../../components/blog/posts/best-discord-alternatives-2026';
@@ -155,6 +156,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  isityourcommunityornot.meta,
   buzzmademerethinkhowteamsuseagents.meta,
   armadabuzzcommunities.meta,
   bestdiscordalternatives2026.meta,
@@ -274,6 +276,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'isityourcommunityornot':
+      return (await import('../../components/blog/posts/is-it-your-community-or-not')).default;
     case 'buzzmademerethinkhowteamsuseagents':
       return (await import('../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents')).default;
     case 'armadabuzzcommunities':
