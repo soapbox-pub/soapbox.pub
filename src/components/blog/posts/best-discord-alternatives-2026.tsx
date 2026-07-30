@@ -262,14 +262,15 @@ export default function BestDiscordAlternatives2026() {
   return (
     <article className="prose prose-lg max-w-none">
       <p className="lead">
-        People are not searching for a Discord alternative on a whim. In 2026 the
-        reasons are specific: a data breach that exposed government IDs, a global
-        push for age and ID verification, automated bans that are hard to appeal,
-        and a confidential IPO filing that points at more ads, not fewer. This is
-        an honest comparison of the alternatives, Matrix, Revolt (now Stoat),
-        Fluxer, Signal, Telegram, and more, and where{' '}
-        <a href="/armada">Armada</a> fits: a free, open source, end-to-end
-        encrypted, Discord-shaped app that no company can shut down.
+        A data breach that leaked people's government IDs. A worldwide push to
+        scan your face or your ID before you can chat. Bans that land overnight
+        with no way to reach a human. And a confidential IPO filing that mostly
+        means more ads. Those are the reasons people spent 2026 looking for a way
+        off Discord. So I went through the alternatives worth taking seriously,
+        Matrix, Revolt (now Stoat), Fluxer, Signal, Telegram, and a few others,
+        to see how they hold up and where <a href="/armada">Armada</a> lands: a
+        free, open source, end-to-end encrypted, Discord-shaped app that no
+        company can shut down.
       </p>
 
       <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
@@ -306,10 +307,10 @@ export default function BestDiscordAlternatives2026() {
       <h2>Why People Are Leaving Discord in 2026</h2>
 
       <p>
-        Discord is where the communities are, and that is exactly the problem. One
-        company holds every account, every server, and every message, so a single
-        bad decision lands on everyone at once. Four things pushed the search for
-        an exit from a slow trickle to a steady stream this year.
+        Everyone is on Discord, which is the whole trouble. One company holds
+        every account, every server, and every message, so when it gets a call
+        wrong, it gets it wrong for all of you at the same time. Four things in
+        particular sent people looking for the exit this year.
       </p>
 
       <h3>The October 2025 Data Breach and ID Scans</h3>
@@ -674,13 +675,12 @@ export default function BestDiscordAlternatives2026() {
       <h2>Armada Is in Open Beta</h2>
 
       <p>
-        Being honest about the trade-offs cuts both ways: Armada is early software,
-        version 0.x, with releases landing almost daily on the road to v1.0.
-        Everything above works today on the web, Android, Linux, and Windows. There
-        is no iOS app yet, though the web app works fine on an iPhone, and some
-        Discord conveniences are still catching up, so expect occasional rough
-        edges. The upside of being this early is that the features people ask for
-        this month tend to ship the next. The full story of how it was built,
+        Fair warning: Armada is early software, version 0.x, with releases landing
+        almost daily on the road to v1.0. Everything above works today on the web,
+        Android, Linux, and Windows. There is no iOS app yet, though the web app
+        works fine on an iPhone, and some Discord conveniences are still catching
+        up, so expect occasional rough edges. The trade for that is that the
+        features people ask for this month tend to ship the next. The full story of how it was built,
         including every protocol tried and abandoned, is in{' '}
         <a href="/blog/building-an-armada-voyage-to-encrypted-communities">
           Building an Armada
