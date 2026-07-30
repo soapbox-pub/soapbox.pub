@@ -606,7 +606,7 @@ docker compose up -d`}</code>
         Settings and they are on your stack.
       </p>
 
-      <p>Two caveats on that, and neither is small.</p>
+      <p>Two caveats on that.</p>
 
       <div className="not-prose my-8 rounded-lg border border-amber-200 dark:border-amber-800 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 p-4">
         <p className="text-base font-semibold text-amber-900 dark:text-amber-200 mb-1">
