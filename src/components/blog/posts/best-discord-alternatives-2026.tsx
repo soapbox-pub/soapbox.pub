@@ -262,18 +262,6 @@ const supportText: Record<Support, string> = {
 export default function BestDiscordAlternatives2026() {
   return (
     <article className="prose prose-lg max-w-none">
-      <p className="lead">
-        Automated moderation that flags and bans people for things they never did.
-        A worldwide push to scan your face or your ID before you can chat. Bans
-        that land overnight with no way to reach a human. And a confidential IPO
-        filing that mostly means more ads. Those are the reasons people spent 2026
-        looking for a way off Discord. So I went through the alternatives worth taking seriously,
-        Matrix, Revolt (now Stoat), Fluxer, Signal, Telegram, and a few others,
-        to see how they hold up and where <a href="/armada">Armada</a> lands: a
-        free, open source, end-to-end encrypted, Discord-shaped app that no
-        company can shut down.
-      </p>
-
       <h2>Why People Are Leaving Discord in 2026</h2>
 
       <p>
