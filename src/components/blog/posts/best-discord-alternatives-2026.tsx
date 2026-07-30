@@ -443,30 +443,32 @@ export default function BestDiscordAlternatives2026() {
                       : 'sticky left-0 bg-background p-3 text-center align-top'
                   }
                 >
-                  <img
-                    src={row.logo}
-                    alt={`${row.app} logo`}
-                    loading="lazy"
-                    className="mx-auto mb-1.5 block h-7 w-7 object-contain"
-                  />
-                  <span
-                    className={
-                      row.highlight
-                        ? 'block font-bold text-[#db2777] dark:text-[#ec4899]'
-                        : 'block font-semibold'
-                    }
-                  >
-                    {row.app.includes(' (') ? (
-                      <>
-                        {row.app.slice(0, row.app.indexOf(' ('))}
-                        <span className="block text-xs font-normal text-muted-foreground">
-                          {row.app.slice(row.app.indexOf(' (') + 1)}
-                        </span>
-                      </>
-                    ) : (
-                      row.app
-                    )}
-                  </span>
+                  <div className="flex flex-col items-center text-center">
+                    <img
+                      src={row.logo}
+                      alt={`${row.app} logo`}
+                      loading="lazy"
+                      className="mb-1.5 h-7 w-7 object-contain"
+                    />
+                    <span
+                      className={
+                        row.highlight
+                          ? 'font-bold text-[#db2777] dark:text-[#ec4899]'
+                          : 'font-semibold'
+                      }
+                    >
+                      {row.app.includes(' (') ? (
+                        <>
+                          {row.app.slice(0, row.app.indexOf(' ('))}
+                          <span className="block text-xs font-normal text-muted-foreground">
+                            {row.app.slice(row.app.indexOf(' (') + 1)}
+                          </span>
+                        </>
+                      ) : (
+                        row.app
+                      )}
+                    </span>
+                  </div>
                 </th>
                 {row.cells.map((cell, i) => (
                   <td key={columns[i]} className="p-3 text-center align-top">
