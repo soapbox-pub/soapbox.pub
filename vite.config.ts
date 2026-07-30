@@ -58,15 +58,6 @@ export default defineConfig({
         "/tools/nostrify",
         "/tools/stacks",
 
-        // Blog author pages
-        // Restored by hand: update-routes.mjs skips every route containing ':'
-        // in AppRouter, so it drops these concrete instances of
-        // /blog/author/:slug and they stop being prerendered.
-        "/blog/author/alex-gleason",
-        "/blog/author/derek-ross",
-        "/blog/author/heather-larson",
-        "/blog/author/m-k-fain",
-
         // Blog posts
         "/blog/agora-connecting-freedom-fighters",
         "/blog/agora-is-live",
@@ -126,8 +117,8 @@ export default defineConfig({
         "/blog/how-to-install-ditto-mobile",
         "/blog/how-to-join-nostr-brazil-cobrafuma",
         "/blog/how-to-login-divine-without-invite-code",
+        "/blog/how-to-self-host-armada",
         "/blog/inkwell-born-in-walmart",
-        "/blog/is-it-your-community-or-not",
         "/blog/loomly-zapier-nostr-bridge",
         "/blog/managing-nostr-keys",
         "/blog/meet-quilly",

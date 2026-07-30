@@ -68,6 +68,7 @@ export function AppRouter() {
         <Route path="/toolbox" element={<Toolbox />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/author/:slug" element={<AuthorPage />} />
+        <Route path="/blog/is-it-your-community-or-not" element={<Navigate to="/blog/how-to-self-host-armada" replace />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/nip/:naddr" element={<CustomNipPage />} />
         <Route path="/shakespeare-resources" element={<ShakespeareResources />} />

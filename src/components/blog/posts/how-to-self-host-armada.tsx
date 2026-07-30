@@ -2,18 +2,18 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 import { Card, CardContent } from '../../ui/card';
 
 export const meta: BlogPostMeta = {
-  slug: 'is-it-your-community-or-not',
-  title: 'Is it your community or not?',
+  slug: 'how-to-self-host-armada',
+  title: 'How to Self-host Armada: Open Source Discord Alternative',
   excerpt:
     'Armada communities already run without a host. Here is how to own the rest: the app you load, the relay your messages travel over, and the server your calls go through.',
-  coverImage: '/assets/blog/is-it-your-community-or-not/cover.jpg',
+  coverImage: '/assets/blog/how-to-self-host-armada/cover.jpg',
   date: '2026-07-30',
   author: {
     name: 'Derek Ross',
     picture: '/assets/avatars/derek.jpg',
   },
   ogImage: {
-    url: '/assets/blog/is-it-your-community-or-not/cover.jpg',
+    url: '/assets/blog/how-to-self-host-armada/cover.jpg',
   },
   featured: false,
   tags: ['soapbox', 'devrel', 'armada', 'nostr', 'self-hosting'],
@@ -21,7 +21,7 @@ export const meta: BlogPostMeta = {
     'self-host armada, armada self hosting, run your own nostr relay, ditto-relay, armada-av, livekit nostr, nostr voice chat, encrypted community chat, ngit, soapbox armada',
 };
 
-export default function IsItYourCommunityOrNot() {
+export default function HowToSelfHostArmada() {
   return (
     <article className="prose prose-lg max-w-none">
       <p className="lead">
