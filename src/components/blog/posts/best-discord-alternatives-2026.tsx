@@ -274,37 +274,6 @@ export default function BestDiscordAlternatives2026() {
         company can shut down.
       </p>
 
-      <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
-        <Button
-          size="lg"
-          className="bg-[#ec4899] px-8 py-3 text-lg font-bold text-white hover:bg-[#db2777]"
-          asChild
-        >
-          <a href="https://armada.buzz" target="_blank" rel="noopener noreferrer">
-            Try Armada on the Web
-          </a>
-        </Button>
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
-          asChild
-        >
-          <a
-            href="https://zapstore.dev/apps/buzz.armada.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/assets/icons/zapstore.png"
-              alt=""
-              className="mr-2 h-5 w-5 rounded"
-            />
-            Get on Zap Store
-          </a>
-        </Button>
-      </div>
-
       <h2>Why People Are Leaving Discord in 2026</h2>
 
       <p>
@@ -777,7 +746,7 @@ export default function BestDiscordAlternatives2026() {
         </a>
       </div>
 
-      <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
+      <div className="not-prose mt-8 flex flex-wrap justify-center gap-3">
         <Button
           size="lg"
           className="bg-[#ec4899] px-8 py-3 text-lg font-bold text-white hover:bg-[#db2777]"
@@ -785,6 +754,25 @@ export default function BestDiscordAlternatives2026() {
         >
           <a href="https://armada.buzz" target="_blank" rel="noopener noreferrer">
             Try Armada on the Web
+          </a>
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          asChild
+        >
+          <a
+            href="https://play.google.com/store/apps/details?id=buzz.armada.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/assets/icons/google-play.svg"
+              alt=""
+              className="mr-2 h-5 w-5"
+            />
+            Get on Google Play
           </a>
         </Button>
         <Button
@@ -807,6 +795,10 @@ export default function BestDiscordAlternatives2026() {
           </a>
         </Button>
       </div>
+
+      <p className="mt-3 text-center text-sm text-muted-foreground">
+        An iOS app is coming soon. For now, the web app works on iPhone.
+      </p>
 
       <h2>Related Reading</h2>
 
