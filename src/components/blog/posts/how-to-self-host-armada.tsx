@@ -6,14 +6,14 @@ export const meta: BlogPostMeta = {
   title: 'How to Self-host Armada: Open Source Discord Alternative',
   excerpt:
     'Armada communities already run without a host. Here is how to own the rest: the app you load, the relay your messages travel over, and the server your calls go through.',
-  coverImage: '/assets/blog/how-to-self-host-armada/cover.jpg',
+  coverImage: '/assets/blog/how-to-self-host-armada/cover.png',
   date: '2026-07-30',
   author: {
     name: 'Derek Ross',
     picture: '/assets/avatars/derek.jpg',
   },
   ogImage: {
-    url: '/assets/blog/how-to-self-host-armada/cover.jpg',
+    url: '/assets/blog/how-to-self-host-armada/cover.png',
   },
   featured: false,
   tags: ['soapbox', 'devrel', 'armada', 'nostr', 'self-hosting'],
