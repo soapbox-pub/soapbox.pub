@@ -18,7 +18,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/what-is-ngit/cover.png',
   },
-  featured: true,
+  featured: false,
   tags: [
     'ngit',
     'nostr git',
