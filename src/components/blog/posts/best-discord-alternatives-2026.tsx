@@ -309,15 +309,6 @@ export default function BestDiscordAlternatives2026() {
       <h2>Why People Are Leaving Discord in 2026</h2>
 
       <p>
-        Everyone is on Discord, which is the whole trouble. One company holds
-        every account, every server, and every message, so when it gets a call
-        wrong, it gets it wrong for all of you at the same time. Four things in
-        particular sent people looking for the exit this year.
-      </p>
-
-      <h3>The October 2025 Data Breach and ID Scans</h3>
-
-      <p>
         In a breach disclosed in October 2025, attackers compromised one of
         Discord's third-party customer support vendors and took data belonging to
         users who had contacted support, including roughly 70,000 government ID
@@ -421,7 +412,7 @@ export default function BestDiscordAlternatives2026() {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b-2 border-border">
-              <th className="sticky left-0 bg-background p-3 text-left align-bottom font-semibold">
+              <th className="sticky left-0 bg-background p-3 text-center align-bottom font-semibold">
                 App
               </th>
               {columns.map((col) => (
@@ -448,15 +439,15 @@ export default function BestDiscordAlternatives2026() {
                   scope="row"
                   className={
                     row.highlight
-                      ? 'sticky left-0 bg-[#fdf2f8] p-3 text-left align-top dark:bg-[#1a0f18]'
-                      : 'sticky left-0 bg-background p-3 text-left align-top'
+                      ? 'sticky left-0 bg-[#fdf2f8] p-3 text-center align-top dark:bg-[#1a0f18]'
+                      : 'sticky left-0 bg-background p-3 text-center align-top'
                   }
                 >
                   <img
                     src={row.logo}
                     alt={`${row.app} logo`}
                     loading="lazy"
-                    className="mb-1.5 h-7 w-7 object-contain"
+                    className="mx-auto mb-1.5 block h-7 w-7 object-contain"
                   />
                   <span
                     className={
@@ -465,7 +456,16 @@ export default function BestDiscordAlternatives2026() {
                         : 'block font-semibold'
                     }
                   >
-                    {row.app}
+                    {row.app.includes(' (') ? (
+                      <>
+                        {row.app.slice(0, row.app.indexOf(' ('))}
+                        <span className="block text-xs font-normal text-muted-foreground">
+                          {row.app.slice(row.app.indexOf(' (') + 1)}
+                        </span>
+                      </>
+                    ) : (
+                      row.app
+                    )}
                   </span>
                 </th>
                 {row.cells.map((cell, i) => (
