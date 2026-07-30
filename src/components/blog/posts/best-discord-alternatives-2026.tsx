@@ -104,10 +104,12 @@ type Support = 'yes' | 'no' | 'partial';
 
 interface CompRow {
   app: string;
-  note: string;
+  logo: string;
   highlight?: boolean;
   cells: { value: Support; label: string }[];
 }
+
+const LOGO_DIR = '/assets/blog/best-discord-alternatives-2026/logos';
 
 const columns = [
   'Encrypted group chat',
@@ -121,11 +123,11 @@ const columns = [
 const rows: CompRow[] = [
   {
     app: 'Armada',
-    note: 'Nostr, Concord protocol',
+    logo: `${LOGO_DIR}/armada.svg`,
     highlight: true,
     cells: [
       { value: 'yes', label: 'End-to-end by default' },
-      { value: 'yes', label: 'Runs on many relays' },
+      { value: 'yes', label: 'Decentralized on Nostr relays' },
       { value: 'yes', label: 'AGPL-3.0' },
       { value: 'yes', label: 'Run your own relay' },
       { value: 'yes', label: 'Nostr key, no email' },
@@ -134,7 +136,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Discord',
-    note: 'The one everyone is leaving',
+    logo: `${LOGO_DIR}/discord.svg`,
     cells: [
       { value: 'no', label: 'Calls only, not text' },
       { value: 'no', label: 'One company' },
@@ -146,7 +148,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Matrix / Element',
-    note: 'Federated protocol',
+    logo: `${LOGO_DIR}/element.svg`,
     cells: [
       { value: 'yes', label: 'On for new private rooms' },
       { value: 'yes', label: 'Federated homeservers' },
@@ -158,7 +160,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Stoat (formerly Revolt)',
-    note: 'Renamed October 2025',
+    logo: `${LOGO_DIR}/stoat.svg`,
     cells: [
       { value: 'no', label: 'Not encrypted' },
       { value: 'no', label: 'Central instance; self-hosts are islands' },
@@ -170,7 +172,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Fluxer',
-    note: 'Open source Discord clone',
+    logo: `${LOGO_DIR}/fluxer.png`,
     cells: [
       { value: 'no', label: 'Not offered' },
       { value: 'no', label: 'Central instance; self-hosts are islands' },
@@ -182,7 +184,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Mattermost',
-    note: 'Self-hosted team chat',
+    logo: `${LOGO_DIR}/mattermost.svg`,
     cells: [
       { value: 'no', label: 'TLS and at-rest only' },
       { value: 'no', label: 'Per-instance, no federation' },
@@ -194,7 +196,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Rocket.Chat',
-    note: 'Self-hosted team chat',
+    logo: `${LOGO_DIR}/rocketdotchat.svg`,
     cells: [
       { value: 'partial', label: 'Optional, off by default' },
       { value: 'no', label: 'Per-instance' },
@@ -206,7 +208,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Signal',
-    note: 'Gold-standard messenger',
+    logo: `${LOGO_DIR}/signal.svg`,
     cells: [
       { value: 'yes', label: 'Always on' },
       { value: 'no', label: 'Centralized' },
@@ -218,7 +220,7 @@ const rows: CompRow[] = [
   },
   {
     app: 'Telegram',
-    note: 'Cloud messenger',
+    logo: `${LOGO_DIR}/telegram.svg`,
     cells: [
       { value: 'no', label: 'Only 1:1 secret chats' },
       { value: 'no', label: 'Centralized cloud' },
@@ -230,10 +232,10 @@ const rows: CompRow[] = [
   },
   {
     app: 'Flotilla',
-    note: 'Also built on Nostr',
+    logo: `${LOGO_DIR}/flotilla.png`,
     cells: [
       { value: 'partial', label: 'DMs yes, spaces no' },
-      { value: 'yes', label: 'Nostr relays' },
+      { value: 'yes', label: 'Decentralized on Nostr relays' },
       { value: 'yes', label: 'AGPL' },
       { value: 'yes', label: 'Run your own relay' },
       { value: 'yes', label: 'Nostr key, no email' },
@@ -450,17 +452,20 @@ export default function BestDiscordAlternatives2026() {
                       : 'sticky left-0 bg-background p-3 text-left align-top'
                   }
                 >
+                  <img
+                    src={row.logo}
+                    alt={`${row.app} logo`}
+                    loading="lazy"
+                    className="mb-1.5 h-7 w-7 object-contain"
+                  />
                   <span
                     className={
                       row.highlight
-                        ? 'font-bold text-[#db2777] dark:text-[#ec4899]'
-                        : 'font-semibold'
+                        ? 'block font-bold text-[#db2777] dark:text-[#ec4899]'
+                        : 'block font-semibold'
                     }
                   >
                     {row.app}
-                  </span>
-                  <span className="block text-xs font-normal text-muted-foreground">
-                    {row.note}
                   </span>
                 </th>
                 {row.cells.map((cell, i) => (
