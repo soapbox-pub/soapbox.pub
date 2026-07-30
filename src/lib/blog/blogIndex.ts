@@ -1,6 +1,7 @@
 // Auto-generated blog posts index
 import * as buzzmademerethinkhowteamsuseagents from '../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents';
 import * as armadabuzzcommunities from '../../components/blog/posts/armada-buzz-communities';
+import * as bestdiscordalternatives2026 from '../../components/blog/posts/best-discord-alternatives-2026';
 import * as armadaopensourceencrypteddiscordalternative from '../../components/blog/posts/armada-open-source-encrypted-discord-alternative';
 import * as whatisngit from '../../components/blog/posts/what-is-ngit';
 import * as bestnostrapps from '../../components/blog/posts/best-nostr-apps';
@@ -156,6 +157,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   buzzmademerethinkhowteamsuseagents.meta,
   armadabuzzcommunities.meta,
+  bestdiscordalternatives2026.meta,
   armadaopensourceencrypteddiscordalternative.meta,
   whatisngit.meta,
   bestnostrapps.meta,
@@ -276,6 +278,8 @@ export const getPostBySlug = async (slug: string) => {
       return (await import('../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents')).default;
     case 'armadabuzzcommunities':
       return (await import('../../components/blog/posts/armada-buzz-communities')).default;
+    case 'bestdiscordalternatives2026':
+      return (await import('../../components/blog/posts/best-discord-alternatives-2026')).default;
     case 'armadaopensourceencrypteddiscordalternative':
       return (await import('../../components/blog/posts/armada-open-source-encrypted-discord-alternative')).default;
     case 'whatisngit':

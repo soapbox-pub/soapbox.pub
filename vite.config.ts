@@ -86,6 +86,7 @@ export default defineConfig({
         "/blog/announcing-treasures",
         "/blog/armada-buzz-communities",
         "/blog/armada-open-source-encrypted-discord-alternative",
+        "/blog/best-discord-alternatives-2026",
         "/blog/best-nostr-apps",
         "/blog/bitcoin-babies-circular-economy-kenya",
         "/blog/build-without-coding",
