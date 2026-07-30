@@ -1281,7 +1281,7 @@ export default function Index() {
             <p className="mt-5 text-lg text-white/85">
               No email. No phone number. No algorithm. Pick a vibe and go.
             </p>
-            <div className="mt-9">
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="https://ditto.pub"
                 target="_blank"
@@ -1290,6 +1290,12 @@ export default function Index() {
               >
                 Join Ditto <ArrowRight className="ml-2 h-5 w-5" />
               </a>
+              <Link
+                to="/armada"
+                className="inline-flex items-center rotate-1 border-2 border-white/70 text-white font-display font-semibold text-lg px-7 py-3 hover:bg-white/10 transition-colors shadow-xl"
+              >
+                Try Armada <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
           </div>
         </section>
