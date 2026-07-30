@@ -79,7 +79,7 @@ const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
  * so it never reaches any server.
  */
 const COMMUNITY_INVITE_URL =
-  'https://armada.buzz/invite/naddr1qvzqqqyzz5pzq8qv4z5xpmcpssv6v28dzf00ruep4x63uk787sp6set7jzpnzudfqqqqn4hakc#BAACAwSramExdyfria50iKwvzRpK';
+  'https://armada.buzz/invite/naddr1qvzqqqyzz5pzp0flk57hwj8x6a969ys0m7f50tl9jlunnadhuxjaqlx4hgh5scktqqqq3w62qc#BAACAwSD_R2taBjMMDl8Ybd670Lq';
 
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';
