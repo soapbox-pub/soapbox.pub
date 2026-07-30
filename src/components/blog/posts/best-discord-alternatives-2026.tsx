@@ -8,15 +8,14 @@ export const meta: BlogPostMeta = {
   title: 'The Best Discord Alternatives in 2026, Compared',
   excerpt:
     "Discord's IPO, ID scans, and 2025 data breach have people leaving. We compare the top Discord alternatives on encryption, privacy, and who can shut you down.",
-  coverImage:
-    '/assets/blog/armada-open-source-encrypted-discord-alternative/cover.png',
+  coverImage: '/assets/blog/best-discord-alternatives-2026/cover.png',
   date: '2026-07-30',
   author: {
     name: 'M. K. Fain',
     picture: '/assets/avatars/mk.jpg',
   },
   ogImage: {
-    url: '/assets/blog/armada-open-source-encrypted-discord-alternative/cover.png',
+    url: '/assets/blog/best-discord-alternatives-2026/cover.png',
   },
   featured: true,
   tags: [
