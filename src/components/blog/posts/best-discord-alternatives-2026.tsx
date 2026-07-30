@@ -158,7 +158,7 @@ const rows: CompRow[] = [
     ],
   },
   {
-    app: 'Stoat (formerly Revolt)',
+    app: 'Stoat (ex-Revolt)',
     logo: `${LOGO_DIR}/stoat.svg`,
     cells: [
       { value: 'no', label: 'Not encrypted' },
