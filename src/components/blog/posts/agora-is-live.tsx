@@ -16,7 +16,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/agora-is-live/Agora-Launched-OFF-Leopoldo.webp',
   },
-  featured: true,
+  featured: false,
   tags: [
     'agora',
     'agora launch',
