@@ -15,7 +15,7 @@ export const meta: BlogPostMeta = {
   ogImage: {
     url: '/assets/blog/mostr-updates-july-2026/cover.png',
   },
-  featured: true,
+  featured: false,
   tags: [
     'mostr',
     'fediverse',
