@@ -495,7 +495,7 @@ export default function BestDiscordAlternatives2026() {
         end-to-end encrypted.
       </p>
 
-      <h2>The Alternatives, One by One</h2>
+      <h2>What Each Discord Alternative Offers</h2>
 
       <h3>Matrix and Element</h3>
 
