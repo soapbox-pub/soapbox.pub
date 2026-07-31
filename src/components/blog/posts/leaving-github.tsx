@@ -10,7 +10,7 @@ export const meta: BlogPostMeta = {
   slug: 'leaving-github',
   title: 'Leaving GitHub: A Self-Hosted Git Alternative on Nostr',
   excerpt:
-    'We moved Armada off GitHub and onto Nostr. Here is what actually replaced it, what it cost us, and the sharpest edge in the model, which we found by rewinding our own default branch on every host with one signed event, then putting it back.',
+    'GitHub is one company, one jurisdiction and one takedown notice away from your project being a 404. That is why we moved Armada off it and onto Nostr. Here is what actually replaced it, what it cost us, and what still does not work.',
   coverImage: '/assets/blog/leaving-github/cover.jpg',
   date: '2026-07-30',
   author: {
