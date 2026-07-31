@@ -437,19 +437,10 @@ export default function LeavingGitHub() {
 
       <p>
         <strong>
-          <a
-            href="https://gitworkshop.dev/ngit"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ngit
-          </a>
+          <Link to="/blog/what-is-ngit">ngit</Link>
         </strong>{' '}
-        is the tool. It installs two binaries.{' '}
-        <Link to="/blog/what-is-ngit">
-          <code>ngit</code>
-        </Link>{' '}
-        is the command you run, and{' '}
+        is the tool. It installs two binaries. <code>ngit</code> is the command
+        you run, and{' '}
         <code>git-remote-nostr</code> is a git remote helper, which is the piece
         that matters most and gets the least attention. A remote helper teaches
         git a new URL scheme. Once it is on your PATH, <code>nostr://</code>{' '}
