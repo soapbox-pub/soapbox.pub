@@ -119,6 +119,7 @@ export default defineConfig({
         "/blog/how-to-login-divine-without-invite-code",
         "/blog/how-to-self-host-armada",
         "/blog/inkwell-born-in-walmart",
+        "/blog/leaving-github",
         "/blog/loomly-zapier-nostr-bridge",
         "/blog/managing-nostr-keys",
         "/blog/meet-quilly",
