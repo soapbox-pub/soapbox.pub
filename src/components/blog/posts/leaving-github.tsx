@@ -10,7 +10,7 @@ export const meta: BlogPostMeta = {
   slug: 'leaving-github',
   title: 'Leaving GitHub: A Self-Hosted Git Alternative on Nostr',
   excerpt:
-    'We moved Armada off GitHub and onto Nostr. Here is what actually replaced it, what it cost us, and the sharpest edge in the model, which we found by breaking our own repository on purpose.',
+    'We moved Armada off GitHub and onto Nostr. Here is what actually replaced it, what it cost us, and the sharpest edge in the model, which we found by rewinding our own default branch on every host with one signed event, then putting it back.',
   coverImage: '/assets/blog/leaving-github/cover.jpg',
   date: '2026-07-30',
   author: {
@@ -497,6 +497,21 @@ export default function LeavingGitHub() {
         discoverable from one event. If one of them goes down or decides it does
         not want to carry the project, the other two do not care and neither do
         you. That is the whole argument compressed into one tag.
+      </p>
+
+      <p>
+        Which is where the words in the title start pulling against each other,
+        and they should. Self-hosting normally means one box you own and one
+        address everyone depends on, and a thing that is yours to run is also
+        yours to lose. Here it describes where you publish from, not where the
+        repository stops. You push to your own host, and the same push is
+        carried by hosts run by other people who never asked you and never
+        needed to. The screenshot below lists more servers than the three
+        Armada announces, because five different people have announced this
+        project and the <code>euc</code> tag groups them into one. On GitHub a
+        fork is a separate repository at a separate URL. Here it is the same
+        project, and it stays reachable whether or not the box with your name
+        on it is still up.
       </p>
 
       <Note>
