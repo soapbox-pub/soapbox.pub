@@ -166,7 +166,6 @@ function PullQuote({ children }: { children: React.ReactNode }) {
 export default function LeavingGitHub() {
   return (
     <article className="prose prose-lg max-w-none">
-      {/* IMAGE TODO: cover + OG at /public/assets/blog/leaving-github/cover.jpg */}
 
       <div className="not-prose mb-8">
         <div className="mb-4 flex flex-wrap gap-2">
@@ -357,11 +356,9 @@ export default function LeavingGitHub() {
         load grows faster than the plan.
       </p>
 
-      {/* IMAGE TODO: inline uptime chart, currently hotlinked to argo. Save to
-          /public/assets/blog/leaving-github/github-uptime-april.jpeg and swap the URL. */}
       <figure className="not-prose my-6">
         <img
-          src="https://argo.derekross.me/media/bc317dff3dc93e17e4e4af9f9dbac1450249e574213312840c158234e61080c5.jpg"
+          src="/assets/blog/leaving-github/github-uptime-april.jpg"
           alt="The Missing GitHub Status Page, showing 85.51% uptime and 95 incidents over the last 90 days"
           className="w-full rounded-lg border shadow-md"
           loading="lazy"
@@ -516,6 +513,23 @@ export default function LeavingGitHub() {
         proof that it does not happen by itself. I will come back to Agora,
         because it is the more useful of the two examples.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/gitworkshop-armada-repo.png"
+          alt="The Team Soapbox armada repository on gitworkshop.dev: Code, Issues 41, PRs 18, Actions and About tabs, a file tree, a Clone button, the maintainer list, and a sidebar panel listing five GRASP servers and two other relays"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The armada repository on gitworkshop.dev. Code, issues, pull requests
+          and maintainers, all of it read from Nostr events. The panel GitHub
+          has no equivalent for is at the bottom right: the GRASP servers and
+          relays carrying the project. It lists more than the three above
+          because five different people have announced this repository, and the{' '}
+          <code>euc</code> tag groups their announcements into one project.
+        </figcaption>
+      </figure>
 
       <hr className="my-12" />
 
@@ -800,6 +814,21 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
         against the commit or the PR.
       </p>
 
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-ci-status-cards.png"
+          alt="Two green CI status cards in the Armada channel: deploy-web succeeded on e8cb0ff and desktop succeeded on e8cb0ff, both from a push, each with an expandable job row linking out to the run"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          What that looks like when it lands. Two ngit-ci jobs, deploy-web and
+          desktop, both green on commit <code>e8cb0ff</code>, rendered in the
+          channel from the events the coordinator published. No GitHub Actions
+          tab was involved in producing this.
+        </figcaption>
+      </figure>
+
       <Success title="The easiest part of the move">
         That is the single lowest-friction part of this migration.
       </Success>
@@ -1019,6 +1048,21 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         thing your team is sitting in.
       </p>
 
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-repo-activity-channel.png"
+          alt="The Armada app showing the #armada channel: a channel list on the left, and a timeline mixing an opened issue, a comment with an image, four status changes, two green deploy-web runs and an opened pull request, with the admin and member roster on the right"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Armada&apos;s #armada channel. An issue opening, a comment, four
+          status changes, two CI runs and a pull request, in the same timeline
+          as the conversation and the people having it. This is the whole
+          argument for putting the repository in the chat rather than in a tab.
+        </figcaption>
+      </figure>
+
       <h3>Connecting a repo to a channel</h3>
 
       <p>
@@ -1053,6 +1097,21 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         and set a ticket&apos;s status without leaving the chat. Every card also
         links out to gitworkshop.dev for the public view.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-issue-comment-card.png"
+          alt="An issue comment card in the Armada channel for the issue Improvements to GIF implementation, showing chad's comment about KLIPY as an optional provider, with Earlier comments and Later comments markers and a View conversation in context link"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          One comment on one issue, in the channel. The card carries the issue
+          title, the comment, and markers for what came before and after it.
+          &quot;View conversation in context&quot; is the way back into the full
+          thread without leaving the app.
+        </figcaption>
+      </figure>
 
       <p>
         Now the gap, because it is the obvious expectation. Commits do not
@@ -1120,11 +1179,9 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         on a large repository.
       </p>
 
-      {/* IMAGE TODO: inline nostrhub repository screenshot, currently hotlinked to argo.
-          Save to /public/assets/blog/leaving-github/nostrhub-armada-repo.png and swap the URL. */}
       <figure className="not-prose my-6">
         <img
-          src="https://argo.derekross.me/media/1100e81628793d99d80df976bbe49c4b9e2b336ae0002ac8ad605e1b60c6df17.png"
+          src="/assets/blog/leaving-github/nostrhub-armada-repo.png"
           alt="The armada repository on nostrhub.io, showing the Code tab with a file tree, the Issues, Merge requests and Discussion tabs, the repository relays and the repository fingerprint"
           className="w-full rounded-lg border shadow-md"
           loading="lazy"
@@ -1356,6 +1413,20 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
         That is the link you put in your README.
       </p>
 
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/gitworkshop-profile.png"
+          alt="A gitworkshop.dev profile page for Derek Ross, showing the bio and links, an npub instead of a username, Overview, Activity, Repositories 38, Followed, Starred and Followed Authors tabs, six repository cards, and a recent activity feed"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The other side of that link: a profile page with 38 repositories on
+          it. The identity under the avatar is an npub, not an account on
+          gitworkshop. Nobody issued it and nobody can suspend it.
+        </figcaption>
+      </figure>
+
       <p>Then keep going.</p>
 
       <hr className="my-12" />
@@ -1391,6 +1462,20 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
         merge requests and the CI runs in the channel where your team is already
         talking.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/gitworkshop-dashboard.png"
+          alt="A logged-in gitworkshop.dev home page reading Good afternoon, Derek, with nine notifications about new issues on armada, a Continue where you left off feed grouped by this week, last week and last month, and a My repositories sidebar listing 38 repositories"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Nine notifications, the repositories you own, and where you left off.
+          The daily loop you already have, on a home page nobody owns. Every row
+          on it is a Nostr event.
+        </figcaption>
+      </figure>
 
       <PullQuote>
         All of the tools are here and ready to use. Find the ones that work for
