@@ -480,7 +480,16 @@ export default function LeavingGitHub() {
       </p>
 
       <p>
-        <strong>GRASP</strong> is the hosting shape. A GRASP server is a git
+        <strong>
+          <a
+            href="https://gitgrasp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GRASP
+          </a>
+        </strong>{' '}
+        is the hosting shape. A GRASP server is a git
         host and a Nostr relay at the same hostname. NIP-34 does not define it
         with a paragraph, it defines it with a detection rule: a host is a GRASP
         server for a repository if the same hostname appears in the
@@ -489,6 +498,37 @@ export default function LeavingGitHub() {
         announcement and see the same domain listed twice, that is not sloppy
         duplication. That is the declaration.
       </p>
+
+      <p>
+        GRASP&apos;s own site puts the consequence more bluntly than the spec
+        does: git servers do not have to be trusted. What you check is the
+        signature on the state event, not the word of whichever host handed you
+        the objects. That is what makes an extra mirror free. It is one more
+        copy, not one more party you are now depending on.
+      </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/grasp-protocol.png"
+          alt="A hand-drawn diagram of the GRASP protocol in six numbered steps: alice pushes her repository and a signed state event to her own GRASP servers; bob clones from any of them and verifies alice's signature; bob opens an issue as a signed message published to her servers and copied to his own; carol sends a patch as a signed diff; carol pushes a larger feature branch to her own GRASP server and sends alice a pointer to it; alice pulls from carol's server, merges locally, and pushes the updated state back to her own"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The protocol in one picture, from{' '}
+          <a
+            href="https://gitgrasp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            gitgrasp.com
+          </a>
+          . Alice, Bob and Carol each have their own servers. Every arrow
+          between them is a signed message, and Carol contributes a patch and a
+          feature branch to Alice&apos;s project without either of them holding
+          an account on anything the other one runs.
+        </figcaption>
+      </figure>
 
       <p>
         Armada announces three of them: <code>git.shakespeare.diy</code>,{' '}
