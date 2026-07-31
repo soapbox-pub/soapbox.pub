@@ -1246,7 +1246,8 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
         give your project a URL you can send to someone, and nostrhub browses
         the code in the reader&apos;s own browser. ngit-ci runs the GitHub
         Actions files you already have, on a machine you run.{' '}
-        <Link to="/blog/what-is-ngit">Buzz</Link> keeps the conversation
+        <Link to="/blog/buzz-made-me-rethink-how-teams-use-agents">Buzz</Link>{' '}
+        keeps the conversation
         attached to the pull request it produced. Armada puts the issues, the
         merge requests and the CI runs in the channel where your team is already
         talking.
