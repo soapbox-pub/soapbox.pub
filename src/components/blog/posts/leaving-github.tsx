@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle } from 'lucide-react';
@@ -34,20 +35,88 @@ export const meta: BlogPostMeta = {
 const codeBlock =
   'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto';
 
-/** A command block, optionally captioned, in the card treatment the other how-to posts use. */
+/**
+ * A command block, optionally captioned. Card shells and heading colours are the
+ * ones how-to-self-host-armada uses for its blue / green / purple command cards.
+ */
+const CODE_TONES = {
+  neutral: {
+    card: 'border-2 border-gray-200 dark:border-gray-800',
+    head: 'text-gray-900 dark:text-gray-100',
+  },
+  blue: {
+    card:
+      'border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950',
+    head: 'text-blue-800 dark:text-blue-200',
+  },
+  green: {
+    card:
+      'border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950',
+    head: 'text-green-800 dark:text-green-200',
+  },
+  purple: {
+    card:
+      'border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950',
+    head: 'text-purple-800 dark:text-purple-200',
+  },
+  orange: {
+    card:
+      'border-2 border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950',
+    head: 'text-orange-800 dark:text-orange-200',
+  },
+} as const;
+
 function CodeCard({
   title,
+  tone = 'neutral',
   children,
 }: {
   title?: string;
+  tone?: keyof typeof CODE_TONES;
+  children: React.ReactNode;
+}) {
+  const t = CODE_TONES[tone];
+  return (
+    <div className="not-prose my-8">
+      <Card className={t.card}>
+        <CardContent className="space-y-3 p-6">
+          {title && (
+            <h4 className={`m-0 text-xl font-bold ${t.head}`}>{title}</h4>
+          )}
+          {children}
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+/** Blue aside, the note block from debugging-in-shakespeare. */
+function Note({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="not-prose my-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950">
+      <p className="m-0 text-sm text-blue-900 dark:text-blue-100">{children}</p>
+    </div>
+  );
+}
+
+/** Green aside, the success block from prompt-better-projects. */
+function Success({
+  title,
+  children,
+}: {
+  title: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className="not-prose my-8">
-      <Card className="border-2 border-gray-200 dark:border-gray-800">
-        <CardContent className="space-y-3 p-6">
-          {title && <h4 className="m-0 text-lg font-bold">{title}</h4>}
-          {children}
+    <div className="not-prose my-6">
+      <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950">
+        <CardContent className="p-6">
+          <h4 className="m-0 mb-2 font-semibold text-green-800 dark:text-green-200">
+            {title}
+          </h4>
+          <p className="m-0 text-sm text-green-700 dark:text-green-300">
+            {children}
+          </p>
         </CardContent>
       </Card>
     </div>
@@ -64,11 +133,13 @@ function Warning({
 }) {
   return (
     <div className="not-prose my-8">
-      <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+      <Card className="border-2 border-orange-200 bg-orange-50 dark:border-orange-800 dark:bg-orange-950">
         <CardContent className="flex items-start gap-3 p-6">
-          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-500" />
+          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-600 dark:text-orange-400" />
           <div className="space-y-2">
-            <p className="m-0 font-bold">{title}</p>
+            <p className="m-0 font-bold text-orange-900 dark:text-orange-200">
+              {title}
+            </p>
             {children}
           </div>
         </CardContent>
@@ -113,12 +184,90 @@ export default function LeavingGitHub() {
         </p>
       </div>
 
+      <div className="not-prose mb-8">
+        <div className="mb-4 flex flex-wrap gap-2">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+            🐙 GitHub
+          </Badge>
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+            ⚡ Nostr
+          </Badge>
+          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+            🔀 Git
+          </Badge>
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+            🚢 Armada
+          </Badge>
+          <Badge variant="secondary" className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+            🔧 Self-hosting
+          </Badge>
+        </div>
+      </div>
+
       <p className="lead">
         On 23 July, India&apos;s Cyber Crime Coordination Centre gave GitHub
         three hours to disable three repositories.
       </p>
 
-      <h2>1. The case against GitHub</h2>
+      <div className="not-prose my-8">
+        <Card className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950">
+          <CardContent className="p-6">
+            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
+              🧭 What is in this post
+            </h3>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-2 text-sm md:grid-cols-2">
+              <div className="flex flex-col space-y-2">
+                <a
+                  href="#section-1"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  1. The case against GitHub
+                </a>
+                <a
+                  href="#section-2"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  2. What replaces it
+                </a>
+                <a
+                  href="#section-3"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  3. How it actually works
+                </a>
+                <a
+                  href="#section-4"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  4. What Buzz adds
+                </a>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <a
+                  href="#section-5"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  5. Reading a repository inside Armada
+                </a>
+                <a
+                  href="#section-6"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  6. Moving your project
+                </a>
+                <a
+                  href="#section-7"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                >
+                  7. Now is the time to do this
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <h2 id="section-1">1. The case against GitHub</h2>
 
       <p>
         The repositories were bitchat, a messaging app that works over Bluetooth
@@ -301,7 +450,9 @@ export default function LeavingGitHub() {
         about.
       </p>
 
-      <h2>2. What replaces it</h2>
+      <hr className="my-12" />
+
+      <h2 id="section-2">2. What replaces it</h2>
 
       <p>
         <strong>
@@ -375,13 +526,13 @@ export default function LeavingGitHub() {
         you. That is the whole argument compressed into one tag.
       </p>
 
-      <p>
+      <Note>
         Be precise about what that redundancy buys. It protects you against
         losing a host. It does not protect you against your own state event,
         which every one of those hosts follows without question. That is in
         section 3, and it is the part of this design I would most want to know
         before moving a project I cared about.
-      </p>
+      </Note>
 
       <p>
         <strong>Armada</strong> is our proof that this works on a real project
@@ -390,11 +541,13 @@ export default function LeavingGitHub() {
         because it is the more useful of the two examples.
       </p>
 
-      <h2>3. How it actually works</h2>
+      <hr className="my-12" />
+
+      <h2 id="section-3">3. How it actually works</h2>
 
       <h3>Cloning</h3>
 
-      <CodeCard title="Clone Armada over Nostr">
+      <CodeCard title="Clone Armada over Nostr" tone="blue">
         <pre className={codeBlock}>
           <code>{`git clone nostr://npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj/relay.ngit.dev/armada`}</code>
         </pre>
@@ -423,7 +576,7 @@ export default function LeavingGitHub() {
         command. You push a branch:
       </p>
 
-      <CodeCard title="Open a pull request">
+      <CodeCard title="Open a pull request" tone="blue">
         <pre className={codeBlock}>
           <code>{`git push -u origin pr/my-branch`}</code>
         </pre>
@@ -434,7 +587,7 @@ export default function LeavingGitHub() {
         description ride along as git push options:
       </p>
 
-      <CodeCard title="Title and description as push options">
+      <CodeCard title="Title and description as push options" tone="blue">
         <pre className={codeBlock}>
           <code>{`git push -o 'title=My PR' -o 'description=line1\\n\\nline2' -u origin pr/branch`}</code>
         </pre>
@@ -485,7 +638,7 @@ export default function LeavingGitHub() {
         branch we had pushed ourselves it did not:
       </p>
 
-      <CodeCard title="What bare ngit merge said instead">
+      <CodeCard title="What bare ngit merge said instead" tone="orange">
         <pre className={codeBlock}>
           <code>{`Error: branch 'pr/my-first-proposal' does not encode a PR id and no PR you
 authored matches it; specify a PR event-id or nevent`}</code>
@@ -531,7 +684,7 @@ authored matches it; specify a PR event-id or nevent`}</code>
       </PullQuote>
 
       <Warning title="Guard the key accordingly">
-        <p className="m-0 text-sm">
+        <p className="m-0 text-sm text-orange-900 dark:text-orange-200">
           There is no per-host force-push protection standing behind it the way
           a branch protection rule stands behind GitHub. Use{' '}
           <code>ngit account login --local</code> so a machine-wide identity is
@@ -546,7 +699,7 @@ authored matches it; specify a PR event-id or nevent`}</code>
         run it:
       </p>
 
-      <CodeCard title="Which direction sync points">
+      <CodeCard title="Which direction sync points" tone="orange">
         <pre className={codeBlock}>
           <code>{`ngit sync      # servers      <- state event   (state wins)
 ngit sync -t   # state event  <- servers       (servers win)`}</code>
@@ -581,7 +734,7 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-800">
+            <tr className="bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-100">
               <th className="border border-gray-300 px-4 py-3 text-left dark:border-gray-700">
                 Query
               </th>
@@ -671,7 +824,9 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
         against the commit or the PR.
       </p>
 
-      <p>That is the single lowest-friction part of this migration.</p>
+      <Success title="The easiest part of the move">
+        That is the single lowest-friction part of this migration.
+      </Success>
 
       <p>
         One nice detail: <code>test.yml</code>&apos;s{' '}
@@ -721,7 +876,7 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
         tag:
       </p>
 
-      <CodeCard title="release.yml derives the Android version from the tag">
+      <CodeCard title="release.yml derives the Android version from the tag" tone="purple">
         <pre className={codeBlock}>
           <code>{`VERSION_NAME="\${TAG#v}"                                        # v0.44.1 -> 0.44.1
 VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 44001`}</code>
@@ -757,7 +912,7 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-800">
+            <tr className="bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-100">
               <th className="border border-gray-300 px-4 py-3 text-left dark:border-gray-700">
                 Artifact
               </th>
@@ -817,7 +972,7 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         this pipeline:
       </p>
 
-      <CodeCard title="Verify the Zapstore releases yourself">
+      <CodeCard title="Verify the Zapstore releases yourself" tone="purple">
         <pre className={codeBlock}>
           <code>{`$ nak req -k 30063 -a 781a1527...9fdae5 -l 5 wss://relay.zapstore.dev
 2026-07-30T01:46:50  buzz.armada.app@0.44.0
@@ -826,7 +981,9 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         </pre>
       </CodeCard>
 
-      <h2>4. What Buzz adds</h2>
+      <hr className="my-12" />
+
+      <h2 id="section-4">4. What Buzz adds</h2>
 
       <p>
         Everything above is NIP-34 and works with any client. Buzz sits on top
@@ -875,7 +1032,9 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         views of your project until this is fixed.
       </p>
 
-      <h2>5. Reading a repository inside Armada</h2>
+      <hr className="my-12" />
+
+      <h2 id="section-5">5. Reading a repository inside Armada</h2>
 
       <p>
         Everything so far is a command line. Armada is the other half: our own
@@ -1001,7 +1160,9 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         </figcaption>
       </figure>
 
-      <h2>6. Moving your project</h2>
+      <hr className="my-12" />
+
+      <h2 id="section-6">6. Moving your project</h2>
 
       <p>
         Here is the whole thing, in order. It is about thirty minutes for a
@@ -1013,7 +1174,7 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         itself:
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`curl -Ls https://ngit.dev/install.sh | bash`}</code>
         </pre>
@@ -1031,7 +1192,7 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         <strong>2. Log in to the repository, not the machine.</strong>
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`ngit account login --local`}</code>
         </pre>
@@ -1060,7 +1221,7 @@ logged in as npub1r7mxut3ju6...`}</code>
         tells you whether the whole model makes sense to you:
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`git clone nostr://npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj/relay.ngit.dev/armada
 cd armada
@@ -1070,11 +1231,11 @@ ngit issue list`}</code>
         </pre>
       </CodeCard>
 
-      <p>
+      <Success title="What a working install looks like">
         You should see 14 <code>pr/</code> branches, 14 open PRs, 40 open
         issues. If you do, your install is correct and you have just read a live
         project&apos;s collaboration history without an account anywhere.
-      </p>
+      </Success>
 
       <p>
         <strong>4. Demote your old host first.</strong> <code>ngit init</code>{' '}
@@ -1083,7 +1244,7 @@ ngit issue list`}</code>
         anything:
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`git remote rename origin github`}</code>
         </pre>
@@ -1100,7 +1261,7 @@ ngit issue list`}</code>
         checkout:
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`ngit init -g relay.ngit.dev -g git.shakespeare.diy -g git.nostrhub.io \\
   --name my-project --identifier my-project --description "..."`}</code>
@@ -1125,7 +1286,7 @@ ngit issue list`}</code>
         by printing your share link and clone URL:
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`set remote origin to nostr url
 push: git.shakespeare.diy/npub1.../my-project.git over https (unauthenticated)...
@@ -1140,7 +1301,7 @@ clone url: nostr://npub1.../relay.ngit.dev/my-project`}</code>
         <strong>6. Move your CI, do not rewrite it.</strong>
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`git mv .github/workflows .ngit/act/workflows`}</code>
         </pre>
@@ -1158,7 +1319,7 @@ clone url: nostr://npub1.../relay.ngit.dev/my-project`}</code>
         <strong>7. Open your first pull request the ordinary way.</strong>
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`git checkout -b pr/my-first-proposal
 git push -o 'title=My first proposal' -u origin pr/my-first-proposal
@@ -1170,7 +1331,7 @@ ngit pr list`}</code>
         <strong>8. Merge, then publish. Two steps, and pass the PR id.</strong>
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`ngit merge <pr-event-id>
 git push origin main`}</code>
@@ -1194,7 +1355,7 @@ git push origin main`}</code>
         </strong>
       </p>
 
-      <CodeCard>
+      <CodeCard tone="green">
         <pre className={codeBlock}>
           <code>{`ngit sync      # servers  <- state event   (state wins)
 ngit sync -t   # state event <- servers    (servers win)`}</code>
@@ -1220,7 +1381,9 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
 
       <p>Then keep going.</p>
 
-      <h2>7. Now is the time to do this</h2>
+      <hr className="my-12" />
+
+      <h2 id="section-7">7. Now is the time to do this</h2>
 
       <p>
         What we proved is narrow, and it is enough. Armada&apos;s repository is
