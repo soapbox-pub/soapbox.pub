@@ -249,12 +249,9 @@ export default function LeavingGitHub() {
       <h2 id="section-1">1. The case against GitHub</h2>
 
       <p className="lead">
-        On 23 July, India&apos;s Cyber Crime Coordination Centre gave GitHub
-        three hours to disable three repositories.
-      </p>
-
-      <p>
-        The repositories were bitchat, a messaging app that works over Bluetooth
+        On July 23, India&apos;s Cyber Crime Coordination Centre gave GitHub
+        three hours to disable three repositories. The repositories were
+        bitchat, a messaging app that works over Bluetooth
         mesh without an internet connection. The notice came from a body under
         the Ministry of Home Affairs, cited Section 79(3)(b) of the Information
         Technology Act, 2000, and carried the standard consequence: comply or
@@ -290,7 +287,7 @@ export default function LeavingGitHub() {
       <p>
         In October 2020 the RIAA sent GitHub a DMCA notice claiming youtube-dl
         violated Section 1201, the anti-circumvention provision. GitHub took the
-        repositories down on 23 October. It reinstated them on 16 November,
+        repositories down on October 23. It reinstated them on November 16,
         after a letter from the EFF, and went further than it had to: it revised
         how it handles 1201 claims and put a million dollars into a developer
         defense fund. That is a genuinely good outcome. It also took three and a
@@ -333,19 +330,19 @@ export default function LeavingGitHub() {
       </p>
 
       <p>
-        May 2026: nine incidents. On 15 May, &quot;42% of Actions runs
-        failed.&quot; On 6 May, &quot;approximately 17.1% of jobs requesting a
-        standard runner failed&quot; over two and a half hours. Also on 6 May,
+        May 2026: nine incidents. On May 15, &quot;42% of Actions runs
+        failed.&quot; On May 6, &quot;approximately 17.1% of jobs requesting a
+        standard runner failed&quot; over two and a half hours. also on May 6,
         creating new pull request review threads failed for close to four hours,
         because a 32-bit integer key in a Vitess lookup table hit its maximum
         value.
       </p>
 
       <p>
-        June 2026: six incidents. On 8 June, &quot;roughly 34% of requests&quot;
+        June 2026: six incidents. On June 8, &quot;roughly 34% of requests&quot;
         for pull requests, issues, releases and patch diffs errored for
-        unauthenticated users. On 10 June, the REST and GraphQL APIs returned
-        authentication failures on about 9% of requests. On 4 June, Copilot code
+        unauthenticated users. On June 10, the REST and GraphQL APIs returned
+        authentication failures on about 9% of requests. On June 4, Copilot code
         review hit a &quot;peak failure rate of 93.9%.&quot;
       </p>
 
@@ -372,7 +369,7 @@ export default function LeavingGitHub() {
         <figcaption className="mt-2 text-center text-sm text-muted-foreground">
           Marek Šuppa&apos;s independent tracker, &quot;The Missing GitHub
           Status Page&quot;: 85.51% uptime and 95 incidents over the 90 days
-          ending 30 April 2026. GitHub publishes no monthly availability
+          ending April 30, 2026. GitHub publishes no monthly availability
           percentage of its own.
         </figcaption>
       </figure>
