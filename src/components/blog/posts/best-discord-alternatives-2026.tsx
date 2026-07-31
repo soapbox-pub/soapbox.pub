@@ -28,6 +28,8 @@ export const meta: BlogPostMeta = {
     'revolt',
     'stoat',
     'fluxer',
+    'nerimity',
+    'gamevox',
     'armada',
     'privacy',
     'decentralized chat',
@@ -35,7 +37,7 @@ export const meta: BlogPostMeta = {
     'discord privacy',
   ],
   keywords:
-    'best discord alternatives, discord alternatives 2026, encrypted discord alternative, open source discord alternative, matrix vs discord, revolt vs discord, stoat chat, fluxer chat, decentralized discord alternative, self hosted discord alternative, discord alternative without phone number, private discord alternative, discord data breach, discord age verification, discord ipo, is discord encrypted, armada discord alternative, discord alternative comparison',
+    'best discord alternatives, discord alternatives 2026, encrypted discord alternative, open source discord alternative, matrix vs discord, revolt vs discord, stoat chat, fluxer chat, nerimity, nerimity discord alternative, gamevox, gamevox discord alternative, decentralized discord alternative, self hosted discord alternative, discord alternative without phone number, private discord alternative, discord data breach, discord age verification, discord ipo, is discord encrypted, armada discord alternative, discord alternative comparison',
   faq: [
     {
       question: 'What is the best Discord alternative in 2026?',
@@ -179,6 +181,30 @@ const rows: CompRow[] = [
       { value: 'yes', label: 'Yes, but no federation' },
       { value: 'yes', label: 'No email needed' },
       { value: 'yes', label: 'No ads' },
+    ],
+  },
+  {
+    app: 'Nerimity',
+    logo: `${LOGO_DIR}/nerimity.png`,
+    cells: [
+      { value: 'no', label: 'Not offered' },
+      { value: 'no', label: 'Central instance; self-hosts are islands' },
+      { value: 'yes', label: 'GPL-3.0' },
+      { value: 'yes', label: 'Yes, but no federation' },
+      { value: 'no', label: 'Email required' },
+      { value: 'yes', label: 'Donation funded' },
+    ],
+  },
+  {
+    app: 'GameVox',
+    logo: `${LOGO_DIR}/gamevox.png`,
+    cells: [
+      { value: 'no', label: 'Calls only, not text' },
+      { value: 'no', label: 'One company; cloud login' },
+      { value: 'no', label: 'Proprietary' },
+      { value: 'partial', label: 'Yes, but cloud auth required' },
+      { value: 'yes', label: 'Username only, no email' },
+      { value: 'yes', label: 'Paid tiers, no ads' },
     ],
   },
   {
@@ -487,6 +513,32 @@ export default function BestDiscordAlternatives2026() {
         end-to-end encryption, and its architecture is a central instance with
         self-hosts that do not federate. It is a good pick if your priority is a
         low-friction, no-email Discord clone rather than encryption.
+      </p>
+
+      <h3>Nerimity</h3>
+
+      <p>
+        Nerimity is a community-run open source Discord clone, GPL-3.0 licensed
+        and funded by donations rather than ads. Both the SolidJS frontend and the
+        backend are public, so you can self-host your own instance, though like
+        Revolt and Fluxer those instances do not federate with each other. It is
+        not end-to-end encrypted, and registration asks for an email. It is a
+        reasonable pick if you want a familiar, donation-backed clone and encryption
+        is not a requirement.
+      </p>
+
+      <h3>GameVox</h3>
+
+      <p>
+        GameVox is a gaming-focused voice, video, and text app from LightSpeed
+        Gaming, built as a native app rather than an Electron wrapper. Its strong
+        points are a low-friction signup (a username and password, no email, phone,
+        or ID) and a self-hosted server option that keeps your voice, chat, and
+        files on your own hardware. The caveats: it is proprietary, not open source;
+        end-to-end encryption covers voice only, not text; and even a self-hosted
+        server still logs members in through GameVox's cloud, so the company remains
+        in the loop. It is aimed at gaming communities that want a TeamSpeak-style
+        voice tool without ID checks, not at people who need encrypted text.
       </p>
 
       <h3>Signal and Telegram</h3>
