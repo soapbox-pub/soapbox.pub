@@ -446,21 +446,25 @@ export default function LeavingGitHub() {
           </a>
         </strong>{' '}
         is the tool. It installs two binaries.{' '}
-        <code>ngit</code> is the command you run, and{' '}
+        <Link to="/blog/what-is-ngit">
+          <code>ngit</code>
+        </Link>{' '}
+        is the command you run, and{' '}
         <code>git-remote-nostr</code> is a git remote helper, which is the piece
         that matters most and gets the least attention. A remote helper teaches
         git a new URL scheme. Once it is on your PATH, <code>nostr://</code>{' '}
         URLs work with plain <code>git clone</code>, plain{' '}
         <code>git fetch</code>, plain <code>git push</code>. No wrapper, no
-        special client, no ngit-specific command in the daily loop.
-        Armada&apos;s <code>origin</code> is a <code>nostr://</code> URL and
-        everything downstream of it is ordinary git.
+        special client, no ngit-specific command in the daily loop.{' '}
+        <Link to="/armada">Armada</Link>&apos;s <code>origin</code> is a{' '}
+        <code>nostr://</code> URL and everything downstream of it is ordinary
+        git.
       </p>
 
       <p>
         <strong>
           <a
-            href="https://github.com/nostr-protocol/nips/blob/master/34.md"
+            href="https://nostrhub.io/nip/34"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -967,8 +971,9 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
       <h2 id="section-4">4. What Buzz adds</h2>
 
       <p>
-        Everything above is NIP-34 and works with any client. Buzz sits on top
-        and adds three things I have not found elsewhere.
+        Everything above is NIP-34 and works with any client.{' '}
+        <Link to="/blog/buzz-made-me-rethink-how-teams-use-agents">Buzz</Link>{' '}
+        sits on top and adds three things I have not found elsewhere.
       </p>
 
       <p>
@@ -1389,9 +1394,8 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
         </a>{' '}
         give your project a URL you can send to someone, and nostrhub browses
         the code in the reader&apos;s own browser. ngit-ci runs the GitHub
-        Actions files you already have, on a machine you run.{' '}
-        <Link to="/blog/buzz-made-me-rethink-how-teams-use-agents">Buzz</Link>{' '}
-        keeps the conversation
+        Actions files you already have, on a machine you run. Buzz keeps the
+        conversation
         attached to the pull request it produced. Armada puts the issues, the
         merge requests and the CI runs in the channel where your team is already
         talking.
