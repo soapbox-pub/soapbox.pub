@@ -8,7 +8,7 @@ import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
   slug: 'leaving-github',
-  title: 'Leaving GitHub: A Self-Hosted Git Alternative on Nostr',
+  title: 'Leaving GitHub: A Decentralized Git Alternative on Nostr',
   excerpt:
     'GitHub is one company, one jurisdiction and one takedown notice away from your project being a 404. That is why we moved Armada off it and onto Nostr. Here is what actually replaced it, what it cost us, and why the daily loop is still just git push.',
   coverImage: '/assets/blog/leaving-github/cover.jpg',
@@ -29,6 +29,9 @@ export const meta: BlogPostMeta = {
     'NIP-34',
     'Armada',
     'Self-hosting',
+    'decentralization',
+    'ngit',
+    'github alternative',
   ],
 };
 
