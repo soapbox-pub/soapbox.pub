@@ -113,9 +113,9 @@ interface CompRow {
 const LOGO_DIR = '/assets/blog/best-discord-alternatives-2026/logos';
 
 const columns = [
-  'Encrypted group chat',
-  'No company kill switch',
   'Open source',
+  'E2E Encrypted',
+  'No company kill switch',
   'Self-hostable',
   'Sign up without personal info',
   'No ads',
@@ -127,9 +127,9 @@ const rows: CompRow[] = [
     logo: `${LOGO_DIR}/armada.svg`,
     highlight: true,
     cells: [
+      { value: 'yes', label: 'AGPL-3.0' },
       { value: 'yes', label: 'End-to-end by default' },
       { value: 'yes', label: 'Decentralized on Nostr relays' },
-      { value: 'yes', label: 'AGPL-3.0' },
       { value: 'yes', label: 'Run your own relay' },
       { value: 'yes', label: 'Nostr key, no email' },
       { value: 'yes', label: 'No ads, no paid tier' },
@@ -139,9 +139,9 @@ const rows: CompRow[] = [
     app: 'Discord',
     logo: `${LOGO_DIR}/discord.svg`,
     cells: [
+      { value: 'no', label: 'Proprietary' },
       { value: 'no', label: 'Calls only, not text' },
       { value: 'no', label: 'One company' },
-      { value: 'no', label: 'Proprietary' },
       { value: 'no', label: 'Hosted only' },
       { value: 'no', label: 'Email or phone, ID in some regions' },
       { value: 'no', label: 'Quests and video ads' },
@@ -151,9 +151,9 @@ const rows: CompRow[] = [
     app: 'Matrix / Element',
     logo: `${LOGO_DIR}/element.svg`,
     cells: [
+      { value: 'yes', label: 'AGPL / Apache' },
       { value: 'yes', label: 'On for new private rooms' },
       { value: 'yes', label: 'Federated homeservers' },
-      { value: 'yes', label: 'AGPL / Apache' },
       { value: 'yes', label: 'Run a homeserver' },
       { value: 'partial', label: 'matrix.org needs email; other servers vary' },
       { value: 'yes', label: 'No ads' },
@@ -163,9 +163,9 @@ const rows: CompRow[] = [
     app: 'Stoat (ex-Revolt)',
     logo: `${LOGO_DIR}/stoat.svg`,
     cells: [
-      { value: 'no', label: 'Not encrypted' },
-      { value: 'no', label: 'Central instance; self-hosts are islands' },
       { value: 'yes', label: 'AGPLv3' },
+      { value: 'no', label: 'Not encrypted' },
+      { value: 'no', label: 'Central; self-hosts are islands' },
       { value: 'yes', label: 'Yes, but no federation' },
       { value: 'no', label: 'Email required' },
       { value: 'yes', label: 'No ads' },
@@ -175,9 +175,9 @@ const rows: CompRow[] = [
     app: 'Fluxer',
     logo: `${LOGO_DIR}/fluxer.png`,
     cells: [
-      { value: 'no', label: 'Not offered' },
-      { value: 'no', label: 'Central instance; self-hosts are islands' },
       { value: 'yes', label: 'AGPLv3' },
+      { value: 'no', label: 'Not offered' },
+      { value: 'no', label: 'Central; self-hosts are islands' },
       { value: 'yes', label: 'Yes, but no federation' },
       { value: 'yes', label: 'No email needed' },
       { value: 'yes', label: 'No ads' },
@@ -187,9 +187,9 @@ const rows: CompRow[] = [
     app: 'Nerimity',
     logo: `${LOGO_DIR}/nerimity.png`,
     cells: [
-      { value: 'no', label: 'Not offered' },
-      { value: 'no', label: 'Central instance; self-hosts are islands' },
       { value: 'yes', label: 'GPL-3.0' },
+      { value: 'no', label: 'Not offered' },
+      { value: 'no', label: 'Central; self-hosts are islands' },
       { value: 'yes', label: 'Yes, but no federation' },
       { value: 'no', label: 'Email required' },
       { value: 'yes', label: 'Donation funded' },
@@ -199,72 +199,103 @@ const rows: CompRow[] = [
     app: 'GameVox',
     logo: `${LOGO_DIR}/gamevox.png`,
     cells: [
+      { value: 'no', label: 'Proprietary' },
       { value: 'no', label: 'Calls only, not text' },
       { value: 'no', label: 'One company; cloud login' },
-      { value: 'no', label: 'Proprietary' },
       { value: 'partial', label: 'Yes, but cloud auth required' },
       { value: 'yes', label: 'Username only, no email' },
       { value: 'yes', label: 'Paid tiers, no ads' },
     ],
   },
   {
-    app: 'Mattermost',
-    logo: `${LOGO_DIR}/mattermost.svg`,
+    app: 'Flotilla',
+    logo: `${LOGO_DIR}/flotilla.png`,
     cells: [
-      { value: 'no', label: 'TLS and at-rest only' },
-      { value: 'no', label: 'Per-instance, no federation' },
-      { value: 'yes', label: 'MIT / AGPL' },
-      { value: 'yes', label: 'Its main use case' },
-      { value: 'no', label: 'Email, admin-controlled' },
+      { value: 'yes', label: 'AGPL' },
+      { value: 'partial', label: 'DMs yes, spaces no' },
+      { value: 'yes', label: 'Decentralized on Nostr relays' },
+      { value: 'yes', label: 'Run your own relay' },
+      { value: 'yes', label: 'Nostr key, no email' },
       { value: 'yes', label: 'No ads' },
     ],
   },
+];
+
+const featureColumns = [
+  'Voice chat',
+  'Video and screen share',
+  'Custom emoji',
+  'GIF keyboard',
+  'Threads',
+  'Events',
+  'Bots',
+];
+
+const featureRows: CompRow[] = [
   {
-    app: 'Rocket.Chat',
-    logo: `${LOGO_DIR}/rocketdotchat.svg`,
+    app: 'Armada',
+    logo: `${LOGO_DIR}/armada.svg`,
+    highlight: true,
     cells: [
-      { value: 'partial', label: 'Optional, off by default' },
-      { value: 'no', label: 'Per-instance' },
-      { value: 'yes', label: 'MIT' },
+      { value: 'yes', label: 'Voice channels' },
+      { value: 'yes', label: 'With screen share' },
+      { value: 'yes', label: 'Custom emoji' },
+      { value: 'yes', label: 'Built-in picker' },
       { value: 'yes', label: 'Yes' },
-      { value: 'no', label: 'Email typically' },
-      { value: 'yes', label: 'No ads' },
+      { value: 'yes', label: 'Community events' },
+      { value: 'yes', label: 'Concord bot SDK' },
     ],
   },
   {
-    app: 'Signal',
-    logo: `${LOGO_DIR}/signal.svg`,
+    app: 'Matrix / Element',
+    logo: `${LOGO_DIR}/element.svg`,
     cells: [
-      { value: 'yes', label: 'Always on' },
-      { value: 'no', label: 'Centralized' },
-      { value: 'yes', label: 'AGPL / GPL' },
-      { value: 'no', label: 'Not practical' },
-      { value: 'no', label: 'Phone number required' },
-      { value: 'yes', label: 'No ads' },
+      { value: 'yes', label: 'Element Call' },
+      { value: 'yes', label: 'With screen share' },
+      { value: 'yes', label: 'Custom emoji' },
+      { value: 'partial', label: 'Via integrations' },
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No native events' },
+      { value: 'yes', label: 'Bots and bridges' },
     ],
   },
   {
-    app: 'Telegram',
-    logo: `${LOGO_DIR}/telegram.svg`,
+    app: 'Fluxer',
+    logo: `${LOGO_DIR}/fluxer.png`,
     cells: [
-      { value: 'no', label: 'Only 1:1 secret chats' },
-      { value: 'no', label: 'Centralized cloud' },
-      { value: 'partial', label: 'Client only, server closed' },
+      { value: 'yes', label: 'Voice channels' },
+      { value: 'yes', label: 'With screen share' },
+      { value: 'yes', label: 'Emotes and stickers' },
       { value: 'no', label: 'No' },
-      { value: 'no', label: 'Phone number required' },
-      { value: 'no', label: 'Channel ads' },
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No' },
+      { value: 'yes', label: 'Discord-style API' },
     ],
   },
   {
     app: 'Flotilla',
     logo: `${LOGO_DIR}/flotilla.png`,
     cells: [
-      { value: 'partial', label: 'DMs yes, spaces no' },
-      { value: 'yes', label: 'Decentralized on Nostr relays' },
-      { value: 'yes', label: 'AGPL' },
-      { value: 'yes', label: 'Run your own relay' },
-      { value: 'yes', label: 'Nostr key, no email' },
-      { value: 'yes', label: 'No ads' },
+      { value: 'yes', label: 'Voice channels' },
+      { value: 'partial', label: 'Video, no screen share' },
+      { value: 'no', label: 'No' },
+      { value: 'no', label: 'No' },
+      { value: 'yes', label: 'Yes' },
+      { value: 'yes', label: 'Event calendar' },
+      { value: 'no', label: 'No' },
+    ],
+  },
+  {
+    app: 'Stoat (ex-Revolt)',
+    logo: `${LOGO_DIR}/stoat.svg`,
+    cells: [
+      { value: 'yes', label: 'Voice channels' },
+      { value: 'no', label: 'Voice only' },
+      { value: 'yes', label: 'Custom emoji' },
+      { value: 'no', label: 'No' },
+      { value: 'no', label: 'No threads' },
+      { value: 'no', label: 'No' },
+      { value: 'yes', label: 'Bot API' },
     ],
   },
 ];
@@ -284,6 +315,97 @@ const supportText: Record<Support, string> = {
   no: 'No',
   partial: 'Partial',
 };
+
+function ComparisonTable({
+  columns,
+  rows,
+}: {
+  columns: string[];
+  rows: CompRow[];
+}) {
+  return (
+    <div className="not-prose my-8 overflow-x-auto">
+      <table className="w-full border-collapse text-sm">
+        <thead>
+          <tr className="border-b-2 border-border">
+            <th
+              className="sticky left-0 bg-background p-3 align-middle font-semibold"
+              style={{ textAlign: 'center' }}
+            >
+              App
+            </th>
+            {columns.map((col) => (
+              <th
+                key={col}
+                className="p-3 align-middle font-semibold text-muted-foreground"
+                style={{ textAlign: 'center' }}
+              >
+                {col}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr
+              key={row.app}
+              className={
+                row.highlight
+                  ? 'border-b border-border bg-[#ec4899]/5'
+                  : 'border-b border-border'
+              }
+            >
+              <th
+                scope="row"
+                className={
+                  row.highlight
+                    ? 'sticky left-0 bg-[#fdf2f8] p-3 text-center align-top dark:bg-[#1a0f18]'
+                    : 'sticky left-0 bg-background p-3 text-center align-top'
+                }
+              >
+                <div className="flex flex-col items-center text-center">
+                  <img
+                    src={row.logo}
+                    alt={`${row.app} logo`}
+                    loading="lazy"
+                    className="mb-1.5 h-7 w-7 object-contain"
+                  />
+                  <span
+                    className={
+                      row.highlight
+                        ? 'font-bold text-[#db2777] dark:text-[#ec4899]'
+                        : 'font-semibold'
+                    }
+                  >
+                    {row.app.includes(' (') ? (
+                      <>
+                        {row.app.slice(0, row.app.indexOf(' ('))}
+                        <span className="block text-xs font-normal text-muted-foreground">
+                          {row.app.slice(row.app.indexOf(' (') + 1)}
+                        </span>
+                      </>
+                    ) : (
+                      row.app
+                    )}
+                  </span>
+                </div>
+              </th>
+              {row.cells.map((cell, i) => (
+                <td key={columns[i]} className="p-3 text-center align-top">
+                  <SupportIcon value={cell.value} />
+                  <span className="sr-only">{supportText[cell.value]}. </span>
+                  <span className="mt-1 block text-xs leading-tight text-muted-foreground">
+                    {cell.label}
+                  </span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export default function BestDiscordAlternatives2026() {
   return (
@@ -390,91 +512,15 @@ export default function BestDiscordAlternatives2026() {
         partial answer, explained in the notes below the table.
       </p>
 
-      <div className="not-prose my-8 overflow-x-auto">
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr className="border-b-2 border-border">
-              <th className="sticky left-0 bg-background p-3 text-center align-bottom font-semibold">
-                App
-              </th>
-              {columns.map((col) => (
-                <th
-                  key={col}
-                  className="p-3 text-center align-bottom font-semibold text-muted-foreground"
-                >
-                  {col}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr
-                key={row.app}
-                className={
-                  row.highlight
-                    ? 'border-b border-border bg-[#ec4899]/5'
-                    : 'border-b border-border'
-                }
-              >
-                <th
-                  scope="row"
-                  className={
-                    row.highlight
-                      ? 'sticky left-0 bg-[#fdf2f8] p-3 text-center align-top dark:bg-[#1a0f18]'
-                      : 'sticky left-0 bg-background p-3 text-center align-top'
-                  }
-                >
-                  <div className="flex flex-col items-center text-center">
-                    <img
-                      src={row.logo}
-                      alt={`${row.app} logo`}
-                      loading="lazy"
-                      className="mb-1.5 h-7 w-7 object-contain"
-                    />
-                    <span
-                      className={
-                        row.highlight
-                          ? 'font-bold text-[#db2777] dark:text-[#ec4899]'
-                          : 'font-semibold'
-                      }
-                    >
-                      {row.app.includes(' (') ? (
-                        <>
-                          {row.app.slice(0, row.app.indexOf(' ('))}
-                          <span className="block text-xs font-normal text-muted-foreground">
-                            {row.app.slice(row.app.indexOf(' (') + 1)}
-                          </span>
-                        </>
-                      ) : (
-                        row.app
-                      )}
-                    </span>
-                  </div>
-                </th>
-                {row.cells.map((cell, i) => (
-                  <td key={columns[i]} className="p-3 text-center align-top">
-                    <SupportIcon value={cell.value} />
-                    <span className="sr-only">{supportText[cell.value]}. </span>
-                    <span className="mt-1 block text-xs leading-tight text-muted-foreground">
-                      {cell.label}
-                    </span>
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <ComparisonTable columns={columns} rows={rows} />
 
       <p className="text-sm text-muted-foreground">
         Notes: Revolt renamed itself Stoat in October 2025; it is the same app.
         Guilded (owned by Roblox) shut down in December 2025 and is left off the
         chart. Matrix rooms are encrypted by default only for new private
-        conversations; large public rooms usually are not. Rocket.Chat's encryption
-        is optional and has had audited weaknesses. Flotilla is another Nostr app:
-        its direct messages are encrypted, but its community "spaces" are not
-        end-to-end encrypted.
+        conversations; large public rooms usually are not. Flotilla is another
+        Nostr app: its direct messages are encrypted, but its community "spaces"
+        are not end-to-end encrypted.
       </p>
 
       <h2>What Each Discord Alternative Offers</h2>
@@ -541,28 +587,27 @@ export default function BestDiscordAlternatives2026() {
         voice tool without ID checks, not at people who need encrypted text.
       </p>
 
-      <h3>Signal and Telegram</h3>
+      <h2>Which Open Source Discord Alternative Has the Most Features?</h2>
 
       <p>
-        Signal is the gold standard for encrypted messaging, always on, for text
-        and calls, and it is open source and non-profit. It is also centralized and
-        requires a phone number, and it is a messenger, not a server-and-channel
-        community platform. Telegram is the opposite trade: huge and feature-rich,
-        but its group chats and channels are not end-to-end encrypted, its server
-        is closed source, it wants a phone number, and it runs ads. Neither is a
-        Discord replacement, but both come up in the conversation, so they are in
-        the chart.
+        If you are trying to work out which open source option comes closest to
+        Discord, the chart below stacks up Armada, Matrix, Fluxer, Flotilla, and
+        Stoat on the features people use most: voice, video, custom emoji, GIFs,
+        threads, events, and bots. Green is a yes, amber is partial, red is a no.
       </p>
 
-      <h3>Mattermost and Rocket.Chat</h3>
+      <ComparisonTable columns={featureColumns} rows={featureRows} />
 
-      <p>
-        If your "community" is really a team or a company, these two self-hosted,
-        open source platforms are strong. Both are built to run on your own
-        hardware. Neither is a great fit for a large, public, voice-first
-        community, and neither gives you end-to-end encryption you can rely on:
-        Mattermost has none, and Rocket.Chat's is optional, off by default, and has
-        had security flaws found in audits.
+      <p className="text-sm text-muted-foreground">
+        Notes: All five cover servers, channels, roles, and file sharing, so the
+        table focuses on where they differ. Armada is the only one with the whole
+        set: voice, video with screen share, custom emoji, a GIF picker, threads,
+        events, and bots. Matrix matches most of it, but has no native events and
+        gets GIFs through integrations. Fluxer adds screen sharing and a
+        Discord-compatible bot API, without events or a GIF picker. Flotilla has
+        an event calendar plus voice and video, but no custom emoji, GIF picker,
+        or bots. Stoat has voice, custom emoji, and bots, but no video, threads,
+        or events.
       </p>
 
       <h2>Armada: Encrypted, Unstoppable Discord Alternative</h2>
