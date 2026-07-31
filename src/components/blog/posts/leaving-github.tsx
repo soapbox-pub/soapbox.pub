@@ -168,22 +168,6 @@ export default function LeavingGitHub() {
     <article className="prose prose-lg max-w-none">
       {/* IMAGE TODO: cover + OG at /public/assets/blog/leaving-github/cover.jpg */}
 
-      <div className="not-prose my-8 rounded-lg border-2 border-amber-500 bg-amber-50 p-5 dark:border-amber-600 dark:bg-amber-950/40">
-        <p className="m-0 font-bold text-amber-900 dark:text-amber-200">
-          DRAFT. Not ready to publish.
-        </p>
-        <p className="mt-2 mb-0 text-sm text-amber-900 dark:text-amber-200">
-          All seven sections are written. Section 1 was signed off by Derek on
-          2026-07-30. Three framing calls remain open: whether Agora stays in as
-          the honest &quot;announced, not migrated&quot; close, whether the lost
-          macOS builds are printed as a regression we own, and whether the
-          state-event rewind finding in section 3 is published at all. Two
-          checklist steps in section 6 were never executed and are named in the
-          ledger. Working notes, sources, and that ledger stay in{' '}
-          <code>~/.buzz/WORK/LEAVING_GITHUB.md</code>.
-        </p>
-      </div>
-
       <div className="not-prose mb-8">
         <div className="mb-4 flex flex-wrap gap-2">
           <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
@@ -203,11 +187,6 @@ export default function LeavingGitHub() {
           </Badge>
         </div>
       </div>
-
-      <p className="lead">
-        On 23 July, India&apos;s Cyber Crime Coordination Centre gave GitHub
-        three hours to disable three repositories.
-      </p>
 
       <div className="not-prose my-8">
         <Card className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950">
@@ -268,6 +247,11 @@ export default function LeavingGitHub() {
       </div>
 
       <h2 id="section-1">1. The case against GitHub</h2>
+
+      <p className="lead">
+        On 23 July, India&apos;s Cyber Crime Coordination Centre gave GitHub
+        three hours to disable three repositories.
+      </p>
 
       <p>
         The repositories were bitchat, a messaging app that works over Bluetooth
