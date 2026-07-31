@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { AlertTriangle } from 'lucide-react';
 import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
@@ -31,6 +34,64 @@ export const meta: BlogPostMeta = {
 const codeBlock =
   'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto';
 
+/** A command block, optionally captioned, in the card treatment the other how-to posts use. */
+function CodeCard({
+  title,
+  children,
+}: {
+  title?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="not-prose my-8">
+      <Card className="border-2 border-gray-200 dark:border-gray-800">
+        <CardContent className="space-y-3 p-6">
+          {title && <h4 className="m-0 text-lg font-bold">{title}</h4>}
+          {children}
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+/** A warning aside, for the sharp edges. */
+function Warning({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="not-prose my-8">
+      <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <CardContent className="flex items-start gap-3 p-6">
+          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-500" />
+          <div className="space-y-2">
+            <p className="m-0 font-bold">{title}</p>
+            {children}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+/** A lifted sentence, set as a pull quote. */
+function PullQuote({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="not-prose my-8">
+      <Card className="border-l-4 border-[#d9e00b] bg-[#d9e00b]/10">
+        <CardContent className="p-6">
+          <blockquote className="m-0 text-xl font-semibold italic text-foreground">
+            {children}
+          </blockquote>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
 export default function LeavingGitHub() {
   return (
     <article className="prose prose-lg max-w-none">
@@ -52,12 +113,12 @@ export default function LeavingGitHub() {
         </p>
       </div>
 
-      <h2>1. The case against GitHub</h2>
-
       <p className="lead">
         On 23 July, India&apos;s Cyber Crime Coordination Centre gave GitHub
         three hours to disable three repositories.
       </p>
+
+      <h2>1. The case against GitHub</h2>
 
       <p>
         The repositories were bitchat, a messaging app that works over Bluetooth
@@ -168,11 +229,12 @@ export default function LeavingGitHub() {
 
       {/* IMAGE TODO: inline uptime chart, currently hotlinked to argo. Save to
           /public/assets/blog/leaving-github/github-uptime-april.jpeg and swap the URL. */}
-      <figure className="m-0">
+      <figure className="not-prose my-6">
         <img
           src="https://argo.derekross.me/media/bc317dff3dc93e17e4e4af9f9dbac1450249e574213312840c158234e61080c5.jpg"
           alt="The Missing GitHub Status Page, showing 85.51% uptime and 95 incidents over the last 90 days"
-          className="w-full rounded-lg"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
         />
         <figcaption className="mt-2 text-center text-sm text-muted-foreground">
           Marek Šuppa&apos;s independent tracker, &quot;The Missing GitHub
@@ -217,9 +279,13 @@ export default function LeavingGitHub() {
         holds accounts, issues, pull requests, releases and CI for tens of
         millions of projects at that single address. Every government with reach
         into that address gets a lever, and the lever works on everything at
-        once. Good policy makes the lever harder to pull. It does not remove the
-        lever.
+        once.
       </p>
+
+      <PullQuote>
+        Good policy makes the lever harder to pull. It does not remove the
+        lever.
+      </PullQuote>
 
       <p>
         Git solved this for the code twenty years ago. Every clone is a complete
@@ -238,7 +304,16 @@ export default function LeavingGitHub() {
       <h2>2. What replaces it</h2>
 
       <p>
-        <strong>ngit</strong> is the tool. It installs two binaries.{' '}
+        <strong>
+          <a
+            href="https://gitworkshop.dev/ngit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ngit
+          </a>
+        </strong>{' '}
+        is the tool. It installs two binaries.{' '}
         <code>ngit</code> is the command you run, and{' '}
         <code>git-remote-nostr</code> is a git remote helper, which is the piece
         that matters most and gets the least attention. A remote helper teaches
@@ -251,7 +326,16 @@ export default function LeavingGitHub() {
       </p>
 
       <p>
-        <strong>NIP-34</strong> is the specification underneath. It defines a
+        <strong>
+          <a
+            href="https://github.com/nostr-protocol/nips/blob/master/34.md"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NIP-34
+          </a>
+        </strong>{' '}
+        is the specification underneath. It defines a
         repository announcement, a repository state event that carries branches
         and tags, and event kinds for patches, pull requests, issues, and their
         statuses. It is marked <code>draft</code> and <code>optional</code>, so
@@ -310,9 +394,11 @@ export default function LeavingGitHub() {
 
       <h3>Cloning</h3>
 
-      <pre className={codeBlock}>
-        <code>{`git clone nostr://npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj/relay.ngit.dev/armada`}</code>
-      </pre>
+      <CodeCard title="Clone Armada over Nostr">
+        <pre className={codeBlock}>
+          <code>{`git clone nostr://npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj/relay.ngit.dev/armada`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         That is Armada. It pulls 13,084 objects, 6.81 MiB, resolves 9,311
@@ -337,18 +423,22 @@ export default function LeavingGitHub() {
         command. You push a branch:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`git push -u origin pr/my-branch`}</code>
-      </pre>
+      <CodeCard title="Open a pull request">
+        <pre className={codeBlock}>
+          <code>{`git push -u origin pr/my-branch`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         The <code>pr/</code> prefix is the whole mechanism. Title and
         description ride along as git push options:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`git push -o 'title=My PR' -o 'description=line1\\n\\nline2' -u origin pr/branch`}</code>
-      </pre>
+      <CodeCard title="Title and description as push options">
+        <pre className={codeBlock}>
+          <code>{`git push -o 'title=My PR' -o 'description=line1\\n\\nline2' -u origin pr/branch`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         <code>ngit --help</code> says it plainly: &quot;remote branches
@@ -395,10 +485,12 @@ export default function LeavingGitHub() {
         branch we had pushed ourselves it did not:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`Error: branch 'pr/my-first-proposal' does not encode a PR id and no PR you
+      <CodeCard title="What bare ngit merge said instead">
+        <pre className={codeBlock}>
+          <code>{`Error: branch 'pr/my-first-proposal' does not encode a PR id and no PR you
 authored matches it; specify a PR event-id or nevent`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         The branch has to encode the id, which is what{' '}
@@ -430,19 +522,23 @@ authored matches it; specify a PR event-id or nevent`}</code>
         the whole model. Anyone who can sign for the maintainer npub can rewind
         a project&apos;s default branch on every host simultaneously. In our
         testing nothing appeared to enforce monotonicity, so replaying an old
-        state event had the same effect as publishing a new one. Your signing
-        key is not just your identity here. It is the write authority over every
-        copy of the repository, and there is no per-host force-push protection
-        standing behind it the way a branch protection rule stands behind
-        GitHub.
+        state event had the same effect as publishing a new one.
       </p>
 
-      <p>
-        Guard the key accordingly. Use <code>ngit account login --local</code>{' '}
-        so a machine-wide identity is not silently publishing for you, and treat
-        maintainer keys with the seriousness you would give a signing key rather
-        than a password.
-      </p>
+      <PullQuote>
+        Your signing key is not just your identity here. It is the write
+        authority over every copy of the repository.
+      </PullQuote>
+
+      <Warning title="Guard the key accordingly">
+        <p className="m-0 text-sm">
+          There is no per-host force-push protection standing behind it the way
+          a branch protection rule stands behind GitHub. Use{' '}
+          <code>ngit account login --local</code> so a machine-wide identity is
+          not silently publishing for you, and treat maintainer keys with the
+          seriousness you would give a signing key rather than a password.
+        </p>
+      </Warning>
 
       <p>
         The practical version of this shows up in <code>ngit sync</code>, which
@@ -450,10 +546,12 @@ authored matches it; specify a PR event-id or nevent`}</code>
         run it:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`ngit sync      # servers      <- state event   (state wins)
+      <CodeCard title="Which direction sync points">
+        <pre className={codeBlock}>
+          <code>{`ngit sync      # servers      <- state event   (state wins)
 ngit sync -t   # state event  <- servers       (servers win)`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         Bare <code>ngit sync</code> is the destructive direction.{' '}
@@ -480,7 +578,7 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
         Run inside a fresh <code>nostr://</code> clone:
       </p>
 
-      <div className="not-prose my-6 overflow-x-auto">
+      <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="bg-gray-100 dark:bg-gray-800">
@@ -562,8 +660,15 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
           <code>act</code>
         </a>
         , one Linux container per job, publishing results and build artifacts
-        back to Nostr where they show up on gitworkshop.dev against the commit
-        or the PR.
+        back to Nostr where they show up on{' '}
+        <a
+          href="https://gitworkshop.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          gitworkshop.dev
+        </a>{' '}
+        against the commit or the PR.
       </p>
 
       <p>That is the single lowest-friction part of this migration.</p>
@@ -616,10 +721,12 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
         tag:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`VERSION_NAME="\${TAG#v}"                                        # v0.44.1 -> 0.44.1
+      <CodeCard title="release.yml derives the Android version from the tag">
+        <pre className={codeBlock}>
+          <code>{`VERSION_NAME="\${TAG#v}"                                        # v0.44.1 -> 0.44.1
 VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 44001`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         That arithmetic is a scar. On GitLab the version code was{' '}
@@ -627,8 +734,15 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         ngit-ci has no pipeline counter, so the first port used{' '}
         <code>git rev-list --count HEAD</code>. But ngit-ci&apos;s runner
         shallow-fetches only the tagged commit, so the count was always 1. Every
-        release got the same version code, and Zapstore silently dropped them as
-        duplicates. Deriving the number from the semver tag made it
+        release got the same version code, and{' '}
+        <a
+          href="https://zapstore.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zapstore
+        </a>{' '}
+        silently dropped them as duplicates. Deriving the number from the semver tag made it
         deterministic and independent of checkout depth.
       </p>
 
@@ -640,7 +754,7 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
 
       <p>Where the artifacts go, none of them GitHub Releases:</p>
 
-      <div className="not-prose my-6 overflow-x-auto">
+      <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="bg-gray-100 dark:bg-gray-800">
@@ -703,12 +817,14 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         this pipeline:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`$ nak req -k 30063 -a 781a1527...9fdae5 -l 5 wss://relay.zapstore.dev
+      <CodeCard title="Verify the Zapstore releases yourself">
+        <pre className={codeBlock}>
+          <code>{`$ nak req -k 30063 -a 781a1527...9fdae5 -l 5 wss://relay.zapstore.dev
 2026-07-30T01:46:50  buzz.armada.app@0.44.0
 2026-07-29T18:58:48  buzz.armada.app@0.43.0
 2026-07-28T06:27:12  buzz.armada.app@0.42.2`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <h2>4. What Buzz adds</h2>
 
@@ -870,11 +986,12 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
 
       {/* IMAGE TODO: inline nostrhub repository screenshot, currently hotlinked to argo.
           Save to /public/assets/blog/leaving-github/nostrhub-armada-repo.png and swap the URL. */}
-      <figure className="m-0">
+      <figure className="not-prose my-6">
         <img
           src="https://argo.derekross.me/media/1100e81628793d99d80df976bbe49c4b9e2b336ae0002ac8ad605e1b60c6df17.png"
           alt="The armada repository on nostrhub.io, showing the Code tab with a file tree, the Issues, Merge requests and Discussion tabs, the repository relays and the repository fingerprint"
-          className="w-full rounded-lg"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
         />
         <figcaption className="mt-2 text-center text-sm text-muted-foreground">
           The armada repository on nostrhub.io. The Code tab and its file tree,
@@ -896,9 +1013,11 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         itself:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`curl -Ls https://ngit.dev/install.sh | bash`}</code>
-      </pre>
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`curl -Ls https://ngit.dev/install.sh | bash`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         You get <code>ngit</code> and <code>git-remote-nostr</code>. Confirm
@@ -912,14 +1031,15 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         <strong>2. Log in to the repository, not the machine.</strong>
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`ngit account login --local`}</code>
-      </pre>
-
-      <pre className={codeBlock}>
-        <code>{`saved login details to local git config. you are only logged in to this local repository.
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`ngit account login --local`}</code>
+        </pre>
+        <pre className={codeBlock}>
+          <code>{`saved login details to local git config. you are only logged in to this local repository.
 logged in as npub1r7mxut3ju6...`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         Use <code>--local</code>. Without it, ngit writes your login into your{' '}
@@ -940,13 +1060,15 @@ logged in as npub1r7mxut3ju6...`}</code>
         tells you whether the whole model makes sense to you:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`git clone nostr://npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj/relay.ngit.dev/armada
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`git clone nostr://npub10qdp2fc9ta6vraczxrcs8prqnv69fru2k6s2dj48gqjcylulmtjsg9arpj/relay.ngit.dev/armada
 cd armada
 git branch -r | grep pr/
 ngit pr list
 ngit issue list`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         You should see 14 <code>pr/</code> branches, 14 open PRs, 40 open
@@ -961,9 +1083,11 @@ ngit issue list`}</code>
         anything:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`git remote rename origin github`}</code>
-      </pre>
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`git remote rename origin github`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         Armada runs this way today: <code>origin</code> is the{' '}
@@ -976,10 +1100,12 @@ ngit issue list`}</code>
         checkout:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`ngit init -g relay.ngit.dev -g git.shakespeare.diy -g git.nostrhub.io \\
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`ngit init -g relay.ngit.dev -g git.shakespeare.diy -g git.nostrhub.io \\
   --name my-project --identifier my-project --description "..."`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         <code>-g</code> names your GRASP servers, &quot;where your git+nostr
@@ -999,22 +1125,26 @@ ngit issue list`}</code>
         by printing your share link and clone URL:
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`set remote origin to nostr url
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`set remote origin to nostr url
 push: git.shakespeare.diy/npub1.../my-project.git over https (unauthenticated)...
  * [new branch]      main
 ...
 share your repository: https://gitworkshop.dev/npub1.../relay.ngit.dev/my-project
 clone url: nostr://npub1.../relay.ngit.dev/my-project`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         <strong>6. Move your CI, do not rewrite it.</strong>
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`git mv .github/workflows .ngit/act/workflows`}</code>
-      </pre>
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`git mv .github/workflows .ngit/act/workflows`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         The files stay GitHub Actions syntax. ngit-ci reads them from the new
@@ -1028,24 +1158,27 @@ clone url: nostr://npub1.../relay.ngit.dev/my-project`}</code>
         <strong>7. Open your first pull request the ordinary way.</strong>
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`git checkout -b pr/my-first-proposal
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`git checkout -b pr/my-first-proposal
 git push -o 'title=My first proposal' -u origin pr/my-first-proposal
 ngit pr list`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         <strong>8. Merge, then publish. Two steps, and pass the PR id.</strong>
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`ngit merge <pr-event-id>
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`ngit merge <pr-event-id>
 git push origin main`}</code>
-      </pre>
-
-      <pre className={codeBlock}>
-        <code>{`merge commit created on main. don't forget to push`}</code>
-      </pre>
+        </pre>
+        <pre className={codeBlock}>
+          <code>{`merge commit created on main. don't forget to push`}</code>
+        </pre>
+      </CodeCard>
 
       <p>
         Take the id from the <code>ID</code> column of{' '}
@@ -1061,10 +1194,12 @@ git push origin main`}</code>
         </strong>
       </p>
 
-      <pre className={codeBlock}>
-        <code>{`ngit sync      # servers  <- state event   (state wins)
+      <CodeCard>
+        <pre className={codeBlock}>
+          <code>{`ngit sync      # servers  <- state event   (state wins)
 ngit sync -t   # state event <- servers    (servers win)`}</code>
-      </pre>
+        </pre>
+      </CodeCard>
 
       <p>
         Bare <code>ngit sync</code> is the destructive direction: it makes your
@@ -1114,9 +1249,37 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
         <Link to="/blog/what-is-ngit">Buzz</Link> keeps the conversation
         attached to the pull request it produced. Armada puts the issues, the
         merge requests and the CI runs in the channel where your team is already
-        talking. All of the tools are here and ready to use. Find the ones that
-        work for you and take the plunge.
+        talking.
       </p>
+
+      <PullQuote>
+        All of the tools are here and ready to use. Find the ones that work for
+        you and take the plunge.
+      </PullQuote>
+
+      <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
+        <Button
+          size="lg"
+          className="bg-[#d9e00b] px-8 py-3 text-lg font-bold text-[#100b15] hover:bg-[#c8cc0a]"
+          asChild
+        >
+          <a
+            href="https://gitworkshop.dev/ngit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Install ngit
+          </a>
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          asChild
+        >
+          <a href="/armada">Try Armada</a>
+        </Button>
+      </div>
     </article>
   );
 }
