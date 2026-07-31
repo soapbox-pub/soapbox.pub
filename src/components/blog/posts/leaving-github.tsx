@@ -506,12 +506,12 @@ export default function LeavingGitHub() {
         yours to lose. Here it describes where you publish from, not where the
         repository stops. You push to your own host, and the same push is
         carried by hosts run by other people who never asked you and never
-        needed to. The screenshot below lists more servers than the three
-        Armada announces, because five different people have announced this
-        project and the <code>euc</code> tag groups them into one. On GitHub a
-        fork is a separate repository at a separate URL. Here it is the same
-        project, and it stays reachable whether or not the box with your name
-        on it is still up.
+        needed to. The screenshot below names five GRASP servers where Armada
+        announces three. <code>gitnostr.com</code> and{' '}
+        <code>ngit.danconwaydev.com</code> are carrying this repository and
+        neither appears in its announcement. On GitHub a fork is a separate
+        repository at a separate URL. Here it is the same project, and it stays
+        reachable whether or not the box with your name on it is still up.
       </p>
 
       <Note>
@@ -538,9 +538,10 @@ export default function LeavingGitHub() {
           The armada repository on gitworkshop.dev. Code, issues, pull requests
           and maintainers, all of it read from Nostr events. The panel GitHub
           has no equivalent for is at the bottom right: the GRASP servers and
-          relays carrying the project. It lists more than the three above
-          because five different people have announced this repository, and the{' '}
-          <code>euc</code> tag groups their announcements into one project.
+          relays carrying the project: five GRASP servers and two other relays,
+          against the three Armada announces. Four maintainers, twelve stars,
+          and the last commit eleven hours ago, all of it assembled from events
+          rather than served by one company.
         </figcaption>
       </figure>
 
