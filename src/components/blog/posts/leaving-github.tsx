@@ -509,9 +509,7 @@ export default function LeavingGitHub() {
 
       <p>
         <strong>Armada</strong> is our proof that this works on a real project
-        rather than a demo. And <strong>Agora</strong>, our other app, is the
-        proof that it does not happen by itself. I will come back to Agora,
-        because it is the more useful of the two examples.
+        rather than a demo.
       </p>
 
       <figure className="not-prose my-6">
@@ -1038,6 +1036,35 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         views of your project until this is fixed.
       </p>
 
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/buzz-create-project.png"
+          alt="Buzz's Create a new project dialog with four fields: Name, an optional Description, an optional Clone URL showing a relay-hosted git URL as its placeholder, and an optional Web URL"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Announcing a repository from Buzz rather than the command line. Name,
+          description, clone URL, web URL, and nowhere to put an{' '}
+          <code>euc</code> tag, which is the rough edge above in dialog form.
+        </figcaption>
+      </figure>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/buzz-projects-repositories.png"
+          alt="Buzz's Projects view on the Repositories tab, showing cards for Armada, Soapbox Website, Agora and Onyx, each with a description and per-repository commit, pull request and issue counts"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The same four projects on the Repositories tab. Worth reading against
+          the paragraph above: Armada shows no commits or pull requests here,
+          while the same project shows 18 pull requests inside Armada. Two
+          announcements, two views that have not converged.
+        </figcaption>
+      </figure>
+
       <hr className="my-12" />
 
       <h2 id="section-5">5. Reading a repository inside Armada</h2>
@@ -1075,6 +1102,52 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         <code>.git/config</code>. If you give it a NIP-05 owner instead of an
         npub, it resolves it properly rather than trusting a profile field.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-create-channel.png"
+          alt="Armada's Create a channel dialog offering two options: Text channel, a plain conversation space for your community, and Repository channel, which ties a git repository to the channel with live activity in chat and a Projects view for issues and PRs"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The first of the two entry points. A repository channel is a channel
+          that happens to have a repository attached, and the dialog says what
+          that buys you in one line: live activity in chat, and a Projects view
+          for issues and PRs.
+        </figcaption>
+      </figure>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-choose-repository.png"
+          alt="Armada's Choose a repository picker: a search field reading Search repositories, or paste an naddr / nostr:// address, above a Recently Announced list showing gamestr, Nostr Events Chain, alice, and two Akamaister repositories"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The picker both entry points open. The search runs over repositories
+          announced to the network, which is why strangers&apos; projects show
+          up under Recently Announced. The field also takes a pasted address,
+          and that is the part with no GitHub equivalent: an{' '}
+          <code>naddr1…</code> identifies a repository without naming a host to
+          fetch it from.
+        </figcaption>
+      </figure>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-connected-repositories.png"
+          alt="Armada's Connected Repositories panel listing three entries: Team Soapbox / Agora attached to #agora, Team Soapbox / armada attached to #armada, and Team Soapbox / Soapbox Pub attached to #marketing, each with a delete button"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The other entry point, and the clearest picture of the rule. One
+          community, three repositories, each attached to its own channel:
+          Agora to #agora, armada to #armada, the website to #marketing.
+        </figcaption>
+      </figure>
 
       <p>
         It writes no new event kind. The coordinate goes into the channel&apos;s
@@ -1145,6 +1218,22 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
         repository on the relay rather than the ones your channels happen to be
         connected to.
       </p>
+
+      <figure className="not-prose my-6">
+        <img
+          src="/assets/blog/leaving-github/armada-projects-view.png"
+          alt="Armada's Projects view for Team Soapbox on the Overview tab: counts reading Repositories 3, Pull requests 18, Issues 65 and People 18, a recent activity feed mixing armada and Agora issues and pull requests with Open, Resolved and Merged states, a people roster and a contribution heatmap"
+          className="w-full rounded-lg border shadow-md"
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          The Projects view, Overview tab. The counts are community-wide across
+          all three connected repositories, which is why 65 issues and 18 pull
+          requests here are a larger number than any single repository page in
+          this post shows. The activity feed mixes armada and Agora items for
+          the same reason.
+        </figcaption>
+      </figure>
 
       <h3>And on the web</h3>
 
