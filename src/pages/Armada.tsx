@@ -77,15 +77,6 @@ const ZAPSTORE_URL = 'https://zapstore.dev/apps/buzz.armada.app';
 /** Zapstore icon used on download buttons. */
 const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
 
-/**
- * Invite link into the official Soapbox community on Armada. The URL
- * fragment carries the unlock token (per CORD-05, invite keys live in an
- * encrypted bundle on relays; the link itself is just a locator + token),
- * so it never reaches any server.
- */
-const COMMUNITY_INVITE_URL =
-  'https://armada.buzz/invite/naddr1qvzqqqyzz5pzp0flk57hwj8x6a969ys0m7f50tl9jlunnadhuxjaqlx4hgh5scktqqqq3w62qc#BAACAwSD_R2taBjMMDl8Ybd670Lq';
-
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';
 
@@ -119,7 +110,7 @@ const NOSTR_APPS: Array<{
     url: 'https://github.com/block/buzz',
     desc: "Block's open-source team chat with AI agents. Armada joins Buzz communities directly.",
     accent: '#d9e00b',
-    shot: '/assets/armada/interop/buzz-shot.png',
+    shot: '/assets/armada/interop/buzz-shot-new.webp',
     logo: '/assets/armada/interop/buzz-logo.jpg',
   },
   {
@@ -127,7 +118,7 @@ const NOSTR_APPS: Array<{
     url: 'https://flotilla.social',
     desc: "Coracle's Nostr communities client, with rooms, events, and moderation.",
     accent: '#8b7cf6',
-    shot: '/assets/armada/interop/flotilla-shot.png',
+    shot: '/assets/armada/interop/flotilla-shot-new.jpg',
     logo: '/assets/armada/interop/flotilla-logo.png',
   },
   {
@@ -422,18 +413,24 @@ const HERO_MESSAGES: DemoMessage[] = [
   {
     person: PEOPLE.alex,
     time: '09:42',
-    text: 'new build is out — custom themes are live 🎨',
+    text: 'new build is out, custom themes are live 🎨',
     reaction: '🎉 4',
   },
   {
     person: PEOPLE.chad,
     time: '09:43',
-    text: 'installing right now',
+    text: 'installing now, looks incredible',
+  },
+  {
+    person: PEOPLE.morgan,
+    time: '09:44',
+    text: 'the ocean theme is 🔥',
+    reaction: '⚓ 3',
   },
   {
     person: PEOPLE.mk,
     time: '09:45',
-    text: 'voice in 5? I want to demo something',
+    text: 'voice in 5? want to demo something',
   },
 ];
 
@@ -447,20 +444,19 @@ const HERO_FRAMES: Array<{
   typing?: Person;
   voice: Person[];
 }> = [
-  { visible: 1, voice: [PEOPLE.derek, PEOPLE.lemon] },
-  { visible: 1, typing: PEOPLE.chad, voice: [PEOPLE.derek, PEOPLE.lemon] },
   { visible: 2, voice: [PEOPLE.derek, PEOPLE.lemon] },
-  { visible: 2, typing: PEOPLE.mk, voice: [PEOPLE.derek, PEOPLE.lemon] },
+  { visible: 2, typing: PEOPLE.chad, voice: [PEOPLE.derek, PEOPLE.lemon] },
   { visible: 3, voice: [PEOPLE.derek, PEOPLE.lemon] },
-  { visible: 3, voice: [PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk] },
-  { visible: 3, voice: [PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk] },
+  { visible: 3, typing: PEOPLE.mk, voice: [PEOPLE.derek, PEOPLE.lemon] },
+  { visible: 4, voice: [PEOPLE.derek, PEOPLE.lemon] },
+  { visible: 4, voice: [PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk] },
+  { visible: 4, voice: [PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk] },
 ];
 
 /**
- * A live-feeling Armada channel window: typing indicators appear,
- * messages pop in, a reaction lands, and someone joins voice — on a
- * loop. Discord-familiar chrome so a visitor instantly recognizes the
- * product category before reading a word of copy.
+ * A live-feeling Armada channel rendered inside a phone. Typing indicators
+ * appear, messages pop in with reactions and a thread, and people join
+ * voice, on a loop. The mobile frame signals "chat app" instantly.
  */
 function HeroChatMockup() {
   const frame = useTicker(1400, HERO_FRAMES.length);
@@ -468,58 +464,84 @@ function HeroChatMockup() {
   const messages = HERO_MESSAGES.slice(0, visible);
 
   return (
-    <div className="relative max-w-md mx-auto">
-      {/* Pink glow behind the card */}
+    <div className="relative mx-auto w-[290px] sm:w-[320px]">
+      {/* Rose + cyan glow behind the phone */}
       <div
-        className="absolute inset-0 -m-8 rounded-3xl opacity-50 blur-3xl"
+        className="absolute inset-0 -m-10 rounded-full opacity-50 blur-3xl pointer-events-none"
         style={{
-          background:
-            'radial-gradient(circle at center, rgba(236, 72, 153, 0.35), transparent 65%)',
+          background: `radial-gradient(ellipse at center, ${ROSE}55, ${CYAN}22 55%, transparent 75%)`,
         }}
       />
 
-      <Card
-        className="relative border-white/10 overflow-hidden shadow-2xl rotate-[1.5deg] hover:rotate-0 transition-transform duration-500"
-        style={{ backgroundColor: SURFACE }}
-      >
-        {/* Channel header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/[0.03]">
-          <div className="flex items-center gap-2 min-w-0">
-            <img
-              src={ARMADA_ICON}
-              alt="Armada app icon"
-              className="size-6 rounded-md shrink-0"
-            />
-            <span className="font-mono text-sm text-white font-semibold truncate">
-              #general
+      {/* Phone body */}
+      <div className="relative rounded-[2.75rem] border-[11px] border-[#0c0a11] bg-[#0c0a11] shadow-2xl ring-1 ring-white/10">
+        {/* Notch */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 h-6 w-32 rounded-b-2xl bg-[#0c0a11]" />
+
+        {/* Screen */}
+        <div
+          className="relative rounded-[2rem] overflow-hidden flex flex-col h-[600px]"
+          style={{ backgroundColor: SURFACE }}
+        >
+          {/* Status bar */}
+          <div className="flex items-center justify-between px-6 pt-3 pb-1 text-white text-[11px] font-medium">
+            <span>9:45</span>
+            <div className="flex items-center gap-1 text-gray-300">
+              <span className="font-mono text-[10px]">5G</span>
+              <span className="inline-block h-2.5 w-4 rounded-[3px] border border-white/50 relative">
+                <span className="absolute inset-0.5 right-1 rounded-[1px] bg-white/80" />
+              </span>
+            </div>
+          </div>
+
+          {/* Channel header */}
+          <div className="flex items-center gap-2.5 px-4 py-2.5 border-b border-white/10 bg-white/[0.02]">
+            <ChevronDown className="size-4 rotate-90 text-gray-400 shrink-0" />
+            <img src={ARMADA_ICON} alt="Armada" className="size-7 rounded-lg shrink-0" />
+            <div className="min-w-0 flex-1">
+              <p className="font-mono text-sm text-white font-semibold leading-none">#general</p>
+              <p className="text-[10px] text-gray-500 mt-0.5">Team Soapbox · 128 online</p>
+            </div>
+            <span className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-300 text-[9px] font-semibold uppercase tracking-wider">
+              <LockKeyhole className="size-2.5" />
+              e2ee
             </span>
           </div>
-          <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-300 text-[10px] font-semibold uppercase tracking-wider">
-            <LockKeyhole className="size-3" />
-            <span>Encrypted</span>
-          </div>
-        </div>
 
-        <CardContent className="p-4 text-white">
-          {/* Message timeline — fixed height so the loop doesn't reflow the page */}
-          <div className="h-56 flex flex-col justify-end gap-4 overflow-hidden">
-            {messages.map((m) => (
+          {/* Messages */}
+          <div className="flex-1 min-h-0 flex flex-col justify-end gap-3.5 px-3.5 py-3 overflow-hidden">
+            {messages.map((m, i) => (
               <div
                 key={m.person.name}
-                className="flex items-start gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300"
+                className="flex items-start gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-300"
               >
-                <ProfilePic person={m.person} />
+                <ProfilePic person={m.person} className="size-8" />
                 <div className="min-w-0">
-                  <p className="text-xs mb-0.5">
-                    <span className="font-semibold text-pink-300">
-                      {m.person.name}
-                    </span>{' '}
+                  <p className="text-[11px] mb-0.5">
+                    <span className="font-semibold text-pink-300">{m.person.name}</span>{' '}
                     <span className="text-gray-500">{m.time}</span>
                   </p>
-                  <p className="text-sm text-gray-200 leading-snug">{m.text}</p>
-                  {m.reaction && visible >= 2 && (
-                    <span className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-xs animate-in fade-in zoom-in-75 duration-300">
+                  <p className="text-[13px] text-gray-100 leading-snug">{m.text}</p>
+                  {m.reaction && (
+                    <span className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-[11px] animate-in fade-in zoom-in-75 duration-300">
                       {m.reaction}
+                    </span>
+                  )}
+                  {/* Thread affordance under the first message */}
+                  {i === 0 && (
+                    <span className="mt-1.5 flex items-center gap-1.5 text-[11px] text-cyan-300">
+                      <span className="flex -space-x-1.5">
+                        {[PEOPLE.chad, PEOPLE.derek].map((p) => (
+                          <img
+                            key={p.name}
+                            src={p.avatar}
+                            alt=""
+                            className="size-4 rounded-full object-cover border-2"
+                            style={{ borderColor: SURFACE }}
+                          />
+                        ))}
+                      </span>
+                      2 replies
                     </span>
                   )}
                 </div>
@@ -528,7 +550,7 @@ function HeroChatMockup() {
 
             {/* Typing indicator */}
             {typing && (
-              <div className="flex items-center gap-2 text-xs text-gray-400 animate-in fade-in duration-200">
+              <div className="flex items-center gap-2 text-[11px] text-gray-400 animate-in fade-in duration-200">
                 <ProfilePic person={typing} className="size-4" />
                 <span className="flex gap-0.5">
                   <span className="size-1.5 rounded-full bg-pink-400 animate-bounce" />
@@ -536,20 +558,17 @@ function HeroChatMockup() {
                   <span className="size-1.5 rounded-full bg-pink-400 animate-bounce [animation-delay:240ms]" />
                 </span>
                 <span>
-                  <span className="text-gray-300 font-medium">
-                    {typing.name}
-                  </span>{' '}
-                  is typing…
+                  <span className="text-gray-300 font-medium">{typing.name}</span> is typing…
                 </span>
               </div>
             )}
           </div>
 
           {/* Voice bar */}
-          <div className="mt-4 flex items-center justify-between rounded-lg bg-cyan-400/10 border border-cyan-400/25 px-3 py-2.5">
-            <div className="flex items-center gap-2 text-cyan-300 text-xs font-medium">
+          <div className="mx-3.5 mb-2 flex items-center justify-between rounded-xl bg-cyan-400/10 border border-cyan-400/25 px-3 py-2">
+            <div className="flex items-center gap-2 text-cyan-300 text-[11px] font-medium">
               <Headphones className="size-4" />
-              <span>Voice · {voice.length} in call</span>
+              <span>hangout · {voice.length} in call</span>
             </div>
             <div className="flex -space-x-2">
               {voice.map((p, i) => (
@@ -567,14 +586,26 @@ function HeroChatMockup() {
           </div>
 
           {/* Composer */}
-          <div className="mt-4 flex items-center gap-2 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2.5">
-            <span className="font-mono text-sm text-gray-500">
-              Message #general
-            </span>
+          <div className="mx-3.5 mb-2 flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-3.5 py-2.5">
+            <Plus className="size-4 text-gray-500 shrink-0" />
+            <span className="font-mono text-[13px] text-gray-500 flex-1">Message #general</span>
             <span className="font-mono text-pink-400 animate-pulse">_</span>
+            <Smile className="size-4 text-gray-500 shrink-0" />
           </div>
-        </CardContent>
-      </Card>
+
+          {/* Bottom tab bar */}
+          <div className="flex items-center justify-around px-6 py-2.5 border-t border-white/10 bg-black/30">
+            <MessagesSquare className="size-5 text-pink-400" />
+            <BellRing className="size-5 text-gray-500" />
+            <Users className="size-5 text-gray-500" />
+            <ProfilePic person={PEOPLE.mk} className="size-5" />
+          </div>
+          {/* Home indicator */}
+          <div className="flex justify-center pb-2 pt-0.5">
+            <span className="h-1 w-28 rounded-full bg-white/25" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -631,13 +662,15 @@ const THEME_PRESETS: Array<{
   bg: string;
   accent: string;
   accent2: string;
+  /** Degrees to hue-rotate the mockup so it recolors like this theme. */
+  hue: number;
 }> = [
-  { name: 'armada', bg: '#15121c', accent: '#f5479e', accent2: '#25f4f4' },
-  { name: 'ember', bg: '#1c1310', accent: '#f97316', accent2: '#fbbf24' },
-  { name: 'ocean', bg: '#0f1a24', accent: '#38bdf8', accent2: '#22d3ee' },
-  { name: 'forest', bg: '#101a14', accent: '#22c55e', accent2: '#a3e635' },
-  { name: 'grape', bg: '#171021', accent: '#a855f7', accent2: '#e879f9' },
-  { name: 'gold', bg: '#1a170f', accent: '#eab308', accent2: '#fde047' },
+  { name: 'armada', bg: '#15121c', accent: '#f5479e', accent2: '#25f4f4', hue: 0 },
+  { name: 'ember', bg: '#1c1310', accent: '#f97316', accent2: '#fbbf24', hue: 57 },
+  { name: 'ocean', bg: '#0f1a24', accent: '#38bdf8', accent2: '#22d3ee', hue: -129 },
+  { name: 'forest', bg: '#101a14', accent: '#22c55e', accent2: '#a3e635', hue: 174 },
+  { name: 'grape', bg: '#171021', accent: '#a855f7', accent2: '#e879f9', hue: -57 },
+  { name: 'gold', bg: '#1a170f', accent: '#eab308', accent2: '#fde047', hue: 77 },
 ];
 
 /**
@@ -653,6 +686,7 @@ function AppWindowMockup() {
   const feature: ShowcaseFeature = SHOWCASE_FEATURES[scene];
   const isDM = feature === 'Direct messages';
   const isThemes = feature === 'Custom themes';
+  const isThreads = feature === 'Threads';
   const theme = THEME_PRESETS[themeIndex];
 
   /** Spotlight ring for the element demonstrating the active feature. */
@@ -672,7 +706,7 @@ function AppWindowMockup() {
   ];
 
   return (
-    <div className="relative max-w-5xl mx-auto">
+    <div className="relative max-w-4xl mx-auto">
       {/* Glow */}
       <div
         className="absolute inset-0 -m-6 rounded-3xl opacity-40 blur-3xl pointer-events-none"
@@ -682,8 +716,11 @@ function AppWindowMockup() {
       />
 
       <div
-        className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex h-[470px]"
-        style={{ backgroundColor: SURFACE }}
+        className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex h-[520px] md:h-[560px] transition-[filter] duration-500"
+        style={{
+          backgroundColor: SURFACE,
+          filter: isThemes && theme.hue ? `hue-rotate(${theme.hue}deg)` : undefined,
+        }}
       >
         {/* Community rail */}
         <div
@@ -1056,100 +1093,89 @@ function AppWindowMockup() {
             </div>
           )}
 
-          {/* Custom themes overlay — an appearance picker recoloring live */}
-          {isThemes && (
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-4 animate-in fade-in duration-200">
-              <div className="w-full max-w-sm rounded-xl border border-white/15 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
-                <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 text-gray-300 text-xs font-medium">
-                  <Smile className="size-3.5" style={{ color: theme.accent }} />
-                  Appearance · Theme
-                </div>
-                <div className="p-3">
-                  {/* Swatch grid */}
-                  <div className="grid grid-cols-6 gap-2 mb-3">
-                    {THEME_PRESETS.map((t, i) => (
-                      <div
-                        key={t.name}
-                        className="aspect-square rounded-md border flex items-end p-1 transition-all"
-                        style={{
-                          backgroundColor: t.bg,
-                          borderColor: i === themeIndex ? t.accent : 'rgba(255,255,255,0.1)',
-                          boxShadow: i === themeIndex ? `0 0 0 2px ${t.accent}` : 'none',
-                        }}
-                      >
-                        <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent }} />
-                        <span className="size-1.5 rounded-full -ml-0.5" style={{ backgroundColor: t.accent2 }} />
-                      </div>
-                    ))}
-                  </div>
-                  {/* Live preview recoloring with the active theme */}
-                  <div className="rounded-lg border border-white/10 p-2.5 space-y-2" style={{ backgroundColor: theme.bg }}>
-                    <div className="flex items-center gap-1.5">
-                      <span className="font-mono text-[10px]" style={{ color: theme.accent2 }}>#</span>
-                      <span className="text-[11px] font-medium text-white">general</span>
-                      <span className="ml-auto font-mono text-[9px] uppercase tracking-wider" style={{ color: theme.accent }}>
-                        {theme.name}
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <img src={PEOPLE.mk.avatar} alt="" className="size-5 rounded-full object-cover" />
-                      <span className="px-2 py-1 rounded-lg rounded-tl-sm text-[10px] text-white" style={{ backgroundColor: theme.accent }}>
-                        love the new look 🎨
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 rounded-md px-2 py-1 border" style={{ borderColor: `${theme.accent2}40`, backgroundColor: `${theme.accent2}14` }}>
-                      <Volume2 className="size-3" style={{ color: theme.accent2 }} />
-                      <span className="text-[10px]" style={{ color: theme.accent2 }}>hangout · 2 in call</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
-        {/* Member list — roles anchor */}
-        <div className={`hidden lg:block w-44 shrink-0 border-l border-white/10 bg-white/[0.02] px-3 py-3 relative transition-all duration-300 ${spot('Roles & moderation')}`}>
-          <p className="px-1 pb-2 text-[10px] font-semibold uppercase tracking-widest text-gray-500">
-            Online — {members.length}
-          </p>
-          <div className="space-y-1.5">
-            {members.map(({ person, role }) => (
-              <div key={person.name} className="flex items-center gap-2 px-1 py-1">
-                <div className="relative">
-                  <ProfilePic person={person} className="size-7" />
-                  <span
-                    className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full bg-emerald-400 border-2"
-                    style={{ borderColor: SURFACE }}
-                  />
+        {/* Right column: thread panel during the Threads scene, otherwise the
+            member list (which carries the roles-menu overlay). */}
+        {isThreads ? (
+          <ThreadPanelMock />
+        ) : (
+          <div className={`hidden lg:block w-44 shrink-0 border-l border-white/10 bg-white/[0.02] px-3 py-3 relative transition-all duration-300 ${spot('Roles & moderation')}`}>
+            <p className="px-1 pb-2 text-[10px] font-semibold uppercase tracking-widest text-gray-500">
+              Online — {members.length}
+            </p>
+            <div className="space-y-1.5">
+              {members.map(({ person, role }) => (
+                <div key={person.name} className="flex items-center gap-2 px-1 py-1">
+                  <div className="relative">
+                    <ProfilePic person={person} className="size-7" />
+                    <span
+                      className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full bg-emerald-400 border-2"
+                      style={{ borderColor: SURFACE }}
+                    />
+                  </div>
+                  <span className="text-xs text-gray-300 truncate">
+                    {person.name}
+                  </span>
+                  {role === 'owner' && (
+                    <Crown className="size-3 text-amber-400 shrink-0" />
+                  )}
+                  {role === 'admin' && (
+                    <ShieldCheck className="size-3 text-cyan-400 shrink-0" />
+                  )}
                 </div>
-                <span className="text-xs text-gray-300 truncate">
-                  {person.name}
-                </span>
-                {role === 'owner' && (
-                  <Crown className="size-3 text-amber-400 shrink-0" />
-                )}
-                {role === 'admin' && (
-                  <ShieldCheck className="size-3 text-cyan-400 shrink-0" />
-                )}
+              ))}
+            </div>
+
+            {/* Role context menu during the roles scene */}
+            {feature === 'Roles & moderation' && (
+              <div className="absolute left-2 right-2 top-28 rounded-lg border border-white/15 shadow-2xl py-1 text-xs animate-in fade-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+                <p className="px-3 py-1 text-gray-500 text-[10px] uppercase tracking-wider">Chad</p>
+                <p className="px-3 py-1 text-gray-300 flex items-center gap-1.5 bg-pink-500/15">
+                  <ShieldCheck className="size-3 text-cyan-400" /> Make moderator
+                </p>
+                <p className="px-3 py-1 text-gray-400 flex items-center gap-1.5">
+                  <Ban className="size-3" /> Kick from community
+                </p>
               </div>
-            ))}
+            )}
           </div>
+        )}
+      </div>
 
-          {/* Role context menu during the roles scene */}
-          {feature === 'Roles & moderation' && (
-            <div className="absolute left-2 right-2 top-28 rounded-lg border border-white/15 shadow-2xl py-1 text-xs animate-in fade-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
-              <p className="px-3 py-1 text-gray-500 text-[10px] uppercase tracking-wider">Chad</p>
-              <p className="px-3 py-1 text-gray-300 flex items-center gap-1.5 bg-pink-500/15">
-                <ShieldCheck className="size-3 text-cyan-400" /> Make moderator
-              </p>
-              <p className="px-3 py-1 text-gray-400 flex items-center gap-1.5">
-                <Ban className="size-3" /> Kick from community
+      {/* Custom themes overlay — an appearance picker recoloring live.
+          Rendered outside the hue-rotated window so its swatches stay true. */}
+      {isThemes && (
+        <div className="absolute inset-0 bottom-auto h-[520px] md:h-[560px] bg-black/60 flex items-center justify-center px-4 animate-in fade-in duration-200 rounded-2xl">
+          <div className="w-full max-w-sm rounded-xl border border-white/15 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 text-gray-300 text-xs font-medium">
+              <Smile className="size-3.5" style={{ color: theme.accent }} />
+              Appearance · Theme
+            </div>
+            <div className="p-3">
+              <div className="grid grid-cols-6 gap-2 mb-3">
+                {THEME_PRESETS.map((t, i) => (
+                  <div
+                    key={t.name}
+                    className="aspect-square rounded-md border flex items-end p-1 transition-all"
+                    style={{
+                      backgroundColor: t.bg,
+                      borderColor: i === themeIndex ? t.accent : 'rgba(255,255,255,0.1)',
+                      boxShadow: i === themeIndex ? `0 0 0 2px ${t.accent}` : 'none',
+                    }}
+                  >
+                    <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent }} />
+                    <span className="size-1.5 rounded-full -ml-0.5" style={{ backgroundColor: t.accent2 }} />
+                  </div>
+                ))}
+              </div>
+              <p className="text-center font-mono text-[11px]" style={{ color: theme.accent }}>
+                {theme.name} theme applied
               </p>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Legend — feature names, highlighted in sync with the tour */}
       <div className="mt-8 flex flex-wrap justify-center gap-2">
@@ -1170,6 +1196,86 @@ function AppWindowMockup() {
   );
 }
 
+
+/**
+ * The thread side panel, imitating Armada's real behavior: a thread opens
+ * in a column to the right of the channel (ThreadPanel.tsx in the app) with
+ * a "Thread · N" header, the root message, a reply-count divider, the
+ * replies, and a "Reply in thread…" composer.
+ */
+function ThreadPanelMock() {
+  const replies: Array<{ person: Person; text: string }> = [
+    { person: PEOPLE.alex, text: "I'm in. Someone bring snacks" },
+    { person: PEOPLE.morgan, text: 'snacks handled 🫡' },
+    { person: PEOPLE.derek, text: 'screen share works on my end, we can vote live' },
+  ];
+
+  return (
+    <div
+      className="hidden md:flex w-[19rem] shrink-0 flex-col border-l border-white/10 animate-in slide-in-from-right-4 fade-in duration-300"
+      style={{ backgroundColor: INK }}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between px-3 py-2.5 border-b border-white/10 shrink-0">
+        <div className="flex items-center gap-2 min-w-0">
+          <MessagesSquare className="size-4 text-gray-500 shrink-0" />
+          <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+            Thread · {replies.length}
+          </span>
+        </div>
+        <span className="text-gray-500 text-lg leading-none">×</span>
+      </div>
+
+      <div className="flex-1 overflow-hidden px-3 py-3 flex flex-col">
+        {/* Root message */}
+        <div className="flex items-start gap-2.5">
+          <ProfilePic person={PEOPLE.chad} className="size-8" />
+          <div className="min-w-0">
+            <p className="text-xs mb-0.5">
+              <span className="font-semibold text-pink-300">Chad</span>{' '}
+              <span className="text-gray-500">2:14 PM</span>
+            </p>
+            <p className="text-sm text-gray-200 leading-snug">
+              movie night friday? I have the projector 🍿
+            </p>
+          </div>
+        </div>
+
+        {/* Reply-count divider */}
+        <div className="flex items-center gap-2 px-1 py-2 mt-1">
+          <div className="h-px flex-1 bg-white/10" />
+          <span className="text-[11px] text-gray-500 shrink-0">
+            {replies.length} replies
+          </span>
+          <div className="h-px flex-1 bg-white/10" />
+        </div>
+
+        {/* Replies */}
+        <div className="space-y-3">
+          {replies.map(({ person, text }) => (
+            <div key={person.name} className="flex items-start gap-2.5">
+              <ProfilePic person={person} className="size-8" />
+              <div className="min-w-0">
+                <p className="text-xs mb-0.5">
+                  <span className="font-semibold text-pink-300">{person.name}</span>
+                </p>
+                <p className="text-sm text-gray-200 leading-snug">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Composer */}
+      <div className="px-3 pb-3 shrink-0">
+        <div className="flex items-center gap-2 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2 text-gray-500">
+          <span className="font-mono text-xs truncate">Reply in thread…</span>
+          <span className="font-mono text-pink-400 animate-pulse">_</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ───────────────────────────────────────────────────────────────────────────
 // Section: Privacy — the same conversation, seen with and without the key.
@@ -2118,7 +2224,7 @@ function IosAlertSection() {
               On the way · iOS
             </p>
             <h2
-              className="font-mono font-bold lowercase whitespace-nowrap text-[clamp(1.1rem,3.1vw,2.25rem)] tracking-tight mb-4"
+              className="font-mono font-bold lowercase text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight mb-4"
               style={{ color: CREAM, textShadow: `0 0 16px ${ROSE}55` }}
             >
               get notified when armada lands on iOS.
@@ -2140,7 +2246,7 @@ function IosAlertSection() {
               }}
             />
             <img
-              src="/assets/armada/ios-hero.jpeg"
+              src="/assets/armada/ios-hero.png"
               alt="Armada on iPhone: the 'gather your crew' screen for starting an encrypted community"
               loading="lazy"
               className="relative w-full drop-shadow-2xl"
@@ -2415,8 +2521,8 @@ function FinalCtaSection() {
     >
       <AsciiSea />
 
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div className="rounded-3xl bg-[#15121c]/70 backdrop-blur-md ring-1 ring-white/10 px-6 sm:px-10 py-12 md:py-14 text-center">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div className="rounded-3xl bg-[#15121c]/70 backdrop-blur-md ring-1 ring-white/10 px-6 sm:px-12 py-12 md:py-16 text-center">
         <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-4 flex items-center justify-center gap-2">
           <LockKeyhole className="size-4" />
           Free forever
@@ -2446,20 +2552,6 @@ function FinalCtaSection() {
             <a href={ARMADA_URL} target="_blank" rel="noopener noreferrer">
               Open Armada
               <ArrowRight className="ml-2 size-5" />
-            </a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
-            style={{ backgroundColor: SURFACE }}
-          >
-            <a
-              href={COMMUNITY_INVITE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join our community
             </a>
           </Button>
           <Button
