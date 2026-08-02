@@ -251,12 +251,12 @@ export default function Armada() {
       <PrivacySection />
       <UnstoppableSection />
       <MiniFeaturesSection />
-      <BuzzCompatSection />
       <BridgeSection />
+      <BuzzCompatSection />
       <SelfHostSection />
-      <IosAlertSection />
       <LatestPostsSection />
       <FaqSection />
+      <IosAlertSection />
       <FinalCtaSection />
 
       <Footer />
@@ -574,7 +574,7 @@ const SHOWCASE_FRAMES: Array<{ visible: number; typing?: Person }> = [
 
 function AppShowcaseSection() {
   return (
-    <section className="text-white py-20 md:py-28" style={{ backgroundColor: INK }}>
+    <section className="text-white py-20 md:py-28" style={{ backgroundColor: SURFACE }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
@@ -1601,7 +1601,7 @@ function BridgeSection() {
   const messages = BRIDGE_MESSAGES.slice(0, visible);
 
   return (
-    <section className="bg-[#faf8fb] py-20 md:py-28">
+    <section className="bg-[#fdf2f8] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
@@ -1770,12 +1770,12 @@ function TerminalDemo() {
 function IosAlertSection() {
   return (
     <section className="py-20 md:py-28" style={{ backgroundColor: INK }}>
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center justify-center gap-2">
           <BellRing className="size-4" />
           On the way · iOS
         </p>
-        <h2 className="font-display font-bold text-white text-3xl sm:text-4xl tracking-tight mb-4">
+        <h2 className="font-display font-bold text-white whitespace-nowrap text-[clamp(1rem,4.3vw,2.25rem)] tracking-tight mb-4">
           Get notified when Armada lands on iOS.
         </h2>
         <p className="text-gray-400 leading-relaxed mb-8">
@@ -1801,7 +1801,7 @@ function LatestPostsSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="bg-[#faf8fb] py-20 md:py-28">
+    <section className="bg-[#fdf2f8] py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
