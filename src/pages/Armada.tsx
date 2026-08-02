@@ -254,7 +254,6 @@ export default function Armada() {
       <BuzzCompatSection />
       <BridgeSection />
       <SelfHostSection />
-      <CommunityCtaSection />
       <IosAlertSection />
       <LatestPostsSection />
       <FaqSection />
@@ -1761,87 +1760,6 @@ function TerminalDemo() {
         )}
       </div>
     </div>
-  );
-}
-
-// ───────────────────────────────────────────────────────────────────────────
-// Section: Join the Soapbox community on Armada
-// ───────────────────────────────────────────────────────────────────────────
-
-function CommunityCtaSection() {
-  return (
-    <section className="bg-[#f5f1f6] py-20 md:py-28">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden border-gray-200 bg-white shadow-lg">
-          <div className="grid md:grid-cols-5">
-            {/* Left: dark brand panel */}
-            <div
-              className="md:col-span-2 p-8 sm:p-10 flex flex-col items-center justify-center text-center gap-4"
-              style={{ backgroundColor: INK }}
-            >
-              <img
-                src={ARMADA_ICON}
-                alt="Armada logo"
-                className="size-20 rounded-2xl shadow-lg shadow-pink-500/20"
-              />
-              {/* The team, in miniature */}
-              <div className="flex -space-x-2">
-                {[PEOPLE.alex, PEOPLE.mk, PEOPLE.chad, PEOPLE.derek, PEOPLE.morgan].map(
-                  (p) => (
-                    <img
-                      key={p.name}
-                      src={p.avatar}
-                      alt={`${p.name}'s profile picture`}
-                      className="size-8 rounded-full object-cover border-2"
-                      style={{ borderColor: INK }}
-                    />
-                  ),
-                )}
-              </div>
-              <p className="font-mono text-sm text-pink-400">
-                <span className="text-cyan-400">$</span> come say hi
-                <span className="animate-pulse">_</span>
-              </p>
-            </div>
-
-            {/* Right: invite copy */}
-            <CardContent className="md:col-span-3 p-8 sm:p-10">
-              <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
-                We're in there daily
-              </p>
-              <h2 className="font-display font-bold text-gray-900 text-2xl sm:text-3xl mb-3">
-                Join the Soapbox community on Armada.
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Team Soapbox hangs out in an end-to-end encrypted Armada
-                community: product chat, dev talk, voice hangs, and early
-                word on everything we ship. The invite link carries its unlock
-                key in the URL fragment, so it never touches a server.
-              </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-pink-500 hover:bg-pink-600 text-white font-semibold"
-                >
-                  <a
-                    href={COMMUNITY_INVITE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessagesSquare className="mr-2 size-4" />
-                    Accept the invite
-                  </a>
-                </Button>
-                <span className="text-sm text-gray-500">
-                  Free · works in any browser
-                </span>
-              </div>
-            </CardContent>
-          </div>
-        </Card>
-      </div>
-    </section>
   );
 }
 
