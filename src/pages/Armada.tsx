@@ -38,7 +38,6 @@ import {
   CheckCircle2,
   ChevronDown,
   Code,
-  CornerDownRight,
   Crown,
   Hash,
   Headphones,
@@ -287,30 +286,35 @@ function HeroSection() {
       className="relative overflow-hidden text-white"
       style={{ backgroundColor: INK }}
     >
-      {/* Pink + cyan glow */}
+      {/* Rose + cyan glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            'radial-gradient(ellipse 60% 50% at 20% 0%, rgba(236, 72, 153, 0.14), transparent 70%), radial-gradient(ellipse 50% 40% at 85% 100%, rgba(34, 211, 238, 0.10), transparent 70%)',
+          background: `radial-gradient(ellipse 60% 50% at 20% 0%, ${ROSE}24, transparent 70%), radial-gradient(ellipse 50% 40% at 85% 100%, ${CYAN}1a, transparent 70%)`,
         }}
       />
+
+      {/* The app's own ASCII ocean, lapping at the bottom of the hero */}
+      <AsciiSea />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy */}
           <div className="lg:col-span-7">
-            <p className="font-mono text-sm sm:text-base text-pink-400 mb-6">
+            <p className="font-mono text-sm sm:text-base mb-6" style={{ color: ROSE }}>
               <span className="text-cyan-400">$</span> now in open beta ·
               v1.0 incoming<span className="animate-pulse">_</span>
             </p>
 
-            <h1 className="font-mono font-bold tracking-tight leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl mb-8">
-              Armada: encrypted,
+            <h1
+              className="font-mono font-bold lowercase tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8"
+              style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}55` }}
+            >
+              armada: encrypted,
               <br />
               open-source,
               <br />
-              <span className="text-pink-500">Discord alternative.</span>
+              <span style={{ color: ROSE }}>discord alternative.</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
@@ -535,40 +539,6 @@ function HeroChatMockup() {
 // chat with threads and reactions, and a member list with roles.
 // ───────────────────────────────────────────────────────────────────────────
 
-/** Messages shown in the big app-window mockup. */
-const SHOWCASE_MESSAGES: Array<DemoMessage & { thread?: string }> = [
-  {
-    person: PEOPLE.chad,
-    time: 'Today at 2:14 PM',
-    text: 'movie night friday? I have the projector 🍿',
-    reaction: '🔥 3',
-    thread: '4 replies',
-  },
-  {
-    person: PEOPLE.alex,
-    time: 'Today at 2:15 PM',
-    text: "I'm in. Someone bring snacks",
-  },
-  {
-    person: PEOPLE.morgan,
-    time: 'Today at 2:17 PM',
-    text: 'snacks handled 🫡',
-    reaction: '🫡 2',
-  },
-  {
-    person: PEOPLE.derek,
-    time: 'Today at 2:18 PM',
-    text: 'screen share works on my end, we can vote on the movie live',
-  },
-];
-
-const SHOWCASE_FRAMES: Array<{ visible: number; typing?: Person }> = [
-  { visible: 3 },
-  { visible: 3, typing: PEOPLE.derek },
-  { visible: 4 },
-  { visible: 4 },
-  { visible: 4 },
-];
 
 function AppShowcaseSection() {
   return (
@@ -576,253 +546,51 @@ function AppShowcaseSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Everything you'd expect.
+            Voice and video calls, custom emojis, GIFs, and more.
           </h2>
           <p className="text-lg text-gray-400">
-            If you've used Discord, you already know how to use Armada.
+            If you've used Discord, you already know how to use Armada. Watch
+            the demo tour every feature people ask about.
           </p>
         </div>
 
         <AppWindowMockup />
-
-        {/* Feature deck — every table-stakes Discord feature, drawn instead
-            of listed. Each card is a tiny working vignette of the feature. */}
-        <FeatureDeck />
       </div>
     </section>
   );
 }
 
+/** The eight features the demo tours, in the order the spotlight visits them. */
+const SHOWCASE_FEATURES = [
+  'Markdown & code blocks',
+  'Reactions & custom emoji',
+  'Threads',
+  'Events & RSVPs',
+  'Roles & moderation',
+  'Ctrl+K quick switcher',
+  'Voice & screen share',
+  'Direct messages',
+] as const;
+
+type ShowcaseFeature = (typeof SHOWCASE_FEATURES)[number];
+
 /**
- * Eight mini-mockups, one per feature people actually compare against
- * Discord. Same visual language as the app window above: INK panels,
- * rose + cyan accents, real team avatars.
+ * A guided tour of the app window. The timeline itself always shows the
+ * in-chat features (markdown, reactions, events, threads); a spotlight
+ * ring visits each one in turn, and the off-chat features (roles menu,
+ * Ctrl+K, voice room, DMs) appear as overlays during their scene. The
+ * legend of feature names under the window highlights in sync.
  */
-function FeatureDeck() {
-  return (
-    <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-      {/* Voice & screen share */}
-      <FeatureCard title="Voice & screen share" blurb="Hop in a voice channel, share your screen, drop out. No links, no scheduling.">
-        <div className="w-full px-4 space-y-2">
-          <div className="flex items-center gap-2 text-gray-300 text-xs font-medium">
-            <Volume2 className="size-3.5 text-gray-500" />
-            design-crit
-            <span className="ml-auto inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-rose-500/15 border border-rose-500/30 text-[9px] font-semibold uppercase tracking-wider" style={{ color: ROSE }}>
-              <MonitorUp className="size-2.5" />
-              live
-            </span>
-          </div>
-          {[PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk].map((p, i) => (
-            <div key={p.name} className="flex items-center gap-2 pl-5">
-              <span className={`relative inline-flex ${i === 0 ? 'rounded-full ring-2 ring-cyan-400' : ''}`}>
-                <img src={p.avatar} alt="" className="size-5 rounded-full object-cover" />
-              </span>
-              <span className="text-gray-400 text-xs">{p.name}</span>
-              {i === 0 && <Mic className="size-3 text-cyan-400" />}
-            </div>
-          ))}
-        </div>
-      </FeatureCard>
-
-      {/* Threads */}
-      <FeatureCard title="Threads" blurb="Branch a side conversation without burying the channel.">
-        <div className="w-full px-4 space-y-1.5">
-          <div className="flex items-start gap-2">
-            <img src={PEOPLE.alex.avatar} alt="" className="size-5 rounded-full object-cover" />
-            <p className="text-gray-300 text-xs leading-snug">should the icon be a sail or an anchor?</p>
-          </div>
-          <div className="ml-2.5 border-l-2 border-white/10 pl-3.5 space-y-1.5">
-            <div className="flex items-center gap-1.5 text-[10px] text-gray-500">
-              <CornerDownRight className="size-3" />
-              thread · 14 replies
-            </div>
-            <div className="flex items-start gap-1.5">
-              <img src={PEOPLE.chad.avatar} alt="" className="size-4 rounded-full object-cover" />
-              <p className="text-gray-400 text-[11px] leading-snug">sail. obviously.</p>
-            </div>
-            <div className="flex items-start gap-1.5">
-              <img src={PEOPLE.morgan.avatar} alt="" className="size-4 rounded-full object-cover" />
-              <p className="text-gray-400 text-[11px] leading-snug">anchor gang rise up</p>
-            </div>
-          </div>
-        </div>
-      </FeatureCard>
-
-      {/* Reactions & custom emoji */}
-      <FeatureCard title="Reactions & custom emoji" blurb="React with anything, including emoji your community made.">
-        <div className="w-full px-4">
-          <div className="flex items-start gap-2 mb-2">
-            <img src={PEOPLE.mk.avatar} alt="" className="size-5 rounded-full object-cover" />
-            <p className="text-gray-300 text-xs leading-snug">shipped the new release 🎉</p>
-          </div>
-          <div className="flex flex-wrap gap-1.5 pl-7">
-            {[
-              { emoji: '🔥', count: 7, hot: true },
-              { emoji: '⚓', count: 4, hot: false },
-              { emoji: '🫡', count: 3, hot: false },
-            ].map((r) => (
-              <span
-                key={r.emoji}
-                className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] border ${
-                  r.hot
-                    ? 'bg-rose-500/15 border-rose-500/40 text-rose-300'
-                    : 'bg-white/[0.05] border-white/10 text-gray-400'
-                }`}
-              >
-                {r.emoji} {r.count}
-              </span>
-            ))}
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-500">
-              <Smile className="size-3" />
-            </span>
-          </div>
-        </div>
-      </FeatureCard>
-
-      {/* Roles & moderation */}
-      <FeatureCard title="Roles & moderation" blurb="Owners, admins, and mods, with the tools to keep your space yours.">
-        <div className="w-full px-4 space-y-2">
-          {[
-            { person: PEOPLE.alex, role: 'owner', icon: Crown, color: 'text-amber-400' },
-            { person: PEOPLE.mk, role: 'admin', icon: ShieldCheck, color: 'text-cyan-400' },
-            { person: PEOPLE.chad, role: 'mod', icon: ShieldCheck, color: 'text-gray-500' },
-          ].map(({ person, role, icon: Icon, color }) => (
-            <div key={person.name} className="flex items-center gap-2">
-              <img src={person.avatar} alt="" className="size-5 rounded-full object-cover" />
-              <span className="text-gray-300 text-xs">{person.name}</span>
-              <span className={`ml-auto inline-flex items-center gap-1 text-[10px] ${color}`}>
-                <Icon className="size-3" />
-                {role}
-              </span>
-            </div>
-          ))}
-        </div>
-      </FeatureCard>
-
-      {/* Direct messages */}
-      <FeatureCard title="Direct messages" blurb="Encrypted DMs with anyone on Nostr, not just people in your server.">
-        <div className="w-full px-4 space-y-1.5">
-          <div className="flex justify-end">
-            <span className="max-w-[80%] px-2.5 py-1.5 rounded-lg rounded-br-sm text-[11px] text-white" style={{ backgroundColor: ROSE }}>
-              you up for a call later?
-            </span>
-          </div>
-          <div className="flex justify-start">
-            <span className="max-w-[80%] px-2.5 py-1.5 rounded-lg rounded-bl-sm bg-white/[0.07] text-[11px] text-gray-300">
-              yep, ping me at 7
-            </span>
-          </div>
-          <p className="flex items-center justify-center gap-1 text-[9px] text-gray-600 pt-1">
-            <LockKeyhole className="size-2.5" />
-            end-to-end encrypted
-          </p>
-        </div>
-      </FeatureCard>
-
-      {/* Events & RSVPs */}
-      <FeatureCard title="Events & RSVPs" blurb="Plan inside the community and see who's coming.">
-        <div className="w-full px-4">
-          <div className="flex items-center gap-3 rounded-lg bg-white/[0.04] border border-white/10 p-2.5">
-            <div className="shrink-0 text-center px-2 py-1 rounded-md bg-rose-500/15 border border-rose-500/30">
-              <p className="text-[8px] font-bold uppercase tracking-wider" style={{ color: ROSE }}>fri</p>
-              <p className="text-sm font-bold text-white leading-none">20</p>
-            </div>
-            <div className="min-w-0">
-              <p className="text-gray-200 text-xs font-medium truncate">movie night 🍿</p>
-              <p className="flex items-center gap-1 text-[10px] text-gray-500">
-                <CalendarDays className="size-2.5" />
-                7pm · voice-lounge
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-1.5 mt-2">
-            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-[10px]">
-              <CheckCircle2 className="size-2.5" /> going · 12
-            </span>
-            <div className="flex -space-x-1.5">
-              {[PEOPLE.derek, PEOPLE.lemon, PEOPLE.morgan].map((p) => (
-                <img key={p.name} src={p.avatar} alt="" className="size-4 rounded-full object-cover border" style={{ borderColor: INK }} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </FeatureCard>
-
-      {/* Ctrl+K quick switcher */}
-      <FeatureCard title="Ctrl+K quick switcher" blurb="Jump to any channel, DM, or community without touching the mouse.">
-        <div className="w-full px-4">
-          <div className="rounded-lg bg-black/40 border border-white/15 overflow-hidden">
-            <div className="flex items-center gap-2 px-2.5 py-1.5 border-b border-white/10">
-              <Search className="size-3 text-gray-500" />
-              <span className="text-gray-400 text-[11px]">des</span>
-              <span className="w-px h-3 bg-rose-400 animate-pulse" />
-              <span className="ml-auto flex gap-0.5">
-                <kbd className="px-1 py-px rounded bg-white/10 text-gray-400 text-[8px] font-mono">Ctrl</kbd>
-                <kbd className="px-1 py-px rounded bg-white/10 text-gray-400 text-[8px] font-mono">K</kbd>
-              </span>
-            </div>
-            <div className="px-2.5 py-1 flex items-center gap-1.5 bg-rose-500/15 text-[11px] text-gray-200">
-              <Hash className="size-3 text-gray-500" /> design
-            </div>
-            <div className="px-2.5 py-1 flex items-center gap-1.5 text-[11px] text-gray-500">
-              <Volume2 className="size-3" /> design-crit
-            </div>
-          </div>
-        </div>
-      </FeatureCard>
-
-      {/* Markdown & code blocks */}
-      <FeatureCard title="Markdown & code blocks" blurb="Bold, links, and syntax-highlighted code, straight in chat.">
-        <div className="w-full px-4">
-          <div className="flex items-start gap-2 mb-1.5">
-            <img src={PEOPLE.derek.avatar} alt="" className="size-5 rounded-full object-cover" />
-            <p className="text-gray-300 text-xs leading-snug">
-              <strong className="text-white">fix is live</strong> — just run:
-            </p>
-          </div>
-          <pre className="ml-7 rounded-md bg-black/50 border border-white/10 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed overflow-hidden">
-            <code>
-              <span className="text-cyan-300">$</span>{' '}
-              <span className="text-gray-300">npm i</span>{' '}
-              <span style={{ color: ROSE }}>armada@latest</span>
-            </code>
-          </pre>
-        </div>
-      </FeatureCard>
-    </div>
-  );
-}
-
-/** Shared shell for FeatureDeck cards: vignette on top, label below. */
-function FeatureCard({
-  title,
-  blurb,
-  children,
-}: {
-  title: string;
-  blurb: string;
-  children: ReactNode;
-}) {
-  return (
-    <div
-      className="rounded-xl border border-white/10 overflow-hidden flex flex-col"
-      style={{ backgroundColor: INK }}
-    >
-      <div className="h-36 flex items-center py-3 border-b border-white/[0.06]">
-        {children}
-      </div>
-      <div className="p-4">
-        <h3 className="text-white font-semibold text-sm mb-1">{title}</h3>
-        <p className="text-gray-500 text-xs leading-relaxed">{blurb}</p>
-      </div>
-    </div>
-  );
-}
-
 function AppWindowMockup() {
-  const frame = useTicker(1500, SHOWCASE_FRAMES.length);
-  const { visible, typing } = SHOWCASE_FRAMES[frame];
-  const messages = SHOWCASE_MESSAGES.slice(0, visible);
+  const scene = useTicker(2600, SHOWCASE_FEATURES.length);
+  const feature: ShowcaseFeature = SHOWCASE_FEATURES[scene];
+  const isDM = feature === 'Direct messages';
+
+  /** Spotlight ring for the element demonstrating the active feature. */
+  const spot = (name: ShowcaseFeature) =>
+    feature === name
+      ? 'ring-2 ring-pink-500/70 shadow-[0_0_18px_rgba(245,71,158,0.35)]'
+      : '';
 
   const channels = ['general', 'design', 'memes', 'dev'];
   const members: Array<{ person: Person; role?: 'owner' | 'admin' }> = [
@@ -840,13 +608,12 @@ function AppWindowMockup() {
       <div
         className="absolute inset-0 -m-6 rounded-3xl opacity-40 blur-3xl pointer-events-none"
         style={{
-          background:
-            'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.25), rgba(34, 211, 238, 0.12) 60%, transparent 75%)',
+          background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
         }}
       />
 
       <div
-        className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex h-[430px]"
+        className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex h-[470px]"
         style={{ backgroundColor: SURFACE }}
       >
         {/* Community rail */}
@@ -867,7 +634,7 @@ function AppWindowMockup() {
               key={emoji}
               className={`size-11 rounded-full flex items-center justify-center text-lg bg-gradient-to-br ${
                 ['from-violet-600 to-indigo-700', 'from-rose-500 to-red-700', 'from-emerald-500 to-teal-700'][i]
-              } opacity-80 hover:opacity-100 hover:rounded-2xl transition-all`}
+              } opacity-80`}
             >
               {emoji}
             </div>
@@ -894,7 +661,7 @@ function AppWindowMockup() {
               <div
                 key={ch}
                 className={`flex items-center gap-1.5 px-2 py-1 rounded ${
-                  ch === 'general'
+                  ch === 'general' && !isDM
                     ? 'bg-pink-500/15 text-white font-medium'
                     : 'text-gray-400'
                 }`}
@@ -914,7 +681,6 @@ function AppWindowMockup() {
               <Volume2 className="size-3.5 shrink-0 text-cyan-400" />
               <span>hangout</span>
             </div>
-            {/* Live voice roster nested under the channel */}
             {[PEOPLE.derek, PEOPLE.lemon].map((p) => (
               <div
                 key={p.name}
@@ -928,6 +694,23 @@ function AppWindowMockup() {
                 <span>{p.name}</span>
               </div>
             ))}
+
+            <p className="px-2 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-gray-500">
+              Direct messages
+            </p>
+            <div
+              className={`flex items-center gap-2 px-2 py-1 rounded ${
+                isDM ? 'bg-pink-500/15 text-white font-medium' : 'text-gray-400'
+              }`}
+            >
+              <img
+                src={PEOPLE.lemon.avatar}
+                alt=""
+                className="size-4 rounded-full object-cover"
+              />
+              <span>Lemon</span>
+              {!isDM && <span className="ml-auto size-1.5 rounded-full bg-pink-400" />}
+            </div>
           </div>
 
           {/* Self bar */}
@@ -945,94 +728,238 @@ function AppWindowMockup() {
         </div>
 
         {/* Chat pane */}
-        <div className="flex-1 min-w-0 flex flex-col">
+        <div className="flex-1 min-w-0 flex flex-col relative">
           <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10">
-            <Hash className="size-4 text-gray-500" />
-            <span className="font-semibold text-sm text-white">general</span>
-            <span className="hidden sm:block text-xs text-gray-500 truncate">
-              — plans, chaos, and everything else
-            </span>
+            {isDM ? (
+              <>
+                <img
+                  src={PEOPLE.lemon.avatar}
+                  alt=""
+                  className="size-5 rounded-full object-cover"
+                />
+                <span className="font-semibold text-sm text-white">Lemon</span>
+                <span className="hidden sm:flex items-center gap-1 text-[10px] text-pink-300 uppercase tracking-wider font-semibold">
+                  <LockKeyhole className="size-3" />
+                  end-to-end encrypted
+                </span>
+              </>
+            ) : (
+              <>
+                <Hash className="size-4 text-gray-500" />
+                <span className="font-semibold text-sm text-white">general</span>
+                <span className="hidden sm:block text-xs text-gray-500 truncate">
+                  — plans, chaos, and everything else
+                </span>
+              </>
+            )}
             <div className="ml-auto flex items-center gap-3 text-gray-500">
               <Search className="size-4" />
               <Users className="size-4" />
             </div>
           </div>
 
-          <div className="flex-1 px-4 py-3 flex flex-col justify-end gap-3.5 overflow-hidden">
-            {messages.map((m) => (
-              <div
-                key={m.person.name + m.time}
-                className="flex items-start gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300"
-              >
-                <ProfilePic person={m.person} className="size-9" />
-                <div className="min-w-0">
+          {isDM ? (
+            /* DM view */
+            <div className="flex-1 px-4 py-3 flex flex-col justify-end gap-2 overflow-hidden animate-in fade-in duration-300">
+              <div className="flex justify-end">
+                <span
+                  className="max-w-[75%] px-3 py-2 rounded-2xl rounded-br-sm text-sm text-white"
+                  style={{ backgroundColor: ROSE }}
+                >
+                  you around for a call?
+                </span>
+              </div>
+              <div className="flex justify-start items-end gap-2">
+                <img
+                  src={PEOPLE.lemon.avatar}
+                  alt=""
+                  className="size-6 rounded-full object-cover"
+                />
+                <span className="max-w-[75%] px-3 py-2 rounded-2xl rounded-bl-sm bg-white/[0.07] text-sm text-gray-200">
+                  yep, gimme 5 🍋
+                </span>
+              </div>
+            </div>
+          ) : (
+            /* Channel timeline — markdown, reactions, events, threads all live here */
+            <div className="flex-1 px-4 py-3 flex flex-col justify-end gap-3 overflow-hidden">
+              {/* Threads anchor */}
+              <div className={`flex items-start gap-3 rounded-lg transition-all duration-300 ${spot('Threads')}`}>
+                <ProfilePic person={PEOPLE.chad} className="size-8" />
+                <div className="min-w-0 py-0.5">
                   <p className="text-xs mb-0.5">
-                    <span className="font-semibold text-pink-300">
-                      {m.person.name}
-                    </span>{' '}
-                    <span className="text-gray-500">{m.time}</span>
+                    <span className="font-semibold text-pink-300">Chad</span>{' '}
+                    <span className="text-gray-500">2:14 PM</span>
                   </p>
-                  <p className="text-sm text-gray-200 leading-snug">{m.text}</p>
-                  <div className="flex items-center gap-2 mt-1.5">
-                    {m.reaction && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-xs">
-                        {m.reaction}
+                  <p className="text-sm text-gray-200 leading-snug">
+                    movie night friday? I have the projector 🍿
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 mt-1 text-xs text-cyan-300">
+                    <MessagesSquare className="size-3.5" />
+                    4 replies
+                    <span className="flex -space-x-1.5">
+                      {[PEOPLE.mk, PEOPLE.lemon].map((p) => (
+                        <img
+                          key={p.name}
+                          src={p.avatar}
+                          alt=""
+                          className="size-4 rounded-full object-cover border"
+                          style={{ borderColor: SURFACE }}
+                        />
+                      ))}
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Markdown anchor */}
+              <div className={`flex items-start gap-3 rounded-lg transition-all duration-300 ${spot('Markdown & code blocks')}`}>
+                <ProfilePic person={PEOPLE.derek} className="size-8" />
+                <div className="min-w-0 py-0.5">
+                  <p className="text-xs mb-0.5">
+                    <span className="font-semibold text-pink-300">Derek</span>{' '}
+                    <span className="text-gray-500">2:15 PM</span>
+                  </p>
+                  <p className="text-sm text-gray-200 leading-snug">
+                    <strong className="text-white">projector fix is live</strong>{' '}
+                    — update first:
+                  </p>
+                  <pre className="mt-1 rounded-md bg-black/50 border border-white/10 px-2.5 py-1.5 font-mono text-[11px] leading-relaxed overflow-hidden">
+                    <code>
+                      <span className="text-cyan-300">$</span>{' '}
+                      <span className="text-gray-300">apt upgrade</span>{' '}
+                      <span style={{ color: ROSE }}>projector-drivers</span>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              {/* Events anchor */}
+              <div className={`ml-11 max-w-[280px] rounded-lg transition-all duration-300 ${spot('Events & RSVPs')}`}>
+                <div className="flex items-center gap-3 rounded-lg bg-white/[0.04] border border-white/10 p-2.5">
+                  <div className="shrink-0 text-center px-2 py-1 rounded-md bg-pink-500/15 border border-pink-500/30">
+                    <p className="text-[8px] font-bold uppercase tracking-wider" style={{ color: ROSE }}>fri</p>
+                    <p className="text-sm font-bold text-white leading-none">20</p>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-gray-200 text-xs font-medium truncate">movie night 🍿</p>
+                    <p className="flex items-center gap-1 text-[10px] text-gray-500">
+                      <CalendarDays className="size-2.5" />
+                      7pm · hangout
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-[10px] shrink-0">
+                    <CheckCircle2 className="size-2.5" /> 12
+                  </span>
+                </div>
+              </div>
+
+              {/* Reactions anchor */}
+              <div className={`flex items-start gap-3 rounded-lg transition-all duration-300 ${spot('Reactions & custom emoji')}`}>
+                <ProfilePic person={PEOPLE.morgan} className="size-8" />
+                <div className="min-w-0 py-0.5">
+                  <p className="text-xs mb-0.5">
+                    <span className="font-semibold text-pink-300">Morgan</span>{' '}
+                    <span className="text-gray-500">2:17 PM</span>
+                  </p>
+                  <p className="text-sm text-gray-200 leading-snug">snacks handled 🫡</p>
+                  <div className="flex items-center gap-1.5 mt-1">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-xs">
+                      🔥 3
+                    </span>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-300 text-xs">
+                      🫡 2
+                    </span>
+                    {feature === 'Reactions & custom emoji' && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-xs animate-in zoom-in-75 duration-300">
+                        ⚓ 5
                       </span>
                     )}
-                    {m.thread && (
-                      <span className="inline-flex items-center gap-1.5 text-xs text-cyan-300">
-                        <MessagesSquare className="size-3.5" />
-                        {m.thread}
-                        <span className="flex -space-x-1.5">
-                          {[PEOPLE.mk, PEOPLE.lemon].map((p) => (
-                            <img
-                              key={p.name}
-                              src={p.avatar}
-                              alt={`${p.name}'s profile picture`}
-                              className="size-4 rounded-full object-cover border"
-                              style={{ borderColor: SURFACE }}
-                            />
-                          ))}
-                        </span>
-                      </span>
-                    )}
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-500">
+                      <Smile className="size-3" />
+                    </span>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+          )}
 
-            {typing && (
-              <div className="flex items-center gap-2 text-xs text-gray-400 animate-in fade-in duration-200">
-                <ProfilePic person={typing} className="size-4" />
-                <span className="flex gap-0.5">
-                  <span className="size-1.5 rounded-full bg-pink-400 animate-bounce" />
-                  <span className="size-1.5 rounded-full bg-pink-400 animate-bounce [animation-delay:120ms]" />
-                  <span className="size-1.5 rounded-full bg-pink-400 animate-bounce [animation-delay:240ms]" />
-                </span>
-                <span>
-                  <span className="text-gray-300 font-medium">
-                    {typing.name}
-                  </span>{' '}
-                  is typing…
-                </span>
-              </div>
-            )}
-          </div>
-
+          {/* Composer */}
           <div className="px-4 pb-4">
             <div className="flex items-center gap-2.5 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2.5 text-gray-500">
               <Plus className="size-4 shrink-0" />
               <span className="font-mono text-sm truncate">
-                Message #general
+                Message {isDM ? '@Lemon' : '#general'}
               </span>
               <span className="font-mono text-pink-400 animate-pulse">_</span>
               <Smile className="size-4 shrink-0 ml-auto" />
             </div>
           </div>
+
+          {/* Ctrl+K overlay */}
+          {feature === 'Ctrl+K quick switcher' && (
+            <div className="absolute inset-0 bg-black/50 flex items-start justify-center pt-14 px-6 animate-in fade-in duration-200">
+              <div className="w-full max-w-xs rounded-xl border border-white/15 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+                <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/10">
+                  <Search className="size-4 text-gray-500" />
+                  <span className="text-gray-300 text-sm">des</span>
+                  <span className="w-px h-4 bg-pink-400 animate-pulse" />
+                  <span className="ml-auto flex gap-0.5">
+                    <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-gray-400 text-[9px] font-mono">Ctrl</kbd>
+                    <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-gray-400 text-[9px] font-mono">K</kbd>
+                  </span>
+                </div>
+                <div className="px-3 py-1.5 flex items-center gap-2 bg-pink-500/15 text-sm text-gray-200">
+                  <Hash className="size-3.5 text-gray-500" /> design
+                </div>
+                <div className="px-3 py-1.5 flex items-center gap-2 text-sm text-gray-500">
+                  <Volume2 className="size-3.5" /> design-crit
+                </div>
+                <div className="px-3 py-1.5 flex items-center gap-2 text-sm text-gray-500 pb-2.5">
+                  <img src={PEOPLE.derek.avatar} alt="" className="size-4 rounded-full object-cover" />
+                  Derek
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Voice & screen share overlay */}
+          {feature === 'Voice & screen share' && (
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center px-6 animate-in fade-in duration-200">
+              <div className="w-full max-w-xs rounded-xl border border-cyan-400/30 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+                <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/10 text-cyan-300 text-xs font-medium">
+                  <Volume2 className="size-3.5" />
+                  hangout · 3 in call
+                  <span className="ml-auto inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-pink-500/15 border border-pink-500/30 text-[9px] font-semibold uppercase tracking-wider" style={{ color: ROSE }}>
+                    <MonitorUp className="size-2.5" />
+                    live
+                  </span>
+                </div>
+                <div className="p-3">
+                  <div className="rounded-lg bg-black/60 border border-white/10 h-20 flex items-center justify-center gap-2 text-gray-500 text-xs font-mono mb-3">
+                    <MonitorUp className="size-4 text-cyan-400" />
+                    Derek is sharing their screen
+                  </div>
+                  <div className="flex items-center justify-center gap-3">
+                    {[PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk].map((p, i) => (
+                      <div key={p.name} className="flex flex-col items-center gap-1">
+                        <img
+                          src={p.avatar}
+                          alt=""
+                          className={`size-9 rounded-full object-cover ${i === 0 ? 'ring-2 ring-cyan-400' : ''}`}
+                        />
+                        <span className="text-[9px] text-gray-500">{p.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Member list */}
-        <div className="hidden lg:block w-44 shrink-0 border-l border-white/10 bg-white/[0.02] px-3 py-3">
+        {/* Member list — roles anchor */}
+        <div className={`hidden lg:block w-44 shrink-0 border-l border-white/10 bg-white/[0.02] px-3 py-3 relative transition-all duration-300 ${spot('Roles & moderation')}`}>
           <p className="px-1 pb-2 text-[10px] font-semibold uppercase tracking-widest text-gray-500">
             Online — {members.length}
           </p>
@@ -1053,16 +980,46 @@ function AppWindowMockup() {
                   <Crown className="size-3 text-amber-400 shrink-0" />
                 )}
                 {role === 'admin' && (
-                  <CheckCircle2 className="size-3 text-cyan-400 shrink-0" />
+                  <ShieldCheck className="size-3 text-cyan-400 shrink-0" />
                 )}
               </div>
             ))}
           </div>
+
+          {/* Role context menu during the roles scene */}
+          {feature === 'Roles & moderation' && (
+            <div className="absolute left-2 right-2 top-28 rounded-lg border border-white/15 shadow-2xl py-1 text-xs animate-in fade-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+              <p className="px-3 py-1 text-gray-500 text-[10px] uppercase tracking-wider">Chad</p>
+              <p className="px-3 py-1 text-gray-300 flex items-center gap-1.5 bg-pink-500/15">
+                <ShieldCheck className="size-3 text-cyan-400" /> Make moderator
+              </p>
+              <p className="px-3 py-1 text-gray-400 flex items-center gap-1.5">
+                <Ban className="size-3" /> Kick from community
+              </p>
+            </div>
+          )}
         </div>
+      </div>
+
+      {/* Legend — feature names, highlighted in sync with the tour */}
+      <div className="mt-8 flex flex-wrap justify-center gap-2">
+        {SHOWCASE_FEATURES.map((name) => (
+          <span
+            key={name}
+            className={`px-3 py-1.5 rounded-full border font-mono text-xs transition-all duration-300 ${
+              name === feature
+                ? 'border-pink-500/70 bg-pink-500/15 text-white shadow-[0_0_14px_rgba(245,71,158,0.35)]'
+                : 'border-white/10 bg-white/[0.04] text-gray-500'
+            }`}
+          >
+            {name}
+          </span>
+        ))}
       </div>
     </div>
   );
 }
+
 
 // ───────────────────────────────────────────────────────────────────────────
 // Section: Privacy — the same conversation, seen with and without the key.
@@ -1103,8 +1060,19 @@ function PrivacySection() {
             <br className="hidden sm:block" /> not even us.
           </h2>
           <p className="text-lg text-gray-600">
-            Messages are locked on your device before they're sent. Here's the
-            same conversation with the key, and without it.
+            Messages are locked on your device before they're sent, and the
+            envelope is sealed too: who sent it, which community it belongs
+            to, even the community's name. Encryption follows the open{' '}
+            <a
+              href={CONCORD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
+            >
+              Concord protocol
+            </a>
+            , so anyone can verify it. Here's the same conversation with the
+            key, and without it.
           </p>
         </div>
 
@@ -1173,19 +1141,6 @@ function PrivacySection() {
           </div>
         </div>
 
-        <p className="text-center mt-10 max-w-2xl mx-auto text-gray-500 text-sm leading-relaxed">
-          Who sent it, which community it belongs to, even the community's
-          name: all sealed. Encryption follows the open{' '}
-          <a
-            href={CONCORD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
-          >
-            Concord protocol
-          </a>
-          , so anyone can verify it or build their own client.
-        </p>
       </div>
     </section>
   );
@@ -1221,8 +1176,10 @@ function UnstoppableSection() {
             A community no one can take away.
           </h2>
           <p className="text-lg text-gray-400">
-            Years of memories and friendships shouldn't live or die on one
-            company's servers. Watch what happens when things go wrong:
+            Your community lives on many independent relays at once: no
+            company account to ban, no headquarters to pressure. Lose one
+            relay, lose ten, and the conversation keeps going. Watch what
+            happens when things go wrong:
           </p>
         </div>
 
@@ -1327,11 +1284,6 @@ function UnstoppableSection() {
           </div>
         </div>
 
-        <p className="text-center mt-10 max-w-2xl mx-auto text-gray-500 text-sm leading-relaxed">
-          There's no company account to ban and no headquarters to pressure.
-          Your community lives on many independent relays at once. Lose one,
-          lose ten, and the conversation keeps going.
-        </p>
       </div>
     </section>
   );
@@ -1348,7 +1300,7 @@ function MiniFeaturesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Things no other chat app can do.
+            Privacy features no other Discord alternative supports.
           </h2>
         </div>
 
@@ -1530,15 +1482,19 @@ function KeyLoginDemoCard() {
 // on their own hardware.
 // ───────────────────────────────────────────────────────────────────────────
 
-/** The command typed in the self-hosting terminal demo. */
-const TERMINAL_CMD = './start.sh';
-
-/** Output lines revealed after the command finishes "typing". */
-const TERMINAL_LINES = [
-  { text: '✔ relay      ws://localhost:5577', color: 'text-emerald-400' },
-  { text: '✔ voice      ws://localhost:7880', color: 'text-emerald-400' },
-  { text: '✔ client     http://localhost:8080', color: 'text-emerald-400' },
-  { text: '✔ all services up — invite your team', color: 'text-cyan-300' },
+/**
+ * The self-hosting terminal demo, revealed line by line. Commands are the
+ * real ones from the self-hosting guide (/blog/how-to-self-host-armada):
+ * clone the client over ngit, the relay from GitLab, and the voice stack.
+ */
+const TERMINAL_SCRIPT: Array<{ text: string; kind: 'cmd' | 'ok' | 'done' }> = [
+  { text: 'git clone nostr://soapbox.pub/relay.ngit.dev/armada', kind: 'cmd' },
+  { text: '✔ client   docker build → nginx on :80', kind: 'ok' },
+  { text: 'git clone https://gitlab.com/soapbox-pub/ditto-relay', kind: 'cmd' },
+  { text: '✔ relay    bun start → your own Nostr relay', kind: 'ok' },
+  { text: 'git clone nostr://chad@chadwick.site/relay.ngit.dev/armada-av', kind: 'cmd' },
+  { text: '✔ voice    docker compose up -d → LiveKit + broker', kind: 'ok' },
+  { text: '✔ your stack, your hardware. nothing left on ours', kind: 'done' },
 ];
 
 // ───────────────────────────────────────────────────────────────────────────
@@ -1844,35 +1800,54 @@ function SelfHostSection() {
               Optional · for teams
             </p>
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl tracking-tight mb-4">
-              Or run the whole thing yourself.
+              Self-hostable at every level.
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Communities are serverless by default, but if you want chat as
-              internal infrastructure, Armada ships a complete open-source
-              server stack. One command brings up the relay, voice server, and
-              client on your own hardware.
+            <p className="text-gray-400 leading-relaxed mb-8">
+              Communities are serverless by default. When you want more
+              independence, every piece is AGPL-3.0 and runs on your own
+              hardware. Take one piece or all three; the{' '}
+              <a
+                href="/blog/how-to-self-host-armada"
+                className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
+              >
+                self-hosting guide
+              </a>{' '}
+              walks through each one.
             </p>
-            <ul className="space-y-2.5">
+
+            <div className="space-y-5">
               {[
-                'Channels, roles, moderation, and voice out of the box',
-                'Runs air-gapped on an internal network with no outside dependency',
-                'Standard Nostr (NIP-29) underneath: works with other clients too',
-              ].map((bullet) => (
-                <li key={bullet} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="size-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-sm leading-snug">
-                    {bullet}
-                  </span>
-                </li>
+                {
+                  icon: Code,
+                  title: 'Self-host the client',
+                  body: 'Build the Armada web app with your own relays baked in and serve the static site from your domain.',
+                },
+                {
+                  icon: Server,
+                  title: 'Self-host a relay',
+                  body: 'Run ditto-relay so your community\u2019s encrypted messages live on a Nostr relay you administer.',
+                },
+                {
+                  icon: Headphones,
+                  title: 'Self-host voice',
+                  body: 'Bring up LiveKit with the armada-av broker so calls route through your own box, not ours.',
+                },
+              ].map(({ icon: Icon, title, body }) => (
+                <div key={title} className="flex items-start gap-4">
+                  <div className="size-10 shrink-0 rounded-lg bg-cyan-400/10 border border-cyan-400/25 flex items-center justify-center">
+                    <Icon className="size-5 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-base mb-0.5">
+                      {title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {body}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </ul>
-            <a
-              href="/blog/how-to-self-host-armada"
-              className="inline-flex items-center gap-1.5 mt-6 font-mono text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              Read the self-hosting guide
-              <span aria-hidden="true">→</span>
-            </a>
+            </div>
           </div>
 
           <TerminalDemo />
@@ -1883,16 +1858,14 @@ function SelfHostSection() {
 }
 
 /**
- * A looping terminal mockup that types `./start.sh` and brings the full
- * self-hosted stack up, line by line.
+ * A looping terminal mockup that reveals the three real self-hosting
+ * commands (client, relay, voice) line by line, then holds and loops.
  */
 function TerminalDemo() {
-  const tick = useTicker(120, 60);
-
-  const typed = TERMINAL_CMD.slice(0, Math.min(tick, TERMINAL_CMD.length));
-  const afterCmd = tick - TERMINAL_CMD.length - 3;
-  const linesShown =
-    afterCmd > 0 ? Math.min(Math.ceil(afterCmd / 5), TERMINAL_LINES.length) : 0;
+  const steps = TERMINAL_SCRIPT.length;
+  const tick = useTicker(950, steps + 3);
+  const shown = Math.min(tick + 1, steps);
+  const done = shown === steps;
 
   return (
     <div className="rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-black/50">
@@ -1906,25 +1879,26 @@ function TerminalDemo() {
         </span>
       </div>
 
-      <div className="p-5 font-mono text-sm leading-relaxed min-h-[10rem]">
-        <p className="text-gray-300">
-          <span className="text-cyan-400">$</span> {typed}
-          {typed.length < TERMINAL_CMD.length && (
-            <span className="text-pink-400 animate-pulse">_</span>
-          )}
-        </p>
-        {TERMINAL_LINES.slice(0, linesShown).map((line) => (
+      <div className="p-5 font-mono text-[13px] leading-relaxed min-h-[15rem]">
+        {TERMINAL_SCRIPT.slice(0, shown).map((line) => (
           <p
             key={line.text}
-            className={`${line.color} animate-in fade-in slide-in-from-bottom-1 duration-200`}
+            className={`animate-in fade-in slide-in-from-bottom-1 duration-200 break-all ${
+              line.kind === 'ok'
+                ? 'text-emerald-400'
+                : line.kind === 'done'
+                  ? 'text-cyan-300 mt-1'
+                  : 'text-gray-300'
+            }`}
           >
+            {line.kind === 'cmd' && <span className="text-cyan-400">$ </span>}
             {line.text}
           </p>
         ))}
-        {linesShown === TERMINAL_LINES.length && (
-          <p className="text-gray-300">
+        {done && (
+          <p className="text-gray-300 mt-1">
             <span className="text-cyan-400">$</span>{' '}
-            <span className="text-pink-400 animate-pulse">_</span>
+            <span className="animate-pulse" style={{ color: ROSE }}>_</span>
           </p>
         )}
       </div>
@@ -1950,6 +1924,9 @@ function IosAlertSection() {
         }}
       />
 
+      {/* The app's ASCII ocean, same as the hero and final CTA */}
+      <AsciiSea />
+
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Copy + form */}
@@ -1958,8 +1935,11 @@ function IosAlertSection() {
               <BellRing className="size-4" />
               On the way · iOS
             </p>
-            <h2 className="font-display font-bold text-white whitespace-nowrap text-[clamp(1.25rem,3.4vw,2.5rem)] tracking-tight mb-4">
-              Get notified when Armada lands on iOS.
+            <h2
+              className="font-mono font-bold lowercase whitespace-nowrap text-[clamp(1.1rem,3.1vw,2.25rem)] tracking-tight mb-4"
+              style={{ color: CREAM, textShadow: `0 0 16px ${ROSE}55` }}
+            >
+              get notified when armada lands on iOS.
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8">
               Armada runs on the web, Android, Linux, and Windows today, and the
