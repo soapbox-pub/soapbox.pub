@@ -46,7 +46,6 @@ import {
   MessagesSquare,
   Mic,
   MonitorUp,
-  Play,
   Plus,
   Search,
   Server,
@@ -81,6 +80,7 @@ const GOOGLE_PLAY_URL =
 
 /** Zapstore icon used on download buttons. */
 const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
+const GOOGLE_PLAY_ICON = '/assets/icons/google-play.svg';
 
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';
@@ -399,7 +399,7 @@ function HeroSection() {
                 style={{ backgroundColor: SURFACE }}
               >
                 <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
-                  <Play className="mr-2 size-4" />
+                  <img src={GOOGLE_PLAY_ICON} alt="" className="mr-2 size-4" />
                   Google Play
                 </a>
               </Button>
@@ -2608,7 +2608,7 @@ function FinalCtaSection() {
             style={{ backgroundColor: SURFACE }}
           >
             <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
-              <Play className="mr-2 size-4" />
+              <img src={GOOGLE_PLAY_ICON} alt="" className="mr-2 size-4" />
               Google Play
             </a>
           </Button>
