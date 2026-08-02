@@ -452,7 +452,7 @@ export default function ArmadaBuzzCommunities() {
           There is no iPhone app yet. Drop your email and we will tell you the
           day it ships.
         </p>
-        <EmailSignupForm tagId="535095" />
+        <EmailSignupForm tagId="8983956" />
       </div>
 
       <h2>Related Reading</h2>

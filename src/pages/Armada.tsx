@@ -2247,7 +2247,7 @@ function IosAlertSection() {
               iPhone app is coming. Drop your email and we will tell you the day
               it ships. No spam, just the release.
             </p>
-            <EmailSignupForm tagId="535095" className="max-w-md" />
+            <EmailSignupForm tagId="8983956" className="max-w-md" />
           </div>
 
           {/* The app on a phone (already rendered in a device frame) */}
