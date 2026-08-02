@@ -2501,14 +2501,30 @@ function AsciiSea() {
       raf = requestAnimationFrame(tick);
     }
 
-    const onResize = () => {
-      build();
-      paint(0);
+    // Rebuild whenever the host actually changes size. A plain window
+    // "resize" listener misses the section growing after mount (e.g. the
+    // phone image loading in), which left the grid covering only the initial
+    // height until a manual resize. ResizeObserver catches every case.
+    let rebuildRaf = 0;
+    const scheduleRebuild = () => {
+      cancelAnimationFrame(rebuildRaf);
+      rebuildRaf = requestAnimationFrame(() => {
+        build();
+        paint(0);
+      });
     };
-    window.addEventListener('resize', onResize);
+    const ro = new ResizeObserver(scheduleRebuild);
+    ro.observe(host);
+
+    // Re-measure once the mono font is ready, in case metrics shift.
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(scheduleRebuild).catch(() => {});
+    }
+
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener('resize', onResize);
+      cancelAnimationFrame(rebuildRaf);
+      ro.disconnect();
     };
   }, []);
 
