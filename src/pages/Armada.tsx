@@ -342,7 +342,7 @@ function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy, on a glass panel so it stays readable over the sea */}
-          <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 px-4 -my-6 py-6 lg:mx-0 lg:my-0 lg:rounded-2xl lg:p-10 sm:p-8 p-6">
+          <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 px-4 -my-20 py-20 md:-my-28 md:py-28 lg:mx-0 lg:my-0 lg:rounded-2xl lg:p-10 sm:p-8 p-6">
             <p className="font-mono text-sm sm:text-base mb-6" style={{ color: ROSE }}>
               <span className="text-cyan-400">$</span> now in open beta ·
               v1.0 incoming<span className="animate-pulse">_</span>
@@ -637,15 +637,15 @@ function HeroChatMockup() {
 function AppShowcaseSection() {
   return (
     <section className="text-white py-20 md:py-28" style={{ backgroundColor: SURFACE }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
+        <div className="text-center max-w-3xl mx-auto mb-8 order-2 md:order-1 md:mb-12">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Voice and video calls, custom emojis, GIFs, and more.
           </h2>
         </div>
 
         {/* Desktop screenshot (desktop only). */}
-        <div className="relative hidden md:block max-w-5xl mx-auto">
+        <div className="relative hidden md:block order-1 md:order-2 max-w-5xl mx-auto">
           <div
             className="absolute inset-0 -m-6 rounded-3xl opacity-40 blur-3xl pointer-events-none"
             style={{
@@ -661,7 +661,9 @@ function AppShowcaseSection() {
         </div>
 
         {/* On mobile, rotate through the real app screenshots instead. */}
-        <MobileShotCarousel />
+        <div className="order-1 md:order-2">
+          <MobileShotCarousel />
+        </div>
       </div>
     </section>
   );
@@ -686,7 +688,7 @@ function MobileShotCarousel() {
   }, [shots.length]);
 
   return (
-    <div className="relative md:hidden max-w-[280px] mx-auto">
+    <div className="relative md:hidden w-full max-w-xs mx-auto">
       <div
         className="absolute inset-0 -m-6 rounded-full opacity-50 blur-3xl pointer-events-none"
         style={{
@@ -2614,17 +2616,17 @@ function FinalCtaSection() {
           className="font-mono font-bold lowercase text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-4 leading-[1.05]"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}66` }}
         >
-          chat like nobody's&nbsp;watching.
+          chat like nobody's watching.
         </h2>
         <p className="font-mono text-sm sm:text-base mb-10" style={{ color: ROSE }}>
           <span className="text-cyan-400">$</span> your keys. your fleet.
           <span className="animate-pulse">_</span>
         </p>
-        <div className="flex flex-wrap gap-4 justify-center mb-8">
+        <div className="flex flex-wrap gap-3 justify-center mb-8 max-w-md mx-auto">
           <Button
             asChild
             size="lg"
-            className="font-bold h-14 px-8 text-lg shadow-2xl text-white hover:opacity-90"
+            className="font-bold h-14 px-8 text-lg shadow-2xl text-white hover:opacity-90 max-sm:w-full max-sm:order-2"
             style={{ backgroundColor: ROSE, boxShadow: `0 10px 40px ${ROSE}40` }}
           >
             <a href={ARMADA_URL} target="_blank" rel="noopener noreferrer">
@@ -2635,7 +2637,7 @@ function FinalCtaSection() {
           <Button
             asChild
             size="lg"
-            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base max-sm:flex-1"
             style={{ backgroundColor: SURFACE }}
           >
             <a href={ZAPSTORE_URL} target="_blank" rel="noopener noreferrer">
@@ -2646,23 +2648,12 @@ function FinalCtaSection() {
           <Button
             asChild
             size="lg"
-            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base max-sm:flex-1"
             style={{ backgroundColor: SURFACE }}
           >
             <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
               <img src={GOOGLE_PLAY_ICON} alt="" className="mr-2 size-4" />
               Google Play
-            </a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
-            style={{ backgroundColor: SURFACE }}
-          >
-            <a href={SOURCE_URL} target="_blank" rel="noopener noreferrer">
-              <Code className="mr-2 size-4" />
-              Source code
             </a>
           </Button>
         </div>
