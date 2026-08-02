@@ -342,7 +342,7 @@ function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy, on a glass panel so it stays readable over the sea */}
-          <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 px-4 -my-20 py-20 md:-my-28 md:py-28 lg:mx-0 lg:my-0 lg:rounded-2xl lg:p-10 sm:p-8 p-6">
+          <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 -my-20 py-24 md:-my-28 md:py-32 lg:mx-0 lg:my-0 lg:rounded-2xl lg:py-14 px-6 sm:px-10 lg:px-12">
             <p className="font-mono text-sm sm:text-base mb-6" style={{ color: ROSE }}>
               <span className="text-cyan-400">$</span> now in open beta ·
               v1.0 incoming<span className="animate-pulse">_</span>
@@ -352,7 +352,7 @@ function HeroSection() {
               className="font-mono font-bold lowercase tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8"
               style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}55` }}
             >
-              armada: encrypted,
+              Armada: encrypted,
               <br />
               open-source,
               <br />
