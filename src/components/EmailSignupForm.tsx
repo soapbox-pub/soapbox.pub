@@ -28,18 +28,23 @@ export function EmailSignupForm({ className, tags: _tags, tagId = '8981074' }: E
       iframe.name = 'hidden_iframe';
       document.body.appendChild(iframe);
 
-      // Create and submit the form
+      // Create and submit the form. Mailchimp reads the account (u), list
+      // (id), and form (f_id) from the action query string, and the tag from
+      // the `tags` body field. Posting u/id in the body (or to the generic
+      // `host.` endpoint) silently drops the tag — see ShakespeareMailchimpForm
+      // for the working classic-embed pattern this mirrors.
       const form = document.createElement('form');
-      form.action = 'https://host.us7.list-manage.com/subscribe/post';
+      form.action =
+        'https://pub.us7.list-manage.com/subscribe/post?u=f1f718a93795f42a604d558d8&id=f7271442a0&f_id=00ffa3e4f0';
       form.method = 'post';
       form.target = 'hidden_iframe';
 
       // Add form fields
       const fields = {
-        u: 'f1f718a93795f42a604d558d8',
-        id: 'f7271442a0',
         EMAIL: email,
-        tags: tagId
+        tags: tagId,
+        // Honeypot: must stay empty (bots fill it), keeps the submission valid.
+        b_f1f718a93795f42a604d558d8_f7271442a0: '',
       };
 
       Object.entries(fields).forEach(([name, value]) => {
