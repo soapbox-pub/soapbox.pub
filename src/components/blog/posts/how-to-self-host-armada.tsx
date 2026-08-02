@@ -1,5 +1,6 @@
 import type { BlogPostMeta } from '@/lib/blog/types';
 import { Card, CardContent } from '../../ui/card';
+import { EmailSignupForm } from '../../EmailSignupForm';
 
 export const meta: BlogPostMeta = {
   slug: 'how-to-self-host-armada',
@@ -638,6 +639,17 @@ docker compose up -d`}</code>
           any of it. Self-host because you want the independence, not because
           the default is lacking.
         </p>
+      </div>
+
+      <div className="not-prose my-10 rounded-xl border border-pink-200 dark:border-pink-900 bg-gradient-to-br from-pink-50 to-cyan-50 dark:from-pink-950/40 dark:to-cyan-950/40 p-6">
+        <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">
+          Get notified when Armada comes to iOS
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+          There is no iPhone app yet. Drop your email and we will tell you the
+          day it ships.
+        </p>
+        <EmailSignupForm tagId="535095" />
       </div>
 
       <p>

@@ -53,9 +53,11 @@ import {
 } from 'lucide-react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { EmailSignupForm } from '@/components/EmailSignupForm';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useSEO } from '@/hooks/useSEO';
+import { getAllPosts, formatDate } from '@/lib/blog/utils';
 
 /** Armada app icon (pink sail over cyan water). */
 const ARMADA_ICON = '/assets/armada/icon.png';
@@ -253,6 +255,8 @@ export default function Armada() {
       <BridgeSection />
       <SelfHostSection />
       <CommunityCtaSection />
+      <IosAlertSection />
+      <LatestPostsSection />
       <FaqSection />
       <FinalCtaSection />
 
@@ -1836,6 +1840,107 @@ function CommunityCtaSection() {
             </CardContent>
           </div>
         </Card>
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// Section: iOS release email alert
+// ───────────────────────────────────────────────────────────────────────────
+
+function IosAlertSection() {
+  return (
+    <section className="py-20 md:py-28" style={{ backgroundColor: INK }}>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center justify-center gap-2">
+          <BellRing className="size-4" />
+          On the way · iOS
+        </p>
+        <h2 className="font-display font-bold text-white text-3xl sm:text-4xl tracking-tight mb-4">
+          Get notified when Armada lands on iOS.
+        </h2>
+        <p className="text-gray-400 leading-relaxed mb-8">
+          There is no iPhone app yet, but it is coming. Drop your email and we
+          will tell you the day it ships. No spam, just the release.
+        </p>
+        <EmailSignupForm tagId="535095" className="max-w-md mx-auto" />
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// Section: Latest Armada blog posts (newest three, by date)
+// ───────────────────────────────────────────────────────────────────────────
+
+function LatestPostsSection() {
+  const posts = getAllPosts()
+    .filter((post) => post.tags?.includes('armada'))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
+
+  if (posts.length === 0) return null;
+
+  return (
+    <section className="bg-[#faf8fb] py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
+            From the blog
+          </p>
+          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+            Latest on Armada.
+          </h2>
+          <p className="text-lg text-gray-600">
+            Release notes, deep dives, and guides from the team building Armada.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {posts.map((post) => (
+            <Link
+              key={post.slug}
+              to={`/blog/${post.slug}`}
+              className="group block"
+            >
+              <Card className="h-full overflow-hidden border-gray-200 bg-white transition-shadow hover:shadow-lg">
+                {post.coverImage && (
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      loading="lazy"
+                      className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <CardContent className="p-6">
+                  <p className="text-xs text-gray-500 mb-2">
+                    {formatDate(post.date)}
+                    {post.author.name ? ` · ${post.author.name}` : ''}
+                  </p>
+                  <h3 className="font-display font-bold text-gray-900 text-lg leading-snug mb-2 transition-colors group-hover:text-pink-600">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-1.5 font-mono text-sm text-pink-600 hover:text-pink-700 transition-colors"
+          >
+            Read the blog
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
       </div>
     </section>
   );

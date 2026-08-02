@@ -8,9 +8,11 @@ import { cn } from '@/lib/utils';
 interface EmailSignupFormProps {
   className?: string;
   tags?: string[]; // For compatibility with existing usage
+  /** Mailchimp tag id to attach to the subscriber. Defaults to the Soapbox tag. */
+  tagId?: string;
 }
 
-export function EmailSignupForm({ className, tags: _tags }: EmailSignupFormProps) {
+export function EmailSignupForm({ className, tags: _tags, tagId = '8981074' }: EmailSignupFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -37,7 +39,7 @@ export function EmailSignupForm({ className, tags: _tags }: EmailSignupFormProps
         u: 'f1f718a93795f42a604d558d8',
         id: 'f7271442a0',
         EMAIL: email,
-        tags: '8981074' // Soapbox tag
+        tags: tagId
       };
 
       Object.entries(fields).forEach(([name, value]) => {
