@@ -349,7 +349,7 @@ function HeroSection() {
             </p>
 
             <h1
-              className="font-mono font-bold lowercase tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8"
+              className="font-mono font-bold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8"
               style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}55` }}
             >
               Armada: encrypted,
