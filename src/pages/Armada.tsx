@@ -46,6 +46,7 @@ import {
   MessagesSquare,
   Mic,
   MonitorUp,
+  Play,
   Plus,
   Search,
   Server,
@@ -73,6 +74,10 @@ const ARMADA_URL = 'https://armada.buzz';
 
 /** Armada on Zapstore, the decentralized Android app store built on Nostr. */
 const ZAPSTORE_URL = 'https://zapstore.dev/apps/buzz.armada.app';
+
+/** Armada on the Google Play Store. */
+const GOOGLE_PLAY_URL =
+  'https://play.google.com/store/apps/details?id=buzz.armada.app';
 
 /** Zapstore icon used on download buttons. */
 const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
@@ -368,7 +373,7 @@ function HeroSection() {
                 className="bg-pink-500 hover:bg-pink-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-pink-500/25"
               >
                 <a href={ARMADA_URL} target="_blank" rel="noopener noreferrer">
-                  Open Armada
+                  Armada Web
                   <ArrowRight className="ml-2 size-4" />
                 </a>
               </Button>
@@ -384,7 +389,18 @@ function HeroSection() {
                     alt=""
                     className="mr-2 size-5 rounded"
                   />
-                  Download on Zapstore
+                  Zapstore
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base"
+                style={{ backgroundColor: SURFACE }}
+              >
+                <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
+                  <Play className="mr-2 size-4" />
+                  Google Play
                 </a>
               </Button>
             </div>
@@ -474,7 +490,7 @@ function HeroChatMockup() {
       />
 
       {/* Phone body */}
-      <div className="relative rounded-[2.75rem] border-[11px] border-[#0c0a11] bg-[#0c0a11] shadow-2xl ring-1 ring-white/10 rotate-[-4deg] hover:rotate-0 transition-transform duration-500">
+      <div className="relative rounded-[2.75rem] border-[11px] border-[#0c0a11] bg-[#0c0a11] shadow-2xl ring-1 ring-white/10 rotate-[4deg] hover:rotate-0 transition-transform duration-500">
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 h-6 w-32 rounded-b-2xl bg-[#0c0a11]" />
 
@@ -2570,8 +2586,30 @@ function FinalCtaSection() {
             style={{ backgroundColor: ROSE, boxShadow: `0 10px 40px ${ROSE}40` }}
           >
             <a href={ARMADA_URL} target="_blank" rel="noopener noreferrer">
-              Open Armada
+              Armada Web
               <ArrowRight className="ml-2 size-5" />
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
+            style={{ backgroundColor: SURFACE }}
+          >
+            <a href={ZAPSTORE_URL} target="_blank" rel="noopener noreferrer">
+              <img src={ZAPSTORE_ICON} alt="" className="mr-2 size-5 rounded" />
+              Zapstore
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
+            style={{ backgroundColor: SURFACE }}
+          >
+            <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
+              <Play className="mr-2 size-4" />
+              Google Play
             </a>
           </Button>
           <Button
