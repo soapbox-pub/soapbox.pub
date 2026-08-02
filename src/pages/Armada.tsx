@@ -342,7 +342,7 @@ function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy, on a glass panel so it stays readable over the sea */}
-          <div className="lg:col-span-7 rounded-2xl bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 p-6 sm:p-8 lg:p-10">
+          <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 px-4 -my-6 py-6 lg:mx-0 lg:my-0 lg:rounded-2xl lg:p-10 sm:p-8 p-6">
             <p className="font-mono text-sm sm:text-base mb-6" style={{ color: ROSE }}>
               <span className="text-cyan-400">$</span> now in open beta ·
               v1.0 incoming<span className="animate-pulse">_</span>
@@ -370,17 +370,18 @@ function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-pink-500/25"
+                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-pink-500/25 max-sm:w-full max-sm:order-2"
               >
                 <a href={ARMADA_URL} target="_blank" rel="noopener noreferrer">
-                  Armada Web
+                  <span className="sm:hidden">Try Armada on the Web</span>
+                  <span className="hidden sm:inline">Armada Web</span>
                   <ArrowRight className="ml-2 size-4" />
                 </a>
               </Button>
               <Button
                 asChild
                 size="lg"
-                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base"
+                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base max-sm:flex-1"
                 style={{ backgroundColor: SURFACE }}
               >
                 <a href={ZAPSTORE_URL} target="_blank" rel="noopener noreferrer">
@@ -395,7 +396,7 @@ function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base"
+                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base max-sm:flex-1"
                 style={{ backgroundColor: SURFACE }}
               >
                 <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
@@ -407,8 +408,8 @@ function HeroSection() {
 
           </div>
 
-          {/* Right: animated chat mockup */}
-          <div className="lg:col-span-5">
+          {/* Right: animated chat mockup (desktop only) */}
+          <div className="hidden lg:block lg:col-span-5">
             <HeroChatMockup />
           </div>
         </div>
@@ -643,11 +644,8 @@ function AppShowcaseSection() {
           </h2>
         </div>
 
-        {/* Animated mock window — temporarily disabled in favor of a real
-            desktop screenshot so we can compare. To restore, render
-            <AppWindowMockup /> here in place of the image below. */}
-
-        <div className="relative max-w-5xl mx-auto">
+        {/* Desktop screenshot (desktop only). */}
+        <div className="relative hidden md:block max-w-5xl mx-auto">
           <div
             className="absolute inset-0 -m-6 rounded-3xl opacity-40 blur-3xl pointer-events-none"
             style={{
@@ -661,8 +659,52 @@ function AppShowcaseSection() {
             className="relative w-full rounded-2xl border border-white/10 shadow-2xl"
           />
         </div>
+
+        {/* On mobile, rotate through the real app screenshots instead. */}
+        <MobileShotCarousel />
       </div>
     </section>
+  );
+}
+
+/**
+ * Mobile-only carousel of the real Armada app screenshots, rotating one
+ * every 2s. Shown in place of the desktop screenshot in the showcase on
+ * small screens.
+ */
+function MobileShotCarousel() {
+  const shots = [1, 2, 3, 4, 5, 6, 7].map(
+    (n) => `/assets/armada/mobile/${n}.webp`,
+  );
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) return;
+    const id = setInterval(() => setI((v) => (v + 1) % shots.length), 2000);
+    return () => clearInterval(id);
+  }, [shots.length]);
+
+  return (
+    <div className="relative md:hidden max-w-[280px] mx-auto">
+      <div
+        className="absolute inset-0 -m-6 rounded-full opacity-50 blur-3xl pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
+        }}
+      />
+      {shots.map((src, n) => (
+        <img
+          key={src}
+          src={src}
+          alt="Armada on mobile"
+          loading={n === 0 ? undefined : 'lazy'}
+          className={`w-full transition-opacity duration-500 ${
+            n === i ? 'relative opacity-100' : 'absolute inset-0 opacity-0'
+          }`}
+        />
+      ))}
+    </div>
   );
 }
 
@@ -2266,8 +2308,8 @@ function IosAlertSection() {
             <EmailSignupForm tagId="8983956" className="max-w-md" />
           </div>
 
-          {/* The app on a phone (already rendered in a device frame) */}
-          <div className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px]">
+          {/* The app on a phone (already rendered in a device frame) — desktop only */}
+          <div className="hidden md:block relative mx-auto w-full max-w-[280px] sm:max-w-[320px]">
             <div
               className="absolute inset-0 -m-8 rounded-full opacity-50 blur-3xl pointer-events-none"
               style={{
