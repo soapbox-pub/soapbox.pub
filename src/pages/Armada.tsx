@@ -102,6 +102,52 @@ const DISCORD_BLURPLE = '#5865f2';
 /** Armada source code (canonical ngit repo, browsable on gitworkshop). */
 const SOURCE_URL = 'https://gitworkshop.dev/soapbox.pub/armada';
 
+/** ditto-relay source, the relay Armada communities run on. */
+const RELAY_REPO_URL = 'https://gitlab.com/soapbox-pub/ditto-relay';
+
+/** Other Nostr apps Armada interoperates with, one identity across all. */
+const NOSTR_APPS: Array<{
+  name: string;
+  url: string;
+  desc: string;
+  accent: string;
+  shot: string;
+  logo: string;
+}> = [
+  {
+    name: 'Buzz',
+    url: 'https://github.com/block/buzz',
+    desc: "Block's open-source team chat with AI agents. Armada joins Buzz communities directly.",
+    accent: '#d9e00b',
+    shot: '/assets/armada/interop/buzz-shot.png',
+    logo: '/assets/armada/interop/buzz-logo.jpg',
+  },
+  {
+    name: 'Flotilla',
+    url: 'https://flotilla.social',
+    desc: "Coracle's Nostr communities client, with rooms, events, and moderation.",
+    accent: '#8b7cf6',
+    shot: '/assets/armada/interop/flotilla-shot.png',
+    logo: '/assets/armada/interop/flotilla-logo.png',
+  },
+  {
+    name: 'Vector',
+    url: 'https://vectorapp.io',
+    desc: 'A private, end-to-end encrypted Nostr direct-messaging app.',
+    accent: '#4ade80',
+    shot: '/assets/armada/interop/vector-shot.png',
+    logo: '/assets/armada/interop/vector-logo.png',
+  },
+  {
+    name: 'Obelisk',
+    url: 'https://obelisk.ar',
+    desc: 'A Discord-style group chat that runs entirely on Nostr, no backend.',
+    accent: '#a3e635',
+    shot: '/assets/armada/interop/obelisk-shot.png',
+    logo: '/assets/armada/interop/obelisk-logo.png',
+  },
+];
+
 /** Armada's dark theme background color (hsl 260 22% 9%, the app default). */
 const INK = '#15121c';
 
@@ -265,7 +311,7 @@ export default function Armada() {
       <MiniFeaturesSection />
       <IosAlertSection />
       <BridgeSection />
-      <BuzzCompatSection />
+      <InteropSection />
       <SelfHostSection />
       <LatestPostsSection />
       <FaqSection />
@@ -299,8 +345,8 @@ function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Left: copy */}
-          <div className="lg:col-span-7">
+          {/* Left: copy, on a glass panel so it stays readable over the sea */}
+          <div className="lg:col-span-7 rounded-2xl bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 p-6 sm:p-8 lg:p-10">
             <p className="font-mono text-sm sm:text-base mb-6" style={{ color: ROSE }}>
               <span className="text-cyan-400">$</span> now in open beta ·
               v1.0 incoming<span className="animate-pulse">_</span>
@@ -338,8 +384,8 @@ function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white font-medium h-12 px-6 text-base"
+                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base"
+                style={{ backgroundColor: SURFACE }}
               >
                 <a href={ZAPSTORE_URL} target="_blank" rel="noopener noreferrer">
                   <img
@@ -566,6 +612,7 @@ const SHOWCASE_FEATURES = [
   'Reactions & custom emoji',
   'Threads',
   'Events & RSVPs',
+  'Custom themes',
   'Roles & moderation',
   'Ctrl+K quick switcher',
   'Voice & screen share',
@@ -573,6 +620,25 @@ const SHOWCASE_FEATURES = [
 ] as const;
 
 type ShowcaseFeature = (typeof SHOWCASE_FEATURES)[number];
+
+/**
+ * Theme presets echoing the app's built-in themes (src/themes.ts in the
+ * armada repo): a background and two accents each. The themes scene cycles
+ * through them to demonstrate live theme switching.
+ */
+const THEME_PRESETS: Array<{
+  name: string;
+  bg: string;
+  accent: string;
+  accent2: string;
+}> = [
+  { name: 'armada', bg: '#15121c', accent: '#f5479e', accent2: '#25f4f4' },
+  { name: 'ember', bg: '#1c1310', accent: '#f97316', accent2: '#fbbf24' },
+  { name: 'ocean', bg: '#0f1a24', accent: '#38bdf8', accent2: '#22d3ee' },
+  { name: 'forest', bg: '#101a14', accent: '#22c55e', accent2: '#a3e635' },
+  { name: 'grape', bg: '#171021', accent: '#a855f7', accent2: '#e879f9' },
+  { name: 'gold', bg: '#1a170f', accent: '#eab308', accent2: '#fde047' },
+];
 
 /**
  * A guided tour of the app window. The timeline itself always shows the
@@ -583,8 +649,11 @@ type ShowcaseFeature = (typeof SHOWCASE_FEATURES)[number];
  */
 function AppWindowMockup() {
   const scene = useTicker(2600, SHOWCASE_FEATURES.length);
+  const themeIndex = useTicker(650, THEME_PRESETS.length);
   const feature: ShowcaseFeature = SHOWCASE_FEATURES[scene];
   const isDM = feature === 'Direct messages';
+  const isThemes = feature === 'Custom themes';
+  const theme = THEME_PRESETS[themeIndex];
 
   /** Spotlight ring for the element demonstrating the active feature. */
   const spot = (name: ShowcaseFeature) =>
@@ -923,34 +992,115 @@ function AppWindowMockup() {
             </div>
           )}
 
-          {/* Voice & screen share overlay */}
+          {/* Voice & screen share overlay — a real call with a shared screen */}
           {feature === 'Voice & screen share' && (
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center px-6 animate-in fade-in duration-200">
-              <div className="w-full max-w-xs rounded-xl border border-cyan-400/30 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
-                <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/10 text-cyan-300 text-xs font-medium">
+            <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-4 animate-in fade-in duration-200">
+              <div className="w-full max-w-sm rounded-xl border border-cyan-400/30 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+                <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 text-cyan-300 text-xs font-medium">
                   <Volume2 className="size-3.5" />
                   hangout · 3 in call
                   <span className="ml-auto inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-pink-500/15 border border-pink-500/30 text-[9px] font-semibold uppercase tracking-wider" style={{ color: ROSE }}>
                     <MonitorUp className="size-2.5" />
-                    live
+                    sharing
                   </span>
                 </div>
-                <div className="p-3">
-                  <div className="rounded-lg bg-black/60 border border-white/10 h-20 flex items-center justify-center gap-2 text-gray-500 text-xs font-mono mb-3">
-                    <MonitorUp className="size-4 text-cyan-400" />
-                    Derek is sharing their screen
+                <div className="p-2.5">
+                  {/* Shared screen: a mock deck with a bar chart */}
+                  <div className="relative rounded-lg bg-[#0d0b11] border border-white/10 overflow-hidden mb-2">
+                    <div className="flex items-center gap-1 px-2 py-1 border-b border-white/5">
+                      <span className="size-1.5 rounded-full bg-rose-500/70" />
+                      <span className="size-1.5 rounded-full bg-amber-400/70" />
+                      <span className="size-1.5 rounded-full bg-emerald-500/70" />
+                      <span className="ml-1.5 font-mono text-[8px] text-gray-500">Q3-roadmap.key — Keynote</span>
+                    </div>
+                    <div className="p-3">
+                      <div className="h-1.5 w-24 rounded-full bg-white/15 mb-1" />
+                      <div className="h-1.5 w-16 rounded-full bg-white/10 mb-3" />
+                      <div className="flex items-end gap-2 h-16">
+                        {[45, 70, 55, 90, 65].map((h, i) => (
+                          <div key={i} className="flex-1 rounded-t" style={{ height: `${h}%`, backgroundColor: i === 3 ? ROSE : `${CYAN}80` }} />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Presenter camera bubble, picture-in-picture */}
+                    <div className="absolute bottom-2 right-2 flex items-center gap-1.5 rounded-md bg-black/70 border border-cyan-400/40 pl-1 pr-2 py-1">
+                      <img src={PEOPLE.derek.avatar} alt="" className="size-6 rounded object-cover" />
+                      <div className="leading-tight">
+                        <p className="text-[9px] text-white font-medium">Derek</p>
+                        <p className="text-[8px] text-cyan-300">presenting</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-center gap-3">
-                    {[PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk].map((p, i) => (
-                      <div key={p.name} className="flex flex-col items-center gap-1">
-                        <img
-                          src={p.avatar}
-                          alt=""
-                          className={`size-9 rounded-full object-cover ${i === 0 ? 'ring-2 ring-cyan-400' : ''}`}
-                        />
-                        <span className="text-[9px] text-gray-500">{p.name}</span>
+                  {/* Participant video tiles */}
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { p: PEOPLE.lemon, cam: true, muted: false },
+                      { p: PEOPLE.mk, cam: true, muted: true },
+                      { p: PEOPLE.morgan, cam: false, muted: false },
+                    ].map(({ p, cam, muted }) => (
+                      <div key={p.name} className="relative aspect-video rounded-md overflow-hidden bg-black/60 border border-white/10 flex items-center justify-center">
+                        {cam ? (
+                          <img src={p.avatar} alt="" className="size-full object-cover" />
+                        ) : (
+                          <img src={p.avatar} alt="" className="size-7 rounded-full object-cover opacity-70" />
+                        )}
+                        <span className="absolute bottom-0.5 left-1 text-[8px] text-white/90 drop-shadow">{p.name}</span>
+                        <span className="absolute bottom-0.5 right-1">
+                          <Mic className={`size-2.5 ${muted ? 'text-rose-400' : 'text-emerald-400'}`} />
+                        </span>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Custom themes overlay — an appearance picker recoloring live */}
+          {isThemes && (
+            <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-4 animate-in fade-in duration-200">
+              <div className="w-full max-w-sm rounded-xl border border-white/15 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200" style={{ backgroundColor: INK }}>
+                <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 text-gray-300 text-xs font-medium">
+                  <Smile className="size-3.5" style={{ color: theme.accent }} />
+                  Appearance · Theme
+                </div>
+                <div className="p-3">
+                  {/* Swatch grid */}
+                  <div className="grid grid-cols-6 gap-2 mb-3">
+                    {THEME_PRESETS.map((t, i) => (
+                      <div
+                        key={t.name}
+                        className="aspect-square rounded-md border flex items-end p-1 transition-all"
+                        style={{
+                          backgroundColor: t.bg,
+                          borderColor: i === themeIndex ? t.accent : 'rgba(255,255,255,0.1)',
+                          boxShadow: i === themeIndex ? `0 0 0 2px ${t.accent}` : 'none',
+                        }}
+                      >
+                        <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent }} />
+                        <span className="size-1.5 rounded-full -ml-0.5" style={{ backgroundColor: t.accent2 }} />
+                      </div>
+                    ))}
+                  </div>
+                  {/* Live preview recoloring with the active theme */}
+                  <div className="rounded-lg border border-white/10 p-2.5 space-y-2" style={{ backgroundColor: theme.bg }}>
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-mono text-[10px]" style={{ color: theme.accent2 }}>#</span>
+                      <span className="text-[11px] font-medium text-white">general</span>
+                      <span className="ml-auto font-mono text-[9px] uppercase tracking-wider" style={{ color: theme.accent }}>
+                        {theme.name}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <img src={PEOPLE.mk.avatar} alt="" className="size-5 rounded-full object-cover" />
+                      <span className="px-2 py-1 rounded-lg rounded-tl-sm text-[10px] text-white" style={{ backgroundColor: theme.accent }}>
+                        love the new look 🎨
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 rounded-md px-2 py-1 border" style={{ borderColor: `${theme.accent2}40`, backgroundColor: `${theme.accent2}14` }}>
+                      <Volume2 className="size-3" style={{ color: theme.accent2 }} />
+                      <span className="text-[10px]" style={{ color: theme.accent2 }}>hangout · 2 in call</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1071,8 +1221,7 @@ function PrivacySection() {
             >
               Concord protocol
             </a>
-            , so anyone can verify it. Here's the same conversation with the
-            key, and without it.
+            , so anyone can verify it.
           </p>
         </div>
 
@@ -1178,8 +1327,7 @@ function UnstoppableSection() {
           <p className="text-lg text-gray-400">
             Your community lives on many independent relays at once: no
             company account to ban, no headquarters to pressure. Lose one
-            relay, lose ten, and the conversation keeps going. Watch what
-            happens when things go wrong:
+            relay, lose ten, and the conversation keeps going.
           </p>
         </div>
 
@@ -1498,60 +1646,78 @@ const TERMINAL_SCRIPT: Array<{ text: string; kind: 'cmd' | 'ok' | 'done' }> = [
 ];
 
 // ───────────────────────────────────────────────────────────────────────────
-// Section: Buzz compatibility
+// Section: Interoperability — one Nostr identity across other chat apps
 // ───────────────────────────────────────────────────────────────────────────
 
-function BuzzCompatSection() {
+function InteropSection() {
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: '#d9e00b' }}>
+    <section className="py-20 md:py-28" style={{ backgroundColor: SURFACE }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div>
-            <p
-              className="font-mono text-xs font-semibold tracking-widest uppercase mb-3"
-              style={{ color: 'rgba(16, 11, 21, 0.6)' }}
-            >
-              New · Armada v0.37
-            </p>
-            <h2
-              className="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4"
-              style={{ color: INK }}
-            >
-              Works with Buzz communities.
-            </h2>
-            <p
-              className="leading-relaxed mb-6"
-              style={{ color: 'rgba(16, 11, 21, 0.8)' }}
-            >
-              <a
-                href="https://github.com/block/buzz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline underline-offset-2"
-                style={{ color: INK }}
-              >
-                Buzz
-              </a>
-              , Block&apos;s open-source team communication app, only ships on
-              desktop. Armada connects to the same workspaces from the web and
-              Android: chat channels, threaded forums, the Projects workspace,
-              and a mentions Inbox, right alongside your other communities and
-              DMs.
-            </p>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3">
+            Open protocol · no lock-in
+          </p>
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+            Interoperable with other Nostr apps.
+          </h2>
+          <p className="text-lg text-gray-400">
+            Armada is built on Nostr, so your account isn't trapped in one app.
+            One key logs you in across the ecosystem, and where clients share
+            protocols, your communities and DMs come with you. Armada already
+            connects to{' '}
             <a
               href="/blog/armada-buzz-communities"
-              className="inline-flex items-center rounded-full px-6 py-3 font-semibold transition-opacity hover:opacity-90"
-              style={{ backgroundColor: INK, color: '#d9e00b' }}
+              className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
             >
-              Read the announcement
+              Buzz communities
+            </a>{' '}
+            directly.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          {NOSTR_APPS.map((app) => (
+            <a
+              key={app.name}
+              href={app.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col rounded-xl border border-white/10 overflow-hidden transition-colors hover:border-white/25"
+              style={{ backgroundColor: INK }}
+            >
+              {/* Brand preview / screenshot */}
+              <div className="aspect-[1200/630] overflow-hidden border-b border-white/10">
+                <img
+                  src={app.shot}
+                  alt={`${app.name} preview`}
+                  loading="lazy"
+                  className="size-full object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col flex-1 p-5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <img
+                    src={app.logo}
+                    alt={`${app.name} logo`}
+                    loading="lazy"
+                    className="size-7 shrink-0 rounded-md object-cover ring-1 ring-white/10"
+                  />
+                  <span className="font-semibold text-white">{app.name}</span>
+                </div>
+                <p className="text-sm text-gray-400 leading-relaxed flex-1">
+                  {app.desc}
+                </p>
+                <span
+                  className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs"
+                  style={{ color: app.accent }}
+                >
+                  Visit {app.name}
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </div>
             </a>
-          </div>
-          <img
-            src="/assets/blog/armada-buzz-communities/buzz-agents.png"
-            alt="A Buzz community open in Armada with chat, a thread panel, and member roles"
-            className="w-full rounded-xl shadow-lg"
-            style={{ border: '1px solid rgba(16, 11, 21, 0.2)' }}
-          />
+          ))}
         </div>
       </div>
     </section>
@@ -1820,19 +1986,26 @@ function SelfHostSection() {
                 {
                   icon: Code,
                   title: 'Self-host the client',
-                  body: 'Build the Armada web app with your own relays baked in and serve the static site from your domain.',
+                  body: 'Serve the web app from your own domain.',
+                  link: { href: SOURCE_URL, label: 'armada', external: true },
                 },
                 {
                   icon: Server,
                   title: 'Self-host a relay',
-                  body: 'Run ditto-relay so your community\u2019s encrypted messages live on a Nostr relay you administer.',
+                  body: 'Keep encrypted messages on a relay you run.',
+                  link: { href: RELAY_REPO_URL, label: 'ditto-relay', external: true },
                 },
                 {
                   icon: Headphones,
                   title: 'Self-host voice',
-                  body: 'Bring up LiveKit with the armada-av broker so calls route through your own box, not ours.',
+                  body: 'Route calls through your own LiveKit box.',
+                  link: {
+                    href: '/blog/how-to-self-host-armada',
+                    label: 'armada-av',
+                    external: false,
+                  },
                 },
-              ].map(({ icon: Icon, title, body }) => (
+              ].map(({ icon: Icon, title, body, link }) => (
                 <div key={title} className="flex items-start gap-4">
                   <div className="size-10 shrink-0 rounded-lg bg-cyan-400/10 border border-cyan-400/25 flex items-center justify-center">
                     <Icon className="size-5 text-cyan-400" />
@@ -1842,7 +2015,16 @@ function SelfHostSection() {
                       {title}
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      {body}
+                      {body}{' '}
+                      <a
+                        href={link.href}
+                        {...(link.external
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                        className="font-mono text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
+                      >
+                        {link.label} →
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -1929,8 +2111,8 @@ function IosAlertSection() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Copy + form */}
-          <div>
+          {/* Copy + form, on a glass panel so it stays readable over the sea */}
+          <div className="rounded-2xl bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 p-6 sm:p-8">
             <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center gap-2">
               <BellRing className="size-4" />
               On the way · iOS
@@ -1947,28 +2129,22 @@ function IosAlertSection() {
               it ships. No spam, just the release.
             </p>
             <EmailSignupForm tagId="535095" className="max-w-md" />
-            <p className="font-mono text-xs text-gray-600 mt-4">
-              <span className="text-cyan-400">$</span> until then, armada.buzz
-              works great in Safari<span className="animate-pulse" style={{ color: ROSE }}>_</span>
-            </p>
           </div>
 
-          {/* The app on a phone, from the media kit */}
-          <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px]">
+          {/* The app on a phone (already rendered in a device frame) */}
+          <div className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px]">
             <div
               className="absolute inset-0 -m-8 rounded-full opacity-50 blur-3xl pointer-events-none"
               style={{
                 background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
               }}
             />
-            <div className="relative h-[420px] sm:h-[500px] rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
-              <img
-                src="/assets/media-kit/screenshots/armada/2.webp"
-                alt="Armada mobile app showing a community's channels, threads, and DMs on a phone"
-                loading="lazy"
-                className="size-full object-cover object-[center_72%]"
-              />
-            </div>
+            <img
+              src="/assets/armada/ios-hero.jpeg"
+              alt="Armada on iPhone: the 'gather your crew' screen for starting an encrypted community"
+              loading="lazy"
+              className="relative w-full drop-shadow-2xl"
+            />
           </div>
         </div>
       </div>
@@ -2239,7 +2415,8 @@ function FinalCtaSection() {
     >
       <AsciiSea />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div className="rounded-3xl bg-[#15121c]/70 backdrop-blur-md ring-1 ring-white/10 px-6 sm:px-10 py-12 md:py-14 text-center">
         <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-4 flex items-center justify-center gap-2">
           <LockKeyhole className="size-4" />
           Free forever
@@ -2274,8 +2451,8 @@ function FinalCtaSection() {
           <Button
             asChild
             size="lg"
-            variant="outline"
-            className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white font-medium h-14 px-7 text-base"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
+            style={{ backgroundColor: SURFACE }}
           >
             <a
               href={COMMUNITY_INVITE_URL}
@@ -2288,8 +2465,8 @@ function FinalCtaSection() {
           <Button
             asChild
             size="lg"
-            variant="outline"
-            className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white font-medium h-14 px-7 text-base"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base"
+            style={{ backgroundColor: SURFACE }}
           >
             <a href={SOURCE_URL} target="_blank" rel="noopener noreferrer">
               <Code className="mr-2 size-4" />
@@ -2328,6 +2505,7 @@ function FinalCtaSection() {
             Why switch from Discord
           </Link>
         </p>
+       </div>
       </div>
     </section>
   );
