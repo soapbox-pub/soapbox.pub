@@ -18,14 +18,15 @@
  *    login — each drawn, not described.
  *  - A compact early-software honesty strip (v0.x, what's live where).
  *
- * Visual identity: Armada's terminal aesthetic — deep aubergine-black
- * (#100b15, the app's dark theme color), hot pink (≈ Tailwind
- * `pink-500`), cyan accents (`cyan-400`), monospace type with a
- * shell-prompt motif ("$ … _"). Mockup users are real Team Soapbox
- * avatars (round profile pictures) so every chat feels inhabited.
+ * Visual identity: matched to the Armada app's own default theme
+ * (src/themes.ts in the armada repo) — deep aubergine-black #15121c,
+ * rose-magenta #f5479e, phosphor-cyan #25f4f4, gilt-cream #efe9dc,
+ * monospace type with a shell-prompt motif ("$ … _"), and the ASCII
+ * ocean from the app's welcome screen closing the page. Mockup users
+ * are real Team Soapbox avatars so every chat feels inhabited.
  */
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeftRight,
@@ -33,20 +34,23 @@ import {
   Ban,
   BellRing,
   Bluetooth,
+  CalendarDays,
   CheckCircle2,
   ChevronDown,
   Code,
+  CornerDownRight,
   Crown,
-  Hammer,
   Hash,
   Headphones,
   KeyRound,
   LockKeyhole,
   MessagesSquare,
   Mic,
+  MonitorUp,
   Plus,
   Search,
   Server,
+  ShieldCheck,
   Smile,
   Users,
   Volume2,
@@ -99,8 +103,17 @@ const DISCORD_BLURPLE = '#5865f2';
 /** Armada source code (canonical ngit repo, browsable on gitworkshop). */
 const SOURCE_URL = 'https://gitworkshop.dev/soapbox.pub/armada';
 
-/** Armada's dark theme background color. */
-const INK = '#100b15';
+/** Armada's dark theme background color (hsl 260 22% 9%, the app default). */
+const INK = '#15121c';
+
+/** Armada's rose-magenta primary (hsl 330 90% 62%). */
+const ROSE = '#f5479e';
+
+/** Armada's phosphor-cyan accent (hsl 180 90% 55%). */
+const CYAN = '#25f4f4';
+
+/** Armada's gilt-cream foreground text (hsl 42 38% 90%). */
+const CREAM = '#efe9dc';
 
 /**
  * FAQ copy, rendered in FaqSection and mirrored verbatim into the FAQPage
@@ -152,8 +165,8 @@ const ARMADA_FAQ: Array<{
   },
 ];
 
-/** Slightly lifted surface color used for app-window mockups. */
-const SURFACE = '#181021';
+/** Slightly lifted surface color used for app-window mockups (app card color). */
+const SURFACE = '#1a1622';
 
 // ───────────────────────────────────────────────────────────────────────────
 // Mockup cast — real Team Soapbox profile pictures so every demo user
@@ -251,12 +264,12 @@ export default function Armada() {
       <PrivacySection />
       <UnstoppableSection />
       <MiniFeaturesSection />
+      <IosAlertSection />
       <BridgeSection />
       <BuzzCompatSection />
       <SelfHostSection />
       <LatestPostsSection />
       <FaqSection />
-      <IosAlertSection />
       <FinalCtaSection />
 
       <Footer />
@@ -587,28 +600,237 @@ function AppShowcaseSection() {
 
         <AppWindowMockup />
 
-        {/* Feature chips — labels for what the mockup just showed */}
-        <div className="mt-8 flex flex-wrap justify-center gap-2.5 max-w-3xl mx-auto">
-          {[
-            'Voice & screen share',
-            'Threads',
-            'Reactions & custom emoji',
-            'Roles & moderation',
-            'Direct messages',
-            'Events & RSVPs',
-            'Ctrl+K quick switcher',
-            'Markdown & code blocks',
-          ].map((chip) => (
-            <span
-              key={chip}
-              className="px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-300 text-sm"
-            >
-              {chip}
-            </span>
-          ))}
-        </div>
+        {/* Feature deck — every table-stakes Discord feature, drawn instead
+            of listed. Each card is a tiny working vignette of the feature. */}
+        <FeatureDeck />
       </div>
     </section>
+  );
+}
+
+/**
+ * Eight mini-mockups, one per feature people actually compare against
+ * Discord. Same visual language as the app window above: INK panels,
+ * rose + cyan accents, real team avatars.
+ */
+function FeatureDeck() {
+  return (
+    <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+      {/* Voice & screen share */}
+      <FeatureCard title="Voice & screen share" blurb="Hop in a voice channel, share your screen, drop out. No links, no scheduling.">
+        <div className="w-full px-4 space-y-2">
+          <div className="flex items-center gap-2 text-gray-300 text-xs font-medium">
+            <Volume2 className="size-3.5 text-gray-500" />
+            design-crit
+            <span className="ml-auto inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-rose-500/15 border border-rose-500/30 text-[9px] font-semibold uppercase tracking-wider" style={{ color: ROSE }}>
+              <MonitorUp className="size-2.5" />
+              live
+            </span>
+          </div>
+          {[PEOPLE.derek, PEOPLE.lemon, PEOPLE.mk].map((p, i) => (
+            <div key={p.name} className="flex items-center gap-2 pl-5">
+              <span className={`relative inline-flex ${i === 0 ? 'rounded-full ring-2 ring-cyan-400' : ''}`}>
+                <img src={p.avatar} alt="" className="size-5 rounded-full object-cover" />
+              </span>
+              <span className="text-gray-400 text-xs">{p.name}</span>
+              {i === 0 && <Mic className="size-3 text-cyan-400" />}
+            </div>
+          ))}
+        </div>
+      </FeatureCard>
+
+      {/* Threads */}
+      <FeatureCard title="Threads" blurb="Branch a side conversation without burying the channel.">
+        <div className="w-full px-4 space-y-1.5">
+          <div className="flex items-start gap-2">
+            <img src={PEOPLE.alex.avatar} alt="" className="size-5 rounded-full object-cover" />
+            <p className="text-gray-300 text-xs leading-snug">should the icon be a sail or an anchor?</p>
+          </div>
+          <div className="ml-2.5 border-l-2 border-white/10 pl-3.5 space-y-1.5">
+            <div className="flex items-center gap-1.5 text-[10px] text-gray-500">
+              <CornerDownRight className="size-3" />
+              thread · 14 replies
+            </div>
+            <div className="flex items-start gap-1.5">
+              <img src={PEOPLE.chad.avatar} alt="" className="size-4 rounded-full object-cover" />
+              <p className="text-gray-400 text-[11px] leading-snug">sail. obviously.</p>
+            </div>
+            <div className="flex items-start gap-1.5">
+              <img src={PEOPLE.morgan.avatar} alt="" className="size-4 rounded-full object-cover" />
+              <p className="text-gray-400 text-[11px] leading-snug">anchor gang rise up</p>
+            </div>
+          </div>
+        </div>
+      </FeatureCard>
+
+      {/* Reactions & custom emoji */}
+      <FeatureCard title="Reactions & custom emoji" blurb="React with anything, including emoji your community made.">
+        <div className="w-full px-4">
+          <div className="flex items-start gap-2 mb-2">
+            <img src={PEOPLE.mk.avatar} alt="" className="size-5 rounded-full object-cover" />
+            <p className="text-gray-300 text-xs leading-snug">shipped the new release 🎉</p>
+          </div>
+          <div className="flex flex-wrap gap-1.5 pl-7">
+            {[
+              { emoji: '🔥', count: 7, hot: true },
+              { emoji: '⚓', count: 4, hot: false },
+              { emoji: '🫡', count: 3, hot: false },
+            ].map((r) => (
+              <span
+                key={r.emoji}
+                className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] border ${
+                  r.hot
+                    ? 'bg-rose-500/15 border-rose-500/40 text-rose-300'
+                    : 'bg-white/[0.05] border-white/10 text-gray-400'
+                }`}
+              >
+                {r.emoji} {r.count}
+              </span>
+            ))}
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-500">
+              <Smile className="size-3" />
+            </span>
+          </div>
+        </div>
+      </FeatureCard>
+
+      {/* Roles & moderation */}
+      <FeatureCard title="Roles & moderation" blurb="Owners, admins, and mods, with the tools to keep your space yours.">
+        <div className="w-full px-4 space-y-2">
+          {[
+            { person: PEOPLE.alex, role: 'owner', icon: Crown, color: 'text-amber-400' },
+            { person: PEOPLE.mk, role: 'admin', icon: ShieldCheck, color: 'text-cyan-400' },
+            { person: PEOPLE.chad, role: 'mod', icon: ShieldCheck, color: 'text-gray-500' },
+          ].map(({ person, role, icon: Icon, color }) => (
+            <div key={person.name} className="flex items-center gap-2">
+              <img src={person.avatar} alt="" className="size-5 rounded-full object-cover" />
+              <span className="text-gray-300 text-xs">{person.name}</span>
+              <span className={`ml-auto inline-flex items-center gap-1 text-[10px] ${color}`}>
+                <Icon className="size-3" />
+                {role}
+              </span>
+            </div>
+          ))}
+        </div>
+      </FeatureCard>
+
+      {/* Direct messages */}
+      <FeatureCard title="Direct messages" blurb="Encrypted DMs with anyone on Nostr, not just people in your server.">
+        <div className="w-full px-4 space-y-1.5">
+          <div className="flex justify-end">
+            <span className="max-w-[80%] px-2.5 py-1.5 rounded-lg rounded-br-sm text-[11px] text-white" style={{ backgroundColor: ROSE }}>
+              you up for a call later?
+            </span>
+          </div>
+          <div className="flex justify-start">
+            <span className="max-w-[80%] px-2.5 py-1.5 rounded-lg rounded-bl-sm bg-white/[0.07] text-[11px] text-gray-300">
+              yep, ping me at 7
+            </span>
+          </div>
+          <p className="flex items-center justify-center gap-1 text-[9px] text-gray-600 pt-1">
+            <LockKeyhole className="size-2.5" />
+            end-to-end encrypted
+          </p>
+        </div>
+      </FeatureCard>
+
+      {/* Events & RSVPs */}
+      <FeatureCard title="Events & RSVPs" blurb="Plan inside the community and see who's coming.">
+        <div className="w-full px-4">
+          <div className="flex items-center gap-3 rounded-lg bg-white/[0.04] border border-white/10 p-2.5">
+            <div className="shrink-0 text-center px-2 py-1 rounded-md bg-rose-500/15 border border-rose-500/30">
+              <p className="text-[8px] font-bold uppercase tracking-wider" style={{ color: ROSE }}>fri</p>
+              <p className="text-sm font-bold text-white leading-none">20</p>
+            </div>
+            <div className="min-w-0">
+              <p className="text-gray-200 text-xs font-medium truncate">movie night 🍿</p>
+              <p className="flex items-center gap-1 text-[10px] text-gray-500">
+                <CalendarDays className="size-2.5" />
+                7pm · voice-lounge
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5 mt-2">
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-[10px]">
+              <CheckCircle2 className="size-2.5" /> going · 12
+            </span>
+            <div className="flex -space-x-1.5">
+              {[PEOPLE.derek, PEOPLE.lemon, PEOPLE.morgan].map((p) => (
+                <img key={p.name} src={p.avatar} alt="" className="size-4 rounded-full object-cover border" style={{ borderColor: INK }} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </FeatureCard>
+
+      {/* Ctrl+K quick switcher */}
+      <FeatureCard title="Ctrl+K quick switcher" blurb="Jump to any channel, DM, or community without touching the mouse.">
+        <div className="w-full px-4">
+          <div className="rounded-lg bg-black/40 border border-white/15 overflow-hidden">
+            <div className="flex items-center gap-2 px-2.5 py-1.5 border-b border-white/10">
+              <Search className="size-3 text-gray-500" />
+              <span className="text-gray-400 text-[11px]">des</span>
+              <span className="w-px h-3 bg-rose-400 animate-pulse" />
+              <span className="ml-auto flex gap-0.5">
+                <kbd className="px-1 py-px rounded bg-white/10 text-gray-400 text-[8px] font-mono">Ctrl</kbd>
+                <kbd className="px-1 py-px rounded bg-white/10 text-gray-400 text-[8px] font-mono">K</kbd>
+              </span>
+            </div>
+            <div className="px-2.5 py-1 flex items-center gap-1.5 bg-rose-500/15 text-[11px] text-gray-200">
+              <Hash className="size-3 text-gray-500" /> design
+            </div>
+            <div className="px-2.5 py-1 flex items-center gap-1.5 text-[11px] text-gray-500">
+              <Volume2 className="size-3" /> design-crit
+            </div>
+          </div>
+        </div>
+      </FeatureCard>
+
+      {/* Markdown & code blocks */}
+      <FeatureCard title="Markdown & code blocks" blurb="Bold, links, and syntax-highlighted code, straight in chat.">
+        <div className="w-full px-4">
+          <div className="flex items-start gap-2 mb-1.5">
+            <img src={PEOPLE.derek.avatar} alt="" className="size-5 rounded-full object-cover" />
+            <p className="text-gray-300 text-xs leading-snug">
+              <strong className="text-white">fix is live</strong> — just run:
+            </p>
+          </div>
+          <pre className="ml-7 rounded-md bg-black/50 border border-white/10 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed overflow-hidden">
+            <code>
+              <span className="text-cyan-300">$</span>{' '}
+              <span className="text-gray-300">npm i</span>{' '}
+              <span style={{ color: ROSE }}>armada@latest</span>
+            </code>
+          </pre>
+        </div>
+      </FeatureCard>
+    </div>
+  );
+}
+
+/** Shared shell for FeatureDeck cards: vignette on top, label below. */
+function FeatureCard({
+  title,
+  blurb,
+  children,
+}: {
+  title: string;
+  blurb: string;
+  children: ReactNode;
+}) {
+  return (
+    <div
+      className="rounded-xl border border-white/10 overflow-hidden flex flex-col"
+      style={{ backgroundColor: INK }}
+    >
+      <div className="h-36 flex items-center py-3 border-b border-white/[0.06]">
+        {children}
+      </div>
+      <div className="p-4">
+        <h3 className="text-white font-semibold text-sm mb-1">{title}</h3>
+        <p className="text-gray-500 text-xs leading-relaxed">{blurb}</p>
+      </div>
+    </div>
   );
 }
 
@@ -1151,29 +1373,6 @@ function MiniFeaturesSection() {
           <KeyLoginDemoCard />
         </div>
 
-        {/* Early-software honesty strip */}
-        <div className="mt-12 max-w-4xl mx-auto rounded-2xl border border-gray-200 bg-white px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className="size-10 shrink-0 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center">
-            <Hammer className="size-5 text-amber-600" />
-          </div>
-          <p className="text-sm text-gray-600 leading-relaxed">
-            <span className="font-semibold text-gray-900">
-              Armada is early software
-            </span>
-            : version 0.x, with new releases landing almost daily. Live today
-            on <span className="font-medium text-gray-800">web, Android, Linux, and Windows</span>;
-            no iOS app yet (the web app works there in the meantime).{' '}
-            <a
-              href={SOURCE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
-            >
-              Follow the changelog
-            </a>
-            .
-          </p>
-        </div>
       </div>
     </section>
   );
@@ -1601,7 +1800,7 @@ function BridgeSection() {
   const messages = BRIDGE_MESSAGES.slice(0, visible);
 
   return (
-    <section className="bg-[#fdf2f8] py-20 md:py-28">
+    <section className="bg-[#f5f3f9] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
@@ -1644,21 +1843,6 @@ function BridgeSection() {
               Connect your server
             </a>
           </Button>
-          <p className="max-w-2xl text-center text-gray-500 text-sm leading-relaxed">
-            Set it up at{' '}
-            <a
-              href={BRIDGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
-            >
-              bridge.armada.buzz
-            </a>{' '}
-            in a few minutes: connect Discord, paste your Armada invite, confirm
-            in-channel. A bridged channel is readable by the bridge to carry
-            messages across, so use it for public community chat, not the rooms
-            you keep end-to-end encrypted.
-          </p>
         </div>
       </div>
     </section>
@@ -1769,20 +1953,59 @@ function TerminalDemo() {
 
 function IosAlertSection() {
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: INK }}>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center justify-center gap-2">
-          <BellRing className="size-4" />
-          On the way · iOS
-        </p>
-        <h2 className="font-display font-bold text-white whitespace-nowrap text-[clamp(1rem,4.3vw,2.25rem)] tracking-tight mb-4">
-          Get notified when Armada lands on iOS.
-        </h2>
-        <p className="text-gray-400 leading-relaxed mb-8">
-          There is no iPhone app yet, but it is coming. Drop your email and we
-          will tell you the day it ships. No spam, just the release.
-        </p>
-        <EmailSignupForm tagId="535095" className="max-w-md mx-auto" />
+    <section
+      className="relative overflow-hidden text-white py-20 md:py-28"
+      style={{ backgroundColor: INK }}
+    >
+      {/* Rose + cyan glows, echoing the app's neon welcome screen */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse 55% 60% at 80% 20%, ${ROSE}24, transparent 70%), radial-gradient(ellipse 45% 50% at 10% 90%, ${CYAN}14, transparent 70%)`,
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Copy + form */}
+          <div>
+            <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center gap-2">
+              <BellRing className="size-4" />
+              On the way · iOS
+            </p>
+            <h2 className="font-display font-bold text-white whitespace-nowrap text-[clamp(1.25rem,3.4vw,2.5rem)] tracking-tight mb-4">
+              Get notified when Armada lands on iOS.
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              Armada runs on the web, Android, Linux, and Windows today, and the
+              iPhone app is coming. Drop your email and we will tell you the day
+              it ships. No spam, just the release.
+            </p>
+            <EmailSignupForm tagId="535095" className="max-w-md" />
+            <p className="font-mono text-xs text-gray-600 mt-4">
+              <span className="text-cyan-400">$</span> until then, armada.buzz
+              works great in Safari<span className="animate-pulse" style={{ color: ROSE }}>_</span>
+            </p>
+          </div>
+
+          {/* The app on a phone, from the media kit */}
+          <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px]">
+            <div
+              className="absolute inset-0 -m-8 rounded-full opacity-50 blur-3xl pointer-events-none"
+              style={{
+                background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
+              }}
+            />
+            <div className="relative h-[420px] sm:h-[500px] rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
+              <img
+                src="/assets/media-kit/screenshots/armada/2.webp"
+                alt="Armada mobile app showing a community's channels, threads, and DMs on a phone"
+                loading="lazy"
+                className="size-full object-cover object-[center_72%]"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1801,7 +2024,7 @@ function LatestPostsSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="bg-[#fdf2f8] py-20 md:py-28">
+    <section className="bg-[#f5f3f9] py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
@@ -1910,27 +2133,163 @@ function FaqSection() {
 // Section: Final CTA
 // ───────────────────────────────────────────────────────────────────────────
 
+/**
+ * The animated ASCII ocean from Armada's own welcome screen
+ * (src/components/landing/AsciiSea.tsx in the armada repo), ported with
+ * fixed brand colors and a static waterline instead of the scroll-driven
+ * mask. Two stacked monospace text layers repainted at 14 fps: cyan
+ * swells and rose crests.
+ */
+function AsciiSea() {
+  const hostRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
+
+    const SWELL_RAMP = '  ..,,--~~';
+    const CREST_GLYPH = '≈';
+    const CREST_THRESHOLD = 0.88;
+    const FPS = 14;
+
+    let raf = 0;
+    let swellRows: HTMLDivElement[] = [];
+    let crestRows: HTMLDivElement[] = [];
+    let cols = 0;
+    let rowCount = 0;
+
+    const build = () => {
+      host.textContent = '';
+
+      // Measure one monospace cell with a probe character.
+      const probe = document.createElement('span');
+      probe.textContent = '0';
+      probe.style.cssText = 'visibility:hidden;position:absolute';
+      host.appendChild(probe);
+      const rect = probe.getBoundingClientRect();
+      const charW = rect.width || 8;
+      const charH = rect.height || 13;
+      host.removeChild(probe);
+
+      cols = Math.ceil(host.clientWidth / charW) + 2;
+      rowCount = Math.ceil(host.clientHeight / charH) + 1;
+
+      const makeLayer = () => {
+        const layer = document.createElement('div');
+        layer.style.cssText = 'position:absolute;inset:0';
+        const rows: HTMLDivElement[] = [];
+        for (let y = 0; y < rowCount; y++) {
+          const row = document.createElement('div');
+          rows.push(row);
+          layer.appendChild(row);
+        }
+        host.appendChild(layer);
+        return rows;
+      };
+      swellRows = makeLayer();
+      crestRows = makeLayer();
+
+      // Rows brighten toward the viewer (bottom).
+      for (let y = 0; y < rowCount; y++) {
+        const near = y / Math.max(rowCount - 1, 1);
+        swellRows[y].style.color = `rgba(37, 244, 244, ${(0.07 + 0.3 * near).toFixed(3)})`;
+        crestRows[y].style.color = `rgba(245, 71, 158, ${(0.05 + 0.4 * near).toFixed(3)})`;
+      }
+    };
+
+    // Three incommensurate sines; wavelength grows toward the viewer.
+    const paint = (phase: number) => {
+      for (let y = 0; y < rowCount; y++) {
+        const near = y / Math.max(rowCount - 1, 1);
+        const amp = 0.32 + 0.68 * near;
+        const freq = 0.3 - 0.2 * near;
+        let swell = '';
+        let crest = '';
+        for (let x = 0; x < cols; x++) {
+          const h =
+            Math.sin(x * freq + phase * 0.9 + y * 0.55) +
+            0.6 * Math.sin(x * freq * 2.3 - phase * 1.35 + y * 0.29) +
+            0.4 * Math.sin(x * freq * 0.45 + phase * 0.5 - y * 0.17);
+          const n = 0.5 + (h / 2) * amp * 0.5;
+          if (n > CREST_THRESHOLD) {
+            crest += CREST_GLYPH;
+            swell += ' ';
+          } else {
+            crest += ' ';
+            swell += SWELL_RAMP[Math.round(n * (SWELL_RAMP.length - 1))];
+          }
+        }
+        swellRows[y].textContent = swell;
+        crestRows[y].textContent = crest;
+      }
+    };
+
+    build();
+    paint(0);
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced) {
+      const frameMs = 1000 / FPS;
+      const start = performance.now();
+      let last = 0;
+      const tick = (now: number) => {
+        raf = requestAnimationFrame(tick);
+        if (now - last < frameMs) return;
+        last = now;
+        paint((now - start) / 1000);
+      };
+      raf = requestAnimationFrame(tick);
+    }
+
+    const onResize = () => {
+      build();
+      paint(0);
+    };
+    window.addEventListener('resize', onResize);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={hostRef}
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 select-none overflow-hidden font-mono text-[0.8125rem] leading-none [white-space:pre]"
+      style={{
+        contain: 'layout paint',
+        maskImage: 'linear-gradient(to bottom, transparent 22%, black 58%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 22%, black 58%)',
+      }}
+    />
+  );
+}
+
 function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#4c0d33] via-[#9d174d] to-[#ec4899] text-white py-20 md:py-28">
-      {/* Cyan accent glow */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-32 pointer-events-none opacity-30"
-        style={{
-          background:
-            'linear-gradient(to top, rgba(34, 211, 238, 0.35), transparent)',
-        }}
-      />
+    <section
+      className="relative overflow-hidden text-white py-24 md:py-36"
+      style={{ backgroundColor: INK }}
+    >
+      <AsciiSea />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="font-mono text-xs font-semibold tracking-widest uppercase text-white/80 mb-4 flex items-center justify-center gap-2">
+        <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-4 flex items-center justify-center gap-2">
           <LockKeyhole className="size-4" />
           Free forever
         </p>
-        <h2 className="font-display font-bold text-white text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 leading-[0.95]">
-          Chat like nobody's watching.
+        <h2
+          className="font-mono font-bold lowercase text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-4 leading-[1.05]"
+          style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}66` }}
+        >
+          chat like nobody's watching.
         </h2>
-        <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="font-mono text-sm sm:text-base mb-8" style={{ color: ROSE }}>
+          <span className="text-cyan-400">$</span> your keys. your fleet.
+          <span className="animate-pulse">_</span>
+        </p>
+        <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
           Armada is open source, built by Team Soapbox, and free for everyone,
           everywhere. There is no company behind your account and no server
           anyone can seize.
@@ -1939,7 +2298,8 @@ function FinalCtaSection() {
           <Button
             asChild
             size="lg"
-            className="bg-white text-pink-700 hover:bg-pink-50 font-bold h-14 px-8 text-lg shadow-2xl"
+            className="font-bold h-14 px-8 text-lg shadow-2xl text-white hover:opacity-90"
+            style={{ backgroundColor: ROSE, boxShadow: `0 10px 40px ${ROSE}40` }}
           >
             <a href={ARMADA_URL} target="_blank" rel="noopener noreferrer">
               Open Armada
