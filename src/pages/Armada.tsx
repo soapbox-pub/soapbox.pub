@@ -474,7 +474,7 @@ function HeroChatMockup() {
       />
 
       {/* Phone body */}
-      <div className="relative rounded-[2.75rem] border-[11px] border-[#0c0a11] bg-[#0c0a11] shadow-2xl ring-1 ring-white/10">
+      <div className="relative rounded-[2.75rem] border-[11px] border-[#0c0a11] bg-[#0c0a11] shadow-2xl ring-1 ring-white/10 rotate-[-4deg] hover:rotate-0 transition-transform duration-500">
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 h-6 w-32 rounded-b-2xl bg-[#0c0a11]" />
 
