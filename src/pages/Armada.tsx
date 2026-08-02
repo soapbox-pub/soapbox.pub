@@ -627,7 +627,24 @@ function AppShowcaseSection() {
           </h2>
         </div>
 
-        <AppWindowMockup />
+        {/* Animated mock window — temporarily disabled in favor of a real
+            desktop screenshot so we can compare. To restore, render
+            <AppWindowMockup /> here in place of the image below. */}
+
+        <div className="relative max-w-5xl mx-auto">
+          <div
+            className="absolute inset-0 -m-6 rounded-3xl opacity-40 blur-3xl pointer-events-none"
+            style={{
+              background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
+            }}
+          />
+          <img
+            src="/assets/media-kit/screenshots/armada/desktop-1.webp"
+            alt="Armada desktop app: an encrypted community with channels, chat, threads, a voice message, bots, and a member list with roles"
+            loading="lazy"
+            className="relative w-full rounded-2xl border border-white/10 shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
@@ -1192,6 +1209,10 @@ function AppWindowMockup() {
   );
 }
 
+
+// Kept referenced while the showcase renders a static screenshot instead of
+// the animated window, so AppWindowMockup stays available to switch back to.
+const _AppWindowMockupRef = AppWindowMockup;
 
 /**
  * The thread side panel, imitating Armada's real behavior: a thread opens
