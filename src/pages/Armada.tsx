@@ -348,21 +348,6 @@ function HeroSection() {
               </Button>
             </div>
 
-            {/* Trust signals */}
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-cyan-400" />
-                <span>End-to-end encrypted</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-cyan-400" />
-                <span>No central server</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-cyan-400" />
-                <span>Free &amp; open source</span>
-              </div>
-            </div>
           </div>
 
           {/* Right: animated chat mockup */}
