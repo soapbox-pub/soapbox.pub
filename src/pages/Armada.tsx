@@ -625,10 +625,6 @@ function AppShowcaseSection() {
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
             Voice and video calls, custom emojis, GIFs, and more.
           </h2>
-          <p className="text-lg text-gray-400">
-            If you've used Discord, you already know how to use Armada. Watch
-            the demo tour every feature people ask about.
-          </p>
         </div>
 
         <AppWindowMockup />
@@ -1316,9 +1312,8 @@ function PrivacySection() {
             <br className="hidden sm:block" /> not even us.
           </h2>
           <p className="text-lg text-gray-600">
-            Messages are locked on your device before they're sent, and the
-            envelope is sealed too: who sent it, which community it belongs
-            to, even the community's name. Encryption follows the open{' '}
+            Locked on your device before sending, even the sender and
+            community name. It uses the open{' '}
             <a
               href={CONCORD_URL}
               target="_blank"
@@ -2068,9 +2063,6 @@ function SelfHostSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3">
-              Optional · for teams
-            </p>
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl tracking-tight mb-4">
               Self-hostable at every level.
             </h2>
@@ -2249,7 +2241,7 @@ function IosAlertSection() {
               src="/assets/armada/ios-hero.png"
               alt="Armada on iPhone: the 'gather your crew' screen for starting an encrypted community"
               loading="lazy"
-              className="relative w-full drop-shadow-2xl"
+              className="relative w-full drop-shadow-2xl rotate-[4deg] hover:rotate-0 transition-transform duration-500"
             />
           </div>
         </div>
@@ -2523,24 +2515,15 @@ function FinalCtaSection() {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
        <div className="rounded-3xl bg-[#15121c]/70 backdrop-blur-md ring-1 ring-white/10 px-6 sm:px-12 py-12 md:py-16 text-center">
-        <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-4 flex items-center justify-center gap-2">
-          <LockKeyhole className="size-4" />
-          Free forever
-        </p>
         <h2
           className="font-mono font-bold lowercase text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-4 leading-[1.05]"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}66` }}
         >
-          chat like nobody's watching.
+          chat like nobody's&nbsp;watching.
         </h2>
-        <p className="font-mono text-sm sm:text-base mb-8" style={{ color: ROSE }}>
+        <p className="font-mono text-sm sm:text-base mb-10" style={{ color: ROSE }}>
           <span className="text-cyan-400">$</span> your keys. your fleet.
           <span className="animate-pulse">_</span>
-        </p>
-        <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Armada is open source, built by Team Soapbox, and free for everyone,
-          everywhere. There is no company behind your account and no server
-          anyone can seize.
         </p>
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <Button
