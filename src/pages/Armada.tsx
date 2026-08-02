@@ -2297,10 +2297,10 @@ function IosAlertSection() {
               On the way · iOS
             </p>
             <h2
-              className="font-mono font-bold lowercase text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight mb-4"
+              className="font-mono font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight mb-4"
               style={{ color: CREAM, textShadow: `0 0 16px ${ROSE}55` }}
             >
-              get notified when armada lands on iOS.
+              Get notified when Armada lands on iOS.
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8">
               Armada runs on the web, Android, Linux, and Windows today, and the
