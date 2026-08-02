@@ -1408,8 +1408,8 @@ function PrivacySection() {
         </div>
 
         <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
-          {/* Lock between the panes (desktop) */}
-          <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-pink-500 text-white items-center justify-center shadow-xl shadow-pink-500/30 border-4 border-[#faf8fb]">
+          {/* Lock between the panes */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-xl shadow-pink-500/30 border-4 border-[#faf8fb]">
             <LockKeyhole className="size-6" />
           </div>
 
@@ -2107,14 +2107,14 @@ function BridgeSection() {
 
         {/* The same channel, live on both platforms at once */}
         <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
-          {/* Bridge connector (desktop) */}
+          {/* Bridge connector (vertical on mobile, horizontal on desktop) */}
           <div
-            className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full items-center justify-center shadow-xl border-4 border-[#faf8fb] text-white"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full flex items-center justify-center shadow-xl border-4 border-[#faf8fb] text-white"
             style={{
               background: `linear-gradient(135deg, ${DISCORD_BLURPLE}, #ec4899)`,
             }}
           >
-            <ArrowLeftRight className="size-6" />
+            <ArrowLeftRight className="size-6 rotate-90 md:rotate-0" />
           </div>
 
           <BridgePanel platform="discord" messages={messages} reacted={reacted} />
