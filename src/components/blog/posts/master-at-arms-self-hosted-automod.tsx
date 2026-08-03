@@ -713,9 +713,6 @@ delete_spam_messages = true`}
             github.com/concord-protocol/concord
           </a>
         </li>
-        <li>
-          Design notes: <code>docs/DESIGN.md</code> in the repo
-        </li>
       </ul>
     </article>
   );
