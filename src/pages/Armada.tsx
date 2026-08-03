@@ -1774,7 +1774,7 @@ function RelayMeshSection() {
         {/* The answer, under the constellation */}
         <p
           className="text-center font-mono font-bold tracking-tight whitespace-nowrap text-[clamp(0.95rem,3.1vw,2.4rem)]"
-          style={{ color: ROSE, textShadow: `0 0 18px ${ROSE}40` }}
+          style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Armada is spread across free public servers.
         </p>
