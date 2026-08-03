@@ -1911,8 +1911,25 @@ function InteropSection() {
             Interoperable with other Nostr apps.
           </h2>
           <p className="text-lg text-gray-400">
-            Armada is built on Nostr and supports multiple formats including
-            Concord, NIP-29, and{' '}
+            Armada is built on Nostr and supports multiple formats including{' '}
+            <a
+              href={CONCORD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
+            >
+              Concord
+            </a>
+            ,{' '}
+            <a
+              href="https://nostrhub.io/nip/29"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
+            >
+              NIP-29
+            </a>
+            , and{' '}
             <a
               href="/blog/armada-buzz-communities"
               className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
@@ -1984,7 +2001,7 @@ function SelfHostSection() {
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8">
               Communities are decentralized by default. When you want more
-              independence, every piece is AGPL-3.0 and runs on your own
+              independence, every piece runs on your own
               hardware. Take one piece or all three; the{' '}
               <a
                 href="/blog/how-to-self-host-armada"
