@@ -1494,21 +1494,21 @@ function PrivacySection() {
   useTicker(350, 1000);
 
   return (
-    <section className="bg-[#faf8fb] py-20 md:py-28">
+    <section className="text-white py-20 md:py-28" style={{ backgroundColor: '#0f0d14' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
             Nobody can read your chats,
             <br className="hidden sm:block" /> not even us.
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-400">
             Locked on your device before sending, even the sender and
             community name. It uses the open{' '}
             <a
               href={CONCORD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-pink-600 hover:text-pink-700 underline decoration-pink-300 hover:decoration-pink-500 underline-offset-2"
+              className="font-medium text-pink-400 hover:text-pink-300 underline decoration-pink-400/40 hover:decoration-pink-300 underline-offset-2"
             >
               Concord protocol
             </a>
@@ -1518,12 +1518,12 @@ function PrivacySection() {
 
         <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
           {/* Lock between the panes */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-xl shadow-pink-500/30 border-4 border-[#faf8fb]">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-xl shadow-pink-500/30 border-4 border-[#0f0d14]">
             <LockKeyhole className="size-6" />
           </div>
 
           {/* Members' view */}
-          <div className="rounded-2xl border border-pink-200 bg-white overflow-hidden shadow-sm">
+          <div className="rounded-2xl border border-pink-200 bg-white overflow-hidden shadow-xl">
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-100 bg-pink-50/50">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-pink-600">
                 You and your friends see
@@ -1550,7 +1550,7 @@ function PrivacySection() {
 
           {/* Everyone else's view */}
           <div
-            className="rounded-2xl border border-gray-800 overflow-hidden shadow-sm"
+            className="rounded-2xl border border-white/15 overflow-hidden shadow-xl"
             style={{ backgroundColor: INK }}
           >
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10 bg-white/[0.03]">
@@ -2102,7 +2102,7 @@ function FinalCtaSection() {
           chat like nobody's watching.
         </h2>
         <p className="font-mono text-sm sm:text-base mb-10" style={{ color: ROSE }}>
-          <span className="text-cyan-400">$</span> your keys. your fleet.
+          <span className="text-cyan-400">$</span> Community owned and operated.
           <span className="animate-pulse">_</span>
         </p>
         <div className="flex flex-wrap gap-3 justify-center mb-8 max-w-md sm:max-w-none mx-auto">
