@@ -1859,6 +1859,16 @@ function RelayMeshSection() {
         >
           Armada is spread across free public servers.
         </p>
+        <p className="text-center font-mono italic text-sm sm:text-base mt-4 text-gray-400">
+          (
+          <Link
+            to="/blog/armada-open-source-encrypted-discord-alternative"
+            className="underline decoration-gray-500/50 underline-offset-2 hover:text-gray-200 transition-colors"
+          >
+            not one corporate server... like some apps...
+          </Link>
+          )
+        </p>
       </div>
     </section>
   );
