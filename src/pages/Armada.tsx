@@ -38,6 +38,7 @@ import {
   ChevronDown,
   Code,
   Crown,
+  Globe,
   Hash,
   Headphones,
   KeyRound,
@@ -332,28 +333,37 @@ function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: copy, on a glass panel so it stays readable over the sea */}
           <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 -my-20 py-24 md:-my-28 md:py-32 lg:mx-0 lg:my-0 lg:rounded-2xl lg:py-14 px-6 sm:px-10 lg:px-12">
-            <p className="font-mono text-sm sm:text-base mb-6" style={{ color: ROSE }}>
-              <span className="text-cyan-400">$</span> now in open beta ·
-              v1.0 incoming<span className="animate-pulse">_</span>
-            </p>
-
             <h1
               className="font-mono font-bold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8"
               style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}55` }}
             >
-              Armada: encrypted,
+              Armada: <span style={{ color: CYAN }}>encrypted,</span>
               <br />
-              open-source,
+              <span style={{ color: CYAN }}>open-source,</span>
               <br />
               <span style={{ color: ROSE }}>discord alternative.</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
-              Servers, channels, threads, voice, and moderation: everything
-              you expect from a chat app, fully end-to-end encrypted. Nobody
-              can read your messages, and nobody can shut your community
-              down.
-            </p>
+            <ul className="space-y-3 mb-8 font-mono text-base lg:text-lg">
+              <li className="flex items-center gap-3 text-gray-200">
+                <span className="size-8 shrink-0 rounded-lg bg-pink-500/10 border border-pink-500/30 flex items-center justify-center">
+                  <Ban className="size-4" style={{ color: ROSE }} />
+                </span>
+                Unbannable communities
+              </li>
+              <li className="flex items-center gap-3 text-gray-200">
+                <span className="size-8 shrink-0 rounded-lg bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
+                  <LockKeyhole className="size-4 text-cyan-400" />
+                </span>
+                Private by default
+              </li>
+              <li className="flex items-center gap-3 text-gray-200">
+                <span className="size-8 shrink-0 rounded-lg bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center">
+                  <Globe className="size-4 text-emerald-400" />
+                </span>
+                Built on the open web
+              </li>
+            </ul>
 
             <div className="flex flex-wrap gap-3">
               <Button
