@@ -731,30 +731,20 @@ function AppShowcaseSection() {
             className="rounded-xl border border-white/10 p-5 flex flex-col"
             style={{ backgroundColor: INK }}
           >
-            <div className="flex flex-col items-center justify-center h-16 mb-4">
-              <div className="flex items-center gap-2">
-                <img src={PEOPLE.mk.avatar} alt="" className="size-6 rounded-full object-cover" />
-                <span className="px-2.5 py-1 rounded-xl rounded-tl-sm bg-white/[0.06] text-xs text-gray-200">
-                  shipped it 🎉
-                </span>
-              </div>
-              <div className="flex gap-1.5 mt-1.5 pl-8">
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-[11px]">
-                  ⚓ 5
-                </span>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-[11px]">
-                  🏴‍☠️ 3
-                </span>
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-500">
-                  <Smile className="size-3" />
-                </span>
-              </div>
+            <div className="flex items-center justify-center h-16 mb-4 px-2">
+              <img
+                src="/assets/armada/emoji-pack.webp"
+                alt="Retro pixel emojis from the Trillian emoji pack installed in Armada"
+                loading="lazy"
+                className="w-full max-w-[280px] [image-rendering:pixelated]"
+              />
             </div>
             <h3 className="text-white font-semibold text-base mb-1">
               Custom emojis
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Upload your community's own emoji and react with anything.
+              Install whole emoji packs or upload your community's own, then
+              react with anything.
             </p>
           </div>
         </div>
