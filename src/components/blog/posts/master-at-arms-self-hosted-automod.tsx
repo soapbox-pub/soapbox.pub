@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle } from 'lucide-react';
@@ -149,8 +150,11 @@ export default function MasterAtArmsSelfHostedAutomod() {
       </p>
 
       <p>
-        Armada Communities are serverless by default and Armada Communities are
-        end to end encrypted. This makes moderation unique. Because of this, a
+        <Link to="/blog/building-an-armada-voyage-to-encrypted-communities">
+          Armada Communities
+        </Link>{' '}
+        are serverless by default and Armada Communities are end to end
+        encrypted. This makes moderation unique. Because of this, a
         relay could want to block spam and still be blind to it. The only actors
         who see a message in plaintext are the members of that community and the
         clients holding their keys.
@@ -166,8 +170,11 @@ export default function MasterAtArmsSelfHostedAutomod() {
       </p>
 
       <p>
-        This is Master-at-Arms, the auto-moderation bot for Armada. It is a
-        standalone, single-purpose bot built on the{' '}
+        This is Master-at-Arms, the auto-moderation bot for{' '}
+        <Link to="/blog/armada-open-source-encrypted-discord-alternative">
+          Armada
+        </Link>
+        . It is a standalone, single-purpose bot built on the{' '}
         <a
           href="https://github.com/VectorPrivacy/vector"
           target="_blank"
@@ -672,6 +679,12 @@ delete_spam_messages = true`}
           >
             armada.buzz
           </a>
+        </li>
+        <li>
+          Self-host Armada itself:{' '}
+          <Link to="/blog/how-to-self-host-armada">
+            How to Self-host Armada
+          </Link>
         </li>
         <li>
           Armada source:{' '}
