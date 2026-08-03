@@ -333,14 +333,19 @@ function HeroSection() {
           {/* Left: copy, on a glass panel so it stays readable over the sea */}
           <div className="lg:col-span-7 bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 -mx-4 -my-20 py-24 md:-my-28 md:py-32 lg:mx-0 lg:my-0 lg:rounded-2xl lg:py-14 px-6 sm:px-10 lg:px-12">
             <h1
-              className="font-mono font-bold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8"
+              className="font-mono font-bold tracking-tight leading-[1.05] mb-8"
               style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}55` }}
             >
-              Armada: <span style={{ color: CYAN }}>encrypted,</span>
-              <br />
-              <span style={{ color: CYAN }}>open-source,</span>
-              <br />
-              <span style={{ color: ROSE }}>discord alternative.</span>
+              <span className="block text-5xl sm:text-6xl lg:text-7xl">
+                Armada
+              </span>
+              <span className="block mt-4 text-3xl sm:text-4xl lg:text-5xl">
+                <span style={{ color: CYAN }}>encrypted,</span>
+                <br />
+                <span style={{ color: CYAN }}>open-source,</span>
+                <br />
+                <span style={{ color: ROSE }}>discord alternative</span>
+              </span>
             </h1>
 
             <ul className="space-y-3 mb-8 font-mono text-base lg:text-lg">
@@ -1561,7 +1566,7 @@ function PrivacySection() {
 
         <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
           {/* Lock between the panes */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-xl shadow-pink-500/30 border-4 border-[#0f0d14]">
+          <div className="absolute left-1/2 top-[calc(50%-2rem)] md:top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-xl shadow-pink-500/30 border-4 border-[#0f0d14]">
             <LockKeyhole className="size-6" />
           </div>
 
@@ -1951,7 +1956,9 @@ function RelayMeshSection() {
             to="/blog/armada-open-source-encrypted-discord-alternative"
             className="underline decoration-gray-500/50 underline-offset-2 hover:text-gray-200 transition-colors"
           >
-            not one corporate server... like some apps...
+            not one corporate server...{' '}
+            <br className="sm:hidden" />
+            like some apps...
           </Link>
           )
         </p>
