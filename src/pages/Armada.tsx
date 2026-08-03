@@ -84,13 +84,6 @@ const GOOGLE_PLAY_ICON = '/assets/icons/google-play.svg';
 /** Concord protocol spec repository. */
 const CONCORD_URL = 'https://github.com/concord-protocol/concord';
 
-/**
- * Hosted setup portal for the Discord <-> Armada bridge. A Discord admin
- * connects their server to an Armada community here, and messages flow
- * both ways with each member's name and avatar intact.
- */
-const BRIDGE_URL = 'https://bridge.armada.buzz/';
-
 /** Discord's brand color, used only to make the Discord side recognizable. */
 const DISCORD_BLURPLE = '#5865f2';
 
@@ -670,11 +663,8 @@ function AppShowcaseSection() {
             personality features (themes, emojis), each drawn, not just named. */}
         <div className="order-3 mt-10 md:mt-14 grid sm:grid-cols-3 gap-4 lg:gap-5 max-w-5xl mx-auto w-full">
           {/* Discord bridge & server import */}
-          <a
-            href={BRIDGE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-xl border border-white/10 p-5 transition-colors hover:border-white/25 flex flex-col"
+          <div
+            className="rounded-xl border border-white/10 p-5 flex flex-col"
             style={{ backgroundColor: INK }}
           >
             <div className="flex items-center justify-center gap-3 h-16 mb-4">
@@ -684,7 +674,7 @@ function AppShowcaseSection() {
               >
                 D
               </span>
-              <ArrowLeftRight className="size-5 text-gray-500 transition-colors group-hover:text-cyan-300" />
+              <ArrowLeftRight className="size-5 text-gray-500" />
               <img src={ARMADA_ICON} alt="" className="size-11 rounded-2xl" />
             </div>
             <h3 className="text-white font-semibold text-base mb-1">
@@ -694,37 +684,10 @@ function AppShowcaseSection() {
               Mirror a channel both ways, or import your whole server. Nobody
               has to move all at once.
             </p>
-            <span className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-cyan-300">
-              bridge.armada.buzz
-              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-            </span>
-          </a>
-
-          {/* Custom themes */}
-          <div
-            className="rounded-xl border border-white/10 p-5 flex flex-col"
-            style={{ backgroundColor: INK }}
-          >
-            <div className="flex items-center justify-center gap-2 h-16 mb-4">
-              {THEME_PRESETS.map((t) => (
-                <span
-                  key={t.name}
-                  className="size-8 rounded-lg border border-white/10 flex items-end justify-center pb-1 gap-0.5"
-                  style={{ backgroundColor: t.bg }}
-                >
-                  <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent }} />
-                  <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent2 }} />
-                </span>
-              ))}
-            </div>
-            <h3 className="text-white font-semibold text-base mb-1">
-              Custom themes
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              More than a dozen presets, from lantern to bubblegum, or build
-              your own palette.
-            </p>
           </div>
+
+          {/* Custom themes — live theme switcher */}
+          <ThemesCard />
 
           {/* Custom emojis */}
           <div
@@ -750,6 +713,69 @@ function AppShowcaseSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * The Custom themes feature card: the whole card re-skins itself through
+ * the app's real theme presets, with a recolored mini chat line, glowing
+ * swatch dots, and the active theme's name as a badge.
+ */
+function ThemesCard() {
+  const i = useTicker(1100, THEME_PRESETS.length);
+  const t = THEME_PRESETS[i];
+
+  return (
+    <div
+      className="rounded-xl border p-5 flex flex-col transition-colors duration-700"
+      style={{ backgroundColor: t.bg, borderColor: `${t.accent}55` }}
+    >
+      <div className="flex flex-col items-center justify-center gap-2.5 h-16 mb-4">
+        {/* Mini chat line, recolored by the active theme */}
+        <div className="flex items-center gap-2">
+          <span
+            className="font-mono text-xs transition-colors duration-700"
+            style={{ color: t.accent2 }}
+          >
+            #
+          </span>
+          <span
+            className="px-2.5 py-1 rounded-xl rounded-tl-sm text-xs text-white transition-colors duration-700"
+            style={{ backgroundColor: t.accent }}
+          >
+            love this theme 🎨
+          </span>
+        </div>
+        {/* Swatch dots — the active one lights up */}
+        <div className="flex items-center gap-2">
+          {THEME_PRESETS.map((p, n) => (
+            <span
+              key={p.name}
+              className={`size-2.5 rounded-full transition-all duration-300 ${
+                n === i ? 'scale-150' : 'opacity-40'
+              }`}
+              style={{
+                backgroundColor: p.accent,
+                boxShadow: n === i ? `0 0 10px ${p.accent}` : 'none',
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="flex items-baseline justify-between gap-2 mb-1">
+        <h3 className="text-white font-semibold text-base">Custom themes</h3>
+        <span
+          className="font-mono text-[10px] uppercase tracking-widest transition-colors duration-700"
+          style={{ color: t.accent }}
+        >
+          {t.name}
+        </span>
+      </div>
+      <p className="text-gray-400 text-sm leading-relaxed">
+        More than a dozen presets, from lantern to bubblegum, or build your
+        own palette.
+      </p>
+    </div>
   );
 }
 
