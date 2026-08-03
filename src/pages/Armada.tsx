@@ -299,7 +299,6 @@ export default function Armada() {
       <InteropSection />
       <LatestPostsSection />
       <FaqSection />
-      <IosAlertSection />
       <FinalCtaSection />
 
       <Footer />
@@ -1816,70 +1815,6 @@ function TerminalDemo() {
 }
 
 // ───────────────────────────────────────────────────────────────────────────
-// Section: iOS release email alert
-// ───────────────────────────────────────────────────────────────────────────
-
-function IosAlertSection() {
-  return (
-    <section
-      className="relative overflow-hidden text-white py-20 md:py-28"
-      style={{ backgroundColor: SURFACE }}
-    >
-      {/* Rose + cyan glows, echoing the app's neon welcome screen */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `radial-gradient(ellipse 55% 60% at 80% 20%, ${ROSE}24, transparent 70%), radial-gradient(ellipse 45% 50% at 10% 90%, ${CYAN}14, transparent 70%)`,
-        }}
-      />
-
-      {/* The app's ASCII ocean, same as the hero and final CTA */}
-      <AsciiSea />
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Copy + form, on a glass panel so it stays readable over the sea */}
-          <div className="rounded-2xl bg-[#15121c]/80 backdrop-blur-sm ring-1 ring-white/10 p-6 sm:p-8">
-            <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center gap-2">
-              <BellRing className="size-4" />
-              On the way · iOS
-            </p>
-            <h2
-              className="font-mono font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight mb-4"
-              style={{ color: CREAM, textShadow: `0 0 16px ${ROSE}55` }}
-            >
-              Get notified when Armada lands on iOS.
-            </h2>
-            <p className="text-gray-400 leading-relaxed mb-8">
-              Armada runs on the web, Android, Linux, and Windows today, and the
-              iPhone app is coming. Drop your email and we will tell you the day
-              it ships. No spam, just the release.
-            </p>
-            <EmailSignupForm tagId="8983956" className="max-w-md" />
-          </div>
-
-          {/* The app on a phone (already rendered in a device frame) — desktop only */}
-          <div className="hidden md:block relative mx-auto w-full max-w-[280px] sm:max-w-[320px]">
-            <div
-              className="absolute inset-0 -m-8 rounded-full opacity-50 blur-3xl pointer-events-none"
-              style={{
-                background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
-              }}
-            />
-            <img
-              src="/assets/armada/ios-hero.png"
-              alt="Armada on iPhone: the 'gather your crew' screen for starting an encrypted community"
-              loading="lazy"
-              className="relative w-full drop-shadow-2xl rotate-[4deg] hover:rotate-0 transition-transform duration-500"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ───────────────────────────────────────────────────────────────────────────
 // Section: Latest Armada blog posts (newest three, by date)
 // ───────────────────────────────────────────────────────────────────────────
 
@@ -2205,7 +2140,48 @@ function FinalCtaSection() {
             </a>
           </Button>
         </div>
-        <p className="text-sm text-white/70">
+
+        {/* iOS release alert, inside the same panel */}
+        <div className="mt-10 pt-10 border-t border-white/10 text-left">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div>
+              <p className="font-mono text-xs font-semibold tracking-widest uppercase text-cyan-400 mb-3 flex items-center gap-2">
+                <BellRing className="size-4" />
+                On the way · iOS
+              </p>
+              <h3
+                className="font-mono font-bold text-2xl sm:text-3xl tracking-tight leading-tight mb-4"
+                style={{ color: CREAM, textShadow: `0 0 16px ${ROSE}55` }}
+              >
+                Get notified when Armada lands on iOS.
+              </h3>
+              <p className="text-gray-400 leading-relaxed mb-8">
+                Armada runs on the web, Android, Linux, and Windows today, and
+                the iPhone app is coming. Drop your email and we will tell you
+                the day it ships. No spam, just the release.
+              </p>
+              <EmailSignupForm tagId="8983956" className="max-w-md" />
+            </div>
+
+            {/* The app on a phone (already framed) — desktop only */}
+            <div className="hidden md:block relative mx-auto w-full max-w-[240px] lg:max-w-[270px]">
+              <div
+                className="absolute inset-0 -m-8 rounded-full opacity-50 blur-3xl pointer-events-none"
+                style={{
+                  background: `radial-gradient(ellipse at center, ${ROSE}40, ${CYAN}1f 60%, transparent 75%)`,
+                }}
+              />
+              <img
+                src="/assets/armada/ios-hero.png"
+                alt="Armada on iPhone: the 'gather your crew' screen for starting an encrypted community"
+                loading="lazy"
+                className="relative w-full drop-shadow-2xl rotate-[4deg] hover:rotate-0 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        <p className="mt-10 pt-10 border-t border-white/10 text-sm text-white/70">
           Built by{' '}
           <Link to="/about" className="underline hover:text-white">
             Team Soapbox
