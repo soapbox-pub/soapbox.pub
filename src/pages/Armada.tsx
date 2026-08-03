@@ -1663,7 +1663,7 @@ function RelayMeshSection() {
         {/* The constellation */}
         <svg
           viewBox="0 0 1000 470"
-          className="w-full my-2 md:my-4"
+          className="w-full my-8 md:my-12"
           role="img"
           aria-label="Your encrypted community publishing to many independent public Nostr relays at once; when one relay goes offline, the rest keep carrying it"
         >
