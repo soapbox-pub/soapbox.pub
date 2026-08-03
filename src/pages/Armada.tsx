@@ -1495,8 +1495,27 @@ function PrivacySection() {
   useTicker(350, 1000);
 
   return (
-    <section className="text-white py-20 md:py-28" style={{ backgroundColor: '#0f0d14' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative text-white py-20 md:py-28 overflow-hidden"
+      style={{ backgroundColor: '#0f0d14' }}
+    >
+      {/* Full-bleed churning ciphertext, the sealed traffic itself as the
+          backdrop. Faint enough that the panes and copy stay readable. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none select-none overflow-hidden font-mono text-sm leading-6 break-all p-2"
+        style={{
+          color: 'rgba(239, 233, 220, 0.055)',
+          maskImage:
+            'radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%)',
+        }}
+      >
+        {noiseString(14000)}
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
             Nobody can read your chats,
