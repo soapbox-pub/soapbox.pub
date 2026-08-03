@@ -2105,7 +2105,7 @@ function FinalCtaSection() {
           <span className="text-cyan-400">$</span> your keys. your fleet.
           <span className="animate-pulse">_</span>
         </p>
-        <div className="flex flex-wrap gap-3 justify-center mb-8 max-w-md mx-auto">
+        <div className="flex flex-wrap gap-3 justify-center mb-8 max-w-md sm:max-w-none mx-auto">
           <Button
             asChild
             size="lg"
