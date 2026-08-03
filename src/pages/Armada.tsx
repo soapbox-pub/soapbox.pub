@@ -1491,8 +1491,22 @@ const PRIVACY_CHAT: DemoMessage[] = [
 ];
 
 function PrivacySection() {
-  // Re-render on a timer so the ciphertext side visibly churns.
-  useTicker(350, 1000);
+  // Re-render on a timer so the ciphertext churns, and drive the periodic
+  // decrypt effect on "not even us."
+  const tick = useTicker(350, 1000);
+
+  // Every 12 ticks (~4.2s): four scramble steps resolving to plaintext,
+  // then hold legible. reveal = fraction of characters already decrypted.
+  const phase = tick % 12;
+  const reveal = phase >= 4 ? 1 : phase / 4;
+  const DECRYPT_TARGET = 'not even us.';
+  const decrypted = DECRYPT_TARGET.split('')
+    .map((ch, i) =>
+      ch === ' ' || i / DECRYPT_TARGET.length < reveal
+        ? ch
+        : NOISE_CHARS[Math.floor(Math.random() * NOISE_CHARS.length)],
+    )
+    .join('');
 
   return (
     <section
@@ -1517,23 +1531,16 @@ function PrivacySection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Nobody can read your chats,
-            <br className="hidden sm:block" /> not even us.
-          </h2>
-          <p className="text-lg text-gray-400">
-            Locked on your device before sending, even the sender and
-            community name. It uses the open{' '}
-            <a
-              href={CONCORD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-pink-400 hover:text-pink-300 underline decoration-pink-400/40 hover:decoration-pink-300 underline-offset-2"
+            <br className="hidden sm:block" />{' '}
+            <span
+              className="whitespace-nowrap"
+              style={{ color: ROSE, textShadow: `0 0 20px ${ROSE}66` }}
             >
-              Concord protocol
-            </a>
-            , so anyone can verify it.
-          </p>
+              {decrypted}
+            </span>
+          </h2>
         </div>
 
         <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
@@ -1601,6 +1608,20 @@ function PrivacySection() {
           </div>
         </div>
 
+        {/* How it works, under the demonstration */}
+        <p className="text-center text-lg text-gray-400 max-w-2xl mx-auto mt-10 md:mt-12">
+          Locked on your device before sending, even the sender and
+          community name. It uses the open{' '}
+          <a
+            href={CONCORD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-pink-400 hover:text-pink-300 underline decoration-pink-400/40 hover:decoration-pink-300 underline-offset-2"
+          >
+            Concord protocol
+          </a>
+          , so anyone can verify it.
+        </p>
       </div>
     </section>
   );
