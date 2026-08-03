@@ -1911,17 +1911,16 @@ function InteropSection() {
             Interoperable with other Nostr apps.
           </h2>
           <p className="text-lg text-gray-400">
-            Armada is built on Nostr, so your account isn't trapped in one app.
-            One key logs you in across the ecosystem, and where clients share
-            protocols, your communities and DMs come with you. Armada already
-            connects to{' '}
+            Armada is built on Nostr and supports multiple formats including
+            Concord, NIP-29, and{' '}
             <a
               href="/blog/armada-buzz-communities"
               className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
             >
-              Buzz communities
+              Buzz
             </a>{' '}
-            directly.
+            communities. One key logs you in across the ecosystem, and where
+            clients share protocols, your communities and DMs come with you.
           </p>
         </div>
 
@@ -1984,7 +1983,7 @@ function SelfHostSection() {
               Self-hostable at every level.
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Communities are serverless by default. When you want more
+              Communities are decentralized by default. When you want more
               independence, every piece is AGPL-3.0 and runs on your own
               hardware. Take one piece or all three; the{' '}
               <a
@@ -2119,15 +2118,9 @@ function LatestPostsSection() {
     <section className="bg-[#f5f3f9] py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
-            From the blog
-          </p>
-          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Latest on Armada.
           </h2>
-          <p className="text-lg text-gray-600">
-            Release notes, deep dives, and guides from the team building Armada.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
