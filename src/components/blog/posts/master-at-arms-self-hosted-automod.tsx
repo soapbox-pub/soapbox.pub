@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, ShieldCheck } from 'lucide-react';
 import type { BlogPostMeta } from '@/lib/blog/types';
 
 export const meta: BlogPostMeta = {
@@ -667,63 +668,116 @@ delete_spam_messages = true`}
         </li>
       </ul>
 
-      <h2>Resources</h2>
+      <h2>Run your own Master-at-Arms</h2>
 
-      <ul>
-        <li>
-          Try Armada:{' '}
+      <p>
+        Everything in this post is MIT licensed and running in production
+        today, including in our own community. It is one Rust binary with no
+        database, no AI, and no services behind it, and it idles in under 20 MB
+        of RAM, so a five dollar VPS or a Raspberry Pi hosts it with room to
+        spare. Clone it, give it a fresh key, invite it aboard.
+      </p>
+
+      <div className="not-prose my-10">
+        <a
+          href="https://github.com/derekross/concord-automod"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block no-underline"
+        >
+          <Card className="border border-[#ec4899]/50 bg-gradient-to-br from-[#181021] to-[#100b15] transition-shadow hover:shadow-lg hover:shadow-[#ec4899]/20">
+            <CardContent className="p-6 flex flex-col items-center gap-4 text-center">
+              <ShieldCheck className="w-8 h-8 shrink-0 text-[#ec4899]" />
+              <div>
+                <p className="m-0 font-semibold text-white">
+                  Get Master-at-Arms
+                </p>
+                <p className="m-0 text-sm text-white/70">
+                  The concord-automod source, config reference, systemd unit,
+                  Dockerfile, and one-command installer. Six steps from clone
+                  to a bot keeping order in your community.
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center rounded-full bg-[#ec4899] px-6 py-3 font-bold text-white">
+                View on GitHub
+              </span>
+            </CardContent>
+          </Card>
+        </a>
+      </div>
+
+      <div className="not-prose my-8 flex flex-wrap justify-center gap-3">
+        <Button
+          size="lg"
+          className="bg-[#ec4899] px-8 py-3 text-lg font-bold text-white hover:bg-[#db2777]"
+          asChild
+        >
           <a
             href="https://armada.buzz"
             target="_blank"
             rel="noopener noreferrer"
           >
-            armada.buzz
+            Try Armada on the Web
+          </a>
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          asChild
+        >
+          <a href="/armada">What is Armada?</a>
+        </Button>
+      </div>
+
+      <h2>Related Reading</h2>
+
+      <ul>
+        <li>
+          <a href="/blog/armada-open-source-encrypted-discord-alternative">
+            Armada: The Open Source, Encrypted Discord Alternative
           </a>
         </li>
         <li>
-          Self-host Armada itself:{' '}
-          <Link to="/blog/how-to-self-host-armada">
-            How to Self-host Armada
-          </Link>
+          <a href="/blog/building-an-armada-voyage-to-encrypted-communities">
+            Building an Armada: Our Voyage to Encrypted Communities on Nostr
+          </a>
         </li>
         <li>
-          Armada source:{' '}
+          <a href="/blog/how-to-self-host-armada">
+            How to Self-host Armada: Open Source Discord Alternative
+          </a>
+        </li>
+        <li>
+          <a href="/blog/managing-nostr-keys">
+            How to Store and Manage Your Nostr Private Key (nsec)
+          </a>
+        </li>
+        <li>
           <a
             href="https://gitworkshop.dev/soapbox.pub/armada"
             target="_blank"
             rel="noopener noreferrer"
           >
-            gitworkshop.dev/soapbox.pub/armada
+            Armada source on Nostr
           </a>
         </li>
         <li>
-          Repo:{' '}
-          <a
-            href="https://github.com/derekross/concord-automod"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github.com/derekross/concord-automod
-          </a>
-        </li>
-        <li>
-          Vector SDK and client:{' '}
           <a
             href="https://github.com/VectorPrivacy/vector"
             target="_blank"
             rel="noopener noreferrer"
           >
-            github.com/VectorPrivacy/vector
+            Vector SDK and client
           </a>
         </li>
         <li>
-          Concord protocol:{' '}
           <a
             href="https://github.com/concord-protocol/concord"
             target="_blank"
             rel="noopener noreferrer"
           >
-            github.com/concord-protocol/concord
+            The Concord protocol
           </a>
         </li>
       </ul>
