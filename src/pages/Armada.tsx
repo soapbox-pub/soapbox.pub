@@ -26,14 +26,13 @@
  * are real Team Soapbox avatars so every chat feels inhabited.
  */
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeftRight,
   ArrowRight,
   Ban,
   BellRing,
-  Bluetooth,
   CalendarDays,
   CheckCircle2,
   ChevronDown,
@@ -303,14 +302,11 @@ export default function Armada() {
       <HeroSection />
       <AppShowcaseSection />
       <PrivacySection />
-      <UnstoppableSection />
-      <MiniFeaturesSection />
-      <IosAlertSection />
-      <BridgeSection />
-      <InteropSection />
       <SelfHostSection />
+      <InteropSection />
       <LatestPostsSection />
       <FaqSection />
+      <IosAlertSection />
       <FinalCtaSection />
 
       <Footer />
@@ -668,6 +664,99 @@ function AppShowcaseSection() {
         {/* On mobile, rotate through the real app screenshots instead. */}
         <div className="order-1 md:order-2">
           <MobileShotCarousel />
+        </div>
+
+        {/* Feature highlights: the switching story (bridge + import) plus the
+            personality features (themes, emojis), each drawn, not just named. */}
+        <div className="order-3 mt-10 md:mt-14 grid sm:grid-cols-3 gap-4 lg:gap-5 max-w-5xl mx-auto w-full">
+          {/* Discord bridge & server import */}
+          <a
+            href={BRIDGE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-xl border border-white/10 p-5 transition-colors hover:border-white/25 flex flex-col"
+            style={{ backgroundColor: INK }}
+          >
+            <div className="flex items-center justify-center gap-3 h-16 mb-4">
+              <span
+                className="size-11 rounded-2xl flex items-center justify-center font-bold text-white text-lg"
+                style={{ backgroundColor: DISCORD_BLURPLE }}
+              >
+                D
+              </span>
+              <ArrowLeftRight className="size-5 text-gray-500 transition-colors group-hover:text-cyan-300" />
+              <img src={ARMADA_ICON} alt="" className="size-11 rounded-2xl" />
+            </div>
+            <h3 className="text-white font-semibold text-base mb-1">
+              Discord bridge &amp; server import
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed flex-1">
+              Mirror a channel both ways, or import your whole server. Nobody
+              has to move all at once.
+            </p>
+            <span className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-cyan-300">
+              bridge.armada.buzz
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </a>
+
+          {/* Custom themes */}
+          <div
+            className="rounded-xl border border-white/10 p-5 flex flex-col"
+            style={{ backgroundColor: INK }}
+          >
+            <div className="flex items-center justify-center gap-2 h-16 mb-4">
+              {THEME_PRESETS.map((t) => (
+                <span
+                  key={t.name}
+                  className="size-8 rounded-lg border border-white/10 flex items-end justify-center pb-1 gap-0.5"
+                  style={{ backgroundColor: t.bg }}
+                >
+                  <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent }} />
+                  <span className="size-1.5 rounded-full" style={{ backgroundColor: t.accent2 }} />
+                </span>
+              ))}
+            </div>
+            <h3 className="text-white font-semibold text-base mb-1">
+              Custom themes
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              More than a dozen presets, from lantern to bubblegum, or build
+              your own palette.
+            </p>
+          </div>
+
+          {/* Custom emojis */}
+          <div
+            className="rounded-xl border border-white/10 p-5 flex flex-col"
+            style={{ backgroundColor: INK }}
+          >
+            <div className="flex flex-col items-center justify-center h-16 mb-4">
+              <div className="flex items-center gap-2">
+                <img src={PEOPLE.mk.avatar} alt="" className="size-6 rounded-full object-cover" />
+                <span className="px-2.5 py-1 rounded-xl rounded-tl-sm bg-white/[0.06] text-xs text-gray-200">
+                  shipped it 🎉
+                </span>
+              </div>
+              <div className="flex gap-1.5 mt-1.5 pl-8">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-200 text-[11px]">
+                  ⚓ 5
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-[11px]">
+                  🏴‍☠️ 3
+                </span>
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-gray-500">
+                  <Smile className="size-3" />
+                </span>
+              </div>
+            </div>
+            <h3 className="text-white font-semibold text-base mb-1">
+              Custom emojis
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Upload your community's own emoji and react with anything.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -1483,336 +1572,6 @@ function PrivacySection() {
 }
 
 // ───────────────────────────────────────────────────────────────────────────
-// Section: Unstoppable — a looping side-by-side where a centralized app
-// suspends the community while the Armada one shrugs off a dead relay.
-// ───────────────────────────────────────────────────────────────────────────
-
-const UNSTOPPABLE_CYCLE = 8;
-
-function UnstoppableSection() {
-  const tick = useTicker(1100, UNSTOPPABLE_CYCLE);
-  const failed = tick >= 3; // the moment things go wrong on both sides
-  const armadaExtra = Math.max(0, Math.min(tick - 3, 2)); // messages after the failure
-
-  const armadaMessages: DemoMessage[] = [
-    { person: PEOPLE.alex, time: '', text: 'anyone else seeing relay-2 down?' },
-    ...(armadaExtra >= 1
-      ? [{ person: PEOPLE.lemon, time: '', text: 'nope, everything still works 👋' }]
-      : []),
-    ...(armadaExtra >= 2
-      ? [{ person: PEOPLE.chad, time: '', text: "didn't even notice lol" }]
-      : []),
-  ];
-
-  return (
-    <section className="text-white py-20 md:py-28" style={{ backgroundColor: INK }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            A community no one can take away.
-          </h2>
-          <p className="text-lg text-gray-400">
-            Your community lives on many independent relays at once: no
-            company account to ban, no headquarters to pressure. Lose one
-            relay, lose ten, and the conversation keeps going.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto items-stretch">
-          {/* A typical chat app */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden flex flex-col">
-            <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-                A typical chat app
-              </span>
-              <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-500">
-                <Server className="size-3" />1 company server
-              </span>
-            </div>
-
-            <div className="relative flex-1 p-4 space-y-3 min-h-[230px]">
-              <div
-                className={`space-y-3 transition-all duration-500 ${
-                  failed ? 'opacity-25 grayscale blur-[1px]' : ''
-                }`}
-              >
-                {[
-                  { person: PEOPLE.chad, text: '3 years of chat history in here 💜' },
-                  { person: PEOPLE.morgan, text: 'best community on the internet' },
-                ].map((m) => (
-                  <div key={m.person.name} className="flex items-start gap-2.5">
-                    <ProfilePic person={m.person} className="size-8" />
-                    <div className="px-3 py-2 rounded-2xl rounded-tl-sm bg-white/[0.06] text-sm text-gray-300 leading-snug">
-                      {m.text}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Suspension overlay */}
-              {failed && (
-                <div className="absolute inset-0 flex items-center justify-center p-6 animate-in fade-in zoom-in-95 duration-300">
-                  <div className="w-full max-w-[260px] rounded-xl border border-red-500/40 bg-[#1c0f14] p-5 text-center shadow-2xl">
-                    <div className="mx-auto size-10 rounded-full bg-red-500/15 border border-red-500/40 flex items-center justify-center mb-3">
-                      <Ban className="size-5 text-red-400" />
-                    </div>
-                    <p className="font-semibold text-white text-sm mb-1">
-                      Server suspended
-                    </p>
-                    <p className="text-xs text-gray-400 leading-snug">
-                      This community was removed for violating our Terms of
-                      Service. All content has been deleted.
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Armada */}
-          <div className="rounded-2xl border border-pink-500/25 overflow-hidden flex flex-col" style={{ backgroundColor: SURFACE }}>
-            <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10 bg-white/[0.03]">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-pink-300">
-                Armada
-              </span>
-              {/* Relay health row */}
-              <span className="flex items-center gap-2">
-                {[1, 2, 3].map((n) => {
-                  const dead = failed && n === 2;
-                  return (
-                    <span
-                      key={n}
-                      className={`flex items-center gap-1 text-[10px] font-mono ${
-                        dead ? 'text-red-400 line-through' : 'text-emerald-400'
-                      }`}
-                    >
-                      <span
-                        className={`size-1.5 rounded-full ${
-                          dead ? 'bg-red-500' : 'bg-emerald-400 animate-pulse'
-                        }`}
-                      />
-                      relay-{n}
-                    </span>
-                  );
-                })}
-              </span>
-            </div>
-
-            <div className="flex-1 p-4 min-h-[230px] flex flex-col justify-start gap-3">
-              {armadaMessages.map((m) => (
-                <div
-                  key={m.person.name}
-                  className="flex items-start gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-300"
-                >
-                  <ProfilePic person={m.person} className="size-8" />
-                  <div className="px-3 py-2 rounded-2xl rounded-tl-sm bg-white/[0.06] text-sm text-gray-200 leading-snug">
-                    {m.text}
-                  </div>
-                </div>
-              ))}
-              {failed && (
-                <p className="mt-auto text-center text-[11px] font-mono text-cyan-300 animate-in fade-in duration-500">
-                  rerouted around the dead relay — nothing lost
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-// ───────────────────────────────────────────────────────────────────────────
-// Section: Mini demos — mesh chat, Google-free notifications, key login —
-// plus a compact honesty strip about how early the software is.
-// ───────────────────────────────────────────────────────────────────────────
-
-function MiniFeaturesSection() {
-  return (
-    <section className="bg-[#faf8fb] py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Privacy features no other Discord alternative supports.
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
-          <MeshDemoCard />
-          <NotificationDemoCard />
-          <KeyLoginDemoCard />
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-/** Shared card shell for the three mini demos. */
-function MiniDemoCard({
-  visual,
-  badge,
-  title,
-  body,
-}: {
-  visual: ReactNode;
-  badge?: string;
-  title: string;
-  body: string;
-}) {
-  return (
-    <Card className="overflow-hidden border-gray-200 bg-white shadow-sm flex flex-col">
-      <div
-        className="relative h-44 flex items-center justify-center overflow-hidden"
-        style={{ backgroundColor: INK }}
-      >
-        {visual}
-        {badge && (
-          <span className="absolute top-3 right-3 px-2 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-[10px] font-semibold uppercase tracking-wider">
-            {badge}
-          </span>
-        )}
-      </div>
-      <CardContent className="p-6 flex-1">
-        <h3 className="font-display font-bold text-gray-900 text-lg mb-2">
-          {title}
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{body}</p>
-      </CardContent>
-    </Card>
-  );
-}
-
-/** Two phones passing a message over Bluetooth, no internet in sight. */
-function MeshDemoCard() {
-  const tick = useTicker(1200, 4);
-  const rightHasMessage = tick >= 2;
-
-  const phone = (person: Person, showBubble: boolean, bubble: string) => (
-    <div
-      className="w-[4.5rem] h-32 rounded-xl border-2 border-white/20 flex flex-col items-center pt-3 gap-2"
-      style={{ backgroundColor: SURFACE }}
-    >
-      <ProfilePic person={person} className="size-7" />
-      <div className="h-9 flex items-start">
-        {showBubble && (
-          <span className="px-2 py-1 rounded-lg bg-pink-500/20 border border-pink-500/40 text-pink-200 text-[9px] leading-tight animate-in fade-in zoom-in-75 duration-300">
-            {bubble}
-          </span>
-        )}
-      </div>
-      {/* "No internet" status */}
-      <span className="mt-auto mb-2 text-[8px] font-mono text-gray-500">
-        no signal ✕
-      </span>
-    </div>
-  );
-
-  return (
-    <MiniDemoCard
-      visual={
-        <div className="flex items-center gap-3">
-          {phone(PEOPLE.derek, true, 'you there?')}
-          {/* Bluetooth link */}
-          <div className="relative flex items-center justify-center size-10">
-            <span className="absolute inset-0 rounded-full bg-cyan-400/20 animate-ping" />
-            <span className="absolute inset-1.5 rounded-full bg-cyan-400/20 animate-ping [animation-delay:300ms]" />
-            <Bluetooth className="relative size-5 text-cyan-300" />
-          </div>
-          {phone(PEOPLE.lemon, rightHasMessage, 'yep 👋')}
-        </div>
-      }
-      badge="Android · offline"
-      title="Chat with zero internet"
-      body="Phones nearby relay messages to each other over Bluetooth: at a festival, on a plane, in a blackout, or anywhere else the internet can't reach. Compatible with bitchat."
-    />
-  );
-}
-
-/** An Android notification popping in — no Google in the delivery path. */
-function NotificationDemoCard() {
-  const cycle = useTicker(2600, 2);
-
-  return (
-    <MiniDemoCard
-      visual={
-        <div className="w-full max-w-[250px] px-4">
-          {/* Status bar hint */}
-          <div className="flex justify-between font-mono text-[9px] text-gray-600 mb-3 px-1">
-            <span>21:36</span>
-            <span>▮▮▮ 82%</span>
-          </div>
-          <div
-            key={cycle}
-            className="rounded-xl border border-white/15 bg-white/[0.07] backdrop-blur p-3 flex items-start gap-2.5 shadow-xl animate-in slide-in-from-top-3 fade-in duration-500"
-          >
-            <ProfilePic person={PEOPLE.chad} className="size-8" />
-            <div className="min-w-0 flex-1">
-              <div className="flex items-baseline justify-between gap-2">
-                <p className="text-xs font-semibold text-white truncate">
-                  Chad · #general
-                </p>
-                <span className="text-[9px] text-gray-500 shrink-0">now</span>
-              </div>
-              <p className="text-xs text-gray-300 truncate">
-                movie night is ON 🍿
-              </p>
-            </div>
-            <img
-              src={ARMADA_ICON}
-              alt="Armada app icon"
-              className="size-4 rounded shrink-0 mt-0.5"
-            />
-          </div>
-          <p className="text-center font-mono text-[9px] text-gray-600 mt-3">
-            delivered without Google <BellRing className="inline size-2.5" />
-          </p>
-        </div>
-      }
-      badge="Android"
-      title="Notifications, no Google"
-      body="Pings arrive straight from your community, even with the app closed. Google and third-party push services never learn who messages you."
-    />
-  );
-}
-
-/** Login card: your account is a key, not an email and password. */
-function KeyLoginDemoCard() {
-  return (
-    <MiniDemoCard
-      visual={
-        <div className="w-full max-w-[230px] px-4">
-          <div
-            className="rounded-xl border border-white/15 p-4 shadow-xl"
-            style={{ backgroundColor: SURFACE }}
-          >
-            <p className="text-xs font-semibold text-white mb-3">Log in</p>
-            <div className="flex items-center gap-2 rounded-lg bg-black/40 border border-pink-500/30 px-3 py-2 mb-3">
-              <KeyRound className="size-3.5 text-pink-400 shrink-0" />
-              <span className="font-mono text-[10px] text-gray-400 truncate">
-                nsec1•••••••••••••••
-              </span>
-            </div>
-            <div className="rounded-lg bg-pink-500 text-white text-center text-xs font-semibold py-2">
-              Unlock
-            </div>
-            <div className="flex justify-center gap-3 mt-3 font-mono text-[9px] text-gray-500">
-              <span className="line-through">email</span>
-              <span className="line-through">phone</span>
-              <span className="line-through">signup form</span>
-            </div>
-          </div>
-        </div>
-      }
-      title="Your key is your account."
-      body="Your identity is a key that only you hold, with no email or phone number to hand over. The same key works across every Nostr app."
-    />
-  );
-}
-
-// ───────────────────────────────────────────────────────────────────────────
 // Section: Self-hosting (optional) — for teams that want the whole stack
 // on their own hardware.
 // ───────────────────────────────────────────────────────────────────────────
@@ -1905,238 +1664,6 @@ function InteropSection() {
               </div>
             </a>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ───────────────────────────────────────────────────────────────────────────
-// Section: Discord bridge — an on-ramp. The same channel rendered twice,
-// once as Discord and once as Armada, with messages appearing on both
-// sides in sync to show the two-way bridge carrying names and avatars.
-// ───────────────────────────────────────────────────────────────────────────
-
-interface BridgeMsg {
-  name: string;
-  origin: 'discord' | 'armada';
-  text: string;
-  /** Every member has a real profile picture, on both sides of the bridge. */
-  avatar: string;
-  /** A reaction that lands after the message and mirrors to the other side. */
-  reaction?: { emoji: string; count: number };
-}
-
-const BRIDGE_MESSAGES: BridgeMsg[] = [
-  {
-    name: 'Derek',
-    origin: 'discord',
-    text: 'is the Armada community actually live yet?',
-    avatar: PEOPLE.derek.avatar,
-  },
-  {
-    name: 'M. K.',
-    origin: 'armada',
-    text: 'yep — and this whole channel is mirrored both ways',
-    avatar: PEOPLE.mk.avatar,
-    reaction: { emoji: '🔥', count: 5 },
-  },
-  {
-    name: 'Morgan',
-    origin: 'discord',
-    text: 'so I can stay on Discord while you all move over?',
-    avatar: PEOPLE.morgan.avatar,
-  },
-  {
-    name: 'Alex',
-    origin: 'armada',
-    text: 'exactly — every message, names and avatars intact',
-    avatar: PEOPLE.alex.avatar,
-  },
-];
-
-/** One message avatar — a real profile picture on both sides of the bridge. */
-function BridgeAvatar({ m, className = 'size-8' }: { m: BridgeMsg; className?: string }) {
-  return (
-    <img
-      src={m.avatar}
-      alt={`${m.name}'s profile picture`}
-      className={`${className} shrink-0 rounded-full object-cover`}
-      loading="lazy"
-    />
-  );
-}
-
-/**
- * One side of the bridge. `platform` decides the chrome; both panels show
- * the same messages, and each panel tags the messages that arrived over the
- * bridge from the other side — the visible proof of two-way attribution.
- */
-function BridgePanel({
-  platform,
-  messages,
-  reacted,
-}: {
-  platform: 'discord' | 'armada';
-  messages: BridgeMsg[];
-  /** Whether the reaction has landed (mirrored onto both panels at once). */
-  reacted: boolean;
-}) {
-  const isDiscord = platform === 'discord';
-  const surface = isDiscord ? '#313338' : SURFACE;
-  const header = isDiscord ? '#2b2d31' : 'rgba(255,255,255,0.03)';
-
-  return (
-    <div
-      className="rounded-2xl border border-white/10 overflow-hidden shadow-sm flex flex-col"
-      style={{ backgroundColor: surface }}
-    >
-      {/* Channel header */}
-      <div
-        className="flex items-center justify-between px-4 py-2.5 border-b border-white/10"
-        style={{ backgroundColor: header }}
-      >
-        <div className="flex items-center gap-2 min-w-0">
-          {isDiscord ? (
-            <Hash className="size-4 shrink-0" style={{ color: '#949ba4' }} />
-          ) : (
-            <img src={ARMADA_ICON} alt="Armada app icon" className="size-5 rounded shrink-0" />
-          )}
-          <span className="font-semibold text-sm text-white truncate">general</span>
-        </div>
-        <span
-          className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
-          style={
-            isDiscord
-              ? { color: '#c9cdfb', backgroundColor: 'rgba(88,101,242,0.2)' }
-              : { color: '#f9a8d4', backgroundColor: 'rgba(236,72,153,0.15)' }
-          }
-        >
-          {isDiscord ? 'Discord' : 'Armada'}
-        </span>
-      </div>
-
-      <div className="p-4 space-y-3 h-[240px] flex flex-col justify-end overflow-hidden">
-        {messages.map((m) => {
-          // A message is "bridged" on the panel that isn't its origin.
-          const bridged = m.origin !== platform;
-          const showReaction = !!m.reaction && reacted;
-          return (
-            <div
-              key={m.name + m.text}
-              className="flex items-start gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-300"
-            >
-              <BridgeAvatar m={m} />
-              <div className="min-w-0">
-                <p className="text-xs mb-0.5 flex items-center gap-1.5">
-                  <span
-                    className="font-semibold"
-                    style={{ color: isDiscord ? '#f2f3f5' : '#f9a8d4' }}
-                  >
-                    {m.name}
-                  </span>
-                  {bridged && (
-                    <span
-                      className="px-1.5 py-px rounded text-[9px] font-semibold uppercase tracking-wide"
-                      style={
-                        isDiscord
-                          ? { color: '#c9cdfb', backgroundColor: 'rgba(88,101,242,0.25)' }
-                          : { color: '#93c5fd', backgroundColor: 'rgba(34,211,238,0.15)' }
-                      }
-                    >
-                      {isDiscord ? 'via Armada' : 'via Discord'}
-                    </span>
-                  )}
-                </p>
-                <p
-                  className="text-sm leading-snug"
-                  style={{ color: isDiscord ? '#dbdee1' : '#e5e7eb' }}
-                >
-                  {m.text}
-                </p>
-                {showReaction && (
-                  <span
-                    className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded-full text-xs animate-in fade-in zoom-in-75 duration-300"
-                    style={
-                      isDiscord
-                        ? {
-                            color: '#c9cdfb',
-                            backgroundColor: 'rgba(88,101,242,0.16)',
-                            border: '1px solid rgba(88,101,242,0.4)',
-                          }
-                        : {
-                            color: '#f9a8d4',
-                            backgroundColor: 'rgba(236,72,153,0.15)',
-                            border: '1px solid rgba(236,72,153,0.3)',
-                          }
-                    }
-                  >
-                    <span>{m.reaction!.emoji}</span>
-                    <span className="font-semibold">{m.reaction!.count}</span>
-                  </span>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function BridgeSection() {
-  // Timeline: reveal the messages one at a time on both panels in sync, then
-  // land the single reaction (mirrored to both sides), then hold, then loop.
-  const count = BRIDGE_MESSAGES.length;
-  const tick = useTicker(1300, count + 3);
-  const visible = Math.min(tick + 1, count);
-  const reacted = tick >= count;
-  const messages = BRIDGE_MESSAGES.slice(0, visible);
-
-  return (
-    <section className="bg-[#f5f3f9] py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="font-mono text-xs font-semibold tracking-widest uppercase text-pink-600 mb-3">
-            New · Discord bridge
-          </p>
-          <h2 className="font-display font-bold text-gray-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            Bridge your Discord server.
-          </h2>
-          <p className="text-lg text-gray-600">
-            Connect a Discord server to an Armada community and every message
-            and reaction flows both ways, names and avatars intact. Nobody has
-            to move all at once.
-          </p>
-        </div>
-
-        {/* The same channel, live on both platforms at once */}
-        <div className="relative grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
-          {/* Bridge connector (vertical on mobile, horizontal on desktop) */}
-          <div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 size-14 rounded-full flex items-center justify-center shadow-xl border-4 border-[#faf8fb] text-white"
-            style={{
-              background: `linear-gradient(135deg, ${DISCORD_BLURPLE}, #ec4899)`,
-            }}
-          >
-            <ArrowLeftRight className="size-6 rotate-90 md:rotate-0" />
-          </div>
-
-          <BridgePanel platform="discord" messages={messages} reacted={reacted} />
-          <BridgePanel platform="armada" messages={messages} reacted={reacted} />
-        </div>
-
-        <div className="mt-12 flex flex-col items-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold h-12 px-6 text-base shadow-lg shadow-pink-500/25"
-          >
-            <a href={BRIDGE_URL} target="_blank" rel="noopener noreferrer">
-              <ArrowLeftRight className="mr-2 size-4" />
-              Connect your server
-            </a>
-          </Button>
         </div>
       </div>
     </section>
@@ -2280,7 +1807,7 @@ function IosAlertSection() {
   return (
     <section
       className="relative overflow-hidden text-white py-20 md:py-28"
-      style={{ backgroundColor: INK }}
+      style={{ backgroundColor: SURFACE }}
     >
       {/* Rose + cyan glows, echoing the app's neon welcome screen */}
       <div
