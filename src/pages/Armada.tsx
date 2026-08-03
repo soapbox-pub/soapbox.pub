@@ -1627,9 +1627,17 @@ function meshPath(x: number, y: number): string {
 }
 
 function RelayMeshSection() {
-  // One relay goes dark at a time, then a breather with everything healthy.
-  const tick = useTicker(2400, MESH_RELAYS.length + 3);
-  const downIdx = tick < MESH_RELAYS.length ? tick : -1;
+  // relay.nostr.band is permanently dark (dead relays are a fact of life),
+  // and relay.ditto.pub (ours) never goes down. The rest take turns going
+  // dark, with a breather where everything else is healthy.
+  const ALWAYS_DOWN = 'relay.nostr.band';
+  const NEVER_DOWN = 'relay.ditto.pub';
+  const cyclable = MESH_RELAYS.filter(
+    (r) => r.name !== ALWAYS_DOWN && r.name !== NEVER_DOWN,
+  );
+  const tick = useTicker(2400, cyclable.length + 3);
+  const cycledDown = tick < cyclable.length ? cyclable[tick].name : null;
+  const isDown = (name: string) => name === ALWAYS_DOWN || name === cycledDown;
 
   return (
     <section
@@ -1660,14 +1668,14 @@ function RelayMeshSection() {
           aria-label="Your encrypted community publishing to many independent public Nostr relays at once; when one relay goes offline, the rest keep carrying it"
         >
           {/* Connection arcs */}
-          {MESH_RELAYS.map((r, i) => (
+          {MESH_RELAYS.map((r) => (
             <path
               key={`line-${r.name}`}
               d={meshPath(r.x, r.y)}
               fill="none"
-              stroke={i === downIdx ? 'rgba(248,113,113,0.15)' : 'rgba(37,244,244,0.18)'}
+              stroke={isDown(r.name) ? 'rgba(248,113,113,0.15)' : 'rgba(37,244,244,0.18)'}
               strokeWidth="1.5"
-              strokeDasharray={i === downIdx ? '3 5' : undefined}
+              strokeDasharray={isDown(r.name) ? '3 5' : undefined}
               className="transition-all duration-500"
             />
           ))}
@@ -1677,7 +1685,7 @@ function RelayMeshSection() {
               prefers-reduced-motion users) */}
           {MESH_RELAYS.map(
             (r, i) =>
-              i !== downIdx && (
+              !isDown(r.name) && (
                 <g key={`packet-${r.name}`} className="motion-reduce:hidden">
                   {/* Outbound */}
                   <circle r="3.5" fill={CYAN}>
@@ -1713,21 +1721,21 @@ function RelayMeshSection() {
           )}
 
           {/* Relay nodes */}
-          {MESH_RELAYS.map((r, i) => {
-            const isDown = i === downIdx;
+          {MESH_RELAYS.map((r) => {
+            const down = isDown(r.name);
             return (
-              <g key={`node-${r.name}`} className="transition-opacity duration-500" opacity={isDown ? 0.55 : 1}>
-                {!isDown && (
+              <g key={`node-${r.name}`} className="transition-opacity duration-500" opacity={down ? 0.55 : 1}>
+                {!down && (
                   <circle cx={r.x} cy={r.y} r="14" fill={`${CYAN}14`} className="motion-safe:animate-pulse" />
                 )}
                 <circle
                   cx={r.x}
                   cy={r.y}
                   r="7"
-                  fill={isDown ? '#f87171' : CYAN}
+                  fill={down ? '#f87171' : CYAN}
                   className="transition-colors duration-500"
                 />
-                {isDown && (
+                {down && (
                   <text x={r.x} y={r.y + 4} textAnchor="middle" fontSize="11" fill="#15121c" fontWeight="bold">
                     ✕
                   </text>
@@ -1737,8 +1745,8 @@ function RelayMeshSection() {
                   y={r.y > MESH_CENTER.y ? r.y + 26 : r.y - 16}
                   textAnchor="middle"
                   fontSize="15"
-                  className={`font-mono ${isDown ? 'line-through' : ''}`}
-                  fill={isDown ? '#f87171' : 'rgba(239,233,220,0.6)'}
+                  className={`font-mono ${down ? 'line-through' : ''}`}
+                  fill={down ? '#f87171' : 'rgba(239,233,220,0.6)'}
                 >
                   {r.name}
                 </text>
