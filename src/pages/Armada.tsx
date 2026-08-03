@@ -636,8 +636,13 @@ function HeroChatMockup() {
 
 function AppShowcaseSection() {
   return (
-    <section className="text-white py-20 md:py-28" style={{ backgroundColor: SURFACE }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
+    <section className="relative overflow-hidden text-white py-20 md:py-28" style={{ backgroundColor: SURFACE }}>
+      {/* The ASCII ocean behind the mobile app carousel (mobile only) */}
+      <div className="absolute inset-0 md:hidden">
+        <AsciiSea />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
         <div className="text-center max-w-3xl mx-auto mb-8 order-2 md:order-1 md:mb-12">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Voice and video calls, custom emojis, GIFs, and more.
