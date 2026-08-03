@@ -2061,7 +2061,11 @@ function SelfHostSection() {
                         {...(link.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
-                        className="font-mono text-pink-400 hover:text-pink-300 underline decoration-pink-400/40 hover:decoration-pink-300 underline-offset-2"
+                        className={`font-mono underline underline-offset-2 ${
+                          rose
+                            ? 'text-pink-400 hover:text-pink-300 decoration-pink-400/40 hover:decoration-pink-300'
+                            : 'text-cyan-400 hover:text-cyan-300 decoration-cyan-400/40 hover:decoration-cyan-300'
+                        }`}
                       >
                         {link.label} →
                       </a>
