@@ -294,7 +294,6 @@ export default function Armada() {
       <Navigation />
 
       <HeroSection />
-      <AppShowcaseSection />
       <PrivacySection />
       <RelayMeshSection />
       <SelfHostSection />
@@ -413,6 +412,10 @@ function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* App showcase shares the hero's background container so the ASCII
+          ocean animates behind it too. */}
+      <AppShowcaseSection />
     </section>
   );
 }
@@ -635,13 +638,7 @@ function HeroChatMockup() {
 
 function AppShowcaseSection() {
   return (
-    <section className="relative overflow-hidden text-white py-20 md:py-28" style={{ backgroundColor: SURFACE }}>
-      {/* The ASCII ocean behind the mobile app carousel (mobile only) */}
-      <div className="absolute inset-0 md:hidden">
-        <AsciiSea />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28 flex flex-col">
         <div className="text-center max-w-3xl mx-auto mb-8 order-1 md:mb-12">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Voice and video calls, custom emojis, GIFs, and more.
@@ -675,7 +672,7 @@ function AppShowcaseSection() {
           {/* Discord bridge & server import */}
           <div
             className="rounded-xl border border-white/10 p-5 flex flex-col"
-            style={{ backgroundColor: INK }}
+            style={{ backgroundColor: SURFACE }}
           >
             <div className="flex items-center justify-center gap-3 h-16 mb-4">
               <span
@@ -702,7 +699,7 @@ function AppShowcaseSection() {
           {/* Custom emojis */}
           <div
             className="rounded-xl border border-white/10 p-5 flex flex-col"
-            style={{ backgroundColor: INK }}
+            style={{ backgroundColor: SURFACE }}
           >
             <div className="flex items-center justify-center h-16 mb-4 px-2">
               <img
@@ -731,8 +728,7 @@ function AppShowcaseSection() {
             <ArrowRight className="size-4" />
           </Link>
         </p>
-      </div>
-    </section>
+    </div>
   );
 }
 
@@ -1716,7 +1712,7 @@ function RelayMeshSection() {
           className="text-center font-display font-bold tracking-tight whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)]"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
-          Chat apps belong to whoever runs the servers...
+          Apps belong to whoever runs the servers...
         </h2>
 
         {/* The constellation */}
