@@ -638,7 +638,7 @@ function HeroChatMockup() {
 
 function AppShowcaseSection() {
   return (
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28 flex flex-col">
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 md:pt-0 md:pb-28 flex flex-col">
         <div className="text-center max-w-3xl mx-auto mb-8 order-1 md:mb-12">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Voice and video calls, custom emojis, GIFs, and more.
@@ -1709,16 +1709,106 @@ function RelayMeshSection() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          className="text-center font-display font-bold tracking-tight whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)]"
+          className="text-center font-display font-bold tracking-tight text-3xl sm:text-4xl lg:text-5xl"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Apps belong to whoever runs the servers...
         </h2>
 
-        {/* The constellation */}
+        {/* Mobile: a vertical version of the same mesh, since the wide
+            constellation cramps on small screens. */}
+        <div className="md:hidden my-10 flex flex-col items-center">
+          {/* The community at the top */}
+          <div className="flex flex-col items-center gap-2">
+            <div className="relative flex items-center justify-center">
+              <span
+                className="absolute inline-flex size-16 rounded-2xl motion-safe:animate-pulse"
+                style={{ backgroundColor: `${ROSE}1a` }}
+              />
+              <img
+                src={ARMADA_ICON}
+                alt="Your Armada community"
+                className="relative size-14 rounded-xl border-2"
+                style={{ borderColor: ROSE }}
+              />
+            </div>
+            <span className="font-mono text-sm" style={{ color: ROSE }}>
+              your community
+            </span>
+          </div>
+
+          {/* Connector down to the relays */}
+          <div
+            className="my-3 h-8 w-px"
+            style={{ backgroundColor: `${CYAN}55` }}
+          />
+
+          {/* The relays, stacked */}
+          <ul className="w-full max-w-xs space-y-2.5">
+            {MESH_RELAYS.map((r) => {
+              const down = isDown(r.name);
+              return (
+                <li
+                  key={`m-${r.name}`}
+                  className="flex items-center gap-3 rounded-lg border px-3.5 py-2.5 transition-colors duration-500"
+                  style={{
+                    backgroundColor: INK,
+                    borderColor: down
+                      ? 'rgba(248,113,113,0.3)'
+                      : r.self
+                        ? `${ROSE}40`
+                        : 'rgba(255,255,255,0.1)',
+                  }}
+                >
+                  {/* Status indicator: live dot, or ✕ when dark */}
+                  <span className="relative flex size-3 shrink-0 items-center justify-center">
+                    {down ? (
+                      <span className="font-mono text-[11px] font-bold text-rose-400">
+                        ✕
+                      </span>
+                    ) : (
+                      <>
+                        <span
+                          className="absolute inline-flex size-3 rounded-full motion-safe:animate-ping"
+                          style={{ backgroundColor: `${r.self ? ROSE : CYAN}66` }}
+                        />
+                        <span
+                          className="relative inline-flex size-2 rounded-full"
+                          style={{ backgroundColor: r.self ? ROSE : CYAN }}
+                        />
+                      </>
+                    )}
+                  </span>
+                  <span
+                    className={`font-mono text-sm ${down ? 'line-through' : ''}`}
+                    style={{
+                      color: down
+                        ? '#f87171'
+                        : r.self
+                          ? ROSE
+                          : 'rgba(239,233,220,0.85)',
+                    }}
+                  >
+                    {r.name}
+                  </span>
+                  {r.self && (
+                    <span
+                      className="ml-auto font-mono text-[10px] uppercase tracking-widest"
+                      style={{ color: `${ROSE}99` }}
+                    >
+                      self-hosted
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {/* Desktop: the live constellation */}
         <svg
           viewBox="0 0 1000 470"
-          className="w-full my-8 md:my-12"
+          className="hidden md:block w-full my-8 md:my-12"
           role="img"
           aria-label="Your encrypted community publishing to many independent public Nostr relays at once; when one relay goes offline, the rest keep carrying it"
         >
@@ -1850,7 +1940,7 @@ function RelayMeshSection() {
 
         {/* The answer, under the constellation */}
         <p
-          className="text-center font-display font-bold tracking-tight whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)]"
+          className="text-center font-display font-bold tracking-tight text-3xl sm:text-4xl lg:text-5xl"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Armada is spread across free public servers.
@@ -2009,20 +2099,20 @@ function SelfHostSection() {
             </p>
 
             <div className="space-y-5">
-              {[
+              {([
                 {
                   icon: Code,
                   title: 'Self-host the client',
                   body: 'Serve the web app from your own domain.',
                   link: { href: SOURCE_URL, label: 'armada', external: true },
-                  rose: true,
+                  color: 'rose',
                 },
                 {
                   icon: Server,
                   title: 'Self-host a relay',
                   body: 'Keep encrypted messages on a relay you run.',
                   link: { href: RELAY_REPO_URL, label: 'ditto-relay', external: true },
-                  rose: false,
+                  color: 'cyan',
                 },
                 {
                   icon: Headphones,
@@ -2033,42 +2123,53 @@ function SelfHostSection() {
                     label: 'armada-av',
                     external: false,
                   },
-                  rose: true,
+                  color: 'green',
                 },
-              ].map(({ icon: Icon, title, body, link, rose }) => (
-                <div key={title} className="flex items-start gap-4">
-                  <div
-                    className={`size-10 shrink-0 rounded-lg border flex items-center justify-center ${
-                      rose
-                        ? 'bg-pink-500/10 border-pink-500/30'
-                        : 'bg-cyan-400/10 border-cyan-400/25'
-                    }`}
-                  >
-                    <Icon className={`size-5 ${rose ? 'text-pink-400' : 'text-cyan-400'}`} />
+              ] as const).map(({ icon: Icon, title, body, link, color }) => {
+                const styles = {
+                  rose: {
+                    box: 'bg-pink-500/10 border-pink-500/30',
+                    icon: 'text-pink-400',
+                    link: 'text-pink-400 hover:text-pink-300 decoration-pink-400/40 hover:decoration-pink-300',
+                  },
+                  cyan: {
+                    box: 'bg-cyan-400/10 border-cyan-400/25',
+                    icon: 'text-cyan-400',
+                    link: 'text-cyan-400 hover:text-cyan-300 decoration-cyan-400/40 hover:decoration-cyan-300',
+                  },
+                  green: {
+                    box: 'bg-emerald-400/10 border-emerald-400/30',
+                    icon: 'text-emerald-400',
+                    link: 'text-emerald-400 hover:text-emerald-300 decoration-emerald-400/40 hover:decoration-emerald-300',
+                  },
+                }[color];
+                return (
+                  <div key={title} className="flex items-start gap-4">
+                    <div
+                      className={`size-10 shrink-0 rounded-lg border flex items-center justify-center ${styles.box}`}
+                    >
+                      <Icon className={`size-5 ${styles.icon}`} />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-base mb-0.5">
+                        {title}
+                      </h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {body}{' '}
+                        <a
+                          href={link.href}
+                          {...(link.external
+                            ? { target: '_blank', rel: 'noopener noreferrer' }
+                            : {})}
+                          className={`font-mono underline underline-offset-2 ${styles.link}`}
+                        >
+                          {link.label} →
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-base mb-0.5">
-                      {title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {body}{' '}
-                      <a
-                        href={link.href}
-                        {...(link.external
-                          ? { target: '_blank', rel: 'noopener noreferrer' }
-                          : {})}
-                        className={`font-mono underline underline-offset-2 ${
-                          rose
-                            ? 'text-pink-400 hover:text-pink-300 decoration-pink-400/40 hover:decoration-pink-300'
-                            : 'text-cyan-400 hover:text-cyan-300 decoration-cyan-400/40 hover:decoration-cyan-300'
-                        }`}
-                      >
-                        {link.label} →
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -2490,11 +2591,6 @@ function FinalCtaSection() {
         </div>
 
         <p className="mt-10 pt-10 border-t border-white/10 text-sm text-white/70">
-          Built by{' '}
-          <Link to="/about" className="underline hover:text-white">
-            Team Soapbox
-          </Link>{' '}
-          ·{' '}
           <a
             href={SOURCE_URL}
             target="_blank"
@@ -2511,14 +2607,7 @@ function FinalCtaSection() {
             className="underline hover:text-white"
           >
             Concord protocol specs
-          </a>{' '}
-          ·{' '}
-          <Link
-            to="/blog/armada-open-source-encrypted-discord-alternative"
-            className="underline hover:text-white"
-          >
-            Why switch from Discord
-          </Link>
+          </a>
         </p>
        </div>
       </div>
