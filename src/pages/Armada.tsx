@@ -721,6 +721,16 @@ function AppShowcaseSection() {
             </p>
           </div>
         </div>
+
+        <p className="order-4 mt-8 text-center">
+          <Link
+            to="/blog/best-discord-alternatives-2026"
+            className="inline-flex items-center gap-1.5 font-mono text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+          >
+            Compare features with other popular discord apps
+            <ArrowRight className="size-4" />
+          </Link>
+        </p>
       </div>
     </section>
   );
