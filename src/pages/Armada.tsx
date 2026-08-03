@@ -1599,14 +1599,14 @@ function PrivacySection() {
  * src/lib/platform.ts in the armada repo) plus a few well-known public
  * Nostr relays.
  */
-const MESH_RELAYS: Array<{ name: string; x: number; y: number }> = [
+const MESH_RELAYS: Array<{ name: string; x: number; y: number; self?: boolean }> = [
   { name: 'relay.damus.io', x: 150, y: 85 },
   { name: 'nos.lol', x: 400, y: 45 },
   { name: 'relay.primal.net', x: 700, y: 60 },
   { name: 'relay.nostr.band', x: 895, y: 140 },
   { name: 'relay.ditto.pub', x: 110, y: 320 },
   { name: 'relay.dreamith.to', x: 330, y: 415 },
-  { name: 'relay.armada.buzz', x: 760, y: 395 },
+  { name: 'your relay', x: 760, y: 395, self: true },
 ];
 
 const MESH_CENTER = { x: 500, y: 235 };
@@ -1628,12 +1628,11 @@ function meshPath(x: number, y: number): string {
 
 function RelayMeshSection() {
   // relay.nostr.band is permanently dark (dead relays are a fact of life),
-  // and relay.ditto.pub (ours) never goes down. The rest take turns going
-  // dark, with a breather where everything else is healthy.
+  // while relay.ditto.pub (ours) and your own self-hosted relay never go
+  // down. The rest take turns going dark, with a healthy breather between.
   const ALWAYS_DOWN = 'relay.nostr.band';
-  const NEVER_DOWN = 'relay.ditto.pub';
   const cyclable = MESH_RELAYS.filter(
-    (r) => r.name !== ALWAYS_DOWN && r.name !== NEVER_DOWN,
+    (r) => r.name !== ALWAYS_DOWN && r.name !== 'relay.ditto.pub' && !r.self,
   );
   const tick = useTicker(2400, cyclable.length + 3);
   const cycledDown = tick < cyclable.length ? cyclable[tick].name : null;
@@ -1723,16 +1722,17 @@ function RelayMeshSection() {
           {/* Relay nodes */}
           {MESH_RELAYS.map((r) => {
             const down = isDown(r.name);
+            const accent = r.self ? ROSE : CYAN;
             return (
               <g key={`node-${r.name}`} className="transition-opacity duration-500" opacity={down ? 0.55 : 1}>
                 {!down && (
-                  <circle cx={r.x} cy={r.y} r="14" fill={`${CYAN}14`} className="motion-safe:animate-pulse" />
+                  <circle cx={r.x} cy={r.y} r="14" fill={`${accent}14`} className="motion-safe:animate-pulse" />
                 )}
                 <circle
                   cx={r.x}
                   cy={r.y}
                   r="7"
-                  fill={down ? '#f87171' : CYAN}
+                  fill={down ? '#f87171' : accent}
                   className="transition-colors duration-500"
                 />
                 {down && (
@@ -1746,10 +1746,23 @@ function RelayMeshSection() {
                   textAnchor="middle"
                   fontSize="15"
                   className={`font-mono ${down ? 'line-through' : ''}`}
-                  fill={down ? '#f87171' : 'rgba(239,233,220,0.6)'}
+                  fill={down ? '#f87171' : r.self ? ROSE : 'rgba(239,233,220,0.6)'}
                 >
                   {r.name}
                 </text>
+                {r.self && (
+                  <text
+                    x={r.x}
+                    y={r.y > MESH_CENTER.y ? r.y + 44 : r.y - 34}
+                    textAnchor="middle"
+                    fontSize="12"
+                    className="font-mono uppercase"
+                    fill={`${ROSE}99`}
+                    letterSpacing="2"
+                  >
+                    self-hosted
+                  </text>
+                )}
               </g>
             );
           })}
