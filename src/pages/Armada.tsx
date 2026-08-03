@@ -2019,12 +2019,14 @@ function SelfHostSection() {
                   title: 'Self-host the client',
                   body: 'Serve the web app from your own domain.',
                   link: { href: SOURCE_URL, label: 'armada', external: true },
+                  rose: true,
                 },
                 {
                   icon: Server,
                   title: 'Self-host a relay',
                   body: 'Keep encrypted messages on a relay you run.',
                   link: { href: RELAY_REPO_URL, label: 'ditto-relay', external: true },
+                  rose: false,
                 },
                 {
                   icon: Headphones,
@@ -2035,11 +2037,18 @@ function SelfHostSection() {
                     label: 'armada-av',
                     external: false,
                   },
+                  rose: true,
                 },
-              ].map(({ icon: Icon, title, body, link }) => (
+              ].map(({ icon: Icon, title, body, link, rose }) => (
                 <div key={title} className="flex items-start gap-4">
-                  <div className="size-10 shrink-0 rounded-lg bg-cyan-400/10 border border-cyan-400/25 flex items-center justify-center">
-                    <Icon className="size-5 text-cyan-400" />
+                  <div
+                    className={`size-10 shrink-0 rounded-lg border flex items-center justify-center ${
+                      rose
+                        ? 'bg-pink-500/10 border-pink-500/30'
+                        : 'bg-cyan-400/10 border-cyan-400/25'
+                    }`}
+                  >
+                    <Icon className={`size-5 ${rose ? 'text-pink-400' : 'text-cyan-400'}`} />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-base mb-0.5">
@@ -2052,7 +2061,7 @@ function SelfHostSection() {
                         {...(link.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
-                        className="font-mono text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
+                        className="font-mono text-pink-400 hover:text-pink-300 underline decoration-pink-400/40 hover:decoration-pink-300 underline-offset-2"
                       >
                         {link.label} →
                       </a>
