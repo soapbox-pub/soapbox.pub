@@ -38,6 +38,7 @@ import {
   ChevronDown,
   Code,
   Crown,
+  Gavel,
   Hash,
   Headphones,
   KeyRound,
@@ -1693,7 +1694,7 @@ function RelayMeshSection() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          className="text-center font-mono font-bold tracking-tight whitespace-nowrap text-[clamp(0.95rem,3.1vw,2.4rem)]"
+          className="text-center font-display font-bold tracking-tight whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)]"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Chat apps belong to whoever runs the servers...
@@ -1834,13 +1835,126 @@ function RelayMeshSection() {
 
         {/* The answer, under the constellation */}
         <p
-          className="text-center font-mono font-bold tracking-tight whitespace-nowrap text-[clamp(0.95rem,3.1vw,2.4rem)]"
+          className="text-center font-display font-bold tracking-tight whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)]"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Armada is spread across free public servers.
         </p>
+
+        {/* Why that matters: takedowns need a center, and there isn't one. */}
+        <BanDemo />
       </div>
     </section>
+  );
+}
+
+/** Dot positions for the mini Armada mesh in the ban demo (percent). */
+const BAN_MESH_DOTS: Array<{ x: number; y: number }> = [
+  { x: 50, y: 8 },
+  { x: 88, y: 30 },
+  { x: 84, y: 74 },
+  { x: 50, y: 92 },
+  { x: 16, y: 74 },
+  { x: 12, y: 30 },
+];
+
+/**
+ * The same gavel comes down on both architectures, on a loop. The
+ * centralized app dies with one strike; the Armada mesh loses one relay
+ * and stays online, because there is no center to hit.
+ */
+function BanDemo() {
+  // 0-1 calm · 2 the gavel strikes · 3-5 aftermath, then loop.
+  const tick = useTicker(1100, 6);
+  const striking = tick === 2;
+  const dead = tick >= 3;
+  // Which mesh relay takes the hit, advancing once per loop.
+  const struck = useTicker(6600, BAN_MESH_DOTS.length);
+
+  const gavel = (
+    <Gavel
+      className={`absolute -top-1 -right-1 size-6 text-red-400 transition-all duration-200 ${
+        striking ? 'rotate-[-50deg] scale-110' : dead ? 'rotate-0 opacity-40' : 'rotate-0 opacity-70'
+      }`}
+    />
+  );
+
+  return (
+    <div className="grid sm:grid-cols-2 gap-4 lg:gap-5 max-w-3xl mx-auto mt-10 md:mt-14">
+      {/* A centralized app: one strike, gone */}
+      <div
+        className="rounded-xl border border-white/10 p-5 text-center"
+        style={{ backgroundColor: INK }}
+      >
+        <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-gray-500 mb-4">
+          A centralized app
+        </p>
+        <div className="relative h-28 flex items-center justify-center">
+          {gavel}
+          <div
+            className={`relative transition-all duration-500 ${
+              dead ? 'opacity-30 grayscale' : ''
+            }`}
+          >
+            <Server className="size-14 text-gray-300" />
+            {dead && (
+              <Ban className="absolute -right-2 -top-2 size-6 text-red-400 animate-in zoom-in-50 duration-300" />
+            )}
+          </div>
+        </div>
+        <p
+          className={`font-mono text-xs mt-3 transition-colors duration-300 ${
+            dead ? 'text-red-400' : 'text-gray-500'
+          }`}
+        >
+          {dead ? 'server seized · community deleted' : 'one order away from gone'}
+        </p>
+      </div>
+
+      {/* Armada: no center to hit */}
+      <div
+        className="rounded-xl border border-white/10 p-5 text-center"
+        style={{ backgroundColor: INK }}
+      >
+        <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-gray-500 mb-4">
+          An Armada community
+        </p>
+        <div className="relative h-28 max-w-[10rem] mx-auto">
+          {gavel}
+          {/* The community, unbannable in the middle */}
+          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-9 rounded-full flex items-center justify-center border"
+            style={{ backgroundColor: SURFACE, borderColor: `${ROSE}66` }}
+          >
+            <LockKeyhole className="size-4" style={{ color: ROSE }} />
+          </span>
+          {/* Relays around it — the struck one dies, the rest carry on */}
+          {BAN_MESH_DOTS.map((d, i) => {
+            const hit = dead && i === struck;
+            return (
+              <span
+                key={i}
+                className={`absolute size-3 rounded-full -translate-x-1/2 -translate-y-1/2 transition-colors duration-300 ${
+                  hit ? 'bg-red-400' : 'motion-safe:animate-pulse'
+                }`}
+                style={{
+                  left: `${d.x}%`,
+                  top: `${d.y}%`,
+                  backgroundColor: hit ? undefined : CYAN,
+                  animationDelay: `${i * 150}ms`,
+                }}
+              />
+            );
+          })}
+        </div>
+        <p
+          className={`font-mono text-xs mt-3 transition-colors duration-300 ${
+            dead ? 'text-emerald-400' : 'text-gray-500'
+          }`}
+        >
+          {dead ? 'still online · nothing to seize' : 'no center to hit'}
+        </p>
+      </div>
+    </div>
   );
 }
 
