@@ -1632,10 +1632,21 @@ function RelayMeshSection() {
   const downIdx = tick < MESH_RELAYS.length ? tick : -1;
 
   return (
-    <section className="text-white py-20 md:py-28 overflow-hidden" style={{ backgroundColor: SURFACE }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative text-white py-20 md:py-28 overflow-hidden"
+      style={{ backgroundColor: SURFACE }}
+    >
+      {/* Depth: rose + cyan glows behind the constellation */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse 50% 45% at 12% 8%, ${ROSE}1f, transparent 70%), radial-gradient(ellipse 45% 50% at 88% 92%, ${CYAN}17, transparent 70%), radial-gradient(ellipse 45% 45% at 50% 52%, ${ROSE}12, transparent 72%)`,
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          className="text-center font-mono font-bold tracking-tight leading-tight text-2xl sm:text-3xl lg:text-5xl mb-4 max-w-4xl mx-auto"
+          className="text-center font-mono font-bold tracking-tight whitespace-nowrap text-[clamp(0.95rem,3.1vw,2.4rem)]"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Chat apps belong to whoever runs the servers...
@@ -1644,7 +1655,7 @@ function RelayMeshSection() {
         {/* The constellation */}
         <svg
           viewBox="0 0 1000 470"
-          className="w-full mt-6 md:mt-10"
+          className="w-full my-2 md:my-4"
           role="img"
           aria-label="Your encrypted community publishing to many independent public Nostr relays at once; when one relay goes offline, the rest keep carrying it"
         >
@@ -1762,16 +1773,10 @@ function RelayMeshSection() {
 
         {/* The answer, under the constellation */}
         <p
-          className="text-center font-mono font-bold tracking-tight leading-tight text-2xl sm:text-3xl lg:text-5xl mt-6 md:mt-10 max-w-4xl mx-auto"
+          className="text-center font-mono font-bold tracking-tight whitespace-nowrap text-[clamp(0.95rem,3.1vw,2.4rem)]"
           style={{ color: ROSE, textShadow: `0 0 18px ${ROSE}40` }}
         >
           Armada is spread across free public servers.
-        </p>
-
-        <p className="text-center font-mono text-xs sm:text-sm mt-6 text-gray-400">
-          <span className="text-cyan-400">$</span> free public relays carrying
-          your community · anyone can add more
-          <span className="animate-pulse" style={{ color: ROSE }}>_</span>
         </p>
       </div>
     </section>
