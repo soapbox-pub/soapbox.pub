@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as masteratarmsselfhostedautomod from '../../components/blog/posts/master-at-arms-self-hosted-automod';
 import * as leavinggithub from '../../components/blog/posts/leaving-github';
 import * as howtoselfhostarmada from '../../components/blog/posts/how-to-self-host-armada';
 import * as buzzmademerethinkhowteamsuseagents from '../../components/blog/posts/buzz-made-me-rethink-how-teams-use-agents';
@@ -157,6 +158,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  masteratarmsselfhostedautomod.meta,
   leavinggithub.meta,
   howtoselfhostarmada.meta,
   buzzmademerethinkhowteamsuseagents.meta,
@@ -278,6 +280,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'masteratarmsselfhostedautomod':
+      return (await import('../../components/blog/posts/master-at-arms-self-hosted-automod')).default;
     case 'leavinggithub':
       return (await import('../../components/blog/posts/leaving-github')).default;
     case 'howtoselfhostarmada':
