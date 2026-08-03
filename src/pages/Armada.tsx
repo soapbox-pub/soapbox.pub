@@ -295,6 +295,7 @@ export default function Armada() {
       <HeroSection />
       <AppShowcaseSection />
       <PrivacySection />
+      <RelayMeshSection />
       <SelfHostSection />
       <InteropSection />
       <LatestPostsSection />
@@ -1581,6 +1582,185 @@ function PrivacySection() {
           </div>
         </div>
 
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// Section: Relay mesh — a live constellation of real public Nostr relays.
+// Your community sits in the middle publishing sealed packets outward;
+// relays keep going dark one at a time and nothing is lost.
+// ───────────────────────────────────────────────────────────────────────────
+
+/** Real public Nostr relays, scattered across the constellation. */
+const MESH_RELAYS: Array<{ name: string; x: number; y: number }> = [
+  { name: 'relay.damus.io', x: 150, y: 80 },
+  { name: 'nos.lol', x: 360, y: 42 },
+  { name: 'relay.primal.net', x: 660, y: 55 },
+  { name: 'relay.nostr.band', x: 880, y: 105 },
+  { name: 'nostr.wine', x: 95, y: 290 },
+  { name: 'offchain.pub', x: 255, y: 400 },
+  { name: 'relay.snort.social', x: 560, y: 420 },
+  { name: 'purplepag.es', x: 790, y: 380 },
+  { name: 'relay.mostr.pub', x: 915, y: 255 },
+];
+
+const MESH_CENTER = { x: 500, y: 235 };
+
+/** Gently curved path from the community out to a relay. */
+function meshPath(x: number, y: number): string {
+  const { x: cx, y: cy } = MESH_CENTER;
+  const mx = (cx + x) / 2;
+  const my = (cy + y) / 2;
+  // Bow the line perpendicular to its direction for a soft arc.
+  const dx = x - cx;
+  const dy = y - cy;
+  const len = Math.sqrt(dx * dx + dy * dy) || 1;
+  const bend = 0.14;
+  const qx = mx - (dy / len) * len * bend;
+  const qy = my + (dx / len) * len * bend;
+  return `M ${cx} ${cy} Q ${qx.toFixed(0)} ${qy.toFixed(0)} ${x} ${y}`;
+}
+
+function RelayMeshSection() {
+  // One relay goes dark at a time, then a breather with everything healthy.
+  const tick = useTicker(2400, MESH_RELAYS.length + 3);
+  const downIdx = tick < MESH_RELAYS.length ? tick : -1;
+  const down = downIdx >= 0 ? MESH_RELAYS[downIdx] : null;
+
+  return (
+    <section className="text-white py-20 md:py-28 overflow-hidden" style={{ backgroundColor: SURFACE }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          className="text-center font-mono font-bold tracking-tight leading-tight text-2xl sm:text-3xl lg:text-5xl mb-4 max-w-4xl mx-auto"
+          style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
+        >
+          Chat apps belong to whoever runs the servers.
+          <br />
+          <span style={{ color: ROSE }}>
+            Armada is spread across free public servers.
+          </span>
+        </h2>
+
+        {/* The constellation */}
+        <svg
+          viewBox="0 0 1000 470"
+          className="w-full mt-6 md:mt-10"
+          role="img"
+          aria-label="Your encrypted community publishing to many independent public Nostr relays at once; when one relay goes offline, the rest keep carrying it"
+        >
+          {/* Connection arcs */}
+          {MESH_RELAYS.map((r, i) => (
+            <path
+              key={`line-${r.name}`}
+              d={meshPath(r.x, r.y)}
+              fill="none"
+              stroke={i === downIdx ? 'rgba(248,113,113,0.15)' : 'rgba(37,244,244,0.18)'}
+              strokeWidth="1.5"
+              strokeDasharray={i === downIdx ? '3 5' : undefined}
+              className="transition-all duration-500"
+            />
+          ))}
+
+          {/* Sealed packets flowing outward (hidden if the relay is down,
+              and for prefers-reduced-motion users) */}
+          {MESH_RELAYS.map(
+            (r, i) =>
+              i !== downIdx && (
+                <g key={`packet-${r.name}`} className="motion-reduce:hidden">
+                  <circle r="3.5" fill={CYAN}>
+                    <animateMotion
+                      dur={`${2.2 + (i % 4) * 0.35}s`}
+                      begin={`${i * 0.28}s`}
+                      repeatCount="indefinite"
+                      path={meshPath(r.x, r.y)}
+                    />
+                  </circle>
+                  <circle r="1.5" fill="white" opacity="0.9">
+                    <animateMotion
+                      dur={`${2.2 + (i % 4) * 0.35}s`}
+                      begin={`${i * 0.28}s`}
+                      repeatCount="indefinite"
+                      path={meshPath(r.x, r.y)}
+                    />
+                  </circle>
+                </g>
+              ),
+          )}
+
+          {/* Relay nodes */}
+          {MESH_RELAYS.map((r, i) => {
+            const isDown = i === downIdx;
+            return (
+              <g key={`node-${r.name}`} className="transition-opacity duration-500" opacity={isDown ? 0.55 : 1}>
+                {!isDown && (
+                  <circle cx={r.x} cy={r.y} r="14" fill={`${CYAN}14`} className="motion-safe:animate-pulse" />
+                )}
+                <circle
+                  cx={r.x}
+                  cy={r.y}
+                  r="7"
+                  fill={isDown ? '#f87171' : CYAN}
+                  className="transition-colors duration-500"
+                />
+                {isDown && (
+                  <text x={r.x} y={r.y + 4} textAnchor="middle" fontSize="11" fill="#15121c" fontWeight="bold">
+                    ✕
+                  </text>
+                )}
+                <text
+                  x={r.x}
+                  y={r.y > MESH_CENTER.y ? r.y + 26 : r.y - 16}
+                  textAnchor="middle"
+                  fontSize="15"
+                  className={`font-mono ${isDown ? 'line-through' : ''}`}
+                  fill={isDown ? '#f87171' : 'rgba(239,233,220,0.6)'}
+                >
+                  {r.name}
+                </text>
+              </g>
+            );
+          })}
+
+          {/* The community, center stage */}
+          <g>
+            <circle cx={MESH_CENTER.x} cy={MESH_CENTER.y} r="46" fill={`${ROSE}1a`} className="motion-safe:animate-pulse" />
+            <circle cx={MESH_CENTER.x} cy={MESH_CENTER.y} r="34" fill={INK} stroke={ROSE} strokeWidth="2" />
+            <image
+              href={ARMADA_ICON}
+              x={MESH_CENTER.x - 22}
+              y={MESH_CENTER.y - 22}
+              width="44"
+              height="44"
+              clipPath="inset(0% round 10px)"
+            />
+            <text
+              x={MESH_CENTER.x}
+              y={MESH_CENTER.y + 58}
+              textAnchor="middle"
+              fontSize="16"
+              className="font-mono"
+              fill={ROSE}
+            >
+              your community
+            </text>
+          </g>
+        </svg>
+
+        {/* Live status line */}
+        <p className="text-center font-mono text-xs sm:text-sm mt-4 text-gray-400" aria-live="polite">
+          <span className="text-cyan-400">$</span>{' '}
+          {down ? (
+            <>
+              <span className="text-red-400">{down.name} went dark</span> ·{' '}
+              {MESH_RELAYS.length - 1} relays still carrying your community
+            </>
+          ) : (
+            <>{MESH_RELAYS.length} public relays carrying your community · anyone can add more</>
+          )}
+          <span className="animate-pulse" style={{ color: ROSE }}>_</span>
+        </p>
       </div>
     </section>
   );
