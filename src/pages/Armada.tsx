@@ -1593,17 +1593,20 @@ function PrivacySection() {
 // relays keep going dark one at a time and nothing is lost.
 // ───────────────────────────────────────────────────────────────────────────
 
-/** Real public Nostr relays, scattered across the constellation. */
+/**
+ * Relays shown in the constellation: Armada's shipped defaults
+ * (relay.ditto.pub, relay.dreamith.to, relay.armada.buzz — see
+ * src/lib/platform.ts in the armada repo) plus a few well-known public
+ * Nostr relays.
+ */
 const MESH_RELAYS: Array<{ name: string; x: number; y: number }> = [
-  { name: 'relay.damus.io', x: 150, y: 80 },
-  { name: 'nos.lol', x: 360, y: 42 },
-  { name: 'relay.primal.net', x: 660, y: 55 },
-  { name: 'relay.nostr.band', x: 880, y: 105 },
-  { name: 'nostr.wine', x: 95, y: 290 },
-  { name: 'offchain.pub', x: 255, y: 400 },
-  { name: 'relay.snort.social', x: 560, y: 420 },
-  { name: 'purplepag.es', x: 790, y: 380 },
-  { name: 'relay.mostr.pub', x: 915, y: 255 },
+  { name: 'relay.damus.io', x: 150, y: 85 },
+  { name: 'nos.lol', x: 400, y: 45 },
+  { name: 'relay.primal.net', x: 700, y: 60 },
+  { name: 'relay.nostr.band', x: 895, y: 140 },
+  { name: 'relay.ditto.pub', x: 110, y: 320 },
+  { name: 'relay.dreamith.to', x: 330, y: 415 },
+  { name: 'relay.armada.buzz', x: 760, y: 395 },
 ];
 
 const MESH_CENTER = { x: 500, y: 235 };
@@ -1627,7 +1630,6 @@ function RelayMeshSection() {
   // One relay goes dark at a time, then a breather with everything healthy.
   const tick = useTicker(2400, MESH_RELAYS.length + 3);
   const downIdx = tick < MESH_RELAYS.length ? tick : -1;
-  const down = downIdx >= 0 ? MESH_RELAYS[downIdx] : null;
 
   return (
     <section className="text-white py-20 md:py-28 overflow-hidden" style={{ backgroundColor: SURFACE }}>
@@ -1636,11 +1638,7 @@ function RelayMeshSection() {
           className="text-center font-mono font-bold tracking-tight leading-tight text-2xl sm:text-3xl lg:text-5xl mb-4 max-w-4xl mx-auto"
           style={{ color: CREAM, textShadow: `0 0 18px ${ROSE}40` }}
         >
-          Chat apps belong to whoever runs the servers.
-          <br />
-          <span style={{ color: ROSE }}>
-            Armada is spread across free public servers.
-          </span>
+          Chat apps belong to whoever runs the servers...
         </h2>
 
         {/* The constellation */}
@@ -1663,12 +1661,14 @@ function RelayMeshSection() {
             />
           ))}
 
-          {/* Sealed packets flowing outward (hidden if the relay is down,
-              and for prefers-reduced-motion users) */}
+          {/* Sealed packets: cyan flowing out to the relays, rose flowing
+              back in (hidden if the relay is down, and for
+              prefers-reduced-motion users) */}
           {MESH_RELAYS.map(
             (r, i) =>
               i !== downIdx && (
                 <g key={`packet-${r.name}`} className="motion-reduce:hidden">
+                  {/* Outbound */}
                   <circle r="3.5" fill={CYAN}>
                     <animateMotion
                       dur={`${2.2 + (i % 4) * 0.35}s`}
@@ -1683,6 +1683,18 @@ function RelayMeshSection() {
                       begin={`${i * 0.28}s`}
                       repeatCount="indefinite"
                       path={meshPath(r.x, r.y)}
+                    />
+                  </circle>
+                  {/* Inbound, same arc reversed */}
+                  <circle r="3" fill={ROSE}>
+                    <animateMotion
+                      dur={`${2.6 + ((i + 2) % 4) * 0.35}s`}
+                      begin={`${i * 0.28 + 1.1}s`}
+                      repeatCount="indefinite"
+                      path={meshPath(r.x, r.y)}
+                      keyPoints="1;0"
+                      keyTimes="0;1"
+                      calcMode="linear"
                     />
                   </circle>
                 </g>
@@ -1748,17 +1760,17 @@ function RelayMeshSection() {
           </g>
         </svg>
 
-        {/* Live status line */}
-        <p className="text-center font-mono text-xs sm:text-sm mt-4 text-gray-400" aria-live="polite">
-          <span className="text-cyan-400">$</span>{' '}
-          {down ? (
-            <>
-              <span className="text-red-400">{down.name} went dark</span> ·{' '}
-              {MESH_RELAYS.length - 1} relays still carrying your community
-            </>
-          ) : (
-            <>{MESH_RELAYS.length} public relays carrying your community · anyone can add more</>
-          )}
+        {/* The answer, under the constellation */}
+        <p
+          className="text-center font-mono font-bold tracking-tight leading-tight text-2xl sm:text-3xl lg:text-5xl mt-6 md:mt-10 max-w-4xl mx-auto"
+          style={{ color: ROSE, textShadow: `0 0 18px ${ROSE}40` }}
+        >
+          Armada is spread across free public servers.
+        </p>
+
+        <p className="text-center font-mono text-xs sm:text-sm mt-6 text-gray-400">
+          <span className="text-cyan-400">$</span> free public relays carrying
+          your community · anyone can add more
           <span className="animate-pulse" style={{ color: ROSE }}>_</span>
         </p>
       </div>
