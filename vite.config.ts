@@ -122,6 +122,7 @@ export default defineConfig({
         "/blog/leaving-github",
         "/blog/loomly-zapier-nostr-bridge",
         "/blog/managing-nostr-keys",
+        "/blog/master-at-arms-self-hosted-automod",
         "/blog/meet-quilly",
         "/blog/mkstack-tutorial",
         "/blog/mostr-fediverse-nostr-bridge",
