@@ -124,6 +124,7 @@ export default defineConfig({
         "/blog/managing-nostr-keys",
         "/blog/master-at-arms-self-hosted-automod",
         "/blog/meet-quilly",
+        "/blog/migrate-discord-server-to-armada",
         "/blog/mkstack-tutorial",
         "/blog/mostr-fediverse-nostr-bridge",
         "/blog/mostr-updates-july-2026",

@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as migratediscordservertoarmada from '../../components/blog/posts/migrate-discord-server-to-armada';
 import * as masteratarmsselfhostedautomod from '../../components/blog/posts/master-at-arms-self-hosted-automod';
 import * as leavinggithub from '../../components/blog/posts/leaving-github';
 import * as howtoselfhostarmada from '../../components/blog/posts/how-to-self-host-armada';
@@ -158,6 +159,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  migratediscordservertoarmada.meta,
   masteratarmsselfhostedautomod.meta,
   leavinggithub.meta,
   howtoselfhostarmada.meta,
@@ -280,6 +282,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'migratediscordservertoarmada':
+      return (await import('../../components/blog/posts/migrate-discord-server-to-armada')).default;
     case 'masteratarmsselfhostedautomod':
       return (await import('../../components/blog/posts/master-at-arms-self-hosted-automod')).default;
     case 'leavinggithub':
