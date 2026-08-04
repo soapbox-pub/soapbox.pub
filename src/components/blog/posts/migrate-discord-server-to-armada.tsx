@@ -78,7 +78,7 @@ export const meta: BlogPostMeta = {
     steps: [
       {
         name: 'Open the import tool',
-        text: 'Sign in at armada.buzz, then click "Import a Discord server" from the Discover page or the add-community dialog.',
+        text: 'Sign in at armada.buzz and start creating a new community, then click "Import a Discord server" below the create form.',
       },
       {
         name: 'Connect Discord',
@@ -138,10 +138,10 @@ export default function MigrateDiscordServerToArmada() {
       <h2>Step 1: Open the Discord Import Tool</h2>
 
       <p>
-        Sign in at <a href="https://armada.buzz">armada.buzz</a>, open{' '}
-        <strong>Discover</strong>, and click{' '}
-        <strong>Import a Discord server</strong>. The same button lives in the
-        add-community dialog behind the <strong>+</strong> in the server rail.
+        Sign in at <a href="https://armada.buzz">armada.buzz</a> and start
+        creating a new community: click the <strong>+</strong> in the server
+        rail, or <strong>Create community</strong> on the Discover page. Below
+        the create form, click <strong>Import a Discord server</strong>.
       </p>
 
       <figure className="not-prose my-6">
