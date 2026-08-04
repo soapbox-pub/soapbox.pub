@@ -340,8 +340,24 @@ export default function MasterAtArmsSelfHostedAutomod() {
       <h2 id="section-4">4. How to self-host it</h2>
 
       <p>
-        The quickstart is six steps, and the longest one is waiting for the Rust
-        build.
+        The source lives on Nostr rather than on GitHub, so grab it with{' '}
+        <a
+          href="https://gitworkshop.dev/ngit"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ngit
+        </a>{' '}
+        installed and the <code>nostr://</code> remote helper on your PATH:
+      </p>
+
+      <pre className={codeBlock}>
+        <code>{`git clone nostr://npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424/relay.ngit.dev/concord-automod`}</code>
+      </pre>
+
+      <p>
+        From there the quickstart is six steps, and the longest one is waiting
+        for the Rust build.
       </p>
 
       <ol>
@@ -680,7 +696,7 @@ delete_spam_messages = true`}
 
       <div className="not-prose my-10">
         <a
-          href="https://github.com/derekross/concord-automod"
+          href="https://gitworkshop.dev/npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424/relay.ngit.dev/concord-automod"
           target="_blank"
           rel="noopener noreferrer"
           className="block no-underline"
@@ -699,7 +715,7 @@ delete_spam_messages = true`}
                 </p>
               </div>
               <span className="inline-flex shrink-0 items-center rounded-full bg-[#ec4899] px-6 py-3 font-bold text-white">
-                View on GitHub
+                Browse it on gitworkshop
               </span>
             </CardContent>
           </Card>
