@@ -69,6 +69,11 @@ export const meta: BlogPostMeta = {
       answer:
         'Yes. Armada is free and open source under the AGPL-3.0 license, and the import tool at armada.buzz costs nothing.',
     },
+    {
+      question: 'Is Armada stable enough to move my community to?',
+      answer:
+        'Armada and the Discord bridge are in open beta ahead of the v1.0 release, with new releases landing almost daily. The import and bridge work today, but expect occasional rough edges. Keeping a live bridge to Discord during the transition means your community loses nothing while Armada matures.',
+    },
   ],
   howTo: {
     name: 'How to migrate a Discord server to Armada',
@@ -131,8 +136,18 @@ export default function MigrateDiscordServerToArmada() {
       </ul>
 
       <p>
-        No bot tokens, no export files, no self-hosting. The screenshots below
-        walk through migrating a small demo server, Moonrise Arcade.
+        No bot tokens, no export files. Use our hosted bridge, or{' '}
+        <a
+          href="https://gitworkshop.dev/mk@ditto.pub/relay.ngit.dev/armada-discord-bridge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          self-host the bridge
+        </a>{' '}
+        yourself (see the self-host section below). One thing to know going in:
+        Armada and the Discord bridge are both in open beta ahead of v1.0, so
+        expect occasional rough edges. The screenshots below walk through
+        migrating a small demo server, Moonrise Arcade.
       </p>
 
       <h2>Step 1: Open the Discord Import Tool</h2>
@@ -434,6 +449,61 @@ export default function MigrateDiscordServerToArmada() {
         </Button>
       </div>
 
+      <div className="not-prose my-10 rounded-xl bg-gray-950 text-gray-100 border border-gray-800 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold mb-3 text-white">
+          How to Self-host a Bridge
+        </h2>
+        <p className="text-gray-300 mb-4">
+          Everything above runs on our hosted bridge at bridge.armada.buzz,
+          but the{' '}
+          <a
+            className="text-pink-400 underline hover:text-pink-300"
+            href="https://gitworkshop.dev/mk@ditto.pub/relay.ngit.dev/armada-discord-bridge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            bridge is open source
+          </a>{' '}
+          and you can run your own. The simplest setup bridges one Discord
+          channel to one Armada channel with Docker:
+        </p>
+        <ol className="list-decimal list-inside space-y-2 text-gray-300 mb-4">
+          <li>
+            Create a Discord application and bot, enable the Message Content
+            intent, and invite the bot to your server.
+          </li>
+          <li>Clone the repo and create a <code className="text-pink-300">.env</code> file:</li>
+        </ol>
+        <pre className="bg-black/60 border border-gray-800 rounded-lg p-4 text-sm text-gray-200 overflow-x-auto mb-4">
+          <code>{`BRIDGE_MASTER_SECRET=  # openssl rand -hex 32
+BRIDGE_PRIMARY_KEY=    # an nsec for the bridge's identity
+BRIDGE_INVITE_URL=     # invite link to your Armada community
+DISCORD_TOKEN=         # your bot token
+DISCORD_GUILD_ID=      # your Discord server ID
+DISCORD_CHANNEL_ID=    # the channel to bridge`}</code>
+        </pre>
+        <ol className="list-decimal list-inside space-y-2 text-gray-300 mb-4" start={3}>
+          <li>
+            Run <code className="text-pink-300">docker compose up --build</code>.
+          </li>
+        </ol>
+        <p className="text-gray-300">
+          The repo also contains the full portal (the import wizard, Discord
+          OAuth, and a multi-bridge dashboard) if you want to run the whole
+          thing: it needs Postgres, a Discord client ID and secret, and Bun.
+          Setup is documented in the{' '}
+          <a
+            className="text-pink-400 underline hover:text-pink-300"
+            href="https://gitworkshop.dev/mk@ditto.pub/relay.ngit.dev/armada-discord-bridge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            README
+          </a>
+          .
+        </p>
+      </div>
+
       <FAQSection
         title="Discord Migration FAQ"
         items={(meta.faq ?? []).map(({ question, answer }) => ({
@@ -441,6 +511,35 @@ export default function MigrateDiscordServerToArmada() {
           answer,
         }))}
       />
+
+      <h2>Get Armada</h2>
+
+      <p>
+        Armada runs in any browser at{' '}
+        <a href="https://armada.buzz">armada.buzz</a>, including on iPhone. A
+        native iOS app is on the way. On Android:
+      </p>
+
+      <div className="not-prose my-6 flex flex-wrap gap-3">
+        <Button asChild>
+          <a
+            href="https://play.google.com/store/apps/details?id=buzz.armada.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get it on Google Play
+          </a>
+        </Button>
+        <Button asChild variant="outline">
+          <a
+            href="https://zapstore.dev/apps/buzz.armada.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get it on Zap Store
+          </a>
+        </Button>
+      </div>
 
       <h2>Related Reading</h2>
       <ul>
@@ -465,6 +564,7 @@ export default function MigrateDiscordServerToArmada() {
           </a>
         </li>
       </ul>
+
     </article>
   );
 }
