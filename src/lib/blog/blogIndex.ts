@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as whybitcoinfreedomrail from '../../components/blog/posts/why-bitcoin-freedom-rail';
 import * as migratediscordservertoarmada from '../../components/blog/posts/migrate-discord-server-to-armada';
 import * as masteratarmsselfhostedautomod from '../../components/blog/posts/master-at-arms-self-hosted-automod';
 import * as leavinggithub from '../../components/blog/posts/leaving-github';
@@ -159,6 +160,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  whybitcoinfreedomrail.meta,
   migratediscordservertoarmada.meta,
   masteratarmsselfhostedautomod.meta,
   leavinggithub.meta,
@@ -282,6 +284,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'whybitcoinfreedomrail':
+      return (await import('../../components/blog/posts/why-bitcoin-freedom-rail')).default;
     case 'migratediscordservertoarmada':
       return (await import('../../components/blog/posts/migrate-discord-server-to-armada')).default;
     case 'masteratarmsselfhostedautomod':
