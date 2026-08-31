@@ -174,6 +174,7 @@ export default defineConfig({
         "/blog/what-is-nostr-divine",
         "/blog/what-is-the-fediverse",
         "/blog/whats-in-a-name",
+        "/blog/why-bitcoin-freedom-rail",
         "/blog/wlc-launches-agora-oslo-freedom-forum",
         "/blog/zapping-101",
       ],
