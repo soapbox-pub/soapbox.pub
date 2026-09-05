@@ -1,10 +1,16 @@
 name: Deploy nsite
 
-# Builds the prerendered marketing site and publishes it as the named nsite
-# "soapbox" (NIP-5A kind 35128) described by .nsite/config.json: the files
-# become Blossom blobs, the manifest mapping path -> sha256 goes to relays, and
-# npanel on venus serves soapbox.pub from it. Runs on pushes to the default
-# branch, alongside Test.
+# Builds the prerendered marketing site and publishes it as the ROOT nsite
+# (NIP-5A kind 15128) described by .nsite/config.json: the files become Blossom
+# blobs, the manifest mapping path -> sha256 goes to relays, and npanel on venus
+# serves soapbox.pub from it. Runs on pushes to the default branch, alongside
+# Test.
+#
+# Root, not named: `"id": null` in .nsite/config.json is what selects kind 15128
+# over 35128. There is exactly ONE root site per pubkey, so this deploy owns the
+# signer's root namespace outright -- any root nsite previously published by
+# that key is replaced, and the other sites under the same key stay unaffected
+# only because they are named (kind 35128, keyed by their own `d` tag).
 #
 # Secrets are provisioned by the ngit-ci operator as
 # NGIT_CI_SECRET_<ALIAS>__<NAME> (note the double underscore) and injected ONLY
@@ -12,8 +18,9 @@ name: Deploy nsite
 # This job needs one:
 #   NSYTE_BUNKER   nbunksec1... -- a pre-established NIP-46 session, the form
 #                  nsyte documents for CI. THE SIGNING PUBKEY IS THE SITE
-#                  ADDRESS, so this secret decides whose namespace the site
-#                  lives in.
+#                  ADDRESS, and for a root site it is the WHOLE address, so this
+#                  secret alone decides which npub's root nsite this build
+#                  overwrites.
 # An empty NSYTE_BUNKER fails the job rather than skipping quietly: this is the
 # only workflow that publishes the site anywhere, so a skipped run would leave
 # the nsite silently pinned to an older build.
@@ -148,6 +155,13 @@ jobs:
           # positives in our own content (blog posts about keys, nsec, and
           # bunker URLs), and a prompt is unanswerable here -- with -i it
           # defaults to N and aborts.
+          #
+          # Do NOT add --publish-relay-list or --publish-server-list here.
+          # Those write the signer's ACCOUNT-WIDE kind 10002/10063 lists, not
+          # anything scoped to this site, and would repoint every client reading
+          # that npub. nsyte refuses them on a named site, so until this became
+          # a root site the mistake was impossible; now only the `false` pair in
+          # .nsite/config.json and these flags' defaults stand in the way.
           set +e
           nsyte deploy dist \
             --sec "$NSYTE_BUNKER" \
