@@ -103,6 +103,7 @@ export default defineConfig({
         "/blog/ditto-1.2",
         "/blog/ditto-1.3",
         "/blog/ditto-bitcoin-vegas-2026",
+        "/blog/ditto-import-export-take-your-history-with-you",
         "/blog/ditto-updates-april-2026",
         "/blog/divine-export-your-nostr-keys",
         "/blog/divine-open-source-tech",
