@@ -60,6 +60,7 @@ export default defineConfig({
 
         // Blog posts
         "/blog/agora-connecting-freedom-fighters",
+        "/blog/agora-embed-widgets-fundraising-anywhere",
         "/blog/agora-is-live",
         "/blog/announcing-clawstr",
         "/blog/announcing-ditto",

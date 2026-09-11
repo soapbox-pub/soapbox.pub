@@ -1,4 +1,5 @@
 // Auto-generated blog posts index
+import * as agoraembedwidgetsfundraisinganywhere from '../../components/blog/posts/agora-embed-widgets-fundraising-anywhere';
 import * as dittoimportexporttakeyourhistorywithyou from '../../components/blog/posts/ditto-import-export-take-your-history-with-you';
 import * as whybitcoinfreedomrail from '../../components/blog/posts/why-bitcoin-freedom-rail';
 import * as migratediscordservertoarmada from '../../components/blog/posts/migrate-discord-server-to-armada';
@@ -161,6 +162,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  agoraembedwidgetsfundraisinganywhere.meta,
   dittoimportexporttakeyourhistorywithyou.meta,
   whybitcoinfreedomrail.meta,
   migratediscordservertoarmada.meta,
@@ -286,6 +288,8 @@ export const getPostBySlug = async (slug: string) => {
   const normalizedSlug = slug.replace(/-/g, '').replace(/\./g, '');
 
   switch (normalizedSlug) {
+    case 'agoraembedwidgetsfundraisinganywhere':
+      return (await import('../../components/blog/posts/agora-embed-widgets-fundraising-anywhere')).default;
     case 'dittoimportexporttakeyourhistorywithyou':
       return (await import('../../components/blog/posts/ditto-import-export-take-your-history-with-you')).default;
     case 'whybitcoinfreedomrail':
