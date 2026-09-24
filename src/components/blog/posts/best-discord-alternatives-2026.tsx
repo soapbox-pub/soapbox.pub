@@ -736,8 +736,15 @@ export default function BestDiscordAlternatives2026() {
 
       <p>
         Fair warning: Armada is early software, version 0.x, with releases landing
-        almost daily on the road to v1.0. Everything above works today on the web,
-        Android, Linux, and Windows. There is no iOS app yet, though the web app
+        almost daily on the road to v1.0. Everything above works today on the web,{' '}
+        <a
+          href="https://armada.buzz/downloads"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Android, Linux, and Windows
+        </a>
+        . There is no iOS app yet, though the web app
         works fine on an iPhone, and some Discord conveniences are still catching
         up, so expect occasional rough edges. The trade for that is that the
         features people ask for this month tend to ship the next. The full story of how it was built,

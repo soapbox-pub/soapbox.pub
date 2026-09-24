@@ -38,6 +38,7 @@ import {
   ChevronDown,
   Code,
   Crown,
+  Download,
   Globe,
   Hash,
   Headphones,
@@ -77,6 +78,9 @@ const ZAPSTORE_URL = 'https://zapstore.dev/apps/buzz.armada.app';
 /** Armada on the Google Play Store. */
 const GOOGLE_PLAY_URL =
   'https://play.google.com/store/apps/details?id=buzz.armada.app';
+
+/** Every Armada client download (Android, Linux, Windows, and more). */
+const DOWNLOADS_URL = 'https://armada.buzz/downloads';
 
 /** Zapstore icon used on download buttons. */
 const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
@@ -405,6 +409,17 @@ function HeroSection() {
                 <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
                   <img src={GOOGLE_PLAY_ICON} alt="" className="mr-2 size-4" />
                   Google Play
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                className="border border-white/15 text-white hover:text-white font-medium h-12 px-6 text-base max-sm:w-full max-sm:order-3"
+                style={{ backgroundColor: SURFACE }}
+              >
+                <a href={DOWNLOADS_URL} target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 size-4" />
+                  All Downloads
                 </a>
               </Button>
             </div>
@@ -2555,6 +2570,17 @@ function FinalCtaSection() {
               Google Play
             </a>
           </Button>
+          <Button
+            asChild
+            size="lg"
+            className="border border-white/15 text-white hover:text-white font-medium h-14 px-7 text-base max-sm:w-full max-sm:order-3"
+            style={{ backgroundColor: SURFACE }}
+          >
+            <a href={DOWNLOADS_URL} target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 size-4" />
+              All Downloads
+            </a>
+          </Button>
         </div>
 
         {/* iOS release alert, inside the same panel */}
@@ -2572,8 +2598,16 @@ function FinalCtaSection() {
                 Get notified when Armada lands on iOS.
               </h3>
               <p className="text-gray-400 leading-relaxed mb-8">
-                Armada runs on the web, Android, Linux, and Windows today, and
-                the iPhone app is coming. Drop your email and we will tell you
+                Armada runs on the web,{' '}
+                <a
+                  href={DOWNLOADS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  Android, Linux, and Windows
+                </a>{' '}
+                today, and the iPhone app is coming. Drop your email and we will tell you
                 the day it ships. No spam, just the release.
               </p>
               <EmailSignupForm tagId="8983956" className="max-w-md" />
