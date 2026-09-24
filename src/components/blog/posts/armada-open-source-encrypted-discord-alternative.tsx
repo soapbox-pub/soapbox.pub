@@ -466,7 +466,15 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
           >
             Zap Store
           </a>
-          . Desktop builds for Linux and Windows are also available.
+          .{' '}
+          <a
+            href="https://armada.buzz/downloads"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Desktop builds for Linux and Windows
+          </a>{' '}
+          are also available.
         </li>
         <li>
           <strong>Create your key.</strong> Tap Sign up and a Nostr key is
@@ -490,8 +498,15 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
 
       <p>
         Armada is early software, version 0.x with releases landing almost
-        daily on the road to v1.0. Everything above works today on the web,
-        Android, Linux, and Windows. There is no iOS app yet, though the web
+        daily on the road to v1.0. Everything above works today on the web,{' '}
+        <a
+          href="https://armada.buzz/downloads"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Android, Linux, and Windows
+        </a>
+        . There is no iOS app yet, though the web
         app works fine on an iPhone in the meantime, and some Discord
         conveniences are still catching up, so expect occasional rough
         edges. Being this early has an upside: the{' '}
@@ -581,7 +596,15 @@ export default function ArmadaOpenSourceEncryptedDiscordAlternative() {
       <h3>Does Armada work on iPhone?</h3>
       <p>
         There is no iOS app yet. The web app at armada.buzz works on iPhone,
-        and native apps exist for Android, Linux, and Windows.
+        and{' '}
+        <a
+          href="https://armada.buzz/downloads"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          native apps exist for Android, Linux, and Windows
+        </a>
+        .
       </p>
 
       <h3>Can I self-host it?</h3>

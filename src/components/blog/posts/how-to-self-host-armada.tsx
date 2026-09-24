@@ -287,7 +287,15 @@ cd armada`}</code>
 
       <p>
         <code>VITE_PLATFORM_RELAYS</code> deserves a note. It is empty in the
-        shipped APK and desktop builds on purpose: a fresh client arrives with no
+        shipped{' '}
+        <a
+          href="https://armada.buzz/downloads"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          APK and desktop builds
+        </a>{' '}
+        on purpose: a fresh client arrives with no
         baked-in servers and the user adds their own. For a self-hosted
         deployment serving one community, pinning your own relay here is exactly
         what it is for. Do not ever pin <code>ws://localhost</code>. It means

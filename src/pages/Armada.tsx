@@ -78,6 +78,9 @@ const ZAPSTORE_URL = 'https://zapstore.dev/apps/buzz.armada.app';
 const GOOGLE_PLAY_URL =
   'https://play.google.com/store/apps/details?id=buzz.armada.app';
 
+/** Every Armada client download (Android, macOS, Linux, Windows, and more). */
+const DOWNLOADS_URL = 'https://armada.buzz/downloads';
+
 /** Zapstore icon used on download buttons. */
 const ZAPSTORE_ICON = '/assets/icons/zapstore.png';
 const GOOGLE_PLAY_ICON = '/assets/icons/google-play.svg';
@@ -190,7 +193,7 @@ const ARMADA_FAQ: Array<{
   {
     question: 'Does Armada work on iPhone?',
     answer:
-      'There is no iOS app yet. The web app at armada.buzz works on iPhone, and native apps exist for Android, Linux, and Windows.',
+      'There is no iOS app yet. The web app at armada.buzz works on iPhone, and native apps exist for Android, macOS, Linux, and Windows.',
   },
   {
     question: 'Is Armada ready to use?',
@@ -265,7 +268,7 @@ export default function Armada() {
       description:
         'A Discord-style chat app built on Nostr with end-to-end encrypted communities powered by the Concord protocol. Servers, channels, voice, and moderation, with no company and no central server. Built by Team Soapbox.',
       applicationCategory: 'CommunicationApplication',
-      operatingSystem: 'Web, Android, Linux, Windows',
+      operatingSystem: 'Web, Android, macOS, Linux, Windows',
       softwareVersion: '0.37',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url: ARMADA_URL,
@@ -304,6 +307,41 @@ export default function Armada() {
 
       <Footer />
     </div>
+  );
+}
+
+/**
+ * Secondary link to every build (desktop included), styled as a shell
+ * prompt so it sits under the store buttons without competing with them.
+ */
+function DownloadsLink({ className = '' }: { className?: string }) {
+  return (
+    <a
+      href={DOWNLOADS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-sm text-gray-400 hover:text-white transition-colors ${className}`}
+    >
+      <span className="text-cyan-400">$</span>
+      <span>
+        also on <span style={{ color: CREAM }}>macOS</span>,{' '}
+        <span style={{ color: CREAM }}>Linux</span> &amp;{' '}
+        <span style={{ color: CREAM }}>Windows</span>
+      </span>
+      <span className="text-white/30 max-sm:hidden">·</span>
+      <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+        <span
+          className="underline decoration-dotted underline-offset-4 group-hover:decoration-solid"
+          style={{ textDecorationColor: ROSE }}
+        >
+          all downloads
+        </span>
+        <ArrowRight
+          className="size-3.5 transition-transform group-hover:translate-x-0.5"
+          style={{ color: ROSE }}
+        />
+      </span>
+    </a>
   );
 }
 
@@ -408,6 +446,8 @@ function HeroSection() {
                 </a>
               </Button>
             </div>
+
+            <DownloadsLink className="mt-5 max-sm:w-full max-sm:justify-center" />
 
           </div>
 
@@ -2556,6 +2596,7 @@ function FinalCtaSection() {
             </a>
           </Button>
         </div>
+        <DownloadsLink className="-mt-3 mb-8 justify-center" />
 
         {/* iOS release alert, inside the same panel */}
         <div className="mt-10 pt-10 border-t border-white/10 text-left">
@@ -2572,8 +2613,16 @@ function FinalCtaSection() {
                 Get notified when Armada lands on iOS.
               </h3>
               <p className="text-gray-400 leading-relaxed mb-8">
-                Armada runs on the web, Android, Linux, and Windows today, and
-                the iPhone app is coming. Drop your email and we will tell you
+                Armada runs on the web,{' '}
+                <a
+                  href={DOWNLOADS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  Android, macOS, Linux, and Windows
+                </a>{' '}
+                today, and the iPhone app is coming. Drop your email and we will tell you
                 the day it ships. No spam, just the release.
               </p>
               <EmailSignupForm tagId="8983956" className="max-w-md" />
