@@ -634,14 +634,10 @@ function DeployStream() {
       ref={ref}
       className="mt-14 w-full max-w-xl overflow-hidden rounded-xl bg-black/70 text-left ring-1 ring-white/10 backdrop-blur-md"
     >
-      <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-2.5">
+      <div className="border-b border-white/[0.07] px-4 py-2.5">
         <p className="flex items-center gap-2 font-mono text-[11px] whitespace-nowrap text-white/55">
           <span className="size-2 animate-pulse rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
           npanel <span className="text-white/30">·</span> deploy log
-        </p>
-        <p className="font-mono text-[11px] whitespace-nowrap text-white/55">
-          <span className="font-semibold tabular-nums" style={{ color: GREEN }}>+{tick.toLocaleString('en-US')}</span> sites
-          <span className="hidden sm:inline"> since you got here</span>
         </p>
       </div>
       <div className="px-4 py-2 font-mono text-[11.5px] leading-6">
