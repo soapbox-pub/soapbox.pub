@@ -34,7 +34,6 @@ import {
   type LucideIcon,
   Plus,
   Settings,
-  Share2,
   Users,
   Waypoints,
   X,
@@ -77,7 +76,6 @@ const RED = '#ff453a';
 const BLUE = '#0a84ff';
 const PURPLE = '#bf5af2';
 const INDIGO = '#5e5ce6';
-const PINK = '#ff375f';
 const YELLOW = '#ff9f0a';
 
 const BRAND_GRADIENT = `linear-gradient(135deg, ${ORANGE}, ${FLAME})`;
@@ -389,9 +387,8 @@ export default function Npanel() {
       <DashboardSection />
       <AnalyticsSection />
       <ErrorsSection />
-      <PreviewsSection />
-      <SpeedSection />
       <TorSection />
+      <SpeedSection />
       <ShakespeareSection />
       <InstallSection />
       <FaqSection />
@@ -1421,6 +1418,8 @@ function TorSection() {
     <FeatureSection
       icon={Waypoints}
       color={INDIGO}
+      flip
+      dark
       title={
         <>
           Every site gets an onion. <span className="text-white/35">No Tor to install.</span>
@@ -1477,29 +1476,6 @@ function ErrorsSection() {
         'Nostr secret keys and secret URL parameters scrubbed',
       ]}
       demo={<ErrorsDemo />}
-    />
-  );
-}
-
-function PreviewsSection() {
-  return (
-    <FeatureSection
-      icon={Share2}
-      color={PINK}
-      flip
-      dark
-      title={
-        <>
-          Links that unfurl. <span className="text-white/35">Even on a static app.</span>
-        </>
-      }
-      body="A Nostr client renders posts in the browser, so every shared link looks like the app's homepage. Publish one preview.js and npanel hands crawlers a real title, description and image for each post, drawn by your own script."
-      points={[
-        'Open Graph, Twitter and schema.org tags per page',
-        'Images drawn on a canvas, without making the page wait',
-        'Runs sandboxed: Landlock, seccomp and a hard deadline',
-      ]}
-      demo={<PreviewsDemo />}
     />
   );
 }
@@ -1751,67 +1727,6 @@ function ErrorsDemo() {
   );
 }
 
-function PreviewsDemo() {
-  return (
-    <div className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
-      <p className="mb-4 text-xs text-white/40">#general</p>
-      <div className="flex gap-3">
-        <img src="/assets/avatars/derek-headshot.jpg" alt="" className="size-9 shrink-0 rounded-full object-cover" />
-        <div className="min-w-0 flex-1">
-          <p className="text-[13px]">
-            <span className="font-semibold text-white">Derek</span> <span className="text-white/35">10:14</span>
-          </p>
-          <p className="mt-0.5 truncate font-mono text-[12.5px]" style={{ color: BLUE }}>
-            https://ditto.pub/nevent1qqsrhuxx8l9ex335q7he0f09aej04zpazpl0ne2cgukyawd24mayt8g
-          </p>
-
-            <div className="mt-3 max-w-[460px] overflow-hidden rounded-xl ring-1 ring-white/10 animate-[npPop_0.5s_cubic-bezier(.2,1.4,.4,1)_both]" style={{ backgroundColor: RAISED }}>
-              <div className="relative aspect-[1.91/1] overflow-hidden" style={{ backgroundImage: 'linear-gradient(135deg,#7c3aed,#c026d3)' }}>
-                <img src="/ditto-logo-transparent.png" alt="" className="absolute -right-6 -bottom-8 size-40 object-contain opacity-20" />
-                <div className="absolute inset-0 flex flex-col justify-between p-5">
-                  <div className="flex items-center gap-2.5">
-                    <img src="/assets/avatars/alex.png" alt="" className="size-10 rounded-full ring-2 ring-white/80" />
-                    <div>
-                      <p className="text-sm font-bold text-white">Alex Gleason</p>
-                      <p className="text-[11px] text-white/70">alex@gleasonator.com</p>
-                    </div>
-                  </div>
-                  <p className="font-serif text-lg leading-snug font-bold text-white sm:text-xl">
-                    "Shipped three apps from Shakespeare before lunch. All of them live on our own npanel."
-                  </p>
-                </div>
-              </div>
-              <div className="p-3">
-                <p className="text-[11px] text-white/40">ditto.pub</p>
-                <p className="text-[13px] font-semibold text-white">Alex Gleason on Ditto</p>
-                <p className="line-clamp-2 text-[12px] text-white/55">
-                  Shipped three apps from Shakespeare before lunch. All of them live on our own npanel.
-                </p>
-              </div>
-            </div>
-        </div>
-      </div>
-
-      <div className="mt-6 overflow-hidden rounded-xl bg-black/50 font-mono text-[11.5px] leading-[1.7] ring-1 ring-white/[0.06]">
-        <p className="border-b border-white/[0.06] px-4 py-2 text-white/40">/.well-known/npanel/preview.js</p>
-        <pre className="overflow-x-auto px-4 py-3 text-white/70">
-          <span style={{ color: PINK }}>export default</span> {'{'}
-          {'\n  '}routes: [<span style={{ color: GREEN }}>"/:id(nevent1[a-z0-9]+)"</span>],
-          {'\n  '}
-          <span style={{ color: PINK }}>async</span> <span style={{ color: BLUE }}>preview</span>(request, {'{'} nostr {'}'}) {'{'}
-          {'\n    '}
-          <span style={{ color: PINK }}>const</span> [note] = <span style={{ color: PINK }}>await</span> nostr.query([{'{'} ids: [id] {'}'}]);
-          {'\n    '}
-          <span style={{ color: PINK }}>return</span> {'{'} title, description: note.content, image: draw(note) {'}'};
-          {'\n  '}
-          {'},'}
-          {'\n}'};
-        </pre>
-      </div>
-    </div>
-  );
-}
-
 /* ------------------------------------------------------------------------ */
 /* Speed: npanel against nginx and Caddy                                    */
 /* ------------------------------------------------------------------------ */
@@ -1848,7 +1763,7 @@ function SpeedSection() {
   const max = BENCHMARK[0].rps;
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: '#08080a' }}>
+    <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: INK }}>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
