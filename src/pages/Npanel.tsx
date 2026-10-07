@@ -34,6 +34,7 @@ import {
   ChevronDown,
   Cpu,
   FileCode2,
+  Gauge,
   Globe,
   History,
   KeyRound,
@@ -47,7 +48,7 @@ import {
   Settings,
   Share2,
   ShieldCheck,
-  Timer,
+  TrendingUp,
   Users,
   Waypoints,
   X,
@@ -2263,19 +2264,45 @@ function ReceiptsSection() {
 }
 
 /* ------------------------------------------------------------------------ */
-/* Speed                                                                    */
+/* Speed: npanel against nginx and Caddy                                    */
 /* ------------------------------------------------------------------------ */
 
-/** From the npanel README: one machine, 64 concurrent connections, 10 s per row. */
-const BENCHMARKS: Array<{ label: string; rps: number }> = [
-  { label: '304 revalidation', rps: 93974 },
-  { label: '404', rps: 75010 },
-  { label: 'Range request (1 KB)', rps: 71157 },
-  { label: 'index.html (2 KB, brotli)', rps: 70219 },
-  { label: 'SPA fallback', rps: 69224 },
-  { label: 'JS bundle (555 KB → 149 KB br)', rps: 28856 },
-  { label: 'Image (284 KB)', rps: 15756 },
+type Server = 'npanel' | 'nginx' | 'caddy';
+
+/**
+ * One nsite (concordprotocol.org's build), served by all three from the same
+ * files, byte for byte. Median requests per second of three rounds, with p99.
+ */
+const BENCHMARKS: Array<{ label: string; detail: string; results: Record<Server, { rps: number; p99: number }> }> = [
+  {
+    label: 'index.html',
+    detail: 'gzip, 8.5 KB',
+    results: { npanel: { rps: 41549, p99: 5.3 }, nginx: { rps: 36852, p99: 2.4 }, caddy: { rps: 8891, p99: 29 } },
+  },
+  {
+    label: 'ui-core.js',
+    detail: 'gzip, 26 KB',
+    results: { npanel: { rps: 41276, p99: 5.1 }, nginx: { rps: 38696, p99: 2.8 }, caddy: { rps: 10094, p99: 25 } },
+  },
+  {
+    label: 'favicon.svg',
+    detail: '536 B',
+    results: { npanel: { rps: 53318, p99: 3.1 }, nginx: { rps: 40761, p99: 2.9 }, caddy: { rps: 11168, p99: 25 } },
+  },
+  {
+    label: 'index.html',
+    detail: 'uncompressed, 59.6 KB',
+    results: { npanel: { rps: 29609, p99: 7.6 }, nginx: { rps: 32165, p99: 4.2 }, caddy: { rps: 7731, p99: 33 } },
+  },
 ];
+
+const SERVERS: Array<{ id: Server; name: string; color: string }> = [
+  { id: 'npanel', name: 'npanel', color: FLAME },
+  { id: 'nginx', name: 'nginx', color: '#4ade80' },
+  { id: 'caddy', name: 'Caddy', color: '#60a5fa' },
+];
+
+const BENCH_MAX = Math.max(...BENCHMARKS.flatMap((row) => SERVERS.map((s) => row.results[s.id].rps)));
 
 function useCountUp(target: number, active: boolean, durationMs = 1400): number {
   const [value, setValue] = useState(0);
@@ -2296,40 +2323,96 @@ function useCountUp(target: number, active: boolean, durationMs = 1400): number 
 
 function SpeedSection() {
   const [ref, inView] = useInView<HTMLDivElement>();
-  const max = BENCHMARKS[0].rps;
 
   return (
     <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: '#08080a' }}>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
-        style={{ background: `radial-gradient(ellipse 40% 50% at 80% 50%, ${FLAME}1a, transparent 70%)` }}
+        style={{ background: `radial-gradient(ellipse 40% 50% at 20% 50%, ${FLAME}1f, transparent 70%)` }}
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Rust, SQLite, mmap"
+          eyebrow="Benchmarks"
           title={
             <>
-              Requests per <GradientText>second.</GradientText>
+              Keeps up with nginx.
+              <br />
+              <GradientText>4× Caddy.</GradientText>
             </>
           }
         >
-          One machine, 64 concurrent connections, ten seconds a row. Every byte is served from a memory-mapped file
-          that was compressed once, when the site was deployed.
+          Same nsite, same files, same two CPU cores. npanel looks up every path in SQLite, picks an encoding, and adds
+          CSP, canonical and nsite headers to each response, and it still matches or beats nginx.
         </SectionHeading>
 
-        <div ref={ref} className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
-          <div className="space-y-3">
-            {BENCHMARKS.map((row, i) => (
-              <BenchRow key={row.label} label={row.label} rps={row.rps} max={max} active={inView} delay={i * 90} />
-            ))}
+        <div ref={ref} className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
+          <div>
+            <div className="mb-6 flex flex-wrap gap-5">
+              {SERVERS.map((server) => (
+                <span key={server.id} className="flex items-center gap-2 font-mono text-xs text-white/70">
+                  <span className="size-2.5 rounded-sm" style={{ backgroundColor: server.color }} />
+                  {server.name}
+                </span>
+              ))}
+              <span className="font-mono text-xs text-white/35">requests per second, higher is better</span>
+            </div>
+
+            <div className="space-y-7">
+              {BENCHMARKS.map((row, i) => {
+                const lead = row.results.npanel.rps / row.results.nginx.rps - 1;
+                return (
+                  <div key={row.label + row.detail}>
+                    <div className="mb-2.5 flex items-baseline justify-between gap-4">
+                      <p className="font-mono text-[13px] text-white">
+                        {row.label} <span className="text-white/40">{row.detail}</span>
+                      </p>
+                      <span
+                        className="shrink-0 rounded-full px-2 py-0.5 font-mono text-[11px] font-semibold"
+                        style={{
+                          color: lead >= 0 ? GREEN : 'rgba(255,255,255,0.55)',
+                          backgroundColor: lead >= 0 ? 'rgba(48,209,88,0.12)' : 'rgba(255,255,255,0.06)',
+                        }}
+                      >
+                        {lead >= 0 ? '+' : '−'}
+                        {Math.abs(Math.round(lead * 100))}% vs nginx
+                      </span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {SERVERS.map((server, j) => (
+                        <BenchBar
+                          key={server.id}
+                          server={server}
+                          rps={row.results[server.id].rps}
+                          active={inView}
+                          delay={i * 120 + j * 60}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 self-start">
-            <Stat icon={Timer} value="0.6–3.7" unit="ms" label="median latency" />
-            <Stat icon={MemoryStick} value="35" unit="MB" label="memory, serving" />
-            <Stat icon={Cpu} value="1" unit="binary" label="dashboard inside" />
-            <Stat icon={Settings} value="7" unit="env vars" label="the whole config" />
+          <div className="space-y-3 self-start">
+            <div className="grid grid-cols-2 gap-3">
+              <Stat icon={Gauge} value="3.8–4.8×" unit="" label="Caddy's throughput" />
+              <Stat icon={TrendingUp} value="+31%" unit="" label="over nginx on small files" />
+              <Stat icon={MemoryStick} value="35" unit="MB" label="memory, serving" />
+              <Stat icon={Cpu} value="1" unit="binary" label="dashboard inside" />
+            </div>
+            <div className="rounded-2xl p-5 text-[12.5px] leading-relaxed text-white/45 ring-1 ring-white/10" style={{ backgroundColor: PANEL }}>
+              <p className="mb-2 font-mono text-[11px] tracking-widest uppercase" style={{ color: ORANGE }}>
+                How we measured
+              </p>
+              One nsite, exported byte for byte from npanel's build for nginx and Caddy to serve. <code>oha</code>, 64
+              connections, HTTP/1.1 keep-alive, 10 s runs, median of 3 rounds taking turns. Servers pinned to 2 cores of a
+              Ryzen 7 5850U and saturated, the client on the other 12. nginx with 4 workers, <code>sendfile</code> and{' '}
+              <code>gzip_static</code>; Caddy 2.11.7 with <code>precompressed</code>. gzip, since stock nginx has no
+              brotli. nginx wins large uncompressed files, where <code>sendfile</code> skips userspace, and has the
+              lower p99 latency throughout.
+            </div>
           </div>
         </div>
       </div>
@@ -2337,25 +2420,37 @@ function SpeedSection() {
   );
 }
 
-function BenchRow({ label, rps, max, active, delay }: { label: string; rps: number; max: number; active: boolean; delay: number }) {
+function BenchBar({
+  server,
+  rps,
+  active,
+  delay,
+}: {
+  server: { id: Server; name: string; color: string };
+  rps: number;
+  active: boolean;
+  delay: number;
+}) {
   const value = useCountUp(rps, active);
+  const ours = server.id === 'npanel';
   return (
-    <div>
-      <div className="mb-1.5 flex items-baseline justify-between gap-4 font-mono text-[12.5px]">
-        <span className="truncate text-white/60">{label}</span>
-        <span className="font-semibold tabular-nums text-white">{value.toLocaleString('en-US')}/s</span>
-      </div>
-      <div className="h-2.5 overflow-hidden rounded-full bg-white/[0.06]">
+    <div className="flex items-center gap-3">
+      <span className={`w-14 shrink-0 font-mono text-[11px] ${ours ? 'text-white' : 'text-white/45'}`}>{server.name}</span>
+      <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/[0.05]">
         <div
           className="h-full rounded-full transition-[width] duration-[1400ms] ease-out"
           style={{
-            width: active ? `${(rps / max) * 100}%` : '0%',
+            width: active ? `${(rps / BENCH_MAX) * 100}%` : '0%',
             transitionDelay: `${delay}ms`,
-            backgroundImage: BRAND_GRADIENT,
-            boxShadow: `0 0 16px -2px ${FLAME}aa`,
+            backgroundImage: ours ? BRAND_GRADIENT : undefined,
+            backgroundColor: ours ? undefined : `${server.color}99`,
+            boxShadow: ours ? `0 0 18px -2px ${FLAME}` : undefined,
           }}
         />
       </div>
+      <span className={`w-16 shrink-0 text-right font-mono text-[12px] tabular-nums ${ours ? 'font-semibold text-white' : 'text-white/55'}`}>
+        {value.toLocaleString('en-US')}
+      </span>
     </div>
   );
 }
@@ -2365,7 +2460,7 @@ function Stat({ icon: Icon, value, unit, label }: { icon: LucideIcon; value: str
     <div className="rounded-2xl p-5 ring-1 ring-white/10" style={{ backgroundColor: PANEL }}>
       <Icon className="mb-4 size-5" style={{ color: ORANGE }} />
       <p className="text-3xl font-bold tracking-tight tabular-nums text-white">
-        {value} <span className="text-sm font-medium text-white/45">{unit}</span>
+        {value} {unit && <span className="text-sm font-medium text-white/45">{unit}</span>}
       </p>
       <p className="mt-1 text-xs text-white/45">{label}</p>
     </div>
