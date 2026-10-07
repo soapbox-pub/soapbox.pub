@@ -421,8 +421,8 @@ export default function Npanel() {
       <Navigation />
 
       <HeroSection />
-      <ShakespeareSection />
       <DashboardSection />
+      <ShakespeareSection />
       <UnplugSection />
       <VersionsSection />
       <SwitchesSection />
