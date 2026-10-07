@@ -59,8 +59,8 @@ import { useSEO } from '@/hooks/useSEO';
 /** npanel source, releases and docs (canonical ngit repo on gitworkshop). */
 const SOURCE_URL = 'https://gitworkshop.dev/alex@gleasonator.com/git.shakespeare.diy/npanel';
 
-/** nsyte, the CLI that publishes a folder as an nsite. */
-const NSYTE_URL = 'https://nsyte.run';
+/** Shakespeare, Soapbox's AI app builder, which deploys to npanel. */
+const SHAKESPEARE_URL = 'https://shakespeare.diy';
 
 /** NIP-5A, the nsite spec. */
 const NIP5A_URL = 'https://github.com/nostr-protocol/nips/blob/master/5A.md';
@@ -132,7 +132,12 @@ const NPANEL_FAQ: Array<{ question: string; answer: string }> = [
   {
     question: 'How do I deploy a site to npanel?',
     answer:
-      'Publish the site with an nsite tool such as nsyte (nsyte deploy ./dist). npanel follows the relays, sees the new signed manifest, downloads every file, and switches the domain over once all of them are on disk. There is no deploy hook or API key.',
+      'Build it in Shakespeare and hit Deploy: Shakespeare publishes the app as an nsite and points a hostname on your npanel at it. Any other nsite tool works too, such as nsyte (nsyte deploy ./dist). npanel sees the new signed manifest on the relays, downloads every file, and switches the domain over once all of them are on disk.',
+  },
+  {
+    question: 'Can I deploy Shakespeare apps to my own npanel?',
+    answer:
+      'Yes. Shakespeare deploys to npanel out of the box, and every app on shakespeare.wtf is served by one. Add your own server as an nsite gateway in Shakespeare\'s deploy settings and your apps get names on your domain instead.',
   },
   {
     question: 'What happens if the relays or Blossom servers go down?',
@@ -381,11 +386,11 @@ export default function Npanel() {
   useSEO({
     title: 'npanel: Self-Hosted nsite Gateway for Nostr Websites | Soapbox',
     description:
-      'Host websites published on Nostr on your own domains. npanel serves nsites from local disk, with versions, rollbacks, Tor, analytics and error tracking built in.',
+      'Ship apps from Shakespeare to your own domains. npanel hosts websites published on Nostr from local disk, with rollbacks, Tor, analytics and error tracking.',
     image: NPANEL_OG_IMAGE,
     type: 'website',
     keywords:
-      'npanel, nsite, nsite gateway, nostr website hosting, host website on nostr, nip-5a, blossom, nsyte, self-hosted static site hosting, decentralized web hosting, nostr static site, censorship resistant website, netlify alternative, vercel alternative, self-hosted vercel, onion site hosting, soapbox',
+      'npanel, nsite, nsite gateway, nostr website hosting, host website on nostr, nip-5a, blossom, nsyte, self-hosted static site hosting, decentralized web hosting, nostr static site, censorship resistant website, netlify alternative, vercel alternative, shakespeare deploy, deploy ai apps, host ai generated apps, self-hosted vercel, onion site hosting, soapbox',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
@@ -419,6 +424,7 @@ export default function Npanel() {
       <Navigation />
 
       <HeroSection />
+      <ShakespeareSection />
       <DashboardSection />
       <UnplugSection />
       <VersionsSection />
@@ -436,6 +442,7 @@ export default function Npanel() {
         @keyframes npPop { from { opacity: 0; transform: scale(.9) } to { opacity: 1; transform: scale(1) } }
         @keyframes npFade { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
         @keyframes npSlide { from { opacity: 0; transform: translateY(-8px) } to { opacity: 1; transform: none } }
+        @keyframes npRise { from { transform: translateY(0) } to { transform: translateY(-50%) } }
         @keyframes npReveal { from { clip-path: inset(0 100% 0 0) } to { clip-path: inset(0 0 0 0) } }
       `}</style>
 
@@ -444,124 +451,202 @@ export default function Npanel() {
 }
 
 /* ------------------------------------------------------------------------ */
-/* Hero: the deploy loop                                                    */
+/* Hero: a flood of apps                                                    */
 /* ------------------------------------------------------------------------ */
+
+/** Shakespeare's own npanel serves every app under this domain. */
+const SHAKESPEARE_DOMAIN = 'shakespeare.wtf';
+
+/** The kind of thing people build in Shakespeare in an afternoon. Invented names. */
+const FLOOD_APPS: Array<[string, string]> = [
+  ['⏱️', 'Pomodoro Lofi'], ['🌱', 'Seed Swap'], ['🎲', 'Dice Night'], ['📚', 'Book Club'], ['🧗', 'Crag Log'],
+  ['🍜', 'Ramen Rank'], ['🎧', 'Mixtape'], ['🐝', 'Hive Notes'], ['🗺️', 'Trail Map'], ['💸', 'Split Bill'],
+  ['🧘', 'Breathe'], ['🎨', 'Pixel Pad'], ['🏀', 'Pickup Hoops'], ['🍳', 'Fridge Chef'], ['🛰️', 'Sat Tracker'],
+  ['📸', 'Polaroids'], ['🐾', 'Dog Walks'], ['🎮', 'Snake'], ['🧾', 'Receipt Box'], ['🌦️', 'Rain Check'],
+  ['🏕️', 'Camp List'], ['🎂', 'Birthday Bot'], ['🧠', 'Flashcards'], ['🚲', 'Bike Share'], ['☕', 'Coffee Map'],
+  ['🎤', 'Karaoke Queue'], ['🪴', 'Plant Water'], ['🧩', 'Daily Puzzle'], ['🏋️', 'Lift Log'], ['📦', 'Garage Sale'],
+  ['🎬', 'Movie Night'], ['🌙', 'Sleep Diary'], ['🐟', 'Fish Finder'], ['🎹', 'Chord Wheel'], ['🗳️', 'Quick Poll'],
+  ['🍕', 'Pizza Vote'], ['📅', 'Meetup'], ['🧳', 'Pack List'], ['💬', 'Group Chat'], ['⚡', 'Zap Jar'],
+  ['🏆', 'Leaderboard'], ['🔭', 'Star Party'], ['🍷', 'Wine Notes'], ['🧶', 'Knit Count'], ['🎯', 'Habit Streak'],
+  ['🛹', 'Skate Spots'], ['🌮', 'Taco Tuesday'], ['📻', 'Podcast Clips'], ['🥾', 'Hike Buddy'], ['🐣', 'Chore Chart'],
+  ['🧪', 'Lab Notes'], ['💡', 'Idea Board'], ['🎟️', 'Raffle'], ['🏠', 'Rent Split'], ['🌊', 'Surf Report'],
+  ['🦉', 'Study Timer'], ['🎻', 'Practice Log'], ['🍪', 'Recipe Box'], ['♟️', 'Chess Club'], ['🔑', 'Lost Keys'],
+];
+
+const FLOOD_GRADIENTS: Array<[string, string]> = [
+  ['#7c3aed', '#db2777'], ['#ea580c', '#dc2626'], ['#16a34a', '#0d9488'], ['#2563eb', '#7c3aed'],
+  ['#f59e0b', '#ea580c'], ['#0891b2', '#2563eb'], ['#db2777', '#9333ea'], ['#65a30d', '#15803d'],
+];
+
+function slug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+}
+
+function floodApp(i: number) {
+  const [emoji, name] = FLOOD_APPS[((i % FLOOD_APPS.length) + FLOOD_APPS.length) % FLOOD_APPS.length];
+  const [from, to] = FLOOD_GRADIENTS[Math.floor(noise(i * 3.1) * FLOOD_GRADIENTS.length)];
+  return { emoji, name, sub: slug(name), from, to };
+}
+
+function AppIcon({ emoji, from, to, className = 'size-10 text-xl' }: { emoji: string; from: string; to: string; className?: string }) {
+  return (
+    <span
+      className={`flex shrink-0 items-center justify-center rounded-[10px] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] ${className}`}
+      style={{ backgroundImage: `linear-gradient(135deg, ${from}, ${to})` }}
+    >
+      {emoji}
+    </span>
+  );
+}
+
+function FloodTile({ i }: { i: number }) {
+  const app = floodApp(i);
+  return (
+    <div className="flex items-center gap-3 rounded-xl bg-[#141416] p-2.5 pr-3.5 ring-1 ring-white/[0.07]">
+      <AppIcon emoji={app.emoji} from={app.from} to={app.to} />
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-[13px] font-semibold text-white">{app.name}</p>
+        <p className="truncate font-mono text-[10.5px] text-white/40">
+          {app.sub}.{SHAKESPEARE_DOMAIN}
+        </p>
+      </div>
+      <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 6px ${GREEN}` }} />
+    </div>
+  );
+}
+
+/** Columns of apps pouring up the screen, each at its own speed. */
+function AppWall() {
+  const columns = [
+    { offset: 0, duration: 11, className: '' },
+    { offset: 9, duration: 8, className: '' },
+    { offset: 19, duration: 13, className: '' },
+    { offset: 28, duration: 9, className: 'hidden md:block' },
+    { offset: 37, duration: 12, className: 'hidden lg:block' },
+    { offset: 46, duration: 7.5, className: 'hidden lg:block' },
+  ];
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute inset-x-[-8%] top-[-10%] bottom-[-10%] origin-top [transform:perspective(1400px)_rotateX(24deg)]">
+        <div className="mx-auto grid h-full max-w-[1500px] grid-cols-3 gap-3 px-3 md:grid-cols-4 lg:grid-cols-6">
+          {columns.map((column) => (
+            <div key={column.offset} className={`h-full overflow-hidden ${column.className}`}>
+              <div className="space-y-3" style={{ animation: `npRise ${column.duration}s linear infinite` }}>
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="space-y-3">
+                    {Array.from({ length: 14 }, (_, k) => (
+                      <FloodTile key={k} i={column.offset + k} />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden" style={{ backgroundColor: INK }}>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[640px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
-        style={PERFORATED}
-      />
+    <section className="relative isolate overflow-hidden" style={{ backgroundColor: INK }}>
+      <AppWall />
+
+      {/* scrims, so the copy reads over the flood */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          background: `radial-gradient(ellipse 50% 38% at 50% 0%, ${FLAME}38, transparent 70%), radial-gradient(ellipse 40% 30% at 50% 78%, ${ORANGE}14, transparent 70%)`,
+          background: `radial-gradient(ellipse 42% 46% at 50% 46%, ${INK} 35%, ${INK}d9 60%, transparent 100%), linear-gradient(to bottom, ${INK} 0%, transparent 18%, transparent 75%, ${INK} 100%)`,
         }}
       />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-black/60 md:hidden" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{ background: `radial-gradient(ellipse 40% 30% at 50% 38%, ${FLAME}30, transparent 70%)` }}
+      />
 
-      <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-20 sm:px-6 md:pt-20 lg:px-8 lg:pb-28">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-8 inline-flex items-center gap-2.5 rounded-full bg-white/[0.04] py-1.5 pr-4 pl-1.5 ring-1 ring-white/10 backdrop-blur">
-            <img src={NPANEL_ICON} alt="npanel logo" className="size-7" />
-            <span className="font-mono text-xs text-white/60">
-              npanel <span className="text-white/30">·</span> the nsite gateway
-            </span>
-          </div>
-
-          <h1 className="text-6xl leading-[0.92] font-bold tracking-tighter sm:text-7xl lg:text-[6.75rem]">
-            Sign it.
-            <br />
-            <span className="relative">
-              <GradientText>It&rsquo;s live.</GradientText>
-              <span
-                aria-hidden
-                className="absolute inset-0 -z-10 blur-3xl opacity-50"
-                style={{ backgroundImage: BRAND_GRADIENT }}
-              />
-            </span>
-          </h1>
-
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl">
-            npanel hosts websites published on Nostr, on your own domains. Every deploy is a signed event. Your server
-            picks it up, downloads it, and serves it from its own disk.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={SOURCE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-2 rounded-xl px-6 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(249,84,26,0.8),inset_0_1px_0_rgba(255,255,255,0.3)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
-              style={{ backgroundImage: BRAND_GRADIENT }}
-            >
-              Get npanel <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="#install"
-              className="inline-flex h-12 items-center gap-2 rounded-xl bg-white/[0.06] px-6 font-mono text-sm text-white/80 ring-1 ring-white/10 transition-colors hover:bg-white/10"
-            >
-              <span style={{ color: ORANGE }}>$</span> docker compose up -d
-            </a>
-          </div>
+      <div className="relative mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
+        <div className="mb-8 inline-flex items-center gap-2.5 rounded-full bg-black/60 py-1.5 pr-4 pl-1.5 ring-1 ring-white/10 backdrop-blur">
+          <img src={NPANEL_ICON} alt="npanel logo" className="size-7" />
+          <span className="font-mono text-xs text-white/65">
+            npanel <span className="text-white/30">·</span> the nsite gateway
+          </span>
         </div>
 
-        <DeployLoop />
+        <h1 className="text-5xl leading-[0.95] font-bold tracking-tighter sm:text-7xl lg:text-[5.75rem]">
+          Your next thousand apps
+          <br />
+          <span className="relative">
+            <GradientText>need a home.</GradientText>
+            <span aria-hidden className="absolute inset-0 -z-10 opacity-50 blur-3xl" style={{ backgroundImage: BRAND_GRADIENT }} />
+          </span>
+        </h1>
+
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
+          Build an app in Shakespeare, hit Deploy, and it's live on your own domain. Then do it again. npanel serves every
+          app your team ships, from one box you own.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={SOURCE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 items-center gap-2 rounded-xl px-6 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(249,84,26,0.8),inset_0_1px_0_rgba(255,255,255,0.3)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+            style={{ backgroundImage: BRAND_GRADIENT }}
+          >
+            Get npanel <ArrowRight className="size-4" />
+          </a>
+          <a
+            href="#install"
+            className="inline-flex h-12 items-center gap-2 rounded-xl bg-black/60 px-6 font-mono text-sm text-white/80 ring-1 ring-white/10 backdrop-blur transition-colors hover:bg-black/80"
+          >
+            <span style={{ color: ORANGE }}>$</span> docker compose up -d
+          </a>
+        </div>
+
+        <DeployStream />
       </div>
     </section>
   );
 }
 
-/** One version of the demo site the hero keeps redeploying. */
-interface SiteVersion {
-  title: string;
-  kicker: string;
-  from: string;
-  to: string;
-  etag: string;
-}
-
-const SITE_VERSIONS: SiteVersion[] = [
-  { title: 'Notes from the trail', kicker: 'Field Notes', from: '#0f766e', to: '#164e63', etag: '4b1e9a07' },
-  { title: 'Notes from the ridge', kicker: 'Field Notes', from: '#ea580c', to: '#9f1239', etag: '9f2ce41a' },
-  { title: 'Notes from the summit', kicker: 'Field Notes', from: '#4f46e5', to: '#0369a1', etag: 'd04f19e2' },
-  { title: 'Notes from the valley', kicker: 'Field Notes', from: '#65a30d', to: '#115e59', etag: '7c1ea90b' },
-];
-
-/** Ticks in one pass of the hero deploy loop. */
-const LOOP = 22;
-
-function DeployLoop() {
+/** The gateway's deploy log, going faster than anyone can read it. */
+function DeployStream() {
   const [ref, inView] = useInView<HTMLDivElement>();
-  const tick = useTicker(620, inView);
-  const t = tick % LOOP;
-  const loop = Math.floor(tick / LOOP);
-  const live = t >= 14;
-  const shown = SITE_VERSIONS[(loop + (live ? 1 : 0)) % SITE_VERSIONS.length];
+  const tick = useTicker(140, inView);
+  const lines = Array.from({ length: 5 }, (_, i) => ({ n: tick - i, app: floodApp(tick - i + 7) }));
 
   return (
-    <div ref={ref} className="relative mt-14 md:mt-16">
-      <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1fr)_150px_minmax(0,1fr)] lg:gap-0">
-        <DeployTerminal t={t} etag={SITE_VERSIONS[(loop + 1) % SITE_VERSIONS.length].etag} />
-        <DeployWire t={t} />
-        <DeployBrowser t={t} site={shown} live={live} />
+    <div
+      ref={ref}
+      className="mt-14 w-full max-w-xl overflow-hidden rounded-xl bg-black/70 text-left ring-1 ring-white/10 backdrop-blur-md"
+    >
+      <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-2.5">
+        <p className="flex items-center gap-2 font-mono text-[11px] whitespace-nowrap text-white/55">
+          <span className="size-2 animate-pulse rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
+          npanel <span className="text-white/30">·</span> deploy log
+        </p>
+        <p className="font-mono text-[11px] whitespace-nowrap text-white/55">
+          <span className="font-semibold tabular-nums" style={{ color: GREEN }}>+{tick.toLocaleString('en-US')}</span> sites
+          <span className="hidden sm:inline"> since you got here</span>
+        </p>
       </div>
-
-      <div className="mt-8 grid gap-6 text-center sm:grid-cols-3">
-        {[
-          { n: '01', title: 'You sign', body: 'nsyte uploads the files to Blossom and signs a manifest.', on: t >= 1 && t < 9 },
-          { n: '02', title: 'Nostr carries it', body: 'The manifest goes out to relays, like any other event.', on: t >= 9 && t < 11 },
-          { n: '03', title: 'npanel serves it', body: 'Your server downloads every file, then switches over.', on: t >= 11 },
-        ].map((step) => (
-          <div key={step.n} className="transition-opacity duration-500" style={{ opacity: step.on ? 1 : 0.35 }}>
-            <p className="font-mono text-xs" style={{ color: step.on ? ORANGE : 'rgba(255,255,255,0.4)' }}>
-              {step.n}
-            </p>
-            <p className="mt-1 font-semibold text-white">{step.title}</p>
-            <p className="mt-1 text-sm text-white/50">{step.body}</p>
+      <div className="px-4 py-2 font-mono text-[11.5px] leading-6">
+        {lines.map((line, i) => (
+          <div
+            key={line.n}
+            className="flex items-center gap-3 whitespace-nowrap"
+            style={{ opacity: 1 - i * 0.17 }}
+          >
+            <span style={{ color: GREEN }}>build_ready</span>
+            <span className="flex-1 truncate text-white/85">
+              {line.app.sub}.{SHAKESPEARE_DOMAIN}
+            </span>
+            <span className="text-white/35">{12 + Math.floor(noise(line.n) * 60)} files</span>
           </div>
         ))}
       </div>
@@ -569,90 +654,231 @@ function DeployLoop() {
   );
 }
 
-const BLOSSOMS = ['blossom.primal.net', 'blossom.ditto.pub', 'cdn.satellite.earth'];
-const RELAYS = ['relay.ditto.pub', 'relay.primal.net', 'nos.lol'];
+/* ------------------------------------------------------------------------ */
+/* Shakespeare → npanel                                                     */
+/* ------------------------------------------------------------------------ */
 
-function DeployTerminal({ t, etag }: { t: number; etag: string }) {
-  const typed = 'nsyte deploy ./dist';
-  const chars = t === 0 ? 0 : t === 1 ? 9 : typed.length;
+/** Your own npanel, as a Shakespeare deploy target. */
+const TEAM_DOMAIN = 'yourteam.dev';
+
+type AppKind = 'timer' | 'vote' | 'list' | 'bars' | 'grid';
+
+interface LoopApp {
+  emoji: string;
+  name: string;
+  sub: string;
+  prompt: string;
+  kind: AppKind;
+  from: string;
+  to: string;
+  files: string[];
+}
+
+const LOOP_APPS: LoopApp[] = [
+  { emoji: '⏱️', name: 'Pomodoro Lofi', sub: 'pomodoro', prompt: 'a pomodoro timer with lo-fi vibes', kind: 'timer', from: '#7c3aed', to: '#db2777', files: ['src/pages/Index.tsx', 'src/components/Timer.tsx'] },
+  { emoji: '🍕', name: 'Pizza Vote', sub: 'pizza', prompt: 'let the office vote on friday pizza', kind: 'vote', from: '#ea580c', to: '#dc2626', files: ['src/pages/Index.tsx', 'src/hooks/useVotes.ts'] },
+  { emoji: '🪴', name: 'Plant Water', sub: 'plants', prompt: 'remind me which plants need water', kind: 'list', from: '#16a34a', to: '#0d9488', files: ['src/pages/Index.tsx', 'src/components/PlantRow.tsx'] },
+  { emoji: '🏋️', name: 'Lift Log', sub: 'lifts', prompt: 'track my lifts and chart my progress', kind: 'bars', from: '#2563eb', to: '#7c3aed', files: ['src/pages/Index.tsx', 'src/components/LiftChart.tsx'] },
+  { emoji: '📸', name: 'Polaroids', sub: 'polaroids', prompt: 'a photo wall for our team offsite', kind: 'grid', from: '#f59e0b', to: '#ea580c', files: ['src/pages/Index.tsx', 'src/components/PhotoWall.tsx'] },
+];
+
+/** Ticks per app in the Shakespeare loop (280 ms each). */
+const APP_LOOP = 22;
+
+function ShakespeareSection() {
+  const [ref, inView] = useInView<HTMLDivElement>();
+  const tick = useTicker(280, inView);
+  const t = tick % APP_LOOP;
+  const index = Math.floor(tick / APP_LOOP);
+  const app = LOOP_APPS[index % LOOP_APPS.length];
+  const live = t >= 16;
+  const shown = live ? app : index === 0 ? null : LOOP_APPS[(index - 1) % LOOP_APPS.length];
 
   return (
-    <Window title="~/fieldnotes — zsh" bodyClassName="p-5 font-mono text-[12.5px] leading-6 min-h-[300px]">
-      <p className="text-white/85">
-        <span style={{ color: ORANGE }}>❯</span> {typed.slice(0, chars)}
-        {t < 3 && <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-white/70" />}
-      </p>
+    <section className="relative py-24 md:py-32" style={{ backgroundColor: INK }}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Shakespeare + npanel"
+          title={
+            <>
+              Prompt. Deploy. <GradientText>Next.</GradientText>
+            </>
+          }
+        >
+          Shakespeare, Soapbox's AI app builder, deploys straight to npanel: every app on shakespeare.wtf is served by
+          one. Add your own npanel as a deploy target and the apps land on your domain instead.
+        </SectionHeading>
 
-      {t >= 3 && (
-        <p className="text-white/45">
-          scanning ./dist <span className="text-white/75">42 files</span>, 1.8 MB
-        </p>
-      )}
-
-      {t >= 4 &&
-        BLOSSOMS.map((server, i) => {
-          const progress = clamp01((t - 4 - i * 0.4) / 3);
-          return (
-            <div key={server} className="flex items-center gap-3">
-              <span className="w-[150px] shrink-0 truncate text-white/45">{server}</span>
-              <span className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
-                <span
-                  className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
-                  style={{ width: `${progress * 100}%`, backgroundImage: BRAND_GRADIENT }}
-                />
-              </span>
-              <span className="w-12 shrink-0 text-right tabular-nums text-white/55">{Math.round(progress * 42)}/42</span>
+        <div ref={ref} className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1fr)_150px_minmax(0,1fr)] lg:gap-0">
+          <ShakespeareMock t={t} app={app} />
+          <DeployWire t={t} />
+          <Browser url={shown ? `https://${shown.sub}.${TEAM_DOMAIN}` : `https://${TEAM_DOMAIN}`}>
+            <div className="relative h-[340px] overflow-hidden">
+              {shown ? (
+                <div key={shown.sub} className="h-full animate-[npPop_0.45s_cubic-bezier(.2,1.3,.4,1)_both]">
+                  <AppPreview app={shown} />
+                </div>
+              ) : (
+                <div className="flex h-full items-center justify-center font-mono text-xs text-white/30">waiting for a deploy…</div>
+              )}
+              {live && t === 16 && <div className="absolute inset-0 animate-[npFlash_0.9s_ease-out_forwards] bg-white" />}
             </div>
-          );
-        })}
+            <div className="flex flex-wrap gap-x-4 gap-y-1 border-t border-white/[0.06] px-3.5 py-2 font-mono text-[10.5px] text-white/40">
+              <span>
+                HTTP/2 <span style={{ color: GREEN }}>200</span>
+              </span>
+              <span className="truncate">
+                x-nsite-addr <span className="text-white/65">35128:{'<you>'}:{shown?.sub ?? '…'}</span>
+              </span>
+            </div>
+          </Browser>
+        </div>
 
-      {t >= 8 && (
-        <p>
-          <span style={{ color: GREEN }}>✔</span> <span className="text-white/75">signed manifest</span>{' '}
-          <span className="text-white/40">kind 35128 · d=fieldnotes</span>
-        </p>
-      )}
-      {t >= 9 && (
-        <p>
-          <span style={{ color: GREEN }}>✔</span> <span className="text-white/75">published to 3 relays</span>
-        </p>
-      )}
-      {t >= 10 && (
-        <p className="text-white/85">
-          <span style={{ color: ORANGE }}>❯</span> {t >= 15 ? 'curl -sI https://fieldnotes.blog | grep etag' : ''}
-          {t < 15 && <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-white/70" />}
-        </p>
-      )}
-      {t >= 16 && (
-        <>
-          <p style={{ color: GREEN }}>etag: "{etag}…"</p>
-          <p className="text-white/85">
-            <span style={{ color: ORANGE }}>❯</span>{' '}
-            <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-white/70" />
-          </p>
-        </>
-      )}
+        <div className="mt-8 grid gap-6 text-center sm:grid-cols-3">
+          {[
+            { n: '01', title: 'Describe it', body: 'Shakespeare writes the app and builds it.', on: t < 12 },
+            { n: '02', title: 'Hit Deploy', body: 'It publishes an nsite signed with your key.', on: t >= 12 && t < 16 },
+            { n: '03', title: 'Live on your npanel', body: 'Your server downloads it and takes the name.', on: t >= 16 },
+          ].map((step) => (
+            <div key={step.n} className="transition-opacity duration-500" style={{ opacity: step.on ? 1 : 0.35 }}>
+              <p className="font-mono text-xs" style={{ color: step.on ? ORANGE : 'rgba(255,255,255,0.4)' }}>
+                {step.n}
+              </p>
+              <p className="mt-1 font-semibold text-white">{step.title}</p>
+              <p className="mt-1 text-sm text-white/50">{step.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-14 flex max-w-2xl flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <p className="text-sm text-white/45">Anything that publishes an nsite works, too:</p>
+          <code className="rounded-lg bg-white/[0.05] px-3 py-1.5 font-mono text-[12.5px] text-white/80 ring-1 ring-white/10">
+            <span style={{ color: ORANGE }}>❯</span> nsyte deploy ./dist
+          </code>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ShakespeareMock({ t, app }: { t: number; app: LoopApp }) {
+  const typed = app.prompt.slice(0, Math.max(0, Math.round((app.prompt.length * t) / 6)));
+  const sent = t >= 7;
+  const deploying = t >= 12;
+  const steps = [
+    { at: 8, text: `Wrote ${app.files[0]}` },
+    { at: 9, text: `Wrote ${app.files[1]}` },
+    { at: 10, text: 'Build passed' },
+  ];
+  const deploySteps = [
+    { at: 13, text: 'Publishing to Nostr' },
+    { at: 14, text: `Pointing ${app.sub}.${TEAM_DOMAIN}` },
+    { at: 16, text: 'Live' },
+  ];
+
+  return (
+    <Window
+      title={
+        <span className="inline-flex items-center gap-1.5">
+          <img src="/assets/logos/shakespeare-logo.png" alt="" className="size-3.5" />
+          Shakespeare
+        </span>
+      }
+      bodyClassName="flex h-[372px] flex-col"
+    >
+      <div className="flex items-center gap-2.5 border-b border-white/[0.06] px-4 py-2.5">
+        <AppIcon emoji={app.emoji} from={app.from} to={app.to} className="size-6 text-[13px] rounded-md" />
+        <p className="flex-1 truncate text-[13px] font-medium text-white">{app.name}</p>
+        <span
+          className="inline-flex h-7 items-center gap-1.5 rounded-md px-3 text-[12px] font-semibold text-white transition-transform"
+          style={{ backgroundColor: '#7c3aed', transform: t === 12 ? 'scale(0.9)' : 'scale(1)', boxShadow: t === 12 ? '0 0 0 4px rgba(124,58,237,0.35)' : 'none' }}
+        >
+          Deploy
+        </span>
+      </div>
+
+      <div className="relative flex-1 space-y-3 overflow-hidden px-4 py-4 text-[13px]">
+        {sent && (
+          <div className="ml-auto max-w-[85%] animate-[npFade_0.3s_ease-out] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2 text-white">
+            Make {app.prompt}
+          </div>
+        )}
+        {t >= 8 && (
+          <div className="space-y-1 font-mono text-[11.5px]">
+            {steps
+              .filter((step) => t >= step.at)
+              .map((step) => (
+                <p key={step.text} className="animate-[npFade_0.25s_ease-out] text-white/60">
+                  <span style={{ color: GREEN }}>✓</span> {step.text}
+                </p>
+              ))}
+          </div>
+        )}
+
+        {/* deploy sheet */}
+        <div
+          className="absolute inset-x-4 bottom-4 rounded-xl p-3.5 ring-1 ring-white/10 transition-all duration-300"
+          style={{
+            backgroundColor: '#242427',
+            opacity: deploying ? 1 : 0,
+            transform: deploying ? 'translateY(0)' : 'translateY(10px)',
+          }}
+        >
+          <div className="mb-2 flex items-center justify-between text-[11px]">
+            <span className="text-white/45">Deploy to</span>
+            <span className="inline-flex items-center gap-1.5 font-medium text-white">
+              <img src={NPANEL_ICON} alt="" className="size-3.5" /> Team npanel
+            </span>
+          </div>
+          {deploySteps.map((step) => {
+            const done = t >= step.at;
+            const active = !done && deploySteps.find((s) => t < s.at) === step;
+            return (
+              <p key={step.text} className="flex items-center gap-2 font-mono text-[11.5px]" style={{ color: done ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.3)' }}>
+                {done ? (
+                  <span style={{ color: GREEN }}>✓</span>
+                ) : active ? (
+                  <span className="size-2.5 animate-spin rounded-full border-[1.5px] border-white/30 border-t-white" />
+                ) : (
+                  <span className="w-2.5" />
+                )}
+                {step.text}
+              </p>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="border-t border-white/[0.06] p-3">
+        <div className="flex h-9 items-center rounded-lg bg-black/40 px-3 text-[13px] ring-1 ring-white/10">
+          {!sent ? (
+            <span className="text-white/85">
+              {typed ? `Make ${typed}` : <span className="text-white/30">What do you want to build?</span>}
+              <span className="ml-px inline-block h-4 w-px translate-y-0.5 animate-pulse bg-white" />
+            </span>
+          ) : (
+            <span className="text-white/30">What do you want to build?</span>
+          )}
+        </div>
+      </div>
     </Window>
   );
 }
 
-/** The gap between the terminal and the browser: relays, and a signed event crossing them. */
+/** The gap between the builder and the browser: relays, and a signed event crossing them. */
 function DeployWire({ t }: { t: number }) {
-  // The event leaves at 9, reaches the relays at 10, and npanel at 11.
-  const position = t < 9 ? 0 : t === 9 ? 6 : t === 10 ? 50 : 96;
-  const visible = t >= 9 && t <= 11;
-  const relaysLit = t >= 10 && t <= 12;
+  // The event leaves at 13, reaches the relays at 14, and npanel at 15.
+  const position = t < 13 ? 0 : t === 13 ? 6 : t === 14 ? 50 : 96;
+  const visible = t >= 13 && t <= 15;
+  const relaysLit = t >= 14 && t <= 16;
 
   return (
     <div className="relative hidden items-center justify-center lg:flex" aria-hidden>
-      {/* the cable */}
       <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-white/5 via-white/20 to-white/5" />
       <div
-        className="absolute top-1/2 h-px -translate-y-1/2 transition-[width] duration-[600ms] ease-linear"
-        style={{ left: 0, width: visible || t === 12 ? `${position}%` : 0, backgroundImage: BRAND_GRADIENT }}
+        className="absolute top-1/2 h-px -translate-y-1/2 transition-[width] duration-[280ms] ease-linear"
+        style={{ left: 0, width: visible || t === 16 ? `${position}%` : 0, backgroundImage: BRAND_GRADIENT }}
       />
-
-      {/* the relays */}
       <div className="relative z-10 flex flex-col gap-2">
         {RELAYS.map((relay, i) => (
           <div
@@ -662,8 +888,7 @@ function DeployWire({ t }: { t: number }) {
               backgroundColor: relaysLit ? '#2a1a10' : RAISED,
               color: relaysLit ? ORANGE : 'rgba(255,255,255,0.45)',
               boxShadow: relaysLit ? `0 0 24px -4px ${FLAME}` : 'none',
-              transitionDelay: `${i * 80}ms`,
-              borderColor: 'transparent',
+              transitionDelay: `${i * 60}ms`,
               ...ringColor(relaysLit ? `${ORANGE}80` : 'rgba(255,255,255,0.08)'),
             }}
           >
@@ -671,108 +896,155 @@ function DeployWire({ t }: { t: number }) {
           </div>
         ))}
       </div>
-
-      {/* the event */}
       <div
-        className="absolute top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-[left,opacity] duration-[600ms] ease-linear"
+        className="absolute top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-[left,opacity] duration-[280ms] ease-linear"
         style={{ left: `${position}%`, opacity: visible ? 1 : 0 }}
       >
-        <div
-          className="size-3.5 rounded-full"
-          style={{ backgroundImage: BRAND_GRADIENT, boxShadow: `0 0 12px 3px ${FLAME}, 0 0 40px 8px ${ORANGE}66` }}
-        />
+        <div className="size-3.5 rounded-full" style={{ backgroundImage: BRAND_GRADIENT, boxShadow: `0 0 12px 3px ${FLAME}, 0 0 40px 8px ${ORANGE}66` }} />
       </div>
     </div>
   );
 }
 
-const DEPLOY_LOG_STAGES: Array<{ at: number; level: 'info' | 'ok'; text: string }> = [
-  { at: 11, level: 'info', text: 'manifest_received' },
-  { at: 12, level: 'info', text: 'downloading_blobs 18/42' },
-  { at: 13, level: 'info', text: 'downloading_blobs 42/42' },
-  { at: 14, level: 'ok', text: 'build_ready · live' },
+const RELAYS = ['relay.ditto.pub', 'relay.primal.net', 'nos.lol'];
+
+/** A freshly generated app, drawn from its kind. */
+function AppPreview({ app }: { app: LoopApp }) {
+  const gradient = `linear-gradient(135deg, ${app.from}, ${app.to})`;
+  return (
+    <div className="flex h-full flex-col bg-[#fafaf9] text-[#1c1917]">
+      <div className="flex items-center gap-2 px-4 py-3">
+        <AppIcon emoji={app.emoji} from={app.from} to={app.to} className="size-7 rounded-lg text-sm" />
+        <span className="text-sm font-bold">{app.name}</span>
+        <span className="ml-auto rounded-full bg-black/5 px-2 py-0.5 text-[10px] text-black/50">Log in</span>
+      </div>
+      <div className="flex flex-1 items-center justify-center px-4 pb-4">
+        {app.kind === 'timer' && (
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex size-40 items-center justify-center rounded-full p-1.5" style={{ backgroundImage: gradient }}>
+              <div className="flex size-full flex-col items-center justify-center rounded-full bg-[#fafaf9]">
+                <span className="text-4xl font-bold tabular-nums">24:59</span>
+                <span className="text-[10px] tracking-widest text-black/40 uppercase">focus</span>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <span className="rounded-full px-4 py-1.5 text-xs font-semibold text-white" style={{ backgroundImage: gradient }}>Start</span>
+              <span className="rounded-full bg-black/5 px-4 py-1.5 text-xs">Reset</span>
+            </div>
+          </div>
+        )}
+        {app.kind === 'vote' && (
+          <div className="w-full max-w-xs space-y-2">
+            <p className="mb-3 text-center text-sm font-semibold">Friday pizza?</p>
+            {[['Margherita', 46], ['Pepperoni', 31], ['Hawaiian', 15], ['Veggie', 8]].map(([label, pct]) => (
+              <div key={label} className="relative overflow-hidden rounded-lg bg-black/5 px-3 py-2 text-xs">
+                <span className="absolute inset-y-0 left-0 opacity-30" style={{ width: `${pct}%`, backgroundImage: gradient }} />
+                <span className="relative flex justify-between">
+                  <span>{label}</span>
+                  <span className="font-semibold">{pct}%</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+        {app.kind === 'list' && (
+          <div className="w-full max-w-xs space-y-2">
+            {[['Monstera', 'today', true], ['Fiddle leaf fig', 'today', true], ['Pothos', 'Thursday', false], ['Snake plant', 'next week', false]].map(([plant, when, due]) => (
+              <div key={String(plant)} className="flex items-center gap-3 rounded-lg bg-white px-3 py-2 text-xs shadow-sm">
+                <span className="size-4 rounded-full border-2" style={{ borderColor: app.from, backgroundColor: due ? app.from : 'transparent' }} />
+                <span className="flex-1 font-medium">{plant}</span>
+                <span className={due ? 'font-semibold' : 'text-black/40'} style={{ color: due ? app.to : undefined }}>{when}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {app.kind === 'bars' && (
+          <div className="w-full max-w-xs">
+            <p className="mb-1 text-xs text-black/50">Squat, kg</p>
+            <p className="mb-3 text-2xl font-bold">
+              140 <span className="text-xs font-semibold" style={{ color: app.to }}>+12.5</span>
+            </p>
+            <div className="flex h-28 items-end gap-1.5">
+              {[48, 55, 52, 63, 66, 71, 70, 78, 84, 90].map((h, i) => (
+                <span key={i} className="flex-1 rounded-t" style={{ height: `${h}%`, backgroundImage: gradient, opacity: 0.45 + i * 0.055 }} />
+              ))}
+            </div>
+          </div>
+        )}
+        {app.kind === 'grid' && (
+          <div className="grid w-full grid-cols-3 gap-2">
+            {Array.from({ length: 6 }, (_, i) => (
+              <div
+                key={i}
+                className="aspect-square rounded bg-white p-1 pb-4 shadow"
+                style={{ transform: `rotate(${(noise(i + 2) - 0.5) * 8}deg)` }}
+              >
+                <div
+                  className="size-full rounded-sm"
+                  style={{ backgroundImage: `linear-gradient(${120 + i * 30}deg, ${FLOOD_GRADIENTS[i][0]}, ${FLOOD_GRADIENTS[i][1]})` }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------------ */
+/* Ditto, the demo site the rest of the page serves                         */
+/* ------------------------------------------------------------------------ */
+
+/** One deploy of Ditto, as the versions and Tor demos show it. */
+interface SiteVersion {
+  feature: string;
+  accent: string;
+  etag: string;
+}
+
+const SITE_VERSIONS: SiteVersion[] = [
+  { feature: 'Communities are here', accent: '#8b5cf6', etag: '4b1e9a07' },
+  { feature: 'Custom profile themes', accent: '#ec4899', etag: '9f2ce41a' },
+  { feature: 'Zap splits', accent: '#f59e0b', etag: 'd04f19e2' },
+  { feature: 'Live streams', accent: '#06b6d4', etag: '7c1ea90b' },
 ];
 
-function DeployBrowser({ t, site, live }: { t: number; site: SiteVersion; live: boolean }) {
-  const stage = [...DEPLOY_LOG_STAGES].reverse().find((s) => t >= s.at);
-  const toastVisible = t >= 11 && t <= 19;
+const DITTO_POSTS = [
+  { name: 'Alex Gleason', handle: 'alex@gleasonator.com', avatar: '/assets/avatars/alex.png', text: 'Shipped three apps from Shakespeare before lunch.' },
+  { name: 'Derek Ross', handle: '· 2m', avatar: '/assets/avatars/derek-headshot.jpg', text: 'gm nostr ☀️ new Ditto build just landed' },
+];
 
+function DittoSite({ site }: { site: SiteVersion }) {
   return (
-    <div className="relative">
-      <Browser url="https://fieldnotes.blog" className="h-full">
-        <div className="relative min-h-[260px] overflow-hidden">
-          <FieldNotesSite site={site} flash={live && t === 14} />
-
-          {/* npanel deploy toast */}
-          <div
-            className="absolute right-3 bottom-3 left-3 flex items-center gap-3 rounded-xl p-3 shadow-2xl ring-1 ring-white/10 backdrop-blur-xl transition-all duration-500 sm:left-auto sm:w-[270px]"
-            style={{
-              backgroundColor: 'rgba(28,28,31,0.88)',
-              opacity: toastVisible ? 1 : 0,
-              transform: toastVisible ? 'translateY(0)' : 'translateY(12px)',
-            }}
-          >
-            <img src={NPANEL_ICON} alt="" className="size-8 shrink-0" />
-            <div className="min-w-0 flex-1">
-              <p className="text-xs font-semibold text-white">fieldnotes.blog</p>
-              <p className="truncate font-mono text-[11px]" style={{ color: stage?.level === 'ok' ? GREEN : 'rgba(255,255,255,0.55)' }}>
-                {stage?.text ?? 'manifest_received'}
-              </p>
-            </div>
-            {stage?.level === 'ok' ? (
-              <span className="flex size-5 items-center justify-center rounded-full" style={{ backgroundColor: GREEN }}>
-                <Check className="size-3 text-black" strokeWidth={3} />
-              </span>
-            ) : (
-              <span className="size-4 animate-spin rounded-full border-2 border-white/20 border-t-white/80" />
-            )}
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-x-4 gap-y-1 border-t border-white/[0.06] px-3.5 py-2 font-mono text-[10.5px] text-white/40">
-          <span>
-            HTTP/2 <span style={{ color: GREEN }}>200</span>
-          </span>
-          <span>
-            etag <span className="text-white/65">"{site.etag}…"</span>
-          </span>
-          <span className="truncate">
-            x-nsite-addr <span className="text-white/65">naddr1qq9xvetd…</span>
-          </span>
-        </div>
-      </Browser>
-    </div>
-  );
-}
-
-/** The demo site, a small blog whose look changes with each deploy. */
-function FieldNotesSite({ site, flash = false, compact = false }: { site: SiteVersion; flash?: boolean; compact?: boolean }) {
-  return (
-    <div className="bg-[#f6f4ef] text-[#1c1917]">
-      <div className="flex items-center justify-between px-5 py-3 text-[11px]">
-        <span className="font-serif text-sm font-bold italic">{site.kicker}</span>
-        <span className="flex gap-3 text-[#78716c]">
-          <span>Posts</span>
-          <span>Maps</span>
-          <span>About</span>
-        </span>
+    <div className="bg-white text-[#18181b]">
+      <div className="flex items-center gap-2 border-b border-black/5 px-4 py-2.5">
+        <img src="/ditto-logo-transparent.png" alt="" className="size-6 object-contain" />
+        <span className="text-sm font-bold">Ditto</span>
+        <span className="ml-auto h-6 w-28 rounded-full bg-black/5" />
       </div>
       <div
-        className={`relative mx-3 overflow-hidden rounded-lg px-5 text-white transition-[background] duration-700 ${compact ? 'py-6' : 'py-9'}`}
-        style={{ backgroundImage: `linear-gradient(135deg, ${site.from}, ${site.to})` }}
+        className="mx-3 mt-3 rounded-xl px-4 py-4 text-white transition-[background] duration-700"
+        style={{ backgroundImage: `linear-gradient(135deg, ${site.accent}, ${site.accent}99)` }}
       >
-        <svg viewBox="0 0 200 60" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-30" aria-hidden>
-          <path d="M0 60 L0 38 L30 18 L55 34 L85 8 L120 36 L145 22 L175 40 L200 26 L200 60 Z" fill="black" />
-        </svg>
-        <p className="relative text-[10px] font-semibold tracking-widest uppercase opacity-80">Latest</p>
-        <p className={`relative mt-1 font-serif font-bold ${compact ? 'text-xl' : 'text-2xl sm:text-3xl'}`}>{site.title}</p>
-        {flash && <div className="absolute inset-0 animate-[npFlash_0.9s_ease-out_forwards] bg-white" />}
+        <p className="text-[10px] font-semibold tracking-widest uppercase opacity-80">New in Ditto</p>
+        <p className="mt-0.5 text-lg font-bold">{site.feature}</p>
       </div>
-      <div className={`grid grid-cols-3 gap-2 px-3 ${compact ? 'py-3' : 'pt-3 pb-20'}`}>
-        {[0, 1, 2].map((i) => (
-          <div key={i} className="space-y-1.5 rounded-md bg-white p-2 shadow-sm">
-            <div className="h-8 rounded" style={{ backgroundColor: i === 0 ? `${site.from}33` : '#e7e5e4' }} />
-            <div className="h-1.5 w-4/5 rounded bg-[#d6d3d1]" />
-            <div className="h-1.5 w-3/5 rounded bg-[#e7e5e4]" />
+      <div className="divide-y divide-black/5 px-3 py-1">
+        {DITTO_POSTS.map((post) => (
+          <div key={post.name} className="flex gap-2.5 py-3">
+            <img src={post.avatar} alt="" className="size-8 shrink-0 rounded-full object-cover" />
+            <div className="min-w-0 text-[12px]">
+              <p className="truncate">
+                <span className="font-semibold">{post.name}</span> <span className="text-black/40">{post.handle}</span>
+              </p>
+              <p className="text-black/75">{post.text}</p>
+              <div className="mt-1.5 flex gap-5 text-[11px] text-black/35">
+                <span>💬 4</span>
+                <span>🔁 12</span>
+                <span style={{ color: site.accent }}>⚡ 2.1k</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -787,32 +1059,32 @@ function FieldNotesSite({ site, flash = false, compact = false }: { site: SiteVe
 interface MockSite {
   title: string;
   host: string;
-  color: string;
-  letter: string;
+  icon: string;
   visitors: string;
   change: number;
   seed: number;
 }
 
+/** Soapbox's own projects, as they'd sit in one npanel. Traffic numbers are illustrative. */
 const MOCK_SITES: MockSite[] = [
-  { title: 'Field Notes', host: 'fieldnotes.blog', color: '#0f766e', letter: 'F', visitors: '2.4k', change: 12, seed: 1 },
-  { title: 'Harbor Coffee', host: 'harbor.coffee', color: '#9a3412', letter: 'H', visitors: '871', change: 4, seed: 7 },
-  { title: 'Open Transit Map', host: 'transit.city', color: '#1d4ed8', letter: 'O', visitors: '15.2k', change: 31, seed: 13 },
-  { title: 'Zine Press', host: 'zine.press', color: '#7e22ce', letter: 'Z', visitors: '406', change: -6, seed: 21 },
-  { title: 'Night Market', host: 'nightmarket.app', color: '#be185d', letter: 'N', visitors: '5.9k', change: 18, seed: 33 },
+  { title: 'Ditto', host: 'ditto.pub', icon: '/ditto-logo-transparent.png', visitors: '18.6k', change: 12, seed: 1 },
+  { title: 'Armada', host: 'armada.buzz', icon: '/assets/media-kit/logos/armada-logo.svg', visitors: '7.2k', change: 31, seed: 7 },
+  { title: 'Shakespeare', host: 'shakespeare.diy', icon: '/assets/logos/shakespeare-logo.png', visitors: '11.4k', change: 9, seed: 13 },
+  { title: 'Agora', host: 'agora.spot', icon: '/assets/media-kit/logos/agora-logo.svg', visitors: '3.9k', change: 18, seed: 21 },
+  { title: 'NostrHub', host: 'nostrhub.io', icon: '/assets/toolbox/nostrhub-icon.png', visitors: '2.1k', change: -4, seed: 33 },
 ];
 
 const NEW_SITE: MockSite = {
-  title: 'Launch Party',
-  host: 'launch.party',
-  color: FLAME,
-  letter: 'L',
+  title: 'Soapbox',
+  host: 'soapbox.pub',
+  icon: '/assets/logo.svg',
   visitors: '0',
   change: 0,
   seed: 51,
 };
 
-const NEW_SITE_ADDRESS = 'npub1q3sle0kvfsehgsuexttt3ugjd8xdklxfwwkh559wxckmzddywnws6cd26p';
+/** soapbox.pub's named nsite (kind 35128, d=soapbox), signed by the Soapbox key. */
+const NEW_SITE_ADDRESS = 'naddr1qqrhxmmpwp3x77qzypup59f8q40hfs0hqgc0zquyvzdng4y032m2pfk25aqztqnlnldw2qcyqqqgjwqs2e02h';
 
 function sparkValues(seed: number, length = 24, grow = 1): number[] {
   return Array.from({ length }, (_, i) => {
@@ -845,12 +1117,7 @@ function SiteCard({ site, status }: { site: MockSite; status?: 'deploying' | 'li
       style={{ backgroundColor: RAISED }}
     >
       <div className="flex items-center gap-2.5">
-        <span
-          className="flex size-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-white"
-          style={{ backgroundColor: site.color }}
-        >
-          {site.letter}
-        </span>
+        <img src={site.icon} alt="" className="size-8 shrink-0 rounded-lg bg-white/[0.06] object-contain p-1" />
         <div className="min-w-0 flex-1">
           <p className="truncate text-[13px] font-semibold text-white">{site.title}</p>
           <p className="truncate text-[11px] text-white/45">{site.host}</p>
@@ -918,7 +1185,7 @@ function DashboardMock() {
 
   const dialogOpen = t >= 14 && t < 64;
   const hostChars = Math.max(0, Math.min(NEW_SITE.host.length, Math.floor((t - 20) / 1.2)));
-  const addrChars = Math.max(0, Math.min(NEW_SITE_ADDRESS.length, (t - 36) * 3));
+  const addrChars = Math.max(0, Math.min(NEW_SITE_ADDRESS.length, (t - 36) * 4));
   const pressing = t >= 60 && t < 64;
   const added = t >= 64;
   const status: 'deploying' | 'live' = t >= 88 ? 'live' : 'deploying';
@@ -1040,7 +1307,7 @@ function DnsStrip() {
   const records = [
     { type: 'A', name: '@', value: '203.0.113.7' },
     { type: 'AAAA', name: '@', value: '2001:db8::7' },
-    { type: 'CNAME', name: 'www', value: 'launch.party.' },
+    { type: 'CNAME', name: 'www', value: 'soapbox.pub.' },
   ];
   return (
     <div className="mx-auto mt-10 grid max-w-6xl items-center gap-6 md:grid-cols-[1fr_auto]">
@@ -1086,13 +1353,13 @@ const UPSTREAMS = [
 const LOG_PATHS = [
   { path: '/', size: '2.1 KB' },
   { path: '/assets/index-B4f2a.js', size: '149 KB' },
-  { path: '/posts/high-camp', size: '2.1 KB' },
+  { path: '/npub1q3sle0kvfsehgsuexttt3ugjd8xdk', size: '2.1 KB' },
   { path: '/assets/index-Cq81.css', size: '11 KB' },
-  { path: '/img/ridge.avif', size: '284 KB' },
-  { path: '/maps', size: '2.1 KB' },
+  { path: '/ditto-logo.png', size: '61 KB' },
+  { path: '/notifications', size: '2.1 KB' },
   { path: '/sitemap.xml', size: '1.4 KB' },
-  { path: '/posts/river-crossing', size: '2.1 KB' },
-  { path: '/favicon.svg', size: '0.8 KB' },
+  { path: '/communities', size: '2.1 KB' },
+  { path: '/favicon.ico', size: '4.2 KB' },
 ];
 
 function UnplugSection() {
@@ -1206,7 +1473,7 @@ function UnplugSection() {
             <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-3">
               <p className="flex items-center gap-2 text-xs font-medium text-white/70">
                 <span className="size-2 animate-pulse rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
-                fieldnotes.blog
+                ditto.pub
               </p>
               <p className="font-mono text-[11px] text-white/40">serving from local disk</p>
             </div>
@@ -1381,9 +1648,9 @@ function VersionsSection() {
           </div>
 
           <div className="lg:sticky lg:top-24">
-            <Browser url="https://fieldnotes.blog">
+            <Browser url="https://ditto.pub">
               <div key={served.id} className="animate-[npFade_0.4s_ease-out]">
-                {served.site && <FieldNotesSite site={served.site} compact />}
+                {served.site && <DittoSite site={served.site} />}
               </div>
             </Browser>
             <p className="mt-4 text-center font-mono text-xs text-white/40">
@@ -1505,7 +1772,7 @@ function SwitchesSection() {
   );
 }
 
-const ONION = 'fieldn7xq4mwvj3h2kzb5ycupl6aodtgr7nse2wfhq5vilkx3am4jbyd.onion';
+const ONION = 'dittopubx7q4mwvj3h2kzb5ycupl6aodtgr7nse2wfhq5vilkx3am4j.onion';
 
 function TorDemo({ on }: { on: boolean }) {
   const tick = useTicker(45, on);
@@ -1513,16 +1780,16 @@ function TorDemo({ on }: { on: boolean }) {
 
   return (
     <div key={String(on)} className="grid h-full animate-[npFade_0.35s_ease-out] gap-4">
-      <Browser url={on ? ONION.slice(0, Math.max(chars, 1)) : 'fieldnotes.blog'} onion={on}>
+      <Browser url={on ? ONION.slice(0, Math.max(chars, 1)) : 'ditto.pub'} onion={on}>
         <div className="relative">
           {on && chars >= ONION.length && (
             <div className="flex items-center gap-2 px-4 py-2 text-[12px] text-white" style={{ backgroundColor: '#3b1f5c' }}>
               <OnionGlyph className="size-4" />
-              <span className="flex-1">fieldnotes.blog is available as an onion site.</span>
+              <span className="flex-1">ditto.pub is available as an onion site.</span>
               <span className="rounded bg-white/15 px-2 py-0.5 text-[11px]">Always prioritize</span>
             </div>
           )}
-          <FieldNotesSite site={SITE_VERSIONS[3]} compact />
+          <DittoSite site={SITE_VERSIONS[3]} />
         </div>
       </Browser>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -1530,7 +1797,7 @@ function TorDemo({ on }: { on: boolean }) {
           lines={[
             { cmd: true, text: 'pgrep -c tor' },
             { text: '0', color: 'rgba(255,255,255,0.7)' },
-            { cmd: true, text: 'curl -sI https://fieldnotes.blog | grep -i onion' },
+            { cmd: true, text: 'curl -sI https://ditto.pub | grep -i onion' },
             on
               ? { text: `onion-location: http://${ONION.slice(0, 18)}…`, color: PURPLE }
               : { text: '(nothing)', color: 'rgba(255,255,255,0.35)' },
@@ -1578,7 +1845,7 @@ function AnalyticsDemo({ on }: { on: boolean }) {
       {on ? (
         <>
           <div className="mb-5 flex items-center justify-between">
-            <p className="text-sm font-semibold text-white">fieldnotes.blog</p>
+            <p className="text-sm font-semibold text-white">ditto.pub</p>
             <p className="flex items-center gap-2 text-xs text-white/55">
               <span className="size-2 animate-pulse rounded-full" style={{ backgroundColor: GREEN }} />
               <span className="tabular-nums">{live}</span> current visitors
@@ -1732,7 +1999,7 @@ function ErrorsDemo({ on }: { on: boolean }) {
             <MiniTerminal
               lines={[
                 { cmd: true, text: 'SENTRY_DSN=' },
-                { text: 'https://key@fieldnotes.blog/_npanel/0', color: ORANGE },
+                { text: 'https://key@ditto.pub/_npanel/0', color: ORANGE },
               ]}
             />
           </div>
@@ -1755,15 +2022,13 @@ function PreviewsDemo({ on }: { on: boolean }) {
             <span className="font-semibold text-white">Derek</span> <span className="text-white/35">10:14</span>
           </p>
           <p className="mt-0.5 truncate font-mono text-[12.5px]" style={{ color: BLUE }}>
-            https://fieldnotes.blog/nevent1qqsrhuxx8l9ex335q7he0f09aej04zpazpl0ne2cgukyawd24mayt8g
+            https://ditto.pub/nevent1qqsrhuxx8l9ex335q7he0f09aej04zpazpl0ne2cgukyawd24mayt8g
           </p>
 
           {on ? (
             <div className="mt-3 max-w-[460px] overflow-hidden rounded-xl ring-1 ring-white/10 animate-[npPop_0.5s_cubic-bezier(.2,1.4,.4,1)_both]" style={{ backgroundColor: RAISED }}>
-              <div className="relative aspect-[1.91/1] overflow-hidden" style={{ backgroundImage: 'linear-gradient(135deg,#4f46e5,#0369a1)' }}>
-                <svg viewBox="0 0 200 60" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-30" aria-hidden>
-                  <path d="M0 60 L0 38 L30 18 L55 34 L85 8 L120 36 L145 22 L175 40 L200 26 L200 60 Z" fill="black" />
-                </svg>
+              <div className="relative aspect-[1.91/1] overflow-hidden" style={{ backgroundImage: 'linear-gradient(135deg,#7c3aed,#c026d3)' }}>
+                <img src="/ditto-logo-transparent.png" alt="" className="absolute -right-6 -bottom-8 size-40 object-contain opacity-20" />
                 <div className="absolute inset-0 flex flex-col justify-between p-5">
                   <div className="flex items-center gap-2.5">
                     <img src="/assets/avatars/alex.png" alt="" className="size-10 rounded-full ring-2 ring-white/80" />
@@ -1773,15 +2038,15 @@ function PreviewsDemo({ on }: { on: boolean }) {
                     </div>
                   </div>
                   <p className="font-serif text-lg leading-snug font-bold text-white sm:text-xl">
-                    "Made it to the summit before the weather turned. Photos from the ridge inside."
+                    "Shipped three apps from Shakespeare before lunch. All of them live on our own npanel."
                   </p>
                 </div>
               </div>
               <div className="p-3">
-                <p className="text-[11px] text-white/40">fieldnotes.blog</p>
-                <p className="text-[13px] font-semibold text-white">Alex Gleason on Field Notes</p>
+                <p className="text-[11px] text-white/40">ditto.pub</p>
+                <p className="text-[13px] font-semibold text-white">Alex Gleason on Ditto</p>
                 <p className="line-clamp-2 text-[12px] text-white/55">
-                  Made it to the summit before the weather turned. Photos from the ridge inside.
+                  Shipped three apps from Shakespeare before lunch. All of them live on our own npanel.
                 </p>
               </div>
             </div>
@@ -1790,8 +2055,8 @@ function PreviewsDemo({ on }: { on: boolean }) {
               <div className="flex">
                 <div className="w-1 shrink-0 bg-white/20" />
                 <div className="p-3">
-                  <p className="text-[11px] text-white/40">fieldnotes.blog</p>
-                  <p className="text-[13px] font-semibold text-white">Field Notes</p>
+                  <p className="text-[11px] text-white/40">ditto.pub</p>
+                  <p className="text-[13px] font-semibold text-white">Ditto</p>
                   <p className="text-[12px] text-white/45">Every link to every post looks exactly like this.</p>
                 </div>
               </div>
@@ -1861,7 +2126,7 @@ const RECEIPTS: Array<{ icon: LucideIcon; color: string; label: string; code: Re
     label: 'Runtime config',
     code: (
       <>
-        window.ENV.API_URL <span className="text-white/40">→</span> <span style={{ color: GREEN }}>"https://api.fieldnotes.blog"</span>
+        window.ENV.RELAY_URL <span className="text-white/40">→</span> <span style={{ color: GREEN }}>"wss://relay.ditto.pub"</span>
       </>
     ),
   },
@@ -1881,7 +2146,7 @@ const RECEIPTS: Array<{ icon: LucideIcon; color: string; label: string; code: Re
     label: 'Audit log',
     code: (
       <>
-        <span className="text-white/40">14:02</span> alex <span style={{ color: YELLOW }}>pinned</span> fieldnotes.blog → d04f19e2
+        <span className="text-white/40">14:02</span> alex <span style={{ color: YELLOW }}>pinned</span> ditto.pub → d04f19e2
       </>
     ),
   },
@@ -1901,7 +2166,7 @@ const RECEIPTS: Array<{ icon: LucideIcon; color: string; label: string; code: Re
     label: 'SEO, handled',
     code: (
       <>
-        link: &lt;https://fieldnotes.blog/maps&gt;; rel="canonical"
+        link: &lt;https://ditto.pub/communities&gt;; rel="canonical"
       </>
     ),
   },
@@ -2219,12 +2484,12 @@ function FinalCtaSection() {
             Get npanel <ArrowRight className="size-4" />
           </a>
           <a
-            href={NSYTE_URL}
+            href={SHAKESPEARE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-12 items-center gap-2 rounded-xl bg-white/[0.06] px-6 font-medium text-white/85 ring-1 ring-white/10 transition-colors hover:bg-white/10"
           >
-            Publish a site with nsyte
+            Build an app with Shakespeare
           </a>
         </div>
         <p className="mt-8 font-mono text-xs text-white/35">
