@@ -42,6 +42,7 @@ export default defineConfig({
         "/halloween-hackathon",
         "/media-kit",
         "/mkstack",
+        "/npanel",
         "/search",
         "/shakespeare",
         "/shakespeare-community",
