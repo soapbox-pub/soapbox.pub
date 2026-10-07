@@ -454,23 +454,49 @@ export default function Npanel() {
 /* Hero: a flood of apps                                                    */
 /* ------------------------------------------------------------------------ */
 
-/** Shakespeare's own npanel serves every app under this domain. */
-const SHAKESPEARE_DOMAIN = 'shakespeare.wtf';
+/** Soapbox's own apps, which show up in the flood with their real icons and domains. */
+const SOAPBOX_APPS: Record<string, { name: string; icon: string; domain: string }> = {
+  ditto: { name: 'Ditto', icon: '/ditto-logo-transparent.png', domain: 'ditto.pub' },
+  armada: { name: 'Armada', icon: '/assets/media-kit/logos/armada-logo.svg', domain: 'armada.buzz' },
+  shakespeare: { name: 'Shakespeare', icon: '/assets/logos/shakespeare-logo.png', domain: 'shakespeare.diy' },
+  agora: { name: 'Agora', icon: '/assets/media-kit/logos/agora-logo.svg', domain: 'agora.spot' },
+  nostrhub: { name: 'NostrHub', icon: '/assets/toolbox/nostrhub-icon.png', domain: 'nostrhub.io' },
+  soapbox: { name: 'Soapbox', icon: '/assets/logo.svg', domain: 'soapbox.pub' },
+  mostr: { name: 'Mostr', icon: '/assets/toolbox/mostr-icon.svg', domain: 'mostr.pub' },
+  nostrify: { name: 'Nostrify', icon: '/assets/toolbox/nostrify-icon.png', domain: 'nostrify.dev' },
+  treasures: { name: 'Treasures', icon: '/assets/toybox/treasures-icon.svg', domain: 'treasures.to' },
+};
 
-/** The kind of thing people build in Shakespeare in an afternoon. Invented names. */
-const FLOOD_APPS: Array<[string, string]> = [
-  ['⏱️', 'Pomodoro Lofi'], ['🌱', 'Seed Swap'], ['🎲', 'Dice Night'], ['📚', 'Book Club'], ['🧗', 'Crag Log'],
-  ['🍜', 'Ramen Rank'], ['🎧', 'Mixtape'], ['🐝', 'Hive Notes'], ['🗺️', 'Trail Map'], ['💸', 'Split Bill'],
-  ['🧘', 'Breathe'], ['🎨', 'Pixel Pad'], ['🏀', 'Pickup Hoops'], ['🍳', 'Fridge Chef'], ['🛰️', 'Sat Tracker'],
-  ['📸', 'Polaroids'], ['🐾', 'Dog Walks'], ['🎮', 'Snake'], ['🧾', 'Receipt Box'], ['🌦️', 'Rain Check'],
-  ['🏕️', 'Camp List'], ['🎂', 'Birthday Bot'], ['🧠', 'Flashcards'], ['🚲', 'Bike Share'], ['☕', 'Coffee Map'],
-  ['🎤', 'Karaoke Queue'], ['🪴', 'Plant Water'], ['🧩', 'Daily Puzzle'], ['🏋️', 'Lift Log'], ['📦', 'Garage Sale'],
-  ['🎬', 'Movie Night'], ['🌙', 'Sleep Diary'], ['🐟', 'Fish Finder'], ['🎹', 'Chord Wheel'], ['🗳️', 'Quick Poll'],
-  ['🍕', 'Pizza Vote'], ['📅', 'Meetup'], ['🧳', 'Pack List'], ['💬', 'Group Chat'], ['⚡', 'Zap Jar'],
-  ['🏆', 'Leaderboard'], ['🔭', 'Star Party'], ['🍷', 'Wine Notes'], ['🧶', 'Knit Count'], ['🎯', 'Habit Streak'],
-  ['🛹', 'Skate Spots'], ['🌮', 'Taco Tuesday'], ['📻', 'Podcast Clips'], ['🥾', 'Hike Buddy'], ['🐣', 'Chore Chart'],
-  ['🧪', 'Lab Notes'], ['💡', 'Idea Board'], ['🎟️', 'Raffle'], ['🏠', 'Rent Split'], ['🌊', 'Surf Report'],
-  ['🦉', 'Study Timer'], ['🎻', 'Practice Log'], ['🍪', 'Recipe Box'], ['♟️', 'Chess Club'], ['🔑', 'Lost Keys'],
+/**
+ * The flood: Soapbox's apps mixed in with the kind of thing people build in an
+ * afternoon. A string entry is a Soapbox app; the rest are invented, names and
+ * domains alike, with a handful on shakespeare.wtf.
+ */
+const FLOOD_APPS: Array<string | [string, string, string]> = [
+  ['⏱️', 'Pomodoro Lofi', 'pomodoro.shakespeare.wtf'], ['🌱', 'Seed Swap', 'seedswap.garden'], 'ditto',
+  ['🎲', 'Dice Night', 'dicenight.games'], ['📚', 'Book Club', 'readalong.club'], ['🧗', 'Crag Log', 'craglog.app'],
+  ['🍜', 'Ramen Rank', 'ramenrank.co'], ['🎧', 'Mixtape', 'mixtape.fm'], 'armada',
+  ['🐝', 'Hive Notes', 'hivenotes.io'], ['🗺️', 'Trail Map', 'trailmap.camp'], ['💸', 'Split Bill', 'splitbill.money'],
+  ['🧘', 'Breathe', 'breathe.shakespeare.wtf'], ['🎨', 'Pixel Pad', 'pixelpad.art'], 'shakespeare',
+  ['🏀', 'Pickup Hoops', 'pickuphoops.com'], ['🍳', 'Fridge Chef', 'fridgechef.kitchen'], ['🛰️', 'Sat Tracker', 'sattrack.space'],
+  ['📸', 'Polaroids', 'polaroids.photo'], 'agora', ['🐾', 'Dog Walks', 'dogwalks.pet'],
+  ['🎮', 'Snake', 'snake.shakespeare.wtf'], ['🧾', 'Receipt Box', 'receiptbox.app'], ['🌦️', 'Rain Check', 'raincheck.dev'],
+  ['🏕️', 'Camp List', 'camplist.org'], 'nostrhub', ['🎂', 'Birthday Bot', 'bday.bot'],
+  ['🧠', 'Flashcards', 'flashcards.study'], ['🚲', 'Bike Share', 'bikeshare.city'], ['☕', 'Coffee Map', 'coffeemap.cafe'],
+  'soapbox', ['🎤', 'Karaoke Queue', 'karaoke.party'], ['🪴', 'Plant Water', 'plants.shakespeare.wtf'],
+  ['🧩', 'Daily Puzzle', 'dailypuzzle.net'], ['🏋️', 'Lift Log', 'liftlog.fit'], 'mostr',
+  ['📦', 'Garage Sale', 'garagesale.shop'], ['🎬', 'Movie Night', 'movienight.tv'], ['🌙', 'Sleep Diary', 'sleepdiary.me'],
+  ['🐟', 'Fish Finder', 'fishfinder.us'], 'nostrify', ['🎹', 'Chord Wheel', 'chordwheel.xyz'],
+  ['🗳️', 'Quick Poll', 'quickpoll.vote'], ['🍕', 'Pizza Vote', 'pizza.shakespeare.wtf'], ['📅', 'Meet Near', 'meetnear.events'],
+  'treasures', ['🧳', 'Pack List', 'packlist.travel'], ['💬', 'Group Chat', 'groupchat.chat'],
+  ['⚡', 'Zap Jar', 'zapjar.lol'], ['🏆', 'Leaderboard', 'leaderboard.gg'], 'armada',
+  ['🔭', 'Star Party', 'starparty.space'], ['🍷', 'Wine Notes', 'winenotes.wine'], ['🧶', 'Knit Count', 'knitcount.co.uk'],
+  ['🎯', 'Habit Streak', 'streak.shakespeare.wtf'], 'ditto', ['🛹', 'Skate Spots', 'skatespots.de'],
+  ['🌮', 'Taco Tuesday', 'tacotuesday.mx'], ['📻', 'Podcast Clips', 'clips.fm'], ['🥾', 'Hike Buddy', 'hikebuddy.ca'],
+  'soapbox', ['🐣', 'Chore Chart', 'chorechart.family'], ['🧪', 'Lab Notes', 'labnotes.science'],
+  ['💡', 'Idea Board', 'ideaboard.so'], ['🏠', 'Rent Split', 'rentsplit.nyc'], 'shakespeare',
+  ['🌊', 'Surf Report', 'surfreport.com.au'], ['🦉', 'Study Timer', 'studytimer.ai'], ['🍪', 'Recipe Box', 'recipebox.recipes'],
+  ['♟️', 'Chess Club', 'chessclub.io'],
 ];
 
 const FLOOD_GRADIENTS: Array<[string, string]> = [
@@ -478,14 +504,21 @@ const FLOOD_GRADIENTS: Array<[string, string]> = [
   ['#f59e0b', '#ea580c'], ['#0891b2', '#2563eb'], ['#db2777', '#9333ea'], ['#65a30d', '#15803d'],
 ];
 
-function slug(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+interface FloodEntry {
+  name: string;
+  domain: string;
+  emoji?: string;
+  icon?: string;
+  from: string;
+  to: string;
 }
 
-function floodApp(i: number) {
-  const [emoji, name] = FLOOD_APPS[((i % FLOOD_APPS.length) + FLOOD_APPS.length) % FLOOD_APPS.length];
+function floodApp(i: number): FloodEntry {
+  const entry = FLOOD_APPS[((i % FLOOD_APPS.length) + FLOOD_APPS.length) % FLOOD_APPS.length];
   const [from, to] = FLOOD_GRADIENTS[Math.floor(noise(i * 3.1) * FLOOD_GRADIENTS.length)];
-  return { emoji, name, sub: slug(name), from, to };
+  if (typeof entry === 'string') return { ...SOAPBOX_APPS[entry], from, to };
+  const [emoji, name, domain] = entry;
+  return { emoji, name, domain, from, to };
 }
 
 function AppIcon({ emoji, from, to, className = 'size-10 text-xl' }: { emoji: string; from: string; to: string; className?: string }) {
@@ -503,12 +536,14 @@ function FloodTile({ i }: { i: number }) {
   const app = floodApp(i);
   return (
     <div className="flex items-center gap-3 rounded-xl bg-[#141416] p-2.5 pr-3.5 ring-1 ring-white/[0.07]">
-      <AppIcon emoji={app.emoji} from={app.from} to={app.to} />
+      {app.icon ? (
+        <img src={app.icon} alt="" className="size-10 shrink-0 rounded-[10px] bg-[#232326] object-contain p-1.5 ring-1 ring-white/10" />
+      ) : (
+        <AppIcon emoji={app.emoji ?? ''} from={app.from} to={app.to} />
+      )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-[13px] font-semibold text-white">{app.name}</p>
-        <p className="truncate font-mono text-[10.5px] text-white/40">
-          {app.sub}.{SHAKESPEARE_DOMAIN}
-        </p>
+        <p className="truncate font-mono text-[10.5px] text-white/40">{app.domain}</p>
       </div>
       <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 6px ${GREEN}` }} />
     </div>
@@ -586,8 +621,8 @@ function HeroSection() {
         </h1>
 
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
-          Build an app in Shakespeare, hit Deploy, and it's live on your own domain. Then do it again. npanel serves every
-          app your team ships, from one box you own.
+          Build a PWA, deploy it on Nostr, and it's live on your own domain. Then do it again. npanel serves every app
+          your team ships, from one box you own.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -644,7 +679,7 @@ function DeployStream() {
           >
             <span style={{ color: GREEN }}>build_ready</span>
             <span className="flex-1 truncate text-white/85">
-              {line.app.sub}.{SHAKESPEARE_DOMAIN}
+              {line.app.domain}
             </span>
             <span className="text-white/35">{12 + Math.floor(noise(line.n) * 60)} files</span>
           </div>
