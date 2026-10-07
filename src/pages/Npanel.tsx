@@ -304,29 +304,6 @@ function Tile({ icon: Icon, color, className = 'size-7' }: { icon: LucideIcon; c
   );
 }
 
-/** The iOS switch the dashboard uses. */
-function Switch({ on, onClick, label }: { on: boolean; onClick: () => void; label: string }) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={on}
-      aria-label={label}
-      onClick={(event) => {
-        event.stopPropagation();
-        onClick();
-      }}
-      className="relative h-[26px] w-[44px] shrink-0 rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-      style={{ backgroundColor: on ? GREEN : 'rgba(120,120,128,0.36)' }}
-    >
-      <span
-        className="absolute top-[2px] left-[2px] size-[22px] rounded-full bg-white shadow-[0_2px_6px_rgba(0,0,0,0.35)] transition-transform duration-200"
-        style={{ transform: on ? 'translateX(18px)' : 'translateX(0)' }}
-      />
-    </button>
-  );
-}
-
 function Eyebrow({ children, color = ORANGE }: { children: ReactNode; color?: string }) {
   return (
     <p className="mb-4 font-mono text-xs font-medium tracking-[0.22em] uppercase" style={{ color }}>
@@ -410,12 +387,12 @@ export default function Npanel() {
 
       <HeroSection />
       <DashboardSection />
-      <ShakespeareSection />
-      <TorSection />
       <AnalyticsSection />
       <ErrorsSection />
       <PreviewsSection />
       <SpeedSection />
+      <TorSection />
+      <ShakespeareSection />
       <InstallSection />
       <FaqSection />
       <FinalCtaSection />
@@ -735,7 +712,7 @@ function ShakespeareSection() {
   const shown = live ? app : index === 0 ? null : LOOP_APPS[(index - 1) % LOOP_APPS.length];
 
   return (
-    <section className="relative py-24 md:py-32" style={{ backgroundColor: INK }}>
+    <section className="relative py-24 md:py-32" style={{ backgroundColor: '#08080a' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Shakespeare + npanel"
@@ -1381,14 +1358,10 @@ function DnsStrip() {
 /* Features: Tor, analytics, errors, link previews, a section each          */
 /* ------------------------------------------------------------------------ */
 
-/**
- * One built-in feature: the pitch on one side, the thing working on the other,
- * and the switch that turns it on, which the reader can flip.
- */
+/** One built-in feature: the pitch on one side, the thing working on the other. */
 function FeatureSection({
   icon,
   color,
-  label,
   title,
   body,
   points,
@@ -1398,15 +1371,13 @@ function FeatureSection({
 }: {
   icon: LucideIcon;
   color: string;
-  label: string;
   title: ReactNode;
   body: ReactNode;
   points: string[];
   flip?: boolean;
   dark?: boolean;
-  demo: (on: boolean) => ReactNode;
+  demo: ReactNode;
 }) {
-  const [on, setOn] = useState(true);
   const [ref, inView] = useInView<HTMLDivElement>();
 
   return (
@@ -1437,18 +1408,9 @@ function FeatureSection({
               </li>
             ))}
           </ul>
-          <div
-            className="mt-10 inline-flex items-center gap-4 rounded-2xl py-3 pr-4 pl-3 ring-1 ring-white/10"
-            style={{ backgroundColor: PANEL }}
-          >
-            <Tile icon={icon} color={color} />
-            <span className="text-[15px] font-medium text-white">{label}</span>
-            <Switch on={on} label={label} onClick={() => setOn((value) => !value)} />
-            <span className="font-mono text-[11px] text-white/35">{on ? 'that was the setup' : 'flip it'}</span>
-          </div>
         </div>
 
-        <div className={`relative min-h-[420px] ${flip ? 'lg:order-1' : ''}`}>{inView && demo(on)}</div>
+        <div className={`relative min-h-[420px] ${flip ? 'lg:order-1' : ''}`}>{inView && demo}</div>
       </div>
     </section>
   );
@@ -1459,7 +1421,6 @@ function TorSection() {
     <FeatureSection
       icon={Waypoints}
       color={INDIGO}
-      label="Tor"
       title={
         <>
           Every site gets an onion. <span className="text-white/35">No Tor to install.</span>
@@ -1471,7 +1432,7 @@ function TorSection() {
         'No daemon, no control port, no second process',
         'Onion-Location on every page, so Tor Browser finds it',
       ]}
-      demo={(on) => <TorDemo on={on} />}
+      demo={<TorDemo />}
     />
   );
 }
@@ -1481,7 +1442,6 @@ function AnalyticsSection() {
     <FeatureSection
       icon={BarChart3}
       color={YELLOW}
-      label="Analytics"
       flip
       dark
       title={
@@ -1495,7 +1455,7 @@ function AnalyticsSection() {
         'Visitors counted under a daily salt, deleted the day after',
         'Sources, pages, countries and devices',
       ]}
-      demo={(on) => <AnalyticsDemo on={on} />}
+      demo={<AnalyticsDemo />}
     />
   );
 }
@@ -1505,7 +1465,6 @@ function ErrorsSection() {
     <FeatureSection
       icon={Bug}
       color={RED}
-      label="Error reporting"
       title={
         <>
           Every crash, <span className="text-white/35">mapped to the line.</span>
@@ -1517,7 +1476,7 @@ function ErrorsSection() {
         'One bug stays one issue across deploys',
         'Nostr secret keys and secret URL parameters scrubbed',
       ]}
-      demo={(on) => <ErrorsDemo on={on} />}
+      demo={<ErrorsDemo />}
     />
   );
 }
@@ -1527,7 +1486,6 @@ function PreviewsSection() {
     <FeatureSection
       icon={Share2}
       color={PINK}
-      label="Link previews"
       flip
       dark
       title={
@@ -1541,7 +1499,7 @@ function PreviewsSection() {
         'Images drawn on a canvas, without making the page wait',
         'Runs sandboxed: Landlock, seccomp and a hard deadline',
       ]}
-      demo={(on) => <PreviewsDemo on={on} />}
+      demo={<PreviewsDemo />}
     />
   );
 }
@@ -1558,15 +1516,15 @@ function fakeOnion(seed: string): string {
 
 const ONION = 'dittopubx7q4mwvj3h2kzb5ycupl6aodtgr7nse2wfhq5vilkx3am4j.onion';
 
-function TorDemo({ on }: { on: boolean }) {
-  const tick = useTicker(45, on);
-  const chars = on ? Math.min(ONION.length, tick) : 0;
+function TorDemo() {
+  const tick = useTicker(45);
+  const chars = Math.min(ONION.length, tick);
 
   return (
-    <div key={String(on)} className="grid h-full animate-[npFade_0.35s_ease-out] gap-4">
-      <Browser url={on ? ONION.slice(0, Math.max(chars, 1)) : 'ditto.pub'} onion={on}>
+    <div className="grid h-full animate-[npFade_0.35s_ease-out] gap-4">
+      <Browser url={ONION.slice(0, Math.max(chars, 1))} onion>
         <div className="relative">
-          {on && chars >= ONION.length && (
+          {chars >= ONION.length && (
             <div className="flex items-center gap-2 px-4 py-2 text-[12px] text-white" style={{ backgroundColor: '#3b1f5c' }}>
               <OnionGlyph className="size-4" />
               <span className="flex-1">ditto.pub is available as an onion site.</span>
@@ -1582,9 +1540,7 @@ function TorDemo({ on }: { on: boolean }) {
             { cmd: true, text: 'pgrep -c tor' },
             { text: '0', color: 'rgba(255,255,255,0.7)' },
             { cmd: true, text: 'curl -sI https://ditto.pub | grep -i onion' },
-            on
-              ? { text: `onion-location: http://${ONION.slice(0, 18)}…`, color: PURPLE }
-              : { text: '(nothing)', color: 'rgba(255,255,255,0.35)' },
+            { text: `onion-location: http://${ONION.slice(0, 18)}…`, color: PURPLE },
           ]}
         />
         <div className="space-y-1.5 rounded-xl p-4 font-mono text-[11px] ring-1 ring-white/10" style={{ backgroundColor: PANEL }}>
@@ -1592,12 +1548,12 @@ function TorDemo({ on }: { on: boolean }) {
             <p
               key={site}
               className="flex items-center gap-2 truncate transition-opacity duration-500"
-              style={{ opacity: on && chars >= ONION.length ? 1 : 0.25, transitionDelay: `${i * 180}ms` }}
+              style={{ opacity: chars >= ONION.length ? 1 : 0.25, transitionDelay: `${i * 180}ms` }}
             >
               <OnionGlyph className="size-3 shrink-0" />
               <span className="w-24 shrink-0 text-white/70">{site}</span>
               <span className="truncate" style={{ color: PURPLE }}>
-                {on ? `${fakeOnion(site).slice(0, 22)}….onion` : '—'}
+                {fakeOnion(site).slice(0, 22)}….onion
               </span>
             </p>
           ))}
@@ -1620,8 +1576,8 @@ function MiniTerminal({ lines }: { lines: Array<{ cmd?: boolean; text: string; c
   );
 }
 
-function AnalyticsDemo({ on }: { on: boolean }) {
-  const tick = useTicker(1400, on);
+function AnalyticsDemo() {
+  const tick = useTicker(1400);
   const values = Array.from({ length: 30 }, (_, i) => 40 + 30 * Math.sin(i / 3) + 40 * noise(i + 4) + i * 2);
   const live = 38 + Math.floor(noise(tick) * 14);
   const sources = [
@@ -1633,8 +1589,7 @@ function AnalyticsDemo({ on }: { on: boolean }) {
   ];
 
   return (
-    <div key={String(on)} className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
-      {on ? (
+    <div className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
         <>
           <div className="mb-5 flex items-center justify-between">
             <p className="text-sm font-semibold text-white">ditto.pub</p>
@@ -1693,20 +1648,16 @@ function AnalyticsDemo({ on }: { on: boolean }) {
             />
           </div>
         </>
-      ) : (
-        <OffState icon={BarChart3} text="No tracker on the page. Nothing counted." />
-      )}
     </div>
   );
 }
 
-function ErrorsDemo({ on }: { on: boolean }) {
-  const tick = useTicker(2200, on);
-  const mapped = on && tick % 2 === 1;
+function ErrorsDemo() {
+  const tick = useTicker(2200);
+  const mapped = tick % 2 === 1;
 
   return (
-    <div key={String(on)} className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
-      {on ? (
+    <div className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
         <>
           <div className="flex items-start gap-3">
             <span className="mt-1 size-2.5 shrink-0 rounded-full" style={{ backgroundColor: RED }} />
@@ -1796,16 +1747,13 @@ function ErrorsDemo({ on }: { on: boolean }) {
             />
           </div>
         </>
-      ) : (
-        <OffState icon={Bug} text="No reporter on the page. Errors stay in your visitors' consoles." />
-      )}
     </div>
   );
 }
 
-function PreviewsDemo({ on }: { on: boolean }) {
+function PreviewsDemo() {
   return (
-    <div key={String(on)} className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
+    <div className="h-full animate-[npFade_0.35s_ease-out] rounded-2xl p-5 ring-1 ring-white/10 md:p-6" style={{ backgroundColor: PANEL }}>
       <p className="mb-4 text-xs text-white/40">#general</p>
       <div className="flex gap-3">
         <img src="/assets/avatars/derek-headshot.jpg" alt="" className="size-9 shrink-0 rounded-full object-cover" />
@@ -1817,7 +1765,6 @@ function PreviewsDemo({ on }: { on: boolean }) {
             https://ditto.pub/nevent1qqsrhuxx8l9ex335q7he0f09aej04zpazpl0ne2cgukyawd24mayt8g
           </p>
 
-          {on ? (
             <div className="mt-3 max-w-[460px] overflow-hidden rounded-xl ring-1 ring-white/10 animate-[npPop_0.5s_cubic-bezier(.2,1.4,.4,1)_both]" style={{ backgroundColor: RAISED }}>
               <div className="relative aspect-[1.91/1] overflow-hidden" style={{ backgroundImage: 'linear-gradient(135deg,#7c3aed,#c026d3)' }}>
                 <img src="/ditto-logo-transparent.png" alt="" className="absolute -right-6 -bottom-8 size-40 object-contain opacity-20" />
@@ -1842,18 +1789,6 @@ function PreviewsDemo({ on }: { on: boolean }) {
                 </p>
               </div>
             </div>
-          ) : (
-            <div className="mt-3 max-w-[460px] overflow-hidden rounded-xl ring-1 ring-white/10" style={{ backgroundColor: RAISED }}>
-              <div className="flex">
-                <div className="w-1 shrink-0 bg-white/20" />
-                <div className="p-3">
-                  <p className="text-[11px] text-white/40">ditto.pub</p>
-                  <p className="text-[13px] font-semibold text-white">Ditto</p>
-                  <p className="text-[12px] text-white/45">Every link to every post looks exactly like this.</p>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
@@ -1873,16 +1808,6 @@ function PreviewsDemo({ on }: { on: boolean }) {
           {'\n}'};
         </pre>
       </div>
-    </div>
-  );
-}
-
-function OffState({ icon: Icon, text }: { icon: LucideIcon; text: string }) {
-  return (
-    <div className="flex h-full min-h-[380px] flex-col items-center justify-center gap-4 text-center">
-      <Icon className="size-10 text-white/15" />
-      <p className="max-w-xs text-sm text-white/40">{text}</p>
-      <p className="font-mono text-xs text-white/25">flip the switch</p>
     </div>
   );
 }
