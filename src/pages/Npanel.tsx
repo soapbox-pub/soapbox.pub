@@ -1593,34 +1593,39 @@ function ErrorsDemo() {
             <span className="text-white/30">no upload step</span>
           </div>
 
-          <div key={String(mapped)} className="mt-3 animate-[npFade_0.4s_ease-out] overflow-hidden rounded-xl bg-black/50 font-mono text-[12px] ring-1 ring-white/[0.06]">
-            {mapped ? (
-              <>
-                <div className="border-b border-white/[0.06] px-4 py-2 text-white/80">
-                  <span style={{ color: ORANGE }}>NoteCard</span> <span className="text-white/40">in</span> src/components/NoteCard.tsx
-                  <span className="text-white/40">:88:17</span>
-                </div>
-                <div className="py-2 leading-6">
-                  {[
-                    [86, '  const { data: author } = useAuthor(event.pubkey);'],
-                    [87, '  const quoted = useQuotedEvent(event);'],
-                    [88, '  const preview = quoted.content.slice(0, 280);'],
-                    [89, ''],
-                    [90, '  return ('],
-                  ].map(([n, code]) => (
-                    <div
-                      key={n}
-                      className="flex gap-4 px-4"
-                      style={{ backgroundColor: n === 88 ? 'rgba(255,69,58,0.14)' : undefined }}
-                    >
-                      <span className="w-6 text-right text-white/30">{n}</span>
-                      <span className={`whitespace-pre ${n === 88 ? 'text-white' : 'text-white/55'}`}>{code}</span>
-                    </div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="space-y-1 px-4 py-3 leading-6 text-white/55">
+          {/* Both traces sit in one grid cell, so the box is always the taller one's height. */}
+          <div className="mt-3 grid overflow-hidden rounded-xl bg-black/50 font-mono text-[12px] ring-1 ring-white/[0.06]">
+            <div
+              className="transition-opacity duration-500 [grid-area:1/1]"
+              style={{ opacity: mapped ? 1 : 0, visibility: mapped ? 'visible' : 'hidden' }}
+            >
+              <div className="border-b border-white/[0.06] px-4 py-2 text-white/80">
+                <span style={{ color: ORANGE }}>NoteCard</span> <span className="text-white/40">in</span> src/components/NoteCard.tsx
+                <span className="text-white/40">:88:17</span>
+              </div>
+              <div className="py-2 leading-6">
+                {[
+                  [86, '  const { data: author } = useAuthor(event.pubkey);'],
+                  [87, '  const quoted = useQuotedEvent(event);'],
+                  [88, '  const preview = quoted.content.slice(0, 280);'],
+                  [89, ''],
+                  [90, '  return ('],
+                ].map(([n, code]) => (
+                  <div
+                    key={n}
+                    className="flex gap-4 px-4"
+                    style={{ backgroundColor: n === 88 ? 'rgba(255,69,58,0.14)' : undefined }}
+                  >
+                    <span className="w-6 text-right text-white/30">{n}</span>
+                    <span className={`whitespace-pre ${n === 88 ? 'text-white' : 'text-white/55'}`}>{code}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div
+              className="space-y-1 px-4 py-3 leading-6 text-white/55 transition-opacity duration-500 [grid-area:1/1]"
+              style={{ opacity: mapped ? 0 : 1, visibility: mapped ? 'hidden' : 'visible' }}
+            >
                 <p>
                   at <span className="text-white/80">r</span> (assets/index-B4f2a.js:1:48213)
                 </p>
@@ -1631,8 +1636,7 @@ function ErrorsDemo() {
                   at <span className="text-white/80">Lc</span> (assets/index-B4f2a.js:9:21877)
                 </p>
                 <p className="truncate">at assets/index-B4f2a.js:9:30204</p>
-              </div>
-            )}
+            </div>
           </div>
 
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
