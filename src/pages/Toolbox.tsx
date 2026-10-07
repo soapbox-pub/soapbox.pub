@@ -50,6 +50,17 @@ const tools: ShowcaseApp[] = [
     accent: "from-violet-500 to-purple-700",
   },
   {
+    name: "npanel",
+    tagline: "A self-hosted gateway for websites published on Nostr. Point your domains at one box and every nsite you deploy goes live on them, faster than nginx, with Tor, analytics and error tracking built in.",
+    icon: "/assets/npanel/icon.svg",
+    screenshot: "/assets/npanel/og.png",
+    url: "https://soapbox.pub/npanel",
+    ctaLabel: "Learn more",
+    builder: "Alex",
+    status: "stable",
+    accent: "from-orange-400 to-orange-600",
+  },
+  {
     name: "MKStack",
     tagline: "The full-stack toolkit for shipping Nostr apps fast — scaffolding, hooks, and deploy in one workflow.",
     icon: "/assets/toolbox/mkstack-icon.png",
