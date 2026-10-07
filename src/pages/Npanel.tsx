@@ -1626,16 +1626,16 @@ function ErrorsDemo() {
               className="space-y-1 px-4 py-3 leading-6 text-white/55 transition-opacity duration-500 [grid-area:1/1]"
               style={{ opacity: mapped ? 0 : 1, visibility: mapped ? 'hidden' : 'visible' }}
             >
-                <p>
-                  at <span className="text-white/80">r</span> (assets/index-B4f2a.js:1:48213)
-                </p>
-                <p>
-                  at <span className="text-white/80">Xo</span> (assets/index-B4f2a.js:1:9921)
-                </p>
-                <p>
-                  at <span className="text-white/80">Lc</span> (assets/index-B4f2a.js:9:21877)
-                </p>
-                <p className="truncate">at assets/index-B4f2a.js:9:30204</p>
+              <p>
+                at <span className="text-white/80">r</span> (assets/index-B4f2a.js:1:48213)
+              </p>
+              <p>
+                at <span className="text-white/80">Xo</span> (assets/index-B4f2a.js:1:9921)
+              </p>
+              <p>
+                at <span className="text-white/80">Lc</span> (assets/index-B4f2a.js:9:21877)
+              </p>
+              <p className="truncate">at assets/index-B4f2a.js:9:30204</p>
             </div>
           </div>
 
