@@ -43,7 +43,7 @@ import { Footer } from '@/components/Footer';
 import { useSEO } from '@/hooks/useSEO';
 
 /** npanel source, releases and docs (canonical ngit repo on gitworkshop). */
-const SOURCE_URL = 'https://gitworkshop.dev/alex@gleasonator.com/git.shakespeare.diy/npanel';
+const SOURCE_URL = 'https://gitworkshop.dev/soapbox.pub/npanel';
 
 /** Shakespeare, Soapbox's AI app builder, which deploys to npanel. */
 const SHAKESPEARE_URL = 'https://shakespeare.diy';
