@@ -78,7 +78,6 @@ const BLUE = '#0a84ff';
 const PURPLE = '#bf5af2';
 const INDIGO = '#5e5ce6';
 const PINK = '#ff375f';
-const GRAY = '#8e8e93';
 const YELLOW = '#ff9f0a';
 
 const BRAND_GRADIENT = `linear-gradient(135deg, ${ORANGE}, ${FLAME})`;
@@ -412,7 +411,10 @@ export default function Npanel() {
       <HeroSection />
       <DashboardSection />
       <ShakespeareSection />
-      <SwitchesSection />
+      <TorSection />
+      <AnalyticsSection />
+      <ErrorsSection />
+      <PreviewsSection />
       <SpeedSection />
       <InstallSection />
       <FaqSection />
@@ -1376,111 +1378,182 @@ function DnsStrip() {
 }
 
 /* ------------------------------------------------------------------------ */
-/* Switches: Tor, analytics, errors, link previews                          */
+/* Features: Tor, analytics, errors, link previews, a section each          */
 /* ------------------------------------------------------------------------ */
 
-type FeatureId = 'tor' | 'analytics' | 'errors' | 'previews';
-
-const FEATURES: Array<{ id: FeatureId; label: string; detail: string; icon: LucideIcon; color: string }> = [
-  { id: 'tor', label: 'Tor', detail: 'An .onion address for every site', icon: Waypoints, color: INDIGO },
-  { id: 'analytics', label: 'Analytics', detail: 'Plausible-style, no cookies', icon: BarChart3, color: YELLOW },
-  { id: 'errors', label: 'Error reporting', detail: 'Sentry-compatible, source-mapped', icon: Bug, color: GRAY },
-  { id: 'previews', label: 'Link previews', detail: 'Unfurl /npub1… and /nevent1… pages', icon: Share2, color: PINK },
-];
-
-function SwitchesSection() {
-  const [enabled, setEnabled] = useState<Record<FeatureId, boolean>>({
-    tor: true,
-    analytics: true,
-    errors: true,
-    previews: true,
-  });
-  const [selected, setSelected] = useState<FeatureId>('tor');
-  const [touched, setTouched] = useState(false);
+/**
+ * One built-in feature: the pitch on one side, the thing working on the other,
+ * and the switch that turns it on, which the reader can flip.
+ */
+function FeatureSection({
+  icon,
+  color,
+  label,
+  title,
+  body,
+  points,
+  flip = false,
+  dark = false,
+  demo,
+}: {
+  icon: LucideIcon;
+  color: string;
+  label: string;
+  title: ReactNode;
+  body: ReactNode;
+  points: string[];
+  flip?: boolean;
+  dark?: boolean;
+  demo: (on: boolean) => ReactNode;
+}) {
+  const [on, setOn] = useState(true);
   const [ref, inView] = useInView<HTMLDivElement>();
-  const tick = useTicker(5200, inView && !touched);
-
-  // Walk through the features until the reader takes over.
-  useEffect(() => {
-    if (touched || tick === 0) return;
-    setSelected(FEATURES[tick % FEATURES.length].id);
-  }, [tick, touched]);
-
-  const on = enabled[selected];
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: '#08080a' }}>
+    <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: dark ? '#08080a' : INK }}>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-80 [mask-image:linear-gradient(to_bottom,black,transparent)]"
-        style={PERFORATED}
+        className="pointer-events-none absolute inset-0"
+        style={{ background: `radial-gradient(ellipse 45% 55% at ${flip ? '25%' : '75%'} 50%, ${color}26, transparent 70%)` }}
       />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Built in"
-          title={
-            <>
-              Flip a switch. <span className="text-white/35">That's the setup.</span>
-            </>
-          }
-        >
-          No daemons, no third-party scripts, no accounts somewhere else. Each of these runs inside npanel, on a thread of
-          its own, so it can never slow down serving.
-        </SectionHeading>
-
-        <div ref={ref} className="grid items-stretch gap-6 lg:grid-cols-[380px_1fr]">
-          <div className="self-start overflow-hidden rounded-2xl ring-1 ring-white/10" style={{ backgroundColor: PANEL }}>
-            {FEATURES.map((feature) => {
-              const isSelected = feature.id === selected;
-              return (
-                <div
-                  key={feature.id}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => {
-                    setTouched(true);
-                    setSelected(feature.id);
-                  }}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                      event.preventDefault();
-                      setTouched(true);
-                      setSelected(feature.id);
-                    }
-                  }}
-                  className="relative flex cursor-pointer items-center gap-3 border-b border-white/[0.05] px-4 py-3.5 transition-colors last:border-0 hover:bg-white/[0.03] focus-visible:outline-none focus-visible:bg-white/[0.05]"
-                  style={{ backgroundColor: isSelected ? 'rgba(255,255,255,0.06)' : undefined }}
-                >
-                  {isSelected && <span className="absolute inset-y-2 left-0 w-[3px] rounded-r" style={{ backgroundImage: BRAND_GRADIENT }} />}
-                  <Tile icon={feature.icon} color={feature.color} />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[14px] font-medium text-white">{feature.label}</p>
-                    <p className="truncate text-[12px] text-white/45">{feature.detail}</p>
-                  </div>
-                  <Switch
-                    on={enabled[feature.id]}
-                    label={feature.label}
-                    onClick={() => {
-                      setTouched(true);
-                      setSelected(feature.id);
-                      setEnabled((state) => ({ ...state, [feature.id]: !state[feature.id] }));
-                    }}
-                  />
-                </div>
-              );
-            })}
+      <div
+        ref={ref}
+        className={`relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:gap-16 lg:px-8 ${flip ? 'lg:grid-cols-[1.35fr_1fr]' : 'lg:grid-cols-[1fr_1.35fr]'}`}
+      >
+        <div className={flip ? 'lg:order-2' : undefined}>
+          <div className="mb-6 flex items-center gap-3">
+            <Tile icon={icon} color={color} className="size-10" />
+            <p className="font-mono text-xs font-medium tracking-[0.22em] uppercase" style={{ color }}>
+              Built in
+            </p>
           </div>
-
-          <div className="relative min-h-[420px]">
-            {selected === 'tor' && <TorDemo on={on} />}
-            {selected === 'analytics' && <AnalyticsDemo on={on} />}
-            {selected === 'errors' && <ErrorsDemo on={on} />}
-            {selected === 'previews' && <PreviewsDemo on={on} />}
+          <h2 className="text-4xl leading-[1.02] font-bold tracking-tighter text-white sm:text-5xl lg:text-[3.5rem]">{title}</h2>
+          <p className="mt-6 text-lg leading-relaxed text-white/55">{body}</p>
+          <ul className="mt-8 space-y-3">
+            {points.map((point) => (
+              <li key={point} className="flex items-start gap-3 text-[15px] text-white/75">
+                <Check className="mt-0.5 size-4 shrink-0" style={{ color }} />
+                {point}
+              </li>
+            ))}
+          </ul>
+          <div
+            className="mt-10 inline-flex items-center gap-4 rounded-2xl py-3 pr-4 pl-3 ring-1 ring-white/10"
+            style={{ backgroundColor: PANEL }}
+          >
+            <Tile icon={icon} color={color} />
+            <span className="text-[15px] font-medium text-white">{label}</span>
+            <Switch on={on} label={label} onClick={() => setOn((value) => !value)} />
+            <span className="font-mono text-[11px] text-white/35">{on ? 'that was the setup' : 'flip it'}</span>
           </div>
         </div>
+
+        <div className={`relative min-h-[420px] ${flip ? 'lg:order-1' : ''}`}>{inView && demo(on)}</div>
       </div>
     </section>
   );
+}
+
+function TorSection() {
+  return (
+    <FeatureSection
+      icon={Waypoints}
+      color={INDIGO}
+      label="Tor"
+      title={
+        <>
+          Every site gets an onion. <span className="text-white/35">No Tor to install.</span>
+        </>
+      }
+      body="npanel runs Arti, the Tor Project's own Rust implementation, inside its process. Turn it on and every site you serve is also an onion service, and Tor Browser offers it to visitors on its own."
+      points={[
+        'An .onion address for every site, kept across restarts',
+        'No daemon, no control port, no second process',
+        'Onion-Location on every page, so Tor Browser finds it',
+      ]}
+      demo={(on) => <TorDemo on={on} />}
+    />
+  );
+}
+
+function AnalyticsSection() {
+  return (
+    <FeatureSection
+      icon={BarChart3}
+      color={YELLOW}
+      label="Analytics"
+      flip
+      dark
+      title={
+        <>
+          Know your visitors. <span className="text-white/35">Not who they are.</span>
+        </>
+      }
+      body="Plausible-style analytics for every site, collected by npanel itself from the site's own origin. No cookie banner, no third-party script, no account somewhere else."
+      points={[
+        'No cookies, and nothing identifying stored',
+        'Visitors counted under a daily salt, deleted the day after',
+        'Sources, pages, countries and devices',
+      ]}
+      demo={(on) => <AnalyticsDemo on={on} />}
+    />
+  );
+}
+
+function ErrorsSection() {
+  return (
+    <FeatureSection
+      icon={Bug}
+      color={RED}
+      label="Error reporting"
+      title={
+        <>
+          Every crash, <span className="text-white/35">mapped to the line.</span>
+        </>
+      }
+      body="A few kilobytes of reporter on every page, and stack traces mapped through the source maps you already deployed. It speaks Sentry's format, so an existing Sentry SDK can report to it too."
+      points={[
+        'No upload step: npanel already has every source map',
+        'One bug stays one issue across deploys',
+        'Nostr secret keys and secret URL parameters scrubbed',
+      ]}
+      demo={(on) => <ErrorsDemo on={on} />}
+    />
+  );
+}
+
+function PreviewsSection() {
+  return (
+    <FeatureSection
+      icon={Share2}
+      color={PINK}
+      label="Link previews"
+      flip
+      dark
+      title={
+        <>
+          Links that unfurl. <span className="text-white/35">Even on a static app.</span>
+        </>
+      }
+      body="A Nostr client renders posts in the browser, so every shared link looks like the app's homepage. Publish one preview.js and npanel hands crawlers a real title, description and image for each post, drawn by your own script."
+      points={[
+        'Open Graph, Twitter and schema.org tags per page',
+        'Images drawn on a canvas, without making the page wait',
+        'Runs sandboxed: Landlock, seccomp and a hard deadline',
+      ]}
+      demo={(on) => <PreviewsDemo on={on} />}
+    />
+  );
+}
+
+/** The other sites on the same npanel, each with an onion of its own. */
+const ONION_SITES = ['armada.buzz', 'shakespeare.diy', 'agora.spot', 'soapbox.pub'];
+
+function fakeOnion(seed: string): string {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz234567';
+  let out = seed.replace(/[^a-z]/g, '').slice(0, 5);
+  for (let i = 0; out.length < 56; i++) out += alphabet[Math.floor(noise(seed.length * 31 + i * 7.7) * 32)];
+  return out;
 }
 
 const ONION = 'dittopubx7q4mwvj3h2kzb5ycupl6aodtgr7nse2wfhq5vilkx3am4j.onion';
@@ -1514,12 +1587,20 @@ function TorDemo({ on }: { on: boolean }) {
               : { text: '(nothing)', color: 'rgba(255,255,255,0.35)' },
           ]}
         />
-        <div className="rounded-xl p-4 text-sm leading-relaxed text-white/55 ring-1 ring-white/10" style={{ backgroundColor: PANEL }}>
-          <p className="mb-2 font-mono text-xs" style={{ color: PURPLE }}>
-            no tor daemon
-          </p>
-          npanel runs Arti, the Tor Project's Rust implementation, inside its own process. Every site gets an address,
-          kept across restarts.
+        <div className="space-y-1.5 rounded-xl p-4 font-mono text-[11px] ring-1 ring-white/10" style={{ backgroundColor: PANEL }}>
+          {ONION_SITES.map((site, i) => (
+            <p
+              key={site}
+              className="flex items-center gap-2 truncate transition-opacity duration-500"
+              style={{ opacity: on && chars >= ONION.length ? 1 : 0.25, transitionDelay: `${i * 180}ms` }}
+            >
+              <OnionGlyph className="size-3 shrink-0" />
+              <span className="w-24 shrink-0 text-white/70">{site}</span>
+              <span className="truncate" style={{ color: PURPLE }}>
+                {on ? `${fakeOnion(site).slice(0, 22)}….onion` : '—'}
+              </span>
+            </p>
+          ))}
         </div>
       </div>
     </div>
