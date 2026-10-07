@@ -115,12 +115,7 @@ const NPANEL_FAQ: Array<{ question: string; answer: string }> = [
   {
     question: 'How do I deploy a site to npanel?',
     answer:
-      'Build it in Shakespeare and hit Deploy: Shakespeare publishes the app as an nsite and points a hostname on your npanel at it. Any other nsite tool works too, such as nsyte (nsyte deploy ./dist). npanel sees the new signed manifest on the relays, downloads every file, and switches the domain over once all of them are on disk.',
-  },
-  {
-    question: 'Can I deploy Shakespeare apps to my own npanel?',
-    answer:
-      'Yes. Shakespeare deploys to npanel out of the box, and every app on shakespeare.wtf is served by one. Add your own server as an nsite gateway in Shakespeare\'s deploy settings and your apps get names on your domain instead.',
+      'Publish it as an nsite, then add a site in npanel that points your domain at it. Any nsite tool works: the nsyte CLI (nsyte deploy ./dist), ngit (ngit nsite), or the Deploy button in Shakespeare. npanel sees the signed manifest on the relays, downloads every file, and switches the domain over once all of them are on disk. Later deploys go live the same way, with nothing to configure.',
   },
   {
     question: 'What happens if the relays or Blossom servers go down?',
@@ -346,7 +341,7 @@ export default function Npanel() {
   useSEO({
     title: 'npanel: Self-Hosted nsite Gateway for Nostr Websites | Soapbox',
     description:
-      'Ship apps from Shakespeare to your own domains. npanel hosts websites published on Nostr from local disk, with rollbacks, Tor, analytics and error tracking.',
+      'Deploy apps to your own domains. npanel hosts websites published on Nostr from local disk, faster than nginx, with Tor, analytics and error tracking built in.',
     image: NPANEL_OG_IMAGE,
     type: 'website',
     keywords:
@@ -389,7 +384,7 @@ export default function Npanel() {
       <ErrorsSection />
       <TorSection />
       <SpeedSection />
-      <ShakespeareSection />
+      <DeployLoopSection />
       <InstallSection />
       <FaqSection />
       <FinalCtaSection />
@@ -669,10 +664,10 @@ function DeployStream() {
 }
 
 /* ------------------------------------------------------------------------ */
-/* Shakespeare → npanel                                                     */
+/* Deploy loop: nsyte → relays → npanel                                     */
 /* ------------------------------------------------------------------------ */
 
-/** Your own npanel, as a Shakespeare deploy target. */
+/** Your own npanel's domain, in the deploy loop. */
 const TEAM_DOMAIN = 'yourteam.dev';
 
 type AppKind = 'timer' | 'vote' | 'list' | 'bars' | 'grid';
@@ -681,25 +676,25 @@ interface LoopApp {
   emoji: string;
   name: string;
   sub: string;
-  prompt: string;
   kind: AppKind;
   from: string;
   to: string;
-  files: string[];
+  files: number;
+  size: string;
 }
 
 const LOOP_APPS: LoopApp[] = [
-  { emoji: '⏱️', name: 'Pomodoro Lofi', sub: 'pomodoro', prompt: 'a pomodoro timer with lo-fi vibes', kind: 'timer', from: '#7c3aed', to: '#db2777', files: ['src/pages/Index.tsx', 'src/components/Timer.tsx'] },
-  { emoji: '🍕', name: 'Pizza Vote', sub: 'pizza', prompt: 'let the office vote on friday pizza', kind: 'vote', from: '#ea580c', to: '#dc2626', files: ['src/pages/Index.tsx', 'src/hooks/useVotes.ts'] },
-  { emoji: '🪴', name: 'Plant Water', sub: 'plants', prompt: 'remind me which plants need water', kind: 'list', from: '#16a34a', to: '#0d9488', files: ['src/pages/Index.tsx', 'src/components/PlantRow.tsx'] },
-  { emoji: '🏋️', name: 'Lift Log', sub: 'lifts', prompt: 'track my lifts and chart my progress', kind: 'bars', from: '#2563eb', to: '#7c3aed', files: ['src/pages/Index.tsx', 'src/components/LiftChart.tsx'] },
-  { emoji: '📸', name: 'Polaroids', sub: 'polaroids', prompt: 'a photo wall for our team offsite', kind: 'grid', from: '#f59e0b', to: '#ea580c', files: ['src/pages/Index.tsx', 'src/components/PhotoWall.tsx'] },
+  { emoji: '⏱️', name: 'Pomodoro Lofi', sub: 'pomodoro', kind: 'timer', from: '#7c3aed', to: '#db2777', files: 38, size: '1.2 MB' },
+  { emoji: '🍕', name: 'Pizza Vote', sub: 'pizza', kind: 'vote', from: '#ea580c', to: '#dc2626', files: 24, size: '880 KB' },
+  { emoji: '🪴', name: 'Plant Water', sub: 'plants', kind: 'list', from: '#16a34a', to: '#0d9488', files: 31, size: '1.0 MB' },
+  { emoji: '🏋️', name: 'Lift Log', sub: 'lifts', kind: 'bars', from: '#2563eb', to: '#7c3aed', files: 45, size: '1.6 MB' },
+  { emoji: '📸', name: 'Polaroids', sub: 'polaroids', kind: 'grid', from: '#f59e0b', to: '#ea580c', files: 52, size: '3.4 MB' },
 ];
 
-/** Ticks per app in the Shakespeare loop (280 ms each). */
+/** Ticks per app in the deploy loop (280 ms each). */
 const APP_LOOP = 22;
 
-function ShakespeareSection() {
+function DeployLoopSection() {
   const [ref, inView] = useInView<HTMLDivElement>();
   const tick = useTicker(280, inView);
   const t = tick % APP_LOOP;
@@ -712,19 +707,19 @@ function ShakespeareSection() {
     <section className="relative py-24 md:py-32" style={{ backgroundColor: '#08080a' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Shakespeare + npanel"
+          eyebrow="Deploy"
           title={
             <>
-              Prompt. Deploy. <GradientText>Next.</GradientText>
+              Build. Deploy. <GradientText>Next.</GradientText>
             </>
           }
         >
-          Shakespeare, Soapbox's AI app builder, deploys straight to npanel: every app on shakespeare.wtf is served by
-          one. Add your own npanel as a deploy target and the apps land on your domain instead.
+          Publish a folder as an nsite and your npanel takes it from there: it sees the signed manifest on the relays,
+          downloads every file, and puts the app on your domain.
         </SectionHeading>
 
         <div ref={ref} className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1fr)_150px_minmax(0,1fr)] lg:gap-0">
-          <ShakespeareMock t={t} app={app} />
+          <DeployTerminal t={t} app={app} />
           <DeployWire t={t} />
           <Browser url={shown ? `https://${shown.sub}.${TEAM_DOMAIN}` : `https://${TEAM_DOMAIN}`}>
             <div className="relative h-[340px] overflow-hidden">
@@ -747,139 +742,81 @@ function ShakespeareSection() {
             </div>
           </Browser>
         </div>
-
-        <div className="mt-8 grid gap-6 text-center sm:grid-cols-3">
-          {[
-            { n: '01', title: 'Describe it', body: 'Shakespeare writes the app and builds it.', on: t < 12 },
-            { n: '02', title: 'Hit Deploy', body: 'It publishes an nsite signed with your key.', on: t >= 12 && t < 16 },
-            { n: '03', title: 'Live on your npanel', body: 'Your server downloads it and takes the name.', on: t >= 16 },
-          ].map((step) => (
-            <div key={step.n} className="transition-opacity duration-500" style={{ opacity: step.on ? 1 : 0.35 }}>
-              <p className="font-mono text-xs" style={{ color: step.on ? ORANGE : 'rgba(255,255,255,0.4)' }}>
-                {step.n}
-              </p>
-              <p className="mt-1 font-semibold text-white">{step.title}</p>
-              <p className="mt-1 text-sm text-white/50">{step.body}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mx-auto mt-14 flex max-w-2xl flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <p className="text-sm text-white/45">Anything that publishes an nsite works, too:</p>
-          <code className="rounded-lg bg-white/[0.05] px-3 py-1.5 font-mono text-[12.5px] text-white/80 ring-1 ring-white/10">
-            <span style={{ color: ORANGE }}>❯</span> nsyte deploy ./dist
-          </code>
-        </div>
       </div>
     </section>
   );
 }
 
-function ShakespeareMock({ t, app }: { t: number; app: LoopApp }) {
-  const typed = app.prompt.slice(0, Math.max(0, Math.round((app.prompt.length * t) / 6)));
-  const sent = t >= 7;
-  const deploying = t >= 12;
-  const steps = [
-    { at: 8, text: `Wrote ${app.files[0]}` },
-    { at: 9, text: `Wrote ${app.files[1]}` },
-    { at: 10, text: 'Build passed' },
-  ];
-  const deploySteps = [
-    { at: 13, text: 'Publishing to Nostr' },
-    { at: 14, text: `Pointing ${app.sub}.${TEAM_DOMAIN}` },
-    { at: 16, text: 'Live' },
-  ];
+const BLOSSOMS = ['blossom.primal.net', 'blossom.ditto.pub', 'cdn.satellite.earth'];
+
+/** nsyte publishing the app: upload to Blossom, sign the manifest, send it to relays. */
+function DeployTerminal({ t, app }: { t: number; app: LoopApp }) {
+  const command = 'nsyte deploy ./dist';
+  const chars = t === 0 ? 0 : t === 1 ? 9 : command.length;
+  const cursor = <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-white/70" />;
 
   return (
-    <Window
-      title={
-        <span className="inline-flex items-center gap-1.5">
-          <img src="/assets/logos/shakespeare-logo.png" alt="" className="size-3.5" />
-          Shakespeare
-        </span>
-      }
-      bodyClassName="flex h-[372px] flex-col"
-    >
-      <div className="flex items-center gap-2.5 border-b border-white/[0.06] px-4 py-2.5">
-        <AppIcon emoji={app.emoji} from={app.from} to={app.to} className="size-6 text-[13px] rounded-md" />
-        <p className="flex-1 truncate text-[13px] font-medium text-white">{app.name}</p>
-        <span
-          className="inline-flex h-7 items-center gap-1.5 rounded-md px-3 text-[12px] font-semibold text-white transition-transform"
-          style={{ backgroundColor: '#7c3aed', transform: t === 12 ? 'scale(0.9)' : 'scale(1)', boxShadow: t === 12 ? '0 0 0 4px rgba(124,58,237,0.35)' : 'none' }}
-        >
-          Deploy
-        </span>
-      </div>
+    <Window title={`~/${app.sub} — zsh`} bodyClassName="h-[372px] p-5 font-mono text-[12.5px] leading-6">
+      <p className="text-white/85">
+        <span style={{ color: ORANGE }}>❯</span> {command.slice(0, chars)}
+        {t < 2 && cursor}
+      </p>
 
-      <div className="relative flex-1 space-y-3 overflow-hidden px-4 py-4 text-[13px]">
-        {sent && (
-          <div className="ml-auto max-w-[85%] animate-[npFade_0.3s_ease-out] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2 text-white">
-            Make {app.prompt}
-          </div>
-        )}
-        {t >= 8 && (
-          <div className="space-y-1 font-mono text-[11.5px]">
-            {steps
-              .filter((step) => t >= step.at)
-              .map((step) => (
-                <p key={step.text} className="animate-[npFade_0.25s_ease-out] text-white/60">
-                  <span style={{ color: GREEN }}>✓</span> {step.text}
-                </p>
-              ))}
-          </div>
-        )}
+      {t >= 2 && (
+        <p className="text-white/45">
+          scanning ./dist <span className="text-white/75">{app.files} files</span>, {app.size}
+        </p>
+      )}
 
-        {/* deploy sheet */}
-        <div
-          className="absolute inset-x-4 bottom-4 rounded-xl p-3.5 ring-1 ring-white/10 transition-all duration-300"
-          style={{
-            backgroundColor: '#242427',
-            opacity: deploying ? 1 : 0,
-            transform: deploying ? 'translateY(0)' : 'translateY(10px)',
-          }}
-        >
-          <div className="mb-2 flex items-center justify-between text-[11px]">
-            <span className="text-white/45">Deploy to</span>
-            <span className="inline-flex items-center gap-1.5 font-medium text-white">
-              <img src={NPANEL_ICON} alt="" className="size-3.5" /> Team npanel
-            </span>
-          </div>
-          {deploySteps.map((step) => {
-            const done = t >= step.at;
-            const active = !done && deploySteps.find((s) => t < s.at) === step;
-            return (
-              <p key={step.text} className="flex items-center gap-2 font-mono text-[11.5px]" style={{ color: done ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.3)' }}>
-                {done ? (
-                  <span style={{ color: GREEN }}>✓</span>
-                ) : active ? (
-                  <span className="size-2.5 animate-spin rounded-full border-[1.5px] border-white/30 border-t-white" />
-                ) : (
-                  <span className="w-2.5" />
-                )}
-                {step.text}
-              </p>
-            );
-          })}
-        </div>
-      </div>
+      {t >= 3 &&
+        BLOSSOMS.map((server, i) => {
+          const progress = clamp01((t - 3 - i * 0.6) / 5);
+          return (
+            <div key={server} className="flex items-center gap-3">
+              <span className="w-[150px] shrink-0 truncate text-white/45">{server}</span>
+              <span className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+                <span
+                  className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-300 ease-out"
+                  style={{ width: `${progress * 100}%`, backgroundImage: BRAND_GRADIENT }}
+                />
+              </span>
+              <span className="w-12 shrink-0 text-right tabular-nums text-white/55">
+                {Math.round(progress * app.files)}/{app.files}
+              </span>
+            </div>
+          );
+        })}
 
-      <div className="border-t border-white/[0.06] p-3">
-        <div className="flex h-9 items-center rounded-lg bg-black/40 px-3 text-[13px] ring-1 ring-white/10">
-          {!sent ? (
-            <span className="text-white/85">
-              {typed ? `Make ${typed}` : <span className="text-white/30">What do you want to build?</span>}
-              <span className="ml-px inline-block h-4 w-px translate-y-0.5 animate-pulse bg-white" />
-            </span>
-          ) : (
-            <span className="text-white/30">What do you want to build?</span>
-          )}
-        </div>
-      </div>
+      {t >= 12 && (
+        <p>
+          <span style={{ color: GREEN }}>✔</span> <span className="text-white/75">signed manifest</span>{' '}
+          <span className="text-white/40">kind 35128 · d={app.sub}</span>
+        </p>
+      )}
+      {t >= 13 && (
+        <p>
+          <span style={{ color: GREEN }}>✔</span> <span className="text-white/75">published to 3 relays</span>
+        </p>
+      )}
+      {t >= 14 && (
+        <p className="text-white/85">
+          <span style={{ color: ORANGE }}>❯</span> {t >= 17 ? `curl -sI https://${app.sub}.${TEAM_DOMAIN} | head -1` : ''}
+          {t < 17 && cursor}
+        </p>
+      )}
+      {t >= 18 && (
+        <>
+          <p style={{ color: GREEN }}>HTTP/2 200</p>
+          <p className="text-white/85">
+            <span style={{ color: ORANGE }}>❯</span> {cursor}
+          </p>
+        </>
+      )}
     </Window>
   );
 }
 
-/** The gap between the builder and the browser: relays, and a signed event crossing them. */
+/** The gap between the terminal and the browser: relays, and a signed event crossing them. */
 function DeployWire({ t }: { t: number }) {
   // The event leaves at 13, reaches the relays at 14, and npanel at 15.
   const position = t < 13 ? 0 : t === 13 ? 6 : t === 14 ? 50 : 96;
