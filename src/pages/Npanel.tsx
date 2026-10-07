@@ -454,49 +454,86 @@ export default function Npanel() {
 /* Hero: a flood of apps                                                    */
 /* ------------------------------------------------------------------------ */
 
-/** Soapbox's own apps, which show up in the flood with their real icons and domains. */
-const SOAPBOX_APPS: Record<string, { name: string; icon: string; domain: string }> = {
-  ditto: { name: 'Ditto', icon: '/ditto-logo-transparent.png', domain: 'ditto.pub' },
-  armada: { name: 'Armada', icon: '/assets/media-kit/logos/armada-logo.svg', domain: 'armada.buzz' },
-  shakespeare: { name: 'Shakespeare', icon: '/assets/logos/shakespeare-logo.png', domain: 'shakespeare.diy' },
-  agora: { name: 'Agora', icon: '/assets/media-kit/logos/agora-logo.svg', domain: 'agora.spot' },
-  nostrhub: { name: 'NostrHub', icon: '/assets/toolbox/nostrhub-icon.png', domain: 'nostrhub.io' },
-  soapbox: { name: 'Soapbox', icon: '/assets/logo.svg', domain: 'soapbox.pub' },
-  mostr: { name: 'Mostr', icon: '/assets/toolbox/mostr-icon.svg', domain: 'mostr.pub' },
-  nostrify: { name: 'Nostrify', icon: '/assets/toolbox/nostrify-icon.png', domain: 'nostrify.dev' },
-  treasures: { name: 'Treasures', icon: '/assets/toybox/treasures-icon.svg', domain: 'treasures.to' },
-};
-
 /**
- * The flood: Soapbox's apps mixed in with the kind of thing people build in an
- * afternoon. A string entry is a Soapbox app; the rest are invented, names and
- * domains alike, with a handful on shakespeare.wtf.
+ * The flood: real nsites, every one of them. Soapbox's own (served by
+ * npanel.soapbox.pub) mixed in with apps people built in Shakespeare and
+ * published to Nostr, Chad's and Derek's among them. Icons are copied from the
+ * sites' own deploys.
  */
-const FLOOD_APPS: Array<string | [string, string, string]> = [
-  ['⏱️', 'Pomodoro Lofi', 'pomodoro.shakespeare.wtf'], ['🌱', 'Seed Swap', 'seedswap.garden'], 'ditto',
-  ['🎲', 'Dice Night', 'dicenight.games'], ['📚', 'Book Club', 'readalong.club'], ['🧗', 'Crag Log', 'craglog.app'],
-  ['🍜', 'Ramen Rank', 'ramenrank.co'], ['🎧', 'Mixtape', 'mixtape.fm'], 'armada',
-  ['🐝', 'Hive Notes', 'hivenotes.io'], ['🗺️', 'Trail Map', 'trailmap.camp'], ['💸', 'Split Bill', 'splitbill.money'],
-  ['🧘', 'Breathe', 'breathe.shakespeare.wtf'], ['🎨', 'Pixel Pad', 'pixelpad.art'], 'shakespeare',
-  ['🏀', 'Pickup Hoops', 'pickuphoops.com'], ['🍳', 'Fridge Chef', 'fridgechef.kitchen'], ['🛰️', 'Sat Tracker', 'sattrack.space'],
-  ['📸', 'Polaroids', 'polaroids.photo'], 'agora', ['🐾', 'Dog Walks', 'dogwalks.pet'],
-  ['🎮', 'Snake', 'snake.shakespeare.wtf'], ['🧾', 'Receipt Box', 'receiptbox.app'], ['🌦️', 'Rain Check', 'raincheck.dev'],
-  ['🏕️', 'Camp List', 'camplist.org'], 'nostrhub', ['🎂', 'Birthday Bot', 'bday.bot'],
-  ['🧠', 'Flashcards', 'flashcards.study'], ['🚲', 'Bike Share', 'bikeshare.city'], ['☕', 'Coffee Map', 'coffeemap.cafe'],
-  'soapbox', ['🎤', 'Karaoke Queue', 'karaoke.party'], ['🪴', 'Plant Water', 'plants.shakespeare.wtf'],
-  ['🧩', 'Daily Puzzle', 'dailypuzzle.net'], ['🏋️', 'Lift Log', 'liftlog.fit'], 'mostr',
-  ['📦', 'Garage Sale', 'garagesale.shop'], ['🎬', 'Movie Night', 'movienight.tv'], ['🌙', 'Sleep Diary', 'sleepdiary.me'],
-  ['🐟', 'Fish Finder', 'fishfinder.us'], 'nostrify', ['🎹', 'Chord Wheel', 'chordwheel.xyz'],
-  ['🗳️', 'Quick Poll', 'quickpoll.vote'], ['🍕', 'Pizza Vote', 'pizza.shakespeare.wtf'], ['📅', 'Meet Near', 'meetnear.events'],
-  'treasures', ['🧳', 'Pack List', 'packlist.travel'], ['💬', 'Group Chat', 'groupchat.chat'],
-  ['⚡', 'Zap Jar', 'zapjar.lol'], ['🏆', 'Leaderboard', 'leaderboard.gg'], 'armada',
-  ['🔭', 'Star Party', 'starparty.space'], ['🍷', 'Wine Notes', 'winenotes.wine'], ['🧶', 'Knit Count', 'knitcount.co.uk'],
-  ['🎯', 'Habit Streak', 'streak.shakespeare.wtf'], 'ditto', ['🛹', 'Skate Spots', 'skatespots.de'],
-  ['🌮', 'Taco Tuesday', 'tacotuesday.mx'], ['📻', 'Podcast Clips', 'clips.fm'], ['🥾', 'Hike Buddy', 'hikebuddy.ca'],
-  'soapbox', ['🐣', 'Chore Chart', 'chorechart.family'], ['🧪', 'Lab Notes', 'labnotes.science'],
-  ['💡', 'Idea Board', 'ideaboard.so'], ['🏠', 'Rent Split', 'rentsplit.nyc'], 'shakespeare',
-  ['🌊', 'Surf Report', 'surfreport.com.au'], ['🦉', 'Study Timer', 'studytimer.ai'], ['🍪', 'Recipe Box', 'recipebox.recipes'],
-  ['♟️', 'Chess Club', 'chessclub.io'],
+const FLOOD_APPS: Array<{ name: string; domain: string; icon: string }> = [
+  { name: 'Ditto', domain: 'ditto.pub', icon: '/assets/npanel/apps/ditto-pub.webp' },
+  { name: 'The Button', domain: 'the-button.shakespeare.wtf', icon: '/assets/npanel/apps/the-button.webp' },
+  { name: 'Sol', domain: 'sol.shakespeare.wtf', icon: '/assets/npanel/apps/sol.webp' },
+  { name: 'Nostrdamus', domain: 'nostrdamus.shakespeare.wtf', icon: '/assets/npanel/apps/nostrdamus.webp' },
+  { name: 'Armada', domain: 'armada.buzz', icon: '/assets/npanel/apps/armada-buzz.webp' },
+  { name: 'Floral Cipher', domain: 'floral-cipher.shakespeare.wtf', icon: '/assets/npanel/apps/floral-cipher.webp' },
+  { name: 'ClawChat', domain: 'clawchat.shakespeare.wtf', icon: '/assets/npanel/apps/clawchat.webp' },
+  { name: 'PopArt Treasures', domain: 'popart-treasures.shakespeare.wtf', icon: '/assets/npanel/apps/popart-treasures.webp' },
+  { name: 'Shakespeare', domain: 'shakespeare.diy', icon: '/assets/npanel/apps/shakespeare-diy.webp' },
+  { name: 'Inkwell', domain: 'inkwell.shakespeare.wtf', icon: '/assets/npanel/apps/inkwell.webp' },
+  { name: 'EmojiVerse', domain: 'emojiverse.shakespeare.wtf', icon: '/assets/npanel/apps/emojiverse.webp' },
+  { name: 'Guest List Hub', domain: 'guest-list-hub.shakespeare.wtf', icon: '/assets/npanel/apps/guest-list-hub.webp' },
+  { name: 'Agora', domain: 'agora.spot', icon: '/assets/npanel/apps/agora-spot.webp' },
+  { name: 'xnostr', domain: 'xnostr.shakespeare.wtf', icon: '/assets/npanel/apps/xnostr.webp' },
+  { name: 'Satoride', domain: 'satoride.shakespeare.wtf', icon: '/assets/npanel/apps/satoride.webp' },
+  { name: 'Stashstr', domain: 'stashstr.shakespeare.wtf', icon: '/assets/npanel/apps/stashstr.webp' },
+  { name: 'NostrHub', domain: 'nostrhub.io', icon: '/assets/npanel/apps/nostrhub-io.webp' },
+  { name: 'Bon Voyage Globe', domain: 'bon-voyage-globe.shakespeare.wtf', icon: '/assets/npanel/apps/bon-voyage-globe.webp' },
+  { name: 'Ikaros', domain: 'ikaros.shakespeare.wtf', icon: '/assets/npanel/apps/ikaros.webp' },
+  { name: 'Seedmon', domain: 'seedmon.shakespeare.wtf', icon: '/assets/npanel/apps/seedmon.webp' },
+  { name: 'Soapbox', domain: 'soapbox.pub', icon: '/assets/npanel/apps/soapbox-pub.webp' },
+  { name: 'Calmcycle', domain: 'calmcycle.shakespeare.wtf', icon: '/assets/npanel/apps/calmcycle.webp' },
+  { name: 'Keks Generator', domain: 'keks-generator.shakespeare.wtf', icon: '/assets/npanel/apps/keks-generator.webp' },
+  { name: 'Mundes World', domain: 'mundes-world.shakespeare.wtf', icon: '/assets/npanel/apps/mundes-world.webp' },
+  { name: 'Treasures', domain: 'treasures.to', icon: '/assets/npanel/apps/treasures.webp' },
+  { name: 'Sats Sister', domain: 'sats-sister.shakespeare.wtf', icon: '/assets/npanel/apps/sats-sister.webp' },
+  { name: 'Chama Chat', domain: 'chama-chat.shakespeare.wtf', icon: '/assets/npanel/apps/chama-chat.webp' },
+  { name: 'Sprachcode', domain: 'sprachcode.shakespeare.wtf', icon: '/assets/npanel/apps/sprachcode.webp' },
+  { name: 'Espy', domain: 'espy.you', icon: '/assets/npanel/apps/espy.webp' },
+  { name: 'Allzeit-Uhr', domain: 'allzeit-uhr.shakespeare.wtf', icon: '/assets/npanel/apps/allzeit-uhr.webp' },
+  { name: 'Nationverse', domain: 'nationverse.shakespeare.wtf', icon: '/assets/npanel/apps/nationverse.webp' },
+  { name: 'Calendrier Républicain', domain: 'calendrier-republicain.shakespeare.wtf', icon: '/assets/npanel/apps/calendrier-republicain.webp' },
+  { name: 'Clawstr', domain: 'clawstr.com', icon: '/assets/npanel/apps/clawstr.webp' },
+  { name: 'Vidstr', domain: 'vidstr.shakespeare.wtf', icon: '/assets/npanel/apps/vidstr-old.webp' },
+  { name: 'RelayScope', domain: 'relayscope.shakespeare.wtf', icon: '/assets/npanel/apps/relayscope.webp' },
+  { name: 'UnixCal', domain: 'unixcal.shakespeare.wtf', icon: '/assets/npanel/apps/unixcal.webp' },
+  { name: 'Birdstar', domain: 'birdstar.app', icon: '/assets/npanel/apps/birdstar-app.webp' },
+  { name: 'Surreal Credits', domain: 'surreal-credits.shakespeare.wtf', icon: '/assets/npanel/apps/surreal-credits.webp' },
+  { name: 'Nostr Report Viewer', domain: 'report-viewer.shakespeare.wtf', icon: '/assets/npanel/apps/report-viewer.webp' },
+  { name: 'Onchain Zap Forensics', domain: 'onchain-zap-forensics.shakespeare.wtf', icon: '/assets/npanel/apps/onchain-zap-forensics.webp' },
+  { name: 'Concord', domain: 'concordprotocol.org', icon: '/assets/npanel/apps/concordprotocol-org.webp' },
+  { name: 'Nostr Podcast Hub', domain: 'nostr-podcast-hub.shakespeare.wtf', icon: '/assets/npanel/apps/nostr-podcast-hub.webp' },
+  { name: 'Nostr Music', domain: 'nostr-music.shakespeare.wtf', icon: '/assets/npanel/apps/nostr-music.webp' },
+  { name: 'NostrDocs', domain: 'nostr-docs.shakespeare.wtf', icon: '/assets/npanel/apps/nostr-docs.webp' },
+  { name: 'Dittoroma', domain: 'dittoroma.com', icon: '/assets/npanel/apps/dittoroma-com.webp' },
+  { name: 'Neopolygraphia', domain: 'neopolygraphia.shakespeare.wtf', icon: '/assets/npanel/apps/neopolygraphia.webp' },
+  { name: 'Calendarium', domain: 'calendarium.shakespeare.wtf', icon: '/assets/npanel/apps/calendarium.webp' },
+  { name: 'ByteURL', domain: 'bytebeat-url.shakespeare.wtf', icon: '/assets/npanel/apps/bytebeat-url.webp' },
+  { name: 'Dreamith', domain: 'dreamith.to', icon: '/assets/npanel/apps/dreamith-to.webp' },
+  { name: 'Block Time Calendar', domain: 'blocktime-calendar.shakespeare.wtf', icon: '/assets/npanel/apps/blocktime-calendar.webp' },
+  { name: 'Nature ID', domain: 'nature-id.shakespeare.wtf', icon: '/assets/npanel/apps/nature-id.webp' },
+  { name: 'Charlink AI', domain: 'charlink-ai.shakespeare.wtf', icon: '/assets/npanel/apps/charlink-ai.webp' },
+  { name: 'Soapbox FE', domain: 'fe.soapbox.pub', icon: '/assets/npanel/apps/fe-soapbox-pub.webp' },
+  { name: 'CartridgeQR', domain: 'cartridgeqr.shakespeare.wtf', icon: '/assets/npanel/apps/cartridgeqr.webp' },
+  { name: 'Grimoire', domain: 'grimoire.shakespeare.wtf', icon: '/assets/npanel/apps/grimoire.webp' },
+  { name: 'Gitano', domain: 'gitano.shakespeare.wtf', icon: '/assets/npanel/apps/gitano.webp' },
+  { name: 'Geiger', domain: 'geiger.dreamith.to', icon: '/assets/npanel/apps/geiger-dreamith-to.webp' },
+  { name: 'HomeHub', domain: 'homehub.shakespeare.wtf', icon: '/assets/npanel/apps/homehub.webp' },
+  { name: 'UTXOracle', domain: 'utxoracle-btc-calculator.shakespeare.wtf', icon: '/assets/npanel/apps/utxoracle-btc-calculator.webp' },
+  { name: 'Isometrix', domain: 'isometrix-5x3.shakespeare.wtf', icon: '/assets/npanel/apps/isometrix-5x3.webp' },
+  { name: 'Open Web Initiative', domain: 'openwebinitiative.org', icon: '/assets/npanel/apps/openwebinitiative-org.webp' },
+  { name: 'Wordstr', domain: 'wordstr.shakespeare.wtf', icon: '/assets/npanel/apps/wordstr.webp' },
+  { name: 'Sahmstr', domain: 'sahmstr.shakespeare.wtf', icon: '/assets/npanel/apps/sahmstr.webp' },
+  { name: 'Bitkopo', domain: 'bitkopo-simulator.shakespeare.wtf', icon: '/assets/npanel/apps/bitkopo-simulator.webp' },
+  { name: 'YourSpace', domain: 'yourspace.live', icon: '/assets/npanel/apps/yourspace-live.webp' },
+  { name: 'Nostr BBS', domain: 'nostr-bbs.shakespeare.wtf', icon: '/assets/npanel/apps/nostr-bbs.webp' },
+  { name: 'Substr', domain: 'substr.shakespeare.wtf', icon: '/assets/npanel/apps/substr.webp' },
+  { name: 'Beacon', domain: 'beacon.shakespeare.wtf', icon: '/assets/npanel/apps/beacon.webp' },
+  { name: 'Budgetstr', domain: 'budgetstr.shakespeare.wtf', icon: '/assets/npanel/apps/budgetstr.webp' },
+  { name: 'Nostrion', domain: 'nostrion.shakespeare.wtf', icon: '/assets/npanel/apps/nostrion.webp' },
+  { name: 'Torchlite', domain: 'torchlite.shakespeare.wtf', icon: '/assets/npanel/apps/torchlite.webp' },
+  { name: 'Regenerate Community', domain: 'regeneratecom.shakespeare.wtf', icon: '/assets/npanel/apps/regeneratecom.webp' },
+  { name: 'Bytebeat Player', domain: 'bytebeat-play.shakespeare.wtf', icon: '/assets/npanel/apps/bytebeat-play.webp' },
 ];
 
 const FLOOD_GRADIENTS: Array<[string, string]> = [
@@ -504,21 +541,8 @@ const FLOOD_GRADIENTS: Array<[string, string]> = [
   ['#f59e0b', '#ea580c'], ['#0891b2', '#2563eb'], ['#db2777', '#9333ea'], ['#65a30d', '#15803d'],
 ];
 
-interface FloodEntry {
-  name: string;
-  domain: string;
-  emoji?: string;
-  icon?: string;
-  from: string;
-  to: string;
-}
-
-function floodApp(i: number): FloodEntry {
-  const entry = FLOOD_APPS[((i % FLOOD_APPS.length) + FLOOD_APPS.length) % FLOOD_APPS.length];
-  const [from, to] = FLOOD_GRADIENTS[Math.floor(noise(i * 3.1) * FLOOD_GRADIENTS.length)];
-  if (typeof entry === 'string') return { ...SOAPBOX_APPS[entry], from, to };
-  const [emoji, name, domain] = entry;
-  return { emoji, name, domain, from, to };
+function floodApp(i: number) {
+  return FLOOD_APPS[((i % FLOOD_APPS.length) + FLOOD_APPS.length) % FLOOD_APPS.length];
 }
 
 function AppIcon({ emoji, from, to, className = 'size-10 text-xl' }: { emoji: string; from: string; to: string; className?: string }) {
@@ -536,11 +560,7 @@ function FloodTile({ i }: { i: number }) {
   const app = floodApp(i);
   return (
     <div className="flex items-center gap-3 rounded-xl bg-[#141416] p-2.5 pr-3.5 ring-1 ring-white/[0.07]">
-      {app.icon ? (
-        <img src={app.icon} alt="" className="size-10 shrink-0 rounded-[10px] bg-[#232326] object-contain p-1.5 ring-1 ring-white/10" />
-      ) : (
-        <AppIcon emoji={app.emoji ?? ''} from={app.from} to={app.to} />
-      )}
+      <img src={app.icon} alt="" className="size-10 shrink-0 rounded-[10px] object-cover" />
       <div className="min-w-0 flex-1">
         <p className="truncate text-[13px] font-semibold text-white">{app.name}</p>
         <p className="truncate font-mono text-[10.5px] text-white/40">{app.domain}</p>
