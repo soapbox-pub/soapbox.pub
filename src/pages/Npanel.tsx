@@ -22,7 +22,7 @@
  * and the perforated rack-vent texture behind the top of the page.
  */
 
-import { type CSSProperties, type ReactNode, type RefObject, useEffect, useRef, useState } from 'react';
+import { type CSSProperties, Fragment, type ReactNode, type RefObject, useEffect, useRef, useState } from 'react';
 import {
   ArrowRight,
   BarChart3,
@@ -513,13 +513,13 @@ function AppIcon({ emoji, from, to, className = 'size-10 text-xl' }: { emoji: st
 function FloodTile({ i }: { i: number }) {
   const app = floodApp(i);
   return (
-    <div className="flex items-center gap-3 rounded-xl bg-[#141416] p-2.5 pr-3.5 ring-1 ring-white/[0.07]">
-      <img src={app.icon} alt="" className="size-10 shrink-0 rounded-[10px] object-cover" />
+    <div className="flex items-center gap-2 rounded-lg bg-[#141416] p-1.5 pr-2 ring-1 ring-white/[0.07] md:gap-3 md:rounded-xl md:p-2.5 md:pr-3.5">
+      <img src={app.icon} alt="" className="size-7 shrink-0 rounded-[7px] object-cover md:size-10 md:rounded-[10px]" />
       <div className="min-w-0 flex-1">
-        <p className="truncate text-[13px] font-semibold text-white">{app.name}</p>
-        <p className="truncate font-mono text-[10.5px] text-white/40">{app.domain}</p>
+        <p className="truncate text-[10px] font-semibold text-white md:text-[13px]">{app.name}</p>
+        <p className="truncate font-mono text-[8px] text-white/40 md:text-[10.5px]">{app.domain}</p>
       </div>
-      <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 6px ${GREEN}` }} />
+      <span className="size-1 shrink-0 rounded-full md:size-1.5" style={{ backgroundColor: GREEN, boxShadow: `0 0 6px ${GREEN}` }} />
     </div>
   );
 }
@@ -530,19 +530,20 @@ function AppWall() {
     { offset: 0, duration: 11, className: '' },
     { offset: 9, duration: 8, className: '' },
     { offset: 19, duration: 13, className: '' },
-    { offset: 28, duration: 9, className: 'hidden md:block' },
+    { offset: 28, duration: 9, className: '' },
     { offset: 37, duration: 12, className: 'hidden lg:block' },
     { offset: 46, duration: 7.5, className: 'hidden lg:block' },
   ];
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="absolute inset-x-[-8%] top-[-10%] bottom-[-10%] origin-top [transform:perspective(1400px)_rotateX(24deg)]">
-        <div className="mx-auto grid h-full max-w-[1500px] grid-cols-3 gap-3 px-3 md:grid-cols-4 lg:grid-cols-6">
+        <div className="mx-auto grid h-full max-w-[1500px] grid-cols-4 gap-2 px-2 md:gap-3 md:px-3 lg:grid-cols-6">
           {columns.map((column) => (
             <div key={column.offset} className={`h-full overflow-hidden ${column.className}`}>
-              <div className="space-y-3" style={{ animation: `npRise ${column.duration}s linear infinite` }}>
+              <div style={{ animation: `npRise ${column.duration}s linear infinite` }}>
+                {/* Padding, not a gap between copies, so -50% lands exactly on the second copy. */}
                 {[0, 1].map((copy) => (
-                  <div key={copy} className="space-y-3">
+                  <div key={copy} className="space-y-2 pb-2 md:space-y-3 md:pb-3">
                     {Array.from({ length: 14 }, (_, k) => (
                       <FloodTile key={k} i={column.offset + k} />
                     ))}
@@ -570,14 +571,14 @@ function HeroSection() {
           background: `radial-gradient(ellipse 42% 46% at 50% 46%, ${INK} 35%, ${INK}d9 60%, transparent 100%), linear-gradient(to bottom, ${INK} 0%, transparent 18%, transparent 75%, ${INK} 100%)`,
         }}
       />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-black/60 md:hidden" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-black/45 md:hidden" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{ background: `radial-gradient(ellipse 40% 30% at 50% 38%, ${FLAME}30, transparent 70%)` }}
       />
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
         <div className="mb-8 inline-flex items-center gap-2.5 rounded-full bg-black/60 py-1.5 pr-4 pl-1.5 ring-1 ring-white/10 backdrop-blur">
           <img src={NPANEL_ICON} alt="npanel logo" className="size-7" />
           <span className="font-mono text-xs text-white/65">
@@ -1187,8 +1188,9 @@ function DashboardMock() {
                   <SiteCard site={NEW_SITE} status={status} />
                 </div>
               )}
+              {/* The new card takes the last visible slot, so the grid never changes height. */}
               {MOCK_SITES.map((site, i) => (
-                <div key={site.host} className={i >= 2 ? 'hidden sm:block' : undefined}>
+                <div key={site.host} className={mockSiteClass(i, added)}>
                   <SiteCard site={site} />
                 </div>
               ))}
@@ -1237,6 +1239,15 @@ function DashboardMock() {
       </Window>
     </div>
   );
+}
+
+/** Two cards in one column, four in two, all five (plus the new one) in three. */
+function mockSiteClass(i: number, added: boolean): string | undefined {
+  if (i === 1 && added) return 'hidden sm:block';
+  if (i === 3 && added) return 'hidden lg:block';
+  if (i === 2 || i === 3) return 'hidden sm:block';
+  if (i === 4) return 'hidden lg:block';
+  return undefined;
 }
 
 function SidebarItem({ icon: Icon, label, active = false }: { icon: LucideIcon; label: string; active?: boolean }) {
@@ -1319,7 +1330,7 @@ function FeatureSection({
       />
       <div
         ref={ref}
-        className={`relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:gap-16 lg:px-8 ${flip ? 'lg:grid-cols-[1.35fr_1fr]' : 'lg:grid-cols-[1fr_1.35fr]'}`}
+        className={`relative mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] items-center gap-12 px-4 sm:px-6 lg:gap-16 lg:px-8 ${flip ? 'lg:grid-cols-[1.35fr_1fr]' : 'lg:grid-cols-[1fr_1.35fr]'}`}
       >
         <div className={flip ? 'lg:order-2' : undefined}>
           <div className="mb-6 flex items-center gap-3">
@@ -1340,7 +1351,10 @@ function FeatureSection({
           </ul>
         </div>
 
-        <div className={`relative min-h-[420px] ${flip ? 'lg:order-1' : ''}`}>{inView && demo}</div>
+        {/* The demo is laid out (hidden) before it's in view, so starting it doesn't shift the page. */}
+        <div className={`relative min-h-[420px] min-w-0 ${flip ? 'lg:order-1' : ''}`} style={{ visibility: inView ? 'visible' : 'hidden' }}>
+          <Fragment key={String(inView)}>{demo}</Fragment>
+        </div>
       </div>
     </section>
   );
@@ -1430,20 +1444,22 @@ function TorDemo() {
   const chars = Math.min(ONION.length, tick);
 
   return (
-    <div className="grid h-full animate-[npFade_0.35s_ease-out] gap-4">
+    <div className="grid h-full animate-[npFade_0.35s_ease-out] grid-cols-[minmax(0,1fr)] gap-4">
       <Browser url={ONION.slice(0, Math.max(chars, 1))} onion>
         <div className="relative">
-          {chars >= ONION.length && (
-            <div className="flex items-center gap-2 px-4 py-2 text-[12px] text-white" style={{ backgroundColor: '#3b1f5c' }}>
-              <OnionGlyph className="size-4" />
-              <span className="flex-1">ditto.pub is available as an onion site.</span>
-              <span className="rounded bg-white/15 px-2 py-0.5 text-[11px]">Always prioritize</span>
-            </div>
-          )}
+          {/* Always laid out, so the bar appearing doesn't push the page down. */}
+          <div
+            className="flex items-center gap-2 px-4 py-2 text-[12px] text-white transition-opacity duration-300"
+            style={{ backgroundColor: '#3b1f5c', opacity: chars >= ONION.length ? 1 : 0 }}
+          >
+            <OnionGlyph className="size-4 shrink-0" />
+            <span className="min-w-0 flex-1">ditto.pub is available as an onion site.</span>
+            <span className="shrink-0 rounded bg-white/15 px-2 py-0.5 text-[11px]">Always prioritize</span>
+          </div>
           <DittoSite site={SITE_VERSIONS[3]} />
         </div>
       </Browser>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
         <MiniTerminal
           lines={[
             { cmd: true, text: 'pgrep -c tor' },
@@ -1594,7 +1610,7 @@ function ErrorsDemo() {
           </div>
 
           {/* Both traces sit in one grid cell, so the box is always the taller one's height. */}
-          <div className="mt-3 grid overflow-hidden rounded-xl bg-black/50 font-mono text-[12px] ring-1 ring-white/[0.06]">
+          <div className="mt-3 grid overflow-x-auto rounded-xl bg-black/50 font-mono text-[10.5px] sm:text-[12px] ring-1 ring-white/[0.06]">
             <div
               className="transition-opacity duration-500 [grid-area:1/1]"
               style={{ opacity: mapped ? 1 : 0, visibility: mapped ? 'visible' : 'hidden' }}
@@ -1830,7 +1846,7 @@ function InstallSection() {
           in the audit log.
         </SectionHeading>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-2">
           <Window title=".env" bodyClassName="p-5 font-mono text-[12.5px] leading-7">
             {ENV_LINES.map(([key, value, comment]) => (
               <p key={key} className="truncate">
