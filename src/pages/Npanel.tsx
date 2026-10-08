@@ -1711,9 +1711,9 @@ function SpeedSection() {
           eyebrow="Rust + Hyper"
           title={
             <>
-              Faster than nginx.
+              Built in Rust.
               <br />
-              <GradientText>4.7× faster than Caddy.</GradientText>
+              <GradientText>Faster than nginx.</GradientText>
             </>
           }
         >
