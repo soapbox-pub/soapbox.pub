@@ -31,6 +31,8 @@ export default defineConfig({
       routes: [
         // Main pages
         "/",
+        // Unmatched route: renders NotFound, moved to dist/404.html by the build script
+        "/404",
         "/about",
         "/agora",
         "/armada",
