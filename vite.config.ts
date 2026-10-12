@@ -44,6 +44,7 @@ export default defineConfig({
         "/mkstack",
         "/npanel",
         "/search",
+        "/security",
         "/shakespeare",
         "/shakespeare-community",
         "/shakespeare-resources",
