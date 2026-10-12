@@ -7,7 +7,6 @@ import GetInvolved from "./pages/GetInvolved";
 import Agora from "./pages/Agora";
 import Armada from "./pages/Armada";
 import Npanel from "./pages/Npanel";
-// import Communities from "./pages/Communities";
 import Showcase from "./pages/Showcase";
 import Toybox from "./pages/Toybox";
 import Toolbox from "./pages/Toolbox";
@@ -66,7 +65,6 @@ export function AppRouter() {
         <Route path="/armada" element={<Armada />} />
         {/* npanel landing page */}
         <Route path="/npanel" element={<Npanel />} />
-        {/* <Route path="/communities" element={<Communities />} /> */}
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/toybox" element={<Toybox />} />
         <Route path="/toolbox" element={<Toolbox />} />

@@ -37,7 +37,6 @@ export default defineConfig({
         "/agora",
         "/armada",
         "/blog",
-        "/communities",
         "/ditto",
         "/ethics",
         "/get-involved",
