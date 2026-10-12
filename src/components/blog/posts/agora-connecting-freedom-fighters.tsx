@@ -61,11 +61,11 @@ export default function AgoraConnectingFreedomFighters() {
             { icon: "₿", label: "Support", desc: "on-the-ground activists directly with Bitcoin" },
             { icon: "📣", label: "Amplify", desc: "the voices of the global resistance beyond censored platforms" },
           ].map(({ icon, label, desc }) => (
-            <Card key={label} className="border-orange-200 bg-orange-50 dark:bg-orange-950/20 dark:border-orange-900">
+            <Card key={label} className="border-orange-200 bg-orange-50">
               <CardContent className="p-5 flex gap-4 items-start">
                 <span className="text-2xl">{icon}</span>
                 <div>
-                  <p className="font-semibold text-orange-800 dark:text-orange-300">{label}</p>
+                  <p className="font-semibold text-orange-800">{label}</p>
                   <p className="text-sm text-muted-foreground">{desc}</p>
                 </div>
               </CardContent>
@@ -85,12 +85,12 @@ export default function AgoraConnectingFreedomFighters() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "This is something that we've been thinking about for a while. And now we have a tested platform. We have a community that is already engaged. We have a huge potential for growth in different countries. And we have a group of developers that are very excited to continue to work on this."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">— Leopoldo López</p>
+            <p className="font-semibold text-orange-700">— Leopoldo López</p>
           </CardContent>
         </Card>
       </div>
@@ -119,12 +119,12 @@ export default function AgoraConnectingFreedomFighters() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
+        <Card className="border-l-4 border-blue-500 bg-blue-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "If Venezuela succeeds, it will send a powerful message to the world that democracy can overcome even the most entrenched autocracies. Venezuela can be the spark for a fourth wave of democratization."
             </blockquote>
-            <p className="font-semibold text-blue-700 dark:text-blue-400">— Leopoldo López</p>
+            <p className="font-semibold text-blue-700">— Leopoldo López</p>
           </CardContent>
         </Card>
       </div>
@@ -246,7 +246,7 @@ export default function AgoraConnectingFreedomFighters() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-orange-300 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30">
+        <Card className="border-dashed border-2 border-orange-300 bg-gradient-to-br from-orange-50 to-red-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-2">⚡</div>
             <div className="text-2xl font-bold mb-3">Power to the people.</div>

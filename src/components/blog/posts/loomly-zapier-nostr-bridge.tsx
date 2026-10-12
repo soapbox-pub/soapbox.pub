@@ -132,9 +132,9 @@ export default function LoomlyZapierNostrBridge() {
 
       <p>If you implement this solution or build upon it, we'd love to hear about your experience. The Nostr ecosystem grows stronger when we share practical solutions to real problems.</p>
 
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg my-8 flex flex-col items-center text-center">
-        <h3 className="text-blue-800 dark:text-blue-200 mt-0">Get Involved</h3>
-        <p className="text-blue-700 dark:text-blue-300 mb-0">Have questions about implementing this bridge? Want to contribute improvements?</p>
+      <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg my-8 flex flex-col items-center text-center">
+        <h3 className="text-blue-800 mt-0">Get Involved</h3>
+        <p className="text-blue-700 mb-0">Have questions about implementing this bridge? Want to contribute improvements?</p>
         <p><strong>Join the conversation on Nostr!</strong></p>
         <a
           href="https://ditto.pub/@soapbox@ditto.pub"

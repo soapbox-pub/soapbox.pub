@@ -54,7 +54,7 @@ export default function ShakespeareImportingExistingProjects() {
 
       {/* Project Compatibility Requirements */}
       <div className="not-prose mb-12">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <CheckCircle className="h-8 w-8 text-green-600" />
@@ -66,22 +66,22 @@ export default function ShakespeareImportingExistingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">1</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Must be a web-based project</p>
-                  <p className="text-gray-600 dark:text-gray-400">Shakespeare works with frontend web applications that run in the browser</p>
+                  <p className="font-semibold text-gray-900">Must be a web-based project</p>
+                  <p className="text-gray-600">Shakespeare works with frontend web applications that run in the browser</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">2</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Must have these files: index.html, package.json, package-lock.json</p>
-                  <p className="text-gray-600 dark:text-gray-400">These core files help Shakespeare understand your project structure</p>
+                  <p className="font-semibold text-gray-900">Must have these files: index.html, package.json, package-lock.json</p>
+                  <p className="text-gray-600">These core files help Shakespeare understand your project structure</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">3</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">You must have the source code either in a git repository or zip file</p>
-                  <p className="text-gray-600 dark:text-gray-400">Shakespeare can import from GitHub, GitLab, or zip archives</p>
+                  <p className="font-semibold text-gray-900">You must have the source code either in a git repository or zip file</p>
+                  <p className="text-gray-600">Shakespeare can import from GitHub, GitLab, or zip archives</p>
                 </div>
               </div>
             </div>
@@ -93,15 +93,15 @@ export default function ShakespeareImportingExistingProjects() {
       <div className="not-prose mb-12">
 
         {/* Method 1: Import via Git */}
-        <Card className="mb-8 border-blue-200 dark:border-blue-800">
+        <Card className="mb-8 border-blue-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <GitBranch className="h-8 w-8 text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 1. Import via Git
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Use the HTTPS clone address to import your repository directly into Shakespeare.
             </p>
 
@@ -113,11 +113,11 @@ export default function ShakespeareImportingExistingProjects() {
               />
             </div>
 
-            <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
-              <p className="font-semibold text-blue-900 dark:text-blue-100 mb-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <p className="font-semibold text-blue-900 mb-4">
                 💡 Pro tip: Anywhere you see this "Edit with Shakespeare" button, you can clone the repository in one click directly into Shakespeare!
               </p>
-              <p className="text-blue-800 dark:text-blue-200 mb-4">
+              <p className="text-blue-800 mb-4">
                 Try it here with the Soapbox website:
               </p>
               <EditWithShakespeareButton
@@ -129,22 +129,22 @@ export default function ShakespeareImportingExistingProjects() {
         </Card>
 
         {/* Method 2: Import via Zip */}
-        <Card className="mb-8 border-green-200 dark:border-green-800">
+        <Card className="mb-8 border-green-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Upload className="h-8 w-8 text-green-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 2. Importing via zip
               </h3>
             </div>
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">1</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Click the three dots menu</p>
+                <p className="text-gray-600">Click the three dots menu</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">2</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Select "Import Zip file"</p>
+                <p className="text-gray-600">Select "Import Zip file"</p>
               </div>
             </div>
 
@@ -159,28 +159,28 @@ export default function ShakespeareImportingExistingProjects() {
         </Card>
 
         {/* Method 3: Import from Act 1 */}
-        <Card className="mb-8 border-orange-200 dark:border-orange-800">
+        <Card className="mb-8 border-orange-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Download className="h-8 w-8 text-orange-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 3. Importing from Shakespeare Act 1
               </h3>
             </div>
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">1</Badge>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Go to your project at: <a href="https://act1.shakespeare.diy/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://act1.shakespeare.diy/</a>
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">2</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Export project as zip</p>
+                <p className="text-gray-600">Export project as zip</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">3</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Import into Act 2 as zip (using method 2 above)</p>
+                <p className="text-gray-600">Import into Act 2 as zip (using method 2 above)</p>
               </div>
             </div>
 
@@ -196,7 +196,7 @@ export default function ShakespeareImportingExistingProjects() {
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

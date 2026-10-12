@@ -56,19 +56,19 @@ export default function AnnouncingShakespeareCommunity() {
         <div className="flex flex-wrap gap-2 mb-4">
           <Badge
             variant="secondary"
-            className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+            className="bg-purple-100 text-purple-800"
           >
             Shakespeare
           </Badge>
           <Badge
             variant="secondary"
-            className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+            className="bg-blue-100 text-blue-800"
           >
             Community
           </Badge>
           <Badge
             variant="secondary"
-            className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+            className="bg-green-100 text-green-800"
           >
             Events
           </Badge>

@@ -130,12 +130,12 @@ export default function AnnouncingNostrHub() {
       <h3>💬 Social Interaction & Comments</h3>
       <p>NostrHub isn't just a directory — it's a <strong>truly social experience</strong>. You can comment on NIPs, apps, and repositories directly on their pages, creating meaningful discussions around Nostr development. Share your implementation experiences, ask questions about specific NIPs, provide feedback on applications, or collaborate on repository improvements. All comments are powered by Nostr, ensuring your discussions are decentralized and censorship-resistant.</p>
 
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 p-6 rounded-lg my-6 not-prose border-l-4 border-l-blue-500">
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg my-6 not-prose border-l-4 border-l-blue-500">
         <div className="flex items-start gap-3">
           <Users className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
           <div>
-            <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Engage with the Community</h4>
-            <p className="text-blue-800 dark:text-blue-200 text-sm">
+            <h4 className="font-semibold text-blue-900 mb-2">Engage with the Community</h4>
+            <p className="text-blue-800 text-sm">
               Every NIP, app, and repository on NostrHub has its own comment section where you can discuss implementation details, share use cases, report issues, or collaborate with other developers. It's like having a built-in forum for every piece of Nostr technology.
             </p>
           </div>
@@ -202,14 +202,14 @@ export default function AnnouncingNostrHub() {
         <p className="text-sm text-muted-foreground text-center mt-2">Explore AI-powered Data Vending Machines in the NostrHub marketplace</p>
       </div>
 
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 p-6 rounded-lg my-6 not-prose border-l-4 border-l-purple-500">
+      <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg my-6 not-prose border-l-4 border-l-purple-500">
         <div className="flex items-start gap-3">
           <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
             <span className="text-white text-xs font-bold">β</span>
           </div>
           <div>
-            <h4 className="font-semibold text-purple-900 dark:text-purple-100 mb-2">Beta Feature</h4>
-            <p className="text-purple-800 dark:text-purple-200 text-sm">
+            <h4 className="font-semibold text-purple-900 mb-2">Beta Feature</h4>
+            <p className="text-purple-800 text-sm">
               The DVM marketplace is currently in beta. Explore AI-powered services like language translation, image processing, content analysis, and more - all running on decentralized infrastructure through the Nostr protocol.
             </p>
           </div>
@@ -282,7 +282,7 @@ export default function AnnouncingNostrHub() {
 
       <p>The platform will continue to evolve based on community feedback and needs. We're committed to supporting the Nostr ecosystem's growth while maintaining the principles of decentralization and open development that make Nostr special.</p>
 
-      <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-8 rounded-xl my-8 not-prose border">
+      <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl my-8 not-prose border">
         <div className="text-center space-y-4">
           <h3 className="text-xl font-bold">Stay Updated</h3>
           <p className="text-muted-foreground max-w-md mx-auto">

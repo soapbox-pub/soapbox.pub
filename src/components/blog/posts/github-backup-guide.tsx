@@ -91,20 +91,20 @@ export default function GitHubBackupGuide() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Repository Creation Fields</h4>
-            <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+            <h4 className="font-semibold text-gray-900 mb-4">Repository Creation Fields</h4>
+            <ul className="space-y-3 text-gray-600">
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong className="text-gray-900 dark:text-gray-100">Repository name:</strong> This will become part of your URL (e.g., <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">github.com/yourusername/project-name</code>)
+                  <strong className="text-gray-900">Repository name:</strong> This will become part of your URL (e.g., <code className="bg-gray-100 px-1 rounded">github.com/yourusername/project-name</code>)
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong className="text-gray-900 dark:text-gray-100">Description:</strong> A brief explanation of what your project is for
+                  <strong className="text-gray-900">Description:</strong> A brief explanation of what your project is for
                 </div>
               </li>
             </ul>
@@ -171,15 +171,15 @@ export default function GitHubBackupGuide() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Non-Technical GitHub User Pro Tips
               </h3>
             </div>
-            <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+            <ul className="space-y-4 text-gray-700">
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                 <span>Once you get used to this process, it takes about <strong>30 seconds</strong> to set up a new repository.</span>
@@ -207,34 +207,34 @@ export default function GitHubBackupGuide() {
       </h2>
 
       <div className="not-prose my-8 space-y-4">
-        <Card className="border-gray-200 dark:border-gray-800">
+        <Card className="border-gray-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            <h4 className="font-semibold text-gray-900 mb-2">
               Q: Do I make a new repository for each project or is this the big main one?
             </h4>
-            <p className="text-gray-600 dark:text-gray-400 m-0">
+            <p className="text-gray-600 m-0">
               <strong>A:</strong> Create a separate repository for each new project. This keeps everything organized and makes it easier to manage.
             </p>
           </CardContent>
         </Card>
 
-        <Card className="border-gray-200 dark:border-gray-800">
+        <Card className="border-gray-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            <h4 className="font-semibold text-gray-900 mb-2">
               Q: What about gitignore, readme, and license options?
             </h4>
-            <p className="text-gray-600 dark:text-gray-400 m-0">
+            <p className="text-gray-600 m-0">
               <strong>A:</strong> For simple backup purposes, you can ignore these options when first setting up your repository.
             </p>
           </CardContent>
         </Card>
 
-        <Card className="border-gray-200 dark:border-gray-800">
+        <Card className="border-gray-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            <h4 className="font-semibold text-gray-900 mb-2">
               Q: Is there any way that GitHub could mess up my backups and lose them? Should I back up elsewhere?
             </h4>
-            <p className="text-gray-600 dark:text-gray-400 m-0">
+            <p className="text-gray-600 m-0">
               <strong>A:</strong> GitHub is very reliable and secure. It will keep your code safe, and Shakespeare should automatically push updates. However, it's always good practice to watch for the sync indicators to ensure everything is backing up properly.
             </p>
           </CardContent>
@@ -246,7 +246,7 @@ export default function GitHubBackupGuide() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

@@ -69,19 +69,19 @@ export default function BuildingPathos() {
         <Card className="border-l-4 border-red-500">
           <CardContent className="p-6 space-y-4">
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"Where are my people?"</p>
+              <p className="font-semibold text-red-700">"Where are my people?"</p>
               <p className="text-sm text-muted-foreground">Activists can't find their communities when they're forced to migrate between platforms.</p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"X was banned in Venezuela."</p>
+              <p className="font-semibold text-red-700">"X was banned in Venezuela."</p>
               <p className="text-sm text-muted-foreground">Centralized platforms become targets. One government order and your entire network disappears.</p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"$10 is huge when your bank account is frozen."</p>
+              <p className="font-semibold text-red-700">"$10 is huge when your bank account is frozen."</p>
               <p className="text-sm text-muted-foreground">Traditional payment rails fail when regimes freeze accounts.</p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"The internet goes dark during critical moments."</p>
+              <p className="font-semibold text-red-700">"The internet goes dark during critical moments."</p>
               <p className="text-sm text-muted-foreground">Connectivity gets throttled or shut down exactly when activists need it most.</p>
             </div>
           </CardContent>
@@ -258,7 +258,7 @@ export default function BuildingPathos() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
+        <Card className="border-dashed border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-purple-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">Freedom needs infrastructure.</div>
             <p className="text-muted-foreground mb-6">

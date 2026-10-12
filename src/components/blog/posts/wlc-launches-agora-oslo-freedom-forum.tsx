@@ -54,7 +54,7 @@ export const meta: BlogPostMeta = {
 export default function WlcLaunchesAgoraOsloFreedomForum() {
   return (
     <article className="prose prose-lg max-w-none">
-      <p className="text-sm uppercase tracking-widest text-orange-600 dark:text-orange-400 font-semibold mb-2 not-prose">
+      <p className="text-sm uppercase tracking-widest text-orange-600 font-semibold mb-2 not-prose">
         For Immediate Release
       </p>
 
@@ -93,12 +93,12 @@ export default function WlcLaunchesAgoraOsloFreedomForum() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "We are witnessing a coordinated assault on democratic principles. Agora is the infrastructure for an equally coordinated network of support going in the other direction."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">— Leopoldo López</p>
+            <p className="font-semibold text-orange-700">— Leopoldo López</p>
           </CardContent>
         </Card>
       </div>
@@ -116,12 +116,12 @@ export default function WlcLaunchesAgoraOsloFreedomForum() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
+        <Card className="border-l-4 border-blue-500 bg-blue-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "Millions of people want to help defend freedom around the world. The problem has never been solidarity. The problem has been barriers. Agora exists to solve that."
             </blockquote>
-            <p className="font-semibold text-blue-700 dark:text-blue-400">— M. K. Fain, Soapbox co-founder</p>
+            <p className="font-semibold text-blue-700">— M. K. Fain, Soapbox co-founder</p>
           </CardContent>
         </Card>
       </div>
@@ -133,7 +133,7 @@ export default function WlcLaunchesAgoraOsloFreedomForum() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-orange-300 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30">
+        <Card className="border-dashed border-2 border-orange-300 bg-gradient-to-br from-orange-50 to-red-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-2">⚡</div>
             <div className="text-2xl font-bold mb-3">Power to the people.</div>

@@ -302,7 +302,7 @@ const featureRows: CompRow[] = [
 
 function SupportIcon({ value }: { value: Support }) {
   if (value === 'yes') {
-    return <Check className="mx-auto h-5 w-5 text-emerald-600 dark:text-emerald-400" aria-hidden />;
+    return <Check className="mx-auto h-5 w-5 text-emerald-600" aria-hidden />;
   }
   if (value === 'no') {
     return <X className="mx-auto h-5 w-5 text-rose-500" aria-hidden />;
@@ -359,7 +359,7 @@ function ComparisonTable({
                 scope="row"
                 className={
                   row.highlight
-                    ? 'sticky left-0 bg-[#fdf2f8] p-3 text-center align-top dark:bg-[#1a0f18]'
+                    ? 'sticky left-0 bg-[#fdf2f8] p-3 text-center align-top'
                     : 'sticky left-0 bg-background p-3 text-center align-top'
                 }
               >
@@ -373,7 +373,7 @@ function ComparisonTable({
                   <span
                     className={
                       row.highlight
-                        ? 'font-bold text-[#db2777] dark:text-[#ec4899]'
+                        ? 'font-bold text-[#db2777]'
                         : 'font-semibold'
                     }
                   >
@@ -823,7 +823,7 @@ export default function BestDiscordAlternatives2026() {
         <Button
           size="lg"
           variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white"
           asChild
         >
           <a
@@ -842,7 +842,7 @@ export default function BestDiscordAlternatives2026() {
         <Button
           size="lg"
           variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white"
           asChild
         >
           <a

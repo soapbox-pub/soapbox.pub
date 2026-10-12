@@ -168,11 +168,11 @@ export default function Zapping101() {
       </p>
 
       <div className="not-prose my-6">
-        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-900/10">
+        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <BookOpen className="h-5 w-5 text-orange-500" />
-              <h4 className="font-semibold text-orange-900 dark:text-orange-100">Learn More About Bitcoin</h4>
+              <h4 className="font-semibold text-orange-900">Learn More About Bitcoin</h4>
             </div>
             <div className="space-y-3">
               {[
@@ -184,8 +184,8 @@ export default function Zapping101() {
                   className="flex items-start gap-3 group no-underline">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2" />
                   <div>
-                    <span className="font-medium text-orange-800 dark:text-orange-200 group-hover:underline">{name}</span>
-                    <span className="text-sm text-orange-700 dark:text-orange-300"> — {desc}</span>
+                    <span className="font-medium text-orange-800 group-hover:underline">{name}</span>
+                    <span className="text-sm text-orange-700"> — {desc}</span>
                   </div>
                 </a>
               ))}
@@ -195,13 +195,13 @@ export default function Zapping101() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-yellow-200 bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-950/20 dark:to-amber-900/10">
+        <Card className="border-yellow-200 bg-gradient-to-br from-yellow-50 to-amber-50">
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
               <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-yellow-900 dark:text-yellow-100 mb-2">Don't want to hold Bitcoin?</h4>
-                <p className="text-yellow-800 dark:text-yellow-200 text-sm">
+                <h4 className="font-semibold text-yellow-900 mb-2">Don't want to hold Bitcoin?</h4>
+                <p className="text-yellow-800 text-sm">
                   That's totally fine. When you receive zaps, you can send that Bitcoin straight to{' '}
                   <a href="https://strike.me" target="_blank" rel="noopener noreferrer" className="underline font-medium">Strike</a>{' '}
                   or{' '}
@@ -243,7 +243,7 @@ export default function Zapping101() {
               <div>
                 <div className="flex items-center flex-wrap gap-2 mb-1">
                   <a href="https://www.walletofsatoshi.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:underline">Wallet of Satoshi</a>
-                  <span className="text-xs bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300 px-2 py-0.5 rounded-full font-medium">Best for Beginners</span>
+                  <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-medium">Best for Beginners</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Available on iPhone and Android. Download the app and you instantly have a Lightning address like <code>yourname@walletofsatoshi.com</code>. No setup required. Just open it and you're ready to zap and get zapped.
@@ -260,7 +260,7 @@ export default function Zapping101() {
               <div>
                 <div className="flex items-center flex-wrap gap-2 mb-1">
                   <a href="https://primal.net/" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:underline">Primal</a>
-                  <span className="text-xs bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 px-2 py-0.5 rounded-full font-medium">All-in-One Nostr App</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">All-in-One Nostr App</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Primal is a Nostr client with a built-in wallet. Your social feed and your wallet in one place — great if you want everything under one roof.
@@ -277,7 +277,7 @@ export default function Zapping101() {
               <div>
                 <div className="flex items-center flex-wrap gap-2 mb-1">
                   <a href="https://rizful.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:underline">Rizful</a>
-                  <span className="text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded-full font-medium">Browser-Based, No Install</span>
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">Browser-Based, No Install</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Works on any device right from your browser. Sign up, claim a Lightning address like <code>yourname@rizful.com</code>, and you're set. No app download needed. Built by the team behind one of the largest Lightning Network routing nodes.
@@ -294,7 +294,7 @@ export default function Zapping101() {
               <div>
                 <div className="flex items-center flex-wrap gap-2 mb-1">
                   <a href="https://coinos.io/" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:underline">CoinOS</a>
-                  <span className="text-xs bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 px-2 py-0.5 rounded-full font-medium">No Account Required</span>
+                  <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">No Account Required</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Just pick a username and password — that's it. Your Lightning address becomes <code>yourname@coinos.io</code>. No email address, no ID, no personal information required. Sign up in seconds and start receiving zaps immediately.
@@ -311,7 +311,7 @@ export default function Zapping101() {
               <div>
                 <div className="flex items-center flex-wrap gap-2 mb-1">
                   <a href="https://strike.me/" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:underline">Strike</a>
-                  <span className="text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300 px-2 py-0.5 rounded-full font-medium">Best for Funding Your Wallet</span>
+                  <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-medium">Best for Funding Your Wallet</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Strike is the easiest way to buy Bitcoin with your bank account and get it onto Lightning. Available in many countries worldwide. Requires ID verification, but it's the most trusted way to get real money into your Lightning wallet so you have sats to zap with.
@@ -334,7 +334,7 @@ export default function Zapping101() {
           alt="Edit Profile in Ditto showing the Lightning address field filled in with mkfain@breez.tips"
           className="rounded-xl shadow-lg w-full object-cover"
         />
-        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/10 flex">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50 flex">
           <CardContent className="p-6 flex flex-col justify-center">
             <ol className="space-y-3 list-none m-0 p-0">
               {[
@@ -363,7 +363,7 @@ export default function Zapping101() {
       <p>Now for the fun part.</p>
 
       <div className="not-prose my-6">
-        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-900/10">
+        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50">
           <CardContent className="p-6">
             <ol className="space-y-3 list-none m-0 p-0">
               {[
@@ -444,7 +444,7 @@ export default function Zapping101() {
               <div className="flex items-center gap-2 mb-1">
                 <Zap className={`h-4 w-4 text-${color}-500`} />
                 <span className="font-bold">{amount}</span>
-                <span className={`text-xs bg-${color}-100 text-${color}-700 dark:bg-${color}-900/30 dark:text-${color}-300 px-2 py-0.5 rounded-full`}>{label}</span>
+                <span className={`text-xs bg-${color}-100 text-${color}-700}-900/30}-300 px-2 py-0.5 rounded-full`}>{label}</span>
               </div>
               <p className="text-sm text-muted-foreground">{desc}</p>
             </CardContent>
@@ -461,9 +461,9 @@ export default function Zapping101() {
       </p>
 
       <div className="not-prose my-6">
-        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50 dark:from-purple-950/20 dark:to-purple-900/10">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-purple-900 dark:text-purple-100 mb-3">Wallets that support Nostr Wallet Connect</h4>
+            <h4 className="font-semibold text-purple-900 mb-3">Wallets that support Nostr Wallet Connect</h4>
             <div className="flex flex-wrap gap-2 mb-3">
               {[
                 { name: 'Primal', url: 'https://primal.net' },
@@ -471,13 +471,13 @@ export default function Zapping101() {
                 { name: 'CoinOS', url: 'https://coinos.io' },
               ].map(({ name, url }) => (
                 <a key={name} href={url} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 bg-white dark:bg-black/20 border border-purple-200 dark:border-purple-800 rounded-full px-3 py-1 text-sm font-medium text-purple-700 dark:text-purple-300 hover:bg-purple-50 transition-colors">
+                  className="inline-flex items-center gap-1 bg-white border border-purple-200 rounded-full px-3 py-1 text-sm font-medium text-purple-700 hover:bg-purple-50 transition-colors">
                   <CheckCircle className="h-3 w-3" />
                   {name}
                 </a>
               ))}
             </div>
-            <p className="text-sm text-purple-800 dark:text-purple-200">
+            <p className="text-sm text-purple-800">
               In your wallet app (Rizful, Primal, or CoinOS), find the NWC section and tap <strong>Get Connection Code</strong>. Then in Ditto, go to <strong>Settings → Advanced → Wallet → + Add</strong> and paste it in. That's it — your wallet is connected and zapping is instant.
             </p>
           </CardContent>
@@ -501,10 +501,10 @@ export default function Zapping101() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-900/10 text-center">
+        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 text-center">
           <CardContent className="p-8">
             <Zap className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-            <p className="text-xl font-semibold text-orange-900 dark:text-orange-100">
+            <p className="text-xl font-semibold text-orange-900">
               Real money. Real people. No permission needed.
             </p>
           </CardContent>

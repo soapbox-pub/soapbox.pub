@@ -52,16 +52,16 @@ export default function ShakespeareAIModelSelection() {
 
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🤖 40+ Models
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🎭 Shakespeare Models
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             💡 Smart Strategies
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             🎯 Project Matching
           </Badge>
         </div>
@@ -75,15 +75,15 @@ export default function ShakespeareAIModelSelection() {
 
       <div className="not-prose my-8">
         <div className="space-y-6">
-          <Card className="border-2 border-yellow-200 dark:border-yellow-800 bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-950 dark:to-amber-950">
+          <Card className="border-2 border-yellow-200 bg-gradient-to-br from-yellow-50 to-amber-50">
             <CardContent className="p-8">
               <div className="flex items-start space-x-4">
                 <div className="text-4xl">🏆</div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-4 text-yellow-800 dark:text-yellow-200">
+                  <h3 className="text-2xl font-bold mb-4 text-yellow-800">
                     Anthropic Claude Sonnet 4.5 - The Professional's Choice
                   </h3>
-                  <p className="text-sm text-yellow-700 dark:text-yellow-300 mb-4">
+                  <p className="text-sm text-yellow-700 mb-4">
                     <strong>When to use:</strong> Complex websites, professional projects, advanced functionality
                   </p>
                   <p className="text-sm mb-4">
@@ -92,7 +92,7 @@ export default function ShakespeareAIModelSelection() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold mb-3 text-yellow-800 dark:text-yellow-200">Strengths:</h4>
+                      <h4 className="font-semibold mb-3 text-yellow-800">Strengths:</h4>
                       <ul className="space-y-1 text-sm">
                         <li>• Exceptional understanding of modern web development</li>
                         <li>• Superior code quality with clean, semantic HTML/CSS</li>
@@ -103,7 +103,7 @@ export default function ShakespeareAIModelSelection() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-3 text-yellow-800 dark:text-yellow-200">Best for:</h4>
+                      <h4 className="font-semibold mb-3 text-yellow-800">Best for:</h4>
                       <ul className="space-y-1 text-sm">
                         <li>• Business websites requiring pixel-perfect design</li>
                         <li>• Complex e-commerce platforms</li>
@@ -114,8 +114,8 @@ export default function ShakespeareAIModelSelection() {
                     </div>
                   </div>
 
-                  <div className="mt-4 p-3 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
-                    <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                  <div className="mt-4 p-3 bg-yellow-100 rounded-lg">
+                    <p className="text-sm text-yellow-800">
                       <strong>Cost consideration:</strong> Premium pricing, but worth it for high-stakes projects
                     </p>
                   </div>
@@ -124,15 +124,15 @@ export default function ShakespeareAIModelSelection() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+          <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
             <CardContent className="p-8">
               <div className="flex items-start space-x-4">
                 <div className="text-4xl">💎</div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-4 text-purple-800 dark:text-purple-200">
+                  <h3 className="text-2xl font-bold mb-4 text-purple-800">
                     Z.ai GLM 4.5 - The Smart Budget Choice
                   </h3>
-                  <p className="text-sm text-purple-700 dark:text-purple-300 mb-4">
+                  <p className="text-sm text-purple-700 mb-4">
                     <strong>When to use:</strong> Most website building tasks, cost-conscious projects
                   </p>
                   <p className="text-sm mb-4">
@@ -141,7 +141,7 @@ export default function ShakespeareAIModelSelection() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold mb-3 text-purple-800 dark:text-purple-200">Strengths:</h4>
+                      <h4 className="font-semibold mb-3 text-purple-800">Strengths:</h4>
                       <ul className="space-y-1 text-sm">
                         <li>• Similar output quality to Claude for standard websites</li>
                         <li>• Excellent at modern CSS frameworks and responsive design</li>
@@ -152,7 +152,7 @@ export default function ShakespeareAIModelSelection() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-3 text-purple-800 dark:text-purple-200">Best for:</h4>
+                      <h4 className="font-semibold mb-3 text-purple-800">Best for:</h4>
                       <ul className="space-y-1 text-sm">
                         <li>• Personal websites and portfolios</li>
                         <li>• Small business websites</li>
@@ -163,8 +163,8 @@ export default function ShakespeareAIModelSelection() {
                     </div>
                   </div>
 
-                  <div className="mt-4 p-3 bg-green-100 dark:bg-green-900 rounded-lg">
-                    <p className="text-sm text-green-800 dark:text-green-200">
+                  <div className="mt-4 p-3 bg-green-100 rounded-lg">
+                    <p className="text-sm text-green-800">
                       <strong>Cost advantage:</strong> Often 60-80% less expensive than Claude with comparable results
                     </p>
                   </div>
@@ -179,9 +179,9 @@ export default function ShakespeareAIModelSelection() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+              <h3 className="text-xl font-bold mb-4 text-blue-700">
                 🌐 OpenRouter - The All-in-One Solution
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
@@ -198,9 +198,9 @@ export default function ShakespeareAIModelSelection() {
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 dark:border-green-800">
+          <Card className="border-green-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-green-700 dark:text-green-300">
+              <h3 className="text-xl font-bold mb-4 text-green-700">
                 🤖 OpenAI GPT Models - The Versatile Option
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
@@ -216,9 +216,9 @@ export default function ShakespeareAIModelSelection() {
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 dark:border-orange-800 md:col-span-2">
+          <Card className="border-orange-200 md:col-span-2">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-orange-700 dark:text-orange-300">
+              <h3 className="text-xl font-bold mb-4 text-orange-700">
                 💻 Local Models (via Ollama) - The Privacy Champion
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
@@ -256,7 +256,7 @@ export default function ShakespeareAIModelSelection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-green-700 dark:text-green-300">Simple Landing Pages</h4>
+              <h4 className="font-semibold mb-2 text-green-700">Simple Landing Pages</h4>
               <p className="text-sm font-medium mb-2">Recommended: GLM 4.5</p>
               <ul className="space-y-1 text-xs">
                 <li>• Cost-effective for straightforward layouts</li>
@@ -268,7 +268,7 @@ export default function ShakespeareAIModelSelection() {
 
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-blue-700 dark:text-blue-300">Professional Websites</h4>
+              <h4 className="font-semibold mb-2 text-blue-700">Professional Websites</h4>
               <p className="text-sm font-medium mb-2">Recommended: Claude Sonnet 4.5</p>
               <ul className="space-y-1 text-xs">
                 <li>• Professional code quality</li>
@@ -281,7 +281,7 @@ export default function ShakespeareAIModelSelection() {
 
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-purple-700 dark:text-purple-300">E-commerce Sites</h4>
+              <h4 className="font-semibold mb-2 text-purple-700">E-commerce Sites</h4>
               <p className="text-sm font-medium mb-2">Recommended: Claude Sonnet 4.5</p>
               <ul className="space-y-1 text-xs">
                 <li>• Complex state management</li>
@@ -294,7 +294,7 @@ export default function ShakespeareAIModelSelection() {
 
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-orange-700 dark:text-orange-300">Personal Projects & Learning</h4>
+              <h4 className="font-semibold mb-2 text-orange-700">Personal Projects & Learning</h4>
               <p className="text-sm font-medium mb-2">Recommended: Local models or Z.ai GLM 4.5</p>
               <ul className="space-y-1 text-xs">
                 <li>• Free options (local) or low costs (Z.ai)</li>
@@ -306,7 +306,7 @@ export default function ShakespeareAIModelSelection() {
 
           <Card className="border-l-4 border-red-500 md:col-span-2 lg:col-span-2">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-red-700 dark:text-red-300">Prototypes & MVPs</h4>
+              <h4 className="font-semibold mb-2 text-red-700">Prototypes & MVPs</h4>
               <p className="text-sm font-medium mb-2">Recommended: GLM 4.5</p>
               <ul className="space-y-1 text-xs">
                 <li>• Rapid development</li>
@@ -328,9 +328,9 @@ export default function ShakespeareAIModelSelection() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="border-2 border-blue-200 dark:border-blue-800">
+          <Card className="border-2 border-blue-200">
             <CardContent className="p-6">
-              <h3 className="text-lg font-bold mb-4 text-blue-800 dark:text-blue-200">
+              <h3 className="text-lg font-bold mb-4 text-blue-800">
                 🎯 The Optimal Setup
               </h3>
               <ul className="space-y-2 text-sm">
@@ -341,9 +341,9 @@ export default function ShakespeareAIModelSelection() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-green-200 dark:border-green-800">
+          <Card className="border-2 border-green-200">
             <CardContent className="p-6">
-              <h3 className="text-lg font-bold mb-4 text-green-800 dark:text-green-200">
+              <h3 className="text-lg font-bold mb-4 text-green-800">
                 💰 Budget-Conscious Approach
               </h3>
               <ul className="space-y-2 text-sm">
@@ -354,9 +354,9 @@ export default function ShakespeareAIModelSelection() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-purple-200 dark:border-purple-800">
+          <Card className="border-2 border-purple-200">
             <CardContent className="p-6">
-              <h3 className="text-lg font-bold mb-4 text-purple-800 dark:text-purple-200">
+              <h3 className="text-lg font-bold mb-4 text-purple-800">
                 ⭐ Premium Quality Approach
               </h3>
               <ul className="space-y-2 text-sm">
@@ -369,14 +369,14 @@ export default function ShakespeareAIModelSelection() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950">
+        <Card className="border-dashed border-2 border-orange-200 bg-orange-50">
           <CardContent className="p-6">
-            <h3 className="text-lg font-bold mb-4 text-orange-800 dark:text-orange-200">
+            <h3 className="text-lg font-bold mb-4 text-orange-800">
               🔄 Smart Switching Strategies - Example
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-3 text-orange-700 dark:text-orange-300">Build-First Approach:</h4>
+                <h4 className="font-semibold mb-3 text-orange-700">Build-First Approach:</h4>
                 <ul className="space-y-1 text-sm">
                   <li>• Start with <strong>Claude Sonnet 4.5</strong> to build core functions and features</li>
                   <li>• Switch to <strong>Z.ai GLM 4.5</strong> for small changes, tweaks, and iterations</li>
@@ -384,7 +384,7 @@ export default function ShakespeareAIModelSelection() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-3 text-orange-700 dark:text-orange-300">Cost-First Approach:</h4>
+                <h4 className="font-semibold mb-3 text-orange-700">Cost-First Approach:</h4>
                 <ul className="space-y-1 text-sm">
                   <li>• Use <strong>Z.ai GLM 4.5</strong> for design and feature implementations</li>
                   <li>• Switch to <strong>Claude Sonnet 4.5</strong> for advanced bug fixing and complex features</li>
@@ -399,7 +399,7 @@ export default function ShakespeareAIModelSelection() {
       <h2>The Bottom Line</h2>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800">
+        <Card className="border-2 border-purple-200">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
               🎯 Smart Model Selection Strategy
@@ -423,7 +423,7 @@ export default function ShakespeareAIModelSelection() {
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

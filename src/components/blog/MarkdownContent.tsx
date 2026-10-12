@@ -22,8 +22,8 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
       .replace(/\*([^*]+)\*/g, '<em class="italic">$1</em>')
       
       // Code blocks (simple)
-      .replace(/```([^`]+)```/g, '<pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg my-4 overflow-x-auto"><code>$1</code></pre>')
-      .replace(/`([^`]+)`/g, '<code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm">$1</code>')
+      .replace(/```([^`]+)```/g, '<pre class="bg-gray-100 p-4 rounded-lg my-4 overflow-x-auto"><code>$1</code></pre>')
+      .replace(/`([^`]+)`/g, '<code class="bg-gray-100 px-2 py-1 rounded text-sm">$1</code>')
       
       // Paragraphs
       .replace(/\n\n/g, '</p><p class="mb-4">')
@@ -38,7 +38,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
 
   return (
     <div 
-      className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-display prose-a:text-primary"
+      className="prose prose-lg max-w-none prose-headings:font-display prose-a:text-primary"
       dangerouslySetInnerHTML={{ 
         __html: convertMarkdownToHtml(content)
       }}

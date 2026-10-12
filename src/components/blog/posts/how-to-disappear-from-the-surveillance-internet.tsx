@@ -114,7 +114,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-xl font-semibold italic text-foreground">
               Five million people a day, proving who they are to look at the
@@ -226,7 +226,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20">
+        <Card className="border-l-4 border-orange-500 bg-gradient-to-br from-orange-50 to-red-50">
           <CardContent className="p-6">
             <p className="text-lg text-foreground m-0">
               Here's what we learned building for people who can't afford to be
@@ -484,7 +484,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
 
       {/* Step 1 */}
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-900">
+        <Card className="border-orange-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-600 text-white text-sm font-bold">
@@ -509,7 +509,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                 href="https://ditto.pub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-700 dark:text-orange-400 underline font-semibold"
+                className="text-orange-700 underline font-semibold"
               >
                 Ditto
               </a>{' '}
@@ -567,15 +567,15 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/20">
+        <Card className="border-amber-200 bg-amber-50">
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
-              <ShieldCheck className="w-6 h-6 text-amber-700 dark:text-amber-400 flex-shrink-0 mt-1" />
+              <ShieldCheck className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-amber-900 dark:text-amber-300 mb-2 mt-0">
+                <h4 className="font-semibold text-amber-900 mb-2 mt-0">
                   Protect your keys
                 </h4>
-                <p className="text-sm text-amber-900 dark:text-amber-200 m-0">
+                <p className="text-sm text-amber-900 m-0">
                   Your private key (nsec) <em>is</em> your account — treat it
                   like the keys to your house. Back it up somewhere safe, and
                   never paste it into a site you don't trust. (New to this? See
@@ -596,7 +596,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
 
       {/* Step 1.5 */}
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-900">
+        <Card className="border-orange-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-400 text-white text-xs font-bold">
@@ -627,7 +627,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                 href="https://grapheneos.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-700 dark:text-orange-400 underline font-semibold"
+                className="text-orange-700 underline font-semibold"
               >
                 GrapheneOS
               </a>{' '}
@@ -636,7 +636,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                 href="https://grapheneos.org/install/web"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-700 dark:text-orange-400 underline"
+                className="text-orange-700 underline"
               >
                 official web installer
               </a>
@@ -648,7 +648,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
 
       {/* Step 2 */}
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-900">
+        <Card className="border-orange-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-600 text-white text-sm font-bold">
@@ -679,7 +679,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
               hood in{' '}
               <a
                 href="/blog/onchain-zaps-in-ditto"
-                className="text-orange-700 dark:text-orange-400 underline"
+                className="text-orange-700 underline"
               >
                 On-chain Zaps in Ditto
               </a>
@@ -691,7 +691,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
 
       {/* Step 3 */}
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-900">
+        <Card className="border-orange-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-600 text-white text-sm font-bold">
@@ -720,7 +720,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://www.hetzner.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   Hetzner
                 </a>{' '}
@@ -729,7 +729,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://www.digitalocean.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   DigitalOcean
                 </a>{' '}
@@ -738,7 +738,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://www.vultr.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   Vultr
                 </a>
@@ -753,7 +753,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://1984.hosting"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   1984 Hosting
                 </a>{' '}
@@ -762,7 +762,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://njal.la"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   Njalla
                 </a>{' '}
@@ -771,7 +771,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://www.orangewebsite.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   OrangeWebsite
                 </a>
@@ -792,14 +792,14 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://shakespeare.diy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   Shakespeare
                 </a>{' '}
                 (describe an app in plain English, deploy it). New to it? Read{' '}
                 <a
                   href="/blog/build-without-coding"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   how to build without coding
                 </a>
@@ -813,7 +813,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://zapstore.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   Zapstore
                 </a>
@@ -825,7 +825,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
 
       {/* Step 4 */}
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-900">
+        <Card className="border-orange-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-600 text-white text-sm font-bold">
@@ -850,7 +850,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://nostrvpn.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline font-semibold"
+                  className="text-orange-700 underline font-semibold"
                 >
                   NostrVPN
                 </a>{' '}
@@ -860,7 +860,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://github.com/mmalmi/nostr-vpn/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   releases
                 </a>
@@ -871,7 +871,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://fips.network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline font-semibold"
+                  className="text-orange-700 underline font-semibold"
                 >
                   FIPS
                 </a>{' '}
@@ -880,7 +880,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://learn.fips.network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   Learn how it works
                 </a>
@@ -891,7 +891,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://www.torproject.org/download/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline font-semibold"
+                  className="text-orange-700 underline font-semibold"
                 >
                   Tor
                 </a>{' '}
@@ -904,7 +904,7 @@ export default function HowToDisappearFromTheSurveillanceInternet() {
                   href="https://tb-manual.torproject.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-700 dark:text-orange-400 underline"
+                  className="text-orange-700 underline"
                 >
                   User guide
                 </a>

@@ -40,16 +40,16 @@ export default function MeetQuilly() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🤖 AI Team Member
           </Badge>
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🪶 Quilly
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             ⚡ Nostr Native
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             🧪 Live Experiment
           </Badge>
         </div>
@@ -68,7 +68,7 @@ export default function MeetQuilly() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div className="bg-blue-100 rounded-full p-2 text-blue-600 font-bold text-sm min-w-[2rem] text-center">1</div>
                 <div>
                   <h3 className="font-semibold mb-2">🧪 Testing in the Real World</h3>
                   <p className="text-sm text-muted-foreground">
@@ -82,7 +82,7 @@ export default function MeetQuilly() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[2rem] text-center">2</div>
                 <div>
                   <h3 className="font-semibold mb-2">🗽 Living Our Values</h3>
                   <p className="text-sm text-muted-foreground">
@@ -96,7 +96,7 @@ export default function MeetQuilly() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div className="bg-purple-100 rounded-full p-2 text-purple-600 font-bold text-sm min-w-[2rem] text-center">3</div>
                 <div>
                   <h3 className="font-semibold mb-2">🚀 Pushing Boundaries</h3>
                   <p className="text-sm text-muted-foreground">
@@ -258,9 +258,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-green-700 dark:text-green-300">
+              <h3 className="text-xl font-bold mb-4 text-green-700">
                 ✅ The Good
               </h3>
               <ul className="text-sm space-y-2 text-muted-foreground">
@@ -273,9 +273,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950 dark:to-amber-950">
+          <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-orange-700 dark:text-orange-300">
+              <h3 className="text-xl font-bold mb-4 text-orange-700">
                 ⚠️ The Challenges
               </h3>
               <ul className="text-sm space-y-2 text-muted-foreground">
@@ -287,9 +287,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
             </CardContent>
           </Card>
 
-          <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+          <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 ✨ The Surprising Parts
               </h3>
               <ul className="text-sm space-y-2 text-muted-foreground">
@@ -326,9 +326,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
       <p>At Soapbox, we build tools that empower people to create their own platforms without central control. From <a href="/blog/announcing-ditto">Ditto</a> (community platform builder) to <a href="/blog/building-pathos">Pathos</a> (decentralized social client), Quilly embodies this mission in several ways:</p>
 
       <div className="not-prose my-8">
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800">
+        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🗽 Living Our Values</h4>
+            <h4 className="font-semibold mb-3 text-blue-900">🗽 Living Our Values</h4>
             <ul className="text-sm space-y-2 text-muted-foreground">
               <li><strong>Open-source first:</strong> The entire stack is open-source and auditable. No proprietary lock-in.</li>
               <li><strong>Decentralized integration:</strong> Active participation on <a href="/blog/nostr101">Nostr</a> demonstrates AI agents working in decentralized systems.</li>
@@ -345,9 +345,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 🪶 Follow Quilly on Nostr
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -364,9 +364,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+              <h3 className="text-xl font-bold mb-4 text-blue-700">
                 🎭 Try Shakespeare
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -375,7 +375,7 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
+                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50"
               >
                 <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
                   Start Building →
@@ -387,9 +387,9 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
       </div>
 
       <div className="not-prose my-8">
-        <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800">
+        <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-900 dark:text-green-100">🚀 Get Involved</h4>
+            <h4 className="font-semibold mb-3 text-green-900">🚀 Get Involved</h4>
             <ul className="text-sm space-y-2 text-muted-foreground">
               <li>• Build your own AI team member using this guide</li>
               <li>• Share your experiences on <a href="/blog/nostr101">Nostr</a> with #AIAgents</li>
@@ -401,7 +401,7 @@ Update MEMORY.md with long-term learnings.`}</code></pre>
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800">
+        <Card className="border-dashed border-2 border-purple-200">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🪶</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

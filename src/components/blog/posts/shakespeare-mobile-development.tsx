@@ -45,7 +45,7 @@ export default function ShakespeareMobileDevelopment() {
         If you've tried using AI to build apps on your phone, you've probably been disappointed. A recent <a href="https://techcrunch.com/2025/09/23/dedicated-mobile-apps-for-vibe-coding-have-so-far-failed-to-gain-traction/" target="_blank" rel="noopener noreferrer">TechCrunch report</a> found that dedicated mobile apps for vibe coding have largely failed to gain traction:
       </p>
 
-      <blockquote className="border-l-4 border-purple-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300">
+      <blockquote className="border-l-4 border-purple-500 pl-6 my-8 italic text-gray-700">
         "Despite the massive success of vibe-coding startups on desktop (with billion-dollar valuations), dedicated mobile apps in this space have virtually failed to gain traction. The largest app, Instance: AI App Builder, has only 16,000 downloads and $1,000 in consumer spending. The consensus: vibe coding is not ready for prime time on mobile devices."
       </blockquote>
 
@@ -55,7 +55,7 @@ export default function ShakespeareMobileDevelopment() {
 
       {/* Shakespeare is Different */}
       <div className="not-prose my-12">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Smartphone className="h-8 w-8 text-purple-600" />
@@ -63,25 +63,25 @@ export default function ShakespeareMobileDevelopment() {
                 Shakespeare: The Mobile Exception
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 mb-4">
               Shakespeare is a Progressive Web App (PWA) that installs directly on your phone and works like a native app. Unlike dedicated mobile coding apps that try to reinvent the wheel, Shakespeare leverages modern web technology to deliver a full development experience that actually works on mobile.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">PWA</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Installs on your home screen, works offline</p>
+                <p className="text-gray-600">Installs on your home screen, works offline</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Nostr Git</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Sync projects between all your devices</p>
+                <p className="text-gray-600">Sync projects between all your devices</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">AI Chat</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Build entire apps through conversation</p>
+                <p className="text-gray-600">Build entire apps through conversation</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">Live Preview</Badge>
-                <p className="text-gray-600 dark:text-gray-400">See your changes instantly on mobile</p>
+                <p className="text-gray-600">See your changes instantly on mobile</p>
               </div>
             </div>
           </CardContent>
@@ -96,26 +96,26 @@ export default function ShakespeareMobileDevelopment() {
 
       {/* Step 1: Install PWA */}
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800">
+        <Card className="border-green-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Download className="h-8 w-8 text-green-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Step 1: Install the PWA
               </h3>
             </div>
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">1</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Open <strong>shakespeare.diy</strong> in your mobile browser</p>
+                <p className="text-gray-600">Open <strong>shakespeare.diy</strong> in your mobile browser</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">2</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Tap the <strong>Install</strong> button when prompted (or use your browser's "Add to Home Screen" option)</p>
+                <p className="text-gray-600">Tap the <strong>Install</strong> button when prompted (or use your browser's "Add to Home Screen" option)</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">3</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Shakespeare will now appear on your home screen like any other app</p>
+                <p className="text-gray-600">Shakespeare will now appear on your home screen like any other app</p>
               </div>
             </div>
             <div className="mb-4">
@@ -131,29 +131,29 @@ export default function ShakespeareMobileDevelopment() {
 
       {/* Step 2: Sign in with Nostr */}
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800">
+        <Card className="border-blue-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Settings className="h-8 w-8 text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Step 2: Sign in with Nostr
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               To sync your projects across devices, you'll need to sign in with your Nostr account. This enables Nostr Git, which lets you push and pull code changes from any device.
             </p>
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">1</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Open the menu and go to <strong>Settings</strong></p>
+                <p className="text-gray-600">Open the menu and go to <strong>Settings</strong></p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">2</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Select <strong>Nostr</strong></p>
+                <p className="text-gray-600">Select <strong>Nostr</strong></p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">3</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Add your Nostr account by signing in with a Nostr signer extension or entering your nsec</p>
+                <p className="text-gray-600">Add your Nostr account by signing in with a Nostr signer extension or entering your nsec</p>
               </div>
             </div>
             <div className="mb-4">
@@ -163,8 +163,8 @@ export default function ShakespeareMobileDevelopment() {
                 className="rounded-lg w-full max-w-md mx-auto"
               />
             </div>
-            <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mt-4">
-              <p className="text-sm text-blue-800 dark:text-blue-200">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+              <p className="text-sm text-blue-800">
                 <strong>Why Nostr?</strong> Nostr Git is a decentralized version control system that stores your code on Nostr relays. This means you own your code, can access it from any device, and don't depend on any single company's servers.
               </p>
             </div>
@@ -174,22 +174,22 @@ export default function ShakespeareMobileDevelopment() {
 
       {/* Step 3: Create or Import a Project */}
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800">
+        <Card className="border-purple-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <FolderOpen className="h-8 w-8 text-purple-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Step 3: Create or Import a Project
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               You can start a new project from scratch or import an existing one. If you've already created projects on desktop, you can import them directly using Nostr Git.
             </p>
 
             <div className="space-y-6 mb-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Create a New Project</h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <h4 className="font-semibold text-gray-900 mb-3">Create a New Project</h4>
+                <p className="text-gray-600 mb-4">
                   Tap the <strong>+ New Project</strong> button to start fresh. Just describe what you want to build and let the AI create it for you.
                 </p>
                 <img
@@ -200,8 +200,8 @@ export default function ShakespeareMobileDevelopment() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Import from Nostr Git</h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <h4 className="font-semibold text-gray-900 mb-3">Import from Nostr Git</h4>
+                <p className="text-gray-600 mb-4">
                   Click the dropdown arrow next to "New Project" and select <strong>Import Repository</strong>. You'll see your existing Nostr Git projects listed under "My Projects".
                 </p>
                 <img
@@ -209,7 +209,7 @@ export default function ShakespeareMobileDevelopment() {
                   alt="Import Repository page showing projects list"
                   className="rounded-lg w-full max-w-md mx-auto mb-4"
                 />
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-gray-600 mb-4">
                   Simply tap <strong>Clone</strong> on any project to import it to your mobile device.
                 </p>
               </div>
@@ -220,15 +220,15 @@ export default function ShakespeareMobileDevelopment() {
 
       {/* Step 4: Work on Your Project */}
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <GitBranch className="h-8 w-8 text-orange-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Step 4: Work on Your Project
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Once your project is imported, you'll see a success message and be ready to start developing. Shakespeare on mobile has all the same features as desktop:
             </p>
 
@@ -236,9 +236,9 @@ export default function ShakespeareMobileDevelopment() {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <Eye className="h-5 w-5 text-purple-600" />
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100">Live Preview</h4>
+                  <h4 className="font-semibold text-gray-900">Live Preview</h4>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                <p className="text-gray-600 text-sm mb-3">
                   See your app running in real-time as you make changes.
                 </p>
                 <img
@@ -251,9 +251,9 @@ export default function ShakespeareMobileDevelopment() {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <Code className="h-5 w-5 text-blue-600" />
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100">Code View</h4>
+                  <h4 className="font-semibold text-gray-900">Code View</h4>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                <p className="text-gray-600 text-sm mb-3">
                   Browse and edit your project files directly.
                 </p>
                 <img
@@ -267,9 +267,9 @@ export default function ShakespeareMobileDevelopment() {
             <div className="mb-4">
               <div className="flex items-center gap-2 mb-2">
                 <Terminal className="h-5 w-5 text-green-600" />
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100">Terminal Access</h4>
+                <h4 className="font-semibold text-gray-900">Terminal Access</h4>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <p className="text-gray-600 text-sm mb-3">
                 Run commands like curl, hexdump, and git directly from your phone.
               </p>
               <img
@@ -290,36 +290,36 @@ export default function ShakespeareMobileDevelopment() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-8">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">How Device Sync Works</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">How Device Sync Works</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">1</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Start on Desktop</p>
-                  <p className="text-gray-600 dark:text-gray-400">Create your project and push it to Nostr Git</p>
+                  <p className="font-semibold text-gray-900">Start on Desktop</p>
+                  <p className="text-gray-600">Create your project and push it to Nostr Git</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">2</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Continue on Mobile</p>
-                  <p className="text-gray-600 dark:text-gray-400">Import the repository on your phone and keep building</p>
+                  <p className="font-semibold text-gray-900">Continue on Mobile</p>
+                  <p className="text-gray-600">Import the repository on your phone and keep building</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">3</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Push Changes</p>
-                  <p className="text-gray-600 dark:text-gray-400">When you're done, push your mobile changes to Nostr Git</p>
+                  <p className="font-semibold text-gray-900">Push Changes</p>
+                  <p className="text-gray-600">When you're done, push your mobile changes to Nostr Git</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">4</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Pull on Any Device</p>
-                  <p className="text-gray-600 dark:text-gray-400">Your changes are now available on desktop or any other device</p>
+                  <p className="font-semibold text-gray-900">Pull on Any Device</p>
+                  <p className="text-gray-600">Your changes are now available on desktop or any other device</p>
                 </div>
               </div>
             </div>
@@ -347,7 +347,7 @@ export default function ShakespeareMobileDevelopment() {
 
       {/* Call to Action */}
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">📱</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

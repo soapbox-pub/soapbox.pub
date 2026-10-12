@@ -64,15 +64,15 @@ export default function ShakespeareVsBase44() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
+        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-red-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <AlertTriangle className="h-6 w-6 text-orange-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 TL;DR
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               You may own your code to the front-end of an app you build with Base44, but when you try to leave the platform, you can't take the back-end infrastructure with you.
             </p>
           </CardContent>
@@ -106,15 +106,15 @@ export default function ShakespeareVsBase44() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 dark:border-red-800">
+        <Card className="border-red-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <XCircle className="h-5 w-5 text-red-500" />
                   Base44
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <XCircle className="h-4 w-4 text-red-500" />
                     5 messages/day free
@@ -138,11 +138,11 @@ export default function ShakespeareVsBase44() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Pay only for what you use
@@ -184,15 +184,15 @@ export default function ShakespeareVsBase44() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <XCircle className="h-5 w-5 text-red-500" />
                   Base44
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -212,11 +212,11 @@ export default function ShakespeareVsBase44() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -276,15 +276,15 @@ export default function ShakespeareVsBase44() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 dark:border-red-800 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950 dark:to-orange-950">
+        <Card className="border-red-200 bg-gradient-to-br from-red-50 to-orange-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <FileWarning className="h-6 w-6 text-red-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Base44 Export Restrictions
               </h3>
             </div>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-0">
+            <ul className="space-y-2 text-gray-700 mb-0">
               <li className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
                 Can't import code
@@ -328,11 +328,11 @@ export default function ShakespeareVsBase44() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare Deployment Options
               </h3>
             </div>
@@ -345,7 +345,7 @@ export default function ShakespeareVsBase44() {
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">Vercel</Badge>
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">Custom Infrastructure</Badge>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mt-4 mb-0">
+            <p className="text-gray-700 mt-4 mb-0">
               Full visibility and control. Deploy wherever makes sense for your project.
             </p>
           </CardContent>
@@ -374,7 +374,7 @@ export default function ShakespeareVsBase44() {
         Base44 has access to users' code, data, and chat interactions within its platform. While Base44 states they do not use your inputs to train public AI models, a 2025 security flaw exposed potential risks of unauthorized access to user data and accounts. Their Terms of Service explicitly states they share user data with third parties for operational purposes but they don't sell your personal information.
       </p>
 
-      <blockquote className="border-l-4 border-green-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300 bg-green-50 dark:bg-green-950/30 py-4 rounded-r-lg">
+      <blockquote className="border-l-4 border-green-500 pl-6 my-8 italic text-gray-700 bg-green-50 py-4 rounded-r-lg">
         Shakespeare prioritizes your privacy. You can build without surveillance, keep your projects private, and never worry about your data being sold to advertisers.
       </blockquote>
 
@@ -392,7 +392,7 @@ export default function ShakespeareVsBase44() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

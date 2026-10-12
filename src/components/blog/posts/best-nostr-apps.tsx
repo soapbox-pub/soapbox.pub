@@ -543,7 +543,7 @@ export default function BestNostrApps() {
                     href={row.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-violet-600 no-underline hover:underline dark:text-violet-400"
+                    className="text-violet-600 no-underline hover:underline"
                   >
                     {row.name}
                   </a>
@@ -633,7 +633,7 @@ export default function BestNostrApps() {
                 {readMore && (
                   <a
                     href={readMore.href}
-                    className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline dark:text-violet-400"
+                    className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline"
                   >
                     {readMore.label} &rarr;
                   </a>
@@ -809,7 +809,7 @@ export default function BestNostrApps() {
         </li>
       </ul>
 
-      <div className="not-prose my-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-100 p-6 sm:p-8 dark:from-violet-950/40 dark:to-purple-950/30">
+      <div className="not-prose my-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-100 p-6 sm:p-8">
         <h3 className="mb-3 text-2xl font-bold text-foreground">
           New to Nostr? Start with Ditto
         </h3>

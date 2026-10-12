@@ -148,14 +148,14 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "I need to set up a crowdfunder, but going through relatives abroad
               means high fees and delays at every step. Sometimes the money takes
               weeks to actually reach us."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">
+            <p className="font-semibold text-orange-700">
               - Venezuelan organizer
             </p>
           </CardContent>
@@ -198,7 +198,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "Foreign aid and big NGOs matter, but they were never going to
@@ -207,7 +207,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
               by the people already working alongside them on the ground. That's
               the power of freedom tech."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">
+            <p className="font-semibold text-orange-700">
               - Venezuelan organizer with the local civil society network
               coordinating relief efforts
             </p>
@@ -249,7 +249,7 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
               </div>
 
               <div className="flex flex-1 flex-col p-5">
-                <div className="mb-2 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-orange-600 dark:text-orange-400">
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-orange-600">
                   <MapPin className="h-3.5 w-3.5 shrink-0" />
                   <span>{campaign.location}</span>
                 </div>
@@ -281,14 +281,14 @@ export default function VenezuelaEarthquakeReliefBitcoin() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "This is a chance for the world to see Bitcoin as borderless money.
               If we want Bitcoin to be taken seriously as a currency, not just as
               speculation, it's time to put our sats to work."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">
+            <p className="font-semibold text-orange-700">
               - Agora development team
             </p>
           </CardContent>

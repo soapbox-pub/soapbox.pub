@@ -36,7 +36,7 @@ export const meta: BlogPostMeta = {
 };
 
 const codeBlock =
-  'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto';
+  'bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto';
 
 /**
  * A command block, optionally captioned. Card shells and heading colours are the
@@ -44,28 +44,28 @@ const codeBlock =
  */
 const CODE_TONES = {
   neutral: {
-    card: 'border-2 border-gray-200 dark:border-gray-800',
-    head: 'text-gray-900 dark:text-gray-100',
+    card: 'border-2 border-gray-200',
+    head: 'text-gray-900',
   },
   blue: {
     card:
-      'border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950',
-    head: 'text-blue-800 dark:text-blue-200',
+      'border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50',
+    head: 'text-blue-800',
   },
   green: {
     card:
-      'border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950',
-    head: 'text-green-800 dark:text-green-200',
+      'border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50',
+    head: 'text-green-800',
   },
   purple: {
     card:
-      'border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950',
-    head: 'text-purple-800 dark:text-purple-200',
+      'border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50',
+    head: 'text-purple-800',
   },
   orange: {
     card:
-      'border-2 border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950',
-    head: 'text-orange-800 dark:text-orange-200',
+      'border-2 border-orange-200 bg-orange-50',
+    head: 'text-orange-800',
   },
 } as const;
 
@@ -96,8 +96,8 @@ function CodeCard({
 /** Blue aside, the note block from debugging-in-shakespeare. */
 function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="not-prose my-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950">
-      <p className="m-0 text-sm text-blue-900 dark:text-blue-100">{children}</p>
+    <div className="not-prose my-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+      <p className="m-0 text-sm text-blue-900">{children}</p>
     </div>
   );
 }
@@ -112,12 +112,12 @@ function Success({
 }) {
   return (
     <div className="not-prose my-6">
-      <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950">
+      <Card className="border-green-200 bg-green-50">
         <CardContent className="p-6">
-          <h4 className="m-0 mb-2 font-semibold text-green-800 dark:text-green-200">
+          <h4 className="m-0 mb-2 font-semibold text-green-800">
             {title}
           </h4>
-          <p className="m-0 text-sm text-green-700 dark:text-green-300">
+          <p className="m-0 text-sm text-green-700">
             {children}
           </p>
         </CardContent>
@@ -136,11 +136,11 @@ function Warning({
 }) {
   return (
     <div className="not-prose my-8">
-      <Card className="border-2 border-orange-200 bg-orange-50 dark:border-orange-800 dark:bg-orange-950">
+      <Card className="border-2 border-orange-200 bg-orange-50">
         <CardContent className="flex items-start gap-3 p-6">
-          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-600 dark:text-orange-400" />
+          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-600" />
           <div className="space-y-2">
-            <p className="m-0 font-bold text-orange-900 dark:text-orange-200">
+            <p className="m-0 font-bold text-orange-900">
               {title}
             </p>
             {children}
@@ -172,53 +172,53 @@ export default function LeavingGitHub() {
 
       <div className="not-prose mb-8">
         <div className="mb-4 flex flex-wrap gap-2">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🐙 GitHub
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             ⚡ Nostr
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             🔀 Git
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             🚢 Armada
           </Badge>
-          <Badge variant="secondary" className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+          <Badge variant="secondary" className="bg-red-100 text-red-800">
             🔧 Self-hosting
           </Badge>
         </div>
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950">
+        <Card className="border-gray-200 bg-gray-50">
           <CardContent className="p-6">
-            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
+            <h3 className="mb-4 text-lg font-bold text-gray-900">
               🧭 What is in this post
             </h3>
             <div className="grid grid-cols-1 gap-x-8 gap-y-2 text-sm md:grid-cols-2">
               <div className="flex flex-col space-y-2">
                 <a
                   href="#section-1"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   1. The case against GitHub
                 </a>
                 <a
                   href="#section-2"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   2. What replaces it
                 </a>
                 <a
                   href="#section-3"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   3. How it actually works
                 </a>
                 <a
                   href="#section-4"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   4. What Buzz adds
                 </a>
@@ -226,19 +226,19 @@ export default function LeavingGitHub() {
               <div className="flex flex-col space-y-2">
                 <a
                   href="#section-5"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   5. Reading a repository inside Armada
                 </a>
                 <a
                   href="#section-6"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   6. Moving your project
                 </a>
                 <a
                   href="#section-7"
-                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200"
+                  className="block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   7. Now is the time to do this
                 </a>
@@ -731,7 +731,7 @@ authored matches it; specify a PR event-id or nevent`}</code>
       </PullQuote>
 
       <Warning title="Guard the key accordingly">
-        <p className="m-0 text-sm text-orange-900 dark:text-orange-200">
+        <p className="m-0 text-sm text-orange-900">
           There is no per-host force-push protection standing behind it the way
           a branch protection rule stands behind GitHub. Use{' '}
           <code>ngit account login --local</code> so a machine-wide identity is
@@ -781,45 +781,45 @@ ngit sync -t   # state event  <- servers       (servers win)`}</code>
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-100">
-              <th className="border border-gray-300 px-4 py-3 text-left dark:border-gray-700">
+            <tr className="bg-blue-100 text-blue-900">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Query
               </th>
-              <th className="border border-gray-300 px-4 py-3 text-left dark:border-gray-700">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Result
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>ngit pr list</code> (open and draft)
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 14
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>ngit pr list --status open,draft,closed,applied</code>
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 35
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>ngit issue list</code> (open)
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 40
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>ngit issue list --status open,closed,resolved</code>
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 93
               </td>
             </tr>
@@ -974,53 +974,53 @@ VERSION_CODE="$(( MAJOR * 1000000 + MINOR * 1000 + PATCH ))"   # v0.44.1 -> 4400
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-100">
-              <th className="border border-gray-300 px-4 py-3 text-left dark:border-gray-700">
+            <tr className="bg-blue-100 text-blue-900">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Artifact
               </th>
-              <th className="border border-gray-300 px-4 py-3 text-left dark:border-gray-700">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Destination
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 Signed Android APK and AAB
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 ngit-ci run artifacts, visible on gitworkshop.dev
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 Signed APK
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 Zapstore, via <code>zsp --json publish</code>
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 AAB
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 Google Play production track, via <code>fastlane supply</code>
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 Linux AppImage and deb, Windows NSIS and portable
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 ngit-ci run artifacts
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 Web client
               </td>
-              <td className="border border-gray-300 px-4 py-3 dark:border-gray-700">
+              <td className="border border-gray-300 px-4 py-3">
                 rsync over SSH to armada.buzz
               </td>
             </tr>
@@ -1647,7 +1647,7 @@ ngit sync -t   # state event <- servers    (servers win)`}</code>
         <Button
           size="lg"
           variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white"
           asChild
         >
           <a href="/armada">Try Armada</a>

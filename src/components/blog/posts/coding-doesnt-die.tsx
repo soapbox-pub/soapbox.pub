@@ -46,7 +46,7 @@ export default function CodingDoesntDie() {
 
       <p>Not evolves. Dies.</p>
 
-      <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300">
+      <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-700">
         "I think by the end of this year you don't even bother doing coding. The AI will just create the binary directly. And the AI can create a much more efficient binary than can be done by any compiler."
         <footer className="text-sm mt-2 not-italic">— <a href="https://timesofindia.indiatimes.com/technology/tech-news/elon-musk-gives-less-than-a-year-to-coding-as-a-profession-says-there-is-no/articleshow/128244238.cms" target="_blank" rel="noopener noreferrer">Elon Musk, February 2026</a></footer>
       </blockquote>
@@ -125,7 +125,7 @@ export default function CodingDoesntDie() {
         Musk's prediction accelerates this. If AI generates binary directly from intent, the producer role doesn't disappear — it becomes the <em>only</em> role. Vision. Judgment. Knowing when the output matches the intention and when it's subtly, dangerously wrong.
       </p>
 
-      <blockquote className="border-l-4 border-blue-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300">
+      <blockquote className="border-l-4 border-blue-500 pl-6 my-8 italic text-gray-700">
         "I'm frankly exhausted by the end of the day... it's a deeply intellectual exercise."
         <footer className="text-sm mt-2 not-italic">— <a href="https://www.deeplearning.ai/the-batch/issue-288/" target="_blank" rel="noopener noreferrer">Andrew Ng</a>, criticizing the term but capturing the truth</footer>
       </blockquote>
@@ -139,7 +139,7 @@ export default function CodingDoesntDie() {
       <p>Not technical ones. Human ones.</p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Brain className="h-8 w-8 text-purple-600" />
@@ -153,8 +153,8 @@ export default function CodingDoesntDie() {
                   <Lightbulb className="h-6 w-6 text-yellow-500 mt-1" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-lg">Creativity</p>
-                  <p className="text-gray-600 dark:text-gray-400">AI can generate. It can't originate. It remixes what exists. It doesn't see what's missing. Your ability to imagine what doesn't exist yet — that's not automatable. That's the spark. AI is an incredible amplifier. But amplifiers need a signal.</p>
+                  <p className="font-semibold text-gray-900 text-lg">Creativity</p>
+                  <p className="text-gray-600">AI can generate. It can't originate. It remixes what exists. It doesn't see what's missing. Your ability to imagine what doesn't exist yet — that's not automatable. That's the spark. AI is an incredible amplifier. But amplifiers need a signal.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -162,8 +162,8 @@ export default function CodingDoesntDie() {
                   <Brain className="h-6 w-6 text-red-500 mt-1" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-lg">Critical Thinking</p>
-                  <p className="text-gray-600 dark:text-gray-400">AI will give you confident answers. Beautifully formatted, syntactically perfect, completely wrong answers. The <a href="https://techcrunch.com/2025/05/14/170-apps-built-with-lovable-exposed-user-data/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Lovable security scandal</a> proved this — 170 apps shipped with exposed user data because vibes met production without judgment.</p>
+                  <p className="font-semibold text-gray-900 text-lg">Critical Thinking</p>
+                  <p className="text-gray-600">AI will give you confident answers. Beautifully formatted, syntactically perfect, completely wrong answers. The <a href="https://techcrunch.com/2025/05/14/170-apps-built-with-lovable-exposed-user-data/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Lovable security scandal</a> proved this — 170 apps shipped with exposed user data because vibes met production without judgment.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -171,8 +171,8 @@ export default function CodingDoesntDie() {
                   <MessageCircle className="h-6 w-6 text-blue-500 mt-1" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-lg">Communication</p>
-                  <p className="text-gray-600 dark:text-gray-400">This is the sleeper skill. The people who can clearly articulate what they want — to humans and to machines — will run circles around everyone else. In Musk's world of imagination-to-software, the quality of the imagination isn't what matters most. It's the quality of the articulation.</p>
+                  <p className="font-semibold text-gray-900 text-lg">Communication</p>
+                  <p className="text-gray-600">This is the sleeper skill. The people who can clearly articulate what they want — to humans and to machines — will run circles around everyone else. In Musk's world of imagination-to-software, the quality of the imagination isn't what matters most. It's the quality of the articulation.</p>
                 </div>
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function CodingDoesntDie() {
       <p><strong>Keep thinking.</strong></p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

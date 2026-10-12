@@ -56,16 +56,16 @@ export default function DebuggingInShakespeare() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🎭 Shakespeare
           </Badge>
-          <Badge variant="secondary" className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+          <Badge variant="secondary" className="bg-red-100 text-red-800">
             🔧 Debugging
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             🛠️ Troubleshooting
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             📋 Advanced
           </Badge>
         </div>
@@ -76,32 +76,32 @@ export default function DebuggingInShakespeare() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+        <Card className="border-gray-200 bg-gray-50">
           <CardContent className="p-6">
-            <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">🔧 Table of Contents</h3>
+            <h3 className="text-lg font-bold mb-4 text-gray-900">🔧 Table of Contents</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
               <div className="flex flex-col space-y-2">
                 <button
                   onClick={() => scrollToSection('section-1')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   1. Debugging in Shakespeare
                 </button>
                 <button
                   onClick={() => scrollToSection('section-2')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   2. The Debug Hierarchy
                 </button>
                 <button
                   onClick={() => scrollToSection('section-3')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   3. Checking for errors in Shakespeare
                 </button>
                 <button
                   onClick={() => scrollToSection('section-4')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   4. Opening Developer Tools
                 </button>
@@ -109,25 +109,25 @@ export default function DebuggingInShakespeare() {
               <div className="flex flex-col space-y-2">
                 <button
                   onClick={() => scrollToSection('section-5')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   5. Gathering Essential Evidence
                 </button>
                 <button
                   onClick={() => scrollToSection('section-6')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   6. Console Error Debugging
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   7. Debugging Nostr Events
                 </button>
                 <button
                   onClick={() => scrollToSection('section-8')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   8. Advanced: Meta-Debugging
                 </button>
@@ -148,11 +148,11 @@ export default function DebuggingInShakespeare() {
       <h3>What Shakespeare Can and Cannot See</h3>
 
       <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800">
+        <Card className="border-gray-200">
           <CardContent className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-4 text-green-800 dark:text-green-200 flex items-center">
+                <h4 className="font-semibold mb-4 text-green-800 flex items-center">
                   ✅ Shakespeare CAN See
                 </h4>
                 <div className="space-y-2 text-sm">
@@ -165,7 +165,7 @@ export default function DebuggingInShakespeare() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold mb-4 text-red-800 dark:text-red-200 flex items-center">
+                <h4 className="font-semibold mb-4 text-red-800 flex items-center">
                   ❌ Shakespeare CANNOT See
                 </h4>
                 <div className="space-y-2 text-sm">
@@ -183,8 +183,8 @@ export default function DebuggingInShakespeare() {
 
       <p>When Shakespeare cannot see something on it's own, it's up to you to provide that information to the AI so it can use it to help you solve the bug.</p>
 
-      <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-6">
-        <p className="text-sm text-blue-900 dark:text-blue-100">
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 my-6">
+        <p className="text-sm text-blue-900">
           <strong>📸 New: Image Upload Support</strong> - Shakespeare can now view and process images that you upload directly into the chat (not image links). This is especially helpful for sharing screenshots of errors, design references, or UI issues. Note that vision capabilities require supported AI models (like Claude Sonnet 4 or GPT-4 Vision).
         </p>
       </div>
@@ -202,7 +202,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-green-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Good Debugging Request Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "My login form isn't working. EXPECTED: After entering email/password and clicking 'Login', user should be authenticated and redirected to dashboard. ACTUAL: Form submits but page just refreshes, no redirect happens. Console shows no errors. Please work with precision to fix this bug, without impacting existing features or functionality."
             </p>
           </CardContent>
@@ -210,10 +210,10 @@ export default function DebuggingInShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+        <Card className="border-blue-200 bg-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">💡 Pro Tip: Use This Phrase</h4>
-            <p className="text-blue-800 dark:text-blue-200 text-sm">
+            <h4 className="font-semibold mb-3 text-blue-900">💡 Pro Tip: Use This Phrase</h4>
+            <p className="text-blue-800 text-sm">
               End your debugging requests with: <strong>"Work with precision to fix this bug, without impacting existing features or functionality."</strong> This prompts Shakespeare to make targeted fixes rather than broad changes.
             </p>
           </CardContent>
@@ -248,9 +248,9 @@ export default function DebuggingInShakespeare() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+        <Card className="border-blue-200 bg-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">Debug Workflow Example:</h4>
+            <h4 className="font-semibold mb-3 text-blue-900">Debug Workflow Example:</h4>
             <div className="space-y-2 text-sm">
               <div><strong>Evidence:</strong> "Submit button not responding, no console errors visible"</div>
               <div><strong>Isolation:</strong> "Issue occurs only on contact form, not login form"</div>
@@ -297,7 +297,7 @@ export default function DebuggingInShakespeare() {
           <img
             src="/assets/images/shakespeare-screenshots/quilly.png"
             alt="Quilly, the Shakespeare mascot, providing helpful debugging information"
-            className="rounded-lg border border-gray-200 dark:border-gray-700"
+            className="rounded-lg border border-gray-200"
           />
           <p className="text-sm text-muted-foreground mt-2 text-center">
             Quilly provides helpful tips and error messages.
@@ -306,12 +306,12 @@ export default function DebuggingInShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+            <h4 className="font-semibold mb-3 text-green-800 flex items-center">
               💡 Pro Tip
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
+            <p className="text-green-700 text-sm">
               Always check the console errors first! Many issues can be quickly identified and resolved by copying the error messages directly into your chat with Shakespeare. This is much faster than describing symptoms.
             </p>
           </CardContent>
@@ -346,10 +346,10 @@ export default function DebuggingInShakespeare() {
       </ul>
 
       {/* <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
+        <Card className="border-gray-200 bg-gray-100">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="bg-gray-300 dark:bg-gray-700 h-48 rounded flex items-center justify-center text-gray-600 dark:text-gray-400">
+            <div className="bg-gray-300 h-48 rounded flex items-center justify-center text-gray-600">
               [Screenshot: Chrome DevTools open showing Console, Network, and Elements tabs]
             </div>
             <p className="text-sm text-muted-foreground mt-2">
@@ -385,7 +385,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-green-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Good Evidence Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "User registration form fails on submit. Steps: 1) Fill email field with 'test@example.com' 2) Fill password with 'password123' 3) Click 'Sign Up' button. Expected: Success message and redirect to dashboard. Actual: Form resets, no error message shown. Console shows no errors. Network tab shows no requests sent. Tested in Chrome 118 on Windows 11, 1920x1080 screen."
             </p>
           </CardContent>
@@ -393,10 +393,10 @@ export default function DebuggingInShakespeare() {
       </div>
 
       {/* <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
+        <Card className="border-gray-200 bg-gray-100">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="bg-gray-300 dark:bg-gray-700 h-48 rounded flex items-center justify-center text-gray-600 dark:text-gray-400">
+            <div className="bg-gray-300 h-48 rounded flex items-center justify-center text-gray-600">
               [Screenshot: Console tab showing error message with stack trace highlighted]
             </div>
             <p className="text-sm text-muted-foreground mt-2">
@@ -418,7 +418,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-red-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Console Error Debugging Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "The submit button isn't working. Console shows: 'TypeError: Cannot read properties of undefined (reading 'email')' at line 47 in ContactForm.jsx. This happens when I click submit after filling out the form. Expected: form should submit and show success message. Actual: nothing happens and error appears. The error occurs in the handleSubmit function when trying to access formData.email."
             </p>
           </CardContent>
@@ -426,12 +426,12 @@ export default function DebuggingInShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+            <h4 className="font-semibold mb-3 text-green-800 flex items-center">
               💡 Pro Tip
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
+            <p className="text-green-700 text-sm">
               The AI will often add console.log messages to help you debug. If you see these, include them in your report to Shakespeare as they provide additional context about variable states leading up to the error. Don't forget to ask them to be removed after!
             </p>
           </CardContent>
@@ -439,10 +439,10 @@ export default function DebuggingInShakespeare() {
       </div>
 
       {/* <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900">
+        <Card className="border-gray-200 bg-gray-100">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Screenshot Placeholder</h4>
-            <div className="bg-gray-300 dark:bg-gray-700 h-48 rounded flex items-center justify-center text-gray-600 dark:text-gray-400">
+            <div className="bg-gray-300 h-48 rounded flex items-center justify-center text-gray-600">
               [Screenshot: Console error with TypeError highlighted, showing stack trace and line numbers]
             </div>
             <p className="text-sm text-muted-foreground mt-2">
@@ -475,9 +475,9 @@ export default function DebuggingInShakespeare() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+        <Card className="border-blue-200 bg-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🔧 Enabling Alby Paranoid Mode:</h4>
+            <h4 className="font-semibold mb-3 text-blue-900">🔧 Enabling Alby Paranoid Mode:</h4>
             <div className="space-y-2 text-sm">
               <div><strong>1.</strong> Open Alby extension → Settings → Advanced</div>
               <div><strong>2.</strong> Enable "Paranoid Mode" or "Review Events"</div>
@@ -503,7 +503,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-purple-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Nostr Event Debugging Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "User profile updates aren't saving. Alby paranoid mode shows this event being created: {JSON.stringify({"id":"abc123","pubkey":"user_pubkey","created_at":1694123456,"kind":0,"tags":[],"content":JSON.stringify({"name":"John","about":"Developer"}),"sig":"signature"})}. Event structure looks correct for kind 0 (user metadata). Network tab shows WebSocket connection to relay successful. Need to check if relay is accepting the event or if there's a validation issue with the content format."
             </p>
           </CardContent>
@@ -521,12 +521,12 @@ export default function DebuggingInShakespeare() {
       </ul>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+            <h4 className="font-semibold mb-3 text-green-800 flex items-center">
               💡 Pro Nostr Debugging Tip
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
+            <p className="text-green-700 text-sm">
               When reporting Nostr issues to Shakespeare, always include the complete event JSON from Alby's paranoid mode. This shows the exact data structure being created, making it much easier to identify formatting, validation, or relay compatibility issues.
             </p>
           </CardContent>
@@ -537,7 +537,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-orange-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Complete Nostr Debugging Report Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "Direct messages not sending between users. Alby shows event: {JSON.stringify({"kind":4,"tags":[["p","recipient_pubkey"]],"content":"encrypted_content_here","created_at":1694123456})}. Event structure appears correct for kind 4 (encrypted DM). WebSocket shows successful connection to 3 relays. Issue: recipient not receiving messages. Suspect: encryption/decryption mismatch or relay propagation delay. Need to verify NIP-04 encryption implementation and test with different relay sets."
             </p>
           </CardContent>
@@ -566,7 +566,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-purple-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Forward Meta-Debugging Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "This authentication bug has persisted despite multiple attempts to fix it. We've tried: 1) Updating the JWT token handling, 2) Fixing the login form validation, 3) Modifying the API endpoint response. The user still can't stay logged in after page refresh. Perform an analysis of what we've already tried and create a new systematic plan to resolve this bug. What are we missing?"
             </p>
           </CardContent>
@@ -592,7 +592,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-orange-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Reverse Meta-Debugging Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "I spent way too many credits trying to solve this form validation bug. We eventually fixed it, but it took 20 messages when it probably should have taken 5. Analyze our chat history and tell me: 1) What information should I have provided earlier? 2) Which debugging steps were unnecessary? 3) How can I be more efficient debugging similar issues next time?"
             </p>
           </CardContent>
@@ -638,7 +638,7 @@ export default function DebuggingInShakespeare() {
         <Card className="border-l-4 border-blue-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Starting Fresh Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "Starting a new chat because the previous conversation got too long and costly. Summary: Working on a bug where published Nostr events (kind 1 notes) aren't appearing in the feed. Already tried: 1) Verifying event structure and signature validation, 2) Testing different relay configurations, 3) Checking WebSocket connection status, 4) Adjusting event filters and subscription queries. All failed. Current state: Events publish successfully (verified in Alby paranoid mode), relays accept them (200 OK responses), but they don't appear in the user's feed. Please help debug this with fresh eyes, avoiding the approaches we've already tested."
             </p>
           </CardContent>
@@ -646,10 +646,10 @@ export default function DebuggingInShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950">
+        <Card className="border-blue-200 bg-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">When to Use Meta-Debugging</h4>
-            <div className="space-y-2 text-sm text-blue-800 dark:text-blue-200">
+            <h4 className="font-semibold mb-3 text-blue-900">When to Use Meta-Debugging</h4>
+            <div className="space-y-2 text-sm text-blue-800">
               <div><strong>Forward:</strong> After 3+ failed fix attempts on the same bug</div>
               <div><strong>Forward:</strong> When you feel like you're going in circles</div>
               <div><strong>Forward:</strong> When the bug seems impossible to reproduce consistently</div>
@@ -671,7 +671,7 @@ export default function DebuggingInShakespeare() {
       </p>
 
       <div className="not-prose my-12 space-y-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-6 text-center">
             <div className="text-3xl mb-3">🎭</div>
             <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
@@ -684,7 +684,7 @@ export default function DebuggingInShakespeare() {
               <Button
                 asChild
                 variant="outline"
-                className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100"
               >
                 <a href="/blog/how-to-prompt-better-projects">
                   Learn Prompting Techniques →
@@ -693,7 +693,7 @@ export default function DebuggingInShakespeare() {
               <Button
                 asChild
                 variant="outline"
-                className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100"
               >
                 <a href="/shakespeare-resources">
                   Shakespeare Resource Center →

@@ -77,7 +77,7 @@ export default function GazaFamiliesBitcoinCrowdfundingAgora() {
       </p>
 
       <div className="not-prose my-8 mx-4 sm:mx-12">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "I am a father trying to protect my small family, but amid the
@@ -85,7 +85,7 @@ export default function GazaFamiliesBitcoinCrowdfundingAgora() {
               most basic necessities, I find myself unable to provide for my
               children."
             </blockquote>
-            <p className="text-right font-semibold text-orange-700 dark:text-orange-400">
+            <p className="text-right font-semibold text-orange-700">
               - Sami Shannat
             </p>
           </CardContent>
@@ -125,7 +125,7 @@ export default function GazaFamiliesBitcoinCrowdfundingAgora() {
       </p>
 
       <div className="not-prose my-8 mx-4 sm:mx-12">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "We previously tried to seek a path to safety. I launched a
@@ -134,7 +134,7 @@ export default function GazaFamiliesBitcoinCrowdfundingAgora() {
               funds on our behalf took the money and refused to transfer it to
               us, leaving us stranded in these harsh conditions."
             </blockquote>
-            <p className="text-right font-semibold text-orange-700 dark:text-orange-400">
+            <p className="text-right font-semibold text-orange-700">
               - Sami Shannat
             </p>
           </CardContent>
@@ -309,7 +309,7 @@ export default function GazaFamiliesBitcoinCrowdfundingAgora() {
       </p>
 
       <div className="not-prose my-8 mx-4 sm:mx-12">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "I appeal to your humanity today as a father who simply wants to
@@ -318,7 +318,7 @@ export default function GazaFamiliesBitcoinCrowdfundingAgora() {
               single donation, no matter how small, means the world to us and
               gives my children hope for a safer tomorrow."
             </blockquote>
-            <p className="text-right font-semibold text-orange-700 dark:text-orange-400">
+            <p className="text-right font-semibold text-orange-700">
               - Sami Shannat
             </p>
           </CardContent>

@@ -49,7 +49,7 @@ export default function ShakespeareEditingCode() {
         />
       </div>
 
-      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+      <p className="text-lg text-gray-700 mb-8">
         Shakespeare gives you the freedom to edit your code directly in the web browser and even run a terminal entirely online. Whether you need to make quick adjustments or dive deep into your project files, Shakespeare's built-in tools provide a seamless development experience without leaving your browser.
       </p>
 
@@ -61,12 +61,12 @@ export default function ShakespeareEditingCode() {
         From the preview pane, you can easily access Shakespeare's built-in code editor to make changes to your project files.
       </p>
 
-      <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
-        <h3 className="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-200">
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-blue-800">
           📝 How to Access the Code Editor
         </h3>
-        <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
-          <li>From the preview pane, click the code <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">&lt;&gt;</code> icon in the top right corner</li>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
+          <li>From the preview pane, click the code <code className="bg-gray-200 px-2 py-1 rounded">&lt;&gt;</code> icon in the top right corner</li>
           <li>This opens Shakespeare's simple text editor with mobile support</li>
           <li>Make your changes to the code</li>
           <li>Click <strong>Save</strong> when you're done editing</li>
@@ -79,7 +79,7 @@ export default function ShakespeareEditingCode() {
           src="/assets/images/shakespeare-screenshots/edit-the-code.png"
           alt="Shakespeare code editor interface showing the code icon and editor view"
         />
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center">
+        <p className="text-sm text-gray-600 mt-2 text-center">
           The Shakespeare code editor provides a clean, simple interface for editing your project files
         </p>
       </div>
@@ -92,14 +92,14 @@ export default function ShakespeareEditingCode() {
         For more advanced development tasks, Shakespeare also provides terminal access directly in your browser.
       </p>
 
-      <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-8">
-        <h3 className="text-xl font-semibold mb-4 text-green-800 dark:text-green-200">
+      <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-green-800">
           🖥️ How to Access the Terminal
         </h3>
-        <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
-          <li>From the code editor view, click the terminal icon <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">&gt;_</code> in the top right of the pane</li>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
+          <li>From the code editor view, click the terminal icon <code className="bg-gray-200 px-2 py-1 rounded">&gt;_</code> in the top right of the pane</li>
           <li>This opens a web-based terminal with support for basic terminal commands</li>
-          <li>Use standard commands like <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">ls</code>, <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">cd</code>, etc.</li>
+          <li>Use standard commands like <code className="bg-gray-200 px-2 py-1 rounded">ls</code>, <code className="bg-gray-200 px-2 py-1 rounded">cd</code>, etc.</li>
           <li>Perfect for running build commands, installing packages, or debugging</li>
         </ol>
       </div>
@@ -109,13 +109,13 @@ export default function ShakespeareEditingCode() {
           src="/assets/images/shakespeare-screenshots/shakespeare-terminal.png"
           alt="Shakespeare terminal interface showing command line access in the browser"
         />
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center">
+        <p className="text-sm text-gray-600 mt-2 text-center">
           The Shakespeare terminal provides full command-line access without leaving your browser
         </p>
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

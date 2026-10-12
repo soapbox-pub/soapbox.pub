@@ -113,15 +113,15 @@ export default function ShakespeareVsGoose() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <Terminal className="h-5 w-5 text-gray-500" />
                   Goose
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Free to use (tool itself)
@@ -137,11 +137,11 @@ export default function ShakespeareVsGoose() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -188,15 +188,15 @@ export default function ShakespeareVsGoose() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Server className="h-6 w-6 text-blue-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Why Use a Local AI Model?
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               If you're wondering why someone would want to vibe code using a local model, in short, they offer far more privacy, more customization, and an end to recurring costs.
             </p>
           </CardContent>
@@ -236,15 +236,15 @@ export default function ShakespeareVsGoose() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-yellow-200 dark:border-yellow-800 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-950 dark:to-orange-950">
+        <Card className="border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Terminal className="h-6 w-6 text-yellow-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Note to Non-Technical Vibe Coders
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               Setting up GitHub for backups with both Goose and Shakespeare will be confusing to those who are completely unfamiliar. Goose leans toward a more complicated setup with GitHub requiring you enter both an access token and command; while this appears to be a mere few steps, non-technical users may get confused here.
             </p>
           </CardContent>
@@ -261,11 +261,11 @@ export default function ShakespeareVsGoose() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare Deployment Options
               </h3>
             </div>
@@ -280,7 +280,7 @@ export default function ShakespeareVsGoose() {
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">GitLab Pages</Badge>
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">Custom Provider</Badge>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mt-4 mb-0">
+            <p className="text-gray-700 mt-4 mb-0">
               Shakespeare is better suited for beginners who just want to get their projects online quickly. Goose is better for technical users who want to customize every aspect of their deployment process.
             </p>
           </CardContent>
@@ -315,10 +315,10 @@ export default function ShakespeareVsGoose() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800">
+        <Card className="border-gray-200">
           <CardContent className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Choose Goose if you:</h3>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Choose Goose if you:</h3>
+            <ul className="space-y-2 text-gray-600">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                 Are comfortable with technical tools and setup
@@ -354,10 +354,10 @@ export default function ShakespeareVsGoose() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Choose Shakespeare if you:</h3>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Choose Shakespeare if you:</h3>
+            <ul className="space-y-2 text-gray-600">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                 Want an easy-to-use, guided experience
@@ -405,7 +405,7 @@ export default function ShakespeareVsGoose() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

@@ -191,12 +191,12 @@ export default function HowToSelfHostArmada() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950">
+        <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50">
           <CardContent className="p-6">
-            <h4 className="text-xl font-bold mb-3 text-blue-800 dark:text-blue-200">
+            <h4 className="text-xl font-bold mb-3 text-blue-800">
               Get the code
             </h4>
-            <pre className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto">
+            <pre className="bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
               <code>{`git clone nostr://soapbox.pub/relay.ngit.dev/armada
 cd armada`}</code>
             </pre>
@@ -212,46 +212,46 @@ cd armada`}</code>
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-800">
-              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left">
+            <tr className="bg-gray-100">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Build arg
               </th>
-              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 What it does
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>VITE_APP_NAME</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 What the app calls itself.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>VITE_APP_RELAYS</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 The relays a fresh user starts with. They can change these in
                 Settings.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>VITE_SEARCH_RELAYS</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Where search queries go.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>VITE_PLATFORM_RELAYS</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Relays pinned to this build. Empty by default. This is where you
                 put your own relay.
               </td>
@@ -268,12 +268,12 @@ cd armada`}</code>
       <p>A build looks like this:</p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950">
+        <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50">
           <CardContent className="p-6">
-            <h4 className="text-xl font-bold mb-3 text-blue-800 dark:text-blue-200">
+            <h4 className="text-xl font-bold mb-3 text-blue-800">
               Build the app
             </h4>
-            <pre className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto">
+            <pre className="bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
               <code>{`docker build \\
   --build-arg VITE_APP_NAME="Example Chat" \\
   --build-arg VITE_APP_RELAYS="wss://relay.example.com" \\
@@ -347,12 +347,12 @@ cd armada`}</code>
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
-            <h4 className="text-xl font-bold mb-3 text-green-800 dark:text-green-200">
+            <h4 className="text-xl font-bold mb-3 text-green-800">
               Get the relay
             </h4>
-            <pre className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto">
+            <pre className="bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
               <code>{`git clone https://gitlab.com/soapbox-pub/ditto-relay
 cd ditto-relay`}</code>
             </pre>
@@ -365,48 +365,48 @@ cd ditto-relay`}</code>
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-800">
-              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left">
+            <tr className="bg-gray-100">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Key
               </th>
-              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Notes
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>RELAY_URL</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Required. The public <code>wss://</code> address of your relay.
                 It will not start without one.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>NOSTR_NSEC</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Required. A key for the relay itself. Must be the{' '}
                 <code>nsec...</code> form, not hex.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>OPENSEARCH_NODE</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Where OpenSearch is. Defaults to{' '}
                 <code>http://localhost:9200</code>.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>PORT</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Defaults to <code>13131</code>.
               </td>
             </tr>
@@ -474,12 +474,12 @@ cd ditto-relay`}</code>
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
           <CardContent className="p-6">
-            <h4 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">
+            <h4 className="text-xl font-bold mb-3 text-purple-800">
               Bring up voice
             </h4>
-            <pre className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto">
+            <pre className="bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
               <code>{`git clone nostr://chad@chadwick.site/relay.ngit.dev/armada-av
 cd armada-av/deploy/single
 cp .env.example .env
@@ -497,38 +497,38 @@ docker compose up -d`}</code>
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-800">
-              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left">
+            <tr className="bg-gray-100">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 Setting
               </th>
-              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left">
+              <th className="border border-gray-300 px-4 py-3 text-left">
                 What it is
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>AV_DOMAIN</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 The domain this box answers on, like <code>av.example.com</code>.
                 No <code>https://</code>.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>LIVEKIT_API_KEY</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Generated, see below.
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 <code>LIVEKIT_API_SECRET</code>
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-3">
+              <td className="border border-gray-300 px-4 py-3">
                 Same.
               </td>
             </tr>
@@ -539,12 +539,12 @@ docker compose up -d`}</code>
       <p>Generate that pair with:</p>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
           <CardContent className="p-6">
-            <h4 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">
+            <h4 className="text-xl font-bold mb-3 text-purple-800">
               Generate the LiveKit keys
             </h4>
-            <pre className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto">
+            <pre className="bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
               <code>{`docker run --rm livekit/livekit-server generate-keys`}</code>
             </pre>
           </CardContent>
@@ -612,11 +612,11 @@ docker compose up -d`}</code>
 
       <p>Two caveats on that.</p>
 
-      <div className="not-prose my-8 rounded-lg border border-amber-200 dark:border-amber-800 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 p-4">
-        <p className="text-base font-semibold text-amber-900 dark:text-amber-200 mb-1">
+      <div className="not-prose my-8 rounded-lg border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 p-4">
+        <p className="text-base font-semibold text-amber-900 mb-1">
           Deep links do not follow you to your domain.
         </p>
-        <p className="text-base text-amber-800 dark:text-amber-300">
+        <p className="text-base text-amber-800">
           An invite link on <code>chat.example.com</code> opens in a browser
           rather than jumping straight into the app, because the installed app
           only claims links on <code>armada.buzz</code>. That is not a setting
@@ -632,11 +632,11 @@ docker compose up -d`}</code>
         </p>
       </div>
 
-      <div className="not-prose my-8 rounded-lg border border-amber-200 dark:border-amber-800 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 p-4">
-        <p className="text-base font-semibold text-amber-900 dark:text-amber-200 mb-1">
+      <div className="not-prose my-8 rounded-lg border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 p-4">
+        <p className="text-base font-semibold text-amber-900 mb-1">
           And running infrastructure is running infrastructure, if you choose to.
         </p>
-        <p className="text-base text-amber-800 dark:text-amber-300">
+        <p className="text-base text-amber-800">
           This one is opt-in, and it is the caveat that goes away entirely if
           you use relays that already exist. OpenSearch does not arrive with
           ditto-relay: you install, secure, tune and back up a real search
@@ -649,11 +649,11 @@ docker compose up -d`}</code>
         </p>
       </div>
 
-      <div className="not-prose my-10 rounded-xl border border-pink-200 dark:border-pink-900 bg-gradient-to-br from-pink-50 to-cyan-50 dark:from-pink-950/40 dark:to-cyan-950/40 p-6">
-        <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">
+      <div className="not-prose my-10 rounded-xl border border-pink-200 bg-gradient-to-br from-pink-50 to-cyan-50 p-6">
+        <h3 className="text-xl font-bold mb-1 text-gray-900">
           Get notified when Armada comes to iOS
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+        <p className="text-sm text-gray-600 mb-4">
           There is no iPhone app yet. Drop your email and we will tell you the
           day it ships.
         </p>

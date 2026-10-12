@@ -34,10 +34,10 @@ export const meta: BlogPostMeta = {
 };
 
 const codeBlock =
-  'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-4 rounded-lg text-sm overflow-x-auto';
+  'bg-gray-100 text-gray-800 p-4 rounded-lg text-sm overflow-x-auto';
 
 const tocLink =
-  'block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-200';
+  'block cursor-pointer py-1 text-blue-600 hover:text-blue-800 hover:underline';
 
 /** A warning aside, for the sharp edges. */
 function Warning({
@@ -49,11 +49,11 @@ function Warning({
 }) {
   return (
     <div className="not-prose my-8">
-      <Card className="border-2 border-orange-200 bg-orange-50 dark:border-orange-800 dark:bg-orange-950">
+      <Card className="border-2 border-orange-200 bg-orange-50">
         <CardContent className="flex items-start gap-3 p-6">
-          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-600 dark:text-orange-400" />
+          <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-orange-600" />
           <div className="space-y-2">
-            <p className="m-0 font-bold text-orange-900 dark:text-orange-200">
+            <p className="m-0 font-bold text-orange-900">
               {title}
             </p>
             {children}
@@ -71,31 +71,31 @@ export default function MasterAtArmsSelfHostedAutomod() {
         <div className="mb-4 flex flex-wrap gap-2">
           <Badge
             variant="secondary"
-            className="bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200"
+            className="bg-pink-100 text-pink-800"
           >
             🛡️ Moderation
           </Badge>
           <Badge
             variant="secondary"
-            className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200"
+            className="bg-orange-100 text-orange-800"
           >
             🚢 Armada
           </Badge>
           <Badge
             variant="secondary"
-            className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+            className="bg-blue-100 text-blue-800"
           >
             ⚡ Nostr
           </Badge>
           <Badge
             variant="secondary"
-            className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+            className="bg-green-100 text-green-800"
           >
             🔐 E2EE
           </Badge>
           <Badge
             variant="secondary"
-            className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+            className="bg-purple-100 text-purple-800"
           >
             🔧 Self-hosting
           </Badge>
@@ -103,9 +103,9 @@ export default function MasterAtArmsSelfHostedAutomod() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950">
+        <Card className="border-gray-200 bg-gray-50">
           <CardContent className="p-6">
-            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
+            <h3 className="mb-4 text-lg font-bold text-gray-900">
               🧭 What is in this post
             </h3>
             <div className="grid grid-cols-1 gap-x-8 gap-y-2 text-sm md:grid-cols-2">
@@ -645,7 +645,7 @@ delete_spam_messages = true`}
       <h2 id="section-8">8. Current known limitations</h2>
 
       <Warning title="A self-hosted bot means handing your community key to one more machine.">
-        <p className="m-0 text-sm text-orange-800 dark:text-orange-300">
+        <p className="m-0 text-sm text-orange-800">
           Master-at-Arms is a member, and members decrypt the community stream,
           so the server running the bot can read every message. The bot itself
           is built to keep that content off disk: duplicate detection stores
@@ -739,7 +739,7 @@ delete_spam_messages = true`}
         <Button
           size="lg"
           variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white"
           asChild
         >
           <a href="/armada">What is Armada?</a>

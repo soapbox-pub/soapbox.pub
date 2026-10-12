@@ -56,16 +56,16 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🎭 Shakespeare
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🤖 AI Prompting
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             📚 Tutorial
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             💡 Best Practices
           </Badge>
         </div>
@@ -76,32 +76,32 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+        <Card className="border-gray-200 bg-gray-50">
           <CardContent className="p-6">
-            <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">📋 Table of Contents</h3>
+            <h3 className="text-lg font-bold mb-4 text-gray-900">📋 Table of Contents</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
               <div className="flex flex-col space-y-2">
                 <button
                   onClick={() => scrollToSection('section-1')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   1. Write the Script Before You Speak
                 </button>
                 <button
                   onClick={() => scrollToSection('section-3')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   2. Define the Design Direction and Tone
                 </button>
                 <button
                   onClick={() => scrollToSection('section-5')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   3. Use Real Copy, Not Placeholder
                 </button>
                 <button
                   onClick={() => scrollToSection('section-7')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   4. Bring Visuals Onto the Stage
                 </button>
@@ -109,25 +109,25 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
               <div className="flex flex-col space-y-2">
                 <button
                   onClick={() => scrollToSection('section-8')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   5. Leverage Shakespeare's Nostr Knowledge
                 </button>
                 <button
                   onClick={() => scrollToSection('section-9')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   6. Edit with Precision, Not Complete Rewrites
                 </button>
                 <button
                   onClick={() => scrollToSection('section-10')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   7. Design as if It's Already Live
                 </button>
                 <button
                   onClick={() => scrollToSection('section-11')}
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 py-1 block text-left cursor-pointer hover:underline"
+                  className="text-blue-600 hover:text-blue-800 py-1 block text-left cursor-pointer hover:underline"
                 >
                   8. Advanced: Meta Prompting
                 </button>
@@ -165,7 +165,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         <Card className="border-l-4 border-blue-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Prompt Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "Build a site for a hiking club at Penn State University. The main thing users do is sign up to join the club. The site should also provide resources about local hikes, club information, and upcoming events."
             </p>
             <div className="mt-4">
@@ -181,12 +181,12 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-        <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+        <h4 className="font-semibold mb-3 text-green-800 flex items-center">
           💡 Pro Tip
         </h4>
-        <p className="text-green-700 dark:text-green-300 text-sm">
+        <p className="text-green-700 text-sm">
           Want help refining your prompt? You can ask Shakespeare to talk to you about your idea before you start building! (also called <a href="#section-11" className="underline">meta prompting</a>)
         </p>
           </CardContent>
@@ -213,7 +213,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         <Card className="border-l-4 border-blue-500">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">Prompt Example:</h4>
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "Use a bold, futuristic style that feels cinematic and premium. Dark background, neon purple accents, large typography, and strong grid layouts. Font should be 'Inter.' The overall vibe should feel innovative and exciting. It should be optimized for mobile use."
             </p>
           </CardContent>
@@ -245,7 +245,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Real Copy Example:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Banner section with headline: 'Own Your Identity.' Subtitle: 'Build your online presence on Nostr with Shakespeare.' Button: 'Start Building Free.' Use centered layout with large typography and strong vertical spacing."
               </p>
             </CardContent>
@@ -258,12 +258,12 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+            <h4 className="font-semibold mb-3 text-green-800 flex items-center">
               💡 Pro Tip
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
+            <p className="text-green-700 text-sm">
               Specify: <strong>"This should be a fully production-ready site with NO placeholder data. Pull live data from Nostr events (or another API)."</strong>
             </p>
           </CardContent>
@@ -292,7 +292,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Product Demo Integration:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Embed this product demo video (link:...) in a full-width container below the hero section. Video should autoplay muted with custom controls, rounded corners, and a subtle drop shadow. Add a centered 'Watch Full Demo' text link below the video."
               </p>
             </CardContent>
@@ -300,7 +300,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Image Gallery:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Create a photo gallery grid showing 6 customer success images. Use 3 columns on desktop, 2 on tablet, 1 on mobile. Each image should have a hover overlay with customer name and company. Include lightbox functionality for full-size viewing."
               </p>
             </CardContent>
@@ -309,12 +309,12 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+            <h4 className="font-semibold mb-3 text-green-800 flex items-center">
               💡 Pro Tip
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
+            <p className="text-green-700 text-sm">
              While Shakespeare can suggest image styles and placements, it can't (yet!) create custom images. Use tools like Midjourney, DALL·E, or stock photo sites to source high-quality visuals that match your design vision.
             </p>
           </CardContent>
@@ -351,7 +351,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Zaps Integration:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Add Lightning zaps with nutzaps support. Include zap goals, split payments, and integration with WebLN for seamless payments."
               </p>
             </CardContent>
@@ -360,12 +360,12 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200 flex items-center">
+            <h4 className="font-semibold mb-3 text-green-800 flex items-center">
               💡 Pro Tip
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm">
+            <p className="text-green-700 text-sm">
               When in doubt, check the latest NIPs at <a href="https://nostrhub.io/" className="underline font-medium">https://nostrhub.io/</a> or reference specific implementation examples from popular Nostr clients. Shakespeare can work with both established and experimental NIPs. You can also ask Shakespeare if any existing kinds/NIPs happen to cover your proposed use case. (e.x., "I want to create a site that hosts Magic: The Gathering decks, does it already exist in nostr?")
             </p>
           </CardContent>
@@ -391,7 +391,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Micro-adjustment:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Change the button text from 'Free Trial' to 'Get Started' and increase horizontal padding. Keep all other button styling the same."
               </p>
             </CardContent>
@@ -399,7 +399,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Color refinement:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Update the accent color throughout the design from purple (#8B5CF6) to a warmer purple (#A855F7). Apply this to all buttons, links, and highlight elements."
               </p>
             </CardContent>
@@ -407,7 +407,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Layout tweak:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Move the testimonials section above the pricing section. Maintain all existing styling and content. Just reorder the sections."
               </p>
             </CardContent>
@@ -415,7 +415,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Responsive fix:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "On mobile devices only, stack the feature cards vertically instead of in a grid. Keep desktop layout unchanged."
               </p>
             </CardContent>
@@ -463,7 +463,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Dynamic Content Planning:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Design a blog post card that handles variable content lengths. Title should truncate after 2 lines, excerpt after 3 lines, and include a 'Read More' link. Show how it looks with both short and long titles."
               </p>
             </CardContent>
@@ -471,7 +471,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Empty State Design:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Create an empty state for the user's project dashboard. Include an illustration, headline 'No Projects Yet,' description 'Create your first project to get started,' and a prominent 'New Project' button."
               </p>
             </CardContent>
@@ -494,7 +494,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Project Planning Assistant:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "I want to build a community platform for local book clubs. Can you help me think through what features would be most important and write it out as a detailed prompt I can use to start building?"
               </p>
             </CardContent>
@@ -502,7 +502,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Feature Prioritization:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "I've built a basic newsletter signup site. Based on what's working well, write a list of the next three features we should implement in order of priority."
               </p>
             </CardContent>
@@ -510,7 +510,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Design Direction Helper:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Create a detailed design brief for a meditation app landing page that would appeal to busy professionals. Include color palette, typography choices, layout structure, and tone—write it as a prompt I can use."
               </p>
             </CardContent>
@@ -525,7 +525,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Post-Mortem Analysis:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "Summarize the issues we had creating this feature and what he solutions were and create a detailed prompt I can use next time to avoid these problems."
               </p>
             </CardContent>
@@ -533,7 +533,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
           <Card className="border-l-4 border-yellow-500">
             <CardContent className="p-6">
               <h4 className="font-semibold mb-3">Site theme descriptions:</h4>
-              <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+              <p className="text-sm bg-gray-100 p-4 rounded italic">
                 "I love the final look of this site. Create a prompt for me that describes the desgin, color palette, typography, and overall tone so I can use it as a starting point for future projects."
               </p>
             </CardContent>
@@ -551,7 +551,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         <strong>You've now got the playbook for building with Shakespeare.</strong> From sketching your idea to shaping the flow and dialing in the design, you know how to get clear, sharp results. Don't overthink it. Pick one project and start. Keep prompts simple, keep direction clear, and let Shakespeare do the heavy lifting. This isn't about perfection, it's about progress. The more you build, the more comfortable you'll become, and the better you'll get. Now go and build something truly remarkable. Happy prompting!
       </p>
 
-      <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
+      <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-red-50">
           <CardContent className="p-6 text-center">
             <div className="text-3xl mb-3">🔧</div>
             <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
@@ -564,7 +564,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
               <Button
                 asChild
                 variant="outline"
-                className="border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900"
+                className="border-orange-300 text-orange-700 hover:bg-orange-100"
               >
                 <a href="/blog/debugging-in-shakespeare">
                   Learn Debugging Techniques →
@@ -573,7 +573,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
               <Button
                 asChild
                 variant="outline"
-                className="border-purple-300 text-purple-700 hover:bg-purple-100 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100"
               >
                 <a href="/shakespeare-resources">
                   Shakespeare Resource Center →
@@ -584,7 +584,7 @@ export default function HowToPromptBetterProjectsWithShakespeare() {
         </Card>
 
       <div className="not-prose my-12 space-y-8">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

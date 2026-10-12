@@ -526,16 +526,16 @@ export default function OnchainZapsInDitto() {
       </p>
 
       <figure className="not-prose my-12 relative">
-        <div className="relative bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/20 rounded-2xl px-8 py-12 md:px-16 md:py-16 text-center overflow-hidden">
+        <div className="relative bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl px-8 py-12 md:px-16 md:py-16 text-center overflow-hidden">
           <span
             aria-hidden="true"
-            className="absolute top-2 left-6 text-9xl leading-none font-serif text-orange-500/20 dark:text-orange-400/20 select-none pointer-events-none"
+            className="absolute top-2 left-6 text-9xl leading-none font-serif text-orange-500/20 select-none pointer-events-none"
           >
             &ldquo;
           </span>
           <span
             aria-hidden="true"
-            className="absolute bottom-[-2.5rem] right-6 text-9xl leading-none font-serif text-orange-500/20 dark:text-orange-400/20 select-none pointer-events-none"
+            className="absolute bottom-[-2.5rem] right-6 text-9xl leading-none font-serif text-orange-500/20 select-none pointer-events-none"
           >
             &rdquo;
           </span>
@@ -549,7 +549,7 @@ export default function OnchainZapsInDitto() {
             <p>Love is not about possession.</p>
             <p>Love is about appreciation.</p>
           </div>
-          <figcaption className="relative mt-8 text-xs uppercase tracking-[0.3em] text-orange-700 dark:text-orange-400">
+          <figcaption className="relative mt-8 text-xs uppercase tracking-[0.3em] text-orange-700">
             Osho
           </figcaption>
         </div>

@@ -41,13 +41,13 @@ export default function AnnouncingShakespeareDirect() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🎬 Video
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🎭 Shakespeare
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             Showcase
           </Badge>
         </div>
@@ -58,7 +58,7 @@ export default function AnnouncingShakespeareDirect() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               Watch Shakespeare Direct
@@ -107,9 +107,9 @@ export default function AnnouncingShakespeareDirect() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-8 text-center">
-            <h3 className="text-3xl font-bold mb-4 text-green-700 dark:text-green-300">
+            <h3 className="text-3xl font-bold mb-4 text-green-700">
               Ready to Build Your Idea?
             </h3>
             <p className="text-lg text-muted-foreground mb-6">

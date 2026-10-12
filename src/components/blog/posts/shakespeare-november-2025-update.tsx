@@ -41,14 +41,14 @@ export default function ShakespeareNovember2025Update() {
   return (
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-purple-300 dark:border-purple-700">
+        <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 text-center border border-purple-200">
+          <div className="inline-block bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-purple-300">
             🎭 November 2025 Update
           </div>
           <h2 className="text-3xl font-bold mb-4">
             Shakespeare Just Got Smarter
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We've been busy shipping new features to make building with Shakespeare even more powerful. Here's what's new.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function ShakespeareNovember2025Update() {
             alt="Image vision in Shakespeare - building a restaurant reservation site from a wireframe"
             className="rounded-lg shadow-md border"
           />
-          <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3">
+          <figcaption className="text-center text-sm text-gray-600 mt-3">
             This <a href="https://restaurant-booking.shakespeare.wtf/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">restaurant reservation site</a> was built in a single prompt using image vision—total cost: $1.72.
           </figcaption>
         </figure>
@@ -184,7 +184,7 @@ export default function ShakespeareNovember2025Update() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

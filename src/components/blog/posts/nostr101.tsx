@@ -363,7 +363,7 @@ export default function Nostr101() {
                 {readMore && (
                   <a
                     href={readMore.href}
-                    className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline dark:text-violet-400"
+                    className="mt-3 text-sm font-semibold text-violet-600 no-underline hover:underline"
                   >
                     {readMore.label} &rarr;
                   </a>
@@ -545,7 +545,7 @@ export default function Nostr101() {
           </a>
         </li>
       </ul>
-      <div className="not-prose my-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-100 p-6 sm:p-8 dark:from-violet-950/40 dark:to-purple-950/30">
+      <div className="not-prose my-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-100 p-6 sm:p-8">
         <h3 className="mb-4 text-2xl font-bold text-foreground">
           Ditto: Best Place to Start
         </h3>

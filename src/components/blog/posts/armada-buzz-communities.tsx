@@ -129,7 +129,7 @@ export default function ArmadaBuzzCommunities() {
         <Button
           size="lg"
           variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white"
           asChild
         >
           <a
@@ -444,11 +444,11 @@ export default function ArmadaBuzzCommunities() {
         . If something breaks, tell us in the test room.
       </p>
 
-      <div className="not-prose my-10 rounded-xl border border-pink-200 dark:border-pink-900 bg-gradient-to-br from-pink-50 to-cyan-50 dark:from-pink-950/40 dark:to-cyan-950/40 p-6">
-        <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">
+      <div className="not-prose my-10 rounded-xl border border-pink-200 bg-gradient-to-br from-pink-50 to-cyan-50 p-6">
+        <h3 className="text-xl font-bold mb-1 text-gray-900">
           Get notified when Armada comes to iOS
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+        <p className="text-sm text-gray-600 mb-4">
           There is no iPhone app yet. Drop your email and we will tell you the
           day it ships.
         </p>

@@ -371,24 +371,24 @@ export default function BuildingAnArmadaVoyageToEncryptedCommunities() {
           <CardContent className="p-6">
             <ul className="space-y-2 m-0 list-none p-0">
               <li>
-                <strong className="text-purple-700 dark:text-purple-400">NIP-04</strong>{' '}
+                <strong className="text-purple-700">NIP-04</strong>{' '}
                 — encrypted content, but leaked everything else.
               </li>
               <li>
-                <strong className="text-orange-700 dark:text-orange-400">NIP-17</strong>{' '}
+                <strong className="text-orange-700">NIP-17</strong>{' '}
                 — nailed private DMs, but couldn't become a community.
               </li>
               <li>
-                <strong className="text-purple-700 dark:text-purple-400">NIP-29</strong>{' '}
+                <strong className="text-purple-700">NIP-29</strong>{' '}
                 — gave us communities, but put a server back in charge with no
                 encryption.
               </li>
               <li>
-                <strong className="text-orange-700 dark:text-orange-400">Universes</strong>{' '}
+                <strong className="text-orange-700">Universes</strong>{' '}
                 — our own full attempt, but the foundations couldn't carry it.
               </li>
               <li>
-                <strong className="text-purple-700 dark:text-purple-400">Marmot</strong>{' '}
+                <strong className="text-purple-700">Marmot</strong>{' '}
                 — world-class encryption, but at a scale and shape we don't have.
               </li>
             </ul>
@@ -521,9 +521,9 @@ export default function BuildingAnArmadaVoyageToEncryptedCommunities() {
       </figure>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6 flex gap-4">
-            <Sparkles className="w-6 h-6 shrink-0 text-orange-600 dark:text-orange-400" />
+            <Sparkles className="w-6 h-6 shrink-0 text-orange-600" />
             <p className="text-lg italic text-foreground m-0">
               None of that struggle was wasted. It was tuition.
             </p>
@@ -566,9 +566,9 @@ export default function BuildingAnArmadaVoyageToEncryptedCommunities() {
       </figure>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-purple-500 bg-purple-50/50 dark:bg-purple-950/20">
+        <Card className="border-l-4 border-purple-500 bg-purple-50/50">
           <CardContent className="p-6 flex gap-4">
-            <ShieldCheck className="w-6 h-6 shrink-0 text-purple-600 dark:text-purple-400" />
+            <ShieldCheck className="w-6 h-6 shrink-0 text-purple-600" />
             <p className="text-lg italic text-foreground m-0">
               We shut down our Signal and moved the entire company onto Concord.
               We don't ask you to trust the software we build, we bet our own

@@ -75,13 +75,13 @@ export default function AnnouncingSoapboxSigner() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-green-100/50 dark:from-green-950/20 dark:to-green-900/10">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-green-100/50">
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
               <Shield className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2">How NIP-07 Keeps You Safe</h4>
-                <p className="text-green-800 dark:text-green-200 text-sm">
+                <h4 className="font-semibold text-green-900 mb-2">How NIP-07 Keeps You Safe</h4>
+                <p className="text-green-800 text-sm">
                   With NIP-07, websites request signatures through your browser extension. Your private key never leaves the extension—websites only receive the cryptographic proof they need. It's like having a secure vault that signs documents for you without ever revealing your signature stamp.
                 </p>
               </div>
@@ -244,41 +244,41 @@ export default function AnnouncingSoapboxSigner() {
 
       <div className="not-prose my-8">
         <div className="grid sm:grid-cols-2 gap-4">
-          <Card className="border-red-200 bg-red-50 dark:bg-red-950/20">
+          <Card className="border-red-200 bg-red-50">
             <CardContent className="p-4">
-              <h4 className="font-semibold text-red-800 dark:text-red-200 mb-1">Deny</h4>
-              <p className="text-sm text-red-700 dark:text-red-300">Reject this request. The website won't be able to perform this action.</p>
+              <h4 className="font-semibold text-red-800 mb-1">Deny</h4>
+              <p className="text-sm text-red-700">Reject this request. The website won't be able to perform this action.</p>
             </CardContent>
           </Card>
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/20">
+          <Card className="border-orange-200 bg-orange-50">
             <CardContent className="p-4">
-              <h4 className="font-semibold text-orange-800 dark:text-orange-200 mb-1">Approve Once</h4>
-              <p className="text-sm text-orange-700 dark:text-orange-300">Allow this specific request only. You'll be asked again next time.</p>
+              <h4 className="font-semibold text-orange-800 mb-1">Approve Once</h4>
+              <p className="text-sm text-orange-700">Allow this specific request only. You'll be asked again next time.</p>
             </CardContent>
           </Card>
-          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/20">
+          <Card className="border-blue-200 bg-blue-50">
             <CardContent className="p-4">
-              <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-1">Trust This Action</h4>
-              <p className="text-sm text-blue-700 dark:text-blue-300">Always allow this specific event kind from this website.</p>
+              <h4 className="font-semibold text-blue-800 mb-1">Trust This Action</h4>
+              <p className="text-sm text-blue-700">Always allow this specific event kind from this website.</p>
             </CardContent>
           </Card>
-          <Card className="border-green-200 bg-green-50 dark:bg-green-950/20">
+          <Card className="border-green-200 bg-green-50">
             <CardContent className="p-4">
-              <h4 className="font-semibold text-green-800 dark:text-green-200 mb-1">Trust This Site</h4>
-              <p className="text-sm text-green-700 dark:text-green-300">Grant full access to this website for all event types.</p>
+              <h4 className="font-semibold text-green-800 mb-1">Trust This Site</h4>
+              <p className="text-sm text-green-700">Grant full access to this website for all event types.</p>
             </CardContent>
           </Card>
         </div>
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/20">
+        <Card className="border-orange-200 bg-orange-50">
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
               <AlertTriangle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-orange-900 dark:text-orange-100 mb-2">Security Notice</h4>
-                <p className="text-sm text-orange-800 dark:text-orange-200">
+                <h4 className="font-semibold text-orange-900 mb-2">Security Notice</h4>
+                <p className="text-sm text-orange-800">
                   Only approve requests from websites you trust. If you're unsure, use "Approve Once" to test the functionality before granting permanent access. You can always revoke permissions later from the settings.
                 </p>
               </div>
@@ -340,13 +340,13 @@ export default function AnnouncingSoapboxSigner() {
       </ul>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 bg-red-50 dark:bg-red-950/20">
+        <Card className="border-red-200 bg-red-50">
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
               <AlertTriangle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2">Important Security Warning</h4>
-                <p className="text-sm text-red-800 dark:text-red-200">
+                <h4 className="font-semibold text-red-900 mb-2">Important Security Warning</h4>
+                <p className="text-sm text-red-800">
                   Exported files contain your private keys (nsec). Keep them secure and never share them! Store backups in an encrypted location like a password manager or encrypted drive.
                 </p>
               </div>

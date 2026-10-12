@@ -919,12 +919,11 @@ The comments system also supports commenting on external URLs, making it useful 
 
 ## App Configuration
 
-The project includes an `AppProvider` that manages global application state including theme and relay configuration. The default configuration includes:
+The project includes an `AppProvider` that manages global application state including relay configuration. The default configuration includes:
 
 ```typescript
 const defaultConfig: AppConfig = {
-  theme: "light",
-  relayUrl: "wss://relay.nostr.band",
+  relayUrl: "wss://relay.ditto.pub",
 };
 ```
 
@@ -1192,20 +1191,15 @@ To add custom fonts, follow these steps:
 
 ### Theme System
 
-The project includes a complete light/dark theme system using CSS custom properties. The theme can be controlled via:
-
-- `useTheme` hook for programmatic theme switching
-- CSS custom properties defined in `src/index.css`
-- Automatic dark mode support with `.dark` class
+The site is light mode only. There is no dark theme, no `.dark` class, and no theme setting in `AppConfig`; do not add `dark:` Tailwind classes. Colors are CSS custom properties in `:root` in `src/index.css`.
 
 ### Color Scheme Implementation
 
 When users specify color schemes:
-- Update CSS custom properties in `src/index.css` (both `:root` and `.dark` selectors)
+- Update CSS custom properties in `src/index.css` (`:root`)
 - Use Tailwind's color palette or define custom colors
 - Ensure proper contrast ratios for accessibility
 - Apply colors consistently across components (buttons, links, accents)
-- Test both light and dark mode variants
 
 ### Component Styling Patterns
 

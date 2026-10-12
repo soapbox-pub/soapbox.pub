@@ -90,15 +90,15 @@ export default function ShakespeareVsLovable() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <GitBranch className="h-6 w-6 text-blue-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 GitLab: An Alternative to GitHub
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               As an added bonus, we allow you to use GitLab rather than give you GitHub as your only option. Most builders give you GitHub for syncing your projects; very few give you GitLab as an option. While GitHub has long been the industry standard for version control and collaboration, some have expressed concerns about Microsoft's acquisition of it and how the GitHub CEO stepped down as the organization became more folded into Big Tech. If you share this concern, GitLab would be a great choice for you.
             </p>
           </CardContent>
@@ -141,15 +141,15 @@ export default function ShakespeareVsLovable() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <XCircle className="h-5 w-5 text-red-500" />
                   Lovable
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -165,11 +165,11 @@ export default function ShakespeareVsLovable() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -239,11 +239,11 @@ export default function ShakespeareVsLovable() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare Deployment Options
               </h3>
             </div>
@@ -258,7 +258,7 @@ export default function ShakespeareVsLovable() {
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">GitLab Pages</Badge>
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">Custom Provider</Badge>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mt-4 mb-0">
+            <p className="text-gray-700 mt-4 mb-0">
               You have the freedom to deploy wherever makes sense for your project.
             </p>
           </CardContent>
@@ -287,7 +287,7 @@ export default function ShakespeareVsLovable() {
         This is perhaps the biggest difference between the two platforms. Lovable can see everything: your code, your conversations with the AI, your project data. Their Terms of Service explicitly state they can use your Customer Data for model training, analytics, and other business purposes unless you opt out or upgrade to a Business plan.
       </p>
 
-      <blockquote className="border-l-4 border-orange-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300 bg-orange-50 dark:bg-orange-950/30 py-4 rounded-r-lg">
+      <blockquote className="border-l-4 border-orange-500 pl-6 my-8 italic text-gray-700 bg-orange-50 py-4 rounded-r-lg">
         Lovable's data retention policy states they "may retain indefinitely Customer Data in an anonymized and aggregated form." Even after you delete your account, they may keep your data for "fraud prevention, legal defense, or to comply with legal obligations." Your deleted data "may persist in backups for a limited time before being permanently removed."
       </blockquote>
 
@@ -301,18 +301,18 @@ export default function ShakespeareVsLovable() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 dark:border-red-800 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950 dark:to-orange-950">
+        <Card className="border-red-200 bg-gradient-to-br from-red-50 to-orange-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <AlertTriangle className="h-6 w-6 text-red-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Vendor Lock-In Warning
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 mb-4">
               Even more concerning: if you want to export your project as a zip file, you'll need to upgrade to Lovable's Business plan at <strong>$50/month</strong>. This means a feature as basic as downloading your own code requires an ongoing subscription.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-0">
+            <p className="text-gray-700 mb-0">
               This is vendor lock-in disguised as a feature tier--it creates an ongoing financial barrier to leaving their platform and taking your work with you.
             </p>
           </CardContent>
@@ -328,15 +328,15 @@ export default function ShakespeareVsLovable() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-teal-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Download className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare: Free Zip Downloads
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               With Shakespeare, you can download a zip file of your project anytime, completely free. No subscription required. No barriers to taking your work with you. Your code belongs to you.
             </p>
           </CardContent>
@@ -344,7 +344,7 @@ export default function ShakespeareVsLovable() {
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

@@ -103,18 +103,6 @@ export function ShakespeareMailchimpForm({ className }: ShakespeareMailchimpForm
               #mc_embed_signup .asterisk {
                 color: #ef4444;
               }
-              .dark #mc_embed_signup input[type="text"],
-              .dark #mc_embed_signup input[type="email"] {
-                background: #374151;
-                border-color: #4b5563;
-                color: white;
-              }
-              .dark #mc_embed_signup label {
-                color: #f9fafb;
-              }
-              .dark #mc_embed_signup input.error {
-                border-color: #ef4444 !important;
-              }
             `}
           </style>
           <div id="mc_embed_signup">

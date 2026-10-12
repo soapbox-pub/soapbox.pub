@@ -197,7 +197,7 @@ export default function SoapboxSessions() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="max-w-6xl mx-auto px-4 py-16">
           {/* Hero Section */}
           <div className="text-center mb-16">
@@ -207,7 +207,7 @@ export default function SoapboxSessions() {
                 Soapbox Sessions
               </h1>
             </div>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Your weekly home for the ever-changing decentralized web. Join Derek and Heather as they explore
               Nostr, AI, and the tools building the future of the internet.
             </p>
@@ -256,7 +256,7 @@ export default function SoapboxSessions() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600">
                     Derek is Soapbox's Developer Relations lead and a long-time Nostr advocate. He's been in the
                     Nostr space since before it was cool, attending conferences, "purple pilling" members of
                     parliament, and building community platforms. Derek brings the technical perspective to
@@ -284,7 +284,7 @@ export default function SoapboxSessions() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600">
                     Heather is Soapbox's Marketing Director and champions the no-code future. She brings a
                     non-developer perspective to the show, demonstrating how tools like Shakespeare make
                     building websites and apps accessible to everyone. Heather helps organize events, from
@@ -343,7 +343,7 @@ export default function SoapboxSessions() {
                   </>
                 ) : (
                   <div className="text-center space-y-4">
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600">
                       To send a tip or question, you need a Nostr account
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
@@ -374,7 +374,7 @@ export default function SoapboxSessions() {
 
           {/* Podstr Section */}
           <div className="mb-16">
-            <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
+            <Card className="bg-gradient-to-r from-purple-50 to-pink-50">
               <CardHeader>
                 <CardTitle className="text-2xl">Built with Soapbox Tools: Podstr</CardTitle>
                 <CardDescription>
@@ -386,7 +386,7 @@ export default function SoapboxSessions() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-semibold mb-3">What is Podstr?</h4>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    <p className="text-gray-600 mb-4">
                       Podstr is a decentralized podcast platform built using MKStack, demonstrating how
                       powerful Nostr applications can be created with AI-first development. It features
                       Podcasting 2.0 technology including wallet splits and value time splits.
@@ -408,7 +408,7 @@ export default function SoapboxSessions() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-3">Podcasting 2.0 Features</h4>
-                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <ul className="space-y-2 text-gray-600">
                       <li>• Self-hosted and decentralized</li>
                       <li>• Wallet splits for value distribution</li>
                       <li>• Value time splits for contributors</li>
@@ -434,7 +434,7 @@ export default function SoapboxSessions() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     Subscribe directly with your favorite podcast app
                   </p>
                   <Button variant="outline" className="w-full" asChild>
@@ -454,7 +454,7 @@ export default function SoapboxSessions() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     Listen and support the show with Fountain
                   </p>
                   <Button variant="outline" className="w-full" asChild>
@@ -474,7 +474,7 @@ export default function SoapboxSessions() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     Listen on Spotify with your existing account
                   </p>
                   <Button variant="outline" className="w-full" asChild>
@@ -494,7 +494,7 @@ export default function SoapboxSessions() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     Listen on Apple Podcasts for iOS and Mac
                   </p>
                   <Button variant="outline" className="w-full" asChild>

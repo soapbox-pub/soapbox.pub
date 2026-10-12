@@ -94,15 +94,15 @@ export default function ShakespeareVsV0() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="h-6 w-6 text-blue-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Stay on Budget While Vibe Coding
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               If you're concerned about vibe coding costs while paying per use, there are ways you can stay on budget. You can prompt in more effective ways that debug and help prevent runaway fees. Learn more in our blog post about <Link to="/blog/debugging-in-shakespeare" className="text-azure hover:text-azure-600 underline">Debugging In Shakespeare</Link>.
             </p>
           </CardContent>
@@ -115,15 +115,15 @@ export default function ShakespeareVsV0() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <XCircle className="h-5 w-5 text-red-500" />
                   v0
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -143,11 +143,11 @@ export default function ShakespeareVsV0() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -202,15 +202,15 @@ export default function ShakespeareVsV0() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Server className="h-6 w-6 text-purple-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Local AI Setup Guide
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               Setting up a local model as an AI provider requires some technical skill and we've written a guide on how to <Link to="/blog/shakespeare-local-ai-model" className="text-azure hover:text-azure-600 underline">set up Shakespeare with local models like GPT-OSS, Ollama, Gemma, and Deepseek</Link>.
             </p>
           </CardContent>
@@ -253,11 +253,11 @@ export default function ShakespeareVsV0() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare Deployment Options
               </h3>
             </div>
@@ -271,7 +271,7 @@ export default function ShakespeareVsV0() {
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">Deno Deploy</Badge>
               <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300">Custom Provider</Badge>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mt-4 mb-0">
+            <p className="text-gray-700 mt-4 mb-0">
               Shakespeare gives you choices. You decide where your app lives.
             </p>
           </CardContent>
@@ -300,7 +300,7 @@ export default function ShakespeareVsV0() {
         v0 requires sign-up with Google, GitHub, email, GitLab, or Bitbucket. Vercel collects your source code, billing info including your address, and location data based on IP.
       </p>
 
-      <blockquote className="border-l-4 border-orange-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300 bg-orange-50 dark:bg-orange-950/30 py-4 rounded-r-lg">
+      <blockquote className="border-l-4 border-orange-500 pl-6 my-8 italic text-gray-700 bg-orange-50 py-4 rounded-r-lg">
         You also can't delete your own data--you have to request deletion from Vercel.
       </blockquote>
 
@@ -314,15 +314,15 @@ export default function ShakespeareVsV0() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 dark:border-red-800 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950 dark:to-orange-950">
+        <Card className="border-red-200 bg-gradient-to-br from-red-50 to-orange-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <XCircle className="h-6 w-6 text-red-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 v0's Limitation: Front-End Only
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-0">
+            <p className="text-gray-700 mb-0">
               Here's where v0 falls short: it's front-end only. No backends, no databases. If you need a full-stack application, you'll need another tool.
             </p>
           </CardContent>
@@ -333,7 +333,7 @@ export default function ShakespeareVsV0() {
         With the recent addition of Railway, Shakespeare handles backend frameworks like databases, containerization, and high-traffic applications.
       </p>
 
-      <hr className="my-12 border-gray-200 dark:border-gray-800" />
+      <hr className="my-12 border-gray-200" />
 
       <h2 className="flex items-center gap-2">
         <Shield className="h-6 w-6 text-blue-500" />
@@ -353,7 +353,7 @@ export default function ShakespeareVsV0() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

@@ -52,16 +52,16 @@ export default function ShakespeareConfiguringAIProviders() {
 
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🤖 40+ Models
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             ☁️ Cloud Providers
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             💻 Local Models
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             🔐 Privacy-First
           </Badge>
         </div>
@@ -80,7 +80,7 @@ export default function ShakespeareConfiguringAIProviders() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div className="bg-blue-100 rounded-full p-2 text-blue-600 font-bold text-sm min-w-[2rem] text-center">1</div>
                 <div>
                   <h4 className="font-semibold mb-1">Navigate to Settings</h4>
                   <p className="text-sm text-muted-foreground">
@@ -94,7 +94,7 @@ export default function ShakespeareConfiguringAIProviders() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div className="bg-purple-100 rounded-full p-2 text-purple-600 font-bold text-sm min-w-[2rem] text-center">2</div>
                 <div>
                   <h4 className="font-semibold mb-1">Click AI Settings</h4>
                   <p className="text-sm text-muted-foreground">
@@ -108,7 +108,7 @@ export default function ShakespeareConfiguringAIProviders() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[2rem] text-center">3</div>
                 <div>
                   <h4 className="font-semibold mb-1">Manage Providers</h4>
                   <p className="text-sm text-muted-foreground">
@@ -125,7 +125,7 @@ export default function ShakespeareConfiguringAIProviders() {
         <img
           src="/assets/blog/shakespeare-configure-providers/configure-providers.png"
           alt="Shakespeare AI Settings Interface"
-          className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800"
+          className="rounded-lg shadow-lg border border-gray-200"
         />
         <p className="text-center mt-2">
             <a
@@ -145,15 +145,15 @@ export default function ShakespeareConfiguringAIProviders() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 ✅ Configured Providers
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
                 Shows your active providers like:
               </p>
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li>• <strong>Shakespeare AI</strong> - Default provider</li>
                 <li>• Current Balance (e.g., "$0.00")</li>
                 <li>• Configure or delete provider options</li>
@@ -162,15 +162,15 @@ export default function ShakespeareConfiguringAIProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+              <h3 className="text-xl font-bold mb-4 text-blue-700">
                 ➕ Add Provider
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
                 Choose from multiple options:
               </p>
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li>• 40+ cloud models</li>
                 <li>• Local installations</li>
                 <li>• Custom API endpoints</li>
@@ -185,7 +185,7 @@ export default function ShakespeareConfiguringAIProviders() {
 
       <div className="not-prose mb-8">
         <div className="space-y-6">
-          <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+          <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
             <CardContent className="p-6">
               <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 ☁️ Cloud Providers (40+ models)
@@ -193,7 +193,7 @@ export default function ShakespeareConfiguringAIProviders() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <h4 className="font-semibold text-sm mb-2">Premium Providers</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-1 text-sm text-gray-700">
                     <li><strong>OpenRouter</strong> - Claude, GPT-5, Gemini & more</li>
                     <li><strong>Anthropic</strong> - Claude models</li>
                     <li><strong>OpenAI</strong> - GPT-5 & ChatGPT models</li>
@@ -201,7 +201,7 @@ export default function ShakespeareConfiguringAIProviders() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm mb-2">Alternative Options</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-1 text-sm text-gray-700">
                     <li><strong>PayPerQ</strong> - Pay-per-query services</li>
                     <li><strong>Routstr</strong> - Decentralized routing</li>
                     <li><strong>Z.ai</strong> - Cost-effective alternatives</li>
@@ -212,9 +212,9 @@ export default function ShakespeareConfiguringAIProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-green-200 dark:border-green-800">
+          <Card className="border-2 border-green-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-green-700 dark:text-green-300">
+              <h3 className="text-xl font-bold mb-4 text-green-700">
                 💻 Local Models
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
@@ -229,9 +229,9 @@ export default function ShakespeareConfiguringAIProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-orange-200 dark:border-orange-800">
+          <Card className="border-2 border-orange-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-orange-700 dark:text-orange-300">
+              <h3 className="text-xl font-bold mb-4 text-orange-700">
                 🔧 Custom APIs
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
@@ -311,9 +311,9 @@ export default function ShakespeareConfiguringAIProviders() {
       <p>For ultimate privacy and offline capabilities, you can run AI models locally using Ollama. For detailed installation instructions and more information, visit our <a href="/blog/shakespeare-local-ai-model" className="text-blue-600 hover:underline">full article on using local AI models with Shakespeare</a>.</p>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-dashed border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
-            <h3 className="text-lg font-bold mb-4 text-green-800 dark:text-green-200">
+            <h3 className="text-lg font-bold mb-4 text-green-800">
               📦 Install Ollama
             </h3>
             <ol className="space-y-3 text-sm">
@@ -327,15 +327,15 @@ export default function ShakespeareConfiguringAIProviders() {
               </li>
               <li className="flex items-start">
                 <span className="font-bold mr-2 text-green-600">3.</span>
-                Download models: <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">ollama pull gpt-oss</code>
+                Download models: <code className="bg-gray-100 px-2 py-1 rounded">ollama pull gpt-oss</code>
               </li>
             </ol>
           </CardContent>
         </Card>
 
-        <Card className="border-dashed border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950 mt-4">
+        <Card className="border-dashed border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 mt-4">
           <CardContent className="p-6">
-            <h3 className="text-lg font-bold mb-4 text-blue-800 dark:text-blue-200">
+            <h3 className="text-lg font-bold mb-4 text-blue-800">
               ⚙️ Configure in Shakespeare
             </h3>
             <ol className="space-y-3 text-sm">
@@ -345,7 +345,7 @@ export default function ShakespeareConfiguringAIProviders() {
               </li>
               <li className="flex items-start">
                 <span className="font-bold mr-2 text-blue-600">2.</span>
-                Enter endpoint: <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">http://localhost:11434</code>
+                Enter endpoint: <code className="bg-gray-100 px-2 py-1 rounded">http://localhost:11434</code>
               </li>
               <li className="flex items-start">
                 <span className="font-bold mr-2 text-blue-600">3.</span>
@@ -370,7 +370,7 @@ export default function ShakespeareConfiguringAIProviders() {
         <img
           src="/assets/blog/shakespeare-configure-providers/drop-down-menu.png"
           alt="Choose AI Model Dropdown in Shakespeare"
-          className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800"
+          className="rounded-lg shadow-lg border border-gray-200"
         />
       </div>
 
@@ -403,15 +403,15 @@ export default function ShakespeareConfiguringAIProviders() {
       </p>
 
       <div className="not-prose my-6">
-        <Card className="border-2 border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950">
+        <Card className="border-2 border-red-200 bg-red-50">
           <CardContent className="p-6">
             <div className="flex items-start space-x-3">
               <div className="text-2xl">🔒</div>
               <div>
-                <h3 className="text-lg font-bold mb-2 text-red-800 dark:text-red-200">
+                <h3 className="text-lg font-bold mb-2 text-red-800">
                   Local Storage Security
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+                <p className="text-sm text-gray-700 mb-3">
                   All API keys are stored locally in your browser, ensuring:
                 </p>
                 <ul className="space-y-1 text-sm">
@@ -439,7 +439,7 @@ export default function ShakespeareConfiguringAIProviders() {
       <h2>Breaking Free from Vendor Lock-In</h2>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800">
+        <Card className="border-2 border-purple-200">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
               🗽 True AI Freedom with Shakespeare
@@ -493,7 +493,7 @@ export default function ShakespeareConfiguringAIProviders() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

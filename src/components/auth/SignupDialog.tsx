@@ -102,10 +102,10 @@ const SignupDialog: React.FC<SignupDialogProps> = ({ isOpen, onClose }) => {
         <div className='px-6 py-8 space-y-6'>
           {step === 'generate' && (
             <div className='text-center space-y-6'>
-              <div className='p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center'>
+              <div className='p-4 rounded-lg bg-gray-50 flex items-center justify-center'>
                 <Key className='w-16 h-16 text-primary' />
               </div>
-              <p className='text-sm text-gray-600 dark:text-gray-300'>
+              <p className='text-sm text-gray-600'>
                 We'll generate a secure key for your account. You'll need this key to log in later.
               </p>
               <Button
@@ -120,11 +120,11 @@ const SignupDialog: React.FC<SignupDialogProps> = ({ isOpen, onClose }) => {
 
           {step === 'download' && (
             <div className='space-y-6'>
-              <div className='p-4 rounded-lg border bg-gray-50 dark:bg-gray-800 overflow-auto'>
+              <div className='p-4 rounded-lg border bg-gray-50 overflow-auto'>
                 <code className='text-xs break-all'>{nsec}</code>
               </div>
 
-              <div className='text-sm text-gray-600 dark:text-gray-300 space-y-2'>
+              <div className='text-sm text-gray-600 space-y-2'>
                 <p className='font-medium text-red-500'>Important:</p>
                 <ul className='list-disc pl-5 space-y-1'>
                   <li>This is your only way to access your account</li>

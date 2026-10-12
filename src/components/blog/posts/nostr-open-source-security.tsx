@@ -114,7 +114,7 @@ function PromptBlock({ prompt }: { prompt: string }) {
 
   return (
     <div className="not-prose relative my-6">
-      <pre className="whitespace-pre-wrap break-words rounded-lg border border-zinc-700 bg-zinc-900 dark:bg-zinc-950 p-4 pr-16 text-sm text-zinc-100 leading-relaxed">
+      <pre className="whitespace-pre-wrap break-words rounded-lg border border-zinc-700 bg-zinc-900 p-4 pr-16 text-sm text-zinc-100 leading-relaxed">
         <code>{prompt}</code>
       </pre>
       <button
@@ -296,7 +296,7 @@ export default function NostrOpenSourceSecurity() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <p className="text-lg font-semibold text-foreground m-0">
               A Nostr client has exactly two security jobs: validate events,
@@ -345,9 +345,9 @@ export default function NostrOpenSourceSecurity() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/20">
+        <Card className="border-amber-200 bg-amber-50">
           <CardContent className="p-6">
-            <p className="text-sm text-amber-900 dark:text-amber-200 m-0">
+            <p className="text-sm text-amber-900 m-0">
               On desktop, we recommend the{' '}
               <a
                 href="https://chromewebstore.google.com/detail/ditto-extension/fbiegkepanmjielbemkhieckmlckiagi"

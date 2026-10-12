@@ -113,9 +113,9 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
             </TabsList>
 
             <TabsContent value='extension' className='space-y-4'>
-              <div className='text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-800'>
+              <div className='text-center p-4 rounded-lg bg-gray-50'>
                 <Shield className='w-12 h-12 mx-auto mb-3 text-primary' />
-                <p className='text-sm text-gray-600 dark:text-gray-300 mb-4'>
+                <p className='text-sm text-gray-600 mb-4'>
                   Login with one click using the browser extension
                 </p>
                 <Button
@@ -131,20 +131,20 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
             <TabsContent value='key' className='space-y-4'>
               <div className='space-y-4'>
                 <div className='space-y-2'>
-                  <label htmlFor='nsec' className='text-sm font-medium text-gray-700 dark:text-gray-400'>
+                  <label htmlFor='nsec' className='text-sm font-medium text-gray-700'>
                     Enter your nsec
                   </label>
                   <Input
                     id='nsec'
                     value={nsec}
                     onChange={(e) => setNsec(e.target.value)}
-                    className='rounded-lg border-gray-300 dark:border-gray-700 focus-visible:ring-primary'
+                    className='rounded-lg border-gray-300 focus-visible:ring-primary'
                     placeholder='nsec1...'
                   />
                 </div>
 
                 <div className='text-center'>
-                  <p className='text-sm mb-2 text-gray-600 dark:text-gray-400'>Or upload a key file</p>
+                  <p className='text-sm mb-2 text-gray-600'>Or upload a key file</p>
                   <input
                     type='file'
                     accept='.txt'
@@ -154,7 +154,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
                   />
                   <Button
                     variant='outline'
-                    className='w-full dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'
+                    className='w-full'
                     onClick={() => fileInputRef.current?.click()}
                   >
                     <Upload className='w-4 h-4 mr-2' />
@@ -174,14 +174,14 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
 
             <TabsContent value='bunker' className='space-y-4'>
               <div className='space-y-2'>
-                <label htmlFor='bunkerUri' className='text-sm font-medium text-gray-700 dark:text-gray-400'>
+                <label htmlFor='bunkerUri' className='text-sm font-medium text-gray-700'>
                   Bunker URI
                 </label>
                 <Input
                   id='bunkerUri'
                   value={bunkerUri}
                   onChange={(e) => setBunkerUri(e.target.value)}
-                  className='rounded-lg border-gray-300 dark:border-gray-700 focus-visible:ring-primary'
+                  className='rounded-lg border-gray-300 focus-visible:ring-primary'
                   placeholder='bunker://'
                 />
                 {bunkerUri && !bunkerUri.startsWith('bunker://') && (
@@ -200,7 +200,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
           </Tabs>
 
           <div className='text-center text-sm'>
-            <p className='text-gray-600 dark:text-gray-400'>
+            <p className='text-gray-600'>
               Don't have an account?{' '}
               <button
                 onClick={handleSignupClick}

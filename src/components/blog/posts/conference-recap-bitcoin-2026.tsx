@@ -1088,10 +1088,10 @@ export default function ConferenceRecapBitcoin2026() {
 
       <p>The numbers speak for themselves:</p>
 
-      <div className="not-prose my-6 overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+      <div className="not-prose my-6 overflow-x-auto rounded-lg border border-gray-200">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 dark:bg-gray-900">
-            <tr className="border-b border-gray-200 dark:border-gray-700">
+          <thead className="bg-gray-50">
+            <tr className="border-b border-gray-200">
               <th className="text-left p-3">Artist</th>
               <th className="text-right p-3">Total Sats</th>
               <th className="text-right p-3">Zaps</th>
@@ -1099,31 +1099,31 @@ export default function ConferenceRecapBitcoin2026() {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-200 dark:border-gray-700">
+            <tr className="border-b border-gray-200">
               <td className="p-3 font-semibold">Noa Gruman</td>
               <td className="p-3 text-right">374,349</td>
               <td className="p-3 text-right">37</td>
               <td className="p-3 text-right">$291.99</td>
             </tr>
-            <tr className="border-b border-gray-200 dark:border-gray-700">
+            <tr className="border-b border-gray-200">
               <td className="p-3 font-semibold">Abel James</td>
               <td className="p-3 text-right">507,122</td>
               <td className="p-3 text-right">34</td>
               <td className="p-3 text-right">$395.55</td>
             </tr>
-            <tr className="border-b border-gray-200 dark:border-gray-700">
+            <tr className="border-b border-gray-200">
               <td className="p-3 font-semibold">The Higher Low</td>
               <td className="p-3 text-right">129,270</td>
               <td className="p-3 text-right">38</td>
               <td className="p-3 text-right">$100.83</td>
             </tr>
-            <tr className="border-b border-gray-200 dark:border-gray-700">
+            <tr className="border-b border-gray-200">
               <td className="p-3 font-semibold">Sara Jade</td>
               <td className="p-3 text-right">566,644</td>
               <td className="p-3 text-right">77</td>
               <td className="p-3 text-right">$441.98</td>
             </tr>
-            <tr className="bg-gray-50 dark:bg-gray-900 font-bold">
+            <tr className="bg-gray-50 font-bold">
               <td className="p-3">Total</td>
               <td className="p-3 text-right">1,577,385</td>
               <td className="p-3 text-right">186</td>
@@ -1131,7 +1131,7 @@ export default function ConferenceRecapBitcoin2026() {
             </tr>
           </tbody>
         </table>
-        <p className="text-xs text-gray-500 dark:text-gray-400 px-3 py-2">
+        <p className="text-xs text-gray-500 px-3 py-2">
           USD equivalents calculated at ~$78,000 / BTC at the time of the
           event.
         </p>

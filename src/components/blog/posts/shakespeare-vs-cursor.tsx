@@ -96,15 +96,15 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <Terminal className="h-5 w-5 text-gray-500" />
                   Cursor Pricing
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <span className="text-sm">Hobby: Free (limited)</span>
                   </li>
@@ -123,11 +123,11 @@ export default function ShakespeareVsCursor() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare Pricing
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Free with BYOK or local LLM
@@ -153,15 +153,15 @@ export default function ShakespeareVsCursor() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <Terminal className="h-5 w-5 text-gray-500" />
                   Cursor
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Credit cards
@@ -185,11 +185,11 @@ export default function ShakespeareVsCursor() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Credit cards
@@ -199,7 +199,7 @@ export default function ShakespeareVsCursor() {
                     Bitcoin payments
                   </li>
                 </ul>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                <p className="text-sm text-gray-500 mt-4">
                   We allow you to pay using Bitcoin so you can pay for AI credits without linking your identity to your payment.
                 </p>
               </div>
@@ -218,9 +218,9 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Learn More About AI in Shakespeare</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Learn More About AI in Shakespeare</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/blog/shakespeare-ai-model-selection" className="text-azure hover:text-azure-600 underline">
@@ -251,15 +251,15 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Server className="h-6 w-6 text-blue-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Get Started with Local AI
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 mb-4">
               To get started with local LLMs in Shakespeare, check out our quick guide:
             </p>
             <Link to="/blog/shakespeare-local-ai-model" className="text-azure hover:text-azure-600 underline font-medium">
@@ -279,9 +279,9 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800">
+        <Card className="border-green-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Learn More About Git in Shakespeare</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Learn More About Git in Shakespeare</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/blog/shakespeare-importing-existing-projects" className="text-azure hover:text-azure-600 underline">
@@ -312,11 +312,11 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare Deployment Options
               </h3>
             </div>
@@ -360,15 +360,15 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 dark:border-red-800 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950 dark:to-orange-950">
+        <Card className="border-red-200 bg-gradient-to-br from-red-50 to-orange-50">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <Eye className="h-5 w-5 text-red-500" />
                   Cursor Privacy
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <XCircle className="h-4 w-4 text-red-500" />
                     Privacy Mode off by default
@@ -384,11 +384,11 @@ export default function ShakespeareVsCursor() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <EyeOff className="h-5 w-5 text-green-500" />
                   Shakespeare Privacy
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Privacy always on
@@ -422,7 +422,7 @@ export default function ShakespeareVsCursor() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

@@ -357,7 +357,7 @@ export default function BuzzMadeMeRethinkHowTeamsUseAgents() {
         <Button
           size="lg"
           variant="outline"
-          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white dark:hover:bg-[#ec4899] dark:hover:text-white"
+          className="border-[#ec4899] px-8 py-3 text-lg font-bold text-[#ec4899] hover:bg-[#ec4899] hover:text-white"
           asChild
         >
           <a

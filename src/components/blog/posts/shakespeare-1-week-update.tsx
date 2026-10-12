@@ -40,22 +40,22 @@ export default function Shakespeare1WeekUpdate() {
   return (
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 rounded-2xl p-8 text-center border border-purple-200 dark:border-purple-800">
-          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300 dark:border-blue-700">
+        <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 text-center border border-purple-200">
+          <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-300">
             🎉 1 Week Update
           </div>
           <h2 className="text-4xl font-bold mb-4">
             🎭 <span className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Shakespeare</span>
           </h2>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+          <h3 className="text-xl font-semibold text-gray-700 mb-6">
             Thank you to everyone who tried Shakespeare!
           </h3>
           <div className="space-y-4 max-w-2xl mx-auto">
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <p className="text-lg text-gray-600">
               <strong>More than 200 of you tried Shakespeare</strong> in the first week of our Beta launch.
               We are so grateful to all of you who shared your ideas, helped us find bugs, and inspired our next steps.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <p className="text-lg text-gray-600">
               Thanks to your feedback, we've already improved Shakespeare significantly in just one week, with more to come!
               Here's a look at some of the projects you've already built, and what's to come.
             </p>
@@ -68,18 +68,18 @@ export default function Shakespeare1WeekUpdate() {
 
       {/* Reviewstr */}
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800 overflow-hidden">
+        <Card className="border-2 border-purple-200 overflow-hidden">
           <CardContent className="p-0">
-            <div className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
-              <h3 className="text-2xl font-bold mb-4 text-purple-800 dark:text-purple-200">
+            <div className="p-6 bg-gradient-to-r from-purple-50 to-pink-50">
+              <h3 className="text-2xl font-bold mb-4 text-purple-800">
                 Reviewstr
               </h3>
 
-              <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-purple-200 dark:border-purple-700 mb-4">
+              <div className="bg-white p-4 rounded-lg border border-purple-200 mb-4">
                 <p className="text-sm">
                   <strong>By:</strong> <a href="https://njump.me/npub105em547c5m5gdxslr4fp2f29jav54sxml6cpk6gda7xyvxuzmv6s84a642" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@TravelTelly</a>
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-600 mt-2">
                   Share your experiences and discover amazing places on Nostr
                 </p>
               </div>
@@ -107,18 +107,18 @@ export default function Shakespeare1WeekUpdate() {
 
       {/* Hashman Game */}
       <div className="not-prose my-8">
-        <Card className="border-2 border-blue-200 dark:border-blue-800 overflow-hidden">
+        <Card className="border-2 border-blue-200 overflow-hidden">
           <CardContent className="p-0">
-            <div className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950">
-              <h3 className="text-2xl font-bold mb-4 text-blue-800 dark:text-blue-200">
+            <div className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50">
+              <h3 className="text-2xl font-bold mb-4 text-blue-800">
                 Hashman
               </h3>
 
-              <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-blue-200 dark:border-blue-700 mb-4">
+              <div className="bg-white p-4 rounded-lg border border-blue-200 mb-4">
                 <p className="text-sm">
                   <strong>By:</strong> <a href="https://njump.me/nprofile1qqs9kqvr4dkruv3t7n2pc6e6a7v9v2s5fprmwjv4gde8c4fe5y29v0sd595dt" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@QW</a>
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-600 mt-2">
                   Pacman-style game built with Shakespeare
                 </p>
               </div>
@@ -146,18 +146,18 @@ export default function Shakespeare1WeekUpdate() {
 
       {/* Betstr */}
       <div className="not-prose my-8">
-        <Card className="border-2 border-green-200 dark:border-green-800 overflow-hidden">
+        <Card className="border-2 border-green-200 overflow-hidden">
           <CardContent className="p-0">
-            <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
-              <h3 className="text-2xl font-bold mb-4 text-green-800 dark:text-green-200">
+            <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50">
+              <h3 className="text-2xl font-bold mb-4 text-green-800">
                 Betstr
               </h3>
 
-              <div className="bg-white dark:bg-gray-900 p-4 rounded-lg border border-green-200 dark:border-green-700 mb-4">
+              <div className="bg-white p-4 rounded-lg border border-green-200 mb-4">
                 <p className="text-sm">
                   <strong>By:</strong> <a href="https://njump.me/npub1ygzsm5m9ndtgch9n22cwsx2clwvxhk2pqvdfp36t5lmdyjqvz84qkca2m5" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@Keith Meola</a>
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-600 mt-2">
                   Peer-to-peer betting with Lightning on Nostr
                 </p>
               </div>
@@ -185,16 +185,16 @@ export default function Shakespeare1WeekUpdate() {
 
       {/* Community Call to Action */}
       <div className="not-prose my-8">
-        <Card className="border-3 border-purple-300 dark:border-purple-700 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-3 border-purple-300 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4 text-purple-800 dark:text-purple-200">
+            <h3 className="text-2xl font-bold mb-4 text-purple-800">
               Share Your Project!
             </h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            <p className="text-lg text-gray-700 mb-6">
               Did you make something cool with Shakespeare? We'd love to see it! Share it with us and the community.
             </p>
-            <div className="bg-purple-100 dark:bg-purple-800 p-6 rounded-xl border border-purple-200 dark:border-purple-600">
-              <p className="text-lg font-bold text-purple-800 dark:text-purple-200">
+            <div className="bg-purple-100 p-6 rounded-xl border border-purple-200">
+              <p className="text-lg font-bold text-purple-800">
                 Use #ShakespeareDIY and tag us on Nostr!
               </p>
             </div>
@@ -205,7 +205,7 @@ export default function Shakespeare1WeekUpdate() {
       <h2>📰 Shakespeare Featured in TechCrunch!</h2>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-8">
             <div className="text-center mb-6">
               <a href="https://techcrunch.com/2025/07/16/jack-dorsey-pumps-10m-into-a-nonprofit-focused-on-open-source-social-media/" target="_blank" rel="noopener noreferrer" className="block">
@@ -217,7 +217,7 @@ export default function Shakespeare1WeekUpdate() {
               </a>
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
+            <p className="text-gray-700 mb-6 text-center">
               Shakespeare was featured in a recent TechCrunch article about Jack Dorsey's investment in Nostr.
               The article highlights how Shakespeare represents the future of AI-powered development on decentralized protocols.
             </p>
@@ -236,13 +236,13 @@ export default function Shakespeare1WeekUpdate() {
       <h2>🚀 Coming Soon</h2>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950 dark:to-indigo-950">
+        <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50">
           <CardContent className="p-8">
             <div className="text-center mb-6">
               <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl">
                 🚀
               </div>
-              <h3 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-6">
+              <h3 className="text-2xl font-bold text-purple-800 mb-6">
                 Exciting Features Coming Soon
               </h3>
             </div>
@@ -251,38 +251,38 @@ export default function Shakespeare1WeekUpdate() {
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100">Full Git Integration</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Complete version control and rollback capabilities for your projects</p>
+                  <h4 className="font-semibold text-gray-900">Full Git Integration</h4>
+                  <p className="text-gray-600 text-sm">Complete version control and rollback capabilities for your projects</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100">Custom Domains</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Publish your Shakespeare-built sites on your own custom domains</p>
+                  <h4 className="font-semibold text-gray-900">Custom Domains</h4>
+                  <p className="text-gray-600 text-sm">Publish your Shakespeare-built sites on your own custom domains</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100">Kimi K2 Support</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Integration with the powerful open source AI agent for enhanced capabilities</p>
+                  <h4 className="font-semibold text-gray-900">Kimi K2 Support</h4>
+                  <p className="text-gray-600 text-sm">Integration with the powerful open source AI agent for enhanced capabilities</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100">Enhanced MKStack Support</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Improved Zaps integration and Lightning Network features</p>
+                  <h4 className="font-semibold text-gray-900">Enhanced MKStack Support</h4>
+                  <p className="text-gray-600 text-sm">Improved Zaps integration and Lightning Network features</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-800 dark:to-cyan-800 p-6 rounded-xl border border-blue-200 dark:border-blue-600 mb-6">
-              <h4 className="font-bold text-blue-900 dark:text-blue-100 mb-3 flex items-center">
+            <div className="bg-gradient-to-r from-blue-100 to-cyan-100 p-6 rounded-xl border border-blue-200 mb-6">
+              <h4 className="font-bold text-blue-900 mb-3 flex items-center">
                 🔧 Built-in Nostr Issue Tracker
               </h4>
-              <p className="text-blue-800 dark:text-blue-200 text-sm mb-4">
+              <p className="text-blue-800 text-sm mb-4">
                 We've built a revolutionary issue tracker directly into Shakespeare that runs entirely on Nostr!
                 Track bugs, request features, and collaborate on improvements using decentralized protocols.
               </p>
@@ -293,8 +293,8 @@ export default function Shakespeare1WeekUpdate() {
               </Button>
             </div>
 
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-800 dark:to-pink-800 p-6 rounded-xl border border-purple-200 dark:border-purple-600">
-              <p className="text-center font-bold text-purple-900 dark:text-purple-100">
+            <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-xl border border-purple-200">
+              <p className="text-center font-bold text-purple-900">
                 🎯 Our goal: Make on the decentralized web open and acessible to everyone.
               </p>
             </div>
@@ -304,13 +304,13 @@ export default function Shakespeare1WeekUpdate() {
 
       <h2>Ready to Build Something Amazing?</h2>
 
-      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+      <p className="text-lg text-gray-600 mb-8">
         Join hundreds of creators who are already building the future with Shakespeare.
         Turn your ideas into reality through natural conversation with AI.
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

@@ -41,16 +41,16 @@ export default function AnnouncingSoapboxSessionsPodcast() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🎙️ Podcast
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🗽 Nostr
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             🤖 AI
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             ⚡ Weekly
           </Badge>
         </div>
@@ -61,12 +61,12 @@ export default function AnnouncingSoapboxSessionsPodcast() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-gray-200 dark:border-gray-800 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-blue-50">
           <CardContent className="p-8 text-center">
-            <h3 className="text-xl font-bold mb-4 text-gray-700 dark:text-gray-300">
+            <h3 className="text-xl font-bold mb-4 text-gray-700">
               Hosted by Heather Larson & Derek Ross
             </h3>
-            <div className="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900 dark:to-blue-900 flex items-center justify-center">
+            <div className="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
               <img
               src="/assets/blog/announcing-soapbox-sessions-podcast/heather-and-derek.png"
               alt="Heather and Derek from Vegas conference"
@@ -114,9 +114,9 @@ export default function AnnouncingSoapboxSessionsPodcast() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-red-200 dark:border-red-800">
+        <Card className="border-red-200">
           <CardContent className="p-6 text-center">
-            <h3 className="text-xl font-bold mb-4 text-red-700 dark:text-red-300">
+            <h3 className="text-xl font-bold mb-4 text-red-700">
               📺 Watch on YouTube
             </h3>
             <p className="text-muted-foreground mb-4">
@@ -134,7 +134,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-red-200 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-300"
+                className="w-full border-red-200 text-red-700 hover:bg-red-50"
               >
                 <a href="https://www.youtube.com/@SoapboxTechnology" target="_blank" rel="noopener noreferrer">
                   Subscribe to Channel →
@@ -169,9 +169,9 @@ export default function AnnouncingSoapboxSessionsPodcast() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 🎧 Listen to Soapbox Sessions
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -188,9 +188,9 @@ export default function AnnouncingSoapboxSessionsPodcast() {
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 dark:border-green-800">
+          <Card className="border-green-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-green-700 dark:text-green-300">
+              <h3 className="text-xl font-bold mb-4 text-green-700">
                 🛠️ Build with Our Tools
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -199,7 +199,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-green-200 text-green-700 hover:bg-green-50 dark:border-green-800 dark:text-green-300"
+                className="w-full border-green-200 text-green-700 hover:bg-green-50"
               >
                 <a href="/tools">
                   View All Tools →
@@ -211,7 +211,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-blue-200 dark:border-blue-800">
+        <Card className="border-dashed border-2 border-blue-200">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎙️</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
@@ -235,7 +235,7 @@ export default function AnnouncingSoapboxSessionsPodcast() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300 font-semibold px-8 py-3"
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-3"
                 >
                   <a href="https://www.youtube.com/@SoapboxTechnology" target="_blank" rel="noopener noreferrer">
                     🎬 Subscribe on YouTube

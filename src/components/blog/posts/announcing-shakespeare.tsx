@@ -43,16 +43,16 @@ export default function AnnouncingShakespeare() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🎭 Shakespeare
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🤖 AI-Powered
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             🗽 Truly Free
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             ⚡ Now Available
           </Badge>
         </div>
@@ -65,9 +65,9 @@ export default function AnnouncingShakespeare() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 🚀 Try Shakespeare Now
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -84,9 +84,9 @@ export default function AnnouncingShakespeare() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+              <h3 className="text-xl font-bold mb-4 text-blue-700">
                 📧 Join the Community
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -95,7 +95,7 @@ export default function AnnouncingShakespeare() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
+                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50"
               >
                 <a href="#community-form">
                   Join Community Below ↓
@@ -107,7 +107,7 @@ export default function AnnouncingShakespeare() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               🎬 Watch the Tutorial
@@ -190,7 +190,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div className="bg-blue-100 rounded-full p-2 text-blue-600 font-bold text-sm min-w-[2rem] text-center">1</div>
                 <div>
                   <h3 className="font-semibold mb-2">🗽 Connect with Freedom</h3>
                   <p className="text-sm text-muted-foreground">
@@ -204,7 +204,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[2rem] text-center">2</div>
                 <div>
                   <h3 className="font-semibold mb-2">🤖 Choose Your AI Assistant</h3>
                   <p className="text-sm text-muted-foreground">
@@ -218,7 +218,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div className="bg-purple-100 rounded-full p-2 text-purple-600 font-bold text-sm min-w-[2rem] text-center">3</div>
                 <div>
                   <h3 className="font-semibold mb-2">💬 Start Building</h3>
                   <p className="text-sm text-muted-foreground">
@@ -232,7 +232,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-orange-100 dark:bg-orange-900 rounded-full p-2 text-orange-600 dark:text-orange-400 font-bold text-sm min-w-[2rem] text-center">4</div>
+                <div className="bg-orange-100 rounded-full p-2 text-orange-600 font-bold text-sm min-w-[2rem] text-center">4</div>
                 <div>
                   <h3 className="font-semibold mb-2">🔄 Iterate & Refine</h3>
                   <p className="text-sm text-muted-foreground">
@@ -246,7 +246,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-red-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-red-100 dark:bg-red-900 rounded-full p-2 text-red-600 dark:text-red-400 font-bold text-sm min-w-[2rem] text-center">5</div>
+                <div className="bg-red-100 rounded-full p-2 text-red-600 font-bold text-sm min-w-[2rem] text-center">5</div>
                 <div>
                   <h3 className="font-semibold mb-2">🚀 Deploy & Share</h3>
                   <p className="text-sm text-muted-foreground">
@@ -267,9 +267,9 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800">
+        <Card className="border-purple-200">
           <CardContent className="p-6 text-center">
-            <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+            <h3 className="text-xl font-bold mb-4 text-purple-700">
               🎨 View Live Examples
             </h3>
             <p className="text-muted-foreground mb-4">
@@ -291,7 +291,7 @@ export default function AnnouncingShakespeare() {
 
       <div className="not-prose my-8">
         <div className="space-y-4">
-          <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+          <Card className="bg-gradient-to-r from-purple-50 to-pink-50">
             <CardContent className="p-4">
               <p className="text-sm italic">
                 "Build a modern portfolio website for a web developer with project showcases, an about section, and a contact form. Use a dark theme with blue accents."
@@ -299,7 +299,7 @@ export default function AnnouncingShakespeare() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950">
+          <Card className="bg-gradient-to-r from-blue-50 to-cyan-50">
             <CardContent className="p-4">
               <p className="text-sm italic">
                 "Create a Twitter-like social media app for Nostr with user profiles, real-time feeds, and the ability to post notes and images."
@@ -307,7 +307,7 @@ export default function AnnouncingShakespeare() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+          <Card className="bg-gradient-to-r from-green-50 to-emerald-50">
             <CardContent className="p-4">
               <p className="text-sm italic">
                 "Design a travel blog with comments, and the ability to like and share posts."
@@ -331,7 +331,7 @@ export default function AnnouncingShakespeare() {
 {/*
       <div className="not-prose my-8">
         <div className="space-y-4">
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50">
             <CardContent className="p-4">
               <p className="text-sm italic">
                 "Import https://github.com/username/my-portfolio and help me add a dark mode toggle to the navigation."
@@ -339,7 +339,7 @@ export default function AnnouncingShakespeare() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+          <Card className="bg-gradient-to-r from-purple-50 to-pink-50">
             <CardContent className="p-4">
               <p className="text-sm italic">
                 "Load https://gitlab.com/project/awesome-app and add a new user authentication system with login and signup forms."
@@ -347,7 +347,7 @@ export default function AnnouncingShakespeare() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950">
+          <Card className="bg-gradient-to-r from-orange-50 to-red-50">
             <CardContent className="p-4">
               <p className="text-sm italic">
                 "Import this React component library and help me create a new date picker component that matches the existing design system."
@@ -362,7 +362,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[2rem] text-center">1</div>
                 <div>
                   <h4 className="font-semibold mb-2">📥 Import Project</h4>
                   <p className="text-sm text-muted-foreground">
@@ -376,7 +376,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div className="bg-blue-100 rounded-full p-2 text-blue-600 font-bold text-sm min-w-[2rem] text-center">2</div>
                 <div>
                   <h4 className="font-semibold mb-2">🤖 AI-Assisted Editing</h4>
                   <p className="text-sm text-muted-foreground">
@@ -390,7 +390,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div className="bg-purple-100 rounded-full p-2 text-purple-600 font-bold text-sm min-w-[2rem] text-center">3</div>
                 <div>
                   <h4 className="font-semibold mb-2">🔄 Live Testing</h4>
                   <p className="text-sm text-muted-foreground">
@@ -404,7 +404,7 @@ export default function AnnouncingShakespeare() {
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-orange-100 dark:bg-orange-900 rounded-full p-2 text-orange-600 dark:text-orange-400 font-bold text-sm min-w-[2rem] text-center">4</div>
+                <div className="bg-orange-100 rounded-full p-2 text-orange-600 font-bold text-sm min-w-[2rem] text-center">4</div>
                 <div>
                   <h4 className="font-semibold mb-2">📤 Submit Pull Request</h4>
                   <p className="text-sm text-muted-foreground">
@@ -424,9 +424,9 @@ export default function AnnouncingShakespeare() {
       </p>
 {/*
       <div className="not-prose my-6">
-        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <Card className="border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🌟 Contribution Examples</h4>
+            <h4 className="font-semibold mb-3 text-blue-900">🌟 Contribution Examples</h4>
             <ul className="text-sm space-y-2 text-muted-foreground">
               <li>• <strong>Bug Fixes:</strong> "This button doesn't work on mobile — can you fix the responsive layout?"</li>
               <li>• <strong>Feature Additions:</strong> "Add a search function to this documentation site"</li>
@@ -460,16 +460,16 @@ export default function AnnouncingShakespeare() {
       </p>
 
       <div className="not-prose my-6">
-        <Card className="border-purple-200 dark:border-purple-800">
+        <Card className="border-purple-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-purple-700 dark:text-purple-300">🚀 Free Gemini Flash NSP</h4>
+            <h4 className="font-semibold mb-3 text-purple-700">🚀 Free Gemini Flash NSP</h4>
             <p className="text-muted-foreground mb-4">
               We're currently offering a <strong>free Gemini Flash NSP</strong> so you can try Shakespeare without adding credits! This gives you access to Google's Gemini Flash model at no cost.
             </p>
             <Button
               asChild
               variant="outline"
-              className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+              className="border-purple-200 text-purple-700 hover:bg-purple-50"
             >
               <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
                 Try Free Gemini Flash NSP →
@@ -480,9 +480,9 @@ export default function AnnouncingShakespeare() {
       </div>
 
       <div className="not-prose my-6">
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800">
+        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">🔍 Learn More About NSPs</h4>
+            <h4 className="font-semibold mb-3 text-blue-900">🔍 Learn More About NSPs</h4>
             <p className="text-sm text-muted-foreground mb-4">
               Discover how to choose the right NSP for your projects and learn how developers can create their own NSPs.
             </p>
@@ -519,7 +519,7 @@ export default function AnnouncingShakespeare() {
         <Card>
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📸 Future Vision Screenshot</h4>
-            <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+            <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <div className="text-3xl mb-2">🔮</div>
                 <p className="text-sm text-muted-foreground">The future of web development</p>
@@ -541,7 +541,7 @@ export default function AnnouncingShakespeare() {
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800">
+        <Card className="border-dashed border-2 border-purple-200">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

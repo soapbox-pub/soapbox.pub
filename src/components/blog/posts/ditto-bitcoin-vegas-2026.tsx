@@ -238,9 +238,9 @@ export default function DittoBitcoinVegas2026() {
         hello.
       </p>
 
-      <div className="not-prose bg-gray-50 dark:bg-gray-900 rounded-lg p-6 my-6 border border-gray-200 dark:border-gray-700">
+      <div className="not-prose bg-gray-50 rounded-lg p-6 my-6 border border-gray-200">
         <p className="font-semibold text-lg mb-3">NosVegas Event Details</p>
-        <ul className="space-y-1 text-gray-700 dark:text-gray-300 text-base">
+        <ul className="space-y-1 text-gray-700 text-base">
           <li><strong>Date:</strong> Tuesday, April 28, 2026</li>
           <li><strong>Time:</strong> 7:00 PM &ndash; 1:00 AM</li>
           <li>

@@ -45,7 +45,7 @@ export default function VibeCodeAnniversary() {
         February 2, 2025. <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener noreferrer">Andrej Karpathy fires off a tweet</a> that would define the year: "There's a new kind of coding I call 'vibe coding,' where you fully give in to the vibes, embrace exponentials, and forget that the code even exists."
       </p>
 
-      <blockquote className="border-l-4 border-purple-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300">
+      <blockquote className="border-l-4 border-purple-500 pl-6 my-8 italic text-gray-700">
         "I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works... I'm mass mass mass producing code by just asking for it. I don't really care what the code is. I 'Accept All' always."
         <footer className="text-sm mt-2 not-italic">— Andrej Karpathy, February 2025</footer>
       </blockquote>
@@ -63,7 +63,7 @@ export default function VibeCodeAnniversary() {
       <h2>The Year of Vibes</h2>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Sparkles className="h-8 w-8 text-purple-600" />
@@ -74,31 +74,31 @@ export default function VibeCodeAnniversary() {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Feb</Badge>
-                <p className="text-gray-600 dark:text-gray-400"><a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Karpathy coins "vibe coding"</a> in a tweet that goes viral</p>
+                <p className="text-gray-600"><a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Karpathy coins "vibe coding"</a> in a tweet that goes viral</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Mar</Badge>
-                <p className="text-gray-600 dark:text-gray-400"><a href="https://www.merriam-webster.com/wordplay/new-words-in-the-dictionary" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Merriam-Webster adds "vibe coding"</a> as trending slang; <a href="https://www.ycombinator.com/blog/what-founders-are-doing-with-ai" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Y Combinator reports</a> 25% of W25 batch ships 95% AI-generated code</p>
+                <p className="text-gray-600"><a href="https://www.merriam-webster.com/wordplay/new-words-in-the-dictionary" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Merriam-Webster adds "vibe coding"</a> as trending slang; <a href="https://www.ycombinator.com/blog/what-founders-are-doing-with-ai" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Y Combinator reports</a> 25% of W25 batch ships 95% AI-generated code</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-red-100 text-red-800 border-red-300 mt-1">May</Badge>
-                <p className="text-gray-600 dark:text-gray-400"><a href="https://techcrunch.com/2025/05/14/170-apps-built-with-lovable-exposed-user-data/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">170 Lovable apps expose user data</a> — the first major security scandal</p>
+                <p className="text-gray-600"><a href="https://techcrunch.com/2025/05/14/170-apps-built-with-lovable-exposed-user-data/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">170 Lovable apps expose user data</a> — the first major security scandal</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">Aug</Badge>
-                <p className="text-gray-600 dark:text-gray-400">GPT-5 hits 74.9% on <a href="https://www.swebench.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">SWE-bench</a> (up from 38% when vibe coding was coined)</p>
+                <p className="text-gray-600">GPT-5 hits 74.9% on <a href="https://www.swebench.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">SWE-bench</a> (up from 38% when vibe coding was coined)</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">Sep</Badge>
-                <p className="text-gray-600 dark:text-gray-400"><a href="https://www.fastcompany.com/91195256/the-vibe-coding-hangover-is-upon-us" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Fast Company declares</a> "the vibe coding hangover is upon us"</p>
+                <p className="text-gray-600"><a href="https://www.fastcompany.com/91195256/the-vibe-coding-hangover-is-upon-us" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Fast Company declares</a> "the vibe coding hangover is upon us"</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 border-yellow-300 mt-1">Nov</Badge>
-                <p className="text-gray-600 dark:text-gray-400"><a href="https://www.collinsdictionary.com/woty" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:underline">Collins crowns "vibe coding"</a> Word of the Year</p>
+                <p className="text-gray-600"><a href="https://www.collinsdictionary.com/woty" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:underline">Collins crowns "vibe coding"</a> Word of the Year</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-indigo-100 text-indigo-800 border-indigo-300 mt-1">Jan</Badge>
-                <p className="text-gray-600 dark:text-gray-400"><a href="https://www.zdnet.com/article/linus-torvalds-reveals-hes-been-vibe-coding-with-ai/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Linus Torvalds reveals</a> he's been vibe coding Python visualizers</p>
+                <p className="text-gray-600"><a href="https://www.zdnet.com/article/linus-torvalds-reveals-hes-been-vibe-coding-with-ai/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Linus Torvalds reveals</a> he's been vibe coding Python visualizers</p>
               </div>
             </div>
           </CardContent>
@@ -118,11 +118,11 @@ export default function VibeCodeAnniversary() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800">
+        <Card className="border-blue-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Layers className="h-8 w-8 text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 The Soapbox Stack Takes Shape
               </h3>
             </div>
@@ -130,36 +130,36 @@ export default function VibeCodeAnniversary() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">May</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/blog/stacks">Stacks</a> + <a href="/mkstack">MKStack</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Decentralized template-sharing for Nostr, with our flagship template for building Nostr apps</p>
+                  <p className="font-semibold text-gray-900"><a href="/blog/stacks">Stacks</a> + <a href="/mkstack">MKStack</a></p>
+                  <p className="text-gray-600">Decentralized template-sharing for Nostr, with our flagship template for building Nostr apps</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">May</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/blog/nostrbook-mcp">Nostrbook MCP</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Making Nostr documentation AI-ready so models understand the protocol</p>
+                  <p className="font-semibold text-gray-900"><a href="/blog/nostrbook-mcp">Nostrbook MCP</a></p>
+                  <p className="text-gray-600">Making Nostr documentation AI-ready so models understand the protocol</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Jun</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/blog/chorus-vibe-coding">Chorus</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Facebook-style groups with eCash wallet, built in 5 days at Oslo Freedom Forum</p>
+                  <p className="font-semibold text-gray-900"><a href="/blog/chorus-vibe-coding">Chorus</a></p>
+                  <p className="text-gray-600">Facebook-style groups with eCash wallet, built in 5 days at Oslo Freedom Forum</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Jul</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/blog/announcing-shakespeare">Shakespeare</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">AI-powered app builder in your browser — 200+ users in the first week</p>
+                  <p className="font-semibold text-gray-900"><a href="/blog/announcing-shakespeare">Shakespeare</a></p>
+                  <p className="text-gray-600">AI-powered app builder in your browser — 200+ users in the first week</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Oct</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/blog/announcing-shakespeare-act-2">Shakespeare Act 2</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Complete freedom: choose your AI, your Git, your deployment, your data</p>
+                  <p className="font-semibold text-gray-900"><a href="/blog/announcing-shakespeare-act-2">Shakespeare Act 2</a></p>
+                  <p className="text-gray-600">Complete freedom: choose your AI, your Git, your deployment, your data</p>
                 </div>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function VibeCodeAnniversary() {
 
       <p><strong>We shipped in five days.</strong></p>
 
-      <blockquote className="border-l-4 border-green-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300">
+      <blockquote className="border-l-4 border-green-500 pl-6 my-8 italic text-gray-700">
         "When vibe coding, the human's role is not to write the code or to even care about the code. The role of the human is to be the visionary that imagines the end goal of the product, and prompts it into existence."
         <footer className="text-sm mt-2 not-italic">— <a href="/blog/chorus-vibe-coding">Chorus: An Experiment in Vibe Coding</a></footer>
       </blockquote>
@@ -193,33 +193,33 @@ export default function VibeCodeAnniversary() {
       <p>Within a week, we had <a href="/blog/shakespeare-1-week-update">200+ users and TechCrunch coverage</a>. But we were just getting started.</p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Rocket className="h-8 w-8 text-green-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Shakespeare Act 2: Complete Freedom
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 mb-4">
               While companies like Lovable, Replit, and Cursor locked users into their platforms, their AI models, and their hosting, we went the opposite direction:
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">AI</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Choose your AI provider — OpenAI, Anthropic, local models, or OpenCode</p>
+                <p className="text-gray-600">Choose your AI provider — OpenAI, Anthropic, local models, or OpenCode</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">Git</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Your code, your Git service — GitHub, GitLab, or Nostr Git</p>
+                <p className="text-gray-600">Your code, your Git service — GitHub, GitLab, or Nostr Git</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">Deploy</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Deploy anywhere — Shakespeare Deploy, Vercel, Cloudflare, Railway, or self-host</p>
+                <p className="text-gray-600">Deploy anywhere — Shakespeare Deploy, Vercel, Cloudflare, Railway, or self-host</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-300 mt-1">Data</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Export everything anytime — no lock-in, ever</p>
+                <p className="text-gray-600">Export everything anytime — no lock-in, ever</p>
               </div>
             </div>
           </CardContent>
@@ -244,15 +244,15 @@ export default function VibeCodeAnniversary() {
         <Card className="border-l-4 border-red-500">
           <CardContent className="p-6 space-y-4">
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"Where are my people?"</p>
+              <p className="font-semibold text-red-700">"Where are my people?"</p>
               <p className="text-sm text-muted-foreground">Activists can't find their communities when forced to migrate between platforms.</p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"X was banned in Venezuela."</p>
+              <p className="font-semibold text-red-700">"X was banned in Venezuela."</p>
               <p className="text-sm text-muted-foreground">Centralized platforms become targets. One government order and your entire network disappears.</p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">"$10 is huge when your bank account is frozen."</p>
+              <p className="font-semibold text-red-700">"$10 is huge when your bank account is frozen."</p>
               <p className="text-sm text-muted-foreground">Traditional payment rails fail when regimes freeze accounts.</p>
             </div>
           </CardContent>
@@ -276,33 +276,33 @@ export default function VibeCodeAnniversary() {
       <p><strong>You give the AI a seat at the table.</strong></p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <MessageSquare className="h-8 w-8 text-purple-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Quilly: AI Team Member
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 mb-4">
               In January 2026, we introduced <a href="/blog/meet-quilly"><strong>Quilly</strong></a>—an AI team member who participates in our Signal group chat, engages with our community on Nostr, manages documentation, and tests Shakespeare in real-world scenarios daily.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Open Source</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Runs on <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">OpenClaw</a>, personality defined in markdown files</p>
+                <p className="text-gray-600">Runs on <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">OpenClaw</a>, personality defined in markdown files</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Nostr Native</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Engages with the community using their own Nostr identity</p>
+                <p className="text-gray-600">Engages with the community using their own Nostr identity</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Real Work</Badge>
-                <p className="text-gray-600 dark:text-gray-400">Builds features, writes docs, submits merge requests</p>
+                <p className="text-gray-600">Builds features, writes docs, submits merge requests</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">Dogfooding</Badge>
-                <p className="text-gray-600 dark:text-gray-400">When Quilly hits a limitation, we know our users will too</p>
+                <p className="text-gray-600">When Quilly hits a limitation, we know our users will too</p>
               </div>
             </div>
           </CardContent>
@@ -330,11 +330,11 @@ export default function VibeCodeAnniversary() {
       <p><strong>But <a href="/blog/nostr101">Nostr</a> changes the calculus.</strong></p>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="h-8 w-8 text-orange-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Why Nostr + Vibe Coding Works
               </h3>
             </div>
@@ -342,29 +342,29 @@ export default function VibeCodeAnniversary() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">1</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Data Lives on Relays</p>
-                  <p className="text-gray-600 dark:text-gray-400">Your app is just a view layer. If your frontend becomes unmaintainable, rebuild it—your data survives.</p>
+                  <p className="font-semibold text-gray-900">Data Lives on Relays</p>
+                  <p className="text-gray-600">Your app is just a view layer. If your frontend becomes unmaintainable, rebuild it—your data survives.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">2</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">NIPs Are Guardrails</p>
-                  <p className="text-gray-600 dark:text-gray-400"><a href="https://github.com/nostr-protocol/nips" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Nostr Implementation Possibilities</a> ensure even spaghetti code speaks the same protocol.</p>
+                  <p className="font-semibold text-gray-900">NIPs Are Guardrails</p>
+                  <p className="text-gray-600"><a href="https://github.com/nostr-protocol/nips" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Nostr Implementation Possibilities</a> ensure even spaghetti code speaks the same protocol.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">3</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Throwaway Frontends</p>
-                  <p className="text-gray-600 dark:text-gray-400">Experiment with ten different interfaces for the same data. Ship fast, learn fast, rebuild fast.</p>
+                  <p className="font-semibold text-gray-900">Throwaway Frontends</p>
+                  <p className="text-gray-600">Experiment with ten different interfaces for the same data. Ship fast, learn fast, rebuild fast.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">4</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100">Software for One</p>
-                  <p className="text-gray-600 dark:text-gray-400"><a href="https://www.nytimes.com/2025/03/19/technology/ai-software-development-coding.html" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Kevin Roose called it</a> personal apps built just for you—but on Nostr, your spaghetti still connects to the larger ecosystem.</p>
+                  <p className="font-semibold text-gray-900">Software for One</p>
+                  <p className="text-gray-600"><a href="https://www.nytimes.com/2025/03/19/technology/ai-software-development-coding.html" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Kevin Roose called it</a> personal apps built just for you—but on Nostr, your spaghetti still connects to the larger ecosystem.</p>
                 </div>
               </div>
             </div>
@@ -384,7 +384,7 @@ export default function VibeCodeAnniversary() {
         Vibe coding inverts the traditional developer role in the same way. You're not the artist writing code—you're the producer shaping what the AI creates. Your job is vision, judgment, knowing when to accept the diff and when to ask for another take.
       </p>
 
-      <blockquote className="border-l-4 border-blue-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300">
+      <blockquote className="border-l-4 border-blue-500 pl-6 my-8 italic text-gray-700">
         "I'm frankly exhausted by the end of the day... it's a deeply intellectual exercise."
         <footer className="text-sm mt-2 not-italic">— <a href="https://www.deeplearning.ai/the-batch/issue-288/" target="_blank" rel="noopener noreferrer">Andrew Ng</a>, criticizing the term but capturing the truth</footer>
       </blockquote>
@@ -402,44 +402,44 @@ export default function VibeCodeAnniversary() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950">
+        <Card className="border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Code className="h-8 w-8 text-indigo-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 The Soapbox Vibe Coding Stack
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
+            <p className="text-gray-700 mb-6">
               Each layer builds on the one below. Vibe coding infrastructure for the decentralized future:
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-indigo-100 text-indigo-800 border-indigo-300 mt-1">Foundation</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/tools/nostrify">Nostrify</a> + <a href="/blog/nostrbook-mcp">Nostrbook MCP</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Core library for Nostr apps + AI-ready documentation</p>
+                  <p className="font-semibold text-gray-900"><a href="/tools/nostrify">Nostrify</a> + <a href="/blog/nostrbook-mcp">Nostrbook MCP</a></p>
+                  <p className="text-gray-600">Core library for Nostr apps + AI-ready documentation</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-indigo-100 text-indigo-800 border-indigo-300 mt-1">Templates</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/mkstack">MKStack</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Proven patterns and best practices baked in from the start</p>
+                  <p className="font-semibold text-gray-900"><a href="/mkstack">MKStack</a></p>
+                  <p className="text-gray-600">Proven patterns and best practices baked in from the start</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-indigo-100 text-indigo-800 border-indigo-300 mt-1">Platform</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">Freedom-respecting vibe coding, accessible to anyone with a browser</p>
+                  <p className="font-semibold text-gray-900"><a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">Shakespeare</a></p>
+                  <p className="text-gray-600">Freedom-respecting vibe coding, accessible to anyone with a browser</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-indigo-100 text-indigo-800 border-indigo-300 mt-1">Team</Badge>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100"><a href="/blog/meet-quilly">Quilly</a></p>
-                  <p className="text-gray-600 dark:text-gray-400">AI team member building features, writing docs, submitting MRs</p>
+                  <p className="font-semibold text-gray-900"><a href="/blog/meet-quilly">Quilly</a></p>
+                  <p className="text-gray-600">AI team member building features, writing docs, submitting MRs</p>
                 </div>
               </div>
             </div>
@@ -454,7 +454,7 @@ export default function VibeCodeAnniversary() {
       <p><strong>The vibes are strong. Come build with us.</strong></p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

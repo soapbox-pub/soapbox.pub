@@ -42,16 +42,16 @@ export default function ShakespeareLocalAIModel() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             🔒 Complete Privacy
           </Badge>
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             ⚡ Zero Ongoing Costs
           </Badge>
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🎛️ Full Customization
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             📴 Works Offline
           </Badge>
         </div>
@@ -65,12 +65,12 @@ export default function ShakespeareLocalAIModel() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="border-green-200 dark:border-green-800">
+          <Card className="border-green-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-green-700 dark:text-green-300">
+              <h3 className="text-xl font-bold mb-4 text-green-700">
                 🔒 Complete Privacy
               </h3>
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li>• No data ever leaves your machine</li>
                 <li>• Perfect for sensitive business projects</li>
                 <li>• Full control over your intellectual property</li>
@@ -79,12 +79,12 @@ export default function ShakespeareLocalAIModel() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+              <h3 className="text-xl font-bold mb-4 text-blue-700">
                 💰 Zero Ongoing Costs
               </h3>
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li>• Pay once for hardware, use forever</li>
                 <li>• No per-request charges</li>
                 <li>• No monthly subscriptions</li>
@@ -93,12 +93,12 @@ export default function ShakespeareLocalAIModel() {
             </CardContent>
           </Card>
 
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 🎛️ Full Customization
               </h3>
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li>• Fine-tune models for your specific needs</li>
                 <li>• Complete control over model behavior</li>
                 <li>• No rate limits or usage restrictions</li>
@@ -118,7 +118,7 @@ export default function ShakespeareLocalAIModel() {
           <Card className="border-l-4 border-red-500">
             <CardContent className="p-4">
               <div className="flex items-start space-x-4">
-                <div className="bg-red-100 dark:bg-red-900 rounded-full p-2 text-red-600 dark:text-red-400 font-bold text-sm min-w-[4rem] text-center">MIN</div>
+                <div className="bg-red-100 rounded-full p-2 text-red-600 font-bold text-sm min-w-[4rem] text-center">MIN</div>
                 <div>
                   <h4 className="font-semibold mb-1">Minimum</h4>
                   <p className="text-sm text-muted-foreground">8GB RAM, modern CPU</p>
@@ -130,7 +130,7 @@ export default function ShakespeareLocalAIModel() {
           <Card className="border-l-4 border-yellow-500">
             <CardContent className="p-4">
               <div className="flex items-start space-x-4">
-                <div className="bg-yellow-100 dark:bg-yellow-900 rounded-full p-2 text-yellow-600 dark:text-yellow-400 font-bold text-sm min-w-[4rem] text-center">REC</div>
+                <div className="bg-yellow-100 rounded-full p-2 text-yellow-600 font-bold text-sm min-w-[4rem] text-center">REC</div>
                 <div>
                   <h4 className="font-semibold mb-1">Recommended</h4>
                   <p className="text-sm text-muted-foreground">16GB+ RAM, GPU with 8GB+ VRAM</p>
@@ -142,7 +142,7 @@ export default function ShakespeareLocalAIModel() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-4">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[4rem] text-center">OPT</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[4rem] text-center">OPT</div>
                 <div>
                   <h4 className="font-semibold mb-1">Optimal</h4>
                   <p className="text-sm text-muted-foreground">32GB+ RAM, high-end GPU</p>
@@ -157,10 +157,10 @@ export default function ShakespeareLocalAIModel() {
 
       <div className="not-prose my-8">
         <div className="space-y-6">
-          <Card className="border-2 border-gray-200 dark:border-gray-800">
+          <Card className="border-2 border-gray-200">
             <CardContent className="p-6">
               <h4 className="text-lg font-bold mb-4">🍎 macOS Installation</h4>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+              <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
                 <code>{`# Install via Homebrew
 brew install ollama
 
@@ -170,10 +170,10 @@ curl -fsSL https://ollama.ai/install.sh | sh`}</code>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-gray-200 dark:border-gray-800">
+          <Card className="border-2 border-gray-200">
             <CardContent className="p-6">
               <h4 className="text-lg font-bold mb-4">🐧 Linux Installation</h4>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+              <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
                 <code>{`# Install via curl
 curl -fsSL https://ollama.ai/install.sh | sh
 
@@ -184,7 +184,7 @@ sudo pacman -S ollama     # Arch Linux`}</code>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-gray-200 dark:border-gray-800">
+          <Card className="border-2 border-gray-200">
             <CardContent className="p-6">
               <h4 className="text-lg font-bold mb-4">🪟 Windows Installation</h4>
               <ol className="space-y-2 text-sm">
@@ -203,18 +203,18 @@ sudo pacman -S ollama     # Arch Linux`}</code>
 
       <div className="not-prose my-8">
         <div className="space-y-6">
-          <Card className="border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950">
+          <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50">
             <CardContent className="p-6">
-              <h4 className="text-xl font-bold mb-3 text-blue-800 dark:text-blue-200">
+              <h4 className="text-xl font-bold mb-3 text-blue-800">
                 GPT-OSS - OpenAI's Open-Weight Powerhouse
               </h4>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm mb-4">
+              <pre className="bg-gray-100 p-3 rounded text-sm mb-4">
                 <code>ollama pull gpt-oss</code>
               </pre>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <p className="font-semibold text-sm mb-2">Best for:</p>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Powerful reasoning, agentic tasks, versatile developer use cases</p>
+                  <p className="text-sm text-gray-700">Powerful reasoning, agentic tasks, versatile developer use cases</p>
                 </div>
                 <div>
                   <p className="font-semibold text-sm mb-2">Trade-offs:</p>
@@ -225,18 +225,18 @@ sudo pacman -S ollama     # Arch Linux`}</code>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950">
+          <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
             <CardContent className="p-6">
-              <h4 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">
+              <h4 className="text-xl font-bold mb-3 text-purple-800">
                 DeepSeek-R1 - Enterprise-Grade Reasoning
               </h4>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm mb-4">
+              <pre className="bg-gray-100 p-3 rounded text-sm mb-4">
                 <code>ollama pull deepseek-r1</code>
               </pre>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <p className="font-semibold text-sm mb-2">Best for:</p>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Open reasoning with performance approaching O3 and Gemini 2.5 Pro</p>
+                  <p className="text-sm text-gray-700">Open reasoning with performance approaching O3 and Gemini 2.5 Pro</p>
                 </div>
                 <div>
                   <p className="font-semibold text-sm mb-2">Trade-offs:</p>
@@ -247,18 +247,18 @@ sudo pacman -S ollama     # Arch Linux`}</code>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+          <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
             <CardContent className="p-6">
-              <h4 className="text-xl font-bold mb-3 text-green-800 dark:text-green-200">
+              <h4 className="text-xl font-bold mb-3 text-green-800">
                 Gemma 3 - Google's Single-GPU Solution
               </h4>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm mb-4">
+              <pre className="bg-gray-100 p-3 rounded text-sm mb-4">
                 <code>ollama pull gemma3</code>
               </pre>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <p className="font-semibold text-sm mb-2">Best for:</p>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Google's most capable model that runs on a single GPU</p>
+                  <p className="text-sm text-gray-700">Google's most capable model that runs on a single GPU</p>
                 </div>
                 <div>
                   <p className="font-semibold text-sm mb-2">Trade-offs:</p>
@@ -274,7 +274,7 @@ sudo pacman -S ollama     # Arch Linux`}</code>
       <h3>Quick Model Comparison</h3>
 
       <div className="not-prose my-6">
-        <Card className="border border-gray-200 dark:border-gray-800">
+        <Card className="border border-gray-200">
           <CardContent className="p-6">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -323,15 +323,15 @@ sudo pacman -S ollama     # Arch Linux`}</code>
       <h2>Configuring CORS for Browser Access</h2>
 
       <div className="not-prose my-6">
-        <Card className="border-2 border-yellow-200 dark:border-yellow-800 bg-yellow-50 dark:bg-yellow-950">
+        <Card className="border-2 border-yellow-200 bg-yellow-50">
           <CardContent className="p-6">
             <div className="flex items-start space-x-3">
               <div className="text-2xl">⚠️</div>
               <div>
-                <h3 className="text-lg font-bold mb-2 text-yellow-800 dark:text-yellow-200">
+                <h3 className="text-lg font-bold mb-2 text-yellow-800">
                   Important: CORS Configuration Required
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-gray-700">
                   Since Shakespeare runs in your browser, you need to configure Ollama to accept cross-origin requests (CORS). This is a crucial step that allows Shakespeare to communicate with your local Ollama instance.
                 </p>
               </div>
@@ -344,8 +344,8 @@ sudo pacman -S ollama     # Arch Linux`}</code>
 
       <p>First, verify if CORS is already enabled:</p>
 
-      <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-        <code className="text-gray-900 dark:text-gray-100">curl -X OPTIONS http://localhost:11434 -H "Origin: http://example.com" -H "Access-Control-Request-Method: GET" -I</code>
+      <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+        <code className="text-gray-900">curl -X OPTIONS http://localhost:11434 -H "Origin: http://example.com" -H "Access-Control-Request-Method: GET" -I</code>
       </pre>
 
       <p>If you see <code>HTTP/1.1 403 Forbidden</code>, CORS is not enabled and needs configuration.</p>
@@ -354,11 +354,11 @@ sudo pacman -S ollama     # Arch Linux`}</code>
 
       <div className="not-prose my-8">
         <div className="space-y-6">
-          <Card className="border-gray-200 dark:border-gray-800">
+          <Card className="border-gray-200">
             <CardContent className="p-6">
               <h4 className="text-lg font-bold mb-4">🍎 Enabling CORS on macOS</h4>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto mb-4">
-                <code className="text-gray-900 dark:text-gray-100">{`# Allow all origins (easiest for local development)
+              <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto mb-4">
+                <code className="text-gray-900">{`# Allow all origins (easiest for local development)
 launchctl setenv OLLAMA_ORIGINS "*"
 
 # Or specify specific origins for better security
@@ -372,27 +372,27 @@ launchctl setenv OLLAMA_HOST "0.0.0.0"
             </CardContent>
           </Card>
 
-          <Card className="border-gray-200 dark:border-gray-800">
+          <Card className="border-gray-200">
             <CardContent className="p-6">
               <h4 className="text-lg font-bold mb-4">🐧 Enabling CORS on Linux</h4>
               <p className="text-sm mb-3">Edit the Ollama service configuration:</p>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto mb-4">
-                <code className="text-gray-900 dark:text-gray-100">sudo systemctl edit ollama.service</code>
+              <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto mb-4">
+                <code className="text-gray-900">sudo systemctl edit ollama.service</code>
               </pre>
               <p className="text-sm mb-3">Add these environment variables:</p>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto mb-4">
-                <code className="text-gray-900 dark:text-gray-100">{`[Service]
+              <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto mb-4">
+                <code className="text-gray-900">{`[Service]
 Environment="OLLAMA_HOST=0.0.0.0"
 Environment="OLLAMA_ORIGINS=*"`}</code>
               </pre>
               <p className="text-sm mb-3">Then restart the service:</p>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-                <code className="text-gray-900 dark:text-gray-100">sudo service ollama restart</code>
+              <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                <code className="text-gray-900">sudo service ollama restart</code>
               </pre>
             </CardContent>
           </Card>
 
-          <Card className="border-gray-200 dark:border-gray-800">
+          <Card className="border-gray-200">
             <CardContent className="p-6">
               <h4 className="text-lg font-bold mb-4">🪟 Enabling CORS on Windows</h4>
               <ol className="space-y-2 text-sm">
@@ -411,14 +411,14 @@ Environment="OLLAMA_ORIGINS=*"`}</code>
 
       <p>After configuration, test again:</p>
 
-      <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-        <code className="text-gray-900 dark:text-gray-100">curl -X OPTIONS http://localhost:11434 -H "Origin: http://example.com" -H "Access-Control-Request-Method: GET" -I</code>
+      <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+        <code className="text-gray-900">curl -X OPTIONS http://localhost:11434 -H "Origin: http://example.com" -H "Access-Control-Request-Method: GET" -I</code>
       </pre>
 
       <p>Success looks like:</p>
 
-      <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-        <code className="text-gray-900 dark:text-gray-100">{`HTTP/1.1 204 No Content
+      <pre className="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+        <code className="text-gray-900">{`HTTP/1.1 204 No Content
 Access-Control-Allow-Origin: *`}</code>
       </pre>
 
@@ -429,11 +429,11 @@ Access-Control-Allow-Origin: *`}</code>
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">1</div>
+                <div className="bg-blue-100 rounded-full p-2 text-blue-600 font-bold text-sm min-w-[2rem] text-center">1</div>
                 <div>
                   <h4 className="font-semibold mb-2">Start Ollama Service</h4>
-                  <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm">
-                    <code className="text-gray-900 dark:text-gray-100">{`# Start Ollama server (with CORS already configured)
+                  <pre className="bg-gray-100 p-3 rounded text-sm">
+                    <code className="text-gray-900">{`# Start Ollama server (with CORS already configured)
 ollama serve
 
 # The service will run on http://localhost:11434`}</code>
@@ -446,11 +446,11 @@ ollama serve
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">2</div>
+                <div className="bg-purple-100 rounded-full p-2 text-purple-600 font-bold text-sm min-w-[2rem] text-center">2</div>
                 <div>
                   <h4 className="font-semibold mb-2">Test Your Model</h4>
-                  <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm">
-                    <code className="text-gray-900 dark:text-gray-100">ollama run gpt-oss "Write a simple HTML page with a header"</code>
+                  <pre className="bg-gray-100 p-3 rounded text-sm">
+                    <code className="text-gray-900">ollama run gpt-oss "Write a simple HTML page with a header"</code>
                   </pre>
                 </div>
               </div>
@@ -460,7 +460,7 @@ ollama serve
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">3</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[2rem] text-center">3</div>
                 <div>
                   <h4 className="font-semibold mb-2">Configure in Shakespeare</h4>
                   <ol className="space-y-2 text-sm">
@@ -481,7 +481,7 @@ ollama serve
       <h2>The Bottom Line</h2>
 
       <div className="not-prose my-8">
-        <Card className="border-2 border-purple-200 dark:border-purple-800">
+        <Card className="border-2 border-purple-200">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
               🚀 Local Models with Shakespeare Provide
@@ -516,7 +516,7 @@ ollama serve
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

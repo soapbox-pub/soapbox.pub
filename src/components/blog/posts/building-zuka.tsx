@@ -146,13 +146,13 @@ export default function BuildingZuka() {
       <p>Her ask was as simple as it gets:</p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "You can't speak in Rwanda without being silenced or killed. I
               want an AI influencer that can't be killed or shut down."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">
+            <p className="font-semibold text-orange-700">
               — Anaïse Kanimba
             </p>
           </CardContent>
@@ -172,7 +172,7 @@ export default function BuildingZuka() {
         <Card className="border-l-4 border-red-500">
           <CardContent className="p-6 space-y-4">
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">
+              <p className="font-semibold text-red-700">
                 Physical violence.
               </p>
               <p className="text-sm text-muted-foreground">
@@ -180,7 +180,7 @@ export default function BuildingZuka() {
               </p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">
+              <p className="font-semibold text-red-700">
                 Platform takedowns.
               </p>
               <p className="text-sm text-muted-foreground">
@@ -188,7 +188,7 @@ export default function BuildingZuka() {
               </p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">
+              <p className="font-semibold text-red-700">
                 Domain seizures.
               </p>
               <p className="text-sm text-muted-foreground">
@@ -196,7 +196,7 @@ export default function BuildingZuka() {
               </p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">
+              <p className="font-semibold text-red-700">
                 Bank account freezes.
               </p>
               <p className="text-sm text-muted-foreground">
@@ -204,7 +204,7 @@ export default function BuildingZuka() {
               </p>
             </div>
             <div>
-              <p className="font-semibold text-red-700 dark:text-red-400">
+              <p className="font-semibold text-red-700">
                 Identity exposure.
               </p>
               <p className="text-sm text-muted-foreground">
@@ -488,7 +488,7 @@ export default function BuildingZuka() {
       <p>We built it in a weekend. We're just getting started.</p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-orange-300 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30">
+        <Card className="border-dashed border-2 border-orange-300 bg-gradient-to-br from-orange-50 to-red-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-2">🗣️</div>
             <div className="text-2xl font-bold mb-3">

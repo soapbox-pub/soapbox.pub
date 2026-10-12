@@ -53,9 +53,9 @@ export default function ShakespeareDeployingSharingProjects() {
 
       {/* Table of Contents */}
       <div className="not-prose mb-12">
-        <Card className="border-gray-200 dark:border-gray-800">
+        <Card className="border-gray-200">
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Table of Contents</h2>
+            <h2 className="text-xl font-bold mb-4 text-gray-900">Table of Contents</h2>
             <nav className="space-y-2">
               <a href="#deploy-shakespeare" className="block text-blue-600 hover:underline">1. Deploy with Shakespeare</a>
               <a href="#deploy-nsite" className="block text-blue-600 hover:underline">2. Deploy with Nsite</a>
@@ -72,15 +72,15 @@ export default function ShakespeareDeployingSharingProjects() {
       <div className="not-prose mb-12">
 
         {/* Method 1: Deploy with Shakespeare */}
-        <Card id="deploy-shakespeare" className="mb-8 border-blue-200 dark:border-blue-800">
+        <Card id="deploy-shakespeare" className="mb-8 border-blue-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Rocket className="h-8 w-8 text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 1. Deploying with Shakespeare
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Deploy to shakespeare.wtf subdomain - free, easy, one-click deployment with custom subdomains on a first-come, first-served basis. No custom DNS required.
             </p>
 
@@ -88,7 +88,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div>
                 <div className="flex items-start gap-3 mb-4">
                   <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Step 1</Badge>
-                  <p className="text-gray-600 dark:text-gray-400">Click menu on the project preview pane → Deploy</p>
+                  <p className="text-gray-600">Click menu on the project preview pane → Deploy</p>
                 </div>
 
                 <div className="mb-6">
@@ -103,7 +103,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div>
                 <div className="flex items-start gap-3 mb-4">
                   <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-300 mt-1">Step 2</Badge>
-                  <p className="text-gray-600 dark:text-gray-400">Select your custom subdomain</p>
+                  <p className="text-gray-600">Select your custom subdomain</p>
                 </div>
 
                 <div className="mb-6">
@@ -116,11 +116,11 @@ export default function ShakespeareDeployingSharingProjects() {
               </div>
             </div>
 
-            <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
-              <p className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <p className="font-semibold text-blue-900 mb-2">
                 ✨ Benefits of Shakespeare deployment:
               </p>
-              <ul className="text-blue-800 dark:text-blue-200 space-y-1">
+              <ul className="text-blue-800 space-y-1">
                 <li>• Free hosting on shakespeare.wtf subdomain</li>
                 <li>• One-click deployment</li>
                 <li>• Custom subdomains (first-come, first-served)</li>
@@ -132,15 +132,15 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card>
 
         {/* Method 2: Deploy with Nsite */}
-        <Card id="deploy-nsite" className="mb-8 border-violet-200 dark:border-violet-800">
+        <Card id="deploy-nsite" className="mb-8 border-violet-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="h-8 w-8 text-violet-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 2. Deploy with Nsite
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Deploy your static website to Nostr blossom servers. Nsite allows you to host websites on the decentralized Nostr network, tied to your npub (Nostr public key).
             </p>
 
@@ -148,7 +148,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">1</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Build your project in Shakespeare and download the static files
                   </p>
                 </div>
@@ -156,7 +156,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">2</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Visit <a href="https://nsite.lol" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">nsite.lol</a> and connect your Nostr account
                   </p>
                 </div>
@@ -164,7 +164,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">3</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Upload your static website files to publish on Nostr blossom servers
                   </p>
                 </div>
@@ -172,18 +172,18 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-violet-100 text-violet-800 border-violet-300 mt-1">4</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Your site becomes accessible via your npub - visitors can enter your npub to view your published website
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-violet-50 dark:bg-violet-950 border border-violet-200 dark:border-violet-800 rounded-lg p-6">
-              <p className="font-semibold text-violet-900 dark:text-violet-100 mb-2">
+            <div className="bg-violet-50 border border-violet-200 rounded-lg p-6">
+              <p className="font-semibold text-violet-900 mb-2">
                 🌐 Nsite benefits:
               </p>
-              <ul className="text-violet-800 dark:text-violet-200 space-y-1">
+              <ul className="text-violet-800 space-y-1">
                 <li>• Decentralized hosting on Nostr network</li>
                 <li>• Website tied to your npub identity</li>
                 <li>• Censorship-resistant hosting</li>
@@ -196,15 +196,15 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card>
 
         {/* Method 3: Deploy with Netlify */}
-        <Card id="deploy-netlify" className="mb-8 border-teal-200 dark:border-teal-800">
+        <Card id="deploy-netlify" className="mb-8 border-teal-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="h-8 w-8 text-teal-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 3. Deploy with Netlify
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Deploy your project to Netlify for professional hosting with custom domains and advanced features.
             </p>
 
@@ -212,7 +212,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-teal-100 text-teal-800 border-teal-300 mt-1">1</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Have an account on Netlify at <a href="https://netlify.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">netlify.com</a>
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-teal-100 text-teal-800 border-teal-300 mt-1">2</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     In Shakespeare, go to Settings → Deployment and add Netlify, then connect your account
                   </p>
                 </div>
@@ -228,18 +228,18 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-teal-100 text-teal-800 border-teal-300 mt-1">3</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Click "Deploy" and choose Netlify from the dropdown to deploy your project
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 rounded-lg p-6">
-              <p className="font-semibold text-teal-900 dark:text-teal-100 mb-2">
+            <div className="bg-teal-50 border border-teal-200 rounded-lg p-6">
+              <p className="font-semibold text-teal-900 mb-2">
                 🌐 Netlify benefits:
               </p>
-              <ul className="text-teal-800 dark:text-teal-200 space-y-1">
+              <ul className="text-teal-800 space-y-1">
                 <li>• Global CDN for fast loading</li>
                 <li>• Custom domain support</li>
                 <li>• Automatic HTTPS</li>
@@ -251,15 +251,15 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card>
 
         {/* Method 3: Deploy with Vercel */}
-        {/* <Card id="deploy-vercel" className="mb-8 border-purple-200 dark:border-purple-800">
+        {/* <Card id="deploy-vercel" className="mb-8 border-purple-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="h-8 w-8 text-purple-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 4. Deploy with Vercel
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Deploy your project to Vercel for edge-optimized hosting with excellent performance and developer experience.
             </p>
 
@@ -267,7 +267,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">1</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Have an account on Vercel at <a href="https://vercel.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">2</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     In Shakespeare, go to Settings → Deployment and add Vercel, then connect your account
                   </p>
                 </div>
@@ -283,18 +283,18 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-800 border-purple-300 mt-1">3</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Click "Deploy" and choose Vercel from the dropdown to deploy your project
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-purple-50 dark:bg-purple-950 border border-purple-200 dark:border-purple-800 rounded-lg p-6">
-              <p className="font-semibold text-purple-900 dark:text-purple-100 mb-2">
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+              <p className="font-semibold text-purple-900 mb-2">
                 ⚡ Vercel benefits:
               </p>
-              <ul className="text-purple-800 dark:text-purple-200 space-y-1">
+              <ul className="text-purple-800 space-y-1">
                 <li>• Edge network for optimal performance</li>
                 <li>• Custom domain support</li>
                 <li>• Automatic HTTPS</li>
@@ -307,15 +307,15 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card> */}
 
         {/* Method 4: Deploy with GitHub Pages */}
-        <Card id="deploy-github" className="mb-8 border-slate-200 dark:border-slate-800">
+        <Card id="deploy-github" className="mb-8 border-slate-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Github className="h-8 w-8 text-slate-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 4. Deploy with GitHub Pages
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Free hosting for public repositories with GitHub Pages.
             </p>
 
@@ -323,7 +323,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-slate-100 text-slate-800 border-slate-300 mt-1">1</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Connect your repo to GitHub (see the <a href="/blog/shakespeare-git-guide" className="text-blue-600 hover:underline">version control resource blog</a>)
                   </p>
                 </div>
@@ -331,7 +331,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-slate-100 text-slate-800 border-slate-300 mt-1">2</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Follow these instructions for setting up GitHub Pages:
                   </p>
                   <a
@@ -347,11 +347,11 @@ export default function ShakespeareDeployingSharingProjects() {
               </div>
             </div>
 
-            <div className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-6">
-              <p className="font-semibold text-slate-900 dark:text-slate-100 mb-2">
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
+              <p className="font-semibold text-slate-900 mb-2">
                 💡 GitHub Pages benefits:
               </p>
-              <ul className="text-slate-800 dark:text-slate-200 space-y-1">
+              <ul className="text-slate-800 space-y-1">
                 <li>• Free for public repositories</li>
                 <li>• Custom domain support</li>
                 <li>• Automatic HTTPS</li>
@@ -362,15 +362,15 @@ export default function ShakespeareDeployingSharingProjects() {
         </Card>
 
         {/* Method 5: Deploy with GitLab Pages */}
-        <Card id="deploy-gitlab" className="mb-8 border-orange-200 dark:border-orange-800">
+        <Card id="deploy-gitlab" className="mb-8 border-orange-200">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Gitlab className="h-8 w-8 text-orange-600" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900">
                 5. Deploy with GitLab Pages
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Free hosting with GitLab Pages for any repository.
             </p>
 
@@ -378,7 +378,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">1</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Connect your repo to GitLab (see the <a href="/blog/shakespeare-git-guide" className="text-blue-600 hover:underline">version control resource blog</a>)
                   </p>
                 </div>
@@ -386,7 +386,7 @@ export default function ShakespeareDeployingSharingProjects() {
               <div className="flex items-start gap-3">
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800 border-orange-300 mt-1">2</Badge>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Follow these instructions for setting up GitLab Pages:
                   </p>
                   <a
@@ -402,11 +402,11 @@ export default function ShakespeareDeployingSharingProjects() {
               </div>
             </div>
 
-            <div className="bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 rounded-lg p-6">
-              <p className="font-semibold text-orange-900 dark:text-orange-100 mb-2">
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+              <p className="font-semibold text-orange-900 mb-2">
                 🦊 GitLab Pages benefits:
               </p>
-              <ul className="text-orange-800 dark:text-orange-200 space-y-1">
+              <ul className="text-orange-800 space-y-1">
                 <li>• Free for all repositories (public and private)</li>
                 <li>• Custom domain support</li>
                 <li>• Built-in CI/CD integration</li>
@@ -418,7 +418,7 @@ export default function ShakespeareDeployingSharingProjects() {
       </div>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

@@ -41,16 +41,16 @@ export default function UnderstandingNostrServiceProviders() {
     <article className="prose prose-lg max-w-none">
       <div className="not-prose mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
             🔧 NSPs
           </Badge>
-          <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+          <Badge variant="secondary" className="bg-purple-100 text-purple-800">
             🤖 AI Services
           </Badge>
-          <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
             🗽 Decentralized
           </Badge>
-          <Badge variant="secondary" className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-800">
             🛠️ Developer Guide
           </Badge>
         </div>
@@ -62,9 +62,9 @@ export default function UnderstandingNostrServiceProviders() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">
+              <h3 className="text-xl font-bold mb-4 text-purple-700">
                 🎭 Try Shakespeare with NSPs
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -81,9 +81,9 @@ export default function UnderstandingNostrServiceProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+              <h3 className="text-xl font-bold mb-4 text-blue-700">
                 📚 Read Shakespeare Announcement
               </h3>
               <p className="text-muted-foreground mb-4">
@@ -92,7 +92,7 @@ export default function UnderstandingNostrServiceProviders() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
+                className="w-full border-blue-200 text-blue-700 hover:bg-blue-50"
               >
                 <a href="/blog/announcing-shakespeare">
                   Read Announcement →
@@ -117,9 +117,9 @@ export default function UnderstandingNostrServiceProviders() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-red-200 dark:border-red-800">
+          <Card className="border-red-200">
             <CardContent className="p-6">
-              <h4 className="font-semibold mb-3 text-red-700 dark:text-red-300">❌ Traditional AI Services</h4>
+              <h4 className="font-semibold mb-3 text-red-700">❌ Traditional AI Services</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Centralized control by single companies</li>
                 <li>• Platform lock-in and vendor dependency</li>
@@ -131,9 +131,9 @@ export default function UnderstandingNostrServiceProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 dark:border-green-800">
+          <Card className="border-green-200">
             <CardContent className="p-6">
-              <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">✅ Nostr Service Providers</h4>
+              <h4 className="font-semibold mb-3 text-green-700">✅ Nostr Service Providers</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Decentralized network of competing providers</li>
                 <li>• Freedom to switch between providers</li>
@@ -160,7 +160,7 @@ export default function UnderstandingNostrServiceProviders() {
           <Card className="border-l-4 border-blue-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2 text-blue-600 dark:text-blue-400 font-bold text-sm min-w-[2rem] text-center">🤖</div>
+                <div className="bg-blue-100 rounded-full p-2 text-blue-600 font-bold text-sm min-w-[2rem] text-center">🤖</div>
                 <div>
                   <h3 className="font-semibold mb-2">AI Model and Capabilities</h3>
                   <p className="text-sm text-muted-foreground">
@@ -174,7 +174,7 @@ export default function UnderstandingNostrServiceProviders() {
           <Card className="border-l-4 border-green-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 dark:bg-green-900 rounded-full p-2 text-green-600 dark:text-green-400 font-bold text-sm min-w-[2rem] text-center">💰</div>
+                <div className="bg-green-100 rounded-full p-2 text-green-600 font-bold text-sm min-w-[2rem] text-center">💰</div>
                 <div>
                   <h3 className="font-semibold mb-2">Pricing Model</h3>
                   <p className="text-sm text-muted-foreground">
@@ -188,7 +188,7 @@ export default function UnderstandingNostrServiceProviders() {
           <Card className="border-l-4 border-purple-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-2 text-purple-600 dark:text-purple-400 font-bold text-sm min-w-[2rem] text-center">🛠️</div>
+                <div className="bg-purple-100 rounded-full p-2 text-purple-600 font-bold text-sm min-w-[2rem] text-center">🛠️</div>
                 <div>
                   <h3 className="font-semibold mb-2">Available Tools and Frameworks</h3>
                   <p className="text-sm text-muted-foreground">
@@ -202,7 +202,7 @@ export default function UnderstandingNostrServiceProviders() {
           <Card className="border-l-4 border-orange-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-orange-100 dark:bg-orange-900 rounded-full p-2 text-orange-600 dark:text-orange-400 font-bold text-sm min-w-[2rem] text-center">⚡</div>
+                <div className="bg-orange-100 rounded-full p-2 text-orange-600 font-bold text-sm min-w-[2rem] text-center">⚡</div>
                 <div>
                   <h3 className="font-semibold mb-2">Performance and Reliability</h3>
                   <p className="text-sm text-muted-foreground">
@@ -216,7 +216,7 @@ export default function UnderstandingNostrServiceProviders() {
           <Card className="border-l-4 border-red-500">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-red-100 dark:bg-red-900 rounded-full p-2 text-red-600 dark:text-red-400 font-bold text-sm min-w-[2rem] text-center">🌍</div>
+                <div className="bg-red-100 rounded-full p-2 text-red-600 font-bold text-sm min-w-[2rem] text-center">🌍</div>
                 <div>
                   <h3 className="font-semibold mb-2">Geographic Location and Compliance</h3>
                   <p className="text-sm text-muted-foreground">
@@ -233,11 +233,11 @@ export default function UnderstandingNostrServiceProviders() {
 
       <div className="not-prose my-8">
         <div className="space-y-4">
-          <Card className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 border-purple-200 dark:border-purple-800">
+          <Card className="bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <h4 className="font-semibold mb-2 text-purple-700 dark:text-purple-300">🚀 MKStack NSP (Recommended)</h4>
+                  <h4 className="font-semibold mb-2 text-purple-700">🚀 MKStack NSP (Recommended)</h4>
                   <p className="text-sm text-muted-foreground mb-3">
                     The flagship NSP that brings the full power of the <a href="/tools/mkstack" className="text-blue-600 hover:underline">MKStack framework</a> to Shakespeare. Offers comprehensive Nostr development capabilities with 50+ NIPs, React components, TypeScript support, and instant deployment.
                   </p>
@@ -251,11 +251,11 @@ export default function UnderstandingNostrServiceProviders() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800">
+          <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <h4 className="font-semibold mb-2 text-green-700 dark:text-green-300">🆓 Free Gemini Flash NSP</h4>
+                  <h4 className="font-semibold mb-2 text-green-700">🆓 Free Gemini Flash NSP</h4>
                   <p className="text-sm text-muted-foreground mb-3">
                     Currently offered for free during Shakespeare's beta period. Powered by Google's Gemini Flash model, perfect for trying out Shakespeare without adding credits.
                   </p>
@@ -272,9 +272,9 @@ export default function UnderstandingNostrServiceProviders() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-blue-200 dark:border-blue-800">
+        <Card className="border-dashed border-2 border-blue-200">
           <CardContent className="p-6 text-center">
-            <h3 className="text-lg font-semibold mb-3 text-blue-700 dark:text-blue-300">
+            <h3 className="text-lg font-semibold mb-3 text-blue-700">
               🔍 Discover More NSPs
             </h3>
             <p className="text-muted-foreground mb-4">
@@ -310,9 +310,9 @@ export default function UnderstandingNostrServiceProviders() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-green-200 dark:border-green-800">
+          <Card className="border-green-200">
             <CardContent className="p-6">
-              <h4 className="font-semibold mb-3 text-green-700 dark:text-green-300">💼 Business Opportunities</h4>
+              <h4 className="font-semibold mb-3 text-green-700">💼 Business Opportunities</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Generate revenue from AI services</li>
                 <li>• Build a sustainable SaaS business</li>
@@ -322,9 +322,9 @@ export default function UnderstandingNostrServiceProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6">
-              <h4 className="font-semibold mb-3 text-blue-700 dark:text-blue-300">🚀 Technical Innovation</h4>
+              <h4 className="font-semibold mb-3 text-blue-700">🚀 Technical Innovation</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Experiment with cutting-edge AI models</li>
                 <li>• Create specialized development tools</li>
@@ -343,9 +343,9 @@ export default function UnderstandingNostrServiceProviders() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800">
+        <Card className="border-purple-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-purple-700 dark:text-purple-300">🛠️ Core Technologies</h4>
+            <h4 className="font-semibold mb-3 text-purple-700">🛠️ Core Technologies</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div>
                 <h5 className="font-medium mb-2">Required Skills:</h5>
@@ -379,9 +379,9 @@ export default function UnderstandingNostrServiceProviders() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800">
+        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-blue-900 dark:text-blue-100">📚 MKStack NSP Resources</h4>
+            <h4 className="font-semibold mb-3 text-blue-900">📚 MKStack NSP Resources</h4>
             <p className="text-sm text-muted-foreground mb-4">
               Access the complete source code, documentation, and protocol specification for building your own NSP.
             </p>
@@ -398,7 +398,7 @@ export default function UnderstandingNostrServiceProviders() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
+                  className="border-blue-200 text-blue-700 hover:bg-blue-50"
                 >
                   <a href="/tools/mkstack" rel="noopener noreferrer">
                     🛠️ Explore MKStack Framework
@@ -407,7 +407,7 @@ export default function UnderstandingNostrServiceProviders() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-blue-200 text-blue-700 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-300"
+                  className="border-blue-200 text-blue-700 hover:bg-blue-50"
                 >
                   <a href="/showcase" rel="noopener noreferrer">
                     🎨 View Example Projects
@@ -427,54 +427,54 @@ export default function UnderstandingNostrServiceProviders() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-purple-700 dark:text-purple-300">🎨 Design-Focused NSP</h4>
+              <h4 className="font-semibold mb-2 text-purple-700">🎨 Design-Focused NSP</h4>
               <p className="text-sm text-muted-foreground">
                 Specialize in creating beautiful, designer-quality websites with advanced styling capabilities and design system integration.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 dark:border-green-800">
+          <Card className="border-green-200">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-green-700 dark:text-green-300">🛒 E-commerce NSP</h4>
+              <h4 className="font-semibold mb-2 text-green-700">🛒 E-commerce NSP</h4>
               <p className="text-sm text-muted-foreground">
                 Focus on building online stores with payment integration, inventory management, and e-commerce best practices.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-blue-700 dark:text-blue-300">📱 Mobile-First NSP</h4>
+              <h4 className="font-semibold mb-2 text-blue-700">📱 Mobile-First NSP</h4>
               <p className="text-sm text-muted-foreground">
                 Specialize in creating mobile-optimized applications with PWA capabilities and mobile-specific features.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 dark:border-orange-800">
+          <Card className="border-orange-200">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-orange-700 dark:text-orange-300">🎮 Gaming NSP</h4>
+              <h4 className="font-semibold mb-2 text-orange-700">🎮 Gaming NSP</h4>
               <p className="text-sm text-muted-foreground">
                 Build browser-based games and interactive experiences with game engines and specialized gaming frameworks.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-red-200 dark:border-red-800">
+          <Card className="border-red-200">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-red-700 dark:text-red-300">📊 Data Visualization NSP</h4>
+              <h4 className="font-semibold mb-2 text-red-700">📊 Data Visualization NSP</h4>
               <p className="text-sm text-muted-foreground">
                 Focus on creating dashboards, analytics tools, and data-driven applications with advanced charting libraries.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-indigo-200 dark:border-indigo-800">
+          <Card className="border-indigo-200">
             <CardContent className="p-4">
-              <h4 className="font-semibold mb-2 text-indigo-700 dark:text-indigo-300">🌍 Multi-Language NSP</h4>
+              <h4 className="font-semibold mb-2 text-indigo-700">🌍 Multi-Language NSP</h4>
               <p className="text-sm text-muted-foreground">
                 Specialize in internationalization with support for multiple languages, RTL layouts, and localization features.
               </p>
@@ -498,7 +498,7 @@ export default function UnderstandingNostrServiceProviders() {
       </ul>
 
       <div className="not-prose my-8">
-        <Card className="border-dashed border-2 border-gray-200 dark:border-gray-800">
+        <Card className="border-dashed border-2 border-gray-200">
           <CardContent className="p-6">
             <h4 className="font-semibold mb-3">📋 Protocol Specification</h4>
             <p className="text-sm text-muted-foreground mb-4">
@@ -578,7 +578,7 @@ export default function UnderstandingNostrServiceProviders() {
       </ul>
 
       <div className="not-prose my-8">
-        <Card className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 border-purple-200 dark:border-purple-800">
+        <Card className="bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               🌟 Join the NSP Revolution
@@ -600,7 +600,7 @@ export default function UnderstandingNostrServiceProviders() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+                className="border-purple-200 text-purple-700 hover:bg-purple-50"
               >
                 <a href="https://gitlab.com/soapbox-pub/mkstack-nsp" target="_blank" rel="noopener noreferrer">
                   🛠️ Build Your NSP
@@ -619,9 +619,9 @@ export default function UnderstandingNostrServiceProviders() {
 
       <div className="not-prose my-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 dark:border-purple-800">
+          <Card className="border-purple-200">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3 text-purple-700 dark:text-purple-300">
+              <h3 className="text-lg font-semibold mb-3 text-purple-700">
                 👤 For Users
               </h3>
               <ol className="text-sm space-y-2 text-muted-foreground">
@@ -634,9 +634,9 @@ export default function UnderstandingNostrServiceProviders() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 dark:border-blue-800">
+          <Card className="border-blue-200">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3 text-blue-700 dark:text-blue-300">
+              <h3 className="text-lg font-semibold mb-3 text-blue-700">
                 👨‍💻 For Developers
               </h3>
               <ol className="text-sm space-y-2 text-muted-foreground">

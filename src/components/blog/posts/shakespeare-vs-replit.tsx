@@ -87,15 +87,15 @@ export default function ShakespeareVsReplit() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <GitBranch className="h-6 w-6 text-blue-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 GitLab: An Alternative to GitHub
               </h3>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 m-0">
+            <p className="text-gray-700 m-0">
               As an added bonus, we allow you to use GitLab rather than give you GitHub as your only option. Most builders give you GitHub for syncing your projects, very few give you GitLab as an option. While GitHub has long been the industry standard for version control and collaboration, some have expressed concerns about Microsoft's acquisition of it and how the GitHub CEO stepped down as the organization became more folded into the Big Tech company. If you share this concern, GitLab would be a great choice for you.
             </p>
           </CardContent>
@@ -111,7 +111,7 @@ export default function ShakespeareVsReplit() {
         Never forget that Replit can, and will, ban you. That's something Shakespeare won't do and none of our tools at Soapbox will do that to you. So while you may own your code in Replit, you may lose access to it at a moment's notice.
       </p>
 
-      <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300 bg-red-50 dark:bg-red-950/30 py-4 rounded-r-lg">
+      <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-700 bg-red-50 py-4 rounded-r-lg">
         "A ban from Replit means you cannot log into your account and all Replit App will have been deleted."
         <footer className="text-sm mt-2 not-italic text-muted-foreground">— Replit Policy</footer>
       </blockquote>
@@ -139,15 +139,15 @@ export default function ShakespeareVsReplit() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-orange-200 dark:border-orange-800">
+        <Card className="border-orange-200">
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <XCircle className="h-5 w-5 text-red-500" />
                   Replit
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -163,11 +163,11 @@ export default function ShakespeareVsReplit() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   Shakespeare
                 </h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     Card payments
@@ -229,11 +229,11 @@ export default function ShakespeareVsReplit() {
       </h2>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="h-6 w-6 text-green-600" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">
+              <h3 className="text-xl font-bold text-gray-900 m-0">
                 Shakespeare Deployment Options
               </h3>
             </div>
@@ -274,7 +274,7 @@ export default function ShakespeareVsReplit() {
         Replit can't come close to Shakespeare in privacy. Replit collects your location and device information and much more as evidenced in its Privacy Policy.
       </p>
 
-      <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-700 dark:text-gray-300 bg-red-50 dark:bg-red-950/30 py-4 rounded-r-lg">
+      <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-700 bg-red-50 py-4 rounded-r-lg">
         "Content published in public Apps may be used by Replit for improving the Service, including but not limited to developing or training large language models, both during and after the term of this agreement."
         <footer className="text-sm mt-2 not-italic text-muted-foreground">— Replit Terms of Service</footer>
       </blockquote>
@@ -322,7 +322,7 @@ export default function ShakespeareVsReplit() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950">
+        <Card className="border-dashed border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
           <CardContent className="p-8 text-center">
             <div className="flex justify-center mb-4">
               <Zap className="h-12 w-12 text-purple-600" />

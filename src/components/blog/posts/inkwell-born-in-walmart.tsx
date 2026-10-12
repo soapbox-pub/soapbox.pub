@@ -67,7 +67,7 @@ export default function InkwellBornInWalmart() {
       <div className="not-prose my-8">
         <Card className="border-l-4 border-purple-500">
           <CardContent className="p-6">
-            <p className="text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded italic">
+            <p className="text-sm bg-gray-100 p-4 rounded italic">
               "I want a simple and elegant writing app to publish blogs on Nostr. Nothing else, just writing."
             </p>
           </CardContent>
@@ -87,12 +87,12 @@ export default function InkwellBornInWalmart() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950">
+        <Card className="border-green-200 bg-green-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200">
+            <h4 className="font-semibold mb-3 text-green-800">
               The Result: Inkwell
             </h4>
-            <p className="text-green-700 dark:text-green-300 text-sm mb-4">
+            <p className="text-green-700 text-sm mb-4">
               A simple, elegant markdown editor that publishes directly to Nostr. No accounts to create. No platforms to trust. Just write and publish.
             </p>
             <Button asChild variant="outline" className="border-green-600 text-green-700 hover:bg-green-100">
@@ -177,19 +177,19 @@ export default function InkwellBornInWalmart() {
 
       <div className="not-prose my-8">
         <div className="grid md:grid-cols-3 gap-4">
-          <Card className="border-gray-200 dark:border-gray-800">
+          <Card className="border-gray-200">
             <CardContent className="p-6 text-center">
               <div className="text-3xl mb-2">$3</div>
               <p className="text-sm text-muted-foreground">Total cost to build</p>
             </CardContent>
           </Card>
-          <Card className="border-gray-200 dark:border-gray-800">
+          <Card className="border-gray-200">
             <CardContent className="p-6 text-center">
               <div className="text-3xl mb-2">~1 hr</div>
               <p className="text-sm text-muted-foreground">Build time</p>
             </CardContent>
           </Card>
-          <Card className="border-gray-200 dark:border-gray-800">
+          <Card className="border-gray-200">
             <CardContent className="p-6 text-center">
               <div className="text-3xl mb-2">0</div>
               <p className="text-sm text-muted-foreground">Lines of code I wrote</p>
@@ -221,12 +221,12 @@ export default function InkwellBornInWalmart() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-950">
+        <Card className="border-purple-200 bg-purple-50">
           <CardContent className="p-6">
-            <h4 className="font-semibold mb-3 text-purple-800 dark:text-purple-200">
+            <h4 className="font-semibold mb-3 text-purple-800">
               Prompting Tip
             </h4>
-            <p className="text-purple-700 dark:text-purple-300 text-sm">
+            <p className="text-purple-700 text-sm">
               Start with the simplest possible version of what you need. You can always add features later. A working simple tool beats a broken complex one every time.
             </p>
           </CardContent>
@@ -248,7 +248,7 @@ export default function InkwellBornInWalmart() {
       </p>
 
       <div className="not-prose my-12">
-        <Card className="border-dashed border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
+        <Card className="border-dashed border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-purple-50">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">Write beautifully. Publish freely.</div>
             <p className="text-muted-foreground mb-6">

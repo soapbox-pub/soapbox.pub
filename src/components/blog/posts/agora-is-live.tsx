@@ -233,7 +233,7 @@ export default function AgoraIsLive() {
       </p>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-orange-500 bg-orange-50/50 dark:bg-orange-950/20">
+        <Card className="border-l-4 border-orange-500 bg-orange-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "I was kidnapped by the state, you don't need to explain privacy
@@ -243,7 +243,7 @@ export default function AgoraIsLive() {
               money. By the time you get to this point, the decision about
               privacy is already made by the person."
             </blockquote>
-            <p className="font-semibold text-orange-700 dark:text-orange-400">
+            <p className="font-semibold text-orange-700">
               - Activist now living in exile
             </p>
           </CardContent>
@@ -251,7 +251,7 @@ export default function AgoraIsLive() {
       </div>
 
       <div className="not-prose my-8">
-        <Card className="border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
+        <Card className="border-l-4 border-blue-500 bg-blue-50/50">
           <CardContent className="p-6">
             <blockquote className="text-lg italic text-foreground mb-3">
               "A lot of people ask me for help to create a GoFundMe. You need to
@@ -260,7 +260,7 @@ export default function AgoraIsLive() {
               people will be waiting to create their campaign and willing to
               raise the risks."
             </blockquote>
-            <p className="font-semibold text-blue-700 dark:text-blue-400">
+            <p className="font-semibold text-blue-700">
               - Organizer helping people in authoritarian regimes
             </p>
           </CardContent>
@@ -320,9 +320,9 @@ export default function AgoraIsLive() {
         <Card>
           <CardContent className="p-6 space-y-5">
             <div className="flex gap-3">
-              <Globe className="size-5 mt-0.5 text-orange-600 dark:text-orange-400 shrink-0" />
+              <Globe className="size-5 mt-0.5 text-orange-600 shrink-0" />
               <div>
-                <p className="font-semibold text-orange-700 dark:text-orange-400">
+                <p className="font-semibold text-orange-700">
                   BIP-86 (Taproot, single-key)
                 </p>
                 <p className="font-mono text-xs text-muted-foreground mt-1">
@@ -336,9 +336,9 @@ export default function AgoraIsLive() {
               </div>
             </div>
             <div className="flex gap-3">
-              <Lock className="size-5 mt-0.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+              <Lock className="size-5 mt-0.5 text-indigo-600 shrink-0" />
               <div>
-                <p className="font-semibold text-indigo-700 dark:text-indigo-400">
+                <p className="font-semibold text-indigo-700">
                   BIP-352 (Silent Payments)
                 </p>
                 <p className="font-mono text-xs text-muted-foreground mt-1">
@@ -458,16 +458,16 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="border-b-2 border-orange-300">
-              <th className="text-left p-3 bg-orange-50 dark:bg-orange-950/30">
+              <th className="text-left p-3 bg-orange-50">
                 Approach
               </th>
-              <th className="text-left p-3 bg-orange-50 dark:bg-orange-950/30">
+              <th className="text-left p-3 bg-orange-50">
                 Donor privacy
               </th>
-              <th className="text-left p-3 bg-orange-50 dark:bg-orange-950/30">
+              <th className="text-left p-3 bg-orange-50">
                 Server?
               </th>
-              <th className="text-left p-3 bg-orange-50 dark:bg-orange-950/30">
+              <th className="text-left p-3 bg-orange-50">
                 Per-campaign totals?
               </th>
             </tr>
@@ -491,7 +491,7 @@ P_k          = B_spend + t_k * G              # the Taproot output key`}</code><
               </td>
               <td className="p-3 align-top">Yes</td>
             </tr>
-            <tr className="border-b bg-orange-50/40 dark:bg-orange-950/10">
+            <tr className="border-b bg-orange-50/40">
               <td className="p-3 align-top font-semibold">
                 Static <code>sp1q…</code> per user (Agora SP mode)
               </td>
