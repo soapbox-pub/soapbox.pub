@@ -59,6 +59,16 @@ export const meta: BlogPostMeta = {
 export default function HowToSelfHostArmada() {
   return (
     <article className="prose prose-lg max-w-none">
+      <video
+        src="https://blossom.ditto.pub/8aa428bfc230f9473d59ba4e77cf52d249b8d4a1601914f0aca7b83b5c57a241.mp4"
+        autoPlay
+        muted
+        loop
+        controls
+        playsInline
+        className="w-full rounded-lg"
+      />
+
       <p className="lead">
         Armada Stack runs your own{' '}
         <a href="/blog/armada-open-source-encrypted-discord-alternative">
