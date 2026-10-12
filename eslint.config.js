@@ -47,6 +47,15 @@ export default tseslint.config(
     },
   },
   {
+    // Module augmentation must repeat Vitest's type parameters exactly and
+    // adds members only through `extends`.
+    files: ["src/test/vitest.d.ts"],
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+    },
+  },
+  {
     files: ["**/*.html"],
     plugins: {
       "@html-eslint": htmlEslint,
