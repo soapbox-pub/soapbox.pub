@@ -94,8 +94,8 @@ const DISCORD_BLURPLE = '#5865f2';
 /** Armada source code (canonical ngit repo, browsable on gitworkshop). */
 const SOURCE_URL = 'https://gitworkshop.dev/soapbox.pub/armada';
 
-/** ditto-relay source, the relay Armada communities run on. */
-const RELAY_REPO_URL = 'https://gitlab.com/soapbox-pub/ditto-relay';
+/** Armada Stack source, the all-in-one self-hosting server. */
+const STACK_URL = 'https://gitworkshop.dev/soapbox.pub/armada-stack';
 
 /** Other Nostr apps Armada interoperates with, one identity across all. */
 const NOSTR_APPS: Array<{
@@ -2014,17 +2014,18 @@ function RelayMeshSection() {
 // ───────────────────────────────────────────────────────────────────────────
 
 /**
- * The self-hosting terminal demo, revealed line by line. Commands are the
- * real ones from the self-hosting guide (/blog/how-to-self-host-armada):
- * clone the client over ngit, the relay from GitLab, and the voice stack.
+ * The self-hosting terminal demo, revealed line by line. The command is the
+ * real one from the self-hosting guide (/blog/how-to-self-host-armada).
  */
 const TERMINAL_SCRIPT: Array<{ text: string; kind: 'cmd' | 'ok' | 'done' }> = [
-  { text: 'git clone nostr://soapbox.pub/relay.ngit.dev/armada', kind: 'cmd' },
-  { text: '✔ client   docker build → nginx on :80', kind: 'ok' },
-  { text: 'git clone https://gitlab.com/soapbox-pub/ditto-relay', kind: 'cmd' },
-  { text: '✔ relay    bun start → your own Nostr relay', kind: 'ok' },
-  { text: 'git clone nostr://chad@chadwick.site/relay.ngit.dev/armada-av', kind: 'cmd' },
-  { text: '✔ voice    docker compose up -d → LiveKit + broker', kind: 'ok' },
+  { text: 'curl -fsSL https://armada.buzz/install.sh | sudo sh', kind: 'cmd' },
+  { text: '✔ client   your Armada on your domain', kind: 'ok' },
+  { text: '✔ relay    your own Nostr relay', kind: 'ok' },
+  { text: '✔ media    encrypted Blossom uploads', kind: 'ok' },
+  { text: '✔ voice    LiveKit calls', kind: 'ok' },
+  { text: '✔ push     Web Push notifications', kind: 'ok' },
+  { text: '✔ https    certificate issued', kind: 'ok' },
+  { text: '✔ tor      .onion address ready', kind: 'ok' },
   { text: '✔ your stack, your hardware. nothing left on ours', kind: 'done' },
 ];
 
@@ -2134,42 +2135,42 @@ function SelfHostSection() {
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8">
               Communities are decentralized by default. When you want more
-              independence, every piece runs on your own
-              hardware. Take one piece or all three; the{' '}
+              independence, Armada Stack runs the whole thing on your own
+              server with one command. See the{' '}
               <a
                 href="/blog/how-to-self-host-armada"
                 className="font-medium text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 underline-offset-2"
               >
                 self-hosting guide
-              </a>{' '}
-              walks through each one.
+              </a>
+              .
             </p>
 
             <div className="space-y-5">
               {([
                 {
-                  icon: Code,
-                  title: 'Self-host the client',
-                  body: 'Serve the web app from your own domain.',
-                  link: { href: SOURCE_URL, label: 'armada', external: true },
+                  icon: Server,
+                  title: 'One binary, everything included',
+                  body: 'Client, relay, encrypted media, voice, and push notifications.',
+                  link: { href: STACK_URL, label: 'armada-stack', external: true },
                   color: 'rose',
                 },
                 {
-                  icon: Server,
-                  title: 'Self-host a relay',
-                  body: 'Keep encrypted messages on a relay you run.',
-                  link: { href: RELAY_REPO_URL, label: 'ditto-relay', external: true },
+                  icon: ShieldCheck,
+                  title: 'HTTPS and Tor built in',
+                  body: 'Certificates renew automatically, and you get a .onion address.',
+                  link: {
+                    href: '/blog/how-to-self-host-armada',
+                    label: 'guide',
+                    external: false,
+                  },
                   color: 'cyan',
                 },
                 {
-                  icon: Headphones,
-                  title: 'Self-host voice',
-                  body: 'Route calls through your own LiveKit box.',
-                  link: {
-                    href: '/blog/how-to-self-host-armada',
-                    label: 'armada-av',
-                    external: false,
-                  },
+                  icon: Code,
+                  title: 'Open source',
+                  body: 'Read the code, or install it by hand.',
+                  link: { href: SOURCE_URL, label: 'armada', external: true },
                   color: 'green',
                 },
               ] as const).map(({ icon: Icon, title, body, link, color }) => {
@@ -2228,8 +2229,8 @@ function SelfHostSection() {
 }
 
 /**
- * A looping terminal mockup that reveals the three real self-hosting
- * commands (client, relay, voice) line by line, then holds and loops.
+ * A looping terminal mockup that reveals the Armada Stack install and what
+ * it sets up, line by line, then holds and loops.
  */
 function TerminalDemo() {
   const steps = TERMINAL_SCRIPT.length;
