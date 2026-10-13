@@ -42,7 +42,7 @@ export const meta: BlogPostMeta = {
     {
       question: 'Do my Discord members transfer to Armada?',
       answer:
-        'No. Members join your new Armada community through an invite link. Messages from people still on Discord appear in Armada under puppet accounts with their Discord name and avatar, and members can type /claim in a bridged Discord channel to link their imported history and roles to their own Nostr key.',
+        'No. Members join your new Armada community through an invite link. Messages from people still on Discord appear in Armada under puppet accounts with their Discord name and avatar.',
     },
     {
       question: 'Does the Discord bridge work both ways?',
@@ -318,7 +318,7 @@ export default function MigrateDiscordServerToArmada() {
       <p>The tool tells you this up front, and so will we:</p>
 
       <ul>
-        <li><strong>Members.</strong> People join through your Armada invite. Until they do, their bridged messages appear under puppet accounts carrying their Discord name and avatar. Anyone can type <code>/claim</code> in a bridged Discord channel to link their imported history and roles to their own Nostr key.</li>
+        <li><strong>Members.</strong> People join through your Armada invite. Until they do, their bridged messages appear under puppet accounts carrying their Discord name and avatar.</li>
         <li><strong>Forum and media channels.</strong> Not supported yet.</li>
         <li><strong>Private channels.</strong> Not supported yet; they are skipped and listed in the review step.</li>
         <li><strong>History for servers over 100 members</strong>, and anything past the 10,000-message cap per channel.</li>
